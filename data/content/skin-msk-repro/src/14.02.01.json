@@ -1,0 +1,825 @@
+{
+ "area": "14.02.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Prostate cancer: pathology, grading and androgen-deprivation pharmacology",
+   "html": "<p>Male reproductive cancers in this area span four organs with very different biology: prostate adenocarcinoma is an androgen-driven epithelial cancer of older men; testicular germ cell tumours arise in young men from a precursor laid down in fetal life; penile squamous cell carcinoma follows chronic inflammation or high-risk HPV; and male breast cancer is uncommon but strongly linked to <em>BRCA2</em>. This section covers prostate cancer pathology and the pharmacology of androgen deprivation.</p>\n<h3>Prostate adenocarcinoma: origin and risk</h3>\n<p>About 70% arise in the <strong>peripheral zone</strong>, the posterior and lateral part of the gland that lies against the rectum, which is why some tumours are palpable on digital rectal examination and why early disease rarely causes urinary obstruction. (Benign prostatic hyperplasia, by contrast, arises in the transition zone.) Risk rises steeply with age and is higher in Black men and in those with a family history. Germline variants that matter for counselling and treatment include <em>BRCA2</em> (associated with earlier, more aggressive disease), <em>BRCA1</em>, <em>ATM</em>, <em>HOXB13</em> and mismatch-repair genes (Lynch syndrome). A common somatic event is fusion of the androgen-regulated <em>TMPRSS2</em> promoter to the <em>ERG</em> oncogene, which places a transcription factor under androgen control. In a large randomised trial, high-dose vitamin E supplements increased prostate cancer risk; no supplement has been shown to prevent it.</p>\n<h3>Histology and grading</h3>\n<p>Benign glands have two cell layers: luminal secretory cells and an outer basal cell layer. Cancer glands are small, crowded and infiltrative, with a <strong>single layer of cells and no basal layer</strong> (basal markers such as p63 and high-molecular-weight keratin are negative), enlarged nuclei with prominent nucleoli, and often perineural invasion. AMACR (racemase) is overexpressed in cancer cells. High-grade prostatic intraepithelial neoplasia has atypical luminal cells but an intact basal layer.</p>\n<p>The Gleason system grades architecture, not cytology. On a biopsy the score adds the most common pattern to the highest other pattern; in practice scores run from 6 to 10. The ISUP Grade Group condenses this into five prognostic groups:</p>\n<table class=\"hy\">\n<thead><tr><th>Grade Group</th><th>Gleason score</th><th>Architecture in words</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>6 or less (3+3)</td><td>Only well-formed discrete glands</td></tr>\n<tr><td>2</td><td>3+4 = 7</td><td>Mostly well-formed glands, a minority poorly formed or fused</td></tr>\n<tr><td>3</td><td>4+3 = 7</td><td>Mostly poorly formed or fused glands</td></tr>\n<tr><td>4</td><td>8 (4+4, 3+5, 5+3)</td><td>Poorly formed glands, or some sheets without glands</td></tr>\n<tr><td>5</td><td>9 or 10</td><td>Sheets, cords, single cells or comedonecrosis predominate</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Gleason 3+4 and 4+3 both total 7 but are different Grade Groups (2 and 3). The first number is the predominant pattern, and a predominant pattern 4 carries a worse prognosis.</p></div>\n<h3>Spread</h3>\n<p>Prostate cancer spreads locally to the seminal vesicles and bladder base, by lymphatics to obturator and internal iliac nodes, and preferentially to the axial skeleton, partly through the valveless vertebral venous plexus. Bone metastases are typically <strong>osteoblastic</strong> (sclerotic on imaging, with raised alkaline phosphatase), causing back pain and risking spinal cord compression.</p>\n<h3>PSA</h3>\n<p>PSA is a serine protease made by prostatic epithelium that liquefies semen. It is organ-specific, not cancer-specific: BPH, prostatitis, urinary retention, recent instrumentation and ejaculation raise it. 5-alpha-reductase inhibitors lower it by about half within months, so a measured value is roughly doubled for interpretation. Feminising estrogen therapy and androgen blockade also lower it.</p>\n<h3>Androgen deprivation therapy and its pharmacology</h3>\n[[figure:s23f-fig140201-2]]\n<p>Prostate cancer cells depend on androgen receptor (AR) signalling. Testosterone, mainly from Leydig cells, is converted in the prostate by 5-alpha-reductase type 2 to the more potent dihydrotestosterone, which binds AR, moves to the nucleus and switches on growth genes. Drugs interrupt the axis at each level:</p>\n<ul>\n<li><strong>GnRH agonists</strong> (leuprolide, goserelin): continuous, rather than pulsatile, receptor stimulation first raises LH and testosterone for 1 to 2 weeks (the <strong>flare</strong>) and then desensitises pituitary GnRH receptors, giving castrate testosterone levels. In men with bulky or spinal metastases, an AR antagonist is started beforehand to block the flare.</li>\n<li><strong>GnRH antagonists</strong> (injectable degarelix, oral relugolix): competitive blockade lowers LH and testosterone at once, without flare.</li>\n<li><strong>AR antagonists</strong>: first generation (bicalutamide, flutamide) compete for the receptor; next-generation agents (enzalutamide, apalutamide, darolutamide) also block nuclear translocation and DNA binding. Enzalutamide lowers the seizure threshold.</li>\n<li><strong>Abiraterone</strong> inhibits CYP17A1 (17-alpha-hydroxylase and 17,20-lyase), blocking androgen synthesis in the testis, adrenal gland and tumour. Cortisol synthesis also falls, so ACTH rises and drives accumulation of mineralocorticoid precursors (11-deoxycorticosterone), causing hypertension, hypokalemia and edema. It is therefore given with prednisone.</li>\n<li><strong>Other agents</strong>: docetaxel (microtubule stabiliser); PARP inhibitors such as olaparib for tumours with <em>BRCA</em> or other homologous-recombination defects (synthetic lethality); radium-223, an alpha emitter that mimics calcium and concentrates in osteoblastic bone metastases.</li>\n</ul>\n<p>Adverse effects of androgen deprivation follow from low testosterone and estradiol: hot flashes, loss of libido and erectile function, gynecomastia, fatigue, anemia, loss of muscle mass, weight gain with insulin resistance, increased cardiovascular risk, and <strong>bone loss with fractures</strong>.</p>\n<div class=\"pearl\"><p>Castration resistance means progression despite castrate testosterone levels. The tumour usually still depends on AR, through receptor amplification, mutation, splice variants or intratumoural androgen synthesis, which is why next-generation AR blockers and abiraterone still work after first-line ADT.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Prostate Cancer"
+    },
+    {
+     "statpearls": "Gleason Score"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Testicular, penile and male breast tumours: pathology and markers",
+   "html": "<p>This section covers the pathology of testicular, penile and male breast cancer, with emphasis on cell of origin, markers and patterns of spread.</p>\n[[figure:s23f-fig140201-1]]\n<h3>Testicular germ cell tumours</h3>\n<p>Testicular cancer is the most common solid malignancy of men aged roughly 15 to 35. Nearly all postpubertal germ cell tumours arise from <strong>germ cell neoplasia in situ</strong>, atypical gonocytes that failed to mature in fetal life; the tumours almost always carry extra copies of chromosome 12p, often as an <strong>isochromosome 12p</strong>. Risk factors are cryptorchidism (risk persists after orchiopexy, and is modestly raised in the normally descended testis too), a previous testicular germ cell tumour, a first-degree relative with one, disorders of sex development with dysgenetic gonads, and Klinefelter syndrome (mediastinal germ cell tumours).</p>\n<table class=\"hy\">\n<thead><tr><th>Tumour</th><th>Gross and microscopic features</th><th>Markers and behaviour</th></tr></thead>\n<tbody>\n<tr><td>Seminoma</td><td>Homogeneous, cream-coloured mass; sheets of large cells with clear glycogen-rich cytoplasm and central nuclei, separated by fibrous septa containing lymphocytes; sometimes granulomas</td><td>PLAP, OCT3/4 and CD117 positive; AFP never elevated; hCG mildly elevated if syncytiotrophoblasts present; very radiosensitive and chemosensitive</td></tr>\n<tr><td>Embryonal carcinoma</td><td>Hemorrhagic, necrotic mass; primitive cells in glands, papillae or sheets</td><td>CD30 and OCT3/4 positive; aggressive; often part of mixed tumours</td></tr>\n<tr><td>Yolk sac tumour</td><td>Reticular or microcystic pattern with glomeruloid Schiller-Duval bodies; eosinophilic hyaline globules</td><td>AFP high; the commonest testicular tumour of infants and toddlers in pure form</td></tr>\n<tr><td>Choriocarcinoma</td><td>Hemorrhagic; sheets of syncytiotrophoblast and cytotrophoblast without villi</td><td>hCG very high; early hematogenous spread to lungs and brain; hCG can stimulate TSH receptors (hyperthyroidism) and drive gynecomastia</td></tr>\n<tr><td>Teratoma</td><td>Tissues from more than one germ layer</td><td>Prepubertal type benign; postpubertal type malignant potential and chemoresistant</td></tr>\n</tbody></table>\n<p>The testis develops near the kidney and descends, carrying its lymphatics, so germ cell tumours spread first to <strong>retroperitoneal (para-aortic) nodes</strong>, not inguinal nodes. The scrotal skin drains to inguinal nodes. This is the anatomic basis for the rule that the testis is removed through an <strong>inguinal</strong> incision with high ligation of the cord, and that the scrotum is never cut or needled: a transscrotal approach opens a new lymphatic route and risks seeding.</p>\n<h3>Sex cord-stromal tumours and lymphoma</h3>\n<ul>\n<li><strong>Leydig cell tumour</strong>: golden-brown mass of polygonal cells with eosinophilic cytoplasm and sometimes rod-shaped Reinke crystals. It makes androgens (precocious puberty in boys) or estrogens via aromatase (gynecomastia in men). Germ cell markers are normal. Most are benign.</li>\n<li><strong>Sertoli cell tumour</strong>: tubule-forming tumour, usually hormonally silent.</li>\n<li><strong>Testicular lymphoma</strong>: usually diffuse large B-cell lymphoma, the most common testicular mass after about age 60, often bilateral, with spread to the central nervous system.</li>\n</ul>\n<h3>Penile squamous cell carcinoma</h3>\n<p>Penile cancer is rare in the United States and more common where neonatal circumcision is uncommon and HPV prevalence is high. Two pathways exist. About half of cases are driven by high-risk HPV, mostly type 16: viral E6 promotes degradation of p53 and E7 binds and inactivates Rb, releasing E2F and, as a by-product, causing strong p16 expression (a surrogate marker). These tumours are often basaloid or warty. The other pathway is HPV-independent, arising on a background of chronic inflammation such as lichen sclerosus, through differentiated intraepithelial neoplasia, often with <em>TP53</em> mutation. Other risk factors are phimosis, poor hygiene with retained smegma, smoking and PUVA therapy. Precursor lesions (penile intraepithelial neoplasia) include a velvety red plaque of the glans or inner foreskin and a scaly plaque of the shaft; multiple small pigmented papules in young men with HPV are a related lesion that often regresses. Spread is to the superficial and then deep inguinal nodes, then pelvic nodes.</p>\n<h3>Male breast cancer</h3>\n<p>Roughly 1% of breast cancers occur in men. Risk factors reflect an excess of estrogen relative to androgen or a genetic predisposition: <strong>germline <em>BRCA2</em></strong> (the strongest single gene; <em>BRCA1</em>, <em>CHEK2</em> and <em>PALB2</em> also contribute), Klinefelter syndrome, cirrhosis, obesity, testicular disorders, chest radiation, and exogenous estrogen, including feminising hormone therapy. Most are invasive ductal carcinomas, and the great majority express estrogen receptors. BRCA2 protein loads RAD51 onto single-stranded DNA for <strong>homologous recombination repair of double-strand breaks</strong>; its loss makes cells depend on error-prone repair and sensitises them to PARP inhibitors and platinum. Carriers also have increased risk of prostate cancer (often aggressive), pancreatic cancer and melanoma.</p>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Gynecomastia</th><th>Male breast cancer</th></tr></thead>\n<tbody>\n<tr><td>Position</td><td>Central, concentric beneath the areola</td><td>Often eccentric or subareolar, fixed</td></tr>\n<tr><td>Consistency</td><td>Rubbery, mobile disc; may be tender when new</td><td>Hard, irregular, painless</td></tr>\n<tr><td>Side</td><td>Often bilateral</td><td>Usually unilateral</td></tr>\n<tr><td>Skin and nipple</td><td>Normal</td><td>Retraction, ulceration, bloody discharge</td></tr>\n<tr><td>Nodes</td><td>None</td><td>Axillary lymphadenopathy possible</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>A testicular germ cell tumour called \"pure seminoma\" by the pathologist but accompanied by a raised serum AFP contains a nonseminomatous component and is treated as nonseminoma. AFP is not produced by seminoma cells.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Testicular Cancer"
+    },
+    {
+     "statpearls": "Penile Cancer and Penile Intraepithelial Neoplasia"
+    },
+    {
+     "statpearls": "Male Breast Cancer"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Prostate cancer: screening, diagnosis and risk-based management",
+   "html": "<p>Prostate cancer is the most common non-skin cancer in men and the second leading cause of cancer death in US men. Most cases are slow-growing, which makes screening a balance between preventing a small number of deaths and harming many men through overdiagnosis and overtreatment.</p>\n<h3>Screening and shared decision-making</h3>\n<p>The USPSTF's 2018 recommendation is that, for men aged 55 to 69, PSA-based screening is an <strong>individual decision</strong> made after discussing benefits and harms (grade C); it recommends <strong>against</strong> PSA screening at 70 and older (grade D). Check the current USPSTF statement, because updates are periodically reissued. The discussion covers:</p>\n<ul>\n<li><strong>Benefit</strong>: a small absolute reduction in prostate cancer death over about 10 to 15 years, and fewer cases of metastatic disease.</li>\n<li><strong>Harms</strong>: false-positive results, anxiety, biopsy complications (bleeding, infection, sepsis), and overdiagnosis of cancers that would never have caused symptoms; treatment can cause erectile dysfunction, urinary incontinence and bowel symptoms.</li>\n<li><strong>Higher-risk groups</strong>: Black men and men with a family history or a known germline variant such as <em>BRCA2</em> may benefit more and may begin the conversation earlier.</li>\n</ul>\n<p><strong>Transgender women and nonbinary people assigned male at birth</strong> keep the prostate after vaginoplasty, so the same age-based shared decision applies. Estrogen and androgen blockade lower PSA, so a value in the usual \"normal\" range may be falsely reassuring, and some experts suggest a lower threshold for further evaluation. After vaginoplasty the prostate lies against the anterior wall of the neovagina, so a manual exam is done through the neovagina rather than the rectum.</p>\n<p>An elevated PSA is repeated (after excluding infection, recent ejaculation or instrumentation) before acting. The usual next step is multiparametric <strong>MRI of the prostate</strong>, which reports a PI-RADS score and guides <strong>targeted plus systematic biopsy</strong>. The transperineal route is increasingly preferred because it carries a lower infection risk than the transrectal route.</p>\n<h3>Risk-stratified management of localised disease</h3>\n<table class=\"hy\">\n<thead><tr><th>Risk</th><th>Typical features</th><th>Preferred approach</th></tr></thead>\n<tbody>\n<tr><td>Low</td><td>Grade Group 1, PSA below 10 ng/mL, organ-confined small tumour</td><td><strong>Active surveillance</strong>: scheduled PSA, examination, MRI and repeat biopsy, with curative treatment if the cancer progresses</td></tr>\n<tr><td>Intermediate</td><td>Grade Group 2 or 3, or PSA 10 to 20 ng/mL</td><td>Radical prostatectomy, or radiation with or without short-term ADT; active surveillance for selected favourable cases</td></tr>\n<tr><td>High</td><td>Grade Group 4 or 5, PSA above 20 ng/mL, or extraprostatic extension</td><td>Radiation plus long-term ADT, or radical prostatectomy with pelvic node dissection</td></tr>\n<tr><td>Metastatic, hormone-sensitive</td><td>Bone or nodal metastases</td><td>ADT plus an AR-pathway inhibitor (abiraterone, enzalutamide, apalutamide or darolutamide), sometimes with docetaxel</td></tr>\n</tbody></table>\n<p>Watchful waiting (symptom-directed treatment without curative intent) suits men with limited life expectancy. Prostatectomy risks urinary incontinence and erectile dysfunction; radiation risks proctitis, cystitis and erectile dysfunction. Germline genetic testing is recommended for men with metastatic or high-risk disease, or a suggestive family history.</p>\n<h3>Managing the adverse effects of androgen deprivation</h3>\n<ul>\n<li><strong>Bone health</strong>: baseline DXA, calcium and vitamin D intake, weight-bearing exercise; a bisphosphonate or denosumab for osteoporosis or high fracture risk. Testosterone replacement is contraindicated.</li>\n<li><strong>Metabolic and cardiovascular risk</strong>: monitor weight, glucose or HbA1c, lipids and blood pressure.</li>\n<li><strong>Hot flashes</strong>: venlafaxine or gabapentin are options; others include low-dose progestins.</li>\n<li><strong>Flare</strong>: start an AR antagonist before a GnRH agonist in men with spinal or symptomatic bone metastases, or use a GnRH antagonist.</li>\n<li><strong>Abiraterone</strong>: give with prednisone and monitor potassium, blood pressure and liver enzymes.</li>\n</ul>\n<div class=\"trap\"><p>A man taking finasteride or dutasteride for BPH whose PSA \"only\" reads 3.2 ng/mL effectively has a PSA near 6.4 ng/mL. A rise in PSA while taking a 5-alpha-reductase inhibitor deserves evaluation.</p></div>\n<h3>Oncologic emergency: spinal cord compression</h3>\n<p>New back pain with leg weakness, sensory level or sphincter disturbance in a man with prostate cancer requires immediate high-dose dexamethasone and urgent MRI of the whole spine, followed by radiation or decompressive surgery.</p>\n<div class=\"pearl\"><p>Survival measured from diagnosis is a poor test of a screening programme. Earlier detection lengthens survival time from diagnosis even when death is not delayed (lead-time bias), and screening finds indolent tumours that inflate survival figures (overdiagnosis). Disease-specific and all-cause mortality in randomised trials are the meaningful outcomes.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Prostate Cancer"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Testicular, penile and male breast cancer: evaluation and treatment",
+   "html": "<p>Testicular cancer is highly curable, even when metastatic, and its management is the model of marker-guided oncology. Penile cancer is rare and stigmatised, so delay is common; male breast cancer is often diagnosed at a later stage because men and clinicians do not expect it.</p>\n<h3>Testicular mass: the sequence</h3>\n<ol>\n<li><strong>History and examination</strong>: a painless, firm intratesticular mass that does not transilluminate. Some present with a dull ache, a hydrocele, gynecomastia, or symptoms of metastases (back pain from retroperitoneal nodes, cough or hemoptysis from lung metastases).</li>\n<li><strong>Scrotal ultrasonography</strong> is the first test; a solid, usually hypoechoic intratesticular lesion is presumed malignant. Extratesticular masses (spermatocele, epididymal cyst, hydrocele) are almost always benign.</li>\n<li><strong>Serum markers</strong> before surgery: AFP, beta-hCG and LDH, repeated after orchiectomy to follow their fall.</li>\n<li><strong>Sperm banking</strong> should be offered before orchiectomy when possible, and before chemotherapy or radiation.</li>\n<li><strong>Radical inguinal orchiectomy</strong> with high ligation of the spermatic cord is both diagnosis and primary treatment. Never perform transscrotal biopsy, aspiration or orchiectomy.</li>\n<li><strong>Staging</strong>: CT of the abdomen and pelvis (retroperitoneal nodes) and chest imaging; brain MRI for very high hCG or neurologic symptoms.</li>\n</ol>\n<table class=\"hy\">\n<thead><tr><th>Stage and type</th><th>Usual management after orchiectomy</th></tr></thead>\n<tbody>\n<tr><td>Stage I seminoma</td><td>Surveillance preferred; single-dose carboplatin or radiation are alternatives</td></tr>\n<tr><td>Stage I nonseminoma</td><td>Surveillance for most; chemotherapy or retroperitoneal lymph node dissection for higher-risk features such as lymphovascular invasion</td></tr>\n<tr><td>Metastatic germ cell tumour</td><td>Cisplatin-based chemotherapy (for example bleomycin, etoposide and cisplatin) by risk group; resection of residual masses</td></tr>\n</tbody></table>\n<p>Chemotherapy toxicities to know: bleomycin causes pulmonary fibrosis (monitor lung function, avoid high inspired oxygen when possible); cisplatin causes nephrotoxicity, ototoxicity and peripheral neuropathy; etoposide causes myelosuppression and secondary leukemia. Survivors carry long-term risks of cardiovascular disease, metabolic syndrome, hypogonadism and second cancers, and need lifelong primary care follow-up. Routine screening of asymptomatic men by self-examination or clinician examination is not recommended by the USPSTF, but men with a new testicular lump need prompt ultrasonography.</p>\n<div class=\"trap\"><p>A young man with a \"persistent epididymitis\" that does not settle after antibiotics, or a firm area inside the testis, needs scrotal ultrasonography. Treating a tumour as an infection for weeks is a classic delay.</p></div>\n<h3>Children</h3>\n<p>Prepubertal testicular tumours differ: the pure yolk sac tumour (AFP high, but remember that AFP is physiologically high in early infancy and must be read against age norms) and the benign prepubertal teratoma predominate. Testis-sparing excision is considered for benign-appearing lesions with normal markers. A boy with precocious puberty and a unilateral testicular mass most likely has a Leydig cell tumour.</p>\n<h3>Penile cancer</h3>\n<p>Any persistent penile lesion, especially under a nonretractile foreskin, needs biopsy. Management is organ-sparing where possible: topical agents (fluorouracil, imiquimod) or laser for intraepithelial neoplasia; wide local excision, glansectomy or partial penectomy for invasive tumours, with total penectomy and perineal urethrostomy for proximal disease. The inguinal nodes are the main prognostic factor: palpable nodes need biopsy, and nonpalpable nodes in higher-risk tumours are staged surgically. Prevention: HPV vaccination, neonatal or later circumcision (which reduces risk mainly by preventing phimosis), smoking cessation, and treatment of lichen sclerosus.</p>\n<h3>Male breast cancer</h3>\n<p>A unilateral, hard, painless or eccentric breast mass in a man, especially with nipple retraction, bloody discharge or axillary nodes, needs <strong>diagnostic mammography with targeted ultrasonography</strong> followed by core needle biopsy. Classic gynecomastia on exam needs no imaging; any suspicious feature does. Treatment is usually mastectomy with sentinel node biopsy, then adjuvant endocrine therapy, with <strong>tamoxifen</strong> as the standard. An aromatase inhibitor alone is less effective in men because the testes continue to supply estrogen precursors, so it is combined with gonadal suppression if used. All men with breast cancer should be offered germline genetic testing; a <em>BRCA2</em> carrier needs breast self-awareness and examination, prostate cancer screening discussions starting earlier, and cascade testing of relatives. Transgender women on long-term estrogen have a higher breast cancer risk than cisgender men (though lower than cisgender women); screening schedules for them vary by guideline, so follow local protocol.</p>\n<div class=\"pearl\"><p>For a man taking spironolactone, finasteride or estrogen who develops a breast lump: if the exam is classic bilateral concentric gynecomastia, review the drug; if the mass is unilateral, hard or eccentric, image and biopsy regardless of the medication history.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Testicular Cancer"
+    },
+    {
+     "statpearls": "Male Breast Cancer"
+    },
+    {
+     "statpearls": "Penile Cancer and Penile Intraepithelial Neoplasia"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Testicular tumour families, typical patients and their serum markers."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. The hypothalamic-pituitary-testicular axis and the sites where androgen-deprivation drugs act."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "A fictional trial of PSA screening",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> Investigators randomly assigned 50,000 men aged 55 to 69 years without known prostate cancer to PSA screening every 2 years (25,000 men) or usual care (25,000 men). Men with PSA of 3.0 ng/mL or higher were referred for MRI and biopsy. After a median follow-up of 13 years, 100 men in the screening group and 140 men in the usual-care group had died of prostate cancer. All-cause mortality was 19.8% in both groups. Prostate cancer was diagnosed in 2,600 screened men and 1,850 usual-care men. Five-year survival after diagnosis was 97% in the screened group and 88% in the usual-care group. A survey of a random sample of the usual-care group found that 38% had had at least one PSA test outside the trial during follow-up. Biopsy-related hospital admission for sepsis occurred in 0.8% of men who had a biopsy.</p>"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 66-year-old man has an elevated serum PSA and a firm nodule in the posterior prostate on rectal examination. A targeted biopsy shows small, closely packed infiltrating glands lined by cells with enlarged nuclei and prominent nucleoli, with tumour surrounding a nerve. Which additional finding would most strongly support a diagnosis of carcinoma rather than a benign mimic?</p>",
+   "options": [
+    "Absence of a basal cell layer around the glands",
+    "Corpora amylacea within gland lumens",
+    "Expression of PSA by the luminal cells",
+    "Nodular proliferation of stroma and glands",
+    "Squamous metaplasia of the duct lining"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Benign prostatic glands, including those of high-grade PIN, keep an outer basal cell layer. Invasive adenocarcinoma has lost it, so immunostains for basal markers (p63, high-molecular-weight keratin) are negative, while AMACR is often positive. Perineural invasion and prominent nucleoli also support cancer.</p><p><strong>Takeaway:</strong> Loss of the basal cell layer is the key histologic marker of invasive prostate adenocarcinoma.</p>",
+   "whyNot": {
+    "B": "Corpora amylacea are concretions common in benign glands; crystalloids, not corpora amylacea, favour cancer.",
+    "C": "PSA is made by both benign and malignant luminal cells and only confirms prostatic origin.",
+    "D": "Nodular proliferation of stroma and glands describes benign prostatic hyperplasia, typically in the transition zone.",
+    "E": "Squamous metaplasia occurs next to infarcts or after hormone therapy in benign tissue and does not indicate carcinoma."
+   },
+   "objective": "Identify loss of the basal cell layer as the key feature of invasive prostate adenocarcinoma.",
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "prostate"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 68-year-old man undergoes MRI-targeted prostate biopsy. The pathology report states that most of the tumour consists of fused and poorly formed glands, with a smaller component of well-formed, discrete glands. No higher-grade pattern is present. Which of the following is the ISUP Grade Group of this tumour?</p>",
+   "options": [
+    "Grade Group 1",
+    "Grade Group 2",
+    "Grade Group 3",
+    "Grade Group 4",
+    "Grade Group 5"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Fused and poorly formed glands are Gleason pattern 4, and well-formed discrete glands are pattern 3. With pattern 4 predominant, the score is 4+3 = 7, which is Grade Group 3. A tumour with predominant pattern 3 and less pattern 4 (3+4 = 7) would be Grade Group 2 and has a better prognosis.</p><p><strong>Takeaway:</strong> Gleason 3+4 is Grade Group 2 and 4+3 is Grade Group 3; the predominant pattern comes first.</p>",
+   "whyNot": {
+    "A": "Grade Group 1 contains only well-formed discrete glands (Gleason 6 or less), with no pattern 4.",
+    "B": "Grade Group 2 is 3+4, in which well-formed glands predominate; here poorly formed glands predominate.",
+    "D": "Grade Group 4 is Gleason 8, which requires pattern 4 throughout or a pattern 5 component.",
+    "E": "Grade Group 5 is Gleason 9 or 10 and requires pattern 5 (sheets, cords, single cells or comedonecrosis)."
+   },
+   "objective": "Assign the ISUP Grade Group from the predominant and secondary Gleason patterns.",
+   "disciplines": [
+    "pathology"
+   ],
+   "tasks": [
+    "pc_prognosis"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "prostate",
+    "tumour grading"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 74-year-old man with newly diagnosed prostate cancer and multiple sclerotic metastases in the lumbar spine begins monthly depot leuprolide. No other drug is given. Ten days later he has markedly worse low back pain and new urinary hesitancy. Which of the following best explains his worsening symptoms?</p>",
+   "options": [
+    "Direct leuprolide toxicity to osteoblasts",
+    "Hypercalcemia from osteolytic metastases",
+    "Selection of androgen-independent tumour clones",
+    "Transient increase in LH and serum testosterone",
+    "Transient increase in serum estradiol from aromatase induction"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Leuprolide is a GnRH agonist. Continuous exposure eventually desensitises pituitary GnRH receptors, but the first 1 to 2 weeks bring a surge of LH and testosterone that stimulates the tumour (flare): bone pain, urinary obstruction and, with spinal disease, risk of cord compression. An androgen receptor antagonist started before the agonist, or a GnRH antagonist, prevents it.</p><p><strong>Takeaway:</strong> GnRH agonists cause an initial testosterone flare; protect men with spinal metastases with an AR antagonist or use a GnRH antagonist.</p>",
+   "whyNot": {
+    "A": "Leuprolide has no direct toxic effect on bone cells; long-term ADT causes bone loss through low sex steroids over months.",
+    "B": "Prostate metastases are typically osteoblastic, and hypercalcemia would not explain the timing linked to the new drug.",
+    "C": "Castration resistance develops over months to years, not within 10 days.",
+    "E": "Androgen deprivation lowers estradiol over time; the early effect is a rise in testosterone."
+   },
+   "objective": "Explain the testosterone flare caused by starting a GnRH agonist.",
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "prostate",
+    "hormonal therapy"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 71-year-old man with castration-resistant metastatic prostate cancer begins an oral drug that blocks androgen synthesis in the testes, adrenal glands and tumour tissue. He is not given any other new drug. Three weeks later his blood pressure is 162/96 mm Hg (previously 128/78 mm Hg), he has ankle edema, and serum potassium is 3.0 mEq/L (3.0 mmol/L). Accumulation of which of the following hormones best explains these findings?</p>",
+   "options": [
+    "Aldosterone, from stimulation by angiotensin II",
+    "Androstenedione",
+    "Cortisol",
+    "11-Deoxycorticosterone",
+    "17-Hydroxyprogesterone"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The drug is abiraterone, an inhibitor of CYP17A1 (17-alpha-hydroxylase and 17,20-lyase). Blocking 17-alpha-hydroxylation lowers cortisol, ACTH rises, and steroid flux is shunted into the mineralocorticoid pathway, so 11-deoxycorticosterone and corticosterone accumulate. These precursors act on mineralocorticoid receptors, causing hypertension, hypokalemia and fluid retention. Co-administered prednisone suppresses ACTH and prevents this.</p><p><strong>Takeaway:</strong> CYP17A1 inhibition by abiraterone causes mineralocorticoid excess from 11-deoxycorticosterone, so it is given with a glucocorticoid.</p>",
+   "whyNot": {
+    "A": "Aldosterone is regulated mainly by angiotensin II and potassium; with volume expansion and hypokalemia, renin and aldosterone are suppressed.",
+    "B": "Androstenedione formation requires 17,20-lyase, which the drug blocks, so it falls.",
+    "C": "Cortisol synthesis requires 17-alpha-hydroxylase, so cortisol falls; that fall drives the ACTH rise.",
+    "E": "17-Hydroxyprogesterone formation also requires 17-alpha-hydroxylase and therefore decreases."
+   },
+   "objective": "Explain how CYP17A1 inhibition with abiraterone produces mineralocorticoid excess.",
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 5,
+   "tags": [
+    "prostate",
+    "steroid synthesis"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 24-year-old man comes to the emergency department because of cough, blood-streaked sputum and palpitations for 2 weeks. He has tender breast enlargement bilaterally, a fine tremor and a pulse of 112/min. There is a firm, nontender mass in the right testis. Chest x-ray shows multiple rounded pulmonary nodules. TSH is 0.1 uU/mL (0.1 mU/L). Serum beta-hCG is 250,000 mIU/mL (reference less than 5 mIU/mL) and AFP is normal. Which of the following is most likely to be seen on histologic examination of the testicular tumour?</p>",
+   "options": [
+    "Glomeruloid structures with a central vessel surrounded by tumour cells",
+    "Large cells with clear cytoplasm in sheets separated by lymphocyte-rich septa",
+    "Mixture of cartilage, glandular epithelium and squamous epithelium",
+    "Polygonal cells with eosinophilic cytoplasm and rod-shaped crystals",
+    "Sheets of syncytiotrophoblast and cytotrophoblast without chorionic villi"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A testicular mass with very high beta-hCG, normal AFP and early hematogenous lung metastases indicates choriocarcinoma. Its cells mimic placental trophoblast: multinucleated syncytiotrophoblasts that secrete hCG and mononuclear cytotrophoblasts, with hemorrhage and no villi. The alpha subunit of hCG is shared with TSH, and very high hCG weakly stimulates the TSH receptor (hyperthyroidism) and promotes aromatisation to estradiol (gynecomastia).</p><p><strong>Takeaway:</strong> Choriocarcinoma: trophoblast without villi, very high hCG, early blood-borne spread, and hCG-driven hyperthyroidism and gynecomastia.</p>",
+   "whyNot": {
+    "A": "Schiller-Duval bodies characterize yolk sac tumour, which raises AFP rather than producing this degree of hCG.",
+    "B": "Seminoma may raise hCG slightly but not to this level, and it spreads mainly through lymphatics.",
+    "C": "Tissues from several germ layers describe teratoma, which does not secrete hCG.",
+    "D": "Reinke crystals indicate a Leydig cell tumour, which can cause gynecomastia but does not secrete hCG or metastasize to the lungs like this."
+   },
+   "objective": "Recognize choriocarcinoma of the testis from its marker profile, metastatic pattern and histology.",
+   "disciplines": [
+    "pathology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "testicular mass"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 7-year-old boy is brought to the clinic because of rapid growth, acne and pubic hair over 8 months. His height has crossed from the 50th to the 90th percentile. The penis is enlarged with Tanner 3 pubic hair. The left testis contains a firm 1.5-cm nodule; the right testis is prepubertal in size. Serum testosterone is in the adult range, LH and FSH are suppressed, and AFP and beta-hCG are normal for age. Which of the following findings is most likely on histologic examination of the nodule?</p>",
+   "options": [
+    "Cells with clear cytoplasm and lymphocytic infiltrate",
+    "Glomeruloid structures in a reticular network",
+    "Polygonal eosinophilic cells containing rod-shaped cytoplasmic crystals",
+    "Primitive cells forming glands and papillae",
+    "Tubules lined by columnar cells resembling immature Sertoli cells"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Peripheral (gonadotropin-independent) precocious puberty with suppressed LH and FSH, a unilateral testicular nodule and normal germ cell markers indicates a Leydig cell tumour secreting testosterone. Histology shows sheets of polygonal cells with abundant eosinophilic cytoplasm and, in a proportion of cases, rod-shaped Reinke crystals. Most are benign and treated by excision.</p><p><strong>Takeaway:</strong> A boy with peripheral precocious puberty and a testicular nodule with normal AFP and hCG most likely has a Leydig cell tumour.</p>",
+   "whyNot": {
+    "A": "Clear cells with lymphocytes describe seminoma, which occurs in adults and does not secrete testosterone.",
+    "B": "Yolk sac tumour causes high AFP and does not cause virilisation.",
+    "D": "Embryonal carcinoma is a tumour of young adults that often raises AFP or hCG and does not secrete androgens.",
+    "E": "Sertoli cell tumours are usually hormonally silent and do not explain androgen excess."
+   },
+   "objective": "Identify Leydig cell tumour as the cause of peripheral precocious puberty with a testicular mass.",
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "pediatric endocrinology",
+    "testicular mass"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 62-year-old man has a hard, painless 2-cm mass beneath the left areola with nipple retraction. Core biopsy shows invasive ductal carcinoma that is estrogen receptor positive. His father died of pancreatic cancer at 58 and his paternal aunt had ovarian cancer. Germline testing finds a pathogenic variant in the gene most strongly associated with breast cancer in men. The normal protein product of this gene functions in which of the following processes?</p>",
+   "options": [
+    "Base excision repair of oxidized bases",
+    "Homologous recombination repair of double-strand DNA breaks",
+    "Mismatch repair of replication errors",
+    "Nucleotide excision repair of pyrimidine dimers",
+    "Telomere elongation in germ cells"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Male breast cancer with a family history of pancreatic and ovarian cancer suggests a germline <em>BRCA2</em> variant, the gene most strongly linked to breast cancer in men. BRCA2 loads RAD51 onto resected single-stranded DNA at double-strand breaks, enabling error-free homologous recombination. Tumours lacking it rely on error-prone repair and are sensitive to PARP inhibitors and platinum drugs.</p><p><strong>Takeaway:</strong> BRCA2 mediates homologous recombination repair; germline variants raise risk of male breast, prostate, pancreatic and ovarian cancer.</p>",
+   "whyNot": {
+    "A": "Base excision repair (glycosylases, APE1) fixes small base lesions; defects in MUTYH, a gene in this pathway, cause colorectal polyposis.",
+    "C": "Mismatch repair defects (MLH1, MSH2 and related genes) cause Lynch syndrome with colorectal and endometrial cancer.",
+    "D": "Nucleotide excision repair defects cause xeroderma pigmentosum with UV-induced skin cancers.",
+    "E": "Telomerase activity is not the function of the gene implicated here."
+   },
+   "objective": "Relate BRCA2-associated male breast cancer to defective homologous recombination repair.",
+   "disciplines": [
+    "genetics",
+    "biochemistry"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "hereditary cancer",
+    "breast mass"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old uncircumcised man has a 2-cm exophytic lesion of the glans. Biopsy shows invasive basaloid squamous cell carcinoma with strong, diffuse nuclear and cytoplasmic p16 immunostaining, and in situ hybridization detects HPV type 16. The strong p16 expression in this tumour is most directly a consequence of which of the following?</p>",
+   "options": [
+    "Activating mutation of KRAS",
+    "Amplification of the cyclin D1 gene",
+    "E6-mediated degradation of p53",
+    "E7-mediated inactivation of Rb",
+    "Loss of function of CDKN2A"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>High-risk HPV E7 binds and inactivates the retinoblastoma protein, releasing E2F and driving the cell cycle. Rb normally represses p16 transcription through negative feedback, so when Rb is inactivated p16 accumulates strongly. Diffuse p16 staining is therefore a surrogate marker of transcriptionally active high-risk HPV in penile, cervical and oropharyngeal carcinomas.</p><p><strong>Takeaway:</strong> Strong p16 staining in squamous carcinoma reflects HPV E7 inactivation of Rb.</p>",
+   "whyNot": {
+    "A": "KRAS mutation activates MAPK signaling and does not produce p16 overexpression.",
+    "B": "Cyclin D1 amplification inactivates Rb by phosphorylation in some HPV-negative cancers, but HPV-driven tumours do not need it and it is not the mechanism here.",
+    "C": "E6 degrades p53, which is also important in HPV oncogenesis, but p53 loss does not cause the p16 accumulation.",
+    "E": "CDKN2A encodes p16; its loss would remove p16 expression, the opposite of this finding, and is typical of HPV-independent tumours."
+   },
+   "objective": "Explain p16 overexpression in HPV-associated penile squamous cell carcinoma by E7 inactivation of Rb.",
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "penile lesions",
+    "oncogenic viruses"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old man comes to the clinic because he noticed a lump in his left testis 3 weeks ago. It is painless. He had a right orchiopexy at age 2. Examination shows a 1.5-cm hard, nontender mass within the left testis that does not transilluminate; the epididymis is normal. Scrotal ultrasonography shows a 1.6-cm hypoechoic intratesticular mass with internal blood flow. Serum AFP, beta-hCG and LDH have been drawn, and sperm banking has been arranged. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Fine-needle aspiration of the mass through the scrotum",
+    "Oral levofloxacin for 14 days and repeat ultrasonography",
+    "Radical inguinal orchiectomy",
+    "Repeat ultrasonography in 6 weeks",
+    "Transscrotal open biopsy"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A solid intratesticular mass in a young man is a germ cell tumour until proved otherwise, and cryptorchidism is a risk factor. After ultrasonography, markers and an offer of sperm banking, radical inguinal orchiectomy with high ligation of the spermatic cord provides the diagnosis and the primary treatment. Staging CT follows.</p><p><strong>Takeaway:</strong> A solid testicular mass is removed by radical inguinal orchiectomy; never biopsy or aspirate through the scrotum.</p>",
+   "whyNot": {
+    "A": "Scrotal needling breaches the scrotal compartment, risking tumour seeding and spread to inguinal lymphatics.",
+    "B": "A painless, discrete intratesticular mass is not epididymitis; an antibiotic trial delays cancer treatment.",
+    "D": "Observation delays definitive management of a probable malignancy.",
+    "E": "Transscrotal biopsy alters lymphatic drainage and risks local recurrence; diagnosis is made on the orchiectomy specimen."
+   },
+   "objective": "Manage a solid intratesticular mass with radical inguinal orchiectomy.",
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "testicular mass"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 72-year-old man with high-risk localized prostate cancer was treated with external-beam radiation and has been receiving leuprolide every 3 months for 2 years, planned for a total of 3 years. He feels well. He has never had a fracture. He has hypertension and type 2 diabetes. Today's results are below.</p><table><thead><tr><th>Item</th><th>Result</th></tr></thead><tbody><tr><td>Medications</td><td>Leuprolide depot, lisinopril, metformin, atorvastatin</td></tr><tr><td>PSA</td><td>Less than 0.1 ng/mL</td></tr><tr><td>Calcium, total</td><td>9.4 mg/dL (2.35 mmol/L)</td></tr><tr><td>25-Hydroxyvitamin D</td><td>34 ng/mL (reference 30-100 ng/mL)</td></tr><tr><td>Creatinine</td><td>1.0 mg/dL (88 umol/L)</td></tr><tr><td>DXA T-score, femoral neck</td><td>-2.7</td></tr><tr><td>DXA T-score, lumbar spine</td><td>-2.2</td></tr></tbody></table><p>In addition to calcium and vitamin D intake and weight-bearing exercise, which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Discontinue leuprolide now",
+    "Intranasal calcitonin",
+    "Oral alendronate",
+    "Repeat DXA in 2 years before treating",
+    "Testosterone gel"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Androgen deprivation causes rapid bone loss and fractures. His femoral neck T-score of -2.7 meets the definition of osteoporosis, so he needs antiresorptive therapy. A bisphosphonate (oral alendronate or IV zoledronic acid) or denosumab is appropriate; his renal function and vitamin D level allow a bisphosphonate. ADT continues as planned because the full course improves survival in high-risk disease.</p><p><strong>Takeaway:</strong> Men on ADT need DXA monitoring, and osteoporosis is treated with a bisphosphonate or denosumab while ADT continues.</p>",
+   "whyNot": {
+    "A": "Stopping ADT early would compromise cancer control in high-risk disease; bone loss is managed with antiresorptive therapy.",
+    "B": "Calcitonin is a weak antiresorptive with little fracture protection and is not a preferred option.",
+    "D": "He already has osteoporosis on DXA; delaying treatment exposes him to fracture risk.",
+    "E": "Testosterone is contraindicated because it would stimulate the prostate cancer that ADT is suppressing."
+   },
+   "objective": "Treat osteoporosis caused by androgen deprivation therapy with antiresorptive medication while ADT continues.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "older adults",
+    "prescription-drug adverse effects"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old transgender woman comes for a health maintenance visit. She has taken estradiol for 15 years and had vaginoplasty 8 years ago. She has no urinary symptoms and no family history of cancer. She has never had prostate cancer screening and asks whether she needs it. Which of the following is the most appropriate response?</p>",
+   "options": [
+    "Explain that screening is not indicated because the prostate is removed during vaginoplasty",
+    "Explain that screening is not indicated because estrogen therapy eliminates prostate cancer risk",
+    "Order annual pelvic MRI as the screening test",
+    "Discuss the potential benefits and harms of PSA screening and decide together, noting that estrogen lowers PSA levels",
+    "Order PSA testing every year and refer for biopsy if the value is above 4.0 ng/mL"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The prostate is not removed during vaginoplasty, and prostate cancer, although less common in transgender women on long-term estrogen, still occurs. For people aged 55 to 69 with a prostate, the USPSTF advises an individual, shared decision about PSA screening. In this patient, estrogen suppresses PSA, so a value below conventional thresholds may be falsely reassuring and some experts suggest a lower threshold for further evaluation. If examined, the prostate is palpated through the anterior wall of the neovagina.</p><p><strong>Takeaway:</strong> Transgender women keep their prostate after vaginoplasty; offer shared decision-making about PSA screening and interpret PSA in light of estrogen therapy.</p>",
+   "whyNot": {
+    "A": "Vaginoplasty leaves the prostate in place; this belief leads to missed cancers.",
+    "B": "Estrogen lowers but does not eliminate prostate cancer risk.",
+    "C": "MRI is used to evaluate an abnormal PSA before biopsy, not as a primary screening test.",
+    "E": "Mandatory annual testing ignores shared decision-making, and a conventional cut-off of 4.0 ng/mL is likely too high in someone whose PSA is suppressed by estrogen."
+   },
+   "objective": "Apply shared decision-making for prostate cancer screening in a transgender woman after vaginoplasty.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance",
+    "communication"
+   ],
+   "difficulty": 3,
+   "references": [
+    "uspstf"
+   ],
+   "tags": [
+    "cancer screening",
+    "gender-affirming care"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 67-year-old man comes to the clinic because of a lump in his right breast that he noticed 2 months ago. It is not painful. He takes amlodipine for hypertension. Examination shows a 2-cm hard, irregular mass just lateral to the right areola that is fixed to the overlying skin, with slight nipple retraction, and a firm 1-cm right axillary lymph node. The left breast is normal. Testicular examination is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Diagnostic mammography with targeted ultrasonography",
+    "Discontinue amlodipine and reexamine in 6 weeks",
+    "Germline BRCA testing before any imaging",
+    "Serum estradiol, testosterone and hCG measurement",
+    "Tamoxifen for 3 months as a diagnostic trial"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A unilateral, hard, eccentric, fixed mass with nipple retraction and an axillary node in a man is suspicious for breast cancer, not gynecomastia. The next step is diagnostic mammography with targeted ultrasonography, followed by core needle biopsy of the mass (and of the node if abnormal). Germline genetic testing is offered once cancer is confirmed.</p><p><strong>Takeaway:</strong> A suspicious breast mass in a man is evaluated with diagnostic mammography and ultrasonography, then core biopsy.</p>",
+   "whyNot": {
+    "B": "Calcium channel blockers are an occasional cause of gynecomastia, but this mass has malignant features and must not be observed.",
+    "C": "Genetic testing is recommended for men with breast cancer but does not replace imaging and biopsy of the mass.",
+    "D": "Hormone testing evaluates gynecomastia; this unilateral fixed mass needs tissue diagnosis.",
+    "E": "A drug trial delays diagnosis; tamoxifen treats confirmed breast cancer or painful gynecomastia, not an undiagnosed mass."
+   },
+   "objective": "Evaluate a suspicious male breast mass with diagnostic mammography and ultrasonography before biopsy.",
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "breast mass"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old man has a PSA of 5.8 ng/mL on two occasions. MRI shows a single 7-mm PI-RADS 4 lesion confined to the left peripheral zone. Targeted and systematic biopsy shows Gleason 3+3 adenocarcinoma in 2 of 14 cores, each less than 30% involved. Rectal examination is normal. He is healthy, has no family history of prostate cancer and has no germline variants on testing. He is anxious about incontinence and erectile dysfunction. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Active surveillance with scheduled PSA, examination, MRI and repeat biopsy",
+    "Androgen deprivation therapy alone",
+    "External-beam radiation with 2 years of androgen deprivation",
+    "No further follow-up",
+    "Radical prostatectomy with extended pelvic lymph node dissection"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Grade Group 1 cancer with PSA below 10 ng/mL and organ-confined disease is low risk. Active surveillance is the preferred management: it monitors the cancer with PSA, examination, MRI and repeat biopsy, and offers curative treatment if the grade or volume increases, sparing most men the urinary, sexual and bowel adverse effects of treatment.</p><p><strong>Takeaway:</strong> Low-risk (Grade Group 1) prostate cancer is managed with active surveillance.</p>",
+   "whyNot": {
+    "B": "ADT alone is not curative for localized disease and adds metabolic, bone and sexual adverse effects without benefit in low-risk cancer.",
+    "C": "Radiation with long-term ADT is for high-risk disease and would overtreat this cancer.",
+    "D": "Active surveillance requires scheduled monitoring; with a life expectancy of decades, abandoning follow-up would miss progression.",
+    "E": "Prostatectomy with extended node dissection is overtreatment for low-risk disease and carries the harms he wants to avoid."
+   },
+   "objective": "Recommend active surveillance for low-risk prostate cancer.",
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "prostate",
+    "older adults"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>Based on the study summary, approximately how many men would need to be invited to screening for 13 years to prevent one death from prostate cancer?</p>",
+   "options": [
+    "40",
+    "160",
+    "625",
+    "1,250",
+    "2,500"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Prostate cancer mortality was 100/25,000 = 0.40% with screening and 140/25,000 = 0.56% with usual care. The absolute risk reduction is 0.16% (0.0016), and the number needed to screen is 1/0.0016 = 625. The relative risk reduction (about 29%) sounds much larger than the absolute benefit.</p><p><strong>Takeaway:</strong> Number needed to screen = 1 / absolute risk reduction; compute it from event rates, not relative risk.</p>",
+   "whyNot": {
+    "A": "This would require an absolute risk reduction of 2.5%, far larger than the observed 0.16%.",
+    "B": "This would require an absolute risk reduction of about 0.6%, close to the usual-care death rate itself rather than the difference between the groups.",
+    "D": "This corresponds to an absolute risk reduction of 0.08%, the error made by dividing the 40 prevented deaths by all 50,000 men in both groups.",
+    "E": "This corresponds to an absolute risk reduction of 0.04%, a quarter of the observed difference."
+   },
+   "objective": "Calculate the number needed to screen from the absolute risk reduction in a screening trial.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "cancer screening",
+    "biostatistics"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Five-year survival after diagnosis was 97% in the screened group and 88% in the usual-care group, yet all-cause mortality did not differ. Which of the following best explains the difference in 5-year survival?</p>",
+   "options": [
+    "Confounding by age",
+    "Lead-time bias and overdiagnosis",
+    "Loss to follow-up",
+    "Recall bias",
+    "Selection bias at enrollment"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Screening moves the date of diagnosis earlier, so survival measured from diagnosis lengthens even if death is not delayed (lead-time bias). Screening also detects slow-growing cancers that would never have caused harm (overdiagnosis; here 2,600 vs 1,850 diagnoses), adding many long survivors to the screened group. Mortality comparisons between randomized groups avoid these biases.</p><p><strong>Takeaway:</strong> Survival from diagnosis exaggerates screening benefit through lead-time bias and overdiagnosis; use mortality in randomized groups.</p>",
+   "whyNot": {
+    "A": "Randomization balances age between groups, so age confounding does not explain the difference.",
+    "C": "Nothing in the summary suggests differential loss to follow-up, and it would not specifically inflate survival from diagnosis.",
+    "D": "Recall bias affects studies that rely on participants' memory of exposures, such as case-control designs.",
+    "E": "Both groups came from the same randomized population, so selection at enrollment does not differ between arms."
+   },
+   "objective": "Identify lead-time bias and overdiagnosis as explanations for improved survival after screen detection.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "cancer screening",
+    "study bias"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 3,
+   "stemHtml": "<p>The investigators note that 38% of men in the usual-care group had PSA testing outside the trial. Which of the following is the most likely effect of this on the study's estimate of the benefit of screening?</p>",
+   "options": [
+    "It biases the estimate toward finding no difference between groups",
+    "It exaggerates the reduction in prostate cancer mortality",
+    "It has no effect because analysis is by intention to treat",
+    "It increases the number of biopsy complications in the screening group",
+    "It introduces lead-time bias into the mortality comparison"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Screening in the control group (contamination) makes the two groups more alike in exposure, diluting any true effect. The trial therefore underestimates the benefit of screening, biasing results toward the null. Intention-to-treat analysis preserves randomization but does not remove this dilution; it measures the effect of an invitation to screen in the real world.</p><p><strong>Takeaway:</strong> Contamination of a control group biases a trial toward the null.</p>",
+   "whyNot": {
+    "B": "Contamination reduces the contrast between groups, so it shrinks rather than exaggerates the measured benefit.",
+    "C": "Intention-to-treat analysis keeps groups as randomized, but it cannot undo the fact that many controls were screened.",
+    "D": "Testing in the usual-care group would add biopsies in that group, not in the screening group.",
+    "E": "Lead-time bias affects survival measured from diagnosis, not mortality compared between randomized groups."
+   },
+   "objective": "Explain how contamination of the control group biases a screening trial toward the null.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "cancer screening",
+    "study design"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "In which prostatic zone do most adenocarcinomas arise?",
+   "back": "The peripheral zone (posterior, palpable on rectal exam).",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which histologic feature separates invasive prostate cancer from benign glands?",
+   "back": "Loss of the basal cell layer (p63 and high-molecular-weight keratin negative).",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Gleason 4+3 = 7 corresponds to which Grade Group?",
+   "back": "Grade Group 3 (3+4 = 7 is Grade Group 2).",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Why do GnRH agonists cause a flare?",
+   "back": "Initial stimulation raises LH and testosterone for 1 to 2 weeks before receptors desensitise.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Why is abiraterone given with prednisone?",
+   "back": "CYP17A1 block lowers cortisol, ACTH rises, and 11-deoxycorticosterone causes mineralocorticoid excess.",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Typical radiographic appearance of prostate cancer bone metastases?",
+   "back": "Osteoblastic (sclerotic), often in the lumbar spine.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "How do 5-alpha-reductase inhibitors affect PSA?",
+   "back": "They lower it by about half; double the measured value.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 2,
+   "front": "Which chromosomal abnormality is typical of testicular germ cell tumours?",
+   "back": "Gain of 12p, often as isochromosome 12p.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Which testicular tumour can never raise AFP?",
+   "back": "Pure seminoma.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Very high hCG, lung metastases and hyperthyroidism in a young man with a testis mass?",
+   "back": "Choriocarcinoma.",
+   "question": 5
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "First lymph node station for testicular germ cell tumours?",
+   "back": "Retroperitoneal (para-aortic) nodes.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Reinke crystals indicate which tumour?",
+   "back": "Leydig cell tumour.",
+   "question": 6
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Most common testicular mass after about age 60?",
+   "back": "Lymphoma (usually diffuse large B-cell).",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Why does HPV-driven penile cancer stain strongly for p16?",
+   "back": "E7 inactivates Rb, removing feedback repression of p16.",
+   "question": 8
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Gene most strongly associated with male breast cancer?",
+   "back": "BRCA2 (homologous recombination repair).",
+   "question": 7
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "USPSTF (2018) stance on PSA screening at ages 55 to 69 and 70 or older?",
+   "back": "55 to 69: individual shared decision (C); 70 and older: recommend against (D).",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Does vaginoplasty remove the prostate?",
+   "back": "No; screening discussions still apply, and estrogen lowers PSA.",
+   "question": 11
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Usual next test after a confirmed elevated PSA?",
+   "back": "Multiparametric prostate MRI to guide targeted biopsy.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Preferred management of Grade Group 1, PSA under 10, organ-confined prostate cancer?",
+   "back": "Active surveillance.",
+   "question": 13
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Bone protection for a man on ADT with osteoporosis?",
+   "back": "Bisphosphonate or denosumab, plus calcium, vitamin D and exercise.",
+   "question": 10
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "What does control-group contamination do to a screening trial?",
+   "back": "Biases the result toward the null.",
+   "question": 16
+  },
+  {
+   "n": 22,
+   "section": 4,
+   "front": "Correct surgical approach for a solid testicular mass?",
+   "back": "Radical inguinal orchiectomy with high cord ligation; never transscrotal.",
+   "question": 9
+  },
+  {
+   "n": 23,
+   "section": 4,
+   "front": "Which serum markers are drawn before orchiectomy?",
+   "back": "AFP, beta-hCG and LDH.",
+   "question": null
+  },
+  {
+   "n": 24,
+   "section": 4,
+   "front": "What should be offered before orchiectomy or chemotherapy for testicular cancer?",
+   "back": "Sperm banking.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 4,
+   "front": "Pulmonary toxicity of BEP chemotherapy comes from which drug?",
+   "back": "Bleomycin.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 4,
+   "front": "First imaging for a suspicious breast mass in a man?",
+   "back": "Diagnostic mammography with targeted ultrasonography, then core biopsy.",
+   "question": 12
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Standard adjuvant endocrine therapy for ER-positive male breast cancer?",
+   "back": "Tamoxifen.",
+   "question": null
+  }
+ ]
+}

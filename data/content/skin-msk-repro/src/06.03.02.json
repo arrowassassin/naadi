@@ -1,0 +1,822 @@
+{
+ "area": "06.03.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "The nail unit: anatomy, nail signs and antifungal pharmacology",
+   "html": "<h2>Anatomy and growth of the nail unit</h2>\n<p>The nail unit is a specialised epidermal appendage. The <strong>matrix</strong> lies under the proximal nail fold and makes the nail plate. Its proximal part forms the top (dorsal) layers of the plate and its distal part forms the underside. The pale half-moon at the base of some nails, the <strong>lunula</strong>, is the visible distal matrix. The <strong>nail plate</strong> is compact hard keratin. It rests on the <strong>nail bed</strong>, whose longitudinal ridges and rich capillary network anchor the plate and give it its pink colour. Two seals keep the space under the plate closed: the <strong>cuticle</strong>, a thin layer of keratin from the proximal nail fold, and the <strong>hyponychium</strong> at the free edge. Breaking either seal lets organisms in. Losing the cuticle leads to paronychia; entry at the hyponychium leads to the commonest pattern of onychomycosis.</p>\n[[figure:s23f-fig060302-1]]\n<p>Fingernails grow about 3 mm a month and replace themselves in about 6 months. Toenails grow about 1 mm a month and take 12–18 months. Growth is faster in children and slower in older adults and in poor peripheral circulation. Because growth is steady, the distance of a transverse mark from the cuticle tells you roughly when the insult happened. Slow toenail growth also explains why onychomycosis needs months of treatment and looks better only once the diseased plate has grown out.</p>\n<h2>Where a nail sign comes from</h2>\n<p>A useful rule: <strong>signs made by the matrix move out with the plate</strong>, while <strong>signs in the bed stay put</strong> and often blanch with pressure.</p>\n<ul><li><strong>Matrix, partial and temporary arrest:</strong> <em>Beau lines</em>, transverse grooves on every nail after severe illness, high fever or chemotherapy. Complete arrest separates the plate from the matrix (<em>onychomadesis</em>). This classically affects children 1–2 months after hand, foot and mouth disease.</li>\n<li><strong>Matrix, faulty keratinisation:</strong> <em>true leukonychia</em>, white spots or bands within the plate. Transverse white bands across all nails (<em>Mees lines</em>) follow arsenic or thallium poisoning or chemotherapy. <em>Pitting</em> comes from foci of parakeratosis made by the proximal matrix (psoriasis, alopecia areata, eczema).</li>\n<li><strong>Matrix, pigment:</strong> <em>longitudinal melanonychia</em>, a brown band made by activated or increased matrix melanocytes. In darker skin, several symmetric bands are common and benign. A new single band raises concern for subungual melanoma.</li>\n<li><strong>Bed, vascular:</strong> <em>Muehrcke lines</em> are paired white transverse bands that vanish on pressure, caused by low albumin (nephrotic syndrome, liver disease, malnutrition). <em>Terry nails</em> (mostly white bed with a narrow distal pink-brown band) occur in cirrhosis, heart failure, diabetes and ageing. <em>Half-and-half (Lindsay) nails</em> occur in chronic kidney disease. <em>Splinter haemorrhages</em> follow the longitudinal capillaries of the bed (endocarditis, vasculitis, often trauma).</li>\n<li><strong>Bed–plate attachment:</strong> <em>onycholysis</em>, distal separation that looks white. Causes include thyrotoxicosis, psoriasis, trauma, candidiasis, and photo-onycholysis from tetracyclines or psoralens.</li></ul>\n<h3>Clubbing</h3>\n<p>Clubbing is bulbous enlargement of the fingertip soft tissue. The angle between the nail plate and the proximal nail fold (Lovibond angle) rises from about 160° to more than 180°, and the diamond-shaped window between opposed dorsal nails closes (Schamroth sign). The leading theory is that <strong>megakaryocytes and large platelet clumps bypass the pulmonary capillary filter</strong>, through right-to-left shunts or abnormal lung vasculature. They lodge in fingertip capillaries and release platelet-derived growth factor and vascular endothelial growth factor, which drive vessel growth, fibroblast proliferation and oedema. Causes include lung cancer, bronchiectasis and cystic fibrosis, lung abscess and empyema, interstitial lung fibrosis, cyanotic congenital heart disease, infective endocarditis, inflammatory bowel disease and cirrhosis. Uncomplicated COPD and asthma do not cause clubbing. Clubbing with painful periostitis of the long bones is hypertrophic osteoarthropathy, most often from lung cancer.</p>\n<h3>Koilonychia and other shape changes</h3>\n<p>Koilonychia (a thin, spoon-shaped plate that can hold a drop of water) is the classic nail sign of <strong>iron deficiency</strong>. It is also normal in the toenails of infants and toddlers and can result from trauma or occupational softening. Yellow, thickened, slow-growing nails with lymphoedema and pleural effusions form yellow nail syndrome. Periungual fibromas (Koenen tumours) are a major feature of tuberous sclerosis. Dilated nailfold capillaries with ragged cuticles point to dermatomyositis or systemic sclerosis.</p>\n<table class=\"hy\"><thead><tr><th>Sign</th><th>Site</th><th>Moves with growth?</th><th>Think of</th></tr></thead><tbody>\n<tr><td>Beau lines</td><td>Matrix (temporary arrest)</td><td>Yes</td><td>Severe illness, chemotherapy, high fever</td></tr>\n<tr><td>Mees lines</td><td>Matrix (abnormal keratin)</td><td>Yes</td><td>Arsenic, thallium, chemotherapy</td></tr>\n<tr><td>Muehrcke lines</td><td>Bed (vascular)</td><td>No; blanch with pressure</td><td>Hypoalbuminaemia</td></tr>\n<tr><td>Half-and-half nails</td><td>Bed</td><td>No</td><td>Chronic kidney disease</td></tr>\n<tr><td>Terry nails</td><td>Bed</td><td>No</td><td>Cirrhosis, heart failure, diabetes</td></tr>\n<tr><td>Koilonychia</td><td>Plate shape</td><td>Not applicable</td><td>Iron deficiency; normal in toddlers' toenails</td></tr>\n<tr><td>Clubbing</td><td>Soft tissue of fingertip</td><td>Not applicable</td><td>Chronic hypoxic or suppurative lung disease, lung cancer, cyanotic heart disease, IBD</td></tr></tbody></table>\n<h2>Infection of the nail unit: organisms and drugs</h2>\n<p><strong>Onychomycosis</strong> is most often caused by dermatophytes, especially <em>Trichophyton rubrum</em>, which digest keratin. Less often it is caused by nondermatophyte moulds or <em>Candida</em>. The pattern tells you the route of entry. <em>Distal lateral subungual</em> disease, the commonest, enters at the hyponychium and spreads proximally. <em>White superficial</em> disease (often <em>T. interdigitale</em>) sits on the plate surface. <em>Proximal subungual</em> disease enters under the proximal fold and should prompt a search for immunosuppression, especially HIV. Candidal nail infection is typical of chronic mucocutaneous candidiasis.</p>\n<table class=\"hy\"><thead><tr><th>Drug</th><th>Mechanism</th><th>Points to remember</th></tr></thead><tbody>\n<tr><td>Terbinafine (oral)</td><td>Allylamine; inhibits squalene epoxidase, so ergosterol falls and toxic squalene builds up (fungicidal)</td><td>Concentrates in keratin; hepatotoxicity, taste disturbance; inhibits CYP2D6</td></tr>\n<tr><td>Itraconazole (oral)</td><td>Triazole; inhibits lanosterol 14α-demethylase (CYP51)</td><td>Strong CYP3A4 inhibitor (statin myopathy, QT-prolonging drugs); negative inotrope, so avoid in heart failure</td></tr>\n<tr><td>Griseofulvin (oral)</td><td>Binds fungal microtubules, blocks mitosis; deposits in keratin</td><td>Used for tinea capitis in children; CYP inducer; teratogenic</td></tr>\n<tr><td>Efinaconazole (topical)</td><td>Triazole; 14α-demethylase inhibitor</td><td>Mild to moderate disease without matrix involvement</td></tr>\n<tr><td>Tavaborole (topical)</td><td>Oxaborole; inhibits fungal leucyl-tRNA synthetase (protein synthesis)</td><td>Topical option for toenail disease</td></tr>\n<tr><td>Ciclopirox (topical lacquer)</td><td>Chelates polyvalent cations such as Fe<sup>3+</sup>, disrupting fungal enzymes</td><td>Low cure rates; long courses</td></tr></tbody></table>\n<p><strong>Acute paronychia</strong> is usually caused by <em>Staphylococcus aureus</em> or streptococci after the cuticle is broken (nail biting, manicures, hangnails). In children who suck their fingers, mixed oral flora including anaerobes are common. <strong>Herpetic whitlow</strong> is HSV inoculated into a finger. It occurs in children with herpetic gingivostomatitis and in health care workers. <strong>Chronic paronychia</strong> is mostly an irritant or allergic dermatitis of the nail fold in people who do wet work, with <em>Candida</em> as a secondary colonist. A green-black nail with onycholysis suggests <em>Pseudomonas aeruginosa</em>, whose pigments (pyocyanin, pyoverdine) stain the plate.</p>\n<div class=\"pearl\"><p>To date a transverse line, divide its distance from the cuticle by the growth rate: about 3 mm a month for fingernails and 1 mm a month for toenails.</p></div>\n<div class=\"trap\"><p>Clubbing in a patient with COPD is not explained by the COPD. Look for lung cancer, bronchiectasis or fibrosis.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Nail Clubbing"
+    },
+    {
+     "statpearls": "Histology, Nail"
+    },
+    {
+     "statpearls": "Onychomycosis"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Nail disorders: onychomycosis, paronychia, ingrown toenail and warning signs",
+   "html": "<h2>Onychomycosis</h2>\n<p>Thick, yellow-white, crumbly toenails with subungual debris are common in older adults, people with diabetes and anyone with tinea pedis. But only about half of dystrophic nails are fungal. Psoriasis, lichen planus, repeated trauma (ill-fitting shoes, sport) and ageing (onychauxis) look similar. <strong>Confirm the diagnosis before starting systemic therapy.</strong></p>\n<table class=\"hy\"><thead><tr><th>Test</th><th>Role</th></tr></thead><tbody>\n<tr><td>Potassium hydroxide (KOH) preparation of subungual debris</td><td>Fast, cheap, bedside; shows hyphae but not the species</td></tr>\n<tr><td>Fungal culture</td><td>Identifies dermatophyte versus mould or yeast; takes weeks, often falsely negative</td></tr>\n<tr><td>Periodic acid–Schiff (PAS) stain of a nail clipping</td><td>Most sensitive single test</td></tr>\n<tr><td>Fungal PCR</td><td>Fast and sensitive where available</td></tr></tbody></table>\n<p><strong>Treatment</strong> is worthwhile when the nails cause pain or functional trouble, in diabetes or peripheral vascular disease, after recurrent cellulitis (the toe web is a portal of entry), in immunosuppression, or when the patient wants it after hearing the realistic cure rates.</p>\n<ul><li><strong>Oral terbinafine</strong> is first line for dermatophyte onychomycosis: 6 weeks for fingernails and 12 weeks for toenails. Check transaminases before starting, and avoid it in chronic or active liver disease. Warn about taste loss and symptoms of liver injury. It inhibits CYP2D6, so review interacting drugs such as some antidepressants and β-blockers.</li>\n<li><strong>Itraconazole</strong> (continuous or pulse dosing) is the alternative and covers <em>Candida</em> and some moulds. Avoid it in heart failure and check for CYP3A4 interactions (simvastatin, some antiarrhythmics and direct oral anticoagulants).</li>\n<li><strong>Topical</strong> efinaconazole, tavaborole or ciclopirox suit mild to moderate distal disease without matrix involvement, or patients who cannot take oral drugs. Courses are long (about 48 weeks) and cure rates lower.</li>\n<li>Prevent recurrence: treat tinea pedis, keep feet dry, avoid barefoot walking in shared showers, and treat or replace shoes. Regular podiatry debridement helps older adults and people with limited reach, vision or dexterity.</li></ul>\n<p><strong>Children</strong> get onychomycosis less often, usually with a family history. Their thin, fast-growing nails respond better to topical therapy, and oral terbinafine is used when needed. Proximal subungual onychomycosis in any patient warrants HIV testing.</p>\n<h2>Paronychia and herpetic whitlow</h2>\n<table class=\"hy\"><thead><tr><th></th><th>Acute paronychia</th><th>Herpetic whitlow</th><th>Chronic paronychia</th></tr></thead><tbody>\n<tr><td>Onset</td><td>Hours to days after a break in the cuticle</td><td>Days; prodromal tingling</td><td>At least 6 weeks; often several fingers</td></tr>\n<tr><td>Look</td><td>Red, hot, tender fold, often a pus pocket</td><td>Grouped vesicles with clear or cloudy fluid on a red base</td><td>Swollen boggy folds, absent cuticle, transverse ridges on the plate</td></tr>\n<tr><td>Cause</td><td><em>S. aureus</em>, streptococci; mixed oral flora in children who suck their fingers</td><td>HSV-1 or HSV-2</td><td>Irritant or allergic dermatitis from wet work; <em>Candida</em> secondary</td></tr>\n<tr><td>Management</td><td>Warm soaks several times a day; incise or lift the fold to drain an abscess; oral antibiotic if cellulitis</td><td><strong>Do not incise</strong>; cover the lesion; consider oral acyclovir or valacyclovir early</td><td>Avoid wet work (cotton-lined gloves); topical corticosteroid (or calcineurin inhibitor); topical azole as adjunct</td></tr></tbody></table>\n<p>For acute paronychia, cephalexin or dicloxacillin covers methicillin-susceptible staphylococci and streptococci. Use trimethoprim–sulfamethoxazole or doxycycline (in patients aged 8 and older) where MRSA is likely, and amoxicillin–clavulanate after finger sucking or a bite. Chronic paronychia that does not respond in a single digit, especially with nail dystrophy, needs a biopsy to exclude squamous cell carcinoma. EGFR inhibitors, retinoids and taxanes cause painful drug-induced paronychia with granulation tissue.</p>\n<h2>Ingrown toenail (onychocryptosis)</h2>\n<p>An ingrown toenail usually affects the lateral edge of the great toenail in adolescents and young adults. Risk factors are nails cut short and rounded at the corners, tight or pointed shoes, sweaty feet, trauma, and a naturally curved (pincer) nail. In older adults, curved and thickened nails and reduced foot care contribute. It progresses from pain and swelling of the lateral fold, through drainage and infection, to overgrowth of granulation tissue and a hypertrophic fold.</p>\n<ul><li><strong>Mild to moderate:</strong> warm soaks, gently lifting the nail corner with a wisp of cotton or dental floss, or a plastic gutter splint along the edge; a mid-potency topical steroid for granulation tissue; well-fitting shoes; cutting nails straight across, level with the toe tip.</li>\n<li><strong>Severe or recurrent:</strong> <strong>partial nail avulsion with lateral matricectomy</strong> under a digital block. Destroying the lateral matrix with phenol (chemical matricectomy) gives the lowest recurrence. Avulsion without matricectomy, and full avulsion, often recur.</li>\n<li>Oral antibiotics are not routinely needed after avulsion. Reserve them for spreading cellulitis. Patients with diabetes or peripheral arterial disease need careful foot assessment, and podiatry referral early.</li></ul>\n<h2>Nail findings that need action</h2>\n[[figure:s23f-fig060302-2]]\n<ul><li><strong>Longitudinal melanonychia.</strong> Several symmetric bands in a person with darker skin, or bands after drugs such as zidovudine or hydroxyurea, are usually benign. Red flags for subungual melanoma: a single band on one digit (especially thumb, great toe or index finger), a band 3 mm or wider or widening, blurred or variegated colour, <strong>pigment spreading onto the nail folds (Hutchinson sign)</strong>, nail plate destruction, and older age. A <strong>biopsy of the nail matrix</strong>, where the pigment arises, is the definitive test. Acral lentiginous melanoma is proportionally the commonest melanoma in people with darker skin and is often diagnosed late.</li>\n<li><strong>Subungual haematoma</strong> after a crush injury: if it is painful and the nail plate and folds are intact, trephination (cautery or needle) relieves pain whatever its size. X-ray for a tuft fracture. A \"haematoma\" without trauma that does not grow out with the nail needs a biopsy.</li>\n<li><strong>Systemic clues:</strong> new clubbing in an adult needs chest imaging. Koilonychia needs a CBC and ferritin, and a search for the source of iron loss. Terry nails call for liver tests and albumin; half-and-half nails, creatinine; Muehrcke lines, albumin and urine protein. Splinter haemorrhages with fever or a new murmur need blood cultures and echocardiography. Onycholysis with tremor or weight loss needs a TSH.</li>\n<li><strong>Children:</strong> onychomadesis weeks after hand, foot and mouth disease is harmless and grows out. Koilonychia of toddlers' toenails is normal. Hypoplastic thumbnails with absent or small patellae suggest nail–patella syndrome, so check the urine for protein.</li></ul>\n<div class=\"trap\"><p>Do not incise a fingertip with vesicles. Herpetic whitlow spreads with incision and can become superinfected.</p></div>\n<div class=\"pearl\"><p>Before months of oral antifungal therapy, prove that the nail is fungal. A PAS stain of a nail clipping is the most sensitive single test.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Onychomycosis"
+    },
+    {
+     "statpearls": "Paronychia"
+    },
+    {
+     "statpearls": "Ingrown Toenails"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. The nail unit in side view: matrix, lunula, plate, bed, folds and hyponychium, with growth rates for dating nail signs."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Six nail signs of systemic disease and their main associations."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 63-year-old man with type 2 diabetes has thick, yellow, crumbling toenails on both feet. Microscopy of subungual debris in potassium hydroxide shows septate hyphae, and culture grows <em>Trichophyton rubrum</em>. He starts a 12-week course of an oral drug that builds up in the nail keratin and is fungicidal because a toxic sterol precursor accumulates inside the fungal cell. Which of the following enzymes does this drug inhibit?</p>",
+   "options": [
+    "β-1,3-Glucan synthase",
+    "Squalene epoxidase",
+    "Lanosterol 14α-demethylase",
+    "Leucyl-tRNA synthetase",
+    "Thymidylate synthase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The drug is <strong>terbinafine</strong>, an allylamine that inhibits fungal <strong>squalene epoxidase</strong>. Blocking this early step of ergosterol synthesis lowers ergosterol in the fungal membrane and makes squalene build up to toxic levels, which kills the fungus. Terbinafine is lipophilic and keratinophilic, so it concentrates in the nail plate. That makes it first-line oral therapy for dermatophyte onychomycosis. Key adverse effects are hepatotoxicity (check transaminases before starting), taste disturbance and CYP2D6 inhibition.</p><p><strong>Takeaway:</strong> Terbinafine inhibits squalene epoxidase; squalene accumulates and the drug is fungicidal against dermatophytes.</p>",
+   "whyNot": {
+    "A": "β-1,3-Glucan synthase is inhibited by echinocandins (caspofungin), intravenous drugs for invasive <em>Candida</em> and <em>Aspergillus</em>, not for onychomycosis.",
+    "C": "Lanosterol 14α-demethylase is inhibited by azoles such as itraconazole; this step comes after squalene epoxidase, and squalene does not build up.",
+    "D": "Leucyl-tRNA synthetase is inhibited by topical tavaborole, not by an oral drug that causes sterol precursor build-up.",
+    "E": "Thymidylate synthase is the target of flucytosine's metabolite (5-fluorouracil), used with amphotericin for cryptococcal meningitis."
+   },
+   "objective": "Recall that terbinafine inhibits squalene epoxidase and is fungicidal against dermatophytes.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail infection",
+    "antifungals"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 14-year-old girl with tetralogy of Fallot, palliated in infancy and awaiting further surgery, has resting oxygen saturation of 82% on room air. Her fingertips are bulbous. Viewed from the side, the angle between each nail plate and its proximal nail fold exceeds 180°, and the nail beds feel spongy. Which of the following mechanisms best explains the change in her fingertips?</p>",
+   "options": [
+    "Chronic hypoxia that stimulates erythropoietin production in the digits",
+    "Deposition of immune complexes in the digital arterioles",
+    "Megakaryocytes bypassing the lungs and releasing growth factors in the digits",
+    "Iron deficiency that thins and softens the nail matrix",
+    "Thrombotic occlusion of the digital capillaries by sickled cells"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Her right-to-left shunt has caused <strong>digital clubbing</strong>. The best-supported mechanism is that <strong>megakaryocytes and platelet clumps</strong>, normally broken up in the pulmonary capillaries, bypass the lungs through the shunt and lodge in the fingertip vessels. There they release <strong>platelet-derived growth factor and vascular endothelial growth factor</strong>, which cause angiogenesis, fibroblast proliferation and connective tissue oedema in the nail bed. The same idea fits clubbing in lung cancer, chronic suppurative lung disease and cirrhosis, where pulmonary vascular structure or shunting is abnormal.</p><p><strong>Takeaway:</strong> Clubbing comes from growth factors (PDGF, VEGF) released by megakaryocytes that escape the pulmonary capillary filter.</p>",
+   "whyNot": {
+    "A": "Erythropoietin is made by the kidney; it explains her polycythaemia but not soft-tissue growth in the fingertips.",
+    "B": "Immune complex vasculitis causes purpura, splinter haemorrhages or digital infarcts rather than painless bulbous enlargement.",
+    "D": "Iron deficiency causes koilonychia, a thin spoon-shaped plate, not an increased nail-fold angle.",
+    "E": "Sickle cell vaso-occlusion causes painful dactylitis in young children, not chronic clubbing."
+   },
+   "objective": "Explain the megakaryocyte growth-factor theory of digital clubbing in right-to-left shunts.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail signs",
+    "congenital heart disease"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old woman notices a deep transverse groove across the nail plate of every fingernail. Each groove sits about 6 mm from the proximal nail fold. She recovered from severe COVID-19 pneumonia that needed intensive care 2 months ago. The grooves are not tender, and the nail folds are normal. Which of the following best explains these grooves?</p>",
+   "options": [
+    "Deposition of haemosiderin in the nail bed",
+    "Fungal invasion of the ventral nail plate",
+    "Hypoalbuminaemia that compresses nail bed capillaries",
+    "Inflammation of the proximal nail fold",
+    "Temporary arrest of nail matrix proliferation"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>These are <strong>Beau lines</strong>. A severe systemic illness, high fever, chemotherapy or major surgery briefly halts cell division in the <strong>nail matrix</strong>, so a thinner band of plate forms. As the nail grows out, the band appears beyond the cuticle as a transverse groove on all nails at the same distance. Fingernails grow about 3 mm a month, so a groove 6 mm out dates the illness to about 2 months ago, matching her intensive care stay. If matrix arrest is complete, the plate can separate entirely (onychomadesis).</p><p><strong>Takeaway:</strong> Beau lines record a temporary arrest of matrix growth; their distance from the cuticle dates the illness.</p>",
+   "whyNot": {
+    "A": "Haemosiderin from a haematoma gives a red-brown or black patch after trauma, not a groove on every nail.",
+    "B": "Onychomycosis causes thickening, discoloration and debris, usually in toenails, not identical grooves on all fingernails.",
+    "C": "Hypoalbuminaemia causes Muehrcke lines, white bands in the nail bed that blanch with pressure and are not grooves.",
+    "D": "Nail fold inflammation (chronic paronychia) causes irregular ridges with a swollen fold, which is absent here."
+   },
+   "objective": "Explain Beau lines as a temporary matrix arrest and use nail growth rate to date the insult.",
+   "extraAreas": [],
+   "disciplines": [
+    "histology_cell_biology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_history_pe"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail signs"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old man has had a white discoloration of several fingernails for 4 months. It starts under the proximal nail fold and spreads toward the free edge, while the distal plate looks normal. He has also had weight loss and recurrent oral thrush. A PAS-stained clipping shows fungal hyphae within the proximal plate. Further testing is most likely to show a decrease in which of the following?</p>",
+   "options": [
+    "CD4+ T-lymphocyte count",
+    "Complement C3 concentration",
+    "Neutrophil myeloperoxidase activity",
+    "Serum IgA concentration",
+    "Serum IgE concentration"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p><strong>Proximal subungual onychomycosis</strong> is the least common pattern. The fungus enters under the proximal nail fold, so the whiteness starts at the cuticle end. It is strongly associated with <strong>immunosuppression</strong>, and with weight loss and recurrent oral candidiasis it points to <strong>HIV infection with a low CD4+ T-cell count</strong>. Cell-mediated immunity (T<sub>H</sub>1 and T<sub>H</sub>17 responses) is central to controlling superficial fungi. This patient should be offered HIV testing.</p><p><strong>Takeaway:</strong> Proximal subungual onychomycosis suggests impaired cell-mediated immunity, classically HIV with a low CD4 count.</p>",
+   "whyNot": {
+    "B": "Low C3 predisposes to encapsulated bacterial infections, not to fungal nail invasion and thrush.",
+    "C": "Myeloperoxidase deficiency is usually silent or causes candidal infection only with diabetes; it does not explain weight loss and this pattern.",
+    "D": "IgA deficiency causes sinopulmonary and gastrointestinal infections and anaphylaxis to blood products, not fungal nail disease.",
+    "E": "IgE is not decreased here; IgE levels are high, not low, in hyper-IgE syndrome, which causes eczema and staphylococcal abscesses."
+   },
+   "objective": "Link proximal subungual onychomycosis to impaired cell-mediated immunity such as HIV.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail infection",
+    "immunodeficiency"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-year-old boy is evaluated for knee pain and frequent falls. His thumbnails are small and split, with triangular lunulae, and the nails of the other fingers are less affected. Examination shows small, laterally displaced patellae and limited elbow extension. A pelvic radiograph shows bony projections from the posterior iliac bones. Urinalysis shows 2+ protein. His mother has similar nails. A mutation in the gene for which of the following is the most likely cause?</p>",
+   "options": [
+    "Collagen type I α1 chain",
+    "Collagen type IV α5 chain",
+    "Fibrillin-1",
+    "Fibroblast growth factor receptor 3",
+    "LIM-homeodomain transcription factor"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Hypoplastic nails (worst on the thumb, with triangular lunulae), small or absent patellae, elbow dysplasia, iliac horns and proteinuria in an autosomal dominant pattern make up <strong>nail–patella syndrome</strong>. It is caused by loss-of-function variants in <strong><em>LMX1B</em></strong>, which encodes a LIM-homeodomain transcription factor. The protein specifies dorsal identity in the developing limb, which is why dorsal structures (nails, patellae) are affected. It is also expressed in glomerular podocytes, explaining the nephropathy that can progress to kidney failure. Affected people need lifelong urine protein and blood pressure monitoring and screening for glaucoma.</p><p><strong>Takeaway:</strong> Nail–patella syndrome (<em>LMX1B</em>) links nail dysplasia to absent patellae, iliac horns and glomerular disease.</p>",
+   "whyNot": {
+    "A": "<em>COL1A1</em> variants cause osteogenesis imperfecta, with fractures, blue sclerae and hearing loss, not nail dysplasia.",
+    "B": "<em>COL4A5</em> variants cause X-linked Alport syndrome, with haematuria, hearing loss and lens changes but normal nails and patellae.",
+    "C": "<em>FBN1</em> variants cause Marfan syndrome, with tall stature, lens dislocation and aortic root dilation.",
+    "D": "<em>FGFR3</em> gain-of-function variants cause achondroplasia, with short limbs and normal nails."
+   },
+   "objective": "Identify nail–patella syndrome and its LMX1B transcription factor defect.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "congenital nail disorders",
+    "genetics"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 41-year-old woman has had fatigue, exertional breathlessness and a craving for ice for 6 months. She has very heavy menstrual periods. Her fingernails are thin and brittle, and several are concave enough to hold a drop of water. Which of the following sets of laboratory findings is most likely?</p>",
+   "options": [
+    "Low ferritin, low total iron-binding capacity, high MCV",
+    "Low ferritin, high total iron-binding capacity, low MCV",
+    "Normal ferritin, normal total iron-binding capacity, high MCV",
+    "High ferritin, low total iron-binding capacity, low MCV",
+    "High ferritin, high transferrin saturation, normal MCV"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Spoon-shaped nails (<strong>koilonychia</strong>), pica for ice (pagophagia) and heavy menstrual bleeding indicate <strong>iron deficiency anaemia</strong>. Iron stores are depleted (low ferritin). The liver makes more transferrin, so total iron-binding capacity rises. Iron-poor erythropoiesis produces microcytic, hypochromic cells (low MCV). Koilonychia reflects thinning and softening of the plate when the iron-dependent matrix is short of iron.</p><p><strong>Takeaway:</strong> Koilonychia signals iron deficiency: low ferritin, high TIBC, microcytosis.</p>",
+   "whyNot": {
+    "A": "Low TIBC with high MCV does not fit iron deficiency; it would suggest a mixed or chronic disease state with a macrocytic process.",
+    "C": "Normal iron studies with macrocytosis suggest vitamin B<sub>12</sub> or folate deficiency, which does not cause koilonychia or pica.",
+    "D": "High ferritin with low TIBC and microcytosis suggests anaemia of chronic disease, which does not fit heavy menstrual losses.",
+    "E": "High ferritin and transferrin saturation suggest iron overload (haemochromatosis), not deficiency."
+   },
+   "objective": "Connect koilonychia and pica to the iron studies of iron deficiency anaemia.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail signs",
+    "anaemia"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 48-year-old man has burning pain and numbness in both feet, a garlic-like odour on his breath, and episodes of vomiting and diarrhoea over 2 months. His fingernails show a single transverse white band across the plate of every nail. The bands do not fade with pressure and have moved 2 mm toward the free edge over 3 weeks. Hair and urine testing confirm the suspected toxin. Inhibition of which of the following enzymes contributes most to this toxin's effect on energy metabolism?</p>",
+   "options": [
+    "Acetylcholinesterase",
+    "Cytochrome c oxidase",
+    "Pyruvate dehydrogenase",
+    "δ-Aminolevulinic acid dehydratase",
+    "Na<sup>+</sup>/K<sup>+</sup>-ATPase"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Transverse white bands within the plate on all nails (<strong>Mees lines</strong>, a true leukonychia that moves with growth), painful peripheral neuropathy, gastrointestinal symptoms and a garlic odour indicate <strong>arsenic poisoning</strong>. Trivalent arsenic binds the vicinal thiols of <strong>lipoic acid</strong>, a cofactor of <strong>pyruvate dehydrogenase</strong> and α-ketoglutarate dehydrogenase. This blocks entry of pyruvate into the citric acid cycle. Glycolysis-dependent nerve tissue suffers, and lactate rises. Treatment is chelation (for example, dimercaprol or succimer).</p><p><strong>Takeaway:</strong> Mees lines with neuropathy and a garlic odour mean arsenic, which inhibits lipoic acid-dependent pyruvate dehydrogenase.</p>",
+   "whyNot": {
+    "A": "Acetylcholinesterase is inhibited by organophosphates, which cause a cholinergic crisis, not nail bands and painful neuropathy.",
+    "B": "Cytochrome c oxidase is inhibited by cyanide and carbon monoxide, which cause acute collapse, not a subacute course with nail changes.",
+    "D": "δ-ALA dehydratase (with ferrochelatase) is inhibited by lead, which causes basophilic stippling, abdominal colic and wrist drop.",
+    "E": "Na<sup>+</sup>/K<sup>+</sup>-ATPase is inhibited by digoxin, which causes arrhythmias and visual change, not leukonychia."
+   },
+   "objective": "Link Mees lines and neuropathy to arsenic and its inhibition of lipoic acid-dependent dehydrogenases.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail signs",
+    "toxicology"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old man takes simvastatin and amlodipine. Toenail onychomycosis is confirmed by culture, and a liver condition makes his physician avoid one first-line oral antifungal. Instead he starts an oral triazole. Three weeks later he has diffuse muscle pain and weakness and dark urine. Serum creatine kinase is 18,400 U/L (reference 30–200 U/L). Which of the following best explains this adverse event?</p>",
+   "options": [
+    "Antifungal-induced inhibition of HMG-CoA reductase",
+    "Direct mitochondrial toxicity of the antifungal in skeletal muscle",
+    "Increased hepatic glucuronidation of simvastatin",
+    "Inhibition of CYP3A4 that raises simvastatin concentrations",
+    "Induction of CYP2C9 that creates a toxic simvastatin metabolite"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The triazole is <strong>itraconazole</strong>, a potent <strong>CYP3A4 inhibitor</strong>. Simvastatin is extensively metabolised by CYP3A4, so inhibition raises statin concentrations many-fold and causes <strong>rhabdomyolysis</strong>: myalgia, weakness, pigmenturia and a very high creatine kinase. Itraconazole is contraindicated with simvastatin and lovastatin. Other important itraconazole interactions include QT-prolonging drugs and some anticoagulants, and the drug should be avoided in heart failure because of negative inotropy.</p><p><strong>Takeaway:</strong> Azole antifungals inhibit CYP3A4 and can cause statin rhabdomyolysis; review every drug list before prescribing.</p>",
+   "whyNot": {
+    "A": "Azoles inhibit fungal 14α-demethylase, not human HMG-CoA reductase; the statin effect is increased through raised drug levels.",
+    "B": "Itraconazole is not a direct mitochondrial muscle toxin; the timing and the statin co-prescription point to a pharmacokinetic interaction.",
+    "C": "Increased clearance of simvastatin would lower its levels and reduce, not raise, myopathy risk.",
+    "E": "Azoles inhibit rather than induce cytochrome P450 enzymes, and simvastatin myopathy reflects parent drug exposure."
+   },
+   "objective": "Recognise CYP3A4 inhibition by itraconazole as the cause of statin-associated rhabdomyolysis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "antifungals",
+    "drug interactions"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old woman asks for a prescription to treat her toenails. Over 3 years the nails of both great toes and two other toes have become thick, yellow and crumbly, with debris under the free edge. She has mild scaling between the toes. She has no history of psoriasis, and her skin and fingernails are otherwise normal. She has hypertension and takes lisinopril. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Begin oral itraconazole",
+    "Begin oral terbinafine",
+    "Recommend complete surgical nail avulsion",
+    "Obtain a nail clipping for PAS staining",
+    "Refer for laser therapy"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Her nails strongly suggest onychomycosis. But about half of dystrophic toenails are not fungal: psoriasis, trauma and age-related thickening look alike. <strong>Laboratory confirmation should come before months of systemic therapy</strong> with potential toxicity and cost. Options include a potassium hydroxide preparation, culture, PCR and a <strong>PAS stain of a nail clipping</strong>, which is the most sensitive single test. If the test is positive, oral terbinafine with baseline transaminases is the usual first choice.</p><p><strong>Takeaway:</strong> Confirm onychomycosis (KOH, culture, PCR or PAS of a clipping) before starting oral antifungal therapy.</p>",
+   "whyNot": {
+    "A": "Itraconazole is a second-line agent with many interactions, and therapy should not start before the diagnosis is confirmed.",
+    "B": "Terbinafine is the preferred drug once the diagnosis is confirmed, but treating an unconfirmed diagnosis exposes her to risk without proof of benefit.",
+    "C": "Surgical avulsion is not first-line for onychomycosis and does not cure it without antifungal therapy.",
+    "E": "Laser therapy has limited evidence and also requires a confirmed diagnosis first."
+   },
+   "objective": "Confirm onychomycosis with laboratory testing before starting systemic antifungal therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail disorders"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 70-year-old man with type 2 diabetes and heart failure with reduced ejection fraction (ejection fraction 30%) has painful, thickened toenails on both feet. He has had two episodes of lower-leg cellulitis in the past year. A nail clipping is positive for dermatophyte hyphae, and culture grows <em>Trichophyton rubrum</em>. The matrix is involved in four nails. His medications include metformin, sacubitril–valsartan, carvedilol, spironolactone and furosemide. Serum ALT and AST are normal, and he does not drink alcohol. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Oral terbinafine for 12 weeks",
+    "Oral fluconazole once weekly",
+    "Oral griseofulvin for 12 months",
+    "Oral itraconazole pulse therapy",
+    "Topical nystatin cream"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>He has confirmed dermatophyte onychomycosis with matrix involvement, pain and recurrent cellulitis. These are strong reasons to treat systemically. <strong>Oral terbinafine for 12 weeks</strong> is the most effective first-line therapy, and his normal liver enzymes allow its use. <strong>Itraconazole is avoided in heart failure</strong> because of its negative inotropic effect (a boxed warning). Treating tinea pedis and arranging podiatry care will help prevent further cellulitis. Terbinafine inhibits CYP2D6, and carvedilol is partly metabolised by CYP2D6, so watch heart rate and blood pressure.</p><p><strong>Takeaway:</strong> Terbinafine is first-line for dermatophyte onychomycosis; avoid itraconazole in heart failure.</p>",
+   "whyNot": {
+    "B": "Fluconazole is an off-label, less effective option and would usually be considered only when terbinafine and itraconazole cannot be used.",
+    "C": "Griseofulvin needs very long courses, has lower cure rates for nails, and is no longer a standard choice for onychomycosis.",
+    "D": "Itraconazole carries a boxed warning against use in heart failure because it can worsen ventricular function.",
+    "E": "Nystatin is not active against dermatophytes and does not penetrate the nail plate."
+   },
+   "objective": "Select oral terbinafine for confirmed onychomycosis and avoid itraconazole in heart failure.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail disorders",
+    "antifungals"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman has had throbbing pain and swelling beside her right index fingernail for 3 days, after pushing back her cuticles during a home manicure. Examination shows a red, warm, tender lateral nail fold with a 6-mm yellow collection of pus under the skin next to the nail plate. There are no vesicles, no red streaking up the hand and no swelling of the finger pad. She is afebrile. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Apply topical clotrimazole cream",
+    "Begin oral acyclovir",
+    "Drain the pus by elevating the nail fold",
+    "Prescribe warm soaks alone for 1 week",
+    "Remove the entire nail plate"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is <strong>acute paronychia with an abscess</strong>, usually caused by <em>S. aureus</em> or streptococci after a break in the cuticle. A visible collection of pus needs <strong>drainage</strong>. Lifting the nail fold off the plate with a blade or needle under a digital block releases it, and warm soaks then help further drainage. Oral antibiotics are needed only for surrounding cellulitis, immunosuppression or failure to improve. Felon (finger-pad infection) and flexor tenosynovitis are absent.</p><p><strong>Takeaway:</strong> Acute paronychia with a visible abscess needs drainage; soaks alone suit early cases without pus.</p>",
+   "whyNot": {
+    "A": "Topical antifungals treat chronic candidal involvement, not an acute bacterial abscess.",
+    "B": "Acyclovir treats herpetic whitlow, which presents with grouped vesicles rather than a single pus collection.",
+    "D": "Warm soaks help early paronychia without a collection, but an established abscess needs drainage.",
+    "E": "Removing the whole nail is excessive; it is kept for abscesses that extend under the nail plate."
+   },
+   "objective": "Drain an acute paronychia that has formed an abscess.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail fold infection"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 2-year-old boy is brought to the clinic because of a painful left thumb for 2 days. He had fever, drooling and painful gum ulcers 5 days ago, and he sucks his thumb. Examination shows a cluster of 3-mm vesicles filled with cloudy fluid on a red, swollen base at the tip and lateral fold of the thumb. There is no fluctuance. Healing ulcers are present on the gums and tongue. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Incision and drainage of the vesicles",
+    "Oral acyclovir",
+    "Oral cephalexin",
+    "Oral trimethoprim–sulfamethoxazole",
+    "Topical mupirocin"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Grouped vesicles on a finger after herpetic gingivostomatitis in a child who sucks his thumb is <strong>herpetic whitlow</strong> from autoinoculation of HSV-1. Cloudy vesicles can look like pus, but <strong>incision is contraindicated</strong>: it spreads the virus and invites bacterial superinfection. Management is supportive (analgesia, covering the finger, discouraging thumb sucking), and an <strong>oral antiviral</strong> such as acyclovir shortens symptoms when started early. Watch for bacterial superinfection.</p><p><strong>Takeaway:</strong> Herpetic whitlow is treated with supportive care and an early oral antiviral, never with incision.</p>",
+   "whyNot": {
+    "A": "Incising herpetic vesicles spreads the infection and risks secondary bacterial infection.",
+    "C": "Cephalexin treats bacterial paronychia, but this is a viral infection and there is no sign of bacterial superinfection.",
+    "D": "Trimethoprim–sulfamethoxazole covers MRSA and is not indicated for a herpes simplex infection.",
+    "E": "Topical mupirocin treats impetigo and minor bacterial infection; it has no antiviral activity."
+   },
+   "objective": "Recognise herpetic whitlow in a child and treat with an oral antiviral rather than incision.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail fold infection",
+    "pediatric infection"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 44-year-old woman who works as a restaurant dishwasher has had swollen, mildly tender skin around several fingernails for 5 months. Examination of four fingers on her dominant hand shows erythematous, boggy proximal nail folds with no cuticles, and irregular transverse ridges on the nail plates. There is no pus or vesicle. Her symptoms improve on holidays. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Daily oral terbinafine for 12 weeks",
+    "Incision and drainage of each nail fold",
+    "Oral cephalexin for 10 days",
+    "Protection from wet work and a topical corticosteroid",
+    "Surgical removal of the affected nail plates"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Swollen nail folds with lost cuticles on several fingers for more than 6 weeks in someone who does wet work is <strong>chronic paronychia</strong>. It is now understood mainly as an <strong>irritant (or allergic) dermatitis</strong> of the nail fold, with <em>Candida</em> and bacteria as secondary colonists. First-line treatment is <strong>avoiding water and irritants</strong> (cotton-lined waterproof gloves, keeping hands dry) plus a <strong>mid- to high-potency topical corticosteroid</strong> or a topical calcineurin inhibitor. A topical azole can be added. The cuticle regrows slowly over months. A single resistant digit needs a biopsy to exclude squamous cell carcinoma.</p><p><strong>Takeaway:</strong> Chronic paronychia is a dermatitis of the nail fold; treat with water avoidance and a topical corticosteroid.</p>",
+   "whyNot": {
+    "A": "Terbinafine treats dermatophyte onychomycosis; chronic paronychia is not a dermatophyte infection of the plate.",
+    "B": "There is no abscess to drain; incision would injure the fold and worsen the problem.",
+    "C": "Oral antibiotics treat acute bacterial paronychia, not a months-long dermatitis.",
+    "E": "Nail removal is not needed and does not address the underlying dermatitis of the fold."
+   },
+   "objective": "Manage chronic paronychia as a nail-fold dermatitis with water avoidance and topical corticosteroids.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail fold disorders",
+    "occupational skin disease"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old boy who plays football has had pain at the lateral edge of his right great toenail for 3 weeks. He has had two similar episodes in the past year, both treated with warm soaks and a course of oral antibiotics. He trims his nails short and rounds the corners. Examination shows swelling of the lateral nail fold with a mass of friable, moist granulation tissue covering the nail edge and a little serous drainage. There is no spreading redness. Pedal pulses are normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Another course of oral antibiotics",
+    "Partial nail avulsion with lateral phenol matricectomy",
+    "Complete nail avulsion without matricectomy",
+    "Cotton wisp under the nail corner and observation",
+    "Topical antifungal applied to the nail for 6 months"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is a <strong>severe, recurrent ingrown toenail</strong>, with granulation tissue and fold hypertrophy, in a typical adolescent with a predisposing habit (rounded, short-cut nails). Conservative measures have failed twice. The definitive treatment is <strong>partial nail avulsion of the offending edge with lateral matricectomy</strong> under a digital block. Chemical matricectomy with phenol has the lowest recurrence rate. Antibiotics do not fix the mechanical problem and are needed only for spreading cellulitis. He should be taught to cut nails straight across and to wear roomy footwear.</p><p><strong>Takeaway:</strong> Recurrent or severe ingrown toenails need partial avulsion with matricectomy (phenol), not repeated antibiotics.</p>",
+   "whyNot": {
+    "A": "Antibiotics have not prevented recurrence and do not treat the nail spicule that drives the inflammation.",
+    "C": "Avulsion without destroying the lateral matrix lets the nail regrow into the fold, with high recurrence.",
+    "D": "Lifting the corner with cotton suits mild early cases, not recurrent disease with established granulation tissue.",
+    "E": "This is not a fungal infection; antifungal therapy has no role."
+   },
+   "objective": "Treat severe or recurrent ingrown toenail with partial nail avulsion and phenol matricectomy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail disorders",
+    "adolescent health"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 54-year-old man has had fatigue and shortness of breath on climbing stairs for 4 months. His fingernails have become thin and concave. He has no gastrointestinal symptoms and takes daily ibuprofen for back pain. He eats a mixed diet that includes meat. Rectal examination shows brown stool. Laboratory results:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Hemoglobin</td><td>9.6 g/dL (96 g/L)</td></tr><tr><td>MCV</td><td>71 fL</td></tr><tr><td>Platelets</td><td>452,000/mm<sup>3</sup></td></tr><tr><td>Ferritin</td><td>6 ng/mL (reference 24–336 ng/mL)</td></tr><tr><td>Leukocytes</td><td>6,800/mm<sup>3</sup></td></tr><tr><td>Creatinine</td><td>0.9 mg/dL (80 µmol/L)</td></tr></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Bone marrow biopsy",
+    "Hemoglobin electrophoresis",
+    "Oral iron and repeat blood count in 3 months, without further testing",
+    "Testing for celiac disease only",
+    "Upper endoscopy and colonoscopy"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Koilonychia, microcytic anaemia, reactive thrombocytosis and a very low ferritin confirm <strong>iron deficiency anaemia</strong>. In an adult man (or a postmenopausal woman), iron deficiency is assumed to be from <strong>gastrointestinal blood loss until proven otherwise</strong>, because colorectal cancer and other lesions must be excluded. NSAID use adds peptic ulcer as a source. Iron replacement should start, but it does not replace <strong>bidirectional endoscopy</strong> (upper endoscopy and colonoscopy). Celiac serology is usually checked as part of the workup but is not sufficient alone.</p><p><strong>Takeaway:</strong> Koilonychia leads to iron deficiency, and iron deficiency in an adult man needs upper and lower endoscopy.</p>",
+   "whyNot": {
+    "A": "Marrow biopsy is unnecessary; a ferritin of 6 ng/mL already proves absent iron stores.",
+    "B": "Haemoglobin electrophoresis evaluates thalassaemia, which causes microcytosis with normal or high ferritin.",
+    "C": "Iron without looking for the source risks missing a gastrointestinal cancer.",
+    "D": "Celiac testing is reasonable, but on its own it misses bleeding lesions of the colon and stomach."
+   },
+   "objective": "Investigate iron deficiency found through koilonychia in an adult man with upper and lower endoscopy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail signs",
+    "anaemia"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 57-year-old Black woman has a dark stripe on her left thumbnail that she first noticed 8 months ago and that has become wider. Examination shows a single longitudinal brown-black band 5 mm wide, darker and wider at the cuticle end, with irregular, blurred edges. Brown pigment extends onto the proximal nail fold skin. Her other nails show two faint, narrow, light-brown bands on the index fingers that she has had for many years. There is no history of trauma. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Biopsy of the nail matrix",
+    "Clinical photographs and review in 12 months",
+    "Oral terbinafine",
+    "Reassurance that pigmented nail bands are normal in darker skin",
+    "Shave biopsy of the pigmented nail fold skin"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Faint, narrow, long-standing bands on several nails are common and benign in people with darker skin. A <strong>new, widening, single band</strong> wider than 3 mm, with irregular colour and edges and pigment on the nail fold (<strong>Hutchinson sign</strong>) is suspicious for <strong>subungual melanoma</strong> (acral lentiginous type), which tends to be diagnosed late in people with darker skin. The pigment is made in the <strong>matrix</strong>, so the diagnostic specimen must come from the matrix at the origin of the band. This is done as an excisional or tangential matrix biopsy by an experienced surgeon.</p><p><strong>Takeaway:</strong> A single, new or widening melanonychia band with Hutchinson sign needs a nail matrix biopsy.</p>",
+   "whyNot": {
+    "B": "Watching a lesion with several warning features delays the diagnosis of a possible melanoma.",
+    "C": "Fungal melanonychia exists but would not explain a widening band with Hutchinson sign, and treating without diagnosis is unsafe.",
+    "D": "Benign racial melanonychia is usually multiple, symmetric and stable; this band is single, changing and irregular.",
+    "E": "A shave of the fold skin samples the wrong site and may miss invasive disease arising in the matrix."
+   },
+   "objective": "Biopsy the nail matrix when longitudinal melanonychia has melanoma red flags such as Hutchinson sign.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nail pigmentation",
+    "skin of colour"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which nail structure makes the nail plate, and what is the lunula?",
+   "back": "The matrix, under the proximal nail fold; the lunula is the visible distal matrix.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Fingernail vs toenail growth rate?",
+   "back": "About 3 mm a month (fingernail) vs about 1 mm a month (toenail).",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Beau lines vs Muehrcke lines?",
+   "back": "Beau: transverse grooves from temporary matrix arrest that move with growth. Muehrcke: paired white bed bands from hypoalbuminaemia that blanch and do not move.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Proposed mechanism of clubbing?",
+   "back": "Megakaryocytes bypass the lung filter and release PDGF and VEGF in fingertip capillaries.",
+   "question": 2
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Nail–patella syndrome gene and what to monitor?",
+   "back": "LMX1B (LIM-homeodomain transcription factor); monitor urine protein and blood pressure.",
+   "question": 5
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Mees lines suggest which toxin, and which enzyme does it inhibit?",
+   "back": "Arsenic; lipoic acid-dependent pyruvate dehydrogenase.",
+   "question": 7
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Terbinafine mechanism?",
+   "back": "Inhibits squalene epoxidase; squalene builds up and ergosterol falls (fungicidal).",
+   "question": 1
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why avoid itraconazole in heart failure?",
+   "back": "It is a negative inotrope (boxed warning). It also strongly inhibits CYP3A4.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Proximal subungual onychomycosis should prompt testing for what?",
+   "back": "Immunosuppression, especially HIV (low CD4 count).",
+   "question": 4
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Most sensitive single test to confirm onychomycosis?",
+   "back": "PAS stain of a nail clipping.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Terbinafine duration for fingernail vs toenail onychomycosis?",
+   "back": "6 weeks vs 12 weeks.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Acute paronychia with a pus collection: management?",
+   "back": "Drain it by lifting the nail fold; antibiotics only for cellulitis or risk factors.",
+   "question": 11
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Why is herpetic whitlow never incised?",
+   "back": "Incision spreads HSV and invites bacterial superinfection; use supportive care and an early oral antiviral.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "First-line treatment of chronic paronychia?",
+   "back": "Avoid wet work and use a topical corticosteroid (azole as adjunct).",
+   "question": 13
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Definitive treatment of recurrent ingrown toenail?",
+   "back": "Partial nail avulsion with lateral phenol matricectomy.",
+   "question": 14
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Red flags in longitudinal melanonychia?",
+   "back": "Single digit, ≥3 mm or widening, irregular colour, Hutchinson sign, nail dystrophy, older age.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Where is the biopsy taken for suspicious melanonychia?",
+   "back": "The nail matrix at the origin of the band.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Iron deficiency (e.g. found through koilonychia) in an adult man: next step?",
+   "back": "Upper endoscopy and colonoscopy to find GI blood loss.",
+   "question": 15
+  },
+  {
+   "n": 19,
+   "section": 2,
+   "front": "Onychomadesis in a child a month after a febrile illness with oral ulcers and a hand rash suggests what?",
+   "back": "Previous hand, foot and mouth disease; it grows out without treatment.",
+   "question": null
+  }
+ ]
+}

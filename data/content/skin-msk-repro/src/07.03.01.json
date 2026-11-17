@@ -1,0 +1,783 @@
+{
+ "area": "07.03.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Bone remodeling and metabolic bone disease: mechanisms",
+   "html": "<p>Bone is renewed throughout life by <strong>basic multicellular units</strong>: osteoclasts dig a resorption pit, and osteoblasts then lay down osteoid that mineralizes over weeks. Every metabolic bone disease is a fault in one of three steps: how much bone is resorbed, how much new matrix is made, or whether that matrix mineralizes. Keep those three questions in mind and most vignettes sort themselves.</p>\n<h3>Cells and signals</h3>\n<ul>\n<li><strong>Osteoblasts</strong> come from mesenchymal stem cells (transcription factor RUNX2, then osterix). Canonical <strong>Wnt/β-catenin</strong> signalling drives their differentiation. They secrete type I collagen and alkaline phosphatase and they express <strong>RANKL</strong> and macrophage colony-stimulating factor (M-CSF).</li>\n<li><strong>Osteoclasts</strong> are multinucleated cells of the monocyte–macrophage lineage. RANKL binding to RANK on precursors, with M-CSF, drives fusion and activation. The ruffled border seals a lacuna and pumps H<sup>+</sup> (carbonic anhydrase II, proton pumps) to dissolve mineral, and cathepsin K digests collagen.</li>\n<li><strong>Osteoprotegerin (OPG)</strong>, a decoy receptor made by osteoblasts, mops up RANKL. The RANKL:OPG ratio sets the rate of resorption.</li>\n<li><strong>Osteocytes</strong> sense mechanical load and secrete <strong>sclerostin</strong>, which blocks Wnt signalling and so restrains bone formation. Unloading raises sclerostin, and this is one reason immobilized patients lose bone quickly.</li>\n<li>Hormones: <strong>PTH</strong> given continuously raises RANKL and resorption; given in daily pulses it is anabolic. <strong>Estrogen</strong> lowers RANKL, raises OPG and shortens osteoclast lifespan, which is why loss of estrogen (in any sex) accelerates resorption. <strong>Calcitriol</strong> raises intestinal calcium and phosphate absorption, which mineralization needs. <strong>FGF23</strong> from osteocytes makes the kidney waste phosphate and suppresses 1α-hydroxylase.</li>\n</ul>\n[[figure:s23f-fig070301-1]]\n<h3>Osteoporosis: too little normally mineralized bone</h3>\n<p>Osteoporosis is loss of bone mass with microarchitectural deterioration (thin, disconnected trabeculae and a thin cortex) while the bone that remains mineralizes normally. Serum calcium, phosphorus, alkaline phosphatase and PTH are therefore normal in primary disease. Trabecular-rich sites fail first: vertebral bodies (wedge or crush fractures, loss of height, kyphosis), the distal radius and the proximal femur.</p>\n<ul>\n<li><strong>Postmenopausal (type I) pattern:</strong> estrogen withdrawal lets resorption outrun formation, mostly in trabecular bone.</li>\n<li><strong>Age-related pattern:</strong> reduced osteoblast output, lower calcium absorption and lower vitamin D synthesis in the skin. It affects cortical and trabecular bone in all sexes.</li>\n<li><strong>Secondary causes</strong> to keep in mind: glucocorticoids (the commonest drug cause; they cause osteoblast and osteocyte apoptosis), hypogonadism and androgen-deprivation therapy, aromatase inhibitors, hyperthyroidism or excess levothyroxine, hyperparathyroidism, malabsorption (celiac disease, bariatric surgery), alcohol, smoking, long-term heparin, immobility, and some anticonvulsants. Adults with disabilities that limit weight bearing (spinal cord injury, cerebral palsy) and people with anorexia nervosa have low peak bone mass and early fractures.</li>\n</ul>\n<h3>Defective mineralization: osteomalacia and rickets</h3>\n<p>When calcium or phosphate is too low at the bone surface, osteoid is laid down but does not mineralize. In adults this is <strong>osteomalacia</strong>: wide seams of unmineralized osteoid, a delayed mineralization front on tetracycline double-labelling, bone pain and tenderness, proximal muscle weakness with a waddling gait, and <strong>pseudofractures</strong> (Looser zones: narrow lucent bands perpendicular to the cortex, often in the pubic rami, femoral neck or ribs). In children the open growth plate is also affected and the disease is <strong>rickets</strong>: the hypertrophic chondrocyte zone widens and the metaphysis cups and frays on x-ray, with bowed legs, enlarged costochondral junctions, wrist widening, frontal bossing, craniotabes and delayed fontanelle closure.</p>\n<ul>\n<li><strong>Nutritional (calcipenic) rickets:</strong> vitamin D deficiency (exclusive breastfeeding without supplementation, darker skin with little sun, malabsorption) or very low calcium intake. Low 25-hydroxyvitamin D, low or normal calcium, low phosphate, high alkaline phosphatase and high PTH.</li>\n<li><strong>Vitamin D–dependent rickets:</strong> type 1A is loss of renal 1α-hydroxylase (<em>CYP27B1</em>), with low calcitriol; type 2A is a vitamin D receptor defect, with high calcitriol and often alopecia.</li>\n<li><strong>Phosphopenic rickets:</strong> X-linked hypophosphatemia from <em>PHEX</em> loss of function, X-linked dominant, raises FGF23. The result is renal phosphate wasting, low serum phosphate, normal calcium and a calcitriol that is low or inappropriately normal. Tumor-induced osteomalacia is the acquired adult version (an FGF23-secreting mesenchymal tumor). Fanconi syndrome wastes phosphate without high FGF23.</li>\n<li><strong>Renal osteodystrophy</strong> (CKD–mineral and bone disorder): phosphate retention and low calcitriol lead to secondary hyperparathyroidism (osteitis fibrosa), while oversuppression leads to adynamic bone.</li>\n</ul>\n<h3>Paget disease of bone: disordered, fast remodeling</h3>\n<p>Paget disease starts with focal overactivity of <strong>large osteoclasts with many nuclei</strong> (lytic phase), followed by frantic, disorganized osteoblast activity (mixed phase) and finally dense, sclerotic but mechanically weak bone. Histology shows a <strong>mosaic of lamellar bone</strong> joined by irregular cement lines. Familial cases often carry <em>SQSTM1</em> (p62) mutations, which enhance RANK signalling. Typical patients are over 55, with involvement of the pelvis, spine, skull, femur or tibia. Alkaline phosphatase is high and calcium and phosphate are normal (unless the patient is immobilized). Complications are bowing and fissure fractures, secondary osteoarthritis, hearing loss, spinal stenosis or cranial-nerve compression, high-output heart failure when disease is extensive, and rarely osteosarcoma.</p>\n<h3>Osteonecrosis (avascular necrosis)</h3>\n<p>Interrupted blood flow kills osteocytes and marrow. Repair is attempted at the edge of the dead segment, but subchondral bone weakens, fractures (the radiographic <em>crescent sign</em>) and collapses, and the joint degenerates. Bones with a single, end-arterial supply are most exposed: the <strong>femoral head</strong> (retinacular branches of the medial circumflex femoral artery run up the neck and are torn by displaced intracapsular fractures), the proximal pole of the scaphoid, the talus and the humeral head. Nontraumatic causes: glucocorticoids, heavy alcohol use, sickle cell disease, SLE and antiphospholipid antibodies, decompression illness, Gaucher disease, radiation and HIV. Bisphosphonates and denosumab are linked to osteonecrosis of the jaw.</p>\n<h3>Tendinopathy and tendon rupture</h3>\n<p>Chronic overuse tendinopathy is mostly a failed-healing, <strong>degenerative</strong> process (tendinosis), not inflammation. Tendon tissue shows disorganized and separated collagen fibers, more type III collagen, increased proteoglycan ground substance (mucoid change) and ingrowth of small vessels and nerves, with few inflammatory cells. Load-bearing tendons with a poor blood supply are most affected: the Achilles tendon 2–6 cm above its insertion, the supraspinatus, the common extensor origin at the lateral epicondyle and the patellar tendon. Fluoroquinolones (matrix metalloproteinase upregulation and tenocyte toxicity), systemic or local glucocorticoids, older age, diabetes and kidney disease raise the risk of rupture.</p>\n<table class=\"hy\">\n<thead><tr><th>Disorder</th><th>Calcium</th><th>Phosphate</th><th>Alkaline phosphatase</th><th>PTH</th><th>Signature lesion</th></tr></thead>\n<tbody>\n<tr><td>Osteoporosis</td><td>Normal</td><td>Normal</td><td>Normal</td><td>Normal</td><td>Thin, disconnected trabeculae</td></tr>\n<tr><td>Osteomalacia / nutritional rickets</td><td>Low or normal</td><td>Low</td><td>High</td><td>High</td><td>Wide unmineralized osteoid seams</td></tr>\n<tr><td>X-linked hypophosphatemia</td><td>Normal</td><td>Low (renal wasting)</td><td>High</td><td>Normal or mildly high</td><td>Rickets with high FGF23</td></tr>\n<tr><td>Paget disease</td><td>Normal</td><td>Normal</td><td>Very high</td><td>Normal</td><td>Mosaic lamellar bone</td></tr>\n<tr><td>Primary hyperparathyroidism</td><td>High</td><td>Low</td><td>Normal or high</td><td>High</td><td>Osteitis fibrosa cystica, brown tumors</td></tr>\n<tr><td>Hypophosphatasia</td><td>Normal or high</td><td>Normal or high</td><td><strong>Low</strong></td><td>Normal or low</td><td>Rickets-like, early tooth loss</td></tr>\n</tbody></table>\n<h3>Pharmacology by mechanism</h3>\n<ul>\n<li><strong>Nitrogen-containing bisphosphonates</strong> (alendronate, risedronate, ibandronate, zoledronic acid) bind hydroxyapatite, are taken up by resorbing osteoclasts and inhibit <strong>farnesyl pyrophosphate synthase</strong>. Small GTPases are no longer prenylated and the osteoclast stops working and dies.</li>\n<li><strong>Denosumab</strong> is a monoclonal antibody that neutralizes RANKL. The effect is fully reversible, so stopping it causes rebound resorption.</li>\n<li><strong>Teriparatide</strong> (PTH 1–34) and <strong>abaloparatide</strong> (a PTHrP analog) act on the PTH1 receptor. Given intermittently, they build new bone.</li>\n<li><strong>Romosozumab</strong> blocks sclerostin. It raises formation and lowers resorption at once.</li>\n<li><strong>Raloxifene</strong> is a selective estrogen receptor modulator: an agonist in bone, an antagonist in breast and uterus.</li>\n</ul>\n<div class=\"trap\"><p>A very high alkaline phosphatase with normal calcium and phosphate in an older adult points to Paget disease, not osteomalacia. A <em>low</em> alkaline phosphatase with rickets-like disease points to hypophosphatasia, and bisphosphonates can make it worse.</p></div>\n<div class=\"pearl\"><p>Naadi memory aid, \"three questions\": resorbed too much (estrogen loss, glucocorticoids, Paget lytic phase), built too little (aging, glucocorticoids), or failed to mineralize (low vitamin D or low phosphate). Osteoporosis is the first two; osteomalacia is the third.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Osteomalacia"
+    },
+    {
+     "statpearls": "Paget Bone Disease"
+    },
+    {
+     "statpearls": "Bisphosphonate"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Osteoporosis: screening, evaluation and treatment",
+   "html": "<p>Osteoporotic fractures cause pain, kyphosis, loss of independence and excess death, especially after hip fracture. Most can be predicted and many prevented. On Step 2 CK, expect questions on who to screen, how to read the result, what to rule out, which drug fits which patient, and how long to treat.</p>\n<h3>Screening</h3>\n<ul>\n<li><strong>Women aged 65 and older</strong> should be screened with bone densitometry (USPSTF, grade B).</li>\n<li><strong>Postmenopausal women younger than 65</strong> at increased risk (low body weight, parental hip fracture, smoking, heavy alcohol use, glucocorticoid use) should be screened. A clinical risk tool such as FRAX helps decide who needs a scan.</li>\n<li><strong>Men:</strong> the USPSTF finds the evidence insufficient for routine screening. Test men who have risk factors for secondary osteoporosis, such as androgen-deprivation therapy, long-term glucocorticoids or a low-trauma fracture.</li>\n<li><strong>Transgender and nonbinary people:</strong> base the decision on current hormones and anatomy. Gender-affirming estrogen or testosterone generally keeps bone density stable. Bone is at risk after gonadectomy if hormones are stopped, and during long puberty suppression with GnRH agonists in adolescents. When the hormone history is unclear, start screening by age with the usual risk factors.</li>\n<li><strong>The test</strong> is central DXA of the hip and lumbar spine. Heel ultrasound and other peripheral devices can triage but do not diagnose.</li>\n</ul>\n<h3>Diagnosis</h3>\n<table class=\"hy\">\n<thead><tr><th>Finding</th><th>Interpretation</th></tr></thead>\n<tbody>\n<tr><td>T-score −1.0 or higher</td><td>Normal bone density</td></tr>\n<tr><td>T-score between −1.0 and −2.5</td><td>Low bone mass (osteopenia). Treat if the 10-year FRAX risk is 3% or more for hip fracture or 20% or more for major osteoporotic fracture</td></tr>\n<tr><td>T-score −2.5 or lower at the hip or spine</td><td>Osteoporosis</td></tr>\n<tr><td>Low-trauma hip or vertebral fracture</td><td>Osteoporosis whatever the T-score</td></tr>\n<tr><td>Z-score −2.0 or lower (premenopausal adults, men under 50, children)</td><td>\"Below the expected range for age\": look hard for a secondary cause</td></tr>\n</tbody></table>\n<p>A low-trauma fracture is a fall from standing height or less. A vertebral fracture may be silent: suspect it with loss of more than about 4 cm of height or new kyphosis, and confirm with a lateral spine radiograph or vertebral fracture assessment on DXA.</p>\n<h3>Evaluation for secondary causes</h3>\n<p>Before treating, check a CBC, serum calcium, phosphorus, albumin, creatinine, alkaline phosphatase, liver enzymes, 25-hydroxyvitamin D and TSH. Add morning testosterone in men, PTH if calcium is abnormal, celiac serology if there are gastrointestinal clues, serum protein electrophoresis if anemia or a high protein gap suggests myeloma, and 24-hour urine calcium in young patients or those with stones. Review the medication list for glucocorticoids, aromatase inhibitors, androgen deprivation, excess levothyroxine, proton-pump inhibitors and anticonvulsants.</p>\n<h3>Treatment for everyone</h3>\n<ul>\n<li>Calcium mainly from diet (about 1,200 mg/day total for women over 50 and men over 70) and vitamin D to correct deficiency (often 800–1,000 IU/day in older adults). Correct vitamin D deficiency before giving a potent antiresorptive, because hypocalcemia can follow.</li>\n<li>Weight-bearing and resistance exercise, balance training, stopping smoking and limiting alcohol.</li>\n<li><strong>Falls prevention</strong> in older adults: exercise programs for community-dwelling adults at higher risk, review of sedating and orthostatic drugs (benzodiazepines, sleep aids, anticholinergics, antihypertensive excess), vision and footwear, and home hazard reduction. Vitamin D given only to prevent falls, in people who are not deficient, does not help.</li>\n</ul>\n<h3>Drug choice</h3>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Best for</th><th>Avoid or watch</th></tr></thead>\n<tbody>\n<tr><td>Oral alendronate or risedronate</td><td>First line for most patients</td><td>Esophageal disease, cannot sit upright 30–60 min, eGFR below about 30–35</td></tr>\n<tr><td>IV zoledronic acid (yearly)</td><td>Poor oral adherence or GI intolerance; after hip fracture</td><td>Same renal limit; flu-like acute-phase reaction after the first dose; hypocalcemia</td></tr>\n<tr><td>Denosumab (every 6 months)</td><td>CKD where bisphosphonates are contraindicated, bisphosphonate failure</td><td>Hypocalcemia (worse in advanced CKD); never stop without a follow-on bisphosphonate</td></tr>\n<tr><td>Teriparatide or abaloparatide (daily)</td><td>Very high risk: multiple vertebral fractures, very low T-score, fracture on therapy</td><td>Paget disease, open epiphyses, prior skeletal radiation, unexplained high alkaline phosphatase; follow with an antiresorptive</td></tr>\n<tr><td>Romosozumab (monthly for 12 months)</td><td>Very high risk</td><td>MI or stroke in the past year; follow with an antiresorptive</td></tr>\n<tr><td>Raloxifene</td><td>Vertebral protection in a postmenopausal woman at high breast-cancer risk</td><td>History of VTE; hot flashes; does not reduce hip fractures</td></tr>\n</tbody></table>\n<h3>Monitoring and duration</h3>\n<ul>\n<li>Repeat DXA about 1–2 years after starting treatment, then less often if stable.</li>\n<li>In patients no longer at high risk, consider a bisphosphonate \"drug holiday\" after about 5 years of oral or 3 years of IV therapy, and reassess. Patients at continuing high risk keep treating.</li>\n<li>Long-term antiresorptive adverse effects: <strong>atypical femoral fracture</strong> (prodromal thigh or groin pain, lateral cortical thickening of the subtrochanteric or shaft region, often bilateral) and <strong>osteonecrosis of the jaw</strong> (exposed bone after dental extraction, higher with high-dose oncology regimens). Atypical fracture: stop the drug, image the other femur and refer to orthopedics.</li>\n<li>Stopping denosumab causes rebound bone loss and multiple vertebral fractures. Transition to a bisphosphonate when the next dose would be due.</li>\n</ul>\n<h3>Glucocorticoid-treated patients</h3>\n<p>For anyone expected to take prednisone 2.5 mg/day or more for 3 months or longer, assess fracture risk early, optimize calcium and vitamin D, use the lowest effective steroid dose, and start an oral bisphosphonate when risk is moderate or high. Bone loss is fastest in the first months of therapy.</p>\n<h3>After a fragility fracture</h3>\n<p>A hip, vertebral, wrist or humerus fracture from low trauma is the strongest single predictor of the next one, and the risk is highest in the first 1–2 years. Start treatment (zoledronic acid is often given after the acute phase of a hip fracture), assess falls risk, and do not wait for a DXA to begin.</p>\n<div class=\"trap\"><p>Treating osteopenia by T-score alone is wrong: use FRAX. A patient with a low-trauma hip or vertebral fracture already has osteoporosis, so a \"normal\" DXA does not cancel treatment.</p></div>\n<div class=\"pearl\"><p>The patient most likely to be harmed by stopping an osteoporosis drug is the one on denosumab, not the one on a bisphosphonate.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Osteoporosis in Females"
+    },
+    {
+     "statpearls": "Osteoporosis in Males"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Osteomalacia, rickets, Paget disease, osteonecrosis and tendinopathy in practice",
+   "html": "<p>This section covers the less common bone, tendon and cartilage disorders that Step 2 CK tests through their clues and their management: osteomalacia and rickets, Paget disease, osteonecrosis and tendinopathy.</p>\n<h3>Osteomalacia in adults</h3>\n<p>Think of osteomalacia in a patient with diffuse bone pain, tenderness on pressure over the sternum or tibia, proximal weakness and a waddling gait. The usual settings are bariatric surgery, celiac disease, chronic pancreatitis or cholestasis, little sun exposure, a darker-skinned person in a northern climate, anticonvulsant use (enzyme induction), and CKD. Expect low or low-normal calcium and phosphate, high alkaline phosphatase, high PTH and low 25-hydroxyvitamin D.</p>\n<ul>\n<li><strong>Imaging:</strong> pseudofractures (Looser zones) and reduced bone density. DXA shows a low T-score that can be mistaken for osteoporosis, so check vitamin D and alkaline phosphatase before starting a bisphosphonate.</li>\n<li><strong>Treatment:</strong> high-dose vitamin D repletion with adequate calcium, then maintenance. Treat the cause of malabsorption. Alkaline phosphatase may rise at first as bone remineralizes, then falls. Correct osteomalacia before any antiresorptive.</li>\n<li><strong>Low phosphate with high FGF23</strong> and normal vitamin D in an adult with new bone pain: search for tumor-induced osteomalacia (functional imaging), because removing the tumor cures it. Some intravenous iron preparations (ferric carboxymaltose) can also cause FGF23-mediated hypophosphatemia.</li>\n</ul>\n<h3>Rickets in children</h3>\n<ul>\n<li>Breastfed and partially breastfed infants need a daily vitamin D supplement (400 IU) from the first days of life. Formula-fed infants taking a full volume of fortified formula get enough.</li>\n<li>Nutritional rickets is treated with vitamin D and calcium. Most bowing corrects with growth once the deficiency is fixed.</li>\n<li>Think of X-linked hypophosphatemia when bowing appears after the child starts walking, with a normal vitamin D level, a parent with the same history, and low phosphate with high urinary phosphate loss. Treat with burosumab (anti-FGF23 antibody), or with oral phosphate plus calcitriol where burosumab is unavailable. Vitamin D alone does not work.</li>\n<li>Physiologic bowing (genu varum) under age 2 is symmetric and resolves. Asymmetric bowing, bowing that gets worse, short stature or abnormal labs need radiographs and a workup.</li>\n</ul>\n<h3>Paget disease</h3>\n<p>It is often found incidentally on an x-ray or from a high alkaline phosphatase. Confirm with radiographs of the involved area. A radionuclide bone scan maps the extent. Measure calcium and 25-hydroxyvitamin D before treatment.</p>\n<ul>\n<li><strong>Treat</strong> with a single IV dose of zoledronic acid (or oral bisphosphonates if needed) when there is bone pain, involvement of the skull, spine or weight-bearing bones near joints, planned surgery on pagetic bone (to reduce bleeding), or hypercalcemia with immobilization. Follow alkaline phosphatase to judge response.</li>\n<li>Calcitonin is a weaker second-line option. Teriparatide is contraindicated because of the risk of osteosarcoma.</li>\n<li>New, severe, unrelenting pain or a growing mass in long-standing Paget disease suggests sarcomatous change. Image it urgently.</li>\n<li>Hearing loss needs audiology; spinal stenosis or nerve compression may need surgery.</li>\n</ul>\n<h3>Osteonecrosis of the femoral head</h3>\n<p>The patient is usually 30–50 years old, with deep groin pain on weight bearing and painful, limited internal rotation of the hip, and a risk factor such as glucocorticoids, alcohol, sickle cell disease, SLE or a previous hip fracture or dislocation. Plain films are normal early.</p>\n<ul>\n<li><strong>Best test when radiographs are normal: MRI</strong>, of both hips (disease is often bilateral). It shows a band-like subchondral lesion long before x-ray changes.</li>\n<li><strong>Precollapse:</strong> protected weight bearing, removal of the risk factor, and core decompression (with or without grafting).</li>\n<li><strong>After collapse</strong> of the femoral head (crescent sign, flattening) or with secondary arthritis: total hip arthroplasty.</li>\n<li>In children aged about 4–8, idiopathic osteonecrosis of the femoral head is Legg–Calvé–Perthes disease (see the trauma and mechanical section).</li>\n<li><strong>Osteonecrosis of the jaw</strong> on antiresorptives: complete dental work before starting high-dose therapy, keep good oral hygiene, and treat conservatively with antiseptic rinses, antibiotics for infection and limited debridement.</li>\n</ul>\n<h3>Tendinopathy and rupture</h3>\n<ul>\n<li><strong>Chronic Achilles, patellar or lateral elbow tendinopathy:</strong> relative rest from the provoking load, a progressive loading program (eccentric or heavy slow resistance) for at least 12 weeks, footwear changes and short courses of NSAIDs for pain. Avoid glucocorticoid injection into or around the Achilles or patellar tendon because it raises the risk of rupture.</li>\n<li><strong>Acute Achilles rupture:</strong> a \"pop\" or a feeling of being kicked in the calf during push-off, a palpable gap and a positive Thompson test (squeezing the calf does not plantar-flex the foot). Diagnosis is clinical; ultrasound or MRI helps if unclear. Both operative repair and functional nonoperative treatment in an equinus boot are reasonable; surgery has a lower rerupture rate but more wound problems.</li>\n<li><strong>Drug risk:</strong> fluoroquinolones raise the risk of tendinopathy and rupture, mostly in adults over 60, people taking glucocorticoids, and kidney, heart or lung transplant recipients. Stop the drug at the first tendon pain.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Presentation</th><th>Likely diagnosis</th><th>Best next step</th></tr></thead>\n<tbody>\n<tr><td>Bone pain, proximal weakness after gastric bypass</td><td>Osteomalacia</td><td>25-hydroxyvitamin D, calcium, phosphate, alkaline phosphatase, PTH</td></tr>\n<tr><td>Isolated high alkaline phosphatase, bowed warm tibia, older adult</td><td>Paget disease</td><td>Radiographs, bone scan, then zoledronic acid if indicated</td></tr>\n<tr><td>Groin pain on glucocorticoids, normal x-ray</td><td>Femoral head osteonecrosis</td><td>MRI of both hips</td></tr>\n<tr><td>Thigh pain after years of alendronate</td><td>Atypical femoral fracture</td><td>Full-length femur films of both sides; stop the drug</td></tr>\n<tr><td>Bowed legs in a walking toddler, low phosphate, normal vitamin D</td><td>X-linked hypophosphatemia</td><td>Urine phosphate, FGF23; burosumab</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>A low DXA score in someone with osteomalacia is not osteoporosis. Giving a bisphosphonate before repleting vitamin D can cause symptomatic hypocalcemia and leaves the defect untreated.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Rickets"
+    },
+    {
+     "statpearls": "Avascular Necrosis"
+    },
+    {
+     "statpearls": "Achilles Tendinopathy"
+    },
+    {
+     "statpearls": "Achilles Tendon Rupture"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Bone remodeling signals and where osteoporosis drugs act (original schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 71-year-old man has had a dull ache in his right thigh for a year, and he says his hats no longer fit. He has mild bilateral hearing loss. Serum calcium is 9.4 mg/dL, phosphorus 3.6 mg/dL, and alkaline phosphatase 486 U/L; AST, ALT, GGT and bilirubin are normal. Radiographs show a thickened, bowed right femur with a widened cortex and coarse trabeculae. A bone biopsy shows irregular fragments of lamellar bone joined by numerous haphazard cement lines. Which of the following is the earliest cellular abnormality in this disease?</p>",
+   "options": [
+    "Excessive resorption by large osteoclasts with many nuclei",
+    "Failure of osteoid mineralization because of low phosphate",
+    "Proliferation of malignant cells that produce osteoid",
+    "Peritrabecular fibrosis driven by parathyroid hormone",
+    "Defective acidification of resorption pits by osteoclasts"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Bone pain, an enlarging skull, hearing loss, a markedly raised alkaline phosphatase with normal calcium and phosphate, and a mosaic pattern of lamellar bone are Paget disease. The disease begins with focal overactivity of abnormal, very large osteoclasts (the lytic phase). Osteoblasts then respond with rapid, disorganized bone formation, and the result is thick but weak bone with chaotic cement lines.</p><p><strong>Takeaway:</strong> Paget disease is osteoclast-first; the mosaic pattern and the high alkaline phosphatase come from the disordered osteoblast response that follows.</p>",
+   "whyNot": {
+    "B": "Defective mineralization (osteomalacia) causes low phosphate and wide unmineralized osteoid seams, not a mosaic pattern; this patient's phosphate is normal.",
+    "C": "Osteosarcoma is a rare late complication of Paget disease, but it produces a destructive mass with malignant osteoid, not diffuse thickened bone with cement lines.",
+    "D": "PTH-driven peritrabecular fibrosis (osteitis fibrosa cystica) occurs with hyperparathyroidism, which would raise calcium or show secondary causes; calcium here is normal.",
+    "E": "Failure of osteoclast acidification (for example, carbonic anhydrase II deficiency) causes osteopetrosis, a disorder of too little resorption that presents early in life."
+   },
+   "objective": "Identify excessive osteoclastic resorption as the initiating event of Paget disease of bone.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "metabolic bone disease"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 68-year-old woman with osteoporosis begins a subcutaneous injection every 6 months of a fully human monoclonal antibody. The drug reduces the formation, activity and survival of osteoclasts by binding a ligand that osteoblast-lineage cells express on their surface. Stopping the drug abruptly can cause rapid bone loss. Which of the following is the direct target of this drug?</p>",
+   "options": [
+    "Sclerostin",
+    "Parathyroid hormone 1 receptor",
+    "RANK ligand (RANKL)",
+    "Farnesyl pyrophosphate synthase",
+    "Estrogen receptor α"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Denosumab binds RANKL and prevents it from activating RANK on osteoclast precursors and mature osteoclasts, mimicking the natural decoy osteoprotegerin. Because it does not bind bone, its effect wears off within months of the last dose, and resorption rebounds above baseline.</p><p><strong>Takeaway:</strong> denosumab is an anti-RANKL antibody given every 6 months; plan a follow-on drug before stopping it.</p>",
+   "whyNot": {
+    "A": "Sclerostin is the target of romosozumab, which is given monthly for 12 months and increases bone formation by releasing Wnt signalling.",
+    "B": "The PTH1 receptor is activated by teriparatide and abaloparatide, which are daily injections that build bone rather than antibodies that block resorption.",
+    "D": "Farnesyl pyrophosphate synthase is inhibited by nitrogen-containing bisphosphonates, which are small molecules, not antibodies, and have a long skeletal half-life.",
+    "E": "Raloxifene acts on the estrogen receptor as a selective modulator; it is an oral daily drug, not an injected antibody."
+   },
+   "objective": "Name RANKL as the target of denosumab and relate it to osteoclast biology.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone pharmacology"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 3-year-old boy is brought for evaluation of bowed legs and short stature. His mother is also short and had leg-straightening surgery as a child. He was breastfed for 12 months and took a daily vitamin D supplement. Examination shows bilateral genu varum and widened wrists; muscle tone is normal. Serum calcium is 9.3 mg/dL, phosphorus is low for age, alkaline phosphatase is high for age, 25-hydroxyvitamin D is normal, and PTH is at the upper limit of normal. Urinary phosphate excretion is inappropriately high for his serum phosphate. A circulating level of which of the following is most likely increased?</p>",
+   "options": [
+    "Calcitonin",
+    "1,25-Dihydroxyvitamin D",
+    "Fibroblast growth factor 23",
+    "Parathyroid hormone–related protein",
+    "Growth hormone"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Rickets with low phosphate, renal phosphate wasting, normal calcium and normal vitamin D stores, inherited from an affected mother, is X-linked hypophosphatemia. Loss-of-function variants in <em>PHEX</em> raise FGF23. FGF23 removes sodium–phosphate cotransporters from the proximal tubule and suppresses renal 1α-hydroxylase, so calcitriol is low or inappropriately normal despite the hypophosphatemia.</p><p><strong>Takeaway:</strong> hypophosphatemic rickets with normal vitamin D and a family history means excess FGF23; treat with burosumab, not vitamin D alone.</p>",
+   "whyNot": {
+    "A": "Calcitonin has a minor role in human mineral balance and does not cause renal phosphate wasting or rickets.",
+    "B": "FGF23 suppresses 1α-hydroxylase, so calcitriol is low or inappropriately normal in this disease rather than increased.",
+    "D": "PTHrP excess causes hypercalcemia of malignancy in adults; this child's calcium is normal.",
+    "E": "Short stature here comes from the bone disease; growth hormone excess would cause tall stature and is unrelated to phosphate wasting."
+   },
+   "objective": "Explain how PHEX loss raises FGF23 and causes phosphate-wasting rickets.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "rickets"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old woman who had a Roux-en-Y gastric bypass 9 years ago has 6 months of diffuse bone pain, a waddling gait and difficulty rising from a chair. She stopped taking supplements years ago. Serum calcium is 8.3 mg/dL, phosphorus 2.4 mg/dL, alkaline phosphatase 240 U/L, PTH elevated and 25-hydroxyvitamin D low. A pelvic radiograph shows bilateral narrow lucent bands running perpendicular to the cortex of the pubic rami. A transiliac bone biopsy is done after tetracycline labelling. Which of the following findings is most likely?</p>",
+   "options": [
+    "Wide seams of unmineralized osteoid with a delayed mineralization front",
+    "Thin trabeculae with normal osteoid width and normal mineralization",
+    "A mosaic of lamellar bone joined by irregular cement lines",
+    "Peritrabecular fibrosis with cystic hemorrhagic brown tumors",
+    "Retained cores of calcified cartilage filling the medullary cavity"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Malabsorption of vitamin D and calcium after gastric bypass has caused osteomalacia: bone pain, proximal myopathy, low calcium and phosphate, high alkaline phosphatase, secondary hyperparathyroidism and Looser zones (pseudofractures). Osteoid continues to be laid down but cannot mineralize, so the seams widen and the tetracycline labels are faint, smeared or close together.</p><p><strong>Takeaway:</strong> osteomalacia is a mineralization defect: wide osteoid seams and pseudofractures, with low vitamin D or phosphate.</p>",
+   "whyNot": {
+    "B": "Thin trabeculae with normal mineralization describe osteoporosis, in which calcium, phosphate and alkaline phosphatase are normal.",
+    "C": "A mosaic pattern is Paget disease, which has normal calcium and phosphate and presents with focal deformity rather than diffuse pain and myopathy.",
+    "D": "Brown tumors are a feature of severe primary hyperparathyroidism with hypercalcemia; this patient's PTH rise is secondary and her calcium is low.",
+    "E": "Retained calcified cartilage in the marrow is osteopetrosis, a failure of osteoclast resorption, which does not fit malabsorption with low vitamin D."
+   },
+   "objective": "Recognize the biopsy and radiographic hallmarks of osteomalacia after bariatric surgery.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "metabolic bone disease",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 79-year-old woman trips on a rug at home and has a displaced intracapsular (subcapital) fracture of the left femoral neck. The orthopedic surgeon recommends hemiarthroplasty rather than screw fixation because of the high risk that the femoral head will undergo osteonecrosis. Disruption of the retinacular branches of which of the following arteries most directly accounts for this risk?</p>",
+   "options": [
+    "Medial circumflex femoral artery",
+    "Artery of the ligamentum teres",
+    "Inferior gluteal artery",
+    "First perforating artery of the deep femoral artery",
+    "Superior gluteal artery"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In adults most of the femoral head's blood supply comes from retinacular (posterior superior) branches of the medial circumflex femoral artery, which run along the femoral neck inside the capsule. A displaced intracapsular fracture tears them. The artery of the ligamentum teres contributes little after childhood, so the head often dies, which is why older adults with displaced subcapital fractures usually have arthroplasty.</p><p><strong>Takeaway:</strong> displaced intracapsular femoral neck fractures disrupt the medial circumflex femoral supply and carry a high risk of osteonecrosis.</p>",
+   "whyNot": {
+    "B": "The artery of the ligamentum teres, a branch of the obturator artery, supplies only a small area of the head in adults and cannot sustain it after a displaced fracture.",
+    "C": "The inferior gluteal artery supplies gluteus maximus and contributes to anastomoses around the hip, but it is not the main supply of the femoral head.",
+    "D": "Perforating arteries supply the femoral shaft and posterior thigh muscles, not the femoral head.",
+    "E": "The superior gluteal artery supplies gluteus medius and minimus; it does not run along the femoral neck inside the capsule."
+   },
+   "objective": "Identify the medial circumflex femoral artery as the main blood supply to the adult femoral head.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hip anatomy",
+    "older adults"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old woman with a T-score of −2.8 at the lumbar spine starts weekly oral alendronate. The drug binds hydroxyapatite at sites of active resorption and is taken up by osteoclasts, where it stops the prenylation of small GTP-binding proteins needed for the ruffled border. Inhibition of which of the following enzymes accounts for this effect?</p>",
+   "options": [
+    "HMG-CoA reductase",
+    "Farnesyl pyrophosphate synthase",
+    "Squalene epoxidase",
+    "Carbonic anhydrase II",
+    "Tartrate-resistant acid phosphatase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Nitrogen-containing bisphosphonates inhibit farnesyl pyrophosphate synthase in the mevalonate pathway inside osteoclasts. Without farnesyl and geranylgeranyl groups, GTPases such as Rab, Rho and Rac cannot anchor to membranes, the ruffled border fails and osteoclasts undergo apoptosis.</p><p><strong>Takeaway:</strong> alendronate, risedronate and zoledronic acid block farnesyl pyrophosphate synthase in osteoclasts.</p>",
+   "whyNot": {
+    "A": "HMG-CoA reductase is upstream in the same pathway and is the target of statins, which have no clinically useful antiresorptive effect.",
+    "C": "Squalene epoxidase is the target of terbinafine in fungal ergosterol synthesis, not of bisphosphonates.",
+    "D": "Carbonic anhydrase II supplies protons for resorption, and its deficiency causes osteopetrosis, but bisphosphonates do not act on it.",
+    "E": "Tartrate-resistant acid phosphatase is a marker of osteoclasts; bisphosphonates do not work by inhibiting it."
+   },
+   "objective": "Describe the molecular mechanism of nitrogen-containing bisphosphonates.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone pharmacology"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 44-year-old recreational runner has had 8 months of gradually worsening pain about 4 cm above the insertion of his right Achilles tendon. The pain is worst at the start of a run and eases as he warms up. There is a tender, fusiform thickening of the tendon. He has not taken fluoroquinolones or glucocorticoids, and serum urate is normal. If tissue from the thickened segment were examined microscopically, which of the following would most likely be seen?</p>",
+   "options": [
+    "Dense neutrophilic infiltrate in the paratenon",
+    "Disorganized, separated collagen fibers with excess ground substance and small new vessels",
+    "Noncaseating granulomas between collagen bundles",
+    "Amorphous deposits with apple-green birefringence on Congo red staining",
+    "Needle-shaped crystals surrounded by foreign-body giant cells"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Chronic midportion Achilles tendinopathy from overuse is a degenerative, failed-healing process (tendinosis). The tendon shows loss of the normal parallel collagen pattern, more type III collagen, mucoid ground substance and neovascularization with nerve ingrowth. Inflammatory cells are scarce, which is why the term \"tendinitis\" is misleading and why the main treatment is progressive loading rather than anti-inflammatory drugs.</p><p><strong>Takeaway:</strong> chronic tendinopathy is degenerative tendinosis with disorganized collagen and neovessels, not inflammation.</p>",
+   "whyNot": {
+    "A": "Neutrophilic infiltrates suggest infection or acute crystal inflammation, not a chronic overuse injury that eases with warming up.",
+    "C": "Granulomas would suggest sarcoidosis or mycobacterial infection, which are not suggested by an isolated overuse injury in a runner.",
+    "D": "Amyloid deposits occur in dialysis-related or systemic amyloidosis, which do not fit a healthy runner.",
+    "E": "Tophaceous gout can infiltrate tendons, but his urate is normal and the history is classic for mechanical overuse."
+   },
+   "objective": "Describe the histopathology of chronic overuse tendinopathy.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "tendon disorders"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 54-year-old woman whose last menstrual period was 2 years ago has had a 6% fall in lumbar spine bone mineral density over 2 years on serial DXA scans. She takes no medications, does not smoke and has a normal diet. Serum calcium, phosphorus, PTH, TSH and 25-hydroxyvitamin D are normal. Which of the following changes most directly drives the accelerated bone loss in this patient?</p>",
+   "options": [
+    "Decreased renal 1α-hydroxylase activity",
+    "Increased RANKL expression relative to osteoprotegerin",
+    "Decreased calcitonin secretion by thyroid C cells",
+    "Increased FGF23 secretion by osteocytes",
+    "Increased PTH secretion by the parathyroid glands"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Estrogen normally suppresses RANKL production by osteoblast-lineage cells and T cells, raises osteoprotegerin and shortens osteoclast lifespan. After menopause the RANKL:OPG ratio rises, more osteoclasts form and live longer, and resorption outpaces formation, mostly in trabecular bone such as the lumbar spine.</p><p><strong>Takeaway:</strong> postmenopausal bone loss is resorption-driven: estrogen loss raises the RANKL:OPG ratio.</p>",
+   "whyNot": {
+    "A": "Reduced 1α-hydroxylase activity would lower calcitriol and calcium absorption, but her vitamin D, calcium and PTH are normal, and this is not the main effect of estrogen loss.",
+    "C": "Calcitonin has only a minor role in adult bone turnover, and calcitonin deficiency after thyroidectomy does not cause osteoporosis.",
+    "D": "Raised FGF23 causes phosphate wasting and osteomalacia, but her phosphorus is normal.",
+    "E": "Her PTH is normal; hyperparathyroidism would also raise calcium."
+   },
+   "objective": "Explain the RANKL–osteoprotegerin mechanism of postmenopausal bone loss.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "osteoporosis"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old woman comes for a health maintenance visit. She has never had a fracture or bone density testing. She takes no medications, walks daily and eats dairy products every day. She does not smoke and drinks one glass of wine a week. Her BMI is 24 kg/m<sup>2</sup>. Examination is normal. Which of the following is the most appropriate screening for osteoporosis?</p>",
+   "options": [
+    "No testing unless a low-trauma fracture occurs",
+    "Dual-energy x-ray absorptiometry of the hip and lumbar spine",
+    "Lateral radiograph of the thoracolumbar spine",
+    "Serum bone turnover markers",
+    "Quantitative ultrasonography of the heel as the diagnostic test"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>All women aged 65 and older should be screened for osteoporosis, whatever their other risk factors. The test that diagnoses osteoporosis and feeds FRAX is central DXA of the hip and lumbar spine, reported as a T-score.</p><p><strong>Takeaway:</strong> screen every woman 65 or older with central DXA; younger postmenopausal women are screened when a risk assessment shows increased risk.</p>",
+   "whyNot": {
+    "A": "Waiting for a fracture misses the chance to prevent it; screening is recommended at her age even without risk factors.",
+    "C": "A spine radiograph can show a vertebral fracture but cannot measure bone density, so it is not a screening test.",
+    "D": "Bone turnover markers vary a lot and do not diagnose osteoporosis; they are sometimes used to monitor adherence.",
+    "E": "Heel ultrasound can triage but does not give the hip or spine T-score used to diagnose and to decide treatment."
+   },
+   "objective": "Apply age-based osteoporosis screening with central DXA in women 65 and older.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "references": [
+    "uspstf"
+   ],
+   "figures": [],
+   "tags": [
+    "screening",
+    "older adults"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 76-year-old woman has had a dull ache in the lateral right thigh for 2 months, worse when she walks. She has not fallen. She had a low-trauma vertebral compression fracture 8 years ago. Her medications are shown.</p><table><thead><tr><th>Medication</th><th>Taken for</th></tr></thead><tbody><tr><td>Alendronate weekly</td><td>8 years</td></tr><tr><td>Amlodipine daily</td><td>6 years</td></tr><tr><td>Atorvastatin daily</td><td>10 years</td></tr><tr><td>Sertraline daily</td><td>3 years</td></tr><tr><td>Cholecalciferol daily</td><td>8 years</td></tr></tbody></table><p>A radiograph of the right femur shows focal thickening of the lateral cortex of the subtrochanteric shaft with a faint transverse lucent line through it; the medial cortex is intact. Which of the following medications most likely contributed to this finding?</p>",
+   "options": [
+    "Alendronate",
+    "Amlodipine",
+    "Atorvastatin",
+    "Sertraline",
+    "Cholecalciferol"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Prodromal thigh pain with a transverse lucency through a beak of lateral cortical thickening in the subtrochanteric femur is an incomplete atypical femoral fracture. The risk rises with the duration of bisphosphonate therapy, probably because suppressed remodeling lets microcracks accumulate. Management: stop the bisphosphonate, check calcium and vitamin D, image the other femur (lesions are often bilateral) and refer to orthopedics, because painful incomplete fractures often need prophylactic intramedullary nailing.</p><p><strong>Takeaway:</strong> new thigh or groin pain after years of a bisphosphonate means an atypical femoral fracture until proven otherwise.</p>",
+   "whyNot": {
+    "B": "Amlodipine can cause ankle edema but has no link to stress fractures of the femoral shaft.",
+    "C": "Statins can cause myalgia, but the pain here is localized to a radiographic cortical lesion, which statins do not cause.",
+    "D": "SSRIs are associated with falls and slightly lower bone density, but not with this lateral cortical stress lesion without trauma.",
+    "E": "Vitamin D supplements support mineralization and do not cause atypical fractures."
+   },
+   "objective": "Recognize an atypical femoral fracture as an adverse effect of long-term bisphosphonate therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "medication adverse effects",
+    "older adults"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 78-year-old woman is evaluated after a DXA scan shows a femoral neck T-score of −3.1. She has had two low-trauma vertebral compression fractures. She has chronic kidney disease with a stable eGFR of 32 mL/min/1.73 m<sup>2</sup>, and she had a pulmonary embolism 2 years ago. Serum calcium, phosphorus, PTH and 25-hydroxyvitamin D are within the reference ranges. She takes calcium and vitamin D supplements. Which of the following is the most appropriate pharmacotherapy?</p>",
+   "options": [
+    "Oral alendronate",
+    "Intravenous zoledronic acid",
+    "Subcutaneous denosumab",
+    "Oral raloxifene",
+    "Intranasal calcitonin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has severe osteoporosis with prior vertebral fractures and needs effective therapy. Bisphosphonates are cleared by the kidney and are not recommended when creatinine clearance is below about 35 mL/min, and raloxifene is contraindicated after venous thromboembolism. Denosumab is not renally cleared and reduces vertebral, hip and other fractures. Confirm normal calcium and vitamin D first (as here), monitor calcium because CKD raises the risk of hypocalcemia, and plan never to stop it without a follow-on drug.</p><p><strong>Takeaway:</strong> in osteoporosis with an eGFR below about 35, denosumab is the usual antiresorptive choice.</p>",
+   "whyNot": {
+    "A": "Alendronate is not recommended at an eGFR below about 35 mL/min/1.73 m<sup>2</sup> because it is renally excreted and safety data are lacking.",
+    "B": "Zoledronic acid is contraindicated at a creatinine clearance below 35 mL/min because it can cause acute kidney injury.",
+    "D": "Raloxifene raises the risk of venous thromboembolism and does not reduce hip fractures; her prior pulmonary embolism rules it out.",
+    "E": "Calcitonin has weak antifracture efficacy and is not used for severe osteoporosis."
+   },
+   "objective": "Choose denosumab for osteoporosis when CKD makes bisphosphonates unsuitable.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "osteoporosis",
+    "kidney disease"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 70-year-old woman has received denosumab every 6 months for 5 years for postmenopausal osteoporosis. Her total hip T-score has improved from −2.8 to −2.1, and she has never had a fracture. Her last injection was 5 months ago. She wants to stop the injections. Kidney function, calcium and 25-hydroxyvitamin D are normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Stop denosumab and repeat DXA in 2 years",
+    "Give zoledronic acid when the next denosumab dose would be due",
+    "Lengthen the denosumab interval to once a year",
+    "Switch to intranasal calcitonin",
+    "Switch to daily teriparatide"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Denosumab's effect ends within months of the last dose, and resorption then rebounds above baseline. Bone density gained is lost quickly and multiple vertebral fractures can occur, even in patients who never had one. When denosumab is stopped, a bisphosphonate (commonly zoledronic acid, or oral alendronate) should be given at the time the next injection would have been due, about 6 months after the last dose, with DXA follow-up.</p><p><strong>Takeaway:</strong> never stop denosumab without a bisphosphonate to follow.</p>",
+   "whyNot": {
+    "A": "Stopping without a follow-on drug exposes her to rebound bone loss and multiple vertebral fractures within months.",
+    "C": "Lengthening the interval lets drug levels fall and triggers the same rebound resorption; denosumab must be given every 6 months.",
+    "D": "Calcitonin is too weak to prevent rebound resorption after denosumab.",
+    "E": "Switching from denosumab directly to teriparatide causes transient bone loss, especially at the hip, and does not prevent rebound."
+   },
+   "objective": "Plan a bisphosphonate transition to prevent rebound fractures when stopping denosumab.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "osteoporosis"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 72-year-old man has had 6 months of aching pain in the left shin that is worse at night. The left tibia is bowed anteriorly and feels warmer than the right. Serum alkaline phosphatase is 410 U/L with normal GGT; calcium, phosphorus, creatinine and 25-hydroxyvitamin D are normal. Radiographs show cortical thickening, coarse trabeculae and a V-shaped lucent front advancing along the tibial shaft. A radionuclide bone scan shows intense uptake in the left tibia and right hemipelvis only. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "A single intravenous infusion of zoledronic acid",
+    "Daily subcutaneous teriparatide",
+    "An oral prednisone taper",
+    "Wide surgical resection of the tibial lesion",
+    "Observation with repeat alkaline phosphatase in 1 year"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Bone pain, warmth, bowing, an isolated rise in alkaline phosphatase and the typical radiographic lytic front are Paget disease. Symptomatic disease and involvement of weight-bearing bones are indications to treat. A single infusion of zoledronic acid suppresses the abnormal osteoclast activity, relieves pain and gives long remissions; response is followed with alkaline phosphatase.</p><p><strong>Takeaway:</strong> symptomatic Paget disease is treated with a bisphosphonate, preferably one dose of IV zoledronic acid.</p>",
+   "whyNot": {
+    "B": "Teriparatide is contraindicated in Paget disease because high bone turnover raises the risk of osteosarcoma.",
+    "C": "Glucocorticoids do not suppress pagetic osteoclast activity and would worsen bone fragility.",
+    "D": "Resection is for sarcomatous change, which would show bone destruction or a soft-tissue mass rather than the typical pagetic pattern.",
+    "E": "Observation is reasonable only for asymptomatic disease at low-risk sites; he has pain in a weight-bearing bone."
+   },
+   "objective": "Treat symptomatic Paget disease of bone with intravenous zoledronic acid.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "metabolic bone disease"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 36-year-old woman with systemic lupus erythematosus has taken prednisone 20 mg daily for 4 months for lupus nephritis. She has had 6 weeks of deep right groin pain that is worse with weight bearing. Temperature is 36.9°C (98.4°F). Internal rotation of the right hip is painful and limited. Anteroposterior and frog-leg lateral radiographs of the pelvis are normal. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    "MRI of both hips",
+    "Repeat radiographs in 3 months",
+    "Ultrasound-guided aspiration of the right hip",
+    "CT of the pelvis",
+    "Radionuclide bone scan"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Groin pain with painful internal rotation in a young patient on high-dose glucocorticoids, with SLE as a second risk factor, is osteonecrosis of the femoral head until proven otherwise. Radiographs stay normal in early disease. MRI is the most sensitive and specific test and should image both hips, because the other side is often affected silently. Finding it before the head collapses allows joint-preserving treatment such as core decompression.</p><p><strong>Takeaway:</strong> suspected femoral head osteonecrosis with normal radiographs: MRI of both hips.</p>",
+   "whyNot": {
+    "B": "Waiting for radiographic change means waiting for subchondral fracture or collapse, when joint-preserving options are lost.",
+    "C": "Aspiration is for suspected septic or crystal arthritis; she is afebrile and the subacute, load-related pain fits osteonecrosis.",
+    "D": "CT shows subchondral fracture and collapse well but misses early marrow changes that MRI detects.",
+    "E": "A bone scan is less sensitive and less specific than MRI for early osteonecrosis and does not show the extent of the lesion as well."
+   },
+   "objective": "Use MRI to detect early osteonecrosis of the femoral head when radiographs are normal.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hip pain"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which enzyme do nitrogen-containing bisphosphonates inhibit in osteoclasts?",
+   "back": "Farnesyl pyrophosphate synthase, which blocks GTPase prenylation.",
+   "question": 6
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "What does osteoprotegerin do?",
+   "back": "It is a decoy receptor made by osteoblasts that binds RANKL and limits osteoclast formation.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which osteocyte protein inhibits Wnt signalling and bone formation?",
+   "back": "Sclerostin (the target of romosozumab).",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Classic lab pattern of Paget disease of bone?",
+   "back": "Very high alkaline phosphatase with normal calcium and phosphate.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Histology of osteomalacia?",
+   "back": "Wide seams of unmineralized osteoid with a delayed mineralization front.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Which gene is lost in X-linked hypophosphatemia, and which hormone rises?",
+   "back": "PHEX; FGF23 rises and causes renal phosphate wasting.",
+   "question": 3
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Main arterial supply of the adult femoral head?",
+   "back": "Retinacular branches of the medial circumflex femoral artery.",
+   "question": 5
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Is chronic overuse tendinopathy mainly inflammatory?",
+   "back": "No. It is degenerative tendinosis: disorganized collagen, mucoid matrix, neovessels, few inflammatory cells.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Which women should be screened for osteoporosis?",
+   "back": "All women 65 or older, and younger postmenopausal women at increased risk on a risk assessment.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "T-score cut-off for osteoporosis?",
+   "back": "−2.5 or lower at the hip or spine (or any low-trauma hip or vertebral fracture).",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "FRAX thresholds for treating osteopenia (US)?",
+   "back": "10-year hip fracture risk 3% or more, or major osteoporotic fracture risk 20% or more.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Osteoporosis drug of choice when eGFR is below about 35?",
+   "back": "Denosumab, after checking calcium and vitamin D.",
+   "question": 11
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "What must follow if denosumab is stopped?",
+   "back": "A bisphosphonate when the next dose would be due, to prevent rebound vertebral fractures.",
+   "question": 12
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Contraindication to romosozumab?",
+   "back": "Myocardial infarction or stroke within the past year.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Why avoid teriparatide in Paget disease?",
+   "back": "Increased risk of osteosarcoma in high-turnover bone.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Prodromal thigh pain after years of a bisphosphonate suggests what?",
+   "back": "An atypical femoral fracture: stop the drug and image both femurs.",
+   "question": 10
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Best test for suspected femoral head osteonecrosis with normal radiographs?",
+   "back": "MRI of both hips.",
+   "question": 14
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Treatment of femoral head osteonecrosis after collapse?",
+   "back": "Total hip arthroplasty (core decompression is for the precollapse stage).",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "First-line treatment of symptomatic Paget disease?",
+   "back": "A single IV infusion of zoledronic acid.",
+   "question": 13
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Daily vitamin D dose for breastfed infants?",
+   "back": "400 IU per day from the first days of life.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "What should be done before giving a bisphosphonate to a patient with osteomalacia?",
+   "back": "Replete vitamin D and calcium; otherwise hypocalcemia can follow.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Positive Thompson test?",
+   "back": "Squeezing the calf fails to plantar-flex the foot: Achilles tendon rupture.",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Why avoid glucocorticoid injection around the Achilles tendon?",
+   "back": "It raises the risk of tendon rupture.",
+   "question": null
+  }
+ ]
+}

@@ -1,0 +1,999 @@
+{
+ "area": "06.03.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Hair follicle biology, acne and rosacea: mechanisms and pharmacology",
+   "html": "<h2>The pilosebaceous unit</h2>\n<p>A hair follicle is an epidermal tube pushed down into the dermis, and it works as one unit with its sebaceous gland and arrector pili muscle. At the base, the <strong>bulb</strong> holds fast-dividing matrix keratinocytes that build the hair shaft around the <strong>dermal papilla</strong>, a mesenchymal signalling centre that sets the size of the hair and the length of its growth phase. Bulb melanocytes pigment the shaft. Higher up, at the insertion of the arrector pili, the <strong>bulge</strong> holds the epithelial stem cells that rebuild the lower follicle in every cycle. Where an inflammatory process strikes decides the outcome: attack on the bulb leaves stem cells alive and hair can regrow (nonscarring alopecia), whereas inflammation at the bulge destroys the stem cells and the follicle is replaced by fibrous tissue (scarring, or cicatricial, alopecia).</p>\n<h3>The hair cycle</h3>\n<ul><li><strong>Anagen</strong> is active growth. On the scalp it lasts years, and most scalp hairs (roughly 85–90%) are in anagen at any time. Short body hairs have short anagen phases, which is why they stay short.</li>\n<li><strong>Catagen</strong> is a brief, apoptosis-driven involution lasting a few weeks.</li>\n<li><strong>Telogen</strong> is rest, about 3 months on the scalp. The club-shaped hair is pushed out as the next anagen hair grows beneath it, so losing up to about 100 scalp hairs a day is normal.</li></ul>\n<p>The cycle explains when each kind of shedding appears. A toxin to dividing cells (cytotoxic chemotherapy, radiation, thallium) arrests matrix mitosis in growing hairs, which narrow and snap within days to weeks: <strong>anagen effluvium</strong>. A systemic shock (high fever, childbirth, major surgery, severe illness, rapid weight loss) pushes many anagen follicles into telogen at the same moment, and the club hairs fall together about 2–4 months later: <strong>telogen effluvium</strong>.</p>\n[[figure:s23f-fig060301-1]]\n<h3>Androgens and hair</h3>\n<p>Testosterone is converted to the more potent dihydrotestosterone (DHT) by 5α-reductase. Type 2 dominates in scalp follicles, beard and genital skin; type 1 dominates in sebaceous glands. Androgens act in opposite directions by body site. In the beard, chest, axillae and pubic area they convert fine vellus hairs into thick terminal hairs. In genetically susceptible scalp follicles they shorten anagen and shrink terminal follicles step by step into vellus-like follicles (<strong>miniaturisation</strong>). One hormone therefore drives both <strong>hirsutism</strong> (terminal hair in androgen-dependent sites in someone with a typically female hair pattern) and <strong>androgenetic (pattern) alopecia</strong>. <strong>Hypertrichosis</strong> is different: excess hair growth that does not follow the androgen pattern, caused by drugs, malnutrition, porphyria, or a congenital or local process.</p>\n<h3>Alopecia areata: lost immune privilege</h3>\n<p>The anagen bulb normally hides from the immune system: it expresses little MHC class I and makes local immunosuppressive signals. In alopecia areata this privilege collapses. Autoreactive CD8+ T cells that carry the activating receptor NKG2D attack the bulb. They are sustained by interferon-γ and IL-15, which signal through Janus kinases. Biopsy shows a dense lymphocytic infiltrate around the bulbs of anagen follicles. The bulge is spared, so the follicles survive and regrowth is possible. This is the rationale for oral JAK inhibitors in severe disease. Short broken hairs that taper toward the scalp (\"exclamation-point\" hairs) and fine nail pitting are clinical clues. Associations include atopy, autoimmune thyroid disease, vitiligo and Down syndrome.</p>\n<h2>Acne vulgaris: four linked steps</h2>\n<ol><li><strong>Sebum excess.</strong> Sebaceous glands enlarge under androgens from adrenarche onward. Exogenous androgens (testosterone in gender-affirming care, anabolic steroids) and hyperandrogenic states such as polycystic ovary syndrome amplify this.</li>\n<li><strong>Follicular hyperkeratinisation.</strong> Keratinocytes in the upper follicle stick together and form a microcomedo. This grows into a closed comedo (whitehead) or an open comedo (blackhead). The dark colour of a blackhead comes from oxidised lipid and melanin, not dirt.</li>\n<li><strong><em>Cutibacterium acnes</em></strong> (formerly <em>Propionibacterium acnes</em>) is an anaerobic, aerotolerant, gram-positive rod that thrives in sebum. It splits triglycerides into irritant free fatty acids and activates <strong>Toll-like receptor 2</strong> on monocytes and keratinocytes, driving IL-1, IL-8 and TNF-α.</li>\n<li><strong>Inflammation</strong> with rupture of the follicle wall produces papules, pustules and nodules. Dermal damage leaves atrophic or hypertrophic scars and, especially in darker skin, post-inflammatory hyperpigmentation.</li></ol>\n[[figure:s23f-fig060301-2]]\n<table class=\"hy\"><thead><tr><th>Drug</th><th>Mechanism</th><th>Main skin use</th><th>Key adverse effects</th></tr></thead><tbody>\n<tr><td>Topical retinoids (tretinoin, adapalene, tazarotene)</td><td>Bind nuclear retinoic acid receptors; normalise follicular keratinisation (comedolytic)</td><td>Comedonal and inflammatory acne</td><td>Irritation, photosensitivity; tazarotene avoided in pregnancy</td></tr>\n<tr><td>Isotretinoin (oral)</td><td>Retinoid; shrinks sebaceous glands and sebum output, normalises keratinisation, indirectly reduces <em>C. acnes</em></td><td>Severe, nodular, scarring or refractory acne</td><td>Teratogen; cheilitis, dry skin, raised triglycerides and transaminases, intracranial hypertension (worse with tetracyclines)</td></tr>\n<tr><td>Benzoyl peroxide</td><td>Releases oxygen free radicals that kill <em>C. acnes</em>; no bacterial resistance</td><td>All acne; paired with any antibiotic</td><td>Irritation, bleaches fabric</td></tr>\n<tr><td>Doxycycline, minocycline, sarecycline</td><td>Bind 30S ribosomal subunit; also inhibit neutrophil chemotaxis and matrix metalloproteinases</td><td>Moderate to severe inflammatory acne, rosacea</td><td>Photosensitivity (doxycycline), blue-grey pigmentation and drug-induced lupus (minocycline), tooth staining under age 8</td></tr>\n<tr><td>Spironolactone</td><td>Androgen receptor antagonist</td><td>Hormonal acne, hirsutism (off-label)</td><td>Hyperkalaemia, menstrual irregularity, breast tenderness; antiandrogenic to a male fetus</td></tr>\n<tr><td>Clascoterone (topical)</td><td>Androgen receptor antagonist acting in the skin</td><td>Acne</td><td>Local irritation</td></tr>\n<tr><td>Finasteride, dutasteride</td><td>Inhibit 5α-reductase (finasteride type 2; dutasteride types 1 and 2)</td><td>Androgenetic alopecia</td><td>Sexual dysfunction; undervirilisation of a male fetus</td></tr>\n<tr><td>Minoxidil</td><td>Opens ATP-sensitive K<sup>+</sup> channels; prolongs anagen, enlarges miniaturised follicles</td><td>Pattern hair loss</td><td>Hypertrichosis, early shedding; oral use causes reflex tachycardia and fluid retention</td></tr>\n<tr><td>Eflornithine (topical)</td><td>Irreversibly inhibits ornithine decarboxylase in the hair matrix</td><td>Facial hirsutism</td><td>Local irritation</td></tr>\n</tbody></table>\n<h2>Rosacea</h2>\n<p>Rosacea is a chronic inflammatory disease of the central face in adults. Its pathogenesis is innate immune and neurovascular, not comedonal. Facial skin in rosacea expresses more TLR2 and more of the serine protease kallikrein-5, which cleaves the antimicrobial peptide cathelicidin into LL-37 fragments that are proinflammatory and promote new vessel growth. Heat-sensitive and capsaicin-sensitive TRPV channels on nerves and vessels explain flushing with hot drinks, spicy food, alcohol, sun and temperature change. Demodex folliculorum mites are found at higher density and amplify inflammation. Over years, sebaceous hyperplasia and fibrosis thicken the nose (rhinophyma, far more common in men). Ocular rosacea comes from meibomian gland dysfunction. Topical ivermectin acts on glutamate-gated chloride channels in the mites, brimonidine (α<sub>2</sub> agonist) and oxymetazoline (α<sub>1A</sub> agonist) constrict superficial vessels, and low-dose doxycycline works mainly as an anti-inflammatory.</p>\n<h2>Folliculitis by mechanism</h2>\n<ul><li><strong><em>Staphylococcus aureus</em></strong> is the usual cause of superficial pustules centred on hairs. Deep infection of a follicle forms a furuncle.</li>\n<li><strong><em>Pseudomonas aeruginosa</em></strong> (\"hot tub\" folliculitis) follows a poorly chlorinated hot tub or pool. Itchy follicular papules and pustules appear 1–2 days later, often under the swimsuit.</li>\n<li><strong><em>Malassezia</em></strong> folliculitis gives itchy, uniform papules on the upper trunk. It is favoured by heat, occlusion, antibiotics, corticosteroids and diabetes, and it does not respond to antibacterials.</li>\n<li><strong>Gram-negative folliculitis</strong> can complicate long courses of oral antibiotics for acne.</li>\n<li><strong>Pseudofolliculitis barbae</strong> is mechanical, not infectious. A sharply cut, tightly curled hair curves back and pierces the skin, causing a foreign-body reaction. It is most common in people with tightly coiled hair who shave closely, including many Black men and anyone who shaves the face.</li>\n<li><strong>Eosinophilic folliculitis</strong> causes very itchy papules on the face and upper trunk in advanced HIV.</li></ul>\n<div class=\"pearl\"><p>Rosacea has no comedones, and acne does. Comedones in a \"rosacea\" patient suggest acne. A facial rash that worsens every time a topical steroid is stopped suggests steroid-induced rosacea or perioral dermatitis.</p></div>\n<div class=\"trap\"><p>Anagen effluvium appears within weeks of chemotherapy. Telogen effluvium appears 2–4 months after the trigger, so patients rarely link the two. Ask what happened 3 months ago, not last week.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Acne Vulgaris"
+    },
+    {
+     "statpearls": "Alopecia Areata"
+    },
+    {
+     "statpearls": "Rosacea"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Acne, rosacea and folliculitis: diagnosis and management",
+   "html": "<h2>Acne vulgaris</h2>\n<p>Acne affects most adolescents and many adults, and it persists into adulthood more often in women. Diagnosis is clinical. The key observation is the <strong>dominant lesion type</strong>: comedones (open or closed), inflammatory papules and pustules, or nodules and cysts. Then look for scarring and post-inflammatory hyperpigmentation, and ask about the psychological burden. Scarring or marked distress justifies stronger therapy at any lesion count.</p>\n<h3>Treatment ladder (in line with current AAD guidance)</h3>\n<table class=\"hy\"><thead><tr><th>Presentation</th><th>First line</th><th>Escalate to</th></tr></thead><tbody>\n<tr><td>Comedonal</td><td>Topical retinoid (adapalene, tretinoin), with or without benzoyl peroxide or azelaic acid</td><td>Fixed-dose retinoid plus benzoyl peroxide</td></tr>\n<tr><td>Mild to moderate inflammatory</td><td>Topical retinoid plus benzoyl peroxide, with or without a topical antibiotic (clindamycin); clascoterone is an option</td><td>Oral tetracycline-class antibiotic plus topical retinoid and benzoyl peroxide</td></tr>\n<tr><td>Moderate to severe inflammatory</td><td>Oral doxycycline, minocycline or sarecycline for a limited course (aim for about 3–4 months), always with topical retinoid and benzoyl peroxide; hormonal therapy for those who want it</td><td>Isotretinoin</td></tr>\n<tr><td>Severe nodular, scarring, or failure of adequate therapy</td><td>Isotretinoin</td><td>Short course of oral glucocorticoid for acne fulminans or a severe flare at isotretinoin start (specialist)</td></tr>\n</tbody></table>\n<ul><li><strong>Antibiotic stewardship.</strong> Never use a topical or oral antibiotic alone. Pair it with benzoyl peroxide to limit resistance, and stop the oral antibiotic once control is reached. Keep the retinoid going for maintenance.</li>\n<li><strong>Hormonal options</strong> for people with ovaries: combined estrogen-progestin pills (check the CDC Medical Eligibility Criteria; for example, avoid them in smokers aged 35 or older and in migraine with aura), and spironolactone, used off-label and with reliable contraception.</li>\n<li><strong>Pregnancy:</strong> azelaic acid, benzoyl peroxide and topical clindamycin are commonly used. Avoid tetracyclines, isotretinoin, tazarotene and spironolactone.</li>\n<li><strong>Children under 8:</strong> avoid tetracyclines because of tooth staining. Erythromycin or azithromycin are alternatives when an oral agent is truly needed.</li></ul>\n<h3>Isotretinoin in practice</h3>\n<p>Isotretinoin is the only drug that can induce long remission. In the United States it is dispensed through the iPLEDGE risk-management program. Anyone who can become pregnant must use two forms of contraception (or commit to abstinence), starting 1 month before treatment and continuing until 1 month after, and must have negative pregnancy tests before starting and every month during treatment. This applies regardless of gender identity: <strong>testosterone is not contraception</strong>, and amenorrhoea on testosterone does not exclude ovulation. Check fasting lipids and transaminases at baseline and during treatment. Ask about mood at each visit. Never combine isotretinoin with a tetracycline, because both cause idiopathic intracranial hypertension. Avoid vitamin A supplements, and do not donate blood during treatment. Expect cheilitis, dry skin and eyes, nosebleeds and myalgia. Severe headache, vomiting or visual change means stopping the drug and urgent assessment for papilledema.</p>\n<h3>Special groups</h3>\n<ul><li><strong>Neonatal acne</strong> (first weeks) and neonatal cephalic pustulosis resolve on their own. <strong>Infantile acne</strong> (about 3–6 months onward) can scar and needs treatment. Acne between ages 1 and 7, or acne with body odour, pubic hair, growth acceleration or clitoromegaly, needs evaluation for androgen excess (for example, nonclassic congenital adrenal hyperplasia or an androgen-secreting tumour).</li>\n<li><strong>Gender-affirming testosterone</strong> commonly causes acne, mostly in the first year. Treat it on the standard ladder, including isotretinoin when indicated. Stopping testosterone is rarely needed. Estradiol with an antiandrogen usually reduces acne in transgender women.</li>\n<li><strong>Skin of colour:</strong> post-inflammatory hyperpigmentation and keloidal scarring are often the main complaint. Treat inflammation early, avoid irritating regimens, and include azelaic acid or a retinoid, which also fade pigment. Oil-based hair products can cause comedones along the hairline.</li>\n<li><strong>Drug-induced acneiform eruptions</strong> (systemic glucocorticoids, EGFR inhibitors, lithium, anabolic steroids) are monomorphic papules and pustules without comedones.</li></ul>\n<h2>Rosacea</h2>\n<p>Rosacea presents in adults with persistent central facial erythema, flushing, telangiectasias, papules and pustules, and sometimes phymatous change or eye symptoms (grittiness, blepharitis, recurrent chalazia). In darker skin, erythema is hard to see. Look for warmth, burning, dusky discolouration and papules. It has no comedones. The malar rash of lupus spares the nasolabial folds and has no pustules. Seborrheic dermatitis scales in the folds. Flushing with diarrhoea or wheeze suggests carcinoid syndrome.</p>\n<table class=\"hy\"><thead><tr><th>Feature</th><th>Treatment</th></tr></thead><tbody>\n<tr><td>Papules and pustules</td><td>Topical ivermectin, metronidazole or azelaic acid; add oral doxycycline (modified-release low dose or standard dose) when moderate to severe</td></tr>\n<tr><td>Persistent erythema</td><td>Topical brimonidine or oxymetazoline (rebound redness possible)</td></tr>\n<tr><td>Telangiectasias</td><td>Vascular laser or intense pulsed light</td></tr>\n<tr><td>Phyma</td><td>Ablative laser or surgical debulking; low-dose isotretinoin in early disease</td></tr>\n<tr><td>Ocular</td><td>Lid hygiene and warm compresses, oral doxycycline; ophthalmology review for keratitis or vision change</td></tr></tbody></table>\n<p>Everyone benefits from trigger avoidance, daily broad-spectrum sunscreen and gentle cleansers. <strong>Do not treat rosacea with topical corticosteroids</strong>: they give short-term blanching and then a rebound of papules and pustules (steroid-induced rosacea). <strong>Perioral dermatitis</strong> causes small papules around the mouth, nose or eyes, with a clear rim next to the lips. It is common in children and young adults using topical or inhaled steroids. Stop the steroid and use topical metronidazole, or a tetracycline in patients aged 8 and older, or erythromycin in younger children.</p>\n<h2>Folliculitis</h2>\n<ul><li><strong>Bacterial (<em>S. aureus</em>):</strong> warm compresses and topical mupirocin or clindamycin. Recurrent disease warrants decolonisation (chlorhexidine washes, intranasal mupirocin). An abscess needs incision and drainage.</li>\n<li><strong>Hot tub (<em>Pseudomonas</em>):</strong> self-limited in healthy people. Avoid the source and arrange for the tub to be treated.</li>\n<li><strong><em>Malassezia</em>:</strong> topical ketoconazole or selenium sulfide. Use oral fluconazole or itraconazole for extensive disease, and stop unnecessary antibiotics.</li>\n<li><strong>Pseudofolliculitis barbae:</strong> stopping close shaving cures it. If shaving is required, use clippers that leave short stubble or a single-blade razor with the grain. Topical retinoid, benzoyl peroxide with clindamycin, and short courses of low-potency steroid help. Laser hair removal is definitive. A long-pulsed Nd:YAG (1064 nm) device is the safest choice in darker skin. Grooming policies in workplaces and the military may need medical documentation.</li></ul>\n<div class=\"trap\"><p>A topical or oral antibiotic for acne should never be used without benzoyl peroxide. And never add minocycline or doxycycline to isotretinoin.</p></div>\n<div class=\"pearl\"><p>Before isotretinoin, ask every patient with a uterus and ovaries about pregnancy potential, whatever their gender. Testosterone suppresses menses unreliably and is itself teratogenic.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Acne Vulgaris"
+    },
+    {
+     "statpearls": "Rosacea"
+    },
+    {
+     "statpearls": "Folliculitis"
+    },
+    {
+     "label": "CDC: US Medical Eligibility Criteria for Contraceptive Use",
+     "url": "https://www.cdc.gov/contraception/hcp/usmec/index.html",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Hair loss and excess hair: evaluation and management",
+   "html": "<h2>Approach to hair loss</h2>\n<p>Ask two questions first. <strong>Is it scarring?</strong> Look for loss of follicular openings, shiny skin, perifollicular redness or scale, and tenderness. <strong>Is it diffuse or patchy?</strong> Then take a focused history: when it started and what happened 2–4 months earlier, new drugs, diet and weight change, hair-care practices (tight braids, extensions, relaxers, heat), family history, and associated symptoms of thyroid disease, iron deficiency or androgen excess. The <strong>pull test</strong> counts hairs released from a gentle tug on about 60 hairs; more than a few suggests active shedding. Trichoscopy (dermoscopy of the scalp) helps at the bedside. Targeted labs often include TSH, ferritin and a CBC. Biopsy is needed for suspected scarring alopecia, taken from the active edge.</p>\n<table class=\"hy\"><thead><tr><th>Disorder</th><th>Pattern and clues</th><th>Key test</th><th>Management</th></tr></thead><tbody>\n<tr><td>Telogen effluvium</td><td>Diffuse shedding 2–4 months after a trigger; positive pull test with club hairs</td><td>History; TSH, ferritin, CBC as guided</td><td>Treat the cause; reassure that regrowth follows over months</td></tr>\n<tr><td>Anagen effluvium</td><td>Abrupt diffuse loss within weeks of chemotherapy</td><td>History</td><td>Scalp cooling during some regimens reduces loss; regrowth after therapy</td></tr>\n<tr><td>Alopecia areata</td><td>Smooth round patches, exclamation-point hairs, nail pitting; may involve brows, beard, body</td><td>Clinical; trichoscopy</td><td>Topical or intralesional steroid; JAK inhibitor for severe disease</td></tr>\n<tr><td>Androgenetic alopecia</td><td>Male pattern: temples and vertex. Female pattern: widening central part with frontal hairline kept</td><td>Clinical; androgen workup if other hyperandrogenic signs</td><td>Minoxidil; finasteride (men); spironolactone off-label (women); transplant</td></tr>\n<tr><td>Tinea capitis</td><td>Children; scaling patches, broken hairs (\"black dots\"), kerion, posterior cervical nodes</td><td>KOH and fungal culture</td><td>Oral griseofulvin or terbinafine (topicals fail)</td></tr>\n<tr><td>Trichotillomania</td><td>Irregular patch with hairs broken at different lengths</td><td>Clinical; trichoscopy</td><td>Habit reversal training (behavioural therapy)</td></tr>\n<tr><td>Traction alopecia</td><td>Frontotemporal thinning from tight styles; retained fringe of short hairs</td><td>Clinical</td><td>Loosen styles early, before scarring</td></tr>\n<tr><td>Central centrifugal cicatricial alopecia</td><td>Scarring at the vertex spreading outward, itch or tenderness; mainly women of African ancestry</td><td>Biopsy</td><td>Topical or intralesional steroid, oral doxycycline; stop progression</td></tr></tbody></table>\n<h3>Alopecia areata</h3>\n<p>Alopecia areata can start at any age and is common in children. For limited patches in adults and adolescents, <strong>intralesional triamcinolone</strong> is first line. Young children usually get a high-potency topical corticosteroid, because injections are poorly tolerated. Extensive disease in adults can be treated with oral JAK inhibitors (baricitinib, deuruxolitinib), and in people aged 12 and older with ritlecitinib. Screen for infection before starting and monitor lipids and blood counts. The prognosis is worse with early onset, extensive or total loss, the band-like occipital \"ophiasis\" pattern, and nail involvement. Screen for thyroid disease when symptoms suggest it.</p>\n<h3>Androgenetic alopecia</h3>\n<p>Topical minoxidil works in all sexes. Low-dose oral minoxidil is increasingly used off-label; watch for fluid retention, tachycardia and hypertrichosis. Finasteride is used in men; counsel about sexual adverse effects, and note that people who are or may become pregnant should not handle crushed tablets. In women, look for features of hyperandrogenism (acne, hirsutism, irregular menses), which warrant an androgen workup. In <strong>transgender men</strong> starting testosterone, pattern hair loss can begin or accelerate. 5α-reductase inhibitors can help but may blunt some DHT-dependent effects the person wants, so discuss this openly. In <strong>transgender women</strong>, estradiol with an antiandrogen often slows or partly reverses pattern loss.</p>\n<h3>Telogen effluvium and nutrition</h3>\n<p>Classic triggers include delivery (postpartum shedding peaks around 3–4 months), febrile illness including COVID-19, surgery, crash dieting, thyroid disease and new drugs (for example, retinoids, anticoagulants, antithyroid drugs). Iron deficiency and protein-energy malnutrition, including eating disorders, cause chronic shedding. Zinc deficiency is rarer. High-dose <strong>biotin</strong> supplements are popular but rarely help, and they interfere with streptavidin-based immunoassays (falsely altering TSH, thyroid hormone and troponin results). Ask about supplements before ordering labs.</p>\n<h3>Scarring alopecias</h3>\n<p>Central centrifugal cicatricial alopecia, lichen planopilaris, frontal fibrosing alopecia (postmenopausal women, often with eyebrow loss) and discoid lupus erythematosus destroy follicles. The aim is to stop progression, because lost hair does not return. A biopsy from the active edge confirms the diagnosis. Discoid lupus also warrants screening for systemic lupus.</p>\n<h2>Excess hair</h2>\n<table class=\"hy\"><thead><tr><th></th><th>Hirsutism</th><th>Hypertrichosis</th></tr></thead><tbody>\n<tr><td>Definition</td><td>Terminal hair in androgen-dependent areas (upper lip, chin, chest, linea alba, back) in people with typically female hair patterns</td><td>Excess hair in a non-androgen pattern, anywhere, in any sex</td></tr>\n<tr><td>Main causes</td><td>Polycystic ovary syndrome (most common), idiopathic, nonclassic congenital adrenal hyperplasia, androgen-secreting tumour, Cushing syndrome, hyperprolactinaemia, exogenous androgens</td><td>Drugs (minoxidil, cyclosporine, phenytoin, diazoxide), anorexia nervosa (lanugo), porphyria cutanea tarda, congenital and local (for example, over spinal dysraphism)</td></tr>\n<tr><td>Workup</td><td>Early-morning total testosterone; 17-hydroxyprogesterone; prolactin, TSH and pregnancy test as indicated; imaging if virilising</td><td>Drug and nutrition history; spinal imaging for a midline lumbosacral tuft</td></tr></tbody></table>\n<p>Hirsutism is graded with the modified Ferriman–Gallwey score. Normal values differ by ancestry, with lower cut-offs in East Asian women. Severity in the score does not predict the cause. Speed does: <strong>rapid progression or virilisation</strong> (deepening voice, clitoromegaly, temporal balding, increased muscle mass) points to an androgen-secreting tumour, especially with very high testosterone. Look for an ovarian source with transvaginal ultrasound. A high DHEA sulfate suggests an adrenal source and calls for adrenal CT. Think too about secondary exposure: a partner's topical testosterone gel can virilise children and partners.</p>\n<p><strong>Management of hirsutism</strong> (Endocrine Society approach): weight loss when PCOS and obesity coexist; a <strong>combined oral contraceptive</strong> as first-line drug therapy for most premenopausal patients; add an antiandrogen such as spironolactone after about 6 months if the response is not enough, always with effective contraception. Direct hair removal works alongside: laser photoepilation (diode or long-pulsed Nd:YAG for darker skin; it works poorly on white or blond hair) and electrolysis (permanent for any hair colour). Topical eflornithine slows facial growth. Transgender women often want facial hair removal. Antiandrogens soften new growth, but established beard hair usually needs laser or electrolysis.</p>\n<div class=\"trap\"><p>A tuft of hair, dimple above the gluteal cleft, or haemangioma over the lower spine of an infant is not cosmetic. It can mark occult spinal dysraphism (tethered cord) and needs imaging. Ultrasound is the usual first test in young infants, before the posterior spinal elements ossify.</p></div>\n<div class=\"pearl\"><p>Diffuse shedding with a clear trigger 3 months earlier, a positive pull test and normal labs needs only reassurance. Minoxidil or a biopsy is not needed for acute telogen effluvium.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Telogen Effluvium"
+    },
+    {
+     "statpearls": "Androgenetic Alopecia"
+    },
+    {
+     "statpearls": "Hirsutism"
+    },
+    {
+     "statpearls": "Hypertrichosis"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. The pilosebaceous unit and the hair cycle, showing which follicle structure each hair-loss mechanism targets and when shedding appears."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. Four steps of acne pathogenesis, from normal follicle to inflammatory rupture, with the step each treatment targets."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Acne during gender-affirming testosterone therapy"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old boy has had open and closed comedones and inflammatory papules on his forehead, cheeks and upper back for 2 years. Material expressed from an inflamed follicle contains a pleomorphic gram-positive rod that grows under anaerobic conditions and hydrolyses sebum triglycerides into free fatty acids. Activation of which of the following host receptors by this organism most directly drives the inflammatory cytokine release in his lesions?</p>",
+   "options": [
+    "Toll-like receptor 2",
+    "Toll-like receptor 3",
+    "Toll-like receptor 4",
+    "Toll-like receptor 5",
+    "Toll-like receptor 9"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The organism is <em>Cutibacterium acnes</em>, an anaerobic, aerotolerant gram-positive rod that lives in sebum-rich follicles. Its cell-wall components are recognised by <strong>TLR2</strong> on perifollicular monocytes and keratinocytes. Signalling through MyD88 and NF-κB releases IL-1, IL-8, IL-12 and TNF-α, which recruit neutrophils and turn a comedo into an inflammatory papule or pustule. Free fatty acids made by bacterial lipases add to the irritation.</p><p><strong>Takeaway:</strong> In acne, <em>C. acnes</em> activates TLR2, a sensor for gram-positive cell-wall components, and this links the bacterium to inflammation.</p>",
+   "whyNot": {
+    "B": "TLR3 senses double-stranded viral RNA inside endosomes, not bacterial cell-wall components.",
+    "C": "TLR4 recognises lipopolysaccharide of gram-negative bacteria; <em>C. acnes</em> is gram-positive and has no LPS.",
+    "D": "TLR5 recognises bacterial flagellin; <em>C. acnes</em> is nonmotile and its inflammation is driven through TLR2.",
+    "E": "TLR9 detects unmethylated CpG DNA in endosomes; it is not the main receptor linking <em>C. acnes</em> to acne inflammation."
+   },
+   "objective": "Identify TLR2 activation by Cutibacterium acnes as the link between follicular bacteria and acne inflammation.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "acne",
+    "innate immunity"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old woman with nodular acne and scarring on her face and back completes a 5-month course of an oral drug, taken alongside two forms of contraception and monthly pregnancy tests. Her skin stays clear for more than 2 years after the drug is stopped. Which of the following effects of the drug best explains this long remission?</p>",
+   "options": [
+    "Blockade of androgen receptors in sebocytes",
+    "Free-radical killing of follicular bacteria",
+    "Inhibition of the bacterial 30S ribosomal subunit",
+    "Inhibition of 5α-reductase in the follicle",
+    "Shrinkage of sebaceous glands with reduced sebum output"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>The drug is <strong>isotretinoin</strong> (13-<em>cis</em>-retinoic acid), signalled by severe scarring acne and the pregnancy-prevention program. It is the only acne drug that acts on all four steps of pathogenesis, but its defining effect is <strong>atrophy of the sebaceous glands</strong> with a large fall in sebum output. It also normalises follicular keratinisation, and lower sebum indirectly reduces <em>C. acnes</em> and inflammation. Because the glands stay smaller for a long time after a full course, many patients have prolonged or permanent remission, which antibiotics and topical agents cannot achieve.</p><p><strong>Takeaway:</strong> Isotretinoin gives durable acne remission mainly by shrinking sebaceous glands; it is also a potent teratogen.</p>",
+   "whyNot": {
+    "A": "Androgen receptor blockade describes spironolactone or clascoterone, which reduce sebum only while they are taken.",
+    "B": "Free-radical killing of <em>C. acnes</em> is the mechanism of benzoyl peroxide, a topical agent whose effect stops when it is stopped.",
+    "C": "Binding the 30S ribosomal subunit is the mechanism of tetracycline-class antibiotics, which suppress acne only during treatment.",
+    "D": "5α-reductase inhibition (finasteride) is used for pattern hair loss and does not explain lasting acne remission."
+   },
+   "objective": "Explain that isotretinoin produces durable acne remission by shrinking sebaceous glands and reducing sebum.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "acne",
+    "retinoids"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old man has had gradual hair thinning at the temples and crown for 3 years. His father had similar hair loss. Examination shows recession of the frontotemporal hairline and fine, short hairs at the vertex. He starts a daily oral drug that lowers scalp dihydrotestosterone concentrations. His partner is trying to conceive. Exposure of a 46,XY fetus to this drug during early pregnancy carries the greatest risk of which of the following?</p>",
+   "options": [
+    "Absent or malformed external ears",
+    "Downward displacement of the tricuspid valve",
+    "Failure of neural tube closure",
+    "Incomplete virilisation of the external genitalia",
+    "Shortened limbs with absent long bones"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The drug is <strong>finasteride</strong>, which inhibits type 2 5α-reductase and blocks conversion of testosterone to dihydrotestosterone (DHT). In a 46,XY fetus, DHT drives formation of the penis, scrotum and prostate from the genital tubercle, folds and swellings. Blocking it in early pregnancy can cause hypospadias and ambiguous or undervirilised external genitalia. The labelling therefore warns that people who are or may become pregnant should not handle crushed or broken tablets.</p><p><strong>Takeaway:</strong> 5α-reductase inhibitors block DHT and can cause undervirilised external genitalia in a male fetus.</p>",
+   "whyNot": {
+    "A": "Ear and craniofacial malformations are characteristic of retinoid (isotretinoin) embryopathy, not of 5α-reductase inhibitors.",
+    "B": "Downward displacement of the tricuspid valve (Ebstein anomaly) is linked to lithium exposure, not to blocking DHT.",
+    "C": "Neural tube defects are linked to valproate, carbamazepine and folate deficiency, not to DHT blockade.",
+    "E": "Limb reduction defects (phocomelia) are the classic effect of thalidomide; DHT does not govern limb development."
+   },
+   "objective": "Relate finasteride's inhibition of 5α-reductase to the risk of undervirilisation of a male fetus.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hair loss",
+    "teratogens"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman has lost more than half of her scalp hair over 8 months in multiple smooth, round patches that have merged. She has also lost much of her eyebrows. Several nails show fine, regular pits. A scalp biopsy shows a dense lymphocytic infiltrate around the bulbs of anagen follicles, with intact follicular units and no fibrosis. Intralesional triamcinolone has not helped. An oral drug is started that interrupts interferon-γ and IL-15 signalling in the infiltrating lymphocytes. This drug most directly inhibits which of the following?</p>",
+   "options": [
+    "Calcineurin",
+    "Janus kinases",
+    "Mammalian target of rapamycin",
+    "Tumour necrosis factor-α",
+    "Interleukin-17A"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The findings are those of extensive <strong>alopecia areata</strong>. The bulb loses its immune privilege, and CD8+ NKG2D+ T cells attack it. Interferon-γ and IL-15 sustain these cells, and both cytokines signal through <strong>Janus kinases</strong> (JAK1/2 for interferon-γ; JAK1/3 for IL-15). Oral JAK inhibitors such as baricitinib are approved for severe alopecia areata in adults, with ritlecitinib for those aged 12 and older. The biopsy shows that bulge stem cells are spared (no fibrosis), so regrowth is possible once the inflammation is controlled.</p><p><strong>Takeaway:</strong> Alopecia areata is a T-cell attack on the anagen bulb driven by interferon-γ and IL-15, and JAK inhibitors block that signalling.</p>",
+   "whyNot": {
+    "A": "Calcineurin inhibitors (cyclosporine, tacrolimus) block IL-2 transcription in T cells; they are not the drug class that targets interferon-γ and IL-15 receptor signalling.",
+    "C": "mTOR inhibitors (sirolimus) block signalling downstream of the IL-2 receptor and are not used for alopecia areata.",
+    "D": "TNF-α inhibitors are not effective in alopecia areata and have even been reported to trigger it.",
+    "E": "IL-17A inhibitors treat psoriasis and hidradenitis suppurativa; IL-17A is not the central cytokine in alopecia areata."
+   },
+   "objective": "Link the cytokine signalling of alopecia areata to the mechanism of JAK inhibitor therapy.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hair loss",
+    "autoimmunity"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman notices large amounts of hair on her pillow and in the shower drain, starting 3 months after an uncomplicated vaginal delivery. The scalp looks normal, with no patches, scale or scarring. A gentle pull on a group of hairs releases 9 hairs, each with a small, nonpigmented, club-shaped bulb. Which of the following best explains her hair loss?</p>",
+   "options": [
+    "Androgen-driven miniaturisation of scalp follicles",
+    "Arrest of matrix cell division in growing hairs",
+    "Synchronised early shift of follicles into the resting phase",
+    "Destruction of bulge stem cells by lymphocytes",
+    "Fungal invasion of the hair shaft"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is postpartum <strong>telogen effluvium</strong>. High estrogen in pregnancy keeps more follicles in anagen. After delivery, many of them move into catagen and then telogen at the same time. About 3 months later, when telogen ends, those club hairs are shed together. Club hairs have a depigmented, keratinised bulb, unlike the pigmented, often broken shafts of anagen effluvium. Regrowth is expected over the following months.</p><p><strong>Takeaway:</strong> Telogen effluvium is a synchronised shift into telogen after a physiological shock, with club-hair shedding about 2–4 months later.</p>",
+   "whyNot": {
+    "A": "Androgenetic alopecia develops gradually over years in a patterned distribution, with miniaturised hairs and no acute shedding of club hairs.",
+    "B": "Arrest of matrix mitosis causes anagen effluvium (for example, after chemotherapy), with tapered, broken shafts within weeks.",
+    "D": "Destruction of bulge stem cells causes scarring alopecia, with loss of follicular openings that is absent here.",
+    "E": "Fungal invasion of the shaft is tinea capitis, which causes scaling patches and broken hairs, mostly in children."
+   },
+   "objective": "Explain the timing and mechanism of telogen effluvium after childbirth.",
+   "extraAreas": [],
+   "disciplines": [
+    "histology_cell_biology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hair loss",
+    "postpartum"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 45-year-old woman has had facial redness for 6 years. It flares with hot drinks, red wine and hot weather. Examination shows persistent erythema of the cheeks, nose and chin, with telangiectasias and scattered papules and pustules. There are no comedones. She is prescribed a topical drug that binds glutamate-gated chloride channels in the nerve and muscle cells of invertebrates. Which of the following organisms, found at increased density in her skin, is the target of this drug's antiparasitic action?</p>",
+   "options": [
+    "<em>Cutibacterium acnes</em>",
+    "<em>Demodex folliculorum</em>",
+    "<em>Malassezia furfur</em>",
+    "<em>Sarcoptes scabiei</em>",
+    "<em>Staphylococcus epidermidis</em>"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Flushing triggered by heat and alcohol, central facial erythema, telangiectasias and papulopustules without comedones mean <strong>papulopustular rosacea</strong>. Facial skin in rosacea carries more <em>Demodex folliculorum</em> mites, whose antigens and bacteria amplify innate immune signalling (TLR2, kallikrein-5, cathelicidin). <strong>Topical ivermectin</strong> binds glutamate-gated chloride channels in invertebrate nerve and muscle, paralysing the mites. It also has anti-inflammatory effects and is a first-line topical treatment for papulopustular rosacea.</p><p><strong>Takeaway:</strong> Topical ivermectin treats papulopustular rosacea partly by killing <em>Demodex</em> mites through glutamate-gated chloride channels.</p>",
+   "whyNot": {
+    "A": "<em>C. acnes</em> drives acne, which has comedones; it is a bacterium and is not targeted by an antiparasitic drug.",
+    "C": "<em>Malassezia</em> is a yeast linked to seborrheic dermatitis and <em>Malassezia</em> folliculitis; it lacks the invertebrate channels ivermectin targets.",
+    "D": "<em>Sarcoptes scabiei</em> is also killed by ivermectin, but scabies causes itchy burrows on the hands and body, not flushing facial erythema.",
+    "E": "<em>S. epidermidis</em> is a skin commensal bacterium; it is not the target of an antiparasitic agent."
+   },
+   "objective": "Connect the antiparasitic mechanism of topical ivermectin to Demodex in rosacea.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "facial erythema",
+    "antiparasitic drugs"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old woman has had excess coarse hair on her upper lip, chin and lower abdomen since age 14, together with acne and menstrual cycles of 40–60 days. Blood pressure is 114/70 mm Hg. She has no clitoromegaly. An early-morning 17-hydroxyprogesterone concentration, taken in the follicular phase, is elevated and rises sharply after cosyntropin (ACTH) stimulation. Serum sodium and potassium concentrations are within the reference ranges. A deficiency of which of the following enzymes best explains these findings?</p>",
+   "options": [
+    "Aromatase",
+    "11β-Hydroxylase",
+    "17α-Hydroxylase",
+    "21-Hydroxylase",
+    "3β-Hydroxysteroid dehydrogenase"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Hirsutism, acne and oligomenorrhoea beginning around puberty, with a high 17-hydroxyprogesterone that rises sharply after ACTH, define <strong>nonclassic (late-onset) congenital adrenal hyperplasia</strong> due to partial <strong>21-hydroxylase</strong> deficiency. The partial block makes 17-hydroxyprogesterone pile up, and it is shunted into androstenedione and testosterone. Cortisol and aldosterone output stay adequate, so there is no salt wasting and no hypotension. It is an important mimic of polycystic ovary syndrome. It is more common in some populations, such as people of Ashkenazi Jewish, Hispanic and Mediterranean ancestry.</p><p><strong>Takeaway:</strong> A follicular-phase 17-hydroxyprogesterone screens for nonclassic 21-hydroxylase deficiency in anyone presenting with hirsutism.</p>",
+   "whyNot": {
+    "A": "Aromatase deficiency causes androgen excess, but maternal virilisation in pregnancy and tall stature with delayed bone age are typical, and 17-hydroxyprogesterone is not raised.",
+    "B": "11β-Hydroxylase deficiency also causes androgen excess, but 11-deoxycorticosterone builds up and causes hypertension; her blood pressure is normal.",
+    "C": "17α-Hydroxylase deficiency blocks sex-steroid synthesis, causing low androgens, primary amenorrhoea and hypertension, the opposite of this picture.",
+    "E": "3β-HSD deficiency causes low production of potent androgens and cortisol, and 17-hydroxyprogesterone does not show this rise."
+   },
+   "objective": "Identify nonclassic 21-hydroxylase deficiency as a cause of hirsutism from the 17-hydroxyprogesterone response.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "excess hair",
+    "adrenal steroids"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old man has had itchy red papules and pustules on his trunk, buttocks and upper thighs for 1 day. Two days ago he spent several hours in a hot tub at a holiday rental with friends, two of whom have a similar rash. Each lesion is centred on a hair follicle. He is afebrile and otherwise well. Culture of a pustule would most likely grow an organism with which of the following characteristics?</p>",
+   "options": [
+    "Oxidase-positive, non-lactose-fermenting gram-negative rod",
+    "Acid-fast rod that grows best at 30 °C",
+    "Catalase-negative, β-haemolytic gram-positive coccus",
+    "Catalase-positive, coagulase-positive gram-positive coccus",
+    "Lipid-dependent budding yeast"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Follicular pustules starting 1–2 days after hot tub use, in areas covered by a swimsuit, in several bathers at once, mean <strong>hot tub folliculitis</strong> from <em>Pseudomonas aeruginosa</em>. It is an aerobic, oxidase-positive, non-lactose-fermenting gram-negative rod that thrives in warm water when disinfectant levels drop. Many strains make blue-green pigments (pyocyanin, pyoverdine) and a grape-like odour. In healthy people the eruption clears without antibiotics within about 1–2 weeks.</p><p><strong>Takeaway:</strong> Folliculitis after a hot tub is caused by <em>Pseudomonas aeruginosa</em> and is usually self-limited.</p>",
+   "whyNot": {
+    "B": "An acid-fast rod growing best at 30 °C is <em>Mycobacterium marinum</em>, which causes nodules on the hands after aquarium or fish exposure, weeks later.",
+    "C": "<em>Streptococcus pyogenes</em> causes impetigo, erysipelas and cellulitis rather than follicle-centred pustules after hot tub exposure.",
+    "D": "<em>S. aureus</em> is the most common cause of folliculitis overall, but the hot tub link and group outbreak point to <em>Pseudomonas</em>.",
+    "E": "<em>Malassezia</em> folliculitis develops gradually with heat and occlusion, not as an outbreak 2 days after a hot tub."
+   },
+   "objective": "Identify Pseudomonas aeruginosa as the cause of hot tub folliculitis from the exposure history.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "folliculitis",
+    "water exposure"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old man with chronic kidney disease has hypertension that remains uncontrolled on four drugs. An oral vasodilator is added, together with a β-blocker and a loop diuretic to offset its adverse effects. Four months later he reports new, fine dark hair growing on his forehead, cheeks, ears and forearms. Which of the following is the primary mechanism of action of the drug responsible?</p>",
+   "options": [
+    "Blockade of α<sub>1</sub>-adrenergic receptors",
+    "Blockade of L-type calcium channels",
+    "Increase in cGMP through nitric oxide release",
+    "Opening of ATP-sensitive potassium channels",
+    "Inhibition of angiotensin-converting enzyme"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The drug is <strong>minoxidil</strong>, a direct arteriolar vasodilator kept for resistant hypertension. It opens ATP-sensitive K<sup>+</sup> channels in vascular smooth muscle, which hyperpolarises the cells and relaxes the arterioles. Reflex tachycardia and salt and water retention are why it is given with a β-blocker and a diuretic. In follicles it prolongs anagen and enlarges small follicles, which causes <strong>hypertrichosis</strong> in a non-androgen pattern. The same effect is used therapeutically, topically or at low oral doses, for pattern hair loss.</p><p><strong>Takeaway:</strong> Minoxidil opens K<sub>ATP</sub> channels; hypertrichosis is its signature adverse effect and the basis of its use in hair loss.</p>",
+   "whyNot": {
+    "A": "α<sub>1</sub>-Blockers such as doxazosin cause orthostatic hypotension, not hypertrichosis, and they don't need routine β-blocker and diuretic cover.",
+    "B": "Calcium channel blockers cause oedema and gingival overgrowth (nifedipine) but not generalised hypertrichosis.",
+    "C": "Nitric oxide donors such as nitroprusside are given intravenously for emergencies and do not cause hair growth.",
+    "E": "ACE inhibitors cause cough, angio-oedema and hyperkalaemia, not hypertrichosis."
+   },
+   "objective": "Recognise minoxidil-induced hypertrichosis and recall that minoxidil opens ATP-sensitive potassium channels.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "excess hair",
+    "antihypertensives"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 20-year-old transgender man comes to the clinic because of worsening acne. He began testosterone therapy 10 months ago and is pleased with his masculinisation. For the past 4 months he has taken oral doxycycline and applied a combined adapalene–benzoyl peroxide gel daily, with little improvement. Examination shows numerous inflamed papules and tender nodules up to 1.5 cm on the face, chest and back, with atrophic scars on the cheeks and early hypertrophic scars on the chest. He says the acne makes him avoid social events. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Add topical clindamycin to the current regimen",
+    "Begin oral isotretinoin",
+    "Begin oral spironolactone",
+    "Discontinue testosterone therapy",
+    "Switch doxycycline to minocycline"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has <strong>severe nodular acne with scarring</strong> that has not responded to an adequate course of an oral tetracycline with a topical retinoid and benzoyl peroxide. This is a clear indication for <strong>isotretinoin</strong>. Testosterone-associated acne is treated on the same ladder as any other acne, and isotretinoin can be used safely alongside gender-affirming testosterone. Early isotretinoin limits further permanent scarring, which matters especially with hypertrophic scars on the chest.</p><p><strong>Takeaway:</strong> Severe nodular or scarring acne that fails oral antibiotic-based therapy calls for isotretinoin, including in people taking testosterone.</p>",
+   "whyNot": {
+    "A": "Adding a topical antibiotic gives little benefit for nodular scarring disease that has already failed an oral antibiotic, and it adds to resistance.",
+    "C": "Spironolactone is an antiandrogen; it would work against his gender-affirming goals and is not used for acne in people taking testosterone.",
+    "D": "Stopping gender-affirming therapy is not needed; acne is treatable while he continues testosterone, and stopping would cause harm.",
+    "E": "Switching to another tetracycline offers no meaningful advantage after failure of doxycycline and delays effective treatment of scarring acne."
+   },
+   "objective": "Choose isotretinoin for severe scarring acne that fails oral antibiotic therapy, including in people taking testosterone.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "acne",
+    "gender-affirming care"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient agrees to start isotretinoin. He has a uterus and ovaries. He has had no menses for 7 months on testosterone. He has receptive vaginal intercourse with a cisgender male partner and uses condoms sometimes. He says he assumed he could not become pregnant while taking testosterone. A urine pregnancy test today is negative. Which of the following is the most appropriate counselling before treatment?</p>",
+   "options": [
+    "Amenorrhoea on testosterone confirms that he cannot conceive",
+    "Condoms alone are adequate because hormonal methods interact with testosterone",
+    "He must stop testosterone so that menses can confirm he is not pregnant",
+    "He needs two contraceptive methods and monthly pregnancy tests",
+    "Isotretinoin should be deferred until he has a hysterectomy"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Isotretinoin is a potent teratogen. Anyone who can become pregnant, whatever their gender identity, must follow the risk-management program: <strong>two forms of contraception</strong> (or committed abstinence) from 1 month before until 1 month after treatment, and <strong>negative pregnancy tests</strong> before starting and every month. <strong>Testosterone is not contraception.</strong> Amenorrhoea does not reliably mean that ovulation has stopped, and testosterone itself can harm a fetus. A progestin intrauterine device or implant works well with testosterone and also suppresses bleeding. Condoms can be the second method.</p><p><strong>Takeaway:</strong> Testosterone does not prevent pregnancy; people with a uterus and ovaries on isotretinoin need two contraceptive methods and monthly pregnancy tests.</p>",
+   "whyNot": {
+    "A": "Ovulation and pregnancy can occur during testosterone-induced amenorrhoea, so amenorrhoea gives no assurance.",
+    "B": "Progestin implants and intrauterine devices are compatible with testosterone; condoms alone do not meet the two-method standard.",
+    "C": "Stopping testosterone is unnecessary and harmful; pregnancy status is confirmed with pregnancy tests, not menses.",
+    "E": "Surgery is not needed to use isotretinoin safely; effective contraception and testing are enough."
+   },
+   "objective": "Counsel people who can become pregnant, including transgender men on testosterone, about contraception and pregnancy testing on isotretinoin.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "obgyn"
+   ],
+   "tasks": [
+    "communication",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "acne",
+    "contraception"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 3,
+   "stemHtml": "<p>Ten weeks into isotretinoin treatment, the patient reports 2 weeks of daily headaches that are worse when he lies down, nausea, and brief episodes of greyed-out vision when he stands. Three weeks ago an urgent care clinician prescribed oral minocycline for a flare of pustules. Funduscopic examination shows bilateral optic disc swelling. Neurological examination is otherwise normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Continue both drugs and add oral acetazolamide",
+    "Continue isotretinoin and stop minocycline",
+    "Stop both drugs and arrange urgent neuroimaging",
+    "Lower the isotretinoin dose and recheck in 1 month",
+    "Start oral prednisone and continue current treatment"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Headache, transient visual obscurations and papilledema mean raised intracranial pressure. Both <strong>isotretinoin and tetracyclines</strong> cause idiopathic intracranial hypertension, and using them together is contraindicated. Both drugs must be <strong>stopped</strong>. Papilledema requires <strong>urgent neuroimaging</strong> (MRI with venography) to exclude a mass or venous sinus thrombosis, followed by lumbar puncture with opening pressure and formal visual field testing by ophthalmology. Acetazolamide may be part of later treatment, but only after the offending drugs are stopped and secondary causes are excluded.</p><p><strong>Takeaway:</strong> Never combine isotretinoin with a tetracycline; papilledema on isotretinoin means stopping the drug and urgent evaluation.</p>",
+   "whyNot": {
+    "A": "Continuing both causative drugs while adding acetazolamide leaves the cause in place and puts vision at risk.",
+    "B": "Isotretinoin alone can cause intracranial hypertension; with papilledema it must also be stopped.",
+    "D": "Dose reduction is not appropriate with papilledema, a vision-threatening complication.",
+    "E": "Glucocorticoids are not first-line treatment for drug-induced intracranial hypertension and would delay the essential workup."
+   },
+   "objective": "Recognise isotretinoin- and tetracycline-associated intracranial hypertension and stop both drugs with urgent evaluation.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug adverse effects",
+    "headache"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old woman has had a red face for 3 months. She first used over-the-counter hydrocortisone, which helped. She then applied a friend's clobetasol cream daily for 8 weeks, and the redness cleared each time she used it. Now, whenever she stops the cream, her cheeks and chin flare with burning, small papules and pustules. Examination shows centrofacial erythema, telangiectasias and monomorphic papulopustules. There are no comedones and no scale. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Apply topical benzoyl peroxide–clindamycin gel",
+    "Stop the corticosteroid and start topical metronidazole",
+    "Begin a 2-week oral prednisone taper",
+    "Change to a low-potency topical corticosteroid long term",
+    "Start topical tretinoin each night"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Facial erythema, telangiectasias and papulopustules that rebound whenever a potent topical steroid is stopped indicate <strong>steroid-induced rosacea</strong>. Treatment is to <strong>stop the topical corticosteroid</strong>. A rebound flare should be expected and explained in advance. Cover the withdrawal with an anti-inflammatory rosacea agent such as topical metronidazole (or ivermectin or azelaic acid), adding oral doxycycline if the flare is severe. Gentle skin care and sunscreen help.</p><p><strong>Takeaway:</strong> Topical steroids worsen rosacea; stop them and treat with metronidazole, ivermectin or azelaic acid, with a tetracycline for severe flares.</p>",
+   "whyNot": {
+    "A": "Benzoyl peroxide and clindamycin are acne treatments, and benzoyl peroxide irritates sensitive rosacea skin; there are no comedones here.",
+    "C": "Systemic glucocorticoids would worsen steroid-dependent rosacea and cause another rebound.",
+    "D": "Continuing any facial steroid maintains the dependence and the skin atrophy; the steroid must be stopped.",
+    "E": "Retinoids irritate rosacea skin and are not first-line for papulopustular rosacea."
+   },
+   "objective": "Manage steroid-induced rosacea by stopping the topical corticosteroid and using a rosacea anti-inflammatory agent.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "facial erythema",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 7-year-old girl is brought to the clinic because her mother found a bald patch on the back of her head 3 weeks ago. The girl is otherwise well and has atopic dermatitis. Examination shows a single round, 3-cm patch of complete hair loss with smooth, normal-coloured skin and no scale, redness or scarring. Several short broken hairs at the margin narrow toward the scalp. There is no cervical lymphadenopathy. Several fingernails show fine pits. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    "High-potency topical corticosteroid",
+    "Ketoconazole shampoo",
+    "Oral baricitinib",
+    "Oral griseofulvin",
+    "Oral prednisone"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A smooth, nonscarring, round patch with tapered short hairs (exclamation-point hairs) and nail pitting in a child with atopy is <strong>alopecia areata</strong>. For a young child with limited disease, a <strong>high-potency topical corticosteroid</strong> is a reasonable first-line choice, because intralesional injections are poorly tolerated at this age. Counsel the family that limited patches often regrow but that relapses are common. Check thyroid function if symptoms suggest it.</p><p><strong>Takeaway:</strong> Limited alopecia areata in a young child is usually treated first with a potent topical corticosteroid.</p>",
+   "whyNot": {
+    "B": "Ketoconazole shampoo is an adjunct for tinea capitis or seborrheic dermatitis; there is no scale or inflammation to suggest either.",
+    "C": "Oral JAK inhibitors are reserved for severe, extensive alopecia areata, and baricitinib is approved only in adults.",
+    "D": "Griseofulvin treats tinea capitis, which causes scale, broken hairs, inflammation and often lymphadenopathy, none of which are present.",
+    "E": "Systemic glucocorticoids cause significant toxicity in children, and relapse is common when they are stopped; they are not first-line for a single patch."
+   },
+   "objective": "Choose a high-potency topical corticosteroid for limited alopecia areata in a young child.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hair loss",
+    "pediatric dermatology"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman comes to the clinic 15 weeks after the vaginal delivery of a healthy infant, whom she is breastfeeding. For 3 weeks she has noticed diffuse hair shedding, with handfuls of hair in her brush. She has no scalp itch or pain. Examination shows normal hair density, no patches, and a normal scalp without scale or scarring. A gentle hair-pull test releases 8 club hairs. TSH, ferritin and a complete blood count are within reference ranges. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Intralesional triamcinolone",
+    "Oral finasteride",
+    "Oral terbinafine",
+    "Reassurance and observation",
+    "Punch biopsy of the scalp"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Diffuse shedding of club hairs starting about 3 months after delivery, with a normal scalp and normal thyroid, iron and blood studies, is <strong>postpartum telogen effluvium</strong>. It resolves on its own as the follicles return to anagen, and density usually recovers within 6–12 months. <strong>Reassurance</strong>, with a gentle hair-care routine and advice to return if shedding continues beyond about 6 months, is the right management. A biopsy is not needed when the history and examination are typical.</p><p><strong>Takeaway:</strong> Postpartum telogen effluvium with normal labs needs only reassurance; regrowth is expected.</p>",
+   "whyNot": {
+    "A": "Intralesional steroids treat patchy alopecia areata; there are no patches or exclamation-point hairs here.",
+    "B": "Finasteride has no role in telogen effluvium and should be avoided in people who are breastfeeding or may become pregnant.",
+    "C": "Terbinafine treats fungal infection, and there is no scaling or broken hair to suggest tinea.",
+    "E": "Biopsy is kept for atypical, persistent or possibly scarring hair loss; this presentation is typical and self-limited."
+   },
+   "objective": "Manage postpartum telogen effluvium with reassurance once common contributing causes are excluded.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hair loss",
+    "postpartum"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 61-year-old woman comes to the clinic because of 6 months of progressive coarse hair on her chin, upper lip and chest, together with a deeper voice and thinning hair at her temples. Menopause was at age 51, and she takes no medications or supplements. Her partner does not use testosterone products. Examination shows terminal hair on the chin, chest and linea alba, frontotemporal balding and clitoromegaly. There is no abdominal mass, striae or cushingoid habitus. Laboratory results:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Total testosterone</td><td>265 ng/dL (reference 15–70 ng/dL)</td></tr><tr><td>DHEA sulfate</td><td>Within the age-specific reference range</td></tr><tr><td>17-Hydroxyprogesterone</td><td>Within the reference range</td></tr><tr><td>TSH</td><td>2.1 μU/mL</td></tr><tr><td>Prolactin</td><td>9 ng/mL (reference below 20 ng/mL)</td></tr></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "ACTH stimulation test",
+    "CT scan of the adrenal glands",
+    "Laser hair removal",
+    "Oral spironolactone",
+    "Transvaginal ultrasonography"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Rapidly progressive <strong>virilisation</strong> (voice change, clitoromegaly, temporal balding) after menopause, with a <strong>markedly elevated testosterone</strong> and normal DHEA sulfate, points to an <strong>ovarian source</strong> of androgen: an androgen-secreting ovarian tumour (such as a Sertoli–Leydig or steroid cell tumour) or ovarian hyperthecosis. <strong>Transvaginal ultrasonography</strong> is the first imaging test. MRI is used if the ultrasound is unrevealing, and selective venous sampling is occasionally needed. A high DHEA sulfate would instead suggest an adrenal tumour and lead to adrenal CT.</p><p><strong>Takeaway:</strong> Virilisation with very high testosterone and normal DHEA sulfate calls for pelvic (ovarian) imaging first.</p>",
+   "whyNot": {
+    "A": "An ACTH stimulation test evaluates nonclassic congenital adrenal hyperplasia or adrenal insufficiency; a normal 17-hydroxyprogesterone and new onset at 61 make CAH very unlikely.",
+    "B": "Adrenal CT is preferred when DHEA sulfate is markedly elevated; here DHEA sulfate is normal, which points to the ovary.",
+    "C": "Hair removal treats a symptom and would delay diagnosis of a possible androgen-secreting tumour.",
+    "D": "Antiandrogen therapy before excluding a tumour would mask the progression of a potentially malignant process."
+   },
+   "objective": "Evaluate rapid-onset virilisation with markedly elevated testosterone by imaging the ovaries first.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "excess hair",
+    "androgen excess"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 42-year-old woman of African ancestry comes to the clinic because of 3 years of slowly widening hair loss on the crown, with intermittent itch and tenderness. For many years she used chemical relaxers and wore tight braided extensions. Examination shows a 6-cm smooth, shiny patch at the vertex with no visible follicular openings and a few tufts of hair emerging from single openings. The surrounding hair shows perifollicular redness and scale. There is no hair loss along the frontal hairline. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Punch biopsy from the active border",
+    "Reassurance that hair will regrow after stopping relaxers",
+    "Serum ferritin and thyroid studies only",
+    "Start topical minoxidil alone",
+    "Potassium hydroxide preparation of scalp scale"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Hair loss starting at the vertex and spreading outward, with loss of follicular openings (scarring), tenderness and perifollicular inflammation at the edge in a woman of African ancestry, is typical of <strong>central centrifugal cicatricial alopecia</strong> (CCCA). Because scarring alopecia is permanent and other scarring diseases (lichen planopilaris, discoid lupus) can look similar, confirm the diagnosis with a <strong>4-mm punch biopsy from the active, inflamed border</strong>, not the burnt-out centre. Treatment then targets inflammation (high-potency topical or intralesional corticosteroids, oral doxycycline) to stop progression, along with gentler hair-care practices.</p><p><strong>Takeaway:</strong> Suspected scarring alopecia needs a biopsy from the active edge, and early anti-inflammatory treatment preserves the remaining follicles.</p>",
+   "whyNot": {
+    "B": "Hair lost to scarring does not regrow; reassurance would allow continued irreversible loss.",
+    "C": "Iron and thyroid studies help with diffuse nonscarring shedding but do not diagnose or treat a scarring alopecia.",
+    "D": "Minoxidil alone does not control the inflammation that destroys follicles in CCCA.",
+    "E": "Tinea capitis is uncommon in adults and does not cause permanent loss of follicular openings at the vertex over years."
+   },
+   "objective": "Confirm suspected central centrifugal cicatricial alopecia with a biopsy from the active border before treatment.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hair loss",
+    "skin of colour"
+   ]
+  },
+  {
+   "n": 18,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 2-month-old girl is brought for a well-child examination. She was born at term after an uncomplicated pregnancy. Her parents ask about a patch of long, dark hair on her lower back that has been present since birth. Examination shows a 3-cm tuft of terminal hair in the midline over the lumbosacral spine, with no dimple, mass or skin discolouration. She moves all limbs normally and has normal tone, reflexes and anal wink. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Karyotype analysis",
+    "Laser hair removal when she is older",
+    "Ultrasonography of the lumbar spine",
+    "Plain radiographs of the lumbosacral spine",
+    "Reassurance and routine follow-up"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A midline <strong>lumbosacral hair tuft</strong> (localised hypertrichosis) is a skin marker of <strong>occult spinal dysraphism</strong>, such as a tethered cord, diastematomyelia or lipomyelomeningocele, even when the neurological examination is normal. Early diagnosis allows surgery before irreversible bladder, bowel or limb problems develop. In young infants, before the posterior spinal elements ossify (roughly the first 4–6 months), <strong>spinal ultrasonography</strong> is a practical initial imaging test that needs no sedation. MRI is used if ultrasound is abnormal or inconclusive, or in older children.</p><p><strong>Takeaway:</strong> Midline lumbosacral skin markers in an infant, such as a hair tuft, need spinal imaging; ultrasound is the usual first test in early infancy.</p>",
+   "whyNot": {
+    "A": "Karyotyping is not indicated for an isolated midline hair tuft; the concern is a local spinal malformation, not a chromosomal syndrome.",
+    "B": "Cosmetic hair removal ignores the underlying spinal cord risk the tuft signals.",
+    "D": "Plain radiographs show bone and cannot show the spinal cord or a tethered filum, so they would miss the relevant lesion.",
+    "E": "Reassurance alone risks missing a tethered cord, which may cause progressive neurological deficits."
+   },
+   "objective": "Recognise a lumbosacral hair tuft as a marker of occult spinal dysraphism and obtain spinal ultrasonography in early infancy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "congenital skin markers",
+    "pediatric imaging"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which follicle structure holds the stem cells whose destruction causes scarring alopecia?",
+   "back": "The bulge, at the insertion of the arrector pili muscle.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Anagen effluvium vs telogen effluvium: timing after the trigger?",
+   "back": "Anagen: days to weeks (matrix mitosis arrest, e.g. chemotherapy). Telogen: about 2–4 months (synchronised shift into telogen).",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which isoform of 5α-reductase predominates in scalp hair follicles, and which drug inhibits it selectively?",
+   "back": "Type 2; finasteride (dutasteride inhibits types 1 and 2).",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Which receptor links Cutibacterium acnes to acne inflammation?",
+   "back": "Toll-like receptor 2 on monocytes and keratinocytes.",
+   "question": 1
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "What is the main effect of isotretinoin that gives durable acne remission?",
+   "back": "Shrinkage of sebaceous glands with a large drop in sebum output.",
+   "question": 2
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Which T cells attack the bulb in alopecia areata, and which cytokines sustain them?",
+   "back": "CD8+ NKG2D+ T cells, sustained by interferon-γ and IL-15 through JAK signalling.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which peptide, cleaved by kallikrein-5, contributes to inflammation and vessel growth in rosacea?",
+   "back": "Cathelicidin, cleaved into LL-37 fragments.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Mechanism of minoxidil?",
+   "back": "Opens ATP-sensitive K+ channels (vasodilator); prolongs anagen and causes hypertrichosis.",
+   "question": 9
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Why is pseudofolliculitis barbae not an infection?",
+   "back": "Closely cut, tightly curled hairs re-enter the skin and cause a foreign-body inflammatory reaction.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Why must a topical or oral antibiotic for acne be combined with benzoyl peroxide?",
+   "back": "Benzoyl peroxide kills C. acnes without inducing resistance and limits antibiotic resistance.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Which acne drug combination is contraindicated because both cause intracranial hypertension?",
+   "back": "Isotretinoin with a tetracycline (doxycycline, minocycline).",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "iPLEDGE contraception rule for anyone who can become pregnant?",
+   "back": "Two methods (or abstinence) from 1 month before until 1 month after treatment, with monthly pregnancy tests.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Is testosterone contraception?",
+   "back": "No. Ovulation can occur despite amenorrhoea, and testosterone is itself teratogenic.",
+   "question": 11
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Which acne treatments are commonly used in pregnancy?",
+   "back": "Azelaic acid, benzoyl peroxide and topical clindamycin; avoid isotretinoin, tetracyclines, tazarotene and spironolactone.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Clinical feature that separates rosacea from acne?",
+   "back": "Rosacea has no comedones.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Management of steroid-induced rosacea or perioral dermatitis?",
+   "back": "Stop the topical steroid (expect a rebound) and use topical metronidazole or a tetracycline (erythromycin under 8 years).",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Definitive treatment for pseudofolliculitis barbae, and the safest laser in darker skin?",
+   "back": "Stop close shaving; laser hair removal with a long-pulsed Nd:YAG 1064 nm device.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Acne in a child aged 1–7 years should prompt what?",
+   "back": "Evaluation for androgen excess (e.g. nonclassic CAH, androgen-secreting tumour).",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "First-line treatment for limited patchy alopecia areata in adults?",
+   "back": "Intralesional triamcinolone.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Where should a biopsy be taken in suspected scarring alopecia?",
+   "back": "From the active, inflamed border, not the scarred centre.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Typical patient and site of central centrifugal cicatricial alopecia?",
+   "back": "Women of African ancestry; vertex, spreading outward.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Hirsutism vs hypertrichosis?",
+   "back": "Hirsutism: terminal hair in androgen-dependent sites. Hypertrichosis: excess hair in a non-androgen pattern, any sex (drugs, anorexia, porphyria, congenital).",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Clue that hirsutism is caused by a tumour rather than PCOS?",
+   "back": "Rapid onset or virilisation (clitoromegaly, deep voice, temporal balding) with very high testosterone.",
+   "question": null
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Very high testosterone with normal DHEA sulfate: first imaging test?",
+   "back": "Transvaginal ultrasonography (ovarian source).",
+   "question": 16
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "First-line drug therapy for hirsutism in most premenopausal patients?",
+   "back": "A combined oral contraceptive; add an antiandrogen after about 6 months if needed, with contraception.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Why ask about biotin supplements before thyroid tests in a patient with hair loss?",
+   "back": "High-dose biotin interferes with streptavidin-based immunoassays and gives false TSH and thyroid hormone results.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 3,
+   "front": "Lumbosacral hair tuft in a 2-month-old: next step?",
+   "back": "Spinal ultrasonography to look for occult spinal dysraphism.",
+   "question": 18
+  },
+  {
+   "n": 28,
+   "section": 3,
+   "front": "First-line treatment for trichotillomania?",
+   "back": "Habit reversal training (behavioural therapy).",
+   "question": null
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 550" width="760" height="550" role="img" aria-label="Comparison of testicular torsion, torsion of the appendix testis and epididymitis. Drawings show a high horizontal testis with twisted cord, a normal testis with a dark nodule at the upper pole, and a normal testis with a swollen epididymis. A table compares onset, age, nausea, cremasteric reflex, Doppler flow and management.">
+<title>Comparison of testicular torsion, torsion of the appendix testis and epididymitis. Drawings show a high horizontal testis with twisted cord, a normal testis with a dark nodule at the upper pole, and a normal testis with a swollen epididymis. A table compares onset, age, nausea, cremasteric reflex, Doppler flow and management.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="550" fill="#ffffff"/>
+<text x="380" y="30" font-family="sans-serif" font-size="18" fill="#0f172a" text-anchor="middle" font-weight="bold">Acute scrotal pain: three common causes compared</text>
+<text x="130" y="62" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Testicular torsion</text>
+<ellipse cx="130" cy="185" rx="95" ry="95" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="380" y="62" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Torsion of appendix testis</text>
+<ellipse cx="380" cy="185" rx="95" ry="95" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="630" y="62" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Epididymitis</text>
+<ellipse cx="630" cy="185" rx="95" ry="95" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<path d="M 130 80 C 110 95 150 105 130 120 C 110 135 150 145 130 155" fill="none" stroke="#0f172a" stroke-width="3"/>
+<ellipse cx="130" cy="180" rx="45" ry="26" fill="#fecaca" stroke="#0f172a" stroke-width="2"/>
+<text x="130" y="185" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">testis</text>
+<text x="130" y="255" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">high-riding, horizontal</text>
+<text x="130" y="270" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">cord twisted</text>
+<line x1="380" y1="80" x2="380" y2="140" stroke="#0f172a" stroke-width="3"/>
+<ellipse cx="380" cy="195" rx="28" ry="45" fill="#e0f2fe" stroke="#0f172a" stroke-width="2"/>
+<circle cx="398" cy="150" r="9" fill="#1e293b" stroke="#0f172a" stroke-width="1"/>
+<line x1="406" y1="146" x2="440" y2="120" stroke="#0f172a" stroke-width="1.5"/>
+<text x="445" y="118" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">blue dot</text>
+<text x="380" y="200" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">testis</text>
+<text x="380" y="265" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">normal lie; tender</text>
+<text x="380" y="280" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">nodule at upper pole</text>
+<line x1="630" y1="80" x2="630" y2="140" stroke="#0f172a" stroke-width="3"/>
+<ellipse cx="620" cy="195" rx="28" ry="45" fill="#e0f2fe" stroke="#0f172a" stroke-width="2"/>
+<path d="M 650 150 C 690 160 695 230 655 245 C 670 220 672 175 650 150 Z" fill="#fecaca" stroke="#0f172a" stroke-width="2"/>
+<text x="688" y="196" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">swollen</text>
+<text x="688" y="211" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">epididymis</text>
+<text x="620" y="200" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">testis</text>
+<text x="630" y="270" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">normal lie</text>
+<rect x="10" y="294" width="740" height="34" fill="#f1f5f9"/>
+<text x="20" y="315" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">Onset</text>
+<text x="220" y="315" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Sudden, severe; often wakes</text>
+<text x="440" y="315" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Gradual over hours to a day</text>
+<text x="650" y="315" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Gradual over 1 to several days</text>
+<text x="20" y="349" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">Typical age</text>
+<text x="220" y="349" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Neonates; adolescents</text>
+<text x="440" y="349" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">About 7 to 12 years</text>
+<text x="650" y="349" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Sexually active people; older men</text>
+<rect x="10" y="362" width="740" height="34" fill="#f1f5f9"/>
+<text x="20" y="383" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">Nausea, vomiting</text>
+<text x="220" y="383" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Common</text>
+<text x="440" y="383" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Uncommon</text>
+<text x="650" y="383" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Uncommon; fever possible</text>
+<text x="20" y="417" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">Cremasteric reflex</text>
+<text x="220" y="417" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Usually absent</text>
+<text x="440" y="417" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Present</text>
+<text x="650" y="417" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Present</text>
+<rect x="10" y="430" width="740" height="34" fill="#f1f5f9"/>
+<text x="20" y="451" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">Doppler flow</text>
+<text x="220" y="451" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Reduced or absent</text>
+<text x="440" y="451" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Normal testicular flow</text>
+<text x="650" y="451" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Increased epididymal flow</text>
+<text x="20" y="485" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">Management</text>
+<text x="220" y="485" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Emergency exploration</text>
+<text x="440" y="485" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Rest, analgesia, NSAIDs</text>
+<text x="650" y="485" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Antibiotics by risk; NSAIDs</text>
+<text x="380" y="530" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="bold">If torsion is likely on history and examination, go to surgery; do not wait for imaging.</text>
+</svg>

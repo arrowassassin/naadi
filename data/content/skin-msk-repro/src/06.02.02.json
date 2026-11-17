@@ -1,0 +1,1045 @@
+{
+ "area": "06.02.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "UV carcinogenesis, keratinocyte carcinomas and melanoma: pathogenesis and pathology",
+   "html": "<p>Skin cancer is the commonest cancer in the United States. Basal cell carcinoma (BCC) and cutaneous squamous cell carcinoma (SCC), together called keratinocyte carcinomas, far outnumber melanoma, but melanoma causes most skin cancer deaths. All three are driven largely by ultraviolet (UV) radiation acting on DNA, modified by pigment, genes and immune surveillance.</p>\n<h3>How UV light causes cancer</h3>\n<ul>\n<li><strong>UVB</strong> (290 to 320 nm) is absorbed directly by DNA. Adjacent pyrimidines on the same strand become covalently linked as <strong>cyclobutane pyrimidine dimers</strong> and 6-4 photoproducts. Unrepaired or misrepaired dimers leave a signature of C-to-T transitions (and CC-to-TT double transitions) at dipyrimidine sites, which is found in <em>TP53</em> of SCC, <em>PTCH1</em> of BCC and many melanoma genes. UVB causes sunburn.</li>\n<li><strong>UVA</strong> (320 to 400 nm) penetrates deeper, generates reactive oxygen species (8-oxoguanine), drives photoaging and tanning, and passes through window glass. Indoor tanning devices emit mostly UVA and raise the risk of all three cancers.</li>\n<li>Bulky dimers are removed by <strong>nucleotide excision repair</strong>. Inherited defects in this pathway (xeroderma pigmentosum) cause skin cancers in childhood.</li>\n<li>UV also suppresses skin immunity by depleting Langerhans cells and inducing regulatory T cells, which helps mutated clones escape.</li>\n</ul>\n<p>Melanin, especially eumelanin, absorbs UV and scavenges radicals. People with fair skin, red hair and freckles often carry loss-of-function <em>MC1R</em> variants that favour pheomelanin. Skin of colour is better protected, but people with dark skin still develop skin cancer, often at sites with little sun exposure, and are more often diagnosed late.</p>\n<h3>Basal cell carcinoma</h3>\n<p>BCC arises from basal-layer and follicular stem cells and almost always involves constitutive activation of the <strong>hedgehog pathway</strong>. Normally the receptor PTCH1 represses Smoothened (SMO); hedgehog ligand relieves that repression and activates GLI transcription factors. Loss-of-function <em>PTCH1</em> mutations (or activating <em>SMO</em> mutations) switch the pathway on permanently. Germline <em>PTCH1</em> mutations cause <strong>basal cell nevus (Gorlin) syndrome</strong>: many BCCs from youth, odontogenic keratocysts of the jaw, palmar and plantar pits, calcification of the falx and medulloblastoma; radiation therapy triggers new BCCs in these patients.</p>\n<p>Clinically BCC is a pearly, translucent papule with rolled borders and arborizing telangiectasias, often ulcerating centrally (the old \"rodent ulcer\"), mostly on the head and neck. Pigmented BCC is commoner in darker skin. Histology shows nests of basaloid cells with <strong>peripheral palisading</strong> and retraction artefact (clefts) from the mucinous stroma. BCC almost never metastasises but can destroy local tissue. SMO inhibitors (vismodegib, sonidegib) treat locally advanced or metastatic disease; adverse effects include muscle cramps, taste loss, alopecia and teratogenicity.</p>\n<h3>Actinic keratosis and squamous cell carcinoma</h3>\n<p>Actinic keratoses are rough, scaly papules on sun-damaged skin made of atypical basal keratinocytes; a small fraction progress to SCC, and they mark a field of UV damage. SCC in situ (Bowen disease) shows full-thickness atypia. Invasive SCC shows nests of atypical keratinocytes invading the dermis with <strong>keratin pearls</strong> and intercellular bridges. <em>TP53</em> mutation is an early event, followed by <em>NOTCH1</em> and <em>CDKN2A</em> loss.</p>\n<p>Risk factors beyond UV include <strong>immunosuppression</strong>, above all in solid-organ transplant recipients, whose SCC risk is many times higher (calcineurin inhibitors and azathioprine contribute; azathioprine also makes DNA sensitive to UVA); chronic voriconazole; HPV (periungual and anogenital SCC); arsenic; ionizing radiation; and chronic wounds, burn scars and long-standing inflammation (Marjolin ulcer), which is the main setting for SCC in people with dark skin. Keratoacanthoma is a rapidly growing, crateriform nodule with a central keratin plug that may regress but is managed as a well-differentiated SCC. SCC metastasises more often than BCC, especially from the lip and ear, in large or deep tumours and with perineural invasion.</p>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>BCC</th><th>SCC</th><th>Melanoma</th></tr></thead>\n<tbody>\n<tr><td>Cell of origin</td><td>Basal and follicular keratinocytes</td><td>Suprabasal keratinocytes</td><td>Melanocytes (neural crest)</td></tr>\n<tr><td>Key pathway</td><td>Hedgehog (<em>PTCH1</em>, <em>SMO</em>)</td><td><em>TP53</em>, <em>NOTCH1</em></td><td>MAPK (<em>BRAF</em>, <em>NRAS</em>, <em>NF1</em>); <em>CDKN2A</em>; <em>KIT</em> in acral and mucosal</td></tr>\n<tr><td>Histology</td><td>Basaloid nests, peripheral palisading, clefts</td><td>Keratin pearls, intercellular bridges</td><td>Atypical melanocytes spreading upward (pagetoid) and invading; S-100, SOX10, Melan-A, HMB-45</td></tr>\n<tr><td>UV exposure pattern</td><td>Intermittent and cumulative</td><td>Cumulative</td><td>Intermittent intense (sunburns), plus non-UV subtypes</td></tr>\n<tr><td>Metastasis</td><td>Rare</td><td>Uncommon, higher in high-risk tumours</td><td>Common once thick</td></tr>\n</tbody></table>\n<h3>Melanoma</h3>\n<p>Melanoma arises from melanocytes, de novo or in a pre-existing nevus. Most cutaneous melanomas on intermittently sun-exposed skin carry <strong><em>BRAF</em> V600E</strong>, which activates the MAPK cascade (BRAF to MEK to ERK). <em>NRAS</em> and <em>NF1</em> mutations are next most common. Familial melanoma involves <em>CDKN2A</em> (p16INK4a) or <em>CDK4</em>.</p>\n<ul>\n<li><strong>Superficial spreading</strong>: the commonest; trunk in men, legs in women; long radial growth phase.</li>\n<li><strong>Nodular</strong>: early vertical growth, often uniformly dark or amelanotic; frequently thick at diagnosis.</li>\n<li><strong>Lentigo maligna</strong>: chronically sun-damaged face of older adults; slow.</li>\n<li><strong>Acral lentiginous</strong>: palms, soles and nail units; not UV-related; the most common subtype in people with dark skin; <em>KIT</em> mutations occur.</li>\n</ul>\n<p>Melanoma first spreads horizontally within the epidermis (radial growth), then grows into the dermis (vertical growth), which is when metastasis becomes possible. <strong>Breslow thickness</strong>, measured in millimetres from the top of the granular layer to the deepest invasive cell, and ulceration are the strongest prognostic factors for a localized primary.</p>\n<div class=\"trap\"><p>Retraction clefts and peripheral palisading are BCC; keratin pearls are SCC. Uveal melanoma usually carries <em>GNAQ</em> or <em>GNA11</em> mutations, not <em>BRAF</em>, and metastasises to the liver.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Basal Cell Carcinoma"
+    },
+    {
+     "statpearls": "Cutaneous Squamous Cell Carcinoma"
+    },
+    {
+     "statpearls": "Malignant Melanoma"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Kaposi sarcoma, cutaneous lymphoma, Merkel cell carcinoma and targeted drugs",
+   "html": "<p>Beyond the three common skin cancers, a few rarer malignancies are tested because they teach virology, lymphocyte biology or targeted pharmacology.</p>\n<h3>Kaposi sarcoma</h3>\n<p>Kaposi sarcoma is an angioproliferative tumour of lymphatic endothelial-type cells infected with <strong>human herpesvirus 8</strong> (HHV-8, Kaposi sarcoma-associated herpesvirus). Viral proteins such as LANA (which inactivates p53 and Rb), a viral cyclin, viral IL-6 and a constitutively active viral G-protein-coupled receptor promote proliferation and angiogenesis. Four settings:</p>\n<ul>\n<li><strong>Classic</strong>: older men of Mediterranean, Eastern European or Jewish ancestry; slow violaceous plaques on the lower legs.</li>\n<li><strong>Endemic</strong>: sub-Saharan Africa, including an aggressive lymphadenopathic form in children.</li>\n<li><strong>Iatrogenic</strong>: transplant recipients; often regresses when immunosuppression is reduced.</li>\n<li><strong>Epidemic (AIDS-associated)</strong>: multifocal skin, oral (hard palate), lymph node, gut and lung disease, especially at low CD4 counts.</li>\n</ul>\n<p>Lesions progress from violaceous patches to plaques and nodules; in darker skin they look dark brown or black. Histology shows spindle cells forming slit-like vascular spaces with extravasated red cells and hemosiderin. Immunostaining for HHV-8 LANA confirms the diagnosis and separates KS from <strong>bacillary angiomatosis</strong> (<em>Bartonella henselae</em> or <em>quintana</em> in advanced HIV), which shows neutrophils and bacterial clumps and responds to doxycycline or a macrolide.</p>\n<h3>Cutaneous T-cell lymphoma</h3>\n<p><strong>Mycosis fungoides</strong> is the commonest primary cutaneous lymphoma: a clonal proliferation of skin-homing <strong>CD4</strong>-positive memory T cells. It evolves over years from patches (often in sun-protected \"bathing trunk\" areas, mimicking eczema or psoriasis) to plaques to tumours. Histology shows atypical lymphocytes with folded, cerebriform nuclei travelling up into the epidermis (epidermotropism), sometimes clustering as <strong>Pautrier microabscesses</strong>, with loss of CD7. T-cell receptor gene rearrangement studies show clonality. A <strong>hypopigmented</strong> variant is common in children and young adults with dark skin and can be mistaken for vitiligo or tinea versicolor.</p>\n<p><strong>Sézary syndrome</strong> is the leukemic form: erythroderma, lymphadenopathy and circulating clonal T cells with cerebriform nuclei (Sézary cells), often with a high CD4:CD8 ratio. Itching is severe, and infection from skin colonisation is a leading cause of death.</p>\n<h3>Merkel cell carcinoma and dermatofibrosarcoma protuberans</h3>\n<p><strong>Merkel cell carcinoma</strong> is an aggressive neuroendocrine carcinoma of the skin. Most cases in the United States are driven by integrated <strong>Merkel cell polyomavirus</strong>, whose truncated large T antigen inactivates Rb; the rest are UV-driven with very high mutation loads. It presents as a fast-growing, painless, red-violet nodule on sun-exposed skin of older or immunosuppressed adults. Histology shows sheets of small round blue cells; <strong>cytokeratin 20 in a perinuclear dot pattern</strong> with neuroendocrine markers (synaptophysin, chromogranin) and absent TTF-1 distinguish it from metastatic small cell lung cancer. It spreads early to lymph nodes but responds well to PD-1/PD-L1 blockade.</p>\n<p><strong>Dermatofibrosarcoma protuberans</strong> is a slow, firm, indurated plaque, usually on the trunk, that later becomes nodular. CD34-positive spindle cells in a storiform pattern infiltrate the fat in a honeycomb pattern. Almost all carry <strong>t(17;22)</strong>, fusing <em>COL1A1</em> to <em>PDGFB</em>, so the tumour makes excess PDGF-B that stimulates its own PDGF receptors; <strong>imatinib</strong> blocks that receptor tyrosine kinase in unresectable disease. Local recurrence is common unless margins are fully examined (Mohs surgery).</p>\n<h3>Drugs that target skin cancer</h3>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Target and mechanism</th><th>Use</th><th>Key adverse effects</th></tr></thead>\n<tbody>\n<tr><td>Vemurafenib, dabrafenib, encorafenib</td><td>Inhibit mutant BRAF V600 kinase</td><td><em>BRAF</em>-mutant melanoma, always with a MEK inhibitor</td><td>Alone: keratoacanthomas and cutaneous SCC from paradoxical MAPK activation in BRAF wild-type cells; photosensitivity (vemurafenib); fever (dabrafenib)</td></tr>\n<tr><td>Trametinib, cobimetinib, binimetinib</td><td>Inhibit MEK1/2 downstream of BRAF</td><td>With a BRAF inhibitor</td><td>Acneiform rash, cardiomyopathy, retinal effects</td></tr>\n<tr><td>Ipilimumab</td><td>Blocks CTLA-4, releasing the brake on CD28-B7 co-stimulation during T-cell priming</td><td>Melanoma, usually with nivolumab</td><td>Colitis, hepatitis, dermatitis, hypophysitis</td></tr>\n<tr><td>Nivolumab, pembrolizumab, cemiplimab</td><td>Block PD-1, restoring effector T-cell activity in tissue</td><td>Melanoma, advanced SCC (cemiplimab, pembrolizumab), Merkel cell carcinoma</td><td>Thyroiditis, pneumonitis, colitis, type 1 diabetes, vitiligo-like depigmentation</td></tr>\n<tr><td>Relatlimab</td><td>Blocks LAG-3 (with nivolumab)</td><td>Advanced melanoma</td><td>Immune-related events</td></tr>\n<tr><td>Vismodegib, sonidegib</td><td>Inhibit Smoothened in the hedgehog pathway</td><td>Advanced BCC</td><td>Muscle cramps, dysgeusia, alopecia, teratogenic</td></tr>\n<tr><td>Imatinib</td><td>Inhibits PDGFR, KIT and BCR-ABL kinases</td><td>Unresectable DFSP; <em>KIT</em>-mutant melanoma</td><td>Edema, myelosuppression</td></tr>\n<tr><td>5-fluorouracil (topical)</td><td>Inhibits thymidylate synthase in dividing atypical cells</td><td>Actinic keratoses, superficial BCC</td><td>Local inflammation and erosion</td></tr>\n<tr><td>Imiquimod (topical)</td><td>Toll-like receptor 7 agonist, inducing interferon-alpha and cell-mediated immunity</td><td>Actinic keratoses, superficial BCC, genital warts</td><td>Local inflammation, flu-like symptoms</td></tr>\n</tbody></table>\n<div class=\"pearl\"><p>Combining a MEK inhibitor with a BRAF inhibitor improves response duration and cuts the number of new keratoacanthomas and SCCs, because MEK blockade prevents paradoxical ERK activation in keratinocytes with wild-type BRAF and upstream <em>RAS</em> activity.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Kaposi Sarcoma"
+    },
+    {
+     "statpearls": "Mycosis Fungoides"
+    },
+    {
+     "statpearls": "Merkel Cell Carcinoma of the Skin"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Melanoma: detection, biopsy, staging and treatment",
+   "html": "<p>Early detection is what saves lives in melanoma. Once a suspicious lesion is found, a correct biopsy, accurate staging and the right surgical margin decide the outcome; systemic therapy has transformed advanced disease.</p>\n[[figure:s23f-fig060202-1]]\n<h3>Finding a melanoma</h3>\n<p>Examine the whole skin including the scalp, palms, soles, nails, genitals and between the toes. Concerning features are asymmetry, irregular borders, multiple colours, diameter over 6 mm and, most important, change (evolution). An \"ugly duckling\" that differs from the patient's other nevi deserves attention whatever its size. Dermoscopy improves accuracy in trained hands. Nodular melanomas may be small, symmetric and pink, so a firm, growing papule that bleeds also needs a biopsy.</p>\n<p>In people with dark skin, melanoma is most often <strong>acral lentiginous</strong>: a dark, irregular macule on the sole or palm, or a new or widening longitudinal pigmented band in a nail (longitudinal melanonychia). Pigment spreading onto the cuticle or nail fold (<strong>Hutchinson sign</strong>), a band wider than 3 mm, uneven colour or a single affected digit in an adult call for a <strong>nail matrix biopsy</strong>. Delay is common because these lesions are mistaken for bruises, warts or fungus.</p>\n<h3>Biopsy and staging</h3>\n<ul>\n<li><strong>Biopsy</strong>: a full-thickness excisional biopsy with 1- to 3-mm margins, oriented along future wide-excision lines; a deep saucerization biopsy is acceptable. Punch or incisional biopsy of the thickest area is used for large lesions or the face and acral sites. Partial superficial shave biopsies can understage thickness.</li>\n<li><strong>T stage</strong> rests on Breslow thickness (1.0, 2.0 and 4.0 mm cut-points) and ulceration. Palpate the regional nodes. Imaging is not needed for thin, node-negative primaries; CT or PET-CT and brain MRI are used for stage III to IV or symptoms.</li>\n<li><strong>Sentinel lymph node biopsy</strong>, done at the time of wide excision, is the most powerful prognostic test for clinically node-negative melanoma. It is discussed for tumours 0.8 to 1.0 mm or thinner tumours with ulceration and offered for those thicker than 1.0 mm. A positive sentinel node is now usually followed by nodal ultrasound surveillance rather than completion lymph node dissection, which did not improve melanoma-specific survival.</li>\n</ul>\n[[figure:s23f-fig060202-2]]\n<h3>Treatment</h3>\n<p><strong>Wide local excision</strong> is the definitive treatment of the primary, with margins set by thickness: 0.5 to 1 cm for melanoma in situ, 1 cm for tumours up to 1.0 mm, 1 to 2 cm for those over 1.0 to 2.0 mm, and 2 cm for those over 2.0 mm. Lentigo maligna on the face may need staged excision or Mohs surgery because its edges are hard to see; imiquimod or radiation are options when surgery is not feasible.</p>\n<ul>\n<li><strong>Adjuvant therapy</strong> after resection of high-risk stage II (IIB, IIC) or stage III disease: anti-PD-1 therapy (nivolumab or pembrolizumab), or dabrafenib plus trametinib for <em>BRAF</em> V600-mutant stage III disease. Test the tumour for <em>BRAF</em> in stage III and IV disease.</li>\n<li><strong>Neoadjuvant</strong> anti-PD-1 therapy before surgery improves event-free survival in clinically detectable, resectable stage III disease.</li>\n<li><strong>Metastatic disease</strong>: combination immunotherapy (nivolumab plus ipilimumab, or nivolumab plus relatlimab) or anti-PD-1 alone; BRAF plus MEK inhibitors for <em>BRAF</em>-mutant tumours needing rapid response; tumour-infiltrating lymphocyte therapy after progression. Brain metastases respond to combined immunotherapy and stereotactic radiosurgery.</li>\n</ul>\n<h3>Immune-related adverse events</h3>\n<p>Checkpoint inhibitors can inflame any organ. Common events are rash and itch, colitis (diarrhea), hepatitis, thyroiditis (transient hyperthyroidism then hypothyroidism), pneumonitis and hypophysitis (headache and fatigue, typical with ipilimumab). Grade 2 or higher events are managed by holding the drug and giving corticosteroids; steroid-refractory colitis receives infliximab or vedolizumab. Endocrine deficiencies are permanent and are replaced rather than suppressed with steroids. In <strong>secondary adrenal insufficiency from hypophysitis, start hydrocortisone before levothyroxine</strong>, because thyroid hormone speeds cortisol clearance and can precipitate adrenal crisis.</p>\n<div class=\"trap\"><p>Do not treat a changing pigmented lesion with cryotherapy, laser or a superficial shave \"to see what it is\". Destroying it without full-thickness histology loses the Breslow thickness, which drives every later decision.</p></div>\n<h3>Follow-up</h3>\n<p>People treated for melanoma have a lifelong increased risk of a new primary. They need regular full-skin and node examinations, self-examination teaching and sun protection. First-degree relatives benefit from skin checks; genetic counselling is considered with three or more melanomas in a family or melanoma with pancreatic cancer.</p>",
+   "furtherReading": [
+    {
+     "statpearls": "Cutaneous Melanoma: Guideline-Based Management and Interprofessional Collaboration"
+    },
+    {
+     "statpearls": "Endocrine-Related Adverse Events From Immune Checkpoint Inhibitors"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Keratinocyte carcinomas, high-risk patients, rare skin cancers and prevention",
+   "html": "<p>Keratinocyte carcinomas are the commonest cancers in older adults. Treatment is chosen by tumour risk, site, patient health and goals; prevention focuses on UV protection, field treatment of sun damage and close follow-up of high-risk groups such as transplant recipients.</p>\n<h3>Actinic keratoses</h3>\n<p>A few isolated actinic keratoses are treated with <strong>cryotherapy</strong> (liquid nitrogen). Many lesions in a sun-damaged area are treated as a <strong>field</strong>, because subclinical lesions surround the visible ones: topical 5-fluorouracil (the most effective field agent; with calcipotriene in short courses), imiquimod, tirbanibulin or photodynamic therapy. Patients should expect redness and crusting during treatment. A thick, tender or rapidly growing \"keratosis\" needs a biopsy to exclude SCC.</p>\n<h3>Basal cell carcinoma</h3>\n<table class=\"hy\">\n<thead><tr><th>Situation</th><th>Preferred treatment</th></tr></thead>\n<tbody>\n<tr><td>Low-risk nodular or superficial BCC on the trunk or limbs</td><td>Standard excision with about 4-mm margins, or curettage and electrodesiccation (not in hair-bearing areas)</td></tr>\n<tr><td>Superficial BCC, small, low-risk</td><td>Topical imiquimod or 5-fluorouracil, or cryotherapy</td></tr>\n<tr><td>High-risk: central face, eyelids, nose, lips, ears (\"mask\" areas), hands, feet, genitals; recurrent; aggressive histology (infiltrative, morpheaform); poorly defined borders; immunosuppression</td><td><strong>Mohs micrographic surgery</strong>, which examines 100% of the peripheral and deep margin and spares tissue</td></tr>\n<tr><td>Not a surgical candidate</td><td>Radiation therapy (avoid in younger patients and in Gorlin syndrome)</td></tr>\n<tr><td>Locally advanced or metastatic</td><td>Hedgehog (SMO) inhibitor; cemiplimab after failure or intolerance</td></tr>\n</tbody></table>\n<h3>Cutaneous squamous cell carcinoma</h3>\n<p>SCC presents as a scaly, indurated papule, plaque or nodule that may ulcerate or be tender. SCC in situ (red scaly plaque) can be treated with excision, curettage, topical 5-fluorouracil or imiquimod. Invasive low-risk SCC is excised with margins of about 4 to 6 mm. High-risk SCC (over 2 cm, deep invasion, poor differentiation, perineural invasion, lip or ear, recurrence, immunosuppression) is treated with Mohs surgery or excision with complete margin assessment, with nodal examination and imaging for very high-risk tumours and adjuvant radiation for extensive perineural disease. Advanced or metastatic SCC responds to <strong>cemiplimab</strong> or pembrolizumab, although transplant recipients risk graft rejection with PD-1 blockade.</p>\n<h3>Organ transplant recipients and other high-risk groups</h3>\n<p>Solid-organ transplant recipients develop many aggressive SCCs. Steps that reduce new cancers include:</p>\n<ul>\n<li>A skin examination every 3 to 12 months depending on history, with early biopsy of new lesions.</li>\n<li>Rigorous sun protection and field therapy for actinic damage.</li>\n<li><strong>Oral nicotinamide</strong> (vitamin B3) as chemoprevention.</li>\n<li>Oral <strong>acitretin</strong> for those with many SCCs (teratogenic; check lipids and liver tests).</li>\n<li>With the transplant team, minimising immunosuppression and <strong>switching from a calcineurin inhibitor or azathioprine to an mTOR inhibitor</strong> (sirolimus, everolimus), which has antiproliferative effects and reduces new SCCs.</li>\n<li>Avoiding long-term voriconazole when another antifungal will do.</li>\n</ul>\n<p>People with chronic lymphocytic leukemia or HIV, and those taking long-term thiopurines, also develop more aggressive SCC. In people with dark skin, SCC more often arises in scars, chronic ulcers, hidradenitis or lupus lesions and on sun-protected sites, so a non-healing ulcer in a scar needs a biopsy.</p>\n<h3>Kaposi sarcoma, cutaneous lymphoma and Merkel cell carcinoma</h3>\n<ul>\n<li><strong>AIDS-associated KS</strong>: start antiretroviral therapy (ART), which alone shrinks limited disease; add systemic chemotherapy (liposomal doxorubicin or paclitaxel) for extensive skin, visceral or rapidly progressive disease. KS can flare as part of immune reconstitution, and corticosteroids worsen it. <strong>Transplant KS</strong>: reduce immunosuppression and switch to sirolimus.</li>\n<li><strong>Mycosis fungoides</strong>: suspect it when \"eczema\" or \"psoriasis\" in sun-protected areas persists despite treatment; diagnosis often needs several biopsies off topical steroids, with immunophenotyping and T-cell receptor clonality. Early patch and plaque disease is treated with skin-directed therapy (topical steroids, topical mechlorethamine, narrowband UVB or PUVA) and has a near-normal life expectancy. Advanced disease and Sézary syndrome need systemic therapy (bexarotene, interferon, extracorporeal photopheresis, mogamulizumab against CCR4, brentuximab vedotin for CD30-positive disease) and attention to skin infection and itch.</li>\n<li><strong>Merkel cell carcinoma</strong>: wide excision with sentinel node biopsy, often with radiation; PD-1/PD-L1 inhibitors for advanced disease.</li>\n</ul>\n<h3>Prevention and screening</h3>\n<p>The USPSTF recommends counselling young people with fair skin, aged 6 months to 24 years, and their parents to minimise UV exposure; for adults over 24 with fair skin, counselling is offered selectively. It finds insufficient evidence to recommend for or against routine whole-body skin examination by a clinician in asymptomatic adults, so practice focuses on people at high risk and on examining any lesion a patient is concerned about. Practical advice: broad-spectrum sunscreen of SPF 30 or more, reapplied every 2 hours and after swimming; shade and protective clothing; avoiding midday sun and all indoor tanning. Infants younger than 6 months are kept out of direct sun.</p>\n<div class=\"pearl\"><p>Sun protection advice should not cause vitamin D deficiency: people who strictly avoid sun, older adults and people with darker skin may need dietary vitamin D or a supplement rather than more UV exposure.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Actinic Keratosis"
+    },
+    {
+     "statpearls": "Basal Cell Carcinoma"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "caption": "Figure. Reassuring and concerning features of pigmented lesions: asymmetry, border, colour, diameter and evolution (original schematic)."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Measuring Breslow thickness and the clinical excision margins used for primary cutaneous melanoma (original schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 74-year-old man who worked outdoors as a roofer for 45 years has many rough, scaly papules on his scalp and the backs of his hands, and a 1.5-cm keratotic, indurated nodule on his left temple. Biopsy of the nodule shows invasive squamous cell carcinoma. Sequencing of the tumor shows many C-to-T and CC-to-TT substitutions at sites where two pyrimidines are adjacent. Which of the following DNA lesions most directly produced this mutational pattern?</p>",
+   "options": [
+    "Cyclobutane pyrimidine dimers",
+    "Double-strand breaks",
+    "Interstrand cross-links",
+    "O6-methylguanine adducts",
+    "Spontaneous depurination"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Ultraviolet B is absorbed by adjacent pyrimidines on the same DNA strand, forming cyclobutane pyrimidine dimers (and 6-4 photoproducts). When these are copied before nucleotide excision repair removes them, polymerases insert adenine opposite the damaged cytosines, producing C-to-T and CC-to-TT transitions at dipyrimidine sites. This UV signature appears in <em>TP53</em> early in SCC development and across the genomes of sun-induced skin cancers.</p><p><strong>Takeaway:</strong> UVB forms pyrimidine dimers, which leave a C-to-T and CC-to-TT mutational signature at dipyrimidine sites.</p>",
+   "whyNot": {
+    "B": "Double-strand breaks are produced mainly by ionizing radiation and lead to deletions and translocations, not dipyrimidine transitions.",
+    "C": "Interstrand cross-links come from agents such as cisplatin and mitomycin and are repaired by the Fanconi anemia pathway.",
+    "D": "O6-methylguanine adducts come from alkylating agents and cause G-to-A transitions without a dipyrimidine context.",
+    "E": "Depurination creates abasic sites at purines, not a pattern focused on adjacent pyrimidines."
+   },
+   "objective": "Link the UV mutational signature to cyclobutane pyrimidine dimers.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "UV radiation",
+    "older adults"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 79-year-old woman has a 6-cm ulcerated tumor on her left cheek that has invaded the orbit. Biopsy shows nests of basaloid cells with peripheral palisading and retraction clefts. Surgery and radiation are judged unsuitable. She begins an oral drug that blocks a signaling pathway that is constitutively active in this tumor because of loss of PTCH1 function. Which of the following is the most likely direct target of this drug?</p>",
+   "options": [
+    "BRAF",
+    "Mammalian target of rapamycin",
+    "MEK",
+    "Programmed cell death protein 1",
+    "Smoothened"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Basaloid nests with peripheral palisading and retraction clefts are basal cell carcinoma, which is driven by hedgehog pathway activation. PTCH1 normally inhibits the transmembrane protein Smoothened (SMO); loss of PTCH1 lets SMO activate GLI transcription factors continuously. Vismodegib and sonidegib bind and inhibit SMO and are used for locally advanced or metastatic BCC. Expect muscle spasms, taste loss, hair loss and weight loss, and they are teratogenic.</p><p><strong>Takeaway:</strong> Advanced BCC is treated with hedgehog inhibitors that block Smoothened, downstream of the PTCH1 defect.</p>",
+   "whyNot": {
+    "A": "BRAF inhibitors target <em>BRAF</em>-mutant melanoma; BCC is driven by hedgehog signalling, not BRAF.",
+    "B": "mTOR inhibitors such as sirolimus reduce SCC risk in transplant recipients but are not targeted therapy for hedgehog-driven BCC.",
+    "C": "MEK inhibitors act downstream of BRAF in the MAPK pathway and are paired with BRAF inhibitors in melanoma.",
+    "D": "PD-1 blockade with cemiplimab is used for BCC after hedgehog inhibitor failure, but it is an antibody, not an oral drug that blocks the hedgehog pathway."
+   },
+   "objective": "Identify Smoothened as the target of hedgehog inhibitors used for advanced basal cell carcinoma.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "skin cancer",
+    "targeted therapy"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 56-year-old man who received a kidney transplant 12 years ago and takes tacrolimus, mycophenolate and prednisone has a tender, rapidly growing, 1.4-cm scaly nodule on the back of his right hand. He has had several similar lesions removed. A biopsy is performed. Which of the following histologic findings is most likely?</p>",
+   "options": [
+    "Atypical keratinocytes invading the dermis with concentric whorls of keratin",
+    "Atypical melanocytes spreading upward through all layers of the epidermis",
+    "Basaloid nests with peripheral palisading and stromal retraction",
+    "Small round blue cells with perinuclear cytokeratin 20 dots",
+    "Spindle cells forming slit-like vascular spaces with extravasated red cells"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Organ transplant recipients develop cutaneous squamous cell carcinoma many times more often than the general population, usually on sun-exposed skin such as the dorsal hands, and their tumours grow faster and spread more often. Invasive SCC shows nests and strands of atypical keratinocytes extending into the dermis, with keratin pearls (concentric whorls of keratin) and intercellular bridges. SCC, not BCC, is the commonest skin cancer in transplant recipients, reversing the usual ratio.</p><p><strong>Takeaway:</strong> Transplant recipients are at greatest risk of SCC, which shows invasive atypical keratinocytes with keratin pearls.</p>",
+   "whyNot": {
+    "B": "Pagetoid spread of atypical melanocytes describes melanoma, which is a less likely cause of a rapidly growing scaly nodule.",
+    "C": "Basaloid palisading nests describe basal cell carcinoma, which is less common than SCC in transplant recipients and is rarely scaly and tender.",
+    "D": "Small round blue cells with perinuclear CK20 describe Merkel cell carcinoma, which presents as a smooth, red-violet, non-scaly nodule.",
+    "E": "Slit-like vascular spaces with spindle cells describe Kaposi sarcoma, which gives violaceous patches and nodules rather than a keratotic nodule."
+   },
+   "objective": "Recognize the histology of squamous cell carcinoma in an organ transplant recipient.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "skin cancer",
+    "immunosuppression"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 47-year-old woman with metastatic melanoma whose tumor carries a BRAF V600E mutation is treated with a selective BRAF inhibitor alone in a clinical trial. Her tumors shrink, but within 8 weeks she develops several rapidly growing, crateriform keratotic nodules on her forearms and face. Biopsies show well-differentiated squamous proliferations; sequencing finds wild-type BRAF and activating HRAS mutations. Adding a second drug reduces the formation of these lesions. Which of the following best explains the benefit of the second drug?</p>",
+   "options": [
+    "It blocks CTLA-4 to restore immune surveillance of keratinocytes",
+    "It blocks MEK and prevents paradoxical ERK activation in BRAF wild-type cells",
+    "It inhibits Smoothened in hair follicle stem cells",
+    "It inhibits mTOR to reduce keratinocyte protein synthesis",
+    "It increases nucleotide excision repair of UV damage"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Selective BRAF inhibitors block signalling in BRAF V600E-mutant cells but, in cells with wild-type BRAF and active upstream RAS, they promote RAF dimerization and paradoxically activate MEK and ERK. Keratinocytes carrying prior UV-induced <em>HRAS</em> mutations then proliferate into keratoacanthomas and well-differentiated SCCs within weeks. Adding a MEK inhibitor (trametinib, cobimetinib or binimetinib) blocks the pathway downstream of RAF, preventing paradoxical ERK activation and also delaying resistance in the melanoma.</p><p><strong>Takeaway:</strong> BRAF inhibitors are combined with MEK inhibitors to prevent paradoxical MAPK activation (and SCCs) in BRAF wild-type cells.</p>",
+   "whyNot": {
+    "A": "CTLA-4 blockade (ipilimumab) enhances T-cell priming but does not explain prevention of drug-induced keratinocyte proliferation.",
+    "C": "Smoothened inhibition targets hedgehog-driven basal cell carcinoma, not MAPK-driven squamous lesions.",
+    "D": "mTOR inhibitors reduce SCC in transplant recipients but are not the drugs paired with BRAF inhibitors.",
+    "E": "No drug in this regimen enhances nucleotide excision repair; the lesions arise from paradoxical signalling, not new DNA damage."
+   },
+   "objective": "Explain why MEK inhibitors are combined with BRAF inhibitors in melanoma.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "targeted therapy",
+    "melanoma therapy"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 61-year-old man with unresectable metastatic melanoma is treated with a monoclonal antibody that acts mainly during T-cell priming in lymph nodes. Six weeks later he develops headache, fatigue and low serum ACTH. The drug blocks a receptor on activated T cells that normally competes with CD28 for which of the following ligands?</p>",
+   "options": [
+    "B7-1 and B7-2 (CD80 and CD86) on antigen-presenting cells",
+    "CD40 ligand on helper T cells",
+    "Lymphocyte function-associated antigen-1 on T cells",
+    "MHC class II on dendritic cells",
+    "PD-L1 on tumor cells"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Ipilimumab blocks CTLA-4, an inhibitory receptor expressed on activated and regulatory T cells. CTLA-4 binds B7-1 (CD80) and B7-2 (CD86) on antigen-presenting cells with higher affinity than CD28 does, removing the co-stimulatory signal and switching T-cell priming off. Blocking CTLA-4 lets CD28 engage B7, so more tumour-reactive T cells are primed, but self-reactive T cells are released too. Hypophysitis with secondary adrenal insufficiency is a characteristic immune-related adverse event of anti-CTLA-4 therapy.</p><p><strong>Takeaway:</strong> CTLA-4 competes with CD28 for B7 (CD80/CD86); ipilimumab blocks it, enhancing T-cell priming and causing immune-related events such as hypophysitis.</p>",
+   "whyNot": {
+    "B": "CD40 ligand on helper T cells binds CD40 on B cells and antigen-presenting cells; it is not the ligand shared by CD28 and CTLA-4.",
+    "C": "LFA-1 is an integrin that binds ICAM-1 to stabilize the immunologic synapse, not a CTLA-4 ligand.",
+    "D": "MHC class II presents peptide to the CD4 T-cell receptor; it is not bound by CTLA-4.",
+    "E": "PD-L1 binds PD-1 in peripheral tissues and tumours; it is the pathway targeted by nivolumab and pembrolizumab, not by an anti-CTLA-4 antibody."
+   },
+   "objective": "Describe the mechanism of CTLA-4 blockade with ipilimumab.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "immunotherapy"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old man with untreated HIV infection has had several painless, purple-brown plaques on his legs and a purple patch on his hard palate for 2 months. His CD4+ T-lymphocyte count is 60/mm<sup>3</sup>. Biopsy of a plaque shows a dermal proliferation of spindle cells forming slit-like vascular spaces that contain red blood cells, with hemosiderin deposits. Warthin-Starry staining is negative. Which of the following infectious agents is most likely involved?</p>",
+   "options": [
+    "Bartonella henselae",
+    "Epstein-Barr virus",
+    "Human herpesvirus 8",
+    "Human papillomavirus type 16",
+    "Human T-lymphotropic virus type 1"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Violaceous skin plaques with a palatal lesion in advanced HIV, and spindle cells forming slit-like vascular spaces with extravasated red cells and hemosiderin, are AIDS-associated Kaposi sarcoma. It is caused by human herpesvirus 8 infection of endothelial-lineage cells; viral proteins such as LANA inactivate p53 and Rb and drive proliferation and angiogenesis. Immunostaining for HHV-8 LANA confirms it. Treatment begins with antiretroviral therapy.</p><p><strong>Takeaway:</strong> Kaposi sarcoma is an HHV-8-driven vascular tumour with spindle cells and slit-like spaces.</p>",
+   "whyNot": {
+    "A": "<em>Bartonella</em> causes bacillary angiomatosis, which shows neutrophils and organisms on Warthin-Starry stain, negative here.",
+    "B": "Epstein-Barr virus causes oral hairy leukoplakia and several lymphomas in HIV, not a spindle-cell vascular tumour.",
+    "D": "HPV 16 causes anogenital and oropharyngeal squamous cell carcinoma, not vascular spindle-cell lesions.",
+    "E": "HTLV-1 causes adult T-cell leukemia-lymphoma, which can involve skin with lymphocytes, not spindle cells."
+   },
+   "objective": "Associate Kaposi sarcoma with human herpesvirus 8.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "HIV",
+    "vascular tumors"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old man has had itchy, scaly, pink-brown patches on his buttocks, upper thighs and lower trunk for 6 years, diagnosed as eczema and treated with topical corticosteroids. Some patches have become thicker plaques. Biopsy shows atypical lymphocytes with folded, convoluted nuclei within the epidermis, some in small clusters surrounded by a clear halo, with little spongiosis. Molecular studies show a clonal T-cell receptor gene rearrangement. The atypical cells are most likely positive for which of the following markers?</p>",
+   "options": [
+    "CD4",
+    "CD8",
+    "CD20",
+    "CD34",
+    "CD56"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Long-standing patches in sun-protected sites that evolve into plaques, epidermotropic atypical lymphocytes with cerebriform nuclei, intraepidermal clusters (Pautrier microabscesses) and a clonal T-cell receptor rearrangement are mycosis fungoides. It is a malignancy of skin-homing CD4-positive helper (memory) T cells, which often lose CD7. Early disease mimics eczema or psoriasis, so diagnosis is frequently delayed.</p><p><strong>Takeaway:</strong> Mycosis fungoides is a clonal CD4-positive T-cell lymphoma of the skin with epidermotropism and Pautrier microabscesses.</p>",
+   "whyNot": {
+    "B": "CD8-positive variants exist, especially in hypopigmented mycosis fungoides, but classic mycosis fungoides is CD4-positive.",
+    "C": "CD20 marks B cells; cutaneous B-cell lymphomas form dermal nodules without epidermotropism.",
+    "D": "CD34 marks endothelial cells and the spindle cells of dermatofibrosarcoma protuberans, not lymphocytes.",
+    "E": "CD56 marks natural killer cells, as in extranodal NK/T-cell lymphoma, which is EBV-related and destructive."
+   },
+   "objective": "Identify the CD4-positive T-cell phenotype of mycosis fungoides.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cutaneous lymphoma",
+    "older adults"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 82-year-old woman with chronic lymphocytic leukemia has a painless, firm, red-violet, 2.5-cm nodule on her left cheek that grew over 6 weeks. Biopsy shows sheets of small round blue cells with scant cytoplasm, finely granular chromatin and many mitoses, filling the dermis. Synaptophysin is positive and TTF-1 is negative. Which of the following additional findings would best support the most likely diagnosis?</p>",
+   "options": [
+    "Cytokeratin 20 in a perinuclear dot pattern",
+    "HHV-8 latency-associated nuclear antigen",
+    "HMB-45 and SOX10 positivity",
+    "Peripheral palisading with retraction clefts",
+    "t(17;22) fusing COL1A1 and PDGFB"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A fast-growing, painless, red-violet nodule on sun-exposed skin of an older, immunosuppressed adult, made of small round blue cells with neuroendocrine features, is Merkel cell carcinoma. Cytokeratin 20 in a characteristic perinuclear dot pattern, together with neuroendocrine markers and negative TTF-1, distinguishes it from metastatic small cell lung carcinoma (CK20-negative, TTF-1-positive). Most cases in the United States contain integrated Merkel cell polyomavirus. It spreads early to nodes and is treated with excision, sentinel node biopsy and radiation, with PD-1/PD-L1 blockade for advanced disease.</p><p><strong>Takeaway:</strong> Merkel cell carcinoma is a neuroendocrine skin cancer with perinuclear-dot CK20 and negative TTF-1.</p>",
+   "whyNot": {
+    "B": "HHV-8 LANA identifies Kaposi sarcoma, a spindle-cell vascular tumour rather than a small round blue cell tumour.",
+    "C": "HMB-45 and SOX10 are melanocytic markers that would support melanoma, not a synaptophysin-positive neuroendocrine tumour.",
+    "D": "Peripheral palisading with clefts defines basal cell carcinoma, which is slow-growing and not neuroendocrine.",
+    "E": "The COL1A1-PDGFB fusion defines dermatofibrosarcoma protuberans, a CD34-positive spindle-cell tumour."
+   },
+   "objective": "Recognize Merkel cell carcinoma by its CK20 perinuclear dot pattern and neuroendocrine features.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "skin cancer",
+    "older adults"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old man has a slowly enlarging, firm, red-brown, indurated plaque on his upper back that has been present for 5 years and has recently developed two raised nodules. Biopsy shows a dermal proliferation of monotonous spindle cells arranged in a cartwheel pattern that infiltrate the subcutaneous fat in a honeycomb pattern. The cells are strongly CD34-positive. The tumor recurs after excision, and he later receives a tyrosine kinase inhibitor. This drug is effective because the tumor cells most likely overproduce a ligand for which of the following receptors?</p>",
+   "options": [
+    "Epidermal growth factor receptor",
+    "Fibroblast growth factor receptor 3",
+    "KIT",
+    "Platelet-derived growth factor receptor",
+    "Vascular endothelial growth factor receptor"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>A slow-growing indurated plaque on the trunk that becomes nodular, with CD34-positive spindle cells in a storiform pattern infiltrating fat like a honeycomb, is dermatofibrosarcoma protuberans. Nearly all cases carry t(17;22), which places the <em>PDGFB</em> gene under the strong <em>COL1A1</em> promoter. The cells overproduce PDGF-B, which stimulates their own PDGF receptors in an autocrine loop. Imatinib inhibits the PDGF receptor tyrosine kinase and shrinks unresectable or metastatic tumours; Mohs surgery is preferred for primary excision because of finger-like extensions.</p><p><strong>Takeaway:</strong> DFSP has a COL1A1-PDGFB fusion causing autocrine PDGF receptor signalling, which imatinib blocks.</p>",
+   "whyNot": {
+    "A": "EGFR is activated in some squamous cancers and targeted by cetuximab; it is not the driver of DFSP.",
+    "B": "FGFR3 activating mutations occur in seborrheic keratoses and achondroplasia, not DFSP.",
+    "C": "KIT is the main imatinib target in gastrointestinal stromal tumour and mastocytosis, but DFSP depends on PDGF signalling.",
+    "E": "VEGF receptors drive angiogenesis and are targeted in renal cell carcinoma; they are not the autocrine loop in DFSP."
+   },
+   "objective": "Link dermatofibrosarcoma protuberans to the COL1A1-PDGFB fusion and imatinib.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue tumors"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 43-year-old woman has an excisional biopsy of a changing pigmented lesion on her upper back. Pathology shows superficial spreading melanoma, Breslow thickness 1.4 mm, without ulceration, with clear deep and lateral margins of 2 mm. There are no palpable lymph nodes in the axillae, neck or groin. She feels well. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Mohs surgery with frozen-section margins only",
+    "PET-CT before any further surgery",
+    "Wide local excision with 0.5-cm margins",
+    "Wide local excision with 1- to 2-cm margins and sentinel lymph node biopsy",
+    "Wide local excision with 2-cm margins and complete axillary dissection"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>A melanoma 1.4 mm thick without ulceration is T2a. The primary site needs wide local excision with 1- to 2-cm clinical margins (more than 1.0 to 2.0 mm thickness), and because the tumour is thicker than 1.0 mm and nodes are clinically negative, sentinel lymph node biopsy is offered at the same operation. The sentinel node result guides staging, adjuvant therapy and surveillance. Routine cross-sectional imaging is not needed for a clinically node-negative stage I to II melanoma without symptoms.</p><p><strong>Takeaway:</strong> For a 1.0- to 2.0-mm melanoma, perform wide excision with 1- to 2-cm margins plus sentinel lymph node biopsy.</p>",
+   "whyNot": {
+    "A": "Mohs surgery is used for selected lentigo maligna on the face, not as standard management of a trunk melanoma needing nodal staging.",
+    "B": "PET-CT has low yield in clinically node-negative stage I to II melanoma and does not replace sentinel node biopsy.",
+    "C": "A 0.5-cm margin is for melanoma in situ and is inadequate for an invasive 1.4-mm tumour.",
+    "E": "Lymph node dissection without evidence of nodal disease is not indicated, and even a positive sentinel node is usually followed by ultrasound surveillance rather than dissection."
+   },
+   "objective": "Choose wide excision margins and sentinel node biopsy for an intermediate-thickness melanoma.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "melanoma management"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old Black man comes to the clinic because a dark stripe in his right thumbnail has widened over the past year. He recalls no trauma. Examination shows a 5-mm-wide brown-black longitudinal band running the full length of the thumbnail, darker and wider near the cuticle, with uneven shades of brown. The pigment extends onto the proximal nail fold. His other nails show no pigment. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Clipping of the free nail edge for fungal culture",
+    "Nail matrix biopsy",
+    "Reassurance that this pattern is common in people with dark skin",
+    "Repeat photograph in 6 months",
+    "Topical antifungal lacquer for 3 months"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Longitudinal melanonychia is common and often benign in people with dark skin, but this band is in a single digit, wider than 3 mm, widening, darker proximally, uneven in colour and associated with pigment on the proximal nail fold (Hutchinson sign). These features are worrying for subungual (acral lentiginous) melanoma, the most common melanoma subtype in Black patients and one that is often diagnosed late. The next step is a biopsy of the nail matrix, where the pigment originates.</p><p><strong>Takeaway:</strong> A widening, irregular pigmented nail band in one digit, especially with Hutchinson sign, needs a nail matrix biopsy for subungual melanoma.</p>",
+   "whyNot": {
+    "A": "Fungal culture of the nail edge cannot exclude melanoma and would delay diagnosis of a high-risk lesion.",
+    "C": "Benign racial melanonychia usually involves several nails with stable, uniform bands, unlike this single, widening, irregular band.",
+    "D": "Watching a lesion with Hutchinson sign and documented growth risks progression of a possible melanoma.",
+    "E": "There is no evidence of fungal infection, and antifungal treatment delays diagnosis."
+   },
+   "objective": "Recognize features of subungual melanoma and perform a nail matrix biopsy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigmented lesions",
+    "nails"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 68-year-old woman comes to the clinic because of a bump on her nose that has slowly grown and occasionally bleeds. Examination shows a 9-mm pearly, translucent papule with rolled borders, fine branching surface vessels and a small central crust on the left nasal ala. Biopsy shows nodular basal cell carcinoma with an infiltrative component. She is healthy and wants the best chance of cure with the least tissue loss. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Cryotherapy with liquid nitrogen",
+    "Curettage and electrodesiccation",
+    "Mohs micrographic surgery",
+    "Topical imiquimod",
+    "Vismodegib"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Basal cell carcinoma on the nasal ala, a high-risk \"mask area\" site, with an infiltrative growth pattern is high risk for recurrence. Mohs micrographic surgery removes the tumour in stages while examining 100% of the peripheral and deep margins, giving the highest cure rates while sparing normal tissue of the nose. Standard excision with wider margins or radiation are alternatives for patients who cannot have Mohs.</p><p><strong>Takeaway:</strong> High-risk BCC (central face, infiltrative histology, recurrent) is treated with Mohs micrographic surgery.</p>",
+   "whyNot": {
+    "A": "Cryotherapy gives no margin control and has higher recurrence rates for infiltrative tumours on the nose.",
+    "B": "Curettage and electrodesiccation suits low-risk tumours on the trunk and limbs, not infiltrative BCC on the face.",
+    "D": "Imiquimod is for small superficial BCC at low-risk sites, not nodular-infiltrative tumours on the nose.",
+    "E": "Hedgehog inhibitors are reserved for locally advanced or metastatic BCC not suitable for surgery or radiation."
+   },
+   "objective": "Choose Mohs micrographic surgery for high-risk basal cell carcinoma on the face.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "skin cancer",
+    "older adults"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 71-year-old man with fair skin who spent his career as a farmer comes to the clinic for a skin check. His scalp is bald and shows more than 20 rough, gritty, pink, scaly papules from 2 to 6 mm on a background of mottled pigmentation and telangiectasia. None is indurated, ulcerated or tender. He had one squamous cell carcinoma removed from his ear 3 years ago. Which of the following is the most appropriate management of the scalp lesions?</p>",
+   "options": [
+    "Excision of each lesion with 4-mm margins",
+    "Mohs surgery for each lesion",
+    "Observation only, because few progress",
+    "Oral acitretin",
+    "Topical 5-fluorouracil applied to the whole scalp"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Many rough, scaly papules on a chronically sun-damaged bald scalp are actinic keratoses, and the surrounding skin almost certainly contains subclinical lesions. With numerous lesions and a prior SCC, field therapy is preferred: topical 5-fluorouracil applied to the whole scalp is the most effective topical option. Imiquimod, tirbanibulin and photodynamic therapy are alternatives. Any lesion that becomes thick, tender or fails to clear should be biopsied.</p><p><strong>Takeaway:</strong> Multiple actinic keratoses in a sun-damaged field are treated with field therapy such as topical 5-fluorouracil.</p>",
+   "whyNot": {
+    "A": "Excising more than 20 non-indurated keratoses is unnecessary, scarring and does not treat the subclinical field.",
+    "B": "Mohs surgery is for high-risk skin cancers, not for actinic keratoses.",
+    "C": "Observation is not ideal in a patient with many lesions and a prior SCC, because treatment reduces the risk of new cancers.",
+    "D": "Systemic acitretin is reserved for chemoprevention in patients with many SCCs, such as transplant recipients, and has significant adverse effects."
+   },
+   "objective": "Treat multiple actinic keratoses with field-directed topical therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "precancerous lesions",
+    "older adults"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 59-year-old man who received a liver transplant 9 years ago has had 7 cutaneous squamous cell carcinomas excised in the past 18 months, all on his face, scalp and hands. His graft function has been stable. He takes tacrolimus and mycophenolate mofetil. He uses sunscreen daily and receives field therapy for actinic damage. The transplant team agrees to adjust his immunosuppression. Which of the following changes is most likely to reduce his rate of new skin cancers?</p>",
+   "options": [
+    "Adding long-term voriconazole prophylaxis",
+    "Adding prednisone to allow lower tacrolimus levels",
+    "Replacing mycophenolate with azathioprine",
+    "Replacing tacrolimus with sirolimus",
+    "Stopping all immunosuppressive drugs"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Transplant recipients with multiple SCCs benefit from reduced immunosuppression and from conversion from a calcineurin inhibitor to an mTOR inhibitor (sirolimus or everolimus). mTOR inhibitors have antiproliferative effects, and conversion lowers the rate of new SCCs in trials, although adverse effects (edema, mouth ulcers, proteinuria, dyslipidemia, pneumonitis) limit tolerance. Other measures are oral nicotinamide, acitretin for many tumours, sun protection and frequent skin examinations.</p><p><strong>Takeaway:</strong> In transplant recipients with multiple SCCs, switching from a calcineurin inhibitor to an mTOR inhibitor reduces new skin cancers.</p>",
+   "whyNot": {
+    "A": "Long-term voriconazole is phototoxic and increases SCC risk; it should be avoided when alternatives exist.",
+    "B": "Adding prednisone increases overall immunosuppression and skin cancer risk rather than reducing it.",
+    "C": "Azathioprine sensitizes DNA to UVA and increases SCC risk, the opposite of what he needs.",
+    "E": "Stopping all immunosuppression would cause graft rejection and is not a reasonable strategy for skin cancer prevention."
+   },
+   "objective": "Reduce skin cancer risk in a transplant recipient by switching to an mTOR inhibitor.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "skin cancer",
+    "immunosuppression"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 56-year-old woman with stage IV melanoma is receiving nivolumab and ipilimumab; she completed her third cycle 4 weeks ago. She now has a severe frontal headache, profound fatigue, nausea and lightheadedness when standing for 1 week. Blood pressure is 96/60 mm Hg supine and 82/52 mm Hg standing; pulse is 104/min. Visual fields are full. Laboratory results are shown.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Sodium</td><td>129 mEq/L</td></tr><tr><td>Potassium</td><td>4.2 mEq/L</td></tr><tr><td>Glucose</td><td>68 mg/dL</td></tr><tr><td>Cortisol, 8 AM</td><td>1.4 ug/dL</td></tr><tr><td>ACTH</td><td>4 pg/mL (reference 10-60 pg/mL)</td></tr><tr><td>TSH</td><td>0.2 uU/mL</td></tr><tr><td>Free thyroxine (T4)</td><td>0.5 ng/dL</td></tr></tbody></table><p>MRI of the brain shows a mildly enlarged pituitary gland. In addition to IV fluids, which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Bromocriptine",
+    "Hydrocortisone",
+    "Infliximab",
+    "Levothyroxine",
+    "Methimazole"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Headache, fatigue, hypotension, hyponatremia and hypoglycemia with low cortisol and low ACTH, together with low TSH and low free T4 and an enlarged pituitary, are immune-mediated hypophysitis, a typical adverse event of CTLA-4 blockade (ipilimumab). She has central adrenal insufficiency and central hypothyroidism. Glucocorticoid replacement (stress-dose hydrocortisone while unwell) must come first. Starting levothyroxine before cortisol is replaced speeds cortisol metabolism and can precipitate adrenal crisis. Levothyroxine is added a few days later. Endocrine deficiencies after checkpoint inhibitors are usually permanent; immunotherapy can often resume once she is stable on replacement.</p><p><strong>Takeaway:</strong> In checkpoint-inhibitor hypophysitis, replace glucocorticoid first, then thyroid hormone.</p>",
+   "whyNot": {
+    "A": "Bromocriptine treats hyperprolactinemia and has no role in hypophysitis with hormone deficiencies.",
+    "C": "Infliximab treats steroid-refractory immune-related colitis, not hypophysitis.",
+    "D": "Thyroid hormone is needed but must follow glucocorticoid replacement to avoid precipitating adrenal crisis.",
+    "E": "Methimazole treats hyperthyroidism; her low TSH with low free T4 indicates central hypothyroidism, not thyrotoxicosis."
+   },
+   "objective": "Manage checkpoint inhibitor-induced hypophysitis by replacing glucocorticoid before thyroid hormone.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "immunotherapy",
+    "adverse effects"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old man comes to the clinic for a new diagnosis of HIV infection. He has had several painless purple plaques on his legs and one on his hard palate for 3 months. He has no cough, gastrointestinal bleeding, weight loss or fever. Biopsy of a leg plaque confirms Kaposi sarcoma. His CD4+ T-lymphocyte count is 140/mm<sup>3</sup> and HIV RNA is 210,000 copies/mL. Chest x-ray is normal and stool is negative for occult blood. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    "Antiretroviral therapy",
+    "Intralesional vinblastine for each lesion",
+    "Liposomal doxorubicin without antiretroviral therapy",
+    "Observation until the CD4 count falls below 50/mm<sup>3</sup>",
+    "Prednisone"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Limited AIDS-associated Kaposi sarcoma (skin and oral lesions without symptomatic visceral disease) is treated first with antiretroviral therapy, which restores immunity against HHV-8 and leads to regression in many patients. Systemic chemotherapy such as liposomal doxorubicin or paclitaxel is added for extensive, rapidly progressive, symptomatic or visceral disease. Lesions can transiently worsen as part of immune reconstitution. Corticosteroids worsen KS.</p><p><strong>Takeaway:</strong> First-line treatment of limited AIDS-associated Kaposi sarcoma is antiretroviral therapy.</p>",
+   "whyNot": {
+    "B": "Intralesional therapy can treat a single cosmetically troublesome lesion but leaves the underlying immunodeficiency and disease untreated.",
+    "C": "Chemotherapy without ART does not address the cause and is reserved, with ART, for advanced disease.",
+    "D": "ART is recommended for all people with HIV regardless of CD4 count; delay allows KS and opportunistic infections to progress.",
+    "E": "Corticosteroids stimulate Kaposi sarcoma growth and are avoided."
+   },
+   "objective": "Start antiretroviral therapy as first-line treatment for limited AIDS-associated Kaposi sarcoma.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "HIV",
+    "vascular tumors"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 13-year-old girl comes to the clinic with her mother for a well visit. She has fair skin, red hair and many freckles, and burns easily. She plays on an outdoor soccer team and wants to start using a tanning salon before a school dance. She has about 15 small, uniform, round brown nevi. There is no family history of melanoma. Which of the following is the most appropriate preventive intervention?</p>",
+   "options": [
+    "Annual full-body skin examination by a dermatologist",
+    "Counseling to reduce UV exposure, including avoiding indoor tanning",
+    "Genetic testing for CDKN2A variants",
+    "Oral nicotinamide",
+    "Photographic mapping of all nevi"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The USPSTF recommends behavioural counselling about minimising UV exposure for young people with fair skin from 6 months to 24 years of age, and their parents. Messages include broad-spectrum sunscreen of SPF 30 or higher, reapplied during sports, protective clothing, hats, seeking shade and avoiding indoor tanning, which raises the risk of melanoma and keratinocyte cancers. Her nevi are typical and she has no family history, so specialized surveillance or genetic testing is not indicated.</p><p><strong>Takeaway:</strong> Counsel fair-skinned children, adolescents and young adults to minimise UV exposure and avoid indoor tanning.</p>",
+   "whyNot": {
+    "A": "The USPSTF finds insufficient evidence for routine clinician skin examination in asymptomatic people, and she has no high-risk features that justify annual specialist screening.",
+    "C": "CDKN2A testing is considered for families with several melanomas or melanoma with pancreatic cancer, not for an adolescent without a family history.",
+    "D": "Nicotinamide is used for chemoprevention in people with prior keratinocyte cancers, not for a healthy adolescent.",
+    "E": "Total-body photography is reserved for people with many atypical nevi or a strong personal or family history."
+   },
+   "objective": "Apply USPSTF guidance on skin cancer prevention counseling for fair-skinned young people.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "references": [
+    "uspstf"
+   ],
+   "figures": [],
+   "tags": [
+    "prevention",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 18,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old man comes to the clinic because of itchy, scaly, pink patches on his buttocks, groin, lower abdomen and inner thighs for 4 years. They were diagnosed as eczema and later psoriasis, but they have not cleared with topical corticosteroids or a course of topical calcipotriene. Some patches now have slight wrinkling and mottled pigmentation, and two have become slightly raised. There is no lymphadenopathy. KOH preparation is negative. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    "Biopsies of several lesions, off steroids, with T-cell clonality studies",
+    "Patch testing with a standard series of contact allergens",
+    "Serum total IgE level and a specific allergen panel",
+    "Bacterial culture of the skin surface with sensitivities",
+    "Two-week trial of oral prednisone with reassessment"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Persistent, steroid-resistant, scaly patches in sun-protected areas (buttocks, groin, inner thighs) with wrinkling and mottled pigmentation (poikiloderma) and early plaques in an older adult suggest mycosis fungoides. Early disease is hard to diagnose histologically, so several biopsies from different lesions, ideally after 2 to 4 weeks off topical steroids, are taken and examined with immunohistochemistry (CD4, loss of CD7) and T-cell receptor gene rearrangement for clonality. Staging then includes examination of nodes and a blood count with flow cytometry for circulating clonal cells.</p><p><strong>Takeaway:</strong> \"Eczema\" or \"psoriasis\" in sun-protected areas that resists treatment in an older adult needs multiple biopsies for mycosis fungoides.</p>",
+   "whyNot": {
+    "B": "Patch testing evaluates allergic contact dermatitis, which follows exposure sites rather than the bathing-trunk distribution, and would delay the diagnosis.",
+    "C": "Serum IgE is nonspecific and does not diagnose or exclude cutaneous lymphoma.",
+    "D": "Bacterial cultures do not explain chronic scaly patches with poikiloderma.",
+    "E": "Systemic steroids can mask histologic findings and do not address a possible lymphoma."
+   },
+   "objective": "Pursue biopsy with immunophenotyping and clonality studies for suspected mycosis fungoides.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cutaneous lymphoma",
+    "older adults"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "DNA lesion formed by UVB?",
+   "back": "Cyclobutane pyrimidine dimers (and 6-4 photoproducts), repaired by nucleotide excision repair.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "UV mutational signature?",
+   "back": "C-to-T and CC-to-TT transitions at dipyrimidine sites.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Pathway driving basal cell carcinoma?",
+   "back": "Hedgehog: loss of PTCH1 releases Smoothened, activating GLI.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Features of Gorlin syndrome?",
+   "back": "Many early BCCs, jaw keratocysts, palmar pits, falx calcification, medulloblastoma; germline PTCH1.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Histology of BCC vs SCC?",
+   "back": "BCC: basaloid nests, peripheral palisading, retraction clefts. SCC: keratin pearls, intercellular bridges.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Most common skin cancer in solid-organ transplant recipients?",
+   "back": "Squamous cell carcinoma.",
+   "question": 3
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Strongest prognostic factors for a localized primary melanoma?",
+   "back": "Breslow thickness and ulceration.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Most common melanoma subtype in people with dark skin?",
+   "back": "Acral lentiginous melanoma.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Most common driver mutation in cutaneous melanoma?",
+   "back": "BRAF V600E (MAPK pathway).",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Virus causing Kaposi sarcoma?",
+   "back": "Human herpesvirus 8.",
+   "question": 6
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "How to tell bacillary angiomatosis from Kaposi sarcoma?",
+   "back": "Bacillary angiomatosis has neutrophils and Bartonella on silver stain; KS has spindle cells and HHV-8 LANA.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Cell of origin in mycosis fungoides?",
+   "back": "Clonal skin-homing CD4-positive T cells.",
+   "question": 7
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Pautrier microabscesses are seen in?",
+   "back": "Mycosis fungoides: clusters of atypical lymphocytes in the epidermis.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Sézary syndrome triad?",
+   "back": "Erythroderma, lymphadenopathy, circulating Sézary cells.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Merkel cell carcinoma immunostain pattern?",
+   "back": "CK20 perinuclear dot, neuroendocrine markers, TTF-1 negative.",
+   "question": 8
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Translocation in dermatofibrosarcoma protuberans and the drug that targets it?",
+   "back": "t(17;22) COL1A1-PDGFB; imatinib.",
+   "question": 9
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Why combine a MEK inhibitor with a BRAF inhibitor?",
+   "back": "Prevents paradoxical MAPK activation in BRAF wild-type cells (fewer SCCs) and delays resistance.",
+   "question": 4
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Ipilimumab target and mechanism?",
+   "back": "CTLA-4; releases CD28-B7 co-stimulation during T-cell priming.",
+   "question": 5
+  },
+  {
+   "n": 19,
+   "section": 2,
+   "front": "Smoothened inhibitors used for advanced BCC?",
+   "back": "Vismodegib and sonidegib.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Preferred biopsy for suspected melanoma?",
+   "back": "Full-thickness excisional biopsy with 1- to 3-mm margins.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Excision margin for melanoma in situ?",
+   "back": "0.5 to 1 cm.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Margin for melanoma over 1.0 to 2.0 mm thick?",
+   "back": "1 to 2 cm, plus sentinel node biopsy.",
+   "question": 10
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Margin for melanoma over 2.0 mm thick?",
+   "back": "2 cm.",
+   "question": null
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Hutchinson sign?",
+   "back": "Nail pigment extending onto the nail fold, suggesting subungual melanoma.",
+   "question": 11
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "After a positive sentinel node, is completion dissection routine?",
+   "back": "No; nodal ultrasound surveillance is usual.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Adjuvant therapy options for resected stage III melanoma?",
+   "back": "Anti-PD-1 (nivolumab or pembrolizumab), or dabrafenib plus trametinib if BRAF V600-mutant.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 3,
+   "front": "Hypophysitis on ipilimumab: which hormone first?",
+   "back": "Hydrocortisone before levothyroxine.",
+   "question": 15
+  },
+  {
+   "n": 28,
+   "section": 4,
+   "front": "Treatment for many actinic keratoses in one area?",
+   "back": "Field therapy, such as topical 5-fluorouracil.",
+   "question": 13
+  },
+  {
+   "n": 29,
+   "section": 4,
+   "front": "When is Mohs surgery preferred for BCC or SCC?",
+   "back": "High-risk sites (central face, ears, hands, genitals), aggressive histology, recurrence, immunosuppression.",
+   "question": 12
+  },
+  {
+   "n": 30,
+   "section": 4,
+   "front": "Immunosuppressant switch that lowers SCC risk after transplant?",
+   "back": "Calcineurin inhibitor to an mTOR inhibitor (sirolimus).",
+   "question": 14
+  },
+  {
+   "n": 31,
+   "section": 4,
+   "front": "Oral vitamin used to prevent keratinocyte cancers?",
+   "back": "Nicotinamide.",
+   "question": null
+  },
+  {
+   "n": 32,
+   "section": 4,
+   "front": "First-line therapy for limited AIDS-associated Kaposi sarcoma?",
+   "back": "Antiretroviral therapy.",
+   "question": 16
+  },
+  {
+   "n": 33,
+   "section": 4,
+   "front": "USPSTF skin cancer counselling group?",
+   "back": "Fair-skinned people aged 6 months to 24 years (and parents): minimise UV exposure.",
+   "question": 17
+  },
+  {
+   "n": 34,
+   "section": 4,
+   "front": "Persistent 'eczema' in the bathing-trunk area of an older adult?",
+   "back": "Biopsy (several) for mycosis fungoides.",
+   "question": 18
+  },
+  {
+   "n": 35,
+   "section": 4,
+   "front": "Antifungal that raises SCC risk with long-term use?",
+   "back": "Voriconazole.",
+   "question": null
+  }
+ ]
+}

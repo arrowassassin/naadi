@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 525" width="760" height="525" role="img" aria-label="Flow diagram of rhabdomyolysis: triggers cause ATP depletion or membrane damage, leading to necrosis and release of CK, myoglobin, potassium and phosphate, which cause acute kidney injury, high potassium and phosphate with early low calcium, compartment syndrome and DIC" font-family="sans-serif" fill="#0f172a">
+<title>Flow diagram of rhabdomyolysis: triggers cause ATP depletion or membrane damage, leading to necrosis and release of CK, myoglobin, potassium and phosphate, which cause acute kidney injury, high potassium and phosphate with early low calcium, compartment syndrome and DIC</title>
+<rect x="0" y="0" width="760" height="525" fill="#ffffff"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle">Rhabdomyolysis cascade</text>
+<rect x="30" y="55" width="700" height="62" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="380.0" y="77" font-size="14" font-weight="bold" text-anchor="middle">Triggers</text>
+<text x="380.0" y="97" font-size="13" text-anchor="middle">crush or long lie, extreme exertion or heat, drugs and toxins, low K or low phosphate, inherited enzyme defects</text>
+<rect x="130" y="145" width="500" height="80" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="380.0" y="167" font-size="14" font-weight="bold" text-anchor="middle">ATP depletion or membrane damage</text>
+<text x="380.0" y="187" font-size="13" text-anchor="middle">Na+/K+-ATPase and SERCA fail</text>
+<text x="380.0" y="204" font-size="13" text-anchor="middle">cytosolic Ca2+ rises: proteases, phospholipases, necrosis</text>
+<line x1="380" y1="117" x2="380" y2="141" stroke="#0f172a" stroke-width="2" marker-end="url(#a)"/>
+<line x1="380" y1="225" x2="380" y2="251" stroke="#0f172a" stroke-width="2" marker-end="url(#a)"/>
+<rect x="130" y="255" width="500" height="62" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="380.0" y="277" font-size="14" font-weight="bold" text-anchor="middle">Contents leak into blood</text>
+<text x="380.0" y="297" font-size="13" text-anchor="middle">CK, myoglobin, potassium, phosphate, urate, thromboplastin</text>
+<line x1="250" y1="317" x2="130" y2="351" stroke="#0f172a" stroke-width="2" marker-end="url(#a)"/>
+<line x1="380" y1="317" x2="380" y2="351" stroke="#0f172a" stroke-width="2" marker-end="url(#a)"/>
+<line x1="510" y1="317" x2="630" y2="351" stroke="#0f172a" stroke-width="2" marker-end="url(#a)"/>
+<rect x="20" y="355" width="225" height="120" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="132.5" y="377" font-size="14" font-weight="bold" text-anchor="middle">Kidney</text>
+<text x="132.5" y="397" font-size="13" text-anchor="middle">myoglobin casts</text>
+<text x="132.5" y="414" font-size="13" text-anchor="middle">heme oxidant injury</text>
+<text x="132.5" y="431" font-size="13" text-anchor="middle">vasoconstriction</text>
+<text x="132.5" y="448" font-size="13" text-anchor="middle">= acute kidney injury</text>
+<rect x="267" y="355" width="225" height="120" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="379.5" y="377" font-size="14" font-weight="bold" text-anchor="middle">Electrolytes</text>
+<text x="379.5" y="397" font-size="13" text-anchor="middle">potassium HIGH (arrhythmia)</text>
+<text x="379.5" y="414" font-size="13" text-anchor="middle">phosphate HIGH</text>
+<text x="379.5" y="431" font-size="13" text-anchor="middle">calcium LOW early</text>
+<text x="379.5" y="448" font-size="13" text-anchor="middle">(may rise in recovery)</text>
+<rect x="514" y="355" width="225" height="120" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="626.5" y="377" font-size="14" font-weight="bold" text-anchor="middle">Other</text>
+<text x="626.5" y="397" font-size="13" text-anchor="middle">muscle swelling:</text>
+<text x="626.5" y="414" font-size="13" text-anchor="middle">compartment syndrome</text>
+<text x="626.5" y="431" font-size="13" text-anchor="middle">thromboplastin: DIC</text>
+<text x="626.5" y="448" font-size="13" text-anchor="middle">organic acids: acidosis</text>
+<text x="380" y="505" font-size="13" text-anchor="middle">Urine: dipstick heme strongly positive, microscopy with few or no red cells. Plasma is clear.</text>
+</svg>

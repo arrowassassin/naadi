@@ -1,0 +1,651 @@
+{
+ "area": "14.01.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Immune mechanisms in male genital inflammation",
+   "html": "<p>The male genital tract must tolerate sperm, which first appear at puberty and carry antigens the immune system never met during development, while still defending mucosal surfaces against infection. When that balance fails, inflammation without infection results. The disorders in this area are linked by immune mechanism rather than by organism: barrier failure (antisperm antibodies), HLA-linked responses to a distant infection (reactive arthritis), neutrophil-driven vasculitis (Behçet disease, IgA vasculitis), chronic lymphocyte-mediated sclerosis (lichen sclerosus), and a poorly understood neuro-immune pain syndrome (chronic prostatitis/chronic pelvic pain syndrome).</p>\n[[figure:s23f-fig140102-1]]\n<h3>Immune privilege of the testis and sperm autoimmunity</h3>\n<p>Adjacent Sertoli cells are joined near the basement membrane by tight junctions, forming the blood-testis barrier. It divides the seminiferous epithelium into a basal compartment (spermatogonia, exposed to the circulation) and an adluminal compartment (spermatocytes, spermatids and sperm, which are shielded). Sertoli cells, interstitial macrophages and the local cytokine milieu (for example TGF-beta) add active tolerance. Disrupting the barrier or the ductal system exposes sperm antigens: most men develop antisperm antibodies after vasectomy, and they can also follow testicular trauma, torsion, infection or surgery. Antibodies on the sperm surface cause agglutination, impair motility and block penetration of cervical mucus and binding to the oocyte. Autoimmune orchitis is uncommon and usually part of a systemic disease.</p>\n<h3>Reactive arthritis</h3>\n<p>A sterile inflammatory arthritis that follows, by 1 to 4 weeks, a genitourinary infection (most often <em>Chlamydia trachomatis</em>) or an enteric infection (Salmonella, Shigella, Campylobacter, Yersinia). It belongs to the seronegative (rheumatoid factor-negative) spondyloarthritis family and is strongly associated with <strong>HLA-B27</strong>. Bacterial antigens, and in chlamydial cases nonculturable persistent organisms, reach the synovium; an HLA-B27-linked immune response then drives inflammation of joints, entheses, conjunctiva and mucosa. Genital features in males are <strong>urethritis</strong> (which may be sterile) and <strong>circinate balanitis</strong>: painless, shallow, moist erosions with a raised white serpiginous border on the glans of an uncircumcised penis (crusted plaques if circumcised). The skin of palms and soles may show keratoderma blennorrhagicum, which is histologically like pustular psoriasis.</p>\n<h3>Behçet disease</h3>\n<p>Behçet disease is a variable-vessel vasculitis that can involve arteries and veins of any size. It is most common along the old Silk Road (Turkey, the Middle East, East Asia) and is associated with <strong>HLA-B51</strong>. Neutrophil hyperactivity and Th1/Th17 responses produce recurrent oral aphthae, genital ulcers, uveitis, skin lesions (erythema nodosum, papulopustules) and a positive <strong>pathergy</strong> test (a sterile pustule after a needle prick). In men the genital ulcers are usually on the scrotum, are painful, and heal with scarring; epididymitis is another genital manifestation. Venous thrombosis and pulmonary artery aneurysms are serious vascular complications.</p>\n<h3>IgA vasculitis (Henoch-Schönlein purpura)</h3>\n<p>The most common systemic vasculitis of childhood, caused by deposition of galactose-deficient IgA1-containing immune complexes in small vessels. Palpable purpura of the buttocks and legs, arthralgia, colicky abdominal pain (with a risk of intussusception) and glomerulonephritis are typical. Boys can develop scrotal pain and swelling from vasculitis of the scrotal wall or spermatic cord, which can mimic torsion. Skin biopsy shows leukocytoclastic vasculitis with IgA on direct immunofluorescence.</p>\n<h3>Lichen sclerosus (balanitis xerotica obliterans)</h3>\n<p>A chronic, lymphocyte-mediated inflammatory dermatosis of anogenital skin. In males it involves the foreskin, glans and urethral meatus and spares the perianal skin far more often than in females. Chronic occlusion and contact with urine under the foreskin are thought to promote it, which is why it is rare in men circumcised early in life. Histology shows <strong>hyperkeratosis, epidermal atrophy with loss of rete ridges, a pale homogenised band of collagen in the upper dermis, and a band-like lymphocytic infiltrate beneath it</strong>. Clinically there are white, sclerotic, shiny plaques, sometimes with purpura or erosions. Scarring causes nonretractile foreskin (secondary phimosis), meatal stenosis and urethral stricture. Long-standing disease carries a risk of penile squamous cell carcinoma through a non-HPV pathway.</p>\n<table class=\"hy\">\n<thead><tr><th>Disorder</th><th>Main immune mechanism</th><th>Genetic or histologic clue</th><th>Genital finding</th></tr></thead>\n<tbody>\n<tr><td>Reactive arthritis</td><td>HLA-linked response to bacterial antigens after infection</td><td>HLA-B27</td><td>Circinate balanitis, sterile urethritis</td></tr>\n<tr><td>Behçet disease</td><td>Neutrophilic variable-vessel vasculitis</td><td>HLA-B51; positive pathergy</td><td>Painful scrotal ulcers that scar; epididymitis</td></tr>\n<tr><td>IgA vasculitis</td><td>IgA1 immune-complex small-vessel vasculitis</td><td>IgA on direct immunofluorescence</td><td>Scrotal swelling in boys</td></tr>\n<tr><td>Lichen sclerosus</td><td>T-cell-mediated chronic dermatosis</td><td>Homogenised upper-dermal collagen over a lymphocytic band</td><td>White sclerotic plaques, phimosis, meatal stenosis</td></tr>\n<tr><td>Zoon (plasma cell) balanitis</td><td>Chronic irritant inflammation in uncircumcised men</td><td>Dense plasma-cell infiltrate</td><td>Glistening red-orange patch of the glans</td></tr>\n<tr><td>Antisperm antibodies</td><td>Breach of the blood-testis barrier</td><td>Sperm agglutination on semen analysis</td><td>Usually none; infertility</td></tr>\n</tbody></table>\n<h3>Chronic prostatitis/chronic pelvic pain syndrome (CP/CPPS)</h3>\n<p>CP/CPPS is NIH category III prostatitis: pelvic pain for at least 3 of the previous 6 months without demonstrable infection. It is subdivided by whether leukocytes appear in prostatic secretions (IIIA inflammatory, IIIB noninflammatory), although this does not predict response to treatment. Proposed mechanisms include neurogenic inflammation, central sensitisation, pelvic floor muscle dysfunction and psychosocial amplification; the prostate itself may not be the source. Category I is acute bacterial prostatitis, II is chronic bacterial prostatitis, and IV is asymptomatic inflammation found incidentally.</p>\n<h3>Drugs by mechanism</h3>\n<ul>\n<li><strong>Alpha-1 blockers</strong> (tamsulosin, alfuzosin, silodosin): block Gq-coupled alpha-1 receptors on prostatic and bladder-neck smooth muscle, reducing phospholipase C activity, IP<sub>3</sub> and intracellular calcium. Adverse effects include orthostatic hypotension, ejaculatory dysfunction and intraoperative floppy iris syndrome during cataract surgery.</li>\n<li><strong>Glucocorticoids</strong> (ultrapotent topical clobetasol for lichen sclerosus): bind a cytosolic receptor that moves to the nucleus, suppresses NF-kB- and AP-1-driven cytokine genes and induces anti-inflammatory proteins. Long use on thin genital skin can cause atrophy.</li>\n<li><strong>Colchicine</strong> (mucocutaneous Behçet disease): binds tubulin and blocks microtubule polymerisation, impairing neutrophil migration and inflammasome activation. Diarrhea is common; myopathy and toxicity rise with CYP3A4 or P-glycoprotein inhibitors.</li>\n<li><strong>Apremilast</strong> (oral ulcers of Behçet disease): inhibits phosphodiesterase 4, raising cAMP in immune cells and lowering TNF-alpha and IL-23 production.</li>\n</ul>\n<div class=\"trap\"><p>Painless erosions on the glans plus knee arthritis and red eyes are not a sexually transmitted ulcer: they are circinate balanitis of reactive arthritis. Painful scrotal ulcers that scar, with recurrent mouth ulcers, point to Behçet disease rather than herpes.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Reactive Arthritis"
+    },
+    {
+     "statpearls": "Behcet Disease"
+    },
+    {
+     "statpearls": "Lichen Sclerosus"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Chronic pelvic pain, lichen sclerosus and systemic inflammatory disease of the male genitals: management",
+   "html": "<p>These conditions are diagnoses of pattern and exclusion. The common thread in management is to rule out infection, neoplasm and torsion first, then treat inflammation and preserve function.</p>\n<h3>Chronic prostatitis/chronic pelvic pain syndrome</h3>\n<p>CP/CPPS is the most common prostatitis category and usually affects men younger than 50. Pain is felt in the perineum, suprapubic area, penis, testes or rectum and often during or after ejaculation; voiding symptoms, sexual dysfunction, anxiety and depression are frequent. The examination may show pelvic floor muscle tenderness or trigger points, while the prostate is usually normal or only mildly tender. A validated symptom index (the NIH Chronic Prostatitis Symptom Index) tracks severity.</p>\n<ul>\n<li><strong>Evaluation</strong>: urinalysis and urine culture; a pre- and post-massage urine test to exclude chronic bacterial prostatitis; post-void residual; STI testing if at risk. Urine cytology and cystoscopy are added for hematuria or risk factors for bladder cancer. PSA is ordered only under the usual screening framework, not to diagnose CP/CPPS.</li>\n<li><strong>Management</strong> is multimodal and targeted to the patient's dominant features: alpha-1 blockers for voiding symptoms (most useful early in the course), <strong>pelvic floor physical therapy with myofascial trigger-point release</strong> for pelvic muscle tenderness, NSAIDs for short-term pain, neuromodulating drugs for neuropathic features, and cognitive behavioural therapy for catastrophising or depression. One course of antibiotics is reasonable only in a newly presenting, antibiotic-naive man; repeated courses without evidence of infection do harm.</li>\n<li>Surgery (transurethral resection, prostatectomy) has no role unless another indication exists. Opioids are avoided.</li>\n</ul>\n<h3>Lichen sclerosus of the penis</h3>\n<p>Lichen sclerosus presents with itching, soreness, splitting, painful erections, a tight foreskin or a weak or spraying urinary stream. The examination shows ivory-white plaques of the foreskin or glans, often a white constricting ring at the preputial opening, and sometimes meatal narrowing. In boys it is the leading cause of <strong>secondary (pathological) phimosis</strong>, which differs from the normal physiologic nonretractile foreskin of early childhood by scarring. Biopsy confirms the diagnosis when the picture is atypical, and is mandatory for any persistent erosion, induration, nodule or failure to respond, because of the risk of squamous cell carcinoma.</p>\n<ul>\n<li><strong>First line</strong>: an ultrapotent topical corticosteroid (clobetasol propionate 0.05% ointment) applied daily, then tapered to maintenance.</li>\n<li><strong>Circumcision</strong> for disease confined to the foreskin or for phimosis that does not respond; it is often curative when the glans is spared.</li>\n<li><strong>Meatal and urethral disease</strong>: meatotomy or meatoplasty for stenosis; urethroplasty for stricture, using buccal mucosa grafts because grafts of genital skin tend to develop the disease again.</li>\n<li>Long-term follow-up, and early review for any new lump or ulcer.</li>\n</ul>\n<h3>Reactive arthritis</h3>\n<p>Suspect it in a young adult with an asymmetric oligoarthritis of the lower limbs, enthesitis (Achilles or plantar fascia), dactylitis, conjunctivitis or anterior uveitis, and mucocutaneous signs, starting weeks after urethritis or diarrhea. Diagnosis is clinical. Joint aspiration excludes septic and crystal arthritis; NAAT for chlamydia and gonorrhea and stool testing identify the trigger; HLA-B27 testing supports but does not make the diagnosis. Management:</p>\n<ul>\n<li>NSAIDs are first line; intra-articular glucocorticoids for a persistently swollen joint after infection is excluded.</li>\n<li>Treat an active chlamydial infection with standard doxycycline, and treat partners. Prolonged antibiotics have not been shown to help the arthritis, and antibiotics for post-enteric arthritis do not change its course.</li>\n<li>Sulfasalazine or methotrexate for chronic arthritis; TNF inhibitors for refractory disease.</li>\n<li>Circinate balanitis responds to low- or mid-potency topical corticosteroids.</li>\n<li>Uveitis needs prompt ophthalmology review.</li>\n</ul>\n<h3>Behçet disease</h3>\n<p>The diagnosis rests on recurrent oral aphthae (several times a year) plus at least two of genital ulcers, eye lesions, skin lesions or a positive pathergy test, after excluding mimics: herpes, syphilis, inflammatory bowel disease, and drug reactions. Every patient needs an ophthalmologic slit-lamp exam because posterior uveitis can cause blindness.</p>\n<table class=\"hy\">\n<thead><tr><th>Manifestation</th><th>Typical treatment</th></tr></thead>\n<tbody>\n<tr><td>Oral and genital ulcers, erythema nodosum</td><td>Topical glucocorticoids; colchicine; apremilast for oral ulcers</td></tr>\n<tr><td>Uveitis or retinal vasculitis</td><td>Azathioprine plus systemic glucocorticoids; TNF inhibitors (infliximab, adalimumab) for severe or refractory disease</td></tr>\n<tr><td>Major vascular, neurologic or GI disease</td><td>High-dose glucocorticoids with immunosuppressants or TNF inhibitors, with specialist care</td></tr>\n</tbody></table>\n<h3>IgA vasculitis with scrotal involvement</h3>\n<p>A child with palpable purpura who develops acute scrotal pain still needs torsion excluded. Doppler ultrasonography typically shows a thickened scrotal wall and epididymal swelling with preserved testicular flow. Management of HSP is supportive (hydration, analgesia, NSAIDs if renal function allows), with serial urinalysis and blood pressure for months to detect nephritis; glucocorticoids are reserved for severe abdominal pain or other organ-threatening disease.</p>\n<h3>Antisperm antibodies and infertility</h3>\n<p>Antisperm antibodies are suspected when semen analysis shows sperm agglutination or poor motility with normal counts, especially after vasectomy reversal, testicular injury or infection. Testing for sperm-bound antibodies (mixed antiglobulin reaction or immunobead test) confirms them. Systemic glucocorticoids are not recommended because their benefit is small and their harms (including avascular necrosis of the femoral head) are real. Assisted reproduction, particularly <strong>intracytoplasmic sperm injection (ICSI)</strong>, bypasses the antibody effect because a single sperm is injected directly into the oocyte.</p>\n<div class=\"pearl\"><p>In any older man with a balanitis or a \"chronic dermatitis\" of the glans that does not settle with appropriate treatment within weeks, the next step is a biopsy, not another cream.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Chronic Prostatitis and Chronic Pelvic Pain Syndrome in Men"
+    },
+    {
+     "statpearls": "Balanitis Xerotica Obliterans (Male Penile Lichen Sclerosus)"
+    },
+    {
+     "statpearls": "IgA Vasculitis (Henoch-Schönlein Purpura)"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. The blood-testis barrier: Sertoli-cell tight junctions separate the basal compartment from the adluminal compartment that holds antigenically new germ cells."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old man and his partner are evaluated because they have been unable to conceive for 14 months. He had a vasectomy 6 years ago and a microsurgical reversal 18 months ago. Sperm concentration is normal, but motility is reduced and many sperm are clumped together head to head. A test shows immunoglobulin bound to most motile sperm. Which of the following structures normally prevents the development of this condition?</p>",
+   "options": [
+    "Basement membrane of the seminiferous tubule",
+    "Desmosomes between spermatids and Sertoli cells",
+    "Gap junctions between Leydig cells",
+    "Tight junctions between adjacent Sertoli cells",
+    "Tunica albuginea of the testis"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Sperm agglutination and immunoglobulin-coated sperm after vasectomy indicate antisperm antibodies. Sperm antigens appear at puberty, long after self-tolerance is established. Tight junctions between neighbouring Sertoli cells form the blood-testis barrier, which seals off the adluminal compartment where spermatocytes and spermatids develop. Vasectomy and other injuries expose these antigens and trigger antibody formation.</p><p><strong>Takeaway:</strong> The blood-testis barrier is made by Sertoli-cell tight junctions; breaching it (for example by vasectomy) leads to antisperm antibodies.</p>",
+   "whyNot": {
+    "A": "The basement membrane lies beneath spermatogonia, which are on the blood side of the barrier; it does not seal off the developing germ cells.",
+    "B": "Junctions anchoring spermatids to Sertoli cells hold germ cells in place but do not create a barrier to immune cells or antibodies.",
+    "C": "Leydig cells lie in the interstitium outside the tubules and make testosterone; their junctions have no barrier role.",
+    "E": "The tunica albuginea is a fibrous capsule around the whole testis; it does not separate germ cells from blood-borne immune effectors."
+   },
+   "objective": "Identify Sertoli-cell tight junctions as the basis of the blood-testis barrier and relate barrier breach to antisperm antibodies.",
+   "extraAreas": [
+    "14.03.01"
+   ],
+   "disciplines": [
+    "histology_cell_biology",
+    "immunology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "infertility",
+    "testicular immunology"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 25-year-old man comes to the clinic because of a painful, swollen right knee and red, gritty eyes for 5 days. One month ago he had dysuria and a clear urethral discharge that resolved without treatment. Examination shows conjunctival injection, a warm knee effusion, tenderness at the insertion of the left Achilles tendon, and painless shallow erosions with a white serpiginous border on the glans of his uncircumcised penis. Synovial fluid has 18,000 leukocytes/mm<sup>3</sup>, no crystals and a negative Gram stain. Which of the following genetic markers is most strongly associated with this condition?</p>",
+   "options": [
+    "HLA-B27",
+    "HLA-B51",
+    "HLA-DQ2",
+    "HLA-DR3",
+    "HLA-DR4"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Arthritis, conjunctivitis and enthesitis weeks after urethritis, with circinate balanitis, is reactive arthritis, a seronegative spondyloarthritis strongly associated with HLA-B27. The genital infection, usually <em>Chlamydia trachomatis</em>, triggers an HLA-B27-linked immune response in the joint, which remains sterile on culture.</p><p><strong>Takeaway:</strong> Circinate balanitis with post-infectious arthritis and conjunctivitis is reactive arthritis, associated with HLA-B27.</p>",
+   "whyNot": {
+    "B": "HLA-B51 is linked to Behçet disease, which causes painful scarring scrotal ulcers and oral aphthae rather than circinate balanitis.",
+    "C": "HLA-DQ2 is associated with celiac disease.",
+    "D": "HLA-DR3 is associated with type 1 diabetes, Graves disease and SLE.",
+    "E": "HLA-DR4 is associated with rheumatoid arthritis, a symmetric small-joint polyarthritis without urethritis or balanitis."
+   },
+   "objective": "Associate reactive arthritis with circinate balanitis with HLA-B27.",
+   "disciplines": [
+    "genetics",
+    "immunology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "spondyloarthritis",
+    "genital lesions"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old uncircumcised man has had itching and splitting of the foreskin for 2 years, and now cannot retract it. His urinary stream has become thin. There are shiny ivory-white plaques on the inner foreskin and glans with a few purpuric spots, and a firm white ring at the preputial opening. A punch biopsy is obtained. Which of the following findings is most likely on histologic examination?</p>",
+   "options": [
+    "Dense dermal infiltrate composed predominantly of plasma cells",
+    "Full-thickness keratinocyte atypia with mitoses above the basal layer",
+    "Intraepidermal acantholysis with suprabasal clefting",
+    "Noncaseating granulomas in the dermis",
+    "Thinned epidermis over a homogenized band of upper-dermal collagen with lymphocytes beneath"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>White sclerotic plaques with a constricting ring, secondary phimosis and a narrowing stream in an uncircumcised older man are lichen sclerosus (balanitis xerotica obliterans). Histology shows hyperkeratosis, epidermal atrophy with loss of rete ridges, a pale homogenized (hyalinized) collagen band in the papillary dermis and a band-like lymphocytic infiltrate below it.</p><p><strong>Takeaway:</strong> Lichen sclerosus: atrophic epidermis, homogenized upper-dermal collagen and an underlying lymphocytic band.</p>",
+   "whyNot": {
+    "A": "A dense plasma-cell infiltrate is characteristic of Zoon balanitis, a glistening red-orange patch, not a white sclerotic plaque.",
+    "B": "Full-thickness atypia is penile intraepithelial neoplasia; it is a possible later complication of lichen sclerosus but does not explain these sclerotic features.",
+    "C": "Suprabasal acantholysis is the pattern of pemphigus vulgaris, which causes flaccid blisters and erosions.",
+    "D": "Noncaseating granulomas suggest sarcoidosis or Crohn disease of the genital skin, not white sclerotic plaques with phimosis."
+   },
+   "objective": "Recognize the histologic pattern of penile lichen sclerosus.",
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "genital dermatoses"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 33-year-old man who emigrated from Turkey has had painful mouth ulcers five or six times a year for several years. He now has two painful, deep ulcers on the scrotum. A small pustule developed at a venipuncture site 2 days after blood was drawn. HSV NAAT of the scrotal ulcer and syphilis serology are negative. Slit-lamp examination is normal. He is started on an oral drug that reduces neutrophil chemotaxis. Its adverse effects include diarrhea and, with clarithromycin, myopathy. This drug acts by which of the following mechanisms?</p>",
+   "options": [
+    "Binding tubulin and blocking microtubule polymerization",
+    "Blocking IL-6 receptor signaling",
+    "Inhibiting calcineurin and IL-2 transcription",
+    "Inhibiting dihydroorotate dehydrogenase",
+    "Inhibiting xanthine oxidase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Recurrent oral aphthae, painful scrotal ulcers and pathergy in a man from Turkey indicate Behçet disease. Colchicine treats its mucocutaneous features. It binds tubulin and prevents microtubule assembly, impairing neutrophil migration, degranulation and inflammasome activation. Diarrhea is the commonest adverse effect; CYP3A4 and P-glycoprotein inhibitors such as clarithromycin raise levels and can cause myopathy or multiorgan toxicity.</p><p><strong>Takeaway:</strong> Colchicine blocks microtubule polymerization in neutrophils and is used for mucocutaneous Behçet disease.</p>",
+   "whyNot": {
+    "B": "IL-6 receptor blockade (tocilizumab) is used for rheumatoid arthritis and giant cell arteritis and is given by injection or infusion, not as this oral drug.",
+    "C": "Calcineurin inhibitors (cyclosporine, tacrolimus) cause nephrotoxicity and hypertension, not the profile described.",
+    "D": "Leflunomide inhibits dihydroorotate dehydrogenase and is used for rheumatoid arthritis; it does not target neutrophil chemotaxis.",
+    "E": "Xanthine oxidase inhibitors lower urate production in gout and have no role in Behçet ulcers."
+   },
+   "objective": "Describe the mechanism and key interaction of colchicine used for mucocutaneous Behçet disease.",
+   "disciplines": [
+    "pharmacology",
+    "immunology"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "vasculitis",
+    "genital ulcers"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old man has had perineal pain, pain after ejaculation and a weak, hesitant urinary stream for 6 months. Urine cultures before and after prostatic massage are negative. He is prescribed tamsulosin. Which of the following intracellular effects in prostatic smooth muscle best explains how this drug improves his urinary stream?</p>",
+   "options": [
+    "Decreased activity of guanylyl cyclase",
+    "Decreased phospholipase C activity and inositol trisphosphate formation",
+    "Increased activity of adenylyl cyclase",
+    "Increased opening of ATP-sensitive potassium channels",
+    "Increased degradation of cyclic GMP"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Tamsulosin is a selective alpha-1A (and alpha-1D) adrenergic antagonist. Alpha-1 receptors are Gq-coupled: norepinephrine normally activates phospholipase C, generating IP<sub>3</sub> (which releases calcium from the sarcoplasmic reticulum) and diacylglycerol, contracting smooth muscle of the prostate and bladder neck. Blocking the receptor lowers this signal, relaxes the smooth muscle and reduces outlet resistance.</p><p><strong>Takeaway:</strong> Alpha-1 blockers relax prostatic smooth muscle by interrupting Gq, phospholipase C and IP<sub>3</sub>-calcium signaling.</p>",
+   "whyNot": {
+    "A": "Reduced guanylyl cyclase activity would lower cGMP and favour contraction, the opposite of the desired effect.",
+    "C": "Increased adenylyl cyclase activity is the beta-2 receptor (Gs) pathway, not the alpha-1 receptor tamsulosin blocks.",
+    "D": "Opening ATP-sensitive potassium channels is the action of minoxidil and diazoxide, not alpha blockers.",
+    "E": "Increased cGMP degradation would promote contraction; PDE5 inhibitors act in the opposite direction by preventing cGMP breakdown."
+   },
+   "objective": "Explain the Gq-coupled signaling blocked by alpha-1 antagonists used for male voiding symptoms.",
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "pelvic pain",
+    "autonomic drugs"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 6-year-old boy is brought to the emergency department because of left scrotal swelling and pain for 1 day. Five days ago he developed a rash on his legs, and he has had cramping abdominal pain and a painful ankle. Ten days ago he had a sore throat. There is palpable purpura over the buttocks and the backs of both legs. The left hemiscrotum is swollen, red and tender; the testis lies normally. Doppler ultrasonography shows scrotal wall thickening with normal testicular flow. Urinalysis shows microscopic hematuria. Direct immunofluorescence of a skin biopsy specimen would most likely show which of the following?</p>",
+   "options": [
+    "Granular IgA deposits in the walls of small dermal vessels",
+    "Granular IgG and C3 along the dermal-epidermal junction",
+    "Linear IgG along the basement membrane zone",
+    "Linear IgG and C3 along glomerular capillaries",
+    "No immune deposits, with granulomatous vasculitis"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Palpable purpura of dependent areas, arthralgia, abdominal pain, hematuria and scrotal swelling after an upper respiratory infection in a child is IgA vasculitis (Henoch-Schönlein purpura). Galactose-deficient IgA1 immune complexes deposit in small vessels, producing a leukocytoclastic vasculitis with IgA on direct immunofluorescence. Scrotal involvement can mimic torsion, which is why ultrasonography was needed.</p><p><strong>Takeaway:</strong> IgA vasculitis shows IgA deposits in small-vessel walls and can present with scrotal swelling in boys.</p>",
+   "whyNot": {
+    "B": "Granular IgG and complement at the dermal-epidermal junction (lupus band) suggests cutaneous lupus.",
+    "C": "Linear IgG along the basement membrane zone suggests bullous pemphigoid, which causes tense blisters, not purpura.",
+    "D": "Linear glomerular IgG defines anti-GBM disease, which would not explain skin purpura and scrotal swelling.",
+    "E": "Pauci-immune granulomatous vasculitis describes granulomatosis with polyangiitis, rare in young children and not associated with this picture."
+   },
+   "objective": "Identify IgA deposition in small vessels as the immunopathology of IgA vasculitis with scrotal involvement.",
+   "disciplines": [
+    "immunology",
+    "pathology"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "pediatric vasculitis",
+    "scrotal swelling"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old man with biopsy-confirmed lichen sclerosus of the glans and foreskin is prescribed clobetasol propionate 0.05% ointment once daily. Which of the following best describes how this drug reduces inflammation in the affected skin?</p>",
+   "options": [
+    "It binds a cell-surface G protein-coupled receptor that raises intracellular cAMP",
+    "It binds a cytosolic receptor that moves to the nucleus and suppresses NF-kB-driven cytokine genes",
+    "It blocks calcineurin-dependent dephosphorylation of NFAT in T cells",
+    "It inhibits cyclooxygenase-2 directly at the active site",
+    "It neutralizes circulating TNF-alpha"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Clobetasol is an ultrapotent glucocorticoid. Glucocorticoids diffuse into cells and bind a cytosolic glucocorticoid receptor, which releases its chaperones, enters the nucleus and alters transcription: it represses NF-kB and AP-1 targets (cytokines, adhesion molecules, COX-2 induction) and induces anti-inflammatory proteins such as annexin A1, which inhibits phospholipase A2. Prolonged use on thin genital skin can cause atrophy, so the dose is tapered to maintenance.</p><p><strong>Takeaway:</strong> Glucocorticoids act through a cytosolic receptor that changes gene transcription, suppressing NF-kB-driven inflammation.</p>",
+   "whyNot": {
+    "A": "Glucocorticoids are not G protein-coupled receptor ligands; raising cAMP describes beta agonists or PDE4 inhibitors.",
+    "C": "Blocking calcineurin-NFAT signaling is the action of topical calcineurin inhibitors such as tacrolimus, a second-line option.",
+    "D": "Glucocorticoids reduce COX-2 induction at the level of gene expression; they do not bind the enzyme's active site like NSAIDs.",
+    "E": "TNF-alpha neutralization is the action of monoclonal antibodies such as infliximab."
+   },
+   "objective": "Describe the genomic mechanism of glucocorticoids used for genital lichen sclerosus.",
+   "disciplines": [
+    "pharmacology"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "genital dermatoses",
+    "corticosteroids"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 34-year-old man comes to the clinic because of aching perineal and penile-tip pain for 7 months that worsens with prolonged sitting and after ejaculation. He has mild urinary frequency. He took a 4-week course of ciprofloxacin and then 3 months of tamsulosin, without improvement. He works as a long-haul truck driver and reports high stress. Digital rectal examination shows a normal-sized, nontender prostate; the levator ani muscles are tender with palpable taut bands that reproduce his pain. Genital examination is normal.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Urinalysis</td><td>No leukocytes, nitrite negative, no blood</td></tr><tr><td>Urine culture before prostatic massage</td><td>No growth</td></tr><tr><td>Urine culture after prostatic massage</td><td>No growth</td></tr><tr><td>First-void urine NAAT, gonorrhea and chlamydia</td><td>Negative</td></tr><tr><td>Post-void residual volume</td><td>20 mL</td></tr></tbody></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Another 6-week course of a fluoroquinolone",
+    "Cystoscopy with bladder biopsy",
+    "Pelvic floor physical therapy with myofascial trigger-point release",
+    "Transrectal prostate biopsy",
+    "Transurethral resection of the prostate"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Pelvic pain for more than 3 months with negative cultures before and after massage is chronic prostatitis/chronic pelvic pain syndrome (NIH category III). Treatment is matched to the dominant features. He has already failed an antibiotic and an alpha blocker, and his examination shows pelvic floor myofascial tenderness that reproduces his pain, so pelvic floor physical therapy with trigger-point release is the best next step, alongside attention to stress and sitting habits.</p><p><strong>Takeaway:</strong> In CP/CPPS with pelvic floor tenderness, use targeted pelvic floor physical therapy; avoid repeated antibiotics and surgery.</p>",
+   "whyNot": {
+    "A": "Cultures are negative and he has already completed an adequate course; repeated antibiotics without infection add harm without benefit.",
+    "B": "Cystoscopy is for hematuria, suspected stricture or bladder cancer risk; he has none of these.",
+    "D": "Biopsy is for suspected prostate cancer; his prostate is normal and biopsy carries infection risk.",
+    "E": "TURP treats obstructive BPH and has no role in CP/CPPS; his residual volume is normal."
+   },
+   "objective": "Manage chronic prostatitis/chronic pelvic pain syndrome with pelvic floor tenderness using pelvic floor physical therapy.",
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "pelvic pain"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 57-year-old man with obesity and type 2 diabetes comes to the clinic because of itching and soreness of the penis for 1 year, with painful tears of the foreskin during erections. Examination shows white, atrophic, crinkled plaques on the glans and inner foreskin with a few areas of purpura; the foreskin still retracts and the meatus is of normal size. There are no erosions or nodules. A punch biopsy confirms lichen sclerosus with no atypia. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    "Clobetasol propionate 0.05% ointment",
+    "Clotrimazole 1% cream",
+    "Fluorouracil 5% cream",
+    "Imiquimod 5% cream",
+    "Mupirocin 2% ointment"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Biopsy-proven penile lichen sclerosus without atypia is treated first with an ultrapotent topical corticosteroid, clobetasol propionate 0.05% ointment, applied daily and then tapered to a maintenance schedule. Circumcision is considered if foreskin disease or phimosis persists. He needs long-term follow-up and a new biopsy for any lesion that becomes eroded, indurated or nodular because of the risk of squamous cell carcinoma.</p><p><strong>Takeaway:</strong> Penile lichen sclerosus: ultrapotent topical steroid first, circumcision for refractory foreskin disease, and lifelong surveillance.</p>",
+   "whyNot": {
+    "B": "A topical azole treats candidal balanitis, which causes glazed red plaques with satellite lesions, not biopsy-proven lichen sclerosus.",
+    "C": "Topical fluorouracil is used for penile intraepithelial neoplasia, which the biopsy did not show.",
+    "D": "Imiquimod treats genital warts and some intraepithelial neoplasia; it is irritant and does not treat lichen sclerosus.",
+    "E": "Mupirocin is a topical antibacterial for impetigo and has no effect on lichen sclerosus."
+   },
+   "objective": "Treat biopsy-proven penile lichen sclerosus with an ultrapotent topical corticosteroid.",
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "genital dermatoses"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 24-year-old man comes to the clinic because of a swollen, painful left knee and right heel pain for 1 week. Three weeks ago he had dysuria after sex with a new partner. He has bilateral conjunctival injection, a moderate knee effusion and tenderness at the right Achilles insertion. Arthrocentesis shows 22,000 leukocytes/mm<sup>3</sup>, a negative Gram stain, no crystals and, later, no growth on culture. First-void urine NAAT is positive for <em>Chlamydia trachomatis</em>. He has no drug allergies. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Doxycycline for 3 months",
+    "Intravenous ceftriaxone for 14 days",
+    "Methotrexate weekly",
+    "NSAID therapy plus doxycycline for 7 days",
+    "Oral prednisone 60 mg daily"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Asymmetric lower-limb arthritis, enthesitis and conjunctivitis weeks after chlamydial urethritis is reactive arthritis. NSAIDs are first line for the arthritis. The active chlamydial infection is treated with the standard 7-day doxycycline course, and partners are treated. Prolonged antibiotic courses have not been shown to change the arthritis.</p><p><strong>Takeaway:</strong> Reactive arthritis: NSAIDs for the joints, standard treatment for any active chlamydial infection, and no prolonged antibiotics.</p>",
+   "whyNot": {
+    "A": "Long-term antibiotic therapy has not shown consistent benefit for reactive arthritis and adds adverse effects.",
+    "B": "IV ceftriaxone treats septic or disseminated gonococcal arthritis; the joint fluid is sterile and chlamydia is not treated by ceftriaxone.",
+    "C": "Methotrexate or sulfasalazine is reserved for chronic arthritis that persists despite NSAIDs, not a first episode.",
+    "E": "Systemic glucocorticoids are not first line; they are used only for severe disease unresponsive to NSAIDs and local injection."
+   },
+   "objective": "Manage chlamydia-triggered reactive arthritis with NSAIDs and standard treatment of the infection.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "spondyloarthritis",
+    "sexually transmitted infections"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old man comes to the clinic because of painful sores on his scrotum for 1 week. He has had painful mouth ulcers many times a year since his teens. He also reports tender red nodules on both shins. He has been in a monogamous relationship for 5 years. Examination shows two 1-cm punched-out scrotal ulcers, an older pale scar nearby, three aphthous ulcers on the buccal mucosa and tender erythematous nodules over the shins. HSV NAAT of the ulcer, RPR and HIV tests are negative. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Behçet disease",
+    "Crohn disease",
+    "Fixed drug eruption",
+    "Recurrent genital herpes",
+    "Reactive arthritis"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Recurrent oral aphthae plus painful scrotal ulcers that scar and erythema nodosum, with infectious causes excluded, meet the clinical criteria for Behçet disease. He needs a slit-lamp eye examination because uveitis is common and can threaten vision. Mucocutaneous disease is treated with topical glucocorticoids, colchicine or apremilast.</p><p><strong>Takeaway:</strong> Scarring scrotal ulcers with recurrent oral aphthae suggest Behçet disease; examine the eyes.</p>",
+   "whyNot": {
+    "B": "Crohn disease can cause oral ulcers and erythema nodosum, but without GI symptoms it does not explain recurrent scarring scrotal ulcers.",
+    "C": "A fixed drug eruption recurs at the same site with each exposure to a drug and does not cause oral aphthae or erythema nodosum.",
+    "D": "Herpes causes grouped vesicles that heal without scarring, and the lesion NAAT was negative.",
+    "E": "Reactive arthritis causes painless circinate balanitis and painless oral lesions with arthritis, not painful scarring scrotal ulcers."
+   },
+   "objective": "Diagnose Behçet disease from recurrent oral and scrotal ulcers with erythema nodosum.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "genital ulcers",
+    "vasculitis"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 40-year-old man and his 33-year-old female partner are evaluated for infertility of 2 years' duration. He had a vasectomy reversal 3 years ago. Her evaluation, including ovulation, tubal patency and uterine cavity, is normal. Two semen analyses show normal volume and sperm concentration, reduced progressive motility and extensive sperm agglutination. A test for sperm-bound antibodies is strongly positive. Testosterone and FSH are normal. Which of the following is the most effective treatment option for achieving pregnancy?</p>",
+   "options": [
+    "Clomiphene citrate",
+    "High-dose oral prednisone for 3 months",
+    "In vitro fertilization with intracytoplasmic sperm injection",
+    "Microsurgical varicocele repair",
+    "Repeat vasovasostomy"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Normal counts with agglutination, poor motility and sperm-bound antibodies after vasectomy reversal indicate immunologic male-factor infertility. Antibodies impair motility, mucus penetration and binding to the oocyte. Intracytoplasmic sperm injection places a single sperm directly into the oocyte and bypasses these steps, so it is the most effective option.</p><p><strong>Takeaway:</strong> For infertility due to antisperm antibodies, IVF with ICSI is the most effective treatment; systemic steroids are not recommended.</p>",
+   "whyNot": {
+    "A": "Clomiphene raises gonadotropins for men with low testosterone and low sperm production; his hormones and counts are normal.",
+    "B": "Systemic glucocorticoids give small, inconsistent benefit and risk serious harm such as avascular necrosis of the hip.",
+    "D": "No varicocele is described, and repair would not remove antisperm antibodies.",
+    "E": "His ducts are patent (normal sperm concentration), so a further reversal would not help."
+   },
+   "objective": "Select intracytoplasmic sperm injection for infertility caused by antisperm antibodies.",
+   "extraAreas": [
+    "14.03.01"
+   ],
+   "clinicalSciences": [
+    "obgyn",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 5,
+   "tags": [
+    "infertility"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 7-year-old boy is brought to the emergency department because of right scrotal pain and swelling that began 6 hours ago. For 4 days he has had a raised purple rash on his buttocks and legs and intermittent abdominal pain. There is palpable purpura on the lower extremities. The right hemiscrotum is swollen, red and tender; the testis is difficult to examine because of swelling, and the cremasteric reflex cannot be assessed reliably. Urinalysis shows 10 to 20 RBC/hpf. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Intravenous methylprednisolone",
+    "Oral ibuprofen and discharge with follow-up in 1 week",
+    "Percutaneous renal biopsy",
+    "Scrotal Doppler ultrasonography",
+    "Skin biopsy for direct immunofluorescence"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The rash, abdominal pain and hematuria make IgA vasculitis (Henoch-Schönlein purpura) likely, and scrotal involvement is a known manifestation. But acute scrotal swelling in a child with an unreliable examination must not be attributed to vasculitis until testicular torsion is excluded. Doppler ultrasonography that shows preserved testicular flow with scrotal wall and epididymal swelling supports vasculitic involvement; absent flow requires emergency exploration.</p><p><strong>Takeaway:</strong> A boy with IgA vasculitis and acute scrotal swelling still needs urgent Doppler ultrasonography to exclude torsion.</p>",
+   "whyNot": {
+    "A": "Systemic glucocorticoids may be used for severe HSP complications but do not address the possibility of torsion.",
+    "B": "Discharge with NSAIDs risks missing torsion; NSAIDs are also used cautiously when there is renal involvement.",
+    "C": "Renal biopsy is reserved for nephrotic-range proteinuria, renal impairment or persistent severe nephritis, none of which is present.",
+    "E": "A skin biopsy could confirm IgA vasculitis, but the diagnosis is clinical and the urgent question is testicular viability."
+   },
+   "objective": "Exclude testicular torsion with Doppler ultrasonography in a child with IgA vasculitis and acute scrotal swelling.",
+   "extraAreas": [
+    "14.04.01"
+   ],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "pediatric vasculitis",
+    "scrotal swelling"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 72-year-old man with lichen sclerosus of the glans and foreskin, treated intermittently with clobetasol for 9 years, comes to the clinic because of a sore on the glans for 2 months that has not healed despite daily clobetasol. Examination shows a 1-cm firm, slightly raised, ulcerated area on the glans within a background of white sclerotic skin. There is no inguinal lymphadenopathy. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Biopsy of the lesion",
+    "Circumcision",
+    "Increase clobetasol to twice daily for 3 months",
+    "Oral valacyclovir",
+    "Topical tacrolimus"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Long-standing lichen sclerosus carries an increased risk of penile squamous cell carcinoma. A firm, nonhealing ulcerated lesion that has not responded to adequate topical steroid must be biopsied to look for intraepithelial neoplasia or invasive carcinoma before any further treatment.</p><p><strong>Takeaway:</strong> Any persistent, indurated or ulcerated lesion in genital lichen sclerosus needs biopsy to exclude squamous cell carcinoma.</p>",
+   "whyNot": {
+    "B": "Circumcision treats foreskin disease and phimosis but would not establish whether this glans lesion is malignant.",
+    "C": "Escalating the steroid delays diagnosis of possible cancer and risks skin atrophy.",
+    "D": "Herpes produces recurrent painful vesicles and erosions, not a single firm lesion present for 2 months.",
+    "E": "Topical calcineurin inhibitors are a steroid-sparing option for lichen sclerosus but are avoided when malignancy has not been excluded."
+   },
+   "objective": "Biopsy a nonhealing indurated lesion arising in genital lichen sclerosus to exclude squamous cell carcinoma.",
+   "extraAreas": [
+    "14.02.01"
+   ],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "genital dermatoses",
+    "older adults"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "What forms the blood-testis barrier?",
+   "back": "Tight junctions between adjacent Sertoli cells.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which procedure leads most men to develop antisperm antibodies?",
+   "back": "Vasectomy.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which HLA type is associated with Behçet disease?",
+   "back": "HLA-B51.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "What is circinate balanitis?",
+   "back": "Painless shallow erosions with a white serpiginous border on the glans, seen in reactive arthritis.",
+   "question": 2
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Classic histology of lichen sclerosus?",
+   "back": "Atrophic epidermis over a homogenized upper-dermal collagen band, with a lymphocytic band beneath.",
+   "question": 3
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "How does colchicine reduce inflammation?",
+   "back": "It binds tubulin and blocks microtubule polymerization, impairing neutrophil migration.",
+   "question": 4
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which second messenger pathway do alpha-1 receptors use?",
+   "back": "Gq, phospholipase C, IP3 and calcium release.",
+   "question": 5
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "What does direct immunofluorescence show in IgA vasculitis?",
+   "back": "IgA deposits in small-vessel walls.",
+   "question": 6
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "How is CP/CPPS defined?",
+   "back": "Pelvic pain for at least 3 of the previous 6 months with no demonstrable infection (NIH category III).",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "CP/CPPS with pelvic floor tenderness and trigger points: best treatment?",
+   "back": "Pelvic floor physical therapy with myofascial trigger-point release.",
+   "question": 8
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "First-line treatment for penile lichen sclerosus?",
+   "back": "Ultrapotent topical corticosteroid (clobetasol propionate 0.05% ointment).",
+   "question": 9
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Most common cause of pathological (secondary) phimosis in boys?",
+   "back": "Lichen sclerosus (balanitis xerotica obliterans).",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Graft of choice for urethroplasty of a lichen sclerosus stricture?",
+   "back": "Buccal mucosa, because genital-skin grafts tend to develop the disease again.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "First-line treatment for reactive arthritis?",
+   "back": "NSAIDs; treat any active chlamydial infection with a standard course.",
+   "question": 10
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Which exam does every patient with Behçet disease need?",
+   "back": "Slit-lamp ophthalmologic examination for uveitis.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Most effective treatment for infertility due to antisperm antibodies?",
+   "back": "IVF with intracytoplasmic sperm injection.",
+   "question": 12
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "A child with IgA vasculitis has acute scrotal swelling. Next step?",
+   "back": "Scrotal Doppler ultrasonography to exclude torsion.",
+   "question": 13
+  }
+ ]
+}

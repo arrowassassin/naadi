@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 494" width="760" height="494" role="img" aria-label="Table diagram of five fetal circulatory shunts, the trigger that closes each after birth, and the adult remnant of each" font-family="sans-serif">
+<title>Table diagram of five fetal circulatory shunts, the trigger that closes each after birth, and the adult remnant of each</title>
+<rect x="0" y="0" width="760" height="494" fill="#ffffff"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<text x="380" y="34" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">Fetal shunts at birth: what closes them and what remains</text>
+<text x="30" y="70" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Fetal structure</text>
+<text x="210" y="70" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Main trigger for closure after birth</text>
+<text x="548" y="70" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Adult remnant</text>
+<rect x="20" y="84" width="172" height="52" rx="6" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="30" y="115" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Ductus venosus</text>
+<rect x="200" y="84" width="322" height="52" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="210" y="108" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Umbilical venous flow stops when the cord</text>
+<text x="210" y="126" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">is clamped</text>
+<line x1="524" y1="110" x2="536" y2="110" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="540" y="84" width="205" height="52" rx="6" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="550" y="115" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Ligamentum venosum</text>
+<rect x="20" y="148" width="172" height="52" rx="6" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="30" y="179" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Foramen ovale</text>
+<rect x="200" y="148" width="322" height="52" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="210" y="172" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Left atrial pressure rises above right</text>
+<text x="210" y="190" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">(lungs open, placenta removed)</text>
+<line x1="524" y1="174" x2="536" y2="174" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="540" y="148" width="205" height="52" rx="6" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="550" y="179" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Fossa ovalis</text>
+<rect x="20" y="212" width="172" height="52" rx="6" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="30" y="243" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Ductus arteriosus</text>
+<rect x="200" y="212" width="322" height="52" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="210" y="243" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">PaO2 rises and circulating PGE2 falls</text>
+<line x1="524" y1="238" x2="536" y2="238" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="540" y="212" width="205" height="52" rx="6" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="550" y="243" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Ligamentum arteriosum</text>
+<rect x="20" y="276" width="172" height="52" rx="6" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="30" y="307" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Umbilical vein</text>
+<rect x="200" y="276" width="322" height="52" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="210" y="307" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Cord clamping</text>
+<line x1="524" y1="302" x2="536" y2="302" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="540" y="276" width="205" height="52" rx="6" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="550" y="307" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Ligamentum teres hepatis</text>
+<rect x="20" y="340" width="172" height="52" rx="6" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="30" y="371" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Umbilical arteries</text>
+<rect x="200" y="340" width="322" height="52" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="210" y="371" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Cord clamping</text>
+<line x1="524" y1="366" x2="536" y2="366" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="540" y="340" width="205" height="52" rx="6" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="550" y="371" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Medial umbilical ligaments</text>
+<text x="20" y="420" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Functional closure of the foramen ovale and ductus arteriosus takes hours to days;</text>
+<text x="20" y="440" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">anatomic closure takes weeks. Indomethacin or ibuprofen (block prostaglandin</text>
+<text x="20" y="460" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">synthesis) close a ductus; alprostadil (PGE1) keeps it open.</text>
+</svg>

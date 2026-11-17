@@ -1,0 +1,824 @@
+{
+ "area": "06.02.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Benign skin tumours, cysts and vascular lesions: pathology and associations",
+   "html": "<p>Benign skin growths are classified by the cell they come from: keratinocytes, melanocytes, adnexal structures (follicles, glands), dermal fibroblasts, fat, vessels or immune cells. Exams test them as visual diagnoses, through their histology, and through the systemic diseases a few of them signal.</p>\n<h3>Keratinocyte growths</h3>\n<ul>\n<li><strong>Seborrheic keratosis</strong>: the commonest benign tumour of older adults. A waxy, \"stuck-on\" tan to black papule or plaque with a verrucous surface and keratin-filled pseudocysts (horn cysts) visible on dermoscopy. Histology shows basaloid keratinocyte proliferation above the level of the surrounding epidermis with horn cysts. Many carry activating <em>FGFR3</em> or <em>PIK3CA</em> mutations, yet they never become malignant. The <strong>sign of Leser-Trélat</strong>, a sudden eruption of many seborrheic keratoses, can signal an internal adenocarcinoma, most often gastric, probably through tumour-derived growth factors.</li>\n<li><strong>Dermatosis papulosa nigra</strong>: small dark seborrheic-keratosis-like papules on the cheeks and neck, common in people with dark skin and often familial. Destructive treatments risk pigment change.</li>\n<li><strong>Acanthosis nigricans</strong>: velvety, hyperpigmented thickening of the neck, axillae and groin. High insulin levels stimulate IGF-1 receptors on keratinocytes and fibroblasts, driving epidermal papillomatosis. It marks insulin resistance (obesity, type 2 diabetes, polycystic ovary syndrome) and occurs with some drugs (systemic glucocorticoids, nicotinic acid, protease inhibitors) and, when sudden and widespread in a lean older adult, gastric adenocarcinoma (tumour-made TGF-alpha acting on EGFR).</li>\n<li><strong>Acrochordons</strong> (skin tags): soft pedunculated papules in folds, linked to insulin resistance and pregnancy.</li>\n</ul>\n<h3>Melanocytic nevi</h3>\n<p>Nevi are benign clonal proliferations of melanocytes, usually driven by an activating <em>BRAF</em> V600E mutation (or <em>NRAS</em> in congenital nevi) followed by oncogene-induced senescence, which halts growth. Acquired nevi move through stages as nests drop from the junction into the dermis.</p>\n[[figure:s23f-fig060201-1]]\n<p>Nevus counts rise with childhood sun exposure and fall after middle age. A large number of nevi, or atypical (dysplastic) nevi, are markers of melanoma risk rather than common precursors. Familial atypical multiple mole-melanoma syndrome (many atypical nevi, family melanoma) is linked to germline <em>CDKN2A</em> variants (p16, a CDK4/6 inhibitor) and an excess of pancreatic cancer. Congenital nevi are present at birth or in the first months; the risk of melanoma rises with size and is greatest for giant lesions (projected adult size above 20 cm), which can also come with neurocutaneous melanosis. Blue nevi are dermal melanocytes deep enough that the Tyndall effect makes them look blue; Spitz nevi are spindle and epithelioid nevi of children that can mimic melanoma under the microscope.</p>\n<h3>Cysts</h3>\n<table class=\"hy\">\n<thead><tr><th>Cyst</th><th>Origin and site</th><th>Histology</th><th>Association</th></tr></thead>\n<tbody>\n<tr><td>Epidermoid (epidermal inclusion) cyst</td><td>Follicular infundibulum; face, neck, trunk; often a central punctum</td><td>Stratified squamous lining <strong>with a granular layer</strong>; laminated, flaky keratin</td><td>Multiple, early-onset cysts with osteomas and colon polyps: Gardner variant of familial adenomatous polyposis (<em>APC</em>)</td></tr>\n<tr><td>Pilar (trichilemmal) cyst</td><td>Follicular isthmus; scalp; often familial</td><td>Lining <strong>without a granular layer</strong>; dense, compact keratin that may calcify</td><td>Autosomal dominant tendency</td></tr>\n<tr><td>Dermoid cyst</td><td>Ectoderm trapped along embryonic fusion lines; lateral eyebrow, midline nose or scalp</td><td>Keratinizing epithelium <strong>with hair follicles, sebaceous and sweat glands</strong> in the wall</td><td>Midline lesions may connect intracranially: image before surgery</td></tr>\n<tr><td>Steatocystoma</td><td>Sebaceous duct</td><td>Wavy eosinophilic cuticle with sebaceous lobules</td><td>Multiplex form with keratin 17 variants</td></tr>\n<tr><td>Milia</td><td>Tiny epidermoid cysts</td><td>Same as epidermoid</td><td>Newborn face; after blistering or trauma</td></tr>\n</tbody></table>\n<p>An epidermoid cyst is not a sebaceous cyst: the \"cheesy\" contents are keratin. When the wall ruptures, keratin spills into the dermis and causes a foreign-body granulomatous reaction that looks like infection but is often sterile.</p>\n<h3>Dermal, fat and adnexal tumours</h3>\n<ul>\n<li><strong>Dermatofibroma</strong>: a firm brown papule, usually on the legs, that dimples inward when pinched (fibroblasts tethered to the overlying epidermis). Histology shows dermal fibroblasts and histiocytes trapping collagen bundles, with overlying epidermal hyperplasia. Sometimes follows an insect bite.</li>\n<li><strong>Lipoma</strong>: soft, mobile, rubbery, encapsulated mature adipocytes; the commonest soft-tissue tumour. Multiple painful lipomas occur in Dercum disease; multiple symmetric lipomatosis is linked to heavy alcohol use.</li>\n<li><strong>Pilomatricoma</strong>: a hard, often bluish nodule on the head or neck of a child, made of \"shadow\" (ghost) cells and calcification, driven by beta-catenin (<em>CTNNB1</em>) mutations.</li>\n<li><strong>Sebaceous hyperplasia</strong>: yellow umbilicated papules on the face of older adults; can mimic basal cell carcinoma. Sebaceous <em>adenomas</em>, by contrast, suggest Muir-Torre syndrome (a Lynch syndrome variant with mismatch repair defects).</li>\n<li><strong>Xanthomas</strong>: lipid-laden macrophages (foam cells). Eruptive xanthomas (crops of yellow papules on buttocks and extensors) appear with very high triglycerides from chylomicrons and VLDL; tendinous xanthomas suggest familial hypercholesterolemia; xanthelasma on the eyelids is associated with dyslipidemia in about half of cases.</li>\n</ul>\n<h3>Vascular tumours and mast cells</h3>\n<p>Vascular anomalies are split into <strong>tumours</strong>, which proliferate (infantile hemangioma, pyogenic granuloma, cherry angioma), and <strong>malformations</strong>, which are errors of vessel development present at birth that grow in proportion to the child and never regress (port-wine stain, venous and lymphatic malformations).</p>\n<ul>\n<li><strong>Infantile hemangioma</strong>: the commonest tumour of infancy, more frequent in girls, preterm and low-birth-weight infants and white infants. Absent or faint at birth, it proliferates rapidly over the first months (most growth by 5 months), then slowly involutes over years, often leaving fibrofatty residue or telangiectasia. Endothelial cells stain for <strong>GLUT1</strong>, which separates them from congenital hemangiomas and vascular malformations. Propranolol shrinks them, probably by vasoconstriction and reduced VEGF and bFGF signalling.</li>\n<li><strong>Pyogenic granuloma</strong> (lobular capillary hemangioma): a fast-growing, friable, bleeding red papule on fingers, lips or gingiva; common in children and in pregnancy (granuloma gravidarum), possibly from hormonal VEGF. Histology shows lobules of capillaries in an edematous stroma, often with surface ulceration; despite the name it is neither pyogenic nor a granuloma.</li>\n<li><strong>Cherry angioma</strong>: bright red dome-shaped papules of dilated capillaries, increasing with age.</li>\n<li><strong>Glomus tumour</strong>: an exquisitely painful, cold-sensitive blue-red papule under a nail, from the modified smooth-muscle cells of the thermoregulatory glomus body.</li>\n<li><strong>Cutaneous mastocytosis</strong>: in children, brown macules or papules (maculopapular cutaneous mastocytosis, formerly urticaria pigmentosa) or a solitary mastocytoma. Rubbing a lesion releases histamine and produces a wheal (Darier sign). Driven by activating <em>KIT</em> mutations; pediatric disease usually regresses by adolescence, whereas adult-onset disease is usually systemic (<em>KIT</em> D816V).</li>\n</ul>\n<div class=\"trap\"><p>A \"hemangioma\" present in full at birth that never grew is not an infantile hemangioma; it is a congenital hemangioma (GLUT1-negative) or a vascular malformation. A flat port-wine stain in the V1 distribution suggests Sturge-Weber syndrome (somatic <em>GNAQ</em>), not a tumour that will involute.</p></div>\n<div class=\"pearl\"><p>Five benign lesions that point inward to a systemic problem: eruptive seborrheic keratoses (gastric cancer), sudden acanthosis nigricans in a lean adult (gastric cancer), eruptive xanthomas (severe hypertriglyceridemia), multiple early epidermoid cysts with osteomas (FAP, Gardner type), sebaceous adenomas (Muir-Torre).</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Seborrheic Keratosis"
+    },
+    {
+     "statpearls": "Epidermal Inclusion Cyst"
+    },
+    {
+     "statpearls": "Hemangioma"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Benign skin lesions: when to reassure, when to biopsy and when to treat",
+   "html": "<p>Most benign skin lesions need only a confident diagnosis and reassurance. The clinical skills are to recognise the common lesions, to spot the features that demand a biopsy, and to know the few benign tumours that need urgent action, mainly infantile hemangiomas in high-risk sites.</p>\n<h3>When a \"benign\" lesion needs a biopsy</h3>\n<ul>\n<li>A pigmented lesion that is changing, the \"ugly duckling\" that looks different from the patient's other nevi, or one with asymmetry, irregular borders, several colours or new symptoms (bleeding, itching).</li>\n<li>Any lesion whose dermoscopy or appearance is not clearly that of a seborrheic keratosis, dermatofibroma or typical nevus.</li>\n<li>Rapid growth, ulceration without trauma, or a firm lesion fixed to deep tissue.</li>\n</ul>\n<p>An <strong>excisional biopsy</strong> with narrow (1 to 3 mm) margins is preferred for a lesion suspicious for melanoma, so the pathologist can measure thickness; a deep shave (saucerization) that removes the whole lesion is an acceptable alternative. Never treat a suspicious pigmented lesion with cryotherapy or laser without histology. Seborrheic keratoses that are irritated or unwanted can be removed by cryotherapy, curettage or shave; in darker skin, cryotherapy can leave lasting hypopigmentation, so discuss this first.</p>\n<h3>Cysts and lipomas</h3>\n<p>An <strong>inflamed epidermoid cyst</strong> is usually a sterile foreign-body reaction to ruptured keratin. A fluctuant, painful cyst is incised and drained; antibiotics are added only for surrounding cellulitis or systemic signs. Drainage does not cure: once inflammation has settled (often 4 to 6 weeks), <strong>excise the whole cyst including its wall</strong>, or it will recur. Midline cysts on the nose or scalp in a child may be dermoids with an intracranial connection; image with MRI before any procedure.</p>\n<p>A <strong>lipoma</strong> that is small, soft, superficial and stable needs no treatment. Image (ultrasound first, MRI for deep or large masses) when a soft-tissue mass is larger than about 5 cm, deep to fascia, growing, painful or firm, because these features raise concern for a sarcoma such as liposarcoma. Never \"shell out\" such a mass without imaging and a planned core biopsy, because an unplanned excision of a sarcoma compromises curative surgery.</p>\n<h3>Infantile hemangioma</h3>\n<p>Most infantile hemangiomas need only monitoring and photographs while they grow and involute. The decision point is early: the critical growth window is the first 1 to 3 months, so a hemangioma that needs treatment should be seen by a specialist within the first month of life, not after it has grown.</p>\n<table class=\"hy\">\n<thead><tr><th>High-risk feature</th><th>Concern</th><th>Action</th></tr></thead>\n<tbody>\n<tr><td>Periocular</td><td>Astigmatism, amblyopia, visual-axis obstruction</td><td>Oral propranolol; ophthalmology</td></tr>\n<tr><td>Large segmental facial (over 5 cm)</td><td>PHACE syndrome: posterior fossa anomalies, arterial anomalies, cardiac (coarctation), eye anomalies, sternal defects</td><td>MRI and MRA of head and neck, echocardiogram, eye exam, then propranolol with caution</td></tr>\n<tr><td>Beard area (chin, jaw, neck)</td><td>Airway hemangioma</td><td>Airway evaluation (ENT) if stridor or noisy breathing</td></tr>\n<tr><td>Lumbosacral segmental</td><td>Spinal dysraphism, tethered cord, genitourinary anomalies (LUMBAR association)</td><td>Spinal ultrasound (young infant) or MRI</td></tr>\n<tr><td>Five or more cutaneous hemangiomas</td><td>Hepatic hemangiomas, high-output heart failure, hypothyroidism (tumour deiodinase)</td><td>Liver ultrasound; thyroid tests if hepatic lesions are large</td></tr>\n<tr><td>Lip, nasal tip, ear, breast, ulcerated diaper-area lesions</td><td>Disfigurement, ulceration, pain</td><td>Early propranolol; wound care for ulceration</td></tr>\n</tbody></table>\n<p><strong>Oral propranolol</strong> is first-line systemic therapy. Before starting, take a history and examination focused on heart disease, rate and blood pressure; an ECG is indicated if the heart rate is low for age or there is a family history of arrhythmia. Give the drug with feeds and hold it when the infant is not eating or is vomiting, because propranolol blunts the counter-regulatory response to <strong>hypoglycemia</strong>. Other adverse effects are bradycardia, hypotension, bronchospasm and sleep disturbance. Topical timolol can be used for small thin superficial lesions. Systemic corticosteroids are a second-line option. Residual fibrofatty tissue or skin change after involution may need surgery or laser later.</p>\n<div class=\"trap\"><p>Waiting for involution is wrong for a periocular, airway, ulcerated or large facial hemangioma. Months of amblyopia from an obstructed visual axis cannot be recovered.</p></div>\n<h3>Pyogenic granuloma, xanthomas and mastocytosis</h3>\n<p><strong>Pyogenic granuloma</strong> bleeds a lot after minor trauma. Remove it by shave excision with curettage and electrocautery of the base, and always send it for histology because amelanotic melanoma and other malignancies can look the same. Lesions that appear in pregnancy often shrink after delivery and can be observed if they are not bleeding much.</p>\n<p><strong>Eruptive xanthomas</strong> mean triglycerides are very high (usually above 1,000 mg/dL), a level that risks acute pancreatitis. Check a fasting lipid panel, glucose and A1c, thyroid function and medications (oral estrogen, isotretinoin, some antiretrovirals and antipsychotics, thiazides, beta-blockers). Treat with a very low-fat diet, alcohol avoidance, glycemic control and fibrates; the papules resolve over weeks as triglycerides fall. <strong>Xanthelasma</strong> calls for a lipid panel.</p>\n<p>Children with <strong>cutaneous mastocytosis</strong> are counselled to avoid triggers of mast cell release (friction, heat, hot baths, some opioids, NSAIDs in sensitive children) and given H1 and H2 antihistamines for itching and flushing. A baseline serum tryptase helps decide who needs evaluation for systemic disease; children with extensive lesions or a history of severe reactions carry an epinephrine auto-injector. Most childhood disease regresses by adolescence. Adults with new mastocytosis lesions usually have systemic disease and need hematology assessment.</p>\n<h3>Acanthosis nigricans and skin tags</h3>\n<p>Acanthosis nigricans in a child or adolescent with obesity is a visible marker of insulin resistance: screen with A1c or fasting glucose and lipids, check blood pressure, consider polycystic ovary syndrome in adolescents with irregular periods or hirsutism, and treat with family-based lifestyle change; the skin improves as insulin falls. Rapid, extensive acanthosis in a lean older adult, especially with involvement of the palms (\"tripe palms\"), the mouth or weight loss, needs a search for gastrointestinal cancer, starting with upper endoscopy.</p>\n<div class=\"pearl\"><p>Pigmented and vascular lesions look different in skin of colour. Seborrheic keratoses and dermatosis papulosa nigra are darker; benign nevi on the palms, soles and nails are more common, and so is acral lentiginous melanoma, which makes up a larger share of melanoma in Black, Asian and Hispanic patients. Examine palms, soles and nail beds in everyone.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Hemangioma"
+    },
+    {
+     "statpearls": "Lipoma"
+    },
+    {
+     "statpearls": "Acanthosis Nigricans"
+    },
+    {
+     "statpearls": "Pyogenic Granuloma"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Junctional, compound and intradermal melanocytic nevi, showing where nests of nevus cells sit relative to the dermal-epidermal junction (original schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 3-month-old girl born at 33 weeks' gestation is brought to the clinic for a red lesion on her scalp. Her parents first noticed a faint pink patch at 2 weeks of age; it has since grown quickly into a bright red, soft, lobulated plaque that blanches partly with pressure. A biopsy of a similar lesion would show a proliferation of capillary-sized vessels. Immunostaining of the endothelial cells for which of the following markers would best confirm the diagnosis?</p>",
+   "options": [
+    "CD1a",
+    "CD117 (KIT)",
+    "Glucose transporter 1 (GLUT1)",
+    "HMB-45",
+    "S-100 protein"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A lesion that was barely present at birth and then grew rapidly in the first months of life, in a preterm girl, is an infantile hemangioma. Its endothelial cells express GLUT1 throughout proliferation and involution. GLUT1 separates infantile hemangiomas from congenital hemangiomas (fully formed at birth), pyogenic granulomas and vascular malformations, which are all GLUT1-negative. Their placental-type phenotype has led to the hypothesis of a placental origin.</p><p><strong>Takeaway:</strong> GLUT1 positivity is the marker of infantile hemangioma.</p>",
+   "whyNot": {
+    "A": "CD1a marks Langerhans cells and is used to diagnose Langerhans cell histiocytosis, not vascular tumours.",
+    "B": "CD117 (KIT) marks mast cells and gastrointestinal stromal tumours; it would be used for mastocytosis.",
+    "D": "HMB-45 is a melanocytic marker used for melanoma, not for endothelial cells.",
+    "E": "S-100 stains melanocytes, nerve sheath cells and Langerhans cells, not hemangioma endothelium."
+   },
+   "objective": "Identify GLUT1 as the immunohistochemical marker of infantile hemangioma.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "vascular lesions"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old man comes to the clinic because dozens of itchy, tan-to-brown, waxy, \"stuck-on\" papules have appeared on his chest and back over 3 months. He has also lost 7 kg (15 lb) and has early satiety. Dermoscopy shows keratin-filled pseudocysts in each lesion. Which of the following malignancies is most strongly associated with this skin finding?</p>",
+   "options": [
+    "Gastric adenocarcinoma",
+    "Hepatocellular carcinoma",
+    "Multiple myeloma",
+    "Renal cell carcinoma",
+    "Small cell carcinoma of the lung"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A sudden eruption of many seborrheic keratoses, often itchy, is the sign of Leser-Trélat. Combined with weight loss and early satiety, it suggests an internal adenocarcinoma, most often of the stomach. Tumour-derived growth factors such as TGF-alpha, acting on epidermal growth factor receptors, are thought to drive the keratinocyte proliferation. The sign frequently coexists with malignant acanthosis nigricans and tripe palms.</p><p><strong>Takeaway:</strong> Eruptive seborrheic keratoses (Leser-Trélat) suggest internal adenocarcinoma, especially gastric.</p>",
+   "whyNot": {
+    "B": "Hepatocellular carcinoma is not classically linked to eruptive seborrheic keratoses; its skin clues are those of underlying cirrhosis.",
+    "C": "Multiple myeloma is associated with amyloid deposits, scleromyxedema and necrobiotic xanthogranuloma rather than Leser-Trélat.",
+    "D": "Renal cell carcinoma can metastasize to skin as vascular nodules but does not cause eruptive seborrheic keratoses.",
+    "E": "Small cell lung cancer is linked to paraneoplastic endocrine and neurologic syndromes, not to the sign of Leser-Trélat."
+   },
+   "objective": "Recognize the sign of Leser-Trélat and its association with gastric adenocarcinoma.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "paraneoplastic",
+    "older adults"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old girl with obesity (BMI 37 kg/m<sup>2</sup>) and irregular menstrual periods has dark, velvety, thickened skin on the back of her neck and in both axillae. Fasting serum insulin is markedly elevated with a fasting plasma glucose of 104 mg/dL. Which of the following best explains the skin finding?</p>",
+   "options": [
+    "Androgen stimulation of sebaceous glands",
+    "Deposition of glycosylated collagen in the dermis",
+    "Insulin activation of IGF-1 receptors on keratinocytes and fibroblasts",
+    "Melanocyte stimulation by ACTH acting on melanocortin-1 receptors",
+    "Tumor-derived TGF-alpha acting on epidermal growth factor receptors"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Velvety hyperpigmented thickening of the neck and axillae with obesity, hyperinsulinemia and irregular periods (suggesting polycystic ovary syndrome) is acanthosis nigricans of insulin resistance. At high concentrations, insulin binds IGF-1 receptors on keratinocytes and dermal fibroblasts and stimulates their growth, producing papillomatosis and hyperkeratosis. The dark colour comes mostly from the thickened keratin layer rather than more melanin. Weight loss and improved insulin sensitivity make it fade.</p><p><strong>Takeaway:</strong> Acanthosis nigricans in obesity reflects hyperinsulinemia stimulating IGF-1 receptors in the skin.</p>",
+   "whyNot": {
+    "A": "Androgen excess causes acne and hirsutism through sebaceous and follicular effects, not velvety plaques in skin folds.",
+    "B": "Glycosylated collagen thickens skin in diabetic scleredema and causes stiff hands, not velvety hyperpigmented folds.",
+    "D": "ACTH acting on MC1R causes generalized hyperpigmentation in Addison disease, with darkened creases and mucosa, not papillomatous plaques.",
+    "E": "TGF-alpha from a tumour drives malignant acanthosis nigricans in older adults with gastric cancer, not acanthosis in an adolescent with obesity and hyperinsulinemia."
+   },
+   "objective": "Explain the mechanism of acanthosis nigricans in insulin resistance.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "pathology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigmented plaques",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old man has had several firm, mobile, skin-colored nodules on his face, scalp and back since age 14; two had central pores that discharged cheesy, foul-smelling material. A panoramic dental x-ray taken for impacted teeth shows several bony masses of the mandible. His father died of colon cancer at age 42. Excision of a nodule shows a cyst lined by stratified squamous epithelium with a granular layer, filled with laminated keratin. A germline mutation in which of the following genes is most likely?</p>",
+   "options": [
+    "APC",
+    "MLH1",
+    "PTCH1",
+    "STK11",
+    "TSC2"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Multiple epidermoid cysts beginning in adolescence (stratified squamous lining with a granular layer and laminated keratin), osteomas of the jaw, dental abnormalities and a parent with early colon cancer are the Gardner variant of familial adenomatous polyposis. It is caused by a germline loss-of-function mutation in the <em>APC</em> tumour-suppressor gene, which normally targets beta-catenin for degradation. Patients also develop desmoid tumours and congenital hypertrophy of the retinal pigment epithelium, and need colonoscopic surveillance from childhood and prophylactic colectomy.</p><p><strong>Takeaway:</strong> Multiple early epidermoid cysts plus osteomas suggest Gardner syndrome (APC mutation).</p>",
+   "whyNot": {
+    "B": "<em>MLH1</em> mutations cause Lynch syndrome; the Muir-Torre variant gives sebaceous adenomas and keratoacanthomas, not epidermoid cysts with osteomas.",
+    "C": "<em>PTCH1</em> mutations cause basal cell nevus syndrome, with many basal cell carcinomas, jaw keratocysts and palmar pits rather than osteomas.",
+    "D": "<em>STK11</em> mutations cause Peutz-Jeghers syndrome, with lip and buccal pigmented macules and hamartomatous polyps.",
+    "E": "<em>TSC2</em> mutations cause tuberous sclerosis, with angiofibromas, ash-leaf macules and shagreen patches."
+   },
+   "objective": "Associate multiple epidermoid cysts and osteomas with the APC gene.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cysts",
+    "genetics"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 10-month-old girl is brought to the clinic for a painless, firm, 1-cm nodule at the outer end of her left eyebrow that has been present since birth and is growing slowly. It does not change with crying and is not attached to the skin surface. It is excised. Microscopy shows a cyst lined by keratinizing stratified squamous epithelium with hair follicles and sebaceous glands in its wall. Which of the following best explains the origin of this lesion?</p>",
+   "options": [
+    "Failed fusion of the neural tube with herniation of meninges",
+    "Germ cells arrested during midline migration",
+    "Persistent remnant of the thyroglossal duct",
+    "Remnant of the second pharyngeal cleft",
+    "Surface ectoderm sequestered along a line of embryonic fusion"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A congenital, firm nodule at the lateral eyebrow lined by keratinizing epithelium with adnexal structures (hair follicles, sebaceous glands) is a dermoid cyst. Dermoid cysts form when surface ectoderm is trapped beneath the skin as facial processes fuse; the frontozygomatic suture at the lateral brow is the commonest site. Lateral lesions are benign and easily excised. Midline nasal or scalp dermoids can extend through bone to the dura, so they are imaged before surgery.</p><p><strong>Takeaway:</strong> A dermoid cyst is ectoderm sequestered along an embryonic fusion line; its wall contains adnexal structures.</p>",
+   "whyNot": {
+    "A": "Failed neural tube closure with herniated meninges produces an encephalocele, which is compressible, often enlarges with crying and lies in the midline.",
+    "B": "Germ cells arrested along their migration give rise to teratomas, which contain derivatives of more than one germ layer, usually in the sacrococcygeal region, gonads or mediastinum.",
+    "C": "Thyroglossal duct cysts are anterior midline neck masses that move with swallowing and tongue protrusion.",
+    "D": "Second branchial cleft cysts lie along the anterior border of the sternocleidomastoid, not at the eyebrow."
+   },
+   "objective": "Explain the embryologic origin of a dermoid cyst.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cysts",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 14-month-old boy is brought to the clinic because of reddish-brown spots that have appeared on his trunk over 6 months. His parents say the spots swell and itch after a bath, and he sometimes flushes. Examination shows about 30 tan-brown macules and papules, 0.5 to 1.5 cm, on the trunk. Firmly stroking one lesion produces a raised, red, itchy wheal within minutes, confined to the lesion. A biopsy shows an increased number of dermal cells with metachromatic granules. An activating mutation in a gene encoding which of the following is most likely responsible?</p>",
+   "options": [
+    "G-protein alpha subunit",
+    "Hedgehog receptor",
+    "Janus kinase 2",
+    "Receptor tyrosine kinase for stem cell factor",
+    "Serine-threonine kinase in the MAPK pathway"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Brown macules and papules that urticate when stroked (Darier sign), with flushing after warm baths and dermal cells containing metachromatic granules, are cutaneous mastocytosis. It is driven by activating mutations in <em>KIT</em>, which encodes the receptor tyrosine kinase for stem cell factor, the main growth and survival signal for mast cells. Pediatric disease often carries mutations outside codon 816 and usually regresses by adolescence; adult systemic mastocytosis usually carries <em>KIT</em> D816V, which resists imatinib.</p><p><strong>Takeaway:</strong> Mastocytosis is driven by activating KIT mutations; Darier sign is the bedside clue.</p>",
+   "whyNot": {
+    "A": "Somatic activating mutations in a G-protein alpha subunit (<em>GNAQ</em>, <em>GNAS</em>) cause port-wine stains with Sturge-Weber syndrome and McCune-Albright syndrome, not urticating macules.",
+    "B": "Hedgehog receptor (<em>PTCH1</em>) mutations cause basal cell carcinomas, not mast cell lesions.",
+    "C": "<em>JAK2</em> V617F drives polycythemia vera and other myeloproliferative neoplasms; it is not the usual driver of mastocytosis.",
+    "E": "<em>BRAF</em>, a MAPK serine-threonine kinase, is mutated in most acquired nevi and many melanomas, not in mastocytosis."
+   },
+   "objective": "Link cutaneous mastocytosis to activating mutations in KIT.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "pigmented lesions"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman at 24 weeks' gestation has a bright red papule on her upper gingiva that appeared 6 weeks ago, has grown to 1 cm and bleeds when she brushes her teeth. It is soft, friable and sits on a narrow stalk. Excision is performed because of bleeding. Microscopy shows lobules of small capillaries separated by fibrous septa within an edematous stroma, with surface ulceration and a collarette of epithelium at the base. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Bacillary angiomatosis",
+    "Cherry angioma",
+    "Glomus tumor",
+    "Kaposi sarcoma",
+    "Lobular capillary hemangioma"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A rapidly growing, friable, bleeding red papule on the gingiva in pregnancy, with lobules of capillaries in an edematous stroma and an epithelial collarette, is a lobular capillary hemangioma (pyogenic granuloma, called granuloma gravidarum in pregnancy). It is a reactive vascular proliferation probably promoted by pregnancy hormones and VEGF; it often shrinks after delivery. Despite the name, it is not infectious and contains no granulomas.</p><p><strong>Takeaway:</strong> Pyogenic granuloma is a lobular capillary hemangioma: a friable, bleeding papule common in pregnancy and childhood.</p>",
+   "whyNot": {
+    "A": "Bacillary angiomatosis is caused by <em>Bartonella</em> in immunocompromised people and shows neutrophils and clumps of bacteria between proliferating vessels.",
+    "B": "Cherry angiomas are small dome-shaped papules of dilated capillaries in older adults that do not grow quickly or bleed easily.",
+    "C": "Glomus tumours are painful blue-red nodules, usually under a nail, made of uniform round glomus cells around vessels.",
+    "D": "Kaposi sarcoma shows slit-like vascular spaces and spindle cells with extravasated red cells, usually in HHV-8 infection with immunosuppression."
+   },
+   "objective": "Recognize pyogenic granuloma (lobular capillary hemangioma) in pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vascular lesions",
+    "pregnancy"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 41-year-old man with poorly controlled type 2 diabetes and heavy alcohol use comes to the clinic because of crops of yellow papules with red halos on his buttocks, elbows and knees that appeared over 3 weeks. His hemoglobin A1c is 11.8%. His serum is milky; after refrigeration overnight, a creamy layer forms on top over a turbid lower layer. Serum triglycerides are 2,600 mg/dL. Which of the following best explains the reduced clearance of triglycerides in this patient?</p>",
+   "options": [
+    "Absent apolipoprotein B-48",
+    "Decreased activity of lipoprotein lipase",
+    "Defective LDL receptor",
+    "Increased activity of cholesteryl ester transfer protein",
+    "Increased hepatic lipase activity"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Eruptive xanthomas, lipemic serum with a creamy top layer (chylomicrons) and a turbid layer below (VLDL), and triglycerides above 2,000 mg/dL in uncontrolled diabetes with alcohol use describe severe mixed hypertriglyceridemia. Lipoprotein lipase on capillary endothelium hydrolyses triglycerides in chylomicrons and VLDL; its synthesis and activity depend on insulin. Insulin deficiency or resistance lowers lipoprotein lipase activity, while alcohol raises hepatic VLDL output, so triglyceride-rich particles accumulate and are taken up by dermal macrophages. Glycemic control, alcohol cessation, a very low-fat diet and fibrates lower triglycerides and the papules clear. The main danger is acute pancreatitis.</p><p><strong>Takeaway:</strong> Eruptive xanthomas signal very high triglycerides, often from reduced lipoprotein lipase activity in uncontrolled diabetes.</p>",
+   "whyNot": {
+    "A": "Absent apolipoprotein B-48 (abetalipoproteinemia) prevents chylomicron formation and causes fat malabsorption with low, not high, triglycerides.",
+    "C": "Defective LDL receptors cause familial hypercholesterolemia with tendinous xanthomas and very high LDL, not eruptive xanthomas with milky serum.",
+    "D": "Cholesteryl ester transfer protein moves cholesteryl esters between lipoproteins; increased activity lowers HDL but does not cause this degree of hypertriglyceridemia.",
+    "E": "Increased hepatic lipase would speed remnant clearance and lower, not raise, triglyceride-rich particles."
+   },
+   "objective": "Explain eruptive xanthomas through reduced lipoprotein lipase activity in uncontrolled diabetes.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "xanthomas",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 6-week-old girl is brought to the clinic because a red spot on her right upper eyelid, first noticed at 1 week of age, has grown rapidly. She was born at term and is feeding well. Examination shows a 2-cm bright red, soft, raised plaque on the upper eyelid that droops over the lid margin and partly covers the pupil when her eyes are open. Pulse and blood pressure are normal for age, and cardiac examination is normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Observation with photographs every month",
+    "Oral prednisolone",
+    "Oral propranolol and ophthalmology evaluation",
+    "Pulsed dye laser treatment",
+    "Surgical excision"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A rapidly growing infantile hemangioma on the eyelid that encroaches on the visual axis threatens amblyopia, and the growth phase is not over at 6 weeks. Oral propranolol is first-line therapy and should start promptly, with ophthalmology evaluation for occlusion and astigmatism. She has no cardiac contraindication. Parents are taught to give the drug with feeds and to withhold it when she is not eating, because of the risk of hypoglycemia.</p><p><strong>Takeaway:</strong> Periocular infantile hemangiomas that threaten vision need prompt oral propranolol and an eye examination.</p>",
+   "whyNot": {
+    "A": "Observation is reasonable for uncomplicated hemangiomas, but waiting for involution here risks permanent amblyopia.",
+    "B": "Systemic corticosteroids are a second-line alternative with more adverse effects and slower response than propranolol.",
+    "D": "Pulsed dye laser treats superficial residual redness or ulceration but does not penetrate a thick proliferating hemangioma.",
+    "E": "Surgery during proliferation is reserved for rare cases failing medical therapy and risks eyelid damage."
+   },
+   "objective": "Treat a vision-threatening infantile hemangioma with oral propranolol and eye evaluation.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "vascular lesions"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 5-week-old girl is brought to the clinic for a rapidly growing red plaque on the right side of her face. Examination shows an 8 × 6-cm bright red, slightly raised plaque in a geographic pattern over the right forehead, temple, upper eyelid and cheek. She is feeding well, and growth parameters are normal. Heart rate is 140/min. The right femoral pulse is strong and the left femoral pulse is weak. There is a soft midline depression just above the umbilicus. Propranolol is being considered. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Abdominal ultrasound to look for hepatic hemangiomas",
+    "MRI and MR angiography of head and neck, and echocardiography",
+    "Serum TSH and free thyroxine measurement",
+    "Punch biopsy of the plaque for GLUT1 staining",
+    "Oral propranolol started now at the full target dose"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A large segmental facial infantile hemangioma raises concern for PHACE syndrome (posterior fossa malformations, hemangioma, arterial anomalies of the head and neck, cardiac defects such as coarctation, eye anomalies, and sternal or supraumbilical raphe defects). Unequal femoral pulses suggest coarctation and the supraumbilical depression a midline raphe. Before starting propranolol, evaluate with MRI and MRA of the brain, head and neck, an echocardiogram and an eye examination. Narrowed or absent cerebral arteries and coarctation increase the risk of stroke if propranolol lowers blood pressure, so the dose is started low and increased slowly if it is used at all.</p><p><strong>Takeaway:</strong> Large segmental facial hemangioma: evaluate for PHACE with brain and head-neck MRI/MRA, echocardiography and eye exam before propranolol.</p>",
+   "whyNot": {
+    "A": "Abdominal ultrasound is used to look for hepatic hemangiomas in infants with five or more cutaneous lesions, not for a single segmental facial lesion.",
+    "C": "Thyroid testing is relevant when large hepatic hemangiomas produce deiodinase; it does not address the arterial and cardiac risks here.",
+    "D": "The clinical picture is diagnostic, and a biopsy would cause bleeding without changing management.",
+    "E": "Starting full-dose propranolol before excluding cerebrovascular anomalies and coarctation risks hypotension and stroke."
+   },
+   "objective": "Evaluate for PHACE syndrome before treating a large segmental facial infantile hemangioma.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "vascular lesions"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 72-year-old Black woman comes to the clinic because she is worried about a growth on her back that her daughter noticed. It has been present for at least 2 years and occasionally catches on her bra strap. Examination shows a 1.2-cm, sharply demarcated, dark brown, waxy plaque with a rough, verrucous surface that looks stuck onto the skin. Dermoscopy shows multiple milia-like cysts and comedo-like openings with no pigment network. She has several similar smaller lesions elsewhere on her trunk and many small dark papules on her cheeks. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Excisional biopsy with 1-cm margins",
+    "Reassurance, with optional removal if it is irritated",
+    "Referral for Mohs surgery",
+    "Topical 5-fluorouracil",
+    "Topical imiquimod"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A long-standing, waxy, stuck-on plaque with a verrucous surface and dermoscopic milia-like cysts and comedo-like openings, among similar lesions, is a seborrheic keratosis; the facial papules are dermatosis papulosa nigra. Seborrheic keratoses are benign and need no treatment. One that is irritated by clothing can be removed by shave or curettage; cryotherapy can leave lighter patches in darker skin. A lesion that is atypical or changing would instead be biopsied.</p><p><strong>Takeaway:</strong> A typical seborrheic keratosis needs reassurance; remove only for symptoms or cosmesis, and biopsy anything atypical.</p>",
+   "whyNot": {
+    "A": "A 1-cm margin is a melanoma treatment margin; it is excessive for a clinically and dermoscopically typical benign lesion.",
+    "C": "Mohs surgery is for selected skin cancers in high-risk sites, not for seborrheic keratoses.",
+    "D": "Topical 5-fluorouracil treats actinic keratoses and superficial carcinomas, not seborrheic keratoses.",
+    "E": "Imiquimod treats superficial basal cell carcinoma, actinic keratoses and genital warts; it has no role here."
+   },
+   "objective": "Recognize a typical seborrheic keratosis and manage it with reassurance.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigmented lesions",
+    "older adults"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old man comes to the clinic because of a painful lump on his upper back for 4 days. He has had a painless, slowly growing 2-cm bump at that site for years that occasionally discharged cheesy material from a central pore. Now it is red, swollen and tender. Temperature is 37.0 °C (98.6 °F). There is a 3-cm fluctuant, tender nodule with a central punctum and 0.5 cm of surrounding erythema. The lump is incised and drained, releasing foul-smelling keratinous material. At follow-up 6 weeks later, a 1.5-cm firm, nontender nodule remains. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Complete excision of the cyst including its wall",
+    "Intralesional triamcinolone injection",
+    "Oral doxycycline for 3 months",
+    "Repeat incision and drainage",
+    "Ultrasound-guided fine-needle aspiration"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is an inflamed, ruptured epidermoid cyst. The inflammation is mostly a foreign-body reaction to keratin released into the dermis, so drainage relieved it without antibiotics. The cyst wall remains and will refill and recur. Once inflammation has settled, definitive treatment is complete excision of the cyst with its wall (lining), either by elliptical excision or a minimal punch technique.</p><p><strong>Takeaway:</strong> Incision and drainage relieves an inflamed epidermoid cyst; cure requires later excision of the entire cyst wall.</p>",
+   "whyNot": {
+    "B": "Intralesional steroid can calm an acutely inflamed, unruptured cyst but does not remove the lining that causes recurrence.",
+    "C": "Long antibiotic courses do not remove the cyst and are not needed for a sterile keratin reaction.",
+    "D": "Repeat drainage of a quiet cyst does not remove the lining, so it will recur.",
+    "E": "Aspiration is unnecessary for a clinically obvious epidermoid cyst and does not treat it."
+   },
+   "objective": "Plan complete excision of an epidermoid cyst after an inflammatory episode.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cysts"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old man comes to the clinic because of a painless mass in his left posterior thigh that he first noticed 5 months ago and that has enlarged. He has no history of trauma. Examination shows a 9 × 7-cm, firm, nontender mass that does not move with the skin and becomes less mobile when he contracts his hamstrings. There is no lymphadenopathy. He has three soft, mobile, 2-cm subcutaneous nodules on his forearms that have been unchanged for 10 years. Which of the following is the most appropriate next step in evaluating the thigh mass?</p>",
+   "options": [
+    "Excision of the mass through a small incision",
+    "Fine-needle aspiration in the office",
+    "Liposuction",
+    "MRI of the thigh with and without contrast",
+    "Reassurance and review in 6 months"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The forearm nodules are typical lipomas. The thigh mass is different: it is larger than 5 cm, deep to fascia, firm, growing and fixed, all of which raise concern for a soft-tissue sarcoma such as liposarcoma. The next step is MRI to define its size, depth, relation to neurovascular structures and internal characteristics, followed by an image-guided core needle biopsy planned with the sarcoma surgeon. Unplanned excision contaminates tissue planes and can cost the patient limb-sparing surgery.</p><p><strong>Takeaway:</strong> A soft-tissue mass over 5 cm, deep, firm or growing needs MRI and a planned core biopsy before any excision.</p>",
+   "whyNot": {
+    "A": "An unplanned \"shell-out\" of a possible sarcoma risks positive margins and wider surgery later; imaging and planned biopsy come first.",
+    "B": "Fine-needle aspiration gives too little tissue to grade a sarcoma and should not precede imaging.",
+    "C": "Liposuction would fragment a possible malignancy and is never used for a suspicious deep mass.",
+    "E": "Reassurance is appropriate for small, soft, stable lipomas like those on his forearms, not for a large, deep, growing mass."
+   },
+   "objective": "Image a large, deep or growing soft-tissue mass with MRI before biopsy or excision.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue mass"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old man comes to the clinic because his skin has become dark and thick over 3 months. He has lost 9 kg (20 lb) without trying and has had epigastric discomfort. He has no history of diabetes and takes no medications. His BMI is 21 kg/m<sup>2</sup>. Examination shows velvety, hyperpigmented plaques in the axillae, groin and around the umbilicus, thickened palms with exaggerated ridges, and papillomatous changes at the corners of his mouth.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Hemoglobin</td><td>10.4 g/dL</td></tr><tr><td>MCV</td><td>72 fL</td></tr><tr><td>Glucose, fasting</td><td>88 mg/dL</td></tr><tr><td>Hemoglobin A1c</td><td>5.2%</td></tr><tr><td>Albumin</td><td>3.2 g/dL</td></tr><tr><td>TSH</td><td>2.1 uU/mL</td></tr><tr><td>Ferritin</td><td>8 ng/mL (reference 20-250 ng/mL)</td></tr></tbody></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Colonoscopy only",
+    "Oral metformin",
+    "Skin biopsy",
+    "Topical tretinoin",
+    "Upper endoscopy"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Rapidly progressive, extensive acanthosis nigricans in a lean older man without insulin resistance, with tripe palms, mucosal papillomatosis, weight loss, epigastric pain and iron-deficiency anemia, is malignant acanthosis nigricans. The most common associated tumour is gastric adenocarcinoma, so the next step is upper endoscopy with biopsy. If it is negative, colonoscopy and cross-sectional imaging follow given the iron deficiency. The skin improves when the tumour is treated.</p><p><strong>Takeaway:</strong> Sudden acanthosis nigricans in a lean older adult with weight loss means a search for gastric cancer, starting with upper endoscopy.</p>",
+   "whyNot": {
+    "A": "Colonoscopy is part of the workup of iron deficiency, but the epigastric symptoms and malignant acanthosis point first to the stomach, so colonoscopy alone is incomplete.",
+    "B": "Metformin treats insulin resistance; his glucose and A1c are normal and his acanthosis is paraneoplastic.",
+    "C": "The clinical diagnosis is clear, and a skin biopsy would not find the underlying cancer.",
+    "D": "Topical retinoids may soften plaques but do nothing about the likely malignancy."
+   },
+   "objective": "Recognize malignant acanthosis nigricans and investigate for gastric adenocarcinoma.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "paraneoplastic",
+    "older adults"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-year-old boy is brought to the clinic because of a red bump on his left index finger that appeared 3 weeks after he cut the finger on a fence. It has grown quickly and bleeds heavily whenever it is bumped, soaking through bandages. Examination shows a 7-mm bright red, glistening, friable papule on a narrow base with a collar of scale and dried blood. There is no surrounding erythema or pus. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Oral cephalexin for 10 days with daily dressing changes",
+    "Oral propranolol with heart rate and glucose monitoring",
+    "Reassurance, pressure dressing and review in 6 months",
+    "Shave removal with cautery of the base, sent for histology",
+    "Wide local excision with 1-cm margins under general anesthesia"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>A rapidly growing, friable, bleeding red papule with a collarette after minor trauma in a child is a pyogenic granuloma (lobular capillary hemangioma). It rarely regresses outside pregnancy and bleeds repeatedly, so it is removed by shave excision with curettage and electrocautery of the base, which lowers recurrence. The specimen always goes for histology because amelanotic melanoma and other tumours can mimic it.</p><p><strong>Takeaway:</strong> Remove a bleeding pyogenic granuloma by shave and cautery of the base and always send it for pathology.</p>",
+   "whyNot": {
+    "A": "There is no infection; despite the name, pyogenic granulomas are vascular tumours, and antibiotics do not shrink them.",
+    "B": "Systemic propranolol is used for infantile hemangiomas, not for a small pyogenic granuloma in an older child.",
+    "C": "This lesion bleeds heavily and is unlikely to regress on its own, so waiting 6 months is not appropriate.",
+    "E": "Wide excision with 1-cm margins is a cancer operation and is unnecessary for a benign vascular papule on a finger."
+   },
+   "objective": "Manage pyogenic granuloma with shave removal, cautery and histologic examination.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vascular lesions",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 2-year-old girl is brought to the clinic because of spots on her trunk and thighs that have appeared over 1 year. Her mother says the spots become puffy and itchy after warm baths or rough play, and the child occasionally becomes flushed. There is no wheezing, vomiting, diarrhea or syncope. Examination shows about 40 tan-brown macules and slightly raised papules, 3 to 10 mm, on the trunk and thighs. Rubbing one lesion with a tongue blade produces a localized wheal with surrounding redness within 5 minutes. There is no hepatosplenomegaly or lymphadenopathy. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Café-au-lait macules",
+    "Chronic spontaneous urticaria",
+    "Congenital melanocytic nevi",
+    "Cutaneous mastocytosis",
+    "Juvenile xanthogranuloma"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Multiple tan-brown macules and papules that urticate when rubbed (Darier sign), with flushing after warm baths, in a young child are maculopapular cutaneous mastocytosis. Most childhood cases are limited to the skin and regress by adolescence. Management is trigger avoidance (friction, heat, certain drugs), H1 and H2 antihistamines, a baseline serum tryptase, and an epinephrine auto-injector for children with extensive disease or severe reactions.</p><p><strong>Takeaway:</strong> Brown macules that wheal when stroked (Darier sign) in a young child are cutaneous mastocytosis.</p>",
+   "whyNot": {
+    "A": "Café-au-lait macules are flat, uniformly light brown and do not urticate when rubbed.",
+    "B": "Urticarial wheals are transient and arise on normal skin; they do not occur only within fixed brown lesions.",
+    "C": "Congenital nevi are present at birth or shortly after and do not swell or itch when rubbed.",
+    "E": "Juvenile xanthogranulomas are yellow-orange or red-brown papules, usually few in number, that do not show a Darier sign."
+   },
+   "objective": "Diagnose childhood cutaneous mastocytosis from the Darier sign.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "pigmented lesions"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Sign of Leser-Trélat?",
+   "back": "Sudden eruption of many seborrheic keratoses, suggesting internal adenocarcinoma (often gastric).",
+   "question": 2
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Mechanism of acanthosis nigricans in obesity?",
+   "back": "High insulin stimulates IGF-1 receptors on keratinocytes and fibroblasts.",
+   "question": 3
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Epidermoid vs pilar cyst on histology?",
+   "back": "Epidermoid: granular layer and laminated keratin. Pilar: no granular layer, compact keratin.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Multiple early epidermoid cysts plus jaw osteomas: gene?",
+   "back": "APC (Gardner variant of FAP).",
+   "question": 4
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "What is in the wall of a dermoid cyst?",
+   "back": "Adnexal structures: hair follicles, sebaceous and sweat glands.",
+   "question": 5
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Marker that confirms infantile hemangioma?",
+   "back": "GLUT1 on endothelial cells.",
+   "question": 1
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Darier sign indicates what?",
+   "back": "Mast cell lesions (cutaneous mastocytosis): rubbing causes a wheal.",
+   "question": 6
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Germline gene in familial atypical mole-melanoma syndrome?",
+   "back": "CDKN2A (p16); also raises pancreatic cancer risk.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Eruptive xanthomas indicate what?",
+   "back": "Very high triglycerides (chylomicrons and VLDL), e.g. uncontrolled diabetes.",
+   "question": 8
+  },
+  {
+   "n": 10,
+   "section": 1,
+   "front": "Dermatofibroma clinical sign?",
+   "back": "Dimpling inward when the lesion is pinched.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "First-line systemic therapy for a high-risk infantile hemangioma?",
+   "back": "Oral propranolol.",
+   "question": 9
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Main propranolol risk to teach parents of an infant?",
+   "back": "Hypoglycemia: give with feeds, hold when not eating.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Large segmental facial hemangioma: evaluate for?",
+   "back": "PHACE: MRI/MRA head and neck, echocardiogram, eye exam.",
+   "question": 10
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Beard-area hemangioma risks what?",
+   "back": "Airway hemangioma; evaluate if noisy breathing or stridor.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Five or more infantile hemangiomas: next test?",
+   "back": "Liver ultrasound for hepatic hemangiomas.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Curative treatment of an epidermoid cyst?",
+   "back": "Complete excision including the cyst wall, after inflammation settles.",
+   "question": 12
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Soft-tissue mass features that need MRI before excision?",
+   "back": "Over 5 cm, deep to fascia, growing, firm or painful.",
+   "question": 13
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Sudden acanthosis nigricans in a lean older adult: first test?",
+   "back": "Upper endoscopy for gastric adenocarcinoma.",
+   "question": 14
+  },
+  {
+   "n": 19,
+   "section": 2,
+   "front": "Why always send a pyogenic granuloma for pathology?",
+   "back": "Amelanotic melanoma and other cancers can mimic it.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 2,
+   "front": "Preferred biopsy for a lesion suspicious for melanoma?",
+   "back": "Excisional biopsy with narrow (1 to 3 mm) margins.",
+   "question": null
+  }
+ ]
+}

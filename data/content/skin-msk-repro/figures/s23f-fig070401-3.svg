@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 510" width="760" height="510" role="img" aria-label="Schematic anterior view of a flexed right knee showing the anterior and posterior cruciate ligaments crossing between femur and tibia, the medial and lateral collateral ligaments, and the medial and lateral menisci, each labelled with its function" font-family="sans-serif" fill="#0f172a">
+<title>Schematic anterior view of a flexed right knee showing the anterior and posterior cruciate ligaments crossing between femur and tibia, the medial and lateral collateral ligaments, and the medial and lateral menisci, each labelled with its function</title>
+<rect x="0" y="0" width="760" height="510" fill="#ffffff"/>
+<text x="380" y="28" font-size="18" font-weight="bold" text-anchor="middle">Right knee, anterior view, flexed (patella removed)</text>
+<path d="M250,60 L510,60 L520,170 Q520,215 470,215 Q430,215 400,185 L360,185 Q330,215 290,215 Q240,215 240,170 Z" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="380" y="95" font-size="14" font-weight="bold" text-anchor="middle">Femur</text>
+<text x="290" y="200" font-size="12" text-anchor="middle">lateral condyle</text><text x="472" y="200" font-size="12" text-anchor="middle">medial condyle</text>
+<path d="M230,262 L530,262 L515,300 L470,330 L470,440 L300,440 L300,330 L245,300 Z" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="385" y="400" font-size="14" font-weight="bold" text-anchor="middle">Tibia</text>
+<rect x="205" y="300" width="34" height="140" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="222" y="460" font-size="12" text-anchor="middle">Fibula</text>
+<path d="M245,250 Q300,228 365,248" stroke="#0f766e" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M400,248 Q465,226 520,250" stroke="#0f766e" stroke-width="9" fill="none" stroke-linecap="round"/>
+<line x1="345" y1="190" x2="405" y2="258" stroke="#1d4ed8" stroke-width="10" stroke-linecap="round"/>
+<line x1="420" y1="190" x2="375" y2="262" stroke="#7c2d12" stroke-width="10" stroke-linecap="round" stroke-dasharray="14 6"/>
+<line x1="240" y1="175" x2="222" y2="305" stroke="#334155" stroke-width="9" stroke-linecap="round"/>
+<line x1="520" y1="175" x2="525" y2="330" stroke="#334155" stroke-width="9" stroke-linecap="round"/>
+<text x="40" y="205" font-size="13">LCL (resists varus)</text>
+<line x1="165.39999999999998" y1="201" x2="225" y2="240" stroke="#64748b" stroke-width="1.2"/>
+<text x="560" y="230" font-size="13">MCL (resists valgus;</text>
+<line x1="556" y1="226" x2="525" y2="250" stroke="#64748b" stroke-width="1.2"/>
+<text x="560" y="248" font-size="13">attached to medial meniscus)</text>
+<text x="560" y="120" font-size="13">PCL (dashed): medial condyle</text>
+<line x1="556" y1="116" x2="412" y2="200" stroke="#64748b" stroke-width="1.2"/>
+<text x="560" y="138" font-size="13">to posterior tibia; stops</text>
+<text x="560" y="156" font-size="13">posterior tibial translation</text>
+<text x="40" y="120" font-size="13">ACL (solid): lateral condyle</text>
+<line x1="224.79999999999998" y1="116" x2="350" y2="196" stroke="#64748b" stroke-width="1.2"/>
+<text x="40" y="138" font-size="13">to anterior tibia; stops</text>
+<text x="40" y="156" font-size="13">anterior tibial translation</text>
+<text x="40" y="290" font-size="13">Lateral meniscus</text>
+<line x1="145.6" y1="286" x2="255" y2="248" stroke="#64748b" stroke-width="1.2"/>
+<text x="560" y="290" font-size="13">Medial meniscus</text>
+<line x1="556" y1="286" x2="505" y2="246" stroke="#64748b" stroke-width="1.2"/>
+<text x="380" y="490" font-size="13" text-anchor="middle">Lateral is on the left of this view. Cruciates are named by where they attach on the tibia.</text>
+</svg>

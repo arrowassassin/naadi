@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" width="760" height="530" role="img" aria-label="Three-column comparison of eccrine, apocrine and sebaceous glands. The eccrine gland is a coiled tube in the dermis whose duct opens straight onto the skin. The apocrine gland opens into the hair follicle above the sebaceous gland. The sebaceous gland is made of lobules of sebocytes that empty into the follicle. Text under each column gives secretion type, control, distribution, age of activity and linked disorders.">
+<title>Three-column comparison of eccrine, apocrine and sebaceous glands. The eccrine gland is a coiled tube in the dermis whose duct opens straight onto the skin. The apocrine gland opens into the hair follicle above the sebaceous gland. The sebaceous gland is made of lobules of sebocytes that empty into the follicle. Text under each column gives secretion type, control, distribution, age of activity and linked disorders.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="530" fill="#ffffff"/>
+<text x="380" y="26" font-family="sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f172a">Three skin glands compared</text>
+<rect x="20" y="44" width="230" height="470" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="135" y="66" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Eccrine</text>
+<rect x="30" y="80" width="210" height="20" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="36" y="95" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">epidermis</text>
+<text x="36" y="272" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">dermis</text>
+<path d="M135 80 Q145 90 135 100 Q125 110 135 120 L135 200" fill="none" stroke="#0f172a" stroke-width="2"/>
+<path d="M135 200 q20 10 0 20 q-20 10 0 20 q20 10 0 20 q-20 10 -5 18" fill="none" stroke="#0f172a" stroke-width="3"/>
+<text x="155" y="240" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">secretory coil</text>
+<text x="143" y="150" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">duct</text>
+<text x="32" y="320" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Opens straight onto the skin</text>
+<text x="32" y="338" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Merocrine (exocytosis)</text>
+<text x="32" y="356" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Sympathetic, cholinergic: ACh at M3</text>
+<text x="32" y="374" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Whole body; densest on palms,</text>
+<text x="32" y="392" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">soles, forehead, axillae</text>
+<text x="32" y="410" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Thermoregulation; active from birth</text>
+<rect x="265" y="44" width="230" height="470" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="380" y="66" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Apocrine</text>
+<rect x="275" y="80" width="210" height="20" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="281" y="95" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">epidermis</text>
+<text x="281" y="272" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">dermis</text>
+<path d="M343 100 L343 250 Q355 266 367 250 L367 100" fill="none" stroke="#0f172a" stroke-width="2"/>
+<path d="M355 250 L355 70" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<text x="371" y="266" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">follicle</text>
+<path d="M367 118 Q405 124 407 196" fill="none" stroke="#0f172a" stroke-width="2"/>
+<path d="M407 196 q22 8 4 20 q-22 10 0 20 q22 8 -2 18" fill="none" stroke="#0f172a" stroke-width="3"/>
+<text x="435" y="214" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">apocrine</text>
+<text x="435" y="229" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">coil in</text>
+<text x="435" y="244" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">dermis</text>
+<ellipse cx="329" cy="168" rx="12" ry="9" fill="#fef9c3" stroke="#0f172a" stroke-width="1"/>
+<line x1="341" y1="168" x2="343" y2="168" stroke="#0f172a" stroke-width="1.5"/>
+<text x="277" y="196" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">sebaceous</text>
+<text x="385" y="112" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">duct enters above</text>
+<text x="385" y="127" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">sebaceous gland</text>
+<text x="277" y="320" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Opens into the hair follicle</text>
+<text x="277" y="338" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Decapitation secretion</text>
+<text x="277" y="356" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Axillae, groin, areolae, perineum</text>
+<text x="277" y="374" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Active from puberty</text>
+<text x="277" y="392" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Odour after bacterial breakdown</text>
+<text x="277" y="410" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Region of hidradenitis suppurativa</text>
+<rect x="510" y="44" width="230" height="470" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="625" y="66" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Sebaceous</text>
+<rect x="520" y="80" width="210" height="20" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="526" y="95" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">epidermis</text>
+<text x="526" y="272" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">dermis</text>
+<path d="M568 100 L568 250 Q580 266 592 250 L592 100" fill="none" stroke="#0f172a" stroke-width="2"/>
+<path d="M580 250 L580 70" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<text x="596" y="266" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">follicle</text>
+<ellipse cx="618" cy="140" rx="26" ry="14" fill="#fef9c3" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="618" cy="166" rx="26" ry="14" fill="#fef9c3" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M592 130 L596 130" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+<text x="652" y="146" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">lobules</text>
+<text x="652" y="162" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">of sebocytes</text>
+<text x="522" y="320" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Opens into the hair follicle</text>
+<text x="522" y="338" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Holocrine (whole cell breaks up)</text>
+<text x="522" y="356" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Androgen-driven (5α-reductase</text>
+<text x="522" y="374" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">type 1); absent on palms and soles</text>
+<text x="522" y="392" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Active at birth and from adrenarche</text>
+<text x="522" y="410" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Acne, seborrheic dermatitis</text>
+</svg>

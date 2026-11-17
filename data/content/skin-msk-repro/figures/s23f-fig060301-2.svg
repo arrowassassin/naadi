@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="760" height="480" role="img" aria-label="Four-stage schematic of acne pathogenesis: a normal follicle, a microcomedo with a keratin plug, a closed or open comedo, and an inflammatory lesion with follicular rupture and inflammatory cells. A table below matches sebum, keratin plugging, Cutibacterium acnes and inflammation to the treatments that act on each.">
+<title>Four-stage schematic of acne pathogenesis: a normal follicle, a microcomedo with a keratin plug, a closed or open comedo, and an inflammatory lesion with follicular rupture and inflammatory cells. A table below matches sebum, keratin plugging, Cutibacterium acnes and inflammation to the treatments that act on each.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="480" fill="#ffffff"/>
+<text x="380" y="28" font-family="sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f172a">Acne vulgaris: from normal follicle to inflammatory lesion</text>
+<rect x="20" y="50" width="170" height="22" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="26" y="66" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">skin surface</text>
+<path d="M93 72 L93 200 Q105 222 117 200 L117 72" fill="none" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="167" cy="118" rx="14" ry="11" fill="#fef9c3" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="153" y1="118" x2="135" y2="112" stroke="#0f172a" stroke-width="1.5"/>
+<text x="105" y="262" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">1. Normal follicle</text>
+<text x="105" y="282" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Sebum drains freely</text>
+<line x1="188" y1="150" x2="206" y2="150" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<rect x="205" y="50" width="170" height="22" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="211" y="66" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">skin surface</text>
+<path d="M276 72 L274 200 Q290 224 306 200 L304 72" fill="none" stroke="#0f172a" stroke-width="2"/>
+<rect x="277" y="90" width="26" height="40" rx="3" fill="#94a3b8" stroke="#0f172a" stroke-width="1"/>
+<ellipse cx="352" cy="118" rx="14" ry="11" fill="#fef9c3" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="338" y1="118" x2="320" y2="112" stroke="#0f172a" stroke-width="1.5"/>
+<text x="290" y="262" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">2. Microcomedo</text>
+<text x="290" y="282" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Sticky keratinocytes</text>
+<text x="290" y="298" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">block the infundibulum</text>
+<line x1="373" y1="150" x2="391" y2="150" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<rect x="390" y="50" width="170" height="22" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="396" y="66" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">skin surface</text>
+<path d="M465 72 Q431 150 455 200 Q475 226 495 200 Q519 150 485 72" fill="none" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="475" cy="140" rx="26" ry="48" fill="#94a3b8" stroke="#0f172a" stroke-width="1"/>
+<circle cx="475" cy="78" r="6" fill="#334155" stroke="#0f172a" stroke-width="1"/>
+<ellipse cx="537" cy="118" rx="14" ry="11" fill="#fef9c3" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="523" y1="118" x2="505" y2="112" stroke="#0f172a" stroke-width="1.5"/>
+<text x="475" y="262" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">3. Comedo</text>
+<text x="475" y="282" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Closed (whitehead) or</text>
+<text x="475" y="298" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">open (blackhead)</text>
+<line x1="558" y1="150" x2="576" y2="150" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<rect x="575" y="50" width="170" height="22" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="581" y="66" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">skin surface</text>
+<path d="M650 72 Q612 150 638 196" fill="none" stroke="#0f172a" stroke-width="2"/>
+<path d="M670 72 Q708 150 690 186" fill="none" stroke="#0f172a" stroke-width="2" stroke-dasharray="5 4"/>
+<ellipse cx="660" cy="140" rx="28" ry="46" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
+<circle cx="710" cy="170" r="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="720" cy="140" r="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="704" cy="200" r="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="726" cy="188" r="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="690" cy="214" r="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="690" y="240" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">neutrophils, macrophages</text>
+<ellipse cx="722" cy="118" rx="14" ry="11" fill="#fef9c3" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="708" y1="118" x2="690" y2="112" stroke="#0f172a" stroke-width="1.5"/>
+<text x="660" y="262" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">4. Inflammatory lesion</text>
+<text x="660" y="282" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">C. acnes, TLR2 signals;</text>
+<text x="660" y="298" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">wall ruptures into dermis</text>
+<line x1="20" y1="326" x2="740" y2="326" stroke="#94a3b8" stroke-width="1"/>
+<text x="20" y="350" font-family="sans-serif" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">Where treatments act</text>
+<text x="20" y="374" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">Sebum (androgen-driven)</text>
+<text x="230" y="374" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">isotretinoin, combined estrogen-progestin pills, spironolactone, clascoterone</text>
+<text x="20" y="396" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">Keratin plug / comedo</text>
+<text x="230" y="396" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">topical retinoids, isotretinoin, azelaic acid</text>
+<text x="20" y="418" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">C. acnes proliferation</text>
+<text x="230" y="418" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">benzoyl peroxide (no resistance), topical or oral antibiotics, azelaic acid</text>
+<text x="20" y="440" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">Inflammation</text>
+<text x="230" y="440" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">tetracycline-class drugs (anti-inflammatory), retinoids; scarring if dermis is damaged</text>
+<text x="20" y="470" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Isotretinoin is the only single drug that acts on all four steps.</text>
+</svg>

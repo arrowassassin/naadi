@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 450" width="760" height="450" role="img" aria-label="Side-view schematic of a fingertip showing the proximal nail fold and cuticle, the nail matrix under the fold, the lunula, the nail plate, the nail bed, the hyponychium and the distal phalanx. Notes say which nail signs start in the matrix and which arise in the bed, and give fingernail and toenail growth rates.">
+<title>Side-view schematic of a fingertip showing the proximal nail fold and cuticle, the nail matrix under the fold, the lunula, the nail plate, the nail bed, the hyponychium and the distal phalanx. Notes say which nail signs start in the matrix and which arise in the bed, and give fingernail and toenail growth rates.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="450" fill="#ffffff"/>
+<text x="380" y="26" font-family="sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f172a">The nail unit in sagittal section (fingertip, side view)</text>
+<path d="M40 120 L300 120 Q330 120 340 108 L560 100 Q640 100 660 150 Q680 230 600 262 L40 262" fill="#fde68a" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M40 176 L420 170 Q520 170 560 190 Q590 214 540 228 L40 232 Z" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="150" y="210" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Distal phalanx</text>
+<path d="M300 112 L600 96 Q640 96 652 116 L640 120 Q620 108 596 110 L310 124 Z" fill="#94a3b8" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M250 150 Q262 128 300 122 L360 120 Q330 136 300 150 Z" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<path d="M210 120 Q250 96 340 104" fill="none" stroke="#0f172a" stroke-width="2"/>
+<line x1="360" y1="124" x2="600" y2="112" stroke="#b91c1c" stroke-width="3"/>
+<line x1="150" y1="88" x2="272" y2="140" stroke="#0f172a" stroke-width="1"/>
+<circle cx="272" cy="140" r="2.5" fill="#0f172a" stroke="#0f172a" stroke-width="0"/>
+<text x="20" y="48" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Matrix: makes the nail plate (pits, Beau</text>
+<text x="20" y="63" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">lines, leukonychia and melanonychia start here)</text>
+<line x1="380" y1="70" x2="330" y2="104" stroke="#0f172a" stroke-width="1"/>
+<circle cx="330" cy="104" r="2.5" fill="#0f172a" stroke="#0f172a" stroke-width="0"/>
+<text x="330" y="48" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Proximal nail fold and cuticle</text>
+<text x="330" y="63" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">(seal; inflamed in paronychia)</text>
+<line x1="590" y1="66" x2="560" y2="100" stroke="#0f172a" stroke-width="1"/>
+<circle cx="560" cy="100" r="2.5" fill="#0f172a" stroke="#0f172a" stroke-width="0"/>
+<text x="560" y="60" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Nail plate (hard keratin)</text>
+<line x1="290" y1="286" x2="365" y2="123" stroke="#0f172a" stroke-width="1"/>
+<circle cx="365" cy="123" r="2.5" fill="#0f172a" stroke="#0f172a" stroke-width="0"/>
+<text x="230" y="300" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Lunula: visible</text>
+<text x="230" y="315" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">distal matrix</text>
+<line x1="470" y1="286" x2="500" y2="118" stroke="#0f172a" stroke-width="1"/>
+<circle cx="500" cy="118" r="2.5" fill="#0f172a" stroke="#0f172a" stroke-width="0"/>
+<text x="380" y="300" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Nail bed: pink from capillaries; colour</text>
+<text x="380" y="315" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">changes here do not move with growth</text>
+<text x="380" y="330" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">(Muehrcke lines, half-and-half nails,</text>
+<text x="380" y="345" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">splinter haemorrhages)</text>
+<line x1="660" y1="286" x2="652" y2="122" stroke="#0f172a" stroke-width="1"/>
+<circle cx="652" cy="122" r="2.5" fill="#0f172a" stroke="#0f172a" stroke-width="0"/>
+<text x="630" y="300" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Hyponychium (distal</text>
+<text x="630" y="315" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">seal; entry point in</text>
+<text x="630" y="330" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">distal subungual</text>
+<text x="630" y="345" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">onychomycosis)</text>
+<line x1="20" y1="392" x2="740" y2="392" stroke="#94a3b8" stroke-width="1"/>
+<text x="20" y="414" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Growth: fingernails about 3 mm a month (full plate about 6 months); toenails about 1 mm a month (12-18 months).</text>
+<text x="20" y="432" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">A transverse mark's distance from the cuticle dates the insult: a Beau line 6 mm out on a fingernail points to about 2 months ago.</text>
+</svg>

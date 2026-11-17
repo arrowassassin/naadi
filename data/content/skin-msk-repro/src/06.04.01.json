@@ -1,0 +1,877 @@
+{
+ "area": "06.04.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Oral mucosa: ulcers, infections, nutrition, drug effects and premalignant lesions",
+   "html": "<p>The oral mucosa is a non-keratinized or lightly keratinized stratified squamous epithelium (keratinized on the gingiva and hard palate) that turns over quickly, about every 2 weeks. Fast turnover makes the mouth an early mirror of nutritional deficiency, chemotherapy toxicity and immune disease, and its warm, moist surface supports a dense microbial community that causes caries and periodontitis when the balance shifts.</p>\n<h3>Aphthous ulcers and Behçet disease</h3>\n<p><strong>Recurrent aphthous stomatitis</strong> is the commonest oral ulcer: shallow, round, painful ulcers with a yellow-grey fibrinous base and a red halo on non-keratinized mucosa (inner lips, buccal mucosa, floor of mouth, ventral tongue). Minor aphthae (under 1 cm) heal in 1 to 2 weeks without scars; major aphthae are larger, deeper, last weeks and scar; herpetiform aphthae are crops of tiny ulcers. The cause is a T-cell-mediated, TNF-driven attack on the epithelium in a genetically predisposed person. Triggers include minor trauma, stress, menstruation, sodium lauryl sulfate in toothpaste and stopping smoking. Aphthae that are frequent, severe or begin in adulthood suggest a systemic cause: deficiency of <strong>iron, folate or vitamin B12</strong>, <strong>celiac disease</strong>, inflammatory bowel disease, HIV, cyclic neutropenia, or periodic fever with aphthous stomatitis, pharyngitis and adenitis (<strong>PFAPA</strong>) in young children.</p>\n<p><strong>Behçet disease</strong> is a variable-vessel vasculitis with recurrent oral aphthae (nearly all patients), genital ulcers that scar, uveitis (often posterior, sight-threatening), skin lesions (erythema nodosum, pseudofolliculitis), pathergy (a pustule 24 to 48 hours after a needle prick), venous thrombosis and arterial aneurysms. It is most common along the old Silk Road (Turkey, Iran, Japan) and is linked to <strong>HLA-B51</strong>. Neutrophil hyperactivity and Th1/Th17 responses drive the inflammation.</p>\n<h3>Infections</h3>\n<ul>\n<li><strong>Primary herpetic gingivostomatitis</strong>: the first HSV-1 infection in a young child; fever, swollen bleeding gingiva and many vesicles that erode across the lips, gums, tongue and palate. HSV then lies latent in the <strong>trigeminal ganglion</strong>, reactivating as herpes labialis at the vermilion border. Recurrent intraoral HSV in healthy people favours keratinized mucosa (gingiva, hard palate), unlike aphthae.</li>\n<li><strong>Herpangina</strong> (coxsackievirus A): vesicles and ulcers on the posterior pharynx, soft palate and tonsillar pillars with fever, in summer; <strong>hand, foot and mouth disease</strong> adds palm and sole lesions.</li>\n<li><strong>Oral candidiasis</strong>: white curd-like plaques that wipe off to a red base (pseudomembranous), red atrophic mucosa under dentures (denture stomatitis), or fissures at the mouth corners (angular cheilitis). Risk rises with inhaled or systemic corticosteroids, broad-spectrum antibiotics, diabetes, dentures, dry mouth, infancy and reduced T-cell immunity. Oral thrush in an adult without a clear cause suggests HIV.</li>\n<li><strong>Oral hairy leukoplakia</strong>: corrugated white plaques on the lateral tongue that do not wipe off, caused by <strong>Epstein-Barr virus</strong> replicating in the epithelium; a marker of immunosuppression, not premalignant.</li>\n<li><strong>Dental caries</strong>: <em>Streptococcus mutans</em> uses glucosyltransferases to make sticky glucans (dextran) from sucrose, building plaque on enamel, and ferments sugar to acid that demineralises it. Fluoride is incorporated into enamel as fluorapatite, which resists acid. <strong>Periodontitis</strong> is driven by anaerobes such as <em>Porphyromonas gingivalis</em> and is linked in both directions with poorly controlled diabetes.</li>\n</ul>\n<h3>Nutrition and the mouth</h3>\n<table class=\"hy\">\n<thead><tr><th>Deficiency</th><th>Oral finding</th><th>Biochemical link</th></tr></thead>\n<tbody>\n<tr><td>Vitamin B12</td><td>Smooth, red, sore tongue (atrophic glossitis), aphthae</td><td>Cofactor for methionine synthase and methylmalonyl-CoA mutase; methylmalonic acid and homocysteine both rise</td></tr>\n<tr><td>Folate</td><td>Glossitis, aphthae</td><td>Needed for thymidine synthesis; homocysteine rises, methylmalonic acid normal</td></tr>\n<tr><td>Iron</td><td>Glossitis, angular cheilitis; with esophageal web in Plummer-Vinson syndrome</td><td>Reduced epithelial turnover enzymes; microcytic anemia</td></tr>\n<tr><td>Riboflavin (B2)</td><td>Angular cheilitis, magenta tongue</td><td>FAD and FMN for redox enzymes</td></tr>\n<tr><td>Niacin (B3)</td><td>Red, swollen tongue with pellagra (dermatitis, diarrhea, dementia)</td><td>NAD and NADP; deficiency with isoniazid, carcinoid, Hartnup disease</td></tr>\n<tr><td>Vitamin C</td><td>Swollen, bleeding gums; perifollicular hemorrhage, corkscrew hairs</td><td>Cofactor for prolyl and lysyl hydroxylase in collagen synthesis</td></tr>\n</tbody></table>\n<h3>Drugs and the mouth</h3>\n<ul>\n<li><strong>Gingival overgrowth</strong>: phenytoin, cyclosporine and calcium channel blockers (especially nifedipine, also amlodipine). The drugs alter calcium flux in gingival fibroblasts, increase their response to inflammatory cytokines and reduce collagen breakdown, so extracellular matrix accumulates; plaque inflammation makes it worse.</li>\n<li><strong>Medication-related osteonecrosis of the jaw</strong>: exposed necrotic jaw bone, usually after a tooth extraction, in people receiving antiresorptive drugs, most often high-dose IV bisphosphonates or denosumab for cancer. Nitrogen-containing bisphosphonates inhibit <strong>farnesyl pyrophosphate synthase</strong> in the osteoclast mevalonate pathway, preventing prenylation of small GTPases and causing osteoclast apoptosis; denosumab blocks RANKL. Suppressed remodelling, infection and possibly anti-angiogenic effects prevent healing of the socket. Antiangiogenic cancer drugs add risk.</li>\n<li><strong>Xerostomia</strong>: anticholinergic drugs (oxybutynin, tricyclics, first-generation antihistamines), radiation to the head and neck, and Sjögren disease reduce saliva, which leads to rampant cervical caries, candidiasis and difficulty with swallowing and dentures.</li>\n<li><strong>Mucositis</strong> from chemotherapy (methotrexate, 5-fluorouracil) and radiation reflects death of rapidly dividing basal cells.</li>\n</ul>\n<h3>White and red lesions with malignant potential</h3>\n<p><strong>Leukoplakia</strong> is a clinical term: a white plaque that cannot be wiped off and cannot be attributed to another disease. It reflects hyperkeratosis with or without <strong>epithelial dysplasia</strong>, and dysplasia (its grade) is the strongest predictor of transformation to squamous cell carcinoma. Lesions on the floor of the mouth and ventral or lateral tongue, non-homogeneous (speckled or nodular) lesions and proliferative verrucous leukoplakia carry the highest risk. <strong>Erythroplakia</strong>, a red velvety patch, is less common but much more often shows severe dysplasia or carcinoma. Risk factors for oral cavity SCC are tobacco (smoked or chewed), alcohol (synergistic), betel quid with areca nut (common in South and Southeast Asian communities) and chronic trauma; <em>TP53</em> mutations are typical. HPV (types 16 and 18) drives most <strong>oropharyngeal</strong> cancers (tonsil, base of tongue), where E7 inactivates Rb and the tumour cells overexpress p16; these occur in younger non-smokers and have a better prognosis.</p>\n<div class=\"trap\"><p>A white patch that wipes off is usually candidiasis. One that does not wipe off is leukoplakia, lichen planus, hairy leukoplakia or frictional keratosis, and the word \"leukoplakia\" says nothing about its histology until a biopsy is done.</p></div>\n[[figure:s23f-fig060401-1]]",
+   "furtherReading": [
+    {
+     "statpearls": "Recurrent Aphthous Stomatitis"
+    },
+    {
+     "statpearls": "Oral Leukoplakia"
+    },
+    {
+     "statpearls": "Behcet Disease"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Oral ulcers and infections: diagnosis and management",
+   "html": "<p>Oral ulcers and infections are common in primary care, pediatrics and urgent care. The goals are to relieve pain, keep children drinking, find systemic causes of recurrent ulcers, and recognise the few emergencies: dehydration in young children, spreading deep neck infection and possible cancer.</p>\n<h3>Recurrent aphthous stomatitis</h3>\n<p>Diagnosis is clinical. Treat minor aphthae with a <strong>topical corticosteroid</strong> (triamcinolone in an adhesive paste, a dexamethasone mouth rinse, or a fluocinonide gel), topical anesthetics and avoidance of triggers such as sharp foods and sodium lauryl sulfate toothpaste. For frequent or severe aphthae, check a blood count, ferritin, vitamin B12 and folate, and tissue transglutaminase IgA with total IgA; correct deficiencies and treat underlying disease. Refractory disease may respond to colchicine; thalidomide is reserved for severe HIV-related ulcers. Any ulcer that has not healed in 2 to 3 weeks needs a biopsy.</p>\n<h3>Behçet disease</h3>\n<p>The diagnosis is clinical (recurrent oral ulcers plus genital ulcers, eye disease, skin lesions or pathergy). Every patient needs an ophthalmology examination. Oral and genital ulcers respond to topical steroids, colchicine (especially with erythema nodosum) and apremilast, a phosphodiesterase-4 inhibitor approved for Behçet oral ulcers. Uveitis, vascular and neurologic disease need systemic immunosuppression with azathioprine or TNF inhibitors.</p>\n<h3>Children: herpetic gingivostomatitis, herpangina and PFAPA</h3>\n<p>A toddler with fever, drooling, swollen bleeding gums and widespread oral vesicles and ulcers has primary herpetic gingivostomatitis. <strong>Oral acyclovir</strong> started within the first few days of symptoms shortens fever, lesions and viral shedding. Pain control (acetaminophen or ibuprofen) and cold fluids are the core of care, because refusal to drink is the main danger; admit for IV fluids if the child is dehydrated. Avoid viscous lidocaine in young children: swallowed lidocaine can cause seizures and arrhythmia. Look at the eyes for herpetic keratitis and at the fingers for whitlow. Herpangina and hand, foot and mouth disease need only supportive care.</p>\n<p><strong>PFAPA</strong> causes clockwork episodes of high fever every 3 to 6 weeks in children, usually starting before age 5, with aphthous ulcers, pharyngitis and tender cervical nodes; the child is entirely well between episodes and grows normally. A <strong>single dose of oral prednisone</strong> at the start of an episode usually ends the fever within hours (it may shorten the interval between episodes). Tonsillectomy can be curative for frequent episodes, and most children outgrow it. Cyclic neutropenia is excluded with serial blood counts when the timing is very regular.</p>\n<h3>Oral candidiasis</h3>\n<ul>\n<li>Infant thrush: oral nystatin suspension; treat the breastfeeding parent's nipples if they are also affected.</li>\n<li>Adults with mild thrush: clotrimazole troches or nystatin suspension; moderate to severe or esophageal symptoms (odynophagia): oral fluconazole.</li>\n<li>Inhaled corticosteroid users: rinse and spit after each dose and use a spacer with metered-dose inhalers.</li>\n<li>Denture stomatitis: remove dentures at night, clean and soak them, and treat with a topical antifungal.</li>\n<li>Thrush in an adult without risk factors: test for HIV and diabetes.</li>\n</ul>\n<h3>Dental infection and deep neck spread</h3>\n<p>A dental abscess is treated by dental drainage or extraction; antibiotics (amoxicillin, or clindamycin for penicillin allergy) are added for spreading infection or systemic signs. <strong>Ludwig angina</strong> is a rapidly spreading cellulitis of the submandibular and sublingual spaces, usually from a lower molar infection: firm bilateral swelling of the floor of the mouth, a raised tongue, drooling, trismus, a muffled voice and stridor. The first priority is the <strong>airway</strong>, ideally secured by awake fiberoptic intubation or surgical airway in a controlled setting, followed by IV antibiotics covering streptococci, oral anaerobes and, in diabetes or immunosuppression, gram-negative rods (for example ampicillin-sulbactam), CT imaging once the airway is safe, and surgical drainage of any abscess.</p>\n<table class=\"hy\">\n<thead><tr><th>Condition</th><th>Typical patient and site</th><th>Key management</th></tr></thead>\n<tbody>\n<tr><td>Minor aphthae</td><td>Teenager or young adult; non-keratinized mucosa</td><td>Topical corticosteroid; look for deficiencies if frequent</td></tr>\n<tr><td>Primary herpetic gingivostomatitis</td><td>Child aged 1 to 5; gingiva plus whole mouth</td><td>Oral acyclovir early; fluids and analgesia</td></tr>\n<tr><td>Herpangina</td><td>Child in summer; posterior palate and pharynx</td><td>Supportive</td></tr>\n<tr><td>PFAPA</td><td>Child under 5 with clockwork fevers</td><td>Single dose of prednisone per episode; tonsillectomy</td></tr>\n<tr><td>Behçet disease</td><td>Young adult; oral and genital ulcers, uveitis</td><td>Colchicine, apremilast; immunosuppression for eye or vascular disease</td></tr>\n<tr><td>Ludwig angina</td><td>Adult with dental infection; floor of mouth</td><td>Secure airway, IV antibiotics, drainage</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Oral ulcers in a toddler with bleeding gums and fever are primary HSV, not aphthae; vesicles confined to the back of the mouth in summer are herpangina. Do not prescribe viscous lidocaine to a young child for either.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Recurrent Aphthous Stomatitis"
+    },
+    {
+     "statpearls": "Ludwig Angina"
+    },
+    {
+     "statpearls": "Oral Candidiasis"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "White and red lesions, oral cancer, dry mouth and drug effects",
+   "html": "<p>White and red patches, persistent ulcers, dry mouth, jaw necrosis and drug effects on the gums are the oral problems most likely to be missed in older adults and people taking many medicines. Oral health also matters for nutrition, for infection risk before surgery or chemotherapy, and for people with disabilities who depend on others for mouth care.</p>\n<h3>Leukoplakia, erythroplakia and oral cancer</h3>\n<p>Any white patch that does not wipe off, any red patch, and any ulcer, lump or numbness that persists more than 2 to 3 weeks after removal of an obvious cause (a sharp tooth, an ill-fitting denture) needs a <strong>biopsy</strong>, usually incisional from the most suspicious area (red, nodular or indurated parts). Brush cytology and adjunctive lights do not replace it. Management of leukoplakia depends on histology: stop tobacco, alcohol and betel quid; excise or laser lesions with moderate or severe dysplasia; and follow every patient indefinitely, re-biopsying any change, because transformation can occur even after removal.</p>\n<p>Oral cavity squamous cell carcinoma presents as a non-healing ulcer or indurated mass, typically on the lateral or ventral tongue or floor of the mouth, sometimes with ear pain (referred through cranial nerves) or a firm neck node. Workup is biopsy, then CT or MRI of the primary and neck and chest imaging; treatment is surgery with neck dissection, with adjuvant radiation or chemoradiation for high-risk features. HPV-associated oropharyngeal cancer often presents as a painless cystic neck node in a middle-aged non-smoker; p16 immunostaining of the biopsy guides staging. HPV vaccination is expected to prevent many oropharyngeal cancers.</p>\n<div class=\"pearl\"><p>Routine screening of asymptomatic adults for oral cancer by primary care clinicians has insufficient evidence for or against it, but examining the mouth of people who use tobacco, alcohol or betel quid, and acting on any persistent lesion, is good practice.</p></div>\n<h3>Oral lichen planus and geographic tongue</h3>\n<p>Reticular oral lichen planus (bilateral lacy white striae on the buccal mucosa) is often painless and needs no treatment. Erosive lichen planus is painful and treated with potent topical corticosteroids (gel or rinse) and, if needed, topical calcineurin inhibitors; test for hepatitis C, review drugs that cause lichenoid reactions and dental amalgam contact, and follow because of a small cancer risk. Geographic tongue (migratory red patches with white borders) is benign and needs only reassurance.</p>\n<h3>Dry mouth in older adults</h3>\n<p>Xerostomia is common in older adults and is usually caused by medications, especially those with anticholinergic effects: bladder antimuscarinics (oxybutynin), tricyclic antidepressants, first-generation antihistamines, antipsychotics and some antiparkinson drugs; diuretics contribute. Other causes are dehydration, head and neck radiation, Sjögren disease, diabetes and mouth breathing. The consequences are rapid root caries, candidiasis, pain, trouble wearing dentures and poor nutrition.</p>\n<ul>\n<li>First, review the medication list and replace or deprescribe the offending drug (for overactive bladder, a beta-3 agonist such as mirabegron avoids anticholinergic effects).</li>\n<li>Sip water, use sugar-free gum or lozenges, saliva substitutes and a humidifier at night; avoid alcohol-based mouthwash.</li>\n<li>Prescription fluoride toothpaste and frequent dental visits to prevent caries.</li>\n<li>Muscarinic agonists (pilocarpine, cevimeline) for Sjögren disease or post-radiation dry mouth when glands still function; they cause sweating and are used with caution in asthma and cardiac disease.</li>\n</ul>\n<h3>Medication-related osteonecrosis of the jaw</h3>\n<p>The risk is highest with high-dose IV zoledronic acid or monthly denosumab for bone metastases or myeloma and is low with oral bisphosphonates for osteoporosis. <strong>Prevention</strong> is a dental evaluation before starting antiresorptive therapy for cancer, with extractions and other invasive work completed and healed first, good oral hygiene and regular dental review. During therapy, avoid elective extractions where possible. Established disease is managed with antimicrobial mouth rinses, antibiotics for infection, pain control and conservative removal of loose sequestra; extensive disease may need resection. Whether to pause the drug is decided with the oncologist. Do not stop oral bisphosphonates for osteoporosis just to have routine dental work.</p>\n<h3>Gingival overgrowth and periodontal disease</h3>\n<p>Gingival overgrowth from nifedipine, amlodipine, cyclosporine or phenytoin improves when the drug is switched (another class of antihypertensive, tacrolimus instead of cyclosporine, or a different antiseizure drug) together with professional cleaning and plaque control; persistent tissue is removed surgically. Periodontitis worsens glycemic control, and periodontal treatment modestly lowers A1c in diabetes. Pregnancy gingivitis is common and is not a reason to postpone dental care: routine dental treatment is safe in pregnancy.</p>\n<h3>Special populations</h3>\n<p>People with intellectual or physical disabilities, frail older adults and people in care homes rely on caregivers for oral hygiene; poor oral care raises the risk of aspiration pneumonia, malnutrition and pain that cannot be reported. Daily assisted tooth brushing with fluoride toothpaste, denture care and regular dental visits are part of their care plan. Children should have fluoride varnish applied in primary care from tooth eruption and a dental home by age 1; fluoride supplements are prescribed from 6 months when the water supply is fluoride-deficient.</p>\n<table class=\"hy\">\n<thead><tr><th>Problem</th><th>Common culprit</th><th>Best first step</th></tr></thead>\n<tbody>\n<tr><td>Dry mouth, new caries</td><td>Anticholinergic drugs</td><td>Deprescribe or substitute; fluoride; saliva measures</td></tr>\n<tr><td>Swollen gums</td><td>Nifedipine, amlodipine, cyclosporine, phenytoin</td><td>Change the drug; plaque control</td></tr>\n<tr><td>Exposed jaw bone after extraction</td><td>IV bisphosphonate or denosumab</td><td>Prevention by dental care before therapy; conservative treatment</td></tr>\n<tr><td>Thrush</td><td>Inhaled corticosteroid, antibiotics, dentures</td><td>Topical antifungal; rinse after inhaler; spacer</td></tr>\n<tr><td>Fixed white or red patch</td><td>Tobacco, alcohol, betel quid</td><td>Biopsy</td></tr>\n</tbody></table>",
+   "furtherReading": [
+    {
+     "statpearls": "Oral Leukoplakia"
+    },
+    {
+     "statpearls": "Xerostomia"
+    },
+    {
+     "statpearls": "Bisphosphonate-Related Jaw Osteonecrosis"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Decision diagram for a white or red patch in the mouth (original schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old man from Turkey has had painful oral ulcers about once a month for 4 years. He also has recurrent painful scrotal ulcers that heal with scars, and he was recently treated for inflammation of the posterior segment of his left eye. A sterile pustule formed at the site of a venipuncture 2 days ago. Which of the following HLA alleles is most strongly associated with this condition?</p>",
+   "options": [
+    "HLA-B27",
+    "HLA-B51",
+    "HLA-DQ2",
+    "HLA-DR3",
+    "HLA-DR4"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Recurrent oral aphthae, scarring genital ulcers, posterior uveitis and a pathergy reaction in a young man from Turkey describe Behçet disease, a variable-vessel vasculitis most prevalent along the Silk Road. Its strongest genetic association is HLA-B51 (B*51). Neutrophil hyperactivity explains the pathergy response, and Th1 and Th17 cytokines sustain the vasculitis.</p><p><strong>Takeaway:</strong> Behçet disease (oral and genital ulcers, uveitis, pathergy) is associated with HLA-B51.</p>",
+   "whyNot": {
+    "A": "HLA-B27 is associated with spondyloarthritis and anterior uveitis, without recurrent scarring genital ulcers or pathergy.",
+    "C": "HLA-DQ2 is associated with celiac disease and dermatitis herpetiformis; celiac disease can cause aphthae but not genital ulcers or pathergy.",
+    "D": "HLA-DR3 is associated with type 1 diabetes, Graves disease and systemic lupus erythematosus.",
+    "E": "HLA-DR4 is associated with rheumatoid arthritis and type 1 diabetes."
+   },
+   "objective": "Associate Behçet disease with HLA-B51.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "oral ulcers"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 2-year-old girl is brought to the clinic because of fever, irritability and refusal to eat for 3 days. Temperature is 39.0 °C (102.2 °F). Her gingivae are swollen, red and bleed easily, and there are many small vesicles and shallow ulcers on her lips, tongue, gums and hard palate. There are tender submandibular lymph nodes. Her skin, hands and feet are clear. After this illness resolves, the causative agent will most likely persist in which of the following sites?</p>",
+   "options": [
+    "Dorsal root ganglia of the cervical spinal cord",
+    "Epithelial cells of the oral mucosa",
+    "Memory B lymphocytes",
+    "Salivary gland epithelium",
+    "Trigeminal ganglion neurons"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Fever, swollen bleeding gums and widespread vesicles and ulcers throughout the mouth in a toddler are primary herpetic gingivostomatitis from HSV-1. The virus enters sensory nerve endings in the oral mucosa and travels retrograde to the trigeminal ganglion, where it persists as an episome in neurons. Reactivation travels back along the nerve, usually producing herpes labialis at the vermilion border.</p><p><strong>Takeaway:</strong> HSV-1 from primary gingivostomatitis becomes latent in the trigeminal ganglion.</p>",
+   "whyNot": {
+    "A": "Cervical dorsal root ganglia are not the latency site for orolabial HSV-1, which uses the trigeminal nerve; VZV can lie latent in any sensory ganglion.",
+    "B": "HSV replicates lytically in oral epithelium during infection but does not remain latent there.",
+    "C": "Memory B lymphocytes are the latency site of Epstein-Barr virus, not HSV.",
+    "D": "Salivary gland epithelium harbours cytomegalovirus and HHV-6/7, not HSV latency."
+   },
+   "objective": "Identify the trigeminal ganglion as the latency site of HSV-1 after primary gingivostomatitis.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "oral infection"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 41-year-old man has white patches on the sides of his tongue that he noticed 1 month ago. They are painless. He has lost 6 kg (13 lb) over 6 months. Examination shows bilateral white plaques with vertical ridges on the lateral borders of the tongue that cannot be scraped off. A trial of clotrimazole troches had no effect. Biopsy shows hyperkeratosis and koilocyte-like ballooned cells in the upper epithelium without dysplasia or fungal elements. Infection with which of the following viruses is most likely responsible?</p>",
+   "options": [
+    "Cytomegalovirus",
+    "Epstein-Barr virus",
+    "Herpes simplex virus type 1",
+    "Human herpesvirus 8",
+    "Human papillomavirus type 16"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Corrugated white plaques on the lateral tongue that cannot be scraped off and do not respond to antifungals, with ballooned upper epithelial cells and no dysplasia, are oral hairy leukoplakia. It results from active Epstein-Barr virus replication in the upper epithelium, permitted by impaired T-cell immunity. In a man with weight loss, it strongly suggests HIV infection and should prompt testing. It is not premalignant and often regresses with antiretroviral therapy.</p><p><strong>Takeaway:</strong> Oral hairy leukoplakia is EBV replication in the lateral tongue epithelium and signals immunosuppression, usually HIV.</p>",
+   "whyNot": {
+    "A": "Cytomegalovirus causes deep oral or esophageal ulcers with large inclusion-bearing cells in advanced HIV, not white ridged plaques.",
+    "C": "HSV-1 causes painful vesicles and ulcers with multinucleated cells, not painless white plaques.",
+    "D": "HHV-8 causes Kaposi sarcoma, typically a violaceous patch or nodule on the hard palate.",
+    "E": "HPV 16 drives oropharyngeal carcinoma and some dysplastic lesions; it does not cause this non-dysplastic, ridged lateral-tongue plaque."
+   },
+   "objective": "Associate oral hairy leukoplakia with Epstein-Barr virus and immunosuppression.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "oral lesions",
+    "HIV"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old woman comes to the dentist because her gums have become enlarged and tender over 6 months, making brushing difficult. She takes lisinopril, metformin, atorvastatin, sertraline and nifedipine, which was added 8 months ago for blood pressure. Examination shows firm, lobulated overgrowth of the interdental papillae of both jaws, partly covering the teeth, with plaque deposits. Which of the following medications is most likely responsible?</p>",
+   "options": [
+    "Atorvastatin",
+    "Lisinopril",
+    "Metformin",
+    "Nifedipine",
+    "Sertraline"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Gingival overgrowth, beginning at the interdental papillae and worse with plaque, is a known effect of calcium channel blockers (most often nifedipine, also amlodipine), phenytoin and cyclosporine. These drugs alter calcium entry into gingival fibroblasts, increasing their response to inflammatory cytokines and reducing collagen breakdown by matrix metalloproteinases, so matrix accumulates. Switching to another class of antihypertensive plus professional cleaning usually leads to regression; residual tissue can be removed surgically.</p><p><strong>Takeaway:</strong> Nifedipine and other calcium channel blockers, phenytoin and cyclosporine cause gingival overgrowth.</p>",
+   "whyNot": {
+    "A": "Atorvastatin can cause myopathy and liver enzyme elevation but not gingival overgrowth.",
+    "B": "ACE inhibitors cause cough and angioedema of the lips and tongue, not firm gingival overgrowth.",
+    "C": "Metformin causes gastrointestinal upset and vitamin B12 deficiency, not gingival enlargement.",
+    "E": "SSRIs can cause dry mouth and bruxism but not fibrous gingival overgrowth."
+   },
+   "objective": "Identify calcium channel blockers as a cause of gingival overgrowth.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gingiva",
+    "older adults"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 36-year-old woman who has followed a strict vegan diet for 8 years without supplements has a sore, smooth, beefy-red tongue, recurrent mouth ulcers, and tingling in both feet. Examination shows loss of vibration sense in the toes. Hemoglobin is 10.1 g/dL and MCV is 112 fL. Increased serum concentration of which of the following best distinguishes this patient's deficiency from folate deficiency?</p>",
+   "options": [
+    "Formiminoglutamate",
+    "Homocysteine",
+    "Methylmalonic acid",
+    "Orotic acid",
+    "Succinyl-CoA"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Atrophic glossitis, aphthous ulcers, macrocytic anemia and posterior column signs in a long-term vegan without supplements are vitamin B12 deficiency. B12 is a cofactor for two enzymes: methionine synthase (which also needs folate, so homocysteine rises in both deficiencies) and methylmalonyl-CoA mutase (which converts methylmalonyl-CoA to succinyl-CoA and needs B12 only). An elevated methylmalonic acid therefore points to B12 deficiency. Accumulated methylmalonyl-CoA and abnormal fatty acids in myelin may contribute to the neuropathy, which folate replacement alone does not prevent.</p><p><strong>Takeaway:</strong> Methylmalonic acid rises in B12 deficiency but not in folate deficiency; homocysteine rises in both.</p>",
+   "whyNot": {
+    "A": "Formiminoglutamate accumulates in folate deficiency after a histidine load, not specifically in B12 deficiency.",
+    "B": "Homocysteine rises in both B12 and folate deficiency, so it does not distinguish them.",
+    "D": "Orotic acid rises in hereditary orotic aciduria and ornithine transcarbamylase deficiency, not B12 deficiency.",
+    "E": "Succinyl-CoA is the product of methylmalonyl-CoA mutase, so its formation falls rather than rises in B12 deficiency."
+   },
+   "objective": "Use methylmalonic acid to distinguish vitamin B12 deficiency from folate deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "glossitis",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old woman with breast cancer metastatic to bone has received IV zoledronic acid every 4 weeks for 3 years. Two months ago she had a lower molar extracted. The socket has not healed, and examination now shows 1 cm of exposed, yellow-white bone with surrounding tender gingiva. Panoramic x-ray shows a poorly defined lucency with a central dense fragment. The drug most likely contributed to this complication by inhibiting which of the following enzymes in osteoclasts?</p>",
+   "options": [
+    "Carbonic anhydrase II",
+    "Cathepsin K",
+    "Farnesyl pyrophosphate synthase",
+    "HMG-CoA reductase",
+    "Tartrate-resistant acid phosphatase"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Exposed, non-healing jaw bone after an extraction in a patient receiving high-dose IV zoledronic acid is medication-related osteonecrosis of the jaw. Nitrogen-containing bisphosphonates bind bone mineral, are taken up by resorbing osteoclasts and inhibit farnesyl pyrophosphate synthase in the mevalonate pathway. Without farnesyl and geranylgeranyl groups, small GTPases such as Ras, Rho and Rab cannot be prenylated, the osteoclast's ruffled border fails and the cell dies. Profoundly suppressed remodelling, infection and reduced angiogenesis prevent the socket from healing.</p><p><strong>Takeaway:</strong> Nitrogen-containing bisphosphonates inhibit osteoclast farnesyl pyrophosphate synthase; at high cumulative doses they predispose to osteonecrosis of the jaw.</p>",
+   "whyNot": {
+    "A": "Carbonic anhydrase II generates the protons osteoclasts secrete; its genetic deficiency causes osteopetrosis, but it is not the bisphosphonate target.",
+    "B": "Cathepsin K degrades collagen in the resorption pit; inhibitors were studied for osteoporosis but it is not inhibited by zoledronic acid.",
+    "D": "HMG-CoA reductase is earlier in the mevalonate pathway and is inhibited by statins, not by bisphosphonates.",
+    "E": "Tartrate-resistant acid phosphatase is an osteoclast marker enzyme, not the target of bisphosphonates."
+   },
+   "objective": "Explain how nitrogen-containing bisphosphonates act on osteoclasts and link them to osteonecrosis of the jaw.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "jaw",
+    "adverse effects"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 71-year-old man who lives alone and has eaten mostly tea, toast and canned soup since his wife died a year ago comes to the clinic because his gums bleed and his legs bruise easily. Examination shows swollen, purple, spongy gingivae that bleed on touch, perifollicular hemorrhages on his shins and coiled hairs. Platelet count and prothrombin time are normal. A deficiency of which of the following cofactors most directly impairs the enzyme step responsible for these findings?</p>",
+   "options": [
+    "Ascorbic acid for prolyl hydroxylase",
+    "Copper for lysyl oxidase",
+    "Niacin for alcohol dehydrogenase",
+    "Pyridoxal phosphate for aminolevulinate synthase",
+    "Vitamin K for gamma-glutamyl carboxylase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Swollen, bleeding gums, perifollicular hemorrhages and corkscrew hairs with normal platelets and clotting times in an older adult with a poor diet are scurvy. Vitamin C (ascorbic acid) keeps the iron in prolyl and lysyl hydroxylases in the reduced state. Without hydroxyproline, procollagen chains cannot form a stable triple helix, so vessel walls and gingival connective tissue are fragile. Social isolation, alcohol use and restrictive diets put older adults at risk.</p><p><strong>Takeaway:</strong> Scurvy is defective collagen hydroxylation from vitamin C deficiency; look for bleeding gums and perifollicular hemorrhage.</p>",
+   "whyNot": {
+    "B": "Copper deficiency impairs lysyl oxidase cross-linking and causes anemia, neutropenia and myeloneuropathy, not classic scurvy.",
+    "C": "Niacin deficiency causes pellagra with photosensitive dermatitis, diarrhea and dementia, not bleeding gums with perifollicular hemorrhage.",
+    "D": "Pyridoxine deficiency causes sideroblastic anemia, cheilosis and neuropathy, not perifollicular bleeding.",
+    "E": "Vitamin K deficiency prolongs the prothrombin time; his prothrombin time is normal."
+   },
+   "objective": "Link scurvy to impaired prolyl hydroxylation from vitamin C deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gingiva",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 59-year-old man who has smoked 2 packs of cigarettes daily for 40 years and drinks 4 to 6 beers daily has a painless 2-cm white plaque on the left floor of his mouth that cannot be scraped off. It has persisted for 4 months despite removal of a sharp denture edge. An incisional biopsy is performed. Which of the following histologic findings would most strongly predict progression of this lesion to invasive carcinoma?</p>",
+   "options": [
+    "Acanthosis with a thickened granular layer",
+    "Band-like lymphocytic infiltrate beneath the epithelium",
+    "Epithelial dysplasia with loss of maturation and atypical mitoses",
+    "Hyperkeratosis without cellular atypia",
+    "Intraepithelial fungal hyphae with neutrophils"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A persistent white plaque that cannot be wiped off and has no other explanation is leukoplakia. It is a clinical term; the histology ranges from simple hyperkeratosis to dysplasia or carcinoma. The presence and grade of epithelial dysplasia (nuclear atypia, loss of polarity and maturation, mitoses above the basal layer) is the strongest predictor of transformation to squamous cell carcinoma. The floor of the mouth, a high-risk site, and heavy tobacco and alcohol use add risk.</p><p><strong>Takeaway:</strong> In leukoplakia, epithelial dysplasia on biopsy is the main predictor of progression to oral squamous cell carcinoma.</p>",
+   "whyNot": {
+    "A": "Acanthosis with a thickened granular layer is a reactive or lichenoid change, not a predictor of malignancy.",
+    "B": "A band-like lymphocytic infiltrate suggests oral lichen planus or a lichenoid reaction, which carries only a small cancer risk.",
+    "D": "Hyperkeratosis without atypia is the most common finding in leukoplakia and carries the lowest risk.",
+    "E": "Fungal hyphae with neutrophils indicate candidal infection, which can coexist but does not itself predict carcinoma."
+   },
+   "objective": "Identify epithelial dysplasia as the key predictor of malignant transformation in leukoplakia.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_prognosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "oral lesions"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old college student comes to the clinic because of painful mouth sores that recur every few months. Each episode brings 1 to 3 round, 4-mm ulcers with a yellow-gray base and a red rim on the inside of her lower lip or cheek, which heal without scarring in about 10 days. She is otherwise healthy, with no genital ulcers, eye symptoms, diarrhea, weight loss or rash. Examination shows one such ulcer on the left buccal mucosa. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Oral acyclovir",
+    "Oral colchicine",
+    "Oral fluconazole",
+    "Oral prednisone",
+    "Topical corticosteroid paste"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Infrequent, small, round, shallow ulcers with a fibrinous base and red halo on non-keratinized mucosa that heal without scarring in a healthy young adult are minor recurrent aphthous stomatitis. Treatment is symptomatic: a topical corticosteroid in an adhesive paste or gel applied early shortens healing and reduces pain, with topical anesthetics and avoidance of triggers. Frequent or severe ulcers would prompt testing for iron, folate and B12 deficiency and celiac disease.</p><p><strong>Takeaway:</strong> Minor aphthous ulcers are treated with a topical corticosteroid and trigger avoidance.</p>",
+   "whyNot": {
+    "A": "Aphthae are not caused by HSV, and recurrent intraoral HSV favours keratinized mucosa with grouped vesicles; acyclovir does not help aphthae.",
+    "B": "Colchicine is reserved for frequent, severe or Behçet-associated ulcers that do not respond to topical therapy.",
+    "C": "There is no candidal infection; the lesion is an ulcer, not a white plaque that wipes off.",
+    "D": "Systemic steroids are reserved for severe major aphthae or Behçet disease and are excessive for an occasional minor ulcer."
+   },
+   "objective": "Treat minor recurrent aphthous stomatitis with a topical corticosteroid.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "oral ulcers"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 17-year-old girl comes to the clinic because of painful mouth ulcers that have become more frequent over the past year, now nearly continuous. She also reports fatigue, bloating and loose stools. Her BMI is 17.5 kg/m<sup>2</sup> and she has fallen from the 50th to the 15th percentile for weight. Examination shows three 5-mm aphthous ulcers on the labial mucosa and angular cheilitis. Hemoglobin is 10.6 g/dL, MCV is 74 fL and ferritin is 6 ng/mL (reference 15-150 ng/mL). Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    "Colonoscopy with terminal ileal biopsies",
+    "HLA-B51 genotyping for Behçet risk",
+    "Pathergy test on the forearm skin",
+    "Swab of an ulcer for HSV PCR testing",
+    "Tissue transglutaminase IgA with total IgA"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Frequent aphthous ulcers with bloating, loose stools, poor weight gain and iron-deficiency anemia in an adolescent suggest celiac disease. The best initial test is tissue transglutaminase IgA with a total IgA level (to detect IgA deficiency, which causes false negatives), taken while she is still eating gluten. A positive result leads to duodenal biopsy for confirmation in most cases. A gluten-free diet and iron replacement usually reduce the ulcers.</p><p><strong>Takeaway:</strong> Frequent aphthae with iron deficiency and gastrointestinal symptoms call for celiac serology (tTG IgA plus total IgA).</p>",
+   "whyNot": {
+    "A": "Colonoscopy is useful for suspected Crohn disease with bloody diarrhea, abdominal pain or perianal disease; the pattern here points first to celiac disease, which is screened serologically.",
+    "B": "HLA-B51 is associated with Behçet disease, which needs genital ulcers or eye involvement, and HLA testing is not diagnostic.",
+    "C": "The pathergy test supports Behçet disease, which does not explain malabsorption and iron deficiency.",
+    "D": "Recurrent aphthae on non-keratinized mucosa are not herpetic, and HSV PCR would not explain the systemic features."
+   },
+   "objective": "Screen for celiac disease in a patient with frequent aphthae and signs of malabsorption.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "oral ulcers",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 20-month-old boy is brought to the urgent care center because of fever and refusal to eat for 2 days. He is drinking small amounts of cold milk. Temperature is 38.9 °C (102 °F). He is drooling, has moist mucous membranes, and his capillary refill is under 2 seconds. Examination shows swollen, bleeding gingivae and many 2- to 3-mm vesicles and ulcers on the lips, tongue, gums and palate, plus vesicles on the skin around his mouth. His eyes and fingers are normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Admission for IV acyclovir",
+    "Oral acyclovir with analgesia and cold fluids",
+    "Oral amoxicillin",
+    "Oral nystatin suspension",
+    "Viscous lidocaine applied to the ulcers before feeds"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Fever, swollen bleeding gums and widespread oral vesicles in a toddler are primary herpetic gingivostomatitis. Started within the first few days, oral acyclovir shortens fever, oral lesions, drinking difficulty and viral shedding. Analgesia with acetaminophen or ibuprofen and frequent cold fluids are the mainstays, and parents are told to return for signs of dehydration or eye involvement. He is drinking and well perfused, so he can be managed at home.</p><p><strong>Takeaway:</strong> Treat early primary herpetic gingivostomatitis with oral acyclovir, analgesia and fluids; admit only if the child is dehydrated or cannot drink.</p>",
+   "whyNot": {
+    "A": "IV acyclovir with admission is for children who are dehydrated, cannot drink, are immunocompromised or have complications; he is drinking and well perfused.",
+    "C": "This is a viral infection; amoxicillin has no effect and may cause a rash.",
+    "D": "Nystatin treats oral candidiasis, which gives white plaques that wipe off rather than vesicles and bleeding gums.",
+    "E": "Viscous lidocaine in young children can be swallowed and cause seizures and arrhythmia; it is avoided."
+   },
+   "objective": "Manage primary herpetic gingivostomatitis in a toddler with oral acyclovir and supportive care.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "oral infection"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 63-year-old man comes to the clinic for a routine visit. He has smoked 1 pack of cigarettes daily for 45 years and drinks 3 to 4 alcoholic drinks daily. He wears an upper denture that fits well. Examination shows a 1.5-cm patch on the right ventral tongue that is mostly white with a red, slightly granular area at its center; it cannot be wiped off. It is painless and was present at his last dental visit 2 months ago. There are no palpable neck nodes. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Incisional biopsy of the lesion including the red area",
+    "Oral fluconazole for 2 weeks and reexamination",
+    "Reassurance and reexamination in 1 year",
+    "Topical corticosteroid gel for 2 weeks",
+    "Toluidine blue staining and brush cytology"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A persistent white patch that cannot be wiped off, with a red granular component (erythroleukoplakia), on the ventral tongue of a heavy smoker and drinker has a high likelihood of dysplasia or carcinoma. It needs an incisional biopsy that includes the red and most suspicious areas, along with tobacco and alcohol cessation counselling. Further management depends on the histology: excision for moderate or severe dysplasia and staging for carcinoma.</p><p><strong>Takeaway:</strong> A persistent oral white or red patch, especially with red areas in a high-risk site, needs a biopsy.</p>",
+   "whyNot": {
+    "B": "An antifungal trial is reasonable only for lesions that look like candidiasis and wipe off; a fixed mixed red-white plaque in a high-risk patient should not be delayed.",
+    "C": "Waiting a year could allow progression of a lesion that may already be malignant.",
+    "D": "Topical steroids treat oral lichen planus and aphthae but could delay the diagnosis of dysplasia or cancer here.",
+    "E": "Adjunctive stains and brush cytology do not replace histology, which is the diagnostic standard."
+   },
+   "objective": "Biopsy persistent leukoplakia or erythroplakia in a patient at high risk for oral cancer.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "oral lesions"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 81-year-old woman comes to the clinic because of a dry, burning mouth for 2 months that makes it hard to eat bread and wear her lower denture. Her dentist has found four new cavities at the gum line. She drinks enough fluids and has no dry eyes or joint pain. Her medications are listed below.</p><table><thead><tr><th>Medication</th><th>Indication</th><th>Started</th></tr></thead><tbody><tr><td>Lisinopril</td><td>Hypertension</td><td>6 years ago</td></tr><tr><td>Atorvastatin</td><td>Hyperlipidemia</td><td>6 years ago</td></tr><tr><td>Levothyroxine</td><td>Hypothyroidism</td><td>10 years ago</td></tr><tr><td>Oxybutynin, immediate release</td><td>Urge urinary incontinence</td><td>3 months ago</td></tr><tr><td>Calcium carbonate with vitamin D</td><td>Bone health</td><td>4 years ago</td></tr></tbody></table><p>Her tongue is dry and fissured, and there is little pooled saliva. There are no white plaques. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Add pilocarpine",
+    "Measure anti-Ro/SSA and anti-La/SSB antibodies",
+    "Replace oxybutynin with mirabegron",
+    "Start oral fluconazole",
+    "Stop lisinopril"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>New dry mouth and rapid root caries began after oxybutynin, a strongly anticholinergic bladder antimuscarinic, was started. Anticholinergic drugs are the commonest cause of xerostomia in older adults and also add risks of constipation, confusion and falls. The best step is to deprescribe or substitute: mirabegron, a beta-3 adrenergic agonist, treats urge incontinence without anticholinergic effects. Add saliva-supportive measures and prescription fluoride, and coordinate with her dentist.</p><p><strong>Takeaway:</strong> Xerostomia in an older adult is usually a drug effect; replace anticholinergic medicines before adding sialogogues.</p>",
+   "whyNot": {
+    "A": "Pilocarpine treats Sjögren or post-radiation dryness and causes sweating and bradycardia; adding a drug to counter another drug's adverse effect is a prescribing cascade.",
+    "B": "Sjögren antibodies are reasonable if dryness persists after the drug is changed or if she has dry eyes or arthritis, which she does not.",
+    "D": "There is no candidiasis, so an antifungal is not indicated.",
+    "E": "Lisinopril does not cause dry mouth and has been taken for years without problems."
+   },
+   "objective": "Recognize anticholinergic-induced xerostomia in an older adult and deprescribe the culprit.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "older adults",
+    "adverse effects"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old woman with newly diagnosed multiple myeloma and lytic bone lesions is about to start chemotherapy and monthly IV zoledronic acid. She has not seen a dentist in 6 years. Examination shows a fractured, carious lower right molar and moderate gingival inflammation. Her renal function is normal. Which of the following is the most appropriate step before starting zoledronic acid, if her oncologic condition allows?</p>",
+   "options": [
+    "Dental evaluation and extraction of nonrestorable teeth first",
+    "Serum C-telopeptide measurement to estimate bone turnover",
+    "Panoramic x-ray now, with extractions deferred until later",
+    "Oral penicillin prophylaxis for the duration of therapy",
+    "Oral alendronate in place of the IV bisphosphonate"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>High-dose IV antiresorptive therapy for myeloma or bone metastases carries a meaningful risk of medication-related osteonecrosis of the jaw, and invasive dental procedures during therapy are the main trigger. The most effective prevention is a dental evaluation before starting, with extraction of nonrestorable teeth and other invasive treatment completed (ideally with mucosal healing over a few weeks) before the first dose, if the cancer treatment can wait. Regular dental review and good oral hygiene continue during therapy.</p><p><strong>Takeaway:</strong> Before IV bisphosphonates or denosumab for cancer, complete needed dental extractions and treatment first.</p>",
+   "whyNot": {
+    "B": "Bone turnover markers such as C-telopeptide do not predict osteonecrosis risk reliably and do not prevent it.",
+    "C": "Deferring extractions until after therapy means they will occur during or after antiresorptive exposure, when the risk of osteonecrosis is highest.",
+    "D": "Long-term prophylactic antibiotics do not prevent osteonecrosis and add adverse effects and resistance.",
+    "E": "Oral alendronate is less effective for myeloma bone disease; IV agents are the standard, and dental preparation is the way to reduce risk."
+   },
+   "objective": "Arrange dental treatment before starting high-dose antiresorptive therapy to prevent osteonecrosis of the jaw.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "jaw",
+    "prevention"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old man with poorly controlled type 2 diabetes comes to the emergency department because of a painful, swollen neck and difficulty swallowing for 2 days. He had a toothache in a lower left molar for a week before. Temperature is 39.1 °C (102.4 °F), pulse is 118/min, respirations are 24/min and oxygen saturation is 95% on room air. He is sitting forward, drooling, and speaks with a muffled voice. There is firm, tender, woody swelling of both submandibular areas, the floor of the mouth is raised and the tongue pushed upward; he can open his mouth only 2 cm. Soft inspiratory stridor is heard. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "CT scan of the neck with contrast",
+    "Dental extraction of the affected molar",
+    "Needle aspiration of the submandibular swelling",
+    "Oral amoxicillin-clavulanate and follow-up in 24 hours",
+    "Securing the airway in a controlled setting"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Bilateral woody submandibular swelling with a raised floor of mouth, displaced tongue, trismus, drooling, muffled voice and stridor after a lower molar infection is Ludwig angina. The immediate threat is airway obstruction, which can progress within minutes. The first step is to secure the airway in a controlled setting, usually by awake fiberoptic intubation with preparation for a surgical airway, with anesthesia and ENT present. IV antibiotics (for example ampicillin-sulbactam, broadened in diabetes) start immediately, and CT and surgical drainage follow once the airway is safe.</p><p><strong>Takeaway:</strong> In Ludwig angina with stridor, secure the airway first; antibiotics, imaging and drainage follow.</p>",
+   "whyNot": {
+    "A": "CT will be needed to look for abscess, but lying a patient with stridor flat in the scanner before the airway is secured risks sudden obstruction.",
+    "B": "Removing the source tooth is part of definitive care but does not address impending airway loss.",
+    "C": "Needle aspiration does not decompress diffuse cellulitis and does not protect the airway.",
+    "D": "Oral outpatient antibiotics are inappropriate for a septic patient with a threatened airway."
+   },
+   "objective": "Prioritize airway management in Ludwig angina.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "dental infection",
+    "emergency"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 3-year-old girl is brought to the clinic because of recurrent fevers. For the past 10 months she has had episodes every 4 weeks of fever to 40 °C (104 °F) lasting 4 days, with mouth sores, sore throat and swollen neck glands. Between episodes she is completely well, and she is growing along the 60th percentile. Her siblings are not affected. Today she is on day 1 of an episode: temperature is 39.8 °C (103.6 °F), there are three small aphthous ulcers on her labial mucosa, her tonsils are red with exudate and she has tender anterior cervical nodes. A rapid streptococcal antigen test and throat culture from two previous episodes were negative. Complete blood counts taken weekly for 6 weeks showed normal neutrophil counts. Which of the following is the most appropriate treatment for this episode?</p>",
+   "options": [
+    "Amoxicillin for 10 days",
+    "Colchicine daily",
+    "Oral acyclovir",
+    "Single dose of oral prednisone",
+    "Tonsillectomy this week"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Clockwork episodes of high fever every few weeks in a young child, with aphthous stomatitis, pharyngitis and cervical adenitis, complete wellness and normal growth between episodes, negative streptococcal tests and normal serial neutrophil counts (excluding cyclic neutropenia), are PFAPA syndrome. A single dose of oral prednisone at the onset of an episode typically ends the fever within hours. Parents should know that steroids may shorten the interval between episodes. Tonsillectomy is an option for frequent episodes that disrupt family life, and most children outgrow PFAPA.</p><p><strong>Takeaway:</strong> PFAPA episodes respond dramatically to a single dose of oral prednisone.</p>",
+   "whyNot": {
+    "A": "Repeated negative streptococcal tests and the clockwork pattern argue against bacterial pharyngitis; antibiotics do not shorten PFAPA episodes.",
+    "B": "Colchicine may lengthen the interval between episodes in some children, but it does not abort an episode already under way.",
+    "C": "Aphthae in PFAPA are not herpetic; acyclovir does not help.",
+    "E": "Tonsillectomy can be curative but is elective and not a treatment for the current febrile episode."
+   },
+   "objective": "Recognize PFAPA syndrome and abort an episode with a single dose of oral prednisone.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "oral ulcers"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "HLA allele most associated with Behçet disease?",
+   "back": "HLA-B51.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Latency site of HSV-1 after gingivostomatitis?",
+   "back": "Trigeminal ganglion.",
+   "question": 2
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Oral hairy leukoplakia: virus and meaning?",
+   "back": "Epstein-Barr virus; marks immunosuppression (usually HIV); not premalignant.",
+   "question": 3
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Drug classes that cause gingival overgrowth?",
+   "back": "Calcium channel blockers (nifedipine), phenytoin, cyclosporine.",
+   "question": 4
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Lab that separates B12 from folate deficiency?",
+   "back": "Methylmalonic acid (raised only in B12 deficiency).",
+   "question": 5
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Bisphosphonate enzyme target?",
+   "back": "Farnesyl pyrophosphate synthase in osteoclasts.",
+   "question": 6
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Scurvy: enzyme and oral sign?",
+   "back": "Prolyl and lysyl hydroxylase need vitamin C; swollen, bleeding gums.",
+   "question": 7
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Strongest predictor of malignant change in leukoplakia?",
+   "back": "Epithelial dysplasia on biopsy.",
+   "question": 8
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "How does Streptococcus mutans adhere to teeth?",
+   "back": "Glucosyltransferases make sticky glucans (dextran) from sucrose.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 1,
+   "front": "Which oral red patch carries the highest cancer risk?",
+   "back": "Erythroplakia.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "First-line treatment for minor aphthous ulcers?",
+   "back": "Topical corticosteroid (paste, gel or rinse).",
+   "question": 9
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Tests for frequent or severe aphthae?",
+   "back": "Blood count, ferritin, B12, folate, tTG IgA with total IgA.",
+   "question": 10
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Treatment of early primary herpetic gingivostomatitis?",
+   "back": "Oral acyclovir, analgesia and fluids.",
+   "question": 11
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Why avoid viscous lidocaine in toddlers?",
+   "back": "Swallowed lidocaine can cause seizures and arrhythmia.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "PFAPA: what aborts an episode?",
+   "back": "A single dose of oral prednisone.",
+   "question": 16
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Ludwig angina: first priority?",
+   "back": "Secure the airway in a controlled setting.",
+   "question": 15
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Apremilast use in oral disease?",
+   "back": "Oral ulcers of Behçet disease.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Inhaled corticosteroid user with thrush: prevention?",
+   "back": "Rinse and spit after each dose and use a spacer.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Persistent white patch that does not wipe off: next step?",
+   "back": "Biopsy (include red or indurated areas).",
+   "question": 12
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Commonest cause of xerostomia in older adults?",
+   "back": "Medications, especially anticholinergics.",
+   "question": 13
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Bladder drug that avoids anticholinergic effects?",
+   "back": "Mirabegron (beta-3 agonist).",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Prevention of medication-related osteonecrosis of the jaw?",
+   "back": "Dental evaluation and invasive dental work before starting IV antiresorptive therapy.",
+   "question": 14
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Which antiresorptive settings carry the highest jaw necrosis risk?",
+   "back": "High-dose IV zoledronic acid or denosumab for cancer.",
+   "question": null
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Typical site and presentation of oral cavity SCC?",
+   "back": "Non-healing ulcer or indurated mass on the lateral or ventral tongue or floor of the mouth.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Is routine dental care safe in pregnancy?",
+   "back": "Yes; pregnancy gingivitis is common and dental treatment should not be postponed.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "When should children have fluoride varnish and a dental home?",
+   "back": "Varnish from tooth eruption in primary care; dental home by age 1.",
+   "question": null
+  }
+ ]
+}

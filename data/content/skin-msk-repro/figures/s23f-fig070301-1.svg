@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 580" width="760" height="580" role="img" aria-label="Schematic of bone remodeling: osteocytes secrete sclerostin that inhibits osteoblasts; osteoblasts express RANKL that activates RANK on osteoclasts and secrete osteoprotegerin that blocks RANKL; with labelled sites of romosozumab, teriparatide, denosumab, bisphosphonates and estrogen or raloxifene" font-family="sans-serif" fill="#0f172a">
+<title>Schematic of bone remodeling: osteocytes secrete sclerostin that inhibits osteoblasts; osteoblasts express RANKL that activates RANK on osteoclasts and secrete osteoprotegerin that blocks RANKL; with labelled sites of romosozumab, teriparatide, denosumab, bisphosphonates and estrogen or raloxifene</title>
+<rect x="0" y="0" width="760" height="580" fill="#ffffff"/>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker><marker id="bar" markerWidth="6" markerHeight="14" refX="3" refY="7" orient="auto"><rect x="0" y="0" width="5" height="14" fill="#0f172a"/></marker></defs>
+<text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle">Bone remodeling: signals and drug sites</text>
+<rect x="30" y="60" width="220" height="110" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="140.0" y="84" font-size="15" font-weight="bold" text-anchor="middle">Osteocyte</text>
+<text x="140.0" y="106" font-size="13" text-anchor="middle">senses load</text>
+<text x="140.0" y="124" font-size="13" text-anchor="middle">secretes sclerostin</text>
+<text x="140.0" y="142" font-size="13" text-anchor="middle">secretes FGF23</text>
+<rect x="30" y="250" width="220" height="120" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="140.0" y="274" font-size="15" font-weight="bold" text-anchor="middle">Osteoblast lineage</text>
+<text x="140.0" y="296" font-size="13" text-anchor="middle">builds osteoid (type I collagen)</text>
+<text x="140.0" y="314" font-size="13" text-anchor="middle">expresses RANKL</text>
+<text x="140.0" y="332" font-size="13" text-anchor="middle">secretes OPG (decoy)</text>
+<rect x="510" y="250" width="220" height="120" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="620.0" y="274" font-size="15" font-weight="bold" text-anchor="middle">Osteoclast</text>
+<text x="620.0" y="296" font-size="13" text-anchor="middle">RANK receptor</text>
+<text x="620.0" y="314" font-size="13" text-anchor="middle">resorbs bone (H+, cathepsin K)</text>
+<text x="620.0" y="332" font-size="13" text-anchor="middle">FPP synthase needed</text>
+<rect x="270" y="450" width="220" height="70" rx="10" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<text x="380.0" y="474" font-size="15" font-weight="bold" text-anchor="middle">Bone surface</text>
+<text x="380.0" y="496" font-size="13" text-anchor="middle">hydroxyapatite</text>
+<line x1="140" y1="170" x2="140" y2="246" stroke="#0f172a" stroke-width="2" marker-end="url(#bar)"/>
+<text x="150" y="215" font-size="13">sclerostin blocks Wnt</text>
+<line x1="252" y1="300" x2="506" y2="300" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="380" y="290" font-size="13" text-anchor="middle">RANKL activates RANK</text>
+<line x1="252" y1="345" x2="380" y2="345" stroke="#0f172a" stroke-width="2" marker-end="url(#bar)"/>
+<text x="320" y="374" font-size="13" text-anchor="middle">OPG binds RANKL</text>
+<line x1="620" y1="372" x2="470" y2="448" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="590" y="420" font-size="13" text-anchor="middle">resorption</text>
+<line x1="140" y1="372" x2="290" y2="448" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="190" y="420" font-size="13" text-anchor="middle">formation</text>
+<rect x="290" y="60" width="440" height="150" rx="10" fill="#ffffff" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="510" y="84" font-size="15" font-weight="bold" text-anchor="middle">Drug sites (label = action)</text>
+<text x="306" y="110" font-size="13">Romosozumab: antibody to sclerostin (more formation)</text>
+<text x="306" y="131" font-size="13">Teriparatide / abaloparatide: pulsed PTH1 receptor agonists (formation)</text>
+<text x="306" y="152" font-size="13">Denosumab: antibody to RANKL (less resorption)</text>
+<text x="306" y="173" font-size="13">Bisphosphonates: bind mineral, inhibit FPP synthase</text>
+<text x="306" y="194" font-size="13">Estrogen / raloxifene: lower RANKL, raise OPG</text>
+<text x="380" y="555" font-size="13" text-anchor="middle">Arrow = stimulates; bar end = inhibits. OPG = osteoprotegerin; FPP = farnesyl pyrophosphate.</text>
+</svg>

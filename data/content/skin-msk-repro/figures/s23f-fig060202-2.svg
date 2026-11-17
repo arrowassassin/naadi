@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-label="Cross-section of skin with a melanoma measured from the granular layer to its deepest point, beside a table of recommended excision margins by Breslow thickness" font-family="sans-serif">
+<title>Cross-section of skin with a melanoma measured from the granular layer to its deepest point, beside a table of recommended excision margins by Breslow thickness</title>
+<rect x="0" y="0" width="760" height="420" fill="#ffffff"/>
+<text x="20" y="30" font-size="16" font-weight="bold" fill="#0f172a">Breslow thickness and excision margins for primary melanoma</text>
+<rect x="20" y="60" width="330" height="40" fill="#f6d9b8" stroke="#475569"/>
+<text x="28" y="85" font-size="13" fill="#0f172a">Epidermis</text>
+<rect x="20" y="100" width="330" height="80" fill="#f3c6b1" stroke="#475569"/>
+<text x="28" y="125" font-size="13" fill="#0f172a">Papillary dermis</text>
+<rect x="20" y="180" width="330" height="120" fill="#eab3a0" stroke="#475569"/>
+<text x="28" y="205" font-size="13" fill="#0f172a">Reticular dermis</text>
+<rect x="20" y="300" width="330" height="60" fill="#fbefb4" stroke="#475569"/>
+<text x="28" y="335" font-size="13" fill="#0f172a">Subcutaneous fat</text>
+<path d="M150,62 L260,62 L250,140 L235,200 L210,240 L190,200 L165,140 Z" fill="#3b2416" stroke="#0f172a"/>
+<line x1="290" y1="62" x2="290" y2="240" stroke="#0f172a" stroke-width="2"/>
+<line x1="282" y1="62" x2="298" y2="62" stroke="#0f172a" stroke-width="2"/>
+<line x1="282" y1="240" x2="298" y2="240" stroke="#0f172a" stroke-width="2"/>
+<line x1="210" y1="240" x2="290" y2="240" stroke="#0f172a" stroke-dasharray="4 3"/>
+<text x="20" y="385" font-size="12" fill="#0f172a">Thickness is measured in millimetres from the top of the</text>
+<text x="20" y="401" font-size="12" fill="#0f172a">granular layer to the deepest invasive tumour cell.</text>
+<text x="300" y="155" font-size="12" fill="#0f172a">Breslow</text>
+<rect x="400" y="70" width="340" height="36" fill="#e2e8f0" stroke="#475569"/>
+<text x="410" y="93" font-size="13" font-weight="bold" fill="#0f172a">Tumour thickness</text>
+<text x="610" y="93" font-size="13" font-weight="bold" fill="#0f172a">Clinical margin</text>
+<rect x="400" y="106" width="340" height="36" fill="#ffffff" stroke="#475569"/>
+<text x="410" y="129" font-size="13" fill="#0f172a">In situ</text>
+<text x="610" y="129" font-size="13" fill="#0f172a">0.5 to 1 cm</text>
+<rect x="400" y="142" width="340" height="36" fill="#ffffff" stroke="#475569"/>
+<text x="410" y="165" font-size="13" fill="#0f172a">1.0 mm or less</text>
+<text x="610" y="165" font-size="13" fill="#0f172a">1 cm</text>
+<rect x="400" y="178" width="340" height="36" fill="#ffffff" stroke="#475569"/>
+<text x="410" y="201" font-size="13" fill="#0f172a">More than 1.0 to 2.0 mm</text>
+<text x="610" y="201" font-size="13" fill="#0f172a">1 to 2 cm</text>
+<rect x="400" y="214" width="340" height="36" fill="#ffffff" stroke="#475569"/>
+<text x="410" y="237" font-size="13" fill="#0f172a">More than 2.0 mm</text>
+<text x="610" y="237" font-size="13" fill="#0f172a">2 cm</text>
+<text x="400" y="275" font-size="12" fill="#0f172a">Ulceration and thickness define the T stage.</text>
+<text x="400" y="293" font-size="12" fill="#0f172a">Sentinel node biopsy is discussed from about</text>
+<text x="400" y="311" font-size="12" fill="#0f172a">0.8 mm (or thinner with ulceration) and</text>
+<text x="400" y="329" font-size="12" fill="#0f172a">offered for thicker tumours.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-label="Linear schematic of the male urethra from bladder neck through prostatic, membranous, bulbar and penile segments to the meatus, grouped as posterior and anterior urethra, with arrows from pelvic fracture to the membranous-bulbar junction, straddle injury to the bulbar urethra, and penile fracture or instrumentation to the penile urethra. Retrograde urethrogram comes before catheterisation.">
+<title>Linear schematic of the male urethra from bladder neck through prostatic, membranous, bulbar and penile segments to the meatus, grouped as posterior and anterior urethra, with arrows from pelvic fracture to the membranous-bulbar junction, straddle injury to the bulbar urethra, and penile fracture or instrumentation to the penile urethra. Retrograde urethrogram comes before catheterisation.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+<text x="380" y="30" font-family="sans-serif" font-size="18" fill="#0f172a" text-anchor="middle" font-weight="bold">Male urethra: segments and typical injuries</text>
+<rect x="20" y="70" width="110" height="56" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.5"/><text x="75.0" y="94.4" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="75.0" dy="0">Bladder</tspan><tspan x="75.0" dy="16">neck</tspan></text>
+<rect x="150" y="70" width="110" height="56" rx="8" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/><text x="205.0" y="102.5" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="normal">Prostatic</text>
+<rect x="280" y="70" width="110" height="56" rx="8" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/><text x="335.0" y="94.4" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="335.0" dy="0">Membranous</tspan><tspan x="335.0" dy="16">(sphincter)</tspan></text>
+<rect x="410" y="70" width="110" height="56" rx="8" fill="#fef3c7" stroke="#0f172a" stroke-width="1.5"/><text x="465.0" y="102.5" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="normal">Bulbar</text>
+<rect x="540" y="70" width="110" height="56" rx="8" fill="#fef3c7" stroke="#0f172a" stroke-width="1.5"/><text x="595.0" y="94.4" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="595.0" dy="0">Penile</tspan><tspan x="595.0" dy="16">(pendulous)</tspan></text>
+<rect x="670" y="70" width="80" height="56" rx="8" fill="#fef3c7" stroke="#0f172a" stroke-width="1.5"/><text x="710.0" y="102.5" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="normal">Meatus</text>
+<line x1="130" y1="98" x2="148" y2="98" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="260" y1="98" x2="278" y2="98" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="390" y1="98" x2="408" y2="98" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="520" y1="98" x2="538" y2="98" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="650" y1="98" x2="668" y2="98" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 150 140 L 150 152 L 390 152 L 390 140" fill="none" stroke="#0f172a" stroke-width="2"/>
+<text x="270" y="172" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="bold">POSTERIOR urethra</text>
+<path d="M 410 140 L 410 152 L 750 152 L 750 140" fill="none" stroke="#0f172a" stroke-width="2"/>
+<text x="580" y="172" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="bold">ANTERIOR urethra (in corpus spongiosum)</text>
+<rect x="170" y="210" width="240" height="96" rx="8" fill="#fee2e2" stroke="#0f172a" stroke-width="1.5"/><text x="290.0" y="239.7" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="290.0" dy="0">Pelvic fracture</tspan><tspan x="290.0" dy="15">(shear at the junction of</tspan><tspan x="290.0" dy="15">membranous and bulbar</tspan><tspan x="290.0" dy="15">urethra)</tspan></text>
+<line x1="320" y1="210" x2="335" y2="128" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="430" y="210" width="150" height="96" rx="8" fill="#fee2e2" stroke="#0f172a" stroke-width="1.5"/><text x="505.0" y="247.2" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="505.0" dy="0">Straddle injury</tspan><tspan x="505.0" dy="15">(bulb crushed</tspan><tspan x="505.0" dy="15">against pubis)</tspan></text>
+<line x1="470" y1="210" x2="465" y2="128" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="600" y="210" width="150" height="96" rx="8" fill="#fee2e2" stroke="#0f172a" stroke-width="1.5"/><text x="675.0" y="247.2" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="675.0" dy="0">Penile fracture,</tspan><tspan x="675.0" dy="15">instrumentation,</tspan><tspan x="675.0" dy="15">penetrating injury</tspan></text>
+<line x1="640" y1="210" x2="600" y2="128" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="30" y="350" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="normal">Signs of urethral injury: blood at the meatus, inability to void, perineal or penile hematoma.</text>
+<text x="30" y="374" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="bold">Next step: retrograde urethrogram BEFORE any attempt to pass a urethral catheter.</text>
+<text x="30" y="398" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="normal">Anterior injury with Buck fascia torn: blood and urine spread under Colles fascia into the</text>
+<text x="30" y="420" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="normal">scrotum, perineum (butterfly bruise) and abdominal wall, but not into the thighs.</text>
+</svg>

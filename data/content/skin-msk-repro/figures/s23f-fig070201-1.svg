@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" width="760" height="540" role="img" aria-label="Schematic long bone divided into epiphysis, metaphysis and diaphysis, each labelled with the bone tumours typically found there" font-family="sans-serif" fill="#0f172a"><title>Schematic long bone divided into epiphysis, metaphysis and diaphysis, each labelled with the bone tumours typically found there</title><rect x="0" y="0" width="760" height="540" fill="#ffffff"/>
+<text x="380" y="30" font-size="18" text-anchor="middle" font-weight="bold">Where bone tumours arise (young person, long bone)</text>
+<g transform="translate(-170,0)"><rect x="300" y="55" width="150" height="70" rx="30" fill="#e2e8f0" stroke="#0f172a" stroke-width="2"/>
+<rect x="300" y="125" width="150" height="8" fill="#94a3b8" stroke="#0f172a"/>
+<text x="375" y="95" font-size="13" text-anchor="middle">Epiphysis</text>
+<path d="M300 133 L450 133 L425 205 L325 205 Z" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<text x="375" y="175" font-size="13" text-anchor="middle">Metaphysis</text>
+<rect x="335" y="205" width="80" height="230" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+<text x="375" y="330" font-size="13" text-anchor="middle">Diaphysis</text></g>
+<line x1="280" y1="90" x2="320" y2="80" stroke="#0f172a"/>
+<text x="325" y="70" font-size="13" font-weight="bold">Epiphysis</text>
+<text x="325" y="88" font-size="13">Giant cell tumour (after physeal closure;</text>
+<text x="325" y="104" font-size="13">extends from metaphysis to subchondral bone)</text>
+<text x="325" y="120" font-size="13">Chondroblastoma (adolescents)</text>
+<line x1="270" y1="170" x2="320" y2="175" stroke="#0f172a"/>
+<text x="325" y="160" font-size="13" font-weight="bold">Metaphysis</text>
+<text x="325" y="178" font-size="13">Osteochondroma, unicameral and aneurysmal</text>
+<text x="325" y="194" font-size="13">bone cysts, nonossifying fibroma, enchondroma</text>
+<text x="325" y="210" font-size="13">Malignant: osteosarcoma (knee, proximal humerus)</text>
+<line x1="245" y1="320" x2="320" y2="320" stroke="#0f172a"/>
+<text x="325" y="300" font-size="13" font-weight="bold">Diaphysis</text>
+<text x="325" y="318" font-size="13">Osteoid osteoma (cortical nidus)</text>
+<text x="325" y="334" font-size="13">Fibrous dysplasia, Langerhans cell histiocytosis</text>
+<text x="325" y="350" font-size="13">Malignant: Ewing sarcoma, lymphoma, myeloma</text>
+<text x="20" y="465" font-size="13" font-weight="bold">Other sites</text>
+<text x="20" y="485" font-size="13">Hand phalanges: enchondroma is the most common bone tumour.</text>
+<text x="20" y="503" font-size="13">Spine posterior elements: osteoid osteoma, osteoblastoma, aneurysmal bone cyst.</text>
+<text x="20" y="521" font-size="13">Vertebral body: hemangioma, metastasis, myeloma; vertebra plana in Langerhans cell histiocytosis.</text>
+</svg>

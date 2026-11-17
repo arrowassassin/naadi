@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430" role="img" aria-label="Cross-section of skin with an eccrine sweat duct running from its coil in the dermis to the surface. Three numbered sites of duct blockage are marked: 1 in the stratum corneum for miliaria crystallina, 2 in the living epidermis for miliaria rubra, and 3 near the dermal-epidermal junction for miliaria profunda, each with its clinical appearance.">
+<title>Cross-section of skin with an eccrine sweat duct running from its coil in the dermis to the surface. Three numbered sites of duct blockage are marked: 1 in the stratum corneum for miliaria crystallina, 2 in the living epidermis for miliaria rubra, and 3 near the dermal-epidermal junction for miliaria profunda, each with its clinical appearance.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="430" fill="#ffffff"/>
+<text x="380" y="26" font-family="sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f172a">Miliaria: where the sweat duct is blocked</text>
+<rect x="40" y="60" width="380" height="22" rx="0" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
+<text x="48" y="76" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">stratum corneum</text>
+<rect x="40" y="82" width="380" height="120" rx="0" fill="#f1f5f9" stroke="#0f172a" stroke-width="1"/>
+<text x="48" y="190" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">living epidermis</text>
+<rect x="40" y="202" width="380" height="180" rx="0" fill="#fefce8" stroke="#0f172a" stroke-width="1"/>
+<text x="48" y="370" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">dermis</text>
+<path d="M230 60 Q246 72 230 84 Q214 100 230 116 Q246 132 230 148 Q214 164 230 180 Q242 192 230 204 L230 300" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M230 300 q24 10 0 22 q-24 10 0 22 q24 10 -4 20" fill="none" stroke="#0f172a" stroke-width="3"/>
+<text x="260" y="340" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">eccrine coil</text>
+<circle cx="230" cy="72" r="11" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+<text x="230" y="77" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">1</text>
+<line x1="242" y1="72" x2="440" y2="72" stroke="#0f172a" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="230" cy="132" r="11" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+<text x="230" y="137" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">2</text>
+<line x1="242" y1="132" x2="440" y2="132" stroke="#0f172a" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="230" cy="204" r="11" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+<text x="230" y="209" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">3</text>
+<line x1="242" y1="204" x2="440" y2="250" stroke="#0f172a" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="446" y="60" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">1. Miliaria crystallina</text>
+<text x="446" y="78" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Block in the stratum corneum.</text>
+<text x="446" y="94" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Clear, fragile 1-2 mm vesicles with no</text>
+<text x="446" y="110" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">redness; newborns, fever, sunburn.</text>
+<text x="446" y="150" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">2. Miliaria rubra</text>
+<text x="446" y="168" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Block in the living epidermis.</text>
+<text x="446" y="184" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Itchy or prickly red papules and</text>
+<text x="446" y="200" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">papulovesicles; heat and occlusion.</text>
+<text x="446" y="244" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">3. Miliaria profunda</text>
+<text x="446" y="262" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Block near the dermal-epidermal junction.</text>
+<text x="446" y="278" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Firm skin-coloured papules after repeated</text>
+<text x="446" y="294" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">rubra; can cause anhidrosis and heat illness.</text>
+<text x="40" y="410" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Treatment for all three: cool the skin, loosen clothing, remove occlusion; the eruption fades within days.</text>
+</svg>

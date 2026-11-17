@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-label="Comparison chart of polymyalgia rheumatica and giant cell arteritis showing affected regions, key symptoms, tests and glucocorticoid doses" font-family="sans-serif" fill="#0f172a"><title>Comparison chart of polymyalgia rheumatica and giant cell arteritis showing affected regions, key symptoms, tests and glucocorticoid doses</title><rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+<text x="380" y="30" font-size="18" text-anchor="middle" font-weight="bold">PMR and GCA: overlapping diseases, different urgency</text>
+<circle cx="190" cy="95" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+<line x1="190" y1="117" x2="190" y2="220" stroke="#0f172a" stroke-width="3"/>
+<line x1="130" y1="135" x2="250" y2="135" stroke="#0f172a" stroke-width="3"/>
+<line x1="150" y1="220" x2="230" y2="220" stroke="#0f172a" stroke-width="3"/>
+<line x1="160" y1="220" x2="150" y2="300" stroke="#0f172a" stroke-width="3"/>
+<line x1="220" y1="220" x2="230" y2="300" stroke="#0f172a" stroke-width="3"/>
+<ellipse cx="135" cy="135" rx="20" ry="14" fill="#94a3b8" stroke="#0f172a"/>
+<ellipse cx="245" cy="135" rx="20" ry="14" fill="#94a3b8" stroke="#0f172a"/>
+<ellipse cx="155" cy="222" rx="18" ry="12" fill="#94a3b8" stroke="#0f172a"/>
+<ellipse cx="225" cy="222" rx="18" ry="12" fill="#94a3b8" stroke="#0f172a"/>
+<path d="M170 85 q-10 -15 5 -25" fill="none" stroke="#0f172a" stroke-width="3" stroke-dasharray="4 3"/>
+<text x="20" y="80" font-size="12">Temporal artery</text>
+<text x="20" y="96" font-size="12">(dashed): GCA</text>
+<text x="20" y="335" font-size="12">Shaded: shoulder and hip girdle</text>
+<text x="20" y="351" font-size="12">bursae and tendon sheaths: PMR</text>
+<rect x="330" y="60" width="400" height="160" rx="8" fill="#f1f5f9" stroke="#0f172a"/>
+<text x="345" y="84" font-size="15" font-weight="bold">Polymyalgia rheumatica</text>
+<text x="345" y="106" font-size="13">Age over 50; bilateral shoulder and hip aching,</text>
+<text x="345" y="124" font-size="13">morning stiffness; ESR and CRP raised; CK normal</text>
+<text x="345" y="146" font-size="13">Prednisone 12.5 to 25 mg daily; rapid response</text>
+<text x="345" y="168" font-size="13">Slow taper over a year or more; bone protection</text>
+<text x="345" y="190" font-size="13">Ask about GCA symptoms at every visit</text>
+<rect x="330" y="240" width="400" height="170" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="345" y="264" font-size="15" font-weight="bold">Giant cell arteritis (emergency)</text>
+<text x="345" y="286" font-size="13">New headache, scalp tenderness, jaw claudication,</text>
+<text x="345" y="304" font-size="13">visual loss or diplopia, limb claudication</text>
+<text x="345" y="326" font-size="13">Start prednisone 40 to 60 mg (IV pulses if vision</text>
+<text x="345" y="344" font-size="13">affected) before biopsy or ultrasound</text>
+<text x="345" y="366" font-size="13">Confirm: temporal artery biopsy or ultrasound halo</text>
+<text x="345" y="388" font-size="13">Tocilizumab spares steroids; image the aorta later</text>
+<line x1="250" y1="135" x2="330" y2="135" stroke="#0f172a" stroke-dasharray="5 4"/>
+<line x1="175" y1="70" x2="330" y2="300" stroke="#0f172a" stroke-dasharray="5 4"/>
+</svg>

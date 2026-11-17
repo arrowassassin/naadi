@@ -1,0 +1,936 @@
+{
+ "area": "12.05.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Disorders of lung and gut maturity and the infant of a diabetic parent",
+   "html": "<p>The disorders of the first month that recur on Step 1 share a theme: an organ asked to work before it is ready. The preterm lung lacks surfactant, the preterm gut lacks mature barrier and immune defenses, and the fetus of a diabetic parent adapts to a high-glucose environment that disappears at birth.</p>\n<h2>Respiratory distress syndrome (surfactant deficiency)</h2>\n<p>Surfactant is a mixture of phospholipids, mainly <strong>dipalmitoylphosphatidylcholine (lecithin)</strong>, with phosphatidylglycerol and surfactant proteins A to D. It is made by <strong>type II pneumocytes</strong> and stored in lamellar bodies. Synthesis begins in the late second trimester and is usually sufficient by about 35 weeks. By the law of Laplace, the pressure needed to keep an alveolus open is proportional to surface tension divided by radius; without surfactant, small alveoli collapse at end-expiration, and each breath must reopen them. The result is diffuse atelectasis, low compliance, intrapulmonary shunting and hypoxemia.</p>\n<p>Plasma leaks into collapsed air spaces, and fibrin with necrotic epithelial debris forms eosinophilic <strong>hyaline membranes</strong> lining the respiratory bronchioles and alveolar ducts. The chest radiograph shows low lung volumes, a diffuse fine reticulogranular (ground-glass) pattern and air bronchograms.</p>\n<p>Hormones regulate surfactant. <strong>Glucocorticoids</strong> induce the enzymes of surfactant synthesis and speed structural maturation, which is why antenatal corticosteroids are given before preterm birth. Thyroid hormone also promotes maturation. <strong>Insulin</strong> antagonizes the glucocorticoid effect, so fetal hyperinsulinemia in a diabetic pregnancy delays lung maturity even at term. Other risk factors are male sex, cesarean birth without labor, a second twin and perinatal asphyxia. Fetal lung maturity was once assessed with a lecithin:sphingomyelin ratio above 2.0 or the presence of phosphatidylglycerol in amniotic fluid; such testing is now rarely used to time delivery.</p>\n<p>Treating the disease brings its own injuries. High inspired oxygen and mechanical ventilation generate free radicals and stretch injury that cause <strong>bronchopulmonary dysplasia</strong> (arrested alveolar and vascular development). Fluctuating oxygen drives abnormal retinal vessel growth through VEGF in <strong>retinopathy of prematurity</strong>. The fragile <strong>germinal matrix</strong> next to the lateral ventricles is prone to hemorrhage in very preterm infants with unstable cerebral blood flow.</p>\n<h2>Transient tachypnea and meconium aspiration</h2>\n<p><strong>Transient tachypnea of the newborn</strong> is retained fetal lung fluid. Infants born by cesarean delivery without labor miss the catecholamine-driven switch of the airway epithelium from chloride secretion to ENaC-mediated sodium absorption. The radiograph shows prominent perihilar streaks, fluid in the fissures and well-inflated lungs; it clears within 1 to 3 days.</p>\n<p><strong>Meconium aspiration syndrome</strong> follows fetal stress near or after term: hypoxia increases bowel peristalsis and relaxes the anal sphincter, and gasping pulls meconium-stained fluid into the airways. Meconium injures the lung four ways: it plugs small airways (partial obstruction acts as a ball valve, causing air trapping and pneumothorax), it causes a chemical pneumonitis, it inactivates surfactant and it predisposes to persistent pulmonary hypertension.</p>\n<h2>Persistent pulmonary hypertension of the newborn</h2>\n<p>When pulmonary vascular resistance fails to fall after birth, pressure in the pulmonary artery stays above systemic pressure, and deoxygenated blood shunts <strong>right to left across the ductus arteriosus and foramen ovale</strong>. Shunting at the ductus lowers saturation in the lower body (postductal) more than in the right arm (preductal), giving a pre-post difference. Causes include maladaptation (meconium aspiration, sepsis, asphyxia), underdevelopment of the vascular bed (congenital diaphragmatic hernia with pulmonary hypoplasia) and maldevelopment with remodeled arterioles. Hypoxia, acidosis and cold all raise pulmonary vascular resistance further, creating a vicious cycle. Inhaled nitric oxide relaxes pulmonary vascular smooth muscle by raising cGMP.</p>\n<h2>Necrotizing enterocolitis</h2>\n<p>Necrotizing enterocolitis is ischemic and inflammatory necrosis of the bowel, mostly in preterm infants after feeds have begun. Immature mucosal barrier function, exaggerated Toll-like receptor 4 signaling to bacterial products, dysbiosis and impaired regulation of mesenteric blood flow combine. Formula feeding raises risk; human milk (own mother's or donor) lowers it. The <strong>terminal ileum and proximal colon</strong> are most often involved. Bacterial gas dissecting into the bowel wall produces <strong>pneumatosis intestinalis</strong>; gas tracking into the portal venous system is seen over the liver; free intraperitoneal air signals perforation. Histology shows coagulative necrosis, hemorrhage and inflammation that can become transmural.</p>\n<h2>The infant of a diabetic parent</h2>\n<p>Glucose crosses the placenta freely; insulin does not. Maternal hyperglycemia makes the fetus hyperglycemic, and fetal pancreatic <strong>beta cells undergo hyperplasia</strong> and secrete more insulin. Fetal hyperinsulinemia explains most of the newborn findings:</p>\n<table class=\"hy\"><thead><tr><th>Finding</th><th>Mechanism</th></tr></thead><tbody>\n<tr><td>Macrosomia, organomegaly, shoulder dystocia</td><td>Insulin acts as an anabolic growth factor; fat is deposited on the trunk and shoulders</td></tr>\n<tr><td>Hypoglycemia in the first hours</td><td>Hyperinsulinemia persists after the placental glucose supply ends</td></tr>\n<tr><td>Respiratory distress syndrome at a later gestational age</td><td>Insulin opposes glucocorticoid induction of surfactant</td></tr>\n<tr><td>Polycythemia and hyperbilirubinemia</td><td>Increased metabolic rate and relative fetal hypoxia raise erythropoietin</td></tr>\n<tr><td>Hypertrophic (septal) cardiomyopathy</td><td>Insulin-driven myocardial growth; usually regresses</td></tr>\n<tr><td>Hypocalcemia and hypomagnesemia</td><td>Transient functional hypoparathyroidism</td></tr>\n<tr><td>Congenital anomalies (caudal regression, neural tube defects, transposition and septal defects, small left colon)</td><td>Hyperglycemia during organogenesis; risk rises with periconception HbA1c</td></tr>\n</tbody></table>\n<p>The anomaly risk comes from pregestational diabetes, because gestational diabetes usually begins after organogenesis is complete.</p>\n<div class=\"pearl\"><p>Naadi memory aid for the diabetic pregnancy: \"sugar in, insulin out\". The fetus makes the insulin, so everything that follows (big baby, low glucose after the cord is cut, slow lungs) traces back to fetal beta cells.</p></div>\n<div class=\"trap\"><p>Respiratory distress syndrome can occur in a term infant of a diabetic parent. Do not exclude surfactant deficiency on gestational age alone when fetal hyperinsulinemia was likely.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Neonatal Respiratory Distress Syndrome"
+    },
+    {
+     "statpearls": "Necrotizing Enterocolitis"
+    },
+    {
+     "statpearls": "Meconium Aspiration"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Perinatal infections, hemolysis and kernicterus: mechanisms",
+   "html": "<p>Infections acquired before, during or soon after birth are a favorite Step 1 topic because each organism leaves a recognizable pattern, and because the mechanisms of transmission explain how they are prevented. Hemolysis and bilirubin neurotoxicity round out this section, together with the pharmacology of neonatal opioid withdrawal.</p>\n<h2>Routes of transmission</h2>\n<ul>\n<li><strong>Transplacental</strong> (hematogenous): toxoplasma, syphilis, rubella, cytomegalovirus, parvovirus B19, varicella, Zika and some HIV transmission.</li>\n<li><strong>Intrapartum</strong> (ascending or by contact in the birth canal): group B streptococcus, <em>Escherichia coli</em>, herpes simplex virus, gonorrhea, chlamydia, hepatitis B and most HIV and hepatitis C transmission.</li>\n<li><strong>Postnatal</strong>: breast milk (HIV, HTLV, CMV in preterm infants) and caregivers or the NICU environment (<em>Staphylococcus aureus</em>, coagulase-negative staphylococci, gram-negative rods, Candida).</li>\n</ul>\n<h2>Bacteria of neonatal sepsis and meningitis</h2>\n<table class=\"hy\"><thead><tr><th>Organism</th><th>Microbiology</th><th>Key virulence or clue</th></tr></thead><tbody>\n<tr><td>Group B streptococcus (<em>Streptococcus agalactiae</em>)</td><td>Gram-positive cocci in chains, beta-hemolytic, bacitracin resistant, CAMP test positive, hydrolyzes hippurate</td><td>Sialic acid-rich polysaccharide capsule blocks complement deposition and phagocytosis; colonizes the rectovaginal tract</td></tr>\n<tr><td><em>Escherichia coli</em></td><td>Gram-negative rod, lactose fermenter</td><td>K1 capsule (polysialic acid) favors meningitis; leading cause of early sepsis in very preterm infants</td></tr>\n<tr><td><em>Listeria monocytogenes</em></td><td>Gram-positive rod, tumbling motility, grows in the cold, facultative intracellular</td><td>Actin rockets spread cell to cell; acquired from deli meats and unpasteurized cheese; intrinsically resistant to cephalosporins</td></tr>\n<tr><td>Coagulase-negative staphylococci</td><td>Gram-positive cocci in clusters</td><td>Biofilm on central catheters; late-onset sepsis in the NICU</td></tr>\n</tbody></table>\n<p>Neonates are vulnerable because of low complement levels, reduced neutrophil storage pools and chemotaxis and limited antibody to capsular polysaccharides. Preterm infants also receive less transplacental IgG. Maternal IgG against the GBS capsule protects, which is the basis of GBS vaccine research.</p>\n<h2>Congenital infections</h2>\n<table class=\"hy\"><thead><tr><th>Infection</th><th>Organism</th><th>Distinctive findings</th></tr></thead><tbody>\n<tr><td>Toxoplasmosis</td><td><em>Toxoplasma gondii</em>, an obligate intracellular protozoan; cat feces, undercooked meat</td><td>Chorioretinitis, hydrocephalus, scattered (diffuse) intracranial calcifications</td></tr>\n<tr><td>Cytomegalovirus</td><td>Enveloped double-stranded DNA herpesvirus; enlarged cells with intranuclear \"owl's eye\" inclusions</td><td>Most common congenital infection; periventricular calcifications, microcephaly, sensorineural hearing loss (often progressive), petechiae, hepatosplenomegaly</td></tr>\n<tr><td>Rubella</td><td>Single-stranded positive-sense RNA togavirus</td><td>Cataracts, sensorineural deafness, patent ductus arteriosus or pulmonary artery stenosis, \"blueberry muffin\" dermal erythropoiesis</td></tr>\n<tr><td>Syphilis</td><td><em>Treponema pallidum</em>, a spirochete seen by darkfield or silver stain</td><td>Early: rhinitis, desquamating rash on palms and soles, hepatosplenomegaly, periostitis and osteochondritis. Late: notched incisors, mulberry molars, saddle nose, saber shins, interstitial keratitis, eighth-nerve deafness</td></tr>\n<tr><td>Herpes simplex</td><td>Enveloped double-stranded DNA virus; mostly acquired at delivery</td><td>Skin, eye and mouth vesicles; encephalitis (temporal lobes); disseminated disease with hepatitis</td></tr>\n<tr><td>Parvovirus B19</td><td>Nonenveloped single-stranded DNA virus; enters erythroid precursors through the P antigen</td><td>Fetal anemia, high-output failure and nonimmune hydrops</td></tr>\n<tr><td>Varicella</td><td>Herpesvirus</td><td>Early pregnancy: limb hypoplasia and cicatricial scars. Rash in the parent just before or after delivery: severe neonatal varicella</td></tr>\n<tr><td>Zika</td><td>Flavivirus spread by Aedes mosquitoes and sexually</td><td>Severe microcephaly with a collapsed skull, subcortical calcifications, eye abnormalities, contractures</td></tr>\n</tbody></table>\n<p>Timing matters. Rubella damages the fetus most in the first trimester, during organogenesis. Toxoplasma crosses the placenta more often late in pregnancy, but fetal disease is more severe when infection occurs early. CMV can cause disease after primary or nonprimary maternal infection. The drugs that treat these infections reflect their biology: pyrimethamine inhibits protozoal dihydrofolate reductase (given with sulfadiazine and folinic acid to protect the host marrow); ganciclovir and valganciclovir are phosphorylated first by the CMV UL97 kinase; acyclovir is activated by HSV thymidine kinase; penicillin binds transpeptidases of <em>T. pallidum</em>.</p>\n<h2>Hemolytic disease and hyperbilirubinemia</h2>\n<p>In <strong>Rh(D) alloimmunization</strong>, an Rh-negative parent sensitized by an earlier pregnancy makes IgG anti-D that crosses the placenta and coats fetal red cells, which are destroyed in the spleen. Severe cases cause fetal anemia, extramedullary hematopoiesis and hydrops. In <strong>ABO incompatibility</strong>, a group O parent has naturally occurring IgG anti-A or anti-B; it can affect a first pregnancy and is usually milder, with spherocytes on the smear and a weakly positive direct antiglobulin test. <strong>G6PD deficiency</strong> (X-linked) and hereditary spherocytosis cause hemolysis with a negative antiglobulin test.</p>\n[[figure:s23f-fig120502-1]]\n<p>Unconjugated bilirubin is lipid-soluble. The fraction not bound to albumin can cross the blood-brain barrier, especially when it is immature or disrupted by acidosis, sepsis or hypoxia. It deposits in the <strong>globus pallidus, subthalamic nucleus, hippocampus, cerebellum and brainstem auditory and oculomotor nuclei</strong>, giving the yellow staining of <strong>kernicterus</strong>. Drugs that compete for albumin binding, such as <strong>sulfonamides</strong> and ceftriaxone, raise the free fraction and are avoided in jaundiced newborns. Survivors develop choreoathetoid cerebral palsy, auditory neuropathy, upward-gaze palsy and dental enamel dysplasia.</p>\n<p>Inherited conjugation defects belong here as well: <strong>Crigler-Najjar type 1</strong> (absent UGT1A1, severe unconjugated jaundice, no response to phenobarbital), <strong>type 2</strong> (reduced activity that phenobarbital can induce) and <strong>Gilbert syndrome</strong> (a promoter variant that can exaggerate newborn jaundice, especially with G6PD deficiency).</p>\n<h2>Neonatal opioid withdrawal</h2>\n<p>Chronic fetal opioid exposure suppresses adenylyl cyclase through mu receptors; neurons compensate by upregulating cAMP signaling. When the supply stops at birth, the unopposed cAMP pathway in noradrenergic neurons of the <strong>locus coeruleus</strong> produces a hyperadrenergic state: tremor, irritability, hypertonia, high-pitched cry, sweating, sneezing, yawning, tachypnea, poor feeding, vomiting and loose stools. Timing reflects half-life: heroin or short-acting opioids within 1 to 2 days, methadone often at 2 to 5 days and buprenorphine in between. An opioid antagonist precipitates abrupt withdrawal and seizures and is contraindicated in the exposed newborn.</p>\n<div class=\"trap\"><p>Two calcification patterns are easy to swap. CMV causes <strong>periventricular</strong> calcifications; toxoplasmosis causes <strong>scattered</strong> calcifications through the parenchyma, with hydrocephalus. Both cause chorioretinitis.</p></div>\n<div class=\"pearl\"><p>Listeria is intrinsically resistant to cephalosporins. That is why ampicillin is part of every empiric regimen for neonatal sepsis.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "TORCH Complex"
+    },
+    {
+     "statpearls": "Kernicterus"
+    },
+    {
+     "statpearls": "Neonatal Abstinence Syndrome"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "The newborn with respiratory distress",
+   "html": "<p>Respiratory distress is the most common reason a newborn is admitted to the NICU. Signs are tachypnea (above 60/min), grunting, nasal flaring, retractions and cyanosis. The age, gestation, birth history and chest radiograph usually point to the cause; the first priority is always support of oxygenation and ventilation.</p>\n<h2>Distinguishing the common causes</h2>\n<table class=\"hy\"><thead><tr><th>Condition</th><th>Typical infant</th><th>Radiograph</th><th>Course and treatment</th></tr></thead><tbody>\n<tr><td>Transient tachypnea</td><td>Term or late preterm, often cesarean without labor</td><td>Perihilar streaks, fluid in fissures, good volumes</td><td>Tachypnea with low oxygen need; resolves in 24 to 72 hours; supportive care</td></tr>\n<tr><td>Respiratory distress syndrome</td><td>Preterm, infant of a diabetic parent</td><td>Low volumes, ground glass, air bronchograms</td><td>Worsens over the first 1 to 2 days; CPAP, surfactant</td></tr>\n<tr><td>Meconium aspiration</td><td>Term or post-term, meconium-stained fluid, fetal distress</td><td>Patchy coarse densities with hyperinflation; pneumothorax</td><td>Oxygen, ventilation, surfactant; treat pulmonary hypertension</td></tr>\n<tr><td>Pneumonia or sepsis</td><td>Any; maternal fever, GBS colonization, prolonged rupture of membranes</td><td>Variable; can mimic RDS</td><td>Cultures and empiric antibiotics</td></tr>\n<tr><td>Congenital diaphragmatic hernia</td><td>Scaphoid abdomen, bowel sounds in the chest, heart sounds shifted right</td><td>Bowel loops in the (usually left) chest</td><td>Intubate and decompress the stomach; no bag-mask ventilation</td></tr>\n<tr><td>Persistent pulmonary hypertension</td><td>Term infant with hypoxemia out of proportion to the radiograph</td><td>Often clear or showing the underlying disease</td><td>Pre-post saturation difference; oxygen, ventilation, inhaled nitric oxide, ECMO</td></tr>\n</tbody></table>\n<p>Cyanotic heart disease also enters the differential: an infant who stays hypoxemic despite 100% oxygen, without much respiratory distress, suggests a right-to-left cardiac lesion, and echocardiography decides.</p>\n<h2>Preventing and treating respiratory distress syndrome</h2>\n<ul>\n<li><strong>Antenatal corticosteroids</strong> (betamethasone or dexamethasone) given to a pregnant patient at risk of delivery within 7 days between 24 and 34 weeks reduce RDS, intraventricular hemorrhage, necrotizing enterocolitis and death. They may be considered from 22 weeks after counseling and in selected late-preterm pregnancies without pregestational diabetes.</li>\n<li><strong>Delivery room:</strong> start CPAP early in a spontaneously breathing preterm infant rather than routine intubation.</li>\n<li><strong>Surfactant:</strong> give intratracheal surfactant when an infant on CPAP has rising oxygen needs (commonly an inspired oxygen above about 30 to 40%) or needs intubation. It can be delivered through an endotracheal tube or by a thin catheter during spontaneous breathing.</li>\n<li><strong>Caffeine</strong> treats apnea of prematurity and shortens ventilation.</li>\n<li>Target oxygen saturations in a moderate range (commonly around 90 to 95%) to limit both retinopathy (from too much oxygen) and death (from too little). Check local protocol for exact limits.</li>\n</ul>\n<h2>Meconium-stained amniotic fluid</h2>\n<p>A vigorous infant born through meconium receives routine care. A nonvigorous infant receives the standard initial steps (warm, dry, stimulate, position the airway) and positive-pressure ventilation if apneic or bradycardic; intubation and suctioning are reserved for airway obstruction. Neither suctioning on the perineum nor amnioinfusion for meconium alone prevents aspiration. After admission, treatment is supportive: oxygen, ventilation strategies that avoid air trapping, surfactant for severe disease, antibiotics while sepsis is excluded and pulmonary vasodilator therapy if pulmonary hypertension develops. A sudden deterioration suggests pneumothorax.</p>\n<h2>Persistent pulmonary hypertension</h2>\n<p>Suspect it when hypoxemia is severe and labile, and preductal (right hand) saturation exceeds postductal (foot) saturation. Echocardiography confirms high pulmonary pressure with right-to-left shunting and excludes structural heart disease. Management is oxygen, optimal lung recruitment, correction of acidosis, hypothermia and hypoglycemia, minimal handling, blood-pressure support and <strong>inhaled nitric oxide</strong>; ECMO is used when these fail.</p>\n<h2>Apnea and other preterm problems</h2>\n<p>Apnea of prematurity (pauses of 20 seconds or more, or shorter pauses with bradycardia or desaturation) reflects immature respiratory control and resolves by about term-corrected age. Exclude sepsis, hypoglycemia, anemia, seizures and intracranial hemorrhage before attributing new apnea to immaturity. Head ultrasound screens very preterm infants for intraventricular hemorrhage, and dilated retinal examinations screen for retinopathy of prematurity according to birth weight and gestational age.</p>\n<h2>Perinatal asphyxia and hypoxic-ischemic encephalopathy</h2>\n<p>An infant of 36 weeks or more with evidence of a perinatal hypoxic event (low cord pH or high base deficit, low Apgar scores, prolonged resuscitation) and moderate or severe encephalopathy should begin <strong>therapeutic hypothermia within 6 hours of birth</strong>, which reduces death and disability. Watch for seizures, renal injury and coagulopathy.</p>\n<div class=\"trap\"><p>In suspected congenital diaphragmatic hernia, bag-mask ventilation fills the herniated bowel with air and compresses the lungs further. Intubate immediately and decompress the stomach.</p></div>\n<div class=\"pearl\"><p>Tachypnea in a term baby born by elective cesarean that improves over the first day with little oxygen is transient tachypnea. Tachypnea that worsens, needs rising oxygen or comes with temperature instability needs a sepsis evaluation.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Transient Tachypnea of the Newborn"
+    },
+    {
+     "statpearls": "Neonatal Respiratory Distress Syndrome"
+    },
+    {
+     "statpearls": "Therapeutic Hypothermia for Neonatal Hypoxic-Ischemic Encephalopathy"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Neonatal sepsis and congenital infections: diagnosis and management",
+   "html": "<p>Neonatal sepsis is defined by age at onset. <strong>Early-onset sepsis</strong> (in the first 72 hours, and up to 6 days for group B streptococcus) reflects vertical transmission; <strong>late-onset sepsis</strong> (after the first week) reflects both vertical organisms and those acquired after birth, and is more often accompanied by meningitis.</p>\n<h2>Preventing early-onset GBS disease</h2>\n<ul>\n<li>Universal rectovaginal culture at <strong>36 0/7 to 37 6/7 weeks</strong>.</li>\n<li>Intrapartum antibiotic prophylaxis for: a positive culture in this pregnancy; GBS bacteriuria at any time in this pregnancy; a previous infant with invasive GBS disease; or unknown status with preterm labor, rupture of membranes for 18 hours or more, intrapartum fever of 38.0&deg;C (100.4&deg;F) or higher or a positive intrapartum nucleic acid test. Colonization in a previous pregnancy is a reason to offer prophylaxis when status is unknown at term.</li>\n<li>Penicillin G is preferred and ampicillin is an alternative. Cefazolin is used for penicillin allergy with low risk of anaphylaxis; for high-risk allergy, clindamycin if the isolate is susceptible, otherwise vancomycin.</li>\n<li>Prophylaxis is <strong>adequate</strong> when penicillin, ampicillin or cefazolin is started at least 4 hours before delivery. It does not prevent late-onset GBS disease.</li>\n<li>A planned cesarean delivery before labor and membrane rupture does not need GBS prophylaxis.</li>\n</ul>\n<h2>Recognizing sepsis</h2>\n<p>Signs are nonspecific: temperature instability (preterm infants are more often hypothermic than febrile), apnea, tachypnea, grunting, poor feeding, lethargy, hypotonia, poor perfusion, jaundice or hypoglycemia. Risk is assessed from maternal fever or intra-amniotic infection, GBS status and adequacy of prophylaxis, duration of membrane rupture and gestational age. For infants of 35 weeks or more, validated multivariable risk calculators or serial examinations safely reduce antibiotic exposure.</p>\n<h2>Evaluation and empiric treatment</h2>\n<ul>\n<li><strong>Blood culture</strong> (an adequate volume, about 1 mL) before antibiotics.</li>\n<li><strong>Lumbar puncture</strong> when the blood culture is positive, the infant is ill or meningitis is suspected, and the infant is stable enough. Meningitis can occur with a sterile blood culture.</li>\n<li>CBC and C-reactive protein add little to the decision to start antibiotics. Urine culture is not part of early-onset evaluation but is part of late-onset evaluation.</li>\n<li><strong>Empiric therapy:</strong> intravenous <strong>ampicillin plus gentamicin</strong> for early-onset sepsis, covering GBS, Listeria and most <em>E. coli</em>. When meningitis is suspected, add a third- or fourth-generation cephalosporin suited to newborns (such as cefotaxime or cefepime) for gram-negative CNS penetration. Ceftriaxone is avoided in neonates because it displaces bilirubin and precipitates with intravenous calcium.</li>\n<li>Late-onset sepsis in the NICU adds vancomycin for coagulase-negative staphylococci and MRSA, guided by local resistance.</li>\n<li>Stop antibiotics at 36 to 48 hours when cultures are sterile and the infant is well.</li>\n</ul>\n<table class=\"hy\"><thead><tr><th>Diagnosis</th><th>Usual treatment course</th></tr></thead><tbody>\n<tr><td>GBS bacteremia without a focus</td><td>Intravenous penicillin G or ampicillin, 10 days</td></tr>\n<tr><td>Uncomplicated GBS meningitis</td><td>Intravenous penicillin G or ampicillin, 14 days</td></tr>\n<tr><td>Gram-negative meningitis</td><td>At least 21 days, by susceptibility</td></tr>\n<tr><td>HSV skin, eye and mouth disease</td><td>IV acyclovir 14 days</td></tr>\n<tr><td>HSV CNS or disseminated disease</td><td>IV acyclovir at least 21 days (for CNS disease, repeat CSF PCR near the end), then oral suppressive acyclovir</td></tr>\n</tbody></table>\n<p>Every survivor of bacterial meningitis needs a hearing evaluation before discharge, because sensorineural hearing loss is the most common sequela, and neurodevelopmental follow-up.</p>\n<h2>Neonatal herpes simplex</h2>\n<p>Risk is highest when the pregnant patient has a first (primary) genital infection near delivery. Cesarean delivery is offered when lesions or prodromal symptoms are present at labor, and suppressive antiviral therapy is offered from 36 weeks to people with recurrent genital herpes. Neonatal disease presents in three forms: skin, eye and mouth vesicles (usually days 7 to 14), CNS disease with seizures and lethargy (often weeks 2 to 3) and disseminated disease with a sepsis-like picture, hepatitis and coagulopathy in the first week. Not all infants have skin lesions. Evaluate with surface swabs, blood HSV PCR, CSF HSV PCR and ALT, and start <strong>IV acyclovir</strong> empirically for any newborn with vesicles, seizures with CSF pleocytosis or sepsis with hepatitis.</p>\n<h2>Congenital syphilis</h2>\n<p>Prevention is prenatal screening (at the first visit, with repeat testing in the third trimester and at delivery, which ACOG now advises for everyone) and treatment of the pregnant patient with benzathine penicillin G, using desensitization when there is a penicillin allergy. A neonate is evaluated with a nontreponemal titer on infant serum (not cord blood) and examination. Infants with findings of congenital syphilis, or a titer fourfold or more above the parent's, have proven or highly probable disease: they need CSF studies, CBC, long-bone radiographs and other tests as indicated, and <strong>intravenous aqueous penicillin G for 10 days</strong>. Infants with a normal examination and lower titers are managed by the adequacy and timing of parental treatment, following the CDC scenarios.</p>\n<h2>Other congenital infections</h2>\n<ul>\n<li><strong>CMV:</strong> diagnose with CMV PCR on urine or saliva collected in the first 21 days; after that, congenital and postnatal infection cannot be separated. Oral valganciclovir for 6 months, started in the first month, improves hearing and development in moderate to severe symptomatic disease; monitor for neutropenia. Failing the hearing screen is a common trigger for targeted CMV testing.</li>\n<li><strong>Toxoplasmosis:</strong> pyrimethamine, sulfadiazine and folinic acid for about a year.</li>\n<li><strong>HIV exposure:</strong> antiretroviral prophylaxis begins within 6 hours of birth, chosen by the parent's viral load, with infant nucleic acid testing on a schedule; antibody tests are not useful in infants because maternal IgG persists.</li>\n<li><strong>Hepatitis C exposure:</strong> HCV RNA testing at 2 to 6 months.</li>\n<li><strong>Varicella:</strong> an infant whose parent develops varicella from 5 days before to 2 days after delivery receives varicella-zoster immune globulin as soon as possible.</li>\n<li><strong>Chlamydial conjunctivitis or pneumonia</strong> (afebrile, staccato cough at 1 to 3 months with eosinophilia): oral azithromycin or erythromycin, with monitoring for pyloric stenosis in infants under 6 weeks.</li>\n</ul>\n<div class=\"trap\"><p>A cord-blood nontreponemal test is not acceptable for congenital syphilis evaluation, and a positive treponemal antibody test in the infant only reflects the parent's IgG.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Neonatal Sepsis"
+    },
+    {
+     "statpearls": "Group B Streptococcus and Pregnancy"
+    },
+    {
+     "statpearls": "Congenital and Maternal Syphilis"
+    },
+    {
+     "statpearls": "Congenital Cytomegalovirus Infection"
+    },
+    {
+     "label": "CDC: Group B strep clinical guidance",
+     "url": "https://www.cdc.gov/group-b-strep/hcp/clinical-guidance/index.html",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step2ck",
+   "heading": "Jaundice, hypoglycemia, NEC, opioid withdrawal and birth injuries",
+   "html": "<p>This section covers the noninfectious disorders that dominate the well-baby nursery and NICU on Step 2 CK: pathologic jaundice, neonatal hypoglycemia, necrotizing enterocolitis, neonatal opioid withdrawal and birth injuries.</p>\n<h2>Pathologic hyperbilirubinemia</h2>\n<p>Every newborn has a bilirubin measurement before discharge, and any visible jaundice in the first 24 hours needs an immediate total serum bilirubin. The AAP 2022 guideline uses hour-specific phototherapy and exchange thresholds that depend on gestational age and on <strong>neurotoxicity risk factors</strong>: gestational age under 38 weeks, albumin below 3.0 g/dL, isoimmune hemolytic disease, G6PD deficiency or other hemolysis, sepsis and significant clinical instability in the previous 24 hours.</p>\n<ul>\n<li><strong>Workup of early or rapidly rising jaundice:</strong> total and direct bilirubin, infant blood type and direct antiglobulin test (if the parent is group O or Rh-negative, or antibody-positive), CBC with smear and reticulocyte count, and G6PD testing when indicated by ancestry, family history or a poor response to phototherapy.</li>\n<li><strong>Phototherapy</strong> at or above the threshold. Feeding continues.</li>\n<li><strong>Escalation of care</strong> when the bilirubin approaches the exchange threshold: urgent admission to a unit that can perform exchange, intensive phototherapy, IV hydration if dehydrated and <strong>IVIG for isoimmune hemolysis</strong>.</li>\n<li><strong>Exchange transfusion</strong> for bilirubin at or above the exchange threshold or any sign of acute bilirubin encephalopathy (lethargy, hypotonia and poor suck progressing to hypertonia, arching, high-pitched cry, fever and seizures).</li>\n<li><strong>Conjugated hyperbilirubinemia</strong> (direct or conjugated bilirubin above 1.0 mg/dL) is never physiologic. Pale stools and dark urine at 2 to 6 weeks suggest biliary atresia: ultrasound and hepatobiliary scintigraphy guide the workup, intraoperative cholangiography confirms the diagnosis, and Kasai portoenterostomy works best when done early, ideally in the first 2 months.</li>\n</ul>\n<h2>Neonatal hypoglycemia</h2>\n<p>Infants at risk are those born to diabetic parents, large or small for gestational age, late preterm, stressed or exposed to maternal beta-blockers. They are fed within the first hour and screened with glucose checks before feeds. Signs include jitteriness, poor feeding, hypotonia, lethargy, a weak or high-pitched cry, apnea, cyanosis, hypothermia and seizures.</p>\n<table class=\"hy\"><thead><tr><th>Situation</th><th>Management</th></tr></thead><tbody>\n<tr><td>Asymptomatic, low glucose in the first hours</td><td>Feed (breast milk or formula), with or without buccal dextrose gel, and recheck</td></tr>\n<tr><td>Asymptomatic, glucose stays low after feeding</td><td>Intravenous dextrose infusion</td></tr>\n<tr><td>Symptomatic, or glucose below 40 mg/dL with signs</td><td>Intravenous 10% dextrose bolus (about 2 mL/kg) followed by a continuous infusion</td></tr>\n<tr><td>Needs high glucose infusion rates, or lasts beyond 2 to 3 days</td><td>Draw a critical sample (insulin, beta-hydroxybutyrate, cortisol, growth hormone) during hypoglycemia; consider hyperinsulinism, hypopituitarism and metabolic disease</td></tr>\n</tbody></table>\n<p>Concentrated dextrose (25% or 50%) is not used in newborns because of the risk of rebound hypoglycemia and vein injury. Glucagon is a temporizing option when IV access fails in a hyperinsulinemic infant with adequate glycogen.</p>\n<h2>Necrotizing enterocolitis</h2>\n<p>A preterm infant on advancing feeds develops feeding intolerance, abdominal distension, bilious aspirates, bloody stools, apnea and temperature instability. Abdominal radiographs show dilated loops, pneumatosis intestinalis or portal venous gas; free air means perforation. Treatment: stop feeds, decompress the stomach, give IV fluids and parenteral nutrition, start broad-spectrum antibiotics and repeat radiographs. Pneumoperitoneum or clinical deterioration despite medical therapy needs surgery (laparotomy or a peritoneal drain). Survivors may develop strictures or short bowel syndrome. Exclusive human milk feeding is the main preventive measure.</p>\n<h2>Neonatal opioid withdrawal</h2>\n<p>Infants exposed to opioids in utero are observed for several days (longer after methadone exposure). Function-based assessment, such as the Eat, Sleep, Console approach, asks whether the infant can feed, sleep and be consoled.</p>\n<ul>\n<li><strong>First-line care is nonpharmacologic</strong>: rooming-in with the parent, skin-to-skin contact, swaddling, a quiet low-light room, responsive feeding and on-demand breastfeeding. Breastfeeding is encouraged when the parent is stable on methadone or buprenorphine and not using other substances.</li>\n<li><strong>Medication</strong> (morphine, methadone or buprenorphine) when nonpharmacologic care does not control signs; clonidine or phenobarbital are adjuncts, especially with polysubstance exposure.</li>\n<li>Never give naloxone to an infant with known in-utero opioid exposure.</li>\n<li>Treatment of the pregnant patient with methadone or buprenorphine is the standard of care for opioid use disorder; medically supervised withdrawal during pregnancy is not recommended because of relapse risk.</li>\n</ul>\n<h2>Birth injuries</h2>\n<table class=\"hy\"><thead><tr><th>Injury</th><th>Features</th><th>Management</th></tr></thead><tbody>\n<tr><td>Caput succedaneum</td><td>Soft, pitting edema present at birth; crosses sutures</td><td>Resolves in days</td></tr>\n<tr><td>Cephalohematoma</td><td>Subperiosteal blood; firm swelling that appears hours later and stops at the sutures</td><td>Observe; resolves over weeks; may add to jaundice; may calcify</td></tr>\n<tr><td>Subgaleal hemorrhage</td><td>Boggy, fluctuant swelling that crosses sutures and extends to the neck; often after vacuum delivery</td><td>Emergency: large blood loss and shock; serial head circumference, hematocrit, volume and blood replacement</td></tr>\n<tr><td>Clavicle fracture</td><td>Crepitus, asymmetric Moro, decreased arm movement; after shoulder dystocia</td><td>Heals without treatment; gentle handling, pain control</td></tr>\n<tr><td>Upper brachial plexus (C5-C6) palsy</td><td>Arm adducted, internally rotated, elbow extended, forearm pronated, wrist flexed; grasp intact</td><td>Gentle range-of-motion exercises and physical therapy; refer to a brachial plexus team if recovery is incomplete by about 3 months</td></tr>\n<tr><td>Lower brachial plexus (C8-T1) palsy</td><td>Weak hand with absent grasp; Horner syndrome if T1 is involved</td><td>Therapy and specialist referral</td></tr>\n<tr><td>Facial nerve palsy</td><td>Asymmetric cry; eye does not close on one side; after forceps or pressure on the sacral promontory</td><td>Usually recovers; protect the cornea with lubrication</td></tr>\n</tbody></table>\n<p>An upper plexus palsy can come with phrenic nerve injury (C3 to C5), causing an elevated hemidiaphragm and respiratory distress.</p>\n<div class=\"trap\"><p>A scalp swelling that crosses suture lines can be harmless caput or a life-threatening subgaleal hemorrhage. The distinction is time and character: a subgaleal bleed grows after birth, feels boggy, shifts with position and is accompanied by tachycardia and a falling hematocrit.</p></div>\n<div class=\"pearl\"><p>In a jittery newborn, check glucose first. Jitteriness stops when the limb is held still; a seizure does not and often comes with eye deviation or autonomic changes.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Neonatal Hypoglycemia"
+    },
+    {
+     "statpearls": "Neonatal Abstinence Syndrome"
+    },
+    {
+     "statpearls": "Cephalohematoma"
+    },
+    {
+     "statpearls": "Erb Palsy"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. The newborn bilirubin pathway, with the step at which each neonatal disorder or treatment acts (original schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "A febrile newborn on day 2"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A boy is born at 29 weeks' gestation after preterm labor that progressed too quickly for antenatal corticosteroids. Within minutes he has grunting, nasal flaring and subcostal retractions, and his oxygen requirement rises over the next 6 hours. A chest radiograph shows small lung volumes, a diffuse fine granular pattern and air bronchograms. Which of the following best explains his hypoxemia?</p>",
+   "options": [
+    "Retained fetal lung fluid in the interstitium",
+    "Alveolar collapse at end-expiration due to high surface tension",
+    "Airway obstruction by aspirated particulate material",
+    "Right-to-left shunting through a ventricular septal defect",
+    "Reduced pulmonary capillary surface area from lung hypoplasia"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is respiratory distress syndrome of prematurity. Type II pneumocytes have not yet produced enough surfactant, whose main component is dipalmitoylphosphatidylcholine. Without it, alveolar surface tension stays high and, by the law of Laplace, small alveoli collapse at end-expiration. Diffuse atelectasis creates intrapulmonary shunt and hypoxemia, and protein-rich exudate forms hyaline membranes. The radiograph (ground glass with air bronchograms and low volumes) is typical.</p><p><strong>Takeaway:</strong> Surfactant deficiency raises surface tension, so alveoli collapse at end-expiration; antenatal steroids and exogenous surfactant prevent and treat it.</p>",
+   "whyNot": {
+    "A": "Retained lung fluid (transient tachypnea) occurs mostly in term infants after cesarean birth and gives well-inflated lungs with perihilar streaks.",
+    "C": "Aspirated meconium causes patchy densities with hyperinflation in term or post-term infants, not low volumes with a uniform granular pattern.",
+    "D": "A ventricular septal defect usually shunts left to right and does not cause a ground-glass radiograph.",
+    "E": "Pulmonary hypoplasia (for example, with diaphragmatic hernia or severe oligohydramnios) causes small lungs from birth but not the diffuse granular pattern of surfactant deficiency."
+   },
+   "objective": "Explain how surfactant deficiency causes atelectasis and hypoxemia in preterm infants.",
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "neonatal lung disease"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 4,650-g (10 lb 4 oz) boy is born at 38 weeks' gestation to a 30-year-old woman with type 1 diabetes mellitus whose HbA1c was 9.2% at 32 weeks. At 90 minutes of age he is jittery and feeding poorly, and his plasma glucose is 22 mg/dL. Which of the following findings in this infant is most directly responsible for the low glucose?</p>",
+   "options": [
+    "Deficient hepatic glycogen stores",
+    "Hyperplasia of pancreatic beta cells",
+    "Transient adrenal insufficiency",
+    "Deficiency of hepatic glucose-6-phosphatase",
+    "Excess transplacental passage of maternal insulin"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Maternal glucose crosses the placenta, so the fetus of a parent with poorly controlled diabetes is hyperglycemic. Fetal beta cells respond with hyperplasia and high insulin secretion, which also drives macrosomia. When the cord is clamped, the glucose supply stops abruptly, but hyperinsulinemia persists for hours to days, suppressing glycogenolysis, gluconeogenesis and ketogenesis. Hypoglycemia usually appears in the first hours.</p><p><strong>Takeaway:</strong> Hypoglycemia in the infant of a diabetic parent comes from fetal beta-cell hyperplasia and hyperinsulinemia; maternal insulin does not cross the placenta.</p>",
+   "whyNot": {
+    "A": "Small glycogen stores cause hypoglycemia in preterm or growth-restricted infants; a macrosomic infant of a diabetic parent usually has ample glycogen.",
+    "C": "Adrenal insufficiency is not a typical complication of maternal diabetes and would usually come with salt wasting or hypotension.",
+    "D": "Glucose-6-phosphatase deficiency (von Gierke disease) causes fasting hypoglycemia with lactic acidosis and hepatomegaly, unrelated to maternal diabetes.",
+    "E": "Insulin is too large to cross the placenta in meaningful amounts; the hyperinsulinemia is made by the fetus."
+   },
+   "objective": "Attribute hypoglycemia in the infant of a diabetic parent to fetal beta-cell hyperplasia.",
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "extraAreas": [
+    "12.07.01"
+   ],
+   "tags": [
+    "neonatal hypoglycemia"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A boy born at 27 weeks' gestation is 3 weeks old and has been taking increasing volumes of formula by nasogastric tube. He develops abdominal distension, bloody stools and episodes of apnea. An abdominal radiograph shows dilated bowel loops with linear and bubbly lucencies within the bowel wall in the right lower quadrant. Despite medical therapy he deteriorates, and laparotomy is performed. Which of the following segments is most likely to show necrosis?</p>",
+   "options": [
+    "Gastric antrum",
+    "Duodenum",
+    "Terminal ileum and ascending colon",
+    "Sigmoid colon",
+    "Rectum"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Necrotizing enterocolitis typically affects the terminal ileum and proximal (ascending) colon, although any segment, or the whole bowel, can be involved. The intramural gas (pneumatosis intestinalis) is produced by bacteria fermenting substrate in the injured bowel wall. Prematurity, formula feeding, an immature mucosal barrier with exaggerated TLR4 signaling and unstable mesenteric blood flow all contribute. Pathology shows coagulative necrosis, hemorrhage and inflammation that can become transmural and perforate.</p><p><strong>Takeaway:</strong> NEC most often involves the terminal ileum and proximal colon; pneumatosis intestinalis is its radiographic signature.</p>",
+   "whyNot": {
+    "A": "The stomach is rarely involved in NEC; gastric perforation in preterm infants is a separate, uncommon entity.",
+    "B": "The duodenum is seldom involved; its rich blood supply and limited bacterial load protect it.",
+    "D": "The sigmoid colon can be involved in extensive disease but is not the most common site.",
+    "E": "The rectum is the least likely site; rectal involvement with delayed meconium suggests Hirschsprung disease instead."
+   },
+   "objective": "Identify the terminal ileum and proximal colon as the usual sites of necrotizing enterocolitis.",
+   "disciplines": [
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "neonatal bowel disease"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A boy is born at 41 weeks' gestation through thick meconium-stained fluid after late decelerations. At 2 hours he is cyanotic on 100% oxygen. Oxygen saturation is 96% in the right hand and 78% in the left foot. Echocardiography shows a structurally normal heart with an estimated pulmonary artery pressure above systemic pressure. Which of the following best explains the difference between the two saturation readings?</p>",
+   "options": [
+    "Left-to-right shunting across the foramen ovale",
+    "Right-to-left shunting across the ductus arteriosus",
+    "Coarctation of the aorta distal to the left subclavian artery",
+    "Peripheral vasoconstriction in the lower limbs",
+    "Methemoglobin formation from inhaled meconium"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Meconium aspiration has caused persistent pulmonary hypertension of the newborn. Pulmonary vascular resistance stays above systemic resistance, so deoxygenated blood from the pulmonary artery crosses the ductus arteriosus into the descending aorta. The ductus joins the aorta beyond the origin of the right subclavian artery, so the right hand (preductal) receives well-oxygenated left-ventricular blood while the feet (postductal) receive mixed blood. Shunting can also occur right to left across the foramen ovale, which lowers saturation everywhere.</p><p><strong>Takeaway:</strong> A preductal saturation higher than postductal saturation in a hypoxemic newborn signals right-to-left ductal shunting from pulmonary hypertension.</p>",
+   "whyNot": {
+    "A": "Left-to-right atrial shunting does not lower systemic saturation, and in pulmonary hypertension atrial flow is right to left.",
+    "C": "The echocardiogram shows a structurally normal heart; coarctation would also lower lower-body pressures and pulses rather than primarily saturation.",
+    "D": "Vasoconstriction can make a probe read poorly but does not produce a consistent 18-point saturation difference in a structurally normal heart.",
+    "E": "Meconium does not oxidize hemoglobin; methemoglobinemia lowers saturation equally at all sites."
+   },
+   "objective": "Explain differential cyanosis in persistent pulmonary hypertension of the newborn.",
+   "disciplines": [
+    "physiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "neonatal lung disease"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 2-day-old girl born at 37 weeks' gestation is small for gestational age and has a head circumference below the 3rd percentile. She has scattered petechiae, hepatosplenomegaly and a direct bilirubin of 3.1 mg/dL. She did not pass her hearing screen in either ear. Cranial ultrasound shows calcifications lining the lateral ventricles. Which of the following is most characteristic of the causal pathogen?</p>",
+   "options": [
+    "Enlarged cells with large intranuclear inclusions surrounded by a clear halo",
+    "Tissue cysts containing bradyzoites",
+    "Corkscrew-shaped organisms visible by darkfield microscopy",
+    "Single-stranded RNA virus that also causes cataracts",
+    "Virus that enters red-cell precursors through the P antigen"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Microcephaly, periventricular calcifications, petechiae, hepatosplenomegaly, conjugated hyperbilirubinemia, growth restriction and sensorineural hearing loss are the picture of congenital cytomegalovirus infection. CMV is an enveloped double-stranded DNA herpesvirus. Infected cells enlarge and show intranuclear \"owl's eye\" inclusions with a surrounding halo. It is the most common congenital infection, and hearing loss can progress after a normal newborn screen.</p><p><strong>Takeaway:</strong> Periventricular calcifications with hearing loss point to congenital CMV, whose hallmark is cytomegaly with owl's eye intranuclear inclusions.</p>",
+   "whyNot": {
+    "B": "Bradyzoite cysts characterize Toxoplasma, which causes scattered parenchymal calcifications and hydrocephalus rather than a periventricular pattern.",
+    "C": "Spirochetes on darkfield indicate syphilis, which causes rhinitis, rash and bone lesions rather than periventricular calcification.",
+    "D": "Rubella is a single-stranded RNA togavirus; cataracts and heart defects would be expected, and calcifications are not its hallmark.",
+    "E": "Parvovirus B19 infects erythroid precursors and causes fetal anemia and hydrops, not microcephaly with calcifications."
+   },
+   "objective": "Recognize congenital CMV and its characteristic histologic inclusions.",
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "congenital infection"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 5-day-old boy has macrocephaly. His mother ate undercooked lamb during the pregnancy. CT of the head shows hydrocephalus with calcifications scattered throughout the cerebral parenchyma, and an ophthalmologist finds chorioretinitis. He is started on a three-drug regimen that includes folinic acid. One of the antimicrobial drugs acts by which of the following mechanisms?</p>",
+   "options": [
+    "Inhibition of dihydrofolate reductase",
+    "Inhibition of ergosterol synthesis",
+    "Inhibition of viral DNA polymerase after phosphorylation by a viral kinase",
+    "Binding of the 30S ribosomal subunit",
+    "Inhibition of heme polymerization in food vacuoles"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Hydrocephalus, scattered intracranial calcifications and chorioretinitis after maternal exposure to undercooked meat indicate congenital toxoplasmosis. Treatment is pyrimethamine with sulfadiazine, plus folinic acid (leucovorin). Pyrimethamine inhibits protozoal dihydrofolate reductase; sulfadiazine inhibits dihydropteroate synthase earlier in the same pathway, so the two act synergistically. Folinic acid bypasses dihydrofolate reductase and protects the infant's bone marrow, while the parasite cannot use it efficiently.</p><p><strong>Takeaway:</strong> Congenital toxoplasmosis is treated with pyrimethamine (a dihydrofolate reductase inhibitor) and sulfadiazine, with folinic acid to prevent marrow suppression.</p>",
+   "whyNot": {
+    "B": "Ergosterol synthesis inhibition is the action of azole antifungals, which do not treat Toxoplasma.",
+    "C": "Activation by a viral kinase describes acyclovir and ganciclovir; Toxoplasma is a protozoan.",
+    "D": "Binding the 30S subunit is the action of tetracyclines and aminoglycosides, which are not part of standard toxoplasmosis treatment in newborns.",
+    "E": "Inhibiting heme polymerization is the action of chloroquine against Plasmodium, not Toxoplasma."
+   },
+   "objective": "Recall that pyrimethamine inhibits dihydrofolate reductase in the treatment of congenital toxoplasmosis.",
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "congenital infection"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 20-hour-old boy born at 38 weeks' gestation develops grunting, poor perfusion and a temperature of 38.5&deg;C (101.3&deg;F). His mother's membranes had been ruptured for 22 hours, and her rectovaginal culture result was not available at delivery. Blood culture grows gram-positive cocci in chains that are beta-hemolytic, resistant to bacitracin and CAMP test positive. Which of the following structures of this organism most directly protects it from opsonophagocytosis in this infant?</p>",
+   "options": [
+    "M protein",
+    "Sialic acid-containing polysaccharide capsule",
+    "Lipooligosaccharide with sialylation",
+    "Protein A binding the Fc region of IgG",
+    "Pyrrolidonyl arylamidase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The organism is group B streptococcus (<em>Streptococcus agalactiae</em>). Its polysaccharide capsule, rich in terminal sialic acid, mimics host glycans, recruits factor H and limits deposition of C3b, so neutrophils and macrophages cannot opsonize and engulf the bacteria. Newborns have low complement and, if preterm or born to a parent without capsule-specific IgG, little protective antibody. This is why early-onset GBS disease presents as sepsis, pneumonia or meningitis in the first days of life.</p><p><strong>Takeaway:</strong> The sialylated polysaccharide capsule is the main virulence factor of group B streptococcus.</p>",
+   "whyNot": {
+    "A": "M protein is the antiphagocytic surface protein of group A streptococcus, which is bacitracin sensitive and CAMP negative.",
+    "C": "Lipooligosaccharide is found in gram-negative organisms such as Neisseria and Haemophilus, not in gram-positive streptococci.",
+    "D": "Protein A is a virulence factor of Staphylococcus aureus, which grows in clusters and is catalase positive.",
+    "E": "Pyrrolidonyl arylamidase is a laboratory marker for group A streptococcus and enterococci, not a virulence factor."
+   },
+   "objective": "Identify the capsule as the key virulence factor of group B streptococcus in neonatal sepsis.",
+   "disciplines": [
+    "microbiology",
+    "immunology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "neonatal sepsis"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 6-day-old girl born at 36 weeks' gestation has a total serum bilirubin of 17.8 mg/dL, almost all unconjugated, and is under phototherapy. She has a urinary tract infection, and the team is choosing an antibiotic. They avoid one option because it could increase her risk of bilirubin-induced brain injury even if her total bilirubin does not rise. Which of the following drugs is most likely to have this effect?</p>",
+   "options": [
+    "Ampicillin",
+    "Gentamicin",
+    "Sulfamethoxazole",
+    "Cefotaxime",
+    "Vancomycin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Unconjugated bilirubin is carried tightly bound to albumin; only the unbound (free) fraction crosses into the brain and causes kernicterus. Sulfonamides compete with bilirubin for albumin binding sites and raise the free fraction without changing the total. Ceftriaxone does the same, which is why both are avoided in jaundiced newborns. Free bilirubin deposits in the globus pallidus, subthalamic nucleus, hippocampus and brainstem nuclei.</p><p><strong>Takeaway:</strong> Sulfonamides (and ceftriaxone) displace bilirubin from albumin and raise the risk of kernicterus in newborns.</p>",
+   "whyNot": {
+    "A": "Ampicillin does not meaningfully displace bilirubin and is a standard neonatal antibiotic.",
+    "B": "Gentamicin's concerns are nephrotoxicity and ototoxicity, not bilirubin displacement.",
+    "D": "Cefotaxime is the neonatal cephalosporin chosen precisely because it does not displace bilirubin the way ceftriaxone does.",
+    "E": "Vancomycin can cause nephrotoxicity and infusion reactions but does not compete with bilirubin for albumin binding."
+   },
+   "objective": "Recognize sulfonamides as drugs that displace bilirubin from albumin and increase kernicterus risk.",
+   "disciplines": [
+    "pharmacology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "neonatal jaundice"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A girl is born at 38 weeks' gestation by scheduled repeat cesarean delivery before the onset of labor. Apgar scores are 8 and 9. At 1 hour of age her respiratory rate is 84/min with mild subcostal retractions and no grunting; she needs 25% oxygen by nasal cannula to keep her saturation above 92%. Temperature is normal, and her mother's GBS culture was negative. Chest radiography shows well-expanded lungs, streaky perihilar densities and fluid in the minor fissure. Over 24 hours her oxygen requirement falls. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Respiratory distress syndrome",
+    "Transient tachypnea of the newborn",
+    "Meconium aspiration syndrome",
+    "Congenital pneumonia",
+    "Congenital diaphragmatic hernia"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A term infant born by cesarean delivery without labor, with tachypnea, a modest and falling oxygen need, well-inflated lungs, perihilar streaking and fluid in the fissure, has transient tachypnea of the newborn from delayed clearance of fetal lung fluid. Care is supportive, and it resolves within 1 to 3 days. Worsening distress, fever or rising oxygen need would prompt a sepsis evaluation.</p><p><strong>Takeaway:</strong> Tachypnea after cesarean birth without labor, with fluid in the fissures and improvement within a day, is transient tachypnea.</p>",
+   "whyNot": {
+    "A": "Respiratory distress syndrome usually affects preterm infants and gives low lung volumes with ground glass that worsens over the first day or two.",
+    "C": "There was no meconium-stained fluid, and meconium aspiration gives patchy coarse densities with air trapping.",
+    "D": "Pneumonia is possible in any newborn, but she has no risk factors, normal temperature and an improving course.",
+    "E": "A diaphragmatic hernia shows bowel loops in the chest and a shifted mediastinum, not perihilar streaks."
+   },
+   "objective": "Diagnose transient tachypnea of the newborn from history, course and radiograph.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "neonatal respiratory distress"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A boy born at 28 weeks' gestation is placed on nasal continuous positive airway pressure in the delivery room because of grunting and retractions. His mother received one dose of betamethasone 3 hours before delivery. At 4 hours of age he needs an inspired oxygen fraction of 0.45 to keep oxygen saturation at 90%, and he has worsening retractions. Arterial blood gas: pH 7.24, PaCO<sub>2</sub> 58 mm Hg, PaO<sub>2</sub> 52 mm Hg. Chest radiography shows low lung volumes with a diffuse ground-glass pattern and air bronchograms. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Increase oxygen to 100% by hood and stop CPAP",
+    "Intratracheal surfactant administration",
+    "Intravenous dexamethasone",
+    "Inhaled nitric oxide",
+    "Intravenous indomethacin"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This preterm infant has respiratory distress syndrome with rising oxygen requirement and respiratory acidosis on CPAP. Exogenous surfactant, given through an endotracheal tube or a thin catheter, is indicated when an infant on CPAP needs more than about 30 to 40% oxygen. It improves compliance and oxygenation within minutes to hours and reduces air leak and death. A single partial course of antenatal betamethasone did not have time to work.</p><p><strong>Takeaway:</strong> A preterm infant with RDS who needs rising oxygen on CPAP should receive intratracheal surfactant.</p>",
+   "whyNot": {
+    "A": "Removing CPAP lets alveoli collapse further, and 100% oxygen without distending pressure would not correct shunt and adds oxygen toxicity.",
+    "C": "Postnatal systemic dexamethasone is not a treatment for acute RDS and is avoided early because of adverse neurodevelopmental effects.",
+    "D": "Inhaled nitric oxide treats persistent pulmonary hypertension in term or near-term infants, not surfactant deficiency in a very preterm infant.",
+    "E": "Indomethacin closes a patent ductus arteriosus; it does not treat surfactant deficiency."
+   },
+   "objective": "Give surfactant to a preterm infant with RDS whose oxygen needs rise on CPAP.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "neonatal respiratory distress"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A woman at 41 weeks 4 days' gestation is in labor with thick, dark green amniotic fluid. A boy is delivered vaginally. He is limp, has no respiratory effort and his heart rate is 80/min. He is placed under a radiant warmer, dried and stimulated, his airway is positioned, and secretions are cleared from the mouth with a bulb syringe. He remains apneic. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Endotracheal intubation and tracheal suctioning before any ventilation",
+    "Positive-pressure ventilation with a face mask",
+    "Chest compressions at a 3:1 ratio with ventilation",
+    "Intravenous epinephrine through an umbilical venous catheter",
+    "Oxygen at 10 L/min by blow-by"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A nonvigorous newborn born through meconium-stained fluid gets the same initial steps as any other newborn. If he is apneic or his heart rate is below 100/min after those steps, positive-pressure ventilation should start within the first minute of life. Routine intubation for tracheal suctioning is no longer recommended, because it delays ventilation without preventing meconium aspiration syndrome; it is reserved for airway obstruction that prevents effective ventilation.</p><p><strong>Takeaway:</strong> For a nonvigorous infant born through meconium, start positive-pressure ventilation; intubate and suction only for obstruction.</p>",
+   "whyNot": {
+    "A": "Routine tracheal suctioning before ventilation delays the most important intervention and has not been shown to prevent meconium aspiration syndrome.",
+    "C": "Compressions start only if the heart rate stays below 60/min after 30 seconds of effective ventilation; his rate is 80/min and he has not been ventilated.",
+    "D": "Epinephrine is given only when the heart rate stays below 60/min despite effective ventilation and compressions.",
+    "E": "Free-flow oxygen does not help an apneic infant, who needs ventilation."
+   },
+   "objective": "Start positive-pressure ventilation for a nonvigorous newborn born through meconium-stained fluid.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "delivery room"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A boy born at 39 weeks' gestation by vaginal delivery is 30 hours old in the newborn nursery. His mother's rectovaginal culture at 36 weeks was positive for group B streptococcus. She received one dose of intravenous ampicillin 90 minutes before delivery. Membranes had been ruptured for 14 hours, and she was afebrile. The infant now has a temperature of 38.4&deg;C (101.1&deg;F), respiratory rate 72/min, heart rate 178/min, capillary refill of 4 seconds and poor feeding. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Observe in the nursery with vital signs every 4 hours",
+    "Blood culture, then intravenous ampicillin and gentamicin",
+    "Blood culture, then oral amoxicillin",
+    "Complete blood count and C-reactive protein, then decide about antibiotics",
+    "Urine culture by bag specimen, then intravenous cefazolin"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This infant has clinical signs of sepsis: fever, tachypnea, tachycardia, poor perfusion and poor feeding. His mother was GBS-colonized and her prophylaxis was inadequate (less than 4 hours before delivery). An ill-appearing newborn needs a blood culture and immediate empiric intravenous ampicillin plus gentamicin, which covers GBS, Listeria and most E. coli. A lumbar puncture should be done when he is stable enough, because meningitis can occur even with a negative blood culture.</p><p><strong>Takeaway:</strong> An ill-appearing newborn gets a blood culture and empiric IV ampicillin plus gentamicin without waiting for laboratory markers.</p>",
+   "whyNot": {
+    "A": "Observation is reserved for well-appearing infants; this infant already has signs of sepsis and poor perfusion.",
+    "C": "Oral antibiotics are never adequate for suspected neonatal sepsis.",
+    "D": "CBC and CRP have poor predictive value in the first days and must not delay antibiotics in an ill infant.",
+    "E": "Urine culture is not part of early-onset sepsis evaluation, and cefazolin does not cover Listeria or reach the CSF reliably."
+   },
+   "objective": "Start empiric ampicillin and gentamicin after a blood culture in an ill-appearing newborn with suspected early-onset sepsis.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "tags": [
+    "neonatal sepsis"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The infant was started on intravenous ampicillin and gentamicin after a blood culture. At 18 hours the blood culture grows group B streptococcus, susceptible to penicillin. Once he is stable, a lumbar puncture is performed. Cerebrospinal fluid shows a leukocyte count of 1,450/mm<sup>3</sup> (82% neutrophils), protein 210 mg/dL and glucose 18 mg/dL; Gram stain shows gram-positive cocci in chains. After 48 hours of treatment, he is afebrile and feeding, with no seizures. Which of the following is the most appropriate antibiotic plan?</p>",
+   "options": [
+    "Intravenous penicillin G for 7 days",
+    "Intravenous penicillin G for 14 days",
+    "Intravenous ceftriaxone for 10 days",
+    "Oral amoxicillin to complete 10 days",
+    "Intravenous vancomycin and gentamicin for 21 days"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has early-onset GBS sepsis with meningitis. Once the isolate is identified and susceptible, therapy is narrowed to high-dose intravenous penicillin G (or ampicillin). Uncomplicated GBS meningitis is treated for 14 days; complicated disease (cerebritis, abscess, ventriculitis, subdural empyema) needs longer courses guided by imaging. GBS bacteremia without meningitis is treated for 10 days.</p><p><strong>Takeaway:</strong> Uncomplicated GBS meningitis in a newborn: high-dose IV penicillin G or ampicillin for 14 days.</p>",
+   "whyNot": {
+    "A": "Seven days is too short for meningitis and would risk relapse.",
+    "C": "Ceftriaxone is avoided in neonates because it displaces bilirubin and precipitates with intravenous calcium, and penicillin is the narrowest effective agent.",
+    "D": "Oral therapy does not achieve adequate CSF levels for neonatal meningitis.",
+    "E": "Vancomycin is unnecessary for a penicillin-susceptible isolate, and 21 days is the course for gram-negative meningitis."
+   },
+   "objective": "Choose the drug and duration for uncomplicated neonatal GBS meningitis.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "neonatal sepsis"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 3,
+   "stemHtml": "<p>The infant completes 14 days of intravenous penicillin G for group B streptococcal meningitis. He is feeding well, his neurologic examination is normal. He passed an automated hearing screen on day 1 of life, before his illness began. His parents ask what follow-up he needs. In addition to routine well-child care and developmental surveillance, which of the following evaluations is most important before discharge?</p>",
+   "options": [
+    "Diagnostic audiologic evaluation",
+    "Electroencephalography",
+    "Repeat blood culture",
+    "Echocardiography",
+    "Renal ultrasonography"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Sensorineural hearing loss is the most common sequela of bacterial meningitis, caused by labyrinthine inflammation (labyrinthitis ossificans in some cases). A hearing screen passed before the illness does not exclude new loss, so every infant recovering from bacterial meningitis needs a diagnostic audiologic evaluation, ideally before discharge or soon after, so that amplification or cochlear implantation can be offered early. Neurodevelopmental follow-up is also needed.</p><p><strong>Takeaway:</strong> After neonatal bacterial meningitis, test hearing again with a diagnostic audiologic evaluation.</p>",
+   "whyNot": {
+    "B": "EEG is indicated for clinical seizures or encephalopathy, which he has not had.",
+    "C": "A repeat blood culture is not needed after documented clearance and a full course of therapy in a well infant.",
+    "D": "Echocardiography is for suspected endocarditis or cardiac disease, not routine after GBS meningitis.",
+    "E": "Renal ultrasound is part of the evaluation of urinary tract infection, not of meningitis."
+   },
+   "objective": "Arrange diagnostic hearing evaluation after neonatal bacterial meningitis.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_prognosis"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "neonatal sepsis"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 1-day-old girl is evaluated after her mother's rapid plasma reagin (RPR) at delivery returned reactive. The mother had no prenatal care and no prior syphilis testing or treatment. The infant was born at 37 weeks' gestation and has hepatosplenomegaly, clear nasal discharge and a copper-colored maculopapular rash on the palms and soles.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Maternal RPR</td><td>Reactive, titer 1:16</td></tr><tr><td>Maternal treponemal antibody (TP-PA)</td><td>Positive</td></tr><tr><td>Infant serum RPR</td><td>Reactive, titer 1:128</td></tr><tr><td>Infant CSF VDRL</td><td>Pending</td></tr><tr><td>Infant ALT</td><td>88 U/L (10-40)</td></tr><tr><td>Infant platelets</td><td>92,000/mm<sup>3</sup> (150,000-400,000)</td></tr></tbody></table><p>Long-bone radiographs show metaphyseal lucencies. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Benzathine penicillin G, one intramuscular dose",
+    "Aqueous crystalline penicillin G intravenously for 10 days",
+    "Ceftriaxone intravenously for 10 days",
+    "Azithromycin orally for 5 days",
+    "No treatment; repeat RPR at 3 months"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This infant has proven or highly probable congenital syphilis: an abnormal examination consistent with syphilis (hepatosplenomegaly, rhinitis, palmar-plantar rash, bone lesions) and a nontreponemal titer fourfold or more above the mother's. Per CDC guidance, these infants receive aqueous crystalline penicillin G intravenously for 10 days (procaine penicillin G intramuscularly is an alternative). If more than a day of therapy is missed, the full course restarts. Follow-up nontreponemal titers should fall and become nonreactive.</p><p><strong>Takeaway:</strong> Congenital syphilis with abnormal findings or a fourfold higher titer: 10 days of IV aqueous penicillin G.</p>",
+   "whyNot": {
+    "A": "A single dose of benzathine penicillin is used only for selected infants with a normal examination and lower-risk scenarios; it does not treat CNS or disseminated disease.",
+    "C": "Ceftriaxone is not first-line and is avoided in neonates; penicillin is the only proven therapy for congenital syphilis.",
+    "D": "Azithromycin is not effective treatment for syphilis, and macrolide resistance is common.",
+    "E": "Clinical disease with a high infant titer needs treatment now; observation would allow progression."
+   },
+   "objective": "Treat proven or highly probable congenital syphilis with 10 days of intravenous aqueous penicillin G.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "tags": [
+    "congenital infection"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 2-hour-old girl born at 38 weeks' gestation to a woman with pregestational type 2 diabetes mellitus weighs 4,400 g (9 lb 11 oz). She breastfed once at 30 minutes of age. The nurse now finds her jittery with a weak suck, and she has a 15-second apneic pause with desaturation. Point-of-care glucose is 24 mg/dL, confirmed by a plasma glucose of 26 mg/dL. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Breastfeed again and recheck glucose in 1 hour",
+    "Buccal 40% dextrose gel and recheck glucose in 30 minutes",
+    "Intravenous 10% dextrose bolus followed by a continuous infusion",
+    "Intravenous 50% dextrose bolus",
+    "Intravenous hydrocortisone"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She is a large infant of a diabetic parent with symptomatic hypoglycemia (jitteriness, poor suck and apnea). Symptomatic hypoglycemia, particularly with a glucose below 40 mg/dL, needs intravenous glucose: a bolus of 10% dextrose of about 2 mL/kg, followed by a continuous infusion, with frequent glucose checks. Feeding can continue alongside, and the infusion is weaned as feeds and glucose stabilize.</p><p><strong>Takeaway:</strong> Symptomatic neonatal hypoglycemia is treated with an IV 10% dextrose bolus and infusion, not with feeding alone.</p>",
+   "whyNot": {
+    "A": "Feeding and rechecking is appropriate for asymptomatic infants with low glucose, not for an infant with apnea and jitteriness.",
+    "B": "Dextrose gel is an adjunct for asymptomatic hypoglycemia; it is not adequate for symptomatic disease.",
+    "D": "Concentrated dextrose is not used in newborns because it injures veins and provokes rebound hypoglycemia through a burst of insulin secretion.",
+    "E": "Hydrocortisone has a role in persistent hypoglycemia with adrenal insufficiency, not as first-line therapy for hyperinsulinemic hypoglycemia."
+   },
+   "objective": "Treat symptomatic neonatal hypoglycemia with intravenous 10% dextrose.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "neonatal hypoglycemia"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 3-day-old boy born at 39 weeks' gestation has had increasing irritability, a high-pitched cry, tremors when disturbed, frequent sneezing, loose stools and difficulty settling after feeds. His mother has opioid use disorder and has taken methadone daily throughout the pregnancy; her urine drug screen at delivery was positive only for methadone. She is HIV-negative and wants to breastfeed. He is feeding at least 1 oz each time, sleeps more than 1 hour between feeds and can be consoled within 10 minutes with swaddling. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Intramuscular naloxone",
+    "Oral morphine started now",
+    "Rooming-in, skin-to-skin contact, swaddling and breastfeeding",
+    "Oral phenobarbital started now",
+    "Separate the infant from the mother and feed formula"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This infant has neonatal opioid withdrawal after methadone exposure. Because he can still eat, sleep and be consoled, first-line care is nonpharmacologic: rooming-in with his mother, skin-to-skin contact, swaddling, a quiet low-stimulation environment and on-demand breastfeeding. Breastfeeding is encouraged for a parent stable on methadone who is not using other substances; it reduces withdrawal severity and length of stay. Medication (morphine, methadone or buprenorphine) is added if he can no longer feed, sleep or be consoled despite these measures.</p><p><strong>Takeaway:</strong> Neonatal opioid withdrawal is managed first with rooming-in, parental care and breastfeeding; medicines are added only when function fails.</p>",
+   "whyNot": {
+    "A": "Naloxone precipitates acute withdrawal and seizures in an opioid-exposed infant and is contraindicated.",
+    "B": "Morphine is for infants whose withdrawal is not controlled by nonpharmacologic care; he is still feeding, sleeping and consolable.",
+    "D": "Phenobarbital is a second-line or adjunct drug, mainly for polysubstance exposure, and is not first-line for opioid withdrawal.",
+    "E": "Separation worsens withdrawal and lengthens hospital stay; breastfeeding is compatible with stable methadone treatment."
+   },
+   "objective": "Manage neonatal opioid withdrawal initially with nonpharmacologic care, rooming-in and breastfeeding.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "extraAreas": [
+    "12.06.01"
+   ],
+   "tags": [
+    "neonatal withdrawal"
+   ]
+  },
+  {
+   "n": 18,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 1-day-old boy weighing 4,300 g (9 lb 8 oz) was delivered vaginally after a shoulder dystocia. His right arm hangs at his side, adducted and internally rotated, with the elbow extended, the forearm pronated and the wrist flexed. He grasps a finger normally with the right hand. The Moro reflex is absent on the right. There is no crepitus over either clavicle, the pupils are equal and his breathing is unlabored. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Immediate surgical exploration of the brachial plexus",
+    "Gentle daily range-of-motion exercises with physical therapy and close follow-up",
+    "Immobilization of the arm in a sling for 6 weeks",
+    "MRI of the brain",
+    "Electromyography at 2 days of age to decide on surgery"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has an upper brachial plexus (C5-C6) birth injury, the most common type, after shoulder dystocia: the arm is adducted and internally rotated with elbow extension and wrist flexion, while the grasp (C8-T1) is preserved. Most infants recover substantially over the first months. Initial management is gentle range-of-motion exercises to prevent contractures, physical therapy and close follow-up. Infants without good recovery of elbow flexion (biceps) by about 3 months are referred to a brachial plexus team for possible nerve surgery. Also check for an associated clavicle or humerus fracture and for phrenic nerve palsy.</p><p><strong>Takeaway:</strong> Upper plexus birth palsy is managed with range-of-motion exercises and observation; refer if recovery is incomplete by about 3 months.</p>",
+   "whyNot": {
+    "A": "Early surgery is not indicated because most infants recover spontaneously; surgery is considered when recovery stalls after several months.",
+    "C": "Prolonged immobilization promotes contractures; at most, the arm is protected briefly for comfort.",
+    "D": "His findings localize to a peripheral nerve injury with a normal grasp and no other neurologic signs, so brain imaging is not indicated.",
+    "E": "Electrodiagnostic studies at 2 days do not predict recovery and do not change initial management."
+   },
+   "objective": "Manage an upper brachial plexus birth injury with range-of-motion exercises and follow-up.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "birth injury"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "What is the main phospholipid of surfactant, and which cell makes it?",
+   "back": "Dipalmitoylphosphatidylcholine (lecithin), made by type II pneumocytes.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which hormone speeds surfactant synthesis, and which delays it?",
+   "back": "Glucocorticoids speed it; insulin delays it.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "What makes up hyaline membranes in RDS?",
+   "back": "Fibrin and necrotic epithelial debris lining alveolar ducts and respiratory bronchioles.",
+   "question": 1
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Why does the infant of a diabetic parent become hypoglycemic after birth?",
+   "back": "Fetal beta-cell hyperplasia keeps insulin high after the placental glucose supply ends.",
+   "question": 2
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Most common site of necrotizing enterocolitis?",
+   "back": "Terminal ileum and proximal colon.",
+   "question": 3
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "What does a preductal saturation higher than postductal saturation indicate?",
+   "back": "Right-to-left shunting across the ductus arteriosus, as in persistent pulmonary hypertension of the newborn.",
+   "question": 4
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Name four ways meconium injures the newborn lung.",
+   "back": "Airway obstruction with air trapping, chemical pneumonitis, surfactant inactivation and pulmonary hypertension.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 2,
+   "front": "Periventricular vs scattered intracranial calcifications: which congenital infections?",
+   "back": "Periventricular: CMV. Scattered with hydrocephalus: toxoplasmosis.",
+   "question": 5
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "How does pyrimethamine work, and why is folinic acid added?",
+   "back": "It inhibits protozoal dihydrofolate reductase; folinic acid protects the host marrow.",
+   "question": 6
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Laboratory features of group B streptococcus?",
+   "back": "Beta-hemolytic gram-positive cocci in chains, bacitracin resistant, CAMP positive, hippurate hydrolysis positive.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Why is ampicillin part of empiric neonatal sepsis therapy?",
+   "back": "It covers Listeria, which is intrinsically resistant to cephalosporins (and covers GBS).",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Which antibiotics displace bilirubin from albumin?",
+   "back": "Sulfonamides and ceftriaxone.",
+   "question": 8
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Which brain regions are stained in kernicterus?",
+   "back": "Globus pallidus, subthalamic nucleus, hippocampus, cerebellum and brainstem auditory and oculomotor nuclei.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Classic triad of congenital rubella?",
+   "back": "Cataracts, sensorineural deafness and cardiac defects (PDA or pulmonary artery stenosis).",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 3,
+   "front": "Radiograph of transient tachypnea of the newborn?",
+   "back": "Well-inflated lungs, perihilar streaking and fluid in the fissures.",
+   "question": 9
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "When does a preterm infant with RDS on CPAP need surfactant?",
+   "back": "When oxygen needs rise (commonly above about 30 to 40%) or intubation is needed.",
+   "question": 10
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Nonvigorous infant born through meconium and apneic after initial steps: next step?",
+   "back": "Positive-pressure ventilation; intubate and suction only for airway obstruction.",
+   "question": 11
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Why avoid bag-mask ventilation in suspected congenital diaphragmatic hernia?",
+   "back": "It inflates the herniated bowel and compresses the lungs; intubate and decompress the stomach.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Eligibility window for therapeutic hypothermia in neonatal encephalopathy?",
+   "back": "36 weeks or more, moderate or severe encephalopathy, started within 6 hours of birth.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 4,
+   "front": "When is intrapartum GBS prophylaxis adequate?",
+   "back": "Penicillin, ampicillin or cefazolin started at least 4 hours before delivery.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 4,
+   "front": "Empiric antibiotics for early-onset neonatal sepsis?",
+   "back": "Intravenous ampicillin plus gentamicin.",
+   "question": 12
+  },
+  {
+   "n": 22,
+   "section": 4,
+   "front": "Duration of therapy for uncomplicated neonatal GBS meningitis?",
+   "back": "14 days of IV penicillin G or ampicillin (10 days for bacteremia without a focus).",
+   "question": 13
+  },
+  {
+   "n": 23,
+   "section": 4,
+   "front": "What is the most common sequela of neonatal bacterial meningitis, and how is it found?",
+   "back": "Sensorineural hearing loss; diagnostic audiologic evaluation before or soon after discharge.",
+   "question": 14
+  },
+  {
+   "n": 24,
+   "section": 4,
+   "front": "Treatment of proven or highly probable congenital syphilis?",
+   "back": "Aqueous crystalline penicillin G IV for 10 days.",
+   "question": 15
+  },
+  {
+   "n": 25,
+   "section": 4,
+   "front": "Specimen and timing to diagnose congenital CMV?",
+   "back": "CMV PCR on urine or saliva collected within the first 21 days of life.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 5,
+   "front": "Symptomatic neonatal hypoglycemia: first treatment?",
+   "back": "IV 10% dextrose bolus (about 2 mL/kg) followed by a continuous infusion.",
+   "question": 16
+  },
+  {
+   "n": 27,
+   "section": 5,
+   "front": "First-line care for neonatal opioid withdrawal?",
+   "back": "Nonpharmacologic: rooming-in, skin-to-skin contact, swaddling, low stimulation and breastfeeding if appropriate.",
+   "question": 17
+  },
+  {
+   "n": 28,
+   "section": 5,
+   "front": "Which neonatal scalp swelling can cause hemorrhagic shock?",
+   "back": "Subgaleal hemorrhage: boggy, crosses sutures, often after vacuum delivery.",
+   "question": null
+  },
+  {
+   "n": 29,
+   "section": 5,
+   "front": "Arm posture in upper brachial plexus (C5-C6) birth palsy?",
+   "back": "Adducted, internally rotated, elbow extended, forearm pronated, wrist flexed; grasp preserved.",
+   "question": 18
+  },
+  {
+   "n": 30,
+   "section": 5,
+   "front": "Conjugated bilirubin above 1.0 mg/dL with pale stools at 3 weeks: what must be excluded urgently?",
+   "back": "Biliary atresia (early Kasai portoenterostomy improves outcome).",
+   "question": null
+  },
+  {
+   "n": 31,
+   "section": 5,
+   "front": "Radiographic sign of perforation in NEC, and what does it require?",
+   "back": "Pneumoperitoneum (free air); surgical treatment.",
+   "question": null
+  }
+ ]
+}

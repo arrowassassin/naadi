@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" role="img" aria-label="Tree of ovarian tumours. Surface epithelial tumours (most common; older adults): serous with psammoma bodies and CA-125, mucinous, endometrioid and clear cell associated with endometriosis, and Brenner. Germ cell tumours (children and young adults): mature teratoma, dysgerminoma with LDH, yolk sac tumour with Schiller-Duval bodies and AFP, choriocarcinoma with hCG. Sex cord-stromal tumours (hormones): granulosa cell tumour with Call-Exner bodies, estrogen and inhibin; Sertoli-Leydig tumour with androgens; fibroma with Meigs syndrome. Metastases: Krukenberg signet-ring cells from the stomach." font-family="sans-serif">
+<title>Ovarian tumours by cell of origin</title>
+<desc>Tree of ovarian tumours. Surface epithelial tumours (most common; older adults): serous with psammoma bodies and CA-125, mucinous, endometrioid and clear cell associated with endometriosis, and Brenner. Germ cell tumours (children and young adults): mature teratoma, dysgerminoma with LDH, yolk sac tumour with Schiller-Duval bodies and AFP, choriocarcinoma with hCG. Sex cord-stromal tumours (hormones): granulosa cell tumour with Call-Exner bodies, estrogen and inhibin; Sertoli-Leydig tumour with androgens; fibroma with Meigs syndrome. Metastases: Krukenberg signet-ring cells from the stomach.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="470" fill="#ffffff"/>
+<text x="380" y="30" font-size="18" text-anchor="middle" font-weight="bold" fill="#0f172a">Ovarian tumours by cell of origin</text>
+<rect x="300" y="45" width="160" height="36" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="380.0" y="68.2" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f172a">Ovary</text>
+<line x1="380" y1="81" x2="95" y2="110" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="15" y="110" width="160" height="46" rx="8" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="95.0" y="129.6" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="95.0" dy="0">SURFACE EPITHELIUM</tspan><tspan x="95.0" dy="16">most common; adults</tspan></text>
+<line x1="380" y1="81" x2="285" y2="110" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="205" y="110" width="160" height="46" rx="8" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="285.0" y="129.6" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="285.0" dy="0">GERM CELLS</tspan><tspan x="285.0" dy="16">young patients</tspan></text>
+<line x1="380" y1="81" x2="475" y2="110" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="395" y="110" width="160" height="46" rx="8" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="475.0" y="129.6" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="475.0" dy="0">SEX CORD-STROMA</tspan><tspan x="475.0" dy="16">make hormones</tspan></text>
+<line x1="380" y1="81" x2="665" y2="110" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="585" y="110" width="160" height="46" rx="8" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="665.0" y="129.6" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="665.0" dy="0">METASTASES</tspan><tspan x="665.0" dy="16">often bilateral</tspan></text>
+<rect x="15" y="172" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="95.0" y="196.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="95.0" dy="0">Serous: psammoma</tspan><tspan x="95.0" dy="15">bodies; CA-125</tspan></text>
+<rect x="15" y="242" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="95.0" y="266.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="95.0" dy="0">Mucinous: large;</tspan><tspan x="95.0" dy="15">check appendix</tspan></text>
+<rect x="15" y="312" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="95.0" y="336.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="95.0" dy="0">Endometrioid, clear</tspan><tspan x="95.0" dy="15">cell: endometriosis</tspan></text>
+<rect x="15" y="382" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="95.0" y="406.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="95.0" dy="0">Brenner: coffee-</tspan><tspan x="95.0" dy="15">bean nuclei</tspan></text>
+<rect x="205" y="172" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="285.0" y="196.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="285.0" dy="0">Mature teratoma:</tspan><tspan x="285.0" dy="15">benign; torsion</tspan></text>
+<rect x="205" y="242" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="285.0" y="266.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="285.0" dy="0">Dysgerminoma:</tspan><tspan x="285.0" dy="15">clear cells; LDH</tspan></text>
+<rect x="205" y="312" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="285.0" y="336.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="285.0" dy="0">Yolk sac: Schiller-</tspan><tspan x="285.0" dy="15">Duval bodies; AFP</tspan></text>
+<rect x="205" y="382" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="285.0" y="406.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="285.0" dy="0">Choriocarcinoma:</tspan><tspan x="285.0" dy="15">no villi; hCG</tspan></text>
+<rect x="395" y="172" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="475.0" y="196.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="475.0" dy="0">Granulosa: Call-</tspan><tspan x="475.0" dy="15">Exner; estrogen</tspan></text>
+<rect x="395" y="242" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="475.0" y="266.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="475.0" dy="0">Granulosa marker:</tspan><tspan x="475.0" dy="15">inhibin</tspan></text>
+<rect x="395" y="312" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="475.0" y="336.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="475.0" dy="0">Sertoli-Leydig:</tspan><tspan x="475.0" dy="15">androgens; virilise</tspan></text>
+<rect x="395" y="382" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="475.0" y="406.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="475.0" dy="0">Fibroma: Meigs</tspan><tspan x="475.0" dy="15">syndrome</tspan></text>
+<rect x="585" y="172" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="665.0" y="196.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="665.0" dy="0">Krukenberg:</tspan><tspan x="665.0" dy="15">signet-ring cells</tspan></text>
+<rect x="585" y="242" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="665.0" y="266.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="665.0" dy="0">Usual primary:</tspan><tspan x="665.0" dy="15">stomach, GI tract</tspan></text>
+<rect x="585" y="312" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="665.0" y="336.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="665.0" dy="0">Breast cancer</tspan><tspan x="665.0" dy="15">also spreads here</tspan></text>
+<rect x="585" y="382" width="160" height="56" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<text x="665.0" y="406.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="665.0" dy="0">Bilateral solid</tspan><tspan x="665.0" dy="15">masses</tspan></text>
+</svg>

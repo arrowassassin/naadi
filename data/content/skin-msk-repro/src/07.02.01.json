@@ -1,0 +1,785 @@
+{
+ "area": "07.02.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Benign bone and soft-tissue tumours: location, histology and molecular drivers",
+   "html": "<p>Most bone tumours in young people are benign, and many of them are recognisable from three facts: the patient's age, the bone and the part of the bone involved. On Step 1, add the tissue each tumour makes (bone, cartilage, fibrous tissue or giant cells), its histology, and the driver mutation or signalling pathway, several of which are now drug targets.</p>\n[[figure:s23f-fig070201-1]]\n<h2>Bone-forming tumours</h2>\n<ul>\n<li><strong>Osteoid osteoma.</strong> A small (under about 2 cm) nidus of woven bone and osteoid rimmed by osteoblasts, inside a well-vascularised stroma. It sits in the cortex of a long-bone diaphysis (femur, tibia) or the posterior elements of the spine, surrounded by dense reactive sclerosis. The nidus makes large amounts of <strong>prostaglandin E<sub>2</sub></strong> through cyclooxygenase, and it is richly innervated. That explains the classic pain: worse at night and relieved promptly by NSAIDs or aspirin. A spinal lesion can cause painful scoliosis.</li>\n<li><strong>Osteoblastoma.</strong> Histologically similar but larger (over 2 cm). It favours the posterior elements of the spine, NSAIDs relieve it less, and it can grow aggressively.</li>\n</ul>\n<h2>Cartilage-forming tumours</h2>\n<ul>\n<li><strong>Osteochondroma (exostosis)</strong>, the most common benign bone tumour. A bony projection with a hyaline cartilage cap grows from the metaphysis and points away from the joint. The key feature is that its cortex and marrow are <em>continuous</em> with those of the host bone. It grows with the skeleton and stops at skeletal maturity. Solitary lesions are common. <strong>Hereditary multiple osteochondromas</strong> (hereditary multiple exostoses) is autosomal dominant, caused by loss of <em>EXT1</em> or <em>EXT2</em>. These genes encode glycosyltransferases that build heparan sulfate chains. Without heparan sulfate, signalling molecules such as Indian hedgehog diffuse abnormally at the growth plate, and chondrocytes grow out sideways. Malignant change to a secondary chondrosarcoma is rare in solitary lesions and more frequent in the hereditary form.</li>\n<li><strong>Enchondroma.</strong> A lobule of mature hyaline cartilage in the medullary cavity. It is most often in the small bones of the hands, where it is the commonest bone tumour, and it frequently presents as a pathologic fracture. Radiographs show a well-defined lucency with \"rings and arcs\" calcification. Somatic <strong><em>IDH1</em> or <em>IDH2</em></strong> mutations produce the oncometabolite 2-hydroxyglutarate, which disrupts DNA and histone demethylation. Multiple enchondromas form <strong>Ollier disease</strong>. Multiple enchondromas with soft-tissue hemangiomas form <strong>Maffucci syndrome</strong>. Both arise from mosaic <em>IDH</em> mutations and carry a substantial risk of chondrosarcoma.</li>\n<li><strong>Chondroblastoma.</strong> A rare tumour of the epiphysis in adolescents, with \"chicken-wire\" calcification around the cells, driven by a histone H3.3 mutation.</li>\n</ul>\n<h2>Giant cell tumour of bone</h2>\n<p>This tumour arises in young adults (20 to 40) after the growth plates have closed. It sits in the <strong>epiphysis and metaphysis</strong> and reaches the subchondral bone. Common sites are the distal femur, proximal tibia, distal radius and sacrum. Radiographs show an eccentric, expansile lytic lesion with a \"soap-bubble\" look and no sclerotic rim. The <em>neoplastic</em> cells are the mononuclear stromal cells of osteoblast lineage. Most carry a histone H3.3 (<em>H3-3A</em>, formerly <em>H3F3A</em>) G34W mutation and overexpress <strong>RANKL</strong>. RANKL recruits and fuses monocytes into the many osteoclast-like giant cells that resorb bone. Those giant cells are reactive, not malignant. This is why <strong>denosumab</strong>, an anti-RANKL antibody, shrinks unresectable tumours. The tumour is locally aggressive and recurs after curettage. A small percentage send \"benign\" implants to the lung.</p>\n<h2>Cysts and fibrous lesions</h2>\n<table class=\"hy\">\n<thead><tr><th>Lesion</th><th>Who and where</th><th>Pathology and clue</th></tr></thead>\n<tbody>\n<tr><td>Unicameral (simple) bone cyst</td><td>Children; proximal humerus or femur; central metaphysis</td><td>Fluid-filled, thin fibrous lining; \"fallen fragment\" after fracture</td></tr>\n<tr><td>Aneurysmal bone cyst</td><td>Children and teenagers; eccentric, expansile metaphyseal lesion; spine</td><td>Blood-filled spaces with fibrous septa; fluid–fluid levels on MRI; <em>USP6</em> rearrangement in primary lesions</td></tr>\n<tr><td>Nonossifying fibroma (fibrous cortical defect)</td><td>Children and teenagers; eccentric metaphyseal cortex near the knee</td><td>Spindle cells in a storiform pattern, foamy macrophages, giant cells; scalloped sclerotic margin; regresses with time</td></tr>\n<tr><td>Fibrous dysplasia</td><td>Any age; ribs, femur, skull and face; one bone or several</td><td>Curvilinear woven-bone trabeculae (\"Chinese letters\") without osteoblastic rimming in fibrous stroma; \"ground-glass\" matrix; shepherd's crook deformity of the femur</td></tr>\n<tr><td>Langerhans cell histiocytosis (eosinophilic granuloma)</td><td>Children; skull, vertebra (vertebra plana), femur</td><td>Langerhans cells with grooved nuclei plus eosinophils; CD1a, CD207 (langerin), S100; Birbeck granules; frequent <em>BRAF</em> V600E</td></tr>\n</tbody></table>\n<p><strong>Fibrous dysplasia</strong> results from a postzygotic, activating mutation of <em>GNAS</em>. The mutated Gsα loses its GTPase activity, so cAMP signalling stays on in osteoblast precursors, which stop at an immature, fibrous stage. When the mutation arises early in embryonic life, the mosaic spreads widely and causes <strong>McCune–Albright syndrome</strong>. Its features are polyostotic fibrous dysplasia, café-au-lait macules with jagged \"coast of Maine\" borders that respect the midline, and hyperfunction of endocrine glands: peripheral precocious puberty, hyperthyroidism, growth hormone excess and Cushing syndrome. FGF23 secreted by dysplastic bone can cause phosphate wasting.</p>\n<h2>Benign soft-tissue and joint tumours</h2>\n<ul>\n<li><strong>Lipoma.</strong> The most common soft-tissue tumour: mature adipocytes in a thin capsule, soft and mobile, usually subcutaneous on the trunk or proximal limbs. Large, deep tumours with atypical stromal cells may be atypical lipomatous tumour (well-differentiated liposarcoma). These are identified by <strong><em>MDM2</em> amplification</strong> on chromosome 12q. MDM2 is an E3 ubiquitin ligase that marks p53 for degradation.</li>\n<li><strong>Tenosynovial giant cell tumour.</strong> A <em>localised</em> nodular form arises from a tendon sheath of the hand, where it is the second most common hand mass after a ganglion. A <em>diffuse</em> form, formerly pigmented villonodular synovitis, involves the synovium of a large joint such as the knee and causes recurrent bloody effusions. A small population of neoplastic synovial cells carries a <em>CSF1</em> rearrangement and overexpresses colony-stimulating factor 1. CSF1 recruits large numbers of CSF1 receptor-bearing macrophages, foam cells, hemosiderin-laden cells and giant cells, which make up most of the mass. CSF1 receptor inhibitors such as pexidartinib exploit this. Pexidartinib carries a risk of serious liver injury.</li>\n<li><strong>Ganglion cyst.</strong> A mucin-filled cyst without a true epithelial lining, arising from a joint capsule or tendon sheath, classically on the dorsal wrist. It transilluminates.</li>\n<li><strong>Desmoid tumour (aggressive fibromatosis).</strong> A clonal proliferation of fibroblasts with Wnt pathway activation. Sporadic tumours carry <em>CTNNB1</em> (β-catenin) mutations. Those in familial adenomatous polyposis carry germline <em>APC</em> loss, often in the abdominal wall or mesentery. Desmoids invade locally and recur, but they do not metastasise.</li>\n</ul>\n<div class=\"trap\"><p>In giant cell tumour, the giant cells are not the tumour. The neoplastic mononuclear stromal cells make RANKL. In tenosynovial giant cell tumour, the macrophages are not the tumour either. A minority of neoplastic cells make CSF1. Both diseases are treated by blocking the signal the tumour cells send.</p></div>\n<div class=\"pearl\"><p>Naadi memory aid for site: <strong>E</strong>piphysis for <strong>E</strong>xtra-big giant cells and chondroblastoma; metaphysis for most of the rest (osteochondroma, bone cysts, nonossifying fibroma, and osteosarcoma among the malignant ones); diaphysis for Ewing sarcoma, fibrous dysplasia and the cortical nidus of osteoid osteoma.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Osteoid Osteoma"
+    },
+    {
+     "statpearls": "Osteochondroma"
+    },
+    {
+     "statpearls": "Enchondroma"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Evaluating a bone lesion or soft-tissue mass and managing benign tumours",
+   "html": "<p>A bone lesion is usually found in one of three ways: as an incidental finding on a radiograph taken for something else, as localised pain (especially at night), or as a pathologic fracture. The plain radiograph, read systematically, decides whether the lesion is clearly benign and can be left alone, or whether it needs advanced imaging and referral to an orthopedic oncology team before any biopsy.</p>\n<h2>Reading the radiograph</h2>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Reassuring (non-aggressive)</th><th>Worrying (aggressive)</th></tr></thead>\n<tbody>\n<tr><td>Margin</td><td>Sharp, geographic, with a thin sclerotic rim</td><td>Ill-defined, moth-eaten or permeative, wide transition zone</td></tr>\n<tr><td>Periosteal reaction</td><td>None, or solid and smooth</td><td>Layered (\"onion skin\"), spiculated (\"sunburst\"), Codman triangle</td></tr>\n<tr><td>Cortex</td><td>Intact or smoothly expanded</td><td>Destroyed, with a soft-tissue mass</td></tr>\n<tr><td>Matrix</td><td>Rings and arcs (cartilage) in a small hand lesion; ground glass</td><td>Cloud-like osteoid in a destructive lesion</td></tr>\n<tr><td>Symptoms</td><td>None, or pain explained by a fracture</td><td>Rest or night pain not explained by a fracture, a growing mass, systemic symptoms</td></tr>\n</tbody></table>\n<p>A <strong>\"leave-alone\" lesion</strong> needs no biopsy and usually no follow-up. Examples are a nonossifying fibroma in a teenager's distal femur or tibia, a small asymptomatic enchondroma with typical calcification, and a bone island. A lesion with aggressive features is referred to an orthopedic oncology team. <strong>MRI of the whole bone</strong>, staging imaging and the biopsy are all planned there, with the biopsy track placed so it can be excised at definitive surgery. An unplanned excision or a poorly sited biopsy can contaminate tissue planes and convert a limb-sparing operation into an amputation.</p>\n<h2>Specific benign bone tumours</h2>\n<ul>\n<li><strong>Osteoid osteoma.</strong> A teenager or young adult with night pain relieved by NSAIDs. Radiographs show dense cortical sclerosis that can hide the nidus. <strong>Thin-section CT</strong> best shows the small lucent nidus. Management options are NSAIDs while the lesion burns out, which can take years, or <strong>CT-guided radiofrequency ablation</strong>, which is curative in most patients and is now first-line when treatment is wanted. Open excision is used when ablation is unsafe, for example next to a nerve. Long-term NSAIDs carry gastrointestinal and renal risk.</li>\n<li><strong>Osteochondroma.</strong> Observe if it causes no symptoms. Excise for pressure on nerves or vessels, painful bursitis over the cap, fracture of the stalk, or cosmetic and functional problems. New pain or growth after skeletal maturity, or a cartilage cap thicker than about 2 cm on MRI in an adult, suggests <strong>secondary chondrosarcoma</strong> and needs referral. People with hereditary multiple osteochondromas need surveillance for this, and children need it for limb-length discrepancy and forearm deformity.</li>\n<li><strong>Enchondroma.</strong> Observation when typical and painless. Curettage and grafting for a hand enchondroma that has fractured, after the fracture heals. A painful cartilage lesion in an adult long bone or the pelvis, with endosteal scalloping or cortical breach, raises concern for chondrosarcoma.</li>\n<li><strong>Giant cell tumour of bone.</strong> Check calcium, phosphate, alkaline phosphatase and PTH, because a brown tumour of hyperparathyroidism can look identical. Biopsy confirms it. Treat with <strong>extended intralesional curettage</strong> with a local adjuvant (high-speed burr, phenol, liquid nitrogen or cement) and fill the cavity with bone cement or graft. Resection is used when the joint surface is destroyed. Denosumab is used for unresectable tumours, such as in the sacrum, or to downstage them. Follow up with imaging of the site and the chest, because the tumour can recur locally and implant in the lung.</li>\n<li><strong>Unicameral bone cyst.</strong> Usually found when a child fractures the proximal humerus. Treat the fracture conservatively with a sling. Some cysts heal after fracture. Persistent cysts in weight-bearing bones may be injected or curetted.</li>\n<li><strong>Aneurysmal bone cyst.</strong> Curettage with adjuvants. Biopsy first, because telangiectatic osteosarcoma can mimic it.</li>\n<li><strong>Fibrous dysplasia.</strong> Bisphosphonates for bone pain. Surgery for fracture or deformity. In McCune–Albright syndrome, screen for endocrine hyperfunction and phosphate wasting.</li>\n<li><strong>Langerhans cell histiocytosis.</strong> A single lesion may heal after biopsy or curettage. Multisystem disease needs chemotherapy, or a BRAF or MEK inhibitor in selected cases. Polyuria points to central diabetes insipidus.</li>\n</ul>\n[[figure:s23f-fig070201-2]]\n<h2>The soft-tissue mass</h2>\n<p>Most soft-tissue lumps are benign, but sarcoma has to be considered. Features that call for imaging and referral before any excision are:</p>\n<ul>\n<li>size over about 5 cm;</li>\n<li>location deep to the fascia;</li>\n<li>growth;</li>\n<li>pain;</li>\n<li>recurrence after previous excision.</li>\n</ul>\n<p><strong>MRI with contrast</strong> characterises the mass. A small, soft, superficial, unchanging lump typical of a lipoma can be confirmed with ultrasound and either left alone or excised simply. A lesion that is not clearly a simple lipoma needs a <strong>core-needle biopsy</strong> planned by a sarcoma team. <em>MDM2</em> FISH separates atypical lipomatous tumour from lipoma.</p>\n<table class=\"hy\">\n<thead><tr><th>Hand or wrist mass</th><th>Features</th><th>Management</th></tr></thead>\n<tbody>\n<tr><td>Ganglion cyst</td><td>Fluctuant, transilluminates, dorsal wrist or volar wrist or finger base; size varies</td><td>Observation (many resolve); aspiration; excision if symptomatic</td></tr>\n<tr><td>Tenosynovial giant cell tumour, localised</td><td>Firm, painless, slow-growing, fixed to a tendon sheath on the volar finger; does not transilluminate</td><td>Marginal excision; recurrence is common</td></tr>\n<tr><td>Epidermoid inclusion cyst</td><td>After a penetrating injury; firm, near the fingertip</td><td>Excision</td></tr>\n<tr><td>Glomus tumour</td><td>Exquisite pinpoint pain and cold sensitivity; bluish spot under the nail</td><td>Excision</td></tr>\n</tbody></table>\n<p><strong>Diffuse tenosynovial giant cell tumour</strong> of the knee presents with recurrent swelling and blood-stained effusions without trauma. Hemosiderin produces \"blooming\" low signal on gradient-echo MRI. It is treated with synovectomy, or with a CSF1 receptor inhibitor when surgery would cause too much harm. <strong>Desmoid tumours</strong> are now often managed with active surveillance first, because many stabilise or regress. Progressive or symptomatic tumours are treated with systemic agents such as gamma-secretase inhibitors (nirogacestat) or sorafenib, with surgery in selected cases. A desmoid in a young adult should prompt colonoscopy or a family history review for familial adenomatous polyposis.</p>\n<div class=\"trap\"><p>Never \"shell out\" a deep soft-tissue mass in the office or the general operating list before imaging. If it turns out to be a sarcoma, the unplanned excision usually leaves tumour behind and contaminates the field, which leads to wider re-excision and radiation.</p></div>\n<div class=\"pearl\"><p>A child who limps and has a lytic lesion in the skull, a vertebra plana, or polyuria with lytic lesions should be evaluated for Langerhans cell histiocytosis, which can involve skin, bone marrow, liver, lungs and the pituitary.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Osteoid Osteoma"
+    },
+    {
+     "statpearls": "Lipoma"
+    },
+    {
+     "statpearls": "Osteochondroma"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Typical sites of bone tumours along a long bone in a young person: epiphysis, metaphysis and diaphysis. Location is only a starting point; age and radiographic pattern refine the differential."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Radiographic schematics: an osteoid osteoma with a small lucent cortical nidus inside dense reactive sclerosis, and an osteochondroma whose cortex and marrow are continuous with the host bone, capped by cartilage and pointing away from the joint."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 17-year-old boy has had 4 months of aching pain in his right thigh that is worst at night and wakes him from sleep. Ibuprofen relieves the pain within an hour. Radiographs show marked cortical thickening of the mid-femoral diaphysis. CT shows a 9-mm round lucency within the thickened cortex. Inhibition of which of the following enzymes best explains the response of his pain to ibuprofen?</p>",
+   "options": [
+    "Cyclooxygenase",
+    "5-Lipoxygenase",
+    "Phospholipase A<sub>2</sub>",
+    "Thromboxane synthase",
+    "Xanthine oxidase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is osteoid osteoma. The small cortical nidus is richly innervated and produces large amounts of prostaglandin E<sub>2</sub>, which sensitises nerve endings and causes vasodilation. NSAIDs block cyclooxygenase (COX-1 and COX-2), cutting prostaglandin synthesis. The prompt relief from NSAIDs or aspirin is so characteristic that it supports the diagnosis.</p><p><strong>Takeaway:</strong> Osteoid osteoma pain is driven by prostaglandins from the nidus, so cyclooxygenase inhibitors relieve it.</p>",
+   "whyNot": {
+    "B": "5-Lipoxygenase makes leukotrienes. It is inhibited by zileuton, not by ibuprofen.",
+    "C": "Phospholipase A<sub>2</sub> releases arachidonic acid upstream. Glucocorticoids inhibit it indirectly, but NSAIDs do not.",
+    "D": "Thromboxane synthase acts downstream of COX in platelets, and its products are not the mediators of osteoid osteoma pain.",
+    "E": "Xanthine oxidase makes uric acid. It is the target of allopurinol, not ibuprofen."
+   },
+   "objective": "Explain the prostaglandin mechanism of osteoid osteoma pain and its NSAID response.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone tumour",
+    "night pain"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 12-year-old boy has several hard, painless bumps around both knees, his left shoulder and both wrists. His forearms are bowed and his left forearm is shorter. His father and paternal aunt had similar lumps removed. Radiographs show many sessile and pedunculated bony projections from the metaphyses, directed away from the joints, with cortex and marrow continuous with the underlying bone. The genes most commonly mutated in this condition encode enzymes needed for which of the following?</p>",
+   "options": [
+    "Activation of fibroblast growth factor receptor 3",
+    "Conversion of isocitrate to α-ketoglutarate",
+    "Elongation of heparan sulfate chains",
+    "Hydrolysis of GTP bound to Gsα",
+    "Hydroxylation of lysine residues in procollagen"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Autosomal dominant multiple metaphyseal exostoses (osteochondromas) indicate hereditary multiple osteochondromas, caused by loss-of-function mutations in <em>EXT1</em> or <em>EXT2</em>. These genes encode glycosyltransferases that together polymerise heparan sulfate chains on proteoglycans. Deficient heparan sulfate changes the spread of growth-plate morphogens such as Indian hedgehog, so cartilage grows outward from the periphery of the physis.</p><p><strong>Takeaway:</strong> Hereditary multiple osteochondromas result from <em>EXT1</em> or <em>EXT2</em> loss, which disrupts heparan sulfate synthesis.</p>",
+   "whyNot": {
+    "A": "Gain-of-function <em>FGFR3</em> mutations cause achondroplasia, with short limbs rather than exostoses.",
+    "B": "<em>IDH1/2</em> mutations, which alter isocitrate dehydrogenase, underlie enchondromas and Ollier and Maffucci syndromes. Those lesions are inside the bone, not projecting from it.",
+    "D": "Loss of Gsα GTPase activity from activating <em>GNAS</em> mutations causes fibrous dysplasia and McCune–Albright syndrome.",
+    "E": "Defective lysyl hydroxylation of procollagen causes a kyphoscoliotic form of Ehlers–Danlos syndrome, not exostoses."
+   },
+   "objective": "Link hereditary multiple osteochondromas to EXT1/EXT2 and heparan sulfate synthesis.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone tumour",
+    "inherited syndromes"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old girl has a swollen, tender left ring finger after catching a ball. She has had several painless swellings of her fingers since childhood, and soft bluish nodules on her hands and feet that compress easily. Hand radiographs show a fracture through one of several expansile lucent lesions in the phalanges and metacarpals, many containing stippled calcifications. Biopsy of a skin nodule shows a vascular lesion. The bone lesions most likely harbour mutations that cause accumulation of which of the following metabolites?</p>",
+   "options": [
+    "Fumarate",
+    "Homogentisic acid",
+    "Methylmalonic acid",
+    "Succinate",
+    "2-Hydroxyglutarate"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Multiple enchondromas of the hands with soft-tissue hemangiomas define Maffucci syndrome. Like Ollier disease, it results from postzygotic mosaic mutations in <em>IDH1</em> or <em>IDH2</em>. The mutant enzymes gain a new function, reducing α-ketoglutarate to the oncometabolite 2-hydroxyglutarate. This inhibits α-ketoglutarate-dependent demethylases and alters chondrocyte differentiation. Patients carry a high lifetime risk of chondrosarcoma.</p><p><strong>Takeaway:</strong> Enchondromas, including those of Ollier disease and Maffucci syndrome, carry <em>IDH1/2</em> mutations that produce 2-hydroxyglutarate.</p>",
+   "whyNot": {
+    "A": "Fumarate accumulates with fumarate hydratase loss, seen in hereditary leiomyomatosis and renal cell carcinoma.",
+    "B": "Homogentisic acid accumulates in alkaptonuria (homogentisate oxidase deficiency), causing ochronosis and arthropathy.",
+    "C": "Methylmalonic acid accumulates in vitamin B<sub>12</sub> deficiency and methylmalonic acidemia, not from IDH mutations.",
+    "D": "Succinate accumulates with succinate dehydrogenase loss, seen in hereditary paraganglioma and gastrointestinal stromal tumour."
+   },
+   "objective": "Link enchondromatosis (Ollier disease, Maffucci syndrome) to IDH mutations and 2-hydroxyglutarate.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cartilage tumour",
+    "inherited syndromes"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman has 3 months of pain on the lateral side of her right knee. A radiograph shows an eccentric, expansile lytic lesion in the lateral femoral condyle that extends from the metaphysis to the subchondral bone, with a thin rim of cortex and no surrounding sclerosis. Serum calcium, phosphorus and PTH are normal. A biopsy shows sheets of mononuclear cells with evenly scattered, very large multinucleated cells containing dozens of nuclei. Which cell in this lesion is neoplastic, and what does it secrete that drives bone destruction?</p>",
+   "options": [
+    "Langerhans cell secreting IL-1",
+    "Mononuclear stromal cell secreting RANKL",
+    "Multinucleated giant cell secreting cathepsin K",
+    "Osteoblast secreting osteoprotegerin",
+    "Plasma cell secreting DKK1"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>An epiphyseal-metaphyseal lytic lesion reaching the subchondral bone in a young adult, with giant cells evenly spread among mononuclear cells, is giant cell tumour of bone. The neoplastic population is the mononuclear stromal cells of osteoblast lineage, which typically carry a histone H3.3 G34W mutation. They overexpress RANKL, which recruits monocytes and fuses them into the reactive osteoclast-like giant cells that resorb bone. Denosumab, which blocks RANKL, can shrink the tumour.</p><p><strong>Takeaway:</strong> In giant cell tumour of bone, the neoplastic stromal cells make RANKL. The giant cells are reactive osteoclasts.</p>",
+   "whyNot": {
+    "A": "Langerhans cell histiocytosis has CD1a-positive cells with grooved nuclei and many eosinophils, usually in children, and is not centred at the subchondral epiphysis.",
+    "C": "The giant cells do secrete cathepsin K to resorb bone, but they are reactive, non-neoplastic osteoclasts recruited by the tumour cells.",
+    "D": "Osteoprotegerin would inhibit osteoclast formation, the opposite of what drives this lytic lesion.",
+    "E": "Myeloma plasma cells secrete DKK1 and drive lytic lesions, but myeloma affects older adults and its histology is sheets of plasma cells, not giant cells."
+   },
+   "objective": "Identify the RANKL-secreting stromal cell as the neoplastic component of giant cell tumour of bone.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone tumour",
+    "giant cells"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 6-year-old girl is evaluated for breast development and vaginal bleeding. She has large café-au-lait macules with irregular, jagged borders over her left back and buttock that stop at the midline. Radiographs show expansile lesions with a hazy, ground-glass matrix in the left femur, which has a varus \"shepherd's crook\" deformity, and in several ribs. Serum LH and FSH are suppressed. Which of the following best describes the molecular basis of her condition?</p>",
+   "options": [
+    "Germline loss of neurofibromin, a Ras GTPase-activating protein",
+    "Inactivating mutation of the Gi α subunit",
+    "Mosaic activating mutation of the Gs α subunit",
+    "Mosaic loss of function of FGF23",
+    "Point mutation activating fibroblast growth factor receptor 3"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Polyostotic fibrous dysplasia, café-au-lait macules with \"coast of Maine\" borders that respect the midline, and gonadotropin-independent precocious puberty define McCune–Albright syndrome. It is caused by a postzygotic (mosaic) activating mutation of <em>GNAS</em>, which encodes Gsα. Loss of its intrinsic GTPase activity locks Gsα in the GTP-bound state, so cAMP signalling runs continuously in affected bone, skin melanocytes and endocrine cells. The disease is never inherited as a germline mutation, because a constitutional mutation would be lethal.</p><p><strong>Takeaway:</strong> McCune–Albright syndrome is a mosaic activating <em>GNAS</em> (Gsα) mutation causing fibrous dysplasia, café-au-lait macules and endocrine hyperfunction.</p>",
+   "whyNot": {
+    "A": "Germline neurofibromin loss causes neurofibromatosis type 1, with smooth-bordered café-au-lait macules, neurofibromas and Lisch nodules, not ground-glass bone lesions with precocious puberty.",
+    "B": "Inactivating Gi mutations are not the cause of this syndrome, and loss of Gi would not be confined to a mosaic distribution.",
+    "D": "In McCune–Albright syndrome, FGF23 is often <em>increased</em> by dysplastic bone, causing phosphate wasting, not lost.",
+    "E": "Activating <em>FGFR3</em> mutations cause achondroplasia, with short limbs rather than fibrous dysplasia and precocious puberty."
+   },
+   "objective": "Attribute McCune–Albright syndrome to a mosaic activating GNAS mutation.",
+   "extraAreas": [
+    "15.08.01"
+   ],
+   "disciplines": [
+    "genetics",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone dysplasia",
+    "precocious puberty"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 5-year-old boy has a painful, soft swelling on his scalp. A skull radiograph shows a sharply \"punched-out\" lytic lesion with beveled edges and no sclerotic rim. Biopsy shows sheets of cells with pale cytoplasm and grooved, folded nuclei mixed with many eosinophils. The cells stain for CD1a and langerin (CD207), and electron microscopy shows rod-shaped cytoplasmic granules with a dilated terminal end. A mutation in which of the following genes is most likely to be found in the lesional cells?</p>",
+   "options": [
+    "<em>BRAF</em>",
+    "<em>JAK2</em>",
+    "<em>KIT</em>",
+    "<em>MYC</em>",
+    "<em>TP53</em>"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A lytic skull lesion with CD1a- and langerin-positive cells with grooved nuclei, eosinophils and Birbeck granules (the tennis-racket granules) is Langerhans cell histiocytosis. It is a myeloid neoplasm driven by constitutive MAPK pathway activation. <em>BRAF</em> V600E is found in about half of cases, and <em>MAP2K1</em> mutations in many of the rest. BRAF and MEK inhibitors are used for refractory disease.</p><p><strong>Takeaway:</strong> Langerhans cell histiocytosis is a MAPK-driven neoplasm, most often with <em>BRAF</em> V600E.</p>",
+   "whyNot": {
+    "B": "<em>JAK2</em> V617F drives polycythemia vera and other myeloproliferative neoplasms, not Langerhans cell histiocytosis.",
+    "C": "<em>KIT</em> mutations drive systemic mastocytosis and gastrointestinal stromal tumours.",
+    "D": "<em>MYC</em> translocation defines Burkitt lymphoma, which would show sheets of lymphocytes with a starry-sky pattern.",
+    "E": "<em>TP53</em> loss is a general tumour-suppressor event in many cancers but is not the characteristic driver here."
+   },
+   "objective": "Identify BRAF V600E as the common driver mutation in Langerhans cell histiocytosis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric bone lesion",
+    "histiocytic disorders"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old man has had five episodes over 2 years of atraumatic swelling of the right knee. Aspiration each time yields dark, blood-stained fluid. MRI shows nodular thickening of the synovium throughout the joint with areas of very low signal that \"bloom\" on gradient-echo sequences. Synovectomy specimens show villous and nodular synovium containing sheets of mononuclear cells, foamy macrophages, hemosiderin-laden macrophages and scattered multinucleated giant cells. Because the lesion recurs after surgery, an oral drug is started. It inhibits the receptor for a growth factor overexpressed by a minority of neoplastic cells in the lesion. Which of the following receptors does this drug most likely inhibit?</p>",
+   "options": [
+    "BCR-ABL fusion kinase",
+    "Colony-stimulating factor 1 receptor",
+    "Epidermal growth factor receptor",
+    "HER2 (ERBB2)",
+    "Vascular endothelial growth factor receptor"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Recurrent hemarthrosis with diffuse nodular synovial thickening and hemosiderin blooming on MRI is diffuse tenosynovial giant cell tumour (formerly pigmented villonodular synovitis). A small population of neoplastic synovial cells carries a <em>CSF1</em> rearrangement and overexpresses colony-stimulating factor 1. CSF1 recruits large numbers of macrophages bearing its receptor, CSF1R, which form most of the mass. Pexidartinib, an oral CSF1R inhibitor, shrinks these tumours but carries a risk of serious hepatotoxicity.</p><p><strong>Takeaway:</strong> Tenosynovial giant cell tumour is driven by CSF1 overexpression, and CSF1R inhibitors treat unresectable disease.</p>",
+   "whyNot": {
+    "A": "BCR-ABL inhibitors such as imatinib treat chronic myeloid leukemia. BCR-ABL does not drive this synovial tumour.",
+    "C": "EGFR inhibitors treat <em>EGFR</em>-mutant lung cancer and colorectal cancer, not synovial macrophage-rich tumours.",
+    "D": "HER2-targeted agents treat <em>ERBB2</em>-amplified breast and gastric cancers.",
+    "E": "VEGFR inhibitors are anti-angiogenic agents for renal cell carcinoma and other cancers. They are not the targeted therapy here."
+   },
+   "objective": "Relate tenosynovial giant cell tumour to CSF1 overexpression and CSF1R inhibition.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "joint tumour",
+    "targeted therapy"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old woman has a painless mass in the posterior thigh that has slowly enlarged over 2 years. MRI shows a 14-cm fatty mass deep to the fascia with a few thickened septa. The resected specimen consists mostly of mature adipocytes, with scattered enlarged stromal cells with hyperchromatic nuclei within fibrous septa. FISH shows high-level amplification of a gene on chromosome 12q15. The protein encoded by this gene normally acts by which of the following mechanisms?</p>",
+   "options": [
+    "Binding E2F to block S-phase entry",
+    "Phosphorylating Rb to release E2F",
+    "Repairing double-strand DNA breaks",
+    "Transcribing p21 to arrest the cell cycle",
+    "Ubiquitinating p53 for degradation"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A large, deep fatty tumour with atypical stromal cells and 12q15 amplification is atypical lipomatous tumour (well-differentiated liposarcoma), not a simple lipoma. The amplified gene is <em>MDM2</em>, which encodes an E3 ubiquitin ligase that binds p53, blocks its transactivation domain and targets it for proteasomal degradation. Too much MDM2 inactivates p53 without any <em>TP53</em> mutation. <em>MDM2</em> FISH is the test that separates this tumour from benign lipoma.</p><p><strong>Takeaway:</strong> <em>MDM2</em> amplification (an E3 ligase that degrades p53) separates atypical lipomatous tumour from lipoma.</p>",
+   "whyNot": {
+    "A": "Binding and inhibiting E2F is the job of hypophosphorylated Rb, not MDM2.",
+    "B": "Rb is phosphorylated by cyclin D–CDK4. <em>CDK4</em> is often co-amplified on 12q but is not the classic diagnostic gene, and phosphorylation is not MDM2's function.",
+    "C": "Double-strand break repair is performed by BRCA1/2 and homologous recombination proteins, not MDM2.",
+    "D": "p21 is transcribed by p53 itself. MDM2 opposes this rather than performing it."
+   },
+   "objective": "Identify MDM2 amplification and its p53-degrading function in atypical lipomatous tumour.",
+   "extraAreas": [
+    "07.02.02"
+   ],
+   "disciplines": [
+    "pathology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue tumour",
+    "tumour suppressors"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old boy has had 8 months of night pain in his left tibia. Naproxen controls it, but he has had two episodes of epigastric pain with melena while taking it and wants a permanent solution. Thin-section CT shows a 7-mm lucent nidus with a central dot of mineral in the anterior tibial cortex, surrounded by dense cortical sclerosis. The lesion is not near a major nerve. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Above-knee amputation",
+    "CT-guided radiofrequency ablation",
+    "External-beam radiation therapy",
+    "Neoadjuvant chemotherapy followed by wide resection",
+    "Switch naproxen to celecoxib indefinitely"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is osteoid osteoma. The disease is benign and self-limited, but NSAIDs have caused GI bleeding and he wants a definitive treatment. CT-guided percutaneous radiofrequency ablation destroys the nidus with high success rates and little morbidity, and it is the standard definitive treatment when no adjacent nerve or skin is at risk.</p><p><strong>Takeaway:</strong> Osteoid osteoma that needs definitive treatment is managed with CT-guided radiofrequency ablation.</p>",
+   "whyNot": {
+    "A": "Amputation is for some high-grade sarcomas. It is grossly excessive for a benign 7-mm lesion.",
+    "C": "Radiation is not used for this benign bone lesion and carries a risk of secondary sarcoma in a teenager.",
+    "D": "Chemotherapy and wide resection are for osteosarcoma or Ewing sarcoma, not osteoid osteoma.",
+    "E": "A COX-2 selective agent may reduce GI risk, but indefinite NSAID use in a teenager who has bled is less appropriate than definitive ablation."
+   },
+   "objective": "Treat symptomatic osteoid osteoma with CT-guided radiofrequency ablation.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone tumour",
+    "adolescents"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old man with hereditary multiple osteochondromas has had 4 months of a deep ache at the back of his left knee and a sense that one of his long-standing lumps there is larger. He had no new lumps or growth since age 17. A radiograph shows a broad-based osteochondroma of the posterior distal femur with irregular, mottled calcification at its tip. MRI shows the lesion's cartilage cap is 4 cm thick, with no fluid collection over it. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Adventitious bursitis over the osteochondroma",
+    "Fracture through the stalk of the osteochondroma",
+    "Popliteal artery pseudoaneurysm",
+    "Secondary chondrosarcoma",
+    "Telangiectatic osteosarcoma"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>An osteochondroma should stop growing at skeletal maturity. New pain, growth after maturity, irregular mineralisation and a cartilage cap thicker than about 2 cm in an adult point to malignant transformation into secondary (peripheral) chondrosarcoma. The risk is higher in hereditary multiple osteochondromas. He needs referral to orthopedic oncology for staging and wide resection, because chondrosarcoma responds poorly to chemotherapy and radiation.</p><p><strong>Takeaway:</strong> A growing or painful osteochondroma in an adult with a cap over about 2 cm suggests secondary chondrosarcoma.</p>",
+   "whyNot": {
+    "A": "Adventitious bursitis can cause pain over an exostosis, but MRI would show a fluid collection, and it would not thicken the cartilage cap.",
+    "B": "Stalk fracture follows trauma and appears as a cortical break, not a thick cap with mottled calcification.",
+    "C": "Popliteal pseudoaneurysm from an exostosis causes a pulsatile mass and is seen on vascular imaging. It does not thicken the cap.",
+    "E": "Telangiectatic osteosarcoma is a lytic, blood-filled tumour, usually in adolescents, not a transformation of an osteochondroma's cartilage cap."
+   },
+   "objective": "Recognise secondary chondrosarcoma arising in an osteochondroma.",
+   "extraAreas": [
+    "07.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cartilage tumour",
+    "inherited syndromes"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 10-year-old boy fell onto his outstretched right arm while skateboarding and now has pain and swelling of the upper arm. He had no pain before the fall. A radiograph shows a minimally displaced fracture through a central, well-defined lucent lesion in the proximal humeral metaphysis, abutting the physis. The cortex is thin, and a small fragment of cortex lies in the dependent part of the lesion. There is no periosteal reaction or soft-tissue mass. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "CT of the chest for staging",
+    "Open biopsy and wide resection of the lesion",
+    "Sling and follow-up radiographs",
+    "Technetium-99m bone scan",
+    "Urgent referral for neoadjuvant chemotherapy"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A central, well-marginated lucency in the proximal humeral metaphysis of a child, with a fragment of cortex that has fallen into the fluid-filled cavity after fracture (the \"fallen fragment\" sign), is a unicameral (simple) bone cyst. It has no aggressive features. The fracture is managed nonoperatively with a sling and heals well. Some cysts heal after fracture, and persistent or recurrent cysts can later be injected or curetted.</p><p><strong>Takeaway:</strong> A pathologic fracture through a simple bone cyst of the proximal humerus is treated conservatively.</p>",
+   "whyNot": {
+    "A": "Staging CT is for suspected malignancy. Nothing in this benign-appearing cyst warrants it.",
+    "B": "Wide resection is unnecessary for a benign cyst and could damage the adjacent growth plate.",
+    "D": "A bone scan adds nothing when the radiograph is diagnostic.",
+    "E": "Chemotherapy is for malignant tumours such as osteosarcoma, which would show aggressive features."
+   },
+   "objective": "Manage a pathologic fracture through a unicameral bone cyst conservatively.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric fracture",
+    "bone lesion"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 13-year-old girl has an ankle radiograph after a sprain. Besides soft-tissue swelling, it shows an incidental 2.5-cm eccentric lucent lesion in the cortex of the distal tibial metaphysis. It has a scalloped, sclerotic border, no cortical destruction, no periosteal reaction and no matrix mineralisation. Before the sprain she had no pain at that site. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Bone scintigraphy",
+    "CT-guided core biopsy",
+    "Curettage and bone grafting",
+    "MRI of the tibia with contrast",
+    "No further evaluation"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>An eccentric, cortically based lucency with a thin, scalloped sclerotic margin in the metaphysis of a teenager, without symptoms or aggressive features, is a nonossifying fibroma. This is a classic \"leave-alone\" lesion that regresses and fills in with bone after skeletal maturity. Biopsy or further imaging only adds cost, anxiety and risk. Only very large lesions that threaten fracture need orthopedic attention.</p><p><strong>Takeaway:</strong> An asymptomatic nonossifying fibroma found incidentally needs reassurance, not biopsy.</p>",
+   "whyNot": {
+    "A": "Bone scintigraphy is unnecessary. A healing nonossifying fibroma can take up tracer and cause false alarm.",
+    "B": "Biopsy of a lesion with a classic benign appearance is unnecessary and risks complications.",
+    "C": "Curettage is reserved for large lesions at risk of fracture or for symptomatic lesions, not a 2.5-cm incidental finding.",
+    "D": "MRI is not needed when the radiographic appearance is diagnostic and benign."
+   },
+   "objective": "Reassure for an incidental nonossifying fibroma with classic benign radiographic features.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "incidental finding",
+    "adolescents"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman has had 3 months of left knee pain, now with a limp. A radiograph shows an eccentric, expansile lytic lesion of the proximal lateral tibia, extending from the metaphysis to just beneath the articular surface, with a thin cortical shell and no sclerotic rim or matrix mineralisation. Laboratory studies are shown.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Calcium, total</td><td>9.4 mg/dL (2.35 mmol/L)</td></tr><tr><td>Phosphorus</td><td>3.6 mg/dL (1.16 mmol/L)</td></tr><tr><td>Alkaline phosphatase</td><td>88 U/L</td></tr><tr><td>Parathyroid hormone (reference, 10–65 pg/mL)</td><td>38 pg/mL</td></tr><tr><td>Creatinine</td><td>0.7 mg/dL</td></tr><tr><td>Hemoglobin</td><td>13.1 g/dL</td></tr></tbody></table><p>CT of the chest is normal. A core biopsy planned by the orthopedic oncology team shows uniformly distributed osteoclast-like giant cells among mononuclear stromal cells, with no atypia or osteoid production. The articular surface is intact. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Above-knee amputation",
+    "Extended curettage with adjuvant and cement",
+    "External-beam radiation therapy alone",
+    "Observation with radiographs every 6 months",
+    "Systemic doxorubicin and cisplatin"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The lesion and histology indicate giant cell tumour of bone. Normal calcium, phosphate and PTH exclude a brown tumour of hyperparathyroidism, which can look identical. With the joint surface intact, standard treatment is extended intralesional curettage with a high-speed burr and a local adjuvant (phenol, liquid nitrogen or the heat of polymerising cement), with the defect filled with cement or graft. This preserves the knee and gives acceptable recurrence rates. Denosumab is reserved for unresectable tumours or for downstaging.</p><p><strong>Takeaway:</strong> Resectable giant cell tumour of bone is treated with extended curettage and adjuvant. Exclude hyperparathyroidism first.</p>",
+   "whyNot": {
+    "A": "Amputation is for unreconstructable high-grade sarcomas, not a benign, locally aggressive tumour with an intact joint.",
+    "C": "Radiation alone has poorer control and a risk of malignant transformation. It is a last resort for unresectable lesions.",
+    "D": "Observation allows continued bone destruction and loss of the joint surface.",
+    "E": "Cytotoxic chemotherapy treats osteosarcoma. It has no role in conventional giant cell tumour."
+   },
+   "objective": "Treat giant cell tumour of bone with extended intralesional curettage after excluding hyperparathyroidism.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone tumour",
+    "young adults"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 41-year-old woman has a slowly enlarging, painless lump on the palmar side of her right index finger at the level of the middle phalanx, present for 18 months. It is firm, lobulated, 1.5 cm across and fixed to the deep tissues but not to the skin. It does not transilluminate, and it moves slightly with flexion of the finger. There is no history of injury, and she has no cold sensitivity. A radiograph shows a soft-tissue mass with mild scalloping of the adjacent phalangeal cortex. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Post-traumatic epidermoid inclusion cyst",
+    "Ganglion cyst",
+    "Glomus tumour",
+    "Lipoma",
+    "Tenosynovial giant cell tumour"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A firm, lobulated, slowly growing, non-transilluminating mass attached to a flexor tendon sheath on the volar finger, with pressure erosion of adjacent bone, is a localised tenosynovial giant cell tumour (giant cell tumour of tendon sheath). It is the second most common hand mass after ganglion cysts. MRI shows low T2 signal from hemosiderin. Marginal excision is the treatment, and local recurrence is common.</p><p><strong>Takeaway:</strong> A firm, non-transilluminating volar finger mass on a tendon sheath is usually a localised tenosynovial giant cell tumour.</p>",
+   "whyNot": {
+    "A": "Epidermoid inclusion cysts follow a penetrating injury and lie closer to the skin, often at the fingertip.",
+    "B": "Ganglion cysts are fluctuant, transilluminate, and usually arise at the wrist or the base of the finger rather than as firm lobulated masses that erode bone.",
+    "C": "Glomus tumours are small, exquisitely painful and cold-sensitive, usually under the nail.",
+    "D": "Lipomas are soft and rarely arise on the volar finger or erode bone."
+   },
+   "objective": "Diagnose a localised tenosynovial giant cell tumour of a finger.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hand mass",
+    "soft-tissue tumour"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 55-year-old man has noticed a lump in his right thigh for 4 months that seems to be enlarging. It is painless. Examination shows a firm 9 × 7 cm mass in the anterior thigh that is deep to the fascia and does not move with the skin. There is no lymphadenopathy. He is otherwise well. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Excisional biopsy in the outpatient procedure room",
+    "Fine-needle aspiration cytology",
+    "MRI of the thigh with contrast",
+    "Reassurance and re-examination in 6 months",
+    "Whole-body PET-CT"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A soft-tissue mass larger than 5 cm, deep to the fascia and growing must be treated as a possible sarcoma until proven otherwise. The first step is MRI with contrast to define its nature, size, compartment and relation to neurovascular structures. A core-needle biopsy planned by a sarcoma team follows. Excising it before imaging and planned biopsy risks an unplanned \"whoops\" resection that leaves tumour behind and contaminates the field.</p><p><strong>Takeaway:</strong> A deep, growing soft-tissue mass over 5 cm needs MRI and then a planned core biopsy at a sarcoma centre, not excision.</p>",
+   "whyNot": {
+    "A": "Unplanned excision of a possible sarcoma contaminates tissue planes and often leads to wider re-excision and radiation.",
+    "B": "Fine-needle cytology rarely gives enough tissue to grade or subtype a sarcoma. Core biopsy after MRI is preferred.",
+    "D": "Watchful waiting is inappropriate given its size, depth and growth.",
+    "E": "PET-CT may be part of staging once the diagnosis is known, but local MRI and tissue diagnosis come first."
+   },
+   "objective": "Image a deep, enlarging soft-tissue mass with MRI before planned biopsy.",
+   "extraAreas": [
+    "07.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue mass",
+    "oncology referral"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Mediator of osteoid osteoma pain?",
+   "back": "Prostaglandin E<sub>2</sub> from the nidus; relieved by COX inhibitors.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Most common benign bone tumour?",
+   "back": "Osteochondroma.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Genes in hereditary multiple osteochondromas and their function?",
+   "back": "<em>EXT1/EXT2</em>; glycosyltransferases for heparan sulfate synthesis.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Enchondromas plus soft-tissue hemangiomas?",
+   "back": "Maffucci syndrome (mosaic <em>IDH1/2</em>; high chondrosarcoma risk).",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Neoplastic cell in giant cell tumour of bone?",
+   "back": "The mononuclear stromal cell (H3.3 G34W) that makes RANKL.",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Molecular cause of McCune–Albright syndrome?",
+   "back": "A mosaic activating <em>GNAS</em> (Gsα) mutation.",
+   "question": 5
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Markers and organelle of Langerhans cell histiocytosis?",
+   "back": "CD1a, langerin (CD207), S100; Birbeck granules; often <em>BRAF</em> V600E.",
+   "question": 6
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Driver of tenosynovial giant cell tumour?",
+   "back": "<em>CSF1</em> overexpression; treated with CSF1R inhibitors.",
+   "question": 7
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Test that separates atypical lipomatous tumour from lipoma?",
+   "back": "<em>MDM2</em> amplification (FISH).",
+   "question": 8
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Best imaging to show an osteoid osteoma nidus?",
+   "back": "Thin-section CT.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Definitive treatment of symptomatic osteoid osteoma?",
+   "back": "CT-guided radiofrequency ablation.",
+   "question": 9
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Cartilage cap thickness that raises concern in an adult osteochondroma?",
+   "back": "More than about 2 cm.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Management of a fractured unicameral bone cyst of the humerus?",
+   "back": "Sling and follow-up radiographs.",
+   "question": 11
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Incidental eccentric metaphyseal lesion with scalloped sclerotic rim in a teenager?",
+   "back": "Nonossifying fibroma; reassure.",
+   "question": 12
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Lab tests before treating a presumed giant cell tumour of bone?",
+   "back": "Calcium, phosphate, alkaline phosphatase and PTH, to exclude a brown tumour.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Treatment of resectable giant cell tumour of bone?",
+   "back": "Extended intralesional curettage with adjuvant and cement or graft.",
+   "question": 13
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Next step for a deep soft-tissue mass larger than 5 cm?",
+   "back": "MRI with contrast, then planned core biopsy at a sarcoma centre.",
+   "question": 15
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Second most common hand mass after a ganglion?",
+   "back": "Localised tenosynovial giant cell tumour.",
+   "question": 14
+  }
+ ]
+}

@@ -1,0 +1,1004 @@
+{
+ "area": "14.04.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Benign prostatic hyperplasia: zones, pathogenesis and pharmacology",
+   "html": "<p>Benign prostatic hyperplasia (BPH) is the commonest cause of lower urinary tract symptoms in older men. The term \"hypertrophy\" persists in the outline, but the lesion is a true <strong>hyperplasia</strong>: an increase in the number of stromal (smooth muscle and fibroblast) and epithelial cells, forming nodules. Histologic BPH is present in most men by their 60s and in the large majority by their 80s; only some develop symptoms.</p>\n[[figure:s23f-fig140401-1]]\n<h3>Zonal anatomy</h3>\n<p>The prostate surrounds the proximal urethra between the bladder neck and the external sphincter. Its glandular tissue falls into zones with different diseases:</p>\n<table class=\"hy\">\n<thead><tr><th>Zone</th><th>Location</th><th>Disease link</th></tr></thead>\n<tbody>\n<tr><td>Transition zone</td><td>Two small lobes hugging the prostatic urethra above the verumontanum</td><td>BPH; nodules here compress the urethra early</td></tr>\n<tr><td>Peripheral zone</td><td>Posterior and lateral gland, next to the rectum; most glandular tissue</td><td>Most adenocarcinomas; chronic prostatitis; palpable on rectal examination</td></tr>\n<tr><td>Central zone</td><td>Cone around the ejaculatory ducts at the base</td><td>Few cancers</td></tr>\n<tr><td>Anterior fibromuscular stroma</td><td>Front of the gland</td><td>No glands; rarely diseased</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Prostate size on rectal examination correlates poorly with symptoms. A modest transition-zone nodule (or a \"median lobe\" projecting into the bladder) can obstruct more than a large gland that grows outward.</p></div>\n<h3>Pathogenesis</h3>\n<ul>\n<li><strong>Androgens are permissive.</strong> Testosterone is converted in stromal cells by <strong>5-alpha-reductase type 2</strong> to dihydrotestosterone (DHT), which binds androgen receptors with higher affinity and drives growth-factor release (for example FGF and TGF-beta family signals) that acts on stroma and epithelium. Men castrated before puberty, and people with 5-alpha-reductase type 2 deficiency, do not develop BPH.</li>\n<li><strong>Estrogen</strong> may sensitise the gland to DHT as the testosterone-to-estradiol ratio falls with age. Inflammation, metabolic syndrome and obesity are associated.</li>\n<li><strong>Two components of obstruction</strong>: a <em>static</em> component from bulk tissue, and a <em>dynamic</em> component from tone in prostatic and bladder-neck smooth muscle, mediated by alpha-1A adrenergic receptors.</li>\n</ul>\n<h3>Effects on the bladder and upper tracts</h3>\n<p>Outflow resistance forces the detrusor to generate higher pressure. Its smooth muscle hypertrophies, giving a <strong>trabeculated</strong> bladder seen at cystoscopy. Mucosa herniates between hypertrophied muscle bundles to form <strong>pseudodiverticula</strong> (false diverticula lacking a muscular wall), which empty poorly and harbour stones and infection. Detrusor overactivity produces urgency and frequency; eventually a decompensated bladder fails to empty, with a large residual, overflow incontinence, and back-pressure causing bilateral hydronephrosis and obstructive renal failure. BPH is not a precursor of prostate cancer.</p>\n<h3>Pharmacology by mechanism</h3>\n<table class=\"hy\">\n<thead><tr><th>Class and examples</th><th>Mechanism</th><th>Key adverse effects</th></tr></thead>\n<tbody>\n<tr><td>Alpha-1 blockers: tamsulosin, silodosin, alfuzosin (uroselective); terazosin, doxazosin (nonselective)</td><td>Block Gq-coupled alpha-1 receptors (alpha-1A predominates in the prostate), relaxing smooth muscle; act within days</td><td>Orthostatic hypotension and first-dose syncope (more with nonselective agents), dizziness, ejaculatory dysfunction, intraoperative floppy iris syndrome</td></tr>\n<tr><td>5-alpha-reductase inhibitors: finasteride (type 2), dutasteride (types 1 and 2)</td><td>Block conversion of testosterone to DHT; prostate shrinks over 6 to 12 months; serum DHT falls and testosterone rises slightly</td><td>Decreased libido, erectile and ejaculatory dysfunction, gynecomastia; PSA falls by about half; teratogenic to a male fetus, so pregnant people should not handle broken tablets</td></tr>\n<tr><td>PDE5 inhibitor: tadalafil (daily)</td><td>Raises cGMP in prostatic, bladder and vascular smooth muscle</td><td>Headache, flushing; contraindicated with nitrates</td></tr>\n<tr><td>Antimuscarinics (oxybutynin, solifenacin) and beta-3 agonists (mirabegron, vibegron)</td><td>Reduce detrusor overactivity (M3 blockade; beta-3 stimulation raises cAMP)</td><td>Antimuscarinics: dry mouth, constipation, confusion in older adults, retention; mirabegron: hypertension</td></tr>\n</tbody></table>\n<div class=\"pearl\"><p>Naadi memory aid: \"Alpha acts at once, five-alpha takes five months.\" Alpha blockers relieve the dynamic component within days; 5-alpha-reductase inhibitors shrink the static component slowly and only help an enlarged gland.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Benign Prostatic Hyperplasia"
+    },
+    {
+     "statpearls": "Anatomy, Abdomen and Pelvis, Prostate"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Scrotal contents: descent, anchoring, venous drainage and their disorders",
+   "html": "<p>The scrotum holds the testes, epididymides and the lower spermatic cords. Most structural disorders of the scrotum come from how the testis descends and how it is anchored, drained and enclosed.</p>\n<h3>Descent and the processus vaginalis</h3>\n<p>The testis develops in the posterior abdominal wall near the kidney, which is why its artery arises from the aorta and its lymph drains to para-aortic nodes. Guided by the gubernaculum, it descends through the inguinal canal in the third trimester, preceded by a tube of peritoneum, the <strong>processus vaginalis</strong>. Normally the processus obliterates, leaving only the <strong>tunica vaginalis</strong> as a closed serous sac around the front and sides of the testis. Failure to obliterate explains a family of pediatric conditions:</p>\n[[figure:s23f-fig140401-3]]\n<table class=\"hy\">\n<thead><tr><th>Condition</th><th>Processus vaginalis</th><th>Clinical clue</th></tr></thead>\n<tbody>\n<tr><td>Communicating hydrocele</td><td>Patent but narrow; peritoneal fluid flows in and out</td><td>Swelling smaller in the morning, larger after activity or crying; transilluminates</td></tr>\n<tr><td>Indirect inguinal hernia</td><td>Widely patent; bowel or omentum enters</td><td>Reducible groin or scrotal bulge; risk of incarceration</td></tr>\n<tr><td>Noncommunicating hydrocele</td><td>Closed; fluid trapped in the tunica vaginalis</td><td>Constant size; common at birth and usually resolves</td></tr>\n<tr><td>Hydrocele of the cord</td><td>Closed above and below a persisting segment</td><td>Smooth mobile cystic mass along the cord, above the testis</td></tr>\n</tbody></table>\n<p>In adults a hydrocele usually forms when the tunica vaginalis secretes more fluid than it absorbs, either idiopathically or as a reaction to infection, trauma or a tumour of the testis.</p>\n<h3>Anchoring and torsion</h3>\n<p>Normally the tunica vaginalis covers only part of the testis, and the posterior testis and epididymis are fixed to the scrotal wall. In the <strong>bell-clapper deformity</strong> the tunica inserts high on the spermatic cord, so the testis hangs free inside it, lies horizontally and can rotate around the cord (intravaginal torsion). The anomaly is usually bilateral, which is why the opposite testis is fixed at the same operation. Twisting first obstructs venous outflow, then arterial inflow; ischemia leads to hemorrhagic infarction within hours. In neonates, torsion is <strong>extravaginal</strong>: the whole tunica and cord twist together before the tunica has fixed to the scrotum. The appendix testis (a remnant of the paramesonephric duct) and the appendix epididymis (a mesonephric remnant) are small pedunculated bodies that can twist without threatening the testis.</p>\n<h3>Venous drainage and varicocele</h3>\n<p>The testis drains through the <strong>pampiniform plexus</strong>, which cools arterial blood by countercurrent exchange, into the testicular vein. The right testicular vein enters the inferior vena cava obliquely; the <strong>left enters the left renal vein at a right angle</strong>, has a longer course and may lack competent valves, and the left renal vein can be compressed between the aorta and superior mesenteric artery (nutcracker phenomenon). The result is that varicoceles (dilated, tortuous plexus veins) are mostly left-sided. Warmer, stagnant venous blood and oxidative stress impair spermatogenesis and, in adolescents, testicular growth. A varicocele that is right-sided alone, appears suddenly in an older man, or does not empty when the patient lies down suggests obstruction of venous outflow: a renal or retroperitoneal tumour (for example renal cell carcinoma extending into the left renal vein) or venous thrombosis.</p>\n<h3>Spermatocele and epididymal cyst</h3>\n<p>Both are retention cysts arising from the efferent ductules or epididymis, usually at the head of the epididymis above and behind the testis. A spermatocele contains milky fluid with sperm; an epididymal cyst contains clear fluid. Both transilluminate, are separate from the testis on palpation, and are benign.</p>\n<div class=\"trap\"><p>Transillumination shows only that a swelling contains clear fluid. A hydrocele can surround and hide a testicular tumour, so a hydrocele in an adult in whom the testis cannot be felt clearly needs ultrasonography.</p></div>\n<h3>Testicular injury: the role of the tunica albuginea</h3>\n<p>The tunica albuginea is the dense fibrous capsule of the testis. Blunt force that compresses the testis against the pubis can tear it (<strong>testicular rupture</strong>), extruding seminiferous tubules and bleeding into the tunica vaginalis (hematocele). Because the intact capsule maintains pressure, untreated rupture risks ischemic loss and, by exposing germ-cell antigens, antisperm antibodies.</p>",
+   "furtherReading": [
+    {
+     "statpearls": "Hydrocele"
+    },
+    {
+     "statpearls": "Varicocele"
+    },
+    {
+     "statpearls": "Testicular Torsion"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "heading": "Penis and urethra: fascial anatomy, fracture, Peyronie disease and urethral injury",
+   "html": "<p>The penis is built of three erectile cylinders. The paired <strong>corpora cavernosa</strong> lie dorsally, each wrapped in a thick bilayered <strong>tunica albuginea</strong>; the ventral <strong>corpus spongiosum</strong> carries the urethra and expands distally into the glans. All three are bound together by <strong>Buck fascia</strong> (deep penile fascia); outside it lie the dartos (superficial) fascia and skin. In the perineum, dartos continues as the membranous layer of superficial fascia (<strong>Colles fascia</strong>), which attaches laterally to the ischiopubic rami and fascia lata, posteriorly to the perineal membrane, and continues up the anterior abdominal wall as Scarpa fascia.</p>\n<h3>Erection and why the tunica can break</h3>\n<p>Parasympathetic pelvic splanchnic nerves (S2 to S4) release nitric oxide, which raises cGMP in cavernosal smooth muscle; the sinusoids fill and compress the subtunical veins against the tunica albuginea (veno-occlusion). In the erect state the tunica thins and becomes taut. Abrupt bending of the erect penis, typically during vigorous intercourse or forced manual bending, can tear it: <strong>penile fracture</strong>. A tear in one corpus cavernosum causes a crack, immediate loss of erection, pain and a hematoma; the penis bends away from the side of the tear. If Buck fascia is intact the hematoma stays on the shaft (\"eggplant\" deformity); if it is torn, blood tracks under Colles fascia into the scrotum and perineum. Because the corpus spongiosum lies close by, the urethra is injured in a minority of fractures.</p>\n<h3>Peyronie disease</h3>\n<p>Peyronie disease is an acquired, localised <strong>fibrosis of the tunica albuginea</strong>, thought to result from abnormal wound healing after repeated microtrauma during intercourse. Fibrin deposition, TGF-beta signalling and myofibroblast activity lay down disorganised collagen, forming an inelastic plaque that may calcify. During erection the plaque does not stretch, so the penis curves toward it (dorsal curvature with a dorsal plaque is commonest), and it may shorten, indent (\"hourglass\") or lose rigidity distal to the plaque. It is associated with Dupuytren contracture and other fibrosing disorders, diabetes, and prior pelvic surgery such as radical prostatectomy. An acute (inflammatory) phase with painful erections and changing curvature is followed by a stable phase.</p>\n<h3>Urethral segments and their injuries</h3>\n[[figure:s23f-fig140401-4]]\n<p>The <strong>posterior urethra</strong> comprises the prostatic and membranous segments; the membranous urethra passes through the external urethral sphincter and is the thinnest, least supported part. The <strong>anterior urethra</strong>, inside the corpus spongiosum, comprises the bulbar and penile (pendulous) segments and the fossa navicularis.</p>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Posterior urethral injury</th><th>Anterior urethral injury</th></tr></thead>\n<tbody>\n<tr><td>Usual mechanism</td><td>Pelvic ring fracture shears the urethra near the junction of the membranous and bulbar segments, where the prostate is fixed by puboprostatic ligaments</td><td>Straddle injury crushing the bulbar urethra against the pubic arch; penile fracture; instrumentation; penetrating injury</td></tr>\n<tr><td>Where blood and urine go</td><td>Above the perineal membrane into the retropubic and pelvic extraperitoneal space</td><td>Within Buck fascia (penile shaft) or, if Buck fascia is torn, beneath Colles fascia into scrotum, perineum and lower abdominal wall</td></tr>\n<tr><td>Why not into the thighs</td><td>Not applicable</td><td>Colles fascia fuses with the fascia lata just below the inguinal ligament</td></tr>\n<tr><td>Long-term risk</td><td>Stricture or distraction defect; erectile dysfunction from cavernous nerve or vascular injury; incontinence</td><td>Stricture</td></tr>\n</tbody></table>\n<div class=\"pearl\"><p>A \"butterfly\" bruise of the perineum maps the attachments of Colles fascia: it means an anterior urethral injury with Buck fascia breached. Swelling limited to the penile shaft means Buck fascia is intact.</p></div>\n<h3>The foreskin</h3>\n<p>At birth the inner foreskin is fused to the glans; separation happens gradually through childhood, so a nonretractile foreskin in a young boy is <strong>physiologic phimosis</strong>. <strong>Pathologic phimosis</strong> is scarring of the preputial opening, most often from lichen sclerosus or recurrent balanoposthitis. <strong>Paraphimosis</strong> occurs when a retracted foreskin is left behind the glans: the tight ring obstructs venous and lymphatic return, edema of the glans and foreskin worsens the constriction, and arterial compromise can follow. Circumcision removes the foreskin; the frenular artery and the dorsal penile nerves are the structures at risk.</p>\n<div class=\"trap\"><p>Hypospadias, chordee and a buried or webbed penis are contraindications to newborn circumcision because the foreskin may be needed for later reconstruction.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Penile Fracture"
+    },
+    {
+     "statpearls": "Peyronie Disease"
+    },
+    {
+     "statpearls": "Urethral Injury"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Benign prostatic hyperplasia and urinary retention: evaluation and management",
+   "html": "<p>Lower urinary tract symptoms (LUTS) in older men are common and multifactorial: BPH is one cause, but detrusor overactivity, nocturnal polyuria, medications, diabetes, neurologic disease and bladder cancer also contribute. Management aims to relieve bothersome symptoms and prevent complications.</p>\n<h3>Evaluation</h3>\n<ul>\n<li><strong>History</strong>: voiding symptoms (hesitancy, weak or intermittent stream, straining, incomplete emptying, dribbling) and storage symptoms (frequency, urgency, nocturia); a validated score (AUA Symptom Index or IPSS) with a bother question; fluid, caffeine and alcohol intake; a medication review (anticholinergics including first-generation antihistamines and tricyclics, decongestants, opioids, diuretics).</li>\n<li><strong>Examination</strong>: abdomen for a palpable bladder; rectal examination of size, symmetry and nodularity; a focused neurologic exam.</li>\n<li><strong>Tests</strong>: urinalysis in all; PSA when knowing it would change management (life expectancy over about 10 years, or gland size affects treatment choice); post-void residual by bladder ultrasound; frequency-volume chart for nocturia; creatinine and renal ultrasound if retention or renal impairment is suspected. Hematuria, a nodular prostate, recurrent infection or neurologic findings need further work-up.</li>\n</ul>\n<h3>Stepwise management</h3>\n<table class=\"hy\">\n<thead><tr><th>Situation</th><th>Approach</th></tr></thead>\n<tbody>\n<tr><td>Mild or non-bothersome symptoms</td><td>Watchful waiting with lifestyle advice: reduce evening fluids, caffeine and alcohol; double voiding; review drugs</td></tr>\n<tr><td>Bothersome symptoms, any prostate size</td><td>Alpha-1 blocker (for example tamsulosin) as first-line drug; effect within days</td></tr>\n<tr><td>Enlarged prostate (for example over about 30 to 40 mL, or PSA over about 1.5 ng/mL as a surrogate)</td><td>5-alpha-reductase inhibitor, alone or combined with an alpha blocker; combination reduces progression, retention and need for surgery</td></tr>\n<tr><td>Coexisting erectile dysfunction</td><td>Daily tadalafil is an option (not with nitrates)</td></tr>\n<tr><td>Persistent storage symptoms with low residual</td><td>Add an antimuscarinic or beta-3 agonist; prefer a beta-3 agonist in older adults at risk of cognitive effects</td></tr>\n<tr><td>Nocturnal polyuria</td><td>Fluid timing; desmopressin only with caution in older adults because of hyponatremia</td></tr>\n</tbody></table>\n<p><strong>Indications for surgery</strong>: refractory or recurrent urinary retention, recurrent infections, bladder stones, recurrent gross hematuria from the prostate, renal insufficiency due to obstruction, or bothersome symptoms despite medical therapy. Options include transurethral resection of the prostate (TURP), laser enucleation (especially for large glands), simple prostatectomy for very large glands, minimally invasive procedures (prostatic urethral lift, water vapour therapy) and prostatic artery embolisation. Common consequences of TURP and enucleation are retrograde ejaculation and transient irritative symptoms; monopolar TURP with hypotonic irrigation can cause dilutional hyponatremia (TURP syndrome), now rare with bipolar saline techniques.</p>\n<h3>Acute urinary retention</h3>\n<p>Sudden painful inability to void with a distended bladder is often precipitated in a man with BPH by anticholinergic or sympathomimetic drugs (cold remedies combining an antihistamine and a decongestant are classic), opioids, alcohol, constipation, immobility or surgery. Management: <strong>immediate bladder decompression with a urethral catheter</strong> (suprapubic if urethral passage fails or is contraindicated), stop precipitating drugs, start an alpha blocker, and attempt a trial without catheter after a few days. Monitor for post-obstructive diuresis and check creatinine after chronic retention.</p>\n<div class=\"trap\"><p>Men taking an alpha blocker who are scheduled for cataract surgery should tell the ophthalmologist, because of intraoperative floppy iris syndrome. The risk persists after stopping the drug, so the surgeon adapts the technique rather than relying on a pause in therapy.</p></div>\n<h3>Special populations</h3>\n<ul>\n<li><strong>Older adults and people with disabilities</strong>: check orthostatic blood pressure before and after starting nonselective alpha blockers; dose at bedtime; assess falls risk; avoid anticholinergic burden in cognitive impairment; consider retention as a cause of delirium or agitation in people who cannot report symptoms.</li>\n<li><strong>Transgender women</strong>: estrogen and androgen blockade usually shrink the prostate and BPH symptoms improve, but LUTS after vaginoplasty may instead reflect meatal stenosis or neourethral problems.</li>\n</ul>\n<div class=\"pearl\"><p>A 5-alpha-reductase inhibitor halves PSA after about 6 to 12 months. Doubling the measured value gives a working estimate, and any rise from the new baseline on treatment warrants evaluation for cancer.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Benign Prostatic Hyperplasia"
+    },
+    {
+     "statpearls": "Male Urinary Retention: Acute and Chronic"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step2ck",
+   "heading": "The acute and the painless scrotum: torsion, appendix testis, hydrocele, varicocele and spermatocele",
+   "html": "<p>Acute scrotal pain is a surgical emergency until testicular torsion is excluded, because testicular salvage falls steeply after about 6 hours of ischemia. Painless scrotal swellings, by contrast, are mostly benign but require exclusion of a testicular tumour.</p>\n[[figure:s23f-fig140401-2]]\n<h3>Testicular torsion</h3>\n<p>Peaks in the neonatal period and in adolescence, but occurs at any age, including in transgender women who retain their testes. Sudden severe unilateral scrotal pain (often waking the patient, sometimes felt in the lower abdomen), nausea and vomiting; the testis is swollen, tender, high-riding with a horizontal lie, and the cremasteric reflex is usually absent. Scoring tools that combine these features can help triage.</p>\n<ul>\n<li><strong>High clinical suspicion</strong>: immediate surgical exploration. Do not delay for ultrasonography.</li>\n<li><strong>Equivocal picture</strong>: urgent Doppler ultrasonography (reduced or absent intratesticular flow, twisted cord \"whirlpool\" sign), with urology involved at once.</li>\n<li><strong>Surgery</strong>: detorsion; if the testis is viable, orchiopexy; if it is necrotic, orchiectomy. The contralateral testis is fixed at the same operation.</li>\n<li><strong>Manual detorsion</strong> (classically rotating the testis outward, toward the thigh) may relieve ischemia while awaiting theatre, but surgery is still required.</li>\n<li><strong>Neonatal (extravaginal) torsion</strong> often presents as a firm, discoloured, painless scrotal mass at birth; management is urgent urologic assessment, and the contralateral testis is often fixed.</li>\n</ul>\n<h3>Torsion of the appendix testis or epididymis</h3>\n<p>The commonest cause of acute scrotal pain in prepubertal boys (about 7 to 12 years). Pain builds more gradually and is localised to the upper pole, where a tender nodule may be felt or a blue-black spot seen through the skin (\"blue dot\"). The cremasteric reflex is preserved and Doppler shows normal testicular flow. Treatment is supportive: rest, scrotal support, ice and NSAIDs; symptoms settle within about a week. Exploration is needed only when torsion of the testis cannot be excluded.</p>\n<h3>Epididymitis in children</h3>\n<p>Prepubertal epididymitis is usually a post-infectious inflammation managed with analgesia; antibiotics are reserved for pyuria or a positive culture, and bacterial epididymitis in young boys warrants evaluation for urinary tract anomalies. In adolescents who are sexually active, test and treat as in adults.</p>\n<h3>Hydrocele</h3>\n<ul>\n<li><strong>Newborn</strong>: a painless, transilluminating, nonreducible swelling around the testis is common and usually a noncommunicating hydrocele that resolves within the first 1 to 2 years; observe. A hydrocele that fluctuates in size is communicating; one that persists beyond about 1 to 2 years, enlarges, or is associated with a hernia is repaired by ligation of the patent processus through an inguinal approach (not by aspiration).</li>\n<li><strong>Inguinal hernia in infants</strong> does not resolve and carries a risk of incarceration, especially in preterm infants, so it is repaired promptly after diagnosis.</li>\n<li><strong>Adults</strong>: confirm with ultrasonography if the testis cannot be palpated, to exclude tumour or epididymo-orchitis. Asymptomatic hydroceles are observed; symptomatic ones are excised (hydrocelectomy). Aspiration with sclerotherapy is an option for poor surgical candidates but recurrence is more common.</li>\n</ul>\n<h3>Varicocele</h3>\n<p>A \"bag of worms\" above the testis, usually left-sided, larger when standing or with Valsalva and smaller when supine. Most are asymptomatic. Indications for repair (microsurgical ligation or percutaneous embolisation) include pain, infertility in a man with a palpable varicocele and abnormal semen parameters whose partner has normal or treatable fertility, and in adolescents a persistent reduction in size of the affected testis or abnormal semen analysis. Repair is not offered for subclinical (ultrasound-only) varicoceles or for cosmesis alone in a man with normal semen. A new varicocele that is isolated on the right, appears abruptly in an older man, or does not decompress when supine requires abdominal imaging for a renal or retroperitoneal mass.</p>\n<h3>Spermatocele and epididymal cyst</h3>\n<p>A smooth, painless, transilluminating cyst palpable separately above or behind the testis. Ultrasonography confirms an extratesticular cyst. Reassure; excise only if large or symptomatic, warning that surgery can obstruct the epididymis and affect fertility on that side.</p>\n<table class=\"hy\">\n<thead><tr><th>Painless mass</th><th>Relation to testis</th><th>Transilluminates</th><th>Key action</th></tr></thead>\n<tbody>\n<tr><td>Hydrocele</td><td>Surrounds the testis; testis may be impalpable</td><td>Yes</td><td>Ultrasonography in adults to exclude tumour</td></tr>\n<tr><td>Spermatocele or epididymal cyst</td><td>Separate, above and behind</td><td>Yes</td><td>Reassurance</td></tr>\n<tr><td>Varicocele</td><td>Above the testis, along the cord</td><td>No</td><td>Repair only for specific indications</td></tr>\n<tr><td>Inguinal hernia</td><td>Above; cannot get above it</td><td>Usually no</td><td>Surgical repair</td></tr>\n<tr><td>Testicular tumour</td><td>Within the testis</td><td>No</td><td>Ultrasonography, markers, inguinal orchiectomy</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Relief of pain on elevating the testis and a \"normal\" urinalysis do not exclude torsion. Absent cremasteric reflex with sudden pain and vomiting is enough to call the surgeon.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Testicular Torsion"
+    },
+    {
+     "statpearls": "Hydrocele"
+    },
+    {
+     "statpearls": "Varicocele"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step2ck",
+   "heading": "Foreskin and penile shaft: phimosis, paraphimosis, circumcision, penile fracture and Peyronie disease",
+   "html": "<p>Disorders of the foreskin and penile shaft range from routine questions about newborn care to emergencies in which delay costs erectile function.</p>\n<h3>Phimosis</h3>\n<p>A nonretractile foreskin is normal in infants and young children, and most become retractable gradually through childhood and adolescence. Parents should be told not to force retraction, which causes tears and scarring. Ballooning of the foreskin during voiding is common and harmless. Treatment is needed for recurrent balanoposthitis, urinary tract infections, pain, or persistent phimosis that interferes with hygiene or, later, with erections:</p>\n<ul>\n<li><strong>Topical corticosteroid</strong> applied to the preputial ring for several weeks, with gentle retraction, is first line for physiologic phimosis that needs treatment.</li>\n<li><strong>Circumcision</strong> (or preputioplasty) for pathologic scarring, lichen sclerosus or failure of topical therapy.</li>\n<li>In adults, new phimosis can be the first sign of diabetes (candidal balanoposthitis) or of lichen sclerosus or penile cancer, so examine carefully and biopsy suspicious tissue.</li>\n</ul>\n<h3>Paraphimosis</h3>\n<p>A urologic emergency in which the retracted foreskin forms a constricting band behind an edematous glans. Typical settings are after catheterisation, cleaning or examination when the foreskin was not returned, in older adults, people in long-term care, and people with cognitive or physical disabilities who cannot report pain. Management, with adequate analgesia (a dorsal penile nerve block is useful):</p>\n<ol>\n<li><strong>Reduce the edema</strong> by firm, steady manual compression of the glans for several minutes (ice or a compressive wrap can help).</li>\n<li><strong>Manual reduction</strong>: push the glans back while the index fingers draw the foreskin forward.</li>\n<li>If this fails: needle puncture of the edematous foreskin to express fluid, then a <strong>dorsal slit</strong> under local anaesthesia; elective circumcision later.</li>\n</ol>\n<p>Prevention matters: anyone who retracts a foreskin for catheterisation or hygiene must return it.</p>\n<h3>Circumcision</h3>\n<p>Newborn male circumcision has health benefits that include fewer urinary tract infections in infancy, lower risk of penile cancer, and lower risk of acquiring HIV and some other STIs through penile-vaginal sex. The American Academy of Pediatrics has concluded that the benefits outweigh the risks but are not great enough to recommend routine circumcision for all newborns, so parents decide after counselling.</p>\n<ul>\n<li><strong>Analgesia is required</strong>: dorsal penile nerve block or ring block, with topical anaesthetic and oral sucrose as adjuncts.</li>\n<li><strong>Defer or avoid</strong> in prematurity or illness, bleeding disorders (ask about family history), hypospadias, chordee, buried or webbed penis, and ambiguous genitalia.</li>\n<li><strong>Complications</strong>: bleeding (the commonest early complication; apply pressure, then topical hemostatic agents or sutures, and evaluate for a coagulation disorder if bleeding is unexpected), infection, removal of too much or too little skin, adhesions and skin bridges, a trapped penis behind a cicatrix, glans injury, and <strong>meatal stenosis</strong> (a later complication causing a thin, upward-deflected stream and straining; treated with meatotomy).</li>\n</ul>\n<h3>Penile fracture</h3>\n<p>Presents with a cracking sound during intercourse or forced bending, immediate detumescence, pain and a rapidly enlarging hematoma with deviation away from the tear. Diagnosis is clinical; ultrasonography or MRI helps only when the history is atypical. Management is <strong>prompt surgical exploration and repair of the tunica albuginea</strong>, which lowers the risk of curvature, painful erections and erectile dysfunction compared with conservative care. Blood at the meatus, hematuria or difficulty voiding indicates urethral injury, which is evaluated with retrograde urethrography or cystoscopy (often at the time of surgery) and repaired at the same operation. A hematoma without a tunica tear (rupture of a superficial dorsal vein) is managed conservatively once fracture is excluded.</p>\n<h3>Peyronie disease</h3>\n<p>Middle-aged and older men present with curvature, a palpable plaque, painful erections in the acute phase, shortening, and often erectile dysfunction and distress. Assessment documents the curvature during erection (photographs or an office injection-induced erection) and screens for depression.</p>\n<ul>\n<li><strong>Acute phase</strong> (pain, changing curvature): NSAIDs for pain; penile traction therapy is an option. Avoid surgery until the disease is stable.</li>\n<li><strong>Stable phase with bothersome curvature</strong>: intralesional collagenase (from <em>Clostridium histolyticum</em>) for men with a palpable plaque and moderate curvature; intralesional verapamil or interferon are alternatives. Collagenase carries a risk of corporal rupture, so patients avoid intercourse for weeks after each injection.</li>\n<li><strong>Surgery</strong> after the curvature has been stable for several months: tunical plication for adequate rigidity and length; plaque incision or excision with grafting for complex deformity; penile prosthesis when erectile dysfunction coexists.</li>\n<li>Oral vitamin E, tamoxifen and similar oral agents are not recommended because evidence does not show benefit.</li>\n</ul>\n<div class=\"pearl\"><p>Penile fracture is repaired at once; Peyronie disease is operated on only after it is stable. The first is an acute tear of a healthy tunica; the second is a scar that is still remodelling.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Paraphimosis"
+    },
+    {
+     "statpearls": "Phimosis"
+    },
+    {
+     "statpearls": "Circumcision"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step2ck",
+   "heading": "Genital and urethral trauma, including blast and burn injury",
+   "html": "<p>Genital injuries are rarely life-threatening on their own, but they often accompany pelvic, perineal and abdominal trauma, and they carry long-term consequences for voiding, sexual function and fertility. Primary survey priorities (airway, breathing, circulation, hemorrhage control) come first.</p>\n<h3>Urethral injury</h3>\n<p>Suspect it with <strong>blood at the urethral meatus</strong>, inability to void with a palpable bladder, a perineal, scrotal or penile hematoma, or a pelvic ring fracture (especially a displaced anterior arch fracture or symphysis diastasis). In such a patient, a <strong>retrograde urethrogram comes before any attempt to pass a urethral catheter</strong>: blind catheterisation can convert a partial tear into a complete one and introduce infection into a hematoma.</p>\n<table class=\"hy\">\n<thead><tr><th>Retrograde urethrogram finding</th><th>Management</th></tr></thead>\n<tbody>\n<tr><td>Normal</td><td>Pass a urethral catheter</td></tr>\n<tr><td>Partial tear (contrast extravasates but also enters the bladder)</td><td>A single gentle attempt at catheter passage by an experienced clinician, or suprapubic drainage</td></tr>\n<tr><td>Complete posterior disruption (no contrast reaches the bladder)</td><td><strong>Suprapubic cystostomy</strong>, with delayed urethroplasty after the hematoma resolves (typically about 3 months); primary endoscopic realignment in selected stable patients at specialised centres</td></tr>\n<tr><td>Anterior (bulbar) injury from a straddle mechanism</td><td>Urinary diversion (suprapubic or, for partial tears, careful urethral catheter); later urethroplasty for stricture</td></tr>\n<tr><td>Penetrating anterior injury</td><td>Surgical exploration with primary repair</td></tr>\n</tbody></table>\n<p>Pelvic fracture with posterior urethral injury may coexist with bladder rupture (seen on cystography) and with rectal injury (rectal examination, sigmoidoscopy when suspected). Long-term problems include stricture, erectile dysfunction and incontinence. Iatrogenic injury from inflating a catheter balloon in the urethra causes pain, bleeding and later stricture; inflate only after urine flows.</p>\n<h3>Testicular rupture and other blunt scrotal injuries</h3>\n<p>Sports injuries, kicks and falls astride cause most blunt scrotal trauma. Pain, swelling and ecchymosis make examination unreliable, so <strong>scrotal ultrasonography</strong> is used: rupture shows a heterogeneous testis with an irregular contour and a break in the echogenic tunica albuginea, often with a hematocele. Management of rupture is <strong>prompt surgical exploration</strong> with debridement of extruded tubules and closure of the tunica; early repair improves testicular salvage compared with delay. Large hematoceles are also explored. Contusion with an intact tunica and a small hematoma can be managed with rest, support, ice and analgesia, with follow-up imaging. Traumatic testicular dislocation (into the inguinal canal or perineum) requires reduction and fixation. Torsion can follow trauma, so flow must be assessed.</p>\n<h3>Lacerations, avulsions and bites</h3>\n<ul>\n<li><strong>Scrotal lacerations</strong>: irrigate, debride, check the testes (explore if the tunica vaginalis is breached), and close in layers; the scrotal skin heals well because of its rich blood supply.</li>\n<li><strong>Degloving or avulsion of genital skin</strong> (machinery, animal attacks): debridement and staged reconstruction; exposed testes can be placed temporarily in subcutaneous thigh pouches.</li>\n<li><strong>Penile amputation</strong>: control bleeding with pressure; wrap the amputated part in saline-moistened gauze inside a sealed bag placed in a second bag of ice and water (never in direct contact with ice), and arrange urgent microsurgical replantation.</li>\n<li><strong>Bites</strong> (human or animal): copious irrigation, debridement, prophylactic antibiotics active against oral flora (for example amoxicillin-clavulanate), tetanus and, for animal bites, rabies assessment.</li>\n<li><strong>Zipper entrapment</strong> of foreskin in boys: cut the median bar of the zipper slider with bone or wire cutters so the teeth fall apart, rather than pulling.</li>\n<li><strong>Hair or thread tourniquet</strong> around the penis of an infant presents as unexplained crying with distal swelling; remove it completely under magnification.</li>\n</ul>\n<h3>Penetrating, blast and burn injuries</h3>\n<p>Gunshot and stab wounds of the penis or scrotum are explored surgically, with retrograde urethrography when the wound track could involve the urethra. <strong>Blast injuries</strong> from improvised explosive devices, typically to people on foot, combine pelvic fractures, perineal and genital tissue loss, urethral and rectal injury and traumatic lower-limb amputation. After hemorrhage control and resuscitation, care focuses on damage-control surgery, urinary diversion, preservation of all viable testicular and penile tissue, and early counselling about fertility (including sperm retrieval and cryopreservation). Protective pelvic garments reduce genital injury in military settings. <strong>Genital burns</strong> are managed in burn centres; a urinary catheter keeps dressings clean and maintains drainage while edema peaks. In a child, burns, bruises or injuries of the genitals with a pattern or history that does not fit the reported mechanism (for example a sharply demarcated immersion pattern) require evaluation for abuse and a report to child protective services.</p>\n<div class=\"trap\"><p>In a trauma patient with blood at the meatus, the next step is not \"insert a Foley to monitor urine output\": it is a retrograde urethrogram, and if a catheter cannot be passed safely, a suprapubic catheter.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Urethral Injury"
+    },
+    {
+     "statpearls": "Lower Genitourinary Trauma"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Zonal anatomy of the prostate: BPH arises in the transition zone, most cancers in the peripheral zone."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Testicular torsion, torsion of the appendix testis and epididymitis compared."
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "caption": "Figure. Variants of the processus vaginalis: communicating and noncommunicating hydrocele, indirect hernia and hydrocele of the cord."
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "caption": "Figure. Segments of the male urethra and the injuries typical of each."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Pelvic fracture and blood at the urethral meatus"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old man with lower urinary tract symptoms and a prostate volume of 65 mL begins daily finasteride. Six months later his symptoms are improved. Which of the following sets of changes from baseline is most likely?</p>",
+   "options": [
+    "Serum DHT decreased, serum testosterone decreased, PSA decreased",
+    "Serum DHT decreased, serum testosterone slightly increased, PSA decreased by about half",
+    "Serum DHT decreased, serum testosterone unchanged, PSA increased",
+    "Serum DHT increased, serum testosterone decreased, PSA unchanged",
+    "Serum DHT unchanged, serum testosterone decreased, PSA decreased by about half"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Finasteride inhibits 5-alpha-reductase type 2, which converts testosterone to dihydrotestosterone. Serum and prostatic DHT fall substantially; because less testosterone is consumed, serum testosterone rises slightly or stays within the normal range. Prostatic epithelium shrinks, and PSA falls by roughly 50% within 6 to 12 months.</p><p><strong>Takeaway:</strong> 5-alpha-reductase inhibitors lower DHT, leave testosterone normal or slightly higher, and halve PSA.</p>",
+   "whyNot": {
+    "A": "Finasteride does not act on the hypothalamic-pituitary axis, so testosterone does not fall; that pattern fits GnRH analogues.",
+    "C": "PSA falls, not rises, with 5-alpha-reductase inhibition; a rising PSA on finasteride warrants evaluation for cancer.",
+    "D": "DHT would increase only if conversion were stimulated, the opposite of the drug's action.",
+    "E": "DHT must fall for the drug to shrink the prostate; a fall in testosterone with unchanged DHT does not describe 5-alpha-reductase inhibition."
+   },
+   "objective": "Predict the hormonal and PSA changes produced by finasteride.",
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "prostate",
+    "hormone metabolism"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 72-year-old man has had a weak urinary stream, hesitancy and nocturia three times a night for 3 years. Rectal examination shows a smooth, symmetrically enlarged, rubbery prostate without nodules. Which region of the prostate is the most likely origin of this condition?</p>",
+   "options": [
+    "Anterior fibromuscular stroma",
+    "Central zone",
+    "Peripheral zone",
+    "Seminal vesicles",
+    "Transition zone"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Smooth, symmetric enlargement with obstructive voiding symptoms in an older man is benign prostatic hyperplasia. BPH nodules arise in the transition zone, which surrounds the prostatic urethra, so even modest growth compresses the urethra and causes symptoms.</p><p><strong>Takeaway:</strong> BPH arises in the periurethral transition zone; carcinoma arises mostly in the peripheral zone.</p>",
+   "whyNot": {
+    "A": "The anterior fibromuscular stroma contains no glands and is rarely the site of disease.",
+    "B": "The central zone surrounds the ejaculatory ducts and is rarely the site of BPH or cancer.",
+    "C": "The peripheral zone is where most prostate cancers and prostatitis arise; it is not the usual site of BPH.",
+    "D": "The seminal vesicles are separate glands and are not part of BPH."
+   },
+   "objective": "Identify the transition zone as the origin of benign prostatic hyperplasia.",
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "prostate"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 79-year-old man with long-standing benign prostatic hyperplasia who has declined treatment for years is found to have a post-void residual of 450 mL. Cystoscopy shows a coarsely ridged bladder wall with several narrow-necked outpouchings. Biopsy of one outpouching would most likely show which of the following?</p>",
+   "options": [
+    "Full-thickness wall including mucosa, submucosa and detrusor muscle",
+    "Mucosa and submucosa herniated between muscle bundles, lacking a muscular wall",
+    "Persistent urachal epithelium continuous with the bladder dome",
+    "Squamous metaplasia with keratin pearls invading muscle",
+    "Urothelium with von Brunn nests and cystitis glandularis only"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Chronic outlet obstruction raises intravesical pressure. The detrusor hypertrophies into ridges (trabeculation), and mucosa and submucosa are pushed out between the muscle bundles, forming acquired pseudodiverticula. Without a muscle coat they cannot empty, so urine stagnates, predisposing to infection and stones.</p><p><strong>Takeaway:</strong> Outlet obstruction causes detrusor hypertrophy, trabeculation and false (pulsion) diverticula that lack a muscular wall.</p>",
+   "whyNot": {
+    "A": "All three layers in the wall describe a true (congenital) diverticulum, not the acquired pulsion type caused by obstruction.",
+    "C": "Urachal remnants arise at the dome from the embryonic allantoic duct and are not caused by obstruction.",
+    "D": "Invasive squamous cell carcinoma can complicate chronically inflamed diverticula but is not what the outpouchings themselves are.",
+    "E": "Von Brunn nests and cystitis glandularis are reactive mucosal changes and do not define an outpouching of the wall."
+   },
+   "objective": "Describe the false diverticula that form in a bladder with chronic outlet obstruction.",
+   "disciplines": [
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "urinary obstruction",
+    "older adults"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 14-year-old boy undergoes emergency scrotal exploration for sudden left testicular pain that began 3 hours ago. The left spermatic cord is twisted 540 degrees within the tunica vaginalis; after detorsion the testis pinks up and is fixed to the scrotal wall. The surgeon then fixes the right testis as well. Which anatomic finding most likely explains the torsion and the need for the second procedure?</p>",
+   "options": [
+    "Absence of the gubernaculum on both sides",
+    "Bilateral patent processus vaginalis",
+    "High investment of the tunica vaginalis on the spermatic cord bilaterally",
+    "Short spermatic cords with high scrotal testes",
+    "Varicocele on the left"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Intravaginal torsion in adolescents usually reflects the bell-clapper deformity: the tunica vaginalis attaches high on the cord and surrounds the testis and epididymis completely, so the testis is not anchored posteriorly to the scrotum and can rotate. The anomaly is commonly bilateral, so the contralateral testis is fixed at the same operation.</p><p><strong>Takeaway:</strong> The bell-clapper deformity (high tunica vaginalis insertion) predisposes to intravaginal torsion and is usually bilateral.</p>",
+   "whyNot": {
+    "A": "The gubernaculum guides descent; its absence would cause undescended testes, not torsion of a descended testis.",
+    "B": "A patent processus vaginalis causes communicating hydrocele or indirect hernia, not intravaginal torsion.",
+    "D": "Short cords hold testes high and limit mobility; they would make torsion less likely.",
+    "E": "A varicocele is a venous dilation and does not predispose to torsion."
+   },
+   "objective": "Explain the bell-clapper deformity as the anatomic basis of intravaginal torsion and of contralateral orchiopexy.",
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "acute scrotum",
+    "pediatric urology"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old man comes to the clinic because of a dragging sensation in the left scrotum for 6 weeks. He has also noticed intermittent painless blood in his urine and has lost 5 kg (11 lb). Examination shows dilated, tortuous veins above the left testis that remain distended when he lies supine. A firm mass is palpable in the left flank. Which of the following best explains the scrotal finding?</p>",
+   "options": [
+    "Compression of the left common iliac vein by the right common iliac artery",
+    "Congenital absence of valves in the left external spermatic vein",
+    "Obstruction of the left renal vein by tumour",
+    "Obstruction of the inferior vena cava below the renal veins",
+    "Reflux through the left internal iliac vein"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Hematuria, weight loss and a flank mass suggest renal cell carcinoma, which commonly grows into the renal vein. The left testicular vein drains into the left renal vein, so tumour obstruction raises pressure in the pampiniform plexus and produces a varicocele that does not decompress when the patient is supine. A new left varicocele in an older man, or any varicocele that fails to empty supine, prompts imaging of the kidney.</p><p><strong>Takeaway:</strong> The left testicular vein drains into the left renal vein; a new nondecompressing left varicocele can signal renal cell carcinoma.</p>",
+   "whyNot": {
+    "A": "Compression of the left common iliac vein (May-Thurner) causes left leg swelling and thrombosis, not a varicocele.",
+    "B": "Valve incompetence explains ordinary varicoceles in young men, which decompress when supine; it does not explain the flank mass and hematuria.",
+    "D": "IVC obstruction below the renal veins would affect both legs and would not selectively distend the left pampiniform plexus, whose vein drains above this level.",
+    "E": "The internal iliac system drains pelvic organs and is not the main drainage of the testis."
+   },
+   "objective": "Relate a nondecompressing left varicocele to obstruction of the left renal vein by renal cell carcinoma.",
+   "extraAreas": [
+    "11.02.02"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 5,
+   "tags": [
+    "scrotal swelling",
+    "venous anatomy"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 9-month-old boy is brought to the clinic because his right scrotum is small in the morning and becomes larger and tense by evening and after crying. The swelling is painless and transilluminates. The testis is palpable within it. No bowel sounds are heard over the swelling, and no groin bulge is present. Which of the following developmental events failed to occur?</p>",
+   "options": [
+    "Descent of the testis through the inguinal canal",
+    "Fusion of the labioscrotal swellings",
+    "Obliteration of the processus vaginalis",
+    "Regression of the paramesonephric ducts",
+    "Union of the efferent ductules with the epididymis"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A transilluminating scrotal swelling that changes size during the day is a communicating hydrocele: peritoneal fluid moves through a narrow patent processus vaginalis into the tunica vaginalis. Normally the processus obliterates after the testis descends. A wider patent processus allows bowel to enter (indirect inguinal hernia).</p><p><strong>Takeaway:</strong> A communicating hydrocele results from failed obliteration of the processus vaginalis.</p>",
+   "whyNot": {
+    "A": "The testis is palpable in the scrotum, so descent occurred.",
+    "B": "Failure of labioscrotal fusion causes a bifid scrotum, often with hypospadias, not a fluctuating fluid collection.",
+    "D": "Persistent paramesonephric (Müllerian) ducts form a uterus and tubes in a male and are linked with undescended testes, not a hydrocele.",
+    "E": "Failure of ductule-epididymis union causes obstructive azoospermia, not a scrotal fluid collection."
+   },
+   "objective": "Explain communicating hydrocele by failure of obliteration of the processus vaginalis.",
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "pediatric urology",
+    "scrotal swelling"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old man slips while climbing over a metal fence and lands astride the top rail. Two hours later he cannot void and has blood at the urethral meatus. There is a butterfly-shaped bruise over the perineum, and swelling extends into the scrotum, penile shaft and lower anterior abdominal wall, but not into the thighs. The pelvis is stable and pelvic x-ray shows no fracture. Which segment of the urethra is most likely injured?</p>",
+   "options": [
+    "Bladder neck",
+    "Bulbar urethra",
+    "Membranous urethra",
+    "Penile (pendulous) urethra",
+    "Prostatic urethra"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A straddle injury crushes the bulbar urethra against the inferior pubic arch. With Buck fascia torn, blood and urine spread beneath Colles fascia into the perineum (butterfly bruise), scrotum, penis and up the abdominal wall beneath Scarpa fascia, but not into the thighs, where Colles fascia fuses with the fascia lata. The next step is a retrograde urethrogram before any catheter.</p><p><strong>Takeaway:</strong> Straddle injury damages the bulbar urethra; extravasation follows the attachments of Colles fascia.</p>",
+   "whyNot": {
+    "A": "Bladder neck injury is rare and occurs with severe pelvic fractures; extravasation would be pelvic, not perineal.",
+    "C": "Membranous urethral disruption typically accompanies pelvic fracture, and blood collects above the perineal membrane in the pelvis rather than in the perineum.",
+    "D": "Penile urethral injury with Buck fascia intact confines swelling to the shaft; the mechanism here is a straddle crush of the bulb.",
+    "E": "The prostatic urethra is protected within the pelvis and is not injured by a straddle mechanism."
+   },
+   "objective": "Localize a straddle injury to the bulbar urethra and explain the extravasation pattern.",
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "genitourinary trauma"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 57-year-old man comes to the clinic because his penis has developed an upward bend during erections over 14 months, making intercourse difficult. Erections were painful for the first few months but no longer are. He has flexion contractures of the fourth and fifth fingers of his right hand. A firm 1.5-cm nodule is palpable on the dorsal shaft. Which of the following is the most likely underlying pathologic process?</p>",
+   "options": [
+    "Fibrous plaque formation in the tunica albuginea",
+    "Hyperplasia of cavernosal smooth muscle",
+    "Rupture of the tunica albuginea of the corpus cavernosum",
+    "Squamous cell carcinoma invading the corpus spongiosum",
+    "Thrombosis of the superficial dorsal vein"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Acquired penile curvature toward a palpable plaque after a painful acute phase, in a man with Dupuytren contracture, is Peyronie disease: a localized fibrosis of the tunica albuginea after abnormal healing of microtrauma, with TGF-beta-driven collagen deposition. The inelastic plaque prevents that side from lengthening during erection, so the penis curves toward it.</p><p><strong>Takeaway:</strong> Peyronie disease is a fibrous plaque of the tunica albuginea, associated with Dupuytren contracture.</p>",
+   "whyNot": {
+    "B": "Cavernosal smooth muscle does not become hyperplastic in Peyronie disease; loss of smooth muscle contributes to erectile dysfunction.",
+    "C": "Tunical rupture is penile fracture, an acute event with a crack, detumescence and hematoma, not slowly progressive curvature.",
+    "D": "Penile carcinoma usually begins on the glans or foreskin and would not explain a stable dorsal plaque with curvature after 14 months.",
+    "E": "Superficial dorsal vein thrombosis (Mondor disease of the penis) causes a tender cord-like vein and resolves within weeks."
+   },
+   "objective": "Identify Peyronie disease as fibrosis of the tunica albuginea.",
+   "disciplines": [
+    "pathology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "penile deformity"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 66-year-old man comes to the clinic because of a weak stream, hesitancy and needing to get up twice at night to urinate for 1 year. The symptoms bother him and his symptom score is in the moderate range. He has hypertension controlled with amlodipine. Rectal examination shows a smooth, symmetric prostate estimated at 25 mL, without nodules. Urinalysis is normal. Post-void residual volume is 40 mL. PSA is 1.1 ng/mL. Which of the following is the most appropriate initial pharmacotherapy?</p>",
+   "options": [
+    "Desmopressin at bedtime",
+    "Finasteride",
+    "Oxybutynin",
+    "Tamsulosin",
+    "Trimethoprim-sulfamethoxazole"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Bothersome, moderate voiding-predominant LUTS with a benign exam, normal urinalysis and low residual warrant medical therapy. An alpha-1 blocker such as tamsulosin is first line: it relaxes prostatic and bladder-neck smooth muscle and works within days, regardless of gland size. He should be warned about dizziness and told to mention the drug before any cataract surgery.</p><p><strong>Takeaway:</strong> First-line drug for bothersome BPH-related LUTS is an alpha-1 blocker.</p>",
+   "whyNot": {
+    "A": "Desmopressin targets nocturnal polyuria and carries a hyponatremia risk in older adults; his main problem is voiding symptoms.",
+    "B": "5-alpha-reductase inhibitors help only enlarged glands (his is small, with a low PSA) and take months to work.",
+    "C": "An antimuscarinic treats storage symptoms of overactive bladder; his symptoms are mainly obstructive.",
+    "E": "His urinalysis is normal, so there is no infection to treat."
+   },
+   "objective": "Choose an alpha-1 blocker as first-line therapy for bothersome LUTS due to BPH.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "prostate",
+    "older adults"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 71-year-old man returns for follow-up of lower urinary tract symptoms. He has taken tamsulosin for 1 year with partial improvement, but still has a weak stream, straining and a sense of incomplete emptying. Urgency is minimal. He has had no urinary retention or infections. Prostate MRI 1 year ago showed an enlarged gland without suspicious lesions. He prefers to avoid surgery.</p><table><thead><tr><th>Item</th><th>Result</th></tr></thead><tbody><tr><td>Medications</td><td>Tamsulosin 0.4 mg daily, losartan, atorvastatin</td></tr><tr><td>Symptom score</td><td>Moderate, bothersome</td></tr><tr><td>Prostate volume (MRI)</td><td>78 mL</td></tr><tr><td>PSA (stable over 2 years)</td><td>4.2 ng/mL</td></tr><tr><td>Post-void residual volume</td><td>110 mL</td></tr><tr><td>Creatinine</td><td>1.0 mg/dL (88 umol/L)</td></tr><tr><td>Urinalysis</td><td>Normal</td></tr></tbody></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Add desmopressin",
+    "Add finasteride",
+    "Add oxybutynin",
+    "Replace tamsulosin with terazosin",
+    "Transrectal prostate biopsy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has persistent bothersome voiding symptoms despite an alpha blocker and a markedly enlarged gland. Adding a 5-alpha-reductase inhibitor shrinks the prostate over 6 to 12 months; the combination improves symptoms more than either drug alone and lowers the risk of acute retention and of needing surgery. His stable PSA, proportionate to a 78-mL gland, and a nonsuspicious MRI do not call for biopsy. After 6 to 12 months of finasteride, his PSA should fall by about half and becomes his new baseline.</p><p><strong>Takeaway:</strong> For BPH with an enlarged prostate and persistent symptoms on an alpha blocker, add a 5-alpha-reductase inhibitor.</p>",
+   "whyNot": {
+    "A": "Desmopressin treats nocturnal polyuria, which is not his problem, and risks hyponatremia at his age.",
+    "C": "Antimuscarinics target storage symptoms; with minimal urgency and a residual of 110 mL they add retention risk without addressing the obstruction.",
+    "D": "Terazosin is another alpha blocker, less selective and more likely to cause orthostatic hypotension, and would not add a new mechanism.",
+    "E": "His PSA is stable, consistent with gland size, and his MRI showed no suspicious lesion, so biopsy is not indicated."
+   },
+   "objective": "Add a 5-alpha-reductase inhibitor for an enlarged prostate with persistent symptoms on alpha-blocker therapy.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "prostate",
+    "older adults"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 78-year-old man is brought to the emergency department because he has not been able to urinate for 10 hours and has severe lower abdominal pain. Two days ago he started an over-the-counter night-time cold remedy containing diphenhydramine and pseudoephedrine. He has a history of mild nocturia. He is restless. Blood pressure is 158/92 mm Hg. A tender, dull mass extends from the pubis nearly to the umbilicus. Bladder scan shows 950 mL. There is no blood at the meatus and no history of urethral surgery or trauma. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "CT of the abdomen and pelvis",
+    "Intravenous furosemide",
+    "Oral tamsulosin and reassessment in 4 hours",
+    "Percutaneous suprapubic cystostomy",
+    "Urethral catheterization"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Acute urinary retention precipitated by an anticholinergic antihistamine (which impairs detrusor contraction) and an alpha-agonist decongestant (which tightens the bladder neck and prostate) in a man with BPH needs immediate decompression. A urethral catheter is the first choice when there is no contraindication. The cold remedy is stopped, an alpha blocker is started, and a trial without catheter follows in a few days, with monitoring for post-obstructive diuresis.</p><p><strong>Takeaway:</strong> Acute urinary retention: decompress immediately with a urethral catheter, stop precipitating drugs and start an alpha blocker.</p>",
+   "whyNot": {
+    "A": "The diagnosis is clear from examination and bladder scan; imaging would delay relief of a painful, overdistended bladder.",
+    "B": "A diuretic would increase urine production into an obstructed bladder and worsen pain.",
+    "C": "An alpha blocker supports a later voiding trial but does not empty a 950-mL bladder now.",
+    "D": "Suprapubic drainage is reserved for failed or contraindicated urethral catheterization, such as urethral trauma or stricture."
+   },
+   "objective": "Decompress drug-precipitated acute urinary retention with a urethral catheter.",
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "urinary obstruction",
+    "prescription-drug adverse effects"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 9-year-old boy is brought to the emergency department because of right scrotal pain that began yesterday afternoon and has gradually increased. He has no nausea or vomiting and no urinary symptoms. Temperature is 37.1°C (98.8°F). The right testis lies normally and is not tender except at its upper pole, where a 4-mm tender nodule is felt; a small bluish spot is visible through the skin there. The cremasteric reflex is present bilaterally. Doppler ultrasonography shows normal and symmetric testicular blood flow with a small avascular nodule adjacent to the upper pole. Urinalysis is normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Ceftriaxone and doxycycline",
+    "Emergency scrotal exploration",
+    "Manual detorsion",
+    "Oral levofloxacin",
+    "Rest, scrotal support and an NSAID"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Gradual pain localized to the upper pole, a blue dot, a preserved cremasteric reflex and normal testicular flow with an avascular nodule indicate torsion of the appendix testis, the commonest cause of acute scrotal pain in prepubertal boys. It is self-limited and is managed with rest, support, ice and NSAIDs, with return precautions.</p><p><strong>Takeaway:</strong> Torsion of the appendix testis is managed conservatively once testicular torsion is excluded.</p>",
+   "whyNot": {
+    "A": "STI treatment is for sexually active patients with epididymitis; nothing suggests infection.",
+    "B": "Exploration is needed when testicular torsion cannot be excluded, but normal flow and a classic exam make it unnecessary here.",
+    "C": "Manual detorsion is a temporizing manoeuvre for testicular torsion, which this is not.",
+    "D": "Fluoroquinolones are avoided in children, and there is no bacterial infection."
+   },
+   "objective": "Manage torsion of the appendix testis conservatively in a prepubertal boy.",
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "acute scrotum",
+    "pediatric urology"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 3-day-old boy born at 39 weeks' gestation is examined before discharge. The left hemiscrotum is enlarged by a soft, painless, nontender swelling that transilluminates brightly. The testis is palpable within it. The swelling does not change with crying and cannot be reduced. There is no groin bulge, and the infant is feeding well. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Needle aspiration of the fluid",
+    "Observation with reexamination at well-child visits",
+    "Scrotal ultrasonography within 24 hours",
+    "Surgical repair before discharge",
+    "Surgical repair at 3 months of age"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A painless, transilluminating, nonreducible swelling that does not vary in size, with a palpable testis and no hernia, is a noncommunicating hydrocele. Most resolve spontaneously within the first 1 to 2 years as the fluid is absorbed, so observation is appropriate. Repair is considered if it persists beyond that, enlarges, changes in size (suggesting communication) or is associated with a hernia.</p><p><strong>Takeaway:</strong> Newborn noncommunicating hydroceles are observed; most resolve without surgery.</p>",
+   "whyNot": {
+    "A": "Aspiration risks infection and bleeding and the fluid reaccumulates; it is not used in infants.",
+    "C": "The testis is palpable and the findings are classic, so imaging adds nothing.",
+    "D": "Early surgery is unnecessary because most newborn hydroceles resolve.",
+    "E": "Scheduled repair at 3 months would treat many hydroceles that would have resolved on their own."
+   },
+   "objective": "Observe a noncommunicating hydrocele in a newborn.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "scrotal swelling",
+    "newborn care"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>An 84-year-old uncircumcised man who lives in a long-term care facility and has advanced dementia is brought to the emergency department because staff noticed swelling of his penis this morning. An indwelling urethral catheter was replaced 2 days ago. The glans is markedly swollen and purple-red, and a tight, edematous band of foreskin lies behind the corona. Capillary refill of the glans is brisk. The catheter is draining clear urine. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Application of a topical corticosteroid and reassessment in 24 hours",
+    "Emergency circumcision under general anaesthesia",
+    "Manual compression of the glans and reduction of the foreskin after a penile block",
+    "Removal of the catheter and observation",
+    "Ultrasonography of the penis with Doppler"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A retracted foreskin forming a constricting band behind an edematous glans after catheter care is paraphimosis, a urologic emergency. After analgesia (a dorsal penile nerve block), steady compression reduces the edema, and the glans is pushed back while the foreskin is drawn forward. If this fails, the edema can be punctured and a dorsal slit performed; circumcision can be done electively later. Staff education to return the foreskin after catheter care prevents recurrence.</p><p><strong>Takeaway:</strong> Paraphimosis: analgesia, compression and manual reduction first; dorsal slit if reduction fails.</p>",
+   "whyNot": {
+    "A": "Topical steroids are used for phimosis; paraphimosis is a constriction that needs reduction now.",
+    "B": "Emergency circumcision is not the first step; most cases reduce manually, and circumcision can be done electively.",
+    "D": "Removing the catheter does not relieve the constricting band and would leave him at risk of retention.",
+    "E": "The diagnosis is clinical, and imaging delays reduction while edema worsens."
+   },
+   "objective": "Reduce paraphimosis manually after compression and analgesia.",
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "foreskin",
+    "people with disabilities"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old man comes to the emergency department 2 hours after hearing a popping sound during intercourse, followed by immediate loss of erection and severe pain. His penis is swollen, bruised and deviated to the left, with the swelling confined to the shaft. A tender defect is palpable on the right side of the shaft. He urinated without difficulty since the injury; there is no blood at the meatus and urinalysis shows no blood. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Cold compresses, analgesia and outpatient follow-up",
+    "Intracavernosal phenylephrine injection",
+    "MRI of the penis within 1 week",
+    "Pressure dressing and an oral PDE5 inhibitor",
+    "Prompt surgical exploration and repair"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A pop during intercourse, immediate detumescence, an eggplant-shaped hematoma confined to the shaft (Buck fascia intact), deviation away from the injured side and a palpable defect indicate penile fracture with a tear of the tunica albuginea of the right corpus cavernosum. Prompt surgical repair reduces long-term curvature, painful erections and erectile dysfunction. With normal voiding and no hematuria or meatal blood, urethral injury is unlikely, though the urethra is still inspected at surgery.</p><p><strong>Takeaway:</strong> Penile fracture is repaired surgically without delay.</p>",
+   "whyNot": {
+    "A": "Conservative care has higher rates of curvature, plaque formation and erectile dysfunction than early repair.",
+    "B": "Intracavernosal phenylephrine treats ischemic priapism, the opposite problem.",
+    "C": "MRI is reserved for an atypical presentation; delaying repair by a week worsens outcomes.",
+    "D": "A PDE5 inhibitor would promote erections and further bleeding, and pressure does not repair a tunica tear."
+   },
+   "objective": "Repair penile fracture surgically without delay.",
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "genitourinary trauma"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 28-year-old man is brought to the emergency department after a motorcycle crash. After a primary survey and 1 L of crystalloid, his pulse is 98/min and blood pressure is 122/76 mm Hg. A pelvic binder is in place, and pelvic x-ray shows widening of the pubic symphysis with fractures of both superior pubic rami. There is blood at the urethral meatus, he cannot void, and the perineum is bruised. FAST examination is negative. Which of the following is the most appropriate next step before bladder drainage?</p>",
+   "options": [
+    "CT cystography",
+    "Flexible cystoscopy",
+    "Insertion of a urethral catheter with a coude tip",
+    "Intravenous urography",
+    "Retrograde urethrography"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Blood at the meatus with inability to void after a displaced anterior pelvic ring fracture indicates a probable posterior urethral injury. A retrograde urethrogram defines whether the urethra is intact, partially torn or completely disrupted before anyone attempts catheterization, because a blind catheter can complete a partial tear and infect the pelvic hematoma.</p><p><strong>Takeaway:</strong> Blood at the meatus after pelvic trauma: retrograde urethrogram before any urethral catheter.</p>",
+   "whyNot": {
+    "A": "CT cystography evaluates bladder rupture and requires a bladder catheter or contrast-filled bladder; the urethra must be assessed first.",
+    "B": "Cystoscopy can be used for realignment in selected cases but is not the initial diagnostic study in the trauma bay.",
+    "C": "Any blind catheter attempt, including with a curved tip, risks converting a partial disruption into a complete one.",
+    "D": "Intravenous urography assesses the kidneys and ureters and does not image the urethra adequately."
+   },
+   "objective": "Obtain a retrograde urethrogram before catheterization when urethral injury is suspected after pelvic fracture.",
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "genitourinary trauma",
+    "pelvic fracture"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The retrograde urethrogram shows extravasation of contrast at the junction of the membranous and bulbar urethra into the pelvis, with no contrast entering the bladder. His bladder is palpable above the pubis. He remains hemodynamically stable, and orthopaedic surgery plans external fixation of the pelvis. Which of the following is the most appropriate management of his urinary tract?</p>",
+   "options": [
+    "Immediate open end-to-end urethroplasty",
+    "Observation until spontaneous voiding returns",
+    "Placement of a urethral stent across the injury",
+    "Repeated urethral catheter attempts using a guidewire",
+    "Suprapubic cystostomy with delayed urethroplasty"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Extravasation with no contrast reaching the bladder indicates complete disruption of the posterior urethra. The bladder is drained by a suprapubic cystostomy, and definitive repair (excision of the scarred segment with anastomotic urethroplasty) is delayed until the pelvic hematoma resolves, typically about 3 months. Early endoscopic realignment is an option only in selected stable patients at specialized centres. Long-term follow-up addresses stricture, erectile dysfunction and continence.</p><p><strong>Takeaway:</strong> Complete posterior urethral disruption: suprapubic cystostomy now, urethroplasty later.</p>",
+   "whyNot": {
+    "A": "Immediate open repair through a fresh pelvic hematoma has higher rates of bleeding, incontinence and erectile dysfunction.",
+    "B": "The bladder is already distended and cannot drain through a disrupted urethra; observation would lead to rupture or extravasation.",
+    "C": "Urethral stents are not used for acute traumatic disruption.",
+    "D": "Repeated blind attempts risk further injury and infection of the hematoma."
+   },
+   "objective": "Manage complete posterior urethral disruption with suprapubic cystostomy and delayed urethroplasty.",
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "genitourinary trauma",
+    "pelvic fracture"
+   ]
+  },
+  {
+   "n": 18,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old man comes to the emergency department 3 hours after being kicked in the scrotum during a soccer match. He has severe right scrotal pain and swelling. He is not taking medications. The right hemiscrotum is swollen, ecchymotic and too tender to examine the testis clearly. Ultrasonography shows a heterogeneous right testis with an irregular contour, a break in the echogenic tunica albuginea and a moderate hematocele; intratesticular flow is present but reduced. The left testis is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Aspiration of the hematocele",
+    "Ice, scrotal support and repeat ultrasonography in 1 week",
+    "MRI of the scrotum",
+    "Oral antibiotics and NSAIDs",
+    "Surgical exploration and repair of the tunica albuginea"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A heterogeneous testis with an irregular contour and a break in the tunica albuginea after blunt trauma indicates testicular rupture. Early surgical exploration, with removal of extruded necrotic tubules and closure of the tunica albuginea, gives the best chance of preserving the testis and limits chronic pain, infection and atrophy.</p><p><strong>Takeaway:</strong> Testicular rupture on ultrasonography needs prompt surgical exploration and repair.</p>",
+   "whyNot": {
+    "A": "Aspiration does not repair the tunica and risks infection and rebleeding.",
+    "B": "Conservative care suits contusion with an intact tunica; delay after rupture increases testicular loss.",
+    "C": "MRI adds little once ultrasonography shows rupture and would delay surgery.",
+    "D": "There is no infection, and medical therapy does not treat a tunical tear."
+   },
+   "objective": "Treat sonographically diagnosed testicular rupture with prompt surgical repair.",
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "genitourinary trauma",
+    "scrotal swelling"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "BPH arises in which prostatic zone?",
+   "back": "The transition zone around the prostatic urethra.",
+   "question": 2
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which enzyme converts testosterone to DHT in the prostate?",
+   "back": "5-alpha-reductase type 2.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Effect of finasteride on serum DHT, testosterone and PSA?",
+   "back": "DHT falls, testosterone is normal or slightly up, PSA falls about 50%.",
+   "question": 1
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "What are the static and dynamic components of BPH obstruction?",
+   "back": "Static: tissue bulk. Dynamic: alpha-1A-mediated smooth muscle tone.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "What bladder outpouchings form with chronic outlet obstruction?",
+   "back": "Pseudodiverticula: mucosa and submucosa without a muscle wall.",
+   "question": 3
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Alpha blocker adverse effect relevant to cataract surgery?",
+   "back": "Intraoperative floppy iris syndrome.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 2,
+   "front": "What is the bell-clapper deformity?",
+   "back": "High insertion of the tunica vaginalis on the cord, leaving the testis free to rotate; usually bilateral.",
+   "question": 4
+  },
+  {
+   "n": 8,
+   "section": 2,
+   "front": "Why are varicoceles usually left-sided?",
+   "back": "The left testicular vein enters the left renal vein at a right angle and has a longer course.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Varicocele that does not decompress when supine: what to suspect?",
+   "back": "Venous outflow obstruction, such as renal cell carcinoma in the left renal vein.",
+   "question": 5
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Communicating hydrocele results from what?",
+   "back": "A narrow patent processus vaginalis.",
+   "question": 6
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Embryologic origin of the appendix testis?",
+   "back": "Remnant of the paramesonephric (Müllerian) duct.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 3,
+   "front": "What is torn in penile fracture?",
+   "back": "The tunica albuginea of a corpus cavernosum.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 3,
+   "front": "Peyronie disease: lesion and associated hand disorder?",
+   "back": "Fibrous plaque of the tunica albuginea; Dupuytren contracture.",
+   "question": 8
+  },
+  {
+   "n": 14,
+   "section": 3,
+   "front": "Which urethral segment is injured in a straddle fall?",
+   "back": "The bulbar urethra.",
+   "question": 7
+  },
+  {
+   "n": 15,
+   "section": 3,
+   "front": "Which urethral segment is injured with pelvic fracture?",
+   "back": "Posterior urethra, near the membranous-bulbar junction.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "Why does extravasated urine from an anterior urethral tear not enter the thighs?",
+   "back": "Colles fascia fuses with the fascia lata below the inguinal ligament.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 4,
+   "front": "First-line drug for bothersome LUTS due to BPH?",
+   "back": "An alpha-1 blocker such as tamsulosin.",
+   "question": 9
+  },
+  {
+   "n": 18,
+   "section": 4,
+   "front": "When is a 5-alpha-reductase inhibitor added for BPH?",
+   "back": "Enlarged prostate with persistent symptoms or progression risk.",
+   "question": 10
+  },
+  {
+   "n": 19,
+   "section": 4,
+   "front": "OTC drug combination that classically precipitates urinary retention?",
+   "back": "An anticholinergic antihistamine with a decongestant (alpha agonist).",
+   "question": 11
+  },
+  {
+   "n": 20,
+   "section": 4,
+   "front": "First step for acute urinary retention without urethral injury?",
+   "back": "Urethral catheter decompression.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 4,
+   "front": "Name four absolute indications for BPH surgery.",
+   "back": "Refractory retention, recurrent UTI, bladder stones, renal insufficiency from obstruction (also recurrent hematuria).",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 5,
+   "front": "High clinical suspicion of testicular torsion: next step?",
+   "back": "Immediate surgical exploration; do not wait for imaging.",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 5,
+   "front": "Blue dot sign indicates what?",
+   "back": "Torsion of the appendix testis; managed conservatively.",
+   "question": 12
+  },
+  {
+   "n": 24,
+   "section": 5,
+   "front": "Management of a newborn noncommunicating hydrocele?",
+   "back": "Observation; most resolve within 1 to 2 years.",
+   "question": 13
+  },
+  {
+   "n": 25,
+   "section": 5,
+   "front": "Adult hydrocele with an impalpable testis: next step?",
+   "back": "Scrotal ultrasonography to exclude tumour.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 5,
+   "front": "Indications for varicocele repair in an adult?",
+   "back": "Pain, or infertility with a palpable varicocele and abnormal semen parameters.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 6,
+   "front": "First step for paraphimosis?",
+   "back": "Analgesia, compression of edema, then manual reduction; dorsal slit if it fails.",
+   "question": 14
+  },
+  {
+   "n": 28,
+   "section": 6,
+   "front": "Late complication of circumcision causing an upward-deflected stream?",
+   "back": "Meatal stenosis.",
+   "question": null
+  },
+  {
+   "n": 29,
+   "section": 6,
+   "front": "Why is newborn circumcision deferred in hypospadias?",
+   "back": "The foreskin may be needed for surgical repair.",
+   "question": null
+  },
+  {
+   "n": 30,
+   "section": 6,
+   "front": "Management of penile fracture?",
+   "back": "Prompt surgical repair of the tunica albuginea.",
+   "question": 15
+  },
+  {
+   "n": 31,
+   "section": 6,
+   "front": "When is surgery offered for Peyronie disease?",
+   "back": "After curvature has been stable for several months.",
+   "question": null
+  },
+  {
+   "n": 32,
+   "section": 7,
+   "front": "Blood at the meatus after pelvic trauma: next step?",
+   "back": "Retrograde urethrogram before any catheter.",
+   "question": 16
+  },
+  {
+   "n": 33,
+   "section": 7,
+   "front": "Management of complete posterior urethral disruption?",
+   "back": "Suprapubic cystostomy, delayed urethroplasty.",
+   "question": 17
+  },
+  {
+   "n": 34,
+   "section": 7,
+   "front": "Ultrasound signs of testicular rupture?",
+   "back": "Heterogeneous testis, irregular contour, break in the tunica albuginea, hematocele.",
+   "question": 18
+  },
+  {
+   "n": 35,
+   "section": 7,
+   "front": "How is an amputated penis transported?",
+   "back": "In saline-moistened gauze in a sealed bag, inside a second bag of ice water, not touching ice.",
+   "question": null
+  },
+  {
+   "n": 36,
+   "section": 7,
+   "front": "How is a zipper caught on foreskin released?",
+   "back": "Cut the median bar of the zipper slider so the teeth separate.",
+   "question": null
+  }
+ ]
+}

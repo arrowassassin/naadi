@@ -1,0 +1,938 @@
+{
+ "area": "06.03.03",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Sweat and sebaceous glands: structure, control and disease mechanisms",
+   "html": "<h2>Three glands, three secretion styles</h2>\n[[figure:s23f-fig060303-1]]\n<table class=\"hy\"><thead><tr><th></th><th>Eccrine</th><th>Apocrine</th><th>Sebaceous</th></tr></thead><tbody>\n<tr><td>Opens onto</td><td>Skin surface (spiral intraepidermal duct)</td><td>Hair follicle, above the sebaceous duct</td><td>Hair follicle; free glands open directly (lips, areola, eyelid, genitals)</td></tr>\n<tr><td>Secretion</td><td>Merocrine; watery, hypotonic sweat</td><td>Apocrine (decapitation); viscous, odourless until bacteria act on it</td><td>Holocrine; whole sebocytes break down into sebum (triglycerides, wax esters, squalene)</td></tr>\n<tr><td>Control</td><td>Sympathetic postganglionic fibres releasing acetylcholine onto M3 receptors</td><td>Adrenergic (and some cholinergic); emotional stimuli</td><td>Androgens (dihydrotestosterone via type 1 5α-reductase); retinoids suppress</td></tr>\n<tr><td>Where</td><td>Almost everywhere; densest on palms, soles, forehead, axillae</td><td>Axillae, groin, perineum, areolae; modified forms in the ear canal (ceruminous), eyelid (Moll) and breast</td><td>Densest on the face, scalp, upper chest and back; absent on palms and soles</td></tr>\n<tr><td>Life course</td><td>Working at birth (immature ducts in newborns)</td><td>Active from puberty</td><td>Active at birth (maternal androgens), quiet in childhood, reactivated at adrenarche</td></tr>\n<tr><td>Disorders</td><td>Hyperhidrosis, miliaria, anhidrosis</td><td>Bromhidrosis, Fox–Fordyce disease; site of hidradenitis suppurativa</td><td>Acne, seborrheic dermatitis, sebaceous hyperplasia and neoplasms</td></tr></tbody></table>\n<h2>Eccrine sweating</h2>\n<p>The secretory coil makes a near-isotonic fluid. The duct then reabsorbs sodium (through ENaC) and chloride (through <strong>CFTR</strong>), so the sweat that reaches the skin is hypotonic. In <strong>cystic fibrosis</strong>, chloride cannot leave the duct lumen, and sodium reabsorption falls with it, so sweat stays salty. A sweat chloride of 60 mmol/L or more is diagnostic in the right setting. Thermoregulatory sweating is driven by the preoptic hypothalamus. Emotional sweating of the palms, soles and axillae is driven by cortical and limbic input. Although the pathway is <strong>sympathetic</strong>, the final transmitter is <strong>acetylcholine on muscarinic M3 receptors</strong>. That is why anticholinergic drugs cause hot, dry skin and why acetylcholine release is the target of botulinum toxin.</p>\n<p><strong>Primary focal hyperhidrosis</strong> comes from overactive central sympathetic output to normal glands, often with a family history. It affects palms, soles, axillae or face symmetrically and stops during sleep. <strong>Secondary hyperhidrosis</strong> is usually generalised and reflects a systemic driver: fever and infection (tuberculosis, endocarditis), lymphoma, hyperthyroidism, pheochromocytoma, hypoglycaemia, menopause or sex-hormone deprivation, autonomic dysreflexia after spinal cord injury, or drugs.</p>\n<h3>Drugs that act on sweating</h3>\n<ul><li><strong>Botulinum toxin A</strong> is taken up by cholinergic terminals and cleaves <strong>SNAP-25</strong>, part of the SNARE complex, so acetylcholine vesicles cannot fuse. Sweating falls for several months, until new terminals sprout. (Botulinum toxin B and tetanus toxin cleave synaptobrevin.)</li>\n<li><strong>Antimuscarinics:</strong> glycopyrrolate and topical glycopyrronium are quaternary amines that barely enter the CNS. Oxybutynin is tertiary, crosses the blood–brain barrier, and is on the list of drugs to avoid in older adults because of confusion and falls.</li>\n<li><strong>Aluminium chloride</strong> salts form plugs in the distal eccrine duct.</li>\n<li><strong>Drugs that reduce sweating</strong> (and so cause heat illness): anticholinergics (tricyclics, first-generation antihistamines, antipsychotics), and the carbonic anhydrase-inhibiting anticonvulsants topiramate and zonisamide, which cause oligohidrosis and hyperthermia in children. <strong>Drugs that increase sweating:</strong> SSRIs and SNRIs, opioids (and opioid withdrawal), cholinesterase inhibitors, insulin and sulfonylureas (through hypoglycaemia), and hormone deprivation (aromatase inhibitors, GnRH agonists, antiandrogens).</li></ul>\n<h3>Too little sweat</h3>\n<p>Hypohidrosis and anhidrosis leave a person at risk of heat stroke. Causes include anticholinergic drugs, diabetic and other autonomic neuropathies, Horner syndrome (anhidrosis of the face on the side of a preganglionic lesion), skin scarring after burns, <strong>Fabry disease</strong> (X-linked α-galactosidase A deficiency with acroparesthesias, angiokeratomas and hypohidrosis), and X-linked <strong>hypohidrotic ectodermal dysplasia</strong> (few or absent sweat glands, sparse hair, missing teeth).</p>\n<h3>Miliaria</h3>\n<p>Miliaria is sweat retention behind a blocked eccrine duct. The level of the block sets the appearance. Newborns, whose ducts are immature, and people who are febrile, bedbound, wrapped in occlusive dressings or living in hot, humid climates are most affected.</p>\n[[figure:s23f-fig060303-2]]\n<h2>Apocrine glands and hidradenitis suppurativa</h2>\n<p>Apocrine secretion is odourless. Axillary odour (bromhidrosis) appears when skin bacteria such as corynebacteria break secreted precursors down into volatile fatty acids and thioalcohols. <strong>Hidradenitis suppurativa</strong> was named for the apocrine gland but is a disease of the <strong>terminal hair follicle</strong> in apocrine-rich skin. Hyperkeratosis plugs the follicular infundibulum. The follicle dilates and ruptures, and keratin and bacteria spill into the dermis. Neutrophilic and granulomatous inflammation follows, driven by TNF-α, IL-1β and the IL-23–IL-17 axis. The process builds epithelialised <strong>sinus tracts</strong> and scars, and the apocrine glands are involved only secondarily. Risk factors include smoking, obesity, female sex, African ancestry and a family history. Some familial cases carry loss-of-function variants in γ-secretase genes (<em>NCSTN</em>, <em>PSEN1</em>, <em>PSENEN</em>), which impair Notch signalling. Associations include Crohn disease, spondyloarthritis, metabolic syndrome, polycystic ovary syndrome, depression and pyoderma gangrenosum. Long-standing gluteal and perineal disease can give rise to squamous cell carcinoma.</p>\n<h2>Sebaceous glands</h2>\n<p>Sebaceous glands enlarge in response to maternal androgens before birth. This is why newborns have tiny yellow papules on the nose (<strong>neonatal sebaceous hyperplasia</strong>) and sometimes neonatal acne. The glands then stay quiet until adrenarche. Free (follicle-independent) glands form Fordyce spots on the lips and oral mucosa, Montgomery tubercles on the areola and the meibomian glands of the eyelid. A blocked meibomian gland forms a chalazion, a sterile lipogranuloma.</p>\n<ul><li><strong>Sebaceous hyperplasia</strong> in adults consists of enlarged lobules around a central dilated duct. It appears as soft yellow umbilicated papules on the forehead and cheeks, and is more common with ageing and with cyclosporine after organ transplantation.</li>\n<li><strong>Sebaceous adenoma</strong> or sebaceous carcinoma, especially in multiples or before age 50, is a marker of <strong>Muir–Torre syndrome</strong>. This variant of Lynch syndrome is caused by germline mismatch-repair gene variants (most often <em>MSH2</em>) and carries a risk of colorectal, endometrial and urinary tract cancers. Immunohistochemistry of the skin tumour for loss of mismatch-repair proteins is the screening step. Sebaceous carcinoma of the eyelid (from meibomian glands) can masquerade as a recurrent chalazion.</li>\n<li><strong>Seborrheic dermatitis</strong> follows sebaceous density. The lipophilic yeast <em>Malassezia</em> uses lipases to split sebum triglycerides into irritant free fatty acids, and susceptible people respond with inflammation and scale. It peaks in infancy and in adults, and is more severe in HIV infection, Parkinson disease (and with dopamine-blocking drugs), after stroke and in Down syndrome. Azole antifungals inhibit fungal lanosterol 14α-demethylase.</li></ul>\n<div class=\"pearl\"><p>Sweating is sympathetic, but its transmitter is acetylcholine. Antimuscarinics dry the skin, botulinum toxin blocks acetylcholine release, and cholinergic poisoning (organophosphates) drenches the patient.</p></div>\n<div class=\"trap\"><p>Hidradenitis suppurativa is not an infection of apocrine glands. It starts with occlusion and rupture of the hair follicle, so repeated incision and drainage and courses of antibiotics alone do not control it.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Hyperhidrosis"
+    },
+    {
+     "statpearls": "Miliaria"
+    },
+    {
+     "statpearls": "Sebaceous Hyperplasia"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Sweating disorders: hyperhidrosis, miliaria and heat-related problems",
+   "html": "<h2>Hyperhidrosis: primary or secondary?</h2>\n<p><strong>Primary focal hyperhidrosis</strong> is likely when visible, excessive focal sweating has lasted at least 6 months without an apparent cause and at least two of these are present: bilateral and roughly symmetric, interferes with daily life, at least one episode a week, onset before age 25, a family history, and no sweating during sleep. It usually starts in childhood (palms, soles) or adolescence (axillae). It affects grip, writing, schoolwork, work with paper or electronics, and social life, and it is linked with anxiety. Feet that stay wet lead to pitted keratolysis (malodorous pits on the soles from corynebacteria-like organisms, treated with topical clindamycin, erythromycin or benzoyl peroxide), tinea pedis and dyshidrotic eczema.</p>\n<p><strong>Secondary hyperhidrosis</strong> is suggested by generalised or one-sided sweating, onset in adulthood, night sweats, and systemic symptoms. Work it up according to the clues: TSH, glucose or HbA1c, CBC, HIV and tuberculosis testing, chest imaging for night sweats with weight loss, and plasma metanephrines for paroxysmal headache, palpitations and hypertension. <strong>Review the drug list</strong> early, because drugs are among the commonest causes. Two scenarios not to miss:</p>\n<ul><li><strong>Autonomic dysreflexia</strong> in a person with a spinal cord injury at T6 or above: sudden severe hypertension, pounding headache, flushing and sweating above the level of injury, often with bradycardia. Sit the patient up, loosen tight clothing, and look for the trigger, usually a distended bladder or bowel. Treat persistent hypertension with a fast-acting antihypertensive.</li>\n<li><strong>Hot flushes with sweating from sex-hormone deprivation:</strong> menopause, androgen deprivation for prostate cancer, aromatase inhibitors, and gonadal suppression in gender-affirming care (for example, a GnRH agonist or antiandrogen without enough estradiol in a transgender woman).</li></ul>\n<h3>Stepwise treatment of primary focal hyperhidrosis</h3>\n<table class=\"hy\"><thead><tr><th>Site</th><th>First line</th><th>Next options</th></tr></thead><tbody>\n<tr><td>Axillae</td><td>Topical aluminium chloride hexahydrate at night on dry skin; topical glycopyrronium cloths (age 9 and older)</td><td>Botulinum toxin A injections; microwave thermolysis; oral antimuscarinic</td></tr>\n<tr><td>Palms and soles</td><td>Topical aluminium chloride; tap-water iontophoresis</td><td>Botulinum toxin (painful; may weaken grip briefly); oral antimuscarinic; for palms, endoscopic thoracic sympathectomy as a last resort</td></tr>\n<tr><td>Face and scalp (craniofacial)</td><td>Topical antimuscarinic or aluminium salts</td><td>Oral antimuscarinic; botulinum toxin</td></tr>\n<tr><td>Multifocal or generalised primary</td><td>Oral glycopyrrolate</td><td>Other oral antimuscarinics; treat associated anxiety</td></tr></tbody></table>\n<ul><li><strong>Aluminium chloride</strong> stings and irritates. Apply it to completely dry skin at bedtime and wash it off in the morning.</li>\n<li><strong>Oral antimuscarinics</strong> (glycopyrrolate, oxybutynin) cause dry mouth, blurred vision, constipation, urinary retention and tachycardia. Avoid them in angle-closure glaucoma, urinary retention or obstructive prostate enlargement, myasthenia gravis, and severe gastrointestinal dysmotility. Oxybutynin is best avoided in older adults because of cognitive effects. They can provoke heat illness in hot weather or during sport.</li>\n<li><strong>Botulinum toxin A</strong> is well established for axillary hyperhidrosis. Each treatment lasts months and can be repeated.</li>\n<li><strong>Endoscopic thoracic sympathectomy</strong> works for palmar sweating, but compensatory sweating of the trunk and legs is common and can be worse and permanent. Reserve it for severe, refractory cases after counselling.</li>\n<li><strong>Children and adolescents:</strong> iontophoresis and topical agents are well tolerated. Ask about school and sport. Topical glycopyrronium is approved from age 9 for axillary disease.</li></ul>\n<h2>Miliaria and the newborn skin</h2>\n<p>Miliaria clears within days once the skin is cooled. Remove extra clothing and blankets, use loose cotton, give lukewarm baths and avoid heavy ointments and occlusion. A low-potency topical steroid can soothe itchy miliaria rubra. Bedbound or febrile hospitalised adults get miliaria on the back. Turning, cooling and breathable bedding prevent it. The main task in newborns is to tell harmless eruptions from infection.</p>\n<table class=\"hy\"><thead><tr><th>Eruption</th><th>Timing and look</th><th>Smear or key point</th></tr></thead><tbody>\n<tr><td>Miliaria crystallina or rubra</td><td>First weeks; clear vesicles or red papules in warm, covered areas (neck, upper trunk)</td><td>Overheating; resolves with cooling</td></tr>\n<tr><td>Erythema toxicum neonatorum</td><td>Days 1–3; blotchy red macules with a central papule or pustule; spares palms and soles</td><td>Eosinophils; resolves within a week or two</td></tr>\n<tr><td>Transient neonatal pustular melanosis</td><td>Present at birth; pustules without redness that leave a scale collar and brown macules; more common in Black newborns</td><td>Neutrophils, sterile; the macules fade over months</td></tr>\n<tr><td>Neonatal cephalic pustulosis (neonatal acne)</td><td>Weeks 2–4; papules and pustules on cheeks and nose</td><td>Maternal androgens, <em>Malassezia</em>; resolves</td></tr>\n<tr><td>Neonatal HSV</td><td>Clustered vesicles on a red base, often after day 5; may have fever, lethargy or seizures</td><td>Emergency: PCR of lesions, blood and CSF; start IV acyclovir at once</td></tr>\n<tr><td>Staphylococcal pustulosis</td><td>Pustules in the nappy area and skin folds</td><td>Gram-positive cocci in clusters; treat</td></tr></tbody></table>\n<h2>Too little sweat and heat illness</h2>\n<p>Children taking <strong>topiramate or zonisamide</strong> can sweat poorly and overheat during sport or hot weather. Counsel families about hydration, cooling and limiting exertion in heat. Older adults on anticholinergic drugs, diuretics or antipsychotics are at high risk in heat waves. People with spinal cord injury cannot sweat below their lesion and need help with cooling. An infant with sparse hair, missing or peg-shaped teeth and recurrent unexplained fevers in warm conditions should be evaluated for <strong>hypohidrotic ectodermal dysplasia</strong>.</p>\n<div class=\"trap\"><p>Generalised, new-onset or night sweating in an adult is not primary hyperhidrosis. Look for infection, malignancy, endocrine disease or a drug, and always review the medication list.</p></div>\n<div class=\"pearl\"><p>Primary focal hyperhidrosis stops during sleep. Night sweats point to a secondary cause.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Hyperhidrosis"
+    },
+    {
+     "statpearls": "Miliaria"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Seborrheic dermatitis, hidradenitis suppurativa and sebaceous lesions",
+   "html": "<h2>Seborrheic dermatitis</h2>\n<p>Seborrheic dermatitis causes greasy yellow scale on pink to red patches in sebum-rich areas: scalp (dandruff is the mildest form), eyebrows, nasolabial folds, around and behind the ears, beard area, central chest, and skin folds. Itch is mild to moderate. In <strong>skin of colour</strong> it may look hypopigmented, or form ring-shaped (petaloid) plaques along the hairline. Frequent washing and some hair products are hard to combine with styling practices, so tailor the regimen. Seborrheic blepharitis causes scaly, red lid margins.</p>\n<p><strong>Infants</strong> develop \"cradle cap\" (adherent greasy scale on the scalp) and salmon-coloured patches in the nappy area and neck folds in the first months. The infant is comfortable and feeding well. It usually clears by 6–12 months.</p>\n<table class=\"hy\"><thead><tr><th>Infant rash</th><th>Clues</th></tr></thead><tbody>\n<tr><td>Seborrheic dermatitis</td><td>Greasy scale on scalp and folds, including the nappy area; little itch</td></tr>\n<tr><td>Atopic dermatitis</td><td>Itchy, dry, often cheeks and extensor limbs; nappy area typically spared</td></tr>\n<tr><td>Psoriasis</td><td>Sharply demarcated, bright red plaques in the nappy area; family history</td></tr>\n<tr><td>Tinea capitis</td><td>Hair loss, broken hairs, enlarged nodes; KOH positive (usually older children)</td></tr>\n<tr><td>Langerhans cell histiocytosis</td><td>Seborrheic-like scale on scalp and folds that does not respond to treatment, with petechiae or purpuric papules, erosions in folds, hepatosplenomegaly, lymphadenopathy, or otorrhoea; needs skin biopsy (CD1a and langerin positive)</td></tr></tbody></table>\n<p><strong>Treatment.</strong> Infants: soften scale with an emollient or mineral oil, brush gently, and wash with a mild shampoo. If it persists, use ketoconazole 2% cream or shampoo, or a brief course of a low-potency steroid. Adolescents and adults: antifungal shampoos (ketoconazole, ciclopirox, selenium sulfide, zinc pyrithione), left on for a few minutes, used several times a week to clear and then weekly to prevent relapse. For the face and folds use ketoconazole cream, short courses of a low-potency corticosteroid, or a calcineurin inhibitor (pimecrolimus, tacrolimus) for steroid-sparing maintenance. Topical roflumilast (a PDE4 inhibitor) is another option. Avoid mid- or high-potency steroids on the face. <strong>Sudden, severe or treatment-resistant seborrheic dermatitis in an adult should prompt HIV testing.</strong> Severe disease is also common in Parkinson disease and after stroke.</p>\n<h2>Hidradenitis suppurativa</h2>\n<p>The diagnosis is clinical and rests on three features: <strong>typical lesions</strong> (deep painful nodules, abscesses, draining sinus tracts, rope-like scars, double-ended comedones), <strong>typical sites</strong> (axillae, groin, inner thighs, inframammary and intermammary folds, perineum, buttocks) and <strong>recurrence</strong> (for example, at least twice in 6 months). It usually starts after puberty. Diagnosis is often delayed for years, during which patients have repeated incisions for \"boils\". Cultures are not diagnostic. Severity is staged by Hurley stage:</p>\n<table class=\"hy\"><thead><tr><th>Hurley stage</th><th>Findings</th><th>Core treatment (add to general measures)</th></tr></thead><tbody>\n<tr><td>I</td><td>Single or multiple abscesses without sinus tracts or scarring</td><td>Topical clindamycin; antiseptic washes (chlorhexidine, benzoyl peroxide); intralesional triamcinolone for a painful acute nodule</td></tr>\n<tr><td>II</td><td>Recurrent abscesses with sinus tracts and scarring, separated by normal skin</td><td>Oral tetracycline for about 12 weeks; clindamycin with rifampin; hormonal therapy (spironolactone, combined oral contraceptive) or metformin in selected patients; deroofing of tracts; biologic if moderate to severe and not controlled</td></tr>\n<tr><td>III</td><td>Diffuse, interconnected tracts and abscesses across a whole region</td><td>Biologic therapy (adalimumab, secukinumab, bimekizumab) plus surgery (deroofing, wide local excision)</td></tr></tbody></table>\n<ul><li><strong>General measures for every patient:</strong> stop smoking, lose weight where relevant, control pain (an urgent and often neglected need), screen for depression, give wound-care supplies, and reduce friction with loose clothing.</li>\n<li><strong>Before a biologic,</strong> screen for latent tuberculosis (interferon-γ release assay) and hepatitis B, and update vaccines. Adalimumab is approved from age 12.</li>\n<li><strong>Screen for associations:</strong> metabolic syndrome (blood pressure, lipids, HbA1c), symptoms of inflammatory bowel disease and inflammatory back pain, and anaemia of chronic inflammation. A chronic ulcer or a new mass in long-standing buttock or perineal disease needs biopsy for squamous cell carcinoma.</li>\n<li>Incision and drainage gives short-term relief of a tense, fluctuant abscess, but lesions nearly always recur. Deroofing removes the roof of a tract and gives more durable control.</li>\n<li><strong>Pregnancy:</strong> avoid tetracyclines and retinoids. Clindamycin and several biologics can be continued with specialist input.</li></ul>\n<h2>Sebaceous lesions</h2>\n<ul><li><strong>Sebaceous hyperplasia:</strong> 2–5 mm soft, yellowish papules with a central dell on the forehead and cheeks of middle-aged and older adults. Dermoscopy shows yellow lobules with fine vessels at the edges that do not cross the centre (\"crown\" vessels). The main mimic is <strong>basal cell carcinoma</strong>, which is pearly and translucent, bleeds or ulcerates, and has branching vessels across the lesion. Biopsy when in doubt. Treatment is cosmetic (electrodesiccation, laser, low-dose isotretinoin).</li>\n<li><strong>Sebaceous adenoma</strong> (a yellow papule or nodule, sometimes with central ulceration) should prompt mismatch-repair immunohistochemistry and a personal and family cancer history. Arrange colonoscopy and Lynch-syndrome evaluation for Muir–Torre syndrome when indicated.</li>\n<li><strong>A \"chalazion\" that keeps recurring in an older adult</strong>, or eyelid thickening with loss of lashes, needs biopsy for sebaceous carcinoma.</li>\n<li><strong>Fordyce spots</strong> (tiny yellow-white papules on the lips or buccal mucosa) and neonatal sebaceous hyperplasia are normal. Reassure the patient.</li></ul>\n<div class=\"pearl\"><p>Recurrent \"boils\" in the axillae or groin with sinus tracts and scars are hidradenitis suppurativa until proven otherwise. Diagnose early, treat the inflammation, and treat the pain.</p></div>\n<div class=\"trap\"><p>A seborrheic-like rash in an infant that does not respond to treatment and has petechiae or purpura is not cradle cap. Biopsy for Langerhans cell histiocytosis.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Seborrheic Dermatitis"
+    },
+    {
+     "statpearls": "Hidradenitis Suppurativa"
+    },
+    {
+     "statpearls": "Sebaceous Hyperplasia"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Eccrine, apocrine and sebaceous glands compared: where each opens, how it secretes, what controls it and which disorders arise from it."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. The three levels of eccrine duct blockage in miliaria and how each looks."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Recurrent painful nodules in the axillae and groin"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 17-year-old girl is so embarrassed by dripping wet palms and axillae, which began in early adolescence, that she avoids handing in written work. Sweating stops during sleep, and her father had the same problem. Thyroid function is normal. After topical aluminium chloride fails, she receives intradermal injections into both axillae and has almost no axillary sweating for the next 6 months. The injected agent produced this effect by cleaving which of the following proteins?</p>",
+   "options": [
+    "Muscarinic M3 receptor",
+    "SNAP-25",
+    "Synaptobrevin",
+    "Synaptotagmin",
+    "Voltage-gated calcium channel"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Intradermal <strong>botulinum toxin type A</strong> treats primary axillary hyperhidrosis. Eccrine glands are innervated by sympathetic postganglionic fibres that release <strong>acetylcholine</strong>. The toxin's light chain is a zinc protease that cleaves <strong>SNAP-25</strong>, a SNARE protein needed for synaptic vesicle fusion, so acetylcholine release stops. Function returns over months as new nerve terminals sprout, which is why injections are repeated.</p><p><strong>Takeaway:</strong> Botulinum toxin A cleaves SNAP-25 and blocks acetylcholine release onto eccrine glands.</p>",
+   "whyNot": {
+    "A": "Botulinum toxin acts before the synapse; blocking M3 receptors is the action of antimuscarinic drugs such as glycopyrrolate.",
+    "C": "Synaptobrevin is cleaved by botulinum toxin B and tetanus toxin, not by the type A toxin used here.",
+    "D": "Synaptotagmin is the calcium sensor for vesicle fusion; it is not the protease target of botulinum toxin A.",
+    "E": "Calcium channel blockade at the nerve terminal is the target of Lambert–Eaton autoantibodies, not of botulinum toxin."
+   },
+   "objective": "Explain how botulinum toxin A treats hyperhidrosis by cleaving SNAP-25 at cholinergic sympathetic terminals.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sweating disorders",
+    "neurotoxins"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 22-year-old man is brought to the emergency department after taking a large amount of an over-the-counter sleep aid containing diphenhydramine. He is agitated and confused. Temperature is 39.4 °C (102.9 °F) and pulse is 128/min. His pupils are dilated, his bladder is distended, and his skin is flushed, hot and completely dry, including the axillae. Blockade of which of the following receptors best explains the absence of sweating?</p>",
+   "options": [
+    "α<sub>1</sub>-Adrenergic receptors on eccrine glands",
+    "β<sub>2</sub>-Adrenergic receptors on eccrine glands",
+    "Histamine H<sub>1</sub> receptors on eccrine glands",
+    "Muscarinic M3 receptors on eccrine glands",
+    "Nicotinic receptors in sympathetic ganglia"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Diphenhydramine has strong <strong>antimuscarinic</strong> activity, and an overdose produces the anticholinergic toxidrome: delirium, hyperthermia, tachycardia, mydriasis, urinary retention and <strong>dry skin</strong>. Eccrine glands receive sympathetic fibres, but these postganglionic neurons release <strong>acetylcholine onto muscarinic M3 receptors</strong>. Blocking M3 stops thermoregulatory sweating and contributes to the hyperthermia. Dry skin separates anticholinergic toxicity from sympathomimetic toxicity (cocaine, amphetamines), in which the patient is drenched in sweat.</p><p><strong>Takeaway:</strong> Eccrine sweating is sympathetic but cholinergic (M3), so antimuscarinic poisoning causes hot, dry skin.</p>",
+   "whyNot": {
+    "A": "α<sub>1</sub>-Adrenergic receptors mediate a minor share of sweating (some stress sweating) and are not blocked by diphenhydramine.",
+    "B": "β<sub>2</sub>-Adrenergic receptors do not control thermoregulatory eccrine sweating.",
+    "C": "H<sub>1</sub> blockade explains the sedative and antiallergic effects but not the loss of sweating.",
+    "E": "Ganglionic nicotinic receptors are not the main target of diphenhydramine, and blocking them would also cause marked hypotension."
+   },
+   "objective": "Identify muscarinic M3 receptors as the final mediator of eccrine sweating and the reason anticholinergic toxicity causes dry skin.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sweating disorders",
+    "toxicology"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 7-month-old boy is evaluated for poor weight gain and frequent greasy stools. His parents notice that his skin tastes salty when they kiss him. Newborn screening was reported as borderline. A pilocarpine iontophoresis sweat test shows a chloride concentration of 92 mmol/L (normal below 30 mmol/L). Which of the following best explains the high sweat chloride?</p>",
+   "options": [
+    "Failure of chloride reabsorption by the sweat duct",
+    "Excess secretion of chloride by the secretory coil",
+    "Increased aldosterone action on the sweat duct",
+    "Increased eccrine gland density",
+    "Loss of tight junctions between duct cells"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The findings indicate <strong>cystic fibrosis</strong>. In the eccrine gland, the coil secretes a near-isotonic fluid, and the <strong>duct reabsorbs chloride through CFTR</strong> and sodium through ENaC to make hypotonic sweat. When CFTR is absent or dysfunctional, chloride cannot be reabsorbed and sodium reabsorption falls too, so the sweat stays salty. This is the reverse of the airway, where loss of CFTR <em>secretion</em> dehydrates mucus. A sweat chloride of 60 mmol/L or more confirms the diagnosis in an infant with suggestive features.</p><p><strong>Takeaway:</strong> High sweat chloride in cystic fibrosis reflects failed CFTR-mediated chloride reabsorption in the sweat duct.</p>",
+   "whyNot": {
+    "B": "In the sweat gland, CFTR's key role is ductal reabsorption; the coil's secretion is not increased in cystic fibrosis.",
+    "C": "Aldosterone increases ductal sodium reabsorption and would lower, not raise, sweat salt.",
+    "D": "Gland density is normal in cystic fibrosis; the defect is in ion transport, not gland number.",
+    "E": "Tight junctions are intact in cystic fibrosis; salty sweat comes from the loss of the CFTR transporter."
+   },
+   "objective": "Explain the high sweat chloride in cystic fibrosis as failed CFTR-mediated reabsorption in the sweat duct.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sweat testing",
+    "genetic disease"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old woman who smokes has had painful nodules in both axillae and the groin for 6 years. They drain foul-smelling material and leave rope-like scars. Examination shows several interconnected draining tunnels and paired open comedones in the axillae. A biopsy from the edge of a lesion is taken. Which of the following is most likely the initiating event in this disease?</p>",
+   "options": [
+    "Autoantibodies against hemidesmosomal proteins",
+    "Lymphocytic attack on eccrine sweat ducts",
+    "Occlusion and rupture of the terminal hair follicle",
+    "Primary bacterial infection of apocrine glands",
+    "Vasculitis of small dermal vessels"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Recurrent painful nodules, draining tunnels, rope-like scars and double-ended comedones in the axillae and groin are <strong>hidradenitis suppurativa</strong>. Despite its name, the disease begins with <strong>hyperkeratosis and occlusion of the follicular infundibulum</strong>. The follicle dilates and ruptures, releasing keratin and bacteria into the dermis. This triggers neutrophilic and granulomatous inflammation driven by TNF-α, IL-1β and IL-17, which builds epithelialised tunnels. Apocrine glands are involved only secondarily, and bacteria are colonisers rather than the primary cause. Smoking and obesity worsen the disease.</p><p><strong>Takeaway:</strong> Hidradenitis suppurativa starts with follicular occlusion and rupture, not primary apocrine infection.</p>",
+   "whyNot": {
+    "A": "Antibodies against hemidesmosomal proteins cause bullous pemphigoid, with tense blisters rather than nodules and tunnels.",
+    "B": "Lymphocytic attack on sweat ducts does not describe this disease; eccrine ducts are not the target in hidradenitis suppurativa.",
+    "D": "Primary apocrine infection was the old explanation, but apocrine involvement is secondary, and antibiotics alone rarely control the disease.",
+    "E": "Small-vessel vasculitis causes palpable purpura, not recurrent nodules with sinus tracts in intertriginous skin."
+   },
+   "objective": "Explain that hidradenitis suppurativa begins with occlusion and rupture of the terminal hair follicle.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "follicular disease"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 49-year-old man has had three yellow papules removed from his face and trunk over 2 years. Pathology reports each as a sebaceous adenoma. He had a right hemicolectomy for colon cancer at age 44, and his mother had endometrial cancer at 50. Immunohistochemistry of the most recent skin lesion shows loss of nuclear staining for two proteins that normally form a heterodimer. A germline variant in which of the following genes is most likely?</p>",
+   "options": [
+    "<em>APC</em>",
+    "<em>BRCA2</em>",
+    "<em>PTCH1</em>",
+    "<em>STK11</em>",
+    "<em>MSH2</em>"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Multiple <strong>sebaceous neoplasms</strong> (adenoma, epithelioma or carcinoma) together with a visceral cancer define <strong>Muir–Torre syndrome</strong>, a variant of Lynch syndrome. Germline variants in DNA <strong>mismatch-repair</strong> genes cause microsatellite instability. <em>MSH2</em> is the gene most often involved, and MSH2 forms a heterodimer with MSH6, so loss of both proteins on immunohistochemistry points to <em>MSH2</em>. Colorectal and endometrial cancers are the most common internal tumours. Affected relatives need genetic counselling and early colonoscopy.</p><p><strong>Takeaway:</strong> Sebaceous adenoma plus visceral cancer suggests Muir–Torre syndrome, most often a germline <em>MSH2</em> variant.</p>",
+   "whyNot": {
+    "A": "<em>APC</em> variants cause familial adenomatous polyposis, which can include epidermoid cysts but not sebaceous neoplasms.",
+    "B": "<em>BRCA2</em> variants raise breast, ovarian, prostate and pancreatic cancer risk without sebaceous tumours.",
+    "C": "<em>PTCH1</em> variants cause basal cell naevus (Gorlin) syndrome, with many basal cell carcinomas and jaw cysts.",
+    "D": "<em>STK11</em> variants cause Peutz–Jeghers syndrome, with mucocutaneous pigmented macules and hamartomatous polyps."
+   },
+   "objective": "Recognise Muir–Torre syndrome from sebaceous neoplasms and a mismatch-repair gene defect.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sebaceous lesions",
+    "hereditary cancer"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 68-year-old man with Parkinson disease has a red, scaly rash on his face. Examination shows greasy yellow scale over erythematous patches in the nasolabial folds, eyebrows, behind the ears and on the scalp. He is prescribed a cream that inhibits fungal lanosterol 14α-demethylase. This treatment is directed against which of the following organisms?</p>",
+   "options": [
+    "<em>Candida albicans</em>",
+    "<em>Malassezia</em> species",
+    "<em>Demodex folliculorum</em>",
+    "<em>Staphylococcus aureus</em>",
+    "<em>Trichophyton rubrum</em>"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Greasy scale on red patches in sebum-rich areas (scalp, eyebrows, nasolabial folds, retroauricular skin) is <strong>seborrheic dermatitis</strong>. It is more common and severe in Parkinson disease, HIV infection and after stroke. The lipophilic yeast <strong><em>Malassezia</em></strong> uses lipases to split sebum triglycerides into irritant fatty acids, and susceptible people react with inflammation and scale. Azoles such as <strong>ketoconazole</strong> inhibit lanosterol 14α-demethylase, deplete ergosterol and lower the yeast burden.</p><p><strong>Takeaway:</strong> Seborrheic dermatitis is driven by <em>Malassezia</em> and responds to azole antifungals.</p>",
+   "whyNot": {
+    "A": "<em>Candida</em> causes intertrigo and thrush; it is not the organism linked to scalp and facial seborrheic dermatitis.",
+    "C": "<em>Demodex</em> mites are linked to rosacea and are treated with ivermectin, not an azole.",
+    "D": "<em>S. aureus</em> causes impetigo and folliculitis; azoles do not target bacteria.",
+    "E": "<em>Trichophyton</em> causes tinea, which usually has an active, raised border rather than greasy scale in sebaceous areas."
+   },
+   "objective": "Identify Malassezia as the target of azole therapy in seborrheic dermatitis.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "scaly facial rash",
+    "antifungals"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old man has had burning pain in his hands and feet since childhood, made worse by exercise and fever. He becomes ill and overheated in hot weather because he sweats very little. Examination shows clusters of tiny dark-red papules that do not blanch, between the umbilicus and knees. Urinalysis shows proteinuria, and slit-lamp examination shows whorled corneal opacities. His maternal uncle died of kidney failure at 45. Deficient activity of which of the following enzymes is most likely?</p>",
+   "options": [
+    "α-Galactosidase A",
+    "Arylsulfatase A",
+    "β-Glucocerebrosidase",
+    "Hexosaminidase A",
+    "Sphingomyelinase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Painful acroparesthesias, <strong>hypohidrosis</strong> with heat intolerance, angiokeratomas in the “bathing trunk” area, proteinuria, corneal whorls (cornea verticillata) and an affected maternal male relative indicate <strong>Fabry disease</strong>. This X-linked lysosomal storage disorder is caused by deficient <strong>α-galactosidase A</strong>, so globotriaosylceramide builds up in vessel walls, nerves, kidneys, heart and sweat glands. Reduced sweating results from small-fibre neuropathy and storage in the glands. Enzyme replacement and, for amenable variants, the oral chaperone migalastat are available.</p><p><strong>Takeaway:</strong> Hypohidrosis with acroparesthesias and angiokeratomas suggests Fabry disease (α-galactosidase A deficiency).</p>",
+   "whyNot": {
+    "B": "Arylsulfatase A deficiency causes metachromatic leukodystrophy, with progressive central and peripheral demyelination rather than angiokeratomas.",
+    "C": "β-Glucocerebrosidase deficiency causes Gaucher disease, with splenomegaly, bone crises and cytopenias.",
+    "D": "Hexosaminidase A deficiency causes Tay–Sachs disease, with neurodegeneration and a cherry-red macula in infancy.",
+    "E": "Sphingomyelinase deficiency causes Niemann–Pick disease, with hepatosplenomegaly and neurodegeneration."
+   },
+   "objective": "Recognise Fabry disease as a cause of hypohidrosis and identify α-galactosidase A deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sweating disorders",
+    "lysosomal disease"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 2-day-old boy born at 40 weeks' gestation has many tiny, uniform, yellow-white papules on his nose, upper lip and cheeks. They are not surrounded by redness and are not pustular. He is feeding well and has no other skin findings. The parents are told the spots will fade over the next few weeks. Which of the following best explains these lesions?</p>",
+   "options": [
+    "Blocked eccrine ducts in the stratum corneum",
+    "Eosinophilic infiltration around hair follicles",
+    "Herpes simplex virus infection of keratinocytes",
+    "Maternal androgen stimulation of sebaceous glands",
+    "Retention of keratin in superficial inclusion cysts"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Uniform, tiny yellow papules over the nose and cheeks of a term newborn are <strong>neonatal sebaceous hyperplasia</strong>. Sebaceous glands respond to androgens, and in late fetal life they are stimulated by <strong>maternal androgens</strong> (and neonatal adrenal androgens). When this influence wanes after birth the glands shrink, and the papules disappear within weeks. Neonatal acne has the same hormonal basis.</p><p><strong>Takeaway:</strong> Neonatal sebaceous hyperplasia reflects maternal androgen stimulation of sebaceous glands and resolves on its own.</p>",
+   "whyNot": {
+    "A": "Blocked eccrine ducts in the stratum corneum cause miliaria crystallina, with clear, fragile vesicles rather than yellow papules.",
+    "B": "Eosinophilic infiltration around follicles describes erythema toxicum neonatorum, which has red blotches with papules or pustules.",
+    "C": "Neonatal HSV infection causes clustered vesicles on a red base and needs urgent treatment; these papules are not vesicular.",
+    "E": "Keratin-filled superficial cysts are milia, which are pearly white, often mixed with sebaceous hyperplasia, but not yellow and not androgen-driven."
+   },
+   "objective": "Explain neonatal sebaceous hyperplasia as a transient effect of maternal androgens.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "newborn skin"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old boy comes to the clinic because his axillae sweat so heavily that he changes his shirt twice during the school day. The sweating began at age 13, is worse with stress, occurs on most days, and never wakes him at night. His older sister has the same problem. He takes no medications and has no fever, weight loss or palpitations. Examination shows visibly wet axillae and no other abnormalities. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    "Endoscopic thoracic sympathectomy",
+    "Oral oxybutynin",
+    "Oral propranolol",
+    "Subcutaneous botulinum toxin injections",
+    "Topical aluminium chloride hexahydrate"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Onset in adolescence, bilateral focal sweating with a family history, frequent episodes, no sweating at night and no systemic features meet the criteria for <strong>primary focal axillary hyperhidrosis</strong>. No laboratory testing is needed. First-line therapy is <strong>topical aluminium chloride hexahydrate</strong>, applied at bedtime to completely dry skin and washed off in the morning. Topical glycopyrronium cloths are another first-line option from age 9. Botulinum toxin, microwave thermolysis and oral antimuscarinics follow if topical therapy fails.</p><p><strong>Takeaway:</strong> Primary focal axillary hyperhidrosis is treated first with a topical aluminium chloride antiperspirant.</p>",
+   "whyNot": {
+    "A": "Sympathectomy is a last resort for severe palmar disease because of frequent, permanent compensatory sweating.",
+    "B": "Oral antimuscarinics are reserved for disease that fails topical therapy, or for generalised or multifocal sweating, because of systemic adverse effects.",
+    "C": "β-Blockers can help situational anxiety but are not standard treatment for primary hyperhidrosis.",
+    "D": "Botulinum toxin is effective but is a second-line option after topical therapy, and it is given intradermally."
+   },
+   "objective": "Choose a topical aluminium chloride antiperspirant as first-line therapy for primary focal axillary hyperhidrosis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sweating disorders",
+    "adolescent health"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 72-year-old woman has had drenching sweats over her face, neck and trunk, day and night, for 6 weeks. She has had no fever, weight loss, cough or palpitations. Her clinician recently changed several of her medications after a hospital stay. Temperature is 36.8 °C (98.2 °F), pulse is 78/min and blood pressure is 132/78 mm Hg. Examination shows no lymphadenopathy, goitre or tremor. Her current medications are listed:</p><table><tr><th>Medication</th><th>Started</th></tr><tr><td>Levothyroxine 75 μg daily</td><td>12 years ago</td></tr><tr><td>Metformin 1,000 mg twice daily</td><td>6 years ago</td></tr><tr><td>Amlodipine 5 mg daily</td><td>4 years ago</td></tr><tr><td>Atorvastatin 40 mg daily</td><td>4 years ago</td></tr><tr><td>Sertraline 100 mg daily</td><td>8 weeks ago</td></tr></table><p>Laboratory results show TSH 1.9 μU/mL, glucose 112 mg/dL (6.2 mmol/L), hemoglobin 12.9 g/dL (129 g/L) and leukocytes 6,900/mm<sup>3</sup>. A chest radiograph is normal. Which of the following is the most likely cause of her sweating?</p>",
+   "options": [
+    "Amlodipine",
+    "Atorvastatin",
+    "Sertraline",
+    "Levothyroxine",
+    "Metformin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>New generalised sweating that began soon after an <strong>SSRI</strong> was started, with normal thyroid function, no hypoglycaemia, no infection or B symptoms and a normal chest radiograph, is most likely <strong>drug-induced hyperhidrosis</strong> from sertraline. Serotonergic antidepressants (SSRIs, SNRIs) commonly increase sweating, often in a dose-related way, through central thermoregulatory effects. Options include lowering the dose, switching to another antidepressant, or adding a low-dose antimuscarinic in selected patients. Antimuscarinics should be used with great caution in an older adult. Reviewing the drug list early avoids unnecessary investigation.</p><p><strong>Takeaway:</strong> In new generalised sweating, look first for a recently started drug such as an SSRI.</p>",
+   "whyNot": {
+    "A": "Amlodipine causes ankle oedema and flushing, not sustained drenching sweats, and it has been taken unchanged for years.",
+    "B": "Atorvastatin is not associated with hyperhidrosis and was started long before the symptom.",
+    "D": "Over-replacement with levothyroxine can cause sweating, but her TSH is normal.",
+    "E": "Metformin alone rarely causes hypoglycaemia, and her glucose is normal; it has been taken for years without sweating."
+   },
+   "objective": "Recognise SSRI-induced generalised hyperhidrosis by reviewing the medication list.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sweating disorders",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old man has had lifelong heavy axillary sweating that soaks through his shirts. Nightly aluminium chloride for 3 months has helped only slightly and irritates his skin. He has chronic angle-closure glaucoma managed by ophthalmology, and benign prostatic hyperplasia with an episode of acute urinary retention last year. He asks for a stronger treatment. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Intradermal botulinum toxin A injections in both axillae",
+    "Endoscopic thoracic sympathectomy",
+    "Oral glycopyrrolate",
+    "Oral oxybutynin",
+    "Topical glycopyrronium cloths"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Primary axillary hyperhidrosis has not responded to aluminium chloride. Antimuscarinic drugs, oral or topical, are <strong>relatively contraindicated</strong> in angle-closure glaucoma and in prostatic obstruction with previous urinary retention, because they can precipitate an acute attack or retention. Topical glycopyrronium can be absorbed and carries the same warnings. <strong>Intradermal botulinum toxin A</strong> acts locally on sweat gland innervation without these systemic effects. It is an established second-line therapy for axillary hyperhidrosis, and its effect lasts several months.</p><p><strong>Takeaway:</strong> When antimuscarinics are unsafe (angle-closure glaucoma, urinary retention), botulinum toxin is the preferred next step for axillary hyperhidrosis.</p>",
+   "whyNot": {
+    "B": "Sympathectomy is a last resort with frequent compensatory sweating, and it is mainly used for palmar disease.",
+    "C": "Oral glycopyrrolate is an antimuscarinic and could worsen his glaucoma and urinary retention.",
+    "D": "Oxybutynin is antimuscarinic and also crosses into the CNS, so it is particularly inappropriate in an older man with these conditions.",
+    "E": "Topical glycopyrronium is an antimuscarinic that is absorbed systemically and carries warnings for glaucoma and urinary retention."
+   },
+   "objective": "Choose botulinum toxin for axillary hyperhidrosis when antimuscarinic therapy is contraindicated.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sweating disorders",
+    "drug safety"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 10-day-old girl is brought to the clinic in July because of a rash on her neck and upper back that appeared yesterday. She has been sleeping in a fleece sleep suit under two blankets. She is feeding well and is alert. Temperature is 37.2 °C (99.0 °F). Examination shows many 1–2 mm red papules and a few tiny papulovesicles clustered on the neck, upper chest and back. There are no grouped vesicles on a red base, no pustules, and no erosions. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Apply a medium-potency topical corticosteroid twice daily",
+    "Dress the infant in light clothing and keep her cool",
+    "Obtain a Tzanck smear of a papulovesicle",
+    "Prescribe oral cephalexin",
+    "Start intravenous acyclovir"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Small red papules and papulovesicles in warm, covered areas of an overdressed newborn in summer are <strong>miliaria rubra</strong> (“heat rash”). The eccrine duct is blocked within the epidermis, so sweat leaks into the surrounding skin and causes inflammation. Treatment is <strong>cooling</strong>: light, loose clothing, a cool room, lukewarm baths and no occlusive ointments. The rash fades within days. Parents should also be counselled on safe, non-overheated infant sleep. The well infant and the absence of clustered vesicles on a red base make HSV very unlikely.</p><p><strong>Takeaway:</strong> Miliaria in an overheated infant is managed by cooling and removing occlusion.</p>",
+   "whyNot": {
+    "A": "A medium-potency steroid is unnecessary for newborn miliaria and adds risk on thin infant skin.",
+    "C": "Viral testing is needed when vesicles are clustered on a red base or the infant is unwell; neither is true here.",
+    "D": "There is no sign of bacterial infection such as pustules, honey-coloured crust or fever.",
+    "E": "Intravenous acyclovir is for suspected neonatal HSV; this well infant has a typical heat-related eruption."
+   },
+   "objective": "Manage miliaria rubra in a newborn by cooling and removing occlusion.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [
+    2
+   ],
+   "tags": [
+    "newborn skin"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 26-year-old Black woman has had painful lumps in her armpits and groin for 4 years. They recur several times a year, drain foul-smelling fluid and leave scars. She has had six incision and drainage procedures in emergency departments and several courses of cephalexin. She smokes 10 cigarettes a day, and her BMI is 34 kg/m<sup>2</sup>. Examination shows tender inflammatory nodules and two draining sinus tracts with rope-like scarring in each axilla and the left groin, separated by normal skin. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Culture the drainage and give antibiotics based on susceptibilities",
+    "Oral isotretinoin for 5 months",
+    "Wide surgical excision of both axillae and the groin",
+    "Oral doxycycline for 12 weeks, with smoking cessation and weight-loss support",
+    "Further incision and drainage of each nodule as it arises"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Recurrent painful nodules and sinus tracts with scarring in the axillae and groin, separated by normal skin, are <strong>hidradenitis suppurativa, Hurley stage II</strong>. Years of incision and drainage reflect the usual delay in diagnosis. Appropriate first systemic therapy is an <strong>oral tetracycline for about 12 weeks</strong>, used for its anti-inflammatory effect, together with <strong>smoking cessation, weight management</strong>, pain control, depression screening and wound care. If this fails, the next steps are clindamycin with rifampin, or a biologic for moderate to severe disease, together with deroofing or excision of established tracts.</p><p><strong>Takeaway:</strong> Hurley stage II hidradenitis suppurativa is treated with an oral tetracycline plus lifestyle measures, escalating to biologics and surgery.</p>",
+   "whyNot": {
+    "A": "Cultures usually grow mixed skin flora and do not guide therapy in hidradenitis suppurativa, which is an inflammatory disease.",
+    "B": "Isotretinoin is generally ineffective for hidradenitis suppurativa, unlike acne.",
+    "C": "Wide excision is used for refractory or Hurley III disease and is not the first step before medical therapy.",
+    "E": "Repeated incision and drainage brings only temporary relief and does not address the underlying disease."
+   },
+   "objective": "Begin anti-inflammatory tetracycline therapy and lifestyle measures for Hurley stage II hidradenitis suppurativa.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "follicular disease",
+    "skin of colour"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>After 12 weeks of oral doxycycline, then 10 weeks of clindamycin with rifampin, the patient has new nodules every month and two more draining tunnels. She has cut down to 3 cigarettes a day. Her clinician recommends starting adalimumab, a subcutaneous anti-TNF-α antibody. She has no cough or fever and has never been tested for tuberculosis. Which of the following is most important to complete before the first dose?</p>",
+   "options": [
+    "Antinuclear antibody titre",
+    "Echocardiography",
+    "Interferon-γ release assay and hepatitis B serologies",
+    "Serum IgE concentration",
+    "Thiopurine methyltransferase activity"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Moderate to severe hidradenitis suppurativa that persists despite oral antibiotics is an indication for a <strong>biologic</strong>. Adalimumab was the first approved agent, and IL-17 inhibitors are alternatives. <strong>TNF-α blockade</strong> impairs granuloma maintenance and can reactivate latent tuberculosis, and it can also reactivate hepatitis B. Before starting, screen for <strong>latent TB</strong> (interferon-γ release assay or tuberculin skin test) and for <strong>hepatitis B</strong> (surface antigen, core antibody), and update non-live vaccines. Latent TB should be treated before or alongside the start of the biologic.</p><p><strong>Takeaway:</strong> Screen for latent tuberculosis and hepatitis B before any TNF-α inhibitor.</p>",
+   "whyNot": {
+    "A": "An ANA is not required before anti-TNF therapy; drug-induced lupus is possible but rare and is not screened for this way.",
+    "B": "TNF inhibitors are avoided in decompensated heart failure, but routine echocardiography is not needed in a young woman without cardiac symptoms.",
+    "D": "IgE has no role in screening before a TNF inhibitor.",
+    "E": "TPMT activity guides azathioprine dosing, not anti-TNF therapy."
+   },
+   "objective": "Screen for latent tuberculosis and hepatitis B before starting a TNF-α inhibitor for hidradenitis suppurativa.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "follicular disease",
+    "biologic therapy"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 8-month-old boy has had a scaly scalp rash and a rash in the groin and armpit folds for 3 months. It has not improved with emollients, ketoconazole cream or 2 weeks of hydrocortisone 1%. He has had recurrent ear discharge, and his weight has fallen from the 50th to the 15th percentile. Examination shows greasy yellow scale on the scalp with scattered tiny reddish-brown, non-blanching papules, eroded plaques in the inguinal and axillary folds, and a liver edge 4 cm below the costal margin. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Skin biopsy of a papule",
+    "Increase to a high-potency topical corticosteroid",
+    "Oral fluconazole for 4 weeks",
+    "Patch testing for contact allergy",
+    "Reassurance that cradle cap resolves by 12 months"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A seborrheic-like eruption of the scalp and folds that does not respond to standard treatment, with <strong>petechial or purpuric papules</strong>, erosions in the folds, otorrhoea, poor weight gain and <strong>hepatomegaly</strong>, is highly suspicious for <strong>Langerhans cell histiocytosis</strong>. This is a myeloid neoplasm, often driven by <em>BRAF</em> V600E or other MAPK-pathway variants, that can involve skin, bone, liver, spleen, marrow and the pituitary. <strong>Skin biopsy</strong> showing CD1a- and langerin (CD207)-positive cells confirms it. Staging for other organ involvement and referral to paediatric oncology follow.</p><p><strong>Takeaway:</strong> Treatment-resistant “seborrheic dermatitis” in an infant with petechiae, organomegaly or otorrhoea needs a biopsy for Langerhans cell histiocytosis.</p>",
+   "whyNot": {
+    "B": "Escalating topical steroids treats a presumed dermatitis and delays diagnosis of a multisystem neoplasm.",
+    "C": "Fluconazole would treat candidal or <em>Malassezia</em> disease, which does not explain purpura, hepatomegaly and otorrhoea.",
+    "D": "Contact allergy does not cause purpuric papules, organomegaly and poor weight gain.",
+    "E": "Reassurance fits uncomplicated cradle cap, not a resistant eruption with systemic signs."
+   },
+   "objective": "Recognise Langerhans cell histiocytosis as a treatment-resistant seborrheic dermatitis mimic in infants and confirm it by biopsy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infant rash"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old Black man has had dandruff and itchy scaling of his face for a year, worse in winter. He shaves his scalp. Examination shows fine greasy scale with slightly hypopigmented, ill-defined patches over the eyebrows, nasolabial folds and beard area, and similar scale on the scalp. There are no pustules, comedones or telangiectasias. He has no other medical problems, and an HIV test 6 months ago was negative. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "High-potency topical corticosteroid twice daily for 8 weeks",
+    "Oral doxycycline",
+    "Oral terbinafine",
+    "Topical benzoyl peroxide wash",
+    "Ketoconazole 2% cream and shampoo"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Greasy scale in the eyebrows, nasolabial folds, beard and scalp is <strong>seborrheic dermatitis</strong>. In darker skin it often shows as hypopigmented rather than red patches, which can be mistaken for other conditions. First-line treatment targets <em>Malassezia</em> with a <strong>topical azole</strong>: ketoconazole 2% cream for the face and a ketoconazole (or ciclopirox, selenium sulfide or zinc pyrithione) shampoo left on for several minutes. A short course of a low-potency steroid or a calcineurin inhibitor helps flares. The hypopigmentation recovers as the inflammation settles.</p><p><strong>Takeaway:</strong> Seborrheic dermatitis is treated with topical azoles; in skin of colour it may look hypopigmented.</p>",
+   "whyNot": {
+    "A": "High-potency steroids on the face for weeks cause atrophy, telangiectasia and steroid-induced rosacea or perioral dermatitis.",
+    "B": "Doxycycline treats rosacea and acne, which this patient does not have (no papulopustules, comedones or telangiectasias).",
+    "C": "Oral terbinafine is for dermatophyte infections and is not standard therapy for seborrheic dermatitis.",
+    "D": "Benzoyl peroxide treats acne and can irritate and bleach; it does not target <em>Malassezia</em>."
+   },
+   "objective": "Treat seborrheic dermatitis with a topical azole and recognise its hypopigmented appearance in darker skin.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "scaly facial rash",
+    "skin of colour"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old man asks about several small bumps on his forehead that appeared over 3 years. He had a kidney transplant 8 years ago and takes cyclosporine and mycophenolate. Examination shows six soft, 2–4 mm yellowish papules, each with a small central depression. Dermoscopy shows yellow lobules with fine vessels at the edges that do not cross the centre. None is translucent, ulcerated or bleeding. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Basal cell carcinoma",
+    "Molluscum contagiosum",
+    "Sebaceous carcinoma",
+    "Sebaceous hyperplasia",
+    "Xanthelasma"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Multiple soft, yellowish, umbilicated papules on the forehead of an older adult, with dermoscopic yellow lobules and peripheral “crown” vessels that do not cross the centre, are <strong>sebaceous hyperplasia</strong>. Each lesion is an enlarged sebaceous gland around a dilated central duct. It is more common with ageing and is classically linked with <strong>cyclosporine</strong> in transplant recipients. Basal cell carcinoma is the key mimic and is common after transplantation, so any translucent, enlarging, bleeding or ulcerated lesion, or one with branching vessels across its surface, should be biopsied.</p><p><strong>Takeaway:</strong> Yellow umbilicated forehead papules with crown vessels are sebaceous hyperplasia; cyclosporine is a known trigger.</p>",
+   "whyNot": {
+    "A": "Basal cell carcinoma is pearly or translucent with branching vessels across the lesion and often bleeds or ulcerates, which these papules do not.",
+    "B": "Molluscum lesions are firm, pearly and dome-shaped with a central core, more common in children and in profound immunosuppression, and lack yellow lobules.",
+    "C": "Sebaceous carcinoma is usually a single enlarging nodule, often on the eyelid, not multiple stable small papules.",
+    "E": "Xanthelasma forms flat yellow plaques on the eyelids, not umbilicated papules on the forehead."
+   },
+   "objective": "Differentiate sebaceous hyperplasia from basal cell carcinoma by appearance and dermoscopy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "facial papules",
+    "transplant medicine"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Transmitter and receptor at the eccrine sweat gland?",
+   "back": "Acetylcholine on muscarinic M3 receptors, released by sympathetic postganglionic fibres.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Secretion types: eccrine, apocrine, sebaceous?",
+   "back": "Eccrine: merocrine. Apocrine: decapitation. Sebaceous: holocrine.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Why is sweat salty in cystic fibrosis?",
+   "back": "CFTR in the sweat duct cannot reabsorb chloride (and sodium follows); sweat chloride ≥60 mmol/L.",
+   "question": 3
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Which protein does botulinum toxin A cleave?",
+   "back": "SNAP-25 (botulinum B and tetanus toxin cleave synaptobrevin).",
+   "question": 1
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Which anticonvulsants cause oligohidrosis and heat illness in children?",
+   "back": "Topiramate and zonisamide (carbonic anhydrase inhibition).",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Miliaria crystallina vs rubra vs profunda: level of duct block?",
+   "back": "Stratum corneum; mid-epidermis; dermal-epidermal junction.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Initiating event in hidradenitis suppurativa?",
+   "back": "Occlusion and rupture of the terminal hair follicle (apocrine involvement is secondary).",
+   "question": 4
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Sebaceous adenoma plus colon cancer: syndrome and usual gene?",
+   "back": "Muir–Torre syndrome (Lynch variant); MSH2.",
+   "question": 5
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Hypohidrosis with acroparesthesias and angiokeratomas: enzyme deficiency?",
+   "back": "α-Galactosidase A (Fabry disease).",
+   "question": 7
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Feature that distinguishes primary focal hyperhidrosis from secondary sweating?",
+   "back": "Primary stops during sleep; night sweats suggest a secondary cause.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "First-line treatment for primary axillary hyperhidrosis?",
+   "back": "Topical aluminium chloride hexahydrate at bedtime on dry skin.",
+   "question": 9
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "First-line treatment for palmar hyperhidrosis after topicals?",
+   "back": "Tap-water iontophoresis.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Contraindications to antimuscarinic therapy for hyperhidrosis?",
+   "back": "Angle-closure glaucoma, urinary retention or prostatic obstruction, myasthenia gravis, severe GI dysmotility; avoid oxybutynin in older adults.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Main drawback of endoscopic thoracic sympathectomy?",
+   "back": "Compensatory sweating of the trunk and legs, often permanent.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Sweating and severe hypertension above the lesion in a person with a T4 spinal cord injury?",
+   "back": "Autonomic dysreflexia: sit upright, loosen clothing, check bladder and bowel.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Common drug class that causes generalised hyperhidrosis?",
+   "back": "SSRIs and SNRIs.",
+   "question": 10
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Erythema toxicum vs transient neonatal pustular melanosis: cell on smear?",
+   "back": "Eosinophils vs neutrophils.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Management of miliaria in an overdressed newborn?",
+   "back": "Cooling: light clothing, cool room, no occlusive ointments.",
+   "question": 12
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Organism and first-line treatment in seborrheic dermatitis?",
+   "back": "Malassezia; topical azole (ketoconazole) cream and shampoo.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Appearance of seborrheic dermatitis in skin of colour?",
+   "back": "Often hypopigmented scaly patches or petaloid plaques along the hairline.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Severe new seborrheic dermatitis in an adult should prompt which test?",
+   "back": "HIV testing.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Infant 'cradle cap' that does not respond to treatment, with petechiae and hepatomegaly?",
+   "back": "Langerhans cell histiocytosis; skin biopsy (CD1a, langerin).",
+   "question": 15
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Hurley stage II hidradenitis suppurativa: first systemic therapy?",
+   "back": "Oral tetracycline for about 12 weeks plus smoking cessation and weight management.",
+   "question": 13
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Screening before adalimumab?",
+   "back": "Latent tuberculosis (IGRA) and hepatitis B serologies.",
+   "question": 14
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Dermoscopic clue that separates sebaceous hyperplasia from basal cell carcinoma?",
+   "back": "Peripheral 'crown' vessels that do not cross the centre (BCC: branching vessels across the lesion).",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Recurrent chalazion in an older adult?",
+   "back": "Biopsy to exclude sebaceous carcinoma.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 3,
+   "front": "Why is repeated incision and drainage poor management in hidradenitis suppurativa?",
+   "back": "Lesions recur because the follicular disease is untreated; deroofing and anti-inflammatory therapy give durable control.",
+   "question": null
+  }
+ ]
+}

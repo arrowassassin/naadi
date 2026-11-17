@@ -1,0 +1,816 @@
+{
+ "area": "07.03.03",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Muscle breakdown, metabolic myopathy, fibromyalgia and fascial disease: mechanisms",
+   "html": "<p>This area covers noninflammatory disease of skeletal muscle and of the dense connective tissues (fascia and ligaments) that transmit force. The unifying ideas are energy supply in muscle, how cells respond to injury, and fibroblast behaviour in fascia.</p>\n<h3>Muscle energy and why fibers break down</h3>\n<p>Contraction and relaxation both use ATP: myosin cross-bridge cycling, the sarcoplasmic reticulum Ca<sup>2+</sup>-ATPase (SERCA) that resequesters calcium, and the Na<sup>+</sup>/K<sup>+</sup>-ATPase that restores the membrane potential. When demand outstrips supply (extreme exertion, heat, ischemia, low phosphate, an inherited enzyme defect) or the membrane is damaged directly (crush, toxins), the pumps fail. Sodium and then calcium flood the cytosol. Calcium activates proteases (calpains) and phospholipases, mitochondria are damaged, and the fiber necroses. The cell's contents then enter the circulation. This is <strong>rhabdomyolysis</strong>.</p>\n[[figure:s23f-fig070303-1]]\n<ul>\n<li><strong>Released contents:</strong> creatine kinase (the diagnostic marker, peaking at 1–3 days), myoglobin (cleared within hours), potassium, phosphate, urate and organic acids. Thromboplastin release can trigger DIC.</li>\n<li><strong>Kidney injury</strong> has three mechanisms: myoglobin forms casts with Tamm–Horsfall protein in acidic, concentrated tubular fluid; its heme iron causes oxidant and lipid-peroxidation damage to proximal tubular cells; and volume loss into injured muscle, plus nitric oxide scavenging by heme, causes renal vasoconstriction.</li>\n<li><strong>Urine:</strong> the dipstick heme reaction is strongly positive, but microscopy shows few or no red cells. Plasma is not pink (myoglobin is small and cleared quickly), unlike hemoglobinemia in hemolysis, where haptoglobin is also low.</li>\n<li><strong>Calcium:</strong> it is low early because calcium phosphate deposits in necrotic muscle and phosphate is high. It can rise during recovery as deposits remobilize and calcitriol recovers, especially if calcium was given early.</li>\n</ul>\n<h3>Metabolic and endocrine myopathies</h3>\n<table class=\"hy\">\n<thead><tr><th>Cause</th><th>Mechanism</th><th>Clues</th><th>CK</th></tr></thead>\n<tbody>\n<tr><td>Hypothyroidism</td><td>Impaired glycogenolysis and mitochondrial oxidation; slowed myosin ATPase</td><td>Proximal weakness, cramps, delayed relaxation of reflexes, myoedema</td><td>Often raised</td></tr>\n<tr><td>Glucocorticoid excess</td><td>Catabolism, preferentially of type II fibers</td><td>Proximal leg weakness, cushingoid features</td><td>Normal</td></tr>\n<tr><td>Hypokalemia</td><td>Membrane hyperpolarization lowers excitability; severe cases cause necrosis</td><td>Diuretics, vomiting, laxatives, aldosteronism</td><td>Normal to very high</td></tr>\n<tr><td>Hypophosphatemia</td><td>Low ATP and 2,3-BPG</td><td>Refeeding, alcohol use disorder, DKA treatment</td><td>Can be very high</td></tr>\n<tr><td>Vitamin D deficiency</td><td>Reduced muscle calcium handling and type II fiber atrophy</td><td>Osteomalacia, waddling gait, falls</td><td>Normal</td></tr>\n<tr><td>Critical illness myopathy</td><td>Loss of myosin filaments; sodium-channel dysfunction</td><td>Sepsis, high-dose steroids, neuromuscular blockade; failure to wean</td><td>Normal or mildly raised</td></tr>\n</tbody></table>\n<p><strong>Refeeding syndrome</strong> is a nutrition emergency. In a starved patient (anorexia nervosa, prolonged fasting, alcohol use disorder, a patient admitted after a long lie), carbohydrate raises insulin, which drives phosphate, potassium and magnesium into cells. Phosphate falls, ATP production fails, and patients develop weakness, rhabdomyolysis, respiratory muscle failure, heart failure and arrhythmias.</p>\n<h3>Aging muscle: sarcopenia</h3>\n<p>Sarcopenia is age-related loss of muscle strength and mass. Motor units are lost (motor neurons die and the remaining ones reinnervate orphaned fibers), and <strong>type II (fast-twitch) fibers atrophy and are lost</strong> preferentially. Fat infiltrates muscle, and muscle protein synthesis responds less to dietary protein and exercise (\"anabolic resistance\"). Inactivity, low protein intake, inflammation, low vitamin D and falling sex hormones speed it up. It causes falls, fractures and frailty.</p>\n<h3>Chronic widespread pain: fibromyalgia</h3>\n<p>Fibromyalgia is a disorder of <strong>central pain processing</strong>, not of muscle. Patients have heightened responses to painful and nonpainful stimuli. Functional imaging shows increased activity in pain-processing regions, cerebrospinal fluid substance P is raised, and descending inhibitory pathways (serotonergic and noradrenergic) work less well. Muscle histology, inflammatory markers and CK are normal. The drugs that help act centrally: <strong>SNRIs</strong> (duloxetine, milnacipran) and tricyclics strengthen descending inhibition, and <strong>pregabalin</strong> and gabapentin bind the α2δ subunit of voltage-gated calcium channels to reduce excitatory neurotransmitter release.</p>\n<h3>Fascia and ligaments</h3>\n<ul>\n<li><strong>Dupuytren disease</strong> is a benign fibroproliferative disorder of the palmar fascia. <strong>Myofibroblasts</strong> (fibroblasts containing α-smooth muscle actin) form nodules and lay down type III-rich collagen in cords that contract and pull the ring and little fingers into flexion. It runs in families (often autosomal dominant with variable penetrance), is most common in older men of Northern European ancestry, and is linked to diabetes, alcohol use, smoking and manual vibration exposure. Related fibromatoses are Ledderhose disease (plantar fascia) and Peyronie disease. Injectable collagenase from <em>Clostridium histolyticum</em> works by lysing the collagen cords.</li>\n<li><strong>Plantar fasciitis</strong> is degeneration (fasciosis) at the origin of the plantar aponeurosis on the medial calcaneal tubercle. It is caused by repetitive tensile overload. The windlass mechanism (toe dorsiflexion tightens the fascia) explains why the first steps of the day and toe extension hurt. Tight calf muscles, obesity, prolonged standing and running raise the risk.</li>\n<li><strong>Diffuse idiopathic skeletal hyperostosis (DISH)</strong> is ossification of the anterior longitudinal ligament and entheses, flowing over at least four contiguous vertebrae, mostly on the right side of the thoracic spine. Disc spaces and sacroiliac joints are preserved, unlike ankylosing spondylitis. It is linked to obesity and type 2 diabetes.</li>\n<li><strong>Ligament healing</strong> is slow because of poor vascularity. Older and degenerated ligaments (such as the hypertrophied ligamentum flavum in spinal stenosis) lose elastin and thicken.</li>\n</ul>\n<div class=\"trap\"><p>A positive urine dipstick for blood with few red cells means heme pigment. Separate myoglobin (normal plasma colour, very high CK) from hemoglobin (pink plasma, low haptoglobin, high LDH and bilirubin).</p></div>\n<div class=\"pearl\"><p>Proximal weakness with a <em>normal</em> CK suggests glucocorticoid myopathy, vitamin D deficiency or a neuromuscular junction problem. A <em>raised</em> CK points to necrosis: hypothyroidism, myositis, drugs or rhabdomyolysis.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Rhabdomyolysis"
+    },
+    {
+     "statpearls": "Hypothyroid Myopathy"
+    },
+    {
+     "statpearls": "Dupuytren Contracture"
+    },
+    {
+     "statpearls": "Hypophosphatemia"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Rhabdomyolysis, metabolic myopathy and sarcopenia: diagnosis and management",
+   "html": "<p>This section covers how to recognize, investigate and treat rhabdomyolysis, metabolic myopathy and sarcopenia, from the emergency department to the geriatric clinic.</p>\n<h3>Rhabdomyolysis</h3>\n<p><strong>Diagnosis:</strong> CK above about five times the upper limit of normal, usually in the thousands to hundreds of thousands, with muscle pain, swelling or weakness and dark (tea- or cola-coloured) urine. Many patients have no symptoms. Look for the cause:</p>\n<ul>\n<li><strong>Trauma and compression:</strong> crush injury, an older adult found after a \"long lie\" on the floor, prolonged surgery or immobilization, compartment syndrome, electrical injury.</li>\n<li><strong>Exertion:</strong> unaccustomed eccentric or high-intensity exercise, especially in heat, with dehydration, in people with sickle cell trait, or in newly training athletes and recruits.</li>\n<li><strong>Drugs and toxins:</strong> alcohol, cocaine, amphetamines, statins (especially with fibrates or CYP3A4 inhibitors), antipsychotics (neuroleptic malignant syndrome), colchicine, daptomycin, propofol infusion syndrome.</li>\n<li><strong>Other:</strong> infections (influenza, legionella, sepsis), hypokalemia, hypophosphatemia, hyperthermia, seizures, hypothyroidism, and inherited metabolic myopathies (suspect them with recurrent episodes after exercise or fasting).</li>\n</ul>\n<p><strong>Initial labs:</strong> CK, basic metabolic panel with calcium, phosphate and urate, urinalysis with microscopy, CBC and coagulation studies (DIC), liver enzymes (AST is often raised from muscle), and an ECG if potassium is high.</p>\n<p><strong>Management:</strong></p>\n<ol>\n<li><strong>Early, generous IV isotonic crystalloid</strong> (normal saline or a balanced solution), adjusted to a high urine output (often about 200–300 mL/h in adults) while watching for fluid overload in older patients and those with heart or kidney disease. This is the intervention that prevents AKI.</li>\n<li><strong>Treat hyperkalemia</strong> urgently: IV calcium for ECG changes, insulin with glucose, and removal measures.</li>\n<li><strong>Leave asymptomatic hypocalcemia alone.</strong> Calcium given early deposits in damaged muscle and can cause rebound hypercalcemia. Give it only for hyperkalemic ECG changes, tetany or seizures.</li>\n<li>Routine bicarbonate and mannitol have not been shown to improve outcomes.</li>\n<li><strong>Dialysis</strong> for refractory hyperkalemia, acidosis or volume overload, or for oligoanuric AKI.</li>\n<li>Check for <strong>compartment syndrome</strong> (pain on passive stretch, a tense compartment) and decompress if present.</li>\n<li>Stop offending drugs. In recurrent or exercise-induced cases with a family history, refer for evaluation of metabolic myopathy once recovered.</li>\n</ol>\n<h3>Approach to a raised CK or a weak patient</h3>\n<table class=\"hy\">\n<thead><tr><th>Setting</th><th>Most likely cause</th><th>Key test</th></tr></thead>\n<tbody>\n<tr><td>Cramps, weight gain, delayed reflex relaxation, CK 1,000–3,000 U/L</td><td>Hypothyroid myopathy</td><td>TSH</td></tr>\n<tr><td>Proximal weakness on long-term prednisone, normal CK</td><td>Glucocorticoid myopathy</td><td>Clinical; improves with dose reduction</td></tr>\n<tr><td>Weakness after starting nutrition in a malnourished patient</td><td>Refeeding hypophosphatemia</td><td>Phosphate, potassium, magnesium</td></tr>\n<tr><td>Older adult with slow gait, weak grip and weight loss</td><td>Sarcopenia or frailty</td><td>Grip strength, gait speed, chair-rise test</td></tr>\n<tr><td>Rash, symmetric proximal weakness, high CK</td><td>Inflammatory myopathy</td><td>Myositis antibodies, MRI, biopsy (covered with immunologic disease)</td></tr>\n<tr><td>ICU patient who cannot be weaned after sepsis</td><td>Critical illness myopathy or polyneuropathy</td><td>EMG and nerve conduction studies</td></tr>\n</tbody></table>\n<p><strong>Refeeding prevention:</strong> in patients at high risk (very low BMI, little or no intake for 5 days or more, alcohol use disorder, low baseline potassium, phosphate or magnesium), start nutrition slowly, give thiamine before carbohydrate, and check phosphate, potassium and magnesium daily for the first several days, replacing them as needed.</p>\n<h3>Sarcopenia and frailty in older adults</h3>\n<ul>\n<li>Screen older adults with questions about strength, walking, rising from a chair, climbing stairs and falls. Confirm with grip strength or a chair-stand test. Gait speed grades severity.</li>\n<li><strong>Treatment:</strong> progressive <strong>resistance training</strong> is the core. Add adequate dietary protein, commonly about 1.0–1.2 g/kg/day for older adults without advanced CKD, spread across meals. Correct vitamin D deficiency, review drugs that cause sedation or weakness, and treat the underlying illness. No drug is approved for sarcopenia; testosterone is used only for documented hypogonadism.</li>\n<li><strong>Hospital-acquired deconditioning:</strong> older inpatients lose strength quickly with bed rest. Encourage early mobilization and physical therapy.</li>\n<li><strong>Disability:</strong> people with spinal cord injury, stroke or cerebral palsy have disuse atrophy and are prone to contractures and pressure injuries; plan therapy, positioning and nutrition with them.</li>\n</ul>\n<div class=\"trap\"><p>\"Correct the calcium\" is the wrong reflex in early rhabdomyolysis. Correct the volume, watch the potassium, and treat calcium only when it causes symptoms or hyperkalemia threatens the heart.</p></div>\n<div class=\"pearl\"><p>An older adult found on the floor after an unknown time needs a CK, kidney function and potassium, as well as a fracture and syncope workup.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Rhabdomyolysis"
+    },
+    {
+     "statpearls": "Myopathy"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Fibromyalgia, plantar fasciitis and Dupuytren disease in practice",
+   "html": "<p>Chronic soft-tissue pain syndromes are common in primary care and are tested as a chance to avoid unnecessary tests and harmful treatments. This section covers fibromyalgia, plantar fasciitis, Dupuytren disease and other overuse problems of fascia and ligament.</p>\n<h3>Fibromyalgia</h3>\n<p><strong>Who:</strong> any age, more often women, frequently with poor sleep, fatigue, cognitive \"fog\", headache, irritable bowel syndrome, depression or anxiety. It also coexists with rheumatoid arthritis, lupus and osteoarthritis, where it inflates disease-activity scores.</p>\n<ul>\n<li><strong>Diagnosis</strong> is clinical: widespread pain in several body regions for at least 3 months, with fatigue, unrefreshing sleep and cognitive symptoms, and no other condition that better explains it. Current criteria use a widespread pain index and symptom severity score; counting tender points is no longer required. The examination is otherwise normal: no synovitis and no true weakness.</li>\n<li><strong>Limited tests</strong> to exclude mimics: CBC, ESR or CRP, CK, TSH and a metabolic panel (with vitamin D if osteomalacia is suspected). Order ANA, RF or imaging only when there are specific clinical clues; low-titer positive ANAs are common in healthy people and mislead.</li>\n<li><strong>Management, in order:</strong>\n<ol>\n<li>Validate the symptoms and explain the diagnosis.</li>\n<li>Graded <strong>aerobic exercise</strong>, which has the best evidence, plus strength training. Start low and increase slowly.</li>\n<li>Sleep hygiene, cognitive behavioural therapy and mindfulness.</li>\n<li>Medication if needed: low-dose amitriptyline or cyclobenzaprine at bedtime (avoid in older adults because of anticholinergic effects), duloxetine or milnacipran (especially with depression), or pregabalin (dizziness, weight gain, edema).</li>\n</ol></li>\n<li><strong>Avoid:</strong> opioids (tramadol only rarely), glucocorticoids and NSAIDs as primary therapy (they do not help the central pain), and repeated imaging.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Fibromyalgia</th><th>Polymyalgia rheumatica</th><th>Hypothyroid myopathy</th><th>Inflammatory myopathy</th></tr></thead>\n<tbody>\n<tr><td>Typical age</td><td>20s–50s</td><td>Over 50</td><td>Any</td><td>Any</td></tr>\n<tr><td>Main symptom</td><td>Widespread pain, fatigue</td><td>Shoulder and hip girdle stiffness</td><td>Cramps, stiffness, weakness</td><td>Proximal weakness</td></tr>\n<tr><td>Strength</td><td>Normal (limited by pain)</td><td>Normal</td><td>Mildly reduced</td><td>Reduced</td></tr>\n<tr><td>ESR/CRP</td><td>Normal</td><td>High</td><td>Normal</td><td>Variable</td></tr>\n<tr><td>CK</td><td>Normal</td><td>Normal</td><td>Raised</td><td>Raised</td></tr>\n<tr><td>Response to low-dose prednisone</td><td>None</td><td>Dramatic</td><td>None</td><td>Partial (needs higher doses)</td></tr>\n</tbody></table>\n<h3>Plantar fasciitis (plantar heel pain)</h3>\n<ul>\n<li><strong>Presentation:</strong> sharp inferior heel pain with the first steps in the morning or after sitting, which eases with walking and returns after long standing. Tenderness is at the medial calcaneal tubercle and gets worse when the toes are passively dorsiflexed.</li>\n<li><strong>Diagnosis is clinical.</strong> Radiographs are not needed. A heel spur is common in people without pain and does not change treatment. Get imaging for atypical features, failure of 2–3 months of care, or trauma.</li>\n<li><strong>First line:</strong> plantar fascia–specific and calf stretching, supportive shoes, heel cups or prefabricated orthoses, activity modification, weight loss and short-term NSAIDs. Most patients improve within 6–12 months.</li>\n<li><strong>Second line</strong> for persistent symptoms: night splints, a walking boot, custom orthoses, glucocorticoid injection (risk of fat-pad atrophy and fascia rupture) and extracorporeal shock wave therapy. Surgical release is rarely needed.</li>\n<li><strong>Mimics:</strong> calcaneal stress fracture (pain on squeezing the heel from the sides; runners, people with low bone density), tarsal tunnel syndrome (burning, numbness, Tinel sign), fat-pad atrophy in older adults (central heel pain), insertional Achilles disease (posterior heel), and spondyloarthritis enthesitis (bilateral, with inflammatory back pain).</li>\n</ul>\n<h3>Dupuytren disease</h3>\n<ul>\n<li>Painless palmar nodules, then cords that flex the MCP and PIP joints, most often of the ring and little fingers. The tabletop test is positive when the palm cannot be laid flat.</li>\n<li><strong>Observe</strong> nodules and mild disease. Splinting alone does not prevent progression.</li>\n<li><strong>Refer for treatment</strong> when there is functional limitation, an MCP contracture of about 30° or more, or any PIP contracture (PIP contractures are harder to correct once fixed). Options are percutaneous needle aponeurotomy, collagenase injection followed by manipulation, and limited fasciectomy. Recurrence is common after all of them, especially with early onset, strong family history or disease in other sites.</li>\n<li>Painful nodules can respond to a glucocorticoid injection.</li>\n</ul>\n<h3>Other fascia and ligament problems</h3>\n<ul>\n<li><strong>Chronic exertional compartment syndrome</strong>: reproducible leg pain at a set distance in runners that resolves with rest. Confirm with exercise compartment pressures. Treatment is activity change or fasciotomy.</li>\n<li><strong>Iliotibial band syndrome</strong>: lateral knee pain in runners and cyclists. Treat with load modification and hip-abductor strengthening.</li>\n<li><strong>DISH</strong>: back stiffness in an older adult with diabetes, flowing anterior ossification and preserved disc spaces. It needs no specific treatment, but it makes the spine rigid, so even minor falls can cause unstable fractures.</li>\n</ul>\n<div class=\"trap\"><p>Prednisone \"for the pain\" in fibromyalgia is a classic wrong answer. A brisk response to low-dose prednisone, a high ESR and age over 50 point instead to polymyalgia rheumatica.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Fibromyalgia"
+    },
+    {
+     "statpearls": "Plantar Fasciitis"
+    },
+    {
+     "statpearls": "Dupuytren Contracture"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Rhabdomyolysis: from failed muscle energy supply to systemic complications (original schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Widespread pain"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 81-year-old woman who lives alone is found on her kitchen floor by a neighbor. She fell 2 days ago and could not get up. She has pressure marks over the left hip and shoulder. Her urine is dark brown. Urine dipstick is strongly positive for blood, but microscopy shows 0–2 red cells per high-power field. Her plasma is not discolored and haptoglobin is normal. Serum creatine kinase is 48,000 U/L (reference 25–200). Which of the following substances is most likely responsible for the urine findings?</p>",
+   "options": [
+    "Hemoglobin",
+    "Myoglobin",
+    "Bilirubin",
+    "Porphobilinogen",
+    "Uric acid"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A long lie after a fall compresses muscle and causes rhabdomyolysis. Myoglobin from necrotic muscle is filtered by the glomerulus and reacts with the heme reagent on the dipstick, so the dipstick is positive with few red cells. Because myoglobin is small and cleared quickly, plasma stays clear and haptoglobin, which binds hemoglobin, is unaffected.</p><p><strong>Takeaway:</strong> a heme-positive dipstick with no red cells, clear plasma and a very high CK means myoglobinuria from rhabdomyolysis.</p>",
+   "whyNot": {
+    "A": "Hemoglobinuria from intravascular hemolysis also gives a positive dipstick without red cells, but plasma would be pink and haptoglobin low.",
+    "C": "Bilirubin darkens urine but does not react with the heme reagent and is not linked to muscle injury.",
+    "D": "Porphobilinogen darkens urine on standing in acute porphyria but gives a negative heme dipstick and does not raise CK.",
+    "E": "Urate rises in rhabdomyolysis and can form crystals, but it does not cause a positive heme dipstick."
+   },
+   "objective": "Recognize myoglobinuria from rhabdomyolysis after a long lie in an older adult.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "muscle injury",
+    "older adults"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old man develops severe thigh pain and dark urine the day after his first high-intensity spin class, done in a hot room. Creatine kinase is 96,000 U/L (reference 25–200). He has had no treatment yet. Which of the following sets of serum findings is most likely at this stage?</p>",
+   "options": [
+    "Potassium high, phosphate high, calcium low",
+    "Potassium low, phosphate low, calcium high",
+    "Potassium high, phosphate low, calcium high",
+    "Potassium low, phosphate high, calcium normal",
+    "Potassium normal, phosphate low, calcium low"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Necrotic muscle releases its intracellular potassium and phosphate. Early in rhabdomyolysis, calcium falls because calcium phosphate precipitates in damaged muscle (and high phosphate lowers calcitriol). During recovery, deposited calcium can be remobilized and cause hypercalcemia, especially if calcium was given early.</p><p><strong>Takeaway:</strong> early rhabdomyolysis gives high potassium, high phosphate and low calcium; correct calcium only if it causes symptoms or hyperkalemia affects the heart.</p>",
+   "whyNot": {
+    "B": "This pattern is closer to primary hyperparathyroidism; necrotic muscle releases potassium and phosphate rather than losing them.",
+    "C": "Phosphate is released from injured muscle along with potassium, so it is high, and calcium is low in the early phase.",
+    "D": "Potassium is released, not lost, and calcium falls early because of deposition in muscle.",
+    "E": "Phosphate rises with cell lysis; low phosphate with low calcium suggests vitamin D deficiency instead."
+   },
+   "objective": "Predict the electrolyte pattern of early rhabdomyolysis and explain the hypocalcemia.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [
+    1
+   ],
+   "tags": [
+    "muscle injury"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old man of Norwegian ancestry has had painless thickening in his right palm for 3 years. He now cannot lay his hand flat on a table because his ring finger is pulled into flexion at the metacarpophalangeal joint. A firm cord runs from a palmar nodule to the base of the ring finger. His father had the same problem. If the nodule were examined microscopically, which of the following cells would predominate?</p>",
+   "options": [
+    "Epithelioid histiocytes forming granulomas",
+    "Myofibroblasts containing α-smooth muscle actin",
+    "Plasma cells with Russell bodies",
+    "Synoviocytes lining villous projections",
+    "Atypical spindle cells with frequent mitoses"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Palmar nodules and cords that pull the ring finger into flexion, with a family history and Northern European ancestry, are Dupuytren disease. Its nodules are proliferations of myofibroblasts, fibroblasts with contractile α-smooth muscle actin, which lay down collagen and shorten the palmar fascia. It is a benign fibromatosis.</p><p><strong>Takeaway:</strong> Dupuytren contracture is driven by myofibroblasts in the palmar fascia.</p>",
+   "whyNot": {
+    "A": "Granulomas suggest infection or sarcoidosis and do not produce contracting fascial cords.",
+    "C": "Plasma-cell-rich infiltrates are seen in chronic inflammation or plasma cell neoplasms, not fibromatosis.",
+    "D": "Synoviocyte-lined villi suggest a synovial process such as tenosynovial giant cell tumor, which arises from tendon sheaths, not palmar fascia.",
+    "E": "Atypical spindle cells with many mitoses suggest a sarcoma, which grows as an enlarging mass rather than a slowly contracting cord."
+   },
+   "objective": "Identify myofibroblasts as the effector cell of Dupuytren disease.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "fascia disorders"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old woman has 2 years of aching pain in the neck, shoulders, back, hips and legs, with fatigue, unrefreshing sleep and trouble concentrating. Strength and joints are normal; light pressure at many sites is painful. CBC, ESR, CRP, CK and TSH are normal. Which of the following mechanisms best explains her pain?</p>",
+   "options": [
+    "Lymphocytic infiltration of the perimysium",
+    "Increased central pain processing with weakened descending inhibition",
+    "Deficient muscle glycogen phosphorylase activity",
+    "Autoantibodies against acetylcholine receptors",
+    "Demyelination of large peripheral sensory fibers"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Chronic widespread pain with fatigue, poor sleep and cognitive symptoms, a normal neuromuscular exam and normal labs is fibromyalgia. It is a disorder of central sensitization: the spinal cord and brain amplify incoming signals, and serotonergic and noradrenergic descending inhibitory pathways are less effective. This explains why SNRIs, tricyclics and α2δ ligands help while anti-inflammatory drugs do not.</p><p><strong>Takeaway:</strong> fibromyalgia is central pain amplification, not muscle inflammation.</p>",
+   "whyNot": {
+    "A": "Perimysial inflammation is seen in dermatomyositis, which causes true proximal weakness, a raised CK and often a rash.",
+    "C": "Myophosphorylase deficiency (McArdle disease) causes exercise-induced cramps with a raised CK, not constant widespread pain with normal labs.",
+    "D": "Acetylcholine receptor antibodies cause fatigable weakness of eye, bulbar and limb muscles in myasthenia gravis, not pain.",
+    "E": "Large-fiber demyelinating neuropathy causes numbness, loss of reflexes and weakness, which she does not have."
+   },
+   "objective": "Explain fibromyalgia as a disorder of central pain sensitization.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "behavioral_sciences"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "chronic pain"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 42-year-old woman with fibromyalgia has poor sleep and pain that has not improved with a supervised exercise program and cognitive behavioural therapy. She does not have depression. Her physician prescribes a drug that binds the α2δ subunit of voltage-gated calcium channels in the dorsal horn. Which of the following is the most direct effect of this drug?</p>",
+   "options": [
+    "Reduced release of excitatory neurotransmitters such as glutamate and substance P",
+    "Inhibition of serotonin and norepinephrine reuptake",
+    "Antagonism of NMDA glutamate receptors",
+    "Activation of μ-opioid receptors",
+    "Blockade of voltage-gated sodium channels in nociceptor axons"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Pregabalin (and gabapentin) bind the α2δ auxiliary subunit of presynaptic voltage-gated calcium channels. They reduce calcium entry and the trafficking of channels to the terminal, so less glutamate, norepinephrine and substance P is released from sensitized nociceptive neurons. Pregabalin is approved for fibromyalgia; adverse effects include dizziness, sedation, weight gain and peripheral edema.</p><p><strong>Takeaway:</strong> α2δ ligands quiet central sensitization by reducing presynaptic excitatory neurotransmitter release.</p>",
+   "whyNot": {
+    "B": "Serotonin and norepinephrine reuptake inhibition is the mechanism of duloxetine and milnacipran, not of α2δ ligands.",
+    "C": "NMDA antagonism describes ketamine, memantine and dextromethorphan.",
+    "D": "μ-Opioid agonists are not recommended in fibromyalgia, and α2δ ligands do not act on opioid receptors.",
+    "E": "Sodium channel blockade is the mechanism of local anesthetics, carbamazepine and lamotrigine."
+   },
+   "objective": "State the mechanism of pregabalin in central pain disorders.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "chronic pain"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 23-year-old woman has 2 weeks of generalized muscle weakness and cramps. She has been inducing vomiting and taking stimulant laxatives several times a day to control her weight. BMI is 18 kg/m<sup>2</sup>. Strength is 4/5 in the proximal limbs. Serum potassium is 2.4 mEq/L, bicarbonate 34 mEq/L and magnesium 1.6 mEq/L. Which of the following changes in skeletal muscle cells most directly causes her weakness?</p>",
+   "options": [
+    "Hyperpolarization of the resting membrane, raising the threshold for action potentials",
+    "Persistent depolarization that inactivates voltage-gated sodium channels",
+    "Reduced acetylcholine release from motor nerve terminals",
+    "Antibody blockade of postsynaptic acetylcholine receptors",
+    "Loss of ryanodine receptor calcium release from the sarcoplasmic reticulum"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Purging causes hypokalemia (with metabolic alkalosis from vomiting). The resting membrane potential depends mainly on the potassium gradient. When extracellular potassium falls, the gradient steepens and the membrane hyperpolarizes, so a larger stimulus is needed to reach threshold and muscle becomes weak. Severe hypokalemia also reduces blood flow during exercise and can cause rhabdomyolysis.</p><p><strong>Takeaway:</strong> hypokalemia weakens muscle by hyperpolarizing the membrane; hyperkalemia weakens it by depolarization block.</p>",
+   "whyNot": {
+    "B": "Persistent depolarization with sodium channel inactivation is the mechanism of severe hyperkalemia, the opposite of her disorder.",
+    "C": "Reduced acetylcholine release occurs with hypermagnesemia, botulism and Lambert–Eaton syndrome; her magnesium is normal.",
+    "D": "Antibody blockade of acetylcholine receptors is myasthenia gravis, with fatigable ocular and bulbar weakness and normal potassium.",
+    "E": "Loss of ryanodine receptor function occurs in some congenital myopathies; gain of function causes malignant hyperthermia. Neither explains purging-related weakness."
+   },
+   "objective": "Explain how hypokalemia causes muscle weakness through membrane hyperpolarization.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "electrolytes",
+    "eating disorders"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old woman with anorexia nervosa (BMI 13.5 kg/m<sup>2</sup>) is admitted for medical stabilization and starts high-calorie oral nutrition with carbohydrate-rich supplements. On day 3 she has profound weakness, shortness of breath from respiratory muscle weakness and a creatine kinase of 9,200 U/L. Which of the following serum abnormalities most directly accounts for her muscle failure?</p>",
+   "options": [
+    "Hyperkalemia",
+    "Hypophosphatemia",
+    "Hypercalcemia",
+    "Hypernatremia",
+    "Hypermagnesemia"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is refeeding syndrome. Carbohydrate stimulates insulin, which moves phosphate (with potassium and magnesium) into cells for glycolysis and ATP synthesis. Total body phosphate is already depleted by starvation, so serum phosphate falls sharply. Muscle cannot make enough ATP, which causes weakness, rhabdomyolysis, diaphragmatic failure and heart failure; low red-cell 2,3-BPG also impairs oxygen delivery.</p><p><strong>Takeaway:</strong> refeeding hypophosphatemia starves muscle of ATP; feed high-risk patients slowly and check phosphate daily.</p>",
+   "whyNot": {
+    "A": "Insulin drives potassium into cells during refeeding, so potassium falls rather than rises.",
+    "C": "Calcium is usually normal or low in refeeding; hypercalcemia is not part of the syndrome.",
+    "D": "Sodium and water retention occur, but hypernatremia does not cause rhabdomyolysis and respiratory muscle failure.",
+    "E": "Magnesium falls during refeeding; hypermagnesemia would require excess intake or kidney failure."
+   },
+   "objective": "Explain refeeding hypophosphatemia as a cause of muscle failure.",
+   "extraAreas": [],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nutrition",
+    "eating disorders"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 84-year-old man has slowed walking, trouble rising from a chair and weaker grip over 3 years. He has no neurologic disease, takes no glucocorticoids and has normal thyroid function and CK. He eats little meat or dairy. A thigh muscle biopsy is done for research. Compared with a healthy 25-year-old, which of the following changes is most likely?</p>",
+   "options": [
+    "Preferential atrophy and loss of type II (fast-twitch) fibers",
+    "Ragged red fibers on Gomori trichrome stain",
+    "Perifascicular atrophy with capillary loss",
+    "Endomysial inflammation with rimmed vacuoles",
+    "Increased glycogen in subsarcolemmal vacuoles"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Age-related sarcopenia involves loss of motor neurons with reinnervation of orphaned fibers (fiber-type grouping), and preferential atrophy and loss of type II fibers, with fat infiltrating the muscle. Low protein intake and inactivity speed the loss, and muscle protein synthesis responds less to protein and exercise.</p><p><strong>Takeaway:</strong> sarcopenia selectively loses type II fibers; treat with resistance training and adequate protein.</p>",
+   "whyNot": {
+    "B": "Ragged red fibers indicate mitochondrial myopathy, which usually starts earlier and includes ophthalmoplegia or multisystem features.",
+    "C": "Perifascicular atrophy is the signature of dermatomyositis, which causes rash and a raised CK.",
+    "D": "Endomysial inflammation with rimmed vacuoles is inclusion body myositis, which causes quadriceps and finger-flexor weakness and usually a raised CK.",
+    "E": "Excess glycogen in vacuoles suggests a glycogen storage myopathy such as acid maltase deficiency."
+   },
+   "objective": "Describe the fiber-type changes of age-related sarcopenia.",
+   "extraAreas": [],
+   "disciplines": [
+    "histology_cell_biology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "older adults",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 22-year-old man comes to the emergency department with severe thigh pain and cola-coloured urine 30 hours after his first high-intensity spin class, done in a heated studio. He has no other medical problems and takes no medications or supplements. Blood pressure is 126/74 mm Hg and pulse 96/min. Both thighs are tender, and the compartments are soft. Results are shown; the ECG is normal.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Creatine kinase</td><td>112,000 U/L (reference 25–200)</td></tr><tr><td>Potassium</td><td>5.4 mEq/L</td></tr><tr><td>Creatinine</td><td>1.5 mg/dL</td></tr><tr><td>Calcium, total</td><td>7.9 mg/dL</td></tr><tr><td>Phosphorus</td><td>5.6 mg/dL</td></tr><tr><td>Bicarbonate</td><td>21 mEq/L</td></tr><tr><td>Urinalysis</td><td>Blood 3+, 0–2 RBC/hpf</td></tr></tbody></table><p>Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Intravenous isotonic crystalloid at a high rate, adjusted to urine output",
+    "Intravenous calcium gluconate to correct the calcium",
+    "Intravenous furosemide to increase urine flow",
+    "Intravenous sodium bicarbonate as the main fluid",
+    "Urgent hemodialysis"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Exertional rhabdomyolysis with early AKI is treated first with early, generous IV isotonic crystalloid, titrated to a high urine output, to dilute myoglobin and flush tubular casts. Potassium, calcium, creatinine and CK are rechecked frequently. His hypocalcemia is expected and asymptomatic, and his potassium is only mildly raised with a normal ECG.</p><p><strong>Takeaway:</strong> volume is the treatment for rhabdomyolysis; calcium, bicarbonate and diuretics are not.</p>",
+   "whyNot": {
+    "B": "Calcium given early deposits in injured muscle and causes later hypercalcemia; give it only for hyperkalemic ECG changes or symptomatic hypocalcemia.",
+    "C": "Loop diuretics in a volume-depleted patient worsen kidney perfusion and acidify the urine, which favours cast formation.",
+    "D": "Bicarbonate has not been shown to improve outcomes over isotonic saline and can lower ionized calcium further.",
+    "E": "Dialysis is for refractory hyperkalemia, acidosis, fluid overload or anuria, none of which is present."
+   },
+   "objective": "Treat rhabdomyolysis with early aggressive isotonic fluids and avoid routine calcium.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "muscle injury"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 41-year-old woman has had 18 months of pain in her neck, upper back, both arms, lower back and both legs. She wakes unrefreshed, feels exhausted most days and has trouble finding words. She also has intermittent abdominal cramping and loose stools. She has no joint swelling, rash, morning stiffness longer than 15 minutes or fever. Examination shows normal strength and no synovitis; she reports pain with light pressure over many muscles. CBC, ESR, CRP, CK, TSH and a metabolic panel are normal. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Fibromyalgia",
+    "Polymyalgia rheumatica",
+    "Polymyositis",
+    "Hypothyroid myopathy",
+    "Early rheumatoid arthritis"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Widespread pain for more than 3 months with fatigue, unrefreshing sleep, cognitive symptoms and irritable bowel symptoms, a normal neuromuscular and joint exam, and normal basic labs meet the clinical definition of fibromyalgia. Extensive further testing is not needed when the history and limited labs fit.</p><p><strong>Takeaway:</strong> fibromyalgia is a positive clinical diagnosis: widespread pain plus fatigue, sleep and cognitive symptoms, with normal exam and basic labs.</p>",
+   "whyNot": {
+    "B": "Polymyalgia rheumatica occurs after age 50 with girdle stiffness and a high ESR or CRP.",
+    "C": "Polymyositis causes objective proximal weakness and a raised CK.",
+    "D": "Hypothyroid myopathy would show an abnormal TSH and usually a raised CK.",
+    "E": "Rheumatoid arthritis causes synovitis and prolonged morning stiffness, usually with raised inflammatory markers."
+   },
+   "objective": "Diagnose fibromyalgia clinically after limited testing excludes mimics.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "chronic pain"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient in the previous item is told she has fibromyalgia. She asks what will help most. She has a desk job, rarely exercises and takes ibuprofen most days without benefit. Screening for depression is negative. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Education and a graded aerobic exercise program",
+    "Oral prednisone 15 mg daily",
+    "Oral oxycodone as needed",
+    "Weekly oral methotrexate",
+    "Rest and avoidance of physical activity until pain improves"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Exercise, aerobic and strengthening, started at a low level and increased gradually, has the strongest evidence in fibromyalgia, combined with education, sleep hygiene and often cognitive behavioural therapy. Medications (low-dose amitriptyline, duloxetine, milnacipran or pregabalin) are added when nonpharmacologic measures are not enough. Daily ibuprofen can be tapered because it is not helping.</p><p><strong>Takeaway:</strong> start fibromyalgia care with education and graded aerobic exercise; avoid steroids and opioids.</p>",
+   "whyNot": {
+    "B": "Glucocorticoids do not help fibromyalgia, which is not inflammatory, and cause weight gain, bone loss and other harms.",
+    "C": "Opioids are ineffective for centralized pain and add risks of dependence and hyperalgesia.",
+    "D": "Methotrexate treats inflammatory arthritis and has no role in fibromyalgia.",
+    "E": "Inactivity worsens deconditioning and pain; graded activity is part of treatment."
+   },
+   "objective": "Choose graded exercise and education as first-line therapy for fibromyalgia.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "chronic pain"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old woman who works as a cashier has had 2 months of sharp pain in the bottom of her left heel. It is worst with her first steps in the morning, eases after a few minutes of walking and returns at the end of her shift. She has gained 8 kg in the past year (BMI 31 kg/m<sup>2</sup>). There is point tenderness over the medial calcaneal tubercle that worsens when her toes are dorsiflexed. Squeezing the heel from both sides is painless, and sensation in the foot is normal. Ankle dorsiflexion is limited by tight calf muscles. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Plantar fascia and calf stretching with supportive footwear",
+    "Radiographs of the foot to look for a heel spur",
+    "Glucocorticoid injection at the medial calcaneal tubercle",
+    "Surgical release of the plantar fascia",
+    "MRI of the foot"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>First-step heel pain with tenderness at the medial calcaneal tubercle and a tight calf is plantar fasciitis, a clinical diagnosis. Initial care is plantar fascia–specific and calf stretching, cushioned supportive shoes or heel cups, activity modification, short-term NSAIDs and weight loss. Most patients improve within months.</p><p><strong>Takeaway:</strong> plantar fasciitis is diagnosed clinically and treated first with stretching and footwear, not imaging or injections.</p>",
+   "whyNot": {
+    "B": "Heel spurs are common in people without pain and do not change treatment; imaging is for atypical or refractory cases.",
+    "C": "Glucocorticoid injection is a second-line option because it can cause fat-pad atrophy and fascia rupture.",
+    "D": "Surgery is reserved for rare cases that fail many months of conservative care.",
+    "E": "MRI is not needed for a typical presentation and would not change initial management."
+   },
+   "objective": "Treat plantar fasciitis initially with stretching and supportive footwear.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "foot pain"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old man with type 2 diabetes has had a slowly progressive contracture of his right little finger for 4 years. He now catches the finger when putting his hand in his pocket and cannot shake hands comfortably. Examination shows a palpable cord in the palm and a fixed flexion contracture of 45° at the metacarpophalangeal joint and 20° at the proximal interphalangeal joint; he cannot lay his palm flat on the table. Sensation is normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Percutaneous needle aponeurotomy of the cord",
+    "Nighttime extension splinting alone",
+    "Oral prednisone taper",
+    "Observation until the contracture exceeds 90°",
+    "Carpal tunnel release"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Dupuytren disease with functional limitation, an MCP contracture above about 30° and any PIP contracture is an indication to release the cord. Options include percutaneous needle aponeurotomy, collagenase injection with manipulation, and limited fasciectomy; the choice depends on the cord, the joints involved and patient preference. Intervening before the PIP joint becomes fixed gives better results.</p><p><strong>Takeaway:</strong> treat Dupuytren disease procedurally once there is a positive tabletop test, an MCP contracture of about 30° or more, or any PIP contracture.</p>",
+   "whyNot": {
+    "B": "Splinting alone does not correct or prevent progression of a Dupuytren cord; it is used after release.",
+    "C": "Systemic glucocorticoids have no role; at most, injection can soften a painful nodule.",
+    "D": "Waiting for severe contracture, especially at the PIP joint, makes full correction less likely.",
+    "E": "Carpal tunnel release treats median nerve compression, which would cause numbness and weakness rather than a fascial cord."
+   },
+   "objective": "Recognize indications for procedural release in Dupuytren disease.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hand disorders"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 57-year-old woman has 4 months of muscle aches, cramps and difficulty climbing stairs. She has gained 5 kg, feels cold and is constipated. She takes no medications. Hip flexor strength is 4/5 bilaterally, and the relaxation phase of the ankle reflexes is slow. There is no rash. Creatine kinase is 1,450 U/L (reference 25–200); CBC and ESR are normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Serum TSH",
+    "Muscle biopsy",
+    "Myositis-specific autoantibody panel",
+    "Electromyography",
+    "MRI of the thighs"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Proximal weakness and cramps with a moderately raised CK, weight gain, cold intolerance, constipation and delayed relaxation of reflexes strongly suggest hypothyroid myopathy. TSH is the simplest, highest-yield test. Weakness and CK improve over weeks to months with levothyroxine. Hypothyroidism should be excluded before invasive testing for myositis in any patient with a raised CK.</p><p><strong>Takeaway:</strong> check TSH in every patient with a raised CK or proximal myopathy.</p>",
+   "whyNot": {
+    "B": "Biopsy is invasive and premature when a simple blood test may explain the myopathy.",
+    "C": "Myositis antibodies are for suspected inflammatory myopathy; her hypothyroid features make that less likely and TSH is cheaper and more direct.",
+    "D": "EMG can show myopathic changes but would not identify the cause; check thyroid function first.",
+    "E": "MRI can show muscle edema in myositis but does not diagnose hypothyroidism."
+   },
+   "objective": "Check thyroid function first in a patient with myopathy and hypothyroid features.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "myopathy"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 82-year-old woman has become slower and weaker over 2 years. She now needs her arms to rise from a chair and has had one fall without injury. She lives alone and eats mostly toast and tea; her weight has fallen from 60 kg to 55 kg. Grip strength is low for age and sex, and gait speed is 0.7 m/s. She has no focal neurologic signs. Kidney function, TSH, CK and 25-hydroxyvitamin D are normal. Which of the following is the most appropriate intervention to improve her muscle strength and function?</p>",
+   "options": [
+    "Progressive resistance training with adequate dietary protein",
+    "Testosterone therapy",
+    "Megestrol acetate",
+    "High-dose vitamin D supplementation",
+    "Bed rest until strength recovers"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Low grip strength, slow gait, weight loss and difficulty rising from a chair indicate sarcopenia with frailty, worsened by low protein intake. Progressive resistance training is the most effective intervention, and adequate protein intake (commonly about 1.0–1.2 g/kg/day for older adults without advanced kidney disease, spread across meals) supports the gain. Address the social contributors to her poor diet, such as meal delivery and help with shopping, and assess her falls risk.</p><p><strong>Takeaway:</strong> sarcopenia is treated with resistance exercise plus enough protein; no drug replaces them.</p>",
+   "whyNot": {
+    "B": "Testosterone has no established role in an older woman with sarcopenia and carries cardiovascular and other risks.",
+    "C": "Megestrol increases appetite and fat rather than muscle, and raises the risk of thromboembolism and adrenal suppression in older adults.",
+    "D": "Her vitamin D level is normal; extra vitamin D does not improve strength or prevent falls in people who are not deficient.",
+    "E": "Bed rest speeds muscle loss and deconditioning."
+   },
+   "objective": "Treat sarcopenia with progressive resistance training and adequate protein intake.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "older adults",
+    "nutrition"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Why is the urine dipstick heme-positive with few RBCs in rhabdomyolysis?",
+   "back": "Myoglobin reacts with the heme reagent.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Three mechanisms of AKI in rhabdomyolysis?",
+   "back": "Myoglobin casts, heme-iron oxidant tubular injury, renal vasoconstriction with volume loss.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Why is calcium low early in rhabdomyolysis?",
+   "back": "Calcium phosphate deposits in necrotic muscle.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Cell that drives Dupuytren cords?",
+   "back": "Myofibroblast (α-smooth muscle actin positive).",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Mechanism of pregabalin?",
+   "back": "Binds the α2δ subunit of voltage-gated calcium channels, reducing excitatory transmitter release.",
+   "question": 5
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Which electrolyte drives refeeding muscle failure?",
+   "back": "Phosphate (low ATP and 2,3-BPG).",
+   "question": 7
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which fibers are lost first in sarcopenia?",
+   "back": "Type II (fast-twitch) fibers.",
+   "question": 8
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "How does DISH differ from ankylosing spondylitis on imaging?",
+   "back": "Flowing anterior ossification with preserved disc spaces and normal sacroiliac joints.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Cornerstone treatment of rhabdomyolysis?",
+   "back": "Early, generous IV isotonic crystalloid titrated to high urine output.",
+   "question": 9
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "When should calcium be given in rhabdomyolysis?",
+   "back": "Only for hyperkalemic ECG changes or symptomatic hypocalcemia.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Indications for dialysis in rhabdomyolysis?",
+   "back": "Refractory hyperkalemia, acidosis or fluid overload, or oligoanuric AKI.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "First test for myopathy with weight gain and delayed reflex relaxation?",
+   "back": "TSH.",
+   "question": 14
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Proximal weakness with a normal CK on long-term prednisone?",
+   "back": "Glucocorticoid myopathy.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Protein target often used for older adults with sarcopenia?",
+   "back": "About 1.0–1.2 g/kg/day without advanced CKD, with resistance training.",
+   "question": 15
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "What to give before carbohydrate in a patient at high refeeding risk?",
+   "back": "Thiamine; then feed slowly and monitor phosphate, potassium and magnesium.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "Single most effective treatment for fibromyalgia?",
+   "back": "Graded aerobic exercise with education.",
+   "question": 11
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Three FDA-approved drugs for fibromyalgia?",
+   "back": "Pregabalin, duloxetine and milnacipran.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Are tender points required for diagnosing fibromyalgia?",
+   "back": "No; current criteria use widespread pain and symptom severity.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Classic plantar fasciitis pain?",
+   "back": "Inferior heel pain on the first steps of the day, tender at the medial calcaneal tubercle.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Heel pain on side-to-side squeeze of the calcaneus suggests what?",
+   "back": "Calcaneal stress fracture.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "When should Dupuytren contracture be released?",
+   "back": "Functional limitation, MCP contracture about 30° or more, or any PIP contracture.",
+   "question": 13
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Fibromyalgia vs polymyalgia rheumatica labs?",
+   "back": "Fibromyalgia: normal ESR/CRP. PMR: high ESR/CRP and fast response to low-dose prednisone.",
+   "question": null
+  }
+ ]
+}

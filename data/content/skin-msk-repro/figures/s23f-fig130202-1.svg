@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-label="Four columns of cervical squamous epithelium sitting on a basement membrane. In normal epithelium only the basal layer is immature. In CIN 1 atypical cells occupy the lower third, with koilocytes above. In CIN 2 they occupy up to two thirds. In CIN 3 they occupy more than two thirds to the full thickness, with the basement membrane intact. In invasive carcinoma, nests of atypical cells cross the basement membrane into the stroma." font-family="sans-serif">
+<title>Cervical intraepithelial neoplasia grading schematic</title>
+<desc>Four columns of cervical squamous epithelium sitting on a basement membrane. In normal epithelium only the basal layer is immature. In CIN 1 atypical cells occupy the lower third, with koilocytes above. In CIN 2 they occupy up to two thirds. In CIN 3 they occupy more than two thirds to the full thickness, with the basement membrane intact. In invasive carcinoma, nests of atypical cells cross the basement membrane into the stroma.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="420" fill="#ffffff"/>
+<text x="380" y="30" font-size="18" text-anchor="middle" font-weight="bold" fill="#0f172a">CIN grade = how high the atypical cells reach</text>
+<rect x="30" y="70" width="130" height="220" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="30" y="263.6" width="130" height="26.4" rx="2" fill="#c7d2fe" stroke="#334155" stroke-width="1.5"/>
+<text x="95.0" y="60" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Normal</text>
+<rect x="175" y="70" width="130" height="220" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="175" y="217.39999999999998" width="130" height="72.60000000000001" rx="2" fill="#c7d2fe" stroke="#334155" stroke-width="1.5"/>
+<circle cx="195" cy="100" r="7" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<circle cx="225" cy="100" r="7" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<circle cx="255" cy="100" r="7" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<circle cx="285" cy="100" r="7" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="240.0" y="130" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">koilocytes</text>
+<text x="240.0" y="60" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">CIN 1</text>
+<rect x="320" y="70" width="130" height="220" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="320" y="144.79999999999998" width="130" height="145.20000000000002" rx="2" fill="#c7d2fe" stroke="#334155" stroke-width="1.5"/>
+<text x="385.0" y="60" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">CIN 2</text>
+<rect x="465" y="70" width="130" height="220" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="465" y="70.0" width="130" height="220.0" rx="2" fill="#c7d2fe" stroke="#334155" stroke-width="1.5"/>
+<text x="530.0" y="60" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">CIN 3</text>
+<rect x="610" y="70" width="130" height="220" rx="2" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="610" y="70.0" width="130" height="220.0" rx="2" fill="#c7d2fe" stroke="#334155" stroke-width="1.5"/>
+<polygon points="645,290 665,345 685,290 " fill="#c7d2fe" stroke="#334155" stroke-width="1.5"/>
+<polygon points="695,290 710,330 722,290" fill="#c7d2fe" stroke="#334155" stroke-width="1.5"/>
+<text x="675.0" y="60" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Invasive</text>
+<line x1="20" y1="290" x2="740" y2="290" stroke="#0f172a" stroke-width="3"/>
+<text x="380" y="365" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">Basement membrane (thick line); stroma below</text>
+<text x="740" y="308" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a"></text>
+<rect x="40" y="385" width="22" height="16" rx="2" fill="#c7d2fe" stroke="#334155" stroke-width="1.5"/>
+<text x="70" y="398" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Shaded = immature, atypical basaloid cells</text>
+<text x="420" y="398" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Invasion = cells cross the basement membrane</text>
+</svg>

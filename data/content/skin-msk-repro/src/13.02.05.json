@@ -1,0 +1,865 @@
+{
+ "area": "13.02.05",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Menstrual cycle physiology and the mechanisms of menstrual and androgen disorders",
+   "html": "<h2>The normal cycle</h2>\n<p>A typical cycle lasts 21&ndash;35 days (in adolescents up to about 45 days in the first years after menarche), with bleeding for up to about 8 days. The <strong>follicular phase</strong> varies in length; the <strong>luteal phase</strong> is fairly constant at about 14 days because the corpus luteum has a fixed lifespan without hCG.</p>\n[[figure:s23f-fig130205-1]]\n<ul>\n<li><strong>Early follicular</strong>: the fall in estradiol, progesterone and inhibin A at the end of the previous cycle lets FSH rise; menses occur as the endometrium sheds after progesterone withdrawal causes spiral artery constriction.</li>\n<li><strong>Mid to late follicular</strong>: the dominant follicle's estradiol drives endometrial <strong>proliferation</strong> (straight tubular glands, mitoses) and makes cervical mucus thin, clear and stretchy. Estradiol and inhibin B suppress FSH.</li>\n<li><strong>Ovulation</strong>: sustained high estradiol switches feedback to positive and triggers the LH surge; ovulation follows about 36 hours after its onset.</li>\n<li><strong>Luteal</strong>: the corpus luteum secretes progesterone and estradiol. Progesterone makes the endometrium <strong>secretory</strong> (coiled glands with subnuclear then luminal glycogen vacuoles, stromal oedema, then predecidual change), raises basal body temperature by about 0.3&ndash;0.5&deg;C and thickens cervical mucus. It also slows GnRH pulse frequency.</li>\n</ul>\n<h2>Amenorrhea by level of the axis</h2>\n<table class=\"hy\"><thead><tr><th>Level</th><th>Examples</th><th>Hormone pattern</th></tr></thead><tbody>\n<tr><td>Hypothalamus</td><td>Low energy availability, stress, weight loss; Kallmann syndrome (failed migration of GnRH neurons from the olfactory placode, with anosmia)</td><td>Low or normal FSH and LH, low estradiol</td></tr>\n<tr><td>Pituitary</td><td>Prolactinoma, other sellar masses, Sheehan syndrome, infiltrative disease</td><td>Low or normal FSH and LH; high prolactin with prolactinoma</td></tr>\n<tr><td>Ovary</td><td>Primary ovarian insufficiency, Turner syndrome; PCOS (anovulation)</td><td>High FSH in ovarian failure; normal FSH with high LH-to-FSH ratio and androgens in PCOS</td></tr>\n<tr><td>Uterus and outflow</td><td>Intrauterine adhesions after curettage (Asherman); Mullerian agenesis; imperforate hymen or transverse septum; complete androgen insensitivity (46,XY, no uterus)</td><td>Normal hormones (with male-range testosterone in androgen insensitivity)</td></tr>\n</tbody></table>\n<p><strong>Prolactin</strong> is tonically inhibited by hypothalamic dopamine acting on D2 receptors on lactotrophs. Hyperprolactinemia (prolactinoma, D2-blocking drugs, hypothyroidism because TRH stimulates lactotrophs, kidney failure from reduced clearance, stalk compression) suppresses <strong>GnRH pulsatility</strong> through kisspeptin neurons, causing oligomenorrhea, anovulation, low estradiol and galactorrhea. In people with testes it causes low testosterone, low libido and erectile dysfunction.</p>\n<h2>Painful and heavy menses</h2>\n<p><strong>Primary dysmenorrhea</strong> is cramping pain with ovulatory cycles and no pelvic disease. As progesterone falls before menses, endometrial phospholipase A2 releases arachidonic acid, and cyclooxygenase makes <strong>prostaglandin F2-alpha</strong> and E2. PGF2-alpha causes strong, dysrhythmic myometrial contractions and vasoconstriction, producing ischaemic pain, along with nausea and diarrhoea. NSAIDs inhibit COX and are most effective when started before or at the onset of bleeding; hormonal contraceptives work by suppressing ovulation and thinning the endometrium.</p>\n<p><strong>Endometriosis</strong> is endometrial-type glands and stroma outside the uterus, most often on the ovaries, uterosacral ligaments, cul-de-sac and pelvic peritoneum. Proposed origins include retrograde menstruation (implantation of shed tissue), coelomic metaplasia of peritoneum, and lymphatic or vascular spread (which explains lesions in the lung or umbilicus). Lesions are estrogen dependent, express aromatase locally, are relatively resistant to progesterone and generate prostaglandins and inflammation. Cyclic bleeding into implants produces haemosiderin-laden macrophages, fibrosis and adhesions; ovarian endometriomas contain altered blood (\"chocolate cysts\"), and lesions appear as \"powder-burn\" or red, white and black spots. Diagnosis by histology requires endometrial glands, stroma or both, often with haemosiderin-laden macrophages. <strong>Adenomyosis</strong> is endometrial glands and stroma within the myometrium, with surrounding smooth muscle hypertrophy, producing a diffusely enlarged, globular, tender uterus with heavy painful menses, most often in parous people in their 40s.</p>\n<h2>Premenstrual disorders</h2>\n<p>Premenstrual syndrome and its severe mood-dominant form, <strong>premenstrual dysphoric disorder (PMDD)</strong>, are not caused by abnormal hormone levels. They reflect an abnormal central sensitivity, involving serotonergic and GABAergic systems, to normal luteal-phase fluctuations of progesterone and its neuroactive metabolite allopregnanolone. Symptoms appear after ovulation and resolve within a few days of menses; suppressing ovulation abolishes them. This explains why SSRIs (which can work within days when taken only in the luteal phase) and ovulation suppression are effective.</p>\n<h2>Androgen excess</h2>\n<p>In people with ovaries, androgens come from the ovarian theca (testosterone and androstenedione, LH driven) and the adrenal zona reticularis (DHEA and DHEA-S, ACTH driven). <strong>PCOS</strong> is the commonest cause: high LH pulse frequency, theca hyperactivity, insulin resistance with hyperinsulinemia (which augments theca androgen production and lowers SHBG) and arrested follicles. <strong>Nonclassic 21-hydroxylase deficiency</strong> causes a mild block in cortisol synthesis, so ACTH drive shunts precursors to androgens and early-morning 17-hydroxyprogesterone is high. <strong>Androgen-secreting tumours</strong> of the ovary (Sertoli-Leydig, steroid cell) or adrenal cause rapid virilisation; very high testosterone suggests an ovarian source, very high DHEA-S an adrenal one. Hirsutism results from androgen action on the pilosebaceous unit, where 5-alpha-reductase converts testosterone to dihydrotestosterone, transforming vellus into terminal hair in androgen-sensitive areas.</p>\n<div class=\"pearl\"><p>Prolactin and TSH belong in every amenorrhea workup after a pregnancy test: hypothyroidism raises TRH, which stimulates lactotrophs, so treating the thyroid can resolve both the galactorrhea and the amenorrhea.</p></div>\n<div class=\"trap\"><p>Primary amenorrhea with normal breasts but absent uterus and scant pubic hair is complete androgen insensitivity (46,XY, testosterone in the male range), not Mullerian agenesis (46,XX, normal female testosterone and pubic hair). A karyotype or serum testosterone separates them.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Physiology, Menstrual Cycle"
+    },
+    {
+     "statpearls": "Endometriosis"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Gender-affirming hormone therapy and puberty suppression: physiology and pharmacology",
+   "html": "<h2>Scope and principles</h2>\n<p>Gender-affirming hormone therapy (GAHT) aligns secondary sex characteristics with a person's gender identity. Current recommendations come from the World Professional Association for Transgender Health Standards of Care version 8 (WPATH SOC 8, 2022) and the Endocrine Society guideline (2017). Both describe care built on individual assessment and informed consent, with attention to fertility, physical and mental health. This section covers the physiology and pharmacology; access to care, especially for minors, is regulated differently across and within countries, and clinicians should know the law and institutional policy where they practise.</p>\n[[figure:s23f-fig130205-2]]\n<h2>Feminizing therapy</h2>\n<p>The goals are to raise estradiol into the typical premenopausal female range and to lower testosterone into the typical female range.</p>\n<ul>\n<li><strong>Estradiol</strong> (oral, transdermal patch or gel, or intramuscular injection) acts on estrogen receptors to produce breast growth and fat redistribution, and through negative feedback lowers LH and testicular testosterone. Bioidentical 17-beta-estradiol is used; <strong>ethinyl estradiol is avoided</strong> because it carries a much higher risk of venous thromboembolism. Oral estradiol undergoes first-pass hepatic metabolism, raising clotting factor synthesis; transdermal routes are favoured for older patients and those with VTE risk factors.</li>\n<li><strong>Spironolactone</strong> is an androgen receptor antagonist (and weak inhibitor of androgen synthesis) as well as a mineralocorticoid receptor antagonist; the latter explains hyperkalemia, polyuria and orthostatic hypotension.</li>\n<li><strong>GnRH agonists</strong> given continuously initially stimulate, then downregulate pituitary GnRH receptors, suppressing LH and FSH and therefore testicular steroidogenesis. They are effective but costly.</li>\n<li><strong>Cyproterone acetate</strong> (not available in the United States) is a progestogenic antiandrogen; it can raise prolactin and has been linked to meningioma with high doses and long use.</li>\n<li><strong>5-alpha-reductase inhibitors</strong> block conversion of testosterone to dihydrotestosterone and have a limited role (for example, scalp hair loss). The evidence for adding progestogens is insufficient to recommend them for breast development.</li>\n</ul>\n<h2>Masculinizing therapy</h2>\n<p><strong>Testosterone</strong> (intramuscular or subcutaneous injection, transdermal gel or patch) acts on androgen receptors directly and after conversion to DHT, and is partly aromatised to estradiol. It suppresses LH and FSH, usually stopping ovulation and menses, although ovulation can still occur. Testosterone stimulates erythropoietin production by the kidney and lowers hepcidin, increasing red cell mass; it lowers HDL, increases muscle mass and causes acne by stimulating sebaceous glands. It is teratogenic, causing virilisation of a fetus with XX chromosomes.</p>\n<table class=\"hy\"><thead><tr><th>Feminizing effects</th><th>Approximate onset</th><th>Approximate maximum</th></tr></thead><tbody>\n<tr><td>Decreased libido and spontaneous erections</td><td>1&ndash;3 months</td><td>Months</td></tr>\n<tr><td>Breast growth (largely irreversible)</td><td>3&ndash;6 months</td><td>2&ndash;3 years</td></tr>\n<tr><td>Fat redistribution, softer skin, less muscle</td><td>3&ndash;6 months</td><td>1&ndash;5 years</td></tr>\n<tr><td>Reduced testicular volume and spermatogenesis</td><td>3&ndash;6 months</td><td>Variable; may not fully recover</td></tr>\n<tr><td>Slower, finer body and facial hair</td><td>6&ndash;12 months</td><td>3 years or more; facial hair usually needs laser or electrolysis</td></tr>\n<tr><td>Voice</td><td colspan=\"2\">No change from hormones; voice training is used</td></tr>\n</tbody></table>\n<table class=\"hy\"><thead><tr><th>Masculinizing effects</th><th>Approximate onset</th><th>Approximate maximum</th></tr></thead><tbody>\n<tr><td>Oily skin and acne</td><td>1&ndash;6 months</td><td>1&ndash;2 years</td></tr>\n<tr><td>Cessation of menses</td><td>Within about 6 months</td><td>&mdash;</td></tr>\n<tr><td>Clitoral growth, vaginal atrophy (clitoral growth is irreversible)</td><td>Within months</td><td>1&ndash;2 years</td></tr>\n<tr><td>Voice deepening (irreversible)</td><td>Within the first year</td><td>1&ndash;2 years</td></tr>\n<tr><td>Facial and body hair</td><td>6&ndash;12 months</td><td>Several years</td></tr>\n<tr><td>Increased muscle mass, fat redistribution</td><td>Months</td><td>2&ndash;5 years</td></tr>\n<tr><td>Scalp hair loss (androgenic pattern)</td><td>After about a year in predisposed people</td><td>Variable</td></tr>\n</tbody></table>\n<h2>Puberty suppression in adolescents</h2>\n<p>GnRH agonists (for example leuprolide or a histrelin implant) suppress the hypothalamic-pituitary-gonadal axis exactly as they do in central precocious puberty. WPATH SOC 8 describes their use in transgender and gender-diverse adolescents who meet assessment criteria (a marked and sustained experience of gender incongruence, capacity to give informed consent or assent with parental consent, mental health concerns addressed, and counselling on reproductive effects) and who have reached at least <strong>Tanner stage 2</strong>. Suppression pauses further development of secondary sex characteristics, and its effects on the body are considered reversible if it is stopped and endogenous puberty resumes. Important physiological consequences: <strong>bone mineral accrual slows</strong> (density z-scores fall during suppression and recover partially with later sex steroids), height velocity changes, and if suppression starts in early puberty and is followed by gender-affirming hormones, gametes do not mature, limiting fertility preservation. These are reasons for monitoring and counselling, discussed in the next sections.</p>\n<div class=\"trap\"><p>Continuous GnRH agonist exposure <em>suppresses</em> LH and FSH after a brief initial flare; pulsatile GnRH stimulates them. The same drug that stops puberty is used in prostate cancer and endometriosis for the same reason.</p></div>\n<div class=\"pearl\"><p>Testosterone suppresses ovulation inconsistently and is teratogenic, so transmasculine people with a uterus who have sex that can lead to pregnancy need contraception. Estrogen-free options (IUDs, implant, injectable progestin) work well alongside testosterone.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Gender Dysphoria"
+    },
+    {
+     "statpearls": "Leuprolide"
+    },
+    {
+     "statpearls": "Spironolactone"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Amenorrhea, abnormal uterine bleeding, endometriosis, PMDD and hirsutism: management",
+   "html": "<h2>Amenorrhea: a practical workup</h2>\n<p><strong>Primary amenorrhea</strong> is no menses by 15 years with normal secondary sexual development (or 3 years after breast development), or no breast development by 13. <strong>Secondary amenorrhea</strong> is absence of menses for 3 months with previously regular cycles or 6 months with irregular cycles.</p>\n<ol>\n<li><strong>Pregnancy test</strong> first, every time.</li>\n<li>History and examination: weight change, exercise, eating, stress, galactorrhea, headache or visual change, hirsutism and acne, drugs (antipsychotics, metoclopramide, opioids, hormonal contraception), prior uterine curettage, cancer therapy. Primary amenorrhea: breast development, height, presence of a uterus and vaginal patency.</li>\n<li>Labs: <strong>TSH, prolactin, FSH</strong> (with estradiol), and testosterone and DHEA-S if there is hyperandrogenism.</li>\n<li>Interpret: high FSH means ovarian insufficiency (karyotype; FMR1 testing). Low or normal FSH with low estradiol means hypothalamic or pituitary disease (MRI if prolactin is high without an obvious drug cause, or if there are headaches, visual defects or other pituitary deficits). Normal FSH with hyperandrogenism suggests PCOS. Normal results after curettage suggest intrauterine adhesions, confirmed by hysteroscopy.</li>\n<li>Primary amenorrhea with breasts but no uterus: karyotype and testosterone to separate Mullerian agenesis from androgen insensitivity. No breasts and high FSH: karyotype for Turner syndrome or gonadal dysgenesis.</li>\n</ol>\n<p><strong>Functional hypothalamic amenorrhea</strong> in athletes or people with restrictive eating is part of low energy availability (relative energy deficiency in sport). Treatment is to restore energy balance with nutrition support and reduced training, and to address any eating disorder; bone density is assessed after about 6 months of amenorrhea. Combined oral contraceptives produce withdrawal bleeding but do not restore bone health and mask recovery; transdermal estradiol with cyclic progestin is used if estrogen replacement is needed.</p>\n<p><strong>Hyperprolactinemia</strong>: confirm, exclude pregnancy, hypothyroidism, kidney disease and drugs. For a symptomatic prolactinoma, a dopamine agonist (<strong>cabergoline</strong> first line; bromocriptine if pregnancy is planned) shrinks the tumour and restores ovulation. Surgery is for intolerance or resistance. A drug-induced cause is managed by changing the drug where possible.</p>\n<h2>Abnormal uterine bleeding</h2>\n<p>The FIGO <strong>PALM-COEIN</strong> system classifies causes in nonpregnant reproductive-age people: structural causes (Polyp, Adenomyosis, Leiomyoma, Malignancy and hyperplasia) and nonstructural causes (Coagulopathy, Ovulatory dysfunction, Endometrial, Iatrogenic, Not otherwise classified).</p>\n<table class=\"hy\"><thead><tr><th>Group</th><th>Typical pattern</th><th>Key evaluation</th></tr></thead><tbody>\n<tr><td>Adolescents</td><td>Anovulation from an immature axis; heavy bleeding since menarche suggests a bleeding disorder</td><td>CBC, ferritin, hCG; von Willebrand panel and platelet count when heavy menses date from menarche</td></tr>\n<tr><td>Reproductive age</td><td>Ovulatory dysfunction (PCOS, thyroid, prolactin); fibroids; polyps</td><td>hCG, CBC, TSH; transvaginal ultrasound; endometrial biopsy at 45 or older or with unopposed estrogen exposure</td></tr>\n<tr><td>Perimenopause and after menopause</td><td>Anovulation; hyperplasia and cancer become important</td><td>Endometrial sampling or ultrasound for any postmenopausal bleeding</td></tr>\n</tbody></table>\n<ul>\n<li><strong>Acute heavy bleeding</strong>: assess haemodynamics and give fluids or blood as needed. Options are IV conjugated estrogen, a high-dose combined oral contraceptive taper, high-dose oral progestin, or tranexamic acid. Curettage (with hysteroscopy) is for instability or failure of medical treatment. Rule out pregnancy first.</li>\n<li><strong>Chronic heavy menstrual bleeding</strong>: the levonorgestrel IUD is the most effective medical option; combined hormonal contraceptives, oral progestins, tranexamic acid (antifibrinolytic, avoid with active thrombosis) and NSAIDs also reduce blood loss. Endometrial ablation is for those who have completed childbearing; hysterectomy is definitive.</li>\n<li>Treat iron deficiency in everyone with heavy bleeding.</li>\n</ul>\n<h2>Dysmenorrhea, endometriosis and adenomyosis</h2>\n<p><strong>Primary dysmenorrhea</strong> responds to NSAIDs and hormonal contraceptives; failure to respond prompts a search for endometriosis or other secondary causes. <strong>Endometriosis</strong> presents with progressive dysmenorrhea, deep dyspareunia, dyschezia, chronic pelvic pain and infertility; examination may show uterosacral nodularity or a fixed retroverted uterus. Transvaginal ultrasound detects endometriomas and deep nodules but misses superficial disease. A clinical diagnosis is enough to begin <strong>empiric treatment</strong>: NSAIDs plus continuous combined hormonal contraception or a progestin (norethindrone acetate, dienogest, the levonorgestrel IUD, the etonogestrel implant or depot medroxyprogesterone). Second line is a GnRH agonist with add-back estrogen-progestin, or an oral GnRH antagonist (elagolix, or relugolix with add-back), with attention to bone loss. Laparoscopy with excision provides histologic diagnosis and treatment and is indicated when empiric treatment fails, for endometriomas or when fertility is the main goal. <strong>Adenomyosis</strong> causes heavy painful menses with a uniformly enlarged, boggy, tender uterus; MRI or ultrasound suggests it; the levonorgestrel IUD and other hormonal treatments help, and hysterectomy is definitive.</p>\n<h2>Premenstrual syndrome and PMDD</h2>\n<p>Diagnosis requires symptoms in the luteal phase that resolve within a few days of menses, confirmed by <strong>prospective daily symptom charting for at least two cycles</strong>, with functional impairment. PMDD (DSM-5) requires at least five symptoms, including at least one core mood symptom (lability, irritability, depressed mood, anxiety). First-line treatment for PMDD is an <strong>SSRI</strong> (continuously or in the luteal phase only); a combined oral contraceptive with drospirenone in a shortened hormone-free interval is an alternative. Exercise and cognitive behavioural therapy help. GnRH agonists with add-back are reserved for refractory cases.</p>\n<h2>Hirsutism and virilisation</h2>\n<p>Gradual hirsutism with irregular menses is usually PCOS. Diagnose PCOS in adults by two of three Rotterdam criteria (ovulatory dysfunction, clinical or biochemical hyperandrogenism, polycystic ovarian morphology) after excluding thyroid disease, hyperprolactinemia and nonclassic congenital adrenal hyperplasia (early-morning 17-hydroxyprogesterone). In adolescents both ovulatory dysfunction and hyperandrogenism are required, and ultrasound is not used. Manage with lifestyle change and weight loss, combined hormonal contraception (menstrual regulation, endometrial protection, lowers free androgens), spironolactone for hirsutism only with reliable contraception (it can feminise a male fetus), metformin for metabolic features, letrozole for ovulation induction, and screening for type 2 diabetes, dyslipidemia, sleep apnoea and depression. <strong>Rapid virilisation</strong> (deep voice, clitoromegaly, temporal balding) or a very high testosterone suggests a tumour: pelvic ultrasound (or MRI) for an ovarian source and adrenal CT when DHEA-S is high. After menopause, ovarian stromal hyperthecosis is an important alternative.</p>\n<div class=\"trap\"><p>Combined oral contraceptives will make an athlete with hypothalamic amenorrhea bleed monthly, but that is not a cure: the low energy availability, bone loss and fracture risk persist. Treat the energy deficit.</p></div>\n<div class=\"pearl\"><p>Heavy menstrual bleeding since the first period in an adolescent is a bleeding disorder until proved otherwise; von Willebrand disease is the most common.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Secondary Amenorrhea"
+    },
+    {
+     "statpearls": "Abnormal Uterine Bleeding"
+    },
+    {
+     "statpearls": "Premenstrual Disorders"
+    },
+    {
+     "statpearls": "Hyperprolactinemia"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Gender-affirming hormone therapy: starting, monitoring and adverse effects",
+   "html": "<h2>Assessment and starting therapy</h2>\n<p>For adults, WPATH SOC 8 recommends GAHT when gender incongruence is marked and sustained, the person can give informed consent, other physical and mental health conditions that could affect treatment are addressed, and reproductive options have been discussed. It does not require a period of psychotherapy or living in the affirmed role. Take a full history (including VTE, cardiovascular disease, cancer, liver disease, smoking, migraine), set realistic expectations about which changes are irreversible, and discuss fertility preservation before starting. Baseline tests usually include blood pressure, weight, hematocrit or hemoglobin, lipids, glucose or A1c and, for feminizing regimens with spironolactone, potassium and creatinine.</p>\n<h2>Monitoring targets (Endocrine Society, restated)</h2>\n<table class=\"hy\"><thead><tr><th></th><th>Feminizing (estradiol with antiandrogen)</th><th>Masculinizing (testosterone)</th></tr></thead><tbody>\n<tr><td>Frequency</td><td>About every 3 months in the first year, then 1&ndash;2 times a year</td><td>About every 3 months in the first year, then 1&ndash;2 times a year</td></tr>\n<tr><td>Hormone targets</td><td>Estradiol about 100&ndash;200 pg/mL; total testosterone below about 50 ng/dL</td><td>Total testosterone in the typical adult male reference range (for injections, measured midway between doses)</td></tr>\n<tr><td>Safety labs</td><td>Potassium and creatinine with spironolactone</td><td>Hematocrit or hemoglobin; lipids</td></tr>\n<tr><td>Clinical review</td><td>Feminization, mood, blood pressure, weight, VTE symptoms</td><td>Virilisation, menses, acne, blood pressure, weight, sleep apnoea</td></tr>\n</tbody></table>\n<p>Adjust doses to reach targets: if testosterone stays above target on estradiol and spironolactone, increase the estradiol dose (if estradiol is low) or the antiandrogen dose; if estradiol is high and testosterone suppressed, lower the estradiol. Interpret creatinine, hemoglobin and other sex-specific reference ranges in light of the current hormone milieu rather than sex assigned at birth.</p>\n<h2>Adverse effects and how to manage them</h2>\n<table class=\"hy\"><thead><tr><th>Therapy</th><th>Adverse effect</th><th>Management</th></tr></thead><tbody>\n<tr><td>Estradiol</td><td>Venous thromboembolism (higher with oral route, older age, smoking, immobility)</td><td>Prefer transdermal routes when risk is higher; avoid ethinyl estradiol; support smoking cessation</td></tr>\n<tr><td>Estradiol</td><td>Hypertriglyceridemia, gallstones, raised liver enzymes, weight gain</td><td>Monitor; consider transdermal route</td></tr>\n<tr><td>Estradiol</td><td>Raised prolactin, rarely prolactinoma</td><td>Evaluate galactorrhea, headache or visual symptoms; measurement practice varies</td></tr>\n<tr><td>Spironolactone</td><td>Hyperkalemia, polyuria, dizziness</td><td>Check potassium; avoid with kidney impairment or other potassium-raising drugs; consider a GnRH agonist instead</td></tr>\n<tr><td>Testosterone</td><td>Erythrocytosis</td><td>Lower the dose or lengthen the interval, consider transdermal route, address smoking and sleep apnoea</td></tr>\n<tr><td>Testosterone</td><td>Acne, androgenic alopecia, lower HDL, weight gain, pelvic pain</td><td>Standard acne treatment; discuss hair loss options; manage cardiovascular risk</td></tr>\n<tr><td>Testosterone</td><td>Pregnancy is still possible and the drug is teratogenic</td><td>Contraception; stop testosterone if pregnancy occurs</td></tr>\n</tbody></table>\n<p>Estrogen is generally avoided or used only after specialist risk assessment in people with active VTE or a high thrombotic risk, estrogen-sensitive cancer, or severe liver disease. Testosterone is contraindicated in pregnancy and is used with caution in erythrocytosis and active sex-hormone-sensitive cancer. Hypertension, diabetes, dyslipidemia, smoking and HIV are managed rather than treated as automatic barriers.</p>\n<h2>Preventive care by anatomy</h2>\n<ul>\n<li><strong>Cervix present</strong> (most transgender men and nonbinary people assigned female at birth who have not had hysterectomy): standard cervical screening; testosterone makes cytology more often unsatisfactory, so HPV-based testing helps.</li>\n<li><strong>Breast tissue</strong>: transgender women on estrogen are commonly advised to begin screening mammography from about 50 years after at least 5 years of hormones, although guidance varies; transgender men who have not had chest surgery follow standard breast screening, and those after mastectomy have residual tissue but no routine mammography.</li>\n<li><strong>Prostate</strong>: remains after vaginoplasty; PSA is lower on estrogen and antiandrogens, so interpret it with a lower threshold.</li>\n<li><strong>Bone</strong>: screen at 65, or earlier if hormones are stopped after gonadectomy or other risk factors exist.</li>\n<li><strong>Contraception</strong> for anyone whose sexual practices could lead to pregnancy: IUDs, the implant and depot medroxyprogesterone are compatible with testosterone.</li>\n</ul>\n<h2>Adolescents</h2>\n<p>When puberty suppression or hormones are used in adolescents, WPATH SOC 8 describes a multidisciplinary assessment with the adolescent and parents or guardians, including mental health, capacity and reproductive counselling. Monitoring during GnRH agonist therapy includes height, weight and Tanner stage, LH, FSH and sex steroids to confirm suppression, and bone health: adequate calcium, vitamin D and weight-bearing activity, with <strong>DXA bone density</strong> at baseline and periodically. Adverse effects include headaches, hot flashes, mood changes and sterile abscesses at injection sites. Laws and national policies on care for minors differ and are changing, and some national reviews have recommended a more restricted approach; know the rules where you practise and keep decisions individualised.</p>\n<div class=\"trap\"><p>Testosterone that has stopped someone's periods does not mean they cannot conceive. Ask about sexual practices and offer contraception; estrogen-free methods do not counteract masculinization.</p></div>\n<div class=\"pearl\"><p>When a feminizing regimen is not working, look at the numbers: testosterone above target with low estradiol means the estradiol dose is too low (or adherence or absorption is poor), not that the person needs a different estrogen such as ethinyl estradiol.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Gender Dysphoria"
+    },
+    {
+     "statpearls": "Estradiol"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Relative hormone levels across an idealised 28-day menstrual cycle, with ovarian and endometrial phases (schematic, not to scale)."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. Sites of action of feminizing and masculinizing hormone therapy and of GnRH agonist puberty suppression (schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 17-year-old girl has never had a menstrual period. She has never been able to smell coffee or perfume. She is 163 cm tall. Breasts are Tanner stage 1, and pubic hair is Tanner stage 2. Pelvic ultrasound shows a small uterus and small ovaries. Serum LH, FSH and estradiol are low. MRI of the pituitary is normal, and the olfactory bulbs are hypoplastic. Which of the following best explains her condition?</p>",
+   "options": [
+    "Autoimmune destruction of ovarian follicles",
+    "Failure of GnRH-secreting neurons to migrate from the olfactory placode",
+    "Infarction of the anterior pituitary",
+    "Loss of a second X chromosome",
+    "Resistance of the androgen receptor to testosterone"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Hypogonadotropic hypogonadism with anosmia and hypoplastic olfactory bulbs is Kallmann syndrome. GnRH neurons originate in the olfactory placode and migrate along olfactory nerve pathways into the hypothalamus during embryonic development. Mutations such as <em>ANOS1</em> (<em>KAL1</em>) disrupt this migration, so GnRH is absent and LH, FSH and sex steroids stay low. Pubic hair can appear because adrenal androgens are independent of GnRH.</p><p><strong>Takeaway:</strong> Kallmann syndrome: failed GnRH neuron migration with anosmia and low LH and FSH.</p>",
+   "whyNot": {
+    "A": "Autoimmune ovarian failure gives high FSH and LH and does not affect smell.",
+    "C": "Pituitary infarction (Sheehan syndrome) follows severe postpartum haemorrhage and causes multiple pituitary deficits.",
+    "D": "Turner syndrome causes ovarian failure with high FSH and short stature; she is of normal height with low FSH.",
+    "E": "Androgen insensitivity presents with normal breast development, absent uterus and male-range testosterone."
+   },
+   "objective": "Explain Kallmann syndrome as failed GnRH neuron migration.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "amenorrhea",
+    "puberty"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old transgender woman (assigned male at birth) starts gender-affirming therapy with oral estradiol and a second drug that also treats primary hyperaldosteronism and heart failure. She is told to have her potassium checked. Which of the following is the mechanism by which the second drug lowers androgen effects?</p>",
+   "options": [
+    "Competitive antagonism at androgen receptors",
+    "Continuous stimulation of pituitary GnRH receptors",
+    "Inhibition of aromatase",
+    "Inhibition of type 2 5-alpha-reductase",
+    "Partial agonism at estrogen receptors"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Spironolactone is a competitive antagonist of the mineralocorticoid receptor and also of the androgen receptor, and it weakly inhibits androgen synthesis. Blocking androgen receptors reduces androgen effects on hair and skin, and estradiol suppresses gonadotropins to lower testicular testosterone. Mineralocorticoid antagonism causes potassium retention, so potassium is monitored.</p><p><strong>Takeaway:</strong> Spironolactone works as an antiandrogen by blocking androgen receptors; watch potassium.</p>",
+   "whyNot": {
+    "B": "Continuous GnRH receptor stimulation describes GnRH agonists, an alternative antiandrogenic strategy.",
+    "C": "Aromatase inhibition would lower estrogen, opposite to the goal of feminizing therapy.",
+    "D": "5-alpha-reductase inhibition describes finasteride and dutasteride.",
+    "E": "Partial estrogen agonism describes SERMs such as tamoxifen and raloxifene."
+   },
+   "objective": "Describe the antiandrogen mechanism of spironolactone in feminizing therapy.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gender-affirming care",
+    "antiandrogens"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 11-year-old transgender boy (assigned female at birth) at Tanner stage 2 begins a GnRH agonist after multidisciplinary assessment. Three months later, serum LH, FSH and estradiol are suppressed and breast development has not progressed. Which of the following best explains the suppression of gonadotropins?</p>",
+   "options": [
+    "Continuous agonist exposure downregulates and desensitises pituitary GnRH receptors",
+    "Direct inhibition of ovarian aromatase",
+    "Increased hypothalamic dopamine release",
+    "Negative feedback from increased ovarian inhibin",
+    "Pulsatile stimulation of gonadotrophs at physiological frequency"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Normal gonadotropin secretion depends on pulsatile GnRH. A long-acting GnRH agonist provides continuous receptor stimulation: after a brief initial flare of LH and FSH, the receptors are internalised and gonadotrophs are desensitised, so LH, FSH and sex steroid levels fall. The same principle is used in central precocious puberty, endometriosis and prostate cancer.</p><p><strong>Takeaway:</strong> Continuous GnRH agonist exposure suppresses LH and FSH by receptor downregulation after an initial flare.</p>",
+   "whyNot": {
+    "B": "GnRH agonists act at the pituitary; aromatase inhibitors act in the ovary and do not suppress gonadotropins.",
+    "C": "Dopamine inhibits prolactin, not GnRH-driven gonadotropin release.",
+    "D": "Inhibin would fall, not rise, when follicular development stops.",
+    "E": "Pulsatile physiological stimulation increases LH and FSH; that is how GnRH pumps induce ovulation."
+   },
+   "objective": "Explain how GnRH agonists suppress puberty.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "puberty",
+    "gender-affirming care"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old girl has had crampy lower abdominal pain for the first 2 days of each menstrual period since about a year after menarche, with nausea and loose stools. Her cycles are regular. Pelvic examination and ultrasound are normal. Ibuprofen taken at the onset of bleeding relieves her pain. Ibuprofen most directly relieves her symptoms by reducing the synthesis of which of the following?</p>",
+   "options": [
+    "Leukotriene B4",
+    "Oxytocin",
+    "Prostaglandin F2-alpha",
+    "Thromboxane A2 in platelets",
+    "Vasopressin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Primary dysmenorrhea occurs with ovulatory cycles: progesterone withdrawal before menses releases arachidonic acid, and cyclooxygenase in the endometrium produces prostaglandins, especially PGF2-alpha. PGF2-alpha causes strong, uncoordinated myometrial contractions and vasoconstriction (ischaemic pain) and stimulates gut smooth muscle (nausea and diarrhoea). NSAIDs inhibit COX and lower prostaglandin production.</p><p><strong>Takeaway:</strong> Primary dysmenorrhea is driven by endometrial PGF2-alpha; NSAIDs block its synthesis.</p>",
+   "whyNot": {
+    "A": "Leukotrienes come from the lipoxygenase pathway, which NSAIDs do not inhibit.",
+    "B": "Oxytocin may contribute to uterine contractility but is not synthesised through COX and is not the target of ibuprofen.",
+    "D": "Platelet thromboxane is reduced by NSAIDs, but this explains bleeding effects, not pain relief in dysmenorrhea.",
+    "E": "Vasopressin is a posterior pituitary hormone not affected by COX inhibition."
+   },
+   "objective": "Link primary dysmenorrhea to prostaglandin F2-alpha and NSAID action.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "dysmenorrhea"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman has worsening dysmenorrhea, deep dyspareunia and pain with bowel movements during menses. Ultrasound shows a 5-cm left ovarian cyst with homogeneous low-level internal echoes. At laparoscopy, the cyst contains thick, dark brown fluid, and there are puckered black and red spots on the uterosacral ligaments. Which of the following histologic findings in a biopsy of the peritoneal lesions confirms the diagnosis?</p>",
+   "options": [
+    "Chronic granulomatous inflammation with caseation",
+    "Endometrial-type glands and stroma with haemosiderin-laden macrophages",
+    "Islands of smooth muscle with whorled fascicles",
+    "Papillary serous epithelium with psammoma bodies",
+    "Signet-ring cells infiltrating fibrous stroma"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Cyclic pain, dyspareunia, dyschezia, a chocolate cyst of the ovary and powder-burn lesions indicate endometriosis. The diagnosis is confirmed by finding endometrial-type glands and/or stroma outside the uterus; repeated bleeding into lesions leaves haemosiderin-laden macrophages and fibrosis.</p><p><strong>Takeaway:</strong> Endometriosis: ectopic endometrial glands and stroma with haemosiderin-laden macrophages.</p>",
+   "whyNot": {
+    "A": "Caseating granulomas suggest tuberculous salpingitis or peritonitis, which does not produce chocolate cysts.",
+    "C": "Whorled smooth muscle describes leiomyoma, a uterine tumour rather than peritoneal implants.",
+    "D": "Papillary serous epithelium with psammoma bodies suggests serous neoplasia of the ovary or peritoneum.",
+    "E": "Signet-ring cells suggest metastatic gastric or other GI carcinoma (Krukenberg tumour)."
+   },
+   "objective": "Recognise the histology that confirms endometriosis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pelvic pain"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 28-year-old woman has had amenorrhea for 6 months and a milky nipple discharge. Urine hCG is negative. TSH and creatinine are normal. Serum prolactin is 140 ng/mL (reference less than 20 ng/mL), and estradiol is low. She takes no medications. MRI shows a 7-mm pituitary adenoma. The elevated hormone most directly causes her amenorrhea by which of the following?</p>",
+   "options": [
+    "Direct inhibition of ovarian aromatase",
+    "Increased hepatic clearance of estradiol",
+    "Induction of endometrial atrophy through prolactin receptors",
+    "Stimulation of adrenal androgen secretion",
+    "Suppression of pulsatile hypothalamic GnRH secretion"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A prolactin-secreting microadenoma causes galactorrhea and hypogonadotropic hypogonadism. High prolactin acts in the hypothalamus, largely via kisspeptin neurons, to suppress pulsatile GnRH release; LH and FSH fall, follicles do not mature and estradiol is low. Dopamine agonists such as cabergoline lower prolactin and restore ovulation.</p><p><strong>Takeaway:</strong> Hyperprolactinemia causes amenorrhea by suppressing pulsatile GnRH secretion.</p>",
+   "whyNot": {
+    "A": "Prolactin does not directly inhibit ovarian aromatase as its main action; low estradiol follows from low gonadotropins.",
+    "B": "Prolactin does not increase hepatic estrogen clearance.",
+    "C": "The endometrium becomes thin because estradiol is low, not through direct prolactin action.",
+    "D": "Prolactin may modestly influence adrenal androgens, but this does not explain amenorrhea with low estradiol."
+   },
+   "objective": "Explain amenorrhea in hyperprolactinemia by suppression of GnRH pulsatility.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "amenorrhea",
+    "pituitary disorders"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman has had no menses for 7 months and has noticed fluid leaking from both nipples. She has no headaches or visual symptoms and takes no medications. Visual fields are full. Results are shown.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Urine beta-hCG</td><td>Negative</td></tr><tr><td>Prolactin</td><td>165 ng/mL (reference less than 20 ng/mL)</td></tr><tr><td>TSH</td><td>1.8 &micro;U/mL</td></tr><tr><td>FSH</td><td>2.1 mIU/mL (follicular reference 3&ndash;10 mIU/mL)</td></tr><tr><td>Creatinine</td><td>0.7 mg/dL (62 &micro;mol/L)</td></tr><tr><td>MRI pituitary</td><td>6-mm adenoma; optic chiasm normal</td></tr></tbody></table><p>She would like to restore regular menses and may want pregnancy in a few years. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Cabergoline",
+    "Combined oral contraceptive alone",
+    "Octreotide",
+    "Pituitary radiation",
+    "Transsphenoidal resection"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has a symptomatic prolactin-secreting microadenoma. A dopamine agonist is first-line: it normalises prolactin, shrinks the tumour and restores ovulation and menses in most patients. Cabergoline is better tolerated and more effective than bromocriptine; if she later plans pregnancy, bromocriptine has more pregnancy safety data, and treatment is usually stopped once pregnancy is confirmed for a microadenoma.</p><p><strong>Takeaway:</strong> First-line treatment of a symptomatic prolactinoma is a dopamine agonist, usually cabergoline.</p>",
+   "whyNot": {
+    "B": "A combined pill would cause withdrawal bleeding and protect bone but would not treat galactorrhea, lower prolactin or restore fertility.",
+    "C": "Octreotide is used for growth hormone- or TSH-secreting adenomas, not prolactinomas.",
+    "D": "Radiation is a last resort for aggressive tumours resistant to other treatment.",
+    "E": "Surgery is reserved for intolerance or resistance to dopamine agonists, or for pituitary apoplexy."
+   },
+   "objective": "Treat a symptomatic prolactin-secreting microadenoma with cabergoline.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "amenorrhea",
+    "pituitary disorders"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old girl is brought to the clinic because of heavy menstrual periods since menarche at 12 years of age. She changes a soaked pad every 1&ndash;2 hours on the first 3 days and sometimes passes large clots. She has frequent nosebleeds and bleeds for a long time after dental cleaning. Her cycles are every 26&ndash;30 days. Hemoglobin is 9.8 g/dL (98 g/L), MCV is 72 fL and platelets are 260,000/mm<sup>3</sup> (260 &times; 10<sup>9</sup>/L). Prothrombin time and aPTT are normal. Urine hCG is negative. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    "Endometrial biopsy",
+    "Hysteroscopy",
+    "Pelvic MRI",
+    "Serum CA-125",
+    "Von Willebrand factor studies"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Heavy menstrual bleeding since menarche plus mucocutaneous bleeding (epistaxis, prolonged dental bleeding) strongly suggests an inherited bleeding disorder, most commonly von Willebrand disease. A normal aPTT does not exclude it. Testing includes von Willebrand factor antigen, activity (ristocetin cofactor or equivalent assays) and factor VIII. Results can be affected by stress, estrogen and inflammation, so testing may need repeating. Iron deficiency should also be treated.</p><p><strong>Takeaway:</strong> Heavy menses since menarche with other bleeding symptoms: test for von Willebrand disease.</p>",
+   "whyNot": {
+    "A": "Endometrial pathology is very unlikely at 15 years without risk factors; biopsy is not indicated.",
+    "B": "Hysteroscopy evaluates structural lesions, which are uncommon in adolescents with this history.",
+    "C": "MRI is unnecessary; there is no suspicion of a structural lesion such as adenomyosis.",
+    "D": "CA-125 has no role in evaluating abnormal bleeding in an adolescent."
+   },
+   "objective": "Test for von Willebrand disease in an adolescent with heavy menses since menarche.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "abnormal uterine bleeding",
+    "adolescent health"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 47-year-old woman has had irregular, heavy menstrual bleeding for 6 months, with cycles ranging from 18 to 50 days. Her BMI is 36 kg/m<sup>2</sup>, and she has type 2 diabetes. Pelvic examination shows a normal-sized uterus and no cervical lesions. Urine hCG is negative. Hemoglobin is 11.2 g/dL (112 g/L). TSH is normal. Cervical screening is up to date. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Begin a combined oral contraceptive without further evaluation",
+    "Endometrial biopsy",
+    "Measure serum CA-125",
+    "Pelvic MRI",
+    "Total hysterectomy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Abnormal uterine bleeding at 45 years or older needs endometrial sampling to exclude hyperplasia and carcinoma, and her obesity and diabetes (with likely anovulation and unopposed estrogen) add risk. Office endometrial biopsy is the first-line test. Treatment, for example a levonorgestrel IUD, follows once malignancy is excluded.</p><p><strong>Takeaway:</strong> Abnormal uterine bleeding at 45 or older, or with unopposed estrogen risk, needs endometrial sampling.</p>",
+   "whyNot": {
+    "A": "Starting hormonal treatment without sampling can mask hyperplasia or cancer; obesity and age also raise the risks of estrogen-containing contraception.",
+    "C": "CA-125 is not a test for endometrial pathology in abnormal bleeding.",
+    "D": "MRI is not the first-line test and cannot replace tissue diagnosis of the endometrium.",
+    "E": "Hysterectomy is premature before a diagnosis and before trying less invasive treatments."
+   },
+   "objective": "Perform endometrial biopsy for abnormal uterine bleeding at 45 years or older.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "abnormal uterine bleeding"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 25-year-old woman has had worsening pain with menses for 3 years, now with deep dyspareunia and pain on defecation during her periods. Naproxen helps only partly. She does not want to become pregnant for several years. She does not smoke, and her blood pressure is 112/70 mm Hg. She has no migraines. Pelvic examination shows tender nodularity of the uterosacral ligaments. Transvaginal ultrasound is normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Continuous combined hormonal contraception",
+    "Danazol",
+    "Diagnostic laparoscopy before any hormonal treatment",
+    "GnRH agonist without add-back therapy for 2 years",
+    "Total hysterectomy with bilateral salpingo-oophorectomy"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Her symptoms and examination suggest endometriosis. Surgical confirmation is not required before treatment: empiric hormonal suppression with continuous combined hormonal contraception (or a progestin) together with NSAIDs is first-line, effective and provides contraception. Laparoscopy is reserved for symptoms that do not respond, for endometriomas or other masses, or when fertility is the main concern. GnRH agonists or antagonists with add-back therapy are second line.</p><p><strong>Takeaway:</strong> Suspected endometriosis can be treated empirically with NSAIDs plus continuous hormonal contraception or a progestin.</p>",
+   "whyNot": {
+    "B": "Danazol is effective but has androgenic adverse effects (acne, hirsutism, voice change) and is no longer first line.",
+    "C": "Laparoscopy is not needed before starting empiric therapy in someone with typical symptoms and no mass.",
+    "D": "GnRH agonists are second line and should be combined with add-back therapy to prevent bone loss and hypoestrogenic symptoms.",
+    "E": "Definitive surgery is inappropriate for a 25-year-old who wants future pregnancy and has not tried first-line treatment."
+   },
+   "objective": "Start empiric hormonal suppression for suspected endometriosis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pelvic pain"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman has severe irritability, low mood, anxiety, breast tenderness, bloating and difficulty concentrating that begin about a week before menses and resolve within 2 days after bleeding starts. Prospective daily ratings over two cycles confirm the timing, and she has no symptoms in the follicular phase. Her symptoms have caused conflict at work and at home. She has no history of bipolar disorder. Which of the following is the most appropriate pharmacotherapy?</p>",
+   "options": [
+    "Alprazolam",
+    "Bupropion",
+    "Lithium",
+    "Quetiapine",
+    "Sertraline"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Luteal-phase mood and physical symptoms that resolve after menses, confirmed by prospective charting and causing impairment, meet criteria for premenstrual dysphoric disorder. SSRIs are first-line; they work quickly and can be taken continuously or only in the luteal phase. Combined oral contraceptives containing drospirenone are an alternative.</p><p><strong>Takeaway:</strong> SSRIs, continuous or luteal-phase only, are first-line for PMDD.</p>",
+   "whyNot": {
+    "A": "Benzodiazepines have weak evidence and risk dependence; they are not recommended for PMDD.",
+    "B": "Bupropion, which lacks serotonergic action, has not been effective for PMDD.",
+    "C": "Lithium has no role in PMDD and is reserved for bipolar disorder.",
+    "D": "Antipsychotics are not indicated for PMDD."
+   },
+   "objective": "Treat premenstrual dysphoric disorder with an SSRI.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "psychiatry"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "premenstrual disorders"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old woman has 8 months of progressive coarse hair growth on her face and chest, deepening of her voice and loss of scalp hair at the temples. Her menopause was at 51 years of age. She takes no medications. Examination shows clitoromegaly. Serum total testosterone is 245 ng/dL (postmenopausal reference less than 40 ng/dL); DHEA-S is normal for age. TSH and prolactin are normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "ACTH stimulation test for nonclassic congenital adrenal hyperplasia",
+    "CT scan of the adrenal glands",
+    "Oral spironolactone and reassessment in 6 months",
+    "Pelvic imaging with transvaginal ultrasound",
+    "Overnight dexamethasone suppression test"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Rapidly progressive virilisation with a markedly elevated testosterone and a normal DHEA-S points to an ovarian source: an androgen-secreting ovarian tumour (Sertoli-Leydig or steroid cell) or ovarian stromal hyperthecosis, which is common after menopause. Transvaginal ultrasound (followed by MRI if needed) is the next step. A high DHEA-S would instead direct imaging to the adrenal glands.</p><p><strong>Takeaway:</strong> Rapid virilisation with high testosterone and normal DHEA-S: image the ovaries first.</p>",
+   "whyNot": {
+    "A": "Nonclassic CAH causes gradual hirsutism beginning around puberty, not new virilisation after menopause.",
+    "B": "Adrenal imaging is chosen when DHEA-S is markedly elevated; hers is normal.",
+    "C": "Treating symptoms without finding the source could miss a malignant tumour.",
+    "E": "Dexamethasone suppression evaluates Cushing syndrome, which does not typically cause this degree of virilisation."
+   },
+   "objective": "Image the ovaries first when virilisation occurs with high testosterone and normal DHEA-S.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "androgen excess"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old transgender woman returns 3 months after starting gender-affirming hormone therapy with oral estradiol and spironolactone at the maximum dose she can tolerate. She takes both drugs daily and has noticed only slight breast tenderness. Blood pressure is 118/74 mm Hg.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Estradiol</td><td>55 pg/mL (target about 100&ndash;200 pg/mL)</td></tr><tr><td>Total testosterone</td><td>290 ng/dL (target less than 50 ng/dL)</td></tr><tr><td>Potassium</td><td>4.3 mEq/L (4.3 mmol/L)</td></tr><tr><td>Creatinine</td><td>0.8 mg/dL (71 &micro;mol/L)</td></tr><tr><td>ALT</td><td>22 U/L</td></tr></tbody></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Add oral micronized progesterone",
+    "Continue the current regimen and recheck in 12 months",
+    "Increase the estradiol dose",
+    "Stop spironolactone",
+    "Switch to ethinyl estradiol"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Her estradiol is below the target range and testosterone remains well above the target, despite adherence and a maximal tolerated spironolactone dose. The next step is to increase the estradiol dose (or switch route if absorption is a problem) and recheck levels in about 3 months. Higher estradiol strengthens negative feedback on LH and further suppresses testosterone. If targets still are not met, a GnRH agonist can be added.</p><p><strong>Takeaway:</strong> If estradiol is low and testosterone high on feminizing therapy, increase the estradiol dose and recheck.</p>",
+   "whyNot": {
+    "A": "Evidence does not support progestogens to improve feminization, and they would not correct her low estradiol.",
+    "B": "Levels are far from target; waiting a year delays effective treatment.",
+    "D": "Stopping the antiandrogen would raise testosterone further; her potassium is normal.",
+    "E": "Ethinyl estradiol carries a much higher thrombotic risk and is not used for gender-affirming therapy."
+   },
+   "objective": "Adjust estradiol dose when hormone levels are off target during feminizing therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gender-affirming care"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 13-year-old transgender boy (assigned female at birth) has been treated with a GnRH agonist for 14 months after a multidisciplinary assessment. Breast development has remained at Tanner stage 2, and LH and estradiol are suppressed. He feels well. His diet includes little dairy, and he plays no sports. Besides height, weight and pubertal staging, which of the following is the most important monitoring for an adverse effect of this treatment?</p>",
+   "options": [
+    "Annual brain MRI",
+    "Bone mineral density by DXA with vitamin D status",
+    "Dilated eye examination",
+    "Echocardiography",
+    "Serial liver ultrasonography"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>During puberty suppression, sex steroids that drive bone mineral accrual are absent, so bone density gains slow and z-scores fall. Guidelines advise baseline and periodic DXA, adequate calcium and vitamin D intake (his diet is low in dairy) and weight-bearing activity. Bone density typically recovers partially once sex steroids, either endogenous or gender-affirming, are introduced.</p><p><strong>Takeaway:</strong> Monitor bone density, calcium and vitamin D during GnRH agonist puberty suppression.</p>",
+   "whyNot": {
+    "A": "Brain imaging is not part of routine monitoring for GnRH agonist therapy.",
+    "C": "GnRH agonists do not cause ocular toxicity requiring routine examination.",
+    "D": "There is no cardiac toxicity that requires echocardiographic monitoring in adolescents on GnRH agonists.",
+    "E": "GnRH agonists are not hepatotoxic, and liver imaging is not indicated."
+   },
+   "objective": "Monitor bone mineral density during GnRH agonist puberty suppression.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gender-affirming care",
+    "bone health"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Why is the luteal phase about 14 days regardless of cycle length?",
+   "back": "The corpus luteum has a fixed lifespan without hCG.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Hormone effect that makes the endometrium secretory?",
+   "back": "Progesterone from the corpus luteum.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Anosmia with low LH and FSH and primary amenorrhea?",
+   "back": "Kallmann syndrome: failed GnRH neuron migration from the olfactory placode.",
+   "question": 1
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "How does hyperprolactinemia cause amenorrhea?",
+   "back": "It suppresses pulsatile hypothalamic GnRH.",
+   "question": 6
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Mediator of primary dysmenorrhea?",
+   "back": "Endometrial prostaglandin F2-alpha (blocked by NSAIDs).",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Histology that confirms endometriosis?",
+   "back": "Ectopic endometrial glands and stroma, often with haemosiderin-laden macrophages.",
+   "question": 5
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Adenomyosis: what is it?",
+   "back": "Endometrial glands and stroma within the myometrium; enlarged globular tender uterus.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Blood test that screens for nonclassic 21-hydroxylase deficiency?",
+   "back": "Early-morning 17-hydroxyprogesterone.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Why is ethinyl estradiol avoided in feminizing therapy?",
+   "back": "Much higher venous thromboembolism risk than 17-beta-estradiol.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Spironolactone's antiandrogen mechanism?",
+   "back": "Androgen receptor antagonism (plus weak inhibition of synthesis); mineralocorticoid antagonism causes hyperkalemia.",
+   "question": 2
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "How does a continuous GnRH agonist suppress puberty?",
+   "back": "Receptor downregulation and desensitisation after a brief flare.",
+   "question": 3
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Earliest pubertal stage for GnRH agonist suppression per WPATH SOC 8?",
+   "back": "Tanner stage 2.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Which testosterone effects are irreversible?",
+   "back": "Voice deepening and clitoral growth (facial hair largely persists).",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Does feminizing therapy change the voice?",
+   "back": "No; voice training is used.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "How does testosterone cause erythrocytosis?",
+   "back": "Increased erythropoietin and decreased hepcidin.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Adverse effect linked to high-dose, long-term cyproterone acetate?",
+   "back": "Meningioma (also raised prolactin).",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "First test in any amenorrhea workup?",
+   "back": "Pregnancy test.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "First-line treatment for a symptomatic prolactinoma?",
+   "back": "Cabergoline (dopamine agonist).",
+   "question": 7
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Heavy menses since menarche with epistaxis?",
+   "back": "Test for von Willebrand disease.",
+   "question": 8
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Who needs endometrial sampling for AUB?",
+   "back": "Age 45 or older, or younger with unopposed estrogen, failed therapy or persistent bleeding.",
+   "question": 9
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "First-line treatment for suspected endometriosis?",
+   "back": "NSAIDs plus continuous combined hormonal contraception or a progestin.",
+   "question": 10
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "How is PMDD confirmed?",
+   "back": "Prospective daily symptom charting for at least two cycles.",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "First-line PMDD treatment?",
+   "back": "SSRI, continuously or in the luteal phase.",
+   "question": 11
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Rapid virilisation, high testosterone, normal DHEA-S?",
+   "back": "Image the ovaries (transvaginal ultrasound).",
+   "question": 12
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Most effective medical treatment for chronic heavy menstrual bleeding?",
+   "back": "Levonorgestrel IUD.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 4,
+   "front": "Feminizing hormone targets?",
+   "back": "Estradiol about 100 to 200 pg/mL; testosterone below about 50 ng/dL.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Masculinizing hormone target?",
+   "back": "Testosterone in the typical male range, mid-interval for injections.",
+   "question": null
+  },
+  {
+   "n": 28,
+   "section": 4,
+   "front": "Key safety labs on testosterone?",
+   "back": "Hematocrit or hemoglobin and lipids.",
+   "question": null
+  },
+  {
+   "n": 29,
+   "section": 4,
+   "front": "Key safety lab on spironolactone?",
+   "back": "Potassium (and creatinine).",
+   "question": null
+  },
+  {
+   "n": 30,
+   "section": 4,
+   "front": "Low estradiol and high testosterone on feminizing therapy?",
+   "back": "Increase the estradiol dose and recheck.",
+   "question": 13
+  },
+  {
+   "n": 31,
+   "section": 4,
+   "front": "Monitoring during puberty suppression?",
+   "back": "Growth, Tanner stage, suppression labs and DXA bone density with calcium and vitamin D.",
+   "question": 14
+  },
+  {
+   "n": 32,
+   "section": 4,
+   "front": "How should PSA be interpreted in a transgender woman on estrogen?",
+   "back": "PSA is lower, so use a lower threshold for concern.",
+   "question": null
+  },
+  {
+   "n": 33,
+   "section": 4,
+   "front": "Contraception for a transgender man on testosterone?",
+   "back": "Needed if pregnancy is possible; IUDs, implant or injectable progestin.",
+   "question": null
+  }
+ ]
+}

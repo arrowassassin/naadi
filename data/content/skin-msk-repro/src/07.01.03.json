@@ -1,0 +1,894 @@
+{
+ "area": "07.01.03",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Seronegative arthritis, polymyalgia rheumatica, JIA and soft-tissue inflammation: mechanisms",
+   "html": "<p>This section covers inflammatory joint and periarticular disease that is not driven by classic autoantibodies: the peripheral spondyloarthritides (reactive, psoriatic and enteropathic arthritis), polymyalgia rheumatica, juvenile idiopathic arthritis, and inflammation of bursae and tendon sheaths. On Step 1, expect questions on triggers, HLA links, cytokine pathways and the drugs that target them, and the anatomy of tendon compartments.</p>\n<h2>The spondyloarthritis family</h2>\n<p>These diseases share HLA-B27, enthesitis, dactylitis, asymmetric oligoarthritis of the lower limbs, sacroiliitis, anterior uveitis and negative rheumatoid factor. The <strong>IL-23/IL-17 axis</strong> links the gut, skin, eye and enthesis. Barrier tissues such as gut mucosa and skin release IL-23 when injured or infected. IL-23 drives IL-17 and TNF from Th17 cells, γδ T cells and innate lymphoid cells. IL-17 recruits neutrophils and stimulates both bone erosion and new bone formation.</p>\n<table class=\"hy\">\n<thead><tr><th>Disease</th><th>Trigger or setting</th><th>Distinguishing features</th></tr></thead>\n<tbody>\n<tr><td>Reactive arthritis</td><td>1 to 4 weeks after enteric infection (<em>Salmonella</em>, <em>Shigella</em>, <em>Campylobacter</em>, <em>Yersinia</em>) or genital <em>Chlamydia trachomatis</em></td><td>Sterile synovitis, conjunctivitis, urethritis or cervicitis, heel enthesitis, painless oral ulcers, keratoderma blennorrhagicum, circinate balanitis</td></tr>\n<tr><td>Psoriatic arthritis</td><td>Psoriasis (skin disease usually comes first)</td><td>DIP arthritis with nail pitting and onycholysis, dactylitis (\"sausage digit\"), pencil-in-cup erosions with fluffy periosteal new bone, arthritis mutilans</td></tr>\n<tr><td>Enteropathic arthritis</td><td>Crohn disease or ulcerative colitis</td><td>Large-joint peripheral arthritis that parallels bowel activity; axial disease that does not</td></tr>\n<tr><td>Ankylosing spondylitis</td><td>(see immunologic disorders)</td><td>Axial predominance, syndesmophytes</td></tr>\n</tbody></table>\n<p>In reactive arthritis, bacterial antigens, and for <em>Chlamydia</em> metabolically active organisms, reach the synovium, but the joint fluid is culture negative. The arthritis is an immune response to the antigen, not a joint infection. <em>Campylobacter jejuni</em> is a curved, oxidase-positive gram-negative rod that grows best at 42 °C. Its lipo-oligosaccharide mimics peripheral nerve gangliosides, which links it to Guillain–Barré syndrome. <em>Yersinia enterocolitica</em> can mimic appendicitis (mesenteric adenitis), and iron overload favours it.</p>\n<h2>Polymyalgia rheumatica (PMR)</h2>\n<p>PMR almost never begins before age 50 and becomes more common with each decade. Imaging shows bursitis and tenosynovitis around the shoulders and hips (subacromial and subdeltoid bursae, biceps tendon sheath, trochanteric bursae) rather than muscle disease. CK, EMG and muscle biopsy are normal. <strong>IL-6</strong> levels track disease activity. IL-6 drives hepatic synthesis of CRP, fibrinogen and hepcidin, which explains the high ESR and CRP, the anemia of inflammation, fatigue and weight loss. PMR and <strong>giant cell arteritis</strong> (GCA) overlap. About one in six to one in five people with PMR develop GCA, and many with GCA have PMR symptoms. GCA is a granulomatous vasculitis of the aorta and its large branches, with CD4 T cells, macrophages and multinucleated giant cells at the internal elastic lamina.</p>\n<h2>Juvenile idiopathic arthritis (JIA)</h2>\n<p>JIA is arthritis that begins before age 16 and lasts at least 6 weeks with no other cause. It is not a single disease.</p>\n<ul>\n<li><strong>Oligoarticular JIA</strong> (4 or fewer joints in the first 6 months). The most common type. Typically a young girl with a swollen knee or ankle and a positive ANA. Chronic anterior uveitis develops without symptoms, so it is found only on slit-lamp screening.</li>\n<li><strong>Polyarticular JIA</strong> (5 or more joints). The RF-positive form resembles adult RA.</li>\n<li><strong>Enthesitis-related arthritis.</strong> Older boys, HLA-B27. It is the pediatric spondyloarthritis.</li>\n<li><strong>Systemic JIA.</strong> An <strong>autoinflammatory</strong> disease of innate immunity, not autoantibody-driven. Monocytes and neutrophils overproduce IL-1β, IL-6 and IL-18. The result is daily (quotidian) fever spikes, an evanescent salmon-pink rash, serositis, hepatosplenomegaly, very high ferritin and, in some children, <strong>macrophage activation syndrome</strong>. That is a form of secondary hemophagocytic lymphohistiocytosis driven by interferon-γ, with cytopenias, falling ESR (fibrinogen is consumed), very high ferritin and triglycerides, and liver injury. Adult-onset Still disease is the adult counterpart.</li>\n</ul>\n<h2>Bursae and tendon sheaths</h2>\n<p>Bursae are synovium-lined sacs that reduce friction. Superficial bursae (olecranon, prepatellar) become inflamed from repeated pressure, as in people who lean on their elbows or kneel to work. They can be infected by skin flora entering through small breaks, most often <em>Staphylococcus aureus</em>. Crystals and RA can also inflame them. Tenosynovitis is inflammation of a tendon sheath:</p>\n<ul>\n<li><strong>De Quervain tenosynovitis.</strong> Thickening of the first dorsal extensor compartment, which holds the <strong>abductor pollicis longus and extensor pollicis brevis</strong>. It is common with repeated thumb abduction and wrist ulnar deviation, for example in new parents lifting an infant and during pregnancy.</li>\n<li><strong>Trigger finger.</strong> A nodule on a flexor tendon catches at the narrowed A1 pulley over the MCP joint. It is more common with diabetes.</li>\n<li><strong>Infectious flexor tenosynovitis.</strong> Pus within the closed flexor sheath of a finger raises pressure and can cause tendon necrosis.</li>\n</ul>\n[[figure:s23f-fig070103-1]]\n<h2>Drugs by mechanism</h2>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Target</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Glucocorticoids</td><td>Cytosolic receptor; the complex enters the nucleus, represses NF-κB and AP-1 genes and induces annexin A1, which inhibits phospholipase A2</td><td>PMR responds dramatically. Long-term use causes bone loss, mainly by suppressing osteoblasts.</td></tr>\n<tr><td>Ustekinumab</td><td>p40 subunit shared by IL-12 and IL-23</td><td>Psoriasis, psoriatic arthritis, Crohn disease</td></tr>\n<tr><td>Guselkumab, risankizumab</td><td>p19 subunit of IL-23</td><td>Psoriasis, psoriatic arthritis</td></tr>\n<tr><td>Secukinumab, ixekizumab</td><td>IL-17A</td><td>Candidiasis; can worsen inflammatory bowel disease</td></tr>\n<tr><td>Apremilast</td><td>Phosphodiesterase-4 inhibitor (raises cAMP in immune cells)</td><td>Oral; diarrhea, weight loss, mood changes</td></tr>\n<tr><td>Anakinra; canakinumab</td><td>IL-1 receptor antagonist; anti-IL-1β antibody</td><td>Systemic JIA, adult-onset Still disease, macrophage activation syndrome (anakinra)</td></tr>\n<tr><td>Tocilizumab, sarilumab</td><td>IL-6 receptor</td><td>Systemic JIA, GCA (tocilizumab); PMR (sarilumab)</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Not every arthritis after an infection is \"reactive\". Acute rheumatic fever after group A streptococcal pharyngitis causes a migratory large-joint arthritis with carditis and responds dramatically to aspirin. A child with a swollen knee after a tick bite has Lyme arthritis, which is an infection. Reactive arthritis specifically follows enteric or chlamydial infection.</p></div>\n<div class=\"pearl\"><p>Naadi memory aid, \"Skin, Gut, Eye, Heel\": a seronegative arthritis with any of psoriasis, bowel inflammation or recent diarrhea, uveitis or conjunctivitis, or heel enthesitis belongs to the spondyloarthritis family.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Reactive Arthritis"
+    },
+    {
+     "statpearls": "Psoriatic Arthritis"
+    },
+    {
+     "statpearls": "Juvenile Idiopathic Arthritis"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Reactive, psoriatic and enteropathic arthritis; polymyalgia rheumatica and giant cell arteritis",
+   "html": "<p>Two common clinical problems sit here. One is the young or middle-aged adult with an asymmetric, seronegative arthritis linked to the skin, gut or genitourinary tract. The other is the older adult with stiff, painful shoulders and hips. Both are diagnosed clinically with supporting tests, and both have traps in treatment.</p>\n<h2>Reactive arthritis</h2>\n<ul>\n<li><strong>History.</strong> Ask about diarrhea or new sexual partners, urethral or vaginal discharge in the preceding month. Reactive arthritis typically affects knees, ankles and toes, with heel pain from Achilles or plantar fascia enthesitis, and sometimes conjunctivitis or painless mouth ulcers.</li>\n<li><strong>Tests.</strong>\n<ul>\n<li>Aspirate a swollen joint. The fluid is inflammatory, with negative cultures and no crystals, which excludes septic and crystal arthritis.</li>\n<li>Do NAAT for <em>Chlamydia</em> and <em>Gonorrhoeae</em> on urine or genital swabs, and test for HIV and syphilis.</li>\n<li>Stool studies if diarrhea is ongoing.</li>\n</ul></li>\n<li><strong>Treatment.</strong>\n<ul>\n<li>NSAIDs first. Inject glucocorticoid into a single troublesome joint once infection is excluded.</li>\n<li>Treat any active <em>Chlamydia</em> infection, and the partners, according to the CDC guidelines (doxycycline). This prevents reinfection, but antibiotics do not shorten established post-enteric arthritis.</li>\n<li>Most cases settle within 6 to 12 months. Chronic or recurrent disease is treated with sulfasalazine or methotrexate, and refractory cases with a TNF inhibitor.</li>\n</ul></li>\n</ul>\n<h2>Psoriatic arthritis</h2>\n<p>Up to about a third of people with psoriasis develop psoriatic arthritis, usually years after the skin disease. Ask everyone with psoriasis about joint pain, morning stiffness, swollen digits and heel pain. Look for psoriasis in hidden places (scalp, umbilicus, gluteal cleft) and for nail pitting in anyone with seronegative arthritis.</p>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Psoriatic arthritis</th><th>Rheumatoid arthritis</th></tr></thead>\n<tbody>\n<tr><td>Distribution</td><td>Asymmetric oligoarthritis or DIP-predominant; can become symmetric</td><td>Symmetric small joints, DIP spared</td></tr>\n<tr><td>Dactylitis and enthesitis</td><td>Common</td><td>Rare</td></tr>\n<tr><td>Nails</td><td>Pitting, onycholysis</td><td>Normal</td></tr>\n<tr><td>Serology</td><td>RF and anti-CCP usually negative</td><td>RF and/or anti-CCP positive in most</td></tr>\n<tr><td>Radiographs</td><td>Erosions plus new bone (periostitis), pencil-in-cup, axial syndesmophytes that can skip levels</td><td>Erosions with osteopenia, no new bone</td></tr>\n</tbody></table>\n<p><strong>Treatment by domain.</strong></p>\n<ul>\n<li><strong>Mild peripheral arthritis.</strong> NSAIDs and joint injections.</li>\n<li><strong>Persistent peripheral arthritis.</strong> Methotrexate, which also helps the skin. Alternatives are sulfasalazine and leflunomide.</li>\n<li><strong>Enthesitis, dactylitis, axial disease or inadequate response.</strong> A biologic: TNF inhibitor, IL-17 inhibitor, IL-12/23 or IL-23 inhibitor. JAK inhibitors and apremilast are further options. Choose by comorbidity:\n<ul>\n<li>with inflammatory bowel disease or uveitis, a <em>monoclonal</em> TNF antibody (not etanercept), or an IL-12/23 or IL-23 inhibitor, which also treat Crohn disease; avoid IL-17 inhibitors;</li>\n<li>with extensive skin disease, IL-17 or IL-23 inhibitors are very effective;</li>\n<li>with heart failure or demyelinating disease, avoid TNF inhibitors.</li>\n</ul></li>\n</ul>\n<p>Avoid systemic glucocorticoids where possible, because withdrawal can provoke pustular or erythrodermic psoriasis. Drugs that can worsen psoriasis include lithium, β-blockers and some antimalarials. Psoriatic disease carries cardiometabolic risk (obesity, diabetes, fatty liver, cardiovascular disease), which needs active management.</p>\n<h2>Enteropathic arthritis</h2>\n<p>Peripheral large-joint arthritis that flares with the bowel improves when the bowel disease is controlled. Axial disease runs its own course. NSAIDs can trigger IBD flares, so use them briefly and cautiously. Monoclonal TNF inhibitors treat both the gut and the joints.</p>\n<h2>Polymyalgia rheumatica and giant cell arteritis</h2>\n[[figure:s23f-fig070103-2]]\n<p><strong>PMR</strong> causes symmetric aching and morning stiffness of the shoulders, neck and hip girdle for at least 2 weeks in someone over 50. The patient has trouble getting out of bed, dressing or combing hair. Strength is normal when tested once pain allows. ESR and CRP are raised. CK is normal. Before treating, exclude look-alikes:</p>\n<ul>\n<li>elderly-onset RA (check RF and anti-CCP, and look for synovitis of small joints);</li>\n<li>hypothyroidism (TSH);</li>\n<li>statin myopathy and inflammatory myositis (CK);</li>\n<li>bilateral rotator cuff disease;</li>\n<li>cancer and infection, such as endocarditis.</li>\n</ul>\n<p>Ultrasound can show bilateral subdeltoid bursitis and biceps tenosynovitis.</p>\n<ul>\n<li><strong>Treatment.</strong> Prednisone at 12.5 to 25 mg daily. The response is rapid and dramatic, usually within days. Lack of response should prompt a search for another diagnosis. Taper slowly over a year or more. Methotrexate is a steroid-sparing option for relapsing disease, and IL-6 receptor blockade (sarilumab) is approved for steroid-refractory PMR.</li>\n<li><strong>Bone protection.</strong> Give calcium and vitamin D, assess fracture risk, and give a bisphosphonate when long-term glucocorticoids are expected. Monitor glucose, blood pressure, weight and mood.</li>\n<li><strong>GCA at every visit.</strong> Ask about new headache, scalp tenderness, jaw claudication, visual symptoms (amaurosis, diplopia), limb claudication and constitutional symptoms.</li>\n</ul>\n<p><strong>GCA</strong> is a vision-threatening emergency, because ischemic optic neuropathy can cause permanent blindness.</p>\n<ul>\n<li><strong>Start high-dose glucocorticoids immediately</strong> when GCA is suspected, before any test result: prednisone 40 to 60 mg daily, or IV methylprednisolone if vision is affected.</li>\n<li>Then confirm with temporal artery biopsy or temporal artery ultrasound (the \"halo\" sign). Biopsy findings persist for at least 1 to 2 weeks after steroids start.</li>\n<li>Tocilizumab reduces relapses and steroid exposure.</li>\n<li>Large-vessel GCA can cause aortic aneurysm years later, so arrange periodic aortic imaging.</li>\n</ul>\n<div class=\"trap\"><p>Do not treat PMR with the GCA dose, and do not treat GCA with the PMR dose. PMR needs low to moderate prednisone (12.5–25 mg). GCA needs 40–60 mg or IV pulses. A patient with PMR on 10 mg who develops jaw claudication needs immediate escalation, not a biopsy first.</p></div>\n<div class=\"pearl\"><p>Older adults on long-term glucocorticoids need fall-risk assessment and cataract and glaucoma awareness. Check vaccinations, including recombinant zoster vaccine, which is non-live, before or early in therapy.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Polymyalgia Rheumatica"
+    },
+    {
+     "statpearls": "Psoriatic Arthritis"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Bursitis, tenosynovitis and juvenile idiopathic arthritis in practice",
+   "html": "<p>These are common outpatient and emergency problems where one decision matters most: is this infected? Septic bursitis and infectious flexor tenosynovitis need antibiotics and sometimes surgery. Aseptic bursitis and overuse tenosynovitis need rest, splinting and occasionally an injection. In children, juvenile idiopathic arthritis is a diagnosis of exclusion with silent eye complications.</p>\n<h2>Bursitis</h2>\n<table class=\"hy\">\n<thead><tr><th>Bursa</th><th>Typical patient</th><th>Key point</th></tr></thead>\n<tbody>\n<tr><td>Olecranon</td><td>Leans on elbows (students, drivers, HVAC and plumbing workers), gout, RA, dialysis patients</td><td>Fluctuant swelling over the olecranon with full elbow motion; aspirate if infection is possible</td></tr>\n<tr><td>Prepatellar</td><td>Kneels to work (roofers, carpet and floor layers, gardeners)</td><td>Swelling in front of the patella; knee joint motion preserved</td></tr>\n<tr><td>Trochanteric region (greater trochanteric pain syndrome)</td><td>Middle-aged and older women, often from gluteal tendinopathy</td><td>Lateral hip pain lying on that side; tender greater trochanter; physical therapy first</td></tr>\n<tr><td>Pes anserine</td><td>Obese adults with knee osteoarthritis</td><td>Pain and tenderness at the medial proximal tibia below the joint line</td></tr>\n<tr><td>Subacromial</td><td>Overhead activity, rotator cuff disease</td><td>Painful arc; see the trauma and mechanical section</td></tr>\n</tbody></table>\n<ul>\n<li><strong>Telling bursitis from a septic joint.</strong> In superficial bursitis the swelling sits over the bone, and the joint moves through a full, nearly painless range. A septic joint is painful with any passive motion.</li>\n<li><strong>Aspirate</strong> a superficial bursa when there is warmth, cellulitis, fever, a skin break or an immunocompromised host. Send Gram stain, culture, cell count and crystals. Septic bursal fluid has many neutrophils, but the counts are lower than in a septic joint.</li>\n<li><strong>Septic bursitis.</strong> Usually <em>S. aureus</em>. Give an anti-staphylococcal antibiotic (oral if mild; IV with systemic illness or immunosuppression), aspirate repeatedly, and refer for surgical drainage or bursectomy if it does not respond.</li>\n<li><strong>Aseptic bursitis.</strong> Protection (padding, avoiding pressure), ice, compression and NSAIDs. Avoid steroid injection into superficial olecranon bursae, because it can cause infection, skin atrophy and chronic sinus formation.</li>\n</ul>\n<h2>Tenosynovitis</h2>\n<ul>\n<li><strong>De Quervain tenosynovitis.</strong> Radial wrist pain over the first dorsal compartment, worse with thumb use. Pain on ulnar deviation of the wrist with the thumb held in the palm (Finkelstein-type test) supports it. Common in new parents and in pregnancy. Treat with a thumb spica splint, NSAIDs and activity change, then a corticosteroid injection into the sheath (highly effective), then surgical release.</li>\n<li><strong>Trigger finger.</strong> Catching or locking of a finger in flexion, with a tender nodule over the palmar MCP joint. Treat with splinting and corticosteroid injection, then release of the A1 pulley. Check glucose in people with several affected fingers.</li>\n<li><strong>Infectious flexor tenosynovitis.</strong> After a puncture wound or bite to a finger, look for the four classic signs: <strong>fusiform swelling</strong> of the whole digit, the finger held in <strong>slight flexion</strong>, <strong>tenderness along the flexor sheath</strong>, and <strong>pain on passive extension</strong>. This is a surgical emergency, treated with IV antibiotics and urgent irrigation of the sheath. Cover <em>S. aureus</em> and streptococci, plus <em>Pasteurella</em> after animal bites or <em>Eikenella</em> after human bites. Delay causes tendon necrosis, adhesions and spread to deep palmar spaces.</li>\n<li><strong>Gonococcal tenosynovitis.</strong> Tenosynovitis of the dorsum of the hand or wrist in a sexually active person, often with a few pustules, is disseminated gonococcal infection until proven otherwise.</li>\n</ul>\n<div class=\"trap\"><p>A bite wound over the knuckle or a finger pulp puncture that \"looks minor\" can hide a closed-space infection. Pain on passive extension of the finger is the earliest and most sensitive of the four signs. Do not discharge the patient on oral antibiotics when the signs are present.</p></div>\n<h2>Juvenile idiopathic arthritis</h2>\n<p>JIA is arthritis for at least 6 weeks in a child under 16, with other causes excluded:</p>\n<ul>\n<li>septic arthritis and osteomyelitis;</li>\n<li>Lyme disease;</li>\n<li>reactive arthritis;</li>\n<li><strong>acute lymphoblastic leukemia and neuroblastoma</strong>: bone pain worse at night, cytopenias, high LDH or uric acid;</li>\n<li>IgA vasculitis;</li>\n<li>trauma, including nonaccidental injury;</li>\n<li>hemophilia.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Subtype</th><th>Clues</th><th>First-line management</th></tr></thead>\n<tbody>\n<tr><td>Oligoarticular</td><td>Young girl, knee or ankle, ANA positive, few systemic signs</td><td>NSAIDs, intra-articular triamcinolone; <strong>slit-lamp screening for uveitis</strong> as often as every 3 months in the highest-risk group (ANA positive, onset under age 7)</td></tr>\n<tr><td>Polyarticular</td><td>5 or more joints; RF-positive form in adolescent girls</td><td>Methotrexate early; biologic if inadequate response</td></tr>\n<tr><td>Enthesitis-related</td><td>Boys over 6, HLA-B27, heel and hip pain, acute painful uveitis</td><td>NSAIDs, TNF inhibitor for axial disease</td></tr>\n<tr><td>Psoriatic</td><td>Dactylitis, nail pitting, psoriasis in the child or a first-degree relative</td><td>As for polyarticular disease</td></tr>\n<tr><td>Systemic</td><td>Daily fever spikes for at least 2 weeks, evanescent salmon rash, serositis, organomegaly, high ferritin</td><td>IL-1 or IL-6 blockade (anakinra, canakinumab, tocilizumab); glucocorticoids as a bridge</td></tr>\n</tbody></table>\n<p><strong>Macrophage activation syndrome</strong> is the emergency of systemic JIA. Suspect it when a febrile child's platelets and ESR <em>fall</em> while ferritin, triglycerides and liver enzymes climb and fibrinogen drops. Treat promptly with high-dose glucocorticoids and anakinra, with cyclosporine as an option.</p>\n<p><strong>Long-term care.</strong> Physical and occupational therapy keep joints moving. Leg-length discrepancy can follow chronic knee arthritis, and micrognathia can follow temporomandibular joint involvement. Steroids affect growth and bone health, so monitor vitamin D and calcium intake. Children should receive non-live vaccines on schedule, and live vaccines are timed around immunosuppression. School accommodations and attention to mental health matter for a chronic disability.</p>\n<div class=\"pearl\"><p>JIA-associated uveitis in oligoarticular disease is painless, and the eye looks white. Untreated, it causes band keratopathy, cataract, glaucoma and vision loss. The child will not complain, so screening is the only way to find it.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Septic Bursitis"
+    },
+    {
+     "statpearls": "De Quervain Tenosynovitis"
+    },
+    {
+     "statpearls": "Juvenile Idiopathic Arthritis"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. The six dorsal extensor compartments of the right wrist and their tendons. De Quervain tenosynovitis affects the first compartment (abductor pollicis longus and extensor pollicis brevis)."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Polymyalgia rheumatica and giant cell arteritis: where symptoms arise and what each demands. Any cranial or visual symptom in a patient with PMR prompts immediate high-dose glucocorticoids."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Stiff shoulders in an older woman"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old man has had a swollen, painful right knee and left ankle for 10 days and pain at the back of both heels. Three weeks ago he had dysuria and a clear urethral discharge after a new sexual partner. Both eyes are red without discharge. Knee aspirate shows 18,000 leukocytes/mm<sup>3</sup>, no crystals, and a negative Gram stain and culture. Urine NAAT is positive for <em>Chlamydia trachomatis</em>. The HLA allele most strongly associated with this patient's arthritis is also strongly associated with which of the following conditions?</p>",
+   "options": [
+    "Ankylosing spondylitis",
+    "Celiac disease",
+    "Hereditary hemochromatosis",
+    "Narcolepsy",
+    "Rheumatoid arthritis"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Sterile asymmetric lower-limb arthritis, Achilles enthesitis and conjunctivitis weeks after chlamydial urethritis is reactive arthritis. Like the other spondyloarthritides, it is linked to HLA-B27, the class I allele carried by most people with ankylosing spondylitis. HLA-B27 carriers have more severe and more chronic reactive arthritis.</p><p><strong>Takeaway:</strong> Reactive arthritis and ankylosing spondylitis share HLA-B27.</p>",
+   "whyNot": {
+    "B": "Celiac disease is associated with HLA-DQ2 and DQ8, class II alleles.",
+    "C": "Hereditary hemochromatosis is caused by <em>HFE</em> mutations near HLA-A3 on chromosome 6, not HLA-B27.",
+    "D": "Narcolepsy type 1 is strongly associated with HLA-DQB1*06:02.",
+    "E": "Rheumatoid arthritis is associated with HLA-DRB1 shared-epitope alleles (DR4, DR1)."
+   },
+   "objective": "Associate reactive arthritis with HLA-B27 and the spondyloarthritis family.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "seronegative arthritis",
+    "HLA associations"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman has painful swelling of the left knee and right ankle 2 weeks after an episode of fever and bloody diarrhea. The diarrhea began 3 days after a barbecue where she ate undercooked chicken. Joint fluid is sterile. A stool culture from the diarrheal illness, incubated at 42°C under microaerophilic conditions, grew curved, oxidase-positive gram-negative rods. This organism is also the infection most commonly identified before which of the following?</p>",
+   "options": [
+    "Guillain–Barré syndrome",
+    "Hemolytic uremic syndrome",
+    "Mesenteric adenitis mimicking appendicitis",
+    "Rheumatic heart disease",
+    "Toxic megacolon after antibiotics"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Reactive arthritis followed <em>Campylobacter jejuni</em> enteritis from undercooked poultry. <em>Campylobacter</em> is a comma- or S-shaped, oxidase-positive gram-negative rod that grows at 42°C in microaerophilic conditions. Its lipo-oligosaccharide resembles gangliosides such as GM1 on peripheral nerve. The cross-reacting antibodies cause Guillain–Barré syndrome, and <em>Campylobacter</em> is the most commonly identified preceding infection.</p><p><strong>Takeaway:</strong> <em>Campylobacter jejuni</em> can trigger both reactive arthritis and, through molecular mimicry, Guillain–Barré syndrome.</p>",
+   "whyNot": {
+    "B": "Hemolytic uremic syndrome follows Shiga toxin-producing <em>E. coli</em> O157:H7 or <em>Shigella dysenteriae</em>, not <em>Campylobacter</em>.",
+    "C": "Mesenteric adenitis mimicking appendicitis is characteristic of <em>Yersinia enterocolitica</em>, a non-curved organism that grows well in the cold.",
+    "D": "Rheumatic heart disease follows group A streptococcal pharyngitis.",
+    "E": "Toxic megacolon after antibiotics is a complication of <em>Clostridioides difficile</em> colitis."
+   },
+   "objective": "Identify Campylobacter jejuni as a trigger of reactive arthritis and Guillain–Barré syndrome.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "post-infectious arthritis",
+    "enteric infection"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 39-year-old man with plaque psoriasis and psoriatic arthritis affecting several DIP joints, with dactylitis of two toes, has persistent disease despite methotrexate. He also has Crohn disease of the terminal ileum. His rheumatologist prescribes a monoclonal antibody that binds a protein subunit shared by the cytokine that promotes Th1 differentiation and the cytokine that sustains Th17 cells. Which of the following subunits does this drug target?</p>",
+   "options": [
+    "IL-6 receptor α chain",
+    "IL-17A homodimer",
+    "IL-23 p19 subunit",
+    "p40 subunit",
+    "TNF-α trimer"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>IL-12 (p35 plus p40) drives Th1 differentiation, and IL-23 (p19 plus p40) maintains and expands Th17 cells. Ustekinumab targets the shared p40 subunit, blocking both. It treats psoriasis, psoriatic arthritis and Crohn disease, which makes it useful when all three coexist. IL-17A inhibitors could worsen his Crohn disease.</p><p><strong>Takeaway:</strong> Ustekinumab blocks p40, the subunit shared by IL-12 and IL-23.</p>",
+   "whyNot": {
+    "A": "Tocilizumab and sarilumab block the IL-6 receptor. IL-6 is not the shared Th1 and Th17 subunit, and IL-6 blockade is not used for psoriasis.",
+    "B": "Secukinumab and ixekizumab neutralise IL-17A, an effector cytokine rather than a subunit shared by two cytokines, and they can worsen Crohn disease.",
+    "C": "Guselkumab and risankizumab target p19, which is unique to IL-23 and blocks only the Th17 pathway, not Th1.",
+    "E": "TNF inhibitors neutralise TNF-α. They do not bind a subunit shared by IL-12 and IL-23."
+   },
+   "objective": "Identify p40 as the IL-12/IL-23 subunit targeted by ustekinumab.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "seronegative arthritis",
+    "biologics"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old woman with a 15-year history of psoriasis has painful swelling of the DIP joints of three fingers. Radiographs show central erosions at the DIP joints that give a pencil-in-cup appearance, with fluffy new periosteal bone along the adjacent phalanges. Examination of the fingernails of the involved digits is most likely to show which of the following?</p>",
+   "options": [
+    "Clubbing with loss of the nail-fold angle",
+    "Koilonychia (spoon-shaped nails)",
+    "Mees lines (transverse white bands)",
+    "Pitting and onycholysis",
+    "Terry nails (white proximal nail beds)"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Psoriatic arthritis of the DIP joints is closely linked to psoriatic nail disease, because the nail matrix and the DIP enthesis are anatomically continuous. Pitting (small depressions from matrix psoriasis) and onycholysis (distal separation of the nail plate) are the typical findings.</p><p><strong>Takeaway:</strong> DIP-predominant psoriatic arthritis goes with nail pitting and onycholysis.</p>",
+   "whyNot": {
+    "A": "Clubbing suggests chronic hypoxemic lung disease, bronchiectasis, cyanotic heart disease or IBD, not psoriatic nail disease.",
+    "B": "Koilonychia suggests iron deficiency.",
+    "C": "Mees lines suggest arsenic or thallium poisoning or chemotherapy.",
+    "E": "Terry nails suggest cirrhosis, heart failure or diabetes."
+   },
+   "objective": "Associate DIP psoriatic arthritis with nail pitting and onycholysis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_history_pe"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "seronegative arthritis",
+    "nail findings"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 74-year-old woman has had 6 weeks of aching and stiffness in both shoulders, her neck and both hips. Stiffness lasts 2 hours each morning, and she needs help getting out of bed. Strength is normal. ESR is 72 mm/h, CRP is 5.8 mg/dL (reference, under 1.0 mg/dL), hemoglobin is 10.9 g/dL with a normal MCV, and CK is normal. Serum levels of a cytokine closely track her disease activity. That cytokine is the main inducer of hepatic CRP synthesis, and a receptor-blocking antibody against it is approved for refractory forms of her condition. Which of the following is this cytokine?</p>",
+   "options": [
+    "Interferon-γ",
+    "Interleukin-1β",
+    "Interleukin-4",
+    "Interleukin-6",
+    "Interleukin-10"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>This is polymyalgia rheumatica. IL-6 levels rise with disease activity. IL-6 is the principal driver of hepatic acute-phase protein synthesis (CRP, fibrinogen, hepcidin), which explains the high ESR and CRP and the anemia of inflammation. Sarilumab, an IL-6 receptor antibody, is approved for PMR that is refractory to or relapses on glucocorticoid taper. Tocilizumab is approved for giant cell arteritis.</p><p><strong>Takeaway:</strong> IL-6 drives the acute-phase response in PMR and GCA, and IL-6 receptor blockade treats both.</p>",
+   "whyNot": {
+    "A": "Interferon-γ activates macrophages and granuloma formation in GCA lesions but is not the main inducer of CRP.",
+    "B": "IL-1β contributes to acute-phase signalling and is central in systemic JIA and Still disease. It is not the cytokine that tracks PMR activity or the target of approved PMR therapy.",
+    "C": "IL-4 drives Th2 responses and IgE class switching, not the acute-phase response.",
+    "E": "IL-10 is an anti-inflammatory cytokine that suppresses macrophage activation."
+   },
+   "objective": "Identify IL-6 as the cytokine driving the acute-phase response in polymyalgia rheumatica.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "older adults",
+    "cytokines"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 76-year-old woman has been treated for polymyalgia rheumatica with prednisone for 9 months. The current dose is 7.5 mg daily. She takes no calcium or vitamin D supplements. Dual-energy x-ray absorptiometry shows a femoral neck T-score of −2.6, down from −1.4 two years ago. Which of the following is the principal mechanism of her accelerated bone loss?</p>",
+   "options": [
+    "Direct stimulation of parathyroid hormone release by the parathyroid glands",
+    "Increased 1α-hydroxylase activity with hypervitaminosis D",
+    "Increased renal calcium reabsorption that suppresses bone turnover",
+    "Primary increase in osteoclast number with normal bone formation",
+    "Suppressed osteoblast formation and survival"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Glucocorticoid-induced osteoporosis is mainly a disorder of reduced bone formation. Glucocorticoids divert mesenchymal precursors away from the osteoblast lineage, increase apoptosis of osteoblasts and osteocytes, and suppress Wnt signalling. Early in therapy there is also a transient rise in resorption through a higher RANKL/OPG ratio. Reduced intestinal calcium absorption and increased renal calcium loss add to the problem. Fracture risk rises within months, even at modest doses.</p><p><strong>Takeaway:</strong> Glucocorticoids cause bone loss mainly by suppressing osteoblasts. Give calcium, vitamin D and usually a bisphosphonate with long-term use.</p>",
+   "whyNot": {
+    "A": "Glucocorticoids do not directly stimulate the parathyroid glands, and secondary hyperparathyroidism is not the main mechanism.",
+    "B": "Glucocorticoids reduce intestinal calcium absorption and do not cause hypervitaminosis D.",
+    "C": "Glucocorticoids increase urinary calcium loss rather than reabsorption.",
+    "D": "Resorption rises only briefly. The dominant and lasting defect is reduced formation, so a purely osteoclastic model is wrong."
+   },
+   "objective": "Explain that glucocorticoid-induced osteoporosis results mainly from suppressed osteoblast function.",
+   "extraAreas": [
+    "07.03.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "older adults",
+    "glucocorticoid adverse effects"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 5-year-old boy has had 3 weeks of fever that spikes to 39.8°C (103.6°F) every evening and returns to normal by morning. During each fever a faint, salmon-pink macular rash appears on his trunk and fades within hours. He has swelling of both wrists and knees, generalised lymphadenopathy and splenomegaly. Leukocyte count is 21,000/mm<sup>3</sup> with neutrophilia, platelets are 610,000/mm<sup>3</sup>, and ferritin is 3,800 ng/mL (reference, 10–150 ng/mL). ANA and rheumatoid factor are negative, and blood cultures and bone marrow examination are normal. Which of the following best describes the pathogenesis of this condition?</p>",
+   "options": [
+    "Antibodies against citrullinated proteins",
+    "Cross-reacting antibodies after streptococcal pharyngitis",
+    "IgE-mediated mast cell degranulation",
+    "Immune-complex deposition with complement consumption",
+    "Innate-immune overproduction of IL-1, IL-6 and IL-18"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Quotidian fever, an evanescent salmon rash, arthritis, organomegaly, neutrophilia, thrombocytosis and very high ferritin, with leukemia and infection excluded, define systemic JIA. It is an autoinflammatory disease. Activated monocytes, macrophages and neutrophils overproduce IL-1β, IL-6 and IL-18 without autoantibodies or autoreactive T cells, which is why IL-1 and IL-6 blockade work so well.</p><p><strong>Takeaway:</strong> Systemic JIA is autoinflammatory (IL-1, IL-6, IL-18), not autoantibody-mediated.</p>",
+   "whyNot": {
+    "A": "Anti-citrullinated protein antibodies mark adult RA and RF-positive polyarticular JIA, not the systemic subtype.",
+    "B": "Cross-reacting antibodies after streptococcal infection cause acute rheumatic fever. Its migratory arthritis and carditis do not come with a salmon rash and very high ferritin.",
+    "C": "IgE-mediated degranulation causes urticaria and anaphylaxis, not weeks of quotidian fever with arthritis.",
+    "D": "Immune-complex disease with low complement suggests SLE or serum sickness. In systemic JIA, complement is normal or high."
+   },
+   "objective": "Classify systemic JIA as an autoinflammatory disease driven by IL-1, IL-6 and IL-18.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric arthritis",
+    "autoinflammation"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman who gave birth 8 weeks ago has 3 weeks of pain on the radial side of her right wrist that is worse when she lifts her baby. There is swelling and tenderness over the radial styloid. Pain is reproduced when she grasps her thumb inside her fist and the examiner deviates her wrist ulnarly. Which of the following tendons are most likely involved?</p>",
+   "options": [
+    "Abductor pollicis longus and extensor pollicis brevis",
+    "Extensor carpi radialis longus and extensor carpi radialis brevis",
+    "Extensor carpi ulnaris and extensor digiti minimi",
+    "Extensor pollicis longus and extensor indicis",
+    "Flexor carpi radialis and palmaris longus"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is de Quervain tenosynovitis: stenosing tenosynovitis of the first dorsal compartment, which contains the abductor pollicis longus and extensor pollicis brevis as they pass over the radial styloid. Repeated thumb abduction with ulnar wrist deviation, as when lifting an infant, and the fluid and hormonal changes of pregnancy and the postpartum period predispose to it.</p><p><strong>Takeaway:</strong> De Quervain tenosynovitis involves APL and EPB in the first dorsal compartment.</p>",
+   "whyNot": {
+    "B": "The radial wrist extensors occupy the second compartment. Intersection syndrome, where the first-compartment muscles cross them, causes pain more proximally on the dorsal forearm.",
+    "C": "Extensor carpi ulnaris (sixth compartment) and extensor digiti minimi (fifth) lie on the ulnar side of the wrist, away from the radial styloid.",
+    "D": "EPL runs in the third compartment around Lister tubercle and extensor indicis in the fourth. Neither passes over the radial styloid or is stretched selectively by this maneuver.",
+    "E": "Flexor carpi radialis and palmaris longus are volar tendons. They cause volar wrist pain, not first-compartment pain on thumb stretch."
+   },
+   "objective": "Identify the first dorsal compartment tendons involved in de Quervain tenosynovitis.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_history_pe"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "wrist pain",
+    "postpartum"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old man comes to the clinic because of a painful swollen left knee for 8 days and pain under both heels. Four weeks ago he had dysuria after unprotected sex with a new partner, which resolved without treatment. Temperature is 37.4°C (99.3°F). The left knee has a moderate effusion, and both Achilles insertions are tender. Knee aspirate shows 14,000 leukocytes/mm<sup>3</sup>, no crystals, and a negative Gram stain. Synovial culture is pending. Urine NAAT is positive for <em>Chlamydia trachomatis</em> and negative for <em>Neisseria gonorrhoeae</em>. HIV and syphilis tests are negative. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Arthroscopic lavage of the knee",
+    "IV ceftriaxone for 7 days",
+    "Methotrexate weekly",
+    "Naproxen and oral doxycycline",
+    "Prednisone 60 mg daily"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>He has reactive arthritis after chlamydial urethritis, with ongoing chlamydial infection. NSAIDs are first-line for the arthritis and enthesitis. Active <em>Chlamydia</em> must be treated with doxycycline for 7 days under the CDC STI guidelines, and his partners must be treated, to prevent reinfection and further triggering. An intra-articular glucocorticoid is an option once the culture returns negative.</p><p><strong>Takeaway:</strong> Reactive arthritis is treated with NSAIDs, plus treatment of any active chlamydial infection and of partners.</p>",
+   "whyNot": {
+    "A": "Lavage is for septic arthritis. This joint fluid is not purulent, and the picture is reactive.",
+    "B": "Ceftriaxone treats gonococcal infection, which is NAAT negative. It does not treat <em>Chlamydia</em>.",
+    "C": "Methotrexate or sulfasalazine is reserved for chronic reactive arthritis lasting beyond about 6 months.",
+    "E": "High-dose systemic glucocorticoids are not first-line and would be inappropriate before infection is controlled."
+   },
+   "objective": "Treat chlamydia-triggered reactive arthritis with NSAIDs and treatment of the active infection.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "post-infectious arthritis",
+    "sexually transmitted infection"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 42-year-old woman with psoriatic arthritis is seen because her joint disease remains active. She has dactylitis of two toes, swelling of five finger joints and plaque psoriasis on 12% of her body surface. She also has Crohn disease in remission on no therapy. Her history and medications are shown.</p><table><thead><tr><th>Item</th><th>Details</th></tr></thead><tbody><tr><td>Methotrexate</td><td>25 mg weekly for 6 months (with folic acid); tolerated, partial response</td></tr><tr><td>Naproxen</td><td>500 mg twice daily; limited benefit</td></tr><tr><td>Interferon-γ release assay</td><td>Negative</td></tr><tr><td>Hepatitis B surface antigen and core antibody</td><td>Negative</td></tr><tr><td>Echocardiogram (for dyspnea last year)</td><td>Normal ejection fraction</td></tr><tr><td>Neurologic history</td><td>None</td></tr></tbody></table><p>Which of the following is the most appropriate addition to her therapy?</p>",
+   "options": [
+    "Adalimumab",
+    "Etanercept",
+    "Hydroxychloroquine",
+    "Oral prednisone",
+    "Secukinumab"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Active peripheral psoriatic arthritis with dactylitis and significant skin disease despite methotrexate calls for a biologic. Her Crohn disease narrows the choice. A monoclonal anti-TNF antibody (adalimumab, infliximab, certolizumab) treats the skin, the joints and Crohn disease. TB and hepatitis B screens are negative, and she has no heart failure or demyelinating disease to contraindicate TNF blockade. An IL-12/23 or IL-23 inhibitor would also be reasonable.</p><p><strong>Takeaway:</strong> In psoriatic arthritis with inflammatory bowel disease, choose a monoclonal TNF inhibitor (or IL-12/23 or IL-23 blockade), not etanercept or an IL-17 inhibitor.</p>",
+   "whyNot": {
+    "B": "Etanercept, a soluble TNF receptor fusion protein, works for the joints but is ineffective for Crohn disease.",
+    "C": "Hydroxychloroquine has little effect in psoriatic arthritis and can worsen psoriasis.",
+    "D": "Systemic glucocorticoids do not control the disease long term and can provoke a severe psoriasis flare on withdrawal.",
+    "E": "IL-17A inhibitors can trigger or worsen inflammatory bowel disease and are avoided in Crohn disease."
+   },
+   "objective": "Choose a monoclonal TNF inhibitor for psoriatic arthritis with coexisting Crohn disease.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "seronegative arthritis",
+    "biologics"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 73-year-old woman comes to the clinic because of 2 months of aching in her neck, both shoulders and both hips, with 90 minutes of morning stiffness. She has trouble raising her arms to comb her hair and getting out of a low chair. She has no headache, scalp tenderness, jaw pain or visual symptoms. Temperature is 37.1°C (98.8°F). Active shoulder abduction is limited by pain, but strength is normal. No synovitis is found in the hands. ESR is 64 mm/h, CRP is 4.1 mg/dL (reference, under 1.0 mg/dL), and hemoglobin is 11.2 g/dL. CK, TSH, rheumatoid factor and anti-CCP antibodies are normal or negative. Which of the following is the most appropriate initial pharmacotherapy?</p>",
+   "options": [
+    "Hydroxychloroquine 200 mg twice daily",
+    "Methotrexate 15 mg weekly alone",
+    "Naproxen 500 mg twice daily alone",
+    "Prednisone 15 mg daily",
+    "Prednisone 60 mg daily"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Bilateral shoulder and hip girdle pain and stiffness in a woman over 50 with raised inflammatory markers, normal CK and negative RA serology is polymyalgia rheumatica. With no cranial symptoms suggesting GCA, initial treatment is low to moderate prednisone (12.5 to 25 mg daily), with a dramatic response expected within days. Taper slowly over at least a year, and give calcium, vitamin D and fracture-risk assessment.</p><p><strong>Takeaway:</strong> PMR is treated with prednisone 12.5–25 mg daily. Reserve 40–60 mg for GCA.</p>",
+   "whyNot": {
+    "A": "Hydroxychloroquine has no established role in PMR.",
+    "B": "Methotrexate is a steroid-sparing adjunct for relapsing disease, not initial monotherapy.",
+    "C": "NSAIDs alone rarely control PMR and carry greater kidney, GI and cardiovascular risk in older adults.",
+    "E": "60 mg is the dose for giant cell arteritis. Using it for uncomplicated PMR causes unnecessary toxicity."
+   },
+   "objective": "Start low- to moderate-dose prednisone for polymyalgia rheumatica without GCA features.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "older adults",
+    "girdle pain"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Her symptoms resolve within 4 days. Three months later, on prednisone 10 mg daily, she calls because of 5 days of a new right-sided headache, tenderness when she brushes her hair, pain in her jaw when chewing, and an episode of blurred vision in her right eye this morning that lasted 10 minutes. ESR is 88 mm/h. Visual acuity is 20/25 in both eyes, and the fundi are normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Continue prednisone 10 mg and arrange temporal artery biopsy within 2 weeks",
+    "Increase prednisone to 20 mg and reassess in 1 week",
+    "Obtain MRI of the brain before changing therapy",
+    "Refer for outpatient ophthalmology review next week",
+    "Start high-dose glucocorticoids today, then arrange temporal artery biopsy"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>New headache, scalp tenderness, jaw claudication and transient monocular blurring in a patient with PMR indicate giant cell arteritis, with impending ischemic optic neuropathy. High-dose glucocorticoids (IV methylprednisolone given the visual symptoms, or prednisone 40 to 60 mg) must start immediately, before confirmation. Temporal artery biopsy or ultrasound should follow promptly. Biopsy findings remain diagnostic for at least 1 to 2 weeks after treatment begins.</p><p><strong>Takeaway:</strong> Suspected GCA, especially with visual symptoms, is treated with high-dose glucocorticoids at once. Do not wait for the biopsy.</p>",
+   "whyNot": {
+    "A": "Keeping the PMR dose while waiting for a biopsy risks permanent blindness.",
+    "B": "20 mg is inadequate for GCA, and waiting a week is unsafe with visual symptoms.",
+    "C": "Brain MRI would delay treatment, and the clinical picture is classic for GCA, not intracranial disease.",
+    "D": "Ophthalmology input is useful, but next week is too late, and treatment must not wait for it."
+   },
+   "objective": "Begin high-dose glucocorticoids immediately for suspected giant cell arteritis with visual symptoms.",
+   "extraAreas": [
+    "08.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "older adults",
+    "headache"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old heating and ventilation technician who spends much of the day leaning on his elbows in crawl spaces has had 3 days of increasing swelling and pain over the tip of his right elbow. He has a small abrasion on the skin over the swelling. Temperature is 38.2°C (100.8°F). A 5-cm fluctuant, warm, erythematous swelling overlies the olecranon, with surrounding cellulitis. He can fully flex and extend the elbow with only mild discomfort. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Arthrocentesis of the elbow joint through a lateral approach",
+    "Aspiration of the olecranon bursa",
+    "Corticosteroid injection into the bursa",
+    "MRI of the elbow",
+    "Oral naproxen, compression and elbow pad"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Fever, warmth, cellulitis and an abrasion over olecranon bursitis raise concern for septic bursitis, usually <em>Staphylococcus aureus</em>. The preserved, nearly painless elbow motion places the problem in the bursa, not the joint. Aspirating the bursa for Gram stain, culture, cell count and crystals, through a lateral approach that avoids passing through the infected skin where possible, confirms infection and identifies the organism and any crystals. Anti-staphylococcal antibiotics follow.</p><p><strong>Takeaway:</strong> Aspirate a superficial bursa when infection is possible; full joint motion separates bursitis from septic arthritis.</p>",
+   "whyNot": {
+    "A": "Elbow motion is preserved, so the joint is not the source. Passing a needle through an infected bursa into the joint could seed it.",
+    "C": "Steroid injection into a possibly infected bursa is contraindicated and worsens infection.",
+    "D": "MRI is unnecessary. The diagnosis and organism come from aspiration.",
+    "E": "Conservative care suits aseptic bursitis. Fever and cellulitis require infection to be excluded first."
+   },
+   "objective": "Aspirate the bursa to diagnose suspected septic olecranon bursitis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "elbow swelling",
+    "occupational health"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 35-year-old woman comes to the emergency department 36 hours after her cat bit the palmar side of her right index finger. The whole finger is swollen, red and held in slight flexion. There is tenderness along the volar aspect of the finger into the palm, and passively extending the finger causes severe pain. Temperature is 37.9°C (100.2°F). Radiographs show no fracture or foreign body. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Buddy taping, NSAIDs and review in 1 week",
+    "Corticosteroid injection into the flexor tendon sheath",
+    "IV ampicillin-sulbactam and surgical sheath irrigation",
+    "Oral amoxicillin-clavulanate and outpatient review in 48 hours",
+    "Tetanus immunization and wound dressing alone"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Fusiform swelling, a flexed resting posture, tenderness along the flexor sheath and pain on passive extension are the four classic signs of infectious flexor tenosynovitis. Here it follows a cat bite (<em>Pasteurella multocida</em>, staphylococci, streptococci and anaerobes). This is a closed-space surgical emergency. Give IV antibiotics that cover <em>Pasteurella</em> and anaerobes, such as ampicillin-sulbactam, and arrange urgent hand-surgery irrigation of the sheath to prevent tendon necrosis and spread. Update tetanus prophylaxis as part of care.</p><p><strong>Takeaway:</strong> Infectious flexor tenosynovitis needs IV antibiotics plus urgent surgical drainage.</p>",
+   "whyNot": {
+    "A": "Taping and NSAIDs ignore a spreading closed-space infection.",
+    "B": "Injecting steroid into an infected sheath is contraindicated.",
+    "D": "Oral antibiotics alone are inadequate once the signs of flexor tenosynovitis are present.",
+    "E": "Tetanus prophylaxis is needed, but alone it does not treat the infection."
+   },
+   "objective": "Treat infectious flexor tenosynovitis after an animal bite with IV antibiotics and urgent surgical drainage.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hand infection",
+    "animal bite"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 3-year-old girl is brought to the clinic because her mother has noticed that her left knee has been swollen for 2 months. The girl limps in the morning but plays normally later in the day. She has had no fever, rash, weight loss or night pain. The left knee has a moderate effusion with mild warmth and a 10-degree flexion contracture. No other joints are involved. CBC, CRP and LDH are normal. Antinuclear antibody is positive at 1:320, and rheumatoid factor is negative. Lyme serology is negative. Which of the following is the most important additional evaluation now?</p>",
+   "options": [
+    "Echocardiography",
+    "HLA-B27 testing",
+    "Slit-lamp eye examination",
+    "Technetium-99m bone scan",
+    "Upper gastrointestinal endoscopy"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A young girl with arthritis of one knee for more than 6 weeks, a positive ANA and no systemic features has oligoarticular JIA. Her greatest long-term threat is chronic anterior uveitis, which is painless and leaves the eye white. It can cause cataract, glaucoma and blindness before anyone notices. ANA positivity with onset under age 7 puts her in the highest-risk group, so she needs prompt slit-lamp examination and then screening about every 3 months.</p><p><strong>Takeaway:</strong> ANA-positive oligoarticular JIA needs regular slit-lamp screening for silent uveitis.</p>",
+   "whyNot": {
+    "A": "Cardiac involvement is not a feature of oligoarticular JIA. Pericarditis occurs in systemic JIA.",
+    "B": "HLA-B27 is relevant to enthesitis-related arthritis in older boys and does not change management here.",
+    "D": "A bone scan adds nothing when there is clear synovitis, normal blood counts and no night pain.",
+    "E": "There are no GI symptoms to suggest inflammatory bowel disease."
+   },
+   "objective": "Arrange slit-lamp screening for uveitis in ANA-positive oligoarticular JIA.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric arthritis",
+    "eye screening"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 7-year-old girl with systemic juvenile idiopathic arthritis diagnosed 4 months ago is admitted with 3 days of persistent (no longer spiking) fever, lethargy and easy bruising. She is drowsy, with hepatosplenomegaly and petechiae. Laboratory results now and at her last visit 2 weeks ago are shown:</p><table><thead><tr><th>Test</th><th>2 weeks ago</th><th>Now</th></tr></thead><tbody><tr><td>Leukocytes</td><td>19,500/mm<sup>3</sup></td><td>3,900/mm<sup>3</sup></td></tr><tr><td>Platelets</td><td>520,000/mm<sup>3</sup></td><td>92,000/mm<sup>3</sup></td></tr><tr><td>ESR</td><td>96 mm/h</td><td>18 mm/h</td></tr><tr><td>Ferritin (reference, 10–150 ng/mL)</td><td>2,100 ng/mL</td><td>24,000 ng/mL</td></tr><tr><td>Fibrinogen (reference, 200–400 mg/dL)</td><td>520 mg/dL</td><td>110 mg/dL</td></tr><tr><td>AST</td><td>30 U/L</td><td>310 U/L</td></tr><tr><td>Triglycerides</td><td>120 mg/dL</td><td>410 mg/dL</td></tr></tbody></table><p>Blood cultures are pending. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Acute lymphoblastic leukemia",
+    "Flare of systemic JIA arthritis",
+    "Kawasaki disease",
+    "Macrophage activation syndrome",
+    "Methotrexate-induced hepatotoxicity"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>In a child with systemic JIA, a change from spiking to persistent fever with falling leukocytes, platelets, ESR and fibrinogen, while ferritin, triglycerides and AST rise sharply, is macrophage activation syndrome. This is secondary hemophagocytic lymphohistiocytosis. The ESR falls because fibrinogen is consumed. Treatment is urgent: high-dose glucocorticoids and anakinra, with cyclosporine as an option, while infection is excluded.</p><p><strong>Takeaway:</strong> In systemic JIA, falling platelets and ESR with soaring ferritin mean macrophage activation syndrome.</p>",
+   "whyNot": {
+    "A": "Leukemia can mimic systemic JIA at presentation, but this child already has an established diagnosis, and the falling fibrinogen with very high triglycerides and ferritin fits MAS.",
+    "B": "A simple flare raises the ESR, platelets and fibrinogen. Here they fall.",
+    "C": "Kawasaki disease causes thrombocytosis in the subacute phase and does not cause hypofibrinogenemia with ferritin of this level.",
+    "E": "Methotrexate hepatotoxicity raises transaminases but does not cause cytopenias with hyperferritinemia and hypofibrinogenemia."
+   },
+   "objective": "Recognise macrophage activation syndrome as a complication of systemic JIA.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric arthritis",
+    "hyperinflammation"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Triggers of reactive arthritis?",
+   "back": "Enteric <em>Salmonella</em>, <em>Shigella</em>, <em>Campylobacter</em>, <em>Yersinia</em>; genital <em>Chlamydia trachomatis</em>.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Shared HLA of reactive arthritis and ankylosing spondylitis?",
+   "back": "HLA-B27.",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "<em>Campylobacter</em> molecular mimicry causes which neurologic disease?",
+   "back": "Guillain–Barré syndrome.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Ustekinumab target?",
+   "back": "The p40 subunit shared by IL-12 and IL-23.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Nail findings in psoriatic arthritis?",
+   "back": "Pitting and onycholysis.",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Cytokine that tracks PMR activity and drives CRP?",
+   "back": "IL-6.",
+   "question": 5
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Main mechanism of glucocorticoid-induced osteoporosis?",
+   "back": "Suppressed osteoblast formation with osteoblast and osteocyte apoptosis.",
+   "question": 6
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Pathogenic category of systemic JIA?",
+   "back": "Autoinflammatory (innate immunity): IL-1, IL-6, IL-18.",
+   "question": 7
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Tendons in the first dorsal compartment?",
+   "back": "Abductor pollicis longus and extensor pollicis brevis.",
+   "question": 8
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "First-line treatment of reactive arthritis?",
+   "back": "NSAIDs; also treat active chlamydia and partners.",
+   "question": 9
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Biologic class to avoid in psoriatic arthritis with Crohn disease?",
+   "back": "IL-17 inhibitors, and etanercept, which is ineffective for IBD.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Why avoid systemic steroids in psoriasis?",
+   "back": "Withdrawal can trigger pustular or erythrodermic psoriasis.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Initial prednisone dose for PMR?",
+   "back": "12.5 to 25 mg daily.",
+   "question": 11
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Expected response to prednisone in PMR?",
+   "back": "Rapid and dramatic, within days. Lack of response suggests another diagnosis.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Suspected GCA with visual symptoms: when to start steroids?",
+   "back": "Immediately, before biopsy.",
+   "question": 12
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "How long does temporal artery biopsy stay diagnostic after steroids start?",
+   "back": "At least 1 to 2 weeks.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Steroid-sparing biologic approved for GCA?",
+   "back": "Tocilizumab (IL-6 receptor blocker).",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Usual organism in septic bursitis?",
+   "back": "<em>Staphylococcus aureus</em>.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "How do you tell olecranon bursitis from septic elbow arthritis?",
+   "back": "Bursitis leaves elbow motion full and nearly painless.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Four classic signs of infectious flexor tenosynovitis?",
+   "back": "Fusiform swelling, flexed posture, sheath tenderness, pain on passive extension.",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Management of infectious flexor tenosynovitis?",
+   "back": "IV antibiotics plus urgent surgical irrigation of the sheath.",
+   "question": 14
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Pulley involved in trigger finger?",
+   "back": "The A1 pulley over the MCP joint.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Highest-risk group for JIA uveitis?",
+   "back": "ANA-positive oligoarticular JIA with onset before age 7.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Lab pattern of macrophage activation syndrome?",
+   "back": "Falling platelets, ESR and fibrinogen; very high ferritin, triglycerides and AST.",
+   "question": 16
+  },
+  {
+   "n": 27,
+   "section": 3,
+   "front": "Cancer to exclude in a child with arthritis and night bone pain?",
+   "back": "Acute lymphoblastic leukemia (and neuroblastoma).",
+   "question": null
+  }
+ ]
+}

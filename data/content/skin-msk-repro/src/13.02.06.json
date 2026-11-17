@@ -1,0 +1,724 @@
+{
+ "area": "13.02.06",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Female sexual response: physiology, mechanisms of dysfunction and drug actions",
+   "html": "<p>Sexual function depends on intact desire circuits in the brain, autonomic control of genital blood flow, somatic sensation and muscle contraction through the pudendal nerve, and a hormonal milieu that keeps the genital tissues healthy. A problem at any of these levels can present as low desire, poor arousal, absent orgasm or pain. A <strong>sexual dysfunction</strong> is diagnosed only when the problem persists and causes the person distress; low desire that does not bother the patient is not a disorder.</p>\n<h2>Models of the response</h2>\n<p>The older linear model describes excitement, plateau, orgasm and resolution in sequence. A circular model fits many women better, especially in long relationships: a person may start from sexual neutrality, choose to engage for emotional intimacy, and experience <em>responsive</em> desire only after arousal begins. This matters clinically because absent spontaneous desire alone is common and is not automatically pathological.</p>\n<h2>Neural and vascular control</h2>\n<table class=\"hy\">\n<thead><tr><th>Component</th><th>Pathway</th><th>Effector events</th><th>What damages it</th></tr></thead>\n<tbody>\n<tr><td>Desire</td><td>Hypothalamus and mesolimbic dopamine; melanocortin signalling; prefrontal control</td><td>Interest, sexual thoughts, motivation</td><td>Depression, serotonergic drugs, high prolactin, opioids, fatigue, relationship conflict</td></tr>\n<tr><td>Arousal (genital)</td><td>Parasympathetic pelvic splanchnic nerves (S2&ndash;S4) through the inferior hypogastric plexus</td><td>Nitric oxide and VIP relax clitoral and vestibular smooth muscle; vasocongestion; vaginal transudate (lubrication)</td><td>Radical pelvic surgery, diabetic autonomic neuropathy, low estrogen, vascular disease</td></tr>\n<tr><td>Orgasm</td><td>Sympathetic outflow (T11&ndash;L2) and somatic pudendal nerve (S2&ndash;S4)</td><td>Rhythmic contraction of bulbospongiosus, ischiocavernosus and pelvic floor; oxytocin release</td><td>SSRIs, pudendal or spinal injury, pelvic floor dysfunction</td></tr>\n<tr><td>Sensation</td><td>Dorsal nerve of the clitoris (pudendal branch); pelvic visceral afferents</td><td>Tactile and erotic sensation</td><td>Perineal trauma, neuropathy, vulvar dermatoses</td></tr>\n</tbody></table>\n[[figure:s23f-fig130206-1]]\n<p>The clitoris is the embryologic homologue of the penis: the glans and corpora develop from the genital tubercle, and the same NO&ndash;cGMP pathway relaxes its erectile tissue. The labia majora correspond to the scrotum and the vestibular bulbs to the corpus spongiosum.</p>\n<h2>Hormones</h2>\n<ul>\n<li><strong>Estrogen</strong> keeps the vaginal epithelium thick and glycogen-rich, maintains blood flow and lubrication. Glycogen feeds lactobacilli, whose lactic acid keeps vaginal pH at or below about 4.5. Estrogen loss (menopause, lactation, aromatase inhibitors, GnRH agonists, premature ovarian insufficiency) produces genitourinary syndrome of menopause: thin pale epithelium, loss of rugae, a rise in pH above 5, predominance of parabasal cells, dryness and dyspareunia.</li>\n<li><strong>Androgens</strong> contribute to desire. Oral estrogen and combined hormonal contraceptives raise sex hormone-binding globulin and lower free testosterone; the clinical effect on desire is inconsistent.</li>\n<li><strong>Prolactin</strong> suppresses GnRH pulsatility, causing hypoestrogenism, and has central inhibitory effects on desire. This explains low libido and dryness during breastfeeding and with dopamine-blocking drugs.</li>\n</ul>\n<h2>Neurotransmitter balance and drug effects</h2>\n<p>Dopamine, norepinephrine and melanocortins are broadly excitatory for desire; serotonin (especially via 5-HT2 receptors), prolactin and endogenous opioids are inhibitory. This framework explains most medication effects.</p>\n<table class=\"hy\">\n<thead><tr><th>Drug or class</th><th>Mechanism of sexual adverse effect</th><th>Typical complaint</th></tr></thead>\n<tbody>\n<tr><td>SSRIs, SNRIs</td><td>Increased serotonergic tone inhibits dopaminergic and spinal orgasm reflexes</td><td>Delayed or absent orgasm, low desire</td></tr>\n<tr><td>First-generation and some second-generation antipsychotics (risperidone)</td><td>D2 blockade in the tuberoinfundibular pathway raises prolactin; mesolimbic D2 blockade lowers reward</td><td>Low desire, dryness, amenorrhea, galactorrhea</td></tr>\n<tr><td>Chronic opioids</td><td>Central suppression of GnRH</td><td>Low desire, hypogonadism</td></tr>\n<tr><td>Aromatase inhibitors, GnRH agonists</td><td>Profound estrogen deprivation</td><td>Severe dryness, dyspareunia</td></tr>\n<tr><td>Spironolactone, other antiandrogens</td><td>Androgen receptor blockade</td><td>Reduced desire in some patients</td></tr>\n<tr><td>Bupropion, mirtazapine</td><td>Little serotonin reuptake inhibition (bupropion is a norepinephrine-dopamine reuptake inhibitor)</td><td>Low risk; used as alternatives</td></tr>\n</tbody></table>\n<h2>Drugs approved for hypoactive sexual desire disorder</h2>\n<p>Both approved agents are for premenopausal women with acquired, generalised low desire that causes distress and is not explained by another condition, medication or relationship problem.</p>\n<ul>\n<li><strong>Flibanserin</strong>: a 5-HT1A agonist and 5-HT2A antagonist, taken nightly at bedtime. It is thought to reduce prefrontal serotonin and increase dopamine and norepinephrine. Main risks are hypotension, syncope and sedation, which are worse with alcohol and with CYP3A4 inhibitors (moderate or strong inhibitors are contraindicated). It is stopped if there is no benefit after about 8 weeks.</li>\n<li><strong>Bremelanotide</strong>: a melanocortin receptor agonist (mainly MC4R) given by subcutaneous autoinjector on demand, at least 45 minutes before sexual activity. Common effects are nausea, flushing and headache; it transiently raises blood pressure, so uncontrolled hypertension and cardiovascular disease are contraindications. MC1R activity can cause focal hyperpigmentation.</li>\n</ul>\n<p>For genitourinary syndrome of menopause, <strong>ospemifene</strong> is an oral SERM with estrogen-agonist action on vaginal epithelium, and <strong>prasterone</strong> is intravaginal DHEA converted locally to estrogens and androgens.</p>\n<div class=\"trap\"><p>Flibanserin is not an &ldquo;as-needed&rdquo; drug and is not a female version of sildenafil. It acts on central serotonin receptors and is taken every night. Bremelanotide is the on-demand option. Neither is approved for postmenopausal women in the US.</p></div>\n<h2>Vulvodynia and pain mechanisms</h2>\n<p>Vulvodynia is vulvar pain lasting at least 3 months without a clear identifiable cause. Biopsies of the vestibule in provoked vestibulodynia show increased density of nociceptive nerve endings; patients often have pelvic floor muscle overactivity and features of central sensitisation (coexisting irritable bowel syndrome, interstitial cystitis, fibromyalgia). Pain-anticipation and muscle guarding create a cycle that sustains genito-pelvic pain.</p>\n<h2>After gender-affirming vaginoplasty</h2>\n<p>In penile-inversion vaginoplasty the neovaginal lining is penile and scrotal skin (sometimes with peritoneal or intestinal grafts), and the neoclitoris is a portion of the glans kept on its dorsal neurovascular pedicle. Sensation and orgasm therefore travel through the <strong>dorsal nerve of the penis, a branch of the pudendal nerve</strong>. Skin-lined neovaginas make no lubricating transudate, so lubricant is needed. Because the lining has no native muscular tube, regular dilation is needed to keep depth and width. The prostate is not removed and lies anterior to the neovaginal wall.</p>\n<div class=\"pearl\"><p>Naadi memory aid, &ldquo;Para Points, Sympathy Shoots&rdquo;: parasympathetic fibres bring the pelvic blood flow (arousal and lubrication); sympathetic and pudendal outflow drive the contractions of orgasm.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Female Sexual Interest and Arousal Disorder"
+    },
+    {
+     "statpearls": "Flibanserin"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Female sexual dysfunction: evaluation and management",
+   "html": "<p>Sexual problems are common and under-asked. Most patients do not volunteer them, so ask routinely with a simple open question and normalise the topic. Disorders defined in DSM-5-TR require symptoms for <strong>at least 6 months</strong>, in most or all sexual encounters, causing <strong>clinically significant distress</strong>, and not better explained by another mental disorder, severe relationship distress, other stressors, a medical condition or a substance.</p>\n<h2>Categories</h2>\n<table class=\"hy\">\n<thead><tr><th>Disorder</th><th>Core features</th><th>First-line approach</th></tr></thead>\n<tbody>\n<tr><td>Female sexual interest/arousal disorder (FDA labels use &ldquo;hypoactive sexual desire disorder&rdquo;)</td><td>Reduced or absent interest, thoughts, initiation, pleasure, responsiveness to cues or genital sensation</td><td>Treat contributors (depression, drugs, relationship), sex therapy and CBT; flibanserin or bremelanotide in selected premenopausal patients</td></tr>\n<tr><td>Female orgasmic disorder</td><td>Marked delay, infrequency or absence of orgasm, or reduced intensity</td><td>Education, directed self-stimulation, vibratory stimulation, address SSRI use</td></tr>\n<tr><td>Genito-pelvic pain/penetration disorder</td><td>Difficulty with penetration, pain with penetration, fear of pain, or pelvic floor tightening</td><td>Pelvic floor physical therapy, graded vaginal dilators, CBT; treat any vulvovaginal cause</td></tr>\n<tr><td>Substance/medication-induced sexual dysfunction</td><td>Onset after starting or changing a drug</td><td>Change dose or drug, or add an antidote strategy</td></tr>\n</tbody></table>\n<h2>Evaluation</h2>\n<ol>\n<li><strong>History</strong>: onset (lifelong or acquired), situational or generalised, which phase is affected, pain location and timing, partner factors (including partner erectile dysfunction), mood, past trauma or current intimate partner violence, and a full medication review.</li>\n<li><strong>Examination</strong>: a careful, patient-controlled genital exam. Look for atrophy, dermatoses (lichen sclerosus, lichen planus), infection, scarring, fissures, and map tenderness with a cotton swab. Palpate the pelvic floor muscles for tenderness or guarding.</li>\n<li><strong>Tests</strong> only as indicated: wet mount and pH for discharge, TSH or prolactin when the history suggests endocrine disease, glucose and HbA1c with neuropathy risk. A serum testosterone level is <em>not</em> used to diagnose low desire because levels do not correlate with symptoms.</li>\n</ol>\n<h2>Management by problem</h2>\n<h3>Medication-induced</h3>\n<p>For SSRI-associated dysfunction with well-controlled depression, options include adding bupropion, switching to bupropion or mirtazapine, or lowering the dose. Never stop an SSRI abruptly (discontinuation symptoms, relapse). Avoid paroxetine, which has a high rate of sexual adverse effects.</p>\n<h3>Genitourinary syndrome of menopause</h3>\n<p>Start with vaginal moisturisers used regularly and lubricants at intercourse. If symptoms persist, <strong>low-dose vaginal estrogen</strong> (cream, tablet or ring) is the most effective treatment; systemic absorption is minimal, so a progestin is not needed for endometrial protection with standard low doses. Alternatives are intravaginal prasterone and oral ospemifene (avoid ospemifene with prior VTE). Pelvic floor therapy helps when guarding has developed.</p>\n<h3>Low desire</h3>\n<p>Address fatigue, depression, body image, relationship conflict and pain first. Psychotherapy with a sexual focus (CBT, mindfulness-based therapy, sensate focus exercises for couples) is first line. In premenopausal patients with persistent distressing acquired generalised low desire, flibanserin (nightly) or bremelanotide (on demand) are options; counsel about alcohol and hypotension with flibanserin and about nausea and blood pressure with bremelanotide. In postmenopausal patients with distressing low desire after other causes are addressed, transdermal testosterone dosed to keep levels in the premenopausal range is supported by international consensus, but no testosterone product is FDA-approved for women; check levels at baseline and during therapy and stop if there is no benefit by about 6 months.</p>\n<h3>Pain disorders</h3>\n<ul>\n<li><strong>Provoked vestibulodynia</strong>: pain localised to the vestibule on touch (tampon, speculum, intercourse) with a positive cotton-swab test and an otherwise normal exam and wet mount. Manage with gentle vulvar care (stop irritants), topical lidocaine before intercourse, pelvic floor physical therapy and CBT; tricyclics or gabapentinoids for refractory or generalised pain; vestibulectomy for carefully selected refractory cases.</li>\n<li><strong>Genito-pelvic pain with fear and muscle guarding</strong> (formerly vaginismus): pelvic floor physical therapy with biofeedback, graded dilators that the patient controls, and CBT.</li>\n<li>Deep dyspareunia suggests endometriosis, adhesions, pelvic inflammatory disease or a fixed retroverted uterus and needs a pelvic evaluation rather than a vulvar one.</li>\n</ul>\n<div class=\"trap\"><p>A normal-appearing vulva with exquisite point tenderness at the vestibule is the classic picture of provoked vestibulodynia. Lichen sclerosus, by contrast, shows white, thinned, wrinkled skin and architectural change; candidiasis shows discharge and budding yeast. Do not label pain as vulvodynia until infection and dermatoses are excluded.</p></div>\n<h2>Special populations</h2>\n<ul>\n<li><strong>Postpartum and lactating patients</strong>: high prolactin suppresses ovarian estrogen, so dryness and dyspareunia are common while breastfeeding, compounded by perineal trauma, fatigue and mood changes. Lubricants and moisturisers are first line; low-dose vaginal estrogen is acceptable. Screen for postpartum depression.</li>\n<li><strong>Older adults</strong>: GSM, comorbid illness, polypharmacy and partner erectile dysfunction dominate. Sexual activity continues into late life; ask.</li>\n<li><strong>People with disabilities</strong>: after spinal cord injury, reflex genital arousal depends on intact sacral (S2&ndash;S4) segments and psychogenic arousal on thoracolumbar pathways; many people can still reach orgasm. Positioning advice, lubricants, vibratory stimulation and attention to bladder and bowel care help. Multiple sclerosis often reduces genital sensation.</li>\n<li><strong>Breast cancer survivors</strong> on aromatase inhibitors have severe GSM. Non-hormonal measures come first; any vaginal hormone use is a shared decision with oncology.</li>\n<li><strong>Transgender women after vaginoplasty</strong>: dilation is needed long term (most often several times daily early on, tapering over months); stopping causes loss of depth and stenosis. Lubricant is required for skin-lined neovaginas. Pain and spotting with dilation weeks after surgery often come from granulation tissue, which is treated in the office with silver nitrate. Estradiol therapy itself can reduce desire in some patients; review the regimen. Screen for STIs based on anatomy and practices.</li>\n<li><strong>Survivors of sexual trauma</strong>: use trauma-informed care, let the patient control the exam, and screen for PTSD and current abuse.</li>\n</ul>\n<div class=\"pearl\"><p>The best first step for most sexual complaints is a focused history with a medication review. Many cases are explained by an SSRI, estrogen deficiency, depression, pain, or a partner's dysfunction rather than a primary sexual disorder.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Dyspareunia"
+    },
+    {
+     "statpearls": "Vulvodynia"
+    },
+    {
+     "statpearls": "Genitourinary Syndrome of Menopause"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Autonomic and somatic pathways of the female genital sexual response (schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "Group program for genito-pelvic pain (fictional trial)",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> Investigators enrolled 240 adults with a uterus aged 18&ndash;45 years who met criteria for genito-pelvic pain/penetration disorder. A central computer randomly assigned participants, with allocation concealed, to a 12-week group program combining education, pelvic floor relaxation and cognitive-behavioural exercises (n = 120) or to a waitlist (n = 120). Participants and the nurses who collected data knew the group assignment. The primary outcome was a reduction of at least 50% in self-reported pain during penetration attempts, recorded in a prospective diary, at 16 weeks.</p><p><strong>Results.</strong> The primary outcome occurred in 48 of 120 participants in the program group (40%) and 24 of 120 on the waitlist (20%); relative risk 2.0 (95% CI 1.3&ndash;3.0). Eleven participants in each group were lost to follow-up and were counted as non-responders.</p>"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman has had major depressive disorder treated with sertraline for 4 months. Her mood has improved, but since the dose was increased she has been unable to reach orgasm, although desire and lubrication are mostly preserved. She has no pelvic pain. Examination is normal. Which of the following best explains her new symptom?</p>",
+   "options": [
+    "Blockade of postsynaptic dopamine D2 receptors in the tuberoinfundibular pathway",
+    "Increased serotonergic signalling that inhibits spinal and central orgasm reflexes",
+    "Inhibition of cGMP-specific phosphodiesterase type 5 in clitoral tissue",
+    "Reduced hepatic production of sex hormone-binding globulin",
+    "Antagonism of muscarinic receptors in vestibular glands"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>SSRIs raise synaptic serotonin. Serotonin, acting largely at 5-HT2 receptors, inhibits dopaminergic reward signalling and the spinal reflexes that coordinate orgasm, so delayed or absent orgasm is the signature adverse effect and is dose-related. Desire can also fall, but arousal (a parasympathetic, NO-mediated event) is often less affected.</p><p><strong>Takeaway:</strong> SSRI-associated anorgasmia comes from increased serotonergic tone; bupropion or mirtazapine are lower-risk alternatives.</p>",
+   "whyNot": {
+    "A": "D2 blockade with hyperprolactinemia is the mechanism for antipsychotics such as risperidone, not sertraline, and it mainly lowers desire and causes dryness.",
+    "C": "PDE-5 inhibition would increase cGMP and enhance genital vasocongestion; it does not explain anorgasmia.",
+    "D": "Lower SHBG would raise free testosterone, which would not impair orgasm; SHBG changes are linked to oral estrogens, not SSRIs.",
+    "E": "Sertraline has little antimuscarinic activity, and anticholinergic dryness would not explain isolated anorgasmia with preserved lubrication."
+   },
+   "objective": "Explain SSRI-induced orgasmic dysfunction by increased serotonergic inhibition of orgasm pathways.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual function",
+    "antidepressants"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 33-year-old woman has had distressing low sexual desire for 14 months that began after the birth of her second child, who is now weaned. Mood screening is negative, her relationship is supportive, and she takes no medications. After counselling, her gynecologist prescribes a tablet to be taken every night at bedtime and warns her that alcohol close to the dose can cause fainting. The prescribed drug most likely acts by which of the following mechanisms?</p>",
+   "options": [
+    "Agonism at melanocortin-4 receptors",
+    "Agonism at 5-HT1A receptors with antagonism at 5-HT2A receptors",
+    "Selective inhibition of norepinephrine and dopamine reuptake",
+    "Agonism at estrogen receptors in vaginal epithelium",
+    "Inhibition of phosphodiesterase type 5"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Flibanserin is a 5-HT1A agonist and 5-HT2A antagonist taken daily at bedtime for acquired, generalised hypoactive sexual desire disorder in premenopausal women. The net effect is thought to be a fall in prefrontal serotonin with a rise in dopamine and norepinephrine. Hypotension and syncope are increased by alcohol and by CYP3A4 inhibitors.</p><p><strong>Takeaway:</strong> Nightly flibanserin modulates serotonin receptors; on-demand bremelanotide is the melanocortin agonist.</p>",
+   "whyNot": {
+    "A": "Melanocortin receptor agonism describes bremelanotide, which is self-injected on demand before sexual activity, not taken as a nightly tablet.",
+    "C": "Norepinephrine-dopamine reuptake inhibition describes bupropion, an antidepressant sometimes used off-label, not the approved nightly desire drug with an alcohol warning.",
+    "D": "Vaginal estrogen-agonist action describes ospemifene, which treats menopausal dyspareunia, not low desire in a premenopausal patient.",
+    "E": "PDE-5 inhibitors act on genital blood flow, are not approved for women, and do not treat low desire."
+   },
+   "objective": "Identify the receptor mechanism of flibanserin and its interaction with alcohol.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge",
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual desire",
+    "pharmacology"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman with acquired, generalised low sexual desire uses a subcutaneous autoinjector about 45 minutes before anticipated sexual activity. After several doses she notices nausea and a few new darker patches on her face and gums. Which of the following receptors is most directly targeted by this drug?</p>",
+   "options": [
+    "Melanocortin receptors",
+    "Serotonin 5-HT2A receptors",
+    "Dopamine D2 receptors",
+    "Oxytocin receptors",
+    "Androgen receptors"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Bremelanotide is a melanocortin receptor agonist, acting mainly at MC4R in the central nervous system to increase sexual desire. Activity at MC1R on melanocytes explains focal hyperpigmentation, particularly of the face, gums and breasts. Nausea is the most common adverse effect, and it transiently raises blood pressure.</p><p><strong>Takeaway:</strong> On-demand subcutaneous bremelanotide is a melanocortin agonist; hyperpigmentation reflects MC1R stimulation.</p>",
+   "whyNot": {
+    "B": "5-HT2A antagonism is part of flibanserin's action, a nightly oral drug that does not cause hyperpigmentation.",
+    "C": "D2 receptor antagonism would raise prolactin and lower desire rather than treat it.",
+    "D": "Oxytocin is released at orgasm, but no approved desire drug acts as an oxytocin receptor agonist, and this would not explain pigment change.",
+    "E": "Androgen receptor agonists such as testosterone are applied transdermally and can cause acne or hirsutism, not melanocytic hyperpigmentation."
+   },
+   "objective": "Link bremelanotide to melanocortin receptor agonism and its pigmentary adverse effect.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual desire",
+    "pharmacology"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old woman with schizophrenia has taken risperidone for 8 months. She reports loss of interest in sex, vaginal dryness during intercourse and no menstrual periods for 5 months. A urine pregnancy test is negative. Expression of milky fluid is possible from both breasts. Which of the following is the most direct cause of her vaginal dryness?</p>",
+   "options": [
+    "Increased hypothalamic GnRH pulse frequency",
+    "Suppression of ovarian estrogen production",
+    "Excess adrenal androgen secretion",
+    "Destruction of vestibular glands by autoimmune inflammation",
+    "Increased vaginal lactobacillus colonisation"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Risperidone blocks D2 receptors in the tuberoinfundibular pathway, removing dopamine's tonic inhibition of lactotrophs. High prolactin suppresses GnRH pulsatility, so LH and FSH fall and the ovaries make less estrogen. Low estrogen thins the vaginal epithelium and reduces lubrication, and amenorrhea and galactorrhea follow from the same axis.</p><p><strong>Takeaway:</strong> Antipsychotic hyperprolactinemia causes hypogonadotropic hypoestrogenism, which explains dryness, amenorrhea and low desire.</p>",
+   "whyNot": {
+    "A": "Prolactin slows and suppresses GnRH pulses; increased pulse frequency is the pattern of polycystic ovary syndrome.",
+    "C": "Adrenal androgen excess would cause hirsutism or virilisation and does not explain dryness or galactorrhea.",
+    "D": "Autoimmune gland destruction (as in Sjogren syndrome) can cause dryness but would not explain amenorrhea and galactorrhea after starting risperidone.",
+    "E": "Lactobacilli depend on estrogen-driven glycogen; hypoestrogenism reduces them rather than increasing them."
+   },
+   "objective": "Trace antipsychotic-induced hyperprolactinemia to hypoestrogenic vaginal dryness.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual function",
+    "endocrine"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 44-year-old woman underwent radical hysterectomy with pelvic lymph node dissection for stage IB cervical cancer 6 months ago. She now reports that, although her desire is unchanged and she can reach orgasm with clitoral stimulation, she has markedly reduced vaginal lubrication during arousal. She also needs to strain to empty her bladder. Injury to which of the following is the most likely explanation?</p>",
+   "options": [
+    "Pudendal nerve in Alcock canal",
+    "Obturator nerve",
+    "Pelvic splanchnic nerves",
+    "Genitofemoral nerve",
+    "Lumbar sympathetic chain"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Pelvic splanchnic nerves carry preganglionic parasympathetic fibres from S2&ndash;S4 through the inferior hypogastric plexus beside the cervix and vagina. They drive genital vasocongestion and the vaginal transudate of arousal, and they also stimulate the detrusor. Radical hysterectomy can injure this plexus, producing reduced lubrication and incomplete bladder emptying, which is why nerve-sparing techniques exist.</p><p><strong>Takeaway:</strong> Parasympathetic (pelvic splanchnic) injury impairs lubrication and detrusor function; pudendal injury affects sensation and pelvic floor contraction.</p>",
+   "whyNot": {
+    "A": "Pudendal injury would reduce clitoral sensation and pelvic floor contraction, but her orgasm with clitoral stimulation is preserved.",
+    "B": "The obturator nerve can be injured during lymph node dissection but causes weak thigh adduction and medial thigh numbness, not reduced lubrication.",
+    "D": "The genitofemoral nerve supplies skin of the labia majora and upper thigh; injury causes numbness or pain there, not autonomic dysfunction.",
+    "E": "Sympathetic outflow governs the emission-like contractions of orgasm and urinary continence, not lubrication; her orgasm is preserved."
+   },
+   "objective": "Localise loss of lubrication after radical pelvic surgery to parasympathetic pelvic splanchnic nerve injury.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [
+    1
+   ],
+   "tags": [
+    "pelvic anatomy",
+    "sexual function"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 49-year-old woman has taken anastrozole for 2 years after treatment of hormone receptor-positive breast cancer. She has burning, dryness and pain with intercourse. Examination shows pale, thin vaginal mucosa with loss of rugae and petechiae. Which of the following additional findings is most likely?</p>",
+   "options": [
+    "Vaginal pH of 4.0 with abundant lactobacilli",
+    "Vaginal pH above 5 with many parabasal cells",
+    "Clue cells with a positive whiff test",
+    "Pseudohyphae on potassium hydroxide preparation",
+    "Hyperkeratosis with a dense band of lymphocytes on biopsy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Aromatase inhibitors block peripheral conversion of androgens to estrogens, causing profound estrogen deficiency. Without estrogen the epithelium thins, superficial cells give way to parabasal cells, and glycogen falls. Lactobacilli need that glycogen to make lactic acid, so they decline and vaginal pH rises above 5. This is genitourinary syndrome of menopause.</p><p><strong>Takeaway:</strong> Estrogen deficiency raises vaginal pH and shifts the cytology to parabasal cells.</p>",
+   "whyNot": {
+    "A": "A pH near 4 with abundant lactobacilli is the estrogenised, healthy pattern that she has lost.",
+    "C": "Clue cells and a fishy odour indicate bacterial vaginosis, which raises pH but would cause discharge and does not explain pale, atrophic mucosa.",
+    "D": "Candidiasis is favoured by estrogen and is less common in atrophy; it shows thick discharge and a normal pH.",
+    "E": "Hyperkeratosis with band-like lymphocytes suggests lichen planus or lichen sclerosus features, not estrogen-deficiency atrophy."
+   },
+   "objective": "Predict the vaginal pH and cytology changes of estrogen deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "menopause symptoms",
+    "vaginal health"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 36-year-old transgender woman had penile-inversion vaginoplasty 1 year ago and takes estradiol. She reports satisfying sexual function with preserved orgasm. She asks which structure carries the sensation from her neoclitoris. The neoclitoris was created from a portion of the glans kept on its neurovascular pedicle. Which nerve most likely provides this sensation?</p>",
+   "options": [
+    "Ilioinguinal nerve",
+    "Genitofemoral nerve",
+    "Dorsal nerve of the penis",
+    "Posterior femoral cutaneous nerve",
+    "Pelvic splanchnic nerves"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The neoclitoris is a segment of glans left attached to the dorsal neurovascular bundle, which contains the dorsal nerve of the penis, a terminal branch of the pudendal nerve (S2&ndash;S4). Preserving this pedicle preserves erotic sensation and the ability to reach orgasm, as with the dorsal nerve of the clitoris in natal anatomy. The two structures are homologous because both come from the genital tubercle.</p><p><strong>Takeaway:</strong> Neoclitoral sensation after vaginoplasty travels in the dorsal nerve (pudendal branch), preserved on the neurovascular pedicle.</p>",
+   "whyNot": {
+    "A": "The ilioinguinal nerve supplies skin of the anterior scrotum or labia and upper medial thigh, not the glans.",
+    "B": "The genitofemoral nerve's genital branch supplies the cremaster and anterior scrotal or labial skin, not the glans.",
+    "D": "The posterior femoral cutaneous nerve supplies the posterior thigh and part of the perineum, not glans-derived tissue.",
+    "E": "Pelvic splanchnic nerves are autonomic and drive erectile engorgement; they do not carry the discriminative touch sensation of the glans."
+   },
+   "objective": "Identify the pudendal-derived nerve that preserves neoclitoral sensation after vaginoplasty.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gender-affirming care",
+    "pelvic anatomy"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman comes to the office because she has been unable to reach orgasm and has had less interest in sex for 3 months. Five months ago she began sertraline for major depressive disorder; her mood has improved substantially, and her PHQ-9 score has fallen from 18 to 4. She wants to stay on treatment for her depression. She has no pelvic pain, and examination is normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Stop sertraline today",
+    "Add bupropion to her current regimen",
+    "Switch sertraline to paroxetine",
+    "Start flibanserin at bedtime",
+    "Increase the sertraline dose"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is medication-induced sexual dysfunction in a patient whose depression has responded. Adding bupropion, a norepinephrine-dopamine reuptake inhibitor with few sexual adverse effects, can counter SSRI-associated sexual dysfunction while preserving the antidepressant response. Switching to bupropion or mirtazapine, or a cautious dose reduction, are alternatives.</p><p><strong>Takeaway:</strong> For SSRI-induced sexual dysfunction with good mood control, augment with or switch to bupropion; never stop the SSRI abruptly.</p>",
+   "whyNot": {
+    "A": "Abrupt discontinuation risks discontinuation symptoms and depressive relapse early in treatment; any change should be planned and tapered.",
+    "C": "Paroxetine has one of the highest rates of sexual adverse effects among SSRIs and would likely worsen her symptoms.",
+    "D": "Flibanserin is for hypoactive desire not explained by a medication; her problem started with sertraline and includes anorgasmia, which flibanserin does not treat.",
+    "E": "Sexual adverse effects of SSRIs are dose-related, so increasing the dose would be expected to worsen them."
+   },
+   "objective": "Manage SSRI-induced sexual dysfunction while maintaining antidepressant response.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "psychiatry",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual function",
+    "antidepressants"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old woman comes to the office because of pain with intercourse for 1 year. Menopause occurred at age 52. She has tried an over-the-counter lubricant with each encounter and a vaginal moisturiser twice weekly for 4 months, with little benefit. She has no history of breast cancer, venous thromboembolism or abnormal uterine bleeding. Her desire is intact. Pelvic examination shows pale, dry vaginal walls with loss of rugae and a vaginal pH of 6.0. Her medications and vital signs are shown.</p><table><thead><tr><th>Medication</th><th>Use</th></tr></thead><tbody><tr><td>Lisinopril 10 mg daily</td><td>Hypertension</td></tr><tr><td>Metformin 1,000 mg twice daily</td><td>Type 2 diabetes</td></tr><tr><td>Atorvastatin 20 mg daily</td><td>Hyperlipidemia</td></tr><tr><td>Calcium with vitamin D daily</td><td>Bone health</td></tr></tbody></table><table><thead><tr><th>Vital sign</th><th>Value</th></tr></thead><tbody><tr><td>Blood pressure</td><td>128/78 mm Hg</td></tr><tr><td>Pulse</td><td>74/min</td></tr><tr><td>BMI</td><td>29 kg/m&sup2;</td></tr></tbody></table><p>Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Oral conjugated estrogen with a progestin",
+    "Low-dose vaginal estradiol",
+    "Transdermal testosterone gel",
+    "Oral flibanserin at bedtime",
+    "Surgical vestibulectomy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>She has genitourinary syndrome of menopause that has not responded to lubricants and moisturisers. Low-dose vaginal estrogen is the most effective next treatment; it restores the epithelium, lowers pH and relieves dyspareunia with minimal systemic absorption, so a progestin is not needed. Her medications are unrelated and do not interact.</p><p><strong>Takeaway:</strong> Persistent GSM after non-hormonal measures is treated with low-dose vaginal estrogen.</p>",
+   "whyNot": {
+    "A": "Systemic hormone therapy is reserved for vasomotor symptoms; for isolated genital symptoms local therapy is more effective with less risk.",
+    "C": "Testosterone is considered for distressing low desire after menopause, but her desire is intact and her problem is atrophic dyspareunia.",
+    "D": "Flibanserin treats low desire in premenopausal patients and does nothing for vaginal atrophy.",
+    "E": "Vestibulectomy is a last resort for refractory provoked vestibulodynia, not for estrogen-deficient atrophy that responds to hormonal treatment."
+   },
+   "objective": "Choose low-dose vaginal estrogen for genitourinary syndrome of menopause refractory to moisturisers.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "menopause symptoms",
+    "dyspareunia"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old woman comes to the clinic because of burning pain at the vaginal opening for 14 months whenever she inserts a tampon or attempts intercourse. She has no pain at other times and no abnormal discharge. She has had no relief from two courses of over-the-counter antifungal cream. Vulvar skin is normal in colour and texture with no lesions or scarring. Light touch with a cotton-tipped swab at the vestibule at the 5 and 7 o'clock positions reproduces sharp pain; touch on the labia majora is painless. Vaginal pH is 4.0, and a wet mount is normal. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Lichen sclerosus",
+    "Recurrent vulvovaginal candidiasis",
+    "Provoked vestibulodynia",
+    "Genitourinary syndrome of menopause",
+    "Recurrent genital herpes simplex"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Localised, provoked pain at the vestibule lasting more than 3 months, reproduced by light cotton-swab touch, with normal skin, normal pH and a normal wet mount, is provoked vestibulodynia, the most common subtype of vulvodynia. It is a diagnosis made after excluding infection and dermatoses, which this workup does.</p><p><strong>Takeaway:</strong> Point tenderness at the vestibule with a normal-appearing vulva and normal wet mount means provoked vestibulodynia.</p>",
+   "whyNot": {
+    "A": "Lichen sclerosus produces white, thinned, crinkled skin, often with architectural change and itch; her skin is normal.",
+    "B": "Candidiasis would show discharge, erythema and yeast on wet mount; her pH and microscopy are normal and antifungals failed.",
+    "D": "She is 24 years old with regular estrogen exposure and normal pH, so atrophy is not expected.",
+    "E": "Herpes causes recurrent painful vesicles or ulcers in episodes, not constant provoked pain with a normal exam."
+   },
+   "objective": "Diagnose provoked vestibulodynia from localised provoked pain and a normal vulvar workup.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vulvar pain"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman has never been able to have penetrative intercourse with her partner of 2 years. Attempts produce intense fear of pain and involuntary tightening, and she has never used tampons. Desire and arousal are normal, and she reaches orgasm with external stimulation. She requests help because she would like to conceive in the future. With her consent and control of the pace, examination shows a normal hymen and vestibule, but placing a fingertip at the introitus causes visible contraction of the pelvic floor muscles and withdrawal. There is no vestibular point tenderness. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Surgical hymenectomy",
+    "Pelvic floor physical therapy with graded vaginal dilators",
+    "Daily topical estrogen cream",
+    "Oral flibanserin at bedtime",
+    "Examination under general anesthesia"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Lifelong inability to tolerate penetration with fear of pain and involuntary pelvic floor contraction, and a normal exam, fits genito-pelvic pain/penetration disorder (formerly vaginismus). First-line treatment is pelvic floor physical therapy with biofeedback and patient-controlled graded dilators, usually combined with CBT or sex therapy to treat fear and avoidance. Desensitisation, not surgery, is the principle.</p><p><strong>Takeaway:</strong> Genito-pelvic pain with muscle guarding responds to pelvic floor therapy, graded dilators and CBT.</p>",
+   "whyNot": {
+    "A": "Her hymen is normal; surgery does not address the fear and reflex muscle contraction that cause the problem.",
+    "C": "She is premenopausal and not hypoestrogenic, so estrogen offers no benefit.",
+    "D": "Her desire and arousal are normal; flibanserin treats low desire, not penetration difficulty.",
+    "E": "Her exam already shows a normal anatomy, and anesthesia removes the very muscle response that needs to be treated."
+   },
+   "objective": "Treat genito-pelvic pain/penetration disorder with pelvic floor therapy, dilators and CBT.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "psychiatry"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genito-pelvic pain"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>Based on the study summary, how many patients would need to receive the group program for one additional patient to achieve the primary outcome at 16 weeks, compared with the waitlist?</p>",
+   "options": [
+    "3",
+    "4",
+    "5",
+    "10",
+    "20"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The response rate was 40% (48/120) with the program and 20% (24/120) on the waitlist. The absolute risk difference is 0.40 &minus; 0.20 = 0.20, so the number needed to treat is 1/0.20 = 5.</p><p><strong>Takeaway:</strong> NNT = 1 / (absolute difference in event rates); use absolute, not relative, differences.</p>",
+   "whyNot": {
+    "A": "An NNT of 3 would need an absolute difference of about 33 percentage points, more than the 20 observed.",
+    "B": "An NNT of 4 corresponds to a 25-point absolute difference, which is not what the study found.",
+    "D": "An NNT of 10 corresponds to a 10-point difference; it results from halving the true absolute difference.",
+    "E": "20 is the absolute difference expressed in percentage points, not its reciprocal."
+   },
+   "objective": "Calculate the number needed to treat from response rates in a trial of a sexual pain intervention.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "study design",
+    "genito-pelvic pain"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Which of the following is the most important limitation of this study's design for estimating the effect of the program on the primary outcome?</p>",
+   "options": [
+    "Selection bias from randomising before baseline assessment",
+    "Performance and detection bias from an unblinded waitlist control with a self-reported outcome",
+    "Confounding by indication because sicker patients chose the program",
+    "Lead-time bias from earlier diagnosis in the program group",
+    "Recall bias from asking about pain at the time it occurred"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Participants knew whether they were in the program or on the waitlist, and the primary outcome was a self-reported pain score. Expectation, attention and wish to please investigators can all improve reported pain in the active group (performance bias), and unblinded self-report inflates the effect (detection bias). A waitlist control also lacks a credible attention-matched comparison.</p><p><strong>Takeaway:</strong> Unblinded trials with subjective outcomes overestimate benefit; an attention-matched control and blinded or objective outcomes reduce this bias.</p>",
+   "whyNot": {
+    "A": "Randomisation by a central computer with allocation concealment, as described, protects against selection bias.",
+    "C": "Confounding by indication arises in observational studies where treatment is chosen; here allocation was random.",
+    "D": "Lead-time bias affects screening studies of survival, not a treatment trial measuring symptom response.",
+    "E": "The pain diary was recorded prospectively at each attempt, which reduces rather than causes recall bias."
+   },
+   "objective": "Identify bias from an unblinded waitlist control with a subjective outcome.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "study design",
+    "genito-pelvic pain"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman comes for a visit 5 months after an uncomplicated vaginal delivery with a second-degree laceration that healed well. She is exclusively breastfeeding and has not had a menstrual period since delivery. She reports dryness and burning during intercourse, which she and her partner resumed 2 months ago. Her mood is good, and Edinburgh Postnatal Depression Scale score is 3. Examination shows a well-healed perineal scar without tenderness, and thin, pale vaginal mucosa. Which of the following is the most likely cause of her symptom?</p>",
+   "options": [
+    "Perineal scar neuroma",
+    "Hypoestrogenism related to lactation",
+    "Postpartum thyroiditis",
+    "Retained products of conception",
+    "Genito-pelvic pain/penetration disorder"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>During lactation, high prolactin and suckling suppress GnRH pulsatility, so ovarian estrogen production is low. The result is a temporary atrophic picture with dryness and dyspareunia, as here: thin pale mucosa, amenorrhea and a well-healed scar. Lubricants and moisturisers are first line, and low-dose vaginal estrogen is acceptable while breastfeeding.</p><p><strong>Takeaway:</strong> Dyspareunia while breastfeeding is usually lactational hypoestrogenism; treat with lubricants or local estrogen.</p>",
+   "whyNot": {
+    "A": "A scar neuroma would cause point tenderness at the scar, which is absent.",
+    "C": "Postpartum thyroiditis causes hyper- or hypothyroid symptoms, not isolated vaginal atrophy.",
+    "D": "Retained products cause bleeding or infection in the early postpartum period, not dryness months later.",
+    "E": "She has no fear-avoidance or pelvic floor guarding, and an organic cause explains her pain; this diagnosis requires 6 months and is not better explained by another condition."
+   },
+   "objective": "Recognise lactational hypoestrogenism as a cause of postpartum dyspareunia.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "postpartum health",
+    "dyspareunia"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which autonomic division mediates genital vasocongestion and vaginal lubrication?",
+   "back": "Parasympathetic, via pelvic splanchnic nerves (S2&ndash;S4), releasing NO and VIP.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which nerve carries clitoral sensation and drives pelvic floor contractions at orgasm?",
+   "back": "The pudendal nerve (S2&ndash;S4); the dorsal nerve of the clitoris is its sensory branch.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Why does estrogen deficiency raise vaginal pH?",
+   "back": "Less epithelial glycogen means fewer lactobacilli and less lactic acid, so pH rises above about 5.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Mechanism of flibanserin?",
+   "back": "5-HT1A agonist and 5-HT2A antagonist, taken nightly; alcohol and CYP3A4 inhibitors increase hypotension and syncope.",
+   "question": 2
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Mechanism of bremelanotide and a distinctive adverse effect?",
+   "back": "Melanocortin (mainly MC4R) agonist given subcutaneously on demand; focal hyperpigmentation via MC1R, plus nausea.",
+   "question": 3
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "How do antipsychotics such as risperidone cause vaginal dryness?",
+   "back": "D2 blockade raises prolactin, which suppresses GnRH and ovarian estrogen.",
+   "question": 4
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which nerves are at risk for loss of lubrication after radical hysterectomy?",
+   "back": "Pelvic splanchnic (parasympathetic) fibres in the inferior hypogastric plexus.",
+   "question": 5
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "What provides neoclitoral sensation after penile-inversion vaginoplasty?",
+   "back": "The dorsal nerve of the penis (a pudendal branch) preserved on the glans pedicle.",
+   "question": 7
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Two requirements shared by all DSM-5-TR sexual dysfunction diagnoses?",
+   "back": "Symptoms for at least about 6 months and clinically significant distress.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Best strategy for SSRI-induced sexual dysfunction when depression is controlled?",
+   "back": "Add or switch to bupropion (or mirtazapine); do not stop the SSRI abruptly.",
+   "question": 8
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Treatment of genitourinary syndrome of menopause after moisturisers and lubricants fail?",
+   "back": "Low-dose vaginal estrogen; no progestin needed at standard low doses.",
+   "question": 9
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Classic exam in provoked vestibulodynia?",
+   "back": "Normal-appearing vulva with sharp pain on cotton-swab touch at the vestibule; normal pH and wet mount.",
+   "question": 10
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "First-line therapy for genito-pelvic pain with fear and muscle guarding?",
+   "back": "Pelvic floor physical therapy with graded dilators plus CBT.",
+   "question": 11
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Is serum testosterone used to diagnose low desire in women?",
+   "back": "No; levels do not correlate with symptoms. Testosterone is measured only to monitor therapy.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Why is dyspareunia common while breastfeeding?",
+   "back": "Lactation suppresses GnRH and ovarian estrogen, causing temporary atrophy.",
+   "question": 14
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Common cause of pain and spotting with dilation weeks after vaginoplasty, and its treatment?",
+   "back": "Granulation tissue, treated in the office with silver nitrate.",
+   "question": null
+  }
+ ]
+}

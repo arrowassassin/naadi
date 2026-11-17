@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-label="Five-column schematic contrasting reassuring and concerning pigmented lesions for asymmetry, border, colour, diameter and evolution" font-family="sans-serif">
+<title>Five-column schematic contrasting reassuring and concerning pigmented lesions for asymmetry, border, colour, diameter and evolution</title>
+<rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+<text x="20" y="30" font-size="16" font-weight="bold" fill="#0f172a">Features that raise concern in a pigmented lesion</text>
+<text x="20" y="62" font-size="13" font-weight="bold" fill="#0f172a">Reassuring</text>
+<text x="20" y="232" font-size="13" font-weight="bold" fill="#0f172a">Concerning</text>
+<text x="30" y="88" font-size="14" font-weight="bold" fill="#0f172a">A: Asymmetry</text>
+<circle cx="90" cy="130" r="32" fill="#8b5a3c" stroke="#0f172a"/>
+<line x1="90" y1="90" x2="90" y2="170" stroke="#0f172a" stroke-dasharray="4 3"/>
+<text x="30" y="195" font-size="12" fill="#0f172a">Halves match</text>
+<path d="M55,300 C50,260 90,255 100,270 C135,270 140,320 105,335 C80,345 55,330 55,300 Z" fill="#6b4226" stroke="#0f172a"/>
+<line x1="90" y1="250" x2="90" y2="350" stroke="#0f172a" stroke-dasharray="4 3"/>
+<text x="30" y="372" font-size="12" fill="#0f172a">Halves differ</text>
+<text x="175" y="88" font-size="14" font-weight="bold" fill="#0f172a">B: Border</text>
+<circle cx="235" cy="130" r="32" fill="#8b5a3c" stroke="#0f172a"/>
+<text x="175" y="195" font-size="12" fill="#0f172a">Smooth, sharp edge</text>
+<polygon points="275,300 258,306 264,317 252,317 252,329 243,329 235,334 229,323 218,329 218,317 200,320 212,306 201,300 212,294 206,283 214,279 218,271 229,277 235,266 241,277 255,265 252,283 264,283 258,294" fill="#6b4226" stroke="#0f172a"/>
+<text x="175" y="372" font-size="12" fill="#0f172a">Notched, blurred</text>
+<text x="320" y="88" font-size="14" font-weight="bold" fill="#0f172a">C: Colour</text>
+<circle cx="380" cy="130" r="32" fill="#8b5a3c" stroke="#0f172a"/>
+<text x="320" y="195" font-size="12" fill="#0f172a">One even brown</text>
+<circle cx="380" cy="300" r="34" fill="#a0714f" stroke="#0f172a"/>
+<circle cx="368" cy="292" r="13" fill="#1f1410"/>
+<circle cx="394" cy="310" r="11" fill="#64748b"/>
+<circle cx="390" cy="284" r="7" fill="#c2410c"/>
+<text x="320" y="358" font-size="12" fill="#0f172a">Tan, black, blue-grey,</text>
+<text x="320" y="374" font-size="12" fill="#0f172a">red or white areas</text>
+<text x="465" y="88" font-size="14" font-weight="bold" fill="#0f172a">D: Diameter</text>
+<circle cx="525" cy="130" r="18" fill="#8b5a3c" stroke="#0f172a"/>
+<text x="465" y="195" font-size="12" fill="#0f172a">Smaller than 6 mm</text>
+<circle cx="525" cy="300" r="40" fill="#6b4226" stroke="#0f172a"/>
+<line x1="485" y1="352" x2="565" y2="352" stroke="#0f172a" stroke-width="2"/>
+<text x="465" y="372" font-size="12" fill="#0f172a">Over 6 mm (but small</text>
+<text x="465" y="388" font-size="12" fill="#0f172a">melanomas occur)</text>
+<text x="610" y="88" font-size="14" font-weight="bold" fill="#0f172a">E: Evolution</text>
+<circle cx="652" cy="130" r="18" fill="#8b5a3c" stroke="#0f172a"/>
+<circle cx="696" cy="130" r="18" fill="#8b5a3c" stroke="#0f172a"/>
+<text x="610" y="195" font-size="12" fill="#0f172a">Stable over time</text>
+<circle cx="645" cy="300" r="14" fill="#8b5a3c" stroke="#0f172a"/>
+<polyline points="665,300 675,300" stroke="#0f172a" stroke-width="2"/>
+<polygon points="675,295 682,300 675,305" fill="#0f172a"/>
+<circle cx="708" cy="300" r="26" fill="#3b2416" stroke="#0f172a"/>
+<text x="610" y="358" font-size="12" fill="#0f172a">Growing, changing,</text>
+<text x="610" y="374" font-size="12" fill="#0f172a">itching or bleeding</text>
+<line x1="20" y1="215" x2="740" y2="215" stroke="#94a3b8"/>
+<text x="20" y="420" font-size="12" fill="#0f172a">Also look for the "ugly duckling": a lesion that looks different from the patient's other moles.</text>
+</svg>

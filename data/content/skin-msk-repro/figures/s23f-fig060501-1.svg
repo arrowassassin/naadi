@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" role="img" aria-label="Pathway diagram: tyrosinase converts tyrosine to DOPA and then to dopaquinone, which becomes red-yellow pheomelanin when cysteine is added or brown-black eumelanin under MC1R signalling. A table lists where synthesis fails: tyrosinase in OCA1, P protein in OCA2, melanosome biogenesis in Hermansky-Pudlak syndrome, granule trafficking in Chediak-Higashi syndrome, and loss of melanocytes in vitiligo and piebaldism.">
+<title>Pathway diagram: tyrosinase converts tyrosine to DOPA and then to dopaquinone, which becomes red-yellow pheomelanin when cysteine is added or brown-black eumelanin under MC1R signalling. A table lists where synthesis fails: tyrosinase in OCA1, P protein in OCA2, melanosome biogenesis in Hermansky-Pudlak syndrome, granule trafficking in Chediak-Higashi syndrome, and loss of melanocytes in vitiligo and piebaldism.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="460" fill="#ffffff"/>
+<text x="380" y="26" font-family="sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f172a">Melanin synthesis in the melanosome and where it fails</text>
+<rect x="30" y="60" width="150" height="40" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="105.0" y="84" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Tyrosine</text>
+<rect x="300" y="60" width="150" height="40" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="375.0" y="84" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">DOPA</text>
+<rect x="570" y="60" width="160" height="40" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="650.0" y="84" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Dopaquinone</text>
+<line x1="180" y1="80" x2="298" y2="80" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="450" y1="80" x2="568" y2="80" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="240" y="70" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a">tyrosinase</text>
+<text x="510" y="70" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a">tyrosinase</text>
+<text x="30" y="132" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Tyrosinase is copper-dependent;</text>
+<text x="30" y="148" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">both steps happen in the melanosome.</text>
+<rect x="400" y="180" width="160" height="54" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="480.0" y="204" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Pheomelanin</text>
+<text x="480.0" y="222" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">red-yellow</text>
+<rect x="590" y="180" width="150" height="54" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="665.0" y="204" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Eumelanin</text>
+<text x="665.0" y="222" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">brown-black</text>
+<line x1="630" y1="100" x2="490" y2="178" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="660" y1="100" x2="665" y2="178" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="470" y="140" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">+ cysteine</text>
+<text x="676" y="140" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">MC1R</text>
+<text x="676" y="154" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">signalling</text>
+<text x="676" y="168" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">favours</text>
+<text x="30" y="192" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">MC1R: Gs-coupled receptor for α-MSH on melanocytes.</text>
+<text x="30" y="210" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Loss-of-function variants: red hair, freckles, burning.</text>
+<text x="30" y="228" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">ACTH excess (Addison disease) also activates MC1R.</text>
+<line x1="20" y1="262" x2="740" y2="262" stroke="#94a3b8" stroke-width="1"/>
+<text x="30" y="288" font-family="sans-serif" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">Where it fails (hypopigmentation)</text>
+<text x="30" y="314" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#0f172a">No tyrosinase activity</text>
+<text x="250" y="314" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">OCA1 (TYR); also low with copper deficiency (Menkes disease) and high phenylalanine (PKU)</text>
+<text x="30" y="338" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#0f172a">Melanosome pH or transport</text>
+<text x="250" y="338" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">OCA2 (P protein, the commonest albinism worldwide); OCA4 (SLC45A2)</text>
+<text x="30" y="362" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#0f172a">Melanosome biogenesis</text>
+<text x="250" y="362" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Hermansky-Pudlak syndrome (also platelet dense granules: bleeding)</text>
+<text x="30" y="386" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#0f172a">Granule trafficking</text>
+<text x="250" y="386" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Chediak-Higashi syndrome (LYST): giant granules, infections, neuropathy</text>
+<text x="30" y="410" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#0f172a">No melanocytes at all</text>
+<text x="250" y="410" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Vitiligo (immune destruction); piebaldism (KIT: failed neural crest migration)</text>
+<text x="30" y="446" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Drugs that block the pathway for treatment: hydroquinone and azelaic acid inhibit tyrosinase.</text>
+</svg>

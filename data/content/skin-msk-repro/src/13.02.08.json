@@ -1,0 +1,839 @@
+{
+ "area": "13.02.08",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Embryology of the female tract and M&uuml;llerian anomalies",
+   "html": "<p>Most congenital anomalies of the female tract make sense once three embryologic sources are kept apart: the <strong>gonadal ridge</strong> (ovary), the paired <strong>paramesonephric (M&uuml;llerian) ducts</strong> (tubes, uterus, cervix and upper vagina), and the <strong>urogenital sinus</strong> (lower vagina, urethra and vestibule). Because these sources are independent, a person can have absent M&uuml;llerian structures with completely normal ovaries and puberty.</p>\n<h2>Development of the M&uuml;llerian system</h2>\n<ol>\n<li><strong>Formation</strong>: each paramesonephric duct forms lateral to the mesonephric (Wolffian) duct, guided by it. In the absence of anti-M&uuml;llerian hormone (AMH, from fetal Sertoli cells) the ducts persist; no hormone is needed for them to develop.</li>\n<li><strong>Fusion</strong>: the caudal parts of the two ducts fuse in the midline to form the uterus, cervix and upper vagina. The cranial unfused parts become the fallopian tubes.</li>\n<li><strong>Septal resorption</strong>: the midline wall between the fused ducts is resorbed, leaving a single cavity.</li>\n<li><strong>Vaginal canalisation</strong>: the sinovaginal bulbs of the urogenital sinus form a solid vaginal plate that canalises to meet the M&uuml;llerian part. The hymen is the membrane at this junction and normally perforates before birth.</li>\n</ol>\n<p>The mesonephric duct also gives rise to the ureteric bud. When M&uuml;llerian development fails on one side, the adjacent kidney is often abnormal too, so <strong>renal anomalies (especially unilateral renal agenesis) accompany M&uuml;llerian anomalies</strong>, and renal ultrasound is part of the workup.</p>\n<table class=\"hy\">\n<thead><tr><th>Step that fails</th><th>Anomaly</th><th>Key features</th></tr></thead>\n<tbody>\n<tr><td>Formation of both ducts</td><td>M&uuml;llerian agenesis (Mayer&ndash;Rokitansky&ndash;K&uuml;ster&ndash;Hauser, MRKH)</td><td>46,XX; absent uterus and upper vagina; normal ovaries, breasts and pubic hair; renal and vertebral anomalies</td></tr>\n<tr><td>Formation of one duct</td><td>Unicornuate uterus, with or without a rudimentary horn</td><td>Ipsilateral renal agenesis common; a non-communicating horn with functional endometrium causes cyclic pain and can hold an ectopic pregnancy that ruptures</td></tr>\n<tr><td>Fusion (complete)</td><td>Uterus didelphys</td><td>Two uteri and two cervices, often a longitudinal vaginal septum; obstructed hemivagina with ipsilateral renal agenesis is a recognised variant</td></tr>\n<tr><td>Fusion (partial)</td><td>Bicornuate uterus</td><td>Indented (heart-shaped) external fundus; malpresentation, preterm birth</td></tr>\n<tr><td>Septal resorption</td><td>Septate uterus (most common structural anomaly)</td><td>Normal external fundal contour with an internal septum; highest rate of pregnancy loss; treated by hysteroscopic resection</td></tr>\n<tr><td>Minor resorption defect</td><td>Arcuate uterus</td><td>Slight fundal indentation of the cavity; usually no clinical significance</td></tr>\n<tr><td>Vaginal canalisation / junction</td><td>Transverse vaginal septum; imperforate hymen</td><td>Obstruction of menstrual outflow (hematocolpos) with primary amenorrhea and cyclic pain</td></tr>\n</tbody></table>\n[[figure:s23f-fig130208-1]]\n<p>In utero exposure to <strong>diethylstilbestrol</strong> (used in the mid-20th century) causes a T-shaped uterine cavity, vaginal adenosis, cervical anomalies and clear cell adenocarcinoma of the vagina and cervix. It is now relevant mainly as a teaching example of a teratogen acting on M&uuml;llerian development.</p>\n<h2>Distinguishing a septate from a bicornuate uterus</h2>\n<p>Both show two cavities on hysterosalpingography, so the <strong>external fundal contour</strong> decides: smooth or minimally indented in septate uterus (a resorption failure inside a normally fused organ), clearly indented in bicornuate uterus (a fusion failure). Three-dimensional ultrasound or MRI shows the contour. This matters because a septum can be resected hysteroscopically, whereas a bicornuate uterus is not usually operated on.</p>\n<h2>Obstructive anomalies</h2>\n<ul>\n<li><strong>Imperforate hymen</strong>: the membrane at the sinus&ndash;M&uuml;llerian junction fails to perforate. In a newborn, retained secretions can cause a bulging introitus (mucocolpos). At puberty, menstrual blood collects behind the membrane (hematocolpos), which bulges as a bluish membrane at the introitus, especially with Valsalva.</li>\n<li><strong>Transverse vaginal septum</strong>: failure of fusion or canalisation between the M&uuml;llerian and sinus portions, at any level of the vagina. The introitus and hymen look normal, but the vagina ends blindly; there is no bulge at the introitus.</li>\n<li><strong>Cervical agenesis</strong>: menstrual blood collects in the uterus (hematometra) rather than the vagina.</li>\n</ul>\n<div class=\"trap\"><p>Primary amenorrhea with fully normal breasts and pubic hair, an absent uterus and a blind vaginal pouch has two main causes. MRKH is 46,XX with ovaries and female-range testosterone. Complete androgen insensitivity is 46,XY with testes, male-range testosterone and sparse pubic and axillary hair. Karyotype and serum testosterone separate them.</p></div>\n<div class=\"pearl\"><p>Naadi memory aid, &ldquo;Form, Fuse, Flush&rdquo;: ducts must form, then fuse, then flush away the midline septum. Failure at each step gives agenesis or unicornuate, didelphys or bicornuate, and septate uterus respectively.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Embryology, Mullerian Ducts (Paramesonephric Ducts)"
+    },
+    {
+     "statpearls": "Imperforate Hymen"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Differences of sex development: Turner syndrome, CAH and 46,XY conditions",
+   "html": "<p>Sex development has three layers: chromosomes (sex chromosome complement), gonads (ovary, testis or dysgenetic gonad) and phenotype (internal ducts and external genitalia, shaped by hormones). <strong>Differences of sex development (DSD)</strong> are congenital conditions in which these layers are atypical or do not align. Use precise diagnostic names and person-first, non-stigmatising language; older terms such as &ldquo;hermaphrodite&rdquo; and &ldquo;pseudohermaphrodite&rdquo; are obsolete. Gender identity is a separate matter from any of these layers and is not predicted reliably by karyotype.</p>\n<h2>The hormonal rules of differentiation</h2>\n<ul>\n<li><strong>SRY</strong> on the Y chromosome directs the bipotential gonad to become a testis.</li>\n<li>Fetal <strong>Sertoli cells</strong> make AMH, which causes M&uuml;llerian regression.</li>\n<li>Fetal <strong>Leydig cells</strong> make testosterone, which stabilises the Wolffian ducts (epididymis, vas deferens, seminal vesicles).</li>\n<li><strong>5-alpha-reductase type 2</strong> converts testosterone to dihydrotestosterone (DHT) in target tissues; DHT drives formation of the penis, scrotum and prostate from the genital tubercle, folds and swellings and the urogenital sinus.</li>\n<li>All androgen effects need a functional <strong>androgen receptor</strong> (X-linked).</li>\n<li>Without testes, the internal tract is M&uuml;llerian and the external genitalia are typical female, whether or not ovaries are present.</li>\n</ul>\n<h2>Turner syndrome (45,X and variants)</h2>\n<p>Loss of all or part of one X chromosome, as 45,X or as mosaicism (for example 45,X/46,XX) or structural X abnormalities. It is not linked to maternal age. Haploinsufficiency for genes that normally escape X-inactivation explains the phenotype: <strong>SHOX</strong> loss causes short stature and skeletal findings (short fourth metacarpals, cubitus valgus, Madelung deformity); accelerated oocyte apoptosis leaves <strong>streak gonads</strong> with primary ovarian insufficiency (high FSH, low estradiol); fetal lymphatic obstruction causes cystic hygroma, neck webbing and newborn lymphedema of hands and feet. Cardiovascular disease (bicuspid aortic valve, coarctation, aortic dilation and dissection) is the main cause of early death. Horseshoe kidney, autoimmune hypothyroidism, celiac disease, sensorineural and conductive hearing loss, and specific nonverbal learning difficulties are common; intelligence is usually normal. If any <strong>Y chromosome material</strong> is present, the dysgenetic gonads carry a high risk of gonadoblastoma, and gonadectomy is recommended.</p>\n<h2>Congenital adrenal hyperplasia in a 46,XX fetus</h2>\n[[figure:s23f-fig130208-2]]\n<p>All forms are autosomal recessive defects in cortisol synthesis. Low cortisol raises ACTH, causing adrenal hyperplasia and shunting of precursors toward whatever pathway remains open.</p>\n<table class=\"hy\">\n<thead><tr><th>Enzyme deficient</th><th>Mineralocorticoid status</th><th>Androgens</th><th>46,XX presentation</th><th>Marker</th></tr></thead>\n<tbody>\n<tr><td>21-hydroxylase (CYP21A2), about 95% of CAH</td><td>Low aldosterone (salt-wasting in the classic form)</td><td>High</td><td>Atypical genitalia (clitoromegaly, labioscrotal fusion) with normal ovaries and uterus; salt-wasting crisis in the first weeks</td><td>High 17-hydroxyprogesterone</td></tr>\n<tr><td>11-beta-hydroxylase (CYP11B1)</td><td>High 11-deoxycorticosterone: hypertension, hypokalemia, low renin</td><td>High</td><td>Virilisation with hypertension</td><td>High 11-deoxycortisol</td></tr>\n<tr><td>17-alpha-hydroxylase (CYP17A1)</td><td>High 11-deoxycorticosterone: hypertension, hypokalemia</td><td>Low (no sex steroids)</td><td>Typical female genitalia at birth; absent puberty with primary amenorrhea</td><td>Low androgens and estrogens, high progesterone</td></tr>\n</tbody></table>\n<p>Because the ovaries and M&uuml;llerian ducts develop normally in 46,XX CAH, only the external genitalia are affected, and fertility is possible with treatment. Nonclassic 21-hydroxylase deficiency presents later with hirsutism, acne and irregular menses and can mimic polycystic ovary syndrome.</p>\n<h2>46,XY conditions with a female or atypical phenotype</h2>\n<table class=\"hy\">\n<thead><tr><th>Condition</th><th>Defect</th><th>Internal structures</th><th>External genitalia and puberty</th></tr></thead>\n<tbody>\n<tr><td>Complete androgen insensitivity (CAIS)</td><td>Androgen receptor (X-linked)</td><td>Testes (often inguinal); no M&uuml;llerian structures (AMH works); Wolffian ducts regress</td><td>Typical female; breast development at puberty from aromatised testosterone; sparse pubic and axillary hair; primary amenorrhea</td></tr>\n<tr><td>5-alpha-reductase type 2 deficiency</td><td>SRD5A2 (autosomal recessive)</td><td>Testes; Wolffian structures present (testosterone works); no M&uuml;llerian structures</td><td>Atypical or female-appearing at birth; marked virilisation at puberty; high testosterone-to-DHT ratio</td></tr>\n<tr><td>Complete gonadal dysgenesis (Swyer syndrome)</td><td>Testis fails to form (for example SRY variants)</td><td>Streak gonads; <strong>uterus present</strong> because no AMH is made</td><td>Typical female; no breast development; high FSH; high gonadoblastoma risk</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>In CAIS, LH and testosterone are high (the hypothalamus cannot sense androgen), and estradiol from aromatisation drives breast growth. Do not mistake high testosterone with no virilisation for a lab error.</p></div>\n<div class=\"pearl\"><p>A uterus in a 46,XY person means no AMH was made: think gonadal dysgenesis. No uterus means functioning Sertoli cells: think androgen insensitivity or 5-alpha-reductase deficiency.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Embryology, Sexual Development"
+    },
+    {
+     "statpearls": "Turner Syndrome"
+    },
+    {
+     "statpearls": "Androgen Insensitivity Syndrome"
+    },
+    {
+     "statpearls": "5α-Reductase Deficiency"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Primary amenorrhea, obstructive anomalies and M&uuml;llerian agenesis: evaluation and management",
+   "html": "<p>Congenital anomalies of the female tract come to attention at three times: at birth (atypical genitalia, bulging introitus), at puberty (primary amenorrhea, cyclic pain) and in adulthood (infertility, pregnancy loss, malpresentation, dyspareunia). The evaluation of primary amenorrhea is the framework that ties them together.</p>\n<h2>Primary amenorrhea</h2>\n<p>Evaluate when there are no menses by age 15, or within 3 years of breast development, or when there is no breast development by age 13. Always exclude pregnancy first.</p>\n<table class=\"hy\">\n<thead><tr><th>Breasts</th><th>Uterus</th><th>Key test result</th><th>Likely diagnoses</th></tr></thead>\n<tbody>\n<tr><td>Present</td><td>Present</td><td>Obstruction on exam or ultrasound</td><td>Imperforate hymen, transverse vaginal septum, cervical agenesis; otherwise evaluate as for secondary amenorrhea</td></tr>\n<tr><td>Present</td><td>Absent</td><td>Karyotype and testosterone</td><td>MRKH (46,XX, female-range testosterone) or CAIS (46,XY, male-range testosterone)</td></tr>\n<tr><td>Absent</td><td>Present</td><td>FSH high</td><td>Primary ovarian insufficiency: Turner syndrome, Swyer syndrome, 17-alpha-hydroxylase deficiency; obtain karyotype</td></tr>\n<tr><td>Absent</td><td>Present</td><td>FSH low or normal</td><td>Constitutional delay, functional hypothalamic amenorrhea, Kallmann syndrome, pituitary disease; check prolactin, TSH and brain MRI as indicated</td></tr>\n</tbody></table>\n<h2>Obstructive anomalies</h2>\n<ul>\n<li><strong>Imperforate hymen</strong>: an adolescent with breast development, no menses and monthly pelvic pain, sometimes urinary retention or back pain from a large hematocolpos. A bluish bulging membrane at the introitus is diagnostic, and ultrasound confirms hematocolpos. Treat with surgical <strong>hymenectomy</strong> (excision of the membrane to create a normal opening). Needle aspiration alone is avoided because of infection and reaccumulation.</li>\n<li><strong>Transverse vaginal septum</strong>: similar symptoms, but the introitus is normal and the vagina is short and blind; a mass may be felt on rectal exam. MRI defines the level and thickness of the septum and confirms a cervix. Surgical resection with end-to-end anastomosis is done in experienced centres; postoperative dilation reduces stenosis. Hormonal suppression of menses can bridge to surgery.</li>\n<li><strong>Obstructed hemivagina</strong> with uterus didelphys and ipsilateral renal agenesis: regular menses (from the unobstructed side) with worsening cyclic pain and a paravaginal mass. Excision of the vaginal septum relieves it. Delayed diagnosis leads to endometriosis.</li>\n</ul>\n<h2>M&uuml;llerian agenesis (MRKH)</h2>\n<p>Presents at about 15&ndash;17 years with primary amenorrhea and normal breasts and hair. Exam shows a shallow vaginal dimple; ultrasound or MRI shows no uterus and normal ovaries. Confirm 46,XX, obtain renal ultrasound, and assess the spine and hearing as indicated. Counselling should be sensitive and unhurried: the diagnosis affects body image and fertility plans, and psychological support and peer groups help.</p>\n<ul>\n<li><strong>Vaginal length</strong>: patient-directed <strong>self-dilation with graduated dilators is first line</strong>; most motivated patients achieve functional length with it. Surgical vaginoplasty is for those in whom dilation fails or who prefer surgery after counselling.</li>\n<li><strong>Fertility</strong>: ovaries work, so the person can have genetic children with IVF and a gestational carrier. Uterus transplantation is available in specialised programmes.</li>\n</ul>\n<h2>Uterine anomalies in adulthood</h2>\n<table class=\"hy\">\n<thead><tr><th>Anomaly</th><th>Typical problem</th><th>Management</th></tr></thead>\n<tbody>\n<tr><td>Septate uterus</td><td>Recurrent pregnancy loss</td><td>Hysteroscopic septum resection for those with recurrent loss</td></tr>\n<tr><td>Bicornuate uterus</td><td>Malpresentation, preterm birth</td><td>Obstetric surveillance; surgery rarely</td></tr>\n<tr><td>Unicornuate uterus with non-communicating functional horn</td><td>Cyclic pain, hematometra, rupture of an ectopic horn pregnancy</td><td>Laparoscopic excision of the rudimentary horn</td></tr>\n<tr><td>Uterus didelphys</td><td>Often asymptomatic; dyspareunia from a vaginal septum; need for two Pap tests</td><td>Treat septum or obstruction if symptomatic</td></tr>\n</tbody></table>\n<p><strong>Cervical agenesis</strong> presents like an obstructive anomaly but with hematometra; management is individualised in specialist centres, with menstrual suppression first and surgery chosen carefully because of infection and restenosis risk. Adolescents with any obstructive or M&uuml;llerian anomaly benefit from confidential discussion of sexual function, contraception and future fertility, and from mental health support, because these diagnoses often arrive at a vulnerable age.</p>\n<p>Diagnosis uses 3-D transvaginal ultrasound or MRI to show the external fundal contour; hysterosalpingography outlines the cavity but cannot distinguish septate from bicornuate uterus by itself.</p>\n<div class=\"trap\"><p>A bulging bluish membrane at the introitus means imperforate hymen; a normal hymen with a blind short vagina means a transverse septum or agenesis. The first is a simple excision; the second needs MRI and specialist surgery.</p></div>\n<div class=\"pearl\"><p>Every M&uuml;llerian anomaly needs a renal ultrasound, because the mesonephric duct that guides M&uuml;llerian development also produces the ureteric bud.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Imperforate Hymen"
+    },
+    {
+     "statpearls": "Embryology, Mullerian Ducts (Paramesonephric Ducts)"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Atypical genitalia, CAH and Turner syndrome: diagnosis and long-term care",
+   "html": "<h2>The newborn with atypical genitalia</h2>\n<p>Atypical genitalia are a medical and psychosocial priority, not a surgical emergency. The immediate medical risk is <strong>salt-wasting congenital adrenal hyperplasia</strong>, which can cause an adrenal crisis in the first 1&ndash;3 weeks.</p>\n<ul>\n<li>Features that need evaluation: bilateral non-palpable gonads in an apparently male infant, severe or proximal hypospadias with undescended testes, clitoromegaly or posterior labial fusion, or a discordance between prenatal karyotype and genital appearance.</li>\n<li><strong>Initial tests</strong>: karyotype (with rapid SRY testing), serum 17-hydroxyprogesterone (after 24&ndash;48 hours of life, when the newborn surge has fallen), serum electrolytes monitored over the first weeks, glucose, and pelvic ultrasound for a uterus. Further steps include LH, FSH, testosterone, AMH and ACTH stimulation as directed by the team.</li>\n<li>Defer registration of sex until the evaluation is complete where law allows. Use neutral words such as &ldquo;your baby&rdquo; and explain that tests will guide decisions. A multidisciplinary team (endocrinology, urology or gynecology, genetics, psychology, nursing) works with the family.</li>\n<li>The timing of genital surgery is debated. Current practice emphasises informed, shared decisions and defers procedures that are not medically necessary until the person can take part where possible.</li>\n</ul>\n<h2>21-hydroxylase deficiency: treatment</h2>\n<ul>\n<li><strong>Newborn screening</strong> by 17-hydroxyprogesterone identifies most classic cases. Preterm and stressed infants have false positives.</li>\n<li><strong>Adrenal crisis</strong> (vomiting, lethargy, hypotension, hyponatremia, hyperkalemia, hypoglycemia): IV isotonic saline bolus, dextrose for hypoglycemia, and a stress dose of IV hydrocortisone, which also has mineralocorticoid activity at high doses. Treat hyperkalemia with ECG changes in the usual way.</li>\n<li><strong>Maintenance in children</strong>: oral <strong>hydrocortisone</strong> (preferred over longer-acting glucocorticoids, which suppress growth), plus <strong>fludrocortisone</strong> and, in infancy, <strong>sodium chloride supplements</strong>, because breast milk and formula contain little sodium. Monitor growth velocity, bone age, 17-hydroxyprogesterone and androstenedione, renin and blood pressure.</li>\n<li><strong>Stress dosing</strong>: triple the glucocorticoid dose for fever or illness, and give IM hydrocortisone for vomiting or collapse. Families need written emergency plans and an emergency injection kit.</li>\n<li>Undertreatment causes virilisation, rapid growth with advanced bone age and short adult height; overtreatment causes Cushingoid features and poor growth.</li>\n<li>Prenatal dexamethasone to reduce virilisation is considered experimental and is not standard care.</li>\n<li><strong>Nonclassic CAH</strong> presents with hirsutism, acne and menstrual irregularity; a morning follicular-phase 17-hydroxyprogesterone screens, and an ACTH stimulation test confirms. Treat symptoms (combined oral contraceptives, antiandrogens); glucocorticoids are used for infertility or early-onset rapid virilisation in children.</li>\n</ul>\n<h2>Turner syndrome: diagnosis and lifelong care</h2>\n<p>Suspect it in a newborn with lymphedema of hands and feet or a webbed neck, in a girl with unexplained short stature (even without other features), or in an adolescent with delayed puberty and high FSH. Confirm with a peripheral blood karyotype; if Y material is suspected, look for it specifically.</p>\n<table class=\"hy\">\n<thead><tr><th>Issue</th><th>Action</th></tr></thead>\n<tbody>\n<tr><td>Short stature</td><td>Growth hormone started early, once growth failure is evident</td></tr>\n<tr><td>Ovarian insufficiency</td><td>Puberty induction with low-dose estradiol (transdermal preferred) at about 11&ndash;12 years if there is no spontaneous puberty, increased gradually over 2&ndash;3 years; add a cyclic progestin after breakthrough bleeding or about 2 years</td></tr>\n<tr><td>Heart and aorta</td><td>Echocardiography and cardiac MRI at diagnosis with lifelong aortic surveillance; treat hypertension</td></tr>\n<tr><td>Kidneys, thyroid, gut, liver</td><td>Renal ultrasound at diagnosis; periodic TSH, celiac screening, liver enzymes, HbA1c and lipids</td></tr>\n<tr><td>Hearing and development</td><td>Regular audiology; educational assessment for visuospatial and executive-function difficulties</td></tr>\n<tr><td>Fertility and pregnancy</td><td>Oocyte or embryo cryopreservation may be possible in mosaic patients before ovarian failure; pregnancy (spontaneous or with donor oocytes) carries high risk of aortic dissection and needs preconception cardiology review</td></tr>\n<tr><td>Y material</td><td>Prophylactic gonadectomy because of gonadoblastoma risk</td></tr>\n</tbody></table>\n<h2>Androgen insensitivity and gonadal dysgenesis: management points</h2>\n<ul>\n<li><strong>CAIS</strong>: germ cell tumour risk before adulthood is low, so many teams retain the gonads until after puberty to allow spontaneous breast development; adults may choose gonadectomy or surveillance. After gonadectomy, estrogen replacement is needed for bone health. Vaginal dilation addresses a short vagina. Disclosure of the diagnosis to the person is recommended, at an age-appropriate pace.</li>\n<li><strong>Swyer syndrome</strong> (46,XY complete gonadal dysgenesis): gonadectomy is recommended at diagnosis because of high gonadoblastoma and dysgerminoma risk; estrogen and progestin replacement; pregnancy with donor oocytes is possible because the uterus is present.</li>\n<li><strong>5-alpha-reductase deficiency</strong>: virilisation at puberty is marked, and many people raised as girls identify as men by adulthood; this informs counselling and supports avoiding irreversible early decisions.</li>\n</ul>\n<div class=\"trap\"><p>Prednisone or dexamethasone for maintenance in a growing child with CAH is a trap: they suppress growth. Hydrocortisone is the glucocorticoid of choice until growth is complete.</p></div>\n<div class=\"pearl\"><p>An apparently male newborn with bilateral non-palpable gonads is 46,XX CAH until proven otherwise; check 17-hydroxyprogesterone and electrolytes before the end of the first week.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Ambiguous Genitalia and Disorders of Sexual Differentiation"
+    },
+    {
+     "statpearls": "Congenital Adrenal Hyperplasia"
+    },
+    {
+     "statpearls": "Turner Syndrome"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Uterine anomalies grouped by the developmental step that fails (schematic)."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. Steroid synthesis pathways and the enzyme blocks of congenital adrenal hyperplasia."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Newborn with salt-wasting crisis"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old girl is evaluated because she has never had a menstrual period. Breast and pubic hair development are Tanner stage 5. Height and weight are normal. The external genitalia appear typical, and the vagina is a 2-cm blind pouch. Ultrasound shows normal ovaries but no uterus; the left kidney is absent. Karyotype is 46,XX, and serum testosterone is in the female reference range. Failure of development of which of the following embryologic structures best explains these findings?</p>",
+   "options": [
+    "Paramesonephric ducts",
+    "Mesonephric ducts",
+    "Gonadal ridges",
+    "Genital tubercle",
+    "Urogenital folds"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is M&uuml;llerian agenesis (MRKH). The paramesonephric ducts normally form the tubes, uterus, cervix and upper vagina; their absence leaves a short vaginal pouch formed only from the urogenital sinus. The ovaries come from the gonadal ridge and work normally, so breasts and pubic hair are typical. The mesonephric duct guides M&uuml;llerian development and also gives the ureteric bud, which explains the associated renal agenesis.</p><p><strong>Takeaway:</strong> MRKH is failure of the paramesonephric ducts in a 46,XX person with normal ovaries; check the kidneys.</p>",
+   "whyNot": {
+    "B": "The mesonephric ducts regress in a 46,XX fetus; their failure alone would not remove the uterus, although a shared field defect explains her kidney.",
+    "C": "Gonadal ridge failure would leave streak gonads with absent puberty and high FSH; her ovaries and puberty are normal.",
+    "D": "The genital tubercle forms the clitoris; her external genitalia are typical.",
+    "E": "The urogenital folds form the labia minora, which are normal here."
+   },
+   "objective": "Attribute MRKH to paramesonephric duct agenesis with preserved ovarian function.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "primary amenorrhea",
+    "embryology"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman has had three consecutive first-trimester pregnancy losses. Karyotypes of both partners are normal, and tests for antiphospholipid antibodies and thyroid disease are negative. Three-dimensional ultrasound shows a smooth, convex external fundal contour with a thick midline partition dividing the upper uterine cavity into two. Which of the following developmental events most likely failed?</p>",
+   "options": [
+    "Formation of one paramesonephric duct",
+    "Fusion of the caudal paramesonephric ducts",
+    "Resorption of the midline wall after duct fusion",
+    "Canalisation of the vaginal plate",
+    "Regression of the mesonephric ducts"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A normal external fundal contour with an internal partition is a septate uterus. The ducts formed and fused normally, so the outside of the uterus is smooth, but the midline wall between them was not resorbed. Septate uterus is the most common structural uterine anomaly and has the highest rate of pregnancy loss, probably because the septum has a poor blood supply for implantation. Hysteroscopic resection is the treatment for recurrent loss.</p><p><strong>Takeaway:</strong> Smooth outer fundus with an internal septum means failed septal resorption, not failed fusion.</p>",
+   "whyNot": {
+    "A": "Failure of one duct gives a unicornuate uterus with a single banana-shaped cavity, not a divided cavity.",
+    "B": "Fusion failure produces a bicornuate uterus or didelphys, both with an indented or doubled external fundus.",
+    "D": "Vaginal plate canalisation failure gives a transverse vaginal septum, which affects the vagina, not the uterine cavity.",
+    "E": "Persistent mesonephric remnants form Gartner duct cysts and do not divide the uterine cavity."
+   },
+   "objective": "Distinguish septate uterus as a failure of septal resorption from fusion anomalies.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pregnancy loss",
+    "embryology"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-year-old girl has a height below the 1st percentile for age with a growth velocity of 3.5 cm/year. She has a low posterior hairline, short fourth metacarpals and an increased carrying angle at the elbows. A murmur leads to the finding of a bicuspid aortic valve. TSH and celiac serology are normal. Haploinsufficiency of which of the following best explains her short stature?</p>",
+   "options": [
+    "Growth hormone gene on chromosome 17",
+    "SHOX gene in the pseudoautosomal region of the sex chromosomes",
+    "FGFR3 gene on chromosome 4",
+    "Androgen receptor gene on the X chromosome",
+    "Fibrillin-1 gene on chromosome 15"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Her findings are typical of Turner syndrome. SHOX lies in the pseudoautosomal region and escapes X-inactivation, so two active copies are normally present; loss of one X leaves a single copy. SHOX haploinsufficiency causes short stature, short fourth metacarpals, cubitus valgus and other skeletal features. Growth hormone secretion is normal, yet growth hormone therapy improves adult height.</p><p><strong>Takeaway:</strong> Short stature in Turner syndrome is from SHOX haploinsufficiency, not growth hormone deficiency.</p>",
+   "whyNot": {
+    "A": "Growth hormone levels are normal in Turner syndrome; GH therapy is used pharmacologically, not as replacement.",
+    "C": "FGFR3 activating (not haploinsufficient) variants cause achondroplasia, with rhizomelic shortening and macrocephaly.",
+    "D": "The androgen receptor matters in 46,XY sex development; its loss does not cause short stature with these features.",
+    "E": "Fibrillin-1 variants cause Marfan syndrome, with tall stature rather than short stature."
+   },
+   "objective": "Explain Turner syndrome short stature by SHOX haploinsufficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "short stature",
+    "genetics"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 10-day-old infant is brought to the emergency department with vomiting and poor feeding. At birth the infant had an enlarged clitoris and fused, rugated labioscrotal folds; no gonads are palpable. Karyotype is 46,XX, and pelvic ultrasound shows a uterus. Serum sodium is 125 mEq/L (136&ndash;145 mEq/L), and potassium is 6.6 mEq/L (3.5&ndash;5.0 mEq/L). Serum concentration of which of the following is most likely increased?</p>",
+   "options": [
+    "17-Hydroxyprogesterone",
+    "11-Deoxycorticosterone",
+    "Cortisol",
+    "Aldosterone",
+    "Corticosterone"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Atypical genitalia in a 46,XX infant with a uterus, followed by salt-wasting in the second week, is classic 21-hydroxylase deficiency. The block prevents conversion of 17-hydroxyprogesterone to 11-deoxycortisol and of progesterone to 11-deoxycorticosterone. Low cortisol raises ACTH, and 17-hydroxyprogesterone accumulates and is diverted to androgens, virilising the external genitalia. Aldosterone is deficient, causing hyponatremia and hyperkalemia.</p><p><strong>Takeaway:</strong> Salt-wasting with virilisation in a 46,XX infant means 21-hydroxylase deficiency; 17-hydroxyprogesterone is high.</p>",
+   "whyNot": {
+    "B": "11-Deoxycorticosterone lies after the 21-hydroxylase step and is low; it is high in 11-beta- and 17-alpha-hydroxylase deficiency, which cause hypertension.",
+    "C": "Cortisol synthesis is blocked, so cortisol is low despite high ACTH.",
+    "D": "Aldosterone is deficient in salt-wasting 21-hydroxylase deficiency, explaining the electrolytes.",
+    "E": "Corticosterone is produced from 11-deoxycorticosterone and is low when 21-hydroxylation fails."
+   },
+   "objective": "Identify 17-hydroxyprogesterone accumulation in salt-wasting 21-hydroxylase deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "atypical genitalia",
+    "adrenal"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old is evaluated for absent breast development and no menstrual periods. Blood pressure is 158/98 mm Hg. Breast development is Tanner stage 1, and pubic hair is Tanner stage 1. External genitalia are typical female, and ultrasound shows a small uterus and small ovaries. Serum potassium is 2.9 mEq/L (3.5&ndash;5.0 mEq/L), plasma renin activity is suppressed, and LH and FSH are elevated. Karyotype is 46,XX. A deficiency of which of the following enzymes is most likely?</p>",
+   "options": [
+    "21-Hydroxylase",
+    "11-Beta-hydroxylase",
+    "17-Alpha-hydroxylase",
+    "Aromatase",
+    "3-Beta-hydroxysteroid dehydrogenase"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>17-alpha-hydroxylase is needed to make cortisol precursors and all sex steroids in the adrenals and gonads. When it is deficient, pregnenolone and progesterone are pushed toward 11-deoxycorticosterone, a mineralocorticoid that causes hypertension, hypokalemia and renin suppression. With no androgens or estrogens, a 46,XX person has typical female genitalia at birth but no breast or pubic hair development at puberty, and gonadotropins are high.</p><p><strong>Takeaway:</strong> Hypertension, hypokalemia and absent puberty point to 17-alpha-hydroxylase deficiency.</p>",
+   "whyNot": {
+    "A": "21-hydroxylase deficiency causes virilisation and, in the classic form, salt-wasting with low blood pressure, not hypertension with absent puberty.",
+    "B": "11-beta-hydroxylase deficiency causes hypertension but also androgen excess, so a 46,XX person would be virilised.",
+    "D": "Aromatase deficiency prevents estrogen synthesis but does not cause mineralocorticoid excess; virilisation is expected.",
+    "E": "3-beta-HSD deficiency causes salt-wasting and mild virilisation in 46,XX infants, not hypertension."
+   },
+   "objective": "Recognise 17-alpha-hydroxylase deficiency from hypertension, hypokalemia and absent sex steroids.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "delayed puberty",
+    "adrenal"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 17-year-old is evaluated for primary amenorrhea. Breast development is Tanner stage 5, but pubic and axillary hair are sparse. Firm, mobile, 2-cm masses are palpable in both inguinal canals. The vagina is a short blind pouch, and no uterus is seen on ultrasound. Serum testosterone is in the adult male reference range, and LH is elevated. Karyotype is 46,XY. Which of the following best explains her breast development?</p>",
+   "options": [
+    "Peripheral aromatisation of testosterone to estradiol",
+    "Estrogen production by ovarian tissue in the inguinal masses",
+    "Elevated serum prolactin",
+    "Binding of dihydrotestosterone to estrogen receptors",
+    "Excess adrenal estrogen secretion"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is complete androgen insensitivity: the androgen receptor does not work, so testosterone is high (the hypothalamus cannot sense it and LH rises) but causes no virilisation and no androgen-dependent hair. Testosterone is aromatised to estradiol in adipose and other tissues, and with no opposing androgen action this drives full breast development. AMH from the testes prevents a uterus from forming.</p><p><strong>Takeaway:</strong> In CAIS, breasts develop from aromatised testosterone acting without androgen opposition.</p>",
+   "whyNot": {
+    "B": "The inguinal masses are testes; she has a 46,XY karyotype and no ovarian tissue.",
+    "C": "Prolactin is not elevated in CAIS and does not cause pubertal breast development on its own.",
+    "D": "DHT is not aromatisable and does not bind estrogen receptors meaningfully.",
+    "E": "Adrenal glands make androgens, not significant estrogen; the estradiol comes from peripheral conversion of testicular testosterone."
+   },
+   "objective": "Explain breast development in complete androgen insensitivity by aromatisation of testosterone.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "primary amenorrhea",
+    "sex development"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old with typical female external genitalia has no breast development and no menses. Height is at the 50th percentile. Serum FSH is markedly elevated and estradiol is low. Pelvic MRI shows a small but normally formed uterus and bilateral streak gonads. Karyotype is 46,XY. Which of the following best explains the presence of the uterus?</p>",
+   "options": [
+    "Absent anti-M&uuml;llerian hormone secretion during fetal development",
+    "Resistance of the M&uuml;llerian ducts to testosterone",
+    "Deficiency of 5-alpha-reductase in the urogenital sinus",
+    "Maternal estrogen exposure during the first trimester",
+    "Absent androgen receptor function in the paramesonephric ducts"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In complete 46,XY gonadal dysgenesis (Swyer syndrome) the gonads never become functioning testes, so fetal Sertoli cells make no AMH and the M&uuml;llerian ducts persist to form a uterus, tubes and upper vagina. No testosterone or estrogen is made, so puberty does not start and FSH is high. The streak gonads carry a high risk of gonadoblastoma and are removed.</p><p><strong>Takeaway:</strong> A uterus in a 46,XY person means no AMH was made, as in gonadal dysgenesis.</p>",
+   "whyNot": {
+    "B": "M&uuml;llerian regression depends on AMH, not testosterone; testosterone acts on the Wolffian ducts.",
+    "C": "5-alpha-reductase deficiency affects external genitalia; AMH is normal, so there is no uterus.",
+    "D": "Maternal estrogen does not prevent AMH-mediated regression; M&uuml;llerian persistence requires absent AMH or AMH receptor.",
+    "E": "Androgen receptor loss (androgen insensitivity) leaves AMH intact, so there is no uterus."
+   },
+   "objective": "Link persistence of the uterus in 46,XY gonadal dysgenesis to absent AMH.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "primary amenorrhea",
+    "sex development"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 13-year-old girl has had cramping lower abdominal pain for several days each month for 5 months and now has difficulty voiding. She has never had a menstrual period. Breast development began at age 10 and is Tanner stage 4. Abdominal examination shows a tender suprapubic mass. Inspection of the vulva shows a tense, bulging, bluish membrane at the introitus that protrudes further when she bears down. Ultrasound shows a large fluid-filled vagina with a normal uterus. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Continuous oral contraceptive pills",
+    "Surgical excision of the obstructing membrane",
+    "Transvaginal needle aspiration of the fluid",
+    "Graduated vaginal dilators",
+    "MRI of the pelvis before any intervention"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A bulging bluish membrane at the introitus with hematocolpos in a pubertal girl with cyclic pain and no menses is an imperforate hymen. Treatment is surgical hymenectomy, which drains the hematocolpos and creates a normal opening. Her urinary retention reflects compression by the distended vagina and resolves after drainage.</p><p><strong>Takeaway:</strong> Imperforate hymen is treated by excising the membrane; needle aspiration alone is avoided.</p>",
+   "whyNot": {
+    "A": "Hormonal suppression can relieve pain temporarily but does not drain the obstruction and is not definitive.",
+    "C": "Needle aspiration risks infection (pyocolpos) and reaccumulation without creating a lasting opening.",
+    "D": "Dilators lengthen an absent or short vagina, as in MRKH; they cannot open a membrane.",
+    "E": "The exam and ultrasound are diagnostic; MRI is used for a transverse septum or complex anomaly, not a visible bulging hymen."
+   },
+   "objective": "Treat imperforate hymen with hematocolpos by surgical hymenectomy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "primary amenorrhea",
+    "pediatric gynecology"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 14-year-old girl has had monthly lower abdominal pain for 8 months but has never menstruated. She had breast budding at age 11, and breasts are now Tanner stage 4 with Tanner stage 4 pubic hair. The vulva and hymen appear normal, and there is no bulge with Valsalva. A cotton swab passes 3 cm into the vagina and meets a blind end. A tender mass is felt above the blind end on rectal examination. Ultrasound shows a fluid-distended upper vagina, a normal cervix and uterus, and normal ovaries. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Imperforate hymen",
+    "Transverse vaginal septum",
+    "M&uuml;llerian agenesis",
+    "Complete androgen insensitivity",
+    "Cervical agenesis"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A normal hymen and introitus with a short blind vagina, hematocolpos above the obstruction, and a normal cervix and uterus indicate a transverse vaginal septum, a failure of fusion or canalisation between the M&uuml;llerian and urogenital sinus parts of the vagina. MRI defines the septum's level and thickness before resection by an experienced surgeon.</p><p><strong>Takeaway:</strong> Hematocolpos with a normal hymen and no introital bulge points to a transverse vaginal septum.</p>",
+   "whyNot": {
+    "A": "An imperforate hymen shows a bulging membrane at the introitus, and the swab could not enter 3 cm.",
+    "C": "M&uuml;llerian agenesis has no uterus or cervix, so there would be no cyclic pain or hematocolpos.",
+    "D": "Androgen insensitivity has no uterus and sparse pubic hair; she has a uterus and Tanner 4 hair.",
+    "E": "Cervical agenesis causes blood to collect in the uterus (hematometra), not the vagina, and the cervix would be absent."
+   },
+   "objective": "Diagnose transverse vaginal septum from hematocolpos with a normal hymen.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "primary amenorrhea",
+    "pediatric gynecology"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 17-year-old was diagnosed with M&uuml;llerian agenesis 6 months ago after evaluation for primary amenorrhea; karyotype is 46,XX and renal ultrasound is normal. She has met with a psychologist and a peer support group. She now has a partner and would like to be able to have penetrative vaginal intercourse. Examination shows a 2-cm vaginal dimple. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Surgical neovagina with a skin graft",
+    "Graduated vaginal self-dilation",
+    "Daily vaginal estrogen cream application",
+    "Referral for uterus transplantation",
+    "Bilateral laparoscopic gonadectomy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Self-dilation with graduated dilators is first-line therapy for vaginal agenesis in MRKH. It is non-invasive, effective in most motivated patients, and has fewer complications than surgery. Timing is the patient's choice, and she is emotionally prepared and motivated. Surgery is reserved for those in whom dilation fails or who choose it after counselling.</p><p><strong>Takeaway:</strong> Primary vaginal dilation is first line for creating vaginal length in M&uuml;llerian agenesis.</p>",
+   "whyNot": {
+    "A": "Surgical vaginoplasty is second line, after dilation fails or by informed preference, because of surgical risks and the need for postoperative dilation anyway.",
+    "C": "Her ovaries make normal estrogen; vaginal estrogen does not lengthen the vagina.",
+    "D": "Uterus transplantation addresses fertility, not vaginal length, and is a later, specialised option.",
+    "E": "She has normal ovaries, not testes, so gonadectomy has no role."
+   },
+   "objective": "Recommend graduated self-dilation as first-line treatment for vaginal agenesis in MRKH.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "primary amenorrhea"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old girl is brought to the clinic because she has not started her periods and has no breast development. She has always been the shortest in her class; her height is below the 3rd percentile, and both parents are of average height. She has had recurrent ear infections. Examination shows Tanner stage 1 breasts and Tanner stage 2 pubic hair. The urine pregnancy test is negative. Laboratory results are shown.</p><table><thead><tr><th>Test</th><th>Result</th><th>Reference range</th></tr></thead><tbody><tr><td>FSH</td><td>92 mIU/mL</td><td>1.5&ndash;12 mIU/mL (follicular phase)</td></tr><tr><td>LH</td><td>38 mIU/mL</td><td>2&ndash;15 mIU/mL</td></tr><tr><td>Estradiol</td><td>below 10 pg/mL</td><td>20&ndash;350 pg/mL</td></tr><tr><td>Prolactin</td><td>9 ng/mL</td><td>below 25 ng/mL</td></tr><tr><td>TSH</td><td>2.1 &mu;U/mL</td><td>0.5&ndash;5.0 &mu;U/mL</td></tr></tbody></table><p>Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    "MRI of the pituitary gland",
+    "Progestin withdrawal challenge",
+    "Peripheral blood karyotype",
+    "GnRH stimulation test",
+    "Bone age radiograph only"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Absent breast development with high FSH and LH and low estradiol is hypergonadotropic hypogonadism (primary ovarian insufficiency). With short stature and recurrent otitis media, Turner syndrome is likely. A karyotype confirms the diagnosis, identifies mosaicism, and shows whether Y material is present, which would require gonadectomy. Diagnosis then triggers cardiac, renal, thyroid, celiac and hearing evaluation.</p><p><strong>Takeaway:</strong> Delayed puberty with high FSH needs a karyotype; short stature makes Turner syndrome the leading cause.</p>",
+   "whyNot": {
+    "A": "Pituitary imaging is for low or normal gonadotropins; her high FSH shows the pituitary is responding to gonadal failure.",
+    "B": "A progestin challenge assesses estrogen status in secondary amenorrhea; her estradiol is already known to be very low, and the cause still needs defining.",
+    "D": "GnRH stimulation helps distinguish central precocious or delayed puberty; it adds nothing when gonadotropins are already very high.",
+    "E": "Bone age is useful for growth assessment but does not identify the cause of ovarian insufficiency."
+   },
+   "objective": "Order a karyotype for delayed puberty with hypergonadotropic hypogonadism and short stature.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "delayed puberty",
+    "short stature"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A newborn delivered at term is examined in the nursery on the first day of life. The phallus measures 2.2 cm with a urethral opening at its base, the labioscrotal folds are fused and rugated, and no gonads are palpable in the folds or inguinal canals. The infant is feeding well, and vital signs are normal. A karyotype has been sent and is pending. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Assign a male sex of rearing and plan hypospadias repair in the first month",
+    "Measure serum 17-hydroxyprogesterone and monitor serum electrolytes",
+    "Begin intramuscular testosterone to enlarge the phallus",
+    "Schedule laparoscopy to locate the gonads",
+    "Discharge home with outpatient genetics follow-up in 1 month"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>An apparently male newborn with bilateral non-palpable gonads and atypical genitalia has 46,XX congenital adrenal hyperplasia until proven otherwise. Salt-wasting 21-hydroxylase deficiency can cause a life-threatening adrenal crisis in the first 1&ndash;3 weeks, so 17-hydroxyprogesterone (after 24&ndash;48 hours of life) and serial electrolytes are needed while the karyotype is pending. Sex assignment and any surgery wait for a complete multidisciplinary evaluation.</p><p><strong>Takeaway:</strong> Atypical genitalia with non-palpable gonads: test for CAH and watch electrolytes before discharge.</p>",
+   "whyNot": {
+    "A": "Assigning sex and planning surgery before the karyotype and hormonal evaluation risks an incorrect decision; nonurgent surgery is deferred.",
+    "C": "Testosterone therapy is not given before a diagnosis and could be harmful.",
+    "D": "Laparoscopy is not a first step; ultrasound and hormonal testing come first.",
+    "E": "Discharge before CAH is excluded risks an unrecognised salt-wasting crisis at home."
+   },
+   "objective": "Evaluate for salt-wasting CAH in a newborn with atypical genitalia and non-palpable gonads.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "atypical genitalia",
+    "newborn care"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 12-day-old infant is brought to the emergency department with 2 days of vomiting and lethargy. The newborn screen reported an elevated 17-hydroxyprogesterone, and the family was asked to return, but they had not yet been reached. The infant has clitoromegaly and partial labioscrotal fusion; karyotype is 46,XX. The infant is lethargic with dry mucous membranes and a capillary refill time of 4 seconds. Pulse is 190/min, and blood pressure is 58/30 mm Hg. Serum sodium is 122 mEq/L (136&ndash;145 mEq/L), potassium is 6.4 mEq/L (3.5&ndash;5.0 mEq/L), and glucose is 52 mg/dL (70&ndash;100 mg/dL). ECG shows sinus tachycardia without peaked T waves. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Oral fludrocortisone and sodium chloride",
+    "IV isotonic saline bolus, IV dextrose and IV hydrocortisone",
+    "ACTH stimulation test before any steroid",
+    "IV dexamethasone alone",
+    "Sodium polystyrene sulfonate by rectum"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This infant is in adrenal crisis from salt-wasting 21-hydroxylase deficiency: hypovolemic shock, hyponatremia, hyperkalemia and hypoglycemia. Initial management is an isotonic saline bolus for volume, dextrose for hypoglycemia, and a stress dose of IV hydrocortisone, which provides glucocorticoid and, at high doses, mineralocorticoid effect. Diagnostic testing must not delay treatment, and the screening result has already shown elevated 17-hydroxyprogesterone.</p><p><strong>Takeaway:</strong> Adrenal crisis: fluids, glucose and stress-dose IV hydrocortisone first, without waiting for tests.</p>",
+   "whyNot": {
+    "A": "Oral therapy is inappropriate in a vomiting infant in shock, and fludrocortisone takes time to act and provides no glucocorticoid.",
+    "C": "Stimulation testing delays life-saving treatment; the diagnosis is already strongly supported.",
+    "D": "Dexamethasone has no mineralocorticoid activity and alone does not treat volume depletion or hypoglycemia.",
+    "E": "Potassium binders act slowly and miss the cause; hyperkalemia corrects with volume, glucose and hydrocortisone."
+   },
+   "objective": "Treat neonatal adrenal crisis with saline, dextrose and stress-dose IV hydrocortisone.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "adrenal",
+    "newborn care"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The infant is stabilised, electrolytes normalise over 48 hours, and the diagnosis of classic salt-wasting 21-hydroxylase deficiency is confirmed. The infant is breastfeeding well and is ready for discharge. Which of the following is the most appropriate long-term regimen?</p>",
+   "options": [
+    "Oral hydrocortisone alone at maintenance doses",
+    "Oral hydrocortisone, fludrocortisone and sodium chloride",
+    "Oral prednisolone, fludrocortisone and sodium chloride",
+    "Oral dexamethasone at bedtime with sodium chloride",
+    "Oral fludrocortisone with sodium chloride"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Infants with salt-wasting 21-hydroxylase deficiency need glucocorticoid replacement with oral hydrocortisone, mineralocorticoid replacement with fludrocortisone, and sodium chloride supplements in infancy, because breast milk and formula are low in sodium. Hydrocortisone is preferred during growth because longer-acting glucocorticoids suppress growth. Families are taught stress dosing and given an emergency IM hydrocortisone kit.</p><p><strong>Takeaway:</strong> Salt-wasting CAH in infancy is treated with hydrocortisone, fludrocortisone and salt, with stress-dose education.</p>",
+   "whyNot": {
+    "A": "Maintenance hydrocortisone doses do not provide enough mineralocorticoid effect for salt-wasting disease.",
+    "C": "This covers mineralocorticoid and salt needs, but prednisolone is more growth-suppressive than hydrocortisone and is avoided in growing children.",
+    "D": "Dexamethasone is the most growth-suppressive option, is hard to dose in infants, and provides no mineralocorticoid effect even with added salt.",
+    "E": "Without a glucocorticoid, cortisol stays deficient, so ACTH-driven androgen excess and the risk of crisis continue."
+   },
+   "objective": "Choose maintenance hydrocortisone, fludrocortisone and salt for infants with salt-wasting CAH.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "adrenal",
+    "newborn care"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which embryologic structure forms the uterus, cervix and upper vagina?",
+   "back": "The paramesonephric (M&uuml;llerian) ducts.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Why are renal anomalies common with M&uuml;llerian anomalies?",
+   "back": "The mesonephric duct guides M&uuml;llerian development and also forms the ureteric bud.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Karyotype, ovaries and testosterone in MRKH?",
+   "back": "46,XX; normal ovaries; female-range testosterone.",
+   "question": 1
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Septate versus bicornuate uterus: which feature distinguishes them?",
+   "back": "External fundal contour: smooth in septate, indented in bicornuate.",
+   "question": 2
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Most common structural uterine anomaly, with the highest pregnancy-loss rate?",
+   "back": "Septate uterus.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Where is the hymen embryologically?",
+   "back": "At the junction of the M&uuml;llerian vagina and the urogenital sinus.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Uterine change after in utero diethylstilbestrol exposure?",
+   "back": "T-shaped cavity; also vaginal adenosis and clear cell adenocarcinoma risk.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 2,
+   "front": "Cause of short stature in Turner syndrome?",
+   "back": "SHOX haploinsufficiency (pseudoautosomal gene).",
+   "question": 3
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Which steroid is high in classic 21-hydroxylase deficiency?",
+   "back": "17-hydroxyprogesterone.",
+   "question": 4
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "CAH with hypertension and virilisation?",
+   "back": "11-beta-hydroxylase deficiency (high 11-deoxycorticosterone and 11-deoxycortisol).",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "CAH with hypertension, hypokalemia and absent puberty?",
+   "back": "17-alpha-hydroxylase deficiency.",
+   "question": 5
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Source of breast development in complete androgen insensitivity?",
+   "back": "Aromatisation of high testosterone to estradiol.",
+   "question": 6
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Why does a 46,XY person with Swyer syndrome have a uterus?",
+   "back": "Streak gonads make no AMH.",
+   "question": 7
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Puberty in 5-alpha-reductase type 2 deficiency?",
+   "back": "Marked virilisation from testosterone; high testosterone-to-DHT ratio.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 3,
+   "front": "Definitive treatment of imperforate hymen?",
+   "back": "Surgical hymenectomy.",
+   "question": 8
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "Hematocolpos with a normal hymen and no introital bulge?",
+   "back": "Transverse vaginal septum; define with MRI.",
+   "question": 9
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "First-line approach to vaginal agenesis in MRKH?",
+   "back": "Patient-directed graduated self-dilation.",
+   "question": 10
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Next test for delayed puberty with high FSH?",
+   "back": "Karyotype.",
+   "question": 11
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Primary amenorrhea, breasts present, uterus absent: which two tests?",
+   "back": "Karyotype and serum testosterone (MRKH vs CAIS).",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Management of a non-communicating functional rudimentary horn?",
+   "back": "Laparoscopic excision (risk of hematometra and rupture of ectopic pregnancy).",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 4,
+   "front": "Apparently male newborn with bilateral non-palpable gonads: first concern?",
+   "back": "46,XX CAH with salt-wasting; check 17-hydroxyprogesterone and electrolytes.",
+   "question": 12
+  },
+  {
+   "n": 22,
+   "section": 4,
+   "front": "Initial treatment of neonatal adrenal crisis?",
+   "back": "Isotonic saline, dextrose and stress-dose IV hydrocortisone.",
+   "question": 13
+  },
+  {
+   "n": 23,
+   "section": 4,
+   "front": "Maintenance regimen for salt-wasting CAH in infancy?",
+   "back": "Hydrocortisone, fludrocortisone and sodium chloride.",
+   "question": 14
+  },
+  {
+   "n": 24,
+   "section": 4,
+   "front": "Why avoid prednisone or dexamethasone in growing children with CAH?",
+   "back": "They suppress growth more than hydrocortisone.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 4,
+   "front": "Turner syndrome with Y chromosome material: what is recommended?",
+   "back": "Gonadectomy because of gonadoblastoma risk.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 4,
+   "front": "Main life-threatening concern in pregnancy with Turner syndrome?",
+   "back": "Aortic dissection; needs preconception cardiac evaluation.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Timing of gonadectomy in Swyer syndrome?",
+   "back": "At diagnosis, because of high germ cell tumour risk.",
+   "question": null
+  }
+ ]
+}

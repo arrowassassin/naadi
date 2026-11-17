@@ -1,0 +1,940 @@
+{
+ "area": "07.01.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Bone, joint and soft-tissue infection: pathogenesis, organisms and drugs",
+   "html": "<p>Bone, joint and deep soft-tissue infections share one theme: the organism reaches a tissue with limited blood supply or limited immune access, multiplies, and the host response itself causes much of the damage. On Step 1, the questions usually ask how the organism got there, why a given host gets a given organism, which virulence factor explains the picture, and how the drugs work.</p>\n<h2>Routes of infection</h2>\n<ul>\n<li><strong>Hematogenous seeding.</strong> This is the main route in children, where it targets the <em>metaphysis</em> of long bones (distal femur, proximal tibia, proximal humerus). In adults it targets the <em>vertebral bodies</em> and disc space. Any bacteremia can seed bone: injection drug use, endocarditis, indwelling catheters and hemodialysis access.</li>\n<li><strong>Contiguous spread.</strong> Infection moves from adjacent soft tissue into bone. Typical settings are a neuropathic diabetic foot ulcer, a sacral pressure injury in a person with spinal cord injury, and sinus or dental infection.</li>\n<li><strong>Direct inoculation.</strong> Open fractures, surgery and prosthetic joints, bites, and puncture wounds introduce organisms straight into bone or joint.</li>\n</ul>\n<h3>Why the metaphysis in children</h3>\n<p>Nutrient arteries end in tight capillary loops just below the growth plate. These open into wide venous sinusoids where flow slows and becomes turbulent. The vessel walls there have gaps, and few phagocytes line them, so circulating bacteria settle easily. A minor bump can add a small hematoma that the bacteria colonise. In infants younger than about 18 months, vessels still cross the physis, so infection can reach the epiphysis and the joint. Joint spread at any age is likely where the metaphysis lies <em>inside</em> the joint capsule: proximal femur (hip), proximal humerus, radial neck and distal lateral tibia. That is why osteomyelitis of the proximal femur can present as a septic hip.</p>\n[[figure:s23f-fig070101-1]]\n<h2>Pathology of osteomyelitis</h2>\n<p>Neutrophils, exudate and edema raise the pressure inside the rigid bone and compress the vessels. Bone dies. The pus tracks through the Haversian and Volkmann canals to the cortex and lifts the periosteum. Dead fragments separated from living bone form a <strong>sequestrum</strong>. The lifted periosteum lays down a sleeve of new reactive bone, the <strong>involucrum</strong>. Openings in the involucrum through which pus drains are called cloacae, and they may connect with skin sinus tracts. A walled-off metaphyseal abscess with a sclerotic rim is a Brodie abscess, the subacute form. Chronic disease shows lymphocytes, plasma cells and fibrosis around dead bone. Late complications include pathologic fracture, growth disturbance if the physis is damaged, secondary (AA) amyloidosis and, rarely, squamous cell carcinoma arising in a long-standing sinus tract.</p>\n<h2>Who gets which organism</h2>\n<table class=\"hy\">\n<thead><tr><th>Host or exposure</th><th>Organism to think of</th><th>Clue</th></tr></thead>\n<tbody>\n<tr><td>Any age, any site</td><td><em>Staphylococcus aureus</em> (MSSA or MRSA)</td><td>Gram-positive cocci in clusters, catalase and coagulase positive</td></tr>\n<tr><td>Child aged about 6 months to 4 years</td><td><em>Kingella kingae</em></td><td>Fastidious gram-negative coccobacillus from oral flora; cultures often negative unless fluid goes into blood culture bottles or PCR is used</td></tr>\n<tr><td>Neonate</td><td>Group B streptococcus, <em>S. aureus</em>, enteric gram-negative rods</td><td>Few systemic signs; often several sites</td></tr>\n<tr><td>Sickle cell disease</td><td><em>Salmonella</em> (and <em>S. aureus</em>)</td><td>Infarcted bone and bowel, functional asplenia</td></tr>\n<tr><td>Sexually active adolescent or adult</td><td><em>Neisseria gonorrhoeae</em></td><td>Tenosynovitis, a few pustules, migratory arthralgia</td></tr>\n<tr><td>Puncture through a shoe sole</td><td><em>Pseudomonas aeruginosa</em></td><td>Oxidase-positive, non-lactose-fermenting rod; often calcaneus</td></tr>\n<tr><td>Cat or dog bite</td><td><em>Pasteurella multocida</em></td><td>Rapid cellulitis within 24 h</td></tr>\n<tr><td>Human bite or clenched-fist injury</td><td><em>Eikenella corrodens</em>, oral anaerobes, streptococci</td><td>Wound over the knuckle (MCP joint)</td></tr>\n<tr><td>Prosthetic joint, late</td><td>Coagulase-negative staphylococci, <em>Cutibacterium acnes</em></td><td>Biofilm on the implant; indolent pain and loosening</td></tr>\n<tr><td>Spine, endemic area or immigrant</td><td><em>Mycobacterium tuberculosis</em> (Pott disease)</td><td>Thoracic spine, adjacent vertebral bodies, cold paraspinal or psoas abscess, caseating granulomas</td></tr>\n<tr><td>Chronic granulomatous disease</td><td>Catalase-positive organisms: <em>S. aureus</em>, <em>Serratia</em>, <em>Aspergillus</em></td><td>NADPH oxidase defect; abnormal dihydrorhodamine test</td></tr>\n</tbody></table>\n<h2>Key organisms and their virulence factors</h2>\n<p><strong><em>S. aureus</em></strong> uses surface adhesins that bind collagen and fibronectin in bone matrix, and protein A, which binds the Fc portion of IgG and blocks opsonisation. It forms biofilm on dead bone and hardware, and it can survive inside osteoblasts. Community MRSA strains that carry Panton–Valentine leukocidin cause more abscesses, venous thrombosis and multifocal disease in children. <strong><em>Kingella kingae</em></strong> colonises the throats of toddlers and enters the blood during viral stomatitis or upper respiratory infection. It belongs to the HACEK group, so it can also cause endocarditis.</p>\n<p><strong><em>Neisseria gonorrhoeae</em></strong> changes its pili and Opa proteins to escape antibodies and makes IgA protease. People who lack the terminal complement components (C5 to C9), or who take a C5 inhibitor such as eculizumab, cannot form the membrane attack complex and get recurrent disseminated <em>Neisseria</em> infection. <strong><em>Borrelia burgdorferi</em></strong> is a spirochete carried by <em>Ixodes</em> ticks. The tick acquires it mainly from small rodents, and deer sustain the adult ticks. Lyme arthritis is a late manifestation: an oligoarthritis, usually of the knee, weeks to months after an untreated bite.</p>\n<h2>Necrotizing soft-tissue infection and pyomyositis</h2>\n<p>Necrotizing fasciitis spreads along the fascial plane. The overlying skin looks deceptively normal early, then turns dusky with bullae and loses sensation as the cutaneous nerves die.</p>\n<ul>\n<li><strong>Type I (polymicrobial).</strong> Anaerobes mixed with facultative gram-negative rods and streptococci, in people with diabetes, after surgery, or in the perineum (Fournier gangrene). Gas in tissue is common.</li>\n<li><strong>Type II (monomicrobial).</strong> Usually <em>Streptococcus pyogenes</em>, and sometimes MRSA, in previously healthy people after minor trauma. M protein resists phagocytosis. Streptococcal pyrogenic exotoxins act as superantigens. They bind MHC class II and the T-cell receptor Vβ chain outside the antigen groove, causing massive cytokine release and toxic shock. Hyaluronidase, streptokinase and DNases help it spread.</li>\n<li><strong>Water and food exposures.</strong> <em>Vibrio vulnificus</em> after salt-water wounds or raw oysters in people with liver disease or iron overload. <em>Aeromonas</em> after fresh-water injury.</li>\n<li><strong>Clostridial myonecrosis (gas gangrene).</strong> <em>Clostridium perfringens</em> in deep, contaminated wounds. Its alpha toxin is a phospholipase C (lecithinase) that destroys cell membranes, causing muscle necrosis and hemolysis. Spontaneous <em>C. septicum</em> gangrene points to a colon cancer or neutropenia.</li>\n</ul>\n<p>Pyomyositis is an abscess inside skeletal muscle, usually from <em>S. aureus</em>. It typically affects the thigh, gluteal or iliopsoas muscles. It is more common in tropical climates and in people with HIV, diabetes or a recent muscle injury.</p>\n<div class=\"pearl\"><p>Clindamycin is added to a β-lactam in toxin-mediated streptococcal and clostridial infection. It binds the 50S ribosomal subunit and stops toxin and M-protein synthesis even when bacteria are in stationary phase. In a dense, slowly growing population, penicillin-binding proteins are expressed less, so cell-wall drugs alone work less well (the inoculum or Eagle effect).</p></div>\n<h2>Drugs by mechanism</h2>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Target</th><th>Points tested</th></tr></thead>\n<tbody>\n<tr><td>Cefazolin, nafcillin, oxacillin</td><td>Penicillin-binding proteins (cell-wall cross-linking)</td><td>MSSA drugs of choice; not active against MRSA (altered PBP2a from <em>mecA</em>)</td></tr>\n<tr><td>Vancomycin</td><td>Binds D-Ala-D-Ala, blocks cell-wall polymerisation</td><td>MRSA; nephrotoxicity, infusion reaction; no gram-negative activity and none against <em>Kingella</em></td></tr>\n<tr><td>Daptomycin</td><td>Inserts into the gram-positive cell membrane and depolarises it</td><td>Monitor CK for myopathy; inactivated by pulmonary surfactant</td></tr>\n<tr><td>Linezolid</td><td>50S (23S rRNA), blocks initiation complex</td><td>Myelosuppression with long courses; serotonin syndrome with SSRIs</td></tr>\n<tr><td>Rifampin</td><td>DNA-dependent RNA polymerase</td><td>Penetrates biofilm on retained hardware; always combined because resistance arises quickly; strong CYP inducer</td></tr>\n<tr><td>Ceftriaxone</td><td>PBPs</td><td>Gonococcal arthritis; <em>Salmonella</em>; Lyme disease with neurologic or cardiac involvement</td></tr>\n<tr><td>Doxycycline</td><td>30S, blocks aminoacyl-tRNA binding</td><td>Lyme arthritis; photosensitivity, esophagitis</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>A negative Gram stain and a sterile routine culture from a toddler's swollen joint do not rule out infection. Think of <em>Kingella</em>. It is resistant to vancomycin, so an anti-MRSA glycopeptide alone does not cover it, while β-lactams such as cefazolin or ampicillin-sulbactam do.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Osteomyelitis"
+    },
+    {
+     "statpearls": "Necrotizing Fasciitis"
+    },
+    {
+     "statpearls": "Lyme Disease"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Septic arthritis, osteomyelitis and necrotizing infection in adults",
+   "html": "<p>This section covers adult bone and joint infection and the soft-tissue emergencies that sit next to it. Pediatric infection, including the irritable hip, is in the next section. The common thread is to get a sample before antibiotics whenever the patient is stable, and to remove pus and dead tissue.</p>\n<h2>Acute monoarthritis: septic arthritis until proven otherwise</h2>\n<p>A hot, swollen, painful joint with restricted passive motion, most often the knee, needs <strong>arthrocentesis before antibiotics</strong>. Send fluid for cell count with differential, Gram stain, culture and crystal microscopy, and take blood cultures. Risk factors are age over 80, diabetes, rheumatoid arthritis, a prosthetic joint, recent joint surgery or injection, skin infection, injection drug use and immunosuppression. Fever is absent in a large minority, and a normal peripheral leukocyte count does not exclude infection.</p>\n[[figure:s23f-fig070101-2]]\n<ul>\n<li><strong>Synovial leukocytes.</strong> A count above about 50,000/mm<sup>3</sup> with more than 90% neutrophils strongly suggests infection. Lower counts occur early, with partial treatment, in immunosuppressed patients and in prosthetic joints, where much lower thresholds apply.</li>\n<li><strong>Crystals do not exclude infection.</strong> Gout or pseudogout can coexist with a septic joint, so always culture.</li>\n<li><strong>Imaging.</strong> A plain film establishes a baseline and shows chondrocalcinosis, fracture or gas. Ultrasound guides aspiration of deep joints such as the hip.</li>\n</ul>\n<p><strong>Management.</strong> Start empiric IV antibiotics as soon as fluid and blood are taken. The Gram stain guides the choice. Gram-positive cocci call for vancomycin. Gram-negative rods call for a third-generation cephalosporin, or cefepime when <em>Pseudomonas</em> is a concern (injection drug use, recent instrumentation). A negative stain in a high-risk adult calls for vancomycin plus a third-generation cephalosporin. Drain the joint every time: repeated needle aspiration, arthroscopic lavage or open arthrotomy. Surgical drainage is preferred for the hip, for loculated effusions and for joints that fail to improve. Narrow the antibiotics to the culture result.</p>\n<h2>Disseminated gonococcal infection</h2>\n<p>Gonococcal infection shows up in two ways, which can overlap:</p>\n<ul>\n<li>A <strong>triad</strong> of tenosynovitis (often the dorsum of the wrist and hand), a few painless pustules or vesiculopustules on the limbs, and migratory polyarthralgia, without a purulent joint.</li>\n<li>A <strong>purulent monoarthritis</strong>, often of the knee.</li>\n</ul>\n<p>Blood and synovial cultures are often negative. Do nucleic acid amplification tests on urogenital, rectal and pharyngeal specimens (by exposure), as they have the highest yield. Treat with IV ceftriaxone 1 g every 24 hours, per the CDC STI guidelines. Treat chlamydia with doxycycline unless it has been excluded. After clinical improvement, the course is completed according to current CDC guidance and susceptibilities (at least 7 days in total for arthritis–dermatitis). Offer HIV and syphilis testing and doxy-PEP counselling where it applies, and arrange partner treatment. If the infection recurs, check terminal complement function.</p>\n<h2>Lyme arthritis</h2>\n<p>Lyme arthritis is a large, often surprisingly comfortable knee effusion in someone from an endemic area (the US Northeast, mid-Atlantic or upper Midwest), sometimes with no remembered rash. Synovial leukocytes are usually in the inflammatory range, often 10,000 to 50,000/mm<sup>3</sup>. Serology is almost always strongly positive by the time arthritis appears, using two-tier testing (an EIA and then an IgG immunoblot, or a second EIA). Treat with <strong>oral doxycycline for 28 days</strong>. Amoxicillin or cefuroxime are alternatives, and amoxicillin is commonly used in young children. Persistent swelling after a full course is treated with a second oral course or IV ceftriaxone. Arthritis that persists after antibiotics is immune-mediated and is managed with NSAIDs, DMARDs or synovectomy, not with more antibiotics.</p>\n<h2>Osteomyelitis in adults</h2>\n<table class=\"hy\">\n<thead><tr><th>Question</th><th>Answer</th></tr></thead>\n<tbody>\n<tr><td>Best initial imaging</td><td>Plain radiograph. It is normal for about the first 2 weeks, then shows periosteal reaction, lucency and cortical loss.</td></tr>\n<tr><td>Most sensitive and specific imaging</td><td>MRI. It shows marrow edema early and outlines abscesses and epidural extension. Use nuclear imaging only if MRI is not possible.</td></tr>\n<tr><td>Most accurate test</td><td>Bone biopsy with culture and histology, ideally before antibiotics.</td></tr>\n<tr><td>Bedside clue in a diabetic foot</td><td>A positive probe-to-bone test, an ulcer more than 2 cm wide, or an ESR above about 70 mm/h</td></tr>\n<tr><td>Markers to follow response</td><td>ESR and CRP</td></tr>\n<tr><td>Unreliable</td><td>Swabs of a sinus tract or ulcer surface, which grow colonisers</td></tr>\n</tbody></table>\n<p><strong>Diabetic foot.</strong> Most diabetic foot osteomyelitis spreads from an ulcer. Manage it with debridement, offloading, glycemic control and assessment of perfusion (ankle–brachial index or toe pressures). Antibiotics are guided by the bone culture. Resection or amputation of the infected bone shortens the antibiotic course considerably. Without resection, a course of about 6 weeks is typical. After initial control, highly bioavailable oral regimens are acceptable for many adults.</p>\n<p><strong>Vertebral osteomyelitis (discitis–osteomyelitis).</strong> This presents as progressive back pain with tenderness, with or without fever, in older adults, people who inject drugs, people on hemodialysis and those with recent bacteremia. Get MRI of the spine and blood cultures. <em>S. aureus</em> bacteremia also calls for echocardiography. If blood cultures are negative and the patient is stable and neurologically intact, <strong>hold antibiotics and obtain an image-guided biopsy</strong> so the organism can be identified. New weakness, sensory level, or bladder or bowel dysfunction suggests an epidural abscess, which needs emergency MRI, antibiotics and surgical decompression.</p>\n<p><strong>Prosthetic joint infection.</strong> Early infection (within about 3 months) is usually virulent <em>S. aureus</em> or gram-negative rods. Late infection is indolent pain from biofilm organisms. Joint aspiration with cell count and culture is the key test. Management depends on timing and implant stability. Early infection with a well-fixed implant can be treated with debridement, antibiotics and implant retention, using rifampin combination therapy for staphylococci. Chronic infection needs one- or two-stage exchange.</p>\n<h2>Necrotizing soft-tissue infection: a surgical emergency</h2>\n<p>Look for pain out of proportion to the skin findings, rapid spread over hours, tense edema beyond the erythema, bullae, crepitus, skin anesthesia and systemic toxicity. Scoring systems based on routine labs cannot rule it out. Imaging may show gas or fascial fluid, but it must never delay the operating room. Surgical exploration is both diagnostic and therapeutic: grey, non-bleeding fascia that separates easily and thin, cloudy fluid. Management is:</p>\n<ul>\n<li>immediate, repeated <strong>surgical debridement</strong>;</li>\n<li>broad empiric antibiotics: an anti-MRSA agent, a broad gram-negative and anaerobic agent, and clindamycin to suppress toxins;</li>\n<li>source-directed narrowing later, for example penicillin plus clindamycin for group A streptococcus, or doxycycline plus a third-generation cephalosporin for <em>Vibrio</em>.</li>\n</ul>\n<p>Pyomyositis is diagnosed with MRI or CT and treated with drainage plus antibiotics active against <em>S. aureus</em>.</p>\n<div class=\"trap\"><p>A patient with an evolving necrotizing infection who is sent for MRI \"to confirm\" first has lost hours. When the clinical picture fits, the next step is the operating room. Imaging is for uncertain, stable cases only.</p></div>\n<div class=\"pearl\"><p>Older adults with septic arthritis or vertebral osteomyelitis often have no fever and present with delirium, falls or a vague decline. Aspirate any acute effusion. Ask about recent procedures, steroid injections and immunosuppressants such as TNF inhibitors and JAK inhibitors.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Septic Arthritis"
+    },
+    {
+     "statpearls": "Gonococcal Arthritis"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Bone and joint infection in children: the septic hip and its mimics",
+   "html": "<p>Children with bone and joint infection often cannot localise their pain. A toddler simply stops walking, a baby cries when the nappy is changed, or a school-age child limps. The exam tests whether you can tell a septic hip from transient synovitis, choose the right tests in the right order, and know which organisms and drugs fit each age.</p>\n<h2>The irritable hip: septic arthritis vs transient synovitis</h2>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Septic arthritis of the hip</th><th>Transient synovitis</th></tr></thead>\n<tbody>\n<tr><td>Typical age</td><td>Any, including infants</td><td>About 3 to 10 years, often after a viral illness</td></tr>\n<tr><td>Appearance</td><td>Ill, febrile, refuses to bear weight</td><td>Well, afebrile or low-grade fever, limps but can often walk</td></tr>\n<tr><td>Hip position and motion</td><td>Held flexed, abducted and externally rotated; any passive motion is very painful</td><td>Mild limitation, especially of internal rotation</td></tr>\n<tr><td>Labs</td><td>Raised leukocytes, ESR and CRP</td><td>Normal or near normal</td></tr>\n<tr><td>Ultrasound</td><td>Effusion</td><td>Effusion (ultrasound cannot tell them apart)</td></tr>\n<tr><td>Aspirate</td><td>Purulent; leukocytes often above 50,000/mm<sup>3</sup>, neutrophil-predominant</td><td>Clear; low cell count</td></tr>\n<tr><td>Management</td><td>Emergency surgical drainage plus IV antibiotics</td><td>NSAIDs, rest, reassessment within 24 to 48 h</td></tr>\n</tbody></table>\n<p>The classic predictors are inability to bear weight, fever above 38.5 °C, ESR above 40 mm/h and peripheral leukocytes above 12,000/mm<sup>3</sup>. Many centres add a CRP above 2 mg/dL. The probability of infection climbs steeply as more predictors are present. A child with three or four should have <strong>image-guided aspiration</strong> straight away, followed by drainage in the operating room if the fluid is purulent. Intra-articular pressure in the hip can compromise the epiphyseal blood supply, so delay risks avascular necrosis of the femoral head, physeal damage and permanent deformity. A child with none of the predictors who is well can be observed with NSAIDs and must be re-examined. Worsening or new fever means aspiration.</p>\n<div class=\"trap\"><p>A limping child whose knee hurts may have a hip problem, because pain from the hip is referred along the obturator nerve to the knee. Examine the hip in every child with knee pain. In an older obese adolescent, think also of slipped capital femoral epiphysis.</p></div>\n<h2>Acute hematogenous osteomyelitis in children</h2>\n<p>The child has focal bone pain and point tenderness over a metaphysis, limps or will not use the limb, and may have fever. CRP rises quickly and falls quickly with effective treatment, so it is the best marker to follow. Take blood cultures from every child, as they are positive in a substantial minority. The plain film is usually normal early but rules out fracture and tumour. <strong>MRI</strong> is the imaging study of choice. It shows marrow edema, subperiosteal abscess and any adjacent septic joint. Aspiration or surgical drainage of a subperiosteal abscess gives tissue for culture.</p>\n<h3>Empiric antibiotics by age</h3>\n<ul>\n<li><strong>Neonates.</strong> Cover group B streptococcus, <em>S. aureus</em> and gram-negative rods, for example with an anti-staphylococcal agent plus a third-generation cephalosporin (cefotaxime, or ceftazidime or cefepime where cefotaxime is unavailable). Look for several sites at once.</li>\n<li><strong>Older infants and children.</strong> Use cefazolin where MRSA is uncommon. Where community MRSA is common, use clindamycin (if local resistance is low) or vancomycin for the critically ill. Coverage for <em>Kingella</em> in children younger than about 4 years comes from a β-lactam such as cefazolin, ampicillin-sulbactam or a cephalosporin.</li>\n<li><strong>Sickle cell disease.</strong> Cover <em>Salmonella</em> and <em>S. aureus</em>, for example with a third-generation cephalosporin plus an anti-staphylococcal agent. Bone infarction from a vaso-occlusive crisis mimics infection, and an MRI or aspiration and culture helps separate them.</li>\n</ul>\n<p><strong>Course.</strong> Children with uncomplicated disease who are improving clinically, with a falling CRP, can switch early to a well-absorbed oral drug at high dose. Total courses of about 3 to 4 weeks for uncomplicated osteomyelitis, and shorter for septic arthritis alone, are now standard. Longer courses are kept for MRSA with abscesses, slow response, neonates and pelvic or vertebral disease. Complications include chronic osteomyelitis, growth arrest or leg-length discrepancy from physeal damage, deep vein thrombosis with virulent MRSA, and pathologic fracture.</p>\n<h2>Other pediatric infections to know</h2>\n<ul>\n<li><strong>Discitis.</strong> A toddler refuses to sit or walk, has back stiffness, and may have no fever. MRI shows disc-space infection. Most cases respond to anti-staphylococcal antibiotics.</li>\n<li><strong>Lyme arthritis.</strong> A swollen knee in a well child from an endemic area. It is the main mimic of septic arthritis in those regions. Children with Lyme arthritis usually have lower fever and lower CRP than those with a septic joint. Serology confirms it.</li>\n<li><strong>Puncture-wound osteochondritis of the foot.</strong> Pain recurs days to weeks after stepping on a nail through a shoe. Suspect <em>Pseudomonas</em>. It needs surgical debridement plus antipseudomonal therapy.</li>\n<li><strong>Gonococcal arthritis in adolescents.</strong> Take a confidential sexual history from every teenager with a hot joint or tenosynovitis. Remember that an infection like this in a younger child raises the question of sexual abuse.</li>\n</ul>\n<div class=\"pearl\"><p>Children with neuromuscular disability (cerebral palsy, spina bifida) may not report pain or localise it. They can present with fever and irritability alone. Insensate skin over the sacrum or feet also predisposes them to contiguous osteomyelitis from pressure injuries.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Transient Synovitis"
+    },
+    {
+     "statpearls": "Osteomyelitis"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Hematogenous osteomyelitis in a child's long bone: slow metaphyseal sinusoidal flow seeds infection beside the physis; pus lifts the periosteum, dead bone becomes a sequestrum and new periosteal bone forms the involucrum."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Typical synovial fluid leukocyte ranges by category. The ranges overlap, especially in early, partly treated, immunosuppressed or prosthetic-joint infection, so culture every inflamed joint."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "A febrile child who will not walk"
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "Short vs standard antibiotic courses for childhood osteomyelitis (fictional trial)",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> A multicentre, open-label, randomized noninferiority trial enrolled 312 children aged 3 months to 14 years with acute hematogenous osteomyelitis of a long or short limb bone who had improved clinically after up to 4 days of IV antibiotics. Exclusion criteria were age under 3 months, immunodeficiency, sickle cell disease, vertebral or pelvic infection, an abscess needing more than one procedure, and chronic osteomyelitis. Children were randomly assigned to oral antibiotics to complete a total of 3 weeks (n = 156) or 6 weeks (n = 156). The primary outcome was treatment failure within 6 months (recurrence, chronic osteomyelitis or unplanned surgery). The prespecified noninferiority margin was 7 percentage points.</p><table><thead><tr><th>Outcome</th><th>3 weeks</th><th>6 weeks</th></tr></thead><tbody><tr><td>Treatment failure (intention to treat)</td><td>7/156 (4.5%)</td><td>6/156 (3.8%)</td></tr><tr><td>Difference in failure (3 wk − 6 wk)</td><td colspan=\"2\">0.6 percentage points (95% CI −3.9 to 5.2)</td></tr><tr><td>Adverse drug events (diarrhea, rash, neutropenia)</td><td>6%</td><td>14%</td></tr></tbody></table><p>Per-protocol results were similar.</p>"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 8-year-old boy with sickle cell disease is brought to the emergency department because of 4 days of fever and worsening pain in his left lower leg. He refuses to bear weight. Temperature is 39.0°C (102.2°F). The proximal tibia is warm and exquisitely tender. MRI shows marrow edema with a small intraosseous abscess. Blood cultures grow an oxidase-negative, motile gram-negative rod that does not ferment lactose, produces hydrogen sulfide on triple sugar iron agar and is urease negative. Which of the following is the most likely causative organism?</p>",
+   "options": [
+    "<em>Klebsiella pneumoniae</em>",
+    "<em>Proteus mirabilis</em>",
+    "<em>Pseudomonas aeruginosa</em>",
+    "<em>Salmonella enterica</em>",
+    "<em>Shigella sonnei</em>"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>People with sickle cell disease have bone infarcts that provide dead tissue for seeding, bowel microinfarcts that allow enteric bacteria into the blood, and functional asplenia. This makes <em>Salmonella</em> a characteristic cause of their osteomyelitis, alongside <em>S. aureus</em>. In the laboratory, <em>Salmonella</em> is a motile, oxidase-negative, non-lactose-fermenting rod that produces H<sub>2</sub>S and does not hydrolyse urea.</p><p><strong>Takeaway:</strong> Osteomyelitis in sickle cell disease with a non-lactose-fermenting, H<sub>2</sub>S-producing, urease-negative rod is <em>Salmonella</em>.</p>",
+   "whyNot": {
+    "A": "<em>Klebsiella</em> ferments lactose, is non-motile and has a thick capsule. It does not produce H<sub>2</sub>S.",
+    "B": "<em>Proteus</em> is motile and H<sub>2</sub>S positive, but it is strongly urease positive. This lab result excludes it.",
+    "C": "<em>Pseudomonas</em> is oxidase positive and produces no H<sub>2</sub>S. It causes osteomyelitis after puncture wounds or injection drug use.",
+    "E": "<em>Shigella</em> is a non-motile, non-lactose fermenter that produces no H<sub>2</sub>S, and it rarely invades the bloodstream."
+   },
+   "objective": "Identify Salmonella as a cause of osteomyelitis in sickle cell disease from its biochemical profile.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "osteomyelitis",
+    "hemoglobinopathy"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 7-year-old girl has fever and pain above the right knee 1 week after a minor fall on the playground. MRI shows acute osteomyelitis confined to the distal femoral metaphysis, adjacent to the growth plate. Blood cultures grow methicillin-susceptible <em>Staphylococcus aureus</em>. Which of the following anatomic features best explains why infection began at this site?</p>",
+   "options": [
+    "Abundant fenestrated capillaries lined by osteoclasts in the diaphyseal cortex",
+    "Dense Haversian canal network in the epiphyseal cartilage",
+    "Direct arterial supply to the metaphysis from the periosteal plexus, bypassing the nutrient artery",
+    "Slow, turbulent flow where capillary loops open into metaphyseal venous sinusoids",
+    "Thick layer of articular cartilage covering the metaphysis"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>In children, the nutrient artery's branches end in tight loops just beneath the physis. These empty into wide venous sinusoids where blood slows and becomes turbulent, the walls have gaps and few phagocytes are present. Circulating bacteria settle there, especially if minor trauma has created a small hematoma.</p><p><strong>Takeaway:</strong> Pediatric hematogenous osteomyelitis starts in the metaphysis because of sluggish flow in looped capillaries and sinusoids next to the growth plate.</p>",
+   "whyNot": {
+    "A": "The diaphyseal cortex is dense compact bone with relatively brisk flow. Osteoclasts do not line capillaries.",
+    "B": "Epiphyseal cartilage is largely avascular after infancy, and Haversian systems belong to compact cortical bone.",
+    "C": "The metaphysis is supplied mainly by terminal branches of the nutrient artery, not by the periosteal plexus alone. That would not explain bacterial settling.",
+    "E": "Articular cartilage covers the epiphysis at the joint surface, not the metaphysis, and it would not attract bacteria."
+   },
+   "objective": "Explain the vascular anatomy that localises childhood hematogenous osteomyelitis to the metaphysis.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone infection",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 20-month-old boy who attends day care has been limping and refusing to put weight on his left leg for 2 days. One week ago he had several painful ulcers in his mouth. Temperature is 38.1°C (100.6°F). The left knee is swollen and warm. Arthrocentesis yields cloudy fluid with 48,000 leukocytes/mm<sup>3</sup>, 85% neutrophils. Gram stain shows no organisms, and routine agar cultures are sterile at 48 hours. PCR of the synovial fluid identifies a gram-negative coccobacillus that is part of the normal oropharyngeal flora of young children. This organism is also a recognised cause of which of the following conditions?</p>",
+   "options": [
+    "Endocarditis with negative routine cultures",
+    "Hemolytic uremic syndrome after bloody diarrhea",
+    "Conjunctivitis in the first week of life",
+    "Rheumatic carditis after pharyngitis",
+    "Toxic shock syndrome during menstruation"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is <em>Kingella kingae</em>, the leading cause of septic arthritis and osteomyelitis in children aged about 6 months to 4 years. It often follows viral stomatitis, and it grows poorly on routine plates, so PCR or blood culture bottle inoculation is needed. <em>Kingella</em> is the K of the HACEK group of fastidious gram-negative organisms that cause endocarditis with negative routine blood cultures.</p><p><strong>Takeaway:</strong> A culture-negative toddler septic joint suggests <em>Kingella kingae</em>, a HACEK organism that can also cause endocarditis.</p>",
+   "whyNot": {
+    "B": "Hemolytic uremic syndrome follows Shiga toxin-producing <em>E. coli</em> enteritis, not oral-flora coccobacilli.",
+    "C": "Ophthalmia neonatorum is caused by <em>N. gonorrhoeae</em> or <em>Chlamydia</em> acquired at birth.",
+    "D": "Rheumatic heart disease is an immune sequel of group A streptococcal pharyngitis, which is a gram-positive coccus.",
+    "E": "Toxic shock syndrome is caused by superantigens from <em>S. aureus</em> or group A streptococcus."
+   },
+   "objective": "Recognise Kingella kingae in toddler septic arthritis and its membership of the HACEK endocarditis group.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "septic arthritis",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 23-year-old woman comes to the clinic because of 3 days of pain along the back of her right wrist and hand, with migrating pain in the left knee and right ankle. She has four small painless pustules on an erythematous base on her forearms. Two years ago she was treated in an intensive care unit for meningococcal meningitis. She has had no sinus or lung infections. Cervical nucleic acid amplification testing is positive for <em>Neisseria gonorrhoeae</em>. A deficiency of which of the following is most likely to explain her susceptibility?</p>",
+   "options": [
+    "C1 esterase inhibitor protein",
+    "β2 integrin CD18 subunit",
+    "Terminal complement (C5–C9)",
+    "Leukocyte myeloperoxidase",
+    "Phagocyte NADPH oxidase"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has disseminated gonococcal infection (tenosynovitis, pustular dermatitis and migratory arthralgia) after previous invasive meningococcal disease. Recurrent or invasive <em>Neisseria</em> infection is the signature of terminal complement deficiency. Without C5b–C9, the membrane attack complex cannot lyse these thin-walled gram-negative cocci. A C5 inhibitor such as eculizumab produces the same risk.</p><p><strong>Takeaway:</strong> Recurrent invasive <em>Neisseria</em> infection points to deficiency of the terminal complement components C5–C9.</p>",
+   "whyNot": {
+    "A": "C1 esterase inhibitor deficiency causes hereditary angioedema from excess bradykinin, not infection.",
+    "B": "CD18 deficiency (leukocyte adhesion deficiency type 1) causes delayed umbilical cord separation and recurrent pus-free skin infections, with neutrophilia.",
+    "D": "Myeloperoxidase deficiency is usually silent, with an occasional problem with <em>Candida</em>. It does not predispose to <em>Neisseria</em>.",
+    "E": "NADPH oxidase deficiency (chronic granulomatous disease) predisposes to catalase-positive organisms such as <em>S. aureus</em> and <em>Aspergillus</em>, not to <em>Neisseria</em>."
+   },
+   "objective": "Link recurrent disseminated Neisseria infection to terminal complement deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "arthritis-dermatitis",
+    "complement"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old previously healthy man has rapidly spreading pain and swelling of the left thigh 2 days after a minor abrasion while playing football. Blood pressure is 82/50 mm Hg. The skin is dusky with bullae, and the area is numb. At surgery, the fascia is grey and non-bleeding. Gram stain of tissue shows gram-positive cocci in chains, and cultures grow a β-hemolytic, bacitracin-susceptible organism. Intravenous penicillin is started, and a second drug is added specifically to reduce the production of bacterial exotoxins. The added drug most likely acts by which of the following mechanisms?</p>",
+   "options": [
+    "Binding D-alanyl-D-alanine to block cell-wall polymerisation",
+    "Binding the 30S subunit to block aminoacyl-tRNA attachment",
+    "Binding the 50S subunit to inhibit peptide chain elongation",
+    "Inhibiting DNA gyrase and topoisomerase IV",
+    "Inhibiting DNA-dependent RNA polymerase"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is type II necrotizing fasciitis with streptococcal toxic shock from <em>Streptococcus pyogenes</em>. Clindamycin binds the 50S ribosomal subunit and blocks translocation during elongation. It shuts down the synthesis of M protein and of the pyrogenic exotoxins that act as superantigens. It works even when the dense bacterial population is in stationary phase, when cell-wall agents are less effective.</p><p><strong>Takeaway:</strong> Clindamycin (a 50S inhibitor) is added to penicillin in invasive group A streptococcal infection to suppress toxin production.</p>",
+   "whyNot": {
+    "A": "This is vancomycin's mechanism. Vancomycin has no anti-toxin effect and is not needed for susceptible group A streptococcus.",
+    "B": "This describes tetracyclines. They are not used to suppress streptococcal toxin, and group A streptococcal resistance to them is common.",
+    "D": "Fluoroquinolones inhibit DNA gyrase. They are not the agent used to stop toxin synthesis in necrotizing fasciitis.",
+    "E": "Rifampin inhibits RNA polymerase. It is used for biofilm and hardware infection, not for streptococcal toxin suppression."
+   },
+   "objective": "Explain the protein-synthesis mechanism by which clindamycin suppresses streptococcal exotoxins.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue infection",
+    "antibiotics"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old farm worker develops severe pain in his right calf 18 hours after a deep, soil-contaminated laceration from machinery. The skin around the wound is tense and bronze-coloured, and crepitus is felt on palpation. Hemoglobin has fallen from 14.8 to 10.1 g/dL, and the plasma is pink. Gram stain of the wound exudate shows large, rectangular gram-positive rods with very few neutrophils. Which of the following bacterial products is chiefly responsible for the tissue destruction and hemolysis?</p>",
+   "options": [
+    "ADP-ribosylating toxin that inactivates elongation factor 2",
+    "Phospholipase that hydrolyses membrane lecithin",
+    "Protease that cleaves SNARE proteins at the synapse",
+    "Superantigen that cross-links MHC class II and the T-cell receptor",
+    "Toxin that ADP-ribosylates Gs to raise cAMP"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Clostridial myonecrosis (gas gangrene) from <em>Clostridium perfringens</em> follows deep, devitalised, contaminated wounds. Its alpha toxin is a phospholipase C (lecithinase) that splits phosphatidylcholine in cell membranes. This destroys muscle, red cells, platelets and leukocytes. The scarcity of neutrophils and the intravascular hemolysis are characteristic.</p><p><strong>Takeaway:</strong> <em>C. perfringens</em> alpha toxin is a lecithinase (phospholipase C) that causes myonecrosis and hemolysis.</p>",
+   "whyNot": {
+    "A": "EF-2 ADP-ribosylation is the mechanism of diphtheria toxin and <em>Pseudomonas</em> exotoxin A, not clostridial gangrene.",
+    "C": "SNARE cleavage is the action of tetanus and botulinum toxins, which cause neurologic disease without myonecrosis.",
+    "D": "Superantigens (TSST-1, streptococcal pyrogenic exotoxins) cause toxic shock, not lecithin-mediated muscle and red-cell lysis.",
+    "E": "Gs ADP-ribosylation is the action of cholera toxin and heat-labile <em>E. coli</em> toxin, which cause secretory diarrhea."
+   },
+   "objective": "Identify the phospholipase C alpha toxin as the cause of clostridial myonecrosis and hemolysis.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "wound infection",
+    "bacterial toxins"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 12-year-old girl from Connecticut has had three episodes over 4 months of a swollen, mildly painful right knee, each lasting about a week. She is afebrile. Last summer, after a camping trip, she had an expanding red patch on her thigh that cleared without treatment. Knee aspirate shows 22,000 leukocytes/mm<sup>3</sup>, and Gram stain and culture are negative. Which of the following organisms is the most likely cause?</p>",
+   "options": [
+    "<em>Babesia microti</em>",
+    "<em>Borrelia burgdorferi</em>",
+    "<em>Ehrlichia chaffeensis</em>",
+    "<em>Rickettsia rickettsii</em>",
+    "<em>Treponema pallidum</em>"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Intermittent attacks of large-joint oligoarthritis, usually the knee, months after an untreated erythema migrans-like rash in a New England child are the late disseminated stage of Lyme disease. The cause is the spirochete <em>Borrelia burgdorferi</em>, transmitted by <em>Ixodes</em> ticks. The synovial fluid is inflammatory but culture negative. Diagnosis rests on serology.</p><p><strong>Takeaway:</strong> Recurrent knee effusions months after a tick-associated expanding rash indicate Lyme arthritis from <em>Borrelia burgdorferi</em>.</p>",
+   "whyNot": {
+    "A": "<em>Babesia</em>, which shares the <em>Ixodes</em> vector, infects red cells and causes fever and hemolysis, not arthritis.",
+    "C": "<em>Ehrlichia</em> causes an acute febrile illness with leukopenia, thrombocytopenia and raised transaminases, not recurrent monoarthritis.",
+    "D": "<em>Rickettsia rickettsii</em> causes Rocky Mountain spotted fever, an acute illness with a rash that starts at the wrists and ankles.",
+    "E": "<em>Treponema pallidum</em> is sexually or congenitally transmitted. Its joint involvement (Clutton joints, Charcot joints) does not follow a tick-associated rash."
+   },
+   "objective": "Recognise late Lyme arthritis caused by Borrelia burgdorferi.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "tick-borne disease",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old boy has worsening heel pain 10 days after stepping on a nail that went through the sole of his athletic shoe. MRI shows calcaneal osteomyelitis. Bone culture grows an oxidase-positive gram-negative rod that does not ferment lactose and produces a blue-green pigment. A major exotoxin of this organism damages host cells by which of the following mechanisms?</p>",
+   "options": [
+    "ADP-ribosylation of elongation factor 2",
+    "Cleavage of 28S rRNA in the 60S ribosomal subunit",
+    "Formation of pores by binding membrane cholesterol",
+    "Increase of cGMP by activating guanylate cyclase",
+    "Phosphatidylcholine hydrolysis in cell membranes"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The organism is <em>Pseudomonas aeruginosa</em>, the classic cause of osteomyelitis and osteochondritis after a puncture through a rubber-soled shoe. It is oxidase positive, a non-fermenter and makes pyocyanin. Its exotoxin A ADP-ribosylates elongation factor 2, the same target as diphtheria toxin. This halts protein synthesis and kills the cell.</p><p><strong>Takeaway:</strong> <em>Pseudomonas</em> exotoxin A, like diphtheria toxin, inactivates EF-2 by ADP-ribosylation.</p>",
+   "whyNot": {
+    "B": "Removal of an adenine from 28S rRNA is the action of Shiga toxin and Shiga-like toxins, not <em>Pseudomonas</em> exotoxin A.",
+    "C": "Cholesterol-binding pore formation is the action of streptolysin O and listeriolysin O.",
+    "D": "Raising cGMP is the action of heat-stable enterotoxin of enterotoxigenic <em>E. coli</em>.",
+    "E": "Lecithin hydrolysis is the action of <em>C. perfringens</em> alpha toxin."
+   },
+   "objective": "Relate Pseudomonas puncture-wound osteomyelitis to the EF-2 ADP-ribosylating action of exotoxin A.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "osteomyelitis",
+    "bacterial toxins"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 6-year-old boy is brought to the emergency department because of 2 days of right hip pain and refusal to walk. He had a cold 10 days ago. Temperature is 39.2°C (102.6°F). He lies with the right hip flexed, abducted and externally rotated and cries with any passive movement. Leukocyte count is 16,400/mm<sup>3</sup>, ESR is 58 mm/h and CRP is 9.1 mg/dL (reference, under 1.0 mg/dL). Radiographs of the pelvis are normal. Ultrasonography shows a moderate right hip effusion. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Bone scintigraphy of the pelvis",
+    "Ibuprofen and reassessment in 24 hours",
+    "MRI of the pelvis with contrast",
+    "Oral cephalexin and outpatient follow-up in 2 days",
+    "Ultrasound-guided aspiration of the right hip"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>He meets all four classic predictors of septic arthritis of the hip: inability to bear weight, fever above 38.5°C, ESR above 40 mm/h and leukocytes above 12,000/mm<sup>3</sup>. His CRP is also high. The probability of infection is very high. Aspirate the joint now, before antibiotics, for cell count, Gram stain and culture, which also confirms the need for drainage.</p><p><strong>Takeaway:</strong> A febrile child with a hip effusion and raised inflammatory markers needs immediate image-guided hip aspiration.</p>",
+   "whyNot": {
+    "A": "Bone scintigraphy is slow and nonspecific. It delays the diagnosis of a joint infection that needs drainage within hours.",
+    "B": "Observing on NSAIDs is appropriate only for a well child with no predictors, a picture of transient synovitis. This child is toxic.",
+    "C": "MRI is useful when osteomyelitis or pyomyositis around the hip is suspected. It should not delay aspiration when an effusion with all predictors of infection is present.",
+    "D": "Oral antibiotics without a sample would obscure the culture and leave a potentially purulent hip undrained."
+   },
+   "objective": "Choose image-guided hip aspiration for a child with a hip effusion and all classic predictors of septic arthritis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "limping child",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Aspiration of the right hip yields 3 mL of purulent fluid. The leukocyte count is 112,000/mm<sup>3</sup> with 95% neutrophils. Gram stain shows gram-positive cocci in clusters. Blood cultures are pending. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Intra-articular corticosteroid injection after the culture result",
+    "IV antibiotics alone, with repeat aspiration if fever persists at 72 hours",
+    "Oral clindamycin and skin traction of the right leg",
+    "Surgical irrigation and debridement of the hip plus IV antibiotics",
+    "Weekly ESR and CRP monitoring while continuing oral NSAIDs"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Purulent hip fluid with this cell count and organisms on Gram stain confirms septic arthritis, almost certainly <em>S. aureus</em>. The hip is deep, hard to drain repeatedly with a needle, and vulnerable to avascular necrosis of the femoral head from raised intracapsular pressure. Pediatric septic hip is a surgical emergency, treated with urgent arthrotomy or arthroscopic washout plus IV antibiotics chosen for local MRSA rates.</p><p><strong>Takeaway:</strong> Pediatric septic arthritis of the hip needs emergency surgical drainage plus IV antibiotics.</p>",
+   "whyNot": {
+    "A": "Corticosteroids injected into an infected joint worsen infection and have no role here.",
+    "B": "Antibiotics alone without drainage of a purulent hip risk femoral head necrosis and joint destruction. Waiting 72 hours is too long.",
+    "C": "Oral antibiotics and traction do not decompress the joint. Traction has no role in septic arthritis.",
+    "E": "NSAIDs and serial markers suit transient synovitis, not a confirmed purulent infection."
+   },
+   "objective": "Treat confirmed pediatric septic arthritis of the hip with emergency surgical drainage and IV antibiotics.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "joint infection",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 2,
+   "setOrder": 1,
+   "stemHtml": "<p>Which of the following conclusions is best supported by the primary analysis?</p>",
+   "options": [
+    "Six weeks is superior because fewer children in that arm had treatment failure",
+    "The result is inconclusive because the confidence interval includes zero",
+    "The trial is underpowered because the P value for the difference is above 0.05",
+    "Three weeks is noninferior; the upper confidence limit is below the margin",
+    "Three weeks is superior because adverse events were less frequent"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>In a noninferiority trial the question is whether the new treatment is no worse than the standard by more than a prespecified margin. The failure rate with 3 weeks minus that with 6 weeks was 0.6 percentage points (95% CI −3.9 to 5.2). The whole interval lies below the 7-point margin, so excess failure as large as the margin is excluded. A CI that crosses zero is expected when the two treatments perform similarly. It does not make the result inconclusive for noninferiority.</p><p><strong>Takeaway:</strong> Noninferiority is shown when the upper limit of the CI for the difference stays below the prespecified margin.</p>",
+   "whyNot": {
+    "A": "The 0.6-point difference in failure is well within chance (the CI includes zero), so no superiority of 6 weeks can be claimed.",
+    "B": "Including zero only means superiority is not shown. The prespecified noninferiority question is answered by comparing the CI with the margin.",
+    "C": "A P value for difference is not the test of a noninferiority hypothesis. Power was planned around the margin.",
+    "E": "The primary outcome was treatment failure, and fewer adverse events (a secondary outcome) does not establish superiority on efficacy."
+   },
+   "objective": "Interpret a noninferiority trial result by comparing the confidence interval with the prespecified margin.",
+   "extraAreas": [
+    "17.02.03"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "study interpretation",
+    "bone infection"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 2,
+   "setOrder": 2,
+   "stemHtml": "<p>The findings of this trial apply most directly to which of the following patients?</p>",
+   "options": [
+    "A 2-week-old girl with osteomyelitis of the proximal humerus and a septic shoulder joint",
+    "A 5-year-old boy with MSSA tibial osteomyelitis, afebrile after 3 days of IV cefazolin",
+    "A 7-year-old girl with chronic osteomyelitis of the femur and a sequestrum on CT",
+    "A 9-year-old boy with sickle cell disease and <em>Salmonella</em> osteomyelitis of the humerus",
+    "A 12-year-old girl with MRSA vertebral osteomyelitis and a paraspinal abscess"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A trial's results apply most directly to patients who resemble its participants. The trial enrolled children aged 3 months to 14 years with uncomplicated acute hematogenous osteomyelitis of a limb bone who were improving after initial IV therapy. It excluded neonates, sickle cell disease, vertebral or pelvic disease, complex abscesses and chronic osteomyelitis. Only the 5-year-old with improving MSSA tibial osteomyelitis meets those criteria.</p><p><strong>Takeaway:</strong> Judge applicability by matching the patient to the trial's inclusion and exclusion criteria.</p>",
+   "whyNot": {
+    "A": "Neonates younger than 3 months were excluded. They have different organisms and often several sites with joint involvement.",
+    "C": "Chronic osteomyelitis with a sequestrum was excluded. It needs surgery and longer therapy.",
+    "D": "Sickle cell disease was an exclusion criterion, so the trial says nothing direct about <em>Salmonella</em> osteomyelitis.",
+    "E": "Vertebral disease and abscesses needing more than one procedure were excluded."
+   },
+   "objective": "Assess the external validity of a trial by matching a patient to its eligibility criteria.",
+   "extraAreas": [
+    "17.07.05"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "study interpretation",
+    "bone infection"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 2,
+   "setOrder": 3,
+   "stemHtml": "<p>Based on the adverse-event data, about how many children would need to be treated with the 3-week course rather than the 6-week course to prevent one adverse drug event?</p>",
+   "options": [
+    "4",
+    "8",
+    "13",
+    "25",
+    "50"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Adverse drug events occurred in 14% with 6 weeks and 6% with 3 weeks. The absolute risk reduction is 14% − 6% = 8 percentage points, or 0.08. The number needed to treat is 1/0.08 = 12.5, which rounds up to 13 children.</p><p><strong>Takeaway:</strong> NNT = 1 / absolute risk reduction. Round up to the next whole patient.</p>",
+   "whyNot": {
+    "A": "4 would require an absolute risk reduction of 25 percentage points, far more than the 8 points observed.",
+    "B": "8 confuses the absolute risk reduction in percentage points with the NNT.",
+    "D": "25 would correspond to an absolute risk reduction of 4 points, half the observed difference.",
+    "E": "50 would need an absolute difference of only 2 percentage points."
+   },
+   "objective": "Calculate the number needed to treat from two event rates.",
+   "extraAreas": [
+    "17.03.03"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "study interpretation"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old man who injects heroin comes to the emergency department because of 5 weeks of progressive low back pain that keeps him awake at night. He has no weakness, numbness, or bladder or bowel symptoms. Lower-extremity strength, sensation and reflexes are normal. There is tenderness over the L3–L4 spinous processes. MRI of the lumbar spine shows L3–L4 discitis with vertebral endplate osteomyelitis and no epidural collection. Two sets of blood cultures drawn on admission are sterile at 72 hours. Transthoracic echocardiography is normal.</p><table><thead><tr><th>Variable</th><th>Result</th></tr></thead><tbody><tr><td>Temperature</td><td>37.8°C (100.0°F)</td></tr><tr><td>Pulse</td><td>92/min</td></tr><tr><td>Blood pressure</td><td>128/76 mm Hg</td></tr><tr><td>Leukocytes</td><td>11,800/mm<sup>3</sup></td></tr><tr><td>ESR</td><td>88 mm/h</td></tr><tr><td>CRP</td><td>6.2 mg/dL (reference, under 1.0 mg/dL)</td></tr><tr><td>Creatinine</td><td>0.9 mg/dL</td></tr></tbody></table><p>No antibiotics have been given. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "CT-guided biopsy of the L3–L4 disc space for culture and histology",
+    "Empiric IV vancomycin plus cefepime for 6 weeks without further testing",
+    "Lumbar decompression and fusion",
+    "Repeat MRI of the lumbar spine in 2 weeks",
+    "Technetium-99m bone scan"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>He has vertebral osteomyelitis with negative blood cultures. He is hemodynamically stable and neurologically intact, so there is time to identify the organism before committing him to about 6 weeks of therapy. Image-guided biopsy for culture (aerobic, anaerobic, fungal and mycobacterial) and histology comes first. Antibiotics are held until the sample is taken. Empiric therapy would be started first if he were septic or had neurologic deficits.</p><p><strong>Takeaway:</strong> In stable, neurologically intact vertebral osteomyelitis with negative blood cultures, biopsy before antibiotics.</p>",
+   "whyNot": {
+    "B": "Six weeks of empiric broad therapy without a microbiologic diagnosis risks missing resistant organisms, tuberculosis or <em>Brucella</em>, and adds avoidable toxicity.",
+    "C": "Surgery is for neurologic deficit, epidural abscess, instability or failed medical therapy, none of which is present.",
+    "D": "Waiting 2 weeks to repeat imaging delays diagnosis and treatment of a confirmed infection.",
+    "E": "A bone scan adds nothing after MRI has already confirmed the diagnosis, and it cannot identify the organism."
+   },
+   "objective": "Obtain image-guided biopsy before antibiotics in stable, culture-negative vertebral osteomyelitis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic",
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "spine infection",
+    "injection drug use"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old woman with type 2 diabetes mellitus comes to the emergency department 30 hours after scraping her left thigh on a fence. She describes severe, constant thigh pain. Temperature is 38.9°C (102.0°F), pulse is 124/min and blood pressure is 88/54 mm Hg. A 10 × 8 cm area of the lateral thigh is erythematous, with tense edema extending beyond the redness, two hemorrhagic bullae and crepitus. Light touch over the bullae is not felt. Serum creatinine is 1.9 mg/dL, and lactate is 34 mg/dL. IV fluids and vancomycin, piperacillin-tazobactam and clindamycin are started. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Admission to the medical ward with marking of the margin every 4 hours",
+    "Emergency surgical exploration and debridement",
+    "Hyperbaric oxygen therapy",
+    "MRI of the thigh to confirm fascial involvement",
+    "Needle aspiration of a bulla for Gram stain"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Pain out of proportion, edema beyond the erythema, hemorrhagic bullae, crepitus, skin anesthesia and septic shock indicate necrotizing soft-tissue infection. Mortality rises with every hour that surgery is delayed. Once fluids and broad antibiotics are running, the next step is emergency surgical exploration and debridement of all necrotic tissue, usually with planned second-look operations.</p><p><strong>Takeaway:</strong> Clinically evident necrotizing fasciitis goes straight to the operating room. Imaging must not delay debridement.</p>",
+   "whyNot": {
+    "A": "Observing the margin is reasonable for uncomplicated cellulitis, not for a patient in shock with bullae and crepitus.",
+    "C": "Hyperbaric oxygen is at most an adjunct where available, after surgical debridement. It never replaces surgery.",
+    "D": "MRI can help in uncertain, stable cases, but here the diagnosis is clinical, and imaging would delay definitive treatment.",
+    "E": "Aspirating a bulla adds little information and does nothing to control the source."
+   },
+   "objective": "Proceed to emergency surgical debridement for clinically evident necrotizing fasciitis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue infection",
+    "sepsis"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old man with type 2 diabetes mellitus and peripheral neuropathy has had a painless ulcer under the head of his left first metatarsal for 2 months. Hemoglobin A<sub>1c</sub> is 9.1%. The ulcer is 2.5 cm across with a clean base, and a sterile metal probe touches bone. Dorsalis pedis and posterior tibial pulses are palpable. ESR is 76 mm/h. Plain radiographs of the foot are normal. Which of the following is the most accurate test to confirm the diagnosis and guide antimicrobial therapy?</p>",
+   "options": [
+    "Bone biopsy with culture and histology",
+    "Indium-111-labelled leukocyte scintigraphy",
+    "MRI of the foot",
+    "Swab culture of the ulcer base",
+    "Technetium-99m three-phase bone scan"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A positive probe-to-bone test, an ulcer more than 2 cm wide and an ESR above 70 mm/h make osteomyelitis likely despite a normal early radiograph. MRI is the most sensitive imaging test, but bone biopsy, percutaneous or at debridement and taken through intact skin where possible, is the reference standard. It confirms osteomyelitis histologically and gives the organism and susceptibilities for a prolonged antibiotic course.</p><p><strong>Takeaway:</strong> Bone biopsy with culture is the most accurate test for osteomyelitis and the best guide to therapy. MRI is the best imaging test.</p>",
+   "whyNot": {
+    "B": "Labelled leukocyte scans are less accurate than MRI in the forefoot and give no microbiologic information.",
+    "C": "MRI is the most sensitive imaging study and would be reasonable, but it cannot identify the organism or susceptibilities.",
+    "D": "Swabs of the ulcer base grow skin colonisers that correlate poorly with organisms in the bone.",
+    "E": "Three-phase bone scans are sensitive but nonspecific in neuropathic feet, where Charcot changes and recent surgery also light up."
+   },
+   "objective": "Identify bone biopsy with culture as the most accurate test for diabetic foot osteomyelitis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "diabetic foot",
+    "bone infection"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 10-year-old boy from Wisconsin has had a swollen left knee for 3 weeks. It limits running but causes only mild pain. He has had no fever, rash or trauma. Temperature is 37.2°C (99.0°F). The knee has a large effusion with mild warmth and nearly full range of motion. Arthrocentesis shows 26,000 leukocytes/mm<sup>3</sup> (70% neutrophils), no crystals and a negative Gram stain. A Lyme enzyme immunoassay is positive, and the IgG immunoblot shows 8 of 10 bands. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    "Arthroscopic synovectomy",
+    "Intra-articular triamcinolone injection",
+    "IV ceftriaxone for 28 days",
+    "Oral doxycycline for 28 days",
+    "Oral methotrexate weekly"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>A well child from an endemic area with a large, relatively painless knee effusion, inflammatory synovial fluid and a strongly positive two-tier Lyme serology has Lyme arthritis. First-line treatment is an oral antibiotic for 28 days. Doxycycline is suitable at this age, and amoxicillin or cefuroxime are alternatives. IV therapy is reserved for arthritis that persists after an oral course or for neurologic involvement.</p><p><strong>Takeaway:</strong> Treat Lyme arthritis first with 28 days of oral doxycycline (or amoxicillin or cefuroxime).</p>",
+   "whyNot": {
+    "A": "Synovectomy is reserved for arthritis that persists after antibiotics and anti-inflammatory therapy have been tried.",
+    "B": "Intra-articular steroids before antibiotics can worsen the outcome of Lyme arthritis and are not first line.",
+    "C": "IV ceftriaxone is for neurologic disease or for arthritis that fails oral therapy, not as initial treatment of uncomplicated arthritis.",
+    "E": "Methotrexate is used for postinfectious (antibiotic-refractory) Lyme arthritis, not before antibiotic treatment."
+   },
+   "objective": "Treat uncomplicated Lyme arthritis with a 28-day oral antibiotic course.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "tick-borne disease",
+    "pediatrics"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which part of a child's long bone is most often seeded in hematogenous osteomyelitis?",
+   "back": "The metaphysis, where looped capillaries empty into slow, turbulent sinusoids beside the physis.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "What is a sequestrum?",
+   "back": "A fragment of dead bone separated from living bone in osteomyelitis.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "What is an involucrum?",
+   "back": "A sleeve of new bone laid down by the lifted periosteum around infected, dead bone.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Which organism causes culture-negative septic arthritis in toddlers and belongs to the HACEK group?",
+   "back": "<em>Kingella kingae</em>.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Osteomyelitis after a nail goes through a shoe sole: organism?",
+   "back": "<em>Pseudomonas aeruginosa</em>.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Recurrent disseminated <em>Neisseria</em> infection suggests which immune defect?",
+   "back": "Deficiency of terminal complement C5–C9, or treatment with a C5 inhibitor such as eculizumab.",
+   "question": 4
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which toxin of <em>C. perfringens</em> causes myonecrosis and hemolysis?",
+   "back": "Alpha toxin, a phospholipase C (lecithinase).",
+   "question": 6
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why is clindamycin added in group A streptococcal necrotizing fasciitis?",
+   "back": "It blocks 50S protein synthesis and so stops toxin production, regardless of growth phase.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Why does vancomycin alone fail against <em>Kingella</em>?",
+   "back": "<em>Kingella</em> is a gram-negative organism and intrinsically resistant to glycopeptides. Use a β-lactam.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "First step for an acute hot, swollen knee?",
+   "back": "Arthrocentesis (cell count, Gram stain, culture, crystals) and blood cultures before antibiotics.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Do crystals in synovial fluid exclude septic arthritis?",
+   "back": "No. Infection and crystal disease can coexist, so always culture.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Synovial leukocyte count that strongly suggests a septic native joint?",
+   "back": "Above about 50,000/mm<sup>3</sup> with more than 90% neutrophils, though early or partly treated infection can be lower.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Treatment of disseminated gonococcal infection (CDC)?",
+   "back": "IV ceftriaxone 1 g every 24 hours, plus treatment for chlamydia unless excluded. Partner treatment and STI testing.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "First-line therapy for Lyme arthritis?",
+   "back": "Oral doxycycline for 28 days (amoxicillin or cefuroxime are alternatives).",
+   "question": 17
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Most accurate test for osteomyelitis?",
+   "back": "Bone biopsy with culture and histology.",
+   "question": 16
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Stable, culture-negative vertebral osteomyelitis: next step?",
+   "back": "Image-guided biopsy before antibiotics.",
+   "question": 14
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Next step for clinically evident necrotizing fasciitis after fluids and antibiotics?",
+   "back": "Emergency surgical exploration and debridement; no imaging delay.",
+   "question": 15
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Four classic predictors of septic arthritis of the hip in a child?",
+   "back": "Non-weight-bearing, fever above 38.5 °C, ESR above 40 mm/h, leukocytes above 12,000/mm<sup>3</sup> (a CRP above 2 mg/dL is often added).",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Can ultrasound tell septic arthritis from transient synovitis?",
+   "back": "No. Both cause an effusion. Aspiration decides.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Management of a confirmed pediatric septic hip?",
+   "back": "Emergency surgical drainage plus IV antibiotics.",
+   "question": 10
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Why is a septic hip an emergency?",
+   "back": "Raised intracapsular pressure threatens the femoral head blood supply, causing avascular necrosis and growth damage.",
+   "question": null
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Best imaging test for childhood osteomyelitis?",
+   "back": "MRI.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Best inflammatory marker to follow treatment of childhood bone infection?",
+   "back": "CRP, which rises and falls quickly.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Usual total antibiotic duration for uncomplicated childhood osteomyelitis?",
+   "back": "About 3–4 weeks, with an early switch to oral therapy once improving.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 3,
+   "front": "Why examine the hip in a child with knee pain?",
+   "back": "Hip pain is referred to the knee along the obturator nerve.",
+   "question": null
+  }
+ ]
+}

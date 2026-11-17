@@ -1,0 +1,910 @@
+{
+ "area": "12.01.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Biology of prenatal screening and prevention: serum markers, cfDNA, Rh immunology and vaccine transfer",
+   "html": "\n<h2>What each screening marker measures</h2>\n<p>Serum screening uses molecules that the fetus or placenta releases into the maternal blood. Each result is expressed as a multiple of the median (MoM) for that gestational week, so correct dating is essential. An error in dates is the most common reason for an \"abnormal\" value.</p>\n<table class=\"hy\">\n<thead><tr><th>Marker</th><th>Made by</th><th>Trisomy 21</th><th>Trisomy 18</th><th>Open neural tube defect</th></tr></thead>\n<tbody>\n<tr><td>Alpha-fetoprotein (AFP)</td><td>Yolk sac, then fetal liver; reaches maternal blood across the placenta and membranes</td><td>Low</td><td>Low</td><td>High</td></tr>\n<tr><td>hCG</td><td>Syncytiotrophoblast</td><td>High</td><td>Low</td><td>Normal</td></tr>\n<tr><td>Unconjugated estriol</td><td>Placenta, from fetal adrenal and liver precursors</td><td>Low</td><td>Low</td><td>Normal</td></tr>\n<tr><td>Inhibin A</td><td>Placenta</td><td>High</td><td>Normal or low</td><td>Normal</td></tr>\n<tr><td>PAPP-A (first trimester)</td><td>Placenta</td><td>Low</td><td>Low</td><td>Not used</td></tr>\n<tr><td>Nuchal translucency</td><td>Fluid behind the fetal neck on ultrasound</td><td>Increased</td><td>Increased</td><td>Not used</td></tr>\n</tbody>\n</table>\n<p>Increased nuchal translucency reflects delayed lymphatic development and cardiac dysfunction. It is associated with aneuploidy, congenital heart disease and some genetic syndromes, even when the karyotype is normal.</p>\n<div class=\"pearl\"><p><strong>Naadi memory aid, \"21 goes HI\":</strong> in trisomy 21 the two placental proteins, <strong>h</strong>CG and <strong>I</strong>nhibin, go up, while the fetal and fetoplacental markers (AFP and estriol) go down. In trisomy 18 everything is low.</p></div>\n\n<h3>The estriol pathway</h3>\n<p>The placenta lacks 17α-hydroxylase, so it cannot make estrogens from progesterone. The fetal adrenal zone makes DHEA sulfate. The fetal liver 16α-hydroxylates it, and the placenta removes the sulfate with steroid sulfatase and aromatises the product to estriol. A very low estriol with otherwise normal markers points to a break in this chain. Examples are placental steroid sulfatase deficiency (X-linked ichthyosis in a male fetus), fetal adrenal hypoplasia or anencephaly (no ACTH drive), and defects of cholesterol synthesis. Placental aromatase deficiency also lowers estriol, but it virilises the mother because androgens build up.</p>\n\n<h2>Cell-free DNA</h2>\n<p>About 10 to 20% of the cell-free DNA in maternal plasma after 10 weeks comes from apoptotic trophoblast. Sequencing counts fragments per chromosome and detects an excess from chromosome 21, 18 or 13. Because the DNA is <em>placental</em>, results can be discordant with the fetus:</p>\n<ul>\n<li><strong>Confined placental mosaicism</strong>: the trisomic cell line is in the placenta but not the fetus. This gives a false-positive cfDNA result, and CVS can also be misleading because it samples the same tissue. Amniocentesis, which samples fetal cells, settles the question.</li>\n<li><strong>Vanishing twin</strong>: DNA from a demised co-twin's placenta.</li>\n<li><strong>Maternal causes</strong>: maternal mosaicism, a maternal copy-number variant, or occult maternal cancer.</li>\n<li><strong>Low fetal fraction</strong> (\"no call\"): more common with high maternal BMI and early gestation, and associated with trisomy 13, trisomy 18 and triploidy.</li>\n</ul>\n\n<h2>Diagnostic tests and the tissue they sample</h2>\n<p>Chorionic villus sampling at 10 to 13 weeks samples placental villi (cytotrophoblast and mesenchymal core). Amniocentesis at 15 weeks or later samples amniocytes shed from fetal skin, urinary tract, gut and amnion. Amniotic fluid AFP and acetylcholinesterase rise with an open neural tube defect. Acetylcholinesterase, which comes from exposed neural tissue, makes the result more specific. Amniocentesis before 15 weeks is associated with more pregnancy loss and talipes, and CVS before 10 weeks with limb reduction defects.</p>\n\n<h2>Why aneuploidy rises with oocyte age</h2>\n<p>Primary oocytes enter meiosis I before birth and stay arrested in prophase I until ovulation, sometimes for 40 years. Cohesin holding the homologous chromosomes together deteriorates over that time. Most trisomy 21 comes from <strong>maternal meiosis I nondisjunction</strong>. About 4% of cases come from a Robertsonian translocation, which can be inherited and recur whatever the parent's age. That is why a karyotype matters after an affected pregnancy.</p>\n\n<h2>Rh(D) immunology and anti-D immune globulin</h2>\n<p>An Rh(D)-negative person who is exposed to D-positive fetal red cells (at delivery, abortion, ectopic pregnancy, procedures, trauma or bleeding) can make anti-D. The first response is IgM, which does not cross the placenta, so the first pregnancy is usually spared. Memory B cells then make IgG1 and IgG3 in later pregnancies. These cross the placenta through FcRn, coat fetal D-positive red cells and lead to splenic destruction (a type II hypersensitivity reaction). Anti-D immune globulin, given before sensitisation, binds the fetal D-positive cells and speeds their clearance before the maternal immune system mounts a primary response. It does nothing once the person is already sensitised.</p>\n\n<h2>Prevention biology</h2>\n<ul>\n<li><strong>Low-dose aspirin</strong> irreversibly acetylates platelet COX-1. Platelets have no nucleus and cannot make new enzyme, so thromboxane A2 falls for the platelet's lifespan, while endothelial prostacyclin largely recovers. This shifts the balance toward vasodilation and less platelet activation in the developing placental bed.</li>\n<li><strong>Vaccines in pregnancy</strong> protect the infant through maternal IgG. The syncytiotrophoblast actively transports IgG by the neonatal Fc receptor (FcRn), most efficiently in the third trimester, so cord IgG can exceed maternal levels. Tdap (pertussis), influenza and the RSV prefusion F vaccine use this route.</li>\n<li><strong>Infection screening</strong> targets organisms with effective interventions: <em>Treponema pallidum</em> (penicillin prevents congenital syphilis), hepatitis B (infant HBIG and vaccine, maternal tenofovir for high viral load), HIV (antiretroviral therapy), and <em>E. coli</em> asymptomatic bacteriuria (progesterone-related ureteral dilation favours ascending pyelonephritis).</li>\n</ul>\n<div class=\"trap\"><p>cfDNA is a <strong>screening</strong> test even though its detection rate is high. A \"high-risk\" result is never confirmed by repeating cfDNA or by a serum screen, but by diagnostic testing (CVS or amniocentesis). Its positive predictive value depends on prevalence, so it is lower in younger patients.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Prenatal Genetic Screening"
+    },
+    {
+     "statpearls": "Down Syndrome"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Prenatal risk assessment in practice: aneuploidy testing, first-visit labs, aspirin, anti-D and vaccines",
+   "html": "\n<h2>Offering aneuploidy screening and diagnosis</h2>\n<p>Offer every pregnant patient, at any age, both aneuploidy screening and diagnostic testing, explained through informed, nondirective counselling. Declining both is a valid choice. Use one screening strategy, not several at once, because combining them raises the false-positive rate without useful gain.</p>\n[[figure:s23f-fig120102-1]]\n<table class=\"hy\">\n<thead><tr><th>Test</th><th>Timing</th><th>Strengths</th><th>Limits</th></tr></thead>\n<tbody>\n<tr><td>Cell-free DNA</td><td>From 10 weeks</td><td>Highest detection for trisomy 21 (about 99%) with the lowest false-positive rate</td><td>Screening only. Can give no result from low fetal fraction. Does not screen for open neural tube defects.</td></tr>\n<tr><td>First-trimester combined screen (NT, PAPP-A, hCG)</td><td>About 11 to 14 weeks</td><td>Early result. NT also flags cardiac and other anomalies.</td><td>Lower detection than cfDNA. NT needs certified sonographers.</td></tr>\n<tr><td>Quadruple screen (AFP, hCG, estriol, inhibin A)</td><td>15 to 22 weeks</td><td>Option when care starts late. AFP screens for open neural tube defects.</td><td>Detects about 80% of trisomy 21. Sensitive to dating errors.</td></tr>\n<tr><td>CVS</td><td>10 to 13 weeks</td><td>Early diagnostic karyotype or microarray</td><td>Small procedure-related loss risk. Confined placental mosaicism. No AFP measurement.</td></tr>\n<tr><td>Amniocentesis</td><td>15 weeks or later</td><td>Diagnostic. Also measures AFP and acetylcholinesterase.</td><td>Small procedure-related loss risk. Results later in pregnancy.</td></tr>\n</tbody>\n</table>\n<h3>Acting on results</h3>\n<ul>\n<li><strong>High-risk cfDNA or serum screen:</strong> genetic counselling, detailed ultrasound and an offer of diagnostic testing. No irreversible decision is made on a screening result.</li>\n<li><strong>Nuchal translucency of 3.0 mm or more:</strong> offer diagnostic testing with microarray, then a detailed anatomy scan and fetal echocardiography, even if cfDNA is low risk.</li>\n<li><strong>Elevated MSAFP (above about 2.0 to 2.5 MoM):</strong> ultrasonography first, to check dating, fetal number and viability and to look for an open neural tube or abdominal wall defect. Offer amniocentesis if no explanation is found. Unexplained elevation is also associated with later placental complications such as growth restriction and stillbirth.</li>\n<li><strong>cfDNA \"no call\":</strong> counselling, ultrasound and an offer of diagnostic testing, because low fetal fraction is associated with aneuploidy. A repeat draw is an option for some patients.</li>\n</ul>\n<div class=\"trap\"><p>A normal nuchal translucency does not cancel a high-risk cfDNA result, and a low-risk cfDNA result does not cancel an abnormal ultrasound. Each finding leads to its own counselling.</p></div>\n\n<h2>First-visit laboratory screening</h2>\n<table class=\"hy\">\n<thead><tr><th>Test</th><th>Who</th><th>Action if positive</th></tr></thead>\n<tbody>\n<tr><td>Blood type, Rh(D), antibody screen</td><td>All</td><td>Rh(D)-negative and unsensitised: anti-D immune globulin at 28 weeks and after sensitising events. Positive antibody screen: identify the antibody and its titer.</td></tr>\n<tr><td>CBC</td><td>All</td><td>Iron deficiency treatment. Hemoglobinopathy evaluation if microcytosis without iron deficiency.</td></tr>\n<tr><td>HIV (opt-out)</td><td>All</td><td>Antiretroviral therapy straight away, and planning for viral load near delivery.</td></tr>\n<tr><td>Syphilis</td><td>All. Repeat at about 28 weeks and at delivery for those at risk or in high-prevalence areas (ACOG now advises this for everyone).</td><td>Benzathine penicillin G at the stage-appropriate dose. Desensitise if allergic.</td></tr>\n<tr><td>Hepatitis B surface antigen</td><td>All, every pregnancy</td><td>HBV DNA. Tenofovir from about 28 weeks if the viral load is high. Infant HBIG plus vaccine within 12 hours of birth.</td></tr>\n<tr><td>Hepatitis C antibody</td><td>All, every pregnancy</td><td>HCV RNA. Treatment after pregnancy and infant testing.</td></tr>\n<tr><td>Chlamydia and gonorrhea NAAT</td><td>Under 25, or older with risk factors. Retest in the third trimester if risk continues.</td><td>Treat. Test of cure about 4 weeks after chlamydia treatment in pregnancy.</td></tr>\n<tr><td>Urine culture</td><td>All (asymptomatic bacteriuria)</td><td>Treat even if asymptomatic, then repeat culture.</td></tr>\n<tr><td>Rubella IgG, varicella history</td><td>All</td><td>Vaccinate postpartum if nonimmune. Do not give live vaccines in pregnancy.</td></tr>\n</tbody>\n</table>\n<p>Toxoplasma, CMV, parvovirus and HSV serologies are not part of routine screening. Screen for tuberculosis by risk. Offer early diabetes screening at the first visit to people with a BMI of 25 kg/m² or more (23 or more in Asian American people) plus another risk factor, such as previous GDM, a first-degree relative with diabetes, hypertension or PCOS. Everyone else is screened at 24 to 28 weeks.</p>\n\n<h2>Preventing preeclampsia: low-dose aspirin</h2>\n<table class=\"hy\">\n<thead><tr><th>High-risk factors (one is enough)</th><th>Moderate-risk factors (two or more)</th></tr></thead>\n<tbody>\n<tr><td>Previous preeclampsia; multifetal gestation; chronic hypertension; type 1 or type 2 diabetes; kidney disease; autoimmune disease such as SLE or antiphospholipid syndrome</td><td>Nulliparity; BMI over 30 kg/m²; mother or sister with preeclampsia; age 35 or more; IVF pregnancy; Black race (reflecting racism and social risk, not biology); low income; previous low-birth-weight or small-for-gestational-age baby, previous adverse outcome, or more than 10 years since the last pregnancy</td></tr>\n</tbody>\n</table>\n<p>Give aspirin 81 mg daily, starting between 12 and 28 weeks (ideally before 16 weeks) and continuing until delivery (USPSTF and ACOG). It is a prescription-level decision even though aspirin is sold over the counter, so ask about bleeding disorders and NSAID allergy.</p>\n\n<h2>Rh(D) prophylaxis</h2>\n<ul>\n<li>Repeat the antibody screen and give 300 µg anti-D immune globulin at about 28 weeks if the patient is unsensitised. The fetus may be D-positive whenever the partner is D-positive or unknown.</li>\n<li>Give it after sensitising events: miscarriage, abortion, ectopic or molar pregnancy, CVS, amniocentesis, antepartum bleeding, abdominal trauma, external cephalic version and fetal death. Recent ACOG guidance allows it to be omitted for loss or abortion before 12 weeks. Follow local protocol.</li>\n<li>After delivery of a D-positive newborn, give it within 72 hours. Screen for excess fetomaternal hemorrhage with a rosette test. If that is positive, quantify the bleed with Kleihauer-Betke or flow cytometry. One 300 µg vial covers about 30 mL of fetal whole blood.</li>\n</ul>\n\n<h2>Vaccines in pregnancy</h2>\n<table class=\"hy\">\n<thead><tr><th>Vaccine</th><th>Timing</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Tdap</td><td>27 to 36 weeks, every pregnancy</td><td>Earlier in the window maximises antibody transfer to protect against infant pertussis.</td></tr>\n<tr><td>Inactivated influenza</td><td>Any trimester during the season</td><td>Live attenuated intranasal vaccine is not used in pregnancy.</td></tr>\n<tr><td>RSV prefusion F (RSVpreF)</td><td>32 0/7 to 36 6/7 weeks, given seasonally</td><td>Alternative: nirsevimab for the infant. Most infants do not need both.</td></tr>\n<tr><td>COVID-19</td><td>Any trimester</td><td>Follow the current schedule.</td></tr>\n<tr><td>Hepatitis B</td><td>When at risk and not immune</td><td>Safe in pregnancy.</td></tr>\n<tr><td>MMR, varicella</td><td>Not during pregnancy</td><td>Give postpartum to nonimmune patients. Breastfeeding is not a contraindication.</td></tr>\n</tbody>\n</table>\n<div class=\"pearl\"><p>Pregnant adolescents get the same screening, plus chlamydia and gonorrhea testing by age alone, and confidential HPV catch-up after delivery. People with intellectual disability need adapted, supported consent for genetic testing. Never assume they will decline or accept it.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Prenatal Genetic Screening"
+    },
+    {
+     "statpearls": "Amniocentesis"
+    },
+    {
+     "statpearls": "Chorionic Villus Sampling"
+    },
+    {
+     "label": "CDC: Vaccines during pregnancy (clinician guidance)",
+     "url": "https://www.cdc.gov/vaccines-pregnancy/hcp/vaccination-guidelines/index.html",
+     "sourceId": "cdc-guidelines"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "caption": "Figure. When each prenatal screening, diagnostic and preventive step is offered, by gestational age. Screening bars are separate from the diagnostic procedures (CVS, amniocentesis)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "Cell-free DNA screening in a younger cohort",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> Investigators enrolled 10,000 people aged 20 to 34 years with singleton pregnancies at 10 to 14 weeks' gestation in a prospective cohort. All had cell-free DNA screening for trisomy 21. Fetal status was established by diagnostic karyotype or newborn examination, with follow-up complete for 100% of participants. Trisomy 21 was present in 20 pregnancies.</p><table><thead><tr><th></th><th>Trisomy 21</th><th>No trisomy 21</th></tr></thead><tbody><tr><td>cfDNA high risk</td><td>19</td><td>10</td></tr><tr><td>cfDNA low risk</td><td>1</td><td>9,970</td></tr></tbody></table><p>The authors conclude that cfDNA performs well in younger people and that a high-risk result should lead to counselling and diagnostic testing.</p>"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman at 17 weeks' gestation by first-trimester ultrasonography has a second-trimester maternal serum screen. Which of the following marker patterns is most consistent with fetal trisomy 21?</p>",
+   "options": [
+    "AFP low, unconjugated estriol low, hCG high, inhibin A high",
+    "AFP low, unconjugated estriol low, hCG low, inhibin A normal",
+    "AFP high, unconjugated estriol normal, hCG normal, inhibin A normal",
+    "AFP high, unconjugated estriol high, hCG high, inhibin A high",
+    "AFP normal, unconjugated estriol very low, hCG normal, inhibin A normal"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In trisomy 21, the two placental proteins (hCG and inhibin A) are high, and the fetal and fetoplacental markers (AFP and unconjugated estriol) are low. Trisomy 18 lowers AFP, estriol and hCG, with inhibin A normal or low. An open neural tube defect raises AFP alone.</p><p><strong>Takeaway:</strong> Quad screen in trisomy 21: AFP and estriol down, hCG and inhibin A up.</p>",
+   "whyNot": {
+    "B": "Low AFP, estriol and hCG with normal inhibin is the trisomy 18 pattern.",
+    "C": "An isolated high AFP suggests an open neural tube or abdominal wall defect, a dating error or multiple gestation.",
+    "D": "A rise in all four markers is not a recognised aneuploidy pattern and would suggest a dating or laboratory error.",
+    "E": "An isolated very low estriol suggests a problem in the estriol pathway, such as placental sulfatase deficiency, not trisomy 21."
+   },
+   "objective": "Recognize the quadruple-screen pattern of trisomy 21.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "aneuploidy screening"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman at 16 weeks' gestation has a maternal serum AFP of 3.1 MoM. Dating was confirmed by first-trimester ultrasonography, and there is a single live fetus. Detailed ultrasonography gives inconclusive views of the fetal spine. Amniocentesis is performed, and amniotic fluid AFP is elevated. Which additional amniotic fluid finding would most specifically support an open neural tube defect?</p>",
+   "options": [
+    "Presence of acetylcholinesterase",
+    "Elevated lecithin-sphingomyelin ratio",
+    "Elevated bilirubin by optical density",
+    "Elevated glucose concentration",
+    "Presence of fetal hemoglobin"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Exposed neural tissue releases acetylcholinesterase into the amniotic fluid. Its presence with raised amniotic fluid AFP makes an open neural tube defect much more likely than other causes of high AFP. Elevated AFP alone can also come from abdominal wall defects or from fetal blood contaminating the sample.</p><p><strong>Takeaway:</strong> Elevated amniotic fluid AFP plus acetylcholinesterase points to an open neural tube defect.</p>",
+   "whyNot": {
+    "B": "The lecithin-sphingomyelin ratio measures fetal lung maturity, not neural tube integrity.",
+    "C": "Amniotic fluid bilirubin (ΔOD450) was used to assess hemolysis in alloimmunisation.",
+    "D": "Amniotic fluid glucose is used in evaluating intra-amniotic infection, not neural tube defects.",
+    "E": "Fetal hemoglobin in the sample suggests blood contamination, which itself can falsely raise AFP."
+   },
+   "objective": "Identify acetylcholinesterase as the specific amniotic fluid marker of an open neural tube defect.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "neural tube",
+    "prenatal diagnosis"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 35-year-old woman at 12 weeks' gestation has a cell-free DNA screen reported as high risk for trisomy 13. Ultrasonography shows normal fetal anatomy for gestational age and a nuchal translucency of 1.4 mm. Amniocentesis at 16 weeks shows a normal 46,XY karyotype in cultured amniocytes, and fetal anatomy remains normal at 20 weeks. Which of the following best explains the discordant results?</p>",
+   "options": [
+    "A trisomic cell line confined to the placenta",
+    "Maternal uniparental disomy for chromosome 13",
+    "Contamination of the amniotic fluid sample with maternal cells",
+    "Fetal mosaicism confined to the brain",
+    "Low fetal fraction from early sampling"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Cell-free fetal DNA in maternal plasma comes from apoptotic trophoblast, so it reflects the placenta's genome. In confined placental mosaicism, a trisomic cell line is present in the placenta but not in the fetus, which produces a false-positive cfDNA result. Amniocentesis samples fetal cells, and a normal karyotype with a normal ultrasound settles the question.</p><p><strong>Takeaway:</strong> cfDNA is placental DNA. Confined placental mosaicism is a classic cause of false-positive results, and amniocentesis resolves it.</p>",
+   "whyNot": {
+    "B": "Uniparental disomy does not change chromosome dosage, so it would not give a trisomy signal on cfDNA.",
+    "C": "Maternal cell contamination would give an XX result, but this karyotype is 46,XY.",
+    "D": "Cell-free DNA does not come from the fetal brain, so mosaicism there would not explain a positive screen.",
+    "E": "Low fetal fraction causes a failed (no-call) result, not a high-risk call for a specific trisomy."
+   },
+   "objective": "Explain false-positive cfDNA results from confined placental mosaicism.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "aneuploidy screening"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 28-year-old woman at 16 weeks' gestation has a quadruple screen with unconjugated estriol of 0.08 MoM. AFP, hCG and inhibin A are normal, and fetal anatomy on ultrasonography is normal. She has no hirsutism, acne or voice change during pregnancy. At 3 months of age, her son develops dark, adherent, polygonal scales on his trunk and the extensor surfaces of his limbs. Deficiency of which enzyme best explains the prenatal and postnatal findings?</p>",
+   "options": [
+    "Steroid sulfatase",
+    "Aromatase",
+    "21-hydroxylase",
+    "5α-reductase",
+    "11β-hydroxylase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Placental estriol comes from fetal adrenal DHEA sulfate, which is 16α-hydroxylated in the fetal liver. The placenta must then remove the sulfate (steroid sulfatase) before aromatising the product. X-linked deficiency of steroid sulfatase (STS) in the fetus and placenta blocks this step, so estriol is very low while the other markers are normal. After birth, failure to break down cholesterol sulfate in the stratum corneum causes X-linked ichthyosis, with dark adherent scales. Labor may also be delayed.</p><p><strong>Takeaway:</strong> An isolated very low estriol in a male fetus suggests placental steroid sulfatase deficiency (X-linked ichthyosis).</p>",
+   "whyNot": {
+    "B": "Placental aromatase deficiency also lowers estriol, but androgens accumulate and virilise the mother, which did not happen here.",
+    "C": "Fetal 21-hydroxylase deficiency raises adrenal androgen precursors and does not lower estriol. It does not cause ichthyosis.",
+    "D": "5α-reductase deficiency affects external genital development in XY infants, not estriol or the skin.",
+    "E": "11β-hydroxylase deficiency raises androgens and deoxycorticosterone and does not lower estriol or cause scaling."
+   },
+   "objective": "Link isolated low estriol to placental steroid sulfatase deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "aneuploidy screening",
+    "steroid biosynthesis"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old primigravida with blood type A, Rh(D)-negative, has a negative antibody screen at 28 weeks' gestation and receives intramuscular anti-D immune globulin. Which of the following best describes how this treatment prevents alloimmunisation?</p>",
+   "options": [
+    "It binds fetal D-positive red cells in the maternal circulation and speeds their clearance before a primary maternal response",
+    "It induces maternal T-regulatory cells that delete D-specific B-cell clones",
+    "It blocks FcRn on the syncytiotrophoblast so maternal IgG cannot reach the fetus",
+    "It neutralises maternal anti-D IgM before class switching",
+    "It masks D antigen on fetal red cells inside the fetal circulation"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Passive anti-D IgG coats any D-positive fetal red cells that enter the maternal circulation. Antibody-coated cells are removed by the reticuloendothelial system before maternal naïve B cells meet the antigen, so a primary response and memory never form. Prophylaxis works only before sensitisation and has no effect once maternal anti-D exists.</p><p><strong>Takeaway:</strong> Anti-D immune globulin prevents primary sensitisation by clearing fetal D-positive cells. It cannot reverse established alloimmunisation.</p>",
+   "whyNot": {
+    "B": "Anti-D immune globulin does not work by inducing regulatory T cells or deleting clones.",
+    "C": "Anti-D immune globulin is IgG itself and does not block placental FcRn.",
+    "D": "At 28 weeks with a negative screen there is no maternal anti-D to neutralise. Prophylaxis prevents formation rather than neutralising.",
+    "E": "The small dose that reaches the fetus is not the mechanism. Clearance happens in the maternal circulation."
+   },
+   "objective": "Explain the mechanism of anti-D immune globulin.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "alloimmunisation"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 37-year-old woman with chronic hypertension is started on aspirin 81 mg daily at 13 weeks' gestation to reduce her risk of preeclampsia. Which of the following best explains why a low dose shifts vascular balance toward vasodilation?</p>",
+   "options": [
+    "Anucleate platelets cannot make new COX-1, so thromboxane A2 falls while endothelial prostacyclin recovers",
+    "Aspirin selectively inhibits COX-2 in the endothelium and spares platelet COX-1",
+    "Aspirin reversibly inhibits thromboxane synthase in the placenta",
+    "Aspirin activates endothelial nitric oxide synthase directly",
+    "Aspirin blocks the platelet P2Y12 receptor and reduces ADP-mediated aggregation"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Aspirin irreversibly acetylates a serine in COX-1. Platelets have no nucleus and cannot replace the enzyme, so thromboxane A2 production stays suppressed for the platelet's lifespan of about 7 to 10 days. Endothelial cells resynthesise cyclooxygenase, so prostacyclin recovers. The resulting lower thromboxane-to-prostacyclin ratio favours vasodilation and less platelet activation in the placental bed.</p><p><strong>Takeaway:</strong> Low-dose aspirin lowers platelet thromboxane A2 more than endothelial prostacyclin, because platelets cannot make new COX-1.</p>",
+   "whyNot": {
+    "B": "Aspirin is not COX-2 selective, and low doses act mainly on platelet COX-1.",
+    "C": "Aspirin acts on cyclooxygenase irreversibly, not reversibly on thromboxane synthase.",
+    "D": "Aspirin does not directly activate nitric oxide synthase.",
+    "E": "P2Y12 blockade is the mechanism of clopidogrel and related drugs, not aspirin."
+   },
+   "objective": "Explain the antiplatelet mechanism of low-dose aspirin used for preeclampsia prevention.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "preeclampsia prevention",
+    "antiplatelet drugs"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman at 28 weeks' gestation receives Tdap vaccine. Two months after birth, her infant has high titers of anti-pertussis toxin IgG, though the infant has not been vaccinated. Which of the following best explains the infant's antibodies?</p>",
+   "options": [
+    "Active transport of maternal IgG across the syncytiotrophoblast by the neonatal Fc receptor",
+    "Passive diffusion of maternal IgM across the placenta",
+    "Fetal B-cell responses to vaccine antigen that crossed the placenta",
+    "Transfer of maternal secretory IgA through breast milk into the infant's blood",
+    "Transfer of maternal plasma cells across the placenta"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The neonatal Fc receptor (FcRn) on syncytiotrophoblast binds IgG in endosomes and transports it to the fetal side. Transfer increases in the third trimester, which is why Tdap is given at 27 to 36 weeks. These antibodies protect the infant against pertussis until their own vaccine series starts at 2 months.</p><p><strong>Takeaway:</strong> Maternal vaccination protects newborns through FcRn-mediated placental transfer of IgG.</p>",
+   "whyNot": {
+    "B": "IgM is a large pentamer and does not cross the placenta in meaningful amounts.",
+    "C": "Vaccine antigens do not cross to the fetus to cause a fetal B-cell response of this size.",
+    "D": "Secretory IgA in milk protects mucosal surfaces and is not absorbed into the infant's circulation.",
+    "E": "Maternal plasma cells do not cross the placenta and take up residence in the fetus."
+   },
+   "objective": "Explain how maternal IgG from vaccination reaches the fetus.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vaccination",
+    "immunology"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 42-year-old woman has cell-free DNA screening at 11 weeks that is high risk for trisomy 21. CVS confirms 47,XX,+21. Parental chromosomes are normal. Which of the following is the most likely origin of the extra chromosome?</p>",
+   "options": [
+    "Nondisjunction in maternal meiosis I",
+    "Nondisjunction in paternal meiosis II",
+    "Robertsonian translocation inherited from the mother",
+    "Mitotic nondisjunction after fertilisation",
+    "Uniparental disomy of chromosome 21"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>About 95% of trisomy 21 is free trisomy, and most cases come from maternal nondisjunction in meiosis I. The age effect reflects decades of arrest in prophase I with deteriorating cohesion between homologues. Normal parental karyotypes exclude an inherited translocation.</p><p><strong>Takeaway:</strong> Most trisomy 21 arises from maternal meiosis I nondisjunction, which explains the rise with maternal age.</p>",
+   "whyNot": {
+    "B": "Paternal errors account for a small minority of cases and do not explain the maternal age effect.",
+    "C": "Robertsonian translocation explains a small share of cases, and the parental karyotypes here are normal.",
+    "D": "Mitotic nondisjunction after fertilisation produces mosaicism, not a full trisomy in every cell examined.",
+    "E": "Uniparental disomy changes the parental origin of two copies but does not add a third chromosome."
+   },
+   "objective": "Identify maternal meiosis I nondisjunction as the usual origin of trisomy 21.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "aneuploidy"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 23-year-old woman, gravida 1, para 0, at 10 weeks' gestation asks about testing for Down syndrome. She has no family history of genetic disease and wants the most accurate <em>screening</em> option rather than an invasive test. Which of the following has the highest detection rate for trisomy 21 with the lowest false-positive rate?</p>",
+   "options": [
+    "Cell-free DNA screening",
+    "First-trimester combined screening",
+    "Quadruple screening at 16 weeks",
+    "Nuchal translucency measurement alone",
+    "Integrated first- and second-trimester serum screening"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Cell-free DNA detects about 99% of trisomy 21 with a false-positive rate well below 1%, better than any serum or ultrasound strategy. It is offered to all pregnant patients regardless of age. A high-risk result still needs diagnostic confirmation.</p><p><strong>Takeaway:</strong> cfDNA is the most sensitive and specific screening test for trisomy 21, but it remains a screening test.</p>",
+   "whyNot": {
+    "B": "First-trimester combined screening detects about 80 to 85% of cases with a higher false-positive rate.",
+    "C": "The quad screen detects about 80% of cases and is mainly used when care begins after the first trimester.",
+    "D": "Nuchal translucency alone has the lowest detection rate of these options.",
+    "E": "Integrated screening improves on the serum screens alone but still performs worse than cfDNA."
+   },
+   "objective": "Choose cfDNA as the most accurate aneuploidy screening test.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "aneuploidy screening"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman, gravida 2, para 1, has a maternal serum AFP of 2.8 MoM at what she believes is 17 weeks' gestation by her last menstrual period. She first sought care at 15 weeks and has not had ultrasonography. She has no symptoms. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Ultrasonography of the fetus",
+    "Amniocentesis for AFP and acetylcholinesterase",
+    "Repeat maternal serum AFP in 2 weeks",
+    "Fetal MRI of the spine",
+    "Cell-free DNA screening"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>An elevated MSAFP is first evaluated with ultrasonography. It confirms gestational age (underestimated dates are the most common cause), detects twins or fetal demise, and looks directly for open neural tube and abdominal wall defects. Amniocentesis is considered if ultrasound does not explain the result.</p><p><strong>Takeaway:</strong> Elevated MSAFP: ultrasonography first, to check dating, fetal number and viability, and for structural defects.</p>",
+   "whyNot": {
+    "B": "Amniocentesis is invasive and is reserved for an elevation that ultrasound does not explain.",
+    "C": "Repeating the serum test delays assessment and does not address the common explanations.",
+    "D": "Fetal MRI is a problem-solving tool after ultrasound, not the first step.",
+    "E": "cfDNA screens for aneuploidy and does not evaluate neural tube defects, the main concern with high AFP."
+   },
+   "objective": "Order ultrasonography as the first step after an elevated maternal serum AFP.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic",
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "prenatal screening"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A woman comes for her first prenatal visit at 11 weeks' gestation. Her history is shown.</p><table><thead><tr><th>Feature</th><th>Finding</th></tr></thead><tbody><tr><td>Age</td><td>36 years</td></tr><tr><td>Obstetric history</td><td>Gravida 1, para 0</td></tr><tr><td>BMI</td><td>27 kg/m²</td></tr><tr><td>Blood pressure</td><td>118/74 mm Hg</td></tr><tr><td>Medical history</td><td>None; no kidney or autoimmune disease</td></tr><tr><td>Family history</td><td>No preeclampsia in mother or sisters</td></tr><tr><td>Medications</td><td>Prenatal vitamin</td></tr></tbody></table><p>She has no history of bleeding disorders or aspirin allergy. Which of the following is the most appropriate recommendation regarding preeclampsia prevention?</p>",
+   "options": [
+    "Start aspirin 81 mg daily at 12 weeks and continue until delivery",
+    "Start aspirin 81 mg daily only if blood pressure rises above 140/90 mm Hg",
+    "Start aspirin 325 mg daily at 30 weeks",
+    "Start calcium carbonate and avoid aspirin because she has no high-risk factor",
+    "Start aspirin 81 mg daily at 12 weeks and stop at 20 weeks"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has two moderate-risk factors: nulliparity and age 35 or more. Her BMI of 27 does not count, because the obesity factor is a BMI over 30. USPSTF and ACOG recommend low-dose aspirin (81 mg daily) for one high-risk factor or for more than one moderate-risk factor. Start it between 12 and 28 weeks, ideally before 16 weeks, and continue it until delivery.</p><p><strong>Takeaway:</strong> Two or more moderate-risk factors (such as nulliparity plus age 35 or more) are an indication for aspirin 81 mg daily from 12 weeks until delivery.</p>",
+   "whyNot": {
+    "B": "Aspirin is preventive. Waiting for hypertension misses the period when it acts on placentation.",
+    "C": "Starting after 28 weeks gives no proven benefit, and higher doses add bleeding risk without added benefit.",
+    "D": "More than one moderate-risk factor justifies aspirin without any high-risk factor.",
+    "E": "Aspirin is continued until delivery, not stopped at 20 weeks."
+   },
+   "objective": "Apply USPSTF/ACOG criteria for low-dose aspirin to prevent preeclampsia.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance",
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [
+    "uspstf"
+   ],
+   "figures": [],
+   "tags": [
+    "preeclampsia prevention"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman with blood type O, Rh(D)-negative, received anti-D immune globulin at 28 weeks. She had a vaginal delivery at 39 weeks 4 hours ago, complicated by a manual placental extraction. Her newborn is O, Rh(D)-positive. A maternal rosette screening test for fetomaternal hemorrhage is positive. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Quantify fetal red cells in the maternal blood with a Kleihauer-Betke test or flow cytometry",
+    "Give one 300-µg dose of anti-D immune globulin and no further testing",
+    "No anti-D immune globulin is needed because she received a dose at 28 weeks",
+    "Perform a direct antiglobulin test on the mother to decide whether she needs anti-D",
+    "Give anti-D immune globulin in 2 weeks, after the fetal cells have cleared"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The rosette test is qualitative. A positive result means the fetomaternal hemorrhage may exceed the 30 mL of fetal whole blood that one 300-µg dose covers. A Kleihauer-Betke test or flow cytometry measures the volume so the number of vials can be calculated. Give anti-D within 72 hours of delivery. The 28-week dose does not cover a hemorrhage at delivery.</p><p><strong>Takeaway:</strong> A positive rosette screen leads to quantification by Kleihauer-Betke or flow cytometry to dose anti-D immune globulin.</p>",
+   "whyNot": {
+    "B": "One dose may be too little when the rosette screen shows a large fetomaternal hemorrhage.",
+    "C": "The antepartum dose does not protect against the fetal cells that entered her circulation at delivery.",
+    "D": "A maternal direct antiglobulin test does not measure fetal cells in her blood.",
+    "E": "Anti-D works best within 72 hours. Waiting allows sensitisation."
+   },
+   "objective": "Quantify a large fetomaternal hemorrhage to dose anti-D immune globulin after delivery.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic",
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "alloimmunisation",
+    "postpartum care"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A healthy 26-year-old woman at 9 weeks' gestation has her first prenatal visit. She has one male partner and no history of injection drug use, transfusion or incarceration. Blood type, antibody screen, CBC, rubella IgG, HIV, syphilis and hepatitis B surface antigen tests have been ordered. Which additional blood test is recommended for all pregnant patients at this visit?</p>",
+   "options": [
+    "Hepatitis C antibody",
+    "Cytomegalovirus IgG",
+    "Toxoplasma IgG",
+    "Herpes simplex virus type 2 IgG",
+    "Parvovirus B19 IgG"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>CDC, ACOG and SMFM recommend screening for hepatitis C in every pregnancy, whatever the risk factors. Positive antibody is followed by HCV RNA, with treatment after pregnancy and testing of the infant. CMV, toxoplasma, HSV and parvovirus serologies are not recommended as universal screening.</p><p><strong>Takeaway:</strong> Screen everyone for hepatitis C in every pregnancy.</p>",
+   "whyNot": {
+    "B": "Routine CMV serology is not recommended, because results are hard to interpret and no proven intervention follows.",
+    "C": "Routine toxoplasma screening is not recommended in the United States. Counsel about avoiding cat litter and undercooked meat instead.",
+    "D": "Routine HSV serology is not recommended. Ask about genital herpes history instead.",
+    "E": "Parvovirus testing is done after exposure or with fetal hydrops, not as screening."
+   },
+   "objective": "Order universal hepatitis C screening in pregnancy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "infection screening"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 22-year-old woman at 12 weeks' gestation has a routine urine culture at her first prenatal visit. It grows more than 100,000 CFU/mL of <em>Escherichia coli</em> susceptible to ampicillin, cephalexin, nitrofurantoin and ciprofloxacin. She has no dysuria, fever or flank pain. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Oral cephalexin, then a repeat urine culture after treatment",
+    "No treatment, with a repeat culture at 28 weeks",
+    "Oral ciprofloxacin, then a repeat urine culture after treatment",
+    "Hospital admission for intravenous ceftriaxone",
+    "Oral doxycycline, then a repeat urine culture after treatment"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Asymptomatic bacteriuria in pregnancy is treated, because untreated bacteriuria leads to pyelonephritis much more often in pregnancy and is associated with preterm birth. Cephalexin is safe throughout pregnancy. Nitrofurantoin is another option (avoided near term), and so is amoxicillin if the organism is susceptible. Repeat the culture after treatment, and screen periodically if bacteriuria recurs.</p><p><strong>Takeaway:</strong> Screen all pregnant patients for asymptomatic bacteriuria and treat it with a pregnancy-safe antibiotic such as cephalexin, followed by a test of cure.</p>",
+   "whyNot": {
+    "B": "Leaving bacteriuria untreated in pregnancy raises the risk of pyelonephritis.",
+    "C": "Fluoroquinolones are generally avoided in pregnancy when safer alternatives work.",
+    "D": "An afebrile, asymptomatic patient does not need admission or parenteral therapy.",
+    "E": "Tetracyclines are avoided in pregnancy because they stain fetal teeth and affect bone."
+   },
+   "objective": "Treat asymptomatic bacteriuria in pregnancy with a pregnancy-safe antibiotic.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [
+    "uspstf"
+   ],
+   "figures": [],
+   "tags": [
+    "infection screening",
+    "urinary tract"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman at 29 weeks' gestation is seen in mid-October. She has had no vaccines this pregnancy. She received the HPV series as a teenager and is rubella-immune. Which vaccines are most appropriate today?</p>",
+   "options": [
+    "Tdap and inactivated influenza vaccine",
+    "Tdap and live attenuated intranasal influenza vaccine",
+    "MMR and inactivated influenza vaccine",
+    "Inactivated influenza vaccine only; Tdap after delivery",
+    "Tdap only; influenza vaccine after delivery"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Tdap is given in every pregnancy at 27 to 36 weeks. At 29 weeks she is in the window, which maximises pertussis antibody transfer to the infant. Inactivated influenza vaccine is recommended in any trimester during the season. Live vaccines (intranasal influenza, MMR) are not given in pregnancy. She will be offered RSV vaccine at 32 to 36 weeks, or her infant can receive nirsevimab.</p><p><strong>Takeaway:</strong> In pregnancy: Tdap at 27 to 36 weeks every time, inactivated influenza in season, and no live vaccines.</p>",
+   "whyNot": {
+    "B": "Live attenuated intranasal influenza vaccine is not used in pregnancy.",
+    "C": "MMR is a live vaccine and is not given during pregnancy, and she is already immune.",
+    "D": "Postponing Tdap until after delivery loses the antibody transfer that protects the newborn.",
+    "E": "Influenza in pregnancy carries higher maternal risk. Vaccinate in season, in any trimester."
+   },
+   "objective": "Select vaccines for a pregnant patient in the third trimester during influenza season.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "vaccination"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old woman at 34 weeks' gestation is seen in November. She has received Tdap and influenza vaccines this pregnancy, and no RSV vaccine. She asks how to protect her newborn from RSV. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    "RSV prefusion F vaccine for her today",
+    "Nirsevimab injection for her today",
+    "RSV prefusion F vaccine for her after delivery",
+    "No RSV prevention, because she is beyond 32 weeks",
+    "Live attenuated RSV vaccine for her today"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>CDC recommends one dose of the RSV prefusion F vaccine (RSVpreF) at 32 0/7 to 36 6/7 weeks during the RSV season. Maternal antibodies cross the placenta and protect the infant in the first months. The alternative is nirsevimab given to the <em>infant</em>. Most infants need only one of the two.</p><p><strong>Takeaway:</strong> To prevent infant RSV, give maternal RSVpreF at 32 to 36 weeks in season, or give the infant nirsevimab.</p>",
+   "whyNot": {
+    "B": "Nirsevimab is a monoclonal antibody given to the infant, not to the pregnant patient.",
+    "C": "Vaccinating after delivery does not deliver antibodies to the infant across the placenta.",
+    "D": "At 34 weeks she is inside the recommended window of 32 to 36 6/7 weeks.",
+    "E": "No live RSV vaccine is used in pregnancy. The approved maternal vaccine is a protein subunit vaccine."
+   },
+   "objective": "Recommend maternal RSVpreF vaccination at 32 to 36 weeks during RSV season.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "vaccination"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>Based on the study summary, what is the positive predictive value of a high-risk cfDNA result for trisomy 21 in this cohort?</p>",
+   "options": [
+    "About 66%",
+    "About 95%",
+    "About 99.9%",
+    "About 34%",
+    "About 19%"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A high-risk result was given to 19 true positives and 10 false positives, 29 results in all. PPV = 19/29, about 66%. Sensitivity (19/20 = 95%) and specificity (9,970/9,980, about 99.9%) are much higher, but in a group with low prevalence (2 per 1,000), even a tiny false-positive rate gives a sizeable share of false positives.</p><p><strong>Takeaway:</strong> PPV = true positives / all positives. In a population with low prevalence it can be modest even when specificity is excellent.</p>",
+   "whyNot": {
+    "B": "95% is the sensitivity (19/20), not the PPV.",
+    "C": "99.9% is the specificity, not the probability that a positive result is correct.",
+    "D": "34% is the proportion of positive results that were false, not the PPV.",
+    "E": "19 is the number of true-positive results, not a percentage."
+   },
+   "objective": "Calculate positive predictive value from a fictional screening study.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "biostatistics",
+    "aneuploidy screening"
+   ]
+  },
+  {
+   "n": 18,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The same cfDNA assay is applied to a cohort aged 40 to 44, in which the prevalence of trisomy 21 is about 1 in 100. Assuming the assay's sensitivity and specificity are unchanged, which of the following is most likely?</p>",
+   "options": [
+    "The positive predictive value will rise",
+    "The positive predictive value will fall",
+    "The sensitivity will rise",
+    "The specificity will fall",
+    "The negative predictive value will rise"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Predictive values depend on prevalence, while sensitivity and specificity are properties of the test. At a higher prevalence, true positives make up a larger share of all positives, so PPV rises. NPV falls slightly, because more of the negative results are false negatives. That is why the same high-risk result means more for an older patient, and why every high-risk result is still confirmed by diagnostic testing.</p><p><strong>Takeaway:</strong> Higher prevalence raises PPV and lowers NPV. Sensitivity and specificity do not change.</p>",
+   "whyNot": {
+    "B": "PPV moves in the same direction as prevalence, so it rises.",
+    "C": "Sensitivity is assumed unchanged and does not depend on prevalence.",
+    "D": "Specificity is assumed unchanged and does not depend on prevalence.",
+    "E": "NPV falls slightly as prevalence rises, because false negatives become a larger share of negative results."
+   },
+   "objective": "Predict the effect of disease prevalence on predictive values.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "biostatistics",
+    "aneuploidy screening"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Quad screen pattern in trisomy 21?",
+   "back": "AFP low, estriol low, hCG high, inhibin A high.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Quad screen pattern in trisomy 18?",
+   "back": "AFP, estriol and hCG all low; inhibin A normal or low.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Most common cause of an abnormal MSAFP?",
+   "back": "Wrong gestational dating.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "What does cell-free 'fetal' DNA actually come from?",
+   "back": "Apoptotic placental trophoblast.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Amniotic fluid marker that makes an open neural tube defect more specific?",
+   "back": "Acetylcholinesterase.",
+   "question": 2
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Enzyme deficiency that gives isolated very low estriol in a male fetus?",
+   "back": "Placental steroid sulfatase (X-linked ichthyosis).",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Why does low-dose aspirin favour prostacyclin over thromboxane?",
+   "back": "Anucleate platelets cannot replace irreversibly acetylated COX-1.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Receptor that moves maternal IgG to the fetus?",
+   "back": "Neonatal Fc receptor (FcRn) on syncytiotrophoblast.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Most common origin of trisomy 21?",
+   "back": "Maternal meiosis I nondisjunction.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Earliest gestational age for cfDNA screening?",
+   "back": "About 10 weeks.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Timing of CVS vs amniocentesis?",
+   "back": "CVS at 10 to 13 weeks; amniocentesis at 15 weeks or later.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "First step after an elevated MSAFP?",
+   "back": "Ultrasonography (dating, number, viability, structural defects).",
+   "question": 10
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Aspirin for preeclampsia prevention: dose and timing?",
+   "back": "81 mg daily, started at 12 to 28 weeks (ideally before 16), until delivery.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Which risk-factor count triggers aspirin?",
+   "back": "One high-risk factor, or more than one moderate-risk factor.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "What volume of fetal whole blood does 300 µg of anti-D cover?",
+   "back": "About 30 mL.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Infection screen recommended in every pregnancy regardless of risk, often forgotten?",
+   "back": "Hepatitis C antibody.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Tdap timing in pregnancy?",
+   "back": "27 to 36 weeks, every pregnancy.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "RSV prevention options for a pregnancy reaching the season?",
+   "back": "Maternal RSVpreF at 32 to 36 6/7 weeks, or infant nirsevimab.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 2,
+   "front": "Does a high-risk cfDNA result justify a decision without diagnostic testing?",
+   "back": "No. Confirm by CVS or amniocentesis.",
+   "question": null
+  }
+ ]
+}

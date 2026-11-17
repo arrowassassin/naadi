@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-label="Timeline from 8 to 40 weeks showing when cell-free DNA, first-trimester screening, chorionic villus sampling, quad screen, amniocentesis, anatomy ultrasound, low-dose aspirin start, glucose screening and Tdap are done">
+<title>Timeline from 8 to 40 weeks showing when cell-free DNA, first-trimester screening, chorionic villus sampling, quad screen, amniocentesis, anatomy ultrasound, low-dose aspirin start, glucose screening and Tdap are done</title>
+<rect x="0" y="0" width="760" height="420" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="30" font-size="16" text-anchor="middle" font-weight="bold">Prenatal screening, diagnosis and prevention by gestational age (weeks from LMP)</text>
+<line x1="215" y1="360" x2="730" y2="360" stroke="#0f172a" stroke-width="2"/>
+<line x1="215" y1="355" x2="215" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="215" y="384" font-size="13" text-anchor="middle">8</text>
+<line x1="279" y1="355" x2="279" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="279" y="384" font-size="13" text-anchor="middle">12</text>
+<line x1="344" y1="355" x2="344" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="344" y="384" font-size="13" text-anchor="middle">16</text>
+<line x1="408" y1="355" x2="408" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="408" y="384" font-size="13" text-anchor="middle">20</text>
+<line x1="472" y1="355" x2="472" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="472" y="384" font-size="13" text-anchor="middle">24</text>
+<line x1="537" y1="355" x2="537" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="537" y="384" font-size="13" text-anchor="middle">28</text>
+<line x1="601" y1="355" x2="601" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="601" y="384" font-size="13" text-anchor="middle">32</text>
+<line x1="666" y1="355" x2="666" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="666" y="384" font-size="13" text-anchor="middle">36</text>
+<line x1="730" y1="355" x2="730" y2="366" stroke="#0f172a" stroke-width="2"/>
+<text x="730" y="384" font-size="13" text-anchor="middle">40</text>
+<text x="470" y="408" font-size="13" text-anchor="middle">Gestational age (weeks)</text>
+<text x="207" y="79" font-size="13" text-anchor="end">Cell-free DNA</text>
+<rect x="247" y="64" width="483" height="22" fill="#c7d2fe" stroke="#0f172a" stroke-width="1"/>
+<text x="253" y="80" font-size="12" text-anchor="start">from 10 wk onward (screen)</text>
+<text x="207" y="115" font-size="13" text-anchor="end">First-trimester screen</text>
+<rect x="263" y="100" width="48" height="22" fill="#bbf7d0" stroke="#0f172a" stroke-width="1"/>
+<text x="269" y="116" font-size="12" text-anchor="start">NT + PAPP-A + hCG</text>
+<text x="207" y="151" font-size="13" text-anchor="end">CVS (diagnostic)</text>
+<rect x="247" y="136" width="64" height="22" fill="#fde68a" stroke="#0f172a" stroke-width="1"/>
+<text x="253" y="152" font-size="12" text-anchor="start">10 to 13 wk</text>
+<text x="207" y="187" font-size="13" text-anchor="end">Quad screen / MSAFP</text>
+<rect x="328" y="172" width="113" height="22" fill="#bbf7d0" stroke="#0f172a" stroke-width="1"/>
+<text x="334" y="188" font-size="12" text-anchor="start">15 to 22 wk</text>
+<text x="207" y="223" font-size="13" text-anchor="end">Amniocentesis (diagnostic)</text>
+<rect x="328" y="208" width="402" height="22" fill="#fde68a" stroke="#0f172a" stroke-width="1"/>
+<text x="334" y="224" font-size="12" text-anchor="start">15 wk or later</text>
+<text x="207" y="259" font-size="13" text-anchor="end">Anatomy ultrasound</text>
+<rect x="376" y="244" width="64" height="22" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="382" y="260" font-size="12" text-anchor="start">18 to 22 wk</text>
+<text x="207" y="295" font-size="13" text-anchor="end">Low-dose aspirin start</text>
+<rect x="279" y="280" width="258" height="22" fill="#fecaca" stroke="#0f172a" stroke-width="1"/>
+<text x="285" y="296" font-size="12" text-anchor="start">12 to 28 wk, ideally before 16</text>
+<text x="207" y="331" font-size="13" text-anchor="end">GDM screen / Tdap</text>
+<rect x="472" y="316" width="193" height="22" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="478" y="332" font-size="12" text-anchor="start">GDM 24 to 28; Tdap 27 to 36</text>
+<text x="215" y="352" font-size="12" text-anchor="start">Screening tests are labelled screen; CVS and amniocentesis give a diagnosis.</text>
+</g>
+</svg>

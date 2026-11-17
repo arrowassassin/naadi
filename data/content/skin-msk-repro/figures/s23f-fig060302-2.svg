@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 580" width="760" height="580" role="img" aria-label="Six labelled panels of nail signs: clubbing in side view with the nail-fold angle above 180 degrees compared with a normal angle near 160 degrees; koilonychia as a spoon-shaped plate; a Beau line as a transverse groove; Terry nails with a mostly white bed and a thin distal band; half-and-half nails with a white proximal half and a red-brown distal half; and splinter haemorrhages as thin longitudinal dark lines. Each panel names the main associated conditions.">
+<title>Six labelled panels of nail signs: clubbing in side view with the nail-fold angle above 180 degrees compared with a normal angle near 160 degrees; koilonychia as a spoon-shaped plate; a Beau line as a transverse groove; Terry nails with a mostly white bed and a thin distal band; half-and-half nails with a white proximal half and a red-brown distal half; and splinter haemorrhages as thin longitudinal dark lines. Each panel names the main associated conditions.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="580" fill="#ffffff"/>
+<text x="380" y="26" font-family="sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f172a">Nail signs of systemic disease (top views unless stated)</text>
+<rect x="20" y="50" width="230" height="245" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="135" y="72" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Clubbing (side view)</text>
+<path d="M40 180 L100 178 Q120 176 126 160" fill="none" stroke="#0f172a" stroke-width="2"/>
+<path d="M80 168 L120 154" fill="none" stroke="#64748b" stroke-width="3"/>
+<text x="50" y="200" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">normal: ~160°</text>
+<path d="M145 180 L190 176 Q235 170 232 130" fill="none" stroke="#0f172a" stroke-width="2"/>
+<path d="M180 154 Q210 136 230 132" fill="none" stroke="#64748b" stroke-width="3"/>
+<text x="150" y="200" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">clubbed: &gt;180°</text>
+<text x="135" y="114" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">grey line = nail plate</text>
+<text x="30" y="236" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Angle at the nail fold above 180 degrees;</text>
+<text x="30" y="252" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">lung cancer, bronchiectasis, CF, cyanotic</text>
+<text x="30" y="268" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">heart disease, IBD, cirrhosis</text>
+<rect x="265" y="50" width="230" height="245" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="380" y="72" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Koilonychia</text>
+<path d="M335 198 L335 106 Q335 88 380.0 88 Q425 88 425 106 L425 198 Z" fill="#fce7f3" stroke="#0f172a" stroke-width="1.8"/>
+<ellipse cx="380" cy="148" rx="30" ry="34" fill="#ffffff" stroke="#0f172a" stroke-width="1.2"/>
+<text x="380" y="152" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">dish</text>
+<text x="380" y="214" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">cuticle end</text>
+<text x="275" y="236" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Spoon-shaped, concave plate;</text>
+<text x="275" y="252" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">iron deficiency (normal in</text>
+<text x="275" y="268" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">toddlers' toenails)</text>
+<rect x="510" y="50" width="230" height="245" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="625" y="72" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Beau line</text>
+<path d="M580 198 L580 106 Q580 88 625.0 88 Q670 88 670 106 L670 198 Z" fill="#fce7f3" stroke="#0f172a" stroke-width="1.8"/>
+<path d="M580 134 Q625 146 670 134" fill="none" stroke="#0f172a" stroke-width="3"/>
+<path d="M580 140 Q625 152 670 140" fill="none" stroke="#0f172a" stroke-width="1.2"/>
+<text x="625" y="214" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">cuticle end</text>
+<text x="520" y="236" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Transverse groove; temporary</text>
+<text x="520" y="252" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">matrix arrest (illness, chemo);</text>
+<text x="520" y="268" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">moves out with growth</text>
+<rect x="20" y="310" width="230" height="245" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="135" y="332" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Terry nails</text>
+<path d="M90 458 L90 366 Q90 348 135.0 348 Q180 348 180 366 L180 458 Z" fill="#fce7f3" stroke="#0f172a" stroke-width="1.8"/>
+<path d="M91 456 L91 378 L179 378 L179 456 Z" fill="#ffffff" stroke="#ffffff" stroke-width="0"/>
+<rect x="91" y="366" width="88" height="14" rx="4" fill="#d6a77a" stroke="#0f172a" stroke-width="0.5"/>
+<text x="135" y="423" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">white</text>
+<text x="135" y="474" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">cuticle end</text>
+<text x="30" y="496" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Mostly white bed, thin pink-brown</text>
+<text x="30" y="512" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">distal band; cirrhosis, heart</text>
+<text x="30" y="528" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">failure, diabetes, ageing</text>
+<rect x="265" y="310" width="230" height="245" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="380" y="332" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Half-and-half nails</text>
+<path d="M335 458 L335 366 Q335 348 380.0 348 Q425 348 425 366 L425 458 Z" fill="#fce7f3" stroke="#0f172a" stroke-width="1.8"/>
+<path d="M336 456 L336 406 L424 406 L424 456 Z" fill="#ffffff" stroke="#0f172a" stroke-width="0.5"/>
+<path d="M336 406 L336 366 Q380 350 424 366 L424 406 Z" fill="#c08457" stroke="#0f172a" stroke-width="0.5"/>
+<text x="380" y="436" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">white</text>
+<text x="380" y="474" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">cuticle end</text>
+<text x="275" y="496" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Proximal white, distal red-brown</text>
+<text x="275" y="512" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">half; chronic kidney disease</text>
+<rect x="510" y="310" width="230" height="245" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+<text x="625" y="332" font-family="sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Splinter haemorrhages</text>
+<path d="M580 458 L580 366 Q580 348 625.0 348 Q670 348 670 366 L670 458 Z" fill="#fce7f3" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="604" y1="362" x2="606" y2="390" stroke="#7f1d1d" stroke-width="2.5"/>
+<line x1="624" y1="362" x2="626" y2="390" stroke="#7f1d1d" stroke-width="2.5"/>
+<line x1="643" y1="362" x2="645" y2="390" stroke="#7f1d1d" stroke-width="2.5"/>
+<text x="625" y="474" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">cuticle end</text>
+<text x="520" y="496" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Thin dark lines along the bed;</text>
+<text x="520" y="512" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">endocarditis, vasculitis, trauma</text>
+</svg>

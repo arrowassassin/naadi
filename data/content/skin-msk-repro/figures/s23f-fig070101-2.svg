@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" role="img" aria-label="Horizontal bar chart of typical synovial fluid leukocyte counts: normal under 200, noninflammatory 200 to 2,000, inflammatory 2,000 to about 50,000, septic usually above 50,000 per cubic millimetre, with overlap noted" font-family="sans-serif" fill="#0f172a"><title>Horizontal bar chart of typical synovial fluid leukocyte counts: normal under 200, noninflammatory 200 to 2,000, inflammatory 2,000 to about 50,000, septic usually above 50,000 per cubic millimetre, with overlap noted</title><rect x="0" y="0" width="760" height="360" fill="#ffffff"/>
+<text x="380" y="30" font-size="18" text-anchor="middle" font-weight="bold">Synovial fluid leukocytes (per mm³), typical ranges</text>
+<line x1="200" y1="300" x2="720" y2="300" stroke="#0f172a" stroke-width="2"/>
+<text x="200" y="322" font-size="12" text-anchor="middle">0</text>
+<text x="270" y="322" font-size="12" text-anchor="middle">200</text>
+<text x="350" y="322" font-size="12" text-anchor="middle">2,000</text>
+<text x="520" y="322" font-size="12" text-anchor="middle">50,000</text>
+<text x="700" y="322" font-size="12" text-anchor="middle">100,000+</text>
+<text x="460" y="345" font-size="12" text-anchor="middle">Scale is compressed (not linear)</text>
+<text x="20" y="75" font-size="14" font-weight="bold">Normal</text>
+<rect x="200" y="60" width="70" height="26" fill="#e2e8f0" stroke="#0f172a"/>
+<text x="280" y="78" font-size="13">clear; under 200</text>
+<text x="20" y="130" font-size="14" font-weight="bold">Noninflammatory</text>
+<rect x="270" y="115" width="80" height="26" fill="#cbd5e1" stroke="#0f172a"/>
+<text x="360" y="133" font-size="13">OA, trauma; under 25% neutrophils</text>
+<text x="20" y="185" font-size="14" font-weight="bold">Inflammatory</text>
+<rect x="350" y="170" width="200" height="26" fill="#94a3b8" stroke="#0f172a"/>
+<text x="560" y="188" font-size="13">RA, crystals, Lyme</text>
+<text x="20" y="240" font-size="14" font-weight="bold">Septic</text>
+<rect x="470" y="225" width="250" height="26" fill="#475569" stroke="#0f172a"/>
+<text x="480" y="243" font-size="13" fill="#ffffff">usually over 50,000</text><text x="480" y="270" font-size="13">over 90% neutrophils</text>
+<text x="20" y="285" font-size="12">Overlap zone: crystals and infection can coexist; always culture</text>
+</svg>

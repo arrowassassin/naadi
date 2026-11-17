@@ -1,0 +1,637 @@
+{
+ "area": "12.01.03",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Maternal physiology of normal pregnancy",
+   "html": "\n<h2>The logic of maternal adaptation</h2>\n<p>Normal pregnancy changes almost every maternal laboratory value. Most changes serve three goals: delivering more oxygen and nutrients to the uteroplacental unit, protecting the mother against blood loss at delivery, and shifting fuel toward the fetus. Knowing the expected direction of each change lets you tell normal physiology from disease, which is a frequent exam task.</p>\n\n<h2>Cardiovascular and hematologic changes</h2>\n<ul>\n<li><strong>Cardiac output</strong> rises by 30 to 50%, mainly by the end of the second trimester. Stroke volume increases first, then heart rate, which rises by about 10 to 20 beats/min.</li>\n<li><strong>Systemic vascular resistance</strong> falls because of progesterone, nitric oxide, relaxin and the low-resistance placental circulation. Blood pressure reaches its lowest point in the second trimester and returns toward baseline by term.</li>\n<li><strong>Normal findings</strong> include a soft systolic flow murmur, an S3 and mild peripheral edema. A diastolic murmur, a loud systolic murmur or a murmur with symptoms is never normal and needs echocardiography.</li>\n<li><strong>Supine position</strong> after about 20 weeks lets the uterus compress the inferior vena cava. Venous return, preload and cardiac output fall, which can cause hypotension and fetal heart rate decelerations. Lying on the left side relieves it.</li>\n<li><strong>Plasma volume</strong> rises by about 40 to 50%, more than <strong>red cell mass</strong> (about 20 to 30%). Hemoglobin and hematocrit fall by dilution (\"physiologic anemia\"). The CDC anemia cut-offs are hemoglobin below 11.0 g/dL in the first and third trimesters and below 10.5 g/dL in the second.</li>\n<li><strong>Coagulation</strong>: fibrinogen and factors VII, VIII, IX and X rise, protein S falls, and resistance to activated protein C increases. Pregnancy is a hypercoagulable state, and VTE risk is highest postpartum.</li>\n<li><strong>White cells</strong> rise (up to about 15,000/mm³, higher in labour). Platelets fall slightly. ESR rises and is not useful.</li>\n</ul>\n\n<h2>Respiratory and renal changes</h2>\n<p>Progesterone sensitises the respiratory centre to CO2. Tidal volume and minute ventilation rise by about 30 to 50% while respiratory rate barely changes. PaCO2 falls to about 30 mm Hg, causing a chronic respiratory alkalosis that the kidney compensates by excreting bicarbonate (about 18 to 22 mEq/L). The low maternal PaCO2 creates a gradient that helps fetal CO2 cross to the mother. The rising diaphragm reduces functional residual capacity, so pregnant patients desaturate faster during apnea.</p>\n<p>Renal plasma flow and glomerular filtration rate rise by about 50% early in pregnancy. Creatinine falls to about 0.4 to 0.8 mg/dL, and BUN and uric acid fall too. A creatinine of 1.0 mg/dL can therefore mean real renal impairment in pregnancy. The filtered glucose load can exceed tubular reabsorption, so mild glucosuria is common and is not a test for diabetes. Progesterone relaxes ureteral smooth muscle, and the uterus compresses the ureters (the right more than the left). The resulting hydroureter and urinary stasis explain why asymptomatic bacteriuria so often becomes pyelonephritis.</p>\n\n<h2>Endocrine and metabolic changes</h2>\n<table class=\"hy\">\n<thead><tr><th>Hormone</th><th>Source</th><th>Main role</th></tr></thead>\n<tbody>\n<tr><td>hCG</td><td>Syncytiotrophoblast. Doubles about every 48 hours early on, peaks around 8 to 10 weeks.</td><td>Acts on the LH receptor to maintain the corpus luteum until the placenta takes over progesterone production (about 7 to 10 weeks). Weakly stimulates the TSH receptor, so TSH dips in the first trimester.</td></tr>\n<tr><td>Progesterone</td><td>Corpus luteum, then placenta</td><td>Keeps the decidua and myometrial quiescence. Relaxes smooth muscle (GI, ureter, veins) and drives ventilation.</td></tr>\n<tr><td>Estrogens (mostly estriol)</td><td>Placenta, using fetal adrenal DHEA sulfate</td><td>Raise uterine blood flow and hepatic binding globulins (TBG, cortisol-binding globulin, sex hormone-binding globulin).</td></tr>\n<tr><td>Human placental lactogen (chorionic somatomammotropin)</td><td>Syncytiotrophoblast. Rises with placental mass.</td><td>Insulin resistance and lipolysis, which spare glucose for the fetus.</td></tr>\n<tr><td>Prolactin</td><td>Maternal anterior pituitary (lactotroph hyperplasia)</td><td>Prepares the breast. High progesterone blocks milk production until delivery.</td></tr>\n</tbody>\n</table>\n<p>The first half of pregnancy is anabolic: insulin sensitivity is relatively normal and fat is stored. In the second half, human placental lactogen, progesterone, cortisol and prolactin cause rising insulin resistance. Fasting glucose falls slightly because the fetus draws glucose continuously, while postprandial glucose rises. Increased TBG raises <em>total</em> T4 and T3, and free T4 stays normal. Total cortisol rises because of cortisol-binding globulin, and free cortisol also rises modestly.</p>\n<div class=\"pearl\"><p>The pituitary enlarges by about a third because of lactotroph hyperplasia. Its blood supply does not keep pace, which is why severe postpartum hemorrhage can infarct it (Sheehan syndrome).</p></div>\n\n<h2>Gastrointestinal, hepatic and skin changes</h2>\n<p>Progesterone lowers lower esophageal sphincter tone, slows gastric emptying and slows colonic transit. The result is reflux, constipation and hemorrhoids. Gallbladder emptying slows and bile becomes more lithogenic. Alkaline phosphatase can double or quadruple because of the placental isoenzyme. Albumin falls by dilution, while AST, ALT, bilirubin and bile acids should stay <strong>normal</strong>, so a rise in these is disease. Estrogen causes spider angiomas and palmar erythema. Melanocyte-stimulating effects cause linea nigra, areolar darkening and melasma. Striae reflect stretch and hormonal effects on collagen.</p>\n<table class=\"hy\">\n<thead><tr><th>Value</th><th>Change in normal pregnancy</th><th>Disease clue</th></tr></thead>\n<tbody>\n<tr><td>Creatinine</td><td>Falls (0.4 to 0.8 mg/dL)</td><td>1.0 mg/dL or more is suspicious</td></tr>\n<tr><td>PaCO2 / HCO3-</td><td>About 30 mm Hg / about 20 mEq/L</td><td>A \"normal\" PaCO2 of 40 mm Hg in an asthma flare means impending respiratory failure</td></tr>\n<tr><td>Alkaline phosphatase</td><td>Rises (placental)</td><td>Not useful for cholestasis in pregnancy. Use bile acids.</td></tr>\n<tr><td>AST, ALT, bile acids</td><td>Unchanged</td><td>A rise suggests preeclampsia, HELLP, cholestasis or AFLP</td></tr>\n<tr><td>Fibrinogen</td><td>Rises</td><td>A \"normal\" fibrinogen at delivery may already be falling (abruption, DIC)</td></tr>\n<tr><td>TSH</td><td>Low-normal in the first trimester</td><td>Suppressed TSH with high free T4 needs evaluation</td></tr>\n</tbody>\n</table>\n<div class=\"trap\"><p>Do not treat physiologic changes: a mild rise in WBC, a falling hemoglobin above the anemia cut-off, high alkaline phosphatase or low creatinine. But do not dismiss a creatinine of 1.1 mg/dL, a PaCO2 of 40 mm Hg or rising transaminases as \"pregnancy\".</p></div>\n<h2>Musculoskeletal changes</h2>\n<p>Relaxin and progesterone loosen the pelvic joints. Lumbar lordosis increases as the centre of gravity moves forward, which causes low back pain. Fluid retention compresses the median nerve, so carpal tunnel syndrome is common in the third trimester.</p>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Physiology, Maternal Changes"
+    },
+    {
+     "statpearls": "Physiology, Pregnancy"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Routine prenatal care: dating, visits, fundal height, weight gain and nutrition",
+   "html": "\n<h2>Confirming and dating the pregnancy</h2>\n<p>The estimated date of delivery (EDD) is 280 days after the first day of the last menstrual period (Naegele rule: add 1 year, subtract 3 months, add 7 days) if cycles are regular. Ultrasonography sharpens the estimate. The first-trimester crown-rump length (CRL) is the most accurate measure, and an EDD set this way is not changed later.</p>\n<table class=\"hy\">\n<thead><tr><th>Gestational age at ultrasound</th><th>Redate if the LMP and ultrasound estimates differ by more than</th></tr></thead>\n<tbody>\n<tr><td>Up to 8 6/7 weeks (CRL)</td><td>5 days</td></tr>\n<tr><td>9 0/7 to 13 6/7 weeks (CRL)</td><td>7 days</td></tr>\n<tr><td>14 0/7 to 15 6/7 weeks</td><td>7 days</td></tr>\n<tr><td>16 0/7 to 21 6/7 weeks</td><td>10 days</td></tr>\n<tr><td>22 0/7 to 27 6/7 weeks</td><td>14 days</td></tr>\n<tr><td>28 weeks or more</td><td>21 days (and the pregnancy is \"suboptimally dated\")</td></tr>\n</tbody>\n</table>\n<p>The fetal heart is seen on transvaginal ultrasound by about 6 weeks and heard by handheld Doppler at about 10 to 12 weeks. Quickening is felt at about 18 to 20 weeks by people pregnant for the first time and earlier by multiparas.</p>\n\n<h2>Routine visits</h2>\n<p>A traditional schedule is every 4 weeks until 28 weeks, every 2 weeks until 36 weeks, then weekly until delivery. Practices can tailor this to risk, including telehealth visits. Each visit checks blood pressure, weight, fetal heart rate, fundal height from 20 weeks, fetal movement from the third trimester, and warning symptoms: bleeding, fluid leakage, contractions, reduced movement, headache, visual change, right upper quadrant pain and swelling of the face or hands.</p>\n[[figure:s23f-fig120103-1]]\n<p>From 20 to 36 weeks, the fundal height in centimetres is about equal to gestational age in weeks. A difference of 3 cm or more prompts ultrasonography for fetal growth and amniotic fluid. Measurement is unreliable with obesity, fibroids, multiple gestation or fetal descent late in pregnancy, so those patients may have serial ultrasound instead.</p>\n<table class=\"hy\">\n<thead><tr><th>Gestational age</th><th>Routine step</th></tr></thead>\n<tbody>\n<tr><td>First visit</td><td>History, examination, labs (see prenatal screening), dating ultrasound when dates are uncertain, offer of aneuploidy screening, cervical cancer screening if due</td></tr>\n<tr><td>11 to 14 weeks</td><td>NT or first-trimester screen if chosen. cfDNA any time from 10 weeks.</td></tr>\n<tr><td>15 to 22 weeks</td><td>Quad screen or MSAFP if chosen. Anatomy ultrasound at 18 to 22 weeks.</td></tr>\n<tr><td>24 to 28 weeks</td><td>Glucose screen, CBC, antibody screen if Rh(D)-negative, anti-D immune globulin at 28 weeks</td></tr>\n<tr><td>27 to 36 weeks</td><td>Tdap. RSV vaccine at 32 to 36 weeks in season. Repeat HIV and syphilis testing where indicated.</td></tr>\n<tr><td>36 0/7 to 37 6/7 weeks</td><td>Group B streptococcus rectovaginal culture. Confirm fetal presentation.</td></tr>\n<tr><td>41 weeks or more</td><td>Antenatal testing and planning for induction</td></tr>\n</tbody>\n</table>\n\n<h2>Weight gain and nutrition</h2>\n<table class=\"hy\">\n<thead><tr><th>Prepregnancy BMI (kg/m²)</th><th>Recommended total gain, singleton</th></tr></thead>\n<tbody>\n<tr><td>Below 18.5</td><td>28 to 40 lb (12.5 to 18 kg)</td></tr>\n<tr><td>18.5 to 24.9</td><td>25 to 35 lb (11.5 to 16 kg)</td></tr>\n<tr><td>25.0 to 29.9</td><td>15 to 25 lb (7 to 11.5 kg)</td></tr>\n<tr><td>30 or more</td><td>11 to 20 lb (5 to 9 kg)</td></tr>\n</tbody>\n</table>\n<ul>\n<li><strong>Energy</strong>: no extra calories are needed in the first trimester. About 340 extra kcal/day are needed in the second trimester and about 450 in the third.</li>\n<li><strong>Iron</strong>: requirements nearly double (27 mg/day). Most prenatal vitamins contain iron. Treat confirmed iron deficiency with oral iron every day or every other day, and use IV iron for intolerance or severe deficiency late in pregnancy.</li>\n<li><strong>Folate, iodine, choline and DHA</strong>: a prenatal vitamin with iodine is advised (iodine needs rise for fetal thyroid hormone). Most patients need folic acid 0.4 mg.</li>\n<li><strong>Calcium and vitamin D</strong>: about 1,000 mg/day of calcium for adults. Adolescents need 1,300 mg/day.</li>\n<li><strong>Vegan diets</strong> need reliable vitamin B12, plus attention to iron, iodine, calcium, vitamin D and omega-3 fats.</li>\n<li><strong>Fish</strong>: 2 to 3 servings (8 to 12 oz) a week of low-mercury fish (salmon, sardines, cod, shrimp). Avoid high-mercury fish (shark, swordfish, king mackerel, tilefish, bigeye tuna, marlin, orange roughy).</li>\n<li><strong>Food safety</strong>: avoid unpasteurised milk and soft cheeses, deli meats and hot dogs unless heated until steaming, refrigerated smoked seafood (<em>Listeria</em>), and raw or undercooked meat and eggs (<em>Toxoplasma</em>, <em>Salmonella</em>).</li>\n<li><strong>Caffeine</strong>: less than 200 mg a day (about 12 oz of brewed coffee) is not associated with miscarriage or preterm birth. <strong>Alcohol</strong>: no amount is known to be safe.</li>\n</ul>\n\n<h2>Common symptoms and safe treatment</h2>\n<table class=\"hy\">\n<thead><tr><th>Complaint</th><th>Approach</th></tr></thead>\n<tbody>\n<tr><td>Nausea and vomiting (early)</td><td>Small frequent meals and ginger, then pyridoxine with or without doxylamine</td></tr>\n<tr><td>Heartburn</td><td>Smaller meals and raising the head of the bed, then calcium carbonate antacids, then H2 blockers, then PPIs. Avoid sodium bicarbonate and magnesium trisilicate.</td></tr>\n<tr><td>Constipation</td><td>Fibre and fluids, then bulk-forming agents, osmotic laxatives (polyethylene glycol) or docusate</td></tr>\n<tr><td>Round ligament pain</td><td>Sharp groin pain with movement in the second trimester. Reassure, after excluding other causes.</td></tr>\n<tr><td>Back pain, carpal tunnel</td><td>Posture, exercise, wrist splints, acetaminophen</td></tr>\n<tr><td>Pain or fever</td><td>Acetaminophen. Avoid NSAIDs from 20 weeks (fetal kidney injury, oligohydramnios) and especially after 30 weeks (premature closure of the ductus arteriosus).</td></tr>\n</tbody>\n</table>\n\n<h2>Activity, work and travel</h2>\n<p>Encourage at least 150 minutes a week of moderate aerobic activity, along with strength training, for those without contraindications such as previa after 26 weeks, ruptured membranes, preterm labour, cerclage or significant heart or lung disease. Avoid contact sports and activities with fall risk, scuba diving and prolonged lying flat on the back. Air travel is generally fine until about 36 weeks. Travellers should stay hydrated, walk and consider compression stockings. Seat belts go below the uterus across the hips, with the shoulder strap between the breasts. Sex is safe unless there is previa, preterm labour or ruptured membranes.</p>\n<div class=\"pearl\"><p>Adapt routine care to the person: adolescents need extra calcium, screening for intimate partner violence and support to stay in school. Patients 35 or older get the same schedule but more attention to hypertension, diabetes and aneuploidy counselling. People with mobility disabilities need accessible tables and scales, a pressure-injury plan and early anesthesia planning. Transgender and nonbinary patients should be asked their name and pronouns, and intake forms should use anatomy-based wording, such as \"pregnant patient\" or \"chest\" when it fits.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Gestational Age Assessment"
+    },
+    {
+     "statpearls": "Physiology, Maternal Changes"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "caption": "Figure. Expected level of the uterine fundus from 12 to 36 weeks. Between 20 and 36 weeks, fundal height in centimetres is about equal to gestational age in weeks."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman at 28 weeks' gestation has a 1-hour glucose challenge result in the normal range, but she asks why pregnancy makes diabetes more likely. Which placental product most directly contributes to rising maternal insulin resistance in the second half of pregnancy?</p>",
+   "options": [
+    "Human placental lactogen",
+    "Inhibin A",
+    "Relaxin",
+    "Activin",
+    "Placental alkaline phosphatase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Human placental lactogen (chorionic somatomammotropin) is made by syncytiotrophoblast in proportion to placental mass. It antagonises insulin and promotes lipolysis, sparing maternal glucose for the fetus. Progesterone, cortisol and prolactin also contribute. When maternal β-cells cannot compensate, gestational diabetes develops.</p><p><strong>Takeaway:</strong> Human placental lactogen is the main placental driver of insulin resistance in the second and third trimesters.</p>",
+   "whyNot": {
+    "B": "Inhibin A is a placental protein used in aneuploidy screening. It has no major role in insulin resistance.",
+    "C": "Relaxin remodels connective tissue and contributes to vasodilation, not insulin resistance.",
+    "D": "Activin regulates FSH and cell growth and is not a recognised cause of gestational insulin resistance.",
+    "E": "Placental alkaline phosphatase raises serum alkaline phosphatase but does not affect glucose metabolism."
+   },
+   "objective": "Identify human placental lactogen as the driver of insulin resistance in pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "physiology of pregnancy",
+    "glucose metabolism"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A healthy 27-year-old woman at 30 weeks' gestation has a hemoglobin of 11.3 g/dL; it was 13.1 g/dL before pregnancy. MCV is 88 fL, ferritin is normal, and the reticulocyte count is mildly increased. Which of the following best explains the fall in hemoglobin?</p>",
+   "options": [
+    "Plasma volume increases proportionally more than red cell mass",
+    "Red cell mass falls because erythropoietin is suppressed",
+    "Fetal uptake of maternal iron limits hemoglobin synthesis",
+    "Placental sequestration of maternal red cells",
+    "Estrogen-induced hemolysis"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Plasma volume rises by about 40 to 50%, while red cell mass rises by only about 20 to 30%, so hemoglobin concentration falls by dilution. Erythropoietin and red cell production actually increase, which explains the mild reticulocytosis. Her hemoglobin is above the third-trimester anemia cut-off of 11.0 g/dL, and the normal MCV and ferritin argue against iron deficiency.</p><p><strong>Takeaway:</strong> Physiologic anemia of pregnancy is dilutional: plasma volume rises more than red cell mass.</p>",
+   "whyNot": {
+    "B": "Erythropoietin rises in pregnancy, and red cell mass increases rather than falls.",
+    "C": "Iron deficiency would lower ferritin and eventually MCV, and both are normal here.",
+    "D": "The placenta does not sequester maternal red cells in meaningful amounts.",
+    "E": "Pregnancy does not cause estrogen-induced hemolysis, and hemolysis markers are not described."
+   },
+   "objective": "Explain dilutional (physiologic) anemia of pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "physiology of pregnancy",
+    "anemia"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman at 10 weeks' gestation has routine thyroid tests because of a family history of thyroid disease. TSH is 0.2 µU/mL (nonpregnant range 0.5-5.0 µU/mL) and free T4 is 1.4 ng/dL (0.8-1.8 ng/dL). She has mild nausea, no tremor or palpitations, and no goitre. Which of the following best explains the TSH value?</p>",
+   "options": [
+    "hCG weakly stimulates the TSH receptor because it is structurally similar to TSH",
+    "Estrogen increases thyroxine-binding globulin and lowers free T4",
+    "Thyroid-stimulating immunoglobulins cross from the placenta",
+    "Placental deiodinase increases T3 production",
+    "Progesterone inhibits pituitary thyrotrophs"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>hCG shares an α subunit with TSH, and its β subunit is homologous with TSH's. At peak hCG levels (8 to 12 weeks), hCG weakly stimulates the thyroid TSH receptor. Thyroid hormone output rises slightly and feedback suppresses TSH, while free T4 stays normal or near normal. This is why the first trimester has its own TSH reference range. Very high hCG, as in molar pregnancy or hyperemesis, can cause biochemical hyperthyroidism.</p><p><strong>Takeaway:</strong> Low TSH with normal free T4 in the first trimester is usually hCG cross-stimulation, not disease.</p>",
+   "whyNot": {
+    "B": "Higher TBG raises total T4, but free T4 stays normal. It would not suppress TSH.",
+    "C": "Thyroid-stimulating immunoglobulins are maternal antibodies in Graves disease. They do not come from the placenta, and she has no signs of Graves.",
+    "D": "Placental type 3 deiodinase inactivates T4 and T3. It does not raise T3.",
+    "E": "Progesterone does not suppress pituitary thyrotrophs."
+   },
+   "objective": "Explain the first-trimester fall in TSH from hCG stimulation of the TSH receptor.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "thyroid",
+    "physiology of pregnancy"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old woman at 22 weeks' gestation has 1+ glucose on a urine dipstick. Her fasting plasma glucose is 76 mg/dL and her HbA1c is 5.0%. Serum creatinine is 0.5 mg/dL. Which of the following best explains the glucosuria?</p>",
+   "options": [
+    "The filtered glucose load rises with GFR and exceeds proximal tubular reabsorption",
+    "Placental lactogen inhibits SGLT2 in the proximal tubule",
+    "Progesterone damages the glomerular basement membrane",
+    "Dilated ureters reflux glucose from the bladder",
+    "Fetal urine with glucose enters the maternal bladder"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>GFR rises by about 50% in pregnancy, so more glucose is filtered at any plasma level. The proximal tubule's capacity to reabsorb it does not rise as much, so glucose appears in the urine at normal plasma levels. This is why urine glucose is not a screening test for gestational diabetes. The low creatinine shows the higher GFR.</p><p><strong>Takeaway:</strong> Glucosuria in pregnancy with normal plasma glucose reflects a higher filtered load from increased GFR.</p>",
+   "whyNot": {
+    "B": "Human placental lactogen causes insulin resistance. It does not inhibit SGLT2 in the tubule.",
+    "C": "Progesterone does not damage the glomerulus. Glomerular injury would cause proteinuria.",
+    "D": "Ureteral dilation causes stasis and infection risk, not glucose reflux.",
+    "E": "Fetal urine forms amniotic fluid and does not enter the maternal urinary tract."
+   },
+   "objective": "Explain physiologic glucosuria from increased GFR in pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "renal physiology",
+    "physiology of pregnancy"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman at 6 weeks' gestation needs laparoscopic removal of a torsed adnexa. The surgeon removes the ovary that contains the corpus luteum and starts progesterone supplementation. Which hormone normally maintains the corpus luteum at this stage of pregnancy?</p>",
+   "options": [
+    "hCG acting on the LH receptor",
+    "FSH from the anterior pituitary",
+    "Estradiol from the placenta",
+    "Prolactin from the anterior pituitary",
+    "Inhibin B from granulosa cells"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>After implantation, syncytiotrophoblast hCG binds the LH receptor on luteal cells and keeps the corpus luteum producing progesterone. The placenta takes over progesterone production at about 7 to 10 weeks (the luteal-placental shift). If the corpus luteum is removed before then, progesterone must be replaced to prevent pregnancy loss.</p><p><strong>Takeaway:</strong> hCG rescues the corpus luteum through the LH receptor until the placenta makes enough progesterone, at about 7 to 10 weeks.</p>",
+   "whyNot": {
+    "B": "FSH supports follicle growth, not the corpus luteum in pregnancy, and it is suppressed early in pregnancy.",
+    "C": "Placental estradiol does not sustain luteal progesterone production.",
+    "D": "Prolactin does not maintain the human corpus luteum in pregnancy.",
+    "E": "Inhibin B comes from developing follicles and suppresses FSH. It does not support the corpus luteum."
+   },
+   "objective": "Identify hCG as the hormone that maintains the corpus luteum early in pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "placental hormones"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman at 34 weeks' gestation lies flat on her back for an ultrasound and becomes lightheaded and pale after a few minutes. Blood pressure falls from 116/72 to 88/54 mm Hg, and she feels better when she turns onto her left side. Which of the following best explains her symptoms?</p>",
+   "options": [
+    "Compression of the inferior vena cava, reducing venous return and preload",
+    "Compression of the abdominal aorta, raising afterload",
+    "Vasovagal reflex from pressure of the ultrasound probe",
+    "Pooling of blood in the placenta",
+    "Progesterone-mediated loss of baroreceptor sensitivity"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>After about 20 weeks, the uterus can compress the inferior vena cava when the patient is supine. Venous return and cardiac output fall, causing supine hypotension and sometimes fetal heart rate decelerations. Left lateral tilt relieves it. This is also why chest compressions in cardiac arrest during pregnancy are done with manual left uterine displacement.</p><p><strong>Takeaway:</strong> Supine hypotension in late pregnancy is caused by caval compression lowering preload, and left lateral positioning relieves it.</p>",
+   "whyNot": {
+    "B": "Aortic compression can occur but would raise upper-body pressure rather than cause this fall in blood pressure.",
+    "C": "A vasovagal reflex would not reliably reverse when she changes to the left lateral position.",
+    "D": "Uteroplacental blood volume does not shift fast enough with position to explain these symptoms.",
+    "E": "Pregnancy does not remove baroreflex function, and that would not explain the positional reversal."
+   },
+   "objective": "Explain supine hypotensive syndrome in late pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cardiovascular physiology",
+    "physiology of pregnancy"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 28-year-old woman has her first prenatal visit. Her cycles are regular, and by her last menstrual period she is at 8 weeks 4 days. Transvaginal ultrasonography today shows a single embryo with cardiac activity and a crown-rump length that corresponds to 7 weeks 3 days. Which of the following is the most appropriate way to assign her estimated date of delivery?</p>",
+   "options": [
+    "Use the ultrasound-based gestational age",
+    "Use the LMP-based gestational age",
+    "Average the LMP and ultrasound estimates",
+    "Repeat ultrasonography at 12 weeks and use the larger estimate",
+    "Use the anatomy scan at 20 weeks"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Before 9 0/7 weeks, the EDD is changed to the ultrasound estimate if the LMP and CRL estimates differ by more than 5 days. Here they differ by 8 days. First-trimester CRL is the most accurate dating method, and an EDD set this way should not be changed by later scans.</p><p><strong>Takeaway:</strong> Up to 8 6/7 weeks, redate by CRL when the difference from LMP dating exceeds 5 days.</p>",
+   "whyNot": {
+    "B": "A difference of more than 5 days this early means the LMP estimate is less reliable than the CRL.",
+    "C": "Averaging is not an accepted method and adds error.",
+    "D": "Later scans are less accurate for dating than an early CRL, and a dated pregnancy should not be redated.",
+    "E": "Second-trimester biometry is less accurate than first-trimester CRL."
+   },
+   "objective": "Apply ACOG redating thresholds for first-trimester ultrasound.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pregnancy dating"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman at 9 weeks' gestation with a single fetus has a prepregnancy BMI of 31 kg/m². She asks how much weight she should gain during pregnancy. Which of the following is the recommended total weight gain?</p>",
+   "options": [
+    "11 to 20 lb (5 to 9 kg)",
+    "25 to 35 lb (11.5 to 16 kg)",
+    "28 to 40 lb (12.5 to 18 kg)",
+    "15 to 25 lb (7 to 11.5 kg)",
+    "No weight gain"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>For a singleton pregnancy with a prepregnancy BMI of 30 or more, the recommended total gain is 11 to 20 lb (5 to 9 kg). Gaining more is associated with gestational diabetes, hypertensive disorders, macrosomia, cesarean delivery and postpartum weight retention.</p><p><strong>Takeaway:</strong> Recommended singleton gain by BMI: under 18.5, 28 to 40 lb; normal, 25 to 35 lb; overweight, 15 to 25 lb; obese, 11 to 20 lb.</p>",
+   "whyNot": {
+    "B": "25 to 35 lb is recommended for a normal BMI.",
+    "C": "28 to 40 lb is recommended for an underweight BMI.",
+    "D": "15 to 25 lb is recommended for an overweight BMI of 25 to 29.9.",
+    "E": "Routine advice for obesity is limited gain, not zero gain."
+   },
+   "objective": "Counsel recommended gestational weight gain by prepregnancy BMI.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nutrition in pregnancy"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 25-year-old woman, gravida 2, para 1, at 30 weeks' gestation by first-trimester ultrasonography has a fundal height of 25 cm. At 26 weeks it was 25 cm. Her BMI is 23 kg/m², blood pressure is 112/70 mm Hg, and she reports normal fetal movement. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Ultrasonography for fetal growth and amniotic fluid volume",
+    "Repeat fundal height measurement in 2 weeks",
+    "Nonstress test only",
+    "Immediate induction of labor",
+    "Redate the pregnancy by the fundal height"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>From 20 to 36 weeks, fundal height in centimetres should be about equal to gestational age. A 5-cm lag, with no growth over 4 weeks, suggests fetal growth restriction or oligohydramnios. Ultrasonography for estimated fetal weight and amniotic fluid is the next step. If growth restriction is confirmed, umbilical artery Doppler follows.</p><p><strong>Takeaway:</strong> A fundal height discrepancy of 3 cm or more after 20 weeks leads to ultrasonography for growth and fluid.</p>",
+   "whyNot": {
+    "B": "Waiting delays recognition of possible growth restriction.",
+    "C": "A nonstress test assesses fetal oxygenation now but does not measure growth or fluid.",
+    "D": "Delivery is not indicated without a diagnosis and evidence of fetal compromise.",
+    "E": "A pregnancy dated by first-trimester ultrasound is never redated by later measurements."
+   },
+   "objective": "Evaluate a lagging fundal height with ultrasonography.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_diagnosis",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "fetal growth",
+    "routine prenatal care"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 23-year-old woman at 14 weeks' gestation asks about her diet. She eats cold turkey sandwiches from the deli most days and buys fresh cheese made from unpasteurised milk at a farmers' market. She drinks one 8-oz cup of brewed coffee daily and eats baked salmon twice a week. Which of the following is the most appropriate advice?</p>",
+   "options": [
+    "Avoid unpasteurised cheese, and heat deli meats until steaming before eating them",
+    "Stop all fish consumption for the rest of pregnancy",
+    "Stop all caffeine for the rest of pregnancy",
+    "Avoid all dairy products",
+    "Continue the current diet without changes"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Pregnant patients are much more susceptible to <em>Listeria monocytogenes</em>, which can cause fever, miscarriage, stillbirth and neonatal sepsis. The main sources are unpasteurised soft cheeses, cold deli meats and hot dogs, and refrigerated smoked seafood. Pasteurised dairy is fine, and deli meats are safe if heated until steaming. Her coffee is under the 200 mg/day limit, and salmon is a recommended low-mercury fish.</p><p><strong>Takeaway:</strong> To prevent listeriosis in pregnancy, avoid unpasteurised soft cheeses and cold deli meats. Keep low-mercury fish and moderate caffeine.</p>",
+   "whyNot": {
+    "B": "Two or three servings a week of low-mercury fish such as salmon are recommended for fetal brain development.",
+    "C": "Caffeine under 200 mg a day, about 12 oz of brewed coffee, is acceptable.",
+    "D": "Pasteurised dairy is safe and a useful source of calcium.",
+    "E": "Unpasteurised cheese and cold deli meats carry a real risk of listeriosis."
+   },
+   "objective": "Give food-safety advice to prevent listeriosis in pregnancy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nutrition in pregnancy",
+    "food safety"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman at 30 weeks' gestation has had burning retrosternal discomfort after meals and at night for 3 weeks. She has no dysphagia, weight loss, vomiting or epigastric pain radiating to the back. Blood pressure is 114/72 mm Hg. Smaller meals and raising the head of the bed have helped only partly. Which of the following is the most appropriate next treatment?</p>",
+   "options": [
+    "Calcium carbonate antacid",
+    "Sodium bicarbonate",
+    "Magnesium trisilicate taken daily for the rest of pregnancy",
+    "Misoprostol",
+    "Upper endoscopy"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Reflux in pregnancy comes from progesterone-related relaxation of the lower esophageal sphincter and pressure from the uterus. After lifestyle measures, calcium-containing antacids come next, then H2 receptor antagonists such as famotidine, then PPIs. Her normal blood pressure and the absence of right upper quadrant or epigastric pain make preeclampsia unlikely, but it should always be considered with new epigastric pain late in pregnancy.</p><p><strong>Takeaway:</strong> Heartburn in pregnancy: lifestyle, then calcium antacids, then H2 blockers, then PPIs. Avoid sodium bicarbonate and long-term magnesium trisilicate.</p>",
+   "whyNot": {
+    "B": "Sodium bicarbonate can cause metabolic alkalosis and fluid overload in pregnancy.",
+    "C": "Long-term high-dose magnesium trisilicate has been linked to fetal kidney stones and other effects, so it is avoided.",
+    "D": "Misoprostol is a prostaglandin E1 analogue that causes uterine contractions and is contraindicated for this use in pregnancy.",
+    "E": "Endoscopy is reserved for alarm features or failure of medical therapy."
+   },
+   "objective": "Treat heartburn in pregnancy with a stepwise, pregnancy-safe approach.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "common pregnancy complaints"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A healthy 29-year-old woman at 32 weeks' gestation has routine laboratory tests. She feels well, and blood pressure is 110/68 mm Hg. Results are shown.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Hemoglobin</td><td>11.3 g/dL (113 g/L)</td></tr><tr><td>MCV</td><td>89 fL</td></tr><tr><td>Leukocytes</td><td>12,600/mm³ (12.6 × 10⁹/L)</td></tr><tr><td>Platelets</td><td>186,000/mm³ (186 × 10⁹/L)</td></tr><tr><td>Creatinine</td><td>0.5 mg/dL (44 µmol/L)</td></tr><tr><td>Alkaline phosphatase</td><td>238 U/L</td></tr><tr><td>AST / ALT</td><td>18 U/L / 15 U/L</td></tr><tr><td>Albumin</td><td>3.1 g/dL (31 g/L)</td></tr><tr><td>Fibrinogen</td><td>470 mg/dL (nonpregnant 200-400 mg/dL)</td></tr></tbody></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Reassurance and continued routine prenatal care",
+    "Hepatobiliary ultrasonography",
+    "Peripheral blood flow cytometry",
+    "24-hour urine protein collection",
+    "Intravenous iron infusion"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Every result fits normal late pregnancy. Hemoglobin is above the third-trimester anemia cut-off of 11.0 g/dL, with a normal MCV. Mild leukocytosis is common. Creatinine falls because GFR rises. Alkaline phosphatase rises because of the placental isoenzyme while transaminases stay normal. Albumin falls by dilution, and fibrinogen rises as part of the normal hypercoagulable state.</p><p><strong>Takeaway:</strong> High alkaline phosphatase, low creatinine, low albumin, mild leukocytosis and high fibrinogen are normal in late pregnancy. Normal transaminases are reassuring.</p>",
+   "whyNot": {
+    "B": "An isolated high alkaline phosphatase with normal transaminases is expected from the placenta and does not need imaging.",
+    "C": "A leukocyte count of 12,600/mm³ is within the expected range in pregnancy and does not call for a hematologic workup.",
+    "D": "Low albumin in pregnancy is dilutional. With normal blood pressure and no symptoms, proteinuria testing is not indicated by this panel.",
+    "E": "Her hemoglobin is not in the anemic range, and her MCV is normal. IV iron is not indicated."
+   },
+   "objective": "Distinguish normal laboratory changes of pregnancy from disease.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "physiology of pregnancy",
+    "laboratory interpretation"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Cardiac output change in pregnancy?",
+   "back": "Rises by 30 to 50%, mostly by the end of the second trimester.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Why do hemoglobin levels fall in normal pregnancy?",
+   "back": "Plasma volume rises (about 45%) more than red cell mass (about 25%).",
+   "question": 2
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Typical PaCO2 and HCO3- in late pregnancy?",
+   "back": "About 30 mm Hg and about 20 mEq/L (compensated respiratory alkalosis).",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Normal creatinine range in pregnancy?",
+   "back": "About 0.4 to 0.8 mg/dL.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Placental hormone mainly responsible for insulin resistance?",
+   "back": "Human placental lactogen.",
+   "question": 1
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Why does TSH dip in the first trimester?",
+   "back": "hCG weakly stimulates the TSH receptor.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which liver test rises normally in pregnancy?",
+   "back": "Alkaline phosphatase (placental). AST, ALT and bile acids stay normal.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "When does the placenta take over progesterone production?",
+   "back": "About 7 to 10 weeks (luteal-placental shift).",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Clotting changes that make pregnancy hypercoagulable?",
+   "back": "Higher fibrinogen and factors VII, VIII, IX and X; lower protein S.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Redating threshold for CRL up to 8 6/7 weeks?",
+   "back": "More than 5 days' difference from LMP dating.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Recommended weight gain with BMI 30 or more?",
+   "back": "11 to 20 lb (5 to 9 kg).",
+   "question": 8
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Fundal height landmarks at 12 and 20 weeks?",
+   "back": "Just above the symphysis at 12; at the umbilicus at 20.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "What fundal-height discrepancy prompts ultrasound?",
+   "back": "3 cm or more from gestational age (20 to 36 weeks).",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Traditional prenatal visit schedule?",
+   "back": "Every 4 weeks to 28, every 2 weeks to 36, then weekly.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Daily caffeine limit in pregnancy?",
+   "back": "Less than 200 mg.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Foods to avoid to prevent listeriosis?",
+   "back": "Unpasteurised soft cheese and milk, cold deli meats and hot dogs, refrigerated smoked seafood.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "When should NSAIDs be avoided in pregnancy?",
+   "back": "From 20 weeks (fetal kidney injury) and especially after 30 weeks (ductus closure).",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "First drug step for heartburn in pregnancy after lifestyle changes?",
+   "back": "Calcium carbonate antacid.",
+   "question": null
+  }
+ ]
+}

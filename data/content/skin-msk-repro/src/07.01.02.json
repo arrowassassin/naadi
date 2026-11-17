@@ -1,0 +1,848 @@
+{
+ "area": "07.01.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Rheumatoid arthritis and axial spondyloarthritis: immunopathology and drug mechanisms",
+   "html": "<p>Rheumatoid arthritis (RA) and axial spondyloarthritis are both chronic immune-mediated joint diseases, but they differ in where the inflammation starts and in which immune pathway drives it. In RA the synovium is the primary target. In spondyloarthritis it is the enthesis, where tendons and ligaments insert into bone. Knowing this explains their deformities and their responses to treatment.</p>\n<h2>Rheumatoid arthritis</h2>\n<h3>Genes and triggers</h3>\n<p>The strongest genetic risk is a set of <strong>HLA-DRB1</strong> alleles, including DR4 and DR1, that share a short amino-acid sequence in the peptide-binding groove (the \"shared epitope\"). These molecules bind and present <em>citrullinated</em> peptides well. Citrullination is the conversion of arginine residues to citrulline by peptidylarginine deiminase (PAD) enzymes. Smoking increases citrullination in the lung, and periodontal infection may do the same in the gums. This is why smoking raises the risk of seropositive RA in carriers of the shared epitope. Antibodies to citrullinated proteins (detected as anti-cyclic citrullinated peptide, or anti-CCP) and rheumatoid factor (IgM against the Fc portion of IgG) can appear years before the first swollen joint.</p>\n<h3>Synovitis, pannus and erosion</h3>\n<p>The synovium thickens and fills with CD4 T cells (Th1 and Th17), B cells, plasma cells and macrophages, often in lymphoid follicles. The lining fibroblast-like synoviocytes multiply and become invasive. The result is <strong>pannus</strong>, a sheet of inflamed granulation tissue that grows over and into cartilage and bone. Macrophage cytokines (TNF-α, IL-1 and IL-6) drive the inflammation:</p>\n<ul>\n<li>matrix metalloproteinases from synoviocytes digest cartilage;</li>\n<li>T cells and synoviocytes express <strong>RANKL</strong>, which binds RANK on osteoclast precursors and drives the marginal bone erosions seen on radiographs;</li>\n<li>IL-6 drives hepatic acute-phase proteins (CRP, fibrinogen, hepcidin), causing the anemia of inflammation, fatigue and a raised ESR.</li>\n</ul>\n<p>Osteoprotegerin is a decoy receptor that normally restrains RANKL.</p>\n<h3>Extra-articular pathology</h3>\n<ul>\n<li><strong>Rheumatoid nodule.</strong> Central fibrinoid necrosis surrounded by palisading histiocytes, on extensor surfaces and in the lung. Nodules are seen in seropositive disease.</li>\n<li><strong>Lung.</strong> Interstitial lung disease (most often a usual interstitial pneumonia pattern), exudative pleural effusion with very low glucose, and Caplan syndrome (nodules with pneumoconiosis).</li>\n<li><strong>Felty syndrome.</strong> RA with splenomegaly and neutropenia. It is related to expansion of large granular lymphocytes.</li>\n<li><strong>Others.</strong> Secondary Sjögren disease, scleritis, small-vessel vasculitis, accelerated atherosclerosis and AA amyloidosis.</li>\n<li><strong>Cervical spine.</strong> Pannus erodes the transverse ligament and odontoid, causing atlantoaxial subluxation.</li>\n</ul>\n<h2>Axial spondyloarthritis (including ankylosing spondylitis)</h2>\n<p>Spondyloarthritis is linked to <strong>HLA-B27</strong>, an MHC class I molecule. Its normal job is to present cytosolic peptides to CD8 T cells. How it causes disease is not settled. Leading ideas are misfolding of the heavy chain, which triggers an unfolded-protein response and IL-23 release, abnormal heavy-chain dimers on the cell surface, and presentation of microbial \"arthritogenic\" peptides. Gut dysbiosis and mechanical stress at entheses contribute. The <strong>IL-23/IL-17 axis</strong> is central. IL-23 stimulates resident enthesis T cells, innate lymphoid cells and Th17 cells to make IL-17 and TNF.</p>\n<p>The disease begins as <strong>enthesitis</strong> with osteitis (bone marrow edema next to the enthesis), most typically at the sacroiliac joints and the vertebral corners. Repair then lays down new bone. Bony bridges called <strong>syndesmophytes</strong> grow vertically between vertebral bodies and can fuse the spine (the \"bamboo\" spine) and the sacroiliac joints. The fused spine is brittle, and fractures follow minor trauma. Extra-articular features are:</p>\n<ul>\n<li>acute anterior uveitis, which is unilateral and painful with photophobia;</li>\n<li>aortitis of the root, causing aortic regurgitation and conduction block;</li>\n<li>apical fibrosis and restricted chest expansion;</li>\n<li>associated inflammatory bowel disease and psoriasis.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Rheumatoid arthritis</th><th>Axial spondyloarthritis</th></tr></thead>\n<tbody>\n<tr><td>Primary target</td><td>Synovium</td><td>Enthesis and adjacent bone</td></tr>\n<tr><td>Genetics</td><td>HLA-DRB1 shared epitope (class II)</td><td>HLA-B27 (class I)</td></tr>\n<tr><td>Key cytokines</td><td>TNF-α, IL-6, IL-1</td><td>IL-23, IL-17, TNF-α</td></tr>\n<tr><td>Bone outcome</td><td>Erosion and periarticular osteopenia (net bone loss)</td><td>Erosion followed by new bone: syndesmophytes and ankylosis</td></tr>\n<tr><td>Autoantibodies</td><td>RF, anti-CCP</td><td>None (seronegative)</td></tr>\n<tr><td>Typical patient</td><td>Women more than men, middle age</td><td>Men more than women; onset before age 45</td></tr>\n</tbody></table>\n<h2>Drugs by mechanism</h2>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Mechanism</th><th>Adverse effects to know</th></tr></thead>\n<tbody>\n<tr><td>Methotrexate</td><td>Folate antagonist. At low weekly doses it inhibits AICAR transformylase and raises extracellular adenosine, which is anti-inflammatory. At high doses it inhibits dihydrofolate reductase.</td><td>Mucositis, cytopenias, hepatic fibrosis, pneumonitis, teratogenicity. Folic acid reduces toxicity. Trimethoprim adds to marrow toxicity.</td></tr>\n<tr><td>Leflunomide</td><td>Inhibits dihydroorotate dehydrogenase, which blocks pyrimidine synthesis in activated lymphocytes</td><td>Hepatotoxicity and teratogenicity. Its long enterohepatic half-life needs cholestyramine washout.</td></tr>\n<tr><td>Sulfasalazine</td><td>Split by colonic bacteria into sulfapyridine and 5-aminosalicylate</td><td>Reversible oligospermia, hemolysis in G6PD deficiency, sulfa rash</td></tr>\n<tr><td>Hydroxychloroquine</td><td>Raises endosomal pH, which reduces antigen processing and TLR7/9 signalling</td><td>Retinopathy with long use; rare cardiomyopathy and QT prolongation</td></tr>\n<tr><td>TNF inhibitors (infliximab, adalimumab, golimumab, certolizumab; etanercept is a soluble receptor fusion)</td><td>Neutralise TNF-α, which is needed to maintain granulomas</td><td>Reactivation of TB and hepatitis B, worsening heart failure, demyelination, drug-induced lupus</td></tr>\n<tr><td>Abatacept</td><td>CTLA-4–Ig binds CD80/86 and blocks CD28 co-stimulation of T cells</td><td>Infections</td></tr>\n<tr><td>Rituximab</td><td>Anti-CD20, depletes B cells</td><td>Hepatitis B reactivation, infusion reactions, PML</td></tr>\n<tr><td>Tocilizumab, sarilumab</td><td>Block the IL-6 receptor</td><td>Bowel perforation, raised lipids, CRP suppressed even during infection</td></tr>\n<tr><td>Tofacitinib, baricitinib, upadacitinib</td><td>Inhibit Janus kinases, which interrupts cytokine receptor signalling</td><td>Herpes zoster, venous thrombosis, major cardiac events in older adults at risk</td></tr>\n<tr><td>Secukinumab, ixekizumab</td><td>Neutralise IL-17A</td><td>Mucocutaneous candidiasis, new or worse inflammatory bowel disease</td></tr>\n</tbody></table>\n<div class=\"pearl\"><p>Etanercept is a TNF receptor–Fc fusion protein, not an antibody. It works for RA and spondyloarthritis but not for inflammatory bowel disease or granulomatous uveitis. Monoclonal anti-TNF antibodies are chosen when those conditions coexist.</p></div>\n<div class=\"trap\"><p>Rheumatoid factor is not specific to RA. It is also found in chronic infections such as hepatitis C (with mixed cryoglobulinemia) and endocarditis, in Sjögren disease, and in many healthy older adults. Anti-CCP is much more specific and predicts erosive disease.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Rheumatoid Arthritis"
+    },
+    {
+     "statpearls": "Ankylosing Spondylitis"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Lupus, Sjögren disease, systemic sclerosis and myositis: immunopathology",
+   "html": "<p>The systemic autoimmune rheumatic diseases share loss of tolerance to nuclear and cytoplasmic antigens, but each has a distinct tissue target. Systemic lupus erythematosus (SLE) damages tissue mainly through immune complexes. Sjögren disease is a lymphocytic attack on exocrine glands. Systemic sclerosis combines a small-vessel vasculopathy with fibroblast-driven fibrosis. The inflammatory myopathies each have their own pattern on muscle biopsy.</p>\n<h2>Systemic lupus erythematosus</h2>\n<p>SLE starts with too much nuclear antigen and too little clearance of it. Defective removal of apoptotic cells and neutrophil extracellular traps exposes nucleic acid–protein complexes. These activate plasmacytoid dendritic cells through TLR7 and TLR9 and drive production of <strong>type I interferon</strong>, giving the \"interferon signature\" of active lupus. BAFF (BLyS) supports autoreactive B cells, which make class-switched antibodies against dsDNA, Smith antigen, Ro and phospholipids.</p>\n<p>Tissue injury is mostly a <strong>type III hypersensitivity</strong>. Immune complexes deposit in glomeruli, skin and serosa and consume complement, so C3 and C4 fall during flares. Some manifestations are type II: autoimmune hemolytic anemia, thrombocytopenia and leukopenia. Genetic deficiency of an <strong>early classical complement component</strong> (C1q above all, then C4 and C2) is one of the strongest single risk factors. Early complement normally tags apoptotic debris for silent removal. Other risk factors are female sex (many genes in this pathway, such as <em>TLR7</em>, are on the X chromosome, and estrogen contributes), and higher incidence and severity in people of African, Hispanic and Asian ancestry.</p>\n<ul>\n<li><strong>Musculoskeletal.</strong> A non-erosive arthritis of the hands. Deformities that correct passively (Jaccoud arthropathy) come from laxity of the tendons and capsule. Osteonecrosis, often of the femoral head, is linked to glucocorticoids and antiphospholipid antibodies.</li>\n<li><strong>Kidney.</strong> Lupus nephritis is graded by biopsy class. Diffuse proliferative nephritis (class IV) shows subendothelial deposits (\"wire loops\").</li>\n<li><strong>Heart and vessels.</strong> Libman–Sacks (nonbacterial verrucous) endocarditis on both sides of the valve, and accelerated atherosclerosis.</li>\n<li><strong>Drug-induced lupus</strong> (hydralazine, procainamide, isoniazid, minocycline, TNF inhibitors). Anti-histone antibodies are typical. Kidney and brain are usually spared. It resolves after the drug is stopped. Slow acetylators are at higher risk with hydralazine and procainamide.</li>\n</ul>\n<h2>Sjögren disease</h2>\n<p>CD4 T cells and B cells infiltrate the salivary and lacrimal glands (focal lymphocytic sialadenitis), with epithelial cells acting as antigen-presenting cells. Anti-Ro/SSA and anti-La/SSB antibodies, rheumatoid factor and hypergammaglobulinemia are common. Persistent B-cell stimulation explains the raised risk of <strong>extranodal marginal zone (MALT) lymphoma</strong>, often in the parotid. Maternal anti-Ro IgG crosses the placenta from about 16 weeks. It can injure the fetal conduction system, causing congenital complete heart block, or cause the rash of neonatal lupus, even in mothers who have no symptoms.</p>\n<h2>Systemic sclerosis</h2>\n<p>Three processes interact:</p>\n<ol>\n<li><strong>Vasculopathy.</strong> Endothelial injury, intimal proliferation and loss of capillaries. This causes Raynaud phenomenon, digital ulcers, pulmonary arterial hypertension and the \"onion-skin\" renal arterioles of scleroderma renal crisis.</li>\n<li><strong>Autoimmunity.</strong> Specific antibodies mark the subsets: anticentromere for limited cutaneous disease, anti-DNA topoisomerase I (Scl-70) for diffuse disease and interstitial lung disease, and anti-RNA polymerase III for rapid skin spread, renal crisis and a link with cancer.</li>\n<li><strong>Fibrosis.</strong> TGF-β and other signals convert fibroblasts to myofibroblasts that lay down excess type I collagen in the dermis, lung, gut wall and heart.</li>\n</ol>\n<p>Esophageal smooth muscle is replaced by fibrous tissue, which reduces peristalsis and lower sphincter tone.</p>\n<h2>Inflammatory myopathies</h2>\n[[figure:s23f-fig070102-1]]\n<table class=\"hy\">\n<thead><tr><th>Disease</th><th>Mechanism and biopsy</th><th>Clinical clues</th></tr></thead>\n<tbody>\n<tr><td>Dermatomyositis</td><td>Complement-mediated injury to endomysial capillaries. Perivascular and perimysial CD4 T cells, B cells and plasmacytoid dendritic cells. <strong>Perifascicular atrophy.</strong></td><td>Heliotrope eyelids, Gottron papules, shawl rash; association with cancer in adults; calcinosis in children</td></tr>\n<tr><td>Polymyositis (now a diagnosis of exclusion)</td><td>CD8 T cells invade non-necrotic fibres that express MHC class I. <strong>Endomysial</strong> inflammation.</td><td>Symmetric proximal weakness without rash</td></tr>\n<tr><td>Antisynthetase syndrome</td><td>Antibodies to aminoacyl-tRNA synthetases, most often anti-Jo-1 (histidyl)</td><td>Myositis, interstitial lung disease, mechanic's hands, arthritis, Raynaud, fever</td></tr>\n<tr><td>Immune-mediated necrotizing myopathy</td><td>Necrotic fibres with little inflammation. Anti-SRP or anti-HMG-CoA reductase antibodies.</td><td>Very high CK. The anti-HMGCR form can follow statin exposure and continues after the statin is stopped.</td></tr>\n<tr><td>Inclusion body myositis</td><td>Endomysial CD8 T cells plus a degenerative component: <strong>rimmed vacuoles</strong>, protein aggregates and mitochondrial changes</td><td>Adults over 50, more often men; weak finger flexors and quadriceps, dysphagia; poor response to immunosuppression</td></tr>\n</tbody></table>\n<p>Other dermatomyositis antibodies are anti-Mi-2 (classic skin disease, good prognosis), anti-TIF1-γ and anti-NXP2 (linked with cancer in adults), and anti-MDA5 (little muscle disease, skin ulcers and rapidly progressive lung disease).</p>\n<h2>Autoantibody map</h2>\n<table class=\"hy\">\n<thead><tr><th>Antibody</th><th>Best association</th></tr></thead>\n<tbody>\n<tr><td>ANA</td><td>Sensitive screen for SLE (over 95% positive); not specific</td></tr>\n<tr><td>Anti-dsDNA</td><td>SLE; tracks nephritis and disease activity</td></tr>\n<tr><td>Anti-Smith</td><td>Highly specific for SLE</td></tr>\n<tr><td>Anti-histone</td><td>Drug-induced lupus</td></tr>\n<tr><td>Anti-U1 RNP</td><td>Mixed connective tissue disease</td></tr>\n<tr><td>Anti-Ro/SSA, anti-La/SSB</td><td>Sjögren disease, subacute cutaneous lupus, neonatal heart block</td></tr>\n<tr><td>Anticentromere</td><td>Limited cutaneous systemic sclerosis</td></tr>\n<tr><td>Anti-topoisomerase I (Scl-70)</td><td>Diffuse systemic sclerosis with interstitial lung disease</td></tr>\n<tr><td>Anti-RNA polymerase III</td><td>Diffuse systemic sclerosis with renal crisis</td></tr>\n<tr><td>Anti-Jo-1</td><td>Antisynthetase syndrome</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>A positive ANA alone does not mean lupus. Low-titre ANA is common in healthy people, especially older women, and in thyroid disease, infection and with some drugs. Order ANA only when the clinical picture suggests a connective tissue disease, and confirm with specific antibodies.</p></div>\n<div class=\"pearl\"><p>Pharmacology of lupus by mechanism: hydroxychloroquine (TLR and endosomal pH), mycophenolate (inhibits IMP dehydrogenase, so lymphocytes run short of guanine nucleotides), belimumab (neutralises BAFF), anifrolumab (blocks the type I interferon receptor), and voclosporin (a calcineurin inhibitor used for nephritis). Cyclophosphamide is an alkylating agent whose metabolite acrolein causes hemorrhagic cystitis, which mesna prevents.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Systemic Lupus Erythematosus"
+    },
+    {
+     "statpearls": "Systemic Sclerosis (Scleroderma)"
+    },
+    {
+     "statpearls": "Dermatomyositis"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Rheumatoid arthritis and axial spondyloarthritis: diagnosis and management",
+   "html": "<p>Early, sustained control of inflammation prevents joint damage. Both RA and axial spondyloarthritis are now managed by treating to a target of remission or low disease activity, with regular reassessment and stepwise escalation.</p>\n<h2>Rheumatoid arthritis: recognising it</h2>\n<p>RA typically causes symmetric swelling of the small joints of the hands (MCP and PIP joints) and wrists and of the MTP joints. Morning stiffness lasts more than an hour. The DIP joints are spared. The 2010 classification criteria score:</p>\n<ul>\n<li>the number and size of involved joints;</li>\n<li>serology (RF, anti-CCP);</li>\n<li>acute-phase reactants (ESR, CRP);</li>\n<li>duration of at least 6 weeks.</li>\n</ul>\n<p>Radiographs of hands and feet set a baseline. Early films show soft-tissue swelling and periarticular osteopenia, and later films show marginal erosions and symmetric joint-space loss. Ultrasound or MRI shows synovitis and erosions earlier. Late deformities are ulnar deviation, swan-neck and boutonnière fingers, and Baker cysts, which can rupture and mimic deep vein thrombosis.</p>\n[[figure:s23f-fig070102-2]]\n<h3>Treatment</h3>\n<ol>\n<li><strong>Start a conventional DMARD promptly.</strong> Methotrexate with folic acid is first line for moderate to high activity. Before starting, check CBC, liver enzymes, creatinine, hepatitis B and C serology and a chest radiograph. Repeat the labs regularly. Advise limiting alcohol, and warn that the drug is teratogenic. Hydroxychloroquine or sulfasalazine suit low activity or combination therapy.</li>\n<li><strong>Use glucocorticoids as a short bridge.</strong> Low-dose prednisone or a joint injection controls symptoms while the DMARD takes effect (about 6 to 12 weeks). Taper and stop. Long-term use causes osteoporosis, cataracts, diabetes, infection and avascular necrosis.</li>\n<li><strong>Escalate</strong> if the target is not reached by about 3 to 6 months. Add a biologic (TNF inhibitor, abatacept, IL-6 receptor blocker, or rituximab) or a JAK inhibitor, usually with methotrexate. JAK inhibitors carry warnings for thrombosis, major cardiac events and cancer in older adults with cardiovascular risk factors.</li>\n<li><strong>Before any biologic or JAK inhibitor</strong>, screen for latent TB (interferon-γ release assay or skin test) and hepatitis B. Update inactivated vaccines and give recombinant zoster vaccine. Avoid live vaccines during treatment.</li>\n</ol>\n<h3>Monitoring and special situations</h3>\n<ul>\n<li><strong>Hydroxychloroquine.</strong> Baseline eye examination, then annual retinal screening after 5 years of use, or sooner with kidney disease or high doses.</li>\n<li><strong>Pregnancy planning.</strong> Stop methotrexate 1 to 3 months before trying to conceive. Leflunomide needs cholestyramine washout. Hydroxychloroquine, sulfasalazine, low-dose prednisone and TNF inhibitors (certolizumab has minimal placental transfer) are compatible with pregnancy. Partners who are trying to conceive also need counselling on drug exposure.</li>\n<li><strong>Surgery and intubation.</strong> Long-standing RA can cause atlantoaxial instability. Flexion–extension cervical radiographs before elective surgery identify it, and neck pain with occipital headache or myelopathic signs needs MRI.</li>\n<li><strong>Cardiovascular risk.</strong> RA roughly doubles cardiovascular risk. Manage lipids, blood pressure and smoking actively.</li>\n<li><strong>Extra-articular disease.</strong> Interstitial lung disease (exertional dyspnea, velcro crackles; get HRCT and PFTs), pleural effusion with low glucose, scleritis, Felty syndrome and vasculitis.</li>\n<li><strong>Older adults.</strong> Elderly-onset RA can begin abruptly in the shoulders and mimic polymyalgia rheumatica. Check kidney function before dosing methotrexate and reassess fall and fracture risk.</li>\n</ul>\n<h2>Axial spondyloarthritis</h2>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Inflammatory back pain</th><th>Mechanical back pain</th></tr></thead>\n<tbody>\n<tr><td>Onset</td><td>Before age 45, insidious</td><td>Any age, often sudden after strain</td></tr>\n<tr><td>Duration</td><td>More than 3 months</td><td>Usually resolves within weeks</td></tr>\n<tr><td>Rest and activity</td><td>Worse with rest, better with exercise</td><td>Worse with activity, better with rest</td></tr>\n<tr><td>Night</td><td>Wakes the patient in the second half of the night</td><td>Uncommon</td></tr>\n<tr><td>Morning stiffness</td><td>More than 30 minutes</td><td>Brief</td></tr>\n<tr><td>NSAID response</td><td>Marked, within 48 hours</td><td>Partial</td></tr>\n</tbody></table>\n<p><strong>Diagnosis.</strong> Start with radiographs of the sacroiliac joints, which show sclerosis, erosions and later fusion. Changes take years to appear. <strong>MRI of the sacroiliac joints</strong> is the most sensitive test for early disease, showing bone marrow edema. This is \"non-radiographic\" axial spondyloarthritis. HLA-B27 testing and CRP support the diagnosis but do not establish it. On examination, the modified Schober test shows reduced lumbar flexion and chest expansion is reduced.</p>\n<p><strong>Management.</strong></p>\n<ul>\n<li>Daily exercise and physical therapy, and stopping smoking.</li>\n<li>Full-dose NSAIDs first. Try at least two before calling them a failure.</li>\n<li>If disease stays active, a TNF inhibitor or an IL-17 inhibitor, then a JAK inhibitor. Choose a monoclonal anti-TNF antibody if there is inflammatory bowel disease or recurrent uveitis, because IL-17 inhibitors can worsen colitis.</li>\n<li>Methotrexate and sulfasalazine do not help axial disease. They are used only for peripheral arthritis. Long-term systemic glucocorticoids are avoided.</li>\n</ul>\n<p><strong>Complications.</strong> Acute anterior uveitis needs same-day ophthalmology and topical glucocorticoids. Aortic regurgitation and heart block can occur, along with restrictive lung physiology and osteoporosis despite the new bone formation. Spinal fractures after minor trauma are often unstable and missed on plain films.</p>\n<div class=\"trap\"><p>A patient with ankylosing spondylitis who has new neck pain after a minor fall needs CT (or MRI) of the spine and spinal precautions. A rigid spine fractures like a long bone, and plain radiographs miss many of these fractures.</p></div>\n<div class=\"pearl\"><p>Joint replacement and spinal surgery in people with long-standing RA or ankylosing spondylitis need an anesthesia plan for the airway. A fused or unstable cervical spine changes the approach to intubation.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Rheumatoid Arthritis"
+    },
+    {
+     "statpearls": "Ankylosing Spondylitis"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Connective tissue diseases: diagnosis, organ screening and treatment",
+   "html": "<p>The connective tissue diseases are diagnosed by putting the clinical pattern together with targeted antibody tests and, where needed, tissue. Much of the management is organ screening: finding nephritis, lung disease and pulmonary hypertension before they become irreversible.</p>\n<h2>Systemic lupus erythematosus</h2>\n<p><strong>Who to test.</strong> Test young women in particular who have unexplained fever, arthritis, photosensitive rash, serositis, cytopenias or proteinuria. ANA is the screen. A negative ANA by immunofluorescence makes SLE very unlikely. A positive ANA is confirmed with anti-dsDNA and anti-Smith, plus C3 and C4, CBC, creatinine, urinalysis with microscopy and a urine protein-to-creatinine ratio. Test antiphospholipid antibodies (lupus anticoagulant, anticardiolipin, anti-β2-glycoprotein I) in anyone with thrombosis or pregnancy loss, and before pregnancy.</p>\n<p><strong>Treatment.</strong></p>\n<ul>\n<li><strong>Hydroxychloroquine</strong> for essentially everyone. It reduces flares, organ damage and thrombosis, and it improves survival.</li>\n<li>Sun protection.</li>\n<li>Glucocorticoids at the lowest dose and for the shortest time.</li>\n<li>Steroid-sparing agents: methotrexate or azathioprine for joints and skin; belimumab or anifrolumab for persistent activity.</li>\n<li><strong>Lupus nephritis.</strong> Proteinuria of 0.5 g/day or more, an active sediment (dysmorphic red cells, red-cell casts) or a rising creatinine calls for a <strong>kidney biopsy</strong>, because the class decides the treatment. Proliferative nephritis (class III or IV) is treated with glucocorticoids plus mycophenolate or low-dose IV cyclophosphamide. Belimumab or voclosporin may be added. Add an ACE inhibitor or ARB for proteinuria, and control blood pressure.</li>\n<li><strong>Pregnancy.</strong> Plan conception during at least 6 months of quiescent disease. Switch mycophenolate to azathioprine before conception. Continue hydroxychloroquine. Give low-dose aspirin to lower the risk of preeclampsia. Antiphospholipid syndrome needs heparin-based anticoagulation in pregnancy, because warfarin is teratogenic. Anti-Ro positivity calls for serial fetal heart-rate or echocardiographic surveillance in mid-pregnancy.</li>\n</ul>\n<p>Drug-induced lupus resolves after the drug is withdrawn.</p>\n<h2>Sjögren disease</h2>\n<p>Sjögren disease causes dry eyes (a gritty sensation; a low Schirmer test or abnormal ocular surface staining) and dry mouth (dental caries, difficulty swallowing dry food), often with fatigue, arthralgia and parotid swelling. Anti-Ro/SSA is the key antibody. A labial minor salivary gland biopsy that shows focal lymphocytic sialadenitis confirms the diagnosis when serology is negative.</p>\n<ul>\n<li><strong>Symptomatic care.</strong> Artificial tears, topical cyclosporine, and fluoride and dental care.</li>\n<li><strong>Muscarinic agonists</strong> (pilocarpine, cevimeline) increase saliva but cause sweating and flushing.</li>\n<li><strong>Systemic disease.</strong> Hydroxychloroquine for arthralgia. Immunosuppression for systemic manifestations such as interstitial lung disease, neuropathy, vasculitis and tubulointerstitial nephritis with distal renal tubular acidosis.</li>\n<li><strong>Lymphoma warning signs.</strong> Persistent unilateral parotid enlargement, palpable purpura, low C4, cryoglobulins or a new monoclonal protein. These call for evaluation for lymphoma.</li>\n</ul>\n<h2>Systemic sclerosis</h2>\n<table class=\"hy\">\n<thead><tr><th>Problem</th><th>How to find it</th><th>Management</th></tr></thead>\n<tbody>\n<tr><td>Raynaud phenomenon, digital ulcers</td><td>History; nailfold capillary changes</td><td>Keep warm, stop smoking, dihydropyridine calcium channel blocker; then PDE-5 inhibitor or IV prostacyclin for ulcers</td></tr>\n<tr><td>Interstitial lung disease (diffuse, anti-Scl-70)</td><td>Baseline HRCT; PFTs with DLCO serially</td><td>Mycophenolate; nintedanib or tocilizumab; transplant referral if progressive</td></tr>\n<tr><td>Pulmonary arterial hypertension (limited, late)</td><td>Annual echocardiography and DLCO; confirm with right-heart catheterisation</td><td>Pulmonary vasodilators (endothelin receptor antagonist, PDE-5 inhibitor)</td></tr>\n<tr><td>Scleroderma renal crisis (early diffuse, anti-RNA polymerase III)</td><td>Home blood pressure checks; new hypertension, rising creatinine, microangiopathic hemolysis</td><td><strong>ACE inhibitor</strong>, titrated up even as creatinine rises; dialysis if needed</td></tr>\n<tr><td>Esophageal dysmotility, reflux</td><td>Symptoms; manometry or endoscopy</td><td>Proton pump inhibitor, prokinetic; treat small-bowel bacterial overgrowth</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Glucocorticoids at moderate to high doses (more than about 15 mg/day of prednisone) are a trigger for scleroderma renal crisis in early diffuse disease. Avoid them where possible, and check blood pressure often in anyone who must take them.</p></div>\n<h2>Inflammatory myopathy</h2>\n<ul>\n<li><strong>Presentation.</strong> Symmetric proximal weakness: trouble rising from a chair, climbing stairs or lifting the arms. Pain is little or absent.</li>\n<li><strong>Initial tests.</strong> Raised CK and aldolase, a myopathic EMG, and MRI showing muscle edema, which also guides the biopsy site.</li>\n<li><strong>Most accurate test.</strong> Muscle biopsy, together with a myositis antibody panel.</li>\n<li><strong>Cancer screening</strong> in adults with dermatomyositis, and to a lesser degree other forms, especially with anti-TIF1-γ or anti-NXP2. Do age-appropriate screening plus CT of the chest, abdomen and pelvis. In people with ovaries, add pelvic imaging and CA-125.</li>\n<li><strong>Lung assessment in everyone.</strong> PFTs with DLCO and HRCT, because interstitial lung disease (especially in antisynthetase syndrome and anti-MDA5 disease) drives mortality. Check for dysphagia and aspiration, and for myocarditis with troponin and ECG.</li>\n<li><strong>Treatment.</strong> High-dose glucocorticoids with an early steroid-sparing agent (methotrexate, azathioprine or mycophenolate). IVIG and rituximab for refractory disease. Hydroxychloroquine and sun protection for the skin. Physical therapy.</li>\n<li><strong>Inclusion body myositis</strong> does not respond to immunosuppression. Care is supportive.</li>\n</ul>\n<p>In juvenile dermatomyositis, watch for calcinosis and gastrointestinal vasculopathy.</p>\n<div class=\"pearl\"><p>A person on long-term prednisone for myositis who gets weaker with a <em>normal</em> CK may have steroid myopathy rather than a flare. Hip flexors are prominently affected. Tapering the dose, not escalating it, is the answer.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Systemic Lupus Erythematosus"
+    },
+    {
+     "statpearls": "Polymyositis"
+    },
+    {
+     "statpearls": "Systemic Sclerosis (Scleroderma)"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Muscle biopsy patterns in cross-section: dermatomyositis with perifascicular atrophy and perimysial inflammation, polymyositis with CD8 T cells invading fibres within the fascicle, and inclusion body myositis with rimmed vacuoles."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Typical hand joint involvement: rheumatoid arthritis targets the wrists, MCP and PIP joints and spares the DIP joints; osteoarthritis targets the DIP and PIP joints and the thumb base."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Headache and rising creatinine in systemic sclerosis"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 47-year-old woman who has smoked one pack of cigarettes daily for 25 years has 4 months of symmetric swelling of the MCP and PIP joints of both hands and both wrists, with 2 hours of morning stiffness. The DIP joints are normal. The most specific serologic test for her condition detects antibodies to self-proteins altered by which of the following post-translational modifications?</p>",
+   "options": [
+    "Citrullination of arginine residues",
+    "Hydroxylation of proline residues",
+    "Nonenzymatic glycation of lysine residues",
+    "Phosphorylation of serine residues",
+    "Sulfation of tyrosine residues"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is rheumatoid arthritis. Anti-cyclic citrullinated peptide (anti-CCP) antibodies are far more specific for RA than rheumatoid factor. They recognise proteins in which peptidylarginine deiminase has converted arginine to citrulline. Smoking increases citrullination in the airways and, in carriers of the HLA-DRB1 shared epitope, raises the risk of seropositive RA. Those HLA molecules present citrullinated peptides efficiently.</p><p><strong>Takeaway:</strong> Anti-CCP antibodies target citrullinated proteins; smoking and the shared epitope link this modification to RA.</p>",
+   "whyNot": {
+    "B": "Prolyl hydroxylation is a step in collagen synthesis that needs vitamin C. It is not the target of RA-specific antibodies.",
+    "C": "Nonenzymatic glycation produces HbA1c and advanced glycation end-products in diabetes, not RA autoantigens.",
+    "D": "Serine phosphorylation is a ubiquitous signalling modification that does not define an RA antibody.",
+    "E": "Tyrosine sulfation affects some chemokine receptors and coagulation proteins but is not the RA-specific neoepitope."
+   },
+   "objective": "Explain that anti-CCP antibodies recognise citrullinated proteins and link this to smoking in RA.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "inflammatory arthritis",
+    "autoantibodies"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old man with seropositive rheumatoid arthritis has had poorly controlled synovitis for 3 years. Hand radiographs show new marginal erosions at the second and third MCP joints. Synovial tissue from a joint replacement contains hyperplastic fibroblast-like synoviocytes and activated T cells that strongly express a membrane ligand. That ligand binds a receptor on myeloid precursors and is the immediate driver of the bone erosions. Which of the following is this ligand?</p>",
+   "options": [
+    "Fas ligand (CD95L)",
+    "Osteoprotegerin",
+    "RANK ligand (RANKL)",
+    "Sclerostin",
+    "Transforming growth factor-β"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Marginal erosions in RA result from osteoclasts generated at the junction of pannus and bone. Synovial fibroblasts and activated T cells express RANKL, which binds RANK on monocyte–macrophage precursors and, with M-CSF, drives their fusion and maturation into bone-resorbing osteoclasts. TNF-α and IL-6 increase RANKL expression. Osteoprotegerin is the natural decoy that blocks RANKL, and denosumab is a therapeutic anti-RANKL antibody.</p><p><strong>Takeaway:</strong> RANKL from synovial fibroblasts and T cells drives osteoclast formation and the erosions of RA.</p>",
+   "whyNot": {
+    "A": "Fas ligand triggers apoptosis through Fas. It does not drive osteoclast differentiation.",
+    "B": "Osteoprotegerin is a soluble decoy receptor that binds RANKL and prevents osteoclast formation, the opposite of what is described.",
+    "D": "Sclerostin, made by osteocytes, inhibits Wnt signalling in osteoblasts and reduces bone formation. It does not activate osteoclast precursors.",
+    "E": "TGF-β promotes fibrosis and matrix production. It is not the ligand that activates osteoclast precursors."
+   },
+   "objective": "Identify RANKL as the mediator of osteoclast-driven erosions in rheumatoid arthritis.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "inflammatory arthritis",
+    "bone remodelling"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 13-year-old girl has photosensitive malar rash, painful mouth ulcers, arthritis of both wrists and proteinuria. ANA and anti-Smith antibodies are positive. Her older brother developed systemic lupus erythematosus at age 9. In both siblings, the total hemolytic complement activity (CH50) is undetectable even when the disease is quiescent, while C3 is normal. An inherited deficiency of which of the following is most likely?</p>",
+   "options": [
+    "C1q",
+    "C5",
+    "C9",
+    "Complement factor H",
+    "Decay-accelerating factor (CD55)"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Childhood-onset lupus in siblings with a persistently absent CH50 and normal C3 suggests a hereditary deficiency of an early classical pathway component. C1q deficiency carries the highest risk of SLE of any single gene defect. Early complement normally coats apoptotic cells and immune complexes so that macrophages clear them quietly. Without it, nuclear antigens persist and drive autoantibody formation.</p><p><strong>Takeaway:</strong> Deficiency of early classical complement components, especially C1q, strongly predisposes to SLE.</p>",
+   "whyNot": {
+    "B": "C5 deficiency removes the terminal pathway. It causes recurrent <em>Neisseria</em> infection and only weakly predisposes to lupus.",
+    "C": "C9 deficiency is the mildest terminal defect, sometimes with <em>Neisseria</em> infection, and is not a lupus risk gene.",
+    "D": "Factor H deficiency causes uncontrolled alternative-pathway activation with low C3 and atypical hemolytic uremic syndrome.",
+    "E": "DAF (CD55) deficiency, with CD59 loss, causes paroxysmal nocturnal hemoglobinuria, not familial lupus."
+   },
+   "objective": "Relate inherited early classical complement deficiency, especially C1q, to familial early-onset SLE.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "autoimmunity",
+    "complement"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 44-year-old woman has 8 months of tight, thickened skin that now extends from her fingers to her upper arms, chest and thighs. She has Raynaud phenomenon and new dyspnea on exertion. High-resolution CT shows bibasilar reticular opacities. Antibodies against which of the following are most likely present?</p>",
+   "options": [
+    "Centromere proteins",
+    "DNA topoisomerase I",
+    "Histones",
+    "Histidyl-tRNA synthetase",
+    "U1 ribonucleoprotein"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Skin thickening proximal to the elbows and onto the trunk, with early interstitial lung disease, defines diffuse cutaneous systemic sclerosis. Anti-DNA topoisomerase I (anti-Scl-70) is the antibody most associated with this subset and with progressive lung fibrosis.</p><p><strong>Takeaway:</strong> Diffuse systemic sclerosis with interstitial lung disease goes with anti-topoisomerase I (Scl-70). Limited disease goes with anticentromere.</p>",
+   "whyNot": {
+    "A": "Anticentromere antibodies mark limited cutaneous systemic sclerosis, with skin changes distal to the elbows and late pulmonary hypertension.",
+    "C": "Anti-histone antibodies indicate drug-induced lupus, which does not cause sclerodactyly or skin fibrosis.",
+    "D": "Anti-histidyl-tRNA synthetase (anti-Jo-1) marks antisynthetase myositis with lung disease, not diffuse skin thickening.",
+    "E": "Anti-U1 RNP defines mixed connective tissue disease, with puffy hands rather than widespread proximal sclerosis."
+   },
+   "objective": "Associate diffuse cutaneous systemic sclerosis with anti-topoisomerase I antibodies.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "connective tissue disease",
+    "autoantibodies"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 71-year-old man has had 3 years of slowly worsening weakness. He has trouble gripping tools and has fallen twice because his knees buckled. He has also begun to choke on solid food. Examination shows weakness and atrophy of the forearm finger flexors and the quadriceps, more on the left. Serum CK is 640 U/L (reference, 30–200 U/L). A 6-month trial of high-dose prednisone did not help. Muscle biopsy shows endomysial CD8 T cells surrounding non-necrotic fibres and many fibres with rimmed vacuoles containing protein aggregates. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Dermatomyositis",
+    "Glucocorticoid-induced myopathy",
+    "Immune-mediated necrotizing myopathy",
+    "Inclusion body myositis",
+    "Polymyositis"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Inclusion body myositis is the most common acquired myopathy after age 50. It affects men more often and progresses slowly with asymmetric weakness of the finger flexors and quadriceps, and often dysphagia. CK is normal or only mildly raised. The biopsy combines endomysial CD8 T-cell inflammation with degenerative features: rimmed vacuoles and protein inclusions. It is characteristically resistant to glucocorticoids and other immunosuppressants.</p><p><strong>Takeaway:</strong> An older man with finger-flexor and quadriceps weakness, rimmed vacuoles and no response to steroids has inclusion body myositis.</p>",
+   "whyNot": {
+    "A": "Dermatomyositis has a characteristic rash and perifascicular atrophy with perimysial inflammation. It usually responds to glucocorticoids.",
+    "B": "Steroid myopathy causes proximal, mostly hip-flexor weakness with a normal CK. It began after, not before, steroid therapy and does not produce rimmed vacuoles.",
+    "C": "Necrotizing myopathy shows necrotic fibres with little inflammation and a very high CK, usually in the thousands.",
+    "E": "Polymyositis causes symmetric proximal weakness that responds to immunosuppression and lacks rimmed vacuoles. It is now diagnosed only after other conditions are excluded."
+   },
+   "objective": "Diagnose inclusion body myositis from its distribution, biopsy findings and steroid resistance.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "myopathy",
+    "older adults"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old man has 2 years of low back and buttock pain that is worst in the early morning, wakes him at 4 AM and improves after a run. He had an episode of painful red left eye with photophobia last year. Lumbar flexion is reduced. Radiographs show bilateral sacroiliac erosions and sclerosis. Genetic testing identifies the HLA allele most strongly associated with his condition. The molecule this allele encodes normally presents peptides to which of the following cells?</p>",
+   "options": [
+    "CD4 T helper cells",
+    "CD8 cytotoxic T cells",
+    "Tissue mast cells",
+    "Naive B lymphocytes",
+    "Circulating neutrophils"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Inflammatory back pain, sacroiliitis and acute anterior uveitis in a young man indicate ankylosing spondylitis, which is strongly linked to HLA-B27. HLA-B is an MHC class I molecule. Class I molecules, expressed on nearly all nucleated cells, present endogenous (cytosolic) peptides to CD8 T cells, with CD8 binding the α3 domain. In spondyloarthritis, misfolding of HLA-B27 and abnormal heavy-chain forms also drive IL-23/IL-17 inflammation.</p><p><strong>Takeaway:</strong> HLA-B27 is MHC class I and presents peptides to CD8 T cells; it is the key genetic risk for axial spondyloarthritis.</p>",
+   "whyNot": {
+    "A": "CD4 T cells recognise peptides on MHC class II (HLA-DR, DQ, DP), the class tied to RA, not HLA-B27.",
+    "C": "Mast cells are activated by IgE cross-linking, not by recognising peptide on MHC class I.",
+    "D": "B cells recognise native antigen through their receptor and do not recognise peptide–MHC class I complexes.",
+    "E": "Neutrophils do not have T-cell receptors and do not recognise MHC-presented peptides."
+   },
+   "objective": "Recall that HLA-B27 is an MHC class I molecule presenting peptides to CD8 T cells.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "back pain",
+    "HLA associations"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman at 22 weeks' gestation has a routine prenatal visit. The fetal heart rate is 52/min and regular. Fetal echocardiography shows complete atrioventricular dissociation with normal cardiac structure. She has had dry eyes and dry mouth for 3 years but has never been evaluated. Which of the following maternal antibodies is most likely responsible for the fetal finding?</p>",
+   "options": [
+    "Anti-cardiolipin IgM",
+    "Anti-centromere IgG",
+    "Anti-dsDNA IgM",
+    "Anti-Ro/SSA IgG",
+    "Anti-thyroid peroxidase IgG"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Sicca symptoms suggest undiagnosed Sjögren disease. Maternal anti-Ro/SSA (and often anti-La/SSB) IgG crosses the placenta from mid-pregnancy. It binds fetal cardiac conduction tissue, causing inflammation and fibrosis of the AV node, which leads to congenital complete heart block, usually found at 18 to 24 weeks. Only IgG crosses the placenta, through the neonatal Fc receptor.</p><p><strong>Takeaway:</strong> Fetal complete heart block in a structurally normal heart points to maternal anti-Ro/SSA IgG.</p>",
+   "whyNot": {
+    "A": "IgM does not cross the placenta. Antiphospholipid antibodies cause placental thrombosis and pregnancy loss, not AV block.",
+    "B": "Anticentromere antibodies mark limited systemic sclerosis and are not linked to fetal heart block.",
+    "C": "Anti-dsDNA is an SLE marker, and as an IgM it would not cross the placenta.",
+    "E": "Thyroid peroxidase antibodies are associated with autoimmune thyroiditis and miscarriage risk, not fetal heart block."
+   },
+   "objective": "Link maternal anti-Ro/SSA IgG to congenital complete heart block.",
+   "extraAreas": [
+    "12.07.01"
+   ],
+   "disciplines": [
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pregnancy",
+    "autoantibodies"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 33-year-old woman with seropositive rheumatoid arthritis comes for a follow-up visit. She and her husband would like to try to conceive within the next few months. Her arthritis has been in remission for 8 months. Her current medications are shown.</p><table><thead><tr><th>Medication</th><th>Dose</th></tr></thead><tbody><tr><td>Methotrexate</td><td>20 mg orally once weekly</td></tr><tr><td>Folic acid</td><td>1 mg orally daily</td></tr><tr><td>Hydroxychloroquine</td><td>200 mg orally twice daily</td></tr><tr><td>Prednisone</td><td>5 mg orally daily</td></tr><tr><td>Calcium carbonate with vitamin D<sub>3</sub></td><td>Daily</td></tr></tbody></table><p>She uses condoms consistently. Which of the following is the most appropriate change to her regimen before she stops contraception?</p>",
+   "options": [
+    "Discontinue folic acid",
+    "Discontinue hydroxychloroquine",
+    "Discontinue methotrexate",
+    "Replace hydroxychloroquine with leflunomide",
+    "Replace prednisone with dexamethasone"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Methotrexate is an abortifacient and teratogen. It must be stopped before conception, with a gap of 1 to 3 months under current rheumatology reproductive guidance, while contraception continues. Hydroxychloroquine, low-dose prednisone and, if needed, sulfasalazine or a TNF inhibitor can maintain control during pregnancy. Folic acid should continue, and higher-dose preconception folate is reasonable after methotrexate exposure.</p><p><strong>Takeaway:</strong> Stop methotrexate 1 to 3 months before conception. Hydroxychloroquine and low-dose prednisone are pregnancy compatible.</p>",
+   "whyNot": {
+    "A": "Folic acid should continue. It is needed both for methotrexate safety now and for neural tube protection in pregnancy.",
+    "B": "Hydroxychloroquine is compatible with pregnancy and helps prevent flares. Stopping it would risk a flare.",
+    "D": "Leflunomide is teratogenic and persists for up to 2 years without a cholestyramine washout. It is a worse choice than methotrexate.",
+    "E": "Dexamethasone crosses the placenta largely unmetabolised and is used only for specific fetal indications. Prednisone is largely inactivated by the placenta."
+   },
+   "objective": "Stop methotrexate before conception while continuing pregnancy-compatible RA therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "inflammatory arthritis",
+    "pregnancy planning"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old man has 9 months of low back pain and stiffness that is worst after waking, lasts about an hour, wakes him in the early morning and improves with exercise. Naproxen helps substantially. He has no trauma history or neurologic symptoms. There is tenderness over both sacroiliac joints. CRP is 2.4 mg/dL (reference, under 1.0 mg/dL). Anteroposterior pelvic radiographs show normal sacroiliac joints. Which of the following is the most sensitive imaging study to detect early inflammation of the sacroiliac joints?</p>",
+   "options": [
+    "CT of the sacroiliac joints",
+    "Flexion–extension radiographs of the lumbar spine",
+    "MRI of the sacroiliac joints",
+    "Technetium-99m bone scintigraphy",
+    "Ultrasonography of the sacroiliac joints"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>He has inflammatory back pain with a raised CRP, suggesting axial spondyloarthritis. Radiographic sacroiliitis can take years to appear. MRI of the sacroiliac joints (STIR or contrast-enhanced sequences) detects bone marrow edema and active osteitis long before erosions or sclerosis show on film. This establishes non-radiographic axial spondyloarthritis.</p><p><strong>Takeaway:</strong> When sacroiliac radiographs are normal but inflammatory back pain is suspected, MRI is the most sensitive test.</p>",
+   "whyNot": {
+    "A": "CT is good for erosions, sclerosis and fusion that are already established, but it cannot show active marrow edema and adds radiation.",
+    "B": "Flexion–extension films assess instability, as in spondylolisthesis, not sacroiliac inflammation.",
+    "D": "Bone scintigraphy is nonspecific at the sacroiliac joints, where uptake is normally high.",
+    "E": "Ultrasound cannot see into the deep sacroiliac joint or bone marrow."
+   },
+   "objective": "Select MRI of the sacroiliac joints to detect early axial spondyloarthritis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "back pain",
+    "spondyloarthritis"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 49-year-old woman has 3 months of difficulty climbing stairs and lifting grocery bags, joint pain in both hands, and progressive shortness of breath on exertion. The skin on the radial sides of her index fingers is thickened, cracked and hyperkeratotic. Proximal strength is 4/5 in the shoulders and hips. Bibasilar fine end-inspiratory crackles are heard. Serum CK is 2,400 U/L (reference, 30–200 U/L). Anti-Jo-1 antibodies are positive. Oxygen saturation is 93% on room air at rest. Which of the following is the most appropriate next step in evaluating her dyspnea?</p>",
+   "options": [
+    "Bronchoscopy with bronchoalveolar lavage",
+    "Coronary angiography",
+    "High-resolution CT of the chest",
+    "Overnight polysomnography",
+    "Ventilation–perfusion lung scan"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Myositis, inflammatory arthritis, mechanic's hands and anti-Jo-1 define antisynthetase syndrome. Interstitial lung disease is its main cause of death and often appears early. Fine crackles with exertional dyspnea call for high-resolution CT of the chest, together with full pulmonary function tests including DLCO, to define the pattern and extent before immunosuppression is chosen.</p><p><strong>Takeaway:</strong> Every patient with inflammatory myopathy, especially antisynthetase syndrome, needs screening for interstitial lung disease with HRCT and PFTs.</p>",
+   "whyNot": {
+    "A": "Bronchoscopy is reserved for suspected infection or an alternative diagnosis after HRCT. It is not the first test for suspected interstitial lung disease.",
+    "B": "Nothing suggests ischemic heart disease. Crackles with antisynthetase antibodies point to the lung parenchyma.",
+    "D": "Polysomnography evaluates sleep-disordered breathing, which would not explain crackles or resting desaturation.",
+    "E": "A V/Q scan looks for pulmonary embolism. Velcro-like crackles in antisynthetase syndrome point instead to interstitial lung disease."
+   },
+   "objective": "Evaluate suspected interstitial lung disease in antisynthetase syndrome with high-resolution CT.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "myopathy",
+    "dyspnea"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman with systemic lupus erythematosus diagnosed 2 years ago, controlled with hydroxychloroquine, has new ankle swelling. Blood pressure is 146/92 mm Hg. Urinalysis shows 3+ protein, 25 red cells per high-power field with many dysmorphic forms and occasional red-cell casts. Urine protein-to-creatinine ratio is 2.1 g/g. Serum creatinine is 1.3 mg/dL (it was 0.8 mg/dL 6 months ago). Anti-dsDNA titre has risen, and C3 and C4 are low. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Begin IV cyclophosphamide without further testing",
+    "Renal artery duplex ultrasonography",
+    "Repeat urinalysis and creatinine in 3 months",
+    "Start lisinopril and observe",
+    "Kidney biopsy"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Proteinuria above 0.5 g/day, an active sediment with red-cell casts, a rising creatinine and serologic activity indicate lupus nephritis. A kidney biopsy is needed to establish the ISN/RPS class and the balance of activity and chronicity, which together decide whether and how intensively to immunosuppress. Proliferative class III or IV disease is treated with glucocorticoids plus mycophenolate or cyclophosphamide.</p><p><strong>Takeaway:</strong> Suspected lupus nephritis (proteinuria 0.5 g/day or more or an active sediment) calls for a kidney biopsy to guide therapy.</p>",
+   "whyNot": {
+    "A": "Starting cyclophosphamide without a biopsy risks treating the wrong class, such as membranous or advanced sclerotic disease, and adds avoidable toxicity in a young woman.",
+    "B": "Renal artery stenosis does not cause red-cell casts or nephritic-range sediment.",
+    "C": "Waiting 3 months allows irreversible nephron loss in active nephritis.",
+    "D": "An ACE inhibitor is useful supportive therapy, but alone it does not treat active immune-complex glomerulonephritis."
+   },
+   "objective": "Order a kidney biopsy to classify suspected lupus nephritis before treatment.",
+   "extraAreas": [
+    "11.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic",
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "connective tissue disease",
+    "glomerular disease"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 47-year-old woman with diffuse cutaneous systemic sclerosis diagnosed 14 months ago comes to the emergency department because of 2 days of severe headache and blurred vision. Her skin thickening has spread rapidly over the past few months. Anti-RNA polymerase III antibodies were positive at diagnosis. Three weeks ago she began prednisone 40 mg daily for an inflammatory arthritis. Blood pressure is 198/112 mm Hg. Serum creatinine is 2.3 mg/dL (it was 0.8 mg/dL 2 months ago). Hemoglobin is 9.6 g/dL, platelets are 94,000/mm<sup>3</sup>, and a blood smear shows schistocytes. Urinalysis shows 1+ protein and no casts. Which of the following is the most appropriate pharmacotherapy?</p>",
+   "options": [
+    "Captopril",
+    "Hydrochlorothiazide",
+    "Methylprednisolone pulse therapy",
+    "Plasma exchange with fresh frozen plasma",
+    "Propranolol"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>New malignant hypertension, acute kidney injury and microangiopathic hemolysis in early, rapidly progressive diffuse systemic sclerosis with anti-RNA polymerase III, after moderate-dose prednisone, is scleroderma renal crisis. Intimal proliferation narrows the renal arteries. Renal hypoperfusion drives renin release, which worsens the vasoconstriction. A short-acting ACE inhibitor such as captopril, titrated rapidly, is the treatment that changed survival in this condition. Other agents (for example, a calcium channel blocker) are added only if blood pressure remains high on a maximal ACE inhibitor.</p><p><strong>Takeaway:</strong> Scleroderma renal crisis is treated with an ACE inhibitor, titrated up quickly.</p>",
+   "whyNot": {
+    "B": "A diuretic worsens renal hypoperfusion and renin release. Patients are often volume-depleted.",
+    "C": "High-dose glucocorticoids are a trigger for renal crisis and would worsen it.",
+    "D": "Plasma exchange treats TTP, but the hemolysis here comes from renal vascular injury in systemic sclerosis, and TTP would not explain the severe hypertension.",
+    "E": "β-blockers do not block the renin–angiotensin system effectively and can worsen Raynaud phenomenon."
+   },
+   "objective": "Recognise scleroderma renal crisis and treat it with an ACE inhibitor.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "connective tissue disease",
+    "hypertensive emergency"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient receives captopril every 8 hours. The dose is increased stepwise, and prednisone is tapered. Forty-eight hours later her headache has resolved. Blood pressure is 152/94 mm Hg, and urine output is adequate. Serum creatinine has risen to 2.9 mg/dL, and potassium is 4.8 mEq/L. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Continue and up-titrate captopril",
+    "Replace captopril with losartan",
+    "Add eculizumab to captopril",
+    "Stop captopril and begin hydralazine",
+    "Stop captopril and begin hemodialysis"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In scleroderma renal crisis, creatinine often keeps rising for days after an ACE inhibitor is started, as glomerular perfusion pressure falls and the existing vascular injury evolves. This is not a reason to stop the drug. Continuing and up-titrating the ACE inhibitor to normal blood pressure gives the best chance of renal recovery. Even patients who need dialysis continue it, and many recover enough kidney function to stop dialysis months later.</p><p><strong>Takeaway:</strong> Do not stop the ACE inhibitor in scleroderma renal crisis when creatinine rises. Titrate it up, and dialyse if needed.</p>",
+   "whyNot": {
+    "B": "ARBs have not been shown to be as effective as ACE inhibitors in renal crisis and should not replace them.",
+    "C": "Eculizumab is used for complement-mediated atypical HUS. It is not standard therapy for scleroderma renal crisis.",
+    "D": "Stopping the ACE inhibitor removes the only proven therapy and risks a rebound in renin-driven hypertension.",
+    "E": "She has no urgent indication for dialysis (adequate urine output, acceptable potassium). If dialysis became necessary, the ACE inhibitor would still continue."
+   },
+   "objective": "Continue and up-titrate the ACE inhibitor despite rising creatinine in scleroderma renal crisis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "connective tissue disease",
+    "acute kidney injury"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which HLA alleles carry the shared epitope linked to RA?",
+   "back": "HLA-DRB1 alleles, including DR4 and DR1, which present citrullinated peptides well.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Enzyme that converts arginine to citrulline?",
+   "back": "Peptidylarginine deiminase (PAD).",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which molecule on synovial T cells and fibroblasts drives RA erosions?",
+   "back": "RANKL, which activates RANK on osteoclast precursors.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Histology of a rheumatoid nodule?",
+   "back": "Central fibrinoid necrosis with palisading histiocytes.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Felty syndrome?",
+   "back": "RA with splenomegaly and neutropenia.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Low-dose methotrexate's anti-inflammatory mechanism?",
+   "back": "Inhibits AICAR transformylase, which raises extracellular adenosine.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Mechanism of abatacept?",
+   "back": "CTLA-4–Ig binds CD80/86 and blocks CD28 co-stimulation.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why avoid IL-17 inhibitors in spondyloarthritis with Crohn disease?",
+   "back": "They can cause or worsen inflammatory bowel disease. A monoclonal anti-TNF is preferred.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "HLA-B27 is which MHC class, and which T cells does it present to?",
+   "back": "Class I; CD8 T cells.",
+   "question": 6
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Strongest single-gene risk for SLE?",
+   "back": "Deficiency of C1q (an early classical complement component).",
+   "question": 3
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Main hypersensitivity type behind lupus nephritis?",
+   "back": "Type III (immune-complex deposition).",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Antibody for diffuse systemic sclerosis with interstitial lung disease?",
+   "back": "Anti-DNA topoisomerase I (Scl-70).",
+   "question": 4
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Antibody linked to scleroderma renal crisis?",
+   "back": "Anti-RNA polymerase III.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Biopsy hallmark of dermatomyositis?",
+   "back": "Perifascicular atrophy with perimysial and perivascular inflammation; capillary complement injury.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Biopsy hallmark of inclusion body myositis?",
+   "back": "Endomysial CD8 T cells with rimmed vacuoles and protein inclusions.",
+   "question": 5
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Maternal antibody behind congenital complete heart block?",
+   "back": "Anti-Ro/SSA IgG.",
+   "question": 7
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Antibody of drug-induced lupus?",
+   "back": "Anti-histone.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Mechanism of belimumab?",
+   "back": "Neutralises BAFF (BLyS), reducing B-cell survival.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Hand joints spared in rheumatoid arthritis?",
+   "back": "The DIP joints.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "First-line DMARD for moderate to high RA activity?",
+   "back": "Methotrexate with folic acid.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Screening before a biologic or JAK inhibitor?",
+   "back": "Latent TB (IGRA or skin test) and hepatitis B; update inactivated vaccines and give recombinant zoster vaccine.",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "When to stop methotrexate before conception?",
+   "back": "1 to 3 months before trying to conceive.",
+   "question": 8
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Hydroxychloroquine eye screening?",
+   "back": "Baseline exam, then annual retinal screening after 5 years (sooner with risk factors).",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Most sensitive imaging for early sacroiliitis?",
+   "back": "MRI of the sacroiliac joints.",
+   "question": 9
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "First-line drug for axial spondyloarthritis?",
+   "back": "NSAIDs at full dose (try at least two).",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 3,
+   "front": "Neck pain after a minor fall in ankylosing spondylitis: next test?",
+   "back": "CT or MRI of the spine; plain films miss fractures.",
+   "question": null
+  },
+  {
+   "n": 30,
+   "section": 4,
+   "front": "Drug recommended for nearly all patients with SLE?",
+   "back": "Hydroxychloroquine.",
+   "question": null
+  },
+  {
+   "n": 31,
+   "section": 4,
+   "front": "Threshold of proteinuria for kidney biopsy in lupus?",
+   "back": "0.5 g/day or more, or an active sediment or rising creatinine.",
+   "question": 11
+  },
+  {
+   "n": 32,
+   "section": 4,
+   "front": "Treatment of scleroderma renal crisis?",
+   "back": "An ACE inhibitor, titrated up even if creatinine rises.",
+   "question": 12
+  },
+  {
+   "n": 33,
+   "section": 4,
+   "front": "Should the ACE inhibitor stop when creatinine rises in scleroderma renal crisis?",
+   "back": "No. Continue and up-titrate it; dialyse if needed.",
+   "question": 13
+  },
+  {
+   "n": 34,
+   "section": 4,
+   "front": "Annual screening in systemic sclerosis for pulmonary hypertension?",
+   "back": "Echocardiography and PFTs with DLCO.",
+   "question": null
+  },
+  {
+   "n": 35,
+   "section": 4,
+   "front": "Most accurate test for inflammatory myopathy?",
+   "back": "Muscle biopsy (with a myositis antibody panel).",
+   "question": null
+  },
+  {
+   "n": 36,
+   "section": 4,
+   "front": "Lymphoma warning signs in Sjögren disease?",
+   "back": "Persistent parotid enlargement, purpura, low C4, cryoglobulins, new monoclonal protein.",
+   "question": null
+  },
+  {
+   "n": 37,
+   "section": 4,
+   "front": "Weakness with a normal CK on long-term prednisone for myositis?",
+   "back": "Suspect steroid myopathy; taper the dose.",
+   "question": null
+  }
+ ]
+}

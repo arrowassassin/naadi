@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 550" width="760" height="550" role="img" aria-label="Five schematic panels showing the processus vaginalis: normal obliterated; communicating hydrocele with a thin patent channel and fluid around the testis; indirect inguinal hernia with a wide sac containing bowel; noncommunicating hydrocele with fluid only in the tunica vaginalis; and hydrocele of the cord as an isolated fluid pocket.">
+<title>Five schematic panels showing the processus vaginalis: normal obliterated; communicating hydrocele with a thin patent channel and fluid around the testis; indirect inguinal hernia with a wide sac containing bowel; noncommunicating hydrocele with fluid only in the tunica vaginalis; and hydrocele of the cord as an isolated fluid pocket.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="550" fill="#ffffff"/>
+<text x="380" y="30" font-family="sans-serif" font-size="18" fill="#0f172a" text-anchor="middle" font-weight="bold">Fate of the processus vaginalis and the resulting conditions</text>
+<text x="80" y="60" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold">Normal</text>
+<line x1="20" y1="100" x2="140" y2="100" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="80" cy="330" rx="55" ry="70" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="80" cy="345" rx="20" ry="28" fill="#fde68a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="80" y="350" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold">T</text>
+<line x1="80" y1="100" x2="80" y2="265" stroke="#0f172a" stroke-width="2" stroke-dasharray="3 4"/>
+<text x="230" y="60" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold"><tspan x="230" dy="0">Communicating</tspan><tspan x="230" dy="15">hydrocele</tspan></text>
+<line x1="170" y1="100" x2="290" y2="100" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="230" cy="330" rx="55" ry="70" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="230" cy="330" rx="45" ry="58" fill="#bfdbfe" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="230" cy="345" rx="20" ry="28" fill="#fde68a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="230" y="350" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold">T</text>
+<rect x="226" y="100" width="8" height="175" fill="#bfdbfe" stroke="#0f172a" stroke-width="1.5"/>
+<text x="380" y="60" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold"><tspan x="380" dy="0">Indirect</tspan><tspan x="380" dy="15">inguinal hernia</tspan></text>
+<line x1="320" y1="100" x2="440" y2="100" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="380" cy="330" rx="55" ry="70" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="380" cy="345" rx="20" ry="28" fill="#fde68a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="380" y="350" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold">T</text>
+<path d="M 358 100 L 358 290 Q 380 312 402 290 L 402 100" fill="#fecaca" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M 370 130 q 20 15 0 30 q -20 15 0 30 q 20 15 0 30 q -20 15 0 30" fill="none" stroke="#0f172a" stroke-width="2"/>
+<text x="530" y="60" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold"><tspan x="530" dy="0">Noncommunicating</tspan><tspan x="530" dy="15">hydrocele</tspan></text>
+<line x1="470" y1="100" x2="590" y2="100" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="530" cy="330" rx="55" ry="70" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="530" cy="330" rx="45" ry="58" fill="#bfdbfe" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="530" cy="345" rx="20" ry="28" fill="#fde68a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="530" y="350" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold">T</text>
+<line x1="530" y1="100" x2="530" y2="265" stroke="#0f172a" stroke-width="2" stroke-dasharray="3 4"/>
+<text x="680" y="60" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold"><tspan x="680" dy="0">Hydrocele</tspan><tspan x="680" dy="15">of the cord</tspan></text>
+<line x1="620" y1="100" x2="740" y2="100" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="680" cy="330" rx="55" ry="70" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="680" cy="345" rx="20" ry="28" fill="#fde68a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="680" y="350" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold">T</text>
+<line x1="680" y1="100" x2="680" y2="265" stroke="#0f172a" stroke-width="2" stroke-dasharray="3 4"/>
+<ellipse cx="680" cy="190" rx="18" ry="32" fill="#bfdbfe" stroke="#0f172a" stroke-width="1.5"/>
+<text x="80" y="430" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="80" dy="0">Processus closed;</tspan><tspan x="80" dy="15">no fluid</tspan></text>
+<text x="230" y="430" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="230" dy="0">Thin patent channel;</tspan><tspan x="230" dy="15">size changes with</tspan><tspan x="230" dy="15">activity</tspan></text>
+<text x="380" y="430" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="380" dy="0">Wide patent sac</tspan><tspan x="380" dy="15">holds bowel</tspan></text>
+<text x="530" y="430" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="530" dy="0">Processus closed;</tspan><tspan x="530" dy="15">fluid in tunica</tspan><tspan x="530" dy="15">vaginalis only</tspan></text>
+<text x="680" y="430" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal"><tspan x="680" dy="0">Isolated fluid</tspan><tspan x="680" dy="15">pocket along</tspan><tspan x="680" dy="15">the cord</tspan></text>
+<text x="380" y="510" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Dashed line: obliterated processus. Shaded tube: patent processus. T: testis. Blue: fluid; zigzag: bowel.</text>
+<text x="380" y="530" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">Top line: peritoneum at the deep inguinal ring.</text>
+</svg>

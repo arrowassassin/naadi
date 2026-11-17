@@ -1,0 +1,922 @@
+{
+ "area": "13.02.07",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Pelvic support, continence and fistula: anatomy and mechanisms",
+   "html": "<p>The pelvic organs are held in place by a partnership of muscle and connective tissue. The levator ani muscles form a contracting floor that closes the urogenital hiatus, while the endopelvic fascia and its condensations suspend and attach the vagina. When muscle is denervated or torn (most often by vaginal birth) the connective tissue takes the whole load, stretches over years and fails. Prolapse, stress incontinence and some defaecatory problems are the mechanical results.</p>\n<h2>Muscular support</h2>\n<ul>\n<li>The <strong>levator ani</strong> (pubococcygeus/pubovisceral, puborectalis and iliococcygeus) is supplied mainly by the nerve to levator ani from S3&ndash;S4, with a contribution from the pudendal nerve. Normal resting tone keeps the hiatus closed.</li>\n<li>The <strong>pudendal nerve</strong> (S2&ndash;S4) leaves the pelvis through the greater sciatic foramen, hooks around the ischial spine and sacrospinous ligament, and re-enters through the lesser sciatic foramen into the pudendal (Alcock) canal. It supplies the external urethral and anal sphincters and perineal skin. A prolonged second stage, a large baby or an operative delivery can stretch it, causing sphincter weakness and perineal numbness. The ischial spine is the landmark for a pudendal block.</li>\n</ul>\n<h2>Connective-tissue support: three levels</h2>\n<table class=\"hy\">\n<thead><tr><th>Level</th><th>Structures</th><th>Function</th><th>Failure produces</th></tr></thead>\n<tbody>\n<tr><td>I (apical)</td><td>Uterosacral and cardinal ligament complex</td><td>Suspends the cervix and upper vagina toward the sacrum</td><td>Uterine prolapse or post-hysterectomy vaginal vault prolapse; enterocele</td></tr>\n<tr><td>II (mid-vagina)</td><td>Lateral attachment of the vagina to the arcus tendineus fasciae pelvis; pubocervical and rectovaginal fascia</td><td>Holds the vagina as a flat sheet between bladder and rectum</td><td>Anterior wall prolapse (cystocele) or posterior wall prolapse (rectocele)</td></tr>\n<tr><td>III (distal)</td><td>Perineal body, perineal membrane, fusion to the levator ani</td><td>Fixes the lower vagina and introitus</td><td>Gaping introitus, low rectocele, perineal descent</td></tr>\n</tbody></table>\n[[figure:s23f-fig130207-1]]\n<p>The round ligament (a remnant of the gubernaculum) and the broad ligament (a peritoneal fold) give almost no support; they do not prevent prolapse. Risk factors for failure are vaginal parity (the strongest), older age and estrogen loss, obesity, chronic straining (constipation, chronic cough, heavy lifting), prior hysterectomy, and connective-tissue disorders such as Ehlers&ndash;Danlos and Marfan syndromes.</p>\n<h2>Continence: the physiology</h2>\n<table class=\"hy\">\n<thead><tr><th>Target</th><th>Receptor and nerve</th><th>Effect</th><th>Drug relevance</th></tr></thead>\n<tbody>\n<tr><td>Detrusor</td><td>M3 muscarinic; parasympathetic pelvic splanchnic (S2&ndash;S4)</td><td>Contraction (voiding)</td><td>Antimuscarinics relax it; onabotulinumtoxinA blocks acetylcholine release</td></tr>\n<tr><td>Detrusor</td><td>Beta-3 adrenergic; sympathetic hypogastric (T11&ndash;L2)</td><td>Relaxation (storage)</td><td>Mirabegron and vibegron are beta-3 agonists</td></tr>\n<tr><td>Internal urethral sphincter / bladder neck</td><td>Alpha-1 adrenergic; sympathetic</td><td>Contraction (storage)</td><td>Alpha-1 blockers can worsen stress leakage</td></tr>\n<tr><td>External urethral sphincter</td><td>Nicotinic; somatic pudendal (S2&ndash;S4, Onuf nucleus)</td><td>Voluntary closure</td><td>Strengthened by pelvic floor training</td></tr>\n</tbody></table>\n<ul>\n<li><strong>Stress incontinence</strong>: leakage when abdominal pressure exceeds urethral closure pressure. In <em>urethral hypermobility</em> the bladder neck drops below the pelvic floor during a cough, so the pressure rise is no longer transmitted equally to the proximal urethra. In <em>intrinsic sphincter deficiency</em> the urethral wall itself cannot coapt (after radiation, surgery or with severe atrophy).</li>\n<li><strong>Urgency incontinence</strong> (overactive bladder): involuntary detrusor contractions during filling. Causes include idiopathic detrusor overactivity and neurologic lesions above the sacral cord (stroke, multiple sclerosis, Parkinson disease).</li>\n<li><strong>Overflow incontinence</strong>: a chronically overdistended bladder leaks when pressure exceeds outlet resistance. Detrusor underactivity (diabetic autonomic neuropathy, sacral cord or cauda equina lesions, anticholinergic or opioid drugs) is the usual cause in women; obstruction from advanced prolapse kinking the urethra is less common.</li>\n</ul>\n<h2>Pharmacology by mechanism</h2>\n<ul>\n<li><strong>Antimuscarinics</strong> (oxybutynin, tolterodine, solifenacin, trospium) block M3 receptors on the detrusor. Effects elsewhere cause dry mouth, constipation, blurred vision and confusion. Tertiary amines such as oxybutynin cross the blood-brain barrier; trospium, a quaternary amine, crosses less. Cumulative anticholinergic exposure is linked to cognitive decline in older adults.</li>\n<li><strong>Beta-3 agonists</strong> (mirabegron, vibegron) relax the detrusor during filling without anticholinergic effects. Mirabegron can raise blood pressure and inhibits CYP2D6.</li>\n<li><strong>OnabotulinumtoxinA</strong>, injected into the detrusor, cleaves SNAP-25 and prevents acetylcholine release; urinary retention needing catheterisation is the key risk.</li>\n</ul>\n<h2>Genital fistula</h2>\n<p>An obstetric fistula forms when the fetal head is impacted in the pelvis for many hours during obstructed labour. Prolonged compression of the bladder base, urethra and vaginal wall against the pubic symphysis (or of the rectum against the sacrum) causes <strong>ischemic pressure necrosis</strong>. The dead tissue sloughs in the days after delivery, leaving a vesicovaginal or rectovaginal fistula with continuous leakage. The same field injury can damage the lumbosacral trunk or common fibular nerve (foot drop), and the baby is often stillborn. Where emergency caesarean delivery is available these fistulas are rare, and most vesicovaginal fistulas follow hysterectomy, radiation or malignancy. Rectovaginal fistulas also follow obstetric anal sphincter injury and Crohn disease.</p>\n<div class=\"trap\"><p>Continuous, painless leakage of urine day and night, beginning days to weeks after surgery or delivery, is a fistula until proven otherwise. Stress, urgency and overflow incontinence are intermittent or related to activity and bladder volume.</p></div>\n<div class=\"pearl\"><p>Naadi memory aid, &ldquo;Muscle closes, ligaments hold&rdquo;: the levator ani closes the hiatus; the uterosacral&ndash;cardinal complex (level I) holds the apex. Once the muscle fails, the ligaments eventually fail too.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Pelvic Organ Prolapse"
+    },
+    {
+     "statpearls": "Urinary Incontinence"
+    },
+    {
+     "statpearls": "Vesicovaginal Fistula"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Adnexal torsion, genital injury and post-assault pharmacology: mechanisms",
+   "html": "<p>This section covers the mechanisms behind adnexal torsion and genital injury, and the drug mechanisms used in the care of a patient after sexual assault.</p>\n<h2>Adnexal torsion</h2>\n<p>The ovary hangs from two pedicles: the <strong>infundibulopelvic (suspensory) ligament</strong>, which carries the ovarian artery (a direct branch of the abdominal aorta) and ovarian vein, and the <strong>utero-ovarian ligament</strong>, which carries ovarian branches of the uterine artery. Torsion is rotation of the adnexa around these pedicles, often with the fallopian tube.</p>\n<ul>\n<li><strong>Sequence of injury</strong>: thin-walled veins and lymphatics collapse first, while higher-pressure arterial inflow continues. The ovary becomes congested, edematous and enlarged, and the follicles are pushed to the periphery. Only later is arterial inflow lost, causing hemorrhagic infarction. This explains why Doppler arterial flow can still be present in a torsed ovary.</li>\n<li><strong>Risk factors</strong>: an enlarged ovary (usually larger than about 5 cm) acting as a lead point, such as a mature cystic teratoma, a functional cyst, or an ovary enlarged by ovulation induction; pregnancy; and, in children and adolescents, long mobile ligaments that let even a normal-sized ovary twist. Malignant masses torse less often because they tend to be fixed by adhesions or invasion.</li>\n<li>Torsion is somewhat more common on the right, where the sigmoid colon does not limit adnexal movement.</li>\n<li>An isolated fallopian tube can twist too, as can a paratubal cyst.</li>\n</ul>\n<h2>Genital injury</h2>\n<table class=\"hy\">\n<thead><tr><th>Injury</th><th>Mechanism</th><th>Typical location</th></tr></thead>\n<tbody>\n<tr><td>Straddle injury (child falls onto a bar or edge)</td><td>Blunt crush of soft tissue against the pubic rami</td><td>Anterior and lateral: labia, clitoral hood, periurethral tissue; usually asymmetric; hymen spared</td></tr>\n<tr><td>Vulvar hematoma</td><td>Rupture of branches of the pudendal vessels in loose vulvar tissue</td><td>Labia majora; can expand quickly because the tissue offers little tamponade</td></tr>\n<tr><td>Penetrating injury</td><td>Object or penile penetration</td><td>Posterior hymen and posterior fourchette; vaginal wall or fornix; can enter the peritoneum</td></tr>\n<tr><td>Coital laceration</td><td>Penetration with poor lubrication, atrophy, first intercourse or force</td><td>Posterior fornix or hymenal ring; can bleed heavily</td></tr>\n</tbody></table>\n<p>In a child, a foul-smelling bloody discharge without trauma suggests a retained vaginal foreign body (often toilet tissue). Posterior hymenal transections, injuries inconsistent with the history, or a sexually transmitted infection beyond the neonatal period raise concern for sexual abuse.</p>\n<h2>Pharmacology after sexual assault</h2>\n<h3>Emergency contraception</h3>\n<table class=\"hy\">\n<thead><tr><th>Method</th><th>Mechanism</th><th>Time window</th></tr></thead>\n<tbody>\n<tr><td>Levonorgestrel 1.5 mg</td><td>Progestin that blunts or delays the LH surge, postponing ovulation; ineffective once the surge has begun</td><td>Best within 72 h</td></tr>\n<tr><td>Ulipristal acetate 30 mg</td><td>Selective progesterone receptor modulator that delays follicular rupture even when the LH surge has started</td><td>Up to 120 h</td></tr>\n<tr><td>Copper IUD</td><td>Copper ions are toxic to sperm and ova and create an inflammatory endometrium</td><td>Within 5 days; most effective method</td></tr>\n</tbody></table>\n<p>Oral emergency contraceptives act <em>before</em> fertilisation by delaying ovulation; they do not disrupt an established pregnancy and are not abortifacients. Progestin starting after ulipristal competes at the receptor, so hormonal contraception is delayed for several days after ulipristal.</p>\n<h3>STI prophylaxis</h3>\n<ul>\n<li><strong>Ceftriaxone</strong> (third-generation cephalosporin; inhibits cell-wall transpeptidases) for <em>Neisseria gonorrhoeae</em>.</li>\n<li><strong>Doxycycline</strong> (binds the 30S ribosomal subunit and blocks aminoacyl-tRNA attachment) for <em>Chlamydia trachomatis</em>; avoid in pregnancy.</li>\n<li><strong>Metronidazole</strong> (reduced inside anaerobes and protozoa to radicals that damage DNA) for trichomoniasis and bacterial vaginosis; it can cause a disulfiram-like reaction with alcohol.</li>\n<li><strong>HIV nonoccupational post-exposure prophylaxis</strong> combines two nucleoside/nucleotide reverse transcriptase inhibitors with an integrase strand transfer inhibitor, for 28 days.</li>\n<li><strong>Hepatitis B vaccine</strong> (recombinant HBsAg) induces protective anti-HBs.</li>\n</ul>\n<div class=\"trap\"><p>Arterial flow on Doppler does not exclude ovarian torsion: venous obstruction comes first, and flow can persist until late. The diagnosis is clinical plus imaging, and it is confirmed at surgery.</p></div>\n<div class=\"pearl\"><p>Copper ions, not hormones, explain why the copper IUD works as emergency contraception regardless of body weight or time in the cycle within the 5-day window.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Ovarian Torsion"
+    },
+    {
+     "statpearls": "Sexual Assault Infectious Disease Prophylaxis"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Pelvic organ prolapse, urinary incontinence and genital fistula: evaluation and management",
+   "html": "<p>Prolapse and incontinence are common, especially after vaginal birth and in older people, and are often hidden from clinicians because of embarrassment. Ask directly. Treatment depends on how much the symptom bothers the patient, not on how far the organs descend.</p>\n<h2>Pelvic organ prolapse</h2>\n<p><strong>Presentation</strong>: a vaginal bulge or pressure that is worse at the end of the day or after standing, difficulty voiding or a need to reduce the bulge to void or defaecate (splinting), recurrent UTI from incomplete emptying, and sometimes ulceration of exposed mucosa. Examine with the patient straining, ideally standing as well as supine, and assess each compartment separately with a split speculum.</p>\n<p><strong>Staging</strong> (POP-Q) is referenced to the hymen: stage 0 no prolapse, I leading edge more than 1 cm above the hymen, II within 1 cm above or below, III more than 1 cm beyond but short of complete eversion, IV complete eversion. Assess a post-void residual volume and check for occult stress incontinence with the prolapse reduced, because correcting prolapse can unmask it.</p>\n<table class=\"hy\">\n<thead><tr><th>Option</th><th>Best for</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Observation</td><td>No or minimal bother</td><td>Prolapse is not dangerous in itself unless it obstructs voiding or ulcerates</td></tr>\n<tr><td>Pelvic floor muscle training</td><td>Stage I&ndash;II with mild symptoms</td><td>Improves symptoms; best supervised by a pelvic floor physical therapist</td></tr>\n<tr><td>Pessary</td><td>Any stage; patients who want to avoid or delay surgery, or who are poor surgical candidates</td><td>Ring for moderate prolapse, space-filling types (Gellhorn, cube) for advanced; vaginal estrogen lowers erosion risk; needs periodic removal and cleaning</td></tr>\n<tr><td>Native-tissue vaginal repair</td><td>Symptomatic prolapse; avoids abdominal surgery</td><td>Anterior or posterior colporrhaphy; apical suspension to the uterosacral or sacrospinous ligament</td></tr>\n<tr><td>Sacrocolpopexy</td><td>Apical or vault prolapse, younger or active patients, recurrence</td><td>Abdominal or laparoscopic mesh from vaginal apex to sacral promontory; most durable apical repair</td></tr>\n<tr><td>Colpocleisis</td><td>Older patients with advanced prolapse who will not have vaginal intercourse in the future</td><td>Obliterative, short and low risk, very effective; rules out future vaginal intercourse and cervical access</td></tr>\n</tbody></table>\n<p>Transvaginally placed mesh for prolapse repair is no longer sold in the US; mesh is still used abdominally (sacrocolpopexy) and in midurethral slings for stress incontinence.</p>\n<h2>Urinary incontinence</h2>\n<h3>Initial evaluation</h3>\n<ul>\n<li>History: leakage with cough, sneeze or exercise (stress) versus a sudden urge with leakage on the way (urgency); nocturia; fluid and caffeine intake; medications (diuretics, alpha-blockers, anticholinergics, sedatives); mobility and cognition.</li>\n<li>A 3-day <strong>bladder diary</strong>, <strong>urinalysis</strong> (infection or hematuria), <strong>post-void residual</strong> by bladder scan or catheter, and a <strong>cough stress test</strong> with a comfortably full bladder.</li>\n<li>Urodynamics are not needed before treatment of uncomplicated stress incontinence; use them for mixed, complex, neurologic or recurrent cases.</li>\n</ul>\n<h3>Treatment by type</h3>\n<table class=\"hy\">\n<thead><tr><th>Type</th><th>First line</th><th>Next</th><th>Escalation</th></tr></thead>\n<tbody>\n<tr><td>Stress</td><td>Pelvic floor muscle training, weight loss</td><td>Incontinence pessary or vaginal insert</td><td>Midurethral sling (standard surgery); Burch colposuspension; urethral bulking for poor surgical candidates or intrinsic sphincter deficiency</td></tr>\n<tr><td>Urgency</td><td>Bladder training (timed voiding with gradually longer intervals), fluid and caffeine adjustment, pelvic floor training, weight loss</td><td>Beta-3 agonist or antimuscarinic (avoid strongly anticholinergic drugs in older adults)</td><td>Intradetrusor onabotulinumtoxinA, sacral neuromodulation, percutaneous tibial nerve stimulation</td></tr>\n<tr><td>Overflow</td><td>Treat cause; stop offending drugs</td><td>Clean intermittent self-catheterisation</td><td>Indwelling catheter only if intermittent catheterisation is impossible</td></tr>\n<tr><td>Mixed</td><td>Treat the most bothersome component first</td><td colspan=\"2\">Behavioural measures help both components</td></tr>\n</tbody></table>\n<p>In frail older adults, look for transient causes first: delirium, infection, atrophic urethritis, drugs, excess urine output (hyperglycemia, heart failure, diuretics), restricted mobility and stool impaction. <strong>Functional incontinence</strong> in people with disabilities or dementia (cannot reach or use the toilet in time) responds to prompted voiding, toilet access and mobility aids. Systemic estrogen therapy does not treat incontinence and may worsen it; vaginal estrogen helps urgency symptoms and recurrent UTI in postmenopausal patients.</p>\n<div class=\"trap\"><p>Starting oxybutynin in an older adult with memory problems is a classic error. Strongly anticholinergic drugs worsen cognition; prefer behavioural therapy and, if a drug is needed, a beta-3 agonist.</p></div>\n<h2>Genitourinary and rectovaginal fistula</h2>\n<ul>\n<li>Suspect a vesicovaginal fistula with continuous leakage after hysterectomy, radiation or prolonged obstructed labour.</li>\n<li><strong>Tampon (dye) test</strong>: instil dilute methylene blue or indigo carmine into the bladder with a tampon in the vagina. Blue staining means a vesicovaginal fistula. If the tampon stays unstained by bladder dye but turns orange after oral phenazopyridine, urine is reaching the vagina from above the bladder: a <strong>ureterovaginal fistula</strong>.</li>\n<li>Confirm and map with cystoscopy and CT urography; a ureteral fistula needs evaluation for obstruction.</li>\n<li>Management: a small, recent fistula may close with continuous bladder drainage for several weeks; most need surgical repair (vaginal or abdominal), timed after inflammation settles. Ureterovaginal fistula is treated with a ureteral stent or reimplantation.</li>\n<li>Rectovaginal fistula presents with passage of gas or stool from the vagina; small low fistulas after delivery may heal; others need repair, and Crohn disease must be controlled first.</li>\n</ul>\n[[figure:s23f-fig130207-2]]\n<div class=\"pearl\"><p>Before any surgery for prolapse, reduce the prolapse and repeat the cough stress test. Occult stress incontinence revealed this way changes the counselling and may justify a concurrent sling.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Pelvic Organ Prolapse"
+    },
+    {
+     "statpearls": "Stress Urinary Incontinence"
+    },
+    {
+     "statpearls": "Vesicovaginal Fistula"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Adnexal torsion, genital trauma and care after sexual assault",
+   "html": "<h2>Adnexal torsion</h2>\n<p><strong>Presentation</strong>: sudden, severe, unilateral lower abdominal or pelvic pain, often intermittent at first (partial twisting and untwisting), with nausea and vomiting in most patients. Fever is usually absent early; a low-grade fever and leukocytosis suggest necrosis. A tender adnexal mass may be palpable. Children may present with vague abdominal pain and vomiting. Always obtain a pregnancy test, because pregnancy (including ectopic pregnancy) changes the differential.</p>\n<p><strong>Imaging</strong>: pelvic ultrasound with Doppler is the first test. Findings that support torsion are a unilaterally enlarged, edematous ovary with peripherally displaced follicles, an associated cyst or mass, free fluid, and a twisted vascular pedicle (whirlpool appearance). <strong>Normal arterial Doppler flow does not exclude torsion.</strong> CT or MRI may be used when ultrasound is unclear, but they must not delay surgery when suspicion is high.</p>\n<p><strong>Management</strong>: emergency laparoscopy with detorsion. Preserve the ovary even if it looks dark and congested; most such ovaries recover function. Remove an associated benign cyst (cystectomy) when feasible. Oophorectomy is reserved for frank necrosis, suspected malignancy or, in postmenopausal patients, by shared choice. In pregnancy, laparoscopy is safe in any trimester. Oophoropexy may be considered after recurrent torsion or torsion of a solitary ovary.</p>\n<table class=\"hy\">\n<thead><tr><th>Diagnosis</th><th>Distinguishing features</th></tr></thead>\n<tbody>\n<tr><td>Adnexal torsion</td><td>Abrupt severe pain, vomiting, enlarged ovary; pregnancy test negative or intrauterine pregnancy</td></tr>\n<tr><td>Ruptured ectopic pregnancy</td><td>Positive hCG, empty uterus, hemoperitoneum, hemodynamic instability</td></tr>\n<tr><td>Ruptured hemorrhagic cyst</td><td>Sudden pain often after intercourse or exercise; free fluid; ovary not enlarged and edematous</td></tr>\n<tr><td>Appendicitis</td><td>Periumbilical pain that migrates to the right lower quadrant, anorexia, fever, normal ovaries</td></tr>\n<tr><td>Tubo-ovarian abscess</td><td>Fever, discharge, cervical motion tenderness, complex adnexal mass</td></tr>\n</tbody></table>\n<h2>Genital trauma</h2>\n<ul>\n<li><strong>Straddle injuries</strong> in children: take a careful history, examine in a calm setting with a caregiver, and confirm the child can void. Small, non-expanding hematomas and superficial lacerations need ice, analgesia and sitz baths. Examination under anesthesia is needed for active bleeding, an expanding hematoma, inability to see the extent of injury, suspected vaginal, urethral or rectal involvement, or a penetrating mechanism. Urinary retention from swelling needs a catheter.</li>\n<li><strong>Vulvar hematoma</strong> in adults: small and stable, manage conservatively; large or expanding, incise, evacuate and ligate bleeding vessels.</li>\n<li><strong>Coital lacerations</strong> of the vaginal fornix can bleed briskly and need repair. Consider non-consensual intercourse and ask privately.</li>\n<li>Injury patterns inconsistent with the history, posterior hymenal injury in a prepubertal child, or a delay in seeking care trigger an evaluation for abuse and a report to child protective services as required by law.</li>\n</ul>\n<h2>Care after sexual assault</h2>\n<p>Treat life-threatening injuries first. Then offer a trauma-informed, patient-led examination, ideally by a sexual assault nurse examiner or trained clinician, in private, with an advocate offered. The patient consents separately to each component and can decline any part.</p>\n<ol>\n<li><strong>Forensic evidence collection</strong>: offered for an acute assault; most jurisdictions collect evidence up to about 120 hours (check local protocol). Ask the patient not to bathe, void or change clothes before collection if possible, but never refuse care if they have. In the US, an adult can have evidence collected and stored without deciding at that time whether to report to law enforcement. Document injuries objectively, with a body diagram or photographs. Consider toxicology if a drug-facilitated assault is suspected.</li>\n<li><strong>Pregnancy evaluation and emergency contraception</strong> for anyone who could become pregnant: a baseline pregnancy test, then emergency contraception. An IUD is most effective; ulipristal is more effective than levonorgestrel, especially after 72 hours and at higher body weight; levonorgestrel is widely available without a prescription.</li>\n<li><strong>STI testing and prophylaxis</strong> (CDC): NAAT for gonorrhea and chlamydia at exposed sites, trichomonas testing, and serologies for HIV, syphilis and hepatitis B. Empiric treatment for adults and adolescents with a vagina is ceftriaxone 500 mg IM once (1 g if 150 kg or more) plus doxycycline for 7 days plus metronidazole for 7 days; for those without a vagina, ceftriaxone plus doxycycline.</li>\n<li><strong>Hepatitis B</strong>: vaccinate if not previously vaccinated; add hepatitis B immune globulin if the assailant is known to be HBsAg-positive.</li>\n<li><strong>HPV vaccination</strong> for survivors in the routine and catch-up age range who are not fully vaccinated.</li>\n<li><strong>HIV nPEP</strong>: start as soon as possible and within 72 hours when the exposure carries a substantial risk, with a 28-day three-drug regimen; obtain a baseline HIV test and arrange follow-up.</li>\n<li><strong>Safety and mental health</strong>: assess immediate safety, offer crisis services, and arrange follow-up for repeat testing, vaccine doses and screening for depression and PTSD.</li>\n</ol>\n<div class=\"trap\"><p>Do not tell a survivor that evidence can only be collected if they make a police report, and do not wait for a decision about reporting before starting emergency contraception or HIV prophylaxis: their effectiveness falls with every hour.</p></div>\n<div class=\"pearl\"><p>For children, management differs: mandatory reporting applies, presumptive antibiotics are generally not given before test results, and the examination is done by a child-abuse specialist whenever possible.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Ovarian Torsion"
+    },
+    {
+     "statpearls": "Sexual Assault Evidence Collection and Documentation"
+    },
+    {
+     "statpearls": "Sexual Assault Infectious Disease Prophylaxis"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Three levels of vaginal connective-tissue support and the prolapse produced by failure at each level (schematic)."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Interpreting the tampon dye test for suspected urinary fistula."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Care after sexual assault"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old woman, para 4, has a sensation of a vaginal bulge that is worse after standing all day. Examination with straining shows the cervix descending to the level of the hymen; the anterior and posterior vaginal walls are well supported. Weakness of which of the following structures most directly accounts for this finding?</p>",
+   "options": [
+    "Round ligament of the uterus",
+    "Uterosacral and cardinal ligament complex",
+    "Suspensory ligament of the ovary",
+    "Ovarian ligament",
+    "Perineal body"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Descent of the cervix with good anterior and posterior wall support is apical (uterine) prolapse, a failure of level I support. The uterosacral and cardinal ligaments suspend the cervix and upper vagina toward the sacrum and pelvic sidewall; when they stretch after childbirth and with age, the uterus descends.</p><p><strong>Takeaway:</strong> Apical prolapse reflects failure of the uterosacral&ndash;cardinal (level I) supports.</p>",
+   "whyNot": {
+    "A": "The round ligament is a gubernacular remnant that holds the uterus anteverted but provides almost no support against descent.",
+    "C": "The suspensory ligament carries the ovarian vessels and does not support the cervix.",
+    "D": "The ovarian ligament joins ovary to uterus and plays no role in uterine support.",
+    "E": "Perineal body failure (level III) causes a gaping introitus or low rectocele, not cervical descent with intact vaginal walls."
+   },
+   "objective": "Attribute apical prolapse to failure of the uterosacral-cardinal ligament complex.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pelvic floor"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old woman in a rural area labored for 3 days before a stillborn infant was delivered vaginally. Ten days later she notices that urine leaks continuously from her vagina day and night. She also has weakness of right ankle dorsiflexion. Which of the following is the most likely mechanism of the urinary leakage?</p>",
+   "options": [
+    "Detrusor overactivity from bladder wall inflammation",
+    "Ischemic necrosis of the bladder base from prolonged compression",
+    "Denervation of the external urethral sphincter",
+    "Detrusor underactivity with overflow",
+    "Laceration of the bladder by the fetal skull"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>During prolonged obstructed labor, the impacted fetal head compresses the bladder base, urethra and anterior vaginal wall against the pubic symphysis. The tissue becomes ischemic and necrotic and sloughs days later, leaving a vesicovaginal fistula with continuous leakage. Compression of the lumbosacral trunk or fibular nerve explains her foot drop.</p><p><strong>Takeaway:</strong> Obstetric fistula is pressure necrosis from prolonged obstructed labor; leakage is continuous and starts days after delivery.</p>",
+   "whyNot": {
+    "A": "Detrusor overactivity causes urgency with intermittent leakage, not constant leakage from the vagina.",
+    "C": "Sphincter denervation causes leakage with effort, not continuous leakage around the urethra into the vagina.",
+    "D": "Overflow causes dribbling through the urethra with a distended bladder; it does not explain leakage from the vagina.",
+    "E": "A direct tear would leak immediately at delivery; the delayed onset points to slough of necrotic tissue."
+   },
+   "objective": "Explain obstetric vesicovaginal fistula as ischemic pressure necrosis after obstructed labor.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pelvic floor",
+    "postpartum health"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 81-year-old woman has daily episodes of a sudden, strong need to void followed by leakage before she reaches the toilet. Bladder training has helped only partly. She has mild cognitive impairment, and her physician wants to avoid a drug that could worsen cognition. She is started on a drug that relaxes the detrusor during bladder filling. Which receptor does this drug most likely stimulate?</p>",
+   "options": [
+    "Alpha-1 adrenergic receptor",
+    "Beta-3 adrenergic receptor",
+    "M3 muscarinic receptor",
+    "Nicotinic acetylcholine receptor",
+    "Beta-2 adrenergic receptor"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Beta-3 adrenergic agonists such as mirabegron and vibegron relax the detrusor during the storage phase, increasing bladder capacity without anticholinergic effects on cognition. Antimuscarinics, which <em>block</em> M3 receptors, achieve a similar effect but carry a central anticholinergic burden in older adults. Mirabegron can raise blood pressure.</p><p><strong>Takeaway:</strong> Beta-3 agonists treat urgency incontinence without anticholinergic cognitive effects.</p>",
+   "whyNot": {
+    "A": "Alpha-1 stimulation contracts the bladder neck and does not relax the detrusor; it is not used for urgency incontinence.",
+    "C": "Stimulating M3 receptors would contract the detrusor and worsen urgency; antimuscarinic drugs block this receptor.",
+    "D": "Nicotinic receptors mediate external sphincter contraction at the neuromuscular junction and are not drug targets for urgency.",
+    "E": "Beta-2 receptors are minor in the detrusor; beta-2 agonists are not used for bladder symptoms."
+   },
+   "objective": "Identify the beta-3 adrenergic mechanism of non-anticholinergic urgency incontinence drugs.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge",
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urinary symptoms",
+    "older adults"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old woman, para 3 by vaginal delivery, leaks small amounts of urine when she coughs, laughs or jumps. She has no urgency, and a post-void residual volume is 20 mL. During a cough with a full bladder, the bladder neck is seen to descend below the level of the pubic bone, and leakage occurs at the same moment. Which of the following best explains her leakage?</p>",
+   "options": [
+    "Involuntary detrusor contraction triggered by coughing",
+    "Unequal transmission of abdominal pressure to the bladder and proximal urethra",
+    "Failure of the detrusor to empty the bladder",
+    "Urine passing through an abnormal opening between bladder and vagina",
+    "Loss of M3 receptor function in the bladder wall"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is stress incontinence from urethral hypermobility. Normally a cough raises pressure in the bladder and the proximal urethra together because both sit above a firm pelvic floor. When pelvic floor and connective-tissue support are weakened by childbirth, the bladder neck drops below the pelvic floor during effort; bladder pressure rises more than urethral closure pressure, and urine leaks.</p><p><strong>Takeaway:</strong> Stress incontinence with hypermobility reflects loss of pressure transmission to the proximal urethra, not detrusor dysfunction.</p>",
+   "whyNot": {
+    "A": "Cough-triggered detrusor overactivity exists but would cause leakage delayed after the cough with urgency; leakage simultaneous with the cough and no urgency point to stress incontinence.",
+    "C": "Her normal post-void residual rules out failure to empty (overflow).",
+    "D": "A fistula causes continuous leakage regardless of effort.",
+    "E": "Loss of M3 function would impair emptying and raise the residual volume, which is normal."
+   },
+   "objective": "Explain stress urinary incontinence with urethral hypermobility as loss of pressure transmission.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urinary symptoms",
+    "pelvic floor"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 13-year-old girl has had sudden severe right lower abdominal pain and vomiting for 6 hours. Ultrasound shows an enlarged, edematous right ovary with follicles pushed to its periphery; Doppler shows arterial flow within the ovary. At laparoscopy the adnexa is twisted twice on its pedicle and the ovary is dusky and swollen. Which of the following best explains the ovarian swelling despite preserved arterial flow?</p>",
+   "options": [
+    "Arterial thrombosis occurring before venous obstruction",
+    "Venous and lymphatic outflow obstruction preceding loss of arterial inflow",
+    "Hemorrhage into a corpus luteum cyst",
+    "Bacterial invasion of the ovarian stroma",
+    "Rupture of a dominant follicle"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Twisting compresses the low-pressure, thin-walled veins and lymphatics first, while higher-pressure arterial inflow continues. Blood and lymph pool, so the ovary swells and the stroma becomes edematous, pushing follicles outward. Arterial occlusion and hemorrhagic infarction come later. This sequence is why Doppler flow does not exclude torsion and why a dusky ovary often recovers after detorsion.</p><p><strong>Takeaway:</strong> In torsion, venous outflow fails before arterial inflow; swelling with preserved flow is expected.</p>",
+   "whyNot": {
+    "A": "Arteries resist compression longer than veins; if arterial flow were lost first, the ovary would not swell with preserved Doppler flow.",
+    "C": "A hemorrhagic corpus luteum causes pain and a complex cyst but does not twist the pedicle or produce diffuse stromal edema.",
+    "D": "Infection (tubo-ovarian abscess) causes fever and a complex mass, not a twisted pedicle in a girl who is not sexually active.",
+    "E": "Follicle rupture causes brief midcycle pain with a little free fluid, not an enlarged twisted adnexa."
+   },
+   "objective": "Describe the venous-before-arterial sequence of ischemia in adnexal torsion.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "adnexal pain",
+    "pediatric gynecology"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman, gravida 1, has fecal incontinence and numbness of the perineum after a prolonged second stage of labor that ended with a forceps delivery 6 weeks ago. The anal sphincter muscles are intact on endoanal ultrasound, but voluntary squeeze is weak. The injured nerve leaves and re-enters the pelvis by passing around which of the following landmarks?</p>",
+   "options": [
+    "Anterior superior iliac spine",
+    "Ischial spine",
+    "Ischial tuberosity",
+    "Pubic symphysis",
+    "Sacral promontory"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The pudendal nerve (S2&ndash;S4) leaves the pelvis through the greater sciatic foramen, hooks around the ischial spine and sacrospinous ligament, and enters the pudendal canal through the lesser sciatic foramen. It supplies the external anal and urethral sphincters and perineal skin. Stretch during a long second stage or an operative delivery can cause a neuropathy with weak squeeze and numbness despite an intact sphincter. The ischial spine is also the landmark for a transvaginal pudendal block.</p><p><strong>Takeaway:</strong> The pudendal nerve curves around the ischial spine; its stretch injury in childbirth causes sphincter weakness with an intact muscle.</p>",
+   "whyNot": {
+    "A": "The anterior superior iliac spine is the landmark for the lateral femoral cutaneous nerve, not a perineal nerve.",
+    "C": "The ischial tuberosity lies below the pudendal canal and is not the point the nerve passes around.",
+    "D": "The pubic symphysis is where the fetal head compresses the bladder base but is not on the pudendal nerve's course around the pelvis.",
+    "E": "The sacral promontory is the anchor point for sacrocolpopexy and is not related to the pudendal nerve's course."
+   },
+   "objective": "Trace the course of the pudendal nerve around the ischial spine and relate it to obstetric neuropathy.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pelvic floor",
+    "postpartum health"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 22-year-old woman comes to the emergency department 80 hours after a sexual assault. Her last menstrual period began 11 days ago, and her cycles are regular. A urine pregnancy test is negative. She declines an intrauterine device. She receives an oral drug that is effective up to 5 days after intercourse because it can postpone follicular rupture even after the LH surge has started. Which of the following best describes this drug's mechanism?</p>",
+   "options": [
+    "GnRH receptor agonism that depletes pituitary gonadotropins",
+    "Selective modulation of the progesterone receptor",
+    "Pure agonism at the progesterone receptor",
+    "Antagonism of the estrogen receptor in the endometrium",
+    "Agonism at prostaglandin E1 receptors in the myometrium"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Ulipristal acetate is a selective progesterone receptor modulator. Given before ovulation, it delays follicular rupture, and unlike levonorgestrel it still works when the LH surge has begun. That is why it is effective for up to 120 hours and is preferred over levonorgestrel after 72 hours. It does not disrupt an implanted pregnancy.</p><p><strong>Takeaway:</strong> Ulipristal is a progesterone receptor modulator that delays ovulation and works up to 120 hours.</p>",
+   "whyNot": {
+    "A": "GnRH agonists initially cause a flare of LH and FSH and are not used for emergency contraception.",
+    "C": "Pure progestin agonism describes levonorgestrel, which loses effect once the LH surge has started and is best within 72 hours.",
+    "D": "Estrogen receptor antagonism is not the basis of any emergency contraceptive.",
+    "E": "Prostaglandin E1 agonism describes misoprostol, which contracts the uterus and is not a contraceptive."
+   },
+   "objective": "Describe ulipristal as a selective progesterone receptor modulator that delays ovulation.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge",
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "contraception"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 79-year-old woman has a vaginal bulge that rubs on her underwear and makes walking uncomfortable. She has heart failure with an ejection fraction of 30% and chronic kidney disease, and she wants to avoid surgery. She is not sexually active. She voids without difficulty. Examination shows the cervix and anterior vaginal wall extending 3 cm beyond the hymen on straining without ulceration. Post-void residual volume is 40 mL. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Colpocleisis under general anesthesia",
+    "Fitting of a vaginal pessary",
+    "Abdominal sacrocolpopexy",
+    "Observation with reassessment in 1 year",
+    "Systemic estrogen therapy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>She has symptomatic stage III prolapse and wants to avoid surgery, which would carry high risk with her heart failure. A vaginal pessary relieves symptoms in most patients, can be fitted in the office, and is appropriate at any stage. Adding vaginal estrogen lowers the risk of erosion, and she will need periodic removal and cleaning.</p><p><strong>Takeaway:</strong> A pessary is first-line for symptomatic prolapse in patients who wish to avoid surgery or are poor surgical candidates.</p>",
+   "whyNot": {
+    "A": "Colpocleisis is a good surgical option for older patients who do not want vaginal intercourse, but she wants to avoid surgery and a pessary has not been tried.",
+    "C": "Sacrocolpopexy is a major abdominal procedure, unsuitable for her cardiac risk and preference.",
+    "D": "Her prolapse is bothersome and limits walking, so treatment rather than observation is indicated.",
+    "E": "Systemic estrogen does not correct prolapse and carries cardiovascular and thrombotic risk."
+   },
+   "objective": "Offer a pessary for symptomatic prolapse in a patient who prefers to avoid surgery.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pelvic floor",
+    "older adults"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old woman has had urinary leakage for 8 months. She describes a sudden, intense need to void, after which she sometimes leaks before reaching the toilet; she does not leak with coughing or exercise. She drinks four large cups of coffee daily. Urinalysis shows no leukocytes, nitrites or blood. Post-void residual is 25 mL. A cough stress test is negative. Her 3-day bladder diary summary is shown.</p><table><thead><tr><th>Measure (daily average)</th><th>Value</th></tr></thead><tbody><tr><td>Fluid intake</td><td>2.8 L (including 1.2 L coffee)</td></tr><tr><td>Daytime voids</td><td>13</td></tr><tr><td>Night-time voids</td><td>2</td></tr><tr><td>Urgency episodes</td><td>7</td></tr><tr><td>Leakage episodes</td><td>3, all after urgency</td></tr><tr><td>Typical voided volume</td><td>150&ndash;200 mL</td></tr></tbody></table><p>Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Midurethral sling placement",
+    "Bladder training with caffeine reduction",
+    "Intradetrusor onabotulinumtoxinA injection",
+    "Clean intermittent self-catheterisation",
+    "Urodynamic testing before any treatment"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The history and diary show urgency incontinence (overactive bladder): frequent small voids, urgency and leakage after urgency, with a negative cough stress test, normal urinalysis and normal residual. First-line treatment is behavioural: bladder training (scheduled voiding with gradually lengthening intervals and urge-suppression techniques), reducing caffeine and adjusting fluid intake, and pelvic floor muscle training. Drugs are added if these are not enough.</p><p><strong>Takeaway:</strong> Uncomplicated urgency incontinence starts with bladder training and fluid and caffeine changes.</p>",
+   "whyNot": {
+    "A": "A sling treats stress incontinence; she has no stress leakage and a negative cough stress test.",
+    "C": "OnabotulinumtoxinA is third-line therapy after behavioural measures and drugs fail.",
+    "D": "Her residual volume is normal, so she has no retention requiring catheterisation.",
+    "E": "Urodynamics are not required before conservative treatment of uncomplicated urgency incontinence."
+   },
+   "objective": "Start behavioural therapy for uncomplicated urgency urinary incontinence identified from a bladder diary.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urinary symptoms"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 44-year-old woman has leaked urine with running, coughing and lifting for 3 years. She has completed 4 months of supervised pelvic floor muscle training with only slight improvement and does not want to use a vaginal device. She has no urgency. Urinalysis is normal, post-void residual is 30 mL, and a supine cough stress test shows leakage at the same moment as each cough. She has no prolapse beyond the hymen. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Oral oxybutynin",
+    "Midurethral sling",
+    "Anterior colporrhaphy",
+    "Sacral neuromodulation",
+    "Vaginal estrogen cream"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>She has uncomplicated stress urinary incontinence that has not responded to pelvic floor muscle training and she declines a pessary. A midurethral sling (retropubic or transobturator) is the standard surgical treatment, with high cure rates. Urodynamic testing is not required before surgery when stress incontinence is uncomplicated and confirmed by a positive cough stress test.</p><p><strong>Takeaway:</strong> Stress incontinence that fails pelvic floor training is treated surgically with a midurethral sling.</p>",
+   "whyNot": {
+    "A": "Antimuscarinics treat urgency incontinence; they do not improve urethral closure in stress incontinence.",
+    "C": "Anterior colporrhaphy repairs a cystocele and is not an effective operation for stress incontinence.",
+    "D": "Sacral neuromodulation is for refractory urgency incontinence or retention, not stress incontinence.",
+    "E": "She is premenopausal; vaginal estrogen does not cure stress incontinence."
+   },
+   "objective": "Recommend a midurethral sling for stress incontinence refractory to pelvic floor training.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urinary symptoms"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 6-year-old girl is brought to the emergency department 1 hour after slipping while climbing onto a playground bar and landing astride it, which her father witnessed. She cried immediately and has some blood spots on her underwear. She voided once since the fall with stinging. Vital signs are normal. Examination in the frog-leg position with her father present shows a 2-cm non-expanding hematoma of the left labium majus and a 0.5-cm superficial abrasion of the left labium minus that is not bleeding. The hymen is intact, and there is no vaginal bleeding or injury to the urethral meatus or anus. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Examination under general anesthesia",
+    "Ice packs, analgesia and sitz baths",
+    "CT scan of the pelvis",
+    "Incision and drainage of the hematoma",
+    "Placement of an indwelling urinary catheter"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A witnessed straddle injury with a small, non-expanding labial hematoma and a superficial abrasion, an intact hymen, no active bleeding and the ability to void is managed conservatively with ice, analgesia and sitz baths. The anterior, asymmetric pattern fits the history. Return precautions include an enlarging hematoma, heavy bleeding or inability to void.</p><p><strong>Takeaway:</strong> Minor straddle injuries in children are managed conservatively when the child can void and the full extent of injury is seen.</p>",
+   "whyNot": {
+    "A": "Examination under anesthesia is needed when the extent of injury cannot be seen, bleeding is active, or vaginal, urethral or rectal injury is suspected; none applies.",
+    "C": "Imaging adds radiation and does not change management of a superficial, fully examined injury.",
+    "D": "Incision and drainage is for large or expanding hematomas; hers is small and stable.",
+    "E": "She has voided, so a catheter is not needed; catheterisation is reserved for retention from swelling."
+   },
+   "objective": "Manage a minor pediatric straddle injury conservatively after a complete examination.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric gynecology",
+    "genital injury"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 47-year-old woman underwent abdominal hysterectomy for fibroids 12 days ago. Since postoperative day 8 she has had a constant watery leakage from the vagina, day and night, while still voiding normal volumes. She has mild left flank discomfort. A tampon is placed in the vagina, and blue dye is instilled into the bladder through a catheter; after 30 minutes of walking the tampon is wet but not blue. She is then given oral phenazopyridine, and a new tampon is stained orange. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Vesicovaginal fistula",
+    "Ureterovaginal fistula",
+    "Urethrovaginal fistula",
+    "Overflow incontinence from detrusor injury",
+    "Stress urinary incontinence"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Bladder dye that does not reach the tampon shows that the bladder is intact, whereas phenazopyridine (excreted by the kidneys and coloring all urine) stains the tampon, so urine is entering the vagina from above the bladder. With continued normal voiding and flank discomfort after hysterectomy, this is a ureterovaginal fistula from ureteral injury. Next steps are CT urography to map the leak and look for obstruction, then ureteral stenting or reimplantation.</p><p><strong>Takeaway:</strong> Unstained tampon with bladder dye but orange with phenazopyridine means a ureterovaginal fistula.</p>",
+   "whyNot": {
+    "A": "A vesicovaginal fistula would let bladder dye stain the tampon blue.",
+    "C": "A urethrovaginal fistula causes leakage mainly during voiding and would also pass dyed bladder urine.",
+    "D": "Overflow causes dribbling through the urethra with a high residual, not constant vaginal leakage with normal voiding.",
+    "E": "Stress incontinence is intermittent with effort and leaks through the urethra."
+   },
+   "objective": "Interpret a two-dye tampon test to diagnose a ureterovaginal fistula after hysterectomy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic",
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urinary symptoms",
+    "postoperative complications"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old girl is brought to the emergency department 4 hours after the sudden onset of severe left lower abdominal pain while playing basketball. She has vomited three times. She has never been sexually active. Temperature is 37.4&deg;C (99.3&deg;F), pulse is 108/min, and blood pressure is 118/72 mm Hg. There is left lower quadrant tenderness without rebound. Urine hCG is negative. Leukocyte count is 11,200/mm<sup>3</sup>. Transabdominal ultrasound shows a 7-cm enlarged, edematous left ovary with peripherally placed follicles and a 4-cm cyst; color Doppler demonstrates arterial and venous flow in the ovary. The right ovary and the appendix appear normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Repeat pelvic ultrasound in 6 hours",
+    "Diagnostic laparoscopy with detorsion",
+    "MRI of the pelvis",
+    "Laparoscopic left salpingo-oophorectomy",
+    "Intravenous ceftriaxone and doxycycline"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Sudden severe unilateral pain with vomiting and an enlarged edematous ovary with a cyst is adnexal torsion until proven otherwise. Preserved Doppler flow does not exclude it, because venous obstruction precedes arterial loss. The next step is prompt laparoscopy to untwist the adnexa, with ovarian cystectomy if feasible. The ovary is preserved even if it looks dusky, especially in a child or adolescent.</p><p><strong>Takeaway:</strong> Suspected torsion goes to the operating room for detorsion and ovarian preservation; normal Doppler flow does not rule it out.</p>",
+   "whyNot": {
+    "A": "Waiting risks infarction and loss of the ovary; clinical suspicion is high now.",
+    "C": "MRI can help in unclear cases but should not delay surgery when ultrasound and clinical findings already point to torsion.",
+    "D": "Oophorectomy is reserved for frankly necrotic tissue or suspected malignancy; ovarian conservation is the standard in a 15-year-old.",
+    "E": "Antibiotics treat pelvic inflammatory disease or abscess; she is not sexually active, has no fever and has a structural cause for pain."
+   },
+   "objective": "Proceed to laparoscopic detorsion for suspected adnexal torsion even when Doppler flow is present.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "adnexal pain",
+    "pediatric gynecology"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 23-year-old woman comes to the emergency department 30 hours after she was sexually assaulted by an unknown man, with vaginal penetration and no condom. She has showered once. She is hemodynamically stable and has a small abrasion on her left forearm. She is unsure whether she wants to report the assault to the police and asks whether she can still have evidence collected. Which of the following is the most appropriate response?</p>",
+   "options": [
+    "Explain that evidence can only be collected after she files a police report",
+    "Offer a forensic examination now and store the evidence until she decides",
+    "Advise her to return once she has decided about reporting",
+    "Explain that evidence is no longer obtainable because she has showered",
+    "Explain that evidence collection is valid only within the first 24 hours"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A forensic examination is offered for an acute assault, and evidence can still be found after bathing and for up to about 120 hours in many jurisdictions. In the US an adult can have evidence collected and stored without first making a police report, so the decision to report can be made later. The examination is trauma-informed, ideally performed by a sexual assault nurse examiner, and the patient consents to each component.</p><p><strong>Takeaway:</strong> Offer forensic evidence collection to adults after an acute assault without requiring a police report, even after bathing.</p>",
+   "whyNot": {
+    "A": "Requiring a police report creates a barrier to care; adults can have evidence collected and stored without reporting.",
+    "C": "Delay loses evidence and postpones time-sensitive emergency contraception and HIV prophylaxis.",
+    "D": "Showering reduces but does not eliminate evidence; collection is still worthwhile.",
+    "E": "Evidence is commonly collected up to about 120 hours; a 24-hour limit is incorrect."
+   },
+   "objective": "Offer forensic evidence collection after sexual assault without requiring a police report.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "professionalism",
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual assault care"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient consents to the forensic examination, which is completed. Her last menstrual period began 10 days ago, and her cycles are regular every 28 days. Her BMI is 34 kg/m&sup2;. Urine hCG is negative. She declines an intrauterine device and any further pelvic procedure today. Which of the following is the most effective option for emergency contraception?</p>",
+   "options": [
+    "Oral levonorgestrel",
+    "Oral ulipristal acetate",
+    "Combined estrogen-progestin pills taken as two doses",
+    "Oral misoprostol",
+    "No emergency contraception because the risk of pregnancy is negligible"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>At 30 hours after exposure, close to the time of ovulation, she needs emergency contraception. With an IUD declined, ulipristal acetate is the most effective oral option. It works even after the LH surge has started and is more effective than levonorgestrel, whose effectiveness is lower at higher body weight. She should delay starting hormonal contraception for several days after ulipristal and use a barrier method meanwhile.</p><p><strong>Takeaway:</strong> When an IUD is declined, ulipristal is the most effective oral emergency contraceptive, particularly at higher BMI or later after exposure.</p>",
+   "whyNot": {
+    "A": "Levonorgestrel is an acceptable alternative but is less effective than ulipristal, particularly with a BMI of 30 kg/m&sup2; or more.",
+    "C": "The combined-pill method is the least effective oral option and causes more nausea.",
+    "D": "Misoprostol is a uterotonic prostaglandin, not a contraceptive.",
+    "E": "Day 10 of a 28-day cycle is in the fertile window; her pregnancy risk is real."
+   },
+   "objective": "Select ulipristal for emergency contraception when an IUD is declined, especially with obesity.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "sexual assault care",
+    "contraception"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 3,
+   "stemHtml": "<p>She takes ulipristal in the department. Baseline nucleic acid amplification tests and serologies are sent. She has no drug allergies, weighs 92 kg and is not pregnant. HIV post-exposure prophylaxis is started, and the first dose of hepatitis B vaccine is given because she was never vaccinated. Which of the following antimicrobial regimens is the most appropriate empiric prophylaxis for other sexually transmitted infections?</p>",
+   "options": [
+    "Ceftriaxone, azithromycin and fluconazole",
+    "Ceftriaxone, doxycycline and metronidazole",
+    "Cefixime, azithromycin and acyclovir",
+    "Benzathine penicillin G, doxycycline and metronidazole",
+    "Ceftriaxone, doxycycline and valacyclovir"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>CDC guidance for empiric prophylaxis after sexual assault in adults and adolescents with a vagina is ceftriaxone 500 mg IM once (1 g if 150 kg or more) for gonorrhea, plus doxycycline 100 mg twice daily for 7 days for chlamydia, plus metronidazole 500 mg twice daily for 7 days for trichomoniasis and bacterial vaginosis. HPV vaccination should also be offered if she is not fully vaccinated, and follow-up arranged for repeat testing and vaccine doses.</p><p><strong>Takeaway:</strong> Post-assault STI prophylaxis for people with a vagina is ceftriaxone plus 7 days of doxycycline plus 7 days of metronidazole.</p>",
+   "whyNot": {
+    "A": "Azithromycin is no longer the preferred chlamydia drug outside pregnancy, and fluconazole treats candidiasis, which is not sexually transmitted.",
+    "C": "Oral cefixime is a second-line gonorrhea option, and empiric acyclovir for herpes is not recommended.",
+    "D": "Empiric benzathine penicillin is not part of routine post-assault prophylaxis; syphilis is tested for and followed up.",
+    "E": "Empiric antiviral prophylaxis for herpes simplex is not recommended after assault."
+   },
+   "objective": "Choose CDC-recommended empiric STI prophylaxis after sexual assault.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 5,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "sexual assault care"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which ligament complex provides level I (apical) vaginal support?",
+   "back": "The uterosacral and cardinal ligaments.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Does the round ligament prevent uterine prolapse?",
+   "back": "No; it is a gubernacular remnant with negligible supportive role.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Mechanism of obstetric vesicovaginal fistula?",
+   "back": "Ischemic pressure necrosis of the bladder base from prolonged impaction of the fetal head; slough days later.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Receptor that relaxes the detrusor and is targeted by mirabegron?",
+   "back": "Beta-3 adrenergic receptor.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Mechanism of stress incontinence with urethral hypermobility?",
+   "back": "Bladder neck drops below the pelvic floor, so cough pressure is not transmitted equally to the proximal urethra.",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Around which landmark does the pudendal nerve pass?",
+   "back": "The ischial spine and sacrospinous ligament (greater to lesser sciatic foramen).",
+   "question": 6
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Why are oxybutynin and other tertiary-amine antimuscarinics risky in older adults?",
+   "back": "They cross the blood-brain barrier and add anticholinergic burden linked to confusion and cognitive decline.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 2,
+   "front": "In ovarian torsion, which outflow fails first?",
+   "back": "Venous and lymphatic outflow, before arterial inflow; hence swelling with preserved Doppler flow.",
+   "question": 5
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Which vessel travels in the infundibulopelvic ligament and where does it arise?",
+   "back": "The ovarian artery, directly from the abdominal aorta.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Why can a normal-sized ovary torse in a child?",
+   "back": "Long, mobile adnexal ligaments.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Typical location of accidental straddle injury in girls?",
+   "back": "Anterior and lateral vulva (labia, clitoral hood, periurethral tissue), usually asymmetric with the hymen spared.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Mechanism of ulipristal as emergency contraception?",
+   "back": "Selective progesterone receptor modulator that delays follicular rupture even after the LH surge starts.",
+   "question": 7
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Mechanism of levonorgestrel emergency contraception?",
+   "back": "Delays or blunts the LH surge to postpone ovulation; ineffective once the surge has begun.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 3,
+   "front": "First-line treatment for symptomatic prolapse in a poor surgical candidate?",
+   "back": "Vaginal pessary (with vaginal estrogen to reduce erosion).",
+   "question": 8
+  },
+  {
+   "n": 15,
+   "section": 3,
+   "front": "First-line treatment for uncomplicated urgency incontinence?",
+   "back": "Bladder training with fluid and caffeine adjustment, plus pelvic floor training.",
+   "question": 9
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "Standard surgery for stress incontinence after failed pelvic floor training?",
+   "back": "Midurethral sling.",
+   "question": 10
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Obliterative prolapse surgery for older patients who will not have vaginal intercourse?",
+   "back": "Colpocleisis.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Tampon test: bladder dye negative, phenazopyridine orange. Diagnosis?",
+   "back": "Ureterovaginal fistula.",
+   "question": 12
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Which tests make up the basic incontinence evaluation?",
+   "back": "Bladder diary, urinalysis, post-void residual and cough stress test.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 4,
+   "front": "Does arterial Doppler flow exclude ovarian torsion?",
+   "back": "No; suspected torsion still needs laparoscopy.",
+   "question": 13
+  },
+  {
+   "n": 21,
+   "section": 4,
+   "front": "Management of a dusky ovary found at surgery for torsion in a teenager?",
+   "back": "Detorsion and ovarian preservation (with cystectomy if feasible).",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 4,
+   "front": "Can an adult have forensic evidence collected without reporting to police?",
+   "back": "Yes; evidence can be collected and stored while the patient decides.",
+   "question": 14
+  },
+  {
+   "n": 23,
+   "section": 4,
+   "front": "Most effective emergency contraception?",
+   "back": "An intrauterine device (copper IUD classically); ulipristal is the most effective oral option.",
+   "question": 15
+  },
+  {
+   "n": 24,
+   "section": 4,
+   "front": "CDC empiric STI prophylaxis after assault for a person with a vagina?",
+   "back": "Ceftriaxone IM once plus doxycycline 7 days plus metronidazole 7 days.",
+   "question": 16
+  },
+  {
+   "n": 25,
+   "section": 4,
+   "front": "Time limit for starting HIV nPEP?",
+   "back": "As soon as possible and within 72 hours; 28-day course.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 4,
+   "front": "Hepatitis B management after assault in an unvaccinated survivor?",
+   "back": "Start the hepatitis B vaccine series; add HBIG only if the assailant is known HBsAg-positive.",
+   "question": null
+  }
+ ]
+}

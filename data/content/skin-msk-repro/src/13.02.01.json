@@ -1,0 +1,931 @@
+{
+ "area": "13.02.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Vaginitis, cervicitis and PID: microbiology and drug mechanisms",
+   "html": "<h2>The healthy vagina and why it fails</h2>\n<p>In a person with ovaries producing estrogen, the vaginal epithelium is thick, stratified squamous and rich in glycogen. Lactobacilli ferment that glycogen (after host amylase breaks it down) to lactic acid, holding the pH at roughly 3.8&ndash;4.5, and many strains also release hydrogen peroxide and bacteriocins. This acid, lactobacillus-dominated ecosystem is the main defence against overgrowth. Anything that removes estrogen (before puberty, after menopause, during lactation, on testosterone in transmasculine people) thins the epithelium, lowers glycogen and raises the pH, which is why the same organisms behave differently across the lifespan.</p>\n<h3>Bacterial vaginosis (BV)</h3>\n<p>BV is a <strong>dysbiosis, not a classic infection</strong>: lactobacilli are replaced by a dense polymicrobial biofilm of facultative and anaerobic organisms, with <em>Gardnerella vaginalis</em> the best-known member, alongside <em>Prevotella</em>, <em>Mobiluncus</em> and others. The anaerobes decarboxylate amino acids into volatile amines (putrescine, cadaverine, trimethylamine), which give the fishy odour; adding KOH volatilises them (positive amine or \"whiff\" test). Loss of lactic acid raises the pH above 4.5. Squamous cells coated with adherent coccobacilli so that their borders are obscured are called <strong>clue cells</strong>. There is little inflammation, so neutrophils are scant. BV is associated with new or multiple partners and douching, but it is not treated as a reportable STI and treatment of male partners does not prevent recurrence.</p>\n<h3>Vulvovaginal candidiasis</h3>\n<p><em>Candida albicans</em> (a dimorphic yeast) causes most cases; <em>C. glabrata</em> (no pseudohyphae, intrinsically less azole-susceptible) causes a minority of recurrent cases. Candida thrives when estrogen and glycogen are high (pregnancy, high-estrogen contraception), when lactobacilli are suppressed (broad-spectrum antibiotics), when glucose is high (poorly controlled diabetes, SGLT2 inhibitors) and when T-cell immunity is reduced (HIV, glucocorticoids). The pH stays normal because lactobacilli are often still present. KOH dissolves epithelial cells and leaves budding yeast and pseudohyphae visible.</p>\n<h3>Trichomoniasis</h3>\n<p><em>Trichomonas vaginalis</em> is a pear-shaped, flagellated, anaerobic protozoan that exists only as a trophozoite (no cyst), so it is transmitted sexually rather than by fomites. It adheres to squamous epithelium, causing a strong neutrophilic inflammation, a frothy yellow-green discharge, pH above 4.5 and punctate cervical haemorrhages (\"strawberry cervix\"). On saline wet mount it is seen as a motile, flagellated organism slightly larger than a neutrophil; motility fades within minutes, which is one reason microscopy misses many cases and NAAT is the preferred test. It is the most common curable nonviral STI worldwide and is frequently asymptomatic in people with a penis.</p>\n<h2>Cervicitis and ascending infection</h2>\n<p><em>Neisseria gonorrhoeae</em> is a gram-negative, oxidase-positive diplococcus that ferments glucose only. Type IV pili and Opa proteins mediate attachment to columnar epithelium; lipooligosaccharide drives inflammation; IgA1 protease cleaves mucosal IgA. <strong>Antigenic variation of pilin</strong> (by recombination of silent <em>pilS</em> cassettes into the expressed <em>pilE</em> locus) and phase variation of Opa mean that infection leaves no protective immunity and no vaccine exists. Culture uses selective chocolate agar with antibiotics (Thayer-Martin), but NAAT is the standard diagnostic test.</p>\n<p><em>Chlamydia trachomatis</em> is an obligate intracellular bacterium with two forms. The <strong>elementary body</strong> is small, metabolically inert and infectious; it enters columnar cells by endocytosis. Inside a membrane-bound inclusion it converts to the larger <strong>reticulate body</strong>, which replicates by binary fission using host ATP, then reorganises into elementary bodies that are released. Its envelope has very little peptidoglycan, so it does not Gram stain usefully and beta-lactams are unreliable; it is treated with drugs that act inside cells (doxycycline, azithromycin). Serovars D&ndash;K cause genital infection and neonatal conjunctivitis and pneumonia; L1&ndash;L3 cause lymphogranuloma venereum; A&ndash;C cause trachoma.</p>\n<p>Both organisms infect the endocervix (columnar epithelium) rather than the squamous vagina, producing mucopurulent discharge and a friable cervix, though most infections are silent. Ascent through the endometrium to the tubes causes <strong>pelvic inflammatory disease (PID)</strong>, which is polymicrobial: gonococci and chlamydiae start it, and BV-associated anaerobes, <em>Mycoplasma genitalium</em> and enteric organisms often join. Tubal mucosal damage heals with fibrosis and loss of ciliated cells, leading to infertility, ectopic pregnancy and chronic pelvic pain; much chlamydial damage is immune mediated (heat-shock protein responses) and happens without dramatic symptoms. Spread along the paracolic gutter causes perihepatitis with adhesions between the liver capsule and the abdominal wall (Fitz-Hugh-Curtis syndrome). A walled-off collection involving tube and ovary is a tubo-ovarian abscess (TOA).</p>\n[[figure:s23f-fig130201-1]]\n<table class=\"hy\"><thead><tr><th>Feature</th><th>Bacterial vaginosis</th><th>Candidiasis</th><th>Trichomoniasis</th></tr></thead><tbody>\n<tr><td>Cause</td><td>Loss of lactobacilli; anaerobic biofilm</td><td>Yeast overgrowth</td><td>Flagellated protozoan, sexually transmitted</td></tr>\n<tr><td>Discharge</td><td>Thin, grey-white, homogeneous, fishy</td><td>Thick, white, curd-like; itch and burning</td><td>Frothy, yellow-green, malodorous</td></tr>\n<tr><td>pH</td><td>Above 4.5</td><td>Normal (4.5 or below)</td><td>Above 4.5</td></tr>\n<tr><td>Microscopy</td><td>Clue cells, few neutrophils</td><td>Budding yeast and pseudohyphae on KOH</td><td>Motile flagellated organisms, many neutrophils</td></tr>\n<tr><td>Amine test</td><td>Positive</td><td>Negative</td><td>Often positive</td></tr>\n<tr><td>Drug class</td><td>Nitroimidazole or clindamycin</td><td>Azole</td><td>Nitroimidazole; treat partners</td></tr>\n</tbody></table>\n<h2>Drugs by mechanism</h2>\n<ul>\n<li><strong>Metronidazole and tinidazole</strong> are prodrugs. In anaerobes and protozoa, low-redox-potential electron carriers (ferredoxin) reduce the nitro group to reactive radicals that break DNA. Aerobes cannot activate them, which explains the spectrum. Classically linked to a disulfiram-like reaction with alcohol; also metallic taste.</li>\n<li><strong>Azoles</strong> (fluconazole, clotrimazole, miconazole) inhibit fungal cytochrome P450 lanosterol 14&alpha;-demethylase, blocking ergosterol synthesis. Oral fluconazole inhibits human CYP2C9 and CYP3A4 and can prolong QT.</li>\n<li><strong>Ceftriaxone</strong> binds penicillin-binding proteins and blocks peptidoglycan transpeptidation. Gonococcal resistance to penicillin (plasmid beta-lactamase), tetracycline and fluoroquinolones is why a third-generation cephalosporin is the only routine first-line drug.</li>\n<li><strong>Doxycycline</strong> binds the 30S subunit and blocks aminoacyl-tRNA attachment; it concentrates intracellularly, which suits chlamydiae. Photosensitivity, pill esophagitis and avoidance in pregnancy are its classic cautions.</li>\n</ul>\n<div class=\"pearl\"><p>Vaginal pH is a fast sorting tool: a normal pH with itching points to candida, while a raised pH points to BV or trichomoniasis. Remember that low estrogen also raises pH, so a high pH in a postmenopausal person or a transmasculine person on testosterone may simply reflect atrophy.</p></div>\n<div class=\"trap\"><p>Gonorrhea and chlamydia infect <strong>columnar</strong> epithelium. In a prepubertal child the vagina is thin and unestrogenized, so gonorrhea causes vaginitis rather than cervicitis, and finding it should prompt evaluation for sexual abuse.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Bacterial Vaginosis"
+    },
+    {
+     "statpearls": "Pelvic Inflammatory Disease"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Genital ulcers, warts, Bartholin gland disease and toxic shock: pathogenesis",
+   "html": "<h2>Genital ulcer disease: the organisms</h2>\n<p>Most genital ulcers in the United States are caused by herpes simplex virus, followed by syphilis; chancroid, lymphogranuloma venereum (LGV) and granuloma inguinale are uncommon. The distinguishing features are pain, the ulcer's edge and base, and the behaviour of the inguinal nodes.</p>\n<h3>Herpes simplex virus</h3>\n<p>HSV-2 causes most recurrent genital herpes, but HSV-1 (acquired through oral-genital contact) now causes a large share of first episodes. The virus replicates in mucosal epithelium, producing grouped vesicles on an erythematous base that erode into shallow painful ulcers. It then travels retrograde along sensory axons and establishes <strong>latency in the sacral dorsal root ganglia</strong>, where the genome persists as an episome with only latency-associated transcripts expressed. Reactivation (stress, menses, immunosuppression) sends virus back down the axon, often heralded by tingling or burning. A first episode can be systemic: fever, tender bilateral inguinal nodes, aseptic meningitis and urinary retention from sacral radiculitis. Cytology of the ulcer base shows multinucleated giant cells with nuclear molding and margination of chromatin, and Cowdry type A intranuclear inclusions, but PCR has replaced the Tzanck smear. Acyclovir, valacyclovir and famciclovir are guanosine analogues that need <strong>viral thymidine kinase</strong> for the first phosphorylation; host kinases then form the triphosphate, which inhibits viral DNA polymerase and terminates chains. Resistance usually reflects thymidine kinase mutations (most often in immunocompromised hosts), and foscarnet, which does not need activation, is the alternative.</p>\n<h3>Syphilis</h3>\n<p><em>Treponema pallidum</em> is a thin spirochete too slender for Gram stain; it is seen by dark-field microscopy or detected by PCR and cannot be routinely cultured. It enters through microabrasions and disseminates within hours. <strong>Primary</strong> syphilis is a painless, clean-based, indurated chancre with firm, nontender regional nodes; it heals in weeks. <strong>Secondary</strong> syphilis (weeks to months later) reflects haematogenous spread: a diffuse rash including the palms and soles, mucous patches, patchy alopecia, generalised lymphadenopathy and <em>condylomata lata</em> (flat, moist, highly infectious plaques; not to be confused with HPV warts). The pathologic hallmark across stages is an <strong>endarteritis with a plasma-cell-rich infiltrate</strong>. Latent syphilis has no signs. <strong>Tertiary</strong> disease includes gummas, aortitis of the vasa vasorum (ascending aortic aneurysm) and neurosyphilis (tabes dorsalis, general paresis, Argyll Robertson pupils), although neurosyphilis can occur at any stage.</p>\n<p>Serology uses two families of tests. <strong>Nontreponemal</strong> tests (RPR, VDRL) detect antibodies to a cardiolipin-cholesterol-lecithin antigen released from damaged host cells; titres rise with activity and fall after treatment, and they can be falsely positive in pregnancy, autoimmune disease with antiphospholipid antibodies, injection drug use and some viral infections. <strong>Treponemal</strong> tests (TP-PA, FTA-ABS, enzyme and chemiluminescence immunoassays) detect antibodies to treponemal proteins and usually stay positive for life. Penicillin works because the organism has never acquired beta-lactam resistance. Within hours of the first dose some patients develop fever, myalgia and headache from cytokines released in response to lipoproteins from lysed spirochetes (the <strong>Jarisch-Herxheimer reaction</strong>); it is not an allergy.</p>\n<h3>The rarer ulcers</h3>\n<ul>\n<li><strong>Chancroid</strong>: <em>Haemophilus ducreyi</em>, a small gram-negative coccobacillus that grows in parallel chains. Painful ulcer with ragged, undermined edges and a purulent grey base; tender, fluctuant inguinal nodes (buboes) that may rupture.</li>\n<li><strong>Lymphogranuloma venereum</strong>: <em>C. trachomatis</em> L1&ndash;L3, which, unlike serovars D&ndash;K, invade macrophages and spread to lymph nodes. A small transient papule is followed by painful matted inguinal and femoral nodes (sometimes with a groove between them) or, after receptive anal sex, a haemorrhagic proctocolitis that can mimic inflammatory bowel disease. Chronic lymphatic obstruction causes genital elephantiasis and strictures.</li>\n<li><strong>Granuloma inguinale</strong>: <em>Klebsiella granulomatis</em>, an intracellular gram-negative rod seen as dark inclusions in macrophages (Donovan bodies). Painless, beefy-red, friable ulcers that bleed easily, without true lymphadenopathy.</li>\n</ul>\n[[figure:s23f-fig130201-1]]\n<table class=\"hy\"><thead><tr><th>Ulcer</th><th>Pain</th><th>Ulcer appearance</th><th>Nodes</th><th>Key laboratory clue</th></tr></thead><tbody>\n<tr><td>HSV</td><td>Painful</td><td>Grouped vesicles, shallow erosions</td><td>Tender, bilateral (first episode)</td><td>PCR of lesion; multinucleated giant cells</td></tr>\n<tr><td>Primary syphilis</td><td>Painless</td><td>Single, indurated, clean base</td><td>Firm, rubbery, nontender</td><td>Dark-field or PCR; serology may lag</td></tr>\n<tr><td>Chancroid</td><td>Painful</td><td>Ragged, undermined, purulent</td><td>Tender, suppurative buboes</td><td>Gram-negative coccobacilli in chains</td></tr>\n<tr><td>LGV</td><td>Papule often unnoticed</td><td>Small, transient</td><td>Painful, matted, may drain</td><td>Chlamydia NAAT; serovar L</td></tr>\n<tr><td>Granuloma inguinale</td><td>Painless</td><td>Beefy red, bleeds easily</td><td>Pseudobuboes (subcutaneous granulation)</td><td>Donovan bodies</td></tr>\n</tbody></table>\n<h2>Warts, Bartholin gland disease and toxic shock</h2>\n<p><strong>Anogenital warts</strong> are caused mainly by low-risk HPV types 6 and 11. Histology shows papillomatosis, acanthosis and <strong>koilocytes</strong> (squamous cells with wrinkled, hyperchromatic nuclei and a perinuclear halo). Low-risk E6 and E7 proteins bind p53 and Rb weakly, which is why these types rarely cause cancer. The same types cause recurrent respiratory papillomatosis in children exposed at birth. The 9-valent vaccine (virus-like particles of L1 capsid protein) prevents both warts and the high-risk types.</p>\n<p>The <strong>Bartholin glands</strong> lie at about the 4 and 8 o'clock positions of the vestibule and drain mucus through short ducts. Obstruction of a duct produces a cyst; infection of the cyst (usually polymicrobial vaginal and skin flora, sometimes gonococci or chlamydiae) produces a painful, fluctuant abscess. Because carcinoma of the gland is rare but occurs mostly in older people, a new solid mass in this location after about age 40 is treated as a possible neoplasm.</p>\n<p><strong>Toxic shock syndrome</strong> results from staphylococcal toxic shock syndrome toxin-1 (menstrual cases with high-absorbency tampons, menstrual cups, contraceptive sponges, nasal packing, postpartum and surgical wounds) or from streptococcal pyrogenic exotoxins. These are <strong>superantigens</strong>: they bind MHC class II on antigen-presenting cells and the variable region of the T-cell receptor beta chain outside the peptide groove, activating a large fraction of all T cells at once. The resulting flood of IL-1, IL-2, TNF and interferon-gamma causes fever, capillary leak, hypotension, diffuse erythroderma and multiorgan injury, with desquamation of the palms and soles one to two weeks later. Blood cultures are usually negative in staphylococcal toxic shock because the toxin, not bacteraemia, drives the illness.</p>\n<div class=\"pearl\"><p>Naadi memory aid, \"Herpes hurts, syphilis is silent\": a painless ulcer with rubbery nodes is syphilis until proved otherwise; painful ulcers are HSV (vesicles first) or chancroid (ragged, purulent, with buboes).</p></div>\n<div class=\"trap\"><p>Condyloma <em>lata</em> (secondary syphilis, flat and moist) and condyloma <em>acuminata</em> (HPV 6/11, cauliflower-like) are different diseases. A wart-like lesion in a patient with a rash on the palms needs syphilis serology, not cryotherapy.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Syphilis"
+    },
+    {
+     "statpearls": "Toxic Shock Syndrome"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Vaginitis, cervicitis and pelvic inflammatory disease: diagnosis and treatment",
+   "html": "<h2>Approach to vaginal symptoms</h2>\n<p>Take a sexual history (partners, practices, protection, prior STIs), ask about the discharge, odour, itch, dyspareunia, bleeding and pelvic pain, and record pregnancy status, recent antibiotics, diabetes and hormone exposure. Organ inventory matters more than gender identity: test the sites a person has and uses. A transmasculine person on testosterone may have atrophic vaginal symptoms that mimic infection; a transfeminine person with a penile-inversion neovagina has keratinised skin and gut or skin flora rather than lactobacilli, and is not at risk of cervicitis.</p>\n<p>Examination with point-of-care tests usually makes the diagnosis: <strong>vaginal pH</strong>, the <strong>amine test</strong>, a <strong>saline wet mount</strong> and a <strong>KOH preparation</strong>. Bacterial vaginosis can be diagnosed clinically when at least three of four findings are present: thin homogeneous discharge, pH above 4.5, positive amine test and clue cells. Gram stain scoring is the research reference standard, and vaginal NAAT panels for BV, candida and trichomonas are increasingly used. Trichomonas is best detected by NAAT because wet mount misses a large share of cases. Every patient with symptoms of cervicitis, PID or a new STI should also have NAAT for gonorrhea and chlamydia (vaginal swab is the preferred specimen in people with a vagina) plus HIV and syphilis testing.</p>\n<h3>Treatment (CDC 2021 STI guidelines, restated)</h3>\n<table class=\"hy\"><thead><tr><th>Condition</th><th>Preferred treatment</th><th>Key points</th></tr></thead><tbody>\n<tr><td>Bacterial vaginosis</td><td>Oral metronidazole for 7 days, or intravaginal metronidazole gel or clindamycin cream</td><td>Treat symptomatic patients, including in pregnancy. Partner treatment does not help. Recurrence is common.</td></tr>\n<tr><td>Uncomplicated candidiasis</td><td>Single oral dose of fluconazole or a short course of a topical azole</td><td>In pregnancy use a 7-day topical azole. Recurrent disease (3 or more episodes a year): culture, longer induction, then weekly fluconazole for 6 months.</td></tr>\n<tr><td>Trichomoniasis</td><td>Women: oral metronidazole 500 mg twice daily for 7 days. Men: metronidazole 2 g once</td><td>Treat partners; retest women about 3 months later. Vaginal gel does not reach the urethra and periurethral glands, so it is not adequate.</td></tr>\n<tr><td>Chlamydia</td><td>Doxycycline 100 mg twice daily for 7 days</td><td>Azithromycin 1 g once in pregnancy or when adherence is a concern. Test of cure in pregnancy. Retest everyone about 3 months later.</td></tr>\n<tr><td>Gonorrhea (uncomplicated)</td><td>Ceftriaxone 500 mg IM once (1 g if 150 kg or more)</td><td>Add doxycycline if chlamydia has not been excluded. Test of cure 7&ndash;14 days after treatment of pharyngeal infection.</td></tr>\n</tbody></table>\n<p>Expedited partner therapy (giving the patient medication or a prescription for partners) is recommended for chlamydia and gonorrhea where it is legal, unless a partner is likely to need an examination. Patients should abstain from sex until 7 days after single-dose treatment or until a 7-day course is complete and partners are treated.</p>\n<h2>Pelvic inflammatory disease</h2>\n<p>PID is a clinical diagnosis with a deliberately low threshold, because untreated disease damages fertility. In a sexually active young person with pelvic or lower abdominal pain and no other explanation, <strong>cervical motion, uterine or adnexal tenderness</strong> on bimanual examination is enough to start empiric treatment. Fever, mucopurulent discharge, abundant neutrophils on wet mount, raised ESR or C-reactive protein and a positive gonorrhea or chlamydia NAAT add specificity. Always check a pregnancy test: ectopic pregnancy is the dangerous mimic, along with appendicitis, ovarian torsion and a ruptured cyst. Transvaginal ultrasound is used when an abscess is suspected or the patient is severely ill; laparoscopy is the most specific test but is reserved for unclear cases.</p>\n<ul>\n<li><strong>Outpatient regimen</strong>: ceftriaxone 500 mg IM once plus doxycycline 100 mg twice daily for 14 days plus metronidazole 500 mg twice daily for 14 days. Reassess within about 72 hours; failure to improve means admission.</li>\n<li><strong>Admit</strong> for a tubo-ovarian abscess, pregnancy, severe illness (high fever, vomiting, inability to take oral medication), failure of outpatient therapy or when a surgical emergency cannot be excluded.</li>\n<li><strong>Parenteral regimens</strong> include ceftriaxone 1 g IV daily with doxycycline and metronidazole, cefoxitin or cefotetan with doxycycline, or clindamycin with gentamicin. Switch to oral therapy after about 24&ndash;48 hours of clinical improvement to complete 14 days.</li>\n<li><strong>Tubo-ovarian abscess</strong>: most respond to IV antibiotics; image-guided drainage is added for large collections or no response within 48&ndash;72 hours; suspected rupture (peritonitis, shock) is a surgical emergency.</li>\n<li>An IUD does not need to be removed; reassess and remove only if there is no improvement. Treat partners from the previous 60 days.</li>\n</ul>\n<p>Long-term sequelae are tubal infertility, ectopic pregnancy and chronic pelvic pain, and the risk rises with each episode. Perihepatitis presents with right upper quadrant pleuritic pain and can be mistaken for cholecystitis.</p>\n<h2>Screening and prevention</h2>\n<p>USPSTF recommends screening for chlamydia and gonorrhea in all sexually active women 24 years or younger and in older women at increased risk, and these recommendations extend to transgender and nonbinary people based on anatomy and risk. Screening at the first prenatal visit is part of routine care. Doxycycline taken within 72 hours after condomless sex (doxy-PEP) reduces bacterial STIs in men who have sex with men and transgender women with a recent bacterial STI; trials in cisgender women did not show benefit, so CDC does not recommend it for them. Condoms, HPV vaccination and partner treatment remain the core of prevention.</p>\n<div class=\"trap\"><p>A 7-day metronidazole course is the preferred trichomoniasis treatment for women; a single 2 g dose is less effective in them. In men the single dose remains the recommended regimen.</p></div>\n<div class=\"pearl\"><p>Adolescents can consent to STI testing and treatment without a parent in every US state. Ask about confidentiality early, because fear of disclosure is a common reason young people avoid care.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Trichomoniasis"
+    },
+    {
+     "statpearls": "Pelvic Inflammatory Disease"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Genital ulcers, warts, Bartholin abscess and toxic shock: management",
+   "html": "<h2>Genital ulcers: diagnosis and treatment</h2>\n<p>Every patient with a genital ulcer needs HSV testing of the lesion, syphilis serology and HIV testing, because clinical appearance alone is unreliable and co-infection is common. Treat empirically when the picture is typical rather than waiting for results.</p>\n<h3>Genital herpes</h3>\n<ul>\n<li><strong>Diagnosis</strong>: NAAT (PCR) of an unroofed vesicle or ulcer base is the most sensitive test and gives the type. Type-specific IgG serology identifies prior infection in someone without lesions but is not recommended for screening the general population.</li>\n<li><strong>First episode</strong>: oral acyclovir, valacyclovir or famciclovir for 7&ndash;10 days, extended if healing is incomplete. Antivirals do not eradicate latency.</li>\n<li><strong>Recurrences</strong>: episodic therapy started within a day of the prodrome, or daily suppressive therapy for frequent recurrences or to reduce transmission to a partner.</li>\n<li><strong>Severe disease</strong> (disseminated infection, meningitis, hepatitis): IV acyclovir with hydration, because acyclovir crystals can cause acute kidney injury.</li>\n<li><strong>Pregnancy</strong>: suppressive acyclovir or valacyclovir from 36 weeks for anyone with a history of genital herpes; cesarean birth if genital lesions or prodromal symptoms are present at the onset of labour. Neonatal risk is highest when the pregnant person acquires HSV for the first time near delivery.</li>\n</ul>\n<h3>Syphilis</h3>\n<p>Diagnosis uses both a nontreponemal and a treponemal test. Labs use either the traditional sequence (RPR first, confirmed with a treponemal test) or the reverse sequence (treponemal immunoassay first, then RPR, with a second treponemal test such as TP-PA if they disagree). Serology may be negative early in primary syphilis, so lesion PCR or dark-field microscopy helps, and empiric treatment is reasonable for a typical chancre.</p>\n<table class=\"hy\"><thead><tr><th>Stage</th><th>Treatment</th></tr></thead><tbody>\n<tr><td>Primary, secondary, early latent (under 1 year)</td><td>Benzathine penicillin G 2.4 million units IM once</td></tr>\n<tr><td>Late latent or latency of unknown duration</td><td>Benzathine penicillin G 2.4 million units IM weekly for 3 doses</td></tr>\n<tr><td>Neurosyphilis, ocular or otic syphilis</td><td>Aqueous crystalline penicillin G IV for 10&ndash;14 days</td></tr>\n<tr><td>Penicillin allergy, not pregnant</td><td>Doxycycline 100 mg twice daily (14 days for early, 28 days for late or unknown duration) with close follow-up</td></tr>\n<tr><td>Penicillin allergy, pregnant</td><td>Desensitisation, then penicillin; no alternative reliably prevents congenital syphilis</td></tr>\n</tbody></table>\n<p>Response is judged by nontreponemal titres: a fourfold fall (for example 1:32 to 1:8) within 6&ndash;12 months for early syphilis. Patients with ocular, otic or neurologic symptoms need CSF examination and IV therapy. Report cases and notify partners. In pregnancy, the Jarisch-Herxheimer reaction can trigger contractions or fetal heart-rate changes in the second half of pregnancy; it is managed supportively and is not a reason to withhold penicillin.</p>\n<h3>Chancroid, LGV and granuloma inguinale</h3>\n<ul>\n<li><strong>Chancroid</strong>: azithromycin 1 g once or ceftriaxone 250 mg IM once (ciprofloxacin and erythromycin are alternatives). Fluctuant buboes may need needle aspiration or incision.</li>\n<li><strong>LGV</strong>: doxycycline 100 mg twice daily for 21 days. Treat proctitis in men who have sex with men empirically when LGV is suspected.</li>\n<li><strong>Granuloma inguinale</strong>: azithromycin until lesions heal, at least 3 weeks.</li>\n</ul>\n<h2>Anogenital warts</h2>\n<p>Diagnosis is clinical; biopsy atypical, pigmented, indurated, fixed or treatment-resistant lesions and those in immunosuppressed patients. Options are patient-applied (imiquimod, podofilox, sinecatechins) or clinician-applied (cryotherapy, trichloroacetic acid, surgical removal). In pregnancy avoid imiquimod, podofilox and sinecatechins; cryotherapy, trichloroacetic acid or excision are used, and warts are not an indication for cesarean unless they obstruct the outlet or would bleed heavily. HPV vaccination is routine at 11&ndash;12 years (it can start at 9), recommended through age 26, and a shared decision for adults 27&ndash;45.</p>\n<h2>Bartholin cysts and abscesses</h2>\n<ul>\n<li>A small asymptomatic cyst in a younger person needs no treatment.</li>\n<li>A symptomatic abscess is drained: incision with placement of a small balloon-tipped catheter for several weeks to allow a tract to epithelialise, or marsupialisation for recurrence. Simple incision and drainage alone often recurs. Antibiotics are added for cellulitis, systemic signs or a positive gonorrhea or chlamydia test.</li>\n<li>A new or solid Bartholin mass after about age 40, or one that does not resolve, should be biopsied or excised to exclude carcinoma.</li>\n</ul>\n<h2>Toxic shock syndrome</h2>\n<p>Suspect TSS when fever, hypotension and a diffuse sunburn-like macular erythroderma occur with involvement of several organs (vomiting or diarrhoea, myalgia with raised CK, renal or hepatic dysfunction, thrombocytopenia, confusion), particularly with menstruation, a retained tampon or a recent wound. Management is that of septic shock plus source control:</p>\n<ol>\n<li>Remove the tampon, packing or other foreign body and examine the vagina; drain or debride infected wounds.</li>\n<li>Give aggressive IV crystalloid and vasopressors as needed.</li>\n<li>Start empiric IV <strong>vancomycin plus clindamycin</strong> (clindamycin suppresses toxin synthesis by inhibiting protein synthesis); many add a broad beta-lactam until cultures return. Narrow to an antistaphylococcal beta-lactam if the organism is methicillin susceptible, keeping clindamycin for the first days.</li>\n<li>Consider IV immunoglobulin for severe streptococcal TSS or refractory shock.</li>\n</ol>\n<p>Recurrence is possible, especially in people who do not form antibodies to the toxin, so advise against tampon use after an episode.</p>\n<div class=\"trap\"><p>In a pregnant patient with a penicillin allergy and syphilis, the answer is desensitisation followed by penicillin. Doxycycline is contraindicated in pregnancy and azithromycin and ceftriaxone are not reliable for preventing congenital syphilis.</p></div>\n<div class=\"pearl\"><p>A painless ulcer with negative syphilis serology does not exclude primary syphilis: antibodies may not have formed yet. Repeat serology in 2&ndash;4 weeks or treat empirically if exposure is likely.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Herpes Simplex Type 2 Infection"
+    },
+    {
+     "statpearls": "Bartholin Gland Cyst"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Sorting genital ulcers by pain, ulcer appearance and the inguinal nodes (schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Genital ulcer in pregnancy"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old woman comes to the clinic because of a thin, grey vaginal discharge with a fishy odour that is worse after intercourse. She has no itching. Speculum examination shows a homogeneous discharge coating the vaginal walls; the cervix appears normal. Vaginal pH is 5.5. Saline microscopy shows squamous cells whose borders are obscured by adherent coccobacilli and very few leukocytes. Which of the following best explains the vaginal pH in this patient?</p>",
+   "options": [
+    "Fermentation of epithelial glycogen by yeast",
+    "Loss of lactic acid-producing lactobacilli",
+    "Neutrophil release of myeloperoxidase",
+    "Reduced epithelial glycogen from estrogen deficiency",
+    "Secretion of alkaline cervical mucus by infected endocervical glands"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The thin discharge, amine odour, clue cells and scant neutrophils indicate bacterial vaginosis. BV is a shift in vaginal flora: lactobacilli that normally ferment glycogen-derived sugars to lactic acid are replaced by a polymicrobial anaerobic biofilm (including <em>Gardnerella</em>), so the pH rises above 4.5. The anaerobes also produce volatile amines that cause the odour.</p><p><strong>Takeaway:</strong> BV raises vaginal pH because the acid-producing lactobacilli are lost, not because of inflammation.</p>",
+   "whyNot": {
+    "A": "Yeast overgrowth (candidiasis) leaves the pH normal and causes itching with a thick white discharge and pseudohyphae on KOH.",
+    "C": "Neutrophils are scant in BV; marked inflammation with high pH suggests trichomoniasis instead.",
+    "D": "Estrogen deficiency raises pH in atrophy, but this 27-year-old has no reason to be hypoestrogenic and her findings are typical of BV.",
+    "E": "Endocervical infection (gonorrhea, chlamydia) causes mucopurulent cervicitis; her cervix is normal and BV is a vaginal process."
+   },
+   "objective": "Explain the rise in vaginal pH in bacterial vaginosis as loss of lactobacilli.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vaginal discharge",
+    "vaginal flora"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman has a frothy, yellow-green, malodorous vaginal discharge and vulvar irritation. Examination shows punctate haemorrhages on the ectocervix. Vaginal pH is 6.0. Saline wet mount shows numerous neutrophils and motile, pear-shaped organisms with flagella. She is given an oral drug, and her partner is treated as well. Which of the following is the mechanism of action of this drug?</p>",
+   "options": [
+    "Binding of ergosterol with formation of membrane pores",
+    "Inhibition of the 30S ribosomal subunit",
+    "Inhibition of the 50S ribosomal subunit",
+    "Inhibition of folate synthesis at dihydropteroate synthase",
+    "Reduction to reactive radicals that damage DNA"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>This is trichomoniasis, caused by the flagellated anaerobic protozoan <em>Trichomonas vaginalis</em>. It is treated with metronidazole (or tinidazole). Metronidazole is a prodrug whose nitro group is reduced by low-redox-potential electron carriers present in anaerobes and protozoa, forming radicals that break DNA strands. Aerobic human cells do not activate it efficiently, which accounts for its selectivity.</p><p><strong>Takeaway:</strong> Nitroimidazoles are activated by anaerobic reduction to DNA-damaging radicals; that is why they treat trichomoniasis, BV and anaerobes.</p>",
+   "whyNot": {
+    "A": "Pore formation by binding ergosterol is the mechanism of amphotericin B and nystatin, which are antifungals and inactive against protozoa.",
+    "B": "30S inhibition is the mechanism of tetracyclines and aminoglycosides, which are not used for trichomoniasis.",
+    "C": "50S inhibition (macrolides, clindamycin) is not effective treatment for trichomonas; clindamycin is used for BV.",
+    "D": "Sulfonamides block dihydropteroate synthase; they have no role in treating trichomoniasis."
+   },
+   "objective": "Identify the mechanism of metronidazole in the treatment of trichomoniasis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vaginal discharge",
+    "antimicrobials"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 23-year-old woman is treated for the third time in 2 years for endocervical infection with gram-negative diplococci that grow on selective chocolate agar and ferment glucose but not maltose. Each episode followed exposure to a new partner. Serum from the most recent episode contains antibodies that react with surface pili from her first isolate but not with pili from her current isolate. Which of the following best explains her susceptibility to repeated infection?</p>",
+   "options": [
+    "Antigenic variation of pilin by gene recombination",
+    "Capsular polysaccharide that prevents opsonisation",
+    "Destruction of CD4+ T cells by the organism",
+    "Intracellular replication within an inclusion body",
+    "Production of a superantigen that exhausts T cells"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The organism is <em>Neisseria gonorrhoeae</em>. Its pilin protein changes through recombination of silent <em>pilS</em> sequences into the expressed <em>pilE</em> gene, and Opa proteins undergo phase variation. Antibodies formed against one infection therefore do not recognise the next strain's surface proteins, so there is no lasting immunity and no vaccine.</p><p><strong>Takeaway:</strong> Gonococcal reinfection is common because pilin and Opa proteins vary antigenically.</p>",
+   "whyNot": {
+    "B": "A polysaccharide capsule is a key virulence factor of <em>N. meningitidis</em>, not of <em>N. gonorrhoeae</em>, which lacks a true capsule.",
+    "C": "Destruction of CD4+ T cells describes HIV; gonococci do not deplete T cells.",
+    "D": "Replication within an inclusion describes <em>Chlamydia</em>, which is obligately intracellular and would not grow on chocolate agar.",
+    "E": "Superantigens are staphylococcal and streptococcal toxins; they explain toxic shock, not repeated gonococcal infection."
+   },
+   "objective": "Explain recurrent gonococcal infection by antigenic variation of surface proteins.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexually transmitted infections",
+    "immune evasion"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 20-year-old woman has postcoital spotting and a mucopurulent endocervical discharge. NAAT of a vaginal swab is positive for an organism that cannot be cultured on artificial media and that relies on host-cell ATP. Electron microscopy of infected cell culture shows a membrane-bound cytoplasmic vacuole filled with large, metabolically active particles dividing by binary fission. Which of the following best describes these particles?</p>",
+   "options": [
+    "Elementary bodies that attach to and enter columnar cells",
+    "Endospores that resist heat and drying",
+    "Reticulate bodies that are the replicating form",
+    "Trophozoites that attach to squamous epithelium",
+    "Virions assembling at the nuclear membrane"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The organism is <em>Chlamydia trachomatis</em>. Infectious, metabolically inert elementary bodies enter columnar epithelial cells by endocytosis and convert within the inclusion to reticulate bodies, the large, metabolically active form that divides by binary fission using host ATP. Reticulate bodies then reorganise into elementary bodies, which are released to infect new cells.</p><p><strong>Takeaway:</strong> In chlamydia, the elementary body infects and the reticulate body replicates inside the inclusion.</p>",
+   "whyNot": {
+    "A": "Elementary bodies are the small, inert infectious form; they do not divide inside the inclusion.",
+    "B": "Endospores are formed by <em>Bacillus</em> and <em>Clostridium</em>, not by chlamydiae.",
+    "D": "Trophozoites attaching to squamous epithelium describe <em>Trichomonas</em>, which can be seen on wet mount and is not intracellular.",
+    "E": "Assembly at the nuclear membrane describes herpesviruses; chlamydiae are bacteria that replicate in cytoplasmic inclusions."
+   },
+   "objective": "Distinguish the replicating reticulate body from the infectious elementary body of Chlamydia.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexually transmitted infections",
+    "intracellular bacteria"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman has had four episodes in the past year of tingling in the buttock followed by a cluster of painful vesicles on the left labium majus that heal in about a week. PCR of a lesion is positive for herpes simplex virus type 2. Between episodes, viral DNA persists in which of the following locations?</p>",
+   "options": [
+    "Basal keratinocytes of the labial epithelium",
+    "Inguinal lymph node germinal centres",
+    "Peripheral blood B lymphocytes",
+    "Sacral dorsal root ganglion neurons",
+    "Ventral horn motor neurons of the lumbar cord"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>After primary infection, HSV enters sensory nerve endings and travels by retrograde axonal transport to the cell bodies of the innervating sensory ganglion. For genital infection these are the sacral dorsal root ganglia. The genome persists as an episome with very limited gene expression, and reactivation sends virus back down the axon to the skin, often preceded by a prodrome of tingling in the dermatome.</p><p><strong>Takeaway:</strong> Genital HSV is latent in sacral dorsal root ganglia; the prodrome reflects reactivation in the sensory neuron.</p>",
+   "whyNot": {
+    "A": "Keratinocytes support lytic replication during an outbreak, but they are shed and do not harbour latent virus.",
+    "B": "Lymph nodes enlarge during a first episode as an immune response; they are not the latent reservoir.",
+    "C": "Latency in B lymphocytes is characteristic of Epstein-Barr virus, not HSV.",
+    "E": "HSV travels in sensory, not motor, neurons, and the motor neuron cell bodies are in the ventral horn of the spinal cord rather than a ganglion."
+   },
+   "objective": "Locate the site of latency of genital herpes simplex virus.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genital ulcers",
+    "viral latency"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman has a diffuse, non-itchy, scaly macular rash that includes the palms and soles, and moist, flat grey plaques on the labia. RPR titre is 1:64 and a treponemal antibody test is reactive. Four hours after an intramuscular injection of benzathine penicillin G, she has a temperature of 38.6&deg;C (101.5&deg;F), chills, headache and myalgia; the rash appears brighter. Blood pressure is 112/70 mm Hg. She has no wheezing or urticaria. Which of the following best explains these new symptoms?</p>",
+   "options": [
+    "Cytokine release triggered by components of killed spirochetes",
+    "IgE-mediated mast cell degranulation in response to penicillin",
+    "Immune complex deposition from antibodies against penicillin",
+    "Inflammation caused by the procaine component of the injection",
+    "Spread of spirochetes into the central nervous system"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Secondary syphilis was treated with penicillin, and within hours she developed fever, chills, myalgia and accentuation of the rash. This is the Jarisch-Herxheimer reaction: lipoproteins released from lysed treponemes trigger a burst of TNF-alpha, IL-6 and IL-8 from host cells. It is self-limited (resolving within about a day), is treated with antipyretics and rest, and does not mean penicillin allergy.</p><p><strong>Takeaway:</strong> Fever and myalgia within hours of treating syphilis are a cytokine reaction to killed spirochetes, not drug allergy.</p>",
+   "whyNot": {
+    "B": "IgE-mediated anaphylaxis would cause urticaria, angioedema, bronchospasm or hypotension within minutes, none of which she has.",
+    "C": "Serum-sickness-like immune complex reactions appear 1&ndash;3 weeks after drug exposure, not within hours.",
+    "D": "Benzathine penicillin G does not contain procaine; procaine reactions cause brief neuropsychiatric symptoms immediately after injection.",
+    "E": "Treatment does not push organisms into the CNS; neurosyphilis would present with neurologic or ocular findings rather than fever and myalgia hours after a dose."
+   },
+   "objective": "Explain the Jarisch-Herxheimer reaction after penicillin treatment of syphilis.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genital ulcers",
+    "adverse reactions"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old woman is brought to the emergency department on the fourth day of her menstrual period because of fever, vomiting and confusion. Temperature is 39.8&deg;C (103.6&deg;F) and blood pressure is 78/42 mm Hg. She has a diffuse blanching macular erythroderma. A high-absorbency tampon is removed from the vagina. Platelets are 82,000/mm<sup>3</sup> (82 &times; 10<sup>9</sup>/L) and creatinine is 2.4 mg/dL (212 &micro;mol/L). Blood cultures are negative. The causative toxin acts by which of the following mechanisms?</p>",
+   "options": [
+    "ADP-ribosylation of elongation factor 2",
+    "Cleavage of SNARE proteins at the neuromuscular junction",
+    "Cross-linking MHC class II molecules with T-cell receptor beta chains",
+    "Formation of pores in host cell membranes",
+    "Increase in intracellular cAMP by activation of Gs"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Menstrual toxic shock syndrome is caused by <em>Staphylococcus aureus</em> toxic shock syndrome toxin-1. TSST-1 is a superantigen: it binds MHC class II on antigen-presenting cells and the variable region of the T-cell receptor beta chain outside the peptide-binding groove. This activates up to a fifth of all T cells, releasing IL-1, IL-2, TNF and interferon-gamma, which cause fever, capillary leak, shock and multiorgan injury. Blood cultures are often negative because the toxin acts at a distance.</p><p><strong>Takeaway:</strong> Superantigens activate T cells non-specifically by bridging MHC II and the TCR beta chain outside the antigen groove.</p>",
+   "whyNot": {
+    "A": "ADP-ribosylation of EF-2 is the mechanism of diphtheria toxin and Pseudomonas exotoxin A, which inhibit protein synthesis.",
+    "B": "SNARE cleavage is the mechanism of botulinum and tetanus toxins, causing paralysis rather than shock with erythroderma.",
+    "D": "Pore-forming toxins (such as alpha-toxin or streptolysin) damage cells directly but do not explain massive cytokine release with a sunburn-like rash.",
+    "E": "Gs activation and raised cAMP describe cholera toxin and heat-labile E. coli toxin, which cause secretory diarrhoea."
+   },
+   "objective": "Describe how TSST-1 acts as a superantigen in menstrual toxic shock syndrome.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "shock",
+    "bacterial toxins"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman comes to the emergency department because of 5 days of worsening lower abdominal pain and fever. She has one male partner and does not use condoms. She is tolerating fluids. Pelvic examination shows mucopurulent cervical discharge, cervical motion tenderness and tender fullness in the right adnexa.</p><table><thead><tr><th>Finding</th><th>Value</th></tr></thead><tbody><tr><td>Temperature</td><td>38.6&deg;C (101.5&deg;F)</td></tr><tr><td>Pulse</td><td>104/min</td></tr><tr><td>Blood pressure</td><td>116/72 mm Hg</td></tr><tr><td>Leukocytes</td><td>16,800/mm<sup>3</sup> (16.8 &times; 10<sup>9</sup>/L)</td></tr><tr><td>Urine &beta;-hCG</td><td>Negative</td></tr><tr><td>Transvaginal ultrasound</td><td>4-cm complex, thick-walled multilocular right adnexal collection; no free fluid</td></tr></tbody></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Admission for intravenous antibiotics such as ceftriaxone, doxycycline and metronidazole",
+    "Diagnostic laparoscopy within 6 hours",
+    "Exploratory laparotomy with total abdominal hysterectomy",
+    "Intramuscular ceftriaxone once with 14 days of oral doxycycline and metronidazole at home",
+    "Ultrasound-guided transvaginal drainage before any antibiotic is given"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has pelvic inflammatory disease complicated by a tubo-ovarian abscess. A TOA is an indication for hospital admission and parenteral antibiotics that cover gonococci, chlamydiae and anaerobes; CDC regimens include IV ceftriaxone with doxycycline and metronidazole. Most abscesses of this size respond to antibiotics alone. Drainage is added if the collection is large or she fails to improve within about 48&ndash;72 hours, and surgery is reserved for suspected rupture or sepsis.</p><p><strong>Takeaway:</strong> PID with a tubo-ovarian abscess needs admission and IV antibiotics with anaerobic coverage; drain if no response.</p>",
+   "whyNot": {
+    "B": "Laparoscopy is used when the diagnosis is uncertain; here the diagnosis is established clinically and on ultrasound.",
+    "C": "Hysterectomy is a last resort for ruptured or refractory abscesses in someone who does not want future fertility; she is stable.",
+    "D": "Outpatient therapy is appropriate for mild PID without an abscess, but a TOA requires inpatient IV treatment.",
+    "E": "Drainage is reserved for large or non-responding abscesses, and antibiotics should never be delayed for it."
+   },
+   "objective": "Admit patients with PID complicated by tubo-ovarian abscess for intravenous antibiotics.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "pelvic pain",
+    "pelvic infection"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old woman has a malodorous, yellow vaginal discharge and dyspareunia for 1 week. She is not pregnant and has no allergies. Speculum examination shows a frothy discharge and an erythematous vaginal wall. Vaginal pH is 6.0. Saline wet mount shows many neutrophils and motile flagellated organisms. NAAT for gonorrhea and chlamydia is pending. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Intravaginal clindamycin cream for 7 days",
+    "Intravaginal metronidazole gel for 5 days",
+    "Oral doxycycline for 7 days",
+    "Oral fluconazole as a single dose",
+    "Oral metronidazole for 7 days"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Motile flagellated organisms with neutrophils and a high pH confirm trichomoniasis. For women, CDC recommends oral metronidazole 500 mg twice daily for 7 days, which cures more infections than a single 2 g dose. Sex partners should be treated, and she should be retested about 3 months later because reinfection is common.</p><p><strong>Takeaway:</strong> Treat trichomoniasis in women with a 7-day course of oral metronidazole and treat partners.</p>",
+   "whyNot": {
+    "A": "Clindamycin cream treats BV but has no reliable activity against trichomonas.",
+    "B": "Vaginal metronidazole gel does not reach therapeutic levels in the urethra and periurethral glands, so it fails to cure trichomoniasis.",
+    "C": "Doxycycline treats chlamydia; it does not treat trichomonas, and her NAAT result is still pending.",
+    "D": "Fluconazole treats candidiasis, which causes a thick white discharge with a normal pH and no motile organisms."
+   },
+   "objective": "Treat trichomoniasis in a woman with a 7-day course of oral metronidazole.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "vaginal discharge"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 22-year-old woman at 18 weeks' gestation comes for evaluation of a sore on her vulva that she noticed 10 days ago. It does not hurt. Examination shows a single 1-cm ulcer with a clean base and a firm, raised border on the right labium minus. There are firm, rubbery, nontender right inguinal lymph nodes. She has had one new partner during this pregnancy. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Chancroid",
+    "Genital herpes",
+    "Granuloma inguinale",
+    "Lymphogranuloma venereum",
+    "Primary syphilis"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A single painless, indurated, clean-based ulcer with firm nontender regional nodes is the classic primary chancre of syphilis. In pregnancy this matters greatly, because untreated syphilis can cross the placenta and cause stillbirth or congenital infection. She needs nontreponemal and treponemal serology (and HIV testing), and treatment should not wait if serology is initially negative.</p><p><strong>Takeaway:</strong> A painless indurated ulcer with rubbery nontender nodes is primary syphilis.</p>",
+   "whyNot": {
+    "A": "Chancroid is painful, with a ragged, undermined, purulent ulcer and tender suppurative nodes.",
+    "B": "Genital herpes produces painful grouped vesicles and shallow erosions, not a single indurated painless ulcer.",
+    "C": "Granuloma inguinale is painless but beefy red and friable, bleeds easily and lacks true lymphadenopathy.",
+    "D": "LGV begins with a small transient papule and is dominated by painful, matted inguinal nodes."
+   },
+   "objective": "Recognise primary syphilis from a painless indurated ulcer with nontender nodes.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genital ulcers",
+    "pregnancy"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient from the previous item has an RPR titre of 1:32 and a reactive treponemal immunoassay, confirming primary syphilis. HIV testing is negative. Two years ago she developed generalised urticaria, lip swelling and wheezing within minutes of taking amoxicillin. Fetal ultrasound is normal for gestational age. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Azithromycin as a single oral dose",
+    "Ceftriaxone intramuscularly daily for 10 days",
+    "Doxycycline orally for 14 days",
+    "Penicillin desensitisation followed by benzathine penicillin G",
+    "Repeat serology in 4 weeks before deciding on treatment"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Penicillin is the only treatment with proven ability to treat the pregnant patient and prevent congenital syphilis. Her history is consistent with an IgE-mediated penicillin allergy, so she should be desensitised in a monitored setting and then given benzathine penicillin G 2.4 million units IM once for primary syphilis. Partners need evaluation, and titres are followed during pregnancy.</p><p><strong>Takeaway:</strong> Pregnant patients with syphilis and penicillin allergy are desensitised and treated with penicillin.</p>",
+   "whyNot": {
+    "A": "Azithromycin resistance in <em>T. pallidum</em> is widespread and it does not reliably prevent congenital syphilis.",
+    "B": "Ceftriaxone has some activity but the data in pregnancy are inadequate to prevent congenital infection, so it is not an accepted alternative.",
+    "C": "Doxycycline is the alternative for nonpregnant patients but is avoided in pregnancy because of effects on fetal bones and teeth.",
+    "E": "The diagnosis is already confirmed; delaying treatment raises the risk of fetal infection."
+   },
+   "objective": "Choose penicillin desensitisation for a pregnant patient with syphilis and penicillin allergy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "genital ulcers",
+    "pregnancy"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 17-year-old girl is brought to the emergency department because of fever, vomiting, watery diarrhoea and dizziness for 12 hours. She started her menstrual period 3 days ago. Temperature is 39.6&deg;C (103.3&deg;F), pulse is 132/min and blood pressure is 76/40 mm Hg. She has a diffuse, blanching, sunburn-like erythroderma and conjunctival injection. Speculum examination reveals a retained tampon, which is removed. Intravenous crystalloid is started. Which of the following is the most appropriate antibiotic regimen?</p>",
+   "options": [
+    "Intravenous ceftriaxone alone",
+    "Intravenous gentamicin alone",
+    "Intravenous vancomycin and clindamycin",
+    "Oral ciprofloxacin",
+    "Oral metronidazole"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is menstrual toxic shock syndrome, a toxin-mediated illness usually caused by <em>S. aureus</em>. Along with source removal and fluid resuscitation, empiric therapy should cover methicillin-resistant staphylococci (vancomycin) and include clindamycin, which inhibits bacterial protein synthesis and therefore toxin production. Many clinicians add a broad beta-lactam until cultures return, and therapy is narrowed once susceptibilities are known.</p><p><strong>Takeaway:</strong> Toxic shock syndrome: remove the source, resuscitate and give vancomycin plus clindamycin to cover MRSA and suppress toxin.</p>",
+   "whyNot": {
+    "A": "Ceftriaxone alone does not cover MRSA and does not suppress toxin production.",
+    "B": "Gentamicin alone is inadequate for staphylococci and does nothing to stop toxin synthesis.",
+    "D": "Oral ciprofloxacin is inappropriate in shock and has unreliable staphylococcal activity.",
+    "E": "Metronidazole covers anaerobes and trichomonas, not <em>S. aureus</em>."
+   },
+   "objective": "Treat toxic shock syndrome with source control plus vancomycin and clindamycin.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "shock",
+    "adolescent health"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 54-year-old woman notices a painless lump at the vaginal opening that has slowly enlarged over 3 months. She has not had fever or discharge. Examination shows a 2.5-cm firm, solid, nontender, poorly mobile mass in the region of the left Bartholin gland, with normal overlying skin. There is no inguinal lymphadenopathy. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Biopsy or excision of the mass",
+    "Incision and drainage with placement of a balloon-tipped catheter",
+    "Oral antibiotics and warm sitz baths",
+    "Reassurance and re-examination in 1 year",
+    "Repeat examination after a 7-day course of topical estrogen"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A new, solid, nontender mass in the Bartholin gland region in someone over about 40 years old must be sampled to exclude carcinoma of the Bartholin gland or vulva. Drainage procedures are for fluctuant cysts and abscesses, which this is not.</p><p><strong>Takeaway:</strong> A new solid Bartholin-area mass after age 40 needs biopsy or excision.</p>",
+   "whyNot": {
+    "B": "Catheter drainage treats a fluctuant abscess or symptomatic cyst; a solid mass has nothing to drain and could be a cancer.",
+    "C": "There are no signs of infection, and delaying tissue diagnosis is inappropriate.",
+    "D": "Observation is suitable only for a small asymptomatic cyst in a younger person.",
+    "E": "Topical estrogen treats atrophy and would not clarify a solid mass."
+   },
+   "objective": "Biopsy a new solid Bartholin gland mass in a patient older than 40 years.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vulvar mass"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman at 24 weeks' gestation has had vulvar itching and a thick white vaginal discharge for 4 days. Vaginal pH is 4.2. KOH preparation shows budding yeast and pseudohyphae. Saline mount shows no clue cells or motile organisms. She has had no similar episodes. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "No treatment until after delivery",
+    "Oral fluconazole as a single dose",
+    "Oral metronidazole for 7 days",
+    "Topical clotrimazole for 7 days",
+    "Vaginal boric acid for 14 days"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>She has uncomplicated vulvovaginal candidiasis in pregnancy. CDC recommends a topical azole for 7 days in pregnancy. Oral fluconazole is avoided because high or repeated doses have been associated with fetal anomalies and some studies suggest a higher risk of miscarriage even at standard doses.</p><p><strong>Takeaway:</strong> In pregnancy, treat vulvovaginal candidiasis with a 7-day topical azole rather than oral fluconazole.</p>",
+   "whyNot": {
+    "A": "Symptomatic candidiasis should be treated; topical therapy is safe and effective in pregnancy.",
+    "B": "Oral fluconazole is first line outside pregnancy but is avoided in pregnancy.",
+    "C": "Metronidazole treats BV and trichomoniasis, not yeast.",
+    "E": "Boric acid is reserved for azole-resistant non-albicans infection and is contraindicated in pregnancy."
+   },
+   "objective": "Treat vulvovaginal candidiasis in pregnancy with a 7-day topical azole.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "vaginal discharge",
+    "pregnancy"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 21-year-old woman returns 1 week after a vaginal NAAT was positive for <em>Chlamydia trachomatis</em> and negative for <em>N. gonorrhoeae</em>; she completed 7 days of doxycycline. Her symptoms have resolved. Her partner received medication through expedited partner therapy. She is not pregnant and has no other complaints. Which of the following is the most appropriate follow-up testing?</p>",
+   "options": [
+    "Repeat NAAT at this visit as a test of cure",
+    "Repeat NAAT about 3 months after treatment",
+    "Repeat NAAT only if symptoms recur",
+    "Serum chlamydia antibody titres in 4 weeks",
+    "Culture of an endocervical specimen in 1 week"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Reinfection after chlamydia is common, usually from an untreated or new partner, and repeated infection raises the risk of tubal damage. CDC recommends retesting everyone treated for chlamydia about 3 months after treatment, regardless of whether partners were treated. A routine test of cure is not needed for nonpregnant patients treated with doxycycline; NAAT done within about 4 weeks can stay positive from nonviable organisms.</p><p><strong>Takeaway:</strong> Retest about 3 months after treating chlamydia to catch reinfection; test of cure is for pregnancy.</p>",
+   "whyNot": {
+    "A": "NAAT can detect residual nucleic acid for weeks after successful treatment, so an early test of cure is misleading and is not recommended outside pregnancy.",
+    "C": "Most reinfections are asymptomatic, so waiting for symptoms misses them.",
+    "D": "Serology has no role in diagnosing or following genital chlamydial infection.",
+    "E": "Culture is less sensitive than NAAT and a test of cure is not indicated."
+   },
+   "objective": "Retest patients for chlamydia about 3 months after treatment.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 4,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "sexually transmitted infections",
+    "follow-up"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Why is vaginal pH raised in bacterial vaginosis?",
+   "back": "Lactic acid-producing lactobacilli are replaced by an anaerobic biofilm.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "What produces the fishy odour of BV and the positive amine test?",
+   "back": "Volatile amines made by anaerobic bacteria, released when KOH is added.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which vaginitis typically has a normal pH?",
+   "back": "Vulvovaginal candidiasis.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "What does T. vaginalis look like on saline wet mount?",
+   "back": "A motile, pear-shaped, flagellated protozoan slightly larger than a neutrophil, with many neutrophils.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "How does N. gonorrhoeae evade lasting immunity?",
+   "back": "Antigenic variation of pilin and phase variation of Opa proteins.",
+   "question": 3
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Which chlamydial form is infectious and which replicates?",
+   "back": "Elementary body infects; reticulate body replicates by binary fission in the inclusion.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "How is metronidazole activated?",
+   "back": "Reduction of its nitro group in anaerobes or protozoa to DNA-damaging radicals.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "What is Fitz-Hugh-Curtis syndrome?",
+   "back": "Perihepatitis with liver capsule adhesions complicating PID; right upper quadrant pain.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Where does genital HSV become latent?",
+   "back": "Sacral dorsal root ganglia.",
+   "question": 5
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "What is the first phosphorylation step of acyclovir, and what does resistance usually involve?",
+   "back": "Viral thymidine kinase; resistance usually reflects thymidine kinase mutations.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Which syphilis test titre tracks disease activity?",
+   "back": "Nontreponemal tests (RPR, VDRL).",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "What causes the Jarisch-Herxheimer reaction?",
+   "back": "Cytokine release triggered by lipoproteins from lysed spirochetes after treatment.",
+   "question": 6
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Painful ragged ulcer with suppurative buboes: organism?",
+   "back": "Haemophilus ducreyi (chancroid).",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "What are Donovan bodies?",
+   "back": "Intracellular Klebsiella granulomatis in macrophages in granuloma inguinale.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "How does TSST-1 activate T cells?",
+   "back": "It bridges MHC class II and the TCR beta chain outside the peptide groove (superantigen).",
+   "question": 7
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Condyloma lata vs condyloma acuminata?",
+   "back": "Lata: flat moist plaques of secondary syphilis. Acuminata: HPV 6/11 warts.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "What are the four clinical criteria for BV (three needed)?",
+   "back": "Thin homogeneous discharge, pH above 4.5, positive amine test, clue cells.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Preferred trichomoniasis treatment in women?",
+   "back": "Oral metronidazole twice daily for 7 days, plus partner treatment.",
+   "question": 9
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "First-line treatment for uncomplicated gonorrhea?",
+   "back": "Ceftriaxone 500 mg IM once (1 g if 150 kg or more).",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "First-line treatment for chlamydia in a nonpregnant patient?",
+   "back": "Doxycycline 100 mg twice daily for 7 days.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Minimum clinical criteria to treat PID?",
+   "back": "Cervical motion, uterine or adnexal tenderness in a sexually active patient with pelvic pain and no other cause.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Give four indications to admit a patient with PID.",
+   "back": "Tubo-ovarian abscess, pregnancy, severe illness or inability to take oral drugs, failed outpatient therapy (or surgical emergency not excluded).",
+   "question": 8
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "When should patients treated for chlamydia be retested?",
+   "back": "About 3 months after treatment.",
+   "question": 15
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Must an IUD be removed in PID?",
+   "back": "No; treat with the IUD in place and remove only if there is no improvement.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 4,
+   "front": "Most sensitive test for a suspected herpetic ulcer?",
+   "back": "HSV NAAT (PCR) of the lesion.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 4,
+   "front": "Treatment of primary or secondary syphilis?",
+   "back": "Benzathine penicillin G 2.4 million units IM once.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Pregnant patient with syphilis and penicillin allergy?",
+   "back": "Desensitise, then treat with penicillin.",
+   "question": 11
+  },
+  {
+   "n": 28,
+   "section": 4,
+   "front": "When is suppressive antiviral therapy started in pregnancy for genital herpes?",
+   "back": "From 36 weeks' gestation.",
+   "question": null
+  },
+  {
+   "n": 29,
+   "section": 4,
+   "front": "Empiric antibiotics for toxic shock syndrome?",
+   "back": "Vancomycin plus clindamycin (clindamycin suppresses toxin).",
+   "question": 12
+  },
+  {
+   "n": 30,
+   "section": 4,
+   "front": "Which wart treatments are avoided in pregnancy?",
+   "back": "Imiquimod, podofilox and sinecatechins.",
+   "question": null
+  },
+  {
+   "n": 31,
+   "section": 4,
+   "front": "New solid Bartholin mass at age 54: next step?",
+   "back": "Biopsy or excision to exclude carcinoma.",
+   "question": 13
+  },
+  {
+   "n": 32,
+   "section": 4,
+   "front": "Treatment of lymphogranuloma venereum?",
+   "back": "Doxycycline for 21 days.",
+   "question": null
+  }
+ ]
+}

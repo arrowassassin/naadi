@@ -1,0 +1,723 @@
+{
+ "area": "13.02.04",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Physiology of menopause, primary ovarian insufficiency and menopausal pharmacology",
+   "html": "<h2>What menopause is</h2>\n<p>Menopause is the permanent end of menstruation caused by loss of ovarian follicular activity. It is diagnosed retrospectively after <strong>12 consecutive months of amenorrhea</strong> without another cause; the median age in the United States is about 51 years. Smoking brings it forward by a year or two, and genetics (the mother's age at menopause) is a strong predictor. The years of irregular cycles before it are the <strong>menopausal transition</strong> (perimenopause), and the stages are described by the STRAW+10 system, beginning with persistent changes in cycle length.</p>\n<h3>The hormone sequence</h3>\n<ol>\n<li>As the follicle pool shrinks, granulosa cells make less <strong>inhibin B</strong> and AMH. With less inhibin, <strong>FSH rises</strong>, first in the early follicular phase, while estradiol is often normal or even high because the remaining follicles are driven harder.</li>\n<li>Cycles shorten, then become irregular with anovulatory cycles. Estradiol swings widely, which explains why symptoms and bleeding are erratic and why a single FSH is unreliable for diagnosis during the transition.</li>\n<li>After the final menstrual period, follicles are essentially exhausted: <strong>estradiol falls</strong> to low levels, FSH and LH stay high (FSH more than LH, because inhibin specifically restrains FSH), and progesterone stays low.</li>\n<li>The postmenopausal ovarian stroma and the adrenal glands still make androstenedione and some testosterone. Peripheral <strong>aromatisation of androstenedione to estrone</strong>, mainly in adipose tissue, becomes the main estrogen source, which is why obesity is associated with endometrial hyperplasia and cancer after menopause.</li>\n</ol>\n<h2>Why symptoms occur</h2>\n<p><strong>Vasomotor symptoms</strong> (hot flashes and night sweats) affect most people during the transition and last a median of about 7 years, longer in Black women and in those whose symptoms start early. In the hypothalamic arcuate nucleus, a population of neurons coexpressing kisspeptin, neurokinin B and dynorphin (KNDy neurons) is normally restrained by estrogen. When estrogen falls, these neurons enlarge and signal excessively through <strong>neurokinin 3 receptors</strong> to the adjacent thermoregulatory centre in the preoptic area. The thermoneutral zone narrows, so small rises in core temperature trigger heat-dissipation responses: peripheral vasodilation, flushing, sweating and a rise in heart rate, followed by chills. This is the target of neurokinin 3 receptor antagonists such as fezolinetant.</p>\n<p><strong>Genitourinary syndrome of menopause</strong> (GSM) reflects the estrogen dependence of the vulva, vagina, urethra and bladder trigone. Without estrogen, the vaginal epithelium thins and loses glycogen; lactobacilli decline, the pH rises above about 5, and the epithelium becomes pale, dry and easily traumatised. The result is dryness, burning, dyspareunia, postcoital bleeding, urgency, dysuria and recurrent urinary tract infections. Unlike hot flashes, GSM is progressive and does not resolve with time.</p>\n<p><strong>Bone</strong>: estrogen restrains osteoclast formation by lowering RANKL expression by osteoblasts and stromal cells and increasing osteoprotegerin, and it promotes osteoclast apoptosis. Estrogen loss shifts this balance, accelerating bone turnover with net resorption, most rapidly in the first years after menopause and most in trabecular bone (vertebrae, distal radius). <strong>Cardiovascular</strong>: LDL rises, HDL tends to fall, and visceral fat increases. Sleep disturbance, mood symptoms (especially with a past history of depression), joint pain and cognitive complaints are common during the transition.</p>\n<h2>Primary ovarian insufficiency</h2>\n<p>Primary ovarian insufficiency (POI) is loss of ovarian function before 40: oligomenorrhea or amenorrhea for at least 4 months with an <strong>elevated FSH in the menopausal range on two occasions</strong> at least 4 weeks apart and low estradiol. It differs from menopause in that function can fluctuate, and a small fraction of patients ovulate and even conceive afterwards. Causes:</p>\n<table class=\"hy\"><thead><tr><th>Cause</th><th>Mechanism or clue</th></tr></thead><tbody>\n<tr><td>Turner syndrome (45,X and mosaics)</td><td>Accelerated follicle loss; streak gonads; short stature; primary or secondary amenorrhea</td></tr>\n<tr><td><em>FMR1</em> premutation</td><td>55&ndash;200 CGG repeats; family history of intellectual disability (fragile X) or late-onset tremor and ataxia</td></tr>\n<tr><td>Autoimmune</td><td>Often with autoimmune adrenal insufficiency (21-hydroxylase antibodies), hypothyroidism or type 1 diabetes</td></tr>\n<tr><td>Iatrogenic</td><td>Alkylating chemotherapy, pelvic radiation, ovarian surgery</td></tr>\n<tr><td>Metabolic and other genetic causes</td><td>Galactosemia; rare gene variants</td></tr>\n<tr><td>Idiopathic</td><td>Most cases</td></tr>\n</tbody></table>\n<p>The evaluation after excluding pregnancy, thyroid disease and hyperprolactinemia includes a karyotype, <em>FMR1</em> premutation testing and adrenal antibodies. Because estrogen deficiency at a young age accelerates bone loss and cardiovascular risk, hormone therapy is advised until about the average age of natural menopause.</p>\n<h2>The hormones used to treat menopause, by mechanism</h2>\n<ul>\n<li><strong>Estrogens</strong> (estradiol by mouth, skin or vagina; conjugated estrogens) act on nuclear estrogen receptors. Oral estrogen passes through the liver first, increasing hepatic synthesis of clotting factors, SHBG, angiotensinogen, triglycerides and C-reactive protein; transdermal estradiol largely avoids these first-pass effects and appears to carry a lower risk of venous thromboembolism.</li>\n<li><strong>Progestogens</strong> (micronized progesterone, medroxyprogesterone acetate, levonorgestrel IUD) protect the endometrium in people with a uterus by converting it to secretory tissue, reducing estrogen receptor expression and increasing local conversion of estradiol to the weaker estrone.</li>\n<li><strong>SERMs</strong> are tissue-selective: raloxifene is an agonist in bone and an antagonist in breast and does not stimulate the endometrium, but it can worsen hot flashes and increases venous thromboembolism; ospemifene is an agonist in vaginal epithelium used for dyspareunia; bazedoxifene combined with conjugated estrogens protects the endometrium without a progestogen.</li>\n<li><strong>Neurokinin 3 receptor antagonists</strong> (fezolinetant) block KNDy neuron signalling to the thermoregulatory centre; hepatotoxicity is the important adverse effect.</li>\n</ul>\n<div class=\"pearl\"><p>In the transition, FSH can be normal one month and high the next because the remaining follicles fire unpredictably. That is why menopause is a clinical diagnosis in people over 45, and why FSH matters mainly when evaluating amenorrhea before 40.</p></div>\n<div class=\"trap\"><p>After menopause the main estrogen is <strong>estrone</strong> made in fat, not estradiol from the ovary. An obese postmenopausal person can therefore have enough estrogen to develop endometrial hyperplasia.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Menopause"
+    },
+    {
+     "statpearls": "Primary Ovarian Insufficiency"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Managing menopause: hormone therapy, nonhormonal options and genitourinary syndrome",
+   "html": "<h2>Confirming menopause and deciding what to treat</h2>\n<p>In a person over 45 with typical symptoms and 12 months without menses, menopause is diagnosed clinically and laboratory tests are not needed. Test when the picture is atypical: amenorrhea before 40 (evaluate for POI with FSH, estradiol, hCG, prolactin and TSH), before 45 with symptoms, or when menses are suppressed by a levonorgestrel IUD or hysterectomy with preserved ovaries. Any bleeding 12 months or more after the final period is <strong>postmenopausal bleeding</strong> and needs evaluation of the endometrium.</p>\n<p>Ask what bothers the patient: vasomotor symptoms, sleep, mood, genitourinary symptoms, sexual function. Review cardiovascular risk, venous thromboembolism history, breast and endometrial cancer history and family history, liver disease, migraine and bone health. Offer bone density testing at 65, or earlier for people with risk factors (USPSTF), and lifestyle measures: weight-bearing exercise, enough calcium and vitamin D from diet, smoking cessation and limiting alcohol.</p>\n<h2>Hormone therapy</h2>\n<p>Systemic estrogen is the most effective treatment for vasomotor symptoms and also treats GSM and prevents bone loss and fractures. Key rules:</p>\n<ul>\n<li><strong>Uterus present</strong>: combine estrogen with a progestogen to prevent endometrial hyperplasia and cancer. <strong>No uterus</strong>: estrogen alone.</li>\n<li>For healthy symptomatic people <strong>under 60 or within 10 years of menopause</strong>, benefits generally outweigh risks. Starting after 60 or more than 10 years after menopause carries higher absolute risks of coronary events, stroke, venous thromboembolism and dementia.</li>\n<li>Use the dose and duration that control symptoms and reassess at least yearly; there is no mandatory stopping age, but continuing beyond 60&ndash;65 needs a documented reason and shared decision-making.</li>\n<li>Transdermal estradiol is preferred when there are VTE risk factors short of a contraindication, hypertriglyceridemia, obesity or migraine.</li>\n<li>Hormone therapy is <strong>not</strong> used to prevent chronic disease (heart disease, dementia) in people without symptoms (USPSTF).</li>\n</ul>\n<table class=\"hy\"><thead><tr><th>Outcome in the large randomised trials</th><th>Estrogen plus progestin (uterus)</th><th>Estrogen alone (after hysterectomy)</th></tr></thead><tbody>\n<tr><td>Breast cancer</td><td>Increased, with longer use</td><td>Not increased (slightly lower)</td></tr>\n<tr><td>Venous thromboembolism</td><td>Increased</td><td>Increased</td></tr>\n<tr><td>Stroke</td><td>Increased</td><td>Increased</td></tr>\n<tr><td>Coronary events</td><td>Early increase in older starters</td><td>Neutral overall; lower in younger starters</td></tr>\n<tr><td>Hip and vertebral fracture</td><td>Decreased</td><td>Decreased</td></tr>\n<tr><td>Colorectal cancer</td><td>Decreased</td><td>No clear effect</td></tr>\n<tr><td>Endometrial cancer</td><td>No increase with continuous combined therapy</td><td>Not applicable</td></tr>\n</tbody></table>\n<p><strong>Contraindications to systemic therapy</strong>: breast cancer (current or past), other estrogen-dependent cancers, unexplained vaginal bleeding, active or past venous thromboembolism or stroke, coronary disease or myocardial infarction, active liver disease, known thrombophilia, and pregnancy. Unscheduled bleeding is expected in the first months of continuous combined therapy; bleeding that persists beyond about 6 months or starts after a period of amenorrhea needs evaluation with transvaginal ultrasound or endometrial biopsy.</p>\n<h2>Nonhormonal treatment of vasomotor symptoms</h2>\n<ul>\n<li><strong>SSRIs and SNRIs</strong>: low-dose paroxetine (approved for this use), escitalopram, citalopram, venlafaxine and desvenlafaxine. In people taking <strong>tamoxifen</strong>, avoid paroxetine and fluoxetine, which strongly inhibit CYP2D6 and reduce formation of the active metabolite endoxifen; venlafaxine is commonly chosen instead.</li>\n<li><strong>Fezolinetant</strong>, a neurokinin 3 receptor antagonist: effective nonhormonal option; check liver tests before starting and during the first months, and stop if transaminases rise or symptoms of liver injury appear.</li>\n<li><strong>Gabapentin</strong> at bedtime helps night sweats and sleep; <strong>oxybutynin</strong> and clonidine are modestly effective but have anticholinergic or hypotensive adverse effects, a particular concern in older adults.</li>\n<li>Cognitive behavioural therapy and clinical hypnosis have evidence; paced breathing, supplements and herbal products (black cohosh, soy, evening primrose) have not shown consistent benefit.</li>\n</ul>\n<h2>Genitourinary syndrome of menopause</h2>\n<p>Start with vaginal moisturisers used several times a week and lubricants during sex. If symptoms persist, <strong>low-dose vaginal estrogen</strong> (cream, tablet, ring) is highly effective; systemic absorption is minimal, so a progestogen is not needed for endometrial protection. Alternatives are vaginal DHEA (prasterone) and oral ospemifene. Pelvic floor physical therapy helps dyspareunia with muscle guarding. For breast cancer survivors, start with nonhormonal options and involve the oncology team before vaginal estrogen, particularly for people taking aromatase inhibitors.</p>\n<h2>Special groups</h2>\n<ul>\n<li><strong>POI or early surgical menopause</strong>: hormone therapy (or combined hormonal contraception if contraception is needed) until about the average age of menopause, to protect bone, the heart and quality of life; the risks seen in older starters do not apply. Address fertility, which may need donor oocytes.</li>\n<li><strong>Older adults</strong>: systemic estrogen is on the Beers list of drugs to avoid starting in older adults, while low-dose vaginal estrogen is acceptable. Watch for falls and polypharmacy with sedating or anticholinergic alternatives.</li>\n<li><strong>Transgender and nonbinary people</strong>: a transgender man on testosterone after oophorectomy does not go through a menopausal transition while testosterone is maintained, but stopping it causes hypogonadal symptoms and bone loss. Older transgender women on estradiol are counselled about VTE and cardiovascular risk with age; switching to transdermal estradiol and adjusting the dose are common strategies rather than stopping therapy.</li>\n</ul>\n<div class=\"trap\"><p>Vaginal estrogen for GSM does not need an added progestogen, and a history of hysterectomy changes systemic therapy from estrogen plus progestogen to estrogen alone. Mixing these up is a classic error.</p></div>\n<div class=\"pearl\"><p>For hot flashes in someone on tamoxifen, choose venlafaxine (or gabapentin) rather than paroxetine or fluoxetine, which block CYP2D6 activation of tamoxifen.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Hormone Replacement Therapy"
+    },
+    {
+     "statpearls": "Genitourinary Syndrome of Menopause"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  }
+ ],
+ "figures": [],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "A fictional trial of a nonhormonal drug for hot flashes",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> A randomised, double-blind, placebo-controlled trial at 40 sites enrolled 600 postmenopausal women aged 45&ndash;65 years who had at least 7 moderate or severe hot flashes per day. Exclusion criteria included any history of breast cancer, active liver disease, a BMI above 40 kg/m<sup>2</sup> and use of hormone therapy within 8 weeks. Participants were assigned 1:1 to an investigational once-daily oral neurokinin 3 receptor antagonist (compound NK-21) or placebo for 12 weeks.</p>\n<p>The primary outcome was the proportion of participants with at least a 50% reduction in daily hot flash frequency at week 12. All randomised participants were analysed in the groups to which they were assigned, and those with missing week-12 data were counted as nonresponders.</p>\n<table><thead><tr><th>Outcome at 12 weeks</th><th>NK-21 (n = 300)</th><th>Placebo (n = 300)</th></tr></thead><tbody>\n<tr><td>At least 50% reduction in hot flashes</td><td>150 (50%)</td><td>90 (30%)</td></tr>\n<tr><td>ALT more than 3 times the upper limit of normal</td><td>6 (2.0%)</td><td>1 (0.3%)</td></tr>\n<tr><td>Discontinued study drug</td><td>36 (12%)</td><td>33 (11%)</td></tr>\n</tbody></table>"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 53-year-old woman has had no menstrual period for 15 months. She has hot flashes several times a day and vaginal dryness. She takes no medications. Which of the following sets of serum findings is most likely?</p>",
+   "options": [
+    "FSH decreased, LH decreased, estradiol decreased, inhibin B increased",
+    "FSH increased, LH increased, estradiol decreased, inhibin B decreased",
+    "FSH increased, LH normal, estradiol increased, inhibin B increased",
+    "FSH normal, LH increased, estradiol normal, inhibin B normal",
+    "FSH normal, LH normal, estradiol decreased, inhibin B increased"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>After menopause the follicle pool is exhausted, so granulosa cells no longer make inhibin B or estradiol. Without negative feedback from either, the pituitary secretes more gonadotropins, with FSH rising more than LH because inhibin specifically restrains FSH. This is a hypergonadotropic hypogonadal pattern.</p><p><strong>Takeaway:</strong> Menopause: high FSH (more than LH), low estradiol and low inhibin B.</p>",
+   "whyNot": {
+    "A": "Low gonadotropins with low estradiol indicate hypothalamic or pituitary failure, not ovarian failure.",
+    "C": "Estradiol and inhibin B are not high after menopause; this pattern could appear briefly in the early transition but not 15 months after the final period.",
+    "D": "An isolated high LH with normal FSH and estradiol is more typical of PCOS.",
+    "E": "Low estradiol with normal FSH would imply a central cause, and inhibin B is not raised after follicle depletion."
+   },
+   "objective": "Describe the hormone pattern after menopause.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "menopause physiology"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 61-year-old woman with a BMI of 41 kg/m<sup>2</sup> has postmenopausal bleeding. She has never used hormone therapy. Endometrial biopsy shows hyperplasia without atypia. Her ovaries are of normal postmenopausal size on ultrasound. Which of the following is the main source of the estrogen stimulating her endometrium?</p>",
+   "options": [
+    "Aromatisation of androstenedione to estrone in adipose tissue",
+    "Direct estradiol secretion by the adrenal cortex",
+    "Estradiol secretion by residual ovarian granulosa cells",
+    "Hepatic conversion of cholesterol to estriol",
+    "Placental-type estrogen synthesis in the endometrium"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>After menopause the ovaries make little estradiol, but the adrenal glands and ovarian stroma continue to secrete androstenedione. Aromatase in adipose tissue converts it to estrone, and the amount of conversion rises with fat mass. In obesity this unopposed estrogen can stimulate the endometrium, causing hyperplasia and increasing the risk of endometrial carcinoma.</p><p><strong>Takeaway:</strong> Postmenopausal estrogen is mainly estrone from aromatisation of androstenedione in fat.</p>",
+   "whyNot": {
+    "B": "The adrenal cortex secretes androgen precursors such as androstenedione and DHEA, not meaningful amounts of estradiol.",
+    "C": "Granulosa cells are depleted after menopause; an estrogen-secreting granulosa cell tumour would usually appear as an ovarian mass.",
+    "D": "The liver does not synthesise estriol from cholesterol; estriol is made mostly by the placenta in pregnancy.",
+    "E": "Placental estrogen synthesis requires fetal adrenal precursors and occurs only in pregnancy."
+   },
+   "objective": "Identify peripheral aromatisation in adipose tissue as the main postmenopausal estrogen source.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "menopause physiology",
+    "obesity"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 55-year-old woman with frequent hot flashes and night sweats has a history of venous thromboembolism. She is prescribed an oral nonhormonal drug that blocks receptors on arcuate nucleus neurons that coexpress kisspeptin, neurokinin B and dynorphin. Baseline and follow-up liver tests are ordered. Which of the following best describes how this drug reduces her symptoms?</p>",
+   "options": [
+    "It activates estrogen receptors in the preoptic hypothalamus",
+    "It blocks neurokinin 3 receptor signalling to the thermoregulatory centre",
+    "It inhibits norepinephrine and serotonin reuptake in the brainstem",
+    "It reduces calcium influx through voltage-gated channels in spinal neurons",
+    "It stimulates presynaptic alpha-2 adrenergic receptors"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Estrogen loss disinhibits KNDy neurons in the arcuate nucleus, which signal through neurokinin 3 receptors to the preoptic thermoregulatory centre, narrowing the thermoneutral zone and triggering hot flashes. Fezolinetant is a selective NK3 receptor antagonist that interrupts this signalling. It contains no hormone, so it can be used when estrogen is contraindicated, but it can cause liver injury and needs liver test monitoring.</p><p><strong>Takeaway:</strong> NK3 receptor antagonists relieve hot flashes by blocking KNDy neuron signalling to the thermoregulatory centre.</p>",
+   "whyNot": {
+    "A": "Estrogen receptor activation is the mechanism of hormone therapy, which is contraindicated with her VTE history.",
+    "C": "Serotonin-norepinephrine reuptake inhibition describes venlafaxine, another nonhormonal option with a different target.",
+    "D": "Calcium channel alpha-2-delta binding describes gabapentin, which helps night sweats by a different mechanism.",
+    "E": "Alpha-2 agonism describes clonidine, which is only modestly effective."
+   },
+   "objective": "Explain the mechanism of neurokinin 3 receptor antagonists for vasomotor symptoms.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vasomotor symptoms"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old woman with osteoporosis and a strong family history of breast cancer is started on a drug that preserves bone density and lowers her risk of invasive estrogen receptor-positive breast cancer without stimulating the endometrium. Which of the following adverse effects is she at greatest risk of from this drug?</p>",
+   "options": [
+    "Deep venous thrombosis",
+    "Endometrial carcinoma",
+    "Hypercalcemia",
+    "Osteonecrosis of the jaw",
+    "Severe hypertriglyceridemia with pancreatitis"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Raloxifene is a SERM that acts as an estrogen agonist in bone and an antagonist in breast tissue, with no stimulatory effect on the endometrium. Like other estrogenic drugs it increases hepatic production of clotting factors and the risk of venous thromboembolism. It can also worsen hot flashes and cause leg cramps.</p><p><strong>Takeaway:</strong> Raloxifene protects bone and breast without endometrial stimulation but increases VTE risk.</p>",
+   "whyNot": {
+    "B": "Endometrial hyperplasia and cancer are adverse effects of tamoxifen, which is a partial agonist in the endometrium; raloxifene is not.",
+    "C": "Hypercalcemia is not an effect of SERMs; it is seen with excess vitamin D or teriparatide.",
+    "D": "Osteonecrosis of the jaw is associated with bisphosphonates and denosumab.",
+    "E": "Marked hypertriglyceridemia is a concern with oral estrogen and occasionally tamoxifen, but VTE is the main risk with raloxifene."
+   },
+   "objective": "Recognise venous thromboembolism as the key adverse effect of raloxifene.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "osteoporosis",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman has had no menses for 8 months and has hot flashes. Urine hCG is negative. FSH is 78 mIU/mL on two occasions 6 weeks apart (reference for the follicular phase 3&ndash;10 mIU/mL); estradiol is low; TSH and prolactin are normal. Her karyotype is 46,XX. Her sister's son has intellectual disability, autistic features and large ears. Which of the following best explains her condition?</p>",
+   "options": [
+    "CGG repeat expansion in the premutation range of FMR1",
+    "Deletion of the SRY gene on the Y chromosome",
+    "Mutation in the androgen receptor gene",
+    "Mutation of the KISS1 receptor",
+    "Trinucleotide CAG repeat expansion in HTT"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has primary ovarian insufficiency. Her nephew's features suggest fragile X syndrome, caused by a full mutation (more than 200 CGG repeats) in <em>FMR1</em>. Female carriers of a premutation (about 55&ndash;200 repeats) have a substantially increased risk of POI, and premutations can expand to full mutations when transmitted by a female. <em>FMR1</em> premutation testing is part of the standard POI evaluation, along with karyotype and adrenal antibodies.</p><p><strong>Takeaway:</strong> FMR1 premutation carriers are at risk of primary ovarian insufficiency; test all patients with POI.</p>",
+   "whyNot": {
+    "B": "SRY deletion with a 46,XY karyotype causes complete gonadal dysgenesis; her karyotype is 46,XX.",
+    "C": "Androgen receptor mutations cause androgen insensitivity in 46,XY individuals, with primary amenorrhea and absent uterus.",
+    "D": "<em>KISS1R</em> mutations cause hypogonadotropic hypogonadism with low, not high, FSH.",
+    "E": "<em>HTT</em> CAG expansion causes Huntington disease, not ovarian insufficiency."
+   },
+   "objective": "Link primary ovarian insufficiency to FMR1 premutation.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ovarian insufficiency"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old woman whose menopause occurred 8 years ago has a fragility fracture of the distal radius. DXA shows osteoporosis at the lumbar spine. She has never taken hormone therapy. Which of the following changes most directly accounts for the increased bone resorption caused by estrogen deficiency?</p>",
+   "options": [
+    "Decreased parathyroid hormone secretion",
+    "Decreased production of 1,25-dihydroxyvitamin D by the kidney",
+    "Increased calcitonin secretion by thyroid C cells",
+    "Increased osteoblast and stromal cell expression of RANKL",
+    "Increased osteoprotegerin secretion by osteoblasts"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Estrogen normally limits osteoclast formation by reducing RANKL expression by osteoblasts and marrow stromal cells, increasing the decoy receptor osteoprotegerin, and promoting osteoclast apoptosis. With estrogen deficiency, RANKL rises relative to osteoprotegerin, osteoclastogenesis increases, and resorption outpaces formation, especially in trabecular bone such as the vertebrae and distal radius. Denosumab, a monoclonal antibody to RANKL, targets this pathway.</p><p><strong>Takeaway:</strong> Estrogen deficiency increases RANKL relative to osteoprotegerin, driving osteoclastic bone loss.</p>",
+   "whyNot": {
+    "A": "Reduced PTH would decrease rather than increase bone resorption, and it is not the mechanism of postmenopausal bone loss.",
+    "B": "Calcitriol deficiency causes osteomalacia with impaired mineralisation, a different disorder.",
+    "C": "Calcitonin inhibits osteoclasts, so an increase would reduce resorption.",
+    "E": "Osteoprotegerin blocks RANKL; increased levels would protect bone. Estrogen loss reduces it."
+   },
+   "objective": "Explain postmenopausal bone loss through increased RANKL signalling.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "osteoporosis",
+    "menopause physiology"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old woman has vaginal dryness, burning and dyspareunia, and three urinary tract infections in the past year. Examination shows pale, thin vaginal mucosa with loss of rugae and petechiae. Vaginal pH is 6.5. Which of the following best explains the high vaginal pH?</p>",
+   "options": [
+    "Colonisation by Trichomonas vaginalis",
+    "Decreased epithelial glycogen with fewer lactobacilli",
+    "Increased cervical mucus secretion",
+    "Overgrowth of Candida species",
+    "Reflux of alkaline urine into the vagina"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is genitourinary syndrome of menopause. Estrogen maintains a thick, glycogen-rich vaginal epithelium that supports lactobacilli, which make lactic acid. With estrogen deficiency, the epithelium thins and glycogen falls, lactobacilli decline and the pH rises. The higher pH allows colonisation with enteric organisms, contributing to recurrent UTIs, which vaginal estrogen reduces.</p><p><strong>Takeaway:</strong> GSM raises vaginal pH because estrogen loss depletes epithelial glycogen and lactobacilli.</p>",
+   "whyNot": {
+    "A": "Trichomoniasis causes a frothy discharge with motile organisms, not thin pale mucosa with loss of rugae.",
+    "C": "Cervical mucus decreases, not increases, after menopause.",
+    "D": "Candida thrives in high-estrogen states and leaves the pH normal.",
+    "E": "Urine does not normally reflux into the vagina, and urinary pH is not the explanation for atrophic changes."
+   },
+   "objective": "Explain the raised vaginal pH in genitourinary syndrome of menopause.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genitourinary symptoms"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 49-year-old woman with estrogen receptor-positive breast cancer treated with lumpectomy and radiation 1 year ago has taken tamoxifen since then. She is premenopausal and has bothersome hot flashes up to 12 times a day that disrupt her sleep. She has tried layered clothing and avoiding triggers. She has no history of depression. Which of the following is the most appropriate pharmacotherapy?</p>",
+   "options": [
+    "Bupropion",
+    "Fluoxetine",
+    "Paroxetine",
+    "Transdermal estradiol",
+    "Venlafaxine"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Systemic estrogen is contraindicated after breast cancer. Among nonhormonal options, SSRIs and SNRIs reduce hot flashes, but tamoxifen is a prodrug that relies on CYP2D6 to form its main active metabolite, endoxifen. Paroxetine and fluoxetine are strong CYP2D6 inhibitors and should be avoided. Venlafaxine has minimal CYP2D6 inhibition and is effective, making it a preferred choice; gabapentin is another option.</p><p><strong>Takeaway:</strong> For hot flashes on tamoxifen, use venlafaxine (or gabapentin), not strong CYP2D6 inhibitors.</p>",
+   "whyNot": {
+    "A": "Bupropion is a strong CYP2D6 inhibitor and is not effective for hot flashes.",
+    "B": "Fluoxetine strongly inhibits CYP2D6, which may reduce tamoxifen efficacy.",
+    "C": "Paroxetine is the most potent CYP2D6 inhibitor of the SSRIs and should be avoided with tamoxifen.",
+    "D": "Systemic estrogen is contraindicated in a person with a history of breast cancer."
+   },
+   "objective": "Choose venlafaxine for vasomotor symptoms in a patient taking tamoxifen.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vasomotor symptoms",
+    "drug interactions"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 63-year-old woman has 2 years of vaginal dryness and painful intercourse that have not improved with an over-the-counter vaginal moisturiser and lubricant. She has no hot flashes. She has a uterus. She has no history of cancer, venous thromboembolism or cardiovascular disease. Examination shows pale, thin vaginal epithelium. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Low-dose vaginal estradiol alone",
+    "Low-dose vaginal estradiol with an oral progestin",
+    "Oral conjugated estrogens with medroxyprogesterone",
+    "Oral raloxifene",
+    "Transdermal testosterone"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has genitourinary syndrome of menopause that persists despite moisturisers and lubricants. Low-dose vaginal estrogen is the most effective treatment and produces minimal systemic absorption, so a progestogen is not required for endometrial protection even though she has a uterus. Any postmenopausal bleeding during treatment still needs evaluation.</p><p><strong>Takeaway:</strong> For GSM, low-dose vaginal estrogen alone is effective; no progestogen is needed.</p>",
+   "whyNot": {
+    "B": "Adding a progestin is unnecessary with low-dose vaginal estrogen and exposes her to avoidable adverse effects.",
+    "C": "Systemic therapy is not needed for isolated genitourinary symptoms and carries systemic risks, especially when started after 60.",
+    "D": "Raloxifene does not treat vaginal atrophy and can worsen vasomotor symptoms.",
+    "E": "Testosterone is not a treatment for vaginal atrophy and dyspareunia from GSM."
+   },
+   "objective": "Treat genitourinary syndrome of menopause with low-dose vaginal estrogen alone.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genitourinary symptoms"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 35-year-old woman, gravida 1, para 1, has had no menses for 9 months and has night sweats and poor sleep. She does not wish to become pregnant now. Results are shown.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Urine beta-hCG</td><td>Negative</td></tr><tr><td>FSH, two samples 5 weeks apart</td><td>64 and 71 mIU/mL (follicular reference 3&ndash;10 mIU/mL)</td></tr><tr><td>Estradiol</td><td>Less than 20 pg/mL</td></tr><tr><td>Prolactin</td><td>9 ng/mL (reference less than 20 ng/mL)</td></tr><tr><td>TSH</td><td>2.1 &micro;U/mL</td></tr><tr><td>Karyotype</td><td>46,XX</td></tr><tr><td>FMR1 testing</td><td>Normal repeat number</td></tr><tr><td>21-hydroxylase antibodies</td><td>Negative</td></tr></tbody></table><p>Which of the following is the most appropriate long-term management?</p>",
+   "options": [
+    "Bisphosphonate therapy without estrogen",
+    "Clomiphene citrate to restore ovulation",
+    "Estrogen with a progestogen until about the average age of natural menopause",
+    "Low-dose vaginal estrogen only",
+    "No treatment unless bone density is low"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has idiopathic primary ovarian insufficiency. Estrogen deficiency at this age accelerates bone loss and raises cardiovascular risk, and it causes symptoms. Hormone therapy with estrogen plus a progestogen (she has a uterus) is recommended until about 50&ndash;51 years of age; doses are typically higher than those used after natural menopause. Combined hormonal contraception is an alternative if she needs contraception, because spontaneous ovulation occasionally occurs.</p><p><strong>Takeaway:</strong> Treat POI with estrogen plus progestogen until about the average age of menopause.</p>",
+   "whyNot": {
+    "A": "Bisphosphonates do not replace the systemic benefits of estrogen and are not first-line in young people with POI.",
+    "B": "Clomiphene does not restore ovulation in POI, and she is not seeking pregnancy.",
+    "D": "Vaginal estrogen treats local symptoms but does not prevent bone loss or relieve systemic symptoms.",
+    "E": "Waiting for low bone density allows preventable bone loss and leaves symptoms untreated."
+   },
+   "objective": "Prescribe hormone therapy until the average age of menopause in primary ovarian insufficiency.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ovarian insufficiency"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old woman had a total hysterectomy for symptomatic fibroids 3 years ago; her ovaries were preserved. Over the past 8 months she has had severe hot flashes and night sweats that impair her work. She has no history of breast cancer, venous thromboembolism, stroke, coronary disease or liver disease, and she does not smoke. Blood pressure is 122/76 mm Hg. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Estrogen alone",
+    "Estrogen with a cyclic progestin",
+    "Oral raloxifene",
+    "Progestin alone",
+    "Topical testosterone"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She is a healthy woman under 60 with severe vasomotor symptoms and no contraindications, so systemic hormone therapy is appropriate. Because she has no uterus, a progestogen is not needed: its only role in menopausal hormone therapy is to protect the endometrium. Estrogen alone also did not increase breast cancer risk in randomised trials, unlike combined therapy.</p><p><strong>Takeaway:</strong> After hysterectomy, treat vasomotor symptoms with estrogen alone.</p>",
+   "whyNot": {
+    "B": "A progestin is unnecessary without a uterus and adds risk, including breast cancer risk in combined regimens.",
+    "C": "Raloxifene can worsen hot flashes.",
+    "D": "Progestin alone is less effective than estrogen for vasomotor symptoms and is not first line.",
+    "E": "Testosterone does not treat vasomotor symptoms."
+   },
+   "objective": "Use estrogen alone for vasomotor symptoms in a patient without a uterus.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vasomotor symptoms"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 58-year-old breast cancer survivor taking an aromatase inhibitor reads about the trial summarised above and asks whether the drug would help her hot flashes. Which of the following best describes the main limitation in applying the trial results to her?</p>",
+   "options": [
+    "Confounding by indication, because participants chose their treatment",
+    "Lack of blinding, because placebo tablets looked different",
+    "Lead-time bias in measuring hot flash frequency",
+    "Limited external validity, because people with breast cancer were excluded",
+    "Too few participants to detect a difference in the primary outcome"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The trial was randomised, blinded and analysed by intention to treat, and it showed a clear effect, so its internal validity appears good. However, people with a history of breast cancer were excluded. Breast cancer survivors differ in important ways (aromatase inhibitor use, more abrupt and severe symptoms, chemotherapy-related ovarian failure), so the results cannot be assumed to apply to her. This is a question of external validity (generalisability).</p><p><strong>Takeaway:</strong> Exclusion criteria limit generalisability: check whether your patient would have been eligible for the trial.</p>",
+   "whyNot": {
+    "A": "Treatment was randomised, not chosen, so confounding by indication is not a concern.",
+    "B": "The trial is described as double-blind; nothing suggests unblinding.",
+    "C": "Lead-time bias applies to screening studies measuring survival from diagnosis, not to symptom trials.",
+    "E": "The trial found a statistically and clinically meaningful difference, so it was not underpowered for its primary outcome."
+   },
+   "objective": "Recognise limited external validity when a patient belongs to a group excluded from a trial.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "evidence-based medicine",
+    "vasomotor symptoms"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Based on the trial summarised above, how many people would need to be treated with NK-21 rather than placebo for 12 weeks for one additional person to achieve at least a 50% reduction in hot flashes?</p>",
+   "options": [
+    "2",
+    "3",
+    "5",
+    "10",
+    "20"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The absolute benefit increase is the difference in response rates: 50% minus 30% = 20%, or 0.20. The number needed to treat is the reciprocal: 1 &divide; 0.20 = 5. For harm, the absolute increase in ALT elevation is 2.0% minus 0.3% = 1.7%, giving a number needed to harm of about 60, which helps weigh benefit against risk.</p><p><strong>Takeaway:</strong> NNT = 1 &divide; absolute risk difference; here 1 &divide; 0.20 = 5.</p>",
+   "whyNot": {
+    "A": "2 is the reciprocal of the drug group's response rate (50%), not of the difference between groups.",
+    "B": "3 would require an absolute difference of about 33%, larger than observed.",
+    "D": "10 would correspond to an absolute difference of 10%.",
+    "E": "20 would correspond to an absolute difference of 5%, which confuses the relative and absolute differences."
+   },
+   "objective": "Calculate the number needed to treat from trial response rates.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "evidence-based medicine",
+    "vasomotor symptoms"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 57-year-old woman has taken continuous combined oral estradiol and micronized progesterone for 3 years for vasomotor symptoms. She had no bleeding after the first 4 months of therapy until 2 weeks ago, when she had 3 days of spotting. She has no other symptoms. Pelvic examination shows no vulvar, vaginal or cervical lesions. Cervical screening is up to date and normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Double the progesterone dose and reassess in 6 months",
+    "Reassurance because breakthrough bleeding is expected on this regimen",
+    "Stop hormone therapy and re-examine if bleeding recurs",
+    "Total hysterectomy",
+    "Transvaginal ultrasound to assess the endometrium"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Irregular bleeding is common in the first 3&ndash;6 months of continuous combined therapy, but new bleeding after a long bleeding-free interval is unscheduled and may signal endometrial hyperplasia or cancer. It needs evaluation of the endometrium, starting with transvaginal ultrasound (or endometrial biopsy). A thin, well-seen endometrium is reassuring; a thickened or poorly seen stripe or persistent bleeding leads to sampling.</p><p><strong>Takeaway:</strong> New bleeding after months of amenorrhea on continuous combined hormone therapy needs endometrial evaluation.</p>",
+   "whyNot": {
+    "A": "Changing the dose without evaluating the endometrium could delay diagnosis of hyperplasia or cancer.",
+    "B": "Breakthrough bleeding is expected only in the first months; after 3 years without bleeding it is abnormal.",
+    "C": "Stopping therapy does not evaluate the cause and could leave a cancer undiagnosed.",
+    "D": "Hysterectomy is premature without a diagnosis."
+   },
+   "objective": "Evaluate new bleeding on long-term continuous combined hormone therapy with transvaginal ultrasound.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "abnormal uterine bleeding",
+    "hormone therapy"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which hormone falls first in the menopausal transition, allowing FSH to rise?",
+   "back": "Inhibin B.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Hormone pattern after menopause?",
+   "back": "High FSH (more than LH), low estradiol, low inhibin B.",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Main estrogen after menopause and its source?",
+   "back": "Estrone from aromatisation of androstenedione in adipose tissue.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Neural basis of hot flashes?",
+   "back": "Estrogen loss disinhibits KNDy neurons, which signal through NK3 receptors to the thermoregulatory centre.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Key adverse effect of raloxifene?",
+   "back": "Venous thromboembolism (also hot flashes, leg cramps).",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Definition of primary ovarian insufficiency?",
+   "back": "Amenorrhea at least 4 months before 40 with menopausal-range FSH twice, at least 4 weeks apart.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Genetic test in every patient with POI besides karyotype?",
+   "back": "FMR1 premutation testing.",
+   "question": 5
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "How does estrogen loss cause bone loss?",
+   "back": "Increased RANKL relative to osteoprotegerin drives osteoclastogenesis.",
+   "question": 6
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Why does oral estrogen raise VTE risk more than transdermal?",
+   "back": "First-pass hepatic effects increase clotting factor synthesis.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Is a progestogen needed with systemic estrogen after hysterectomy?",
+   "back": "No; estrogen alone.",
+   "question": 11
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Is a progestogen needed with low-dose vaginal estrogen?",
+   "back": "No.",
+   "question": 9
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Contraindications to systemic hormone therapy?",
+   "back": "Breast or estrogen-dependent cancer, unexplained bleeding, VTE or stroke, coronary disease, active liver disease, thrombophilia, pregnancy.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Window in which benefits of HT usually outweigh risks?",
+   "back": "Under 60 or within 10 years of menopause.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Hot flashes on tamoxifen: preferred drug?",
+   "back": "Venlafaxine (avoid paroxetine and fluoxetine).",
+   "question": 8
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Monitoring with fezolinetant?",
+   "back": "Liver tests before starting and during the first months.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Management of POI?",
+   "back": "Estrogen plus progestogen until about the average age of menopause.",
+   "question": 10
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "New bleeding after long amenorrhea on continuous combined HT?",
+   "back": "Evaluate the endometrium (transvaginal ultrasound or biopsy).",
+   "question": 14
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "How is NNT calculated?",
+   "back": "1 divided by the absolute risk difference.",
+   "question": 13
+  }
+ ]
+}

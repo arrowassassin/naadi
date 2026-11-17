@@ -1,0 +1,706 @@
+{
+ "area": "07.03.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Joint degeneration and crystal arthropathy: mechanisms",
+   "html": "<p>Degenerative and metabolic joint disease has two main families. In <strong>osteoarthritis</strong> the whole joint (cartilage, subchondral bone, synovium, ligaments and muscle) fails mechanically. In the <strong>crystal arthropathies</strong> crystals deposited in or around the joint trigger innate inflammation. Neuropathic (Charcot) joints and iron or pigment deposition diseases are less common causes that are tested because of their distinctive clues.</p>\n<h3>Articular cartilage and how it fails</h3>\n<p>Hyaline cartilage has no vessels or nerves. Chondrocytes keep up a matrix of <strong>type II collagen</strong> and <strong>aggrecan</strong>, whose negatively charged glycosaminoglycans hold water and resist compression. In osteoarthritis, mechanical overload and low-grade inflammation (IL-1β, TNF) shift chondrocytes toward catabolism. They release matrix metalloproteinases (notably collagenase-3, MMP-13) and aggrecanases (ADAMTS-4 and -5). Proteoglycan is lost first and the cartilage swells. The surface then <strong>fibrillates</strong> and clefts, cartilage is worn down to bone, and the exposed subchondral bone becomes polished and dense (<strong>eburnation</strong>). Subchondral sclerosis and cysts form, and endochondral bone growth at the joint margins produces <strong>osteophytes</strong>. Fragments of cartilage and bone break off as loose bodies (\"joint mice\"). Inflammation of the synovium is mild and secondary.</p>\n<ul>\n<li><strong>Risk factors:</strong> age, obesity (load and adipokines), female sex, prior joint injury (meniscal or ACL tear), malalignment, occupations with repetitive kneeling or lifting, and family history.</li>\n<li><strong>Distribution:</strong> knees, hips, DIP (Heberden nodes) and PIP (Bouchard nodes) joints, the first carpometacarpal joint and the cervical and lumbar facet joints. MCP joints, wrists, elbows and ankles are usually spared unless there was trauma or a metabolic cause.</li>\n<li><strong>Secondary osteoarthritis</strong> in an unusual joint or at a young age points to trauma, developmental hip disease, osteonecrosis, hemochromatosis, CPPD, acromegaly or alkaptonuria (ochronosis: homogentisate 1,2-dioxygenase deficiency, with dark pigment in cartilage and calcified intervertebral discs).</li>\n</ul>\n<h3>Uric acid and gout</h3>\n<p>Uric acid is the end product of purine breakdown in humans, who lack uricase. Purines come from cell turnover and diet. Xanthine oxidase converts hypoxanthine to xanthine and then to uric acid. About two-thirds of urate leaves through the kidney: it is filtered, then mostly reabsorbed in the proximal tubule by <strong>URAT1</strong> and GLUT9, and partly secreted. Monosodium urate crystallizes when the serum concentration exceeds about 6.8 mg/dL, and more readily in cool, peripheral joints such as the first MTP.</p>\n<ul>\n<li><strong>Underexcretion</strong> (about 90% of patients): CKD, thiazide and loop diuretics, low-dose aspirin, cyclosporine and tacrolimus, pyrazinamide and ethambutol, alcohol, lactic acidosis and ketosis (organic acids compete for tubular exchange), lead nephropathy, and genetic transporter variants.</li>\n<li><strong>Overproduction:</strong> tumor lysis and myeloproliferative disease, psoriasis, high purine intake, fructose, and inborn errors: <strong>HGPRT deficiency</strong> (complete in Lesch–Nyhan syndrome, with self-injury and dystonia; partial in Kelley–Seegmiller, with early gout and stones only), PRPP synthetase overactivity and glucose-6-phosphatase deficiency (von Gierke).</li>\n<li><strong>Inflammation:</strong> crystals are phagocytosed and activate the <strong>NLRP3 inflammasome</strong>. Caspase-1 cleaves pro-IL-1β to IL-1β, which draws in neutrophils. This is why colchicine (tubulin binding, which blocks neutrophil migration and inflammasome assembly) and IL-1 blockers work.</li>\n<li><strong>Chronic tophaceous gout:</strong> tophi are urate deposits rimmed by histiocytes and foreign-body giant cells. Formalin dissolves urate, so use alcohol fixation to keep the crystals. Bone erosions are \"punched out\" with overhanging edges.</li>\n</ul>\n<h3>Calcium pyrophosphate deposition (CPPD)</h3>\n<p>Chondrocytes release excess inorganic pyrophosphate (through ANKH and ENPP1). It combines with calcium in cartilage to form CPP crystals, which show on x-ray as <strong>chondrocalcinosis</strong> in the knee menisci, the triangular fibrocartilage of the wrist and the pubic symphysis. Aging is the main risk. In patients under about 60, look for <strong>hemochromatosis, hyperparathyroidism, hypomagnesemia and hypophosphatasia</strong>: iron, calcium and magnesium all impair pyrophosphate clearance, and a low alkaline phosphatase leaves pyrophosphate uncleaved. Presentations: acute CPP crystal arthritis (pseudogout), chronic inflammatory polyarthritis that mimics rheumatoid arthritis, OA-like disease in atypical joints, and the crowned dens syndrome (neck pain and fever from deposits around C1–C2).</p>\n[[figure:s23f-fig070302-1]]\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Monosodium urate</th><th>Calcium pyrophosphate</th></tr></thead>\n<tbody>\n<tr><td>Shape</td><td>Needles</td><td>Rhomboids or rods</td></tr>\n<tr><td>Birefringence</td><td>Strong, <strong>negative</strong></td><td>Weak, <strong>positive</strong></td></tr>\n<tr><td>Colour parallel to the compensator's slow axis</td><td>Yellow</td><td>Blue</td></tr>\n<tr><td>Typical joint</td><td>First MTP, midfoot, ankle, knee</td><td>Knee, wrist</td></tr>\n<tr><td>Imaging</td><td>Punched-out erosions with overhanging edges; double-contour sign on ultrasound</td><td>Chondrocalcinosis</td></tr>\n<tr><td>Lowering therapy</td><td>Yes (xanthine oxidase inhibitors, uricosurics, uricase)</td><td>None; treat the cause and the inflammation</td></tr>\n</tbody></table>\n<h3>Neuropathic (Charcot) arthropathy</h3>\n<p>When protective pain and position sense are lost, repeated unperceived trauma, together with neurally mediated hyperemia that drives bone resorption, causes fractures, dislocation and a disorganized joint. Inflammatory RANKL signalling makes things worse. The site tells you the cause: the <strong>midfoot</strong> (tarsometatarsal) in diabetes mellitus, the <strong>knee and hip</strong> in tabes dorsalis (dorsal-column loss in tertiary syphilis), and the <strong>shoulder and elbow</strong> in syringomyelia. Radiographs show joint effusion, fragmentation with bony debris, subluxation or dislocation, and dense sclerotic bone, with a joint that looks far worse than the patient's pain suggests.</p>\n<h3>Hemochromatosis arthropathy</h3>\n<p>Hereditary hemochromatosis (usually <em>HFE</em> C282Y homozygosity) lowers hepatic <strong>hepcidin</strong>. Ferroportin is no longer degraded, so the gut absorbs too much iron and macrophages release it. Iron deposited in synovium and cartilage inhibits pyrophosphatase and damages chondrocytes. The classic picture is bony swelling of the <strong>second and third MCP joints</strong> with \"hook-like\" osteophytes on the radial side of the metacarpal heads, and chondrocalcinosis. The arthropathy often does not improve with phlebotomy.</p>\n<h3>Pharmacology by mechanism</h3>\n<ul>\n<li><strong>Allopurinol</strong> (a purine analog) and <strong>febuxostat</strong> (a non-purine) inhibit xanthine oxidase. Allopurinol's active metabolite oxypurinol is cleared by the kidney. Severe cutaneous reactions are linked to HLA-B*58:01.</li>\n<li><strong>Probenecid</strong> inhibits URAT1 (and OAT transporters, raising penicillin and methotrexate levels). It needs adequate kidney function and is avoided in patients with uric acid stones.</li>\n<li><strong>Pegloticase</strong> is a pegylated recombinant uricase. It turns urate into allantoin and hydrogen peroxide, so it causes hemolysis and methemoglobinemia in G6PD deficiency. Anti-drug antibodies cause infusion reactions and loss of effect; methotrexate co-therapy reduces them.</li>\n<li><strong>Colchicine</strong> binds tubulin. Toxicity includes diarrhea, myopathy and neuropathy, and marrow suppression, worse with CKD and with CYP3A4 or P-glycoprotein inhibitors such as clarithromycin.</li>\n<li><strong>Losartan</strong> and <strong>fenofibrate</strong> lower urate modestly. Thiazides and loop diuretics raise it.</li>\n</ul>\n<div class=\"trap\"><p>The colour of a crystal depends on its orientation to the compensator. Learn the rule (urate: yellow when parallel; CPP: blue when parallel) rather than \"gout is yellow\".</p></div>\n<div class=\"pearl\"><p>Arthropathy of the second and third MCP joints with chondrocalcinosis in a middle-aged adult is hemochromatosis until iron studies say otherwise.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Osteoarthritis"
+    },
+    {
+     "statpearls": "Gout"
+    },
+    {
+     "statpearls": "Calcium Pyrophosphate Deposition Disease"
+    },
+    {
+     "statpearls": "Hemochromatosis"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Osteoarthritis: diagnosis and stepwise management",
+   "html": "<p>Osteoarthritis is the commonest joint disease and a leading cause of disability in older adults. Step 2 CK tests how to tell it from inflammatory arthritis, how far to investigate, and the order of treatment.</p>\n<h3>Clinical diagnosis</h3>\n<ul>\n<li>Pain with use that eases with rest, morning stiffness lasting less than about 30 minutes, gelling after inactivity, crepitus, bony enlargement and reduced range of motion. There are no systemic features.</li>\n<li>An adult over 45 with use-related knee pain and short morning stiffness can be diagnosed clinically. Radiographs are not needed for typical cases. Get them when the presentation is atypical or when surgery is being considered.</li>\n<li>Radiographs show asymmetric joint-space narrowing, osteophytes, subchondral sclerosis and cysts. Weight-bearing views show knee narrowing best. Radiographic severity often does not match pain.</li>\n<li>Labs (ESR, CRP, RF) are normal or match age. Synovial fluid, if tapped, is noninflammatory: clear, viscous, with fewer than 2,000 leukocytes/mm<sup>3</sup>.</li>\n<li>Hip OA typically causes groin pain and loss of internal rotation. Lateral hip pain over the greater trochanter is usually greater trochanteric pain syndrome. Buttock pain below the knee with neurologic signs suggests the lumbar spine.</li>\n<li>Erosive (inflammatory) hand OA involves the DIP and PIP joints, with central erosions that give a \"gull-wing\" appearance, and can be quite inflamed. It still spares the MCP joints.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Osteoarthritis</th><th>Rheumatoid arthritis</th><th>Psoriatic arthritis</th><th>Hemochromatosis</th></tr></thead>\n<tbody>\n<tr><td>Hand joints</td><td>DIP, PIP, first CMC</td><td>MCP, PIP, wrist; DIP spared</td><td>DIP, dactylitis, asymmetric</td><td>Second and third MCP</td></tr>\n<tr><td>Morning stiffness</td><td>Under 30 min</td><td>Over 1 hour</td><td>Often prolonged</td><td>Variable</td></tr>\n<tr><td>Exam</td><td>Hard bony swelling</td><td>Soft, boggy synovitis</td><td>Nail pitting, skin plaques</td><td>Bony swelling</td></tr>\n<tr><td>X-ray</td><td>Osteophytes, uneven narrowing</td><td>Periarticular osteopenia, marginal erosions</td><td>Pencil-in-cup, new bone</td><td>Hook-like osteophytes, chondrocalcinosis</td></tr>\n<tr><td>Labs</td><td>Normal</td><td>RF, anti-CCP, raised CRP</td><td>Seronegative</td><td>High ferritin and transferrin saturation</td></tr>\n</tbody></table>\n<h3>Treatment ladder</h3>\n<ol>\n<li><strong>Core for everyone:</strong> education and self-management, a structured exercise program (strengthening, aerobic, tai chi), and weight loss when overweight. Losing about 5–10% of body weight meaningfully reduces knee pain and improves function. Add a cane in the hand opposite the painful knee or hip, knee braces for unicompartmental disease, and a thumb-base splint for first CMC disease.</li>\n<li><strong>Topical NSAIDs</strong> (diclofenac gel) for knee and hand OA. They are effective with little systemic exposure, so they are preferred in older adults and in people with kidney disease, GI risk or cardiovascular disease.</li>\n<li><strong>Oral NSAIDs</strong> at the lowest effective dose for the shortest time, if there is no contraindication. Add a proton-pump inhibitor for GI risk. Avoid them in CKD stage 4–5, heart failure, prior GI bleeding or with anticoagulants. Celecoxib has less GI toxicity but carries the same renal and cardiovascular cautions.</li>\n<li><strong>Intra-articular glucocorticoid</strong> injection for a flare of knee or hip pain. It gives short-term relief, so limit how often it is repeated.</li>\n<li><strong>Duloxetine</strong> helps when pain is widespread or centrally amplified. Acetaminophen has a small effect, with a hepatotoxicity ceiling. Tramadol is a limited option; avoid other opioids.</li>\n<li><strong>Total joint arthroplasty</strong> for severe pain and disability with structural damage when nonsurgical care has failed.</li>\n</ol>\n<p>Treatments with poor evidence or recommendations against them: glucosamine and chondroitin, hyaluronic acid injections (limited benefit), platelet-rich plasma and stem-cell injections, bisphosphonates, hydroxychloroquine, methotrexate, biologics and arthroscopic lavage or debridement for degenerative knees (it does not beat sham surgery or therapy).</p>\n<h3>Special populations</h3>\n<ul>\n<li><strong>Older adults:</strong> check kidney function and fall risk before analgesics. NSAIDs raise the risk of AKI with ACE inhibitors and diuretics (\"triple whammy\"). Sedating drugs increase falls.</li>\n<li><strong>People with disabilities:</strong> wheelchair users get early shoulder OA from transfers and propulsion. Adults with cerebral palsy or limb loss overload the remaining joints. Arrange physical and occupational therapy and adaptive equipment.</li>\n<li><strong>Occupation:</strong> repetitive kneeling or heavy lifting; consider job modification.</li>\n</ul>\n<div class=\"trap\"><p>A warm, effusive, very painful single joint in a patient with OA is not \"an OA flare\" until you have aspirated it: infection and crystals are common in damaged joints.</p></div>\n<div class=\"pearl\"><p>MCP involvement makes OA unlikely. Think rheumatoid arthritis, hemochromatosis or CPPD instead.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Osteoarthritis"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Gout, CPPD, Charcot joint and hemochromatosis arthropathy in practice",
+   "html": "<p>This section covers how to diagnose and treat gout, CPPD, neuropathic joints and hemochromatosis arthropathy, including the decisions on long-term urate lowering that are tested most often.</p>\n<h3>The acutely hot joint: aspirate first</h3>\n<p>Any acute monoarthritis with an effusion should be aspirated for leukocyte count and differential, Gram stain, culture and polarized microscopy. Crystals do not exclude infection: both can be present together. Start empiric antibiotics after aspiration if septic arthritis is suspected (fever, very high synovial leukocyte count, prosthetic joint, immunosuppression).</p>\n<table class=\"hy\">\n<thead><tr><th>Synovial fluid</th><th>Leukocytes/mm<sup>3</sup></th><th>Typical causes</th></tr></thead>\n<tbody>\n<tr><td>Noninflammatory</td><td>Under 2,000</td><td>Osteoarthritis, trauma, neuropathic joint</td></tr>\n<tr><td>Inflammatory</td><td>2,000 to about 50,000</td><td>Gout, CPPD, rheumatoid and other inflammatory arthritis</td></tr>\n<tr><td>Septic range</td><td>Often over 50,000, mostly neutrophils</td><td>Bacterial infection (crystal flares can overlap this range)</td></tr>\n<tr><td>Hemorrhagic</td><td>Bloody</td><td>Trauma, hemophilia, anticoagulation, tenosynovial giant cell tumor</td></tr>\n</tbody></table>\n<h3>Gout</h3>\n<ul>\n<li><strong>Diagnosis:</strong> needle-shaped, negatively birefringent crystals. Serum urate can be normal during a flare, so recheck it 2 or more weeks later. Dual-energy CT or ultrasound (double-contour sign) helps when aspiration is not possible.</li>\n<li><strong>Flare treatment</strong> (start early, choose by comorbidity): an NSAID, low-dose colchicine (1.2 mg, then 0.6 mg an hour later), or a glucocorticoid (oral, or intra-articular for one joint). Reduce or avoid colchicine in CKD and with strong CYP3A4 or P-glycoprotein inhibitors. Avoid NSAIDs in CKD, heart failure, peptic ulcer disease and anticoagulation. IL-1 inhibitors are a fallback when all of these are contraindicated. Do not stop urate-lowering therapy during a flare.</li>\n<li><strong>When to start urate-lowering therapy:</strong> one or more tophi, radiographic damage from gout, or frequent flares (two or more a year). Consider it after a first flare with CKD stage 3 or worse, a serum urate above 9 mg/dL or urolithiasis.</li>\n<li><strong>How:</strong> allopurinol first line, including in CKD. Start low (100 mg/day or less, lower in CKD) and titrate every few weeks to a <strong>target serum urate below 6 mg/dL</strong> (below 5 if tophi persist). Before starting allopurinol, test for HLA-B*58:01 in people of Southeast Asian (for example Han Chinese, Korean, Thai) or African descent. Febuxostat is the alternative; use caution with established cardiovascular disease. Probenecid is an add-on or alternative when kidney function is adequate and there are no stones. Pegloticase is for severe refractory tophaceous gout (check G6PD first).</li>\n<li><strong>Flare prophylaxis</strong> during the first 3–6 months of urate lowering: low-dose colchicine, an NSAID or low-dose prednisone, because shifting urate levels mobilize crystals.</li>\n<li><strong>Drug review:</strong> stop or switch drugs that raise urate where possible (hydrochlorothiazide to another antihypertensive such as losartan). Keep low-dose aspirin if it is indicated for cardiovascular protection.</li>\n<li><strong>Lifestyle and nutrition:</strong> limit beer and spirits, sugar-sweetened drinks with high-fructose corn syrup, and large amounts of organ meats and shellfish. Lose weight. Diet alone rarely reaches target.</li>\n</ul>\n<h3>CPPD</h3>\n<ul>\n<li>Acute CPP arthritis often follows surgery, acute illness or trauma, or parathyroidectomy. Treat with joint aspiration and an intra-articular glucocorticoid once infection is excluded, or with an NSAID, colchicine or a short systemic glucocorticoid course. No drug removes the crystals; recurrent attacks may need colchicine prophylaxis.</li>\n<li>Screen patients under about 60, or with florid disease, for hemochromatosis (ferritin, transferrin saturation), hyperparathyroidism (calcium, PTH), hypomagnesemia (Gitelman syndrome, PPIs, diuretics) and hypophosphatasia (alkaline phosphatase).</li>\n</ul>\n<h3>Charcot foot</h3>\n<p>A warm, red, swollen midfoot in a person with diabetic neuropathy, usually with little pain and no ulcer, is <strong>active Charcot neuroarthropathy</strong> until proven otherwise. It is often misread as cellulitis, gout or DVT. A temperature difference of more than about 2°C from the other foot supports activity. Radiographs may be normal early, and MRI shows marrow edema and early fractures.</p>\n<ul>\n<li><strong>Treatment:</strong> immediate offloading and immobilization, usually with a <strong>total contact cast</strong> and limited weight bearing, until swelling and the temperature difference resolve and radiographs are stable (often months). Then use custom footwear or a walker boot for life.</li>\n<li>Surgery (exostectomy, reconstruction) is for unstable deformity or recurrent ulcers.</li>\n<li>With an ulcer over the deformity, consider osteomyelitis (probe-to-bone, MRI, bone biopsy).</li>\n</ul>\n<h3>Hemochromatosis arthropathy</h3>\n<p>Check transferrin saturation and ferritin in any adult with second and third MCP arthropathy, early or unexplained CPPD, or arthritis with abnormal liver tests, diabetes or skin bronzing. If they are high, test <em>HFE</em>. Phlebotomy prevents organ damage, but the joint disease often persists and may need NSAIDs, injections or arthroplasty.</p>\n<div class=\"trap\"><p>A normal serum urate during an acute flare does not rule out gout, and starting allopurinol in the middle of a flare is not wrong if it comes with anti-inflammatory cover. Stopping established allopurinol during a flare is wrong.</p></div>\n<div class=\"pearl\"><p>Treat to target: the test question is often \"the urate is still 7.4 on allopurinol\": the answer is to increase the dose, not to switch or stop.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Gout"
+    },
+    {
+     "statpearls": "Allopurinol"
+    },
+    {
+     "statpearls": "Septic Arthritis"
+    },
+    {
+     "statpearls": "Calcium Pyrophosphate Deposition Disease"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Urate and calcium pyrophosphate crystals under compensated polarized light (original schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Hot knee in a hospitalized older adult"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 71-year-old woman with a BMI of 34 kg/m<sup>2</sup> has had 6 years of right knee pain that worsens with walking and improves with rest, with morning stiffness of about 10 minutes. Weight-bearing radiographs show medial joint-space narrowing, marginal osteophytes and subchondral sclerosis. She undergoes total knee arthroplasty. Which of the following findings is most likely on microscopic examination of the resected medial tibial plateau?</p>",
+   "options": [
+    "Neutrophil-rich synovium with fibrin deposits",
+    "Synovial hyperplasia with lymphoid follicles and a pannus eroding cartilage",
+    "Fibrillated cartilage with polished, dense exposed subchondral bone",
+    "Synovium with brown hemosiderin-laden villi",
+    "Caseating granulomas in the synovium"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Use-related pain, short morning stiffness, obesity and the radiographic triad of asymmetric narrowing, osteophytes and sclerosis are osteoarthritis. Microscopically, articular cartilage loses proteoglycan, then fibrillates and fissures. Where it is worn through, subchondral bone is exposed and becomes polished and sclerotic (eburnation), with cysts and marginal osteophytes. Synovitis is mild.</p><p><strong>Takeaway:</strong> osteoarthritis is a cartilage and subchondral bone disease: fibrillation, eburnation and osteophytes.</p>",
+   "whyNot": {
+    "A": "A neutrophil-rich synovium suggests septic or crystal arthritis, which present acutely with a hot joint rather than years of mechanical pain.",
+    "B": "Lymphoid follicles and pannus are rheumatoid arthritis, which causes symmetric small-joint synovitis, long morning stiffness and periarticular osteopenia.",
+    "D": "Hemosiderin-laden villi suggest tenosynovial giant cell tumor or recurrent hemarthrosis, not obesity-related degenerative disease.",
+    "E": "Caseating granulomas indicate tuberculous arthritis, which causes chronic inflammatory monoarthritis with erosions, not osteophytes."
+   },
+   "objective": "Describe the gross and microscopic pathology of osteoarthritis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "degenerative joint disease"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old man has had two attacks of severe pain and swelling of the right first metatarsophalangeal joint in 6 months and passed a kidney stone last year. He has normal intelligence, development and neurologic examination. He does not drink alcohol and takes no medications. Serum urate is 11.2 mg/dL, creatinine is normal, and fasting glucose and liver size are normal. A 24-hour urine collection shows markedly increased uric acid excretion. Decreased activity of which of the following enzymes most likely explains these findings?</p>",
+   "options": [
+    "Hypoxanthine-guanine phosphoribosyltransferase",
+    "Xanthine oxidase",
+    "Glucose-6-phosphatase",
+    "Adenosine deaminase",
+    "Ornithine transcarbamylase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Gout and uric acid stones in a teenager with urate overproduction (high urinary urate) suggest an inborn error of purine metabolism. Partial HGPRT deficiency blocks salvage of hypoxanthine and guanine, so they are degraded to uric acid, and accumulating PRPP drives more de novo purine synthesis. Complete deficiency (Lesch–Nyhan syndrome) adds dystonia, intellectual disability and self-injury; the partial form causes only hyperuricemia.</p><p><strong>Takeaway:</strong> early-onset gout with urate overproduction and a normal neurologic exam points to partial HGPRT deficiency.</p>",
+   "whyNot": {
+    "B": "Decreased xanthine oxidase activity (as with allopurinol or hereditary xanthinuria) lowers uric acid and can cause xanthine stones.",
+    "C": "Glucose-6-phosphatase deficiency causes hyperuricemia, but also fasting hypoglycemia, lactic acidosis and hepatomegaly, which he does not have.",
+    "D": "Adenosine deaminase deficiency causes severe combined immunodeficiency in infancy, not isolated gout.",
+    "E": "Ornithine transcarbamylase deficiency causes hyperammonemia and orotic aciduria, not hyperuricemia with gout."
+   },
+   "objective": "Link early-onset gout with urate overproduction to partial HGPRT deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "purine metabolism"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old man has 2 years of aching, bony swelling of the second and third metacarpophalangeal joints of both hands. He also has fatigue and erectile dysfunction, and he was recently diagnosed with type 2 diabetes. Hand radiographs show hook-like osteophytes on the radial side of the second and third metacarpal heads and calcification of the triangular fibrocartilage. Serum ALT is 72 U/L, ferritin is 1,850 ng/mL (reference 20–250), and transferrin saturation is 78% (reference 20–50). An inappropriately low level of which of the following proteins most directly underlies this patient's disease?</p>",
+   "options": [
+    "Ferroportin",
+    "Transferrin",
+    "Hepcidin",
+    "Ceruloplasmin",
+    "Erythropoietin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>MCP arthropathy with hook-like osteophytes and chondrocalcinosis, with diabetes, hypogonadism, liver injury and iron overload, is hereditary hemochromatosis. <em>HFE</em> mutations impair the liver's iron sensing, so hepcidin is inappropriately low. Without hepcidin, ferroportin on enterocytes and macrophages is not internalized and degraded, and iron absorption and release continue despite high body stores.</p><p><strong>Takeaway:</strong> hereditary hemochromatosis is a hepcidin deficiency state; its arthropathy targets the second and third MCP joints.</p>",
+   "whyNot": {
+    "A": "Ferroportin is the iron exporter that hepcidin degrades; in HFE hemochromatosis ferroportin activity is increased, not low.",
+    "B": "Transferrin carries iron in plasma; it is highly saturated here, and low transferrin (atransferrinemia) is a rare, separate disorder with anemia.",
+    "D": "Low ceruloplasmin points to Wilson disease, which causes copper, not iron, overload and neuropsychiatric signs.",
+    "E": "Erythropoietin drives iron absorption only indirectly, in ineffective erythropoiesis, and is not the primary defect in hemochromatosis."
+   },
+   "objective": "Explain how low hepcidin causes iron overload and arthropathy in hereditary hemochromatosis.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "metabolic arthropathy"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old man with type 2 diabetes for 20 years has 3 weeks of swelling and warmth of the left midfoot. He has only mild discomfort and recalls no injury. He has no ulcer and is afebrile. The left foot is 3°C warmer than the right, and the arch has begun to collapse. Monofilament and vibration sensation are absent to the ankles bilaterally. Leukocyte count and CRP are normal. Radiographs show fragmentation and subluxation at the tarsometatarsal joints. Which of the following most directly accounts for this joint destruction?</p>",
+   "options": [
+    "Loss of protective pain and position sense with repeated unperceived injury",
+    "Monosodium urate deposition in the midfoot joints",
+    "Hematogenous bacterial seeding of the tarsal bones",
+    "Autoantibody-mediated synovial inflammation",
+    "Ischemic necrosis from macrovascular occlusion"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A warm, swollen, relatively painless midfoot with collapse of the arch and joint fragmentation in a person with diabetic peripheral neuropathy is Charcot neuroarthropathy. Without protective sensation, the person keeps loading injured joints. Neurally mediated hyperemia and inflammatory signalling (RANKL) increase bone resorption, so fractures and dislocations cascade into deformity such as rocker-bottom foot.</p><p><strong>Takeaway:</strong> Charcot joints follow loss of pain and proprioception; the midfoot is the diabetic site.</p>",
+   "whyNot": {
+    "B": "Gout can affect the midfoot but would be very painful and would not explain sensory loss with fragmentation and collapse.",
+    "C": "Hematogenous osteomyelitis is uncommon in adults' feet; diabetic foot osteomyelitis usually spreads from an ulcer, and he has none, with normal inflammatory markers.",
+    "D": "Autoimmune synovitis causes painful symmetric small-joint arthritis with erosions, not painless destruction in an insensate foot.",
+    "E": "Ischemia causes cool feet, rest pain and gangrene; this foot is warm and hyperemic."
+   },
+   "objective": "Explain the pathogenesis of neuropathic (Charcot) arthropathy.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "diabetic foot"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 77-year-old woman has a painful, swollen right knee for 2 days. Synovial fluid has 18,000 leukocytes/mm<sup>3</sup>, mostly neutrophils, and the Gram stain shows no organisms. Under compensated polarized light, the fluid contains short rhomboid crystals that are faintly blue when their long axis lies parallel to the slow axis of the compensator and yellow when perpendicular. Knee radiographs show thin linear calcification within the menisci. Which of the following is the composition of these crystals?</p>",
+   "options": [
+    "Monosodium urate",
+    "Calcium pyrophosphate dihydrate",
+    "Basic calcium phosphate (hydroxyapatite)",
+    "Calcium oxalate",
+    "Cholesterol"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Rhomboid crystals with weak positive birefringence (blue when parallel to the compensator's slow axis) and meniscal chondrocalcinosis in an older adult are calcium pyrophosphate dihydrate, causing acute CPP crystal arthritis.</p><p><strong>Takeaway:</strong> CPP crystals are rhomboid and weakly positively birefringent; urate crystals are needles with strong negative birefringence.</p>",
+   "whyNot": {
+    "A": "Urate crystals are needle-shaped and strongly negatively birefringent, so they are yellow, not blue, when parallel to the compensator.",
+    "C": "Basic calcium phosphate crystals are too small to see by light microscopy and are not birefringent; they cause calcific tendinitis and Milwaukee shoulder.",
+    "D": "Calcium oxalate crystals (bipyramidal or envelope-shaped) occur in joints mainly with primary oxalosis or long-term dialysis.",
+    "E": "Cholesterol crystals are large flat plates with notched corners, seen in chronic effusions such as rheumatoid bursitis."
+   },
+   "objective": "Identify calcium pyrophosphate crystals by shape and birefringence.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [
+    1
+   ],
+   "tags": [
+    "crystal arthritis"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 61-year-old man has severe tophaceous gout with persistent flares and a serum urate above target despite maximum tolerated doses of allopurinol and then febuxostat. His rheumatologist plans intravenous infusions of a pegylated recombinant enzyme that converts urate into allantoin. Before the first infusion, a deficiency of which of the following enzymes must be excluded?</p>",
+   "options": [
+    "Thiopurine methyltransferase",
+    "Glucose-6-phosphate dehydrogenase",
+    "Pyruvate kinase",
+    "Dihydropyrimidine dehydrogenase",
+    "Butyrylcholinesterase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Pegloticase is a recombinant uricase. Oxidizing urate to allantoin produces hydrogen peroxide. Red cells defend against oxidant stress with NADPH from glucose-6-phosphate dehydrogenase, so patients with G6PD deficiency can develop severe hemolysis and methemoglobinemia, and the drug is contraindicated. Screen people of African, Mediterranean, Middle Eastern or South Asian ancestry before the first dose.</p><p><strong>Takeaway:</strong> uricase drugs (pegloticase, rasburicase) generate hydrogen peroxide: check G6PD first.</p>",
+   "whyNot": {
+    "A": "TPMT deficiency matters for azathioprine and 6-mercaptopurine, not for uricase therapy.",
+    "C": "Pyruvate kinase deficiency causes chronic hemolysis but does not increase vulnerability to oxidant drugs in the same way.",
+    "D": "Dihydropyrimidine dehydrogenase deficiency causes severe toxicity from 5-fluorouracil and capecitabine.",
+    "E": "Butyrylcholinesterase deficiency prolongs paralysis after succinylcholine or mivacurium."
+   },
+   "objective": "Explain why G6PD deficiency is a contraindication to pegloticase.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urate-lowering therapy"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 78-year-old woman is in the hospital on day 3 of treatment for community-acquired pneumonia. She now has pain and swelling of the right knee that began this morning. Temperature is 38.1°C (100.6°F). The right knee is warm with a large effusion, and passive motion is painful. She has no prosthetic joints. A radiograph of the knee shows thin linear calcification within the menisci and no fracture. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Arthrocentesis with cell count, Gram stain, culture and crystal analysis",
+    "Empiric intravenous vancomycin and ceftriaxone without aspiration",
+    "Oral colchicine and reassessment in 48 hours",
+    "MRI of the right knee",
+    "Serum urate level"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>An acute, hot, effusive knee in a febrile inpatient could be septic arthritis, acute CPP crystal arthritis (suggested by the chondrocalcinosis and the setting of acute illness), or both. Chondrocalcinosis does not prove that crystals cause this attack, and crystals do not exclude infection. Aspiration with leukocyte count, Gram stain, culture and polarized microscopy is the essential first step and guides everything else.</p><p><strong>Takeaway:</strong> aspirate every acute effusive monoarthritis before deciding between infection and crystals.</p>",
+   "whyNot": {
+    "B": "Antibiotics given before aspiration lower the yield of culture; tap first, then start antibiotics if infection is likely.",
+    "C": "Treating empirically for crystals risks missing a septic joint, which can be destroyed in days.",
+    "D": "MRI does not distinguish infection from crystal arthritis and delays the diagnostic test.",
+    "E": "Serum urate neither confirms nor excludes gout during an attack and does not address infection."
+   },
+   "objective": "Perform arthrocentesis first in acute monoarthritis, even when chondrocalcinosis is seen.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "acute monoarthritis",
+    "older adults"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient in the previous item undergoes arthrocentesis. Synovial fluid has 24,000 leukocytes/mm<sup>3</sup> (85% neutrophils) and short rhomboid, weakly positively birefringent crystals; the Gram stain is negative. Her eGFR is 34 mL/min/1.73 m<sup>2</sup>, and she had a bleeding gastric ulcer 2 years ago. Her pneumonia is improving on antibiotics. Synovial fluid culture shows no growth at 48 hours. Which of the following is the most appropriate treatment for her knee?</p>",
+   "options": [
+    "Intra-articular glucocorticoid injection",
+    "Oral indomethacin",
+    "Oral allopurinol",
+    "Intravenous vancomycin plus cefepime",
+    "Arthroscopic lavage"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The fluid confirms acute CPP crystal arthritis (pseudogout), and a negative Gram stain and culture make infection unlikely. For a single large joint, aspiration followed by intra-articular glucocorticoid injection works quickly and avoids systemic toxicity, which matters here because of CKD and a prior ulcer. Low-dose colchicine or a short course of oral glucocorticoid are alternatives when several joints are involved.</p><p><strong>Takeaway:</strong> once infection is excluded, monoarticular pseudogout is best treated with aspiration and intra-articular glucocorticoid.</p>",
+   "whyNot": {
+    "B": "NSAIDs such as indomethacin are risky with an eGFR of 34 and a previous bleeding ulcer.",
+    "C": "Allopurinol lowers urate and has no effect on calcium pyrophosphate crystals.",
+    "D": "Culture is negative and crystals explain the attack; adding broad-spectrum antibiotics exposes her to toxicity without benefit.",
+    "E": "Arthroscopic washout is for septic arthritis that does not clear with needle drainage, not for crystal arthritis."
+   },
+   "objective": "Treat acute monoarticular CPP crystal arthritis with an intra-articular glucocorticoid once infection is excluded.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "acute monoarthritis",
+    "older adults"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 49-year-old man returns for follow-up of gout. He has had four flares of the first MTP joint and ankle in the past year, including two since his last visit. He has taken allopurinol 300 mg daily for 6 months, with daily colchicine 0.6 mg for flare prophylaxis, and says he has not missed doses. He has hypertension treated with amlodipine. There are no tophi. Laboratory results are shown.</p><table><thead><tr><th>Test</th><th>Before allopurinol</th><th>Today</th></tr></thead><tbody><tr><td>Uric acid</td><td>9.8 mg/dL</td><td>7.4 mg/dL</td></tr><tr><td>Creatinine</td><td>1.0 mg/dL</td><td>1.0 mg/dL</td></tr><tr><td>ALT</td><td>28 U/L</td><td>31 U/L</td></tr><tr><td>Leukocytes</td><td>7,200/mm<sup>3</sup></td><td>6,900/mm<sup>3</sup></td></tr></tbody></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Continue the current allopurinol dose",
+    "Increase the allopurinol dose",
+    "Switch allopurinol to pegloticase",
+    "Stop allopurinol and colchicine",
+    "Replace amlodipine with hydrochlorothiazide"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Urate-lowering therapy is treated to a target serum urate below 6 mg/dL. His urate is 7.4 mg/dL on 300 mg daily, he is adherent, and kidney and liver tests and blood counts are normal. Allopurinol should be increased stepwise (doses above 300 mg/day are often needed and can go up to 800 mg/day) while flare prophylaxis continues. Febuxostat or an added uricosuric are options only if target cannot be reached on a tolerated allopurinol dose.</p><p><strong>Takeaway:</strong> titrate allopurinol to a serum urate below 6 mg/dL; 300 mg is not a ceiling.</p>",
+   "whyNot": {
+    "A": "Staying at a dose that leaves urate above 6 mg/dL lets crystals persist, and flares and tophi continue.",
+    "C": "Pegloticase is reserved for severe gout refractory to optimized oral therapy; his allopurinol has not been titrated yet.",
+    "D": "Stopping therapy would allow urate to rise again and flares to increase; he has a clear indication for continued treatment.",
+    "E": "Thiazides raise serum urate and would make control harder; amlodipine or losartan are better choices in gout."
+   },
+   "objective": "Titrate allopurinol to a serum urate target below 6 mg/dL in gout.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urate-lowering therapy"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 74-year-old woman has bilateral knee pain from osteoarthritis that limits her walking. She completed 12 weeks of supervised physical therapy and continues a home exercise program, and she has lost 4 kg. She has hypertension treated with lisinopril and hydrochlorothiazide, and stage 3 chronic kidney disease (eGFR 48 mL/min/1.73 m<sup>2</sup>). She had a gastrointestinal bleed from an NSAID-related ulcer 5 years ago. Examination shows bony enlargement and crepitus of both knees without effusion. Which of the following is the most appropriate pharmacotherapy?</p>",
+   "options": [
+    "Topical diclofenac gel",
+    "Oral naproxen with omeprazole",
+    "Oral glucosamine and chondroitin",
+    "Oral oxycodone",
+    "Oral hydroxychloroquine"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>After core measures (exercise and weight loss), topical NSAIDs are recommended for knee osteoarthritis. Systemic absorption is low, so they are preferred in older adults and in people with CKD, prior GI bleeding or use of ACE inhibitors and diuretics, all of which make oral NSAIDs dangerous for her.</p><p><strong>Takeaway:</strong> topical NSAIDs are first-line drug therapy for knee and hand osteoarthritis, especially in older or high-risk patients.</p>",
+   "whyNot": {
+    "B": "An oral NSAID with an ACE inhibitor and a diuretic in CKD risks acute kidney injury, and a prior ulcer bleed makes it unsafe even with a PPI.",
+    "C": "Glucosamine and chondroitin have not shown consistent benefit over placebo and are not recommended for knee OA.",
+    "D": "Strong opioids add risks of falls, constipation and dependence without better function in OA and are not recommended.",
+    "E": "Hydroxychloroquine has no benefit in osteoarthritis."
+   },
+   "objective": "Choose topical NSAIDs for knee osteoarthritis in an older adult with renal and GI risk.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "degenerative joint disease",
+    "older adults"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 61-year-old man with type 1 diabetes for 35 years has had 2 weeks of swelling and redness of the right midfoot. He has only mild discomfort. He recalls stepping off a curb awkwardly shortly before it began. Temperature is 36.8°C (98.2°F). The right midfoot is swollen and red, and is 3°C warmer than the left; the skin is intact and there is no ulcer. Pedal pulses are palpable. Protective sensation is absent in both feet. Leukocyte count and CRP are normal. Radiographs show subtle widening at the second tarsometatarsal joint with small fragments. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Immobilization in a total contact cast with offloading",
+    "Intravenous ampicillin–sulbactam",
+    "Percutaneous bone biopsy of the tarsal bones",
+    "Oral colchicine and continued full weight bearing",
+    "Compression stockings and elevation"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A warm, red, swollen insensate midfoot without an ulcer or systemic inflammation, with early fragmentation at the tarsometatarsal joints, is active Charcot neuroarthropathy. Immediate offloading and immobilization, usually with a total contact cast, protects the foot until the temperature difference and swelling settle and radiographs stabilize. Weight bearing during the active phase leads to collapse, rocker-bottom deformity and ulceration.</p><p><strong>Takeaway:</strong> active Charcot foot is treated with offloading in a total contact cast, not antibiotics.</p>",
+   "whyNot": {
+    "B": "Cellulitis is the classic misdiagnosis; with intact skin, no fever and normal inflammatory markers, antibiotics are not indicated.",
+    "C": "Bone biopsy is for suspected osteomyelitis, usually beneath an ulcer; there is no ulcer here.",
+    "D": "Continuing to walk on an active Charcot foot accelerates collapse, and colchicine has no role without crystal disease.",
+    "E": "Compression and elevation treat venous edema and do not protect the fracturing midfoot."
+   },
+   "objective": "Manage active Charcot neuroarthropathy with total contact casting and offloading.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "diabetic foot"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 47-year-old man has had three episodes of acute pain and swelling of his left wrist and right knee over the past year. Aspiration during the last episode showed rhomboid, weakly positively birefringent crystals. He has noticed that his skin has darkened and he has new erectile dysfunction. Radiographs show chondrocalcinosis of both knees and of the triangular fibrocartilage of the wrist, with bony enlargement of the second and third metacarpophalangeal joints. ALT is 64 U/L. Calcium, magnesium and alkaline phosphatase are normal. Which of the following is the most appropriate next step in evaluation?</p>",
+   "options": [
+    "Serum ferritin and transferrin saturation",
+    "Rheumatoid factor and anti-CCP antibodies",
+    "HLA-B27 testing",
+    "Serum urate",
+    "Antinuclear antibodies"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>CPPD in a patient younger than about 60 should prompt a search for a metabolic cause. Second and third MCP arthropathy, skin darkening, hypogonadism and raised liver enzymes all point to hereditary hemochromatosis, and calcium, magnesium and alkaline phosphatase have already excluded the other main associations. Transferrin saturation and ferritin are the initial tests, followed by <em>HFE</em> genotyping. Phlebotomy prevents cirrhosis, cardiomyopathy and diabetes from progressing.</p><p><strong>Takeaway:</strong> early-onset CPPD calls for iron studies, calcium, magnesium and alkaline phosphatase.</p>",
+   "whyNot": {
+    "B": "RF and anti-CCP assess rheumatoid arthritis, but he has crystal-proven episodic arthritis with hook-like osteophytes rather than symmetric synovitis.",
+    "C": "HLA-B27 relates to spondyloarthritis, which causes inflammatory back pain and enthesitis, not chondrocalcinosis.",
+    "D": "The crystals are calcium pyrophosphate, so serum urate does not explain the disease or its metabolic cause.",
+    "E": "ANA testing is for suspected lupus or other connective tissue disease, which is not suggested here."
+   },
+   "objective": "Screen for hemochromatosis in early-onset CPPD with MCP arthropathy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "crystal arthritis",
+    "metabolic arthropathy"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which enzymes degrade cartilage matrix in osteoarthritis?",
+   "back": "Matrix metalloproteinases (especially MMP-13) and aggrecanases (ADAMTS-4 and -5) made by chondrocytes.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "What is eburnation?",
+   "back": "Polished, dense subchondral bone exposed where cartilage has worn away in osteoarthritis.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Partial vs complete HGPRT deficiency?",
+   "back": "Partial: early gout and uric acid stones only. Complete (Lesch–Nyhan): plus dystonia, intellectual disability, self-injury.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Birefringence of urate vs CPP crystals?",
+   "back": "Urate: needles, strongly negative (yellow when parallel). CPP: rhomboids, weakly positive (blue when parallel).",
+   "question": 5
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Which inflammasome do urate crystals activate?",
+   "back": "NLRP3, leading to caspase-1 cleavage of pro-IL-1β.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Why must G6PD be checked before pegloticase?",
+   "back": "Uricase generates hydrogen peroxide, which causes hemolysis and methemoglobinemia in G6PD deficiency.",
+   "question": 6
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Charcot joint site by cause?",
+   "back": "Diabetes: midfoot. Tabes dorsalis: knee and hip. Syringomyelia: shoulder and elbow.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Low hepcidin in HFE hemochromatosis leads to what?",
+   "back": "Ferroportin is not degraded, so intestinal iron absorption and macrophage release stay high.",
+   "question": 3
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Mechanism of probenecid?",
+   "back": "Inhibits URAT1 in the proximal tubule, increasing urate excretion; also inhibits OAT transporters.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Typical morning stiffness in osteoarthritis?",
+   "back": "Under about 30 minutes.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Which hand joints does osteoarthritis spare?",
+   "back": "Usually the MCP joints and the wrist (DIP, PIP and first CMC are involved).",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "First-line drug for knee OA in an older adult with CKD?",
+   "back": "Topical NSAID (diclofenac gel).",
+   "question": 10
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Synovial fluid leukocyte count in osteoarthritis?",
+   "back": "Under 2,000/mm³ (noninflammatory).",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Name two OA treatments that guidelines advise against.",
+   "back": "Glucosamine/chondroitin and arthroscopic lavage or debridement (also hydroxychloroquine, biologics).",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "How much weight loss meaningfully helps knee OA?",
+   "back": "About 5–10% of body weight.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "Target serum urate on urate-lowering therapy?",
+   "back": "Below 6 mg/dL (below 5 with persistent tophi).",
+   "question": 9
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Strong indications to start urate-lowering therapy?",
+   "back": "Any tophus, radiographic gout damage, or two or more flares a year.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Who should be tested for HLA-B*58:01 before allopurinol?",
+   "back": "People of Southeast Asian (Han Chinese, Korean, Thai) or African descent.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "First step in acute effusive monoarthritis?",
+   "back": "Arthrocentesis with cell count, Gram stain, culture and crystal analysis.",
+   "question": 7
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Treatment of monoarticular pseudogout after infection is excluded?",
+   "back": "Aspiration and intra-articular glucocorticoid.",
+   "question": 8
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Four metabolic causes to screen for in early CPPD?",
+   "back": "Hemochromatosis, hyperparathyroidism, hypomagnesemia, hypophosphatasia.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Treatment of active Charcot foot?",
+   "back": "Offloading and immobilization in a total contact cast.",
+   "question": 11
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Should allopurinol be stopped during a gout flare?",
+   "back": "No; continue it and treat the flare.",
+   "question": null
+  }
+ ]
+}

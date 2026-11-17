@@ -1,0 +1,677 @@
+{
+ "area": "12.05.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Transition to extrauterine life: newborn physiology",
+   "html": "<p>Birth forces three systems to switch within minutes: the lungs must take over gas exchange, the circulation must separate into two circuits in series, and the newborn must make its own heat and glucose. Most newborn physiology on Step 1 is a question about how one of these switches works or what happens when it fails.</p>\n<h2>Lung aeration and fetal lung fluid</h2>\n<p>The fetal airways are filled with fluid secreted by the lung epithelium (chloride secretion drives water into the lumen). Late in pregnancy and especially during labor, rising catecholamines and glucocorticoids switch the epithelium toward absorption: <strong>epithelial sodium channels (ENaC)</strong> pull sodium, and water follows, out of the air spaces into the interstitium, where lymphatics and capillaries clear it. The first breaths generate large negative pressures that open the alveoli; surfactant from type II pneumocytes lowers surface tension so the alveoli stay open at end-expiration and a functional residual capacity forms. A baby born by cesarean delivery without labor misses much of the catecholamine-driven absorption, which is why retained lung fluid (transient tachypnea) is more common after elective cesarean birth.</p>\n<h2>Circulatory transition</h2>\n<p>In the fetus, oxygenated blood returns from the placenta in the umbilical vein; about half bypasses the hepatic sinusoids through the <strong>ductus venosus</strong> into the inferior vena cava. In the right atrium the crista dividens and the valve of the inferior vena cava direct this stream across the <strong>foramen ovale</strong> to the left heart, so the best-oxygenated blood reaches the coronary and cerebral circulations. Blood from the superior vena cava goes mainly to the right ventricle and pulmonary trunk, and because fetal pulmonary vascular resistance is high, most of it crosses the <strong>ductus arteriosus</strong> into the descending aorta and returns to the placenta through the two umbilical arteries.</p>\n<p>At birth, lung expansion, the rise in alveolar oxygen and endothelial nitric oxide release make pulmonary vascular resistance fall steeply. Clamping the cord removes the low-resistance placenta, so systemic resistance rises. Pulmonary venous return now raises left atrial pressure above right atrial pressure, which presses the septum primum against the septum secundum and closes the foramen ovale functionally. The ductus arteriosus constricts in response to the higher arterial oxygen tension and to the fall in prostaglandin E2, which is no longer produced by the placenta and is now cleared by the perfused lungs. Functional ductal closure usually occurs within the first few days; fibrosis follows over weeks.</p>\n[[figure:s23f-fig120501-1]]\n<p>Because the ductus depends on prostaglandins, pharmacology can steer it. Cyclooxygenase inhibitors (indomethacin, ibuprofen) or acetaminophen help close a persistent ductus in a preterm infant. Alprostadil, a PGE1 analogue, keeps the ductus open in a newborn whose pulmonary or systemic blood flow depends on it, such as critical pulmonary stenosis or a hypoplastic left heart; apnea, fever and flushing are its notable adverse effects.</p>\n<div class=\"bridge\"><p>Fetal hemoglobin (two alpha and two gamma chains) binds 2,3-bisphosphoglycerate poorly, so its oxygen dissociation curve sits to the left of adult hemoglobin. That lets the fetus load oxygen at the low partial pressures of placental blood. After birth, gamma-chain synthesis falls and beta-chain synthesis rises over the first 6 months, which is why beta-globin disorders such as sickle cell disease are clinically silent in the newborn period.</p></div>\n<h2>Thermoregulation</h2>\n<p>Newborns lose heat fast: a large surface area relative to mass, little subcutaneous fat and a wet skin at delivery. Heat leaves by <strong>evaporation</strong> (amniotic fluid on the skin), <strong>conduction</strong> (a cold mattress or scale), <strong>convection</strong> (drafts) and <strong>radiation</strong> (to cold walls or windows). Newborns cannot shiver effectively, so they rely on <strong>nonshivering thermogenesis in brown adipose tissue</strong>, found between the scapulae, around the kidneys and along the great vessels. Cold stimulates sympathetic release of norepinephrine, which acts on beta-3 adrenergic receptors and activates lipolysis. Fatty acids open <strong>uncoupling protein 1 (thermogenin)</strong> in the inner mitochondrial membrane, letting protons flow back into the matrix without passing through ATP synthase, so the energy of the proton gradient is released as heat. Cold stress costs oxygen and glucose and can cause hypoglycemia, acidosis and increased pulmonary vascular resistance; preterm infants with little brown fat are most at risk.</p>\n<h2>Glucose and energy</h2>\n<p>Cord clamping ends the continuous placental glucose supply. Blood glucose falls to a nadir in the first 1 to 2 hours, then stabilizes as a surge of catecholamines and glucagon and a fall in insulin drive hepatic glycogenolysis and then gluconeogenesis and ketogenesis. Hepatic glycogen stores are laid down mostly in the third trimester, so preterm and growth-restricted infants have small reserves.</p>\n<h2>Bilirubin handling</h2>\n<p>Newborns make two to three times more bilirubin per kilogram than adults: their red-cell mass is high and fetal red cells live only about 70 to 90 days. Heme oxygenase converts heme to biliverdin (releasing carbon monoxide), and biliverdin reductase makes unconjugated bilirubin, which travels on albumin to the liver. Hepatic uptake, <strong>UDP-glucuronosyltransferase 1A1 (UGT1A1)</strong> activity and canalicular excretion are all immature in the first days. In the gut, the sterile bowel lacks the bacteria that reduce bilirubin to urobilinogen, and intestinal beta-glucuronidase deconjugates bilirubin so it is reabsorbed (enhanced enterohepatic circulation). The sum is the transient unconjugated hyperbilirubinemia called physiologic jaundice.</p>\n<h2>Coagulation and vitamin K</h2>\n<p>Vitamin K crosses the placenta poorly, human milk contains little, and the newborn gut has not yet been colonized by vitamin K2-producing bacteria. Vitamin K is the cofactor for <strong>gamma-glutamyl carboxylase</strong>, which adds carboxyl groups to glutamate residues of factors II, VII, IX and X and proteins C and S so they can bind calcium and phospholipid. Without it, the newborn makes nonfunctional factors and can bleed (vitamin K deficiency bleeding), which is why a single intramuscular dose is given at birth.</p>\n<h2>Immunity at birth</h2>\n<p>Maternal IgG crosses the placenta by the neonatal Fc receptor (FcRn), mostly in the third trimester, so preterm infants receive less. IgM and IgA do not cross. The fetus makes its own IgM from mid-gestation, so a raised cord-blood IgM suggests intrauterine infection. Colostrum and milk add secretory IgA, lactoferrin and oligosaccharides that protect the gut. Thymic output of new T cells is high at birth; newborn screening for severe combined immunodeficiency measures <strong>T-cell receptor excision circles (TRECs)</strong>, small DNA circles left over from T-cell receptor gene rearrangement in the thymus.</p>\n<table class=\"hy\"><thead><tr><th>Switch at birth</th><th>Key mechanism</th><th>What failure looks like</th></tr></thead><tbody>\n<tr><td>Lung fluid clearance</td><td>Catecholamine-driven ENaC sodium absorption</td><td>Transient tachypnea, especially after cesarean birth without labor</td></tr>\n<tr><td>Alveolar stability</td><td>Surfactant lowers surface tension</td><td>Respiratory distress syndrome in preterm infants</td></tr>\n<tr><td>Pulmonary vascular resistance fall</td><td>Oxygen and nitric oxide dilate pulmonary arterioles</td><td>Persistent pulmonary hypertension with right-to-left shunting</td></tr>\n<tr><td>Ductal closure</td><td>Rising PaO2, falling PGE2</td><td>Patent ductus arteriosus (common in preterm infants)</td></tr>\n<tr><td>Heat production</td><td>Brown fat, UCP-1 uncoupling</td><td>Cold stress, hypoglycemia, acidosis</td></tr>\n<tr><td>Bilirubin clearance</td><td>UGT1A1 conjugation, bile excretion</td><td>Physiologic or exaggerated unconjugated jaundice</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Closure of the foramen ovale is driven by pressure (left atrial above right atrial), not by oxygen. Closure of the ductus arteriosus is driven by oxygen and the loss of prostaglandin. Questions often swap the two triggers. About a quarter of adults keep a probe-patent foramen ovale.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Physiology, Fetal Circulation"
+    },
+    {
+     "statpearls": "Physiology, Bilirubin"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Delivery-room assessment, prophylaxis and newborn screening",
+   "html": "<p>Most newborns need only warmth, drying, stimulation and a mother's skin. The job in the delivery room is to recognize quickly the few who need help, and then to deliver routine preventive care that has large population benefit: vitamin K, eye prophylaxis, hepatitis B immunization and screening.</p>\n<h2>The first minute</h2>\n<p>Before birth, ask the obstetric team four things: gestational age, amniotic fluid color, the number of babies expected and any risk factors (maternal fever, fetal heart-rate concerns, prolonged rupture of membranes). At birth, ask three quick questions: Is the baby term? Does the baby have good tone? Is the baby breathing or crying? A vigorous term infant stays with the parent for skin-to-skin contact, drying and routine care, and <strong>cord clamping is delayed for at least 30 to 60 seconds</strong> in vigorous term and preterm infants, which improves iron stores and, in preterm infants, circulatory stability.</p>\n<p>If the answer to any question is no, the infant goes to a radiant warmer: warm, dry, stimulate, position the airway in a slightly extended sniffing position and clear secretions only if they block the airway. If the infant is apneic or gasping, or the heart rate is below 100/min after these steps, start <strong>positive-pressure ventilation</strong> within the first minute of life and attach a right-hand (preductal) pulse oximeter. Ventilation is the single most effective action in neonatal resuscitation; a rising heart rate is the best sign that it is working. Begin with room air for infants at 35 weeks or more. If the heart rate stays below 60/min despite 30 seconds of ventilation that moves the chest (after corrective steps and, usually, an airway such as an endotracheal tube or laryngeal mask), begin chest compressions coordinated with breaths at a 3:1 ratio with 100% oxygen; epinephrine follows if the rate remains below 60/min. Healthy newborns take several minutes to reach adult saturations, so a preductal saturation in the 60s at 1 minute is expected.</p>\n<p>Meconium-stained fluid no longer triggers routine tracheal suctioning. A vigorous baby gets routine care; a nonvigorous baby gets the same initial steps and ventilation as any other, with intubation and suctioning only if the airway is obstructed.</p>\n<h2>Apgar score</h2>\n<p>The Apgar score is assigned at 1 and 5 minutes, and every 5 minutes up to 20 minutes while the score is below 7. It describes the infant's condition and response to resuscitation; it is not used to decide whether to start resuscitation, and a low score alone does not diagnose asphyxia or predict neurologic outcome.</p>\n<table class=\"hy\"><thead><tr><th>Sign</th><th>0</th><th>1</th><th>2</th></tr></thead><tbody>\n<tr><td>Heart rate</td><td>Absent</td><td>Below 100/min</td><td>100/min or more</td></tr>\n<tr><td>Respiratory effort</td><td>Absent</td><td>Slow, irregular, weak cry</td><td>Good, strong cry</td></tr>\n<tr><td>Muscle tone</td><td>Limp</td><td>Some flexion of limbs</td><td>Active motion</td></tr>\n<tr><td>Reflex irritability (response to suction or stimulation)</td><td>None</td><td>Grimace</td><td>Cough, sneeze, cry or pulls away</td></tr>\n<tr><td>Color</td><td>Blue or pale all over</td><td>Pink body, blue hands and feet</td><td>Pink all over</td></tr>\n</tbody></table>\n<p>Acrocyanosis (blue hands and feet with a pink trunk) is normal for the first day. Central cyanosis of the lips and tongue is never normal. Color scoring is less reliable in infants with darker skin, which is one reason pulse oximetry, not appearance, guides oxygen.</p>\n<h2>Routine prophylaxis</h2>\n<ul>\n<li><strong>Vitamin K:</strong> one intramuscular dose soon after birth prevents vitamin K deficiency bleeding. Oral regimens are less reliable, especially for late bleeding at 2 to 12 weeks in exclusively breastfed infants, which often presents as intracranial hemorrhage. When parents decline, explain that late bleeding is rare but can be catastrophic, document the discussion and teach them warning signs.</li>\n<li><strong>Eye prophylaxis:</strong> erythromycin 0.5% ophthalmic ointment in both eyes within hours of birth prevents gonococcal ophthalmia neonatorum, which can perforate the cornea within days. It does not reliably prevent chlamydial conjunctivitis, which is handled by prenatal screening and treatment of the pregnant patient. Prophylaxis is given even after cesarean delivery. The USPSTF recommends it for all newborns.</li>\n<li><strong>Hepatitis B:</strong> the birth dose of hepatitis B vaccine is the first step of the infant series. Management depends on the pregnant patient's HBsAg status: if HBsAg-positive, give hepatitis B vaccine <em>and</em> hepatitis B immune globulin (HBIG) within 12 hours of birth, regardless of birth weight, then complete the series and test the infant for HBsAg and anti-HBs after the series (at 9 to 12 months). If the status is unknown, give vaccine within 12 hours and test the parent urgently; HBIG follows if the result is positive (and is given within 12 hours, without waiting, to infants under 2,000 g). For infants of HBsAg-negative parents, the AAP recommends the birth dose within 24 hours for medically stable infants of 2,000 g or more; federal advisory recommendations for this group were revised in 2025, so follow the current CDC schedule.</li>\n</ul>\n<h2>Screening before discharge</h2>\n<p>The <strong>heel-stick dried blood spot</strong> is collected at 24 to 48 hours of age. Testing earlier risks missing phenylketonuria, because phenylalanine accumulates only after protein feeding has begun, and can give a falsely high TSH because of the normal postnatal TSH surge; an infant screened before 24 hours needs a repeat specimen. Each state sets its own panel, guided by the federal Recommended Uniform Screening Panel, which includes amino-acid, fatty-acid oxidation and organic-acid disorders (by tandem mass spectrometry), congenital hypothyroidism, congenital adrenal hyperplasia, galactosemia, hemoglobinopathies, cystic fibrosis, severe combined immunodeficiency (TRECs) and spinal muscular atrophy. A positive screen is not a diagnosis; it triggers prompt confirmatory testing.</p>\n<p>Point-of-care screens complete the set:</p>\n<ul>\n<li><strong>Critical congenital heart disease:</strong> pulse oximetry in the right hand and one foot at 24 hours or later. The screen passes if saturation is 95% or more in either site with a difference of 3% or less; it fails if either site is below 90%. Anything in between is repeated once an hour later, and a second result that still does not pass is a failed screen. A failed screen needs evaluation for a cause of hypoxemia and an echocardiogram if no other cause is found.</li>\n<li><strong>Hearing:</strong> otoacoustic emissions or automated auditory brainstem response before discharge, with diagnostic audiology by 3 months and intervention by 6 months for any infant who does not pass. Infants with NICU stays longer than 5 days get ABR testing because they are at higher risk of auditory neuropathy.</li>\n<li><strong>Bilirubin:</strong> every newborn has a transcutaneous or serum bilirubin measured before discharge and plotted against hour-specific phototherapy thresholds.</li>\n</ul>\n<div class=\"pearl\"><p>Hyperbilirubinemia, dehydration and feeding problems peak on days 3 to 5. An infant discharged before 48 hours should be seen within 1 to 2 days of discharge, and the earlier the discharge, the sooner that visit.</p></div>\n<div class=\"trap\"><p>Erythromycin eye ointment prevents gonococcal disease, not chlamydial disease. A newborn with conjunctivitis at 1 to 2 weeks despite prophylaxis most likely has chlamydia and needs systemic oral therapy, not more ointment.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "APGAR Score"
+    },
+    {
+     "statpearls": "Newborn Screening"
+    },
+    {
+     "label": "CDC: Perinatal hepatitis B",
+     "url": "https://www.cdc.gov/hepatitis-b/hcp/perinatal-provider-overview/index.html",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Normal newborn findings, physiologic jaundice and feeding",
+   "html": "<p>Parents bring many normal findings to the first visits. Knowing what is normal prevents unnecessary tests and lets you spot the few findings that are not.</p>\n<h2>Skin</h2>\n<table class=\"hy\"><thead><tr><th>Finding</th><th>Timing and look</th><th>Key point</th></tr></thead><tbody>\n<tr><td>Erythema toxicum neonatorum</td><td>Days 1 to 3; blotchy red macules with central yellow-white papules or pustules on the trunk and limbs; spares palms and soles</td><td>Pustules contain eosinophils; harmless and self-limited</td></tr>\n<tr><td>Transient neonatal pustular melanosis</td><td>Present at birth; superficial pustules that rupture and leave a collarette and brown macules; more common in infants with darker skin</td><td>Pustules contain neutrophils but are sterile; macules fade over weeks to months</td></tr>\n<tr><td>Milia</td><td>Tiny white papules on the nose and cheeks</td><td>Retained keratin; resolve in weeks</td></tr>\n<tr><td>Congenital dermal melanocytosis</td><td>Flat blue-gray patches over the sacrum or buttocks, common in Black, Asian and Indigenous infants</td><td>Document at birth so they are not later mistaken for bruises</td></tr>\n<tr><td>Nevus simplex (salmon patch)</td><td>Pink patch on the nape, eyelids or glabella</td><td>Facial patches fade; distinguish from a port-wine stain, which persists and can signal Sturge-Weber in a V1 distribution</td></tr>\n<tr><td>Neonatal cephalic pustulosis</td><td>Small red papules and pustules on the face at 2 to 4 weeks</td><td>Linked to Malassezia; no scarring</td></tr>\n</tbody></table>\n<p>Grouped vesicles on a red base, especially after the first few days, are not normal and suggest herpes simplex virus until proven otherwise.</p>\n<h2>Head, face and body</h2>\n<ul>\n<li><strong>Molding and caput succedaneum:</strong> a soft, pitting scalp swelling present at birth that crosses suture lines and resolves in days.</li>\n<li><strong>Fontanelles:</strong> the anterior fontanelle closes by about 18 months and the posterior by about 2 months.</li>\n<li><strong>Eyes:</strong> subconjunctival hemorrhages after vaginal birth are harmless; the red reflex must be present and symmetric in both eyes. An absent or white reflex suggests cataract or retinoblastoma and needs urgent ophthalmology.</li>\n<li><strong>Mouth:</strong> Epstein pearls (small white cysts on the palate) and sucking blisters are normal.</li>\n<li><strong>Breasts and genitals:</strong> maternal estrogen can cause breast buds, a little milky nipple discharge, swollen labia, white vaginal discharge and a small withdrawal bleed in the first week.</li>\n<li><strong>Umbilical cord:</strong> two arteries and one vein; the stump dries and falls off at 1 to 3 weeks. A single umbilical artery is associated with other anomalies, so examine the infant carefully.</li>\n<li><strong>Hips:</strong> Barlow and Ortolani maneuvers at each early visit. Imaging is guided by risk: breech position in the third trimester, family history or an abnormal examination.</li>\n<li><strong>Reflexes:</strong> Moro, rooting, sucking, palmar and plantar grasp and an extensor plantar response are normal at birth; an asymmetric Moro suggests a brachial plexus injury or clavicle fracture.</li>\n</ul>\n<h2>Output and weight</h2>\n<p>Most newborns pass meconium within 24 hours and urine within 24 hours. Delayed meconium beyond 48 hours suggests Hirschsprung disease or meconium ileus from cystic fibrosis. Weight falls in the first days as extracellular fluid is lost; exclusively breastfed infants lose more than formula-fed infants. Most regain birth weight by 10 to 14 days. A loss above about 10%, few wet diapers or persistent meconium stools by day 4 to 5 suggest inadequate intake and need prompt lactation assessment.</p>\n<h2>Physiologic jaundice</h2>\n<p>Visible jaundice is common in the first week and progresses head to toe as bilirubin rises, but the eye is a poor estimate of the level, particularly in infants with darker skin. Physiologic jaundice is <strong>unconjugated</strong>, appears after the first 24 hours, peaks around day 3 to 5 in term infants (later in preterm infants) and fades within about 2 weeks. Features that are <strong>not</strong> physiologic and need investigation:</p>\n<ul>\n<li>jaundice in the first 24 hours (think hemolysis: ABO or Rh incompatibility, G6PD deficiency, spherocytosis);</li>\n<li>a rapid rise that crosses phototherapy thresholds on the hour-specific nomogram;</li>\n<li>a conjugated (direct) bilirubin above 1.0 mg/dL, pale stools or dark urine (think biliary atresia);</li>\n<li>jaundice beyond 2 weeks in a term infant (3 weeks in a preterm infant) without an explanation such as breast milk jaundice;</li>\n<li>an ill-appearing infant (sepsis, metabolic disease).</li>\n</ul>\n<p>Two feeding patterns raise unconjugated bilirubin. <strong>Suboptimal intake jaundice</strong> (sometimes called breastfeeding jaundice) occurs in the first week when milk intake is low: fewer stools mean more enterohepatic recirculation. Treat it by improving breastfeeding, with 8 to 12 feeds a day, lactation support and supplementation with expressed milk, donor milk or formula when weight loss or dehydration calls for it; water or dextrose water must never be given. <strong>Breast milk jaundice</strong> begins after the first week in a thriving infant, peaks at 2 to 3 weeks and may last up to 2 to 3 months; it is thought to reflect milk factors that increase intestinal bilirubin absorption. Breastfeeding continues.</p>\n<p>Management follows the AAP 2022 guideline: plot every total bilirubin by hour of age against thresholds that are lower for younger gestational age and for infants with neurotoxicity risk factors (isoimmune hemolysis, G6PD deficiency, sepsis, low albumin, clinical instability). Phototherapy is started at or above the threshold; exchange transfusion is reserved for levels near the exchange threshold or signs of acute bilirubin encephalopathy.</p>\n<h2>Feeding and nutrition</h2>\n<ul>\n<li><strong>Human milk</strong> is recommended exclusively for about the first 6 months, with complementary foods thereafter and continued breastfeeding as long as the family wishes. Newborns feed 8 to 12 times in 24 hours.</li>\n<li><strong>Vitamin D:</strong> 400 IU daily starting in the first days of life for every breastfed or partially breastfed infant, and for formula-fed infants who take less than about 1 liter of formula daily, because human milk contains little vitamin D.</li>\n<li><strong>Iron:</strong> term infants have stores for about 4 to 6 months; exclusively breastfed infants receive iron supplementation from about 4 months until iron-rich foods are established. Preterm infants need iron earlier.</li>\n<li><strong>Things to avoid:</strong> honey before 12 months (infant botulism), cow's milk as a main drink before 12 months (iron deficiency, occult intestinal blood loss) and plain water in the first months (hyponatremia).</li>\n<li><strong>When breastfeeding is not advised:</strong> classic galactosemia in the infant; maternal HTLV-1 or HTLV-2; untreated active tuberculosis (expressed milk can be given while the parent is isolated); herpes lesions on the breast (feed from the unaffected side); and maternal use of illicit drugs such as methamphetamine or cocaine. Stable treatment with methadone or buprenorphine is compatible with breastfeeding. Maternal hepatitis B and hepatitis C infection are not contraindications. In the United States, people with HIV are counselled with shared decision-making: those with sustained viral suppression on antiretroviral therapy may choose to breastfeed with close support and infant testing.</li>\n</ul>\n<p>Transgender and nonbinary parents may chestfeed; a person who has had chest masculinization surgery may produce some milk depending on the remaining glandular tissue, and those using testosterone need individualized advice because testosterone passes into milk and suppresses lactation. Use the parent's terms for feeding and for themselves.</p>\n<div class=\"pearl\"><p>Sleep advice is part of every newborn visit: back to sleep, on a firm flat surface in the parents' room but not their bed, with no pillows, bumpers or soft bedding, and no smoke exposure. Breastfeeding and pacifier use at sleep onset both lower the risk of sudden unexpected infant death.</p></div>\n<div class=\"trap\"><p>A jaundiced infant in the first 24 hours is never \"physiologic.\" The next step is a total serum (or transcutaneous) bilirubin with blood type, direct antiglobulin test and a search for hemolysis, not reassurance.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Neonatal Jaundice"
+    },
+    {
+     "statpearls": "Breastfeeding"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Fetal shunts at birth: the trigger that closes each one and its adult remnant (original schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A male infant is born at 39 weeks' gestation by spontaneous vaginal delivery and cries immediately. Over the next 48 hours a soft continuous murmur heard at the left infraclavicular area on the first day becomes inaudible, and echocardiography on day 3 shows no flow between the aorta and pulmonary artery. Which of the following changes after birth was most directly responsible for closing this vessel?</p>",
+   "options": [
+    "Fall in left atrial pressure below right atrial pressure",
+    "Rise in arterial oxygen tension with a fall in circulating prostaglandin E2",
+    "Rise in pulmonary vascular resistance after the first breath",
+    "Release of bradykinin from the clamped umbilical vessels",
+    "Increase in circulating maternal estrogen after delivery"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The vessel connecting the pulmonary trunk to the descending aorta is the ductus arteriosus. Its smooth muscle constricts when arterial PO2 rises after the lungs begin gas exchange, and it loses the dilating effect of prostaglandin E2, which came largely from the placenta and is now metabolized by the perfused lungs. Functional closure happens within a few days; fibrosis produces the ligamentum arteriosum.</p><p>Indomethacin, ibuprofen or acetaminophen promote closure of a persistent ductus in preterm infants; alprostadil keeps a ductus open when the circulation depends on it.</p><p><strong>Takeaway:</strong> The ductus arteriosus closes in response to oxygen and the loss of prostaglandin E2; the foramen ovale closes in response to pressure.</p>",
+   "whyNot": {
+    "A": "After birth left atrial pressure rises above right atrial pressure, and that pressure reversal closes the foramen ovale, not the ductus.",
+    "C": "Pulmonary vascular resistance falls, not rises, after the first breaths; a rise would favor right-to-left ductal flow and keep the ductus open.",
+    "D": "Bradykinin has been studied as a contributor to umbilical vessel constriction, but it is not the principal driver of ductal closure tested here.",
+    "E": "Maternal estrogen falls after delivery and has no direct role in ductal closure."
+   },
+   "objective": "Identify rising oxygen tension and falling prostaglandin E2 as the triggers for ductus arteriosus closure.",
+   "disciplines": [
+    "physiology",
+    "anatomy_embryology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "fetal circulation"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A neonatologist places an umbilical venous catheter in a 1-day-old infant born at 30 weeks' gestation who needs central venous access. A radiograph confirms that the catheter tip lies at the junction of the inferior vena cava and right atrium. On its way from the umbilical vein, the catheter most likely passed through which of the following structures?</p>",
+   "options": [
+    "Ductus arteriosus",
+    "Ductus venosus",
+    "Foramen ovale",
+    "Internal iliac artery",
+    "Portal vein bifurcation into the hepatic sinusoids"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>In fetal life, oxygenated blood in the umbilical vein reaches the inferior vena cava partly through the hepatic circulation and partly through the ductus venosus, which bypasses the sinusoids. A catheter advanced from the umbilical vein follows the ductus venosus to the inferior vena cava. After birth the ductus venosus closes over days to weeks and becomes the ligamentum venosum; the umbilical vein becomes the ligamentum teres hepatis in the free edge of the falciform ligament.</p><p><strong>Takeaway:</strong> Umbilical vein to ductus venosus to inferior vena cava is the fetal bypass of the liver, and it is the route of an umbilical venous catheter.</p>",
+   "whyNot": {
+    "A": "The ductus arteriosus connects the pulmonary trunk to the aorta; it is reached from the arterial side, not from the umbilical vein.",
+    "C": "The foramen ovale lies between the atria, beyond the catheter tip at the inferior vena cava-right atrial junction.",
+    "D": "The internal iliac arteries give rise to the umbilical arteries, which are the route of an umbilical arterial catheter, not a venous one.",
+    "E": "A properly placed catheter bypasses the sinusoids; a tip lodged in the portal system is a malposition that can cause hepatic injury."
+   },
+   "objective": "Trace the course of the fetal umbilical venous circulation through the ductus venosus.",
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "fetal circulation"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A girl is born at 36 weeks' gestation in a cool delivery room. Her axillary temperature is 36.0&deg;C (96.8&deg;F) at 20 minutes. She is not shivering. Norepinephrine release activates heat production in adipose tissue between her scapulae and around her kidneys. Which of the following molecular events in this tissue directly produces the heat?</p>",
+   "options": [
+    "Hydrolysis of ATP by sodium-potassium ATPase",
+    "Proton re-entry into the mitochondrial matrix that bypasses ATP synthase",
+    "Inhibition of cytochrome c oxidase by carbon monoxide",
+    "Futile cycling of glucose through glycolysis and gluconeogenesis",
+    "Increased substrate-level phosphorylation in the citric acid cycle"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Brown adipose tissue produces heat by nonshivering thermogenesis. Norepinephrine acting on beta-3 adrenergic receptors activates lipolysis, and the released fatty acids activate uncoupling protein 1 (thermogenin) in the inner mitochondrial membrane. Protons pumped out by the electron transport chain flow back into the matrix through UCP-1 instead of ATP synthase, so the energy of the gradient is released as heat rather than stored in ATP.</p><p>Preterm infants have less brown fat and lose heat faster, so cold stress quickly causes hypoglycemia and acidosis.</p><p><strong>Takeaway:</strong> Newborn heat production depends on UCP-1, which uncouples electron transport from ATP synthesis.</p>",
+   "whyNot": {
+    "A": "Sodium-potassium ATPase consumes ATP in all cells, but it is not the specialized heat-producing mechanism of brown fat.",
+    "C": "Carbon monoxide inhibition of cytochrome c oxidase blocks electron transport and causes tissue hypoxia rather than controlled heat production.",
+    "D": "Futile substrate cycles release small amounts of heat but are not the mechanism activated by norepinephrine in brown fat.",
+    "E": "Substrate-level phosphorylation stores energy as GTP or ATP; it does not dissipate the proton gradient as heat."
+   },
+   "objective": "Explain nonshivering thermogenesis in brown adipose tissue through UCP-1 uncoupling.",
+   "disciplines": [
+    "biochemistry",
+    "physiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "thermoregulation"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 6-week-old exclusively breastfed boy is brought to the emergency department because of irritability, vomiting and a bulging anterior fontanelle. He was born at home, and his parents declined all newborn injections. CT of the head shows a subdural hemorrhage. Prothrombin time is 58 seconds and aPTT is 92 seconds; platelet count is 310,000/mm<sup>3</sup>. Prothrombin time corrects after a single parenteral dose of a vitamin. The deficient vitamin is a required cofactor for which of the following reactions?</p>",
+   "options": [
+    "Hydroxylation of proline and lysine residues in procollagen",
+    "Gamma-carboxylation of glutamate residues on clotting factors",
+    "Transamination of amino acids to keto acids",
+    "Carboxylation of pyruvate to oxaloacetate",
+    "Conversion of homocysteine to methionine"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is late vitamin K deficiency bleeding: an exclusively breastfed infant who did not receive intramuscular vitamin K at birth, presenting at 2 to 12 weeks with intracranial hemorrhage. Human milk contains little vitamin K, the vitamin crosses the placenta poorly and the gut flora that make vitamin K2 are not yet established. Reduced vitamin K is the cofactor for gamma-glutamyl carboxylase, which carboxylates glutamate residues on factors II, VII, IX and X and proteins C and S. Without carboxylation the factors cannot bind calcium and phospholipid, so both PT and aPTT are prolonged.</p><p><strong>Takeaway:</strong> Vitamin K is the cofactor for gamma-carboxylation of factors II, VII, IX and X; a single intramuscular dose at birth prevents late bleeding in breastfed infants.</p>",
+   "whyNot": {
+    "A": "Prolyl and lysyl hydroxylation needs vitamin C; deficiency causes scurvy with gum and perifollicular bleeding, not a prolonged PT.",
+    "C": "Transamination uses pyridoxal phosphate (vitamin B6), whose deficiency does not prolong clotting times.",
+    "D": "Pyruvate carboxylase uses biotin; biotin deficiency causes dermatitis and alopecia, not coagulopathy.",
+    "E": "Methionine synthase needs vitamin B12 and folate, and its failure causes megaloblastic anemia rather than bleeding."
+   },
+   "objective": "Link late vitamin K deficiency bleeding to loss of gamma-glutamyl carboxylation of clotting factors.",
+   "disciplines": [
+    "biochemistry",
+    "nutrition"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "neonatal bleeding"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 3-day-old girl born at 38 weeks' gestation is jaundiced to the abdomen. She is breastfeeding well and has normal stools and urine. Total serum bilirubin is 10.2 mg/dL, and direct bilirubin is 0.3 mg/dL. Her blood type and her mother's are both A, Rh-positive, and the direct antiglobulin test is negative. Hemoglobin and reticulocyte count are normal for age. Which of the following is the most important reason her serum bilirubin is higher than an adult's?</p>",
+   "options": [
+    "Reduced hepatic UDP-glucuronosyltransferase activity",
+    "Obstruction of the extrahepatic bile ducts",
+    "Increased bacterial conversion of bilirubin to urobilinogen in the colon",
+    "Deficiency of heme oxygenase",
+    "Increased albumin binding of bilirubin in plasma"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has physiologic jaundice: unconjugated, appearing after 24 hours, in a well, feeding infant without hemolysis. Several factors combine: a high red-cell mass, shorter fetal red-cell survival, enhanced enterohepatic circulation and, most importantly, low activity of hepatic UDP-glucuronosyltransferase 1A1, which conjugates bilirubin with glucuronic acid so it can be excreted in bile. Enzyme activity matures over the first weeks.</p><p><strong>Takeaway:</strong> Immature UGT1A1 conjugation is the central mechanism of physiologic unconjugated jaundice.</p>",
+   "whyNot": {
+    "B": "Bile duct obstruction raises the conjugated fraction; her direct bilirubin is normal.",
+    "C": "The newborn gut lacks the bacteria that make urobilinogen; reduced, not increased, bacterial conversion contributes to recirculation.",
+    "D": "Heme oxygenase makes biliverdin from heme; less activity would lower bilirubin production.",
+    "E": "Albumin binding holds unconjugated bilirubin in plasma, but more binding does not explain the higher level; low albumin binding raises the neurotoxic free fraction."
+   },
+   "objective": "Identify immature hepatic conjugation as the main cause of physiologic jaundice.",
+   "disciplines": [
+    "biochemistry",
+    "physiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "neonatal jaundice"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 4-day-old boy born at 37 weeks' gestation has a total serum bilirubin of 19.0 mg/dL with a direct fraction of 0.5 mg/dL. He is placed under blue-green light with his eyes shielded. Over 12 hours the bilirubin falls to 15.1 mg/dL, and his stools become greener. Which of the following best describes how this treatment lowers serum bilirubin?</p>",
+   "options": [
+    "It induces hepatic UDP-glucuronosyltransferase synthesis",
+    "It converts bilirubin into water-soluble isomers that are excreted without conjugation",
+    "It oxidizes bilirubin back to biliverdin in the skin",
+    "It inhibits heme oxygenase in the reticuloendothelial system",
+    "It increases renal filtration of albumin-bound bilirubin"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Phototherapy uses light of about 460 to 490 nm, which bilirubin in the skin and superficial capillaries absorbs. Light converts bilirubin into configurational isomers and the structural isomer lumirubin. These are more water-soluble and can be excreted in bile and urine without hepatic conjugation. Effectiveness depends on irradiance and on the area of skin exposed.</p><p>Adverse effects are usually minor: loose stools, temperature instability, increased insensible water loss and the bronze baby syndrome in infants with cholestasis.</p><p><strong>Takeaway:</strong> Phototherapy works by photoisomerization of bilirubin to water-soluble forms such as lumirubin.</p>",
+   "whyNot": {
+    "A": "Phenobarbital, not light, induces UGT1A1; that effect takes days and is not standard neonatal treatment.",
+    "C": "Light does not reverse the biliverdin reductase step; the products are bilirubin isomers.",
+    "D": "Heme oxygenase inhibitors (metalloporphyrins) are experimental drugs, not the action of phototherapy.",
+    "E": "Albumin-bound bilirubin is not filtered by the kidney; only the new water-soluble isomers appear in urine."
+   },
+   "objective": "Describe photoisomerization as the mechanism of neonatal phototherapy.",
+   "disciplines": [
+    "biochemistry",
+    "pharmacology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "neonatal jaundice"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A state newborn screening program reports that a 5-day-old girl's dried blood spot has an undetectable level of a DNA marker that is normally abundant in newborns. Lymphocyte flow cytometry shows very few CD3+ cells, with normal numbers of CD19+ B cells. The screening marker is generated by which of the following processes?</p>",
+   "options": [
+    "Class switch recombination in germinal center B cells",
+    "Somatic hypermutation of immunoglobulin variable regions",
+    "V(D)J recombination of T-cell receptor genes in the thymus",
+    "Positive selection of thymocytes on cortical epithelial cells",
+    "Antigen-driven clonal expansion of memory T cells"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Newborn screening for severe combined immunodeficiency measures T-cell receptor excision circles (TRECs). When developing thymocytes rearrange their T-cell receptor genes by V(D)J recombination, the intervening DNA is cut out and ligated into small circles that do not replicate when the cell divides. TRECs therefore mark recently made naive T cells. Infants with SCID, and some with other causes of severe T-cell lymphopenia, have very low or absent TRECs. A low screen is confirmed with flow cytometry.</p><p><strong>Takeaway:</strong> TRECs are by-products of thymic T-cell receptor rearrangement and screen newborns for SCID.</p>",
+   "whyNot": {
+    "A": "Class switch recombination occurs in B cells after antigen exposure and does not generate the T-cell screening marker.",
+    "B": "Somatic hypermutation alters B-cell immunoglobulin genes in germinal centers and produces no excision circles.",
+    "D": "Positive selection determines which thymocytes survive but does not itself excise DNA.",
+    "E": "Clonal expansion dilutes TRECs among daughter cells, because the circles do not replicate; it does not generate them."
+   },
+   "objective": "Explain that TRECs reflect thymic V(D)J recombination and are used to screen for SCID.",
+   "disciplines": [
+    "immunology",
+    "genetics"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "newborn screening"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>Within 1 hour of birth, a healthy newborn receives an ophthalmic ointment in both eyes as routine prophylaxis against an organism that can perforate the cornea within days. The drug in the ointment acts by which of the following mechanisms?</p>",
+   "options": [
+    "Binding the 30S ribosomal subunit and blocking aminoacyl-tRNA attachment",
+    "Binding the 50S ribosomal subunit and blocking translocation",
+    "Inhibiting DNA gyrase and topoisomerase IV",
+    "Binding D-alanyl-D-alanine and blocking cell wall polymerization",
+    "Inhibiting dihydropteroate synthase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Erythromycin 0.5% ophthalmic ointment prevents gonococcal ophthalmia neonatorum. Erythromycin is a macrolide: it binds the 23S rRNA of the 50S ribosomal subunit and blocks translocation of the growing peptide chain, which is usually bacteriostatic. Resistance arises by methylation of the 23S binding site or by efflux pumps.</p><p><strong>Takeaway:</strong> Newborn eye prophylaxis uses a macrolide, which blocks translocation at the 50S subunit.</p>",
+   "whyNot": {
+    "A": "Blocking aminoacyl-tRNA attachment at the 30S subunit is the action of tetracyclines, which are not used for newborn eye prophylaxis in the United States.",
+    "C": "DNA gyrase inhibition is the mechanism of fluoroquinolones, which are not used for newborn ocular prophylaxis.",
+    "D": "Binding D-Ala-D-Ala is the action of vancomycin, which has no activity against gram-negative Neisseria.",
+    "E": "Inhibiting dihydropteroate synthase is the action of sulfonamides, which are avoided in newborns because they displace bilirubin from albumin."
+   },
+   "objective": "Recall the mechanism of erythromycin, the agent used for neonatal ocular prophylaxis.",
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "newborn prophylaxis"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A girl is born at 39 weeks' gestation by vaginal delivery after a prolonged second stage of labor. At 1 minute of age her heart rate is 90/min, and she has slow, irregular respirations with a weak cry. Her arms and legs are partly flexed. She grimaces when a catheter is placed in her nares. Her trunk is pink, and her hands and feet are blue. Which of the following is her 1-minute Apgar score?</p>",
+   "options": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Each of the five signs scores 0 to 2. Heart rate below 100/min scores 1; slow, irregular breathing with a weak cry scores 1; some flexion scores 1; a grimace scores 1; and a pink body with blue extremities scores 1. The total is 5. Because the score is below 7, it is repeated every 5 minutes until 20 minutes. Her heart rate below 100/min, not the score itself, is what calls for positive-pressure ventilation.</p><p><strong>Takeaway:</strong> Score each Apgar sign 0, 1 or 2; resuscitation decisions follow heart rate and breathing, not the total.</p>",
+   "whyNot": {
+    "A": "A score of 3 would need two of the signs to score 0, such as absent respirations and a limp infant.",
+    "B": "A score of 4 undercounts by one sign; each of her five signs earns 1 point.",
+    "D": "A score of 6 would need one sign to score 2, such as a heart rate of 100/min or more.",
+    "E": "A score of 7 would need two signs to score 2, such as a strong cry and active motion."
+   },
+   "objective": "Calculate an Apgar score from the five clinical signs.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_history_pe"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "delivery room"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A boy is born at 38 weeks' gestation by uncomplicated vaginal delivery. Birth weight is 3,150 g (6 lb 15 oz). Prenatal records show that his mother's hepatitis B surface antigen test was positive at 10 weeks' gestation; she took tenofovir from 28 weeks. Apgar scores are 8 and 9. He is now 2 hours old and breastfeeding. Which of the following is the most appropriate next step for this infant?</p>",
+   "options": [
+    "Hepatitis B vaccine alone within 24 hours",
+    "Hepatitis B vaccine and hepatitis B immune globulin within 12 hours",
+    "Hepatitis B immune globulin alone, with the vaccine series starting at 2 months",
+    "Infant HBsAg testing now, with prophylaxis only if the result is positive",
+    "Formula feeding in place of breastfeeding, with vaccination at 1 month"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>An infant born to an HBsAg-positive parent needs both active and passive immunization within 12 hours of birth: the first dose of hepatitis B vaccine and HBIG at a different injection site. This combination, together with maternal antiviral therapy for a high viral load, prevents most perinatal transmission. The vaccine series is completed on schedule, and the infant has HBsAg and anti-HBs testing after the series, at 9 to 12 months.</p><p>Breastfeeding is encouraged; hepatitis B infection is not a reason to avoid it.</p><p><strong>Takeaway:</strong> Infant of an HBsAg-positive parent: vaccine plus HBIG within 12 hours, whatever the birth weight, then post-vaccination serology.</p>",
+   "whyNot": {
+    "A": "Vaccine alone within 24 hours is the plan for an infant whose parent is HBsAg-negative; it leaves this infant underprotected.",
+    "C": "Passive antibody alone wanes within months, and delaying the vaccine forfeits active protection during the period of highest risk.",
+    "D": "Testing the infant at birth does not show whether infection will occur; prophylaxis must not wait for results.",
+    "E": "Breastfeeding does not meaningfully add to transmission risk once the infant has received vaccine and HBIG, and delaying vaccination leaves the infant unprotected."
+   },
+   "objective": "Give hepatitis B vaccine and HBIG within 12 hours to an infant of an HBsAg-positive parent.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "tags": [
+    "newborn prophylaxis"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A girl born at 39 weeks' gestation is in the well-baby nursery. Pregnancy and delivery were uncomplicated, and a mid-trimester anatomy ultrasound was reported as normal. She is feeding well, and her examination is normal, with no murmur, normal femoral pulses and no respiratory distress. Pulse oximetry screening results are shown.</p><table><thead><tr><th>Age</th><th>Right hand SpO<sub>2</sub></th><th>Foot SpO<sub>2</sub></th></tr></thead><tbody><tr><td>25 hours</td><td>94%</td><td>90%</td></tr><tr><td>26 hours</td><td>94%</td><td>91%</td></tr></tbody></table><p>Temperature is 36.9&deg;C (98.4&deg;F), heart rate 138/min and respiratory rate 44/min. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Discharge with a routine visit at 3 to 5 days",
+    "Repeat pulse oximetry at 48 hours of age",
+    "Echocardiography",
+    "Intravenous alprostadil infusion",
+    "Blood culture and empiric ampicillin and gentamicin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Neither screen reached 95% in either extremity, and both had a hand-foot difference above 3%. Under the current algorithm, a result between 90% and 94% (or a difference above 3%) is repeated once, and a second result that still does not pass counts as a failed screen. A well-appearing infant with a failed screen and no other explanation for hypoxemia (such as pneumonia or transient tachypnea) needs echocardiography before discharge. A lower foot saturation raises concern for a lesion with right-to-left ductal flow, such as coarctation or an interrupted aortic arch, which a normal prenatal ultrasound can miss.</p><p><strong>Takeaway:</strong> Two screens that do not reach 95% with a difference of 3% or less make a failed critical congenital heart disease screen; obtain an echocardiogram.</p>",
+   "whyNot": {
+    "A": "Discharging an infant who failed the screen risks collapse at home when the ductus closes.",
+    "B": "The algorithm allows only one repeat; further delay is not appropriate once the screen has failed.",
+    "D": "Alprostadil is started when a ductal-dependent lesion is diagnosed or the infant is unstable; this well infant needs the diagnosis first.",
+    "E": "She has no fever, tachypnea or signs of sepsis; a failed oximetry screen in a well infant points to cardiac evaluation, not empiric antibiotics."
+   },
+   "objective": "Apply the newborn pulse oximetry algorithm to recognize a failed screen and order echocardiography.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "newborn screening"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 4-day-old boy born at 39 weeks' gestation is seen in clinic for his first visit after discharge. He is exclusively breastfed about 6 times a day, and his mother says her milk has not \"come in\" fully. He had 2 wet diapers and 1 dark green stool in the past 24 hours. Birth weight was 3,600 g; today he weighs 3,200 g (an 11% loss). He is jaundiced to the lower abdomen, alert and has moist mucous membranes. Transcutaneous bilirubin, confirmed by a total serum bilirubin of 14.0 mg/dL (direct 0.4 mg/dL), is below the phototherapy threshold for his age and risk factors. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Stop breastfeeding for 48 hours and feed formula only",
+    "Lactation support, feeding 8 to 12 times daily, and supplementation with expressed milk or formula",
+    "Supplementation with oral dextrose water after each feed",
+    "Admission for intravenous fluids and phototherapy",
+    "Reassurance and a routine visit at 2 weeks of age"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has suboptimal intake jaundice: too few feeds, low output, persistent transitional stools and an 11% weight loss in the first week. Low intake slows stooling, so more bilirubin is reabsorbed from the gut. The bilirubin is below the phototherapy threshold, and he is not dehydrated clinically. Management is to improve milk transfer: a lactation assessment, feeding at least 8 to 12 times a day, and supplementation with expressed milk, donor milk or formula until weight gain resumes. He needs a weight and bilirubin check within 1 to 2 days.</p><p><strong>Takeaway:</strong> Jaundice from low intake in the first week is treated by feeding more, with lactation support and supplementation, never with water or dextrose water.</p>",
+   "whyNot": {
+    "A": "Interrupting breastfeeding is not needed and can undermine milk supply; the problem is too little milk, not the milk itself.",
+    "C": "Water or dextrose water adds no calories for bilirubin excretion and risks hyponatremia; it is never recommended.",
+    "D": "His bilirubin is below the phototherapy threshold and he is not clinically dehydrated, so admission is not indicated now.",
+    "E": "An 11% weight loss with poor output needs follow-up within 1 to 2 days, not at 2 weeks."
+   },
+   "objective": "Manage suboptimal intake jaundice in a breastfed newborn with lactation support and supplementation.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "neonatal jaundice",
+    "infant feeding"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 2-day-old girl born at 40 weeks' gestation has a new rash. Her parents noticed blotchy red patches on her chest, back and thighs this morning, some with a tiny pale yellow papule in the center. She is feeding well and is afebrile. The palms and soles are spared, and there are no vesicles in the mouth or on the scalp. Her mother had no genital lesions during pregnancy. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Reassurance and observation",
+    "Topical mupirocin",
+    "Intravenous acyclovir",
+    "Topical nystatin",
+    "Skin biopsy"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Blotchy erythematous macules with central small papules or pustules on the trunk and thighs, appearing on day 1 to 3 and sparing the palms and soles in a well, afebrile infant, are erythema toxicum neonatorum. A smear of a pustule would show eosinophils. The rash comes and goes and clears within 1 to 2 weeks without treatment.</p><p>Features that would change the plan include grouped vesicles or erosions (herpes simplex), honey-crusted or pus-filled bullae (staphylococcal infection), fever, lethargy or poor feeding.</p><p><strong>Takeaway:</strong> Erythema toxicum is a benign, self-limited eosinophilic rash of the first days of life; reassure.</p>",
+   "whyNot": {
+    "B": "Mupirocin treats localized bacterial pustulosis, which produces larger pus-filled lesions rather than a migrating erythematous rash with tiny papules.",
+    "C": "Acyclovir is for suspected neonatal herpes, which presents with grouped vesicles, usually after the first few days, and often with systemic signs.",
+    "D": "Nystatin treats candidiasis, which presents as beefy red plaques with satellite pustules in skin folds or as oral thrush.",
+    "E": "The clinical picture is diagnostic; biopsy of a self-limited newborn rash is not justified."
+   },
+   "objective": "Recognize erythema toxicum neonatorum and reassure the family.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "newborn skin"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 7-day-old girl born at 39 weeks' gestation is seen for a weight check. She is exclusively breastfed and has regained to 20 g below her birth weight. Her mother is healthy, follows a vegan diet and takes a prenatal vitamin. The infant's examination is normal. Which of the following supplements should be recommended for this infant now?</p>",
+   "options": [
+    "Oral iron",
+    "Oral fluoride",
+    "Oral vitamin D",
+    "Oral vitamin A",
+    "Oral zinc"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Human milk contains little vitamin D, whatever the parent's diet, and infant sunlight exposure is not a safe or reliable source. Every breastfed or partially breastfed infant should start vitamin D 400 IU daily in the first days of life and continue until taking enough fortified formula or milk. Because her mother is vegan, the infant's vitamin B12 supply depends on the mother's B12 intake, so the mother's B12 status should also be checked and supplemented; the infant needs B12 supplementation only if the mother is deficient.</p><p><strong>Takeaway:</strong> Start vitamin D 400 IU daily in the first days of life for every breastfed infant.</p>",
+   "whyNot": {
+    "A": "Term infants have iron stores for about 4 months; iron supplementation for exclusively breastfed term infants starts at about 4 months, not in the first week.",
+    "B": "Fluoride supplements are not given before 6 months, and then only when the water supply is low in fluoride.",
+    "D": "Routine vitamin A supplementation is not recommended for healthy term infants in the United States.",
+    "E": "Healthy term breastfed infants do not need zinc supplements; zinc is a concern in preterm infants and in rare inherited disorders."
+   },
+   "objective": "Recommend vitamin D supplementation for breastfed newborns from the first days of life.",
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "infant feeding"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "What closes the foramen ovale functionally after birth?",
+   "back": "Left atrial pressure rising above right atrial pressure, which presses the septum primum against the septum secundum.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which two changes after birth constrict the ductus arteriosus?",
+   "back": "A rise in arterial oxygen tension and a fall in prostaglandin E2.",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "What is the adult remnant of the ductus venosus?",
+   "back": "The ligamentum venosum.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Which protein lets brown fat make heat?",
+   "back": "Uncoupling protein 1 (thermogenin), which lets protons re-enter the mitochondrial matrix without making ATP.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Why does an elective cesarean delivery without labor raise the risk of retained lung fluid?",
+   "back": "The infant misses the labor-associated catecholamine surge that activates ENaC sodium (and water) absorption from the airways.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Why is fetal hemoglobin's oxygen affinity higher than adult hemoglobin's?",
+   "back": "Gamma chains bind 2,3-bisphosphoglycerate poorly, shifting the curve to the left.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which enzyme needs vitamin K as a cofactor?",
+   "back": "Gamma-glutamyl carboxylase, which activates factors II, VII, IX, X and proteins C and S.",
+   "question": 4
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "What does a low TREC count on newborn screening suggest?",
+   "back": "Severe T-cell lymphopenia such as SCID; TRECs are by-products of thymic T-cell receptor rearrangement.",
+   "question": 7
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "What is the single most effective action in neonatal resuscitation?",
+   "back": "Effective positive-pressure ventilation; a rising heart rate shows it is working.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "When does a newborn need chest compressions?",
+   "back": "When the heart rate stays below 60/min after 30 seconds of ventilation that moves the chest.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "When is the Apgar score repeated beyond 5 minutes?",
+   "back": "Every 5 minutes up to 20 minutes while the score is below 7.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Newborn of an HBsAg-positive parent: what and when?",
+   "back": "Hepatitis B vaccine plus HBIG within 12 hours of birth, then HBsAg and anti-HBs testing after the series.",
+   "question": 10
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Why repeat a newborn blood-spot screen collected before 24 hours of age?",
+   "back": "Phenylalanine may not have risen yet (false-negative PKU) and the TSH surge can give a false-positive result.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "When does a newborn pulse oximetry screen pass?",
+   "back": "SpO2 95% or more in the right hand or foot with a difference of 3% or less.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Which infection does erythromycin eye ointment at birth reliably prevent?",
+   "back": "Gonococcal ophthalmia neonatorum (not chlamydial conjunctivitis).",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "Which cells fill the pustules of erythema toxicum neonatorum?",
+   "back": "Eosinophils.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Caput succedaneum vs cephalohematoma: which crosses suture lines?",
+   "back": "Caput succedaneum (scalp edema); a cephalohematoma is subperiosteal and stops at the sutures.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Name four features that make newborn jaundice non-physiologic.",
+   "back": "Onset in the first 24 hours, a rapid rise across thresholds, direct bilirubin above 1.0 mg/dL, or persistence beyond 2 weeks (term).",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Breastfeeding (low intake) jaundice vs breast milk jaundice: timing?",
+   "back": "Low-intake jaundice is in the first week; breast milk jaundice starts after the first week and peaks at 2 to 3 weeks.",
+   "question": 12
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Vitamin D dose for a breastfed newborn?",
+   "back": "400 IU orally once daily, starting in the first days of life.",
+   "question": 14
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "By what age do most newborns regain birth weight?",
+   "back": "By 10 to 14 days.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Which infant condition is an absolute contraindication to breastfeeding?",
+   "back": "Classic galactosemia.",
+   "question": null
+  }
+ ]
+}

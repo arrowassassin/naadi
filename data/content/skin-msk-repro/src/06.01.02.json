@@ -1,0 +1,1025 @@
+{
+ "area": "06.01.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Autoimmune blistering diseases and erythema multiforme: targets and immunopathology",
+   "html": "<p>Autoimmune blistering diseases are organ-specific antibody diseases. The antibody binds an adhesion protein, keratinocytes lose their grip on each other or on the basement membrane, and fluid fills the gap. Where the target sits determines how the blister looks, whether the mucosa is involved and what immunofluorescence shows.</p>\n[[figure:s23f-fig060102-1]]\n<h3>Desmosomes and the pemphigus group</h3>\n<p>Desmosomes join keratinocytes to each other through cadherins, desmogleins and desmocollins, anchored to keratin filaments by plakins. Desmoglein-3 is concentrated in the lower epidermis and throughout mucosal epithelium; desmoglein-1 is concentrated in the upper epidermis and is scarce in mucosa. This distribution explains the clinical patterns.</p>\n<ul>\n<li><strong>Pemphigus vulgaris</strong>: IgG against desmoglein-3 alone gives mucosal disease (painful oral erosions often come first); antibodies to both desmogleins add skin disease. Keratinocytes separate just above the basal layer (suprabasal acantholysis). Basal cells stay attached to the basement membrane, giving a \"row of tombstones\" floor. Blisters are flaccid, rupture into erosions and extend with lateral pressure (Nikolsky sign). Direct immunofluorescence (DIF) shows IgG and C3 outlining every keratinocyte in a net-like pattern. This is a type II hypersensitivity: the antibody itself disrupts adhesion, largely without complement.</li>\n<li><strong>Pemphigus foliaceus</strong>: IgG against desmoglein-1 gives a superficial, subcorneal split, crusted scaly erosions on the face, scalp and upper trunk, and no mucosal disease. An endemic form occurs in rural Brazil.</li>\n<li><strong>Paraneoplastic pemphigus</strong>: severe, treatment-resistant stomatitis with polymorphous skin lesions, most often with non-Hodgkin lymphoma, chronic lymphocytic leukemia or Castleman disease. Antibodies target plakins (envoplakin, periplakin) as well as desmogleins; bronchiolitis obliterans can follow.</li>\n<li><strong>Drug-induced pemphigus</strong> follows thiol drugs such as penicillamine and captopril.</li>\n</ul>\n<h3>Hemidesmosomes and the pemphigoid group</h3>\n<p>Hemidesmosomes bind basal keratinocytes to the basement membrane through BP230 (intracellular), BP180 (type XVII collagen, transmembrane), integrin alpha-6 beta-4 and laminin-332. Anchoring fibrils of type VII collagen then tie the lamina densa to the dermis.</p>\n<ul>\n<li><strong>Bullous pemphigoid</strong> (BP), the commonest autoimmune blistering disease, affects mostly people over 70. IgG against BP180 (especially its NC16A domain) and BP230 fixes complement, recruits eosinophils and neutrophils, and their proteases split the lamina lucida. Blisters are subepidermal and tense, on urticarial plaques of the flexures, thighs and abdomen; itching may precede blisters by months. Mucosa is involved in a minority. DIF shows <strong>linear IgG and C3</strong> along the basement membrane; biopsy shows a subepidermal blister rich in eosinophils. Associations include neurologic disease (dementia, Parkinson disease, stroke) and drugs, notably dipeptidyl peptidase-4 inhibitors (gliptins), loop diuretics and immune checkpoint inhibitors.</li>\n<li><strong>Mucous membrane pemphigoid</strong> targets BP180 or laminin-332 and causes scarring of the conjunctiva, mouth, larynx and genitals; ocular scarring can blind. Laminin-332 disease carries an association with solid cancers.</li>\n<li><strong>Pemphigoid gestationis</strong>: anti-BP180 IgG in pregnancy, triggered by paternal HLA antigens expressed in the placenta; periumbilical urticarial plaques and blisters.</li>\n<li><strong>Epidermolysis bullosa acquisita</strong>: IgG against type VII collagen; blisters at trauma sites heal with scars and milia. Linear IgG on DIF, with antibody on the dermal floor of salt-split skin (BP antibody binds the roof).</li>\n</ul>\n<h3>Dermatitis herpetiformis</h3>\n<p>Dermatitis herpetiformis (DH) is the skin form of celiac disease and shares its genetics (HLA-DQ2 and DQ8). Gluten exposure generates IgA against tissue transglutaminase and, in the skin, against <strong>epidermal transglutaminase (TG3)</strong>. IgA-TG3 complexes deposit in the tips of dermal papillae and attract neutrophils, which form papillary microabscesses and a subepidermal split. Lesions are grouped, intensely itchy papules and vesicles symmetrically on the extensor elbows, knees, buttocks and scalp; they are often excoriated before they are seen intact. DIF shows <strong>granular IgA in the dermal papillae</strong>. Most patients have gluten-sensitive enteropathy on biopsy even without gut symptoms.</p>\n<table class=\"hy\">\n<thead><tr><th>Disease</th><th>Target</th><th>Split</th><th>DIF</th><th>Typical patient</th></tr></thead>\n<tbody>\n<tr><td>Pemphigus vulgaris</td><td>Desmoglein-3 (+/- 1)</td><td>Suprabasal</td><td>Intercellular IgG, net-like</td><td>Middle-aged adult; oral erosions first</td></tr>\n<tr><td>Pemphigus foliaceus</td><td>Desmoglein-1</td><td>Subcorneal</td><td>Intercellular IgG, upper epidermis</td><td>Crusted scaly erosions, no mucosa</td></tr>\n<tr><td>Bullous pemphigoid</td><td>BP180, BP230</td><td>Subepidermal (lamina lucida)</td><td>Linear IgG and C3</td><td>Older adult; tense bullae, itch</td></tr>\n<tr><td>Dermatitis herpetiformis</td><td>Epidermal transglutaminase</td><td>Subepidermal, papillary tips</td><td>Granular IgA in papillae</td><td>Celiac disease; extensor vesicles</td></tr>\n<tr><td>Epidermolysis bullosa acquisita</td><td>Type VII collagen</td><td>Sub-lamina densa</td><td>Linear IgG (floor on salt split)</td><td>Trauma-site blisters, scarring, milia</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Nikolsky sign is positive when the split is high and the roof is thin: pemphigus, SSSS and toxic epidermal necrolysis. It is usually negative in pemphigoid. Linear immunofluorescence means the basement membrane; net-like means the cell surfaces of keratinocytes; granular IgA in the papillae means DH.</p></div>\n<h3>Erythema multiforme</h3>\n<p>Erythema multiforme (EM) is an acute, often recurrent, cell-mediated reaction to an infection, most often HSV. Fragments of HSV DNA carried to the skin by circulating mononuclear cells are expressed in keratinocytes and attract CD4 then cytotoxic CD8 T cells, giving an interface dermatitis with scattered necrotic keratinocytes. Lesions are fixed <strong>targets</strong> with three zones, acral and symmetric, appearing over days; EM major adds mucosal erosions. <em>Mycoplasma pneumoniae</em> triggers EM-like disease and mucositis in children and young adults. EM is separate from Stevens-Johnson syndrome, which is drug-induced and features widespread atypical targets and epidermal detachment.</p>",
+   "furtherReading": [
+    {
+     "statpearls": "Bullous Pemphigoid"
+    },
+    {
+     "statpearls": "Pemphigus Vulgaris"
+    },
+    {
+     "statpearls": "Dermatitis Herpetiformis"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Inflammatory dermatoses: immune pathways, histology and targeted drugs",
+   "html": "<p>Most inflammatory skin diseases are driven by a dominant immune pathway, and modern treatment targets that pathway. Knowing the axis (Th1, Th2, Th17, mast cell or neutrophil) predicts the histology, the comorbidities and which biologic works.</p>\n<h3>Psoriasis: the IL-23/Th17 axis</h3>\n<p>In genetically predisposed people (HLA-C*06:02 is the strongest risk allele), triggers such as trauma, streptococcal infection, stress or certain drugs activate plasmacytoid dendritic cells. Myeloid dendritic cells then make <strong>IL-23</strong> (and IL-12), which sustains Th17 and Tc17 cells. Their <strong>IL-17A, IL-17F and IL-22</strong> drive keratinocytes to proliferate and to release chemokines that recruit neutrophils, closing a feed-forward loop. TNF-alpha amplifies the loop at several points. The epidermal transit time drops from about 4 weeks to a few days.</p>\n<p>Histology: regular elongation of rete ridges (psoriasiform acanthosis), thinning of the epidermis over dilated, tortuous papillary capillaries, loss of the granular layer, confluent <strong>parakeratosis</strong> (nuclei retained in the stratum corneum) and neutrophil collections in the stratum corneum (Munro microabscesses). The thin suprapapillary plate explains pinpoint bleeding when scale is removed. The Koebner phenomenon is new plaques along lines of trauma.</p>\n<h3>Atopic dermatitis: barrier failure plus Th2 inflammation</h3>\n<p>Loss-of-function variants in <strong>filaggrin</strong> (FLG), a protein that aggregates keratin filaments and is broken down into natural moisturising factor, weaken the stratum corneum, raise its pH and increase water loss. Allergens and <em>S. aureus</em> enter, and keratinocyte alarmins (TSLP, IL-33, IL-25) push toward a <strong>Th2</strong> response. IL-4 and IL-13 further suppress filaggrin and barrier lipids, and IL-31 drives itch. The atopic march links early eczema with later food allergy, asthma and allergic rhinitis, probably because sensitisation occurs through inflamed skin. Histology of acute eczema is <strong>spongiosis</strong>, edema between keratinocytes that stretches their connections, sometimes forming intraepidermal vesicles.</p>\n<h3>Contact dermatitis</h3>\n<p>Allergic contact dermatitis is a <strong>type IV (delayed-type) hypersensitivity</strong>. A small hapten (nickel, urushiol from poison ivy, fragrances, preservatives, neomycin, hair-dye para-phenylenediamine) binds skin proteins; Langerhans and dermal dendritic cells carry it to lymph nodes and prime T cells. On re-exposure, memory T cells cause eczema 24 to 72 hours later, sharply limited to the contact site. Irritant contact dermatitis is direct chemical damage without sensitisation; it is commoner overall, especially on the hands of health workers.</p>\n<h3>Urticaria and angioedema</h3>\n<p>Mast cell degranulation releases histamine, prostaglandin D2 and leukotrienes into the dermis, producing wheals that each last less than 24 hours and leave no mark. Acute urticaria (under 6 weeks) often follows a viral infection, a drug or a food (type I, IgE-mediated) or non-IgE mast cell activation (opioids, NSAIDs, radiocontrast). In chronic spontaneous urticaria, many patients have IgG autoantibodies against IgE or the high-affinity IgE receptor (FcεRI), or IgE against self-antigens. <strong>Omalizumab</strong>, a humanised antibody that binds the Fc portion of free IgE so it cannot bind FcεRI, is effective; FcεRI expression on mast cells then falls. Angioedema without wheals points instead to bradykinin: ACE inhibitors (which block bradykinin breakdown) or hereditary C1 inhibitor deficiency.</p>\n<h3>Lichen planus and hidradenitis suppurativa</h3>\n<p><strong>Lichen planus</strong> is a T-cell attack on basal keratinocytes: a dense band-like lymphocytic infiltrate hugs the dermal-epidermal junction, rete ridges take a sawtooth shape, the granular layer thickens (seen clinically as white Wickham striae) and dying basal cells form eosinophilic colloid (Civatte) bodies. The rash is pruritic, purple, polygonal, planar papules on the wrists, shins and genitals; oral lesions are lacy white. It is associated with <strong>hepatitis C</strong>. In darker skin, lesions are often deep violet-brown and heal with marked hyperpigmentation.</p>\n<p><strong>Hidradenitis suppurativa</strong> begins with occlusion and rupture of the hair follicle in apocrine-rich, intertriginous skin (axillae, groin, inframammary folds, buttocks). Spilled keratin and bacteria drive an innate response dominated by TNF, IL-1 and IL-17, forming painful nodules, abscesses and draining tunnels that scar. It is more common in women, in Black patients, and with obesity and smoking; it is not primarily an infection.</p>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Mechanism</th><th>Main skin use</th><th>Key adverse effect</th></tr></thead>\n<tbody>\n<tr><td>Adalimumab, etanercept, infliximab</td><td>Bind TNF-alpha</td><td>Psoriasis, psoriatic arthritis, hidradenitis</td><td>Reactivation of TB and hepatitis B; serious infection</td></tr>\n<tr><td>Secukinumab, ixekizumab; bimekizumab</td><td>Block IL-17A; IL-17A and IL-17F</td><td>Psoriasis, hidradenitis (secukinumab, bimekizumab)</td><td>Mucocutaneous candidiasis; new or worse inflammatory bowel disease</td></tr>\n<tr><td>Ustekinumab</td><td>Binds p40, shared by IL-12 and IL-23</td><td>Psoriasis, psoriatic arthritis</td><td>Infection (low overall)</td></tr>\n<tr><td>Guselkumab, risankizumab, tildrakizumab</td><td>Bind p19, unique to IL-23</td><td>Psoriasis</td><td>Infection (low overall)</td></tr>\n<tr><td>Dupilumab</td><td>Blocks IL-4 receptor alpha, inhibiting IL-4 and IL-13 signalling</td><td>Atopic dermatitis</td><td>Conjunctivitis, injection-site reactions</td></tr>\n<tr><td>Upadacitinib, abrocitinib (oral); ruxolitinib (cream)</td><td>Janus kinase inhibition</td><td>Atopic dermatitis</td><td>Oral forms: boxed warnings for serious infection, thrombosis, major cardiac events, cancer</td></tr>\n<tr><td>Apremilast</td><td>Phosphodiesterase-4 inhibitor (raises cAMP)</td><td>Psoriasis</td><td>Diarrhea, weight loss, depression</td></tr>\n<tr><td>Tacrolimus, pimecrolimus (topical)</td><td>Calcineurin inhibition, blocking IL-2 transcription in T cells</td><td>Eczema of face and folds</td><td>Burning; no skin atrophy</td></tr>\n<tr><td>Calcipotriene</td><td>Vitamin D receptor agonist; normalises keratinocyte differentiation</td><td>Psoriasis</td><td>Irritation; hypercalcemia if overused</td></tr>\n<tr><td>Omalizumab</td><td>Binds free IgE</td><td>Chronic spontaneous urticaria</td><td>Anaphylaxis (rare)</td></tr>\n</tbody></table>\n<div class=\"pearl\"><p>Psoriasis is a systemic inflammatory disease: about a third of patients develop psoriatic arthritis, and severe psoriasis is linked to obesity, diabetes, dyslipidemia and cardiovascular events. Metabolic risk screening is part of care.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Psoriasis"
+    },
+    {
+     "statpearls": "Atopic Dermatitis"
+    },
+    {
+     "statpearls": "Lichen Planus"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Blistering diseases, urticaria and erythema multiforme: diagnosis and management",
+   "html": "<p>Blistering, urticarial and target-lesion eruptions are often seen first in primary care or the emergency department. The diagnostic workup is consistent, and treatment depends on how widespread the disease is and how fragile the patient is.</p>\n<h3>Workup of an autoimmune blister</h3>\n<ul>\n<li><strong>Two biopsies</strong>: one from the edge of a fresh blister for routine histology (level of split, inflammatory cells), and one from normal-looking skin next to a lesion (perilesional) for direct immunofluorescence. DIF is the most accurate single test; tissue inside the blister gives false negatives because immunoreactants are degraded.</li>\n<li><strong>Serology</strong>: ELISA for desmoglein-1 and -3, BP180 and BP230 antibodies supports the diagnosis and helps follow disease activity. For suspected DH, check tissue transglutaminase IgA with total IgA.</li>\n<li>Look at the mouth, eyes and genitals in every patient: mucosal disease changes the urgency and the specialists involved.</li>\n</ul>\n<h3>Bullous pemphigoid</h3>\n<p>Typical patients are frail older adults, often with neurologic disease, so treatment aims for control with the least systemic toxicity. A <strong>superpotent topical corticosteroid</strong> (clobetasol) applied to the whole body works as well as systemic steroids for extensive disease and causes fewer deaths and adverse events. Doxycycline (with nicotinamide in some regimens) is a gentler alternative for mild or moderate disease. Methotrexate, mycophenolate, dupilumab, omalizumab and rituximab are steroid-sparing options for refractory disease. Review the medication list: stopping a DPP-4 inhibitor can help. Watch for skin infection, falls, hyperglycemia and osteoporosis.</p>\n<h3>Pemphigus vulgaris</h3>\n<p>Untreated pemphigus was usually fatal from fluid loss and sepsis. First-line therapy for moderate to severe disease is <strong>rituximab</strong> (anti-CD20, depleting the B cells that make the antibody) combined with a systemic corticosteroid, which achieves remission with less cumulative steroid. Azathioprine or mycophenolate are steroid-sparing alternatives. Check hepatitis B serology before rituximab, because it can reactivate hepatitis B. Oral pain limits eating; involve dentistry and nutrition early.</p>\n<h3>Dermatitis herpetiformis</h3>\n<p>A lifelong <strong>gluten-free diet</strong> treats both skin and gut, lowers the risk of small-bowel lymphoma and allows medication to be tapered, but skin response takes months. <strong>Dapsone</strong> relieves itch within days. It causes dose-related hemolysis and methemoglobinemia in everyone and severe hemolysis with G6PD deficiency, so check G6PD activity before starting; monitor the blood count and liver tests, and watch for agranulocytosis and a hypersensitivity syndrome. A dietitian referral and screening of first-degree relatives for celiac disease are part of care.</p>\n<h3>Urticaria</h3>\n<table class=\"hy\">\n<thead><tr><th>Step</th><th>Chronic spontaneous urticaria (wheals for 6 weeks or more)</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>Second-generation H1 antihistamine (cetirizine, loratadine, fexofenadine) at standard dose, taken daily rather than as needed</td></tr>\n<tr><td>2</td><td>Increase the same antihistamine up to 4 times the standard dose</td></tr>\n<tr><td>3</td><td>Add omalizumab; newer options for refractory disease include dupilumab and the BTK inhibitor remibrutinib</td></tr>\n<tr><td>4</td><td>Cyclosporine for disease refractory to the above</td></tr>\n</tbody></table>\n<p>Systemic corticosteroids are limited to short courses for severe flares. Extensive laboratory testing is not useful in typical chronic urticaria: a blood count, CRP or ESR, and sometimes TSH, are enough unless the history points elsewhere. Wheals lasting more than 24 hours, painful or burning lesions, bruising on resolution, fever or joint pain suggest <strong>urticarial vasculitis</strong> and need a biopsy. Avoid NSAIDs and opioids, which worsen urticaria in many patients. First-generation antihistamines sedate and are anticholinergic: avoid them in older adults.</p>\n<div class=\"trap\"><p>Angioedema without wheals is not treated like urticaria. Ask about ACE inhibitors and family history; check C4 (low between attacks in hereditary angioedema). Antihistamines, epinephrine and steroids do not reliably reverse bradykinin-mediated swelling.</p></div>\n<h3>Erythema multiforme</h3>\n<p>Diagnosis is clinical: target lesions with three zones, appearing over a few days on the hands, forearms, feet and face, often with lip or oral erosions in EM major. Look for a cold sore 1 to 3 weeks before. Treatment is symptomatic (topical steroids, antihistamines, oral anesthetic rinses); acute antiviral therapy after EM starts does not change its course. For <strong>recurrent HSV-associated EM</strong>, continuous suppressive valacyclovir or acyclovir prevents attacks. Separate EM from Stevens-Johnson syndrome by morphology (raised typical targets vs flat atypical targets and dusky macules), distribution (acral vs truncal), skin detachment and the history of a new drug.</p>\n<div class=\"pearl\"><p>In darker skin, the inflammatory ring of urticaria, targets or pemphigoid plaques may look violet, grey or barely red; the raised edge, the timing and itching carry the diagnosis. Post-inflammatory hyperpigmentation after these diseases can last months and is a common concern for patients.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Bullous Pemphigoid"
+    },
+    {
+     "statpearls": "Chronic Urticaria"
+    },
+    {
+     "statpearls": "Erythema Multiforme"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Psoriasis, eczema, lichen planus and hidradenitis suppurativa: management",
+   "html": "<p>Psoriasis, eczema, lichen planus and hidradenitis suppurativa are chronic, relapsing diseases with large effects on sleep, work and mental health. Management follows the extent of disease, the sites involved, the comorbidities and the patient's goals.</p>\n<h3>Psoriasis</h3>\n<p>Chronic plaque psoriasis gives well-demarcated plaques with silvery scale on extensor elbows and knees, scalp, umbilicus and gluteal cleft, with nail pitting and onycholysis. Guttate psoriasis is a shower of small papules 2 to 3 weeks after streptococcal pharyngitis in children and young adults. Inverse psoriasis affects folds without scale. In darker skin, plaques look violet, grey or dark brown rather than pink, scale may be thicker and post-inflammatory pigment change is prominent. Biopsy is rarely needed.</p>\n<ul>\n<li><strong>Limited disease</strong> (under about 3 to 5% body surface area): a medium- to high-potency topical corticosteroid combined with a vitamin D analogue (calcipotriene). Use low-potency steroids or calcineurin inhibitors on the face and folds. Newer non-steroid topicals include tapinarof and roflumilast.</li>\n<li><strong>Moderate to severe disease</strong>, or difficult sites (scalp, palms, soles, genitals, nails) or psoriatic arthritis: narrowband UVB phototherapy, oral agents (methotrexate, apremilast, deucravacitinib, acitretin, cyclosporine for short courses) or biologics (IL-23, IL-17, TNF or IL-12/23 inhibitors).</li>\n<li><strong>Before any biologic or systemic immunosuppressant</strong>: screen for latent tuberculosis (interferon-gamma release assay or tuberculin skin test) and hepatitis B; check hepatitis C and HIV per local protocol; update non-live vaccines. Live vaccines are avoided during therapy.</li>\n<li>Avoid systemic corticosteroids for psoriasis: withdrawal can precipitate erythrodermic or pustular flares. Drugs that worsen psoriasis include lithium, beta-blockers, antimalarials and abrupt steroid withdrawal.</li>\n</ul>\n<p>Methotrexate needs a baseline blood count, liver and kidney tests and folic acid; it is teratogenic for anyone who could conceive or father a pregnancy during and shortly after treatment. Acitretin is teratogenic for years after stopping. IL-17 inhibitors are avoided in inflammatory bowel disease. Screen people with psoriasis for psoriatic arthritis (morning stiffness, dactylitis, enthesitis), depression, obesity, diabetes, hypertension and dyslipidemia.</p>\n<h3>Atopic dermatitis</h3>\n<p>Infants have itchy eczema of the cheeks, scalp and extensor surfaces, sparing the diaper area; older children and adults have flexural lichenified plaques. In darker skin, follicular papules, lichenification and hyper- or hypopigmentation are common, and redness is less obvious, so severity is easily underestimated.</p>\n<table class=\"hy\">\n<thead><tr><th>Severity</th><th>Treatment</th></tr></thead>\n<tbody>\n<tr><td>All</td><td>Thick fragrance-free emollient at least daily; short lukewarm baths; avoid irritants; identify and treat infection</td></tr>\n<tr><td>Mild to moderate flares</td><td>Topical corticosteroid of appropriate potency for site and age; topical calcineurin inhibitor, crisaborole or ruxolitinib cream for face, folds and maintenance; proactive twice-weekly application to sites that keep flaring</td></tr>\n<tr><td>Moderate to severe, not controlled by topicals</td><td>Dupilumab or tralokinumab (also lebrikizumab, nemolizumab); oral JAK inhibitor (upadacitinib, abrocitinib) after weighing boxed-warning risks; narrowband UVB phototherapy; cyclosporine, methotrexate or azathioprine as older options</td></tr>\n</tbody></table>\n<p>Oral corticosteroids give rapid improvement and a rebound flare, so they are not used for maintenance. Dilute bleach baths can reduce flares in children with recurrent infection. Food allergy testing is reserved for children with a convincing history of immediate reactions or moderate to severe eczema that fails optimal care, because broad testing produces false positives and harmful diet restriction. Infants with severe eczema or egg allergy benefit from <strong>early peanut introduction</strong> (around 4 to 6 months), after evaluation where advised, to prevent peanut allergy. Exclude scabies, contact dermatitis and, in adults with new eczema, cutaneous T-cell lymphoma and drug eruptions.</p>\n<h3>Contact dermatitis, seborrheic dermatitis and lichen planus</h3>\n<p>Suspect <strong>allergic contact dermatitis</strong> when the shape matches an exposure (earlobes and nickel, linear streaks from plants, eyelids and nail products); <strong>patch testing</strong> is the diagnostic test. Treat with avoidance and topical corticosteroids; extensive poison ivy dermatitis needs a 2- to 3-week oral steroid taper, because short courses cause rebound. <strong>Seborrheic dermatitis</strong> gives greasy scale on the scalp, eyebrows, nasolabial folds and chest; it is treated with ketoconazole and short courses of low-potency steroids, and severe or sudden disease suggests HIV or Parkinson disease. <strong>Lichen planus</strong> is treated with potent topical corticosteroids; test for hepatitis C, and follow erosive oral lichen planus because of a small risk of squamous cell carcinoma.</p>\n<h3>Hidradenitis suppurativa</h3>\n<p>Recurrent painful nodules and abscesses in the axillae, groin, buttocks or under the breasts, often since puberty, with sinus tracts and rope-like scars, are hidradenitis suppurativa. Diagnosis is clinical and frequently delayed for years after repeated drainage for \"boils\". Severity is staged by Hurley: I (isolated nodules without tunnels), II (recurrent lesions with tunnels and scars, separated by normal skin) and III (diffuse interconnected tunnels).</p>\n<ul>\n<li>All stages: smoking cessation, weight management, pain control, loose clothing, screening for depression; avoid repeated incision and drainage except to relieve a painful abscess.</li>\n<li>Mild: topical clindamycin; intralesional triamcinolone for acute painful nodules.</li>\n<li>Moderate: a long course of oral tetracycline (doxycycline); clindamycin plus rifampin; hormonal therapy (spironolactone or combined oral contraceptives) in women; metformin with insulin resistance.</li>\n<li>Moderate to severe or refractory: <strong>adalimumab</strong>, secukinumab or bimekizumab; surgical deroofing of tunnels or wide excision for established tracts.</li>\n</ul>\n<div class=\"trap\"><p>Repeated abscesses in the axillae or groin are not \"recurrent MRSA\" until hidradenitis has been considered. Isotretinoin, so effective in acne, has little effect on hidradenitis. Squamous cell carcinoma can arise in long-standing gluteal disease, especially in men.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Psoriasis"
+    },
+    {
+     "statpearls": "Hidradenitis Suppurativa"
+    },
+    {
+     "statpearls": "Contact Dermatitis"
+    },
+    {
+     "label": "MedlinePlus: Skin conditions",
+     "url": "https://medlineplus.gov/skinconditions.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Level of blister formation, target antigen and immunofluorescence pattern in the main immunobullous diseases (original schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "A fictional trial of an IL-17A antibody in psoriasis",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> A multicenter, randomized, double-blind, placebo-controlled trial enrolled 600 adults with moderate to severe chronic plaque psoriasis (at least 10% body surface area) who had not received a biologic. Patients with active inflammatory bowel disease or untreated latent tuberculosis were excluded. Participants were randomly assigned 2:1 to subcutaneous zelvotimab, an investigational monoclonal antibody against IL-17A, or placebo, at weeks 0, 1, 2, 3 and 4 and then every 4 weeks. The primary end point was at least a 90% improvement in the Psoriasis Area and Severity Index (PASI 90) at week 16, analysed by intention to treat.</p>\n<table><thead><tr><th>Outcome at week 16</th><th>Zelvotimab (n = 400)</th><th>Placebo (n = 200)</th></tr></thead>\n<tbody><tr><td>PASI 90</td><td>260 (65%)</td><td>10 (5%)</td></tr>\n<tr><td>Oral or skin candidiasis</td><td>24 (6%)</td><td>2 (1%)</td></tr>\n<tr><td>Serious infection</td><td>4 (1%)</td><td>2 (1%)</td></tr>\n<tr><td>Discontinued for adverse event</td><td>8 (2%)</td><td>4 (2%)</td></tr></tbody></table>"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 81-year-old man with Parkinson disease has had itching for 4 months and now has blisters on his thighs, groin and forearms. The blisters are 1 to 3 cm, tense, and filled with clear fluid, and they arise on red urticarial plaques. The oral mucosa is normal. Lateral pressure on normal skin does not cause separation. Biopsy shows a subepidermal blister containing many eosinophils, and direct immunofluorescence shows linear IgG and C3 along the basement membrane. The autoantibodies in this patient are most likely directed against a component of which of the following structures?</p>",
+   "options": [
+    "Anchoring fibrils",
+    "Desmosomes",
+    "Gap junctions",
+    "Hemidesmosomes",
+    "Tight junctions"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Tense, itchy blisters on urticarial plaques in an older adult with neurologic disease, a subepidermal eosinophil-rich blister and linear IgG and C3 at the basement membrane are bullous pemphigoid. The autoantibodies target BP180 (type XVII collagen) and BP230, components of the hemidesmosome that anchors basal keratinocytes to the basement membrane. Complement activation recruits eosinophils and neutrophils, whose proteases split the lamina lucida.</p><p><strong>Takeaway:</strong> Bullous pemphigoid antibodies target hemidesmosomal BP180 and BP230, giving tense subepidermal blisters with linear IgG and C3.</p>",
+   "whyNot": {
+    "A": "Anchoring fibrils of type VII collagen are targeted in epidermolysis bullosa acquisita, which gives scarring blisters at trauma sites with a split below the lamina densa.",
+    "B": "Desmosomes are targeted in pemphigus, which gives flaccid intraepidermal blisters, a positive Nikolsky sign and net-like intercellular IgG.",
+    "C": "Gap junctions (connexins) allow cell-to-cell communication; their mutations cause some genetic keratodermas and hearing loss, not autoimmune blistering.",
+    "E": "Tight junctions (claudins) seal the granular layer and are not the target of any classic autoimmune blistering disease."
+   },
+   "objective": "Identify the hemidesmosome as the target in bullous pemphigoid.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "blistering disorders",
+    "older adults"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman has had intensely itchy bumps on her elbows, knees and buttocks for 6 months. She has iron-deficiency anemia that has not responded to oral iron, and occasional bloating. Examination shows grouped, excoriated papules and a few tiny vesicles symmetrically on the extensor surfaces. A biopsy of perilesional skin shows granular IgA deposits in the tips of the dermal papillae. The skin deposits in this condition most likely contain antibodies directed against which of the following?</p>",
+   "options": [
+    "BP230",
+    "Desmoglein-1",
+    "Envoplakin",
+    "Epidermal transglutaminase",
+    "Type VII collagen"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Intensely itchy grouped vesicles on extensor surfaces, granular IgA in the dermal papillae and iron deficiency that does not respond to oral iron (malabsorption) are dermatitis herpetiformis, the skin manifestation of celiac disease. Gluten triggers IgA against tissue transglutaminase and, in the skin, against epidermal transglutaminase (TG3). IgA-TG3 complexes lodge in the papillary dermis, attract neutrophils and cause subepidermal vesicles.</p><p><strong>Takeaway:</strong> Dermatitis herpetiformis is IgA against epidermal transglutaminase deposited in the dermal papillae; look for celiac disease.</p>",
+   "whyNot": {
+    "A": "BP230 is a hemidesmosomal protein targeted by IgG in bullous pemphigoid, which shows linear IgG and C3, not granular IgA.",
+    "B": "Desmoglein-1 is the IgG target in pemphigus foliaceus, which gives superficial crusted erosions and intercellular IgG.",
+    "C": "Envoplakin is a plakin protein targeted in paraneoplastic pemphigus, which presents with severe stomatitis and an underlying lymphoproliferative disorder.",
+    "E": "Type VII collagen is targeted by IgG in epidermolysis bullosa acquisita, which gives scarring trauma-site blisters with linear deposits."
+   },
+   "objective": "Link dermatitis herpetiformis to IgA against epidermal transglutaminase and celiac disease.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "blistering disorders",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old man has had scaly plaques on his elbows, knees and lower back for 3 years. The plaques are sharply demarcated and covered with thick silvery-white scale; removing the scale causes pinpoint bleeding. His fingernails have small pits. A biopsy of a plaque is performed. Which of the following findings is most likely?</p>",
+   "options": [
+    "Band-like lymphocytic infiltrate at the dermal-epidermal junction with sawtooth rete ridges",
+    "Confluent parakeratosis with neutrophil collections in the stratum corneum",
+    "Intercellular edema between keratinocytes forming intraepidermal vesicles",
+    "Suprabasal acantholysis with basal cells remaining on the basement membrane",
+    "Thickened granular layer with orthokeratosis and dermal colloid bodies"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Well-demarcated plaques with silvery scale on extensor surfaces, pinpoint bleeding when scale is removed and nail pitting describe chronic plaque psoriasis. Histology shows regular epidermal hyperplasia with elongated rete ridges, confluent parakeratosis (retained nuclei in the stratum corneum from rapid turnover), loss of the granular layer, thinning over dilated papillary capillaries and neutrophil collections in the stratum corneum (Munro microabscesses). The IL-23/IL-17 axis drives keratinocyte proliferation and neutrophil recruitment.</p><p><strong>Takeaway:</strong> Psoriasis shows confluent parakeratosis, a lost granular layer and neutrophils in the stratum corneum over regular acanthosis.</p>",
+   "whyNot": {
+    "A": "A band-like lymphocytic infiltrate with sawtooth rete ridges is lichen planus, which gives purple polygonal papules rather than silvery-scaled plaques.",
+    "C": "Intercellular edema (spongiosis) with vesicles is the pattern of acute eczematous dermatitis, not of thick silvery plaques.",
+    "D": "Suprabasal acantholysis with a row of basal cells is pemphigus vulgaris, which presents with erosions and flaccid blisters.",
+    "E": "A thickened granular layer with orthokeratosis and colloid bodies also describes lichen planus; psoriasis loses its granular layer."
+   },
+   "objective": "Recognize the histology of plaque psoriasis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "papulosquamous disorders"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 44-year-old woman with plaque psoriasis covering 18% of her body surface area and new swelling of two fingers has not improved with topical therapy and methotrexate. She begins treatment with a monoclonal antibody that binds the p40 protein subunit. Which of the following pairs of cytokines will this drug most directly inhibit?</p>",
+   "options": [
+    "IL-1 and IL-6",
+    "IL-4 and IL-13",
+    "IL-12 and IL-23",
+    "IL-17A and IL-17F",
+    "TNF-alpha and lymphotoxin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The p40 subunit is shared by IL-12 (p35 plus p40) and IL-23 (p19 plus p40). Ustekinumab binds p40, blocking both cytokines and so reducing Th1 differentiation (IL-12) and Th17 maintenance (IL-23). Antibodies that bind p19 (guselkumab, risankizumab, tildrakizumab) block IL-23 alone and work as well or better in psoriasis, which shows that the IL-23/Th17 axis is the main driver.</p><p><strong>Takeaway:</strong> Anti-p40 antibodies block IL-12 and IL-23; anti-p19 antibodies block IL-23 only.</p>",
+   "whyNot": {
+    "A": "IL-1 and IL-6 are blocked by anakinra and tocilizumab respectively; neither is a p40-containing cytokine.",
+    "B": "IL-4 and IL-13 signal through IL-4 receptor alpha, which dupilumab blocks in atopic dermatitis.",
+    "D": "IL-17A and IL-17F are downstream effector cytokines blocked by bimekizumab; they do not contain p40.",
+    "E": "TNF-alpha and lymphotoxin are both bound by etanercept, a soluble TNF receptor fusion protein, not by a p40 antibody."
+   },
+   "objective": "Identify the cytokines blocked by an anti-p40 antibody used for psoriasis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "biologics",
+    "papulosquamous disorders"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-month-old boy has had dry, itchy, red patches on his cheeks and the extensor surfaces of his arms and legs since age 3 months; the diaper area is spared. His father has asthma and allergic rhinitis. The infant's skin loses water rapidly when measured with an evaporimeter, and genetic testing shows a heterozygous loss-of-function variant in a gene expressed in the granular layer. The protein encoded by this gene normally has which of the following functions?</p>",
+   "options": [
+    "Aggregates keratin filaments and yields natural moisturizing factor",
+    "Anchors basal keratinocytes to the lamina densa",
+    "Forms anchoring fibrils in the papillary dermis",
+    "Pumps calcium into the endoplasmic reticulum of keratinocytes",
+    "Synthesizes melanin from tyrosine in melanosomes"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Infantile eczema of the cheeks and extensor surfaces sparing the diaper area, a family history of atopy and high transepidermal water loss point to atopic dermatitis with a filaggrin (FLG) variant. Profilaggrin in keratohyalin granules is processed to filaggrin, which aggregates keratin filaments as cells cornify; filaggrin is then broken down into amino acids that make up natural moisturizing factor and keep the stratum corneum acidic. Loss of filaggrin weakens the barrier, lets allergens and <em>S. aureus</em> in, and skews toward Th2 inflammation. FLG variants also raise the risk of ichthyosis vulgaris, food allergy and asthma with eczema.</p><p><strong>Takeaway:</strong> Filaggrin loss-of-function variants weaken the skin barrier and predispose to atopic dermatitis.</p>",
+   "whyNot": {
+    "B": "Anchoring basal cells to the lamina densa is the job of hemidesmosomal proteins such as BP180 and integrin alpha-6 beta-4, whose mutations cause junctional epidermolysis bullosa.",
+    "C": "Anchoring fibrils are made of type VII collagen; mutations in COL7A1 cause dystrophic epidermolysis bullosa with scarring blisters.",
+    "D": "Calcium pumping into the endoplasmic reticulum is the role of SERCA2 (ATP2A2), mutated in Darier disease with greasy keratotic papules.",
+    "E": "Melanin synthesis from tyrosine depends on tyrosinase, which is deficient in oculocutaneous albinism, not in eczema."
+   },
+   "objective": "Explain the barrier role of filaggrin and its link to atopic dermatitis.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "eczema",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 35-year-old woman develops an itchy, oozing rash on both earlobes and around her umbilicus 2 days after she began wearing new inexpensive earrings. She has worn a metal jeans button for years. Examination shows erythematous, vesicular, eczematous plaques precisely at the sites of contact. A similar rash occurred last year after she wore a metal watch. Which of the following best describes the immune mechanism of this reaction?</p>",
+   "options": [
+    "Antibody against a cell-surface antigen activating complement",
+    "Hapten-protein complexes presented to sensitized T cells",
+    "IgE cross-linking on dermal mast cells",
+    "Immune complexes depositing in dermal venules",
+    "Non-immunologic damage to keratinocytes by a chemical"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Eczematous plaques confined to sites of metal contact, appearing about 2 days after exposure in a person with a previous similar reaction, are allergic contact dermatitis to nickel. Nickel ions act as haptens: they bind skin proteins, are captured by Langerhans and dermal dendritic cells and are presented to T cells, which become sensitized. On later exposure, memory T cells release cytokines and kill keratinocytes, producing spongiotic dermatitis 24 to 72 hours later. This is a type IV (delayed-type) hypersensitivity.</p><p><strong>Takeaway:</strong> Allergic contact dermatitis is a T-cell-mediated, type IV reaction to haptens such as nickel; patch testing reproduces it.</p>",
+   "whyNot": {
+    "A": "Antibody to a cell-surface antigen with complement activation is type II hypersensitivity, as in pemphigus or autoimmune hemolytic anemia.",
+    "C": "IgE cross-linking on mast cells causes urticaria or anaphylaxis within minutes, not eczema after 2 days.",
+    "D": "Immune complex deposition in venules is type III hypersensitivity, giving leukocytoclastic vasculitis with palpable purpura.",
+    "E": "Irritant contact dermatitis is non-immunologic, but it does not need prior sensitization and would not recur selectively with metal objects."
+   },
+   "objective": "Classify allergic contact dermatitis as a type IV hypersensitivity to a hapten.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "eczema",
+    "hypersensitivity"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 39-year-old woman has had itchy wheals on her trunk and limbs almost every day for 5 months. Each wheal fades within 12 hours without bruising. Cetirizine at four times the standard daily dose has not controlled her symptoms. Her physician adds a monoclonal antibody given subcutaneously every 4 weeks. Within 2 months, her wheals stop and the number of high-affinity IgE receptors on her basophils falls. Which of the following is the most likely mechanism of this drug?</p>",
+   "options": [
+    "Binds free IgE and prevents its attachment to its high-affinity receptor",
+    "Binds IL-5 and reduces eosinophil production",
+    "Blocks the H1 receptor on endothelial cells",
+    "Depletes CD20-positive B cells",
+    "Inhibits leukotriene synthesis by 5-lipoxygenase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Chronic spontaneous urticaria that does not respond to up-dosed second-generation antihistamines is treated next with omalizumab. Omalizumab binds the Cε3 domain of free IgE, the site that IgE uses to bind FcεRI, so IgE cannot arm mast cells and basophils. With less bound IgE, cells down-regulate FcεRI, raising their activation threshold. It also blunts the effect of autoantibodies against IgE or FcεRI that many patients have. It does not bind IgE already on the receptor, so it does not cross-link and trigger degranulation.</p><p><strong>Takeaway:</strong> Omalizumab binds free IgE, reduces FcεRI on mast cells and basophils, and treats antihistamine-refractory chronic urticaria.</p>",
+   "whyNot": {
+    "B": "Anti-IL-5 antibodies such as mepolizumab treat eosinophilic asthma; they would not reduce IgE receptor expression on basophils.",
+    "C": "H1 receptor blockade is how cetirizine works, and it has already failed at high dose.",
+    "D": "Rituximab depletes CD20-positive B cells and is used for pemphigus, not as the next step in chronic urticaria.",
+    "E": "5-lipoxygenase inhibition is the action of zileuton, an asthma drug that does not change IgE receptor numbers."
+   },
+   "objective": "Explain the mechanism of omalizumab in chronic spontaneous urticaria.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urticaria"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old man has had very itchy, flat-topped, violet-brown papules on his inner wrists and shins for 3 months. Some papules have fine white lines on their surface, and similar papules have appeared along a scratch on his forearm. The buccal mucosa shows a lacy white reticular pattern. A biopsy shows a dense band of lymphocytes along the dermal-epidermal junction, sawtooth rete ridges and eosinophilic bodies in the papillary dermis. Testing for which of the following infections is most appropriate in this patient?</p>",
+   "options": [
+    "Epstein-Barr virus",
+    "Hepatitis C virus",
+    "Human herpesvirus 8",
+    "Human papillomavirus",
+    "Parvovirus B19"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Pruritic, purple, polygonal, planar papules with Wickham striae on the wrists and shins, a Koebner response, lacy white oral lesions and a band-like lymphocytic infiltrate with sawtooth rete ridges and colloid bodies are lichen planus. Lichen planus, particularly oral and erosive disease, is associated with chronic hepatitis C infection, and testing is recommended. The disease is mediated by cytotoxic T cells attacking basal keratinocytes.</p><p><strong>Takeaway:</strong> Lichen planus is a T-cell interface dermatitis associated with hepatitis C; test for HCV.</p>",
+   "whyNot": {
+    "A": "Epstein-Barr virus causes oral hairy leukoplakia on the lateral tongue in immunosuppressed people, which cannot be scraped off and does not cause purple skin papules.",
+    "C": "Human herpesvirus 8 causes Kaposi sarcoma, which gives violaceous patches and nodules with spindle cells, not an interface dermatitis.",
+    "D": "Human papillomavirus causes warts and some oral cancers, not a lichenoid band of lymphocytes.",
+    "E": "Parvovirus B19 causes erythema infectiosum and papular-purpuric gloves-and-socks syndrome, not chronic polygonal papules with oral striae."
+   },
+   "objective": "Associate lichen planus with hepatitis C infection.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "papulosquamous disorders"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 22-year-old man has his third episode in 2 years of a rash on his hands, forearms and lips. Each episode has begun about 10 days after a cold sore on his upper lip. Examination shows dozens of round, 1- to 2-cm lesions on the palms and dorsal hands, each with a dusky center, a pale edematous ring and an outer red ring, plus two shallow erosions on the lower lip. He takes no medications. Biopsy shows interface dermatitis with scattered necrotic keratinocytes. Which of the following is the most likely mechanism of this eruption?</p>",
+   "options": [
+    "Circulating IgE against herpes antigens activating mast cells",
+    "Cytotoxic T-cell response to viral DNA fragments in keratinocytes",
+    "Direct viral replication and lysis of keratinocytes",
+    "Drug-specific T cells causing widespread keratinocyte apoptosis",
+    "Immune complexes depositing in small dermal vessels"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Recurrent acral target lesions with three zones and mild lip involvement, each episode following a cold sore, are HSV-associated erythema multiforme. Fragments of HSV DNA (including the polymerase gene) are carried to the skin by circulating mononuclear cells and expressed in keratinocytes. Antigen-specific CD4 T cells, then cytotoxic CD8 T cells, attack those keratinocytes and cause the interface change with necrotic keratinocytes. Replicating virus is not present in the lesions, which is why antivirals given after EM appears do not shorten it, while continuous suppression prevents recurrences.</p><p><strong>Takeaway:</strong> HSV-associated erythema multiforme is a T-cell reaction to viral DNA fragments in keratinocytes, not active infection of the lesions.</p>",
+   "whyNot": {
+    "A": "IgE-mediated mast cell activation gives wheals that last less than a day and do not have necrotic keratinocytes.",
+    "C": "The lesions do not contain replicating virus; active HSV infection gives grouped vesicles, not acral targets.",
+    "D": "Drug-specific T cells cause Stevens-Johnson syndrome or toxic epidermal necrolysis, and this patient takes no drugs.",
+    "E": "Immune complex deposition causes leukocytoclastic vasculitis with palpable purpura rather than fixed target lesions with interface dermatitis."
+   },
+   "objective": "Explain the immune mechanism of HSV-associated erythema multiforme.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "target lesions"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 84-year-old woman in an assisted-living facility is evaluated for itchy blisters on her thighs, abdomen and arms for 6 weeks. She has type 2 diabetes treated with metformin and sitagliptin, hypertension and mild dementia. Examination shows about 20 tense bullae, 1 to 3 cm, on urticarial plaques covering roughly 30% of her body surface area. The oral mucosa is normal. Biopsy confirms a subepidermal blister with eosinophils, and direct immunofluorescence shows linear IgG and C3 along the basement membrane. Hemoglobin A1c is 7.4%. In addition to reviewing her diabetes medications, which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    "IV immune globulin",
+    "Oral prednisone 1 mg/kg daily",
+    "Rituximab infusion",
+    "Superpotent topical corticosteroid applied to the whole body",
+    "Topical tacrolimus applied to the blisters"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>This is extensive bullous pemphigoid in a frail older adult, possibly triggered by a DPP-4 inhibitor (sitagliptin). Whole-body application of a superpotent topical corticosteroid such as clobetasol propionate controls extensive pemphigoid as well as oral prednisone with fewer deaths and serious adverse effects, including hyperglycemia, infection and fractures. Nursing support for application is essential. Doxycycline is an alternative for mild to moderate disease, and steroid-sparing agents are added if control is not reached.</p><p><strong>Takeaway:</strong> First-line therapy for bullous pemphigoid, even when extensive, is a superpotent topical corticosteroid; review DPP-4 inhibitors.</p>",
+   "whyNot": {
+    "A": "IV immune globulin is reserved for refractory disease because it is costly, needs repeated infusions and can cause thrombosis and fluid overload.",
+    "B": "High-dose oral prednisone controls pemphigoid but raises mortality, worsens diabetes and causes falls and infection in frail older adults, so it is not first line here.",
+    "C": "Rituximab is first line for pemphigus vulgaris, not for initial treatment of bullous pemphigoid.",
+    "E": "Topical tacrolimus is too weak to control extensive blistering disease and is not a standard treatment for pemphigoid."
+   },
+   "objective": "Choose a superpotent topical corticosteroid as first-line therapy for bullous pemphigoid in an older adult.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "blistering disorders",
+    "older adults"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old man of Mediterranean descent is diagnosed with dermatitis herpetiformis after a skin biopsy shows granular IgA in the dermal papillae. Tissue transglutaminase IgA is elevated and a duodenal biopsy shows villous atrophy. He agrees to a strict gluten-free diet, but his itching keeps him awake, so his physician plans to add dapsone. Which of the following tests is most important before starting dapsone?</p>",
+   "options": [
+    "Glucose-6-phosphate dehydrogenase activity",
+    "HLA-B*15:02 genotyping",
+    "HLA-B*58:01 genotyping",
+    "Interferon-gamma release assay",
+    "Thiopurine methyltransferase activity"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Dapsone produces oxidant metabolites that cause dose-related hemolysis and methemoglobinemia in everyone, and brisk, severe hemolysis in people with G6PD deficiency. G6PD deficiency is relatively common in people of Mediterranean, African, Middle Eastern and South Asian ancestry, so G6PD activity is checked first. After starting, monitor the blood count and reticulocytes, liver tests, and watch for agranulocytosis and dapsone hypersensitivity syndrome (fever, rash, hepatitis), which is associated with HLA-B*13:01 in some Asian populations.</p><p><strong>Takeaway:</strong> Check G6PD before dapsone; dapsone relieves DH itch quickly while the gluten-free diet treats the disease.</p>",
+   "whyNot": {
+    "B": "HLA-B*15:02 testing is done before carbamazepine in people of Asian ancestry because of the risk of Stevens-Johnson syndrome.",
+    "C": "HLA-B*58:01 testing is done before allopurinol in high-risk ancestry groups because of severe cutaneous reactions.",
+    "D": "Latent tuberculosis screening is needed before TNF inhibitors and other biologics, not before dapsone.",
+    "E": "TPMT activity is checked before azathioprine or mercaptopurine to predict myelotoxicity, not before dapsone."
+   },
+   "objective": "Order G6PD testing before starting dapsone for dermatitis herpetiformis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "blistering disorders",
+    "pharmacogenomics"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 47-year-old man with plaque psoriasis covering 22% of his body surface area, scalp involvement and nail pitting has not improved after 6 months of potent topical corticosteroids and calcipotriene. He also has hand pain with morning stiffness. His dermatologist plans to start adalimumab. He emigrated from the Philippines 8 years ago and works as a respiratory therapist.</p><table><thead><tr><th>Item</th><th>Result</th></tr></thead><tbody><tr><td>Current medications</td><td>Clobetasol ointment, calcipotriene ointment, naproxen as needed</td></tr><tr><td>Vaccinations</td><td>Up to date for age; received BCG in childhood</td></tr><tr><td>Hemoglobin</td><td>14.6 g/dL</td></tr><tr><td>Leukocytes</td><td>7,200/mm<sup>3</sup></td></tr><tr><td>ALT</td><td>28 U/L</td></tr><tr><td>Creatinine</td><td>0.9 mg/dL</td></tr><tr><td>Hepatitis B surface antigen</td><td>Negative</td></tr><tr><td>Hepatitis B core antibody</td><td>Negative</td></tr><tr><td>Chest x-ray</td><td>Normal</td></tr></tbody></table><p>Which of the following is the most appropriate next step before starting adalimumab?</p>",
+   "options": [
+    "Antinuclear antibody titer",
+    "HLA-B27 testing",
+    "Interferon-gamma release assay",
+    "Skin biopsy of a plaque",
+    "Tuberculin skin test"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Every patient starting a TNF inhibitor (or most other biologics and JAK inhibitors) needs screening for latent tuberculosis, because TNF maintains granulomas and blocking it can reactivate TB, often as extrapulmonary or disseminated disease. A normal chest x-ray does not exclude latent infection. This man was born in a country with high TB incidence, has occupational exposure and received BCG, so an interferon-gamma release assay is preferred: it is not affected by prior BCG. Hepatitis B screening has already been done and is negative.</p><p><strong>Takeaway:</strong> Before a TNF inhibitor, screen for latent TB; prefer an IGRA in BCG-vaccinated patients.</p>",
+   "whyNot": {
+    "A": "ANA is not required before adalimumab; drug-induced lupus is uncommon and baseline ANA does not change the decision.",
+    "B": "HLA-B27 does not change management of psoriatic arthritis or the decision to start a biologic.",
+    "D": "The diagnosis of psoriasis is clinically clear; a biopsy would not change treatment.",
+    "E": "A tuberculin skin test can be falsely positive after BCG vaccination, so an IGRA is the better choice for this patient."
+   },
+   "objective": "Screen for latent tuberculosis with an IGRA before starting a TNF inhibitor in a BCG-vaccinated patient.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "biologics",
+    "papulosquamous disorders"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman has had itchy wheals on her arms, trunk and thighs on most days for 4 months. Each wheal lasts a few hours and leaves no bruise. Twice she has had swelling of her lips. She has no fever, joint pain or weight loss, and no new medications; she avoids NSAIDs. She has taken cetirizine at the standard daily dose every day for 6 weeks with partial improvement. Examination shows several blanching, edematous plaques on her trunk. Complete blood count and CRP are normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Add montelukast and stop cetirizine",
+    "Increase cetirizine up to four times the standard daily dose",
+    "Order an extensive food-allergen IgE panel",
+    "Start cyclosporine",
+    "Start oral prednisone daily for 3 months"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Daily wheals for more than 6 weeks, each lasting hours without bruising, are chronic spontaneous urticaria. Extensive testing is not useful when the history is typical and basic tests are normal. When a standard dose of a second-generation antihistamine does not control symptoms, the next step is to increase the same drug up to four times the licensed dose. If that fails, add omalizumab; cyclosporine is reserved for refractory disease.</p><p><strong>Takeaway:</strong> In chronic spontaneous urticaria, up-dose the second-generation antihistamine to as much as four times standard before adding omalizumab.</p>",
+   "whyNot": {
+    "A": "Montelukast is a weak add-on at best and should not replace the antihistamine that is partly working.",
+    "C": "Food allergy rarely causes chronic daily urticaria, and broad IgE panels produce false positives that lead to needless diet restriction.",
+    "D": "Cyclosporine is effective but nephrotoxic and hypertensive; it comes after up-dosed antihistamines and omalizumab.",
+    "E": "Long courses of oral corticosteroids cause serious harm and rebound; they are reserved for short bursts in severe flares."
+   },
+   "objective": "Escalate second-generation antihistamine dosing for chronic spontaneous urticaria.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "urticaria"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 14-year-old girl has had atopic dermatitis since infancy. Over the past year, lichenified plaques on her neck, antecubital and popliteal fossae, hands and eyelids have kept her awake most nights and caused her to miss school. She has used emollients and a mid-potency topical corticosteroid twice daily and topical tacrolimus on her face, with good adherence confirmed by her parents and the pharmacy. Two short courses of oral prednisone helped for a week each before she flared. There are no signs of infection. Patch testing was negative. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Elimination diet guided by a food-allergen IgE panel",
+    "Long-term oral prednisone at the lowest effective dose",
+    "Oral cephalexin for 4 weeks",
+    "Oral hydroxyzine at bedtime as sole added therapy",
+    "Subcutaneous dupilumab"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>She has moderate to severe atopic dermatitis that remains uncontrolled despite adherent, appropriate topical therapy, with major effects on sleep and schooling. Systemic therapy is indicated. Dupilumab, which blocks IL-4 receptor alpha, is approved for children and adolescents and has a favourable safety profile without laboratory monitoring. Its main adverse effect is conjunctivitis. Oral JAK inhibitors and phototherapy are alternatives; systemic corticosteroids are not maintenance treatment because of rebound and toxicity.</p><p><strong>Takeaway:</strong> For moderate to severe atopic dermatitis that fails optimal topical therapy, start a systemic agent such as dupilumab, not oral steroids.</p>",
+   "whyNot": {
+    "A": "Food allergy is not driving her disease; IgE panels give false positives and elimination diets risk poor nutrition without improving eczema.",
+    "B": "Chronic oral corticosteroids cause growth, bone and metabolic harm and rebound flares, and she has already relapsed after courses.",
+    "C": "There is no clinical infection, and long courses of antibiotics do not treat atopic inflammation and promote resistance.",
+    "D": "Sedating antihistamines may help her sleep briefly but do not control the underlying inflammation."
+   },
+   "objective": "Select systemic biologic therapy for adolescent atopic dermatitis uncontrolled by topical treatment.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "eczema",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 28-year-old Black woman has had painful, recurrent lumps and draining sores in both axillae and her groin since she was 17. She has had the lumps incised and drained in the emergency department six times, and cultures have grown mixed skin flora. She smokes half a pack of cigarettes daily, and her BMI is 34 kg/m<sup>2</sup>. Examination shows multiple inflamed nodules, interconnected draining tunnels and rope-like scars in both axillae and the groin, with normal skin between affected areas. A 12-week course of doxycycline, followed by 10 weeks of clindamycin with rifampin, gave only brief improvement. She is not pregnant and uses an intrauterine device. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Adalimumab",
+    "Incision and drainage of each new nodule as it appears",
+    "Isotretinoin",
+    "Long-term oral prednisone",
+    "Trimethoprim-sulfamethoxazole for MRSA decolonization"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Recurrent painful nodules and tunnels with scarring in the axillae and groin since adolescence are hidradenitis suppurativa, Hurley stage II. It has not responded to long courses of oral antibiotics. The next step is a biologic: adalimumab (TNF inhibitor) was the first approved, and secukinumab or bimekizumab (IL-17 inhibitors) are alternatives. Smoking cessation, weight management, pain control and, for established tunnels, surgical deroofing are added. Screen for latent TB and hepatitis B before starting.</p><p><strong>Takeaway:</strong> Moderate to severe hidradenitis suppurativa that fails oral antibiotics calls for a biologic such as adalimumab, plus surgery for tunnels.</p>",
+   "whyNot": {
+    "B": "Repeated incision and drainage relieves pressure but does not remove tunnels and leads to recurrence, as her history shows.",
+    "C": "Isotretinoin, though effective for acne, has little benefit in hidradenitis.",
+    "D": "Chronic systemic corticosteroids cause weight gain, diabetes and infection, and do not give lasting control.",
+    "E": "Hidradenitis is an inflammatory follicular disease, not an infection; mixed flora on culture does not indicate MRSA, and decolonization will not help."
+   },
+   "objective": "Escalate hidradenitis suppurativa that fails antibiotics to a biologic such as adalimumab.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "follicular disease"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>Based on the study summary, approximately how many patients must be treated with zelvotimab rather than placebo for 16 weeks for one additional patient to achieve PASI 90?</p>",
+   "options": [
+    "1",
+    "2",
+    "5",
+    "10",
+    "17"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The absolute benefit increase is the difference in PASI 90 rates: 65% minus 5% = 60% (0.60). The number needed to treat is the reciprocal, 1/0.60 = 1.67, rounded up to 2. Two patients must be treated with the drug rather than placebo for one more to reach PASI 90 at 16 weeks.</p><p><strong>Takeaway:</strong> NNT = 1 / absolute risk difference, rounded up to the next whole number.</p>",
+   "whyNot": {
+    "A": "An NNT of 1 would require every treated patient to benefit and no placebo patient to respond; the risk difference here is 0.60, not 1.0.",
+    "C": "An NNT of 5 corresponds to an absolute difference of 20%; that is not the difference observed.",
+    "D": "An NNT of 10 corresponds to an absolute difference of 10%, much smaller than the observed 60%.",
+    "E": "An NNT of 17 corresponds to an absolute difference of about 6%, closer to the difference in candidiasis rates than to the efficacy result."
+   },
+   "objective": "Calculate the number needed to treat from a randomized trial of a psoriasis biologic.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "biostatistics",
+    "papulosquamous disorders"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>A 36-year-old man with severe plaque psoriasis asks whether zelvotimab is right for him. He has Crohn disease that is currently active despite treatment with azathioprine. Which of the following is the most appropriate interpretation of the study for this patient?</p>",
+   "options": [
+    "The candidiasis excess means the drug is unsafe for any patient with psoriasis",
+    "The results apply to him because the trial was large, blinded and randomized",
+    "The results do not address him, because active bowel inflammation was an exclusion",
+    "The 2:1 allocation introduced selection bias that invalidates the efficacy result",
+    "The trial shows the drug causes fewer serious infections than placebo does"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Applicability (external validity) asks whether the trial population resembles the patient. People with active inflammatory bowel disease were excluded, so the trial gives no information about safety or efficacy in someone like him. The class effect matters too: IL-17A blockade has been associated with new or worsening inflammatory bowel disease. For him, an agent that treats both conditions (for example an IL-23 or TNF inhibitor) is a better choice.</p><p><strong>Takeaway:</strong> A well-done trial is only applicable to patients like those it enrolled; check exclusion criteria against your patient.</p>",
+   "whyNot": {
+    "A": "The candidiasis excess (5 percentage points) is a manageable, expected class effect, not a reason to call the drug unsafe for everyone.",
+    "B": "Randomization protects internal validity, but it does not make results applicable to patients the trial excluded.",
+    "D": "Unequal allocation ratios with concealed randomization do not cause selection bias; they are a common design choice.",
+    "E": "Serious infections were equal (1% in each group), and the trial was not powered to show a difference in rare events."
+   },
+   "objective": "Judge the applicability of a randomized trial to a patient with an excluded comorbidity.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "biostatistics",
+    "biologics"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Pemphigus vulgaris: split level and DIF pattern?",
+   "back": "Suprabasal acantholysis; net-like intercellular IgG and C3.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Why does pemphigus foliaceus spare the mouth?",
+   "back": "Its target, desmoglein-1, is scarce in mucosa, where desmoglein-3 compensates.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Bullous pemphigoid targets which structure and proteins?",
+   "back": "Hemidesmosome: BP180 (type XVII collagen) and BP230.",
+   "question": 1
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Class of diabetes drug associated with bullous pemphigoid?",
+   "back": "DPP-4 inhibitors (gliptins).",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Dermatitis herpetiformis: antigen and DIF?",
+   "back": "Epidermal transglutaminase; granular IgA in dermal papillae.",
+   "question": 2
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Epidermolysis bullosa acquisita targets what?",
+   "back": "Type VII collagen of anchoring fibrils; scarring blisters and milia at trauma sites.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Malignancies classically linked to paraneoplastic pemphigus?",
+   "back": "Non-Hodgkin lymphoma, CLL and Castleman disease.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Most common trigger of recurrent erythema multiforme?",
+   "back": "Herpes simplex virus.",
+   "question": 9
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Which cytokine axis drives psoriasis?",
+   "back": "IL-23 from dendritic cells sustaining Th17 cells that make IL-17 and IL-22.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Munro microabscesses are found where?",
+   "back": "Neutrophil collections in the parakeratotic stratum corneum of psoriasis.",
+   "question": 3
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Ustekinumab binds which subunit and blocks which cytokines?",
+   "back": "p40; IL-12 and IL-23.",
+   "question": 4
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Gene most associated with atopic dermatitis barrier failure?",
+   "back": "Filaggrin (FLG), loss-of-function variants.",
+   "question": 5
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Histologic hallmark of acute eczema?",
+   "back": "Spongiosis: intercellular edema in the epidermis.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Hypersensitivity type of allergic contact dermatitis?",
+   "back": "Type IV, T-cell mediated, to a hapten such as nickel.",
+   "question": 6
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Dupilumab blocks what?",
+   "back": "IL-4 receptor alpha, inhibiting IL-4 and IL-13 signalling.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Two class adverse effects of IL-17 inhibitors?",
+   "back": "Mucocutaneous candidiasis and new or worsened inflammatory bowel disease.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Lichen planus is associated with which infection?",
+   "back": "Hepatitis C.",
+   "question": 8
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "How does omalizumab work?",
+   "back": "Binds free IgE so it cannot attach to FcεRI; receptor numbers then fall.",
+   "question": 7
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Which biopsy site gives the best direct immunofluorescence?",
+   "back": "Perilesional normal-looking skin, not the blister itself.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "First-line treatment of bullous pemphigoid in a frail older adult?",
+   "back": "Superpotent topical corticosteroid (clobetasol), even for extensive disease.",
+   "question": 10
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "First-line therapy for moderate to severe pemphigus vulgaris?",
+   "back": "Rituximab with a systemic corticosteroid.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Test before dapsone?",
+   "back": "G6PD activity.",
+   "question": 11
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Definitive treatment of dermatitis herpetiformis?",
+   "back": "Lifelong gluten-free diet; dapsone controls itch meanwhile.",
+   "question": null
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Chronic urticaria not controlled on standard-dose cetirizine: next step?",
+   "back": "Increase the second-generation antihistamine up to four times the standard dose.",
+   "question": 13
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Wheals lasting over 24 hours with bruising suggest what?",
+   "back": "Urticarial vasculitis; biopsy.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Angioedema without wheals on lisinopril: mediator?",
+   "back": "Bradykinin; stop the ACE inhibitor.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 3,
+   "front": "How do you prevent recurrent HSV-associated erythema multiforme?",
+   "back": "Continuous suppressive valacyclovir or acyclovir.",
+   "question": null
+  },
+  {
+   "n": 28,
+   "section": 4,
+   "front": "First-line topical regimen for limited plaque psoriasis?",
+   "back": "Potent topical corticosteroid combined with a vitamin D analogue (calcipotriene).",
+   "question": null
+  },
+  {
+   "n": 29,
+   "section": 4,
+   "front": "Screening before starting a TNF inhibitor?",
+   "back": "Latent TB (IGRA preferred after BCG) and hepatitis B serology.",
+   "question": 12
+  },
+  {
+   "n": 30,
+   "section": 4,
+   "front": "Why avoid systemic steroids in psoriasis?",
+   "back": "Withdrawal can trigger erythrodermic or pustular psoriasis.",
+   "question": null
+  },
+  {
+   "n": 31,
+   "section": 4,
+   "front": "Drugs that worsen psoriasis?",
+   "back": "Lithium, beta-blockers, antimalarials, and steroid withdrawal.",
+   "question": null
+  },
+  {
+   "n": 32,
+   "section": 4,
+   "front": "Next step for atopic dermatitis uncontrolled by adherent topical therapy?",
+   "back": "Systemic therapy such as dupilumab; not oral steroids.",
+   "question": 14
+  },
+  {
+   "n": 33,
+   "section": 4,
+   "front": "Diagnostic test for allergic contact dermatitis?",
+   "back": "Patch testing.",
+   "question": null
+  },
+  {
+   "n": 34,
+   "section": 4,
+   "front": "Hurley stage II hidradenitis failing oral antibiotics: next step?",
+   "back": "A biologic such as adalimumab (or an IL-17 inhibitor), plus surgery for tunnels.",
+   "question": 15
+  },
+  {
+   "n": 35,
+   "section": 4,
+   "front": "Does isotretinoin work well for hidradenitis suppurativa?",
+   "back": "No; it has little benefit, unlike in acne.",
+   "question": null
+  },
+  {
+   "n": 36,
+   "section": 4,
+   "front": "Why taper oral steroids over 2 to 3 weeks for poison ivy?",
+   "back": "Short courses cause rebound dermatitis.",
+   "question": null
+  },
+  {
+   "n": 37,
+   "section": 4,
+   "front": "NNT formula?",
+   "back": "1 divided by the absolute risk difference, rounded up.",
+   "question": 16
+  }
+ ]
+}

@@ -1,0 +1,810 @@
+{
+ "area": "12.01.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Preconception biology: folate, glycemia, maternal metabolism and carrier genetics",
+   "html": "\n<h2>Why the weeks before conception matter</h2>\n<p>Most organ systems form between the third and eighth week after fertilisation, which is roughly weeks 5 to 10 counted from the last menstrual period. Many people do not know they are pregnant until part of that window has passed. Preconception care exists because the variables that shape organogenesis (folate status, maternal glucose, drug exposure, infection immunity and inherited carrier status) have to be set <em>before</em> a missed period, not after it.</p>\n<p>The embryonic period follows an \"all-or-none\" phase. In the first two weeks after fertilisation, a toxic exposure either destroys enough cells to end the pregnancy or is fully compensated by the totipotent cells that remain. Structural malformation is the signature of exposure during weeks 3 to 8. After that, exposures mainly affect growth, function and the central nervous system, which keeps maturing throughout pregnancy.</p>\n\n<h2>Folate and neural tube closure</h2>\n<p>The neural plate folds into a tube that zips closed from the middle outward. The cranial (rostral) neuropore closes around day 25 after fertilisation and the caudal neuropore around day 27 to 28. Failure of rostral closure leads to anencephaly. Failure of caudal closure leads to spina bifida (myelomeningocele when the meninges and cord protrude). Both open defects leak alpha-fetoprotein and acetylcholinesterase into the amniotic fluid.</p>\n<p>Folate, as tetrahydrofolate derivatives, carries one-carbon units. N5,N10-methylene-tetrahydrofolate donates the methyl group that thymidylate synthase uses to make dTMP from dUMP. N5-methyl-tetrahydrofolate remethylates homocysteine to methionine through the vitamin B12-dependent methionine synthase, which feeds S-adenosylmethionine for DNA and protein methylation. The neuroepithelium divides very fast, so it is sensitive to any shortfall in nucleotide supply. Supplementation reduces, but does not eliminate, neural tube defects. Genetic and other environmental factors also contribute.</p>\n<div class=\"pearl\"><p>Because the neural tube has closed by about 6 weeks from the last menstrual period, starting folic acid when pregnancy is confirmed is usually too late for the neural tube. That is why the advice is a daily supplement for anyone who could become pregnant.</p></div>\n\n<h2>Maternal hyperglycemia as a teratogen</h2>\n<p>Glucose crosses the placenta by facilitated diffusion, but maternal insulin does not. During organogenesis, maternal hyperglycemia increases embryonic oxidative stress and disturbs gene expression in the neural tube, heart and caudal mesoderm. The risk of major anomalies rises with periconceptional HbA1c. Cardiac defects (transposition, ventricular septal defects, outflow anomalies) and neural tube defects are the most common. Caudal regression syndrome (sacral agenesis with lower-limb hypoplasia) is rare but is the anomaly most characteristic of pregestational diabetes. Later in pregnancy, hyperglycemia causes fetal hyperinsulinemia and macrosomia rather than malformation.</p>\n\n<h2>Other maternal conditions with a preconception target</h2>\n<table class=\"hy\">\n<thead><tr><th>Condition</th><th>Mechanism of fetal harm</th><th>Preconception goal</th></tr></thead>\n<tbody>\n<tr><td>Phenylketonuria (phenylalanine hydroxylase deficiency)</td><td>High maternal phenylalanine crosses the placenta and is concentrated on the fetal side. It injures the brain and heart <strong>whatever the fetal genotype</strong> (maternal PKU syndrome: microcephaly, intellectual disability, congenital heart disease, growth restriction).</td><td>Restart a phenylalanine-restricted diet and reach target levels before conception.</td></tr>\n<tr><td>Hypothyroidism</td><td>The fetal thyroid makes little hormone before about 12 weeks, so early neurodevelopment depends on maternal T4. Rising estrogen raises thyroxine-binding globulin, and the placenta deiodinates T4.</td><td>Keep TSH in range and plan an early dose increase once pregnancy is confirmed.</td></tr>\n<tr><td>Epilepsy treated with valproate</td><td>Valproate is linked to neural tube defects and to lower childhood IQ in a dose-dependent way. The proposed mechanisms include interference with folate metabolism and histone deacetylase inhibition.</td><td>Change to an agent with lower risk while the patient is not pregnant, under neurology supervision.</td></tr>\n<tr><td>Severe acne treated with isotretinoin</td><td>This retinoid acts on nuclear retinoic acid receptors and disrupts cranial neural crest migration, leading to ear, facial, cardiac outflow, thymic and CNS defects.</td><td>Use two forms of contraception during treatment and for 1 month after the last dose.</td></tr>\n<tr><td>Rubella non-immunity</td><td>First-trimester infection causes congenital rubella syndrome: cataracts, sensorineural deafness, patent ductus arteriosus and pulmonary artery stenosis.</td><td>Give live MMR vaccine before pregnancy and avoid conception for 4 weeks.</td></tr>\n</tbody>\n</table>\n\n<h2>Thyroid physiology in early pregnancy</h2>\n<p>Estrogen reduces hepatic clearance of thyroxine-binding globulin by increasing its sialylation, so TBG levels roughly double. This raises total T4 and T3 while free hormone stays normal in a person with a working gland. A person who depends on levothyroxine cannot raise their own production, so free T4 falls unless the dose goes up. hCG shares an α subunit with TSH and weakly stimulates the TSH receptor, which is why TSH normally dips at the end of the first trimester.</p>\n\n<h2>Carrier genetics for counselling</h2>\n<ul>\n<li><strong>Autosomal recessive conditions</strong> (cystic fibrosis from CFTR variants, spinal muscular atrophy from SMN1 loss, hemoglobinopathies): when both partners are carriers, each pregnancy has a 1 in 4 chance of an affected child and a 1 in 2 chance of a carrier child.</li>\n<li><strong>Bayesian prior for relatives</strong>: an unaffected sibling of a person with an autosomal recessive disease has a 2/3 chance of being a carrier. The unaffected sibling cannot be the affected genotype, so of the remaining three outcomes, two are carriers.</li>\n<li><strong>SMA silent carriers</strong>: some people carry two SMN1 copies on one chromosome and none on the other (a \"2+0\" arrangement). Copy-number testing reads them as normal, so a negative screen lowers the risk but does not remove it.</li>\n<li><strong>Alpha thalassemia</strong>: two-gene deletion trait can be in <em>cis</em> (--/αα, more common in people of Southeast Asian ancestry) or <em>trans</em> (-α/-α, more common in people of African ancestry). If both partners carry the <em>cis</em> deletion, the fetus can inherit no α genes. It then forms γ4 tetramers (Hb Bart), which bind oxygen too tightly to deliver it, causing hydrops fetalis.</li>\n<li><strong>Fragile X</strong>: an FMR1 CGG repeat in the premutation range (about 55 to 200) can expand to a full mutation (over 200, with methylation and silencing) when transmitted by the mother. Premutation carriers are at risk of primary ovarian insufficiency themselves.</li>\n</ul>\n<div class=\"trap\"><p>A normal hemoglobin electrophoresis does <strong>not</strong> exclude alpha thalassemia trait in an adult. Hb A2 and Hb F are normal in alpha trait. Consider DNA testing for alpha-globin deletions when microcytosis is not explained by iron deficiency.</p></div>\n\n<h2>Gender-affirming hormones and fertility</h2>\n<p>A transgender man or nonbinary person with a uterus who takes testosterone often stops menstruating, but they can still ovulate and conceive. Testosterone crosses the placenta and can virilise a fetus with XX chromosomes (clitoromegaly, labial fusion). Testosterone is therefore not a contraceptive, and it is stopped before attempting conception. Record the sex assigned at birth, current anatomy and hormone use, because they decide which counselling applies.</p>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Preconception Counseling"
+    },
+    {
+     "statpearls": "Folic Acid Deficiency"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "The preconception visit: disease optimisation, medicines, vaccines and carrier screening",
+   "html": "\n<h2>Who and when</h2>\n<p>Preconception care belongs in every visit with a person who could become pregnant. One useful opening question is whether they hope to become pregnant in the next year. The core goals are to find and control chronic disease, review every medication and supplement, update vaccines, offer carrier screening, address substance use and intimate partner violence, and plan the spacing of pregnancies. Pregnancy intervals shorter than 18 months from birth to the next conception are associated with preterm birth and growth restriction, so contraception counselling is part of the visit.</p>\n\n<h2>Folic acid</h2>\n<ul>\n<li><strong>Everyone who could become pregnant:</strong> 0.4 to 0.8 mg (400 to 800 µg) of folic acid daily, starting at least 1 month before conception and continuing through the first 2 to 3 months of pregnancy (USPSTF).</li>\n<li><strong>Prior pregnancy affected by a neural tube defect:</strong> 4 mg daily, started before conception and continued through the first trimester. Give it as a separate folic acid tablet, not by taking extra multivitamins, which would also deliver too much vitamin A.</li>\n<li>Higher doses are often advised for people taking folate-antagonist antiseizure drugs, or after bariatric surgery. Follow specialist protocols here.</li>\n</ul>\n\n<h2>Chronic disease optimisation</h2>\n<table class=\"hy\">\n<thead><tr><th>Condition</th><th>Before conception</th><th>Why</th></tr></thead>\n<tbody>\n<tr><td>Pregestational diabetes</td><td>Aim for HbA1c below 6.5% if it can be done without significant hypoglycemia. Use effective contraception until then. Check retinopathy, nephropathy and thyroid function.</td><td>Anomaly and miscarriage risk rise with HbA1c around conception.</td></tr>\n<tr><td>Chronic hypertension</td><td>Stop ACE inhibitors and ARBs. Use labetalol or nifedipine (or methyldopa) instead.</td><td>RAAS blockade in the second and third trimesters causes fetal renal failure, oligohydramnios and skull hypoplasia.</td></tr>\n<tr><td>Epilepsy</td><td>Give the lowest effective dose of a single drug. Move away from valproate (and topiramate where possible) toward lamotrigine or levetiracetam, while the patient is not pregnant.</td><td>Valproate has the highest malformation and neurodevelopmental risk. Lamotrigine levels fall in pregnancy and need monitoring.</td></tr>\n<tr><td>Hypothyroidism</td><td>Get TSH into range. Tell the patient to take about two extra levothyroxine doses per week (about 25 to 30% more) as soon as a home test is positive, then check TSH about every 4 weeks in the first half of pregnancy.</td><td>Requirements rise early, and the fetus depends on maternal T4.</td></tr>\n<tr><td>Obesity and bariatric surgery</td><td>Recommend weight reduction. After bariatric surgery, delay pregnancy for 12 to 24 months, during the period of rapid weight loss.</td><td>Rapid weight loss raises the risk of nutrient deficiency and fetal growth restriction.</td></tr>\n<tr><td>Venous thromboembolism on warfarin</td><td>Plan to switch to low-molecular-weight heparin before or very early in pregnancy. Patients with mechanical valves need specialist planning.</td><td>Warfarin embryopathy (nasal hypoplasia, stippled epiphyses) from exposure at 6 to 12 weeks.</td></tr>\n<tr><td>Phenylketonuria</td><td>Start a metabolic diet and reach target phenylalanine levels before conception.</td><td>Prevents maternal PKU syndrome.</td></tr>\n</tbody>\n</table>\n\n<h2>Medication review</h2>\n<p>Review prescriptions, over-the-counter drugs and supplements. Drugs that call for planning before conception include isotretinoin (iPLEDGE, with contraception continued for 1 month after stopping), mycophenolate (stopped at least 6 weeks before conception), methotrexate, leflunomide (which needs an accelerated cholestyramine washout), warfarin, valproate, ACE inhibitors and ARBs, and statins, which are usually stopped. Do not stop a drug abruptly when stopping it endangers the patient, for example antiseizure medication or antidepressants for severe depression. Change it under supervision instead.</p>\n<div class=\"trap\"><p>Testosterone suppresses menses but is <strong>not</strong> contraception. A transgender man who wants to carry a pregnancy stops testosterone before conception. One who does not want pregnancy needs an effective method, and progestin-only methods or IUDs are commonly chosen.</p></div>\n\n<h2>Vaccination</h2>\n<ul>\n<li>Check rubella immunity and varicella immunity (by history or serology). <strong>Live vaccines</strong> (MMR, varicella) are given before pregnancy, followed by 4 weeks of contraception. They are not given during pregnancy, but an inadvertent dose is not a reason to end a pregnancy.</li>\n<li>Bring inactivated vaccines up to date according to the adult schedule: hepatitis B for those not immune and at risk or unvaccinated, influenza in season, COVID-19, and HPV up to age 26. HPV vaccination is postponed if pregnancy occurs.</li>\n<li>Tdap is given <em>during</em> every pregnancy (27 to 36 weeks), so it is not a preconception vaccine.</li>\n</ul>\n\n<h2>Carrier screening</h2>\n<ul>\n<li>Offer cystic fibrosis and spinal muscular atrophy carrier screening to everyone considering pregnancy, regardless of ancestry. Expanded panels are an acceptable alternative.</li>\n<li>Offer everyone a CBC with red cell indices. Add hemoglobin electrophoresis if there is microcytosis without iron deficiency, or if the patient's ancestry carries a higher prevalence of hemoglobinopathy. Use DNA testing for alpha-globin deletions when alpha thalassemia is suspected.</li>\n<li>Offer fragile X premutation testing when there is a family history of fragile X, unexplained intellectual disability or autism, or primary ovarian insufficiency.</li>\n<li>Screening the reproductive partner first is not required. When one person screens positive, test the partner and refer to genetic counselling. Options for a carrier couple include prenatal diagnosis, preimplantation genetic testing with IVF, donor gametes and adoption.</li>\n</ul>\n\n<h2>Lifestyle, safety and social factors</h2>\n<p>Advise stopping tobacco, alcohol and cannabis, and offer treatment for opioid use disorder (buprenorphine or methadone are continued in pregnancy, not stopped). Screen for intimate partner violence and depression. Discuss occupational exposures, high-mercury fish, unpasteurised foods and travel to areas with Zika transmission. People with disabilities need the same counselling, adapted for access. A person with a spinal cord injury, for example, should plan bladder, bowel, skin and blood-pressure care, and discuss medications they take for spasticity or bladder function. In adolescents, confirm that contraception and STI screening are confidential, and include nutrition (iron, calcium, folate), because adolescent pregnancies carry higher risks of anemia and preterm birth.</p>\n<div class=\"pearl\"><p>Older adults planning pregnancy (age 35 or more, including people using donor oocytes in their 40s and 50s) need screening for hypertension, diabetes and cardiac disease before conception, because their baseline cardiovascular risk is higher. Aneuploidy risk depends on the <em>age of the oocyte</em>, not the age of the person carrying the pregnancy.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Preconception Counseling"
+    },
+    {
+     "label": "CDC: Immunization schedules",
+     "url": "https://www.cdc.gov/vaccines/hcp/imz-schedules/index.html",
+     "sourceId": "cdc-guidelines"
+    },
+    {
+     "label": "CDC: US Medical Eligibility Criteria for Contraceptive Use",
+     "url": "https://www.cdc.gov/contraception/hcp/usmec/index.html",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  }
+ ],
+ "figures": [],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman comes for preconception counselling. Her first pregnancy ended at 19 weeks after ultrasonography showed absence of the cranial vault and cerebral hemispheres above the orbits. She asks when the defect would have developed. Failure of which developmental event most likely caused the abnormality in her previous pregnancy?</p>",
+   "options": [
+    "Closure of the rostral neuropore in the fourth week after fertilisation",
+    "Closure of the caudal neuropore in the fourth week after fertilisation",
+    "Fusion of the palatine shelves in the ninth week after fertilisation",
+    "Formation of the primitive streak in the third week after fertilisation",
+    "Separation of the prosencephalon into two hemispheres in the fifth week after fertilisation"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Absence of the forebrain and cranial vault is anencephaly. It results from failure of the cranial (rostral) neuropore to close, around day 25 after fertilisation. At that point many patients do not yet know they are pregnant, which is why folic acid must be started before conception.</p><p><strong>Takeaway:</strong> Anencephaly is failed rostral neuropore closure (about day 25). Spina bifida is failed caudal closure (about day 27 to 28).</p>",
+   "whyNot": {
+    "B": "Failed caudal neuropore closure causes spina bifida in the lumbosacral region, not loss of the cranial vault.",
+    "C": "Failed palatine shelf fusion causes cleft palate, which is a facial defect with an intact skull and brain.",
+    "D": "Primitive streak defects cause caudal dysgenesis or sacrococcygeal teratoma, not absence of the forebrain.",
+    "E": "Failed cleavage of the prosencephalon causes holoprosencephaly. The cranial vault is present and the face is often affected."
+   },
+   "objective": "Identify anencephaly as failure of rostral neuropore closure during the fourth week after fertilisation.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "neural tube",
+    "embryology"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old woman who plans to conceive in the next few months is advised to take 0.4 mg of folic acid daily. She asks how the supplement helps the developing nervous system. The reduced form of this vitamin is a required cofactor for which of the following reactions in rapidly dividing neuroepithelial cells?</p>",
+   "options": [
+    "Conversion of dUMP to dTMP by thymidylate synthase",
+    "Conversion of ribonucleotides to deoxyribonucleotides by ribonucleotide reductase",
+    "Conversion of methylmalonyl-CoA to succinyl-CoA",
+    "Conversion of pyruvate to acetyl-CoA by pyruvate dehydrogenase",
+    "Conversion of homogentisate to maleylacetoacetate"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>N5,N10-methylene-tetrahydrofolate donates the one-carbon methyl group that thymidylate synthase transfers to dUMP to make dTMP. The neural plate divides very fast and needs a steady supply of thymidine for DNA synthesis, so it is sensitive to folate shortage. Folate also supports purine synthesis and the remethylation of homocysteine.</p><p><strong>Takeaway:</strong> Folate's key role in DNA synthesis is supplying the methyl group for dTMP production by thymidylate synthase.</p>",
+   "whyNot": {
+    "B": "Ribonucleotide reductase uses a thioredoxin-dependent radical mechanism, not a folate cofactor.",
+    "C": "Methylmalonyl-CoA mutase needs vitamin B12 (adenosylcobalamin), not folate.",
+    "D": "Pyruvate dehydrogenase needs thiamine, lipoate, CoA, FAD and NAD+, not folate.",
+    "E": "Homogentisate oxidase in tyrosine catabolism needs iron and oxygen. Its deficiency causes alkaptonuria, and it does not use folate."
+   },
+   "objective": "Recognize the folate-dependent thymidylate synthase reaction as the link between folate and neural tube development.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vitamins",
+    "neural tube"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman with classic phenylketonuria stopped her restricted diet at age 14. She now wants to become pregnant. Her plasma phenylalanine concentration is 19 mg/dL (target for pregnancy 2 to 6 mg/dL). Her partner has no family history of PKU. She asks why her diet matters if the baby is unlikely to inherit the disease. Which of the following best explains the risk to the fetus?</p>",
+   "options": [
+    "Maternal phenylalanine crosses the placenta and reaches toxic levels in the fetus regardless of the fetal genotype",
+    "Maternal tyrosine excess crosses the placenta and inhibits fetal tyrosine hydroxylase",
+    "Maternal antibodies against phenylalanine hydroxylase cross the placenta and damage fetal hepatocytes",
+    "The fetus inherits a dominant-negative phenylalanine hydroxylase allele from the mother",
+    "Placental tetrahydrobiopterin is consumed, causing fetal deficiency of serotonin and dopamine"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Phenylalanine is actively transported across the placenta and becomes concentrated on the fetal side. High maternal levels expose a fetus who is only a heterozygous carrier to toxic phenylalanine during organogenesis and brain growth. The result is maternal PKU syndrome: microcephaly, intellectual disability, congenital heart disease and growth restriction. Reaching target levels before conception prevents most of this harm.</p><p><strong>Takeaway:</strong> In maternal PKU the fetus is injured by the mother's phenylalanine, not by its own genotype, so diet control must start before conception.</p>",
+   "whyNot": {
+    "B": "In PKU, tyrosine is low rather than high, because phenylalanine cannot be converted to tyrosine.",
+    "C": "PKU is an inherited enzyme deficiency, not an autoimmune disease, and maternal antibodies play no role.",
+    "D": "PKU is autosomal recessive. A heterozygous fetus has enough enzyme activity of its own.",
+    "E": "Tetrahydrobiopterin deficiency is a separate cause of hyperphenylalaninemia in the affected person. It is not a mechanism of placental harm."
+   },
+   "objective": "Explain that maternal hyperphenylalaninemia is teratogenic regardless of fetal genotype.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "inborn errors",
+    "teratogens"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman attends preconception counselling with her partner. Her brother has cystic fibrosis, and she and her parents are healthy. She has not had carrier testing. Her partner had carrier screening and is heterozygous for a pathogenic CFTR variant. What is the probability that their first child will have cystic fibrosis?</p>",
+   "options": [
+    "1/4",
+    "1/6",
+    "1/8",
+    "1/3",
+    "1/2"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Her parents must both be carriers. As an unaffected sibling, she has a 2/3 chance of being a carrier, because the affected genotype is excluded and two of the remaining three outcomes are carriers. Her partner is a known carrier, so if both are carriers, each child has a 1/4 chance of being affected. The combined risk is 2/3 × 1 × 1/4 = 1/6.</p><p><strong>Takeaway:</strong> An unaffected sibling of a person with an autosomal recessive disease has a 2/3 carrier risk. Multiply it by each partner's carrier probability and then by 1/4.</p>",
+   "whyNot": {
+    "A": "A 1/4 risk applies only when both partners are known carriers. Her own carrier status is 2/3, not certain.",
+    "C": "A 1/8 risk would follow from a 1/2 carrier probability for her, which ignores the fact that she is known to be unaffected.",
+    "D": "A 1/3 risk mistakes the chance that she is not a carrier for the chance that the child is affected.",
+    "E": "A 1/2 risk is the chance that a child of two carriers is a carrier, not that the child is affected."
+   },
+   "objective": "Calculate recurrence risk for an autosomal recessive disease when one partner's carrier status is conditional.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "carrier screening",
+    "inheritance"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old woman whose parents emigrated from Vietnam is planning a pregnancy. Her hemoglobin is 11.4 g/dL, MCV 68 fL, and ferritin normal. Hemoglobin electrophoresis shows normal proportions of Hb A, Hb A2 and Hb F. Her partner, who has the same ancestry, has a similar CBC and electrophoresis. DNA testing shows that both carry deletion of two alpha-globin genes on the same chromosome. If a fetus inherits both partners' affected chromosomes, which hemoglobin will predominate in fetal red cells?</p>",
+   "options": [
+    "Tetramers of four gamma chains",
+    "Tetramers of four beta chains",
+    "Two alpha and two gamma chains",
+    "Two alpha and two delta chains",
+    "Two alpha and two sickle beta chains"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Both partners have the <em>cis</em> two-gene deletion (--/αα), which is common in people of Southeast Asian ancestry. A fetus who inherits both deleted chromosomes has no α genes (--/--). Without α chains, γ chains form γ4 tetramers (Hb Bart). Hb Bart has very high oxygen affinity and delivers almost no oxygen to tissues, causing hydrops fetalis. This is the reason couples are offered DNA-based alpha-globin testing.</p><p><strong>Takeaway:</strong> Couples who both carry the cis two-gene alpha deletion risk a fetus with Hb Bart (γ4) and hydrops fetalis. A normal electrophoresis does not exclude alpha trait.</p>",
+   "whyNot": {
+    "B": "β4 tetramers (Hb H) form after birth in three-gene deletion disease. Before birth the main non-α chain is γ, not β.",
+    "C": "α2γ2 is normal fetal hemoglobin (Hb F), which needs α chains that this fetus cannot make.",
+    "D": "α2δ2 is Hb A2, a minor adult hemoglobin that also needs α chains.",
+    "E": "Sickle hemoglobin needs a β-globin point mutation. Neither partner has evidence of one, and it would still need α chains."
+   },
+   "objective": "Predict Hb Bart (gamma-4) hydrops fetalis in a fetus of two partners with cis alpha-globin deletions.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hemoglobinopathies",
+    "carrier screening"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman has a nephew with intellectual disability, macroorchidism and a long face. Before trying to conceive, she has DNA testing that shows 90 CGG repeats in one FMR1 allele (normal fewer than 45). She asks what the result means for her children. Which of the following best describes the main risk to her offspring?</p>",
+   "options": [
+    "Expansion of the repeat to more than 200 copies during maternal transmission, with methylation and gene silencing",
+    "Contraction of the repeat during paternal transmission, leading to loss of FMR1 expression",
+    "Uniparental disomy of the X chromosome in the oocyte",
+    "A gain-of-function polyglutamine protein that is toxic to fetal neurons",
+    "Mitochondrial heteroplasmy transmitted through the oocyte cytoplasm"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Ninety repeats is a premutation. Premutation alleles are unstable when a female passes them on and can expand to a full mutation (over 200 repeats). The full mutation causes hypermethylation of the FMR1 promoter, loss of FMRP and fragile X syndrome. The larger the maternal premutation, the higher the chance of expansion. Female premutation carriers are also at risk of fragile X-associated primary ovarian insufficiency.</p><p><strong>Takeaway:</strong> FMR1 premutations expand to full mutations through maternal transmission, which is why they are relevant to preconception counselling.</p>",
+   "whyNot": {
+    "B": "Paternal transmission generally does not expand the repeat to a full mutation, and contraction would not cause the syndrome.",
+    "C": "Uniparental disomy is not the mechanism of fragile X syndrome.",
+    "D": "Polyglutamine toxicity comes from CAG repeats in coding regions, as in Huntington disease. CGG repeats in FMR1 lie in the 5' untranslated region.",
+    "E": "Fragile X is an X-linked trinucleotide repeat disorder, not a mitochondrial disease."
+   },
+   "objective": "Explain maternal expansion of an FMR1 premutation to a full mutation.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "trinucleotide repeats",
+    "carrier screening"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman with type 1 diabetes has an HbA1c of 9.2%. She wants to stop contraception now because she hopes to conceive. Her physician explains that the risk of structural birth defects depends mainly on glycemic control during a specific developmental window. Counted from fertilisation, maternal hyperglycemia during which of the following periods most increases the risk of major structural malformations?</p>",
+   "options": [
+    "Weeks 3 through 8",
+    "Days 1 through 14",
+    "Weeks 12 through 20",
+    "Weeks 24 through 32",
+    "Week 36 until delivery"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Organogenesis takes place during the embryonic period, weeks 3 to 8 after fertilisation. Hyperglycemia then causes oxidative stress and disturbs gene expression in the heart, neural tube and caudal mesoderm. Cardiac and neural tube defects are the most common results, and caudal regression is the most characteristic. Because this window begins before most pregnancies are recognised, HbA1c should be below 6.5% before contraception is stopped, if that can be done safely.</p><p><strong>Takeaway:</strong> Diabetic embryopathy arises during weeks 3 to 8 after fertilisation, so glycemic optimisation has to come before conception.</p>",
+   "whyNot": {
+    "B": "The first 2 weeks are the all-or-none period: injury either ends the pregnancy or is fully repaired, without malformation.",
+    "C": "After organogenesis, hyperglycemia mainly drives fetal hyperinsulinemia and growth rather than structural defects.",
+    "D": "Third-trimester hyperglycemia causes macrosomia, polyhydramnios and neonatal hypoglycemia, not malformations.",
+    "E": "Hyperglycemia near term raises the risk of stillbirth and birth trauma, not structural anomalies."
+   },
+   "objective": "Identify organogenesis (weeks 3 to 8 after fertilisation) as the period of greatest teratogenic risk from maternal hyperglycemia.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "diabetes",
+    "teratogens"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 28-year-old woman who takes levothyroxine after thyroidectomy for a benign nodule is planning pregnancy. Her TSH is 1.6 µU/mL. She is told that her dose will need to increase early in pregnancy, while a person with a normal thyroid gland adjusts on their own. Which of the following changes most directly increases her levothyroxine requirement?</p>",
+   "options": [
+    "Estrogen-driven increase in serum thyroxine-binding globulin",
+    "Increased renal clearance of TSH",
+    "Inhibition of hepatic deiodinase by progesterone",
+    "Placental production of thyroid-stimulating immunoglobulin",
+    "Reduced intestinal absorption of levothyroxine due to rising gastric acidity"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Estrogen increases sialylation of thyroxine-binding globulin, which slows its clearance, so TBG roughly doubles. More T4 is bound, and the total pool has to grow to keep free T4 normal. Placental type 3 deiodinase and the larger volume of distribution add to the demand. A person without thyroid tissue cannot respond to TSH, so the levothyroxine dose must rise, usually by about 25 to 30% as soon as pregnancy is confirmed.</p><p><strong>Takeaway:</strong> Higher TBG (from estrogen) and placental deiodination raise T4 needs early in pregnancy, so patients on levothyroxine increase their dose when pregnancy is confirmed.</p>",
+   "whyNot": {
+    "B": "TSH clearance is not the main factor. In early pregnancy TSH is actually lowered by hCG's weak stimulation of the TSH receptor.",
+    "C": "Progesterone does not inhibit hepatic deiodinase. The placenta increases T4 inactivation through type 3 deiodinase.",
+    "D": "The placenta does not make thyroid-stimulating immunoglobulin. That antibody comes from maternal B cells in Graves disease.",
+    "E": "Gastric acidity falls rather than rises in pregnancy, and absorption changes are not the main reason for the dose increase."
+   },
+   "objective": "Explain why levothyroxine requirements rise early in pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "thyroid",
+    "physiology of pregnancy"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman, gravida 2, para 0, comes for a preconception visit. Her last pregnancy was terminated at 18 weeks after ultrasonography showed a lumbosacral myelomeningocele. She takes no medications, does not have epilepsy, and has a BMI of 24 kg/m². She plans to stop contraception next month. Which of the following is the most appropriate folic acid regimen?</p>",
+   "options": [
+    "4 mg daily, starting before conception and continuing through the first trimester",
+    "0.4 mg daily, starting once pregnancy is confirmed",
+    "0.4 mg daily, starting before conception and continuing through the first trimester",
+    "4 mg daily, starting at the first prenatal visit and continuing until delivery",
+    "Four prenatal multivitamin tablets daily, starting before conception"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A previous pregnancy affected by a neural tube defect puts her at high risk. She should take 4 mg of folic acid daily, beginning before conception (at least 1 month ahead) and continuing through the first trimester. Folic acid must be present before the neural tube closes, around 6 weeks after the last menstrual period.</p><p><strong>Takeaway:</strong> After a pregnancy affected by a neural tube defect, use 4 mg of folic acid daily, started before conception, as a separate tablet.</p>",
+   "whyNot": {
+    "B": "Starting after a positive test often misses neural tube closure, and 0.4 mg is the dose for people at average risk.",
+    "C": "0.4 mg is appropriate for average risk. She needs the high-risk dose because of her previous affected pregnancy.",
+    "D": "Starting at the first prenatal visit is too late for neural tube closure.",
+    "E": "Taking several multivitamins to reach 4 mg of folate would also deliver excess vitamin A, which is teratogenic. A separate folic acid tablet is used."
+   },
+   "objective": "Prescribe high-dose folic acid before conception after a pregnancy affected by a neural tube defect.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance",
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [
+    "uspstf"
+   ],
+   "figures": [],
+   "tags": [
+    "folic acid",
+    "preconception"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman with type 2 diabetes and hypertension wants to become pregnant in the next few months. She uses condoms inconsistently. Her current medications and tests are shown.</p><table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Metformin</td><td>1,000 mg twice daily</td></tr><tr><td>Lisinopril</td><td>20 mg daily</td></tr><tr><td>Atorvastatin</td><td>20 mg daily</td></tr><tr><td>Blood pressure</td><td>132/84 mm Hg</td></tr><tr><td>Hemoglobin A1c</td><td>8.6% (below 5.7%)</td></tr><tr><td>Creatinine</td><td>0.8 mg/dL (0.6-1.2 mg/dL)</td></tr><tr><td>Urine albumin-to-creatinine ratio</td><td>18 mg/g (below 30 mg/g)</td></tr></tbody></table><p>Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    "Use effective contraception until HbA1c is below 6.5%, and replace lisinopril with labetalol",
+    "Stop contraception now and stop all three medications once pregnancy is confirmed",
+    "Stop contraception now, continue all medications, and recheck HbA1c at 16 weeks of pregnancy",
+    "Stop metformin, start insulin, and continue lisinopril until the second trimester",
+    "Use effective contraception until HbA1c is below 9%, and continue lisinopril"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>An HbA1c of 8.6% around conception significantly raises the risk of miscarriage and major anomalies. She should use effective contraception while glycemia is improved toward an HbA1c below 6.5%, if that can be achieved without significant hypoglycemia. ACE inhibitors are fetotoxic in the second and third trimesters, so switching to labetalol (or nifedipine) before conception avoids an unplanned exposure. The statin is usually stopped too, and retinal and thyroid evaluation are completed. She should also start folic acid.</p><p><strong>Takeaway:</strong> In pregestational diabetes, delay conception with effective contraception until HbA1c is below 6.5% where safe, and change ACE inhibitors or ARBs to pregnancy-compatible antihypertensives beforehand.</p>",
+   "whyNot": {
+    "B": "Trying to conceive with an HbA1c of 8.6% exposes organogenesis to hyperglycemia. Stopping drugs only after a positive test leaves the early weeks exposed.",
+    "C": "Checking HbA1c at 16 weeks is after organogenesis, and lisinopril would be continued into the fetotoxic period.",
+    "D": "Continuing lisinopril into the second trimester risks fetal renal failure and oligohydramnios.",
+    "E": "An HbA1c of 9% is far above the preconception target, and the ACE inhibitor should be changed."
+   },
+   "objective": "Plan preconception optimisation of glycemia and antihypertensive therapy in a patient with pregestational diabetes.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management",
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "diabetes",
+    "preconception"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old woman with juvenile myoclonic epilepsy has been seizure-free for 3 years on valproate 750 mg twice daily. She and her partner want to conceive within the next year. She uses an etonogestrel implant. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Keep the implant while her neurologist gradually changes valproate to levetiracetam",
+    "Remove the implant and continue valproate, adding folic acid 4 mg daily",
+    "Stop valproate now and remove the implant",
+    "Continue valproate and plan an amniocentesis for alpha-fetoprotein at 16 weeks",
+    "Remove the implant and change valproate to carbamazepine once she has a positive pregnancy test"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Valproate carries the highest risk of malformation (including neural tube defects) and of dose-dependent neurodevelopmental harm among antiseizure drugs. Because she has time, the safest plan is to keep reliable contraception while her neurologist cross-titrates to a lower-risk drug that also treats generalised epilepsy, such as levetiracetam (lamotrigine is another lower-risk option but can aggravate myoclonic seizures). She can try to conceive once she is stable on the new drug. She should also take folic acid.</p><p><strong>Takeaway:</strong> Change valproate to a lower-risk antiseizure drug before conception, under supervision and while contraception continues. Never stop it abruptly.</p>",
+   "whyNot": {
+    "B": "Folic acid does not offset valproate's malformation and neurodevelopmental risks when a safer alternative is available.",
+    "C": "Stopping an antiseizure drug abruptly risks breakthrough seizures and status epilepticus.",
+    "D": "Prenatal detection does not reduce exposure. Prevention through a drug change is preferred.",
+    "E": "Switching after a positive test misses early organogenesis, and carbamazepine also has teratogenic risk and is less effective for juvenile myoclonic epilepsy."
+   },
+   "objective": "Manage antiseizure medication before conception in a patient taking valproate.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "epilepsy",
+    "preconception"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 25-year-old woman who emigrated from a country without routine rubella vaccination comes for a preconception visit. She has no vaccination records. Rubella IgG is negative and varicella IgG is positive. A urine pregnancy test today is negative, and she uses condoms. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    "Give MMR vaccine today and advise avoiding pregnancy for 4 weeks",
+    "Delay vaccination until her first prenatal visit, then give MMR",
+    "Give rubella immune globulin today and repeat it during each pregnancy",
+    "Give MMR vaccine today; no change to her pregnancy plans is needed",
+    "Give MMR vaccine only after her first delivery"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She is not immune to rubella and is not pregnant. MMR is a live attenuated vaccine, so it is given before pregnancy, followed by 4 weeks of contraception because of a theoretical fetal risk. If she receives it and then conceives inadvertently, the risk is theoretical and is not a reason to end the pregnancy.</p><p><strong>Takeaway:</strong> Give live vaccines (MMR, varicella) before conception and advise contraception for 4 weeks. They are not given during pregnancy.</p>",
+   "whyNot": {
+    "B": "MMR is a live vaccine and is not given during pregnancy, so waiting for the prenatal visit loses the chance to protect her.",
+    "C": "Immune globulin gives only short-term passive protection and is not a substitute for vaccination.",
+    "D": "Live vaccines are followed by 4 weeks of contraception, so counselling about the interval is needed.",
+    "E": "Waiting until after a delivery leaves her first pregnancy unprotected against congenital rubella syndrome."
+   },
+   "objective": "Vaccinate a rubella-nonimmune patient before conception and advise a 4-week interval.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "vaccination",
+    "preconception"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A healthy 28-year-old woman and her partner plan to conceive. Neither has a family history of genetic disease, and both of their families are of mixed European and Latin American ancestry. Her CBC is normal. She asks which genetic carrier screening she should be offered. Which of the following is most appropriate?</p>",
+   "options": [
+    "Cystic fibrosis and spinal muscular atrophy carrier screening",
+    "No carrier screening because there is no family history",
+    "Tay-Sachs enzyme testing only",
+    "Fragile X premutation testing only",
+    "Karyotype of both partners"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>ACOG recommends offering cystic fibrosis and spinal muscular atrophy carrier screening to everyone considering pregnancy, whatever their ancestry or family history, along with a CBC to screen for hemoglobinopathy. Expanded panels are an acceptable alternative. A positive result leads to partner testing and genetic counselling.</p><p><strong>Takeaway:</strong> Offer CF and SMA carrier screening, plus a CBC with indices, to all people planning pregnancy. A negative family history does not exclude carrier status.</p>",
+   "whyNot": {
+    "B": "Most carriers of recessive conditions have no affected relatives, so carrier screening is not limited to people with a family history.",
+    "C": "Tay-Sachs screening is targeted mainly to people of Ashkenazi Jewish, French-Canadian or Cajun ancestry, or with a family history.",
+    "D": "Fragile X testing is offered when there is a relevant family or personal history, which she does not have.",
+    "E": "Karyotyping of partners is used after recurrent pregnancy loss, not as routine carrier screening."
+   },
+   "objective": "Offer universal CF and SMA carrier screening before pregnancy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "carrier screening"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman had a Roux-en-Y gastric bypass 7 months ago and has lost 30 kg. Her BMI is now 33 kg/m². She is sexually active with a male partner and wants to avoid pregnancy for now, though she hopes to conceive in the future. She asks for a combined oral contraceptive, which she used before surgery. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    "Levonorgestrel intrauterine device, and delay conception until 12 to 24 months after surgery",
+    "Combined oral contraceptive, and delay conception until 3 months after surgery",
+    "Progestin-only pill, with conception allowed once weight is stable",
+    "Fertility awareness methods, with conception allowed now",
+    "Combined oral contraceptive at a double dose to overcome malabsorption"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Pregnancy is postponed for 12 to 24 months after bariatric surgery, while weight loss is rapid and nutritional deficiencies are common. After a malabsorptive procedure such as Roux-en-Y bypass, absorption of oral contraceptives is unreliable. The US MEC rates combined oral pills category 3 and progestin-only pills category 3 in this setting. A long-acting reversible method such as a levonorgestrel IUD avoids the problem.</p><p><strong>Takeaway:</strong> After malabsorptive bariatric surgery, avoid relying on oral contraceptives. Use a LARC and delay conception for 12 to 24 months.</p>",
+   "whyNot": {
+    "B": "Oral contraceptive efficacy is unreliable after Roux-en-Y bypass, and a 3-month interval is too short.",
+    "C": "Progestin-only pills are also unreliably absorbed after a malabsorptive procedure.",
+    "D": "Fertility awareness methods are less effective, and conceiving during rapid weight loss is not advised.",
+    "E": "Doubling the dose is not a recommended strategy and raises estrogen-related risks."
+   },
+   "objective": "Recommend contraception and pregnancy timing after malabsorptive bariatric surgery.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance",
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "contraception",
+    "obesity"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 33-year-old woman with Hashimoto thyroiditis takes levothyroxine 100 µg daily. Her TSH 2 months ago was 1.8 µU/mL. She calls the clinic because a home pregnancy test is positive; her last menstrual period was 5 weeks ago. She has no symptoms. Which of the following is the most appropriate instruction?</p>",
+   "options": [
+    "Increase levothyroxine by taking two extra tablets each week, and check TSH in about 4 weeks",
+    "Continue the current dose and recheck TSH at 20 weeks",
+    "Stop levothyroxine until the end of the first trimester",
+    "Switch to liothyronine for the remainder of pregnancy",
+    "Halve the dose because hCG will stimulate her thyroid"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Levothyroxine requirements rise by about 25 to 30% early in pregnancy, because thyroxine-binding globulin increases and the placenta degrades T4. In early gestation the fetus depends entirely on maternal T4. A practical plan is to take two extra doses per week (nine doses instead of seven) once pregnancy is confirmed, then check TSH about every 4 weeks until mid-pregnancy and adjust to trimester-specific targets.</p><p><strong>Takeaway:</strong> When a patient on levothyroxine becomes pregnant, increase the dose by about 25 to 30% straight away and monitor TSH every 4 weeks.</p>",
+   "whyNot": {
+    "B": "Waiting until 20 weeks risks maternal hypothyroxinemia during the period when the fetus depends on maternal T4.",
+    "C": "Stopping levothyroxine would cause hypothyroidism, which is associated with miscarriage and impaired neurodevelopment.",
+    "D": "Liothyronine crosses the placenta poorly and does not supply the T4 the fetal brain needs.",
+    "E": "Her thyroid cannot respond meaningfully to hCG because of Hashimoto disease. Her requirement goes up, not down."
+   },
+   "objective": "Increase levothyroxine as soon as pregnancy is confirmed in a patient with hypothyroidism.",
+   "extraAreas": [
+    "12.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "thyroid",
+    "early pregnancy"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old transgender man (assigned female at birth) has taken testosterone cypionate injections for 4 years and has not had a menstrual period for 3 years. He has a uterus and ovaries. He and his partner, who produces sperm, want to have a child. He wants to carry the pregnancy. Which of the following is the most appropriate counselling?</p>",
+   "options": [
+    "Stop testosterone before trying to conceive, because it can virilise a fetus",
+    "Continue testosterone, because amenorrhea shows he cannot ovulate",
+    "Continue testosterone and add letrozole to induce ovulation",
+    "Stop testosterone only after a positive pregnancy test",
+    "IVF with a gestational carrier is required after any testosterone exposure"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Testosterone often causes amenorrhea but does not reliably stop ovulation. It is not a contraceptive. It crosses the placenta and can virilise an XX fetus. A transgender man who wants to carry a pregnancy stops testosterone before trying to conceive, and menses and ovulation usually return within months. Counselling should cover the possibility of gender dysphoria during pregnancy and postpartum chest feeding, with affirming, accurate language.</p><p><strong>Takeaway:</strong> Testosterone is teratogenic and is not contraception. Stop it before conception in a transgender man who plans to carry a pregnancy.</p>",
+   "whyNot": {
+    "B": "Amenorrhea on testosterone does not prove anovulation. Unintended pregnancies happen on testosterone.",
+    "C": "Continuing testosterone exposes the embryo to androgens, and ovulation induction is not the first step.",
+    "D": "Stopping after a positive test exposes the embryo during early development, including genital differentiation.",
+    "E": "Previous testosterone use does not require a gestational carrier. Many people conceive after stopping it."
+   },
+   "objective": "Counsel a transgender man on stopping testosterone before conception.",
+   "extraAreas": [
+    "12.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance",
+    "communication"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gender-affirming care",
+    "preconception"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "When does the rostral neuropore close, and what defect follows if it fails?",
+   "back": "About day 25 after fertilisation. Failure causes anencephaly.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which folate-dependent enzyme makes dTMP from dUMP?",
+   "back": "Thymidylate synthase, using N5,N10-methylene-tetrahydrofolate.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "In maternal PKU, does the fetal genotype protect the fetus?",
+   "back": "No. High maternal phenylalanine crosses the placenta and harms even a heterozygous fetus.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Carrier risk of an unaffected sibling of a person with an autosomal recessive disease?",
+   "back": "2/3.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Which hemoglobin causes hydrops fetalis when no alpha-globin genes are present?",
+   "back": "Hb Bart (gamma-4 tetramers).",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "FMR1 repeat range for a premutation, and when does it expand?",
+   "back": "About 55 to 200 CGG repeats. It expands to a full mutation on maternal transmission.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Most characteristic (though rare) malformation in pregestational diabetes?",
+   "back": "Caudal regression syndrome (sacral agenesis).",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why do levothyroxine needs rise in early pregnancy?",
+   "back": "Estrogen raises TBG, and placental deiodinase degrades T4.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Folic acid dose for people at average risk who could become pregnant?",
+   "back": "0.4 to 0.8 mg daily, starting at least 1 month before conception.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Folic acid dose after a pregnancy affected by a neural tube defect?",
+   "back": "4 mg daily, started before conception, as a separate tablet.",
+   "question": 9
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Preconception HbA1c target in pregestational diabetes?",
+   "back": "Below 6.5% if it can be achieved without significant hypoglycemia.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "How long to avoid pregnancy after MMR or varicella vaccine?",
+   "back": "4 weeks.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Which carrier screens does ACOG recommend offering to everyone planning pregnancy?",
+   "back": "Cystic fibrosis and spinal muscular atrophy, plus a CBC for hemoglobinopathy.",
+   "question": 13
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "How long should pregnancy be delayed after bariatric surgery?",
+   "back": "12 to 24 months.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "First action for a patient on levothyroxine with a positive pregnancy test?",
+   "back": "Take about two extra doses per week (25 to 30% increase), then check TSH every 4 weeks.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Is testosterone contraception for a transgender man?",
+   "back": "No. It is teratogenic and is stopped before conception if pregnancy is wanted.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Which antiseizure drug should be switched before conception if possible?",
+   "back": "Valproate, under supervision, to a lower-risk agent.",
+   "question": null
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" role="img" aria-label="Two-panel schematic. Panel A labels the pilosebaceous unit: hair shaft, sebaceous gland, arrector pili muscle, the bulge stem-cell zone and the bulb with its dermal papilla. Panel B shows the anagen, catagen and telogen phases and notes when shedding appears in anagen effluvium, telogen effluvium, alopecia areata and scarring alopecia.">
+<title>Two-panel schematic. Panel A labels the pilosebaceous unit: hair shaft, sebaceous gland, arrector pili muscle, the bulge stem-cell zone and the bulb with its dermal papilla. Panel B shows the anagen, catagen and telogen phases and notes when shedding appears in anagen effluvium, telogen effluvium, alopecia areata and scarring alopecia.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="470" fill="#ffffff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#0f172a">A. The pilosebaceous unit</text>
+<rect x="20" y="56" width="290" height="24" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1"/>
+<text x="28" y="73" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Epidermis</text>
+<path d="M118 80 L118 290" fill="none" stroke="#0f172a" stroke-width="2"/>
+<path d="M158 80 L158 290" fill="none" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="138" cy="316" rx="40" ry="32" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="138" cy="330" rx="15" ry="13" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M138 300 L138 40" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+<text x="146" y="48" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Hair shaft</text>
+<ellipse cx="92" cy="132" rx="24" ry="18" fill="#fef9c3" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M116 132 L118 132" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+<text x="20" y="168" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Sebaceous</text>
+<text x="20" y="184" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">gland</text>
+<path d="M158 192 L252 86" fill="none" stroke="#64748b" stroke-width="3"/>
+<text x="222" y="128" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Arrector</text>
+<text x="222" y="144" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">pili</text>
+<path d="M163 180 L170 180 L170 206 L163 206" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+<text x="176" y="214" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Bulge: stem cells</text>
+<text x="176" y="230" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">(destroyed in</text>
+<text x="176" y="246" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">scarring alopecia)</text>
+<line x1="178" y1="316" x2="214" y2="300" stroke="#0f172a" stroke-width="1.5"/>
+<text x="218" y="292" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Bulb: matrix</text>
+<text x="218" y="308" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">keratinocytes</text>
+<text x="218" y="324" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">(targeted in</text>
+<text x="218" y="340" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">anagen effluvium</text>
+<text x="218" y="356" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">and alopecia areata)</text>
+<line x1="150" y1="334" x2="214" y2="392" stroke="#0f172a" stroke-width="1.5"/>
+<text x="218" y="396" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Dermal papilla</text>
+<text x="340" y="28" font-family="sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#0f172a">B. Hair cycle and when shedding appears</text>
+<rect x="340" y="48" width="120" height="84" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="400" y="70" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Anagen</text>
+<text x="400" y="90" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">growth</text>
+<text x="400" y="105" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">years on scalp</text>
+<text x="400" y="120" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">~85-90% of hairs</text>
+<rect x="480" y="48" width="120" height="84" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="540" y="70" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Catagen</text>
+<text x="540" y="90" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">regression</text>
+<text x="540" y="105" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">about 2-3 weeks</text>
+<rect x="620" y="48" width="120" height="84" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+<text x="680" y="70" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Telogen</text>
+<text x="680" y="90" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">rest</text>
+<text x="680" y="105" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">about 3 months</text>
+<text x="680" y="120" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">club hair shed</text>
+<line x1="460" y1="90" x2="478" y2="90" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="600" y1="90" x2="618" y2="90" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<path d="M680 132 L680 156 L400 156 L400 136" fill="none" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="400" y1="140" x2="400" y2="134" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="540" y="172" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">new anagen hair pushes out the club hair</text>
+<text x="340" y="200" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">Anagen effluvium</text>
+<text x="340" y="218" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Matrix mitosis stops in growing hairs (cytotoxic</text>
+<text x="340" y="234" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">chemotherapy, radiation): broken, tapered shafts</text>
+<text x="340" y="250" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">fall within days to weeks.</text>
+<text x="340" y="278" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">Telogen effluvium</text>
+<text x="340" y="296" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">A trigger (fever, childbirth, surgery, crash diet)</text>
+<text x="340" y="312" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">moves many anagen follicles into telogen at once:</text>
+<text x="340" y="328" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">club hairs shed about 2-4 months later.</text>
+<text x="340" y="356" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">Alopecia areata</text>
+<text x="340" y="374" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">T cells attack the anagen bulb; bulge stem cells</text>
+<text x="340" y="390" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">survive, so the loss is nonscarring and reversible.</text>
+<text x="340" y="418" font-family="sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#0f172a">Scarring alopecia</text>
+<text x="340" y="436" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Inflammation at the bulge destroys stem cells:</text>
+<text x="340" y="452" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">follicular openings vanish; loss is permanent.</text>
+</svg>

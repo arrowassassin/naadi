@@ -1,0 +1,681 @@
+{
+ "area": "13.02.03",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Physiology of conception, causes of infertility and fertility drugs",
+   "html": "<h2>What has to go right for conception</h2>\n<p>Conception requires an oocyte released on time, sperm able to reach it, a patent tube where fertilisation happens and an endometrium ready to accept the embryo. Infertility is a failure at one or more of these steps, and causes are roughly divided into ovulatory, tubal or peritoneal, uterine, male factor and unexplained, with more than one present in many couples. Male factor contributes in about a third to a half of couples, which is why both partners are evaluated together.</p>\n<h3>Ovulation</h3>\n<p>Pulsatile GnRH from the hypothalamus stimulates pituitary FSH and LH. FSH recruits a cohort of antral follicles and induces aromatase in granulosa cells; LH stimulates theca cells to make androstenedione, which granulosa cells aromatise to estradiol (the two-cell, two-gonadotropin model). One dominant follicle emerges because it has the most FSH receptors and aromatase and can survive as rising estradiol and inhibin B lower FSH. When estradiol stays high (roughly above 200 pg/mL for about 2 days), feedback switches from negative to positive, producing the <strong>LH surge</strong>. The surge restarts meiosis I in the oocyte (which has been arrested in prophase I since fetal life), luteinises the granulosa cells and triggers follicle rupture about a day and a half after it begins. The secondary oocyte is released arrested in metaphase II and completes meiosis only if fertilised.</p>\n<p>The corpus luteum secretes progesterone (and estradiol), which converts the endometrium to secretory, raises basal body temperature and thickens cervical mucus. A midluteal serum progesterone above about 3 ng/mL indicates that ovulation occurred. Without pregnancy, the corpus luteum regresses after about 14 days; with pregnancy, <strong>hCG from the syncytiotrophoblast</strong> acts on LH receptors to rescue it until the placenta takes over progesterone production at around 8&ndash;10 weeks.</p>\n<h3>Ovarian reserve</h3>\n<p>The pool of primordial follicles is fixed before birth and declines throughout life, falling faster after the mid-30s, and oocyte aneuploidy rises with age. <strong>Anti-Mullerian hormone (AMH)</strong>, made by granulosa cells of preantral and small antral follicles, and the antral follicle count on ultrasound reflect the size of the remaining pool and predict response to ovarian stimulation. They do not predict natural fertility well in a person who is ovulating. A high early-follicular FSH with a normal or high estradiol indicates diminished reserve.</p>\n<h3>Fertilisation and implantation</h3>\n<p>Sperm become able to fertilise only after <strong>capacitation</strong> in the female tract (removal of surface glycoproteins and cholesterol, changes in membrane fluidity). Binding to the zona pellucida triggers the <strong>acrosome reaction</strong>, releasing enzymes that let sperm penetrate the zona. Fusion with the oocyte causes a wave of calcium release that drives the <strong>cortical reaction</strong>: cortical granules release enzymes that modify the zona so that no further sperm can bind (block to polyspermy), and the oocyte completes meiosis II. Fertilisation usually occurs in the <strong>ampulla</strong> of the tube. The embryo travels to the uterus over several days and implants as a blastocyst about 6&ndash;7 days after fertilisation, when the syncytiotrophoblast invades the decidualised endometrium and begins secreting hCG.</p>\n<h2>Mechanisms of the main causes</h2>\n<table class=\"hy\"><thead><tr><th>Cause</th><th>Mechanism</th><th>Typical clue</th></tr></thead><tbody>\n<tr><td>Polycystic ovary syndrome</td><td>High LH pulse frequency, theca androgen excess and insulin resistance arrest follicle development</td><td>Oligomenorrhea, hyperandrogenism, many small follicles</td></tr>\n<tr><td>Functional hypothalamic amenorrhea</td><td>Low energy availability, stress or weight loss slow GnRH pulses</td><td>Low LH, FSH and estradiol; athlete or restrictive eating</td></tr>\n<tr><td>Hyperprolactinemia</td><td>Prolactin suppresses hypothalamic GnRH pulsatility</td><td>Galactorrhea, drug history, pituitary adenoma</td></tr>\n<tr><td>Primary ovarian insufficiency</td><td>Follicle depletion or dysfunction before 40</td><td>High FSH, low estradiol and AMH</td></tr>\n<tr><td>Tubal disease</td><td>Mucosal destruction and fimbrial occlusion after salpingitis (often chlamydial and silent), endometriosis or surgery</td><td>Hydrosalpinx on imaging; ectopic pregnancy history</td></tr>\n<tr><td>Uterine factors</td><td>Distorted or scarred cavity prevents implantation</td><td>Submucosal fibroid, polyp, septum, intrauterine adhesions after curettage</td></tr>\n<tr><td>Endometriosis</td><td>Adhesions, inflammatory peritoneal fluid, reduced oocyte quality</td><td>Dysmenorrhea, dyspareunia, endometrioma</td></tr>\n</tbody></table>\n<p>In PCOS, high-frequency GnRH pulses favour LH over FSH; LH drives theca androgen production, while relative FSH deficiency halts follicle maturation, leaving many small antral follicles. Hyperinsulinemia acts synergistically with LH on theca cells and suppresses hepatic sex hormone-binding globulin, raising free testosterone. A hydrosalpinx lowers IVF success because fluid from the dilated tube refluxes into the uterine cavity and is embryotoxic.</p>\n<h2>Fertility drugs by mechanism</h2>\n[[figure:s23f-fig130203-1]]\n<ul>\n<li><strong>Clomiphene citrate</strong>: a selective estrogen receptor modulator that blocks estrogen receptors in the hypothalamus. The brain senses low estrogen, GnRH pulse frequency rises, and FSH and LH increase. Its antiestrogenic effects on cervical mucus and endometrium may reduce efficacy; it causes hot flashes and occasionally visual disturbances, and raises the chance of twins.</li>\n<li><strong>Letrozole</strong>: an aromatase inhibitor that lowers estradiol production, removing negative feedback so FSH rises. Because it has a short half-life and leaves estrogen receptors untouched, it tends to give monofollicular ovulation and a normal endometrium.</li>\n<li><strong>Gonadotropins</strong> (recombinant FSH, menotropins with FSH and LH activity) stimulate follicles directly and are used for hypogonadotropic hypogonadism and IVF. They carry the highest risk of multiple gestation and ovarian hyperstimulation.</li>\n<li><strong>hCG</strong> or a GnRH agonist \"trigger\" mimics or provokes the LH surge to complete oocyte maturation before retrieval or timed intercourse.</li>\n<li><strong>GnRH antagonists</strong> (immediate receptor block) or <strong>continuous GnRH agonists</strong> (downregulation after an initial flare) prevent a premature LH surge during IVF stimulation.</li>\n<li><strong>Dopamine agonists</strong> (cabergoline, bromocriptine) restore ovulation in hyperprolactinemia; <strong>metformin</strong> improves insulin sensitivity in PCOS but is a weak ovulation inducer by itself.</li>\n</ul>\n<p><strong>Ovarian hyperstimulation syndrome</strong> follows exposure of multiple stimulated follicles to hCG (exogenous trigger or early pregnancy). Luteinised granulosa cells overproduce <strong>vascular endothelial growth factor</strong>, which increases capillary permeability; fluid shifts into the peritoneal and pleural spaces, causing enlarged ovaries, ascites, haemoconcentration, hyponatremia, oliguria and a high risk of thrombosis. Using a GnRH agonist trigger instead of hCG and freezing all embryos lowers the risk.</p>\n<div class=\"pearl\"><p>Clomiphene and letrozole both work by making the hypothalamus \"see\" less estrogen; clomiphene blocks the receptor, letrozole lowers the hormone. Both need an intact hypothalamic-pituitary axis, so they fail in hypogonadotropic hypogonadism.</p></div>\n<div class=\"trap\"><p>AMH estimates how many oocytes stimulation will yield, not whether someone can conceive naturally this year. Do not use a low AMH alone to tell an ovulating patient that natural conception is impossible.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Female Infertility"
+    },
+    {
+     "statpearls": "Ovulation Induction Techniques"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Evaluating and treating infertility; fertility preservation",
+   "html": "<h2>When to evaluate</h2>\n<p>Infertility is failure to conceive after 12 months of regular unprotected intercourse when the person with ovaries is under 35, or after 6 months at 35 or older. Evaluate immediately at 40 or older, or whenever there is an obvious cause: oligomenorrhea or amenorrhea, known tubal or uterine disease, stage III or IV endometriosis, prior chemotherapy or pelvic radiation, or a known male factor. The same applies to same-sex couples and single people seeking pregnancy, who may need donor sperm or a gestational carrier rather than a diagnosis of disease.</p>\n<h2>The initial workup</h2>\n<table class=\"hy\"><thead><tr><th>Question</th><th>Test</th><th>Notes</th></tr></thead><tbody>\n<tr><td>Is sperm normal?</td><td>Semen analysis</td><td>Abnormal results are repeated and lead to evaluation by a urologist or andrologist</td></tr>\n<tr><td>Is ovulation occurring?</td><td>Menstrual history; midluteal progesterone; urinary LH kits</td><td>Regular cycles every 21&ndash;35 days almost always mean ovulation</td></tr>\n<tr><td>Why is ovulation not occurring?</td><td>hCG, TSH, prolactin, FSH and estradiol; androgens and 17-hydroxyprogesterone if hyperandrogenic</td><td>Classify as hypothalamic, PCOS-type, hyperprolactinemic, thyroid or ovarian insufficiency</td></tr>\n<tr><td>What is the ovarian reserve?</td><td>AMH, antral follicle count, early-follicular FSH and estradiol</td><td>Predicts response to stimulation and guides urgency, especially over 35</td></tr>\n<tr><td>Are the tubes open?</td><td>Hysterosalpingography or sonographic contrast study</td><td>Laparoscopy with dye if endometriosis or adhesions are suspected</td></tr>\n<tr><td>Is the cavity normal?</td><td>Transvaginal ultrasound, saline infusion sonography or hysteroscopy</td><td>Polyps, submucosal fibroids, septum and adhesions are treated surgically</td></tr>\n</tbody></table>\n<p>Preconception care runs alongside: folic acid, rubella and varicella immunity, review of teratogenic drugs (for example valproate, isotretinoin, warfarin, methotrexate, ACE inhibitors), smoking and alcohol cessation, and attention to weight, since both obesity and low BMI impair ovulation and pregnancy outcomes.</p>\n<h2>Treatment by cause</h2>\n<ul>\n<li><strong>PCOS</strong>: lifestyle change and weight loss of even 5&ndash;10% can restore ovulation. <strong>Letrozole</strong> is the first-line ovulation inducer because it gives higher live birth rates than clomiphene. Gonadotropins or laparoscopic ovarian drilling are second line; IVF follows if these fail. Metformin is an adjunct, especially with glucose intolerance.</li>\n<li><strong>Functional hypothalamic amenorrhea</strong>: restore energy availability (more intake, less exercise, treat any eating disorder). If ovulation does not return, use pulsatile GnRH where available or injectable gonadotropins containing LH activity. Clomiphene and letrozole usually fail because the axis is suppressed.</li>\n<li><strong>Hyperprolactinemia</strong>: stop causative drugs where possible; a dopamine agonist (cabergoline is better tolerated; bromocriptine has more pregnancy data) restores ovulation.</li>\n<li><strong>Thyroid disease</strong>: treat hypothyroidism to a normal TSH before conception.</li>\n<li><strong>Tubal disease</strong>: IVF bypasses the tubes. Hydrosalpinges visible on ultrasound lower IVF success, so laparoscopic salpingectomy (or proximal tubal occlusion) is recommended before IVF. Proximal blockage on HSG can be spasm and may be cannulated.</li>\n<li><strong>Uterine factors</strong>: hysteroscopic polypectomy, myomectomy, septum resection or adhesiolysis.</li>\n<li><strong>Male factor</strong>: intrauterine insemination for mild abnormalities; IVF with intracytoplasmic sperm injection (ICSI) for severe oligospermia or surgically retrieved sperm.</li>\n<li><strong>Unexplained infertility</strong>: ovarian stimulation with intrauterine insemination for a limited number of cycles, then IVF; proceed to IVF sooner with advancing age or low reserve.</li>\n</ul>\n<h3>Complications of treatment</h3>\n<p>The main risks are multiple gestation (highest with gonadotropins; limited by single embryo transfer in IVF), ovarian hyperstimulation syndrome and ectopic or heterotopic pregnancy. <strong>OHSS</strong> presents days after the trigger or in early pregnancy with abdominal distension, nausea, ascites, weight gain, haemoconcentration, hyponatremia and sometimes oliguria or dyspnoea. Mild disease is managed as an outpatient with oral fluids and analgesia. Severe disease (haematocrit above about 45%, oliguria, tense ascites, hypoxemia) needs admission for IV crystalloid with strict fluid balance, thromboprophylaxis with low-molecular-weight heparin and paracentesis for tense ascites or breathing difficulty. Diuretics are avoided because intravascular volume is already low, and the enlarged ovaries are not removed.</p>\n<h2>Fertility preservation</h2>\n<p>Discuss fertility before any treatment that may impair it, as early as possible and regardless of prognosis, and refer interested patients promptly to a reproductive specialist.</p>\n<ul>\n<li><strong>Before gonadotoxic cancer therapy</strong> (alkylating agents such as cyclophosphamide, pelvic radiation, stem cell transplant): oocyte or embryo cryopreservation after a stimulation cycle that can begin at any point in the menstrual cycle and takes about 2 weeks. For estrogen-sensitive cancers, letrozole is added to keep estradiol low. Ovarian tissue cryopreservation is an option when there is no time for stimulation or before puberty. GnRH agonist during chemotherapy may lower the risk of ovarian insufficiency, mainly shown in breast cancer, but it is an adjunct, not a substitute. Post-pubertal people with testes bank sperm.</li>\n<li><strong>Before gender-affirming hormones or surgery</strong>: WPATH SOC 8 recommends discussing reproductive options before starting treatment. Estradiol with antiandrogens can impair spermatogenesis and testosterone can impair ovulation, and recovery after stopping is uncertain, so sperm cryopreservation before feminizing therapy and oocyte or embryo cryopreservation before masculinizing therapy are offered. Gonadectomy causes permanent loss of gametes. Adolescents who begin puberty suppression at early Tanner stage 2 have immature gametes, so options are limited (tissue cryopreservation, experimental for testicular tissue) unless puberty is allowed to progress.</li>\n<li><strong>Testosterone is not contraception</strong>: transmasculine people with a uterus and ovaries can ovulate and conceive on testosterone, and testosterone is contraindicated in pregnancy. Those who want to conceive stop testosterone and usually regain ovulation, but timelines vary.</li>\n</ul>\n<div class=\"trap\"><p>Do not prescribe testosterone or other androgens to a man who is trying to conceive; exogenous androgens suppress LH and FSH and cause azoospermia. The same suppression makes androgens useless as treatment for male infertility.</p></div>\n<div class=\"pearl\"><p>For a hydrosalpinx seen on ultrasound, the step before IVF is salpingectomy (or proximal occlusion). Leaving it in place roughly halves the chance of success.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Female Infertility"
+    },
+    {
+     "statpearls": "In Vitro Fertilization"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Where ovulation-induction drugs act on the hypothalamic-pituitary-ovarian axis (schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman with polycystic ovary syndrome has not ovulated despite 10 kg weight loss. She is started on an oral drug on days 3&ndash;7 of a progestin-induced menstrual cycle. The drug is a selective estrogen receptor modulator. Which of the following best describes how this drug induces ovulation?</p>",
+   "options": [
+    "It activates pituitary GnRH receptors continuously",
+    "It blocks hypothalamic estrogen receptors, increasing GnRH pulse secretion",
+    "It directly stimulates FSH receptors on granulosa cells",
+    "It inhibits aromatase in granulosa cells",
+    "It mimics LH at theca cell receptors"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Clomiphene citrate is a SERM that acts mainly as an estrogen receptor antagonist in the hypothalamus. With the negative feedback signal blocked, the hypothalamus increases GnRH pulsatility, and pituitary FSH and LH rise, driving follicle growth. Its antiestrogenic action at the cervix and endometrium may reduce pregnancy rates despite ovulation.</p><p><strong>Takeaway:</strong> Clomiphene induces ovulation by blocking hypothalamic estrogen receptors and removing negative feedback.</p>",
+   "whyNot": {
+    "A": "Continuous GnRH receptor activation (GnRH agonist) downregulates the pituitary and suppresses FSH and LH.",
+    "C": "Direct FSH receptor stimulation describes injectable gonadotropins, not an oral SERM.",
+    "D": "Aromatase inhibition is the mechanism of letrozole, which is not a SERM.",
+    "E": "hCG mimics LH; clomiphene does not act on LH receptors."
+   },
+   "objective": "Explain how clomiphene citrate induces ovulation.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ovulation induction"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman with oligomenorrhea, hirsutism and polycystic ovarian morphology is trying to conceive. She is given letrozole for 5 days early in the cycle. Which of the following hormonal changes is the direct effect of the drug that leads to ovulation?</p>",
+   "options": [
+    "Decreased conversion of androgens to estrogens, lowering negative feedback on FSH",
+    "Decreased hepatic synthesis of sex hormone-binding globulin",
+    "Decreased secretion of prolactin from lactotrophs",
+    "Increased conversion of testosterone to dihydrotestosterone",
+    "Increased hepatic clearance of estradiol"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Letrozole is a nonsteroidal aromatase inhibitor. Blocking aromatase lowers estradiol production, so negative feedback on the hypothalamus and pituitary falls and FSH rises, stimulating follicle growth. Because estrogen receptors are not blocked, the endometrium and cervical mucus are spared, and it is the first-line ovulation inducer in PCOS.</p><p><strong>Takeaway:</strong> Letrozole lowers estradiol by aromatase inhibition, which raises FSH and induces ovulation.</p>",
+   "whyNot": {
+    "B": "Lower SHBG would raise free androgens, which is a feature of PCOS rather than a drug action that induces ovulation.",
+    "C": "Lowering prolactin describes dopamine agonists, used for hyperprolactinemia.",
+    "D": "Conversion to DHT is by 5-alpha-reductase; aromatase inhibitors do not increase it in a way that induces ovulation.",
+    "E": "Letrozole reduces estradiol production; it does not speed hepatic clearance."
+   },
+   "objective": "Describe the mechanism of letrozole for ovulation induction.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ovulation induction"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 33-year-old woman undergoing IVF receives recombinant FSH, and 22 follicles develop. Final oocyte maturation is triggered with hCG. Five days after retrieval she has abdominal distension, nausea and shortness of breath. Ultrasound shows enlarged ovaries and moderate ascites. Hematocrit is 49%, and serum sodium is 131 mEq/L (131 mmol/L). Which of the following mediators is primarily responsible for the fluid shift?</p>",
+   "options": [
+    "Aldosterone from the adrenal cortex",
+    "Antidiuretic hormone from the posterior pituitary",
+    "Atrial natriuretic peptide from the heart",
+    "Prostaglandin F2-alpha from the endometrium",
+    "Vascular endothelial growth factor from luteinised granulosa cells"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>This is ovarian hyperstimulation syndrome. hCG acting on many luteinised follicles causes granulosa-lutein cells to overproduce VEGF, which sharply increases capillary permeability. Fluid moves into the peritoneum and pleura, producing ascites, haemoconcentration and intravascular depletion; the resulting hypovolemia then activates ADH and the renin-angiotensin system, worsening hyponatremia.</p><p><strong>Takeaway:</strong> OHSS is a VEGF-mediated capillary leak triggered by hCG acting on many stimulated follicles.</p>",
+   "whyNot": {
+    "A": "Aldosterone rises as a secondary response to intravascular depletion; it does not cause the capillary leak.",
+    "B": "ADH contributes to hyponatremia secondarily but does not move fluid into the peritoneum.",
+    "C": "ANP promotes natriuresis and would not produce ascites and haemoconcentration.",
+    "D": "PGF2-alpha causes uterine contraction and dysmenorrhea; it is not the mediator of OHSS."
+   },
+   "objective": "Identify VEGF as the mediator of ovarian hyperstimulation syndrome.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "assisted reproduction",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 37-year-old woman is planning to freeze oocytes and asks how many eggs she is likely to obtain. Her clinician orders a serum hormone that reflects the number of growing preantral and small antral follicles and varies little across the menstrual cycle. This hormone is secreted by which of the following cells?</p>",
+   "options": [
+    "Corpus luteum cells",
+    "Granulosa cells",
+    "Oocytes",
+    "Pituitary gonadotrophs",
+    "Theca interna cells"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Anti-Mullerian hormone is produced by granulosa cells of preantral and small antral follicles. Its level parallels the size of the remaining follicle pool and predicts the number of oocytes retrieved after stimulation. It falls with age and is undetectable after menopause. It is not a good predictor of natural fertility in someone who is ovulating.</p><p><strong>Takeaway:</strong> AMH from granulosa cells of small follicles is the main marker of ovarian reserve.</p>",
+   "whyNot": {
+    "A": "The corpus luteum secretes progesterone and estradiol after ovulation, not AMH.",
+    "C": "Oocytes signal to surrounding cells but do not secrete AMH into the blood.",
+    "D": "Gonadotrophs secrete FSH and LH; early-follicular FSH is a cruder and more variable reserve marker.",
+    "E": "Theca interna cells make androgens under LH stimulation; they do not make AMH."
+   },
+   "objective": "Identify granulosa cells as the source of anti-Mullerian hormone.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ovarian reserve"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman has been unable to conceive for 2 years. Her cycles are regular, her partner's semen analysis is normal, and she has no history of pelvic surgery or symptoms of endometriosis. She recalls being treated for a \"bladder infection\" at 19 years of age but never had a sexually transmitted infection diagnosed. Hysterosalpingography shows bilateral dilated tubes with no spill of contrast into the peritoneum. Which of the following organisms most likely caused her tubal disease?</p>",
+   "options": [
+    "Candida albicans",
+    "Chlamydia trachomatis",
+    "Gardnerella vaginalis",
+    "Herpes simplex virus type 2",
+    "Trichomonas vaginalis"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Bilateral distal tubal occlusion with hydrosalpinges in a person without surgery or endometriosis is most often the result of prior salpingitis. <em>C. trachomatis</em> is the leading cause, and it frequently causes silent or mild infection whose damage is partly immune-mediated, so many patients never knew they had PID.</p><p><strong>Takeaway:</strong> Silent chlamydial salpingitis is the leading cause of tubal factor infertility.</p>",
+   "whyNot": {
+    "A": "Candida causes vulvovaginitis and does not ascend to cause salpingitis.",
+    "C": "<em>Gardnerella</em> is part of BV-associated flora that may join polymicrobial PID but does not usually initiate it.",
+    "D": "HSV-2 causes genital ulcers and latency in ganglia, not tubal occlusion.",
+    "E": "Trichomonas causes vaginitis; it is not a recognised cause of tubal infertility."
+   },
+   "objective": "Attribute tubal factor infertility most often to prior chlamydial infection.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "tubal infertility"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman conceives after IVF. Before transfer she received progesterone supplementation because the corpus luteum function after stimulation was uncertain. In a natural pregnancy, the corpus luteum is maintained during the first weeks after implantation by a hormone produced by which of the following?</p>",
+   "options": [
+    "Cytotrophoblast acting on FSH receptors",
+    "Decidualised endometrial stromal cells acting on prolactin receptors",
+    "Fetal adrenal cortex acting on ACTH receptors",
+    "Maternal anterior pituitary acting on LH receptors",
+    "Syncytiotrophoblast acting on LH receptors"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>After implantation, the syncytiotrophoblast secretes hCG, which shares its alpha subunit with LH and binds the LH receptor on the corpus luteum. This rescues the corpus luteum from regression so it keeps making progesterone until the placenta becomes the main source at about 8&ndash;10 weeks. Exogenous progesterone after IVF compensates for luteal phase defects caused by stimulation protocols.</p><p><strong>Takeaway:</strong> hCG from the syncytiotrophoblast rescues the corpus luteum through the LH receptor.</p>",
+   "whyNot": {
+    "A": "Cytotrophoblast is the progenitor layer; hCG is secreted by syncytiotrophoblast and acts on LH receptors, not FSH receptors.",
+    "B": "Decidual prolactin has local roles but does not maintain the corpus luteum.",
+    "C": "The fetal adrenal produces DHEA-S for placental estrogen synthesis, not luteotropic support.",
+    "D": "Maternal LH falls after ovulation and cannot sustain the corpus luteum beyond about 14 days."
+   },
+   "objective": "Explain how hCG from the syncytiotrophoblast maintains the corpus luteum.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "early pregnancy physiology"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>During IVF, a single sperm is injected into each mature oocyte. Embryologists note that, in conventional insemination, more than one sperm can bind the zona pellucida, yet normally only one fertilises the oocyte. Which of the following events normally prevents more than one sperm from fertilising an oocyte?</p>",
+   "options": [
+    "Capacitation of sperm in the female reproductive tract",
+    "Completion of meiosis I at the time of the LH surge",
+    "Exocytosis of cortical granules after a rise in oocyte calcium",
+    "Release of acrosomal enzymes after zona binding",
+    "Secretion of hCG by the trophoblast"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Sperm-oocyte fusion triggers waves of intracellular calcium release in the oocyte. This drives exocytosis of cortical granules, whose enzymes modify zona pellucida glycoproteins so that additional sperm cannot bind or penetrate (the slow block to polyspermy). The calcium signal also lets the oocyte complete meiosis II.</p><p><strong>Takeaway:</strong> The cortical reaction, triggered by oocyte calcium release, blocks polyspermy.</p>",
+   "whyNot": {
+    "A": "Capacitation enables sperm to fertilise; it does not prevent other sperm from entering.",
+    "B": "Meiosis I completes before ovulation; this produces a secondary oocyte but does not affect polyspermy.",
+    "D": "The acrosome reaction lets sperm penetrate the zona; it is required for fertilisation, not a barrier to it.",
+    "E": "hCG is secreted after implantation, days after fertilisation."
+   },
+   "objective": "Describe the cortical reaction as the block to polyspermy.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "fertilisation"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 36-year-old woman and her 38-year-old male partner have been trying to conceive for 7 months. Her cycles are regular every 28&ndash;30 days. Neither has children. She has no history of pelvic infection or surgery, and she takes only a prenatal vitamin. Her BMI is 24 kg/m<sup>2</sup>. Pelvic examination is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Begin evaluation of both partners now, including semen analysis, ovarian reserve testing and tubal patency testing",
+    "Prescribe clomiphene citrate for three cycles without further testing",
+    "Proceed directly to in vitro fertilisation",
+    "Reassure them and recommend evaluation if they have not conceived after 12 months",
+    "Schedule diagnostic laparoscopy"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Because she is 35 or older, infertility is defined after 6 months of trying, and evaluation should begin now. Both partners are evaluated together: semen analysis, confirmation of ovulation (her regular cycles strongly suggest it), ovarian reserve testing, assessment of tubal patency and the uterine cavity, and baseline tests such as TSH where indicated.</p><p><strong>Takeaway:</strong> Evaluate infertility after 6 months when the person with ovaries is 35 or older, and evaluate both partners.</p>",
+   "whyNot": {
+    "B": "Empiric ovulation induction without evaluating sperm and tubes can miss the actual cause and exposes her to multiple gestation risk.",
+    "C": "IVF may become necessary, but it is not chosen before a basic evaluation identifies the cause.",
+    "D": "Waiting 12 months is appropriate only under 35; delay reduces success at her age.",
+    "E": "Laparoscopy is reserved for suspected endometriosis or adhesions after noninvasive testing."
+   },
+   "objective": "Start infertility evaluation of both partners after 6 months when the patient is 35 or older.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infertility evaluation"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old woman who is a competitive distance runner has had no menses for 14 months and wants to conceive. Over the past 6 months, with a dietitian's help, she has increased her intake, reduced training and regained 4 kg; her BMI is now 19.5 kg/m<sup>2</sup>, but menses have not returned. Urine beta-hCG is negative. Serum FSH and LH are low-normal, estradiol is low, and TSH and prolactin are normal. MRI of the pituitary is normal. A progestin challenge produces no bleeding. Her partner's semen analysis is normal. Which of the following is the most appropriate pharmacotherapy to induce ovulation?</p>",
+   "options": [
+    "Cabergoline",
+    "Clomiphene citrate",
+    "Injectable gonadotropins",
+    "Letrozole",
+    "Metformin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has functional hypothalamic amenorrhea with hypogonadotropic hypogonadism. Restoring energy availability is the first step, and she has done this without return of ovulation. Because her hypothalamic-pituitary axis is suppressed and estradiol is low, drugs that rely on reducing estrogen feedback (clomiphene, letrozole) are usually ineffective. Ovulation can be induced with pulsatile GnRH where available or with injectable gonadotropins that include LH activity, with close ultrasound monitoring to limit multiple gestation.</p><p><strong>Takeaway:</strong> In hypogonadotropic hypogonadism, induce ovulation with gonadotropins (or pulsatile GnRH), not clomiphene or letrozole.</p>",
+   "whyNot": {
+    "A": "Cabergoline treats hyperprolactinemia; her prolactin is normal.",
+    "B": "Clomiphene needs endogenous estrogen and an intact axis to raise FSH; it usually fails in hypothalamic amenorrhea.",
+    "D": "Letrozole also depends on removing estrogen feedback from an active axis and is rarely effective here.",
+    "E": "Metformin helps insulin-resistant PCOS and has no role in hypothalamic amenorrhea."
+   },
+   "objective": "Use gonadotropins to induce ovulation in hypogonadotropic hypogonadism after nutritional recovery.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ovulation induction",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman has been unable to conceive for 18 months. She had pelvic inflammatory disease at 22 years of age. Results of the evaluation are shown.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Menstrual cycles</td><td>Regular, every 28 days</td></tr><tr><td>Midluteal progesterone</td><td>11 ng/mL (ovulatory range above 3 ng/mL)</td></tr><tr><td>AMH</td><td>2.4 ng/mL (age-appropriate)</td></tr><tr><td>Partner semen analysis</td><td>Normal</td></tr><tr><td>Hysterosalpingography</td><td>Both tubes dilated and occluded distally; no peritoneal spill; normal cavity</td></tr><tr><td>Transvaginal ultrasound</td><td>Bilateral fluid-filled, sausage-shaped adnexal structures</td></tr></tbody></table><p>The couple chooses IVF. Which of the following is the most appropriate step before embryo transfer?</p>",
+   "options": [
+    "Antibiotic suppression with doxycycline throughout IVF",
+    "Diagnostic hysteroscopy with endometrial scratching",
+    "Laparoscopic bilateral salpingectomy",
+    "Microsurgical tubal reanastomosis",
+    "No intervention; proceed directly to embryo transfer"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has bilateral distal tubal occlusion with hydrosalpinges visible on ultrasound, so IVF is the treatment of choice. Hydrosalpinx fluid refluxes into the uterine cavity and is toxic to embryos, roughly halving implantation and live birth rates. Removing the tubes (or occluding them proximally if surgery is difficult) before embryo transfer restores IVF success rates.</p><p><strong>Takeaway:</strong> Remove or proximally occlude ultrasound-visible hydrosalpinges before IVF.</p>",
+   "whyNot": {
+    "A": "Prolonged antibiotics do not eliminate the hydrosalpinx fluid that impairs implantation.",
+    "B": "Endometrial scratching has not been shown to improve live birth rates and does not address the tubes.",
+    "D": "Reanastomosis is for reversal of tubal ligation; it does not repair distal tubal disease with hydrosalpinges.",
+    "E": "Proceeding with hydrosalpinges in place significantly lowers the chance of a live birth."
+   },
+   "objective": "Perform salpingectomy for hydrosalpinges before IVF.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "tubal infertility",
+    "assisted reproduction"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman has newly diagnosed hormone receptor-negative breast cancer. Her oncologist plans neoadjuvant chemotherapy including doxorubicin and cyclophosphamide to begin in 3 weeks. She has a partner and wants children in the future. Her menses are regular. Which of the following is the most appropriate next step regarding her fertility?</p>",
+   "options": [
+    "Advise that she can attempt pregnancy after chemotherapy without any further steps",
+    "Begin a combined oral contraceptive during chemotherapy to protect the ovaries",
+    "Defer chemotherapy until she has completed a pregnancy",
+    "Measure AMH after chemotherapy and refer only if it is low",
+    "Urgent referral for oocyte or embryo cryopreservation before chemotherapy"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Cyclophosphamide is highly gonadotoxic and can cause premature ovarian insufficiency. Fertility should be discussed before treatment and interested patients referred urgently. Ovarian stimulation can start at any point in the cycle and takes about 2 weeks, so oocyte or embryo cryopreservation is usually possible without delaying her chemotherapy. A GnRH agonist during chemotherapy may add some ovarian protection but is not a substitute.</p><p><strong>Takeaway:</strong> Refer for oocyte or embryo cryopreservation before gonadotoxic chemotherapy; random-start stimulation avoids delay.</p>",
+   "whyNot": {
+    "A": "Alkylating chemotherapy may permanently reduce ovarian reserve, so waiting risks losing the chance of genetic offspring.",
+    "B": "Hormonal contraceptives do not protect the ovaries from chemotherapy.",
+    "C": "Delaying curative cancer treatment for a pregnancy is unsafe.",
+    "D": "Testing after chemotherapy is too late to preserve gametes."
+   },
+   "objective": "Refer patients for oocyte or embryo cryopreservation before gonadotoxic chemotherapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "fertility preservation",
+    "oncology"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old transgender woman (assigned male at birth) is seen to begin feminizing hormone therapy with estradiol and spironolactone. She has completed puberty, has had consistent gender incongruence for many years, and her mental health is stable. She is unsure whether she will want biological children in the future. She has not had any gender-affirming surgery. Which of the following is the most appropriate recommendation before starting therapy?</p>",
+   "options": [
+    "Advise that hormone-related infertility is always reversible within 3 months of stopping",
+    "Defer hormone therapy until she decides definitively whether she wants children",
+    "Offer sperm cryopreservation before starting hormones",
+    "Recommend orchiectomy at the same time to avoid needing spironolactone",
+    "Start therapy now and offer sperm banking after 1 year of treatment"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>WPATH SOC 8 and the Endocrine Society advise counselling on fertility before starting gender-affirming hormones. Estradiol and antiandrogens suppress spermatogenesis, and recovery after stopping is uncertain and may be incomplete, so sperm cryopreservation before therapy is the most reliable option. Uncertainty about future parenthood is a reason to preserve gametes, not to delay care.</p><p><strong>Takeaway:</strong> Offer sperm cryopreservation before feminizing hormones; effects on spermatogenesis may not be reversible.</p>",
+   "whyNot": {
+    "A": "Recovery of spermatogenesis after stopping feminizing therapy is variable and not guaranteed.",
+    "B": "Delaying medically indicated therapy is not required; fertility preservation addresses her uncertainty.",
+    "D": "Gonadectomy is irreversible and permanently ends gamete production; it is not offered as a shortcut before counselling.",
+    "E": "After a year of therapy, sperm quality is often impaired; banking is best done before starting."
+   },
+   "objective": "Offer sperm cryopreservation before feminizing gender-affirming hormone therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "obgyn"
+   ],
+   "tasks": [
+    "communication",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "fertility preservation",
+    "transgender health"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman is seen 6 days after hCG-triggered oocyte retrieval with 26 oocytes collected. She has severe abdominal distension, vomiting and has passed very little urine in 12 hours. Pulse is 112/min, blood pressure is 102/64 mm Hg and respirations are 22/min. The abdomen is tense with shifting dullness. Hematocrit is 52%, serum sodium is 129 mEq/L (129 mmol/L), and creatinine is 1.4 mg/dL (124 &micro;mol/L). Ultrasound shows bilateral 10-cm multicystic ovaries and large-volume ascites. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Discharge with oral fluids and review in 1 week",
+    "Emergency bilateral oophorectomy",
+    "Hospital admission for intravenous crystalloid, thromboprophylaxis and paracentesis for tense ascites",
+    "Intravenous furosemide to increase urine output",
+    "Additional hCG injections for luteal support"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has severe ovarian hyperstimulation syndrome: tense ascites, oliguria, haemoconcentration (hematocrit above 45%), hyponatremia and rising creatinine. She needs admission for careful IV crystalloid with strict fluid balance, prophylactic low-molecular-weight heparin because of the high thrombosis risk, and ultrasound-guided paracentesis for tense ascites or respiratory compromise. The ovaries are left in place; the condition regresses as hCG levels fall, though pregnancy prolongs it.</p><p><strong>Takeaway:</strong> Severe OHSS: admit, give IV crystalloid, anticoagulant prophylaxis and drain tense ascites; avoid diuretics.</p>",
+   "whyNot": {
+    "A": "Oliguria, haemoconcentration and renal impairment indicate severe disease that cannot be managed at home.",
+    "B": "Enlarged OHSS ovaries resolve spontaneously; surgery is only for torsion or rupture with bleeding.",
+    "D": "Diuretics worsen intravascular depletion and thrombosis risk in OHSS.",
+    "E": "More hCG would aggravate OHSS; hCG is avoided for luteal support in high-risk cycles."
+   },
+   "objective": "Admit patients with severe OHSS for fluids, thromboprophylaxis and paracentesis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "assisted reproduction",
+    "drug adverse effects"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "How does clomiphene induce ovulation?",
+   "back": "SERM that blocks hypothalamic estrogen receptors, raising GnRH, FSH and LH.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "How does letrozole induce ovulation?",
+   "back": "Aromatase inhibition lowers estradiol, removing negative feedback so FSH rises.",
+   "question": 2
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Mediator of ovarian hyperstimulation syndrome?",
+   "back": "VEGF from luteinised granulosa cells, increasing capillary permeability.",
+   "question": 3
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Which cells secrete AMH?",
+   "back": "Granulosa cells of preantral and small antral follicles.",
+   "question": 4
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Leading cause of tubal factor infertility?",
+   "back": "Prior (often silent) Chlamydia trachomatis salpingitis.",
+   "question": 5
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "What maintains the corpus luteum in early pregnancy?",
+   "back": "hCG from syncytiotrophoblast acting on LH receptors.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "What blocks polyspermy?",
+   "back": "The cortical reaction after oocyte calcium release.",
+   "question": 7
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Midluteal progesterone level that confirms ovulation?",
+   "back": "Above about 3 ng/mL.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Where does fertilisation usually occur?",
+   "back": "The ampulla of the fallopian tube.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "When is infertility evaluated at 35 or older?",
+   "back": "After 6 months of trying (immediately at 40 or older).",
+   "question": 8
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "First-line ovulation induction drug in PCOS?",
+   "back": "Letrozole.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Ovulation induction in hypothalamic amenorrhea after nutritional recovery fails?",
+   "back": "Gonadotropins with LH activity or pulsatile GnRH.",
+   "question": 9
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Hydrosalpinx before IVF?",
+   "back": "Salpingectomy or proximal tubal occlusion before transfer.",
+   "question": 10
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Severe OHSS management?",
+   "back": "Admit, IV crystalloid, LMWH prophylaxis, paracentesis for tense ascites; no diuretics.",
+   "question": 13
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Fertility preservation before cyclophosphamide chemotherapy?",
+   "back": "Oocyte or embryo cryopreservation, usually with random-start stimulation.",
+   "question": 11
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Before feminizing hormones, which fertility option is offered?",
+   "back": "Sperm cryopreservation.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Is testosterone reliable contraception?",
+   "back": "No; people on testosterone can ovulate and conceive, and testosterone is teratogenic.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Treatment for severe male factor infertility?",
+   "back": "IVF with intracytoplasmic sperm injection.",
+   "question": null
+  }
+ ]
+}

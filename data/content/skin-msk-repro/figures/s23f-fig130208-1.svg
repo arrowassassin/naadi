@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-label="Schematic coronal outlines of a typical uterus and of unicornuate, didelphys, bicornuate, septate and arcuate uteri, each labelled with the developmental step that fails." font-family="sans-serif" font-size="14" fill="#0f172a">
+<title>Schematic coronal outlines of a typical uterus and of unicornuate, didelphys, bicornuate, septate and arcuate uteri, each labelled with the developmental step that fails.</title>
+<rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+
+<text x="380" y="30" text-anchor="middle" font-size="18" font-weight="bold">Uterine anomalies by the developmental step that fails</text>
+<g stroke="#0f172a" stroke-width="2" fill="#f8fafc">
+<path d="M60 90 Q110 70 160 90 L150 170 Q110 190 70 170 Z"/>
+<path d="M300 80 Q330 70 345 95 L335 170 Q320 185 305 170 Z"/>
+<path d="M540 90 Q565 70 590 90 L585 170 Q565 185 545 170 Z"/>
+<path d="M610 90 Q635 70 660 90 L655 170 Q635 185 615 170 Z"/>
+<path d="M60 260 Q85 230 110 260 Q135 230 160 260 L150 340 Q110 360 70 340 Z"/>
+<path d="M300 260 Q350 245 400 260 L390 340 Q350 360 310 340 Z"/>
+<path d="M540 260 Q590 245 640 260 L630 340 Q590 360 550 340 Z"/>
+</g>
+<line x1="350" y1="262" x2="350" y2="330" stroke="#0f172a" stroke-width="4"/>
+<path d="M560 258 Q590 275 620 258" fill="none" stroke="#0f172a" stroke-width="2"/>
+<text x="110" y="205" text-anchor="middle" font-weight="bold">Typical uterus</text>
+<text x="110" y="223" text-anchor="middle" font-size="13">one cavity, smooth fundus</text>
+<text x="325" y="205" text-anchor="middle" font-weight="bold">Unicornuate</text>
+<text x="325" y="223" text-anchor="middle" font-size="13">one duct forms</text>
+<text x="600" y="205" text-anchor="middle" font-weight="bold">Didelphys</text>
+<text x="600" y="223" text-anchor="middle" font-size="13">no fusion: two uteri, two cervices</text>
+<text x="110" y="378" text-anchor="middle" font-weight="bold">Bicornuate</text>
+<text x="110" y="396" text-anchor="middle" font-size="13">partial fusion: notched outer fundus</text>
+<text x="350" y="378" text-anchor="middle" font-weight="bold">Septate</text>
+<text x="350" y="396" text-anchor="middle" font-size="13">smooth outer fundus, internal septum</text>
+<text x="590" y="378" text-anchor="middle" font-weight="bold">Arcuate</text>
+<text x="590" y="396" text-anchor="middle" font-size="13">slight dip of the cavity roof</text>
+<text x="380" y="428" text-anchor="middle" font-size="12">Schematic coronal outlines. Agenesis (MRKH) has no uterus to draw.</text>
+
+</svg>

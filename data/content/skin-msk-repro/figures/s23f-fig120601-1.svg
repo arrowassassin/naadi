@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 570" width="760" height="570" role="img" aria-label="Timeline of weeks after conception showing the all-or-none period, the embryonic period of organogenesis, the fetal period, sensitive windows for seven organ systems and examples of teratogens by timing" font-family="sans-serif">
+<title>Timeline of weeks after conception showing the all-or-none period, the embryonic period of organogenesis, the fetal period, sensitive windows for seven organ systems and examples of teratogens by timing</title>
+<rect x="0" y="0" width="760" height="570" fill="#ffffff"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">When exposure matters: sensitive periods after conception</text>
+<text x="380" y="52" font-size="13" font-weight="normal" text-anchor="middle" fill="#0f172a">Weeks after conception (add 2 for gestational age from the last menstrual period)</text>
+<rect x="200.0" y="70" width="28.42105263157896" height="46" rx="0" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="228.42105263157896" y="70" width="85.26315789473682" height="46" rx="0" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="313.6842105263158" y="70" width="426.3157894736842" height="46" rx="0" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.5"/>
+<text x="214.21052631578948" y="98" font-size="12" font-weight="bold" text-anchor="middle" fill="#0f172a">0-2</text>
+<text x="271.0526315789474" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="#0f172a">Embryonic period</text>
+<text x="271.0526315789474" y="108" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">weeks 3-8</text>
+<text x="526.8421052631579" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="#0f172a">Fetal period (weeks 9-38)</text>
+<text x="526.8421052631579" y="108" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">growth, brain maturation, organ function</text>
+<text x="20" y="90" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Period</text>
+<text x="20" y="140" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">All-or-none (weeks 0-2): loss of the embryo or normal development; malformations are rare.</text>
+<text x="20" y="158" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Organ (solid: major malformations; dashed: functional or minor defects)</text>
+<text x="20" y="200" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Central nervous system</text>
+<rect x="242.6315789473684" y="187" width="184.73684210526315" height="16" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<line x1="427.36842105263156" y1="195" x2="740.0" y2="195" stroke="#0f172a" stroke-width="3" stroke-dasharray="6,4"/>
+<text x="20" y="230" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Heart</text>
+<rect x="242.6315789473684" y="217" width="71.05263157894737" height="16" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<line x1="313.6842105263158" y1="225" x2="327.89473684210526" y2="225" stroke="#0f172a" stroke-width="3" stroke-dasharray="6,4"/>
+<text x="20" y="260" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Limbs</text>
+<rect x="256.8421052631579" y="247" width="56.84210526315786" height="16" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<text x="20" y="290" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Eyes</text>
+<rect x="256.8421052631579" y="277" width="56.84210526315786" height="16" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<line x1="313.6842105263158" y1="285" x2="740.0" y2="285" stroke="#0f172a" stroke-width="3" stroke-dasharray="6,4"/>
+<text x="20" y="320" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Lip and palate</text>
+<rect x="271.0526315789474" y="307" width="56.84210526315786" height="16" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<text x="20" y="350" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Ears</text>
+<rect x="256.8421052631579" y="337" width="71.05263157894734" height="16" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<line x1="327.89473684210526" y1="345" x2="427.36842105263156" y2="345" stroke="#0f172a" stroke-width="3" stroke-dasharray="6,4"/>
+<text x="20" y="380" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">External genitalia</text>
+<rect x="299.4736842105263" y="367" width="71.05263157894734" height="16" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<line x1="370.52631578947364" y1="375" x2="740.0" y2="375" stroke="#0f172a" stroke-width="3" stroke-dasharray="6,4"/>
+<line x1="200.0" y1="404" x2="200.0" y2="412" stroke="#0f172a" stroke-width="1.5"/>
+<text x="200.0" y="428" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">0</text>
+<line x1="228.42105263157896" y1="404" x2="228.42105263157896" y2="412" stroke="#0f172a" stroke-width="1.5"/>
+<text x="228.42105263157896" y="428" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">2</text>
+<line x1="313.6842105263158" y1="404" x2="313.6842105263158" y2="412" stroke="#0f172a" stroke-width="1.5"/>
+<text x="313.6842105263158" y="428" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">8</text>
+<line x1="427.36842105263156" y1="404" x2="427.36842105263156" y2="412" stroke="#0f172a" stroke-width="1.5"/>
+<text x="427.36842105263156" y="428" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">16</text>
+<line x1="541.0526315789473" y1="404" x2="541.0526315789473" y2="412" stroke="#0f172a" stroke-width="1.5"/>
+<text x="541.0526315789473" y="428" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">24</text>
+<line x1="654.7368421052631" y1="404" x2="654.7368421052631" y2="412" stroke="#0f172a" stroke-width="1.5"/>
+<text x="654.7368421052631" y="428" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">32</text>
+<line x1="740.0" y1="404" x2="740.0" y2="412" stroke="#0f172a" stroke-width="1.5"/>
+<text x="740.0" y="428" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">38</text>
+<line x1="200.0" y1="408" x2="740.0" y2="408" stroke="#0f172a" stroke-width="1.5"/>
+<text x="20" y="454" font-size="14" font-weight="bold" text-anchor="start" fill="#0f172a">Examples by timing</text>
+<text x="20" y="476" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">Embryonic: thalidomide (limbs), isotretinoin (face, heart, thymus), valproate (neural tube),</text>
+<text x="20" y="496" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">  warfarin (nasal hypoplasia, stippled epiphyses), methimazole (scalp aplasia cutis).</text>
+<text x="20" y="516" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">Fetal: ACE inhibitors and ARBs (renal failure, oligohydramnios, skull hypoossification), NSAIDs</text>
+<text x="20" y="536" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">  (oligohydramnios from 20 weeks, ductal constriction later), tetracyclines (teeth), alcohol (brain).</text>
+</svg>

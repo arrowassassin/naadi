@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 610" width="760" height="610" role="img" aria-label="Classification tree of testicular tumours into germ cell tumours (seminoma and nonseminomatous types) and sex cord-stromal tumours, with a table of typical patients and serum markers: AFP normal in seminoma, high in yolk sac tumour; hCG very high in choriocarcinoma; markers normal in teratoma, Leydig, Sertoli tumours and lymphoma. An elevated AFP excludes pure seminoma.">
+<title>Classification tree of testicular tumours into germ cell tumours (seminoma and nonseminomatous types) and sex cord-stromal tumours, with a table of typical patients and serum markers: AFP normal in seminoma, high in yolk sac tumour; hCG very high in choriocarcinoma; markers normal in teratoma, Leydig, Sertoli tumours and lymphoma. An elevated AFP excludes pure seminoma.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="610" fill="#ffffff"/>
+<text x="380" y="30" font-family="sans-serif" font-size="18" fill="#0f172a" text-anchor="middle" font-weight="bold">Testicular tumours: families, typical patients and serum markers</text>
+<rect x="280" y="50" width="200" height="46" rx="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5"/><text x="380.0" y="78.2" font-family="sans-serif" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="bold">Testicular neoplasm</text>
+<rect x="20" y="140" width="470" height="46" rx="8" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/><text x="255.0" y="167.9" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Germ cell tumours (most testicular cancers)</text>
+<rect x="510" y="140" width="230" height="46" rx="8" fill="#fef3c7" stroke="#0f172a" stroke-width="1.5"/><text x="625.0" y="167.9" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Sex cord-stromal tumours</text>
+<line x1="330" y1="96" x2="255" y2="138" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="430" y1="96" x2="600" y2="138" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="230" width="150" height="46" rx="8" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/><text x="95.0" y="257.9" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Seminoma</text>
+<rect x="200" y="230" width="290" height="46" rx="8" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/><text x="345.0" y="257.9" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Nonseminomatous germ cell tumours</text>
+<line x1="180" y1="186" x2="95" y2="228" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="330" y1="186" x2="345" y2="228" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="30" y="310" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="bold">Tumour</text>
+<text x="265" y="310" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="bold">Typical patient or feature</text>
+<text x="545" y="310" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="bold">Serum markers</text>
+<line x1="20" y1="318" x2="740" y2="318" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="20" y="322" width="720" height="30" fill="#f8fafc"/>
+<text x="30" y="342" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Seminoma</text>
+<text x="265" y="342" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Commonest; 30s-40s; radiosensitive</text>
+<text x="545" y="342" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">AFP normal; hCG may be mildly up</text>
+<text x="30" y="372" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Embryonal carcinoma</text>
+<text x="265" y="372" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Aggressive; often part of mixed tumours</text>
+<text x="545" y="372" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">AFP and/or hCG may rise</text>
+<rect x="20" y="382" width="720" height="30" fill="#f8fafc"/>
+<text x="30" y="402" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Yolk sac tumour</text>
+<text x="265" y="402" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Pure form mainly in young children</text>
+<text x="545" y="402" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">AFP high</text>
+<text x="30" y="432" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Choriocarcinoma</text>
+<text x="265" y="432" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Early blood-borne spread (lung, brain)</text>
+<text x="545" y="432" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">hCG very high</text>
+<rect x="20" y="442" width="720" height="30" fill="#f8fafc"/>
+<text x="30" y="462" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Teratoma</text>
+<text x="265" y="462" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Benign before puberty, malignant after</text>
+<text x="545" y="462" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Usually normal</text>
+<text x="30" y="492" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Leydig cell tumour</text>
+<text x="265" y="492" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Hormone excess; Reinke crystals</text>
+<text x="545" y="492" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Germ cell markers normal</text>
+<rect x="20" y="502" width="720" height="30" fill="#f8fafc"/>
+<text x="30" y="522" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Sertoli cell tumour</text>
+<text x="265" y="522" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Usually hormonally silent</text>
+<text x="545" y="522" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Germ cell markers normal</text>
+<text x="30" y="552" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Testicular lymphoma</text>
+<text x="265" y="552" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Commonest testis mass after about age 60</text>
+<text x="545" y="552" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Germ cell markers normal</text>
+<text x="30" y="590" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="normal">LDH reflects tumour burden in any germ cell tumour. An elevated AFP excludes a pure seminoma.</text>
+</svg>

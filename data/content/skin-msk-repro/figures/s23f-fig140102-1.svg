@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 590" width="760" height="590" role="img" aria-label="Schematic of the seminiferous tubule wall. Two Sertoli cells are joined near the basement membrane by tight junctions that split the epithelium into a basal compartment holding spermatogonia and an adluminal compartment holding spermatocytes, spermatids and sperm. The barrier hides post-pubertal germ-cell antigens; breaching it can cause antisperm antibodies.">
+<title>Schematic of the seminiferous tubule wall. Two Sertoli cells are joined near the basement membrane by tight junctions that split the epithelium into a basal compartment holding spermatogonia and an adluminal compartment holding spermatocytes, spermatids and sperm. The barrier hides post-pubertal germ-cell antigens; breaching it can cause antisperm antibodies.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="590" fill="#ffffff"/>
+<text x="380" y="30" font-family="sans-serif" font-size="18" fill="#0f172a" text-anchor="middle" font-weight="bold">Seminiferous tubule wall: the blood-testis barrier</text>
+<rect x="20" y="440" width="720" height="14" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.5"/>
+<text x="380" y="476" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="normal">Basement membrane; below it lie myoid cells, capillaries and Leydig cells</text>
+<rect x="160" y="90" width="140" height="350" rx="18" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<text x="230" y="115" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Sertoli cell</text>
+<rect x="460" y="90" width="140" height="350" rx="18" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<text x="530" y="115" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Sertoli cell</text>
+<rect x="300" y="380" width="160" height="16" fill="#fde68a" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="300" y1="388" x2="460" y2="388" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="380" y="356" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="bold">Tight junctions</text>
+<text x="380" y="372" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="normal">(the barrier)</text>
+<line x1="20" y1="403" x2="740" y2="403" stroke="#0f172a" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="612" y="418" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">BASAL compartment:</text>
+<text x="612" y="434" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">spermatogonia (Sg)</text>
+<text x="612" y="150" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">ADLUMINAL</text>
+<text x="612" y="166" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="bold">compartment:</text>
+<text x="612" y="184" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">spermatocytes (Sc),</text>
+<text x="612" y="200" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">spermatids (St),</text>
+<text x="612" y="216" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">sperm</text>
+<text x="30" y="418" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Reached by blood</text>
+<text x="30" y="434" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">and antibodies</text>
+<text x="30" y="166" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">Shielded from</text>
+<text x="30" y="182" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="start" font-weight="normal">immune cells</text>
+<circle cx="380" cy="421" r="15" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.5"/>
+<text x="380" y="426" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="bold">Sg</text>
+<circle cx="380" cy="290" r="24" fill="#fef3c7" stroke="#0f172a" stroke-width="1.5"/>
+<text x="380" y="295" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="bold">Sc</text>
+<ellipse cx="380" cy="200" rx="16" ry="24" fill="#fef3c7" stroke="#0f172a" stroke-width="1.5"/>
+<text x="380" y="205" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="bold">St</text>
+<line x1="380" y1="340" x2="380" y2="316" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="380" y1="264" x2="380" y2="228" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="380" y="72" font-family="sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="normal">Lumen: spermatozoa leave for the epididymis</text>
+<line x1="380" y1="174" x2="380" y2="82" stroke="#0f172a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="30" y="520" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="normal">Spermatogonia are present before birth and are tolerated as self. Spermatocytes, spermatids</text>
+<text x="30" y="542" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="normal">and sperm appear at puberty with new antigens; the barrier hides them. Vasectomy, trauma,</text>
+<text x="30" y="564" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="start" font-weight="normal">torsion or infection can expose them and induce antisperm antibodies.</text>
+</svg>

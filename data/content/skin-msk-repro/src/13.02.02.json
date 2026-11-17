@@ -1,0 +1,845 @@
+{
+ "area": "13.02.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "HPV, cervical neoplasia and vulvovaginal tumours: pathology",
+   "html": "<h2>HPV and the cervix</h2>\n<p>The cervix has a squamous ectocervix and a columnar endocervix. Where they meet is the <strong>squamocolumnar junction</strong>; under the influence of estrogen at puberty and in pregnancy, columnar epithelium everts onto the ectocervix and is gradually replaced by squamous epithelium (squamous metaplasia). The band of metaplastic epithelium between the original and the current junction is the <strong>transformation zone</strong>. Immature metaplastic basal cells there are the main target of high-risk human papillomavirus, which is why almost all cervical precancer and cancer starts in this zone, and why the junction recedes into the canal after menopause, making colposcopy harder.</p>\n<p>HPV is a non-enveloped double-stranded DNA virus that infects basal keratinocytes through microabrasions. In productive infection the virus replicates as an episome as cells differentiate, producing koilocytes. In transforming infection by <strong>high-risk types (16 and 18 above all, plus 31, 33, 45, 52, 58 and others)</strong>, viral DNA often integrates into the host genome, disrupting the E2 regulatory gene. Loss of E2 releases expression of the oncoproteins:</p>\n<ul>\n<li><strong>E6</strong> recruits the ubiquitin ligase E6AP to target <strong>p53</strong> for proteasomal degradation, removing the G1 checkpoint and apoptosis; it also activates telomerase.</li>\n<li><strong>E7</strong> binds hypophosphorylated <strong>Rb</strong>, releasing E2F transcription factors and driving S-phase entry. The cell compensates by overexpressing <strong>p16</strong>, which is why diffuse \"block\" p16 staining is a surrogate marker of high-risk HPV-driven dysplasia.</li>\n</ul>\n<p>Most infections clear within 1&ndash;2 years through cell-mediated immunity; persistence is what matters. Cofactors for persistence and progression include smoking, immunosuppression (HIV, transplant drugs), long-term combined hormonal contraceptive use and high parity. HPV-associated cancers also arise in the vulva, vagina, anus, penis and oropharynx.</p>\n<h3>Cervical intraepithelial neoplasia</h3>\n<p>Dysplasia is graded by how much of the epithelial thickness is replaced by immature, atypical basaloid cells with high nuclear-to-cytoplasmic ratios and mitoses above the basal layer. Cytology uses the Bethesda terms (LSIL, HSIL); histology uses CIN 1&ndash;3 or the two-tier LSIL/HSIL system.</p>\n[[figure:s23f-fig130202-1]]\n<table class=\"hy\"><thead><tr><th>Grade</th><th>Extent of atypia</th><th>Behaviour</th></tr></thead><tbody>\n<tr><td>CIN 1 (histologic LSIL)</td><td>Lower third; koilocytes in upper layers</td><td>Productive infection; most regress</td></tr>\n<tr><td>CIN 2</td><td>Up to two thirds</td><td>Many regress in young people, some progress; treated as HSIL in most adults</td></tr>\n<tr><td>CIN 3 (includes carcinoma in situ)</td><td>More than two thirds to full thickness; basement membrane intact</td><td>True precursor of invasive cancer</td></tr>\n<tr><td>Invasive carcinoma</td><td>Breach of basement membrane into stroma</td><td>Can spread to parametria, nodes and adjacent organs</td></tr>\n</tbody></table>\n<p>About three quarters of invasive cervical cancers are <strong>squamous cell carcinomas</strong>; most of the rest are <strong>adenocarcinomas</strong> arising from endocervical glands (HPV 18 is relatively more common in them, and they are harder to detect by cytology). Cancer spreads by direct extension into the parametria and vagina and through pelvic then para-aortic nodes. Lateral extension compresses the <strong>ureters</strong>; hydronephrosis and kidney failure are a classic cause of death in advanced disease. Presentations are postcoital bleeding, intermenstrual bleeding, watery or malodorous discharge and, late, pelvic or back pain and leg oedema.</p>\n<h2>Vulva and vagina</h2>\n<p>Vulvar squamous carcinoma has two pathways. <strong>HPV-associated</strong> disease affects younger people, arises from vulvar HSIL (usual-type VIN) and shares risk factors with cervical cancer. <strong>HPV-independent</strong> disease affects older people, arises from differentiated VIN with <em>TP53</em> mutations, usually against a background of <strong>lichen sclerosus</strong>. Lichen sclerosus is a chronic, probably autoimmune, inflammatory dermatosis: thin, porcelain-white, crinkled skin in a figure-of-eight around the vulva and anus, with an atrophic epidermis, loss of rete ridges, homogenised (hyalinised) collagen in the upper dermis and a band of lymphocytes beneath it. Untreated, it carries a small lifetime risk of squamous carcinoma. By contrast, <strong>lichen simplex chronicus</strong> is epidermal thickening (acanthosis, hyperkeratosis) from chronic scratching, with no increased malignant potential.</p>\n<p><strong>Extramammary Paget disease</strong> of the vulva is a pruritic, red, eczema-like plaque containing large intraepidermal cells with pale cytoplasm (mucin and PAS positive, cytokeratin 7 positive). Unlike Paget disease of the nipple, it usually does not have an underlying carcinoma, although adnexal, rectal or urothelial primaries are sought. <strong>Melanoma</strong> also occurs on the vulva and must be considered for any pigmented lesion.</p>\n<p>Primary vaginal cancer is rare; most vaginal squamous carcinoma is extension from the cervix. Two embryologically interesting tumours: <strong>clear cell adenocarcinoma</strong> in people exposed in utero to diethylstilbestrol (DES), arising from vaginal adenosis (persistent Mullerian glandular epithelium); and <strong>embryonal rhabdomyosarcoma, botryoid type</strong>, a grape-like polypoid mass protruding from the vagina of a girl under about 5 years, made of primitive spindle cells that crowd beneath the epithelium (the cambium layer) and stain for desmin and myogenin.</p>\n<div class=\"pearl\"><p>Two pairs that separate many questions: E6 removes p53 and E7 removes Rb; HPV-associated vulvar cancer is younger and HSIL-driven, while HPV-independent vulvar cancer is older and lichen sclerosus with <em>TP53</em>-driven.</p></div>\n<div class=\"trap\"><p>Koilocytes mean HPV infection, not cancer. Low-grade lesions full of koilocytes usually regress; the grade depends on how high the immature atypical cells extend, not on koilocyte numbers.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Cervical Cancer"
+    },
+    {
+     "statpearls": "Lichen Sclerosus"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Endometrial, myometrial and ovarian tumours: pathology, genetics and markers",
+   "html": "<h2>Endometrial hyperplasia and carcinoma</h2>\n<p>The endometrium proliferates under estrogen and is converted to secretory endometrium by progesterone after ovulation. <strong>Unopposed estrogen</strong> (anovulation as in PCOS, obesity with aromatisation of androstenedione to estrone in adipose tissue, estrogen-only therapy with a uterus, estrogen-secreting granulosa cell tumours, tamoxifen's partial agonism) drives glandular proliferation. Hyperplasia is classified as <strong>without atypia</strong> (low progression risk, responds to progestin) or <strong>atypical hyperplasia/endometrioid intraepithelial neoplasia</strong>, which has cytologic atypia, is often clonal with <em>PTEN</em> loss, and frequently coexists with or progresses to carcinoma.</p>\n<table class=\"hy\"><thead><tr><th>Feature</th><th>Endometrioid carcinoma (\"type I\")</th><th>Serous carcinoma (\"type II\")</th></tr></thead><tbody>\n<tr><td>Typical patient</td><td>Perimenopausal or early postmenopausal, obesity, diabetes, anovulation</td><td>Older, often thin, no estrogen excess</td></tr>\n<tr><td>Background</td><td>Atypical hyperplasia</td><td>Atrophic endometrium; precursor is serous intraepithelial carcinoma</td></tr>\n<tr><td>Molecular</td><td><em>PTEN</em> loss, <em>PIK3CA</em>, <em>KRAS</em>, <em>CTNNB1</em>, mismatch-repair deficiency (microsatellite instability)</td><td><em>TP53</em> mutation in nearly all; copy-number high</td></tr>\n<tr><td>Histology</td><td>Back-to-back glands resembling endometrium</td><td>Papillae with marked atypia, slit-like spaces, psammoma bodies</td></tr>\n<tr><td>Behaviour</td><td>Usually low grade and early stage; good prognosis</td><td>Aggressive; early peritoneal spread</td></tr>\n</tbody></table>\n<p>Modern molecular classification groups endometrial carcinoma into <em>POLE</em>-ultramutated (excellent prognosis), mismatch-repair deficient, p53-abnormal (poor) and no specific molecular profile. All endometrial cancers are now tested for mismatch-repair protein loss by immunohistochemistry, which both guides immunotherapy and screens for <strong>Lynch syndrome</strong>: autosomal dominant germline mutation in <em>MLH1</em>, <em>MSH2</em>, <em>MSH6</em>, <em>PMS2</em> or <em>EPCAM</em> (which silences <em>MSH2</em>). Endometrial cancer is the most common first cancer in many people with Lynch syndrome, ahead of colorectal cancer, and the ovary is also at risk. Loss of <em>MLH1</em> staining is often caused by somatic promoter hypermethylation rather than a germline mutation, which is why <em>MLH1</em> methylation testing follows.</p>\n<h2>Smooth muscle tumours</h2>\n<p><strong>Leiomyomas</strong> (fibroids) are the most common tumour of the female pelvis. Each is a monoclonal proliferation of myometrial smooth muscle; recurrent somatic <em>MED12</em> mutations are found in most. They grow under estrogen and progesterone, enlarge in pregnancy and shrink after menopause, and are more common and earlier in Black women. Grossly they are firm, well circumscribed and white with a whorled cut surface; microscopically, interlacing fascicles of bland spindle cells with few mitoses. Degeneration (hyaline, cystic, or red degeneration from haemorrhagic infarction in pregnancy) causes pain. <strong>Leiomyosarcoma</strong> arises de novo, not from a fibroid; diagnosis rests on at least two of marked atypia, high mitotic count and tumour cell necrosis. Rapid growth after menopause raises concern.</p>\n<h2>Ovarian tumours by cell of origin</h2>\n[[figure:s23f-fig130202-2]]\n<p><strong>Epithelial tumours</strong> are the most common overall and cause most ovarian cancer deaths; they are graded benign (cystadenoma), borderline and malignant. <strong>High-grade serous carcinoma</strong> is the most common malignant type. Most arise from the <strong>distal fallopian tube</strong> (serous tubal intraepithelial carcinoma with <em>TP53</em> mutation) and spread early across peritoneal surfaces, so most present at an advanced stage with ascites and omental disease; germline <em>BRCA1</em> or <em>BRCA2</em> mutations, which impair homologous recombination, are present in a substantial minority. Low-grade serous carcinoma follows a separate <em>KRAS</em>/<em>BRAF</em> pathway through borderline tumours. <strong>Mucinous</strong> tumours can be very large; a mucinous ovarian mass with pseudomyxoma peritonei usually comes from the appendix. <strong>Endometrioid</strong> and <strong>clear cell</strong> carcinomas are associated with endometriosis (and <em>ARID1A</em> loss) and with Lynch syndrome. <strong>Brenner tumours</strong> contain urothelium-like nests with grooved \"coffee-bean\" nuclei and are usually benign.</p>\n<p><strong>Germ cell tumours</strong> affect children and young adults. The <strong>mature cystic teratoma</strong> (dermoid cyst) is the most common ovarian neoplasm in young people; it contains skin, hair, sebaceous material and teeth and is benign, but it predisposes to torsion. Immature teratomas contain primitive neuroepithelium and are graded by its amount. <strong>Struma ovarii</strong> is a teratoma made mostly of thyroid tissue and can cause hyperthyroidism. <strong>Dysgerminoma</strong>, the ovarian counterpart of seminoma, has sheets of large clear cells with fibrous septa and lymphocytes, raises LDH, is very radiosensitive and chemosensitive, and is associated with gonadal dysgenesis containing Y material. <strong>Yolk sac tumour</strong> secretes AFP and has glomeruloid Schiller-Duval bodies. <strong>Choriocarcinoma</strong> secretes hCG, lacks villi and can cause theca lutein cysts.</p>\n<p><strong>Sex cord-stromal tumours</strong> often make hormones. <strong>Granulosa cell tumours</strong> secrete estrogen and inhibin. The adult type (<em>FOXL2</em> mutation) causes endometrial hyperplasia or postmenopausal bleeding and shows coffee-bean nuclei and small rosettes around eosinophilic material (Call-Exner bodies); the juvenile type, which lacks those features, causes peripheral precocious puberty in children. <strong>Sertoli-Leydig cell tumours</strong> produce androgens and virilise. <strong>Fibromas</strong> and thecomas are solid; a fibroma with ascites and a right pleural effusion that resolve after removal is Meigs syndrome. <strong>Metastases</strong> to the ovary, often bilateral, include gastric and other gastrointestinal signet-ring cell carcinomas (Krukenberg tumour) and breast cancer.</p>\n<table class=\"hy\"><thead><tr><th>Tumour</th><th>Marker or hormone</th></tr></thead><tbody>\n<tr><td>High-grade serous carcinoma</td><td>CA-125 (also HE4)</td></tr>\n<tr><td>Mucinous carcinoma</td><td>CEA, CA 19-9</td></tr>\n<tr><td>Dysgerminoma</td><td>LDH (sometimes mild hCG)</td></tr>\n<tr><td>Yolk sac tumour</td><td>AFP</td></tr>\n<tr><td>Choriocarcinoma</td><td>hCG</td></tr>\n<tr><td>Granulosa cell tumour</td><td>Inhibin, estradiol (anti-Mullerian hormone also used)</td></tr>\n<tr><td>Sertoli-Leydig cell tumour</td><td>Testosterone</td></tr>\n</tbody></table>\n<div class=\"pearl\"><p>Combined hormonal contraception lowers the lifetime risk of both ovarian and endometrial cancer, and the protection lasts years after stopping. Fewer ovulations and progestin exposure of the endometrium are the proposed mechanisms.</p></div>\n<div class=\"trap\"><p>CA-125 is neither specific nor a screening test: it rises with endometriosis, fibroids, pregnancy, PID and any peritoneal inflammation, especially before menopause. It is most useful for assessing a pelvic mass in a postmenopausal patient and for following known serous cancer.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Endometrial Cancer"
+    },
+    {
+     "statpearls": "Epithelial Ovarian Cancer"
+    },
+    {
+     "statpearls": "Endometrial Hyperplasia"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Cervical cancer screening, abnormal results and cervical cancer",
+   "html": "<h2>Cervical cancer screening</h2>\n<p>Screening finds and removes precancer before it invades, and it is one of the most effective programs in medicine. The current US recommendations (USPSTF, endorsed broadly by ACOG) are:</p>\n<table class=\"hy\"><thead><tr><th>Group</th><th>Recommendation</th></tr></thead><tbody>\n<tr><td>Younger than 21</td><td>Do not screen, regardless of sexual history</td></tr>\n<tr><td>21&ndash;29</td><td>Cytology every 3 years (ACS and some organisations also accept primary HPV testing from 25)</td></tr>\n<tr><td>30&ndash;65</td><td>Primary high-risk HPV testing every 5 years, cotesting every 5 years, or cytology alone every 3 years; self-collected vaginal HPV samples are an accepted option</td></tr>\n<tr><td>Older than 65</td><td>Stop if prior screening was adequate and negative and there is no history of CIN 2 or worse in the past 25 years</td></tr>\n<tr><td>After hysterectomy with removal of the cervix for benign disease</td><td>Stop</td></tr>\n<tr><td>HIV or other immunosuppression</td><td>Start within a year of sexual debut and no later than 21; screen more often and continue beyond 65</td></tr>\n</tbody></table>\n<p>Vaccination status does not change screening. Screening is based on the organs present, not gender identity: a transgender man or nonbinary person with a cervix follows the same schedule. Testosterone causes cervical atrophy that makes cytology more often unsatisfactory, so primary HPV testing is a useful option, and telling the laboratory about testosterone use helps interpretation. A transgender woman with a neovagina has no cervix and needs no cervical screening.</p>\n<h2>Managing abnormal results</h2>\n<p>US management follows the ASCCP risk-based guidelines: the decision depends on the estimated immediate risk of CIN 3 or worse, calculated from the current result and the past history. Practical rules that cover most exam questions:</p>\n<ul>\n<li><strong>HPV-negative ASC-US</strong>: repeat HPV-based testing in 3 years.</li>\n<li><strong>HPV-positive ASC-US or LSIL</strong> without a recent negative HPV test: colposcopy.</li>\n<li><strong>HPV 16 or 18 positive</strong>, even with normal cytology: colposcopy. Other high-risk types with normal cytology: repeat in 1 year.</li>\n<li><strong>HSIL</strong>: colposcopy, or expedited excisional treatment without colposcopic biopsy in nonpregnant patients 25 and older when the immediate risk is high.</li>\n<li><strong>Atypical glandular cells</strong>: colposcopy with endocervical sampling, plus endometrial sampling at 35 or older or when there is a risk of endometrial neoplasia.</li>\n<li><strong>Age 21&ndash;24</strong>: ASC-US or LSIL is managed with repeat cytology in 1 year, because most lesions regress.</li>\n</ul>\n<p>Colposcopy applies dilute acetic acid, which makes dysplastic epithelium appear white, and directs biopsies of the worst areas. Histologic <strong>CIN 1</strong> is usually observed. <strong>CIN 2 or 3</strong> is treated by excision of the transformation zone: loop electrosurgical excision (LEEP) or cold-knife conization; ablation is acceptable only when the whole junction is seen and invasion is not suspected. In people under 25, CIN 2 can be observed with colposcopy every 6 months. Excision slightly increases the risk of preterm birth in later pregnancies, which is one reason for conservative management in the young.</p>\n<p>In <strong>pregnancy</strong>, colposcopy and biopsy are safe, but endocervical curettage is not performed, and treatment of CIN is deferred until after delivery unless invasion is suspected. The goal during pregnancy is only to exclude invasive cancer.</p>\n<h2>Cervical cancer</h2>\n<p>A visible lesion is biopsied directly; never rely on cytology alone for a visible mass. Staging (FIGO 2018) is clinical, with imaging (MRI for local extent, PET-CT for nodes) and pathology allowed to assign stage. Management depends on stage:</p>\n<ul>\n<li><strong>Microinvasive (IA1) disease</strong>: conization with clear margins for those wanting fertility, or simple hysterectomy.</li>\n<li><strong>Early invasive disease confined to the cervix</strong>: radical hysterectomy with pelvic lymph node assessment, or radical trachelectomy in selected patients who want fertility; primary chemoradiation is an alternative.</li>\n<li><strong>Locally advanced disease</strong> (large tumours, parametrial or vaginal spread, positive nodes, hydronephrosis): concurrent cisplatin-based chemotherapy with external-beam radiation followed by brachytherapy.</li>\n<li><strong>Metastatic or recurrent disease</strong>: platinum-based chemotherapy with bevacizumab and immune checkpoint inhibition in appropriate patients.</li>\n</ul>\n<h2>Prevention</h2>\n<p>The 9-valent HPV vaccine is routinely given at 11&ndash;12 years (from 9), with catch-up through 26 and shared decision-making for 27&ndash;45. Two doses suffice when the series starts before 15; three doses are used from 15 or in immunocompromised people. It is not recommended during pregnancy, but pregnancy testing is not required before vaccination. Smoking cessation lowers the risk of persistence.</p>\n<div class=\"trap\"><p>Do not perform endocervical curettage or excisional treatment for CIN during pregnancy. The only aim is to rule out invasive cancer; treatment waits until after delivery.</p></div>\n<div class=\"pearl\"><p>People living with HIV need cervical screening from the start of sexual activity and for life; the 65-year stopping rule does not apply to them.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Abnormal Papanicolaou Smear"
+    },
+    {
+     "statpearls": "Colposcopy"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Endometrial cancer, fibroids, adnexal masses and hereditary risk: management",
+   "html": "<h2>Postmenopausal and high-risk bleeding: finding endometrial cancer</h2>\n<p>Endometrial carcinoma is the most common gynaecologic cancer in the United States, and its incidence and mortality are rising, particularly the aggressive non-endometrioid types among Black women. About nine in ten patients present with abnormal bleeding, which is why it is often caught early. Any <strong>postmenopausal bleeding</strong> must be evaluated. Either first step is acceptable:</p>\n<ul>\n<li><strong>Transvaginal ultrasound</strong>: an endometrial thickness of 4 mm or less in a postmenopausal person with bleeding has a very high negative predictive value. A thicker stripe, a poorly seen stripe or persistent bleeding needs tissue.</li>\n<li><strong>Office endometrial biopsy</strong>: sensitive for diffuse disease; a nondiagnostic or negative sample with persistent bleeding leads to hysteroscopy with dilation and curettage.</li>\n</ul>\n<p>Before menopause, endometrial sampling is indicated for abnormal bleeding at 45 or older and at any age with prolonged unopposed estrogen exposure (obesity, PCOS, anovulation), failed medical treatment or Lynch syndrome. Tamoxifen thickens the endometrium (often with subepithelial cysts), so ultrasound is less specific in those patients; bleeding on tamoxifen goes to biopsy, but asymptomatic patients do not need routine surveillance.</p>\n<h3>Treatment</h3>\n<ul>\n<li><strong>Hyperplasia without atypia</strong>: progestin therapy, preferably the levonorgestrel IUD (or oral progestin), with repeat sampling; correct the cause (weight, anovulation).</li>\n<li><strong>Atypical hyperplasia</strong>: total hysterectomy because of the high rate of coexisting cancer; if fertility is desired, high-dose progestin (often the levonorgestrel IUD) with sampling every 3&ndash;6 months, followed by hysterectomy after childbearing.</li>\n<li><strong>Carcinoma</strong>: surgical staging with total hysterectomy, bilateral salpingo-oophorectomy and sentinel lymph node mapping, usually by minimally invasive surgery. Adjuvant vaginal brachytherapy, radiation or chemotherapy depends on stage, grade, histology and molecular class; immune checkpoint inhibitors are used for advanced mismatch-repair-deficient disease.</li>\n</ul>\n<h2>Leiomyomas in practice</h2>\n<p>Fibroids cause heavy, prolonged menses with iron-deficiency anaemia, bulk symptoms (pressure, urinary frequency, constipation) and, if they distort the cavity, infertility or pregnancy loss. Examination shows an enlarged, irregular, firm uterus. <strong>Pelvic ultrasound</strong> is the first imaging test; saline infusion sonography or hysteroscopy defines submucosal fibroids; MRI maps fibroids before surgery or embolisation.</p>\n<table class=\"hy\"><thead><tr><th>Goal or situation</th><th>Option</th></tr></thead><tbody>\n<tr><td>Asymptomatic</td><td>Observation; no treatment needed</td></tr>\n<tr><td>Heavy bleeding, cavity not distorted</td><td>Levonorgestrel IUD, combined hormonal contraception, tranexamic acid, NSAIDs</td></tr>\n<tr><td>Short-term shrinkage or bridge to menopause or surgery</td><td>GnRH agonist (with iron to correct anaemia before surgery) or oral GnRH antagonist combined with estrogen-progestin add-back</td></tr>\n<tr><td>Submucosal fibroid, fertility desired</td><td>Hysteroscopic myomectomy</td></tr>\n<tr><td>Intramural or subserosal fibroids, fertility desired</td><td>Laparoscopic or abdominal myomectomy</td></tr>\n<tr><td>Uterus to be preserved, fertility not a priority</td><td>Uterine artery embolisation or radiofrequency ablation</td></tr>\n<tr><td>Definitive treatment</td><td>Hysterectomy</td></tr>\n</tbody></table>\n<p>A rapidly enlarging uterine mass after menopause, or one with features of sarcoma on MRI, should not be morcellated; power morcellation can disseminate an occult leiomyosarcoma.</p>\n<h2>The adnexal mass</h2>\n<p>Transvaginal ultrasound is the first test. Features that favour a benign lesion are a simple, thin-walled, unilocular cyst without solid parts; features that raise concern are solid components, papillary projections, thick septations, internal blood flow, ascites and bilateral or fixed masses. In <strong>premenopausal</strong> patients most masses are functional cysts, endometriomas, dermoids or ectopic pregnancy (always check hCG), and simple cysts are re-imaged rather than removed. In <strong>postmenopausal</strong> patients, a simple cyst under about 10 cm with a normal CA-125 can be followed, but a complex mass, ascites or a raised CA-125 needs <strong>referral to a gynaecologic oncologist</strong>, because surgery by a specialist improves survival in ovarian cancer. In children, ovarian masses are more often germ cell tumours; check AFP, hCG and LDH before surgery and aim to preserve fertility.</p>\n<p>Epithelial ovarian cancer presents with vague bloating, early satiety, pelvic pain and urinary symptoms, usually at an advanced stage. Treatment is primary cytoreductive surgery aiming for no visible residual disease (or neoadjuvant chemotherapy then interval surgery) and carboplatin with paclitaxel; PARP inhibitors are used as maintenance, with the most benefit in <em>BRCA</em>-mutated or homologous-recombination-deficient tumours. Everyone with epithelial ovarian, tubal or peritoneal cancer should be offered germline genetic testing.</p>\n<h2>Hereditary risk and screening</h2>\n<ul>\n<li><strong>Average risk</strong>: no screening for ovarian cancer; ultrasound and CA-125 screening did not reduce deaths and led to unnecessary surgery (USPSTF recommends against it). There is no endometrial cancer screening in asymptomatic people.</li>\n<li><strong><em>BRCA1</em> or <em>BRCA2</em> carriers</strong>: risk-reducing bilateral salpingo-oophorectomy, typically at 35&ndash;40 for <em>BRCA1</em> and 40&ndash;45 for <em>BRCA2</em>, after childbearing. It sharply lowers ovarian cancer risk. Combined oral contraceptives lower ovarian cancer risk in carriers.</li>\n<li><strong>Lynch syndrome</strong>: colonoscopy every 1&ndash;2 years from early adulthood; prompt evaluation of any abnormal bleeding; risk-reducing hysterectomy with bilateral salpingo-oophorectomy after childbearing, timing tailored to the gene; endometrial biopsy surveillance is an option before surgery.</li>\n<li>Opportunistic salpingectomy during other pelvic surgery (or instead of tubal ligation) is encouraged because many high-grade serous cancers start in the tube.</li>\n</ul>\n<div class=\"trap\"><p>Do not order CA-125 or pelvic ultrasound to screen an asymptomatic average-risk person for ovarian cancer. Do order an evaluation for any postmenopausal bleeding, however light.</p></div>\n<div class=\"pearl\"><p>For a person with a uterus who is starting tamoxifen, explain that new bleeding must be reported; routine ultrasound surveillance without symptoms is not recommended.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Postmenopausal Bleeding"
+    },
+    {
+     "statpearls": "Fertility Sparing Management in Uterine Fibroids"
+    },
+    {
+     "statpearls": "Hereditary Nonpolyposis Colon Cancer (Lynch Syndrome)"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Grading cervical intraepithelial neoplasia by how far atypical basaloid cells extend through the epithelium (schematic)."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. Ovarian tumours grouped by cell of origin, with typical patients, histologic clues and serum markers (schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Heavy menstrual bleeding with an enlarged uterus"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old woman has a cervical biopsy that shows full-thickness replacement of the squamous epithelium by atypical basaloid cells with an intact basement membrane. In situ hybridisation detects integrated HPV type 16 DNA. Immunohistochemistry shows strong, diffuse nuclear and cytoplasmic p16 staining. A viral oncoprotein in these cells most directly causes the p16 overexpression by which of the following actions?</p>",
+   "options": [
+    "Activating telomerase reverse transcriptase",
+    "Binding Rb and releasing E2F transcription factors",
+    "Degrading p53 through a ubiquitin ligase",
+    "Inactivating the E2 regulatory gene",
+    "Phosphorylating cyclin-dependent kinase 4"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The biopsy shows CIN 3 caused by high-risk HPV. E7 binds hypophosphorylated Rb and frees E2F, driving the cell into S phase. With Rb function lost, the normal negative feedback that keeps p16 (an inhibitor of CDK4/6) low is removed, so p16 accumulates. Diffuse block-type p16 staining is therefore a marker of transforming high-risk HPV infection.</p><p><strong>Takeaway:</strong> HPV E7 inactivates Rb, and loss of Rb feedback causes the p16 overexpression used as a marker of high-risk HPV lesions.</p>",
+   "whyNot": {
+    "A": "Telomerase activation is an E6 effect that immortalises cells, but it does not explain p16 accumulation.",
+    "C": "E6 degrades p53, removing the G1 checkpoint and apoptosis; p53 loss is not what raises p16.",
+    "D": "Integration disrupts E2, which increases E6 and E7 expression, but E2 loss is an upstream event, not the action that elevates p16.",
+    "E": "p16 inhibits CDK4; no HPV protein phosphorylates CDK4 to drive p16 expression."
+   },
+   "objective": "Link HPV E7 binding of Rb to p16 overexpression in cervical dysplasia.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cervical neoplasia",
+    "oncogenic viruses"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old woman has had amenorrhea for 7 months, a deepening voice, acne and coarse hair growth on the chin and chest. Examination shows temporal balding and clitoromegaly. Serum total testosterone is 310 ng/dL (reference 15&ndash;70 ng/dL); DHEA-S and 17-hydroxyprogesterone are normal. Ultrasound shows a 6-cm solid left ovarian mass. Histology of the resected mass shows tubules lined by columnar cells intermixed with clusters of large polygonal cells with abundant eosinophilic cytoplasm. This tumour arises from which of the following ovarian components?</p>",
+   "options": [
+    "Coelomic surface epithelium",
+    "Distal fallopian tube epithelium",
+    "Germ cells",
+    "Metastatic gastrointestinal epithelium",
+    "Sex cord-stromal cells"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Rapid virilisation with a very high testosterone, normal adrenal androgens and a solid ovarian mass composed of Sertoli-type tubules and Leydig-type cells is a Sertoli-Leydig cell tumour. Sertoli, Leydig, granulosa and theca cells all derive from the sex cord-stromal component of the gonad, and these tumours often secrete steroid hormones: androgens here, estrogen in granulosa cell tumours.</p><p><strong>Takeaway:</strong> Hormone-secreting ovarian tumours (Sertoli-Leydig, granulosa, thecoma) come from sex cord-stromal cells.</p>",
+   "whyNot": {
+    "A": "Surface epithelial tumours (serous, mucinous, endometrioid) are usually cystic and rarely secrete androgens.",
+    "B": "The distal tube is the origin of most high-grade serous carcinomas, which present with ascites and a high CA-125, not virilisation.",
+    "C": "Germ cell tumours (teratoma, dysgerminoma, yolk sac tumour) secrete AFP, LDH or hCG rather than large amounts of testosterone.",
+    "D": "Krukenberg tumours are bilateral metastases with signet-ring cells; they occasionally cause stromal luteinisation but do not have Sertoli and Leydig elements."
+   },
+   "objective": "Classify Sertoli-Leydig cell tumours as androgen-secreting sex cord-stromal tumours.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ovarian tumours",
+    "androgen excess"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 72-year-old woman with a BMI of 21 kg/m<sup>2</sup> has 3 weeks of postmenopausal bleeding. She has never taken hormone therapy. Endometrial sampling shows a carcinoma composed of complex papillae lined by cells with marked nuclear pleomorphism, slit-like spaces and scattered laminated calcifications. The surrounding endometrium is atrophic. Which of the following genetic alterations is most likely in this tumour?</p>",
+   "options": [
+    "CTNNB1 activating mutation",
+    "KRAS activating mutation",
+    "MLH1 promoter hypermethylation",
+    "PTEN loss of function",
+    "TP53 mutation"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>This is endometrial serous carcinoma: an older, thin patient without estrogen excess, an atrophic background and high-grade papillary architecture with psammoma bodies. Nearly all serous carcinomas have <em>TP53</em> mutations, and they behave aggressively with early peritoneal spread.</p><p><strong>Takeaway:</strong> Endometrial serous carcinoma arises in atrophic endometrium and carries TP53 mutations.</p>",
+   "whyNot": {
+    "A": "<em>CTNNB1</em> mutations occur in a subset of low-grade endometrioid carcinomas, not serous carcinoma.",
+    "B": "<em>KRAS</em> mutations are seen in endometrioid carcinoma and low-grade serous ovarian tumours rather than high-grade uterine serous carcinoma.",
+    "C": "<em>MLH1</em> hypermethylation causes mismatch-repair-deficient endometrioid carcinoma, usually in an estrogen-rich setting.",
+    "D": "<em>PTEN</em> loss is the typical early event in endometrioid carcinoma arising from atypical hyperplasia."
+   },
+   "objective": "Associate endometrial serous carcinoma with TP53 mutation and an atrophic background.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "endometrial cancer"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 44-year-old woman has endometrioid adenocarcinoma of the endometrium. Her mother had colon cancer at 48 years of age, and her maternal aunt had ovarian cancer. Immunohistochemistry of the tumour shows loss of MSH2 and MSH6 staining with retained MLH1 and PMS2. Germline testing confirms a pathogenic <em>MSH2</em> variant. Which of the following cellular processes is most directly impaired in her tumour cells?</p>",
+   "options": [
+    "Base excision repair of oxidised bases",
+    "Correction of base mismatches introduced during DNA replication",
+    "Homologous recombination repair of double-strand breaks",
+    "Nonhomologous end joining",
+    "Nucleotide excision repair of bulky adducts"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>She has Lynch syndrome, an autosomal dominant defect in DNA mismatch repair (<em>MLH1</em>, <em>MSH2</em>, <em>MSH6</em>, <em>PMS2</em>, <em>EPCAM</em>). MSH2-MSH6 recognises mismatched bases and small insertion-deletion loops left by the replicative polymerase; when the second allele is lost in a cell, errors accumulate in short repeats (microsatellite instability). Endometrial and colorectal cancers are the most common, with ovarian cancer also increased.</p><p><strong>Takeaway:</strong> Lynch syndrome is a mismatch-repair defect; endometrial cancer is often its sentinel cancer.</p>",
+   "whyNot": {
+    "A": "Base excision repair (for example <em>MUTYH</em>) is defective in MUTYH-associated polyposis, not Lynch syndrome.",
+    "C": "Homologous recombination is impaired by <em>BRCA1</em> and <em>BRCA2</em> mutations, associated with breast and high-grade serous ovarian cancer.",
+    "D": "Nonhomologous end joining defects cause immunodeficiency and radiosensitivity syndromes rather than this cancer pattern.",
+    "E": "Nucleotide excision repair is defective in xeroderma pigmentosum, with ultraviolet-induced skin cancers."
+   },
+   "objective": "Identify the DNA mismatch-repair defect of Lynch syndrome in endometrial cancer.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "endometrial cancer",
+    "hereditary cancer"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 17-year-old girl has 3 weeks of increasing abdominal girth and pelvic pain. Ultrasound shows a 14-cm solid and cystic left ovarian mass. Serum alpha-fetoprotein is 3,400 ng/mL (reference less than 10 ng/mL); beta-hCG is within normal limits. Which of the following histologic findings is most likely in the resected tumour?</p>",
+   "options": [
+    "Large clear cells in sheets separated by lymphocyte-rich septa",
+    "Papillae with laminated calcified concretions",
+    "Perivascular structures resembling primitive glomeruli",
+    "Rosettes of granulosa cells around eosinophilic secretions",
+    "Signet-ring cells infiltrating ovarian stroma"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A rapidly growing ovarian mass in an adolescent with a very high AFP is a yolk sac (endodermal sinus) tumour. Its characteristic structure is the Schiller-Duval body: a central vessel surrounded by tumour cells within a space, resembling a primitive glomerulus. Intracytoplasmic hyaline globules may also be seen. It is highly responsive to platinum-based chemotherapy.</p><p><strong>Takeaway:</strong> Ovarian mass plus very high AFP in a young patient means yolk sac tumour with Schiller-Duval bodies.</p>",
+   "whyNot": {
+    "A": "Sheets of clear cells with lymphocytic septa describe dysgerminoma, which raises LDH rather than AFP.",
+    "B": "Psammoma bodies in papillae describe serous carcinoma, usually in older adults with a raised CA-125.",
+    "D": "Call-Exner bodies describe granulosa cell tumours, which make estrogen and inhibin.",
+    "E": "Signet-ring cells describe a Krukenberg tumour metastatic from the gastrointestinal tract, rare in adolescents and not AFP-secreting."
+   },
+   "objective": "Recognise ovarian yolk sac tumour from a high AFP and Schiller-Duval bodies.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ovarian tumours",
+    "tumour markers"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old woman has had years of vulvar itching. Examination shows thin, white, crinkled plaques encircling the vulva and perianal skin, with loss of the labia minora and narrowing of the introitus. A biopsy is performed. Which of the following histologic findings is most likely?</p>",
+   "options": [
+    "Acanthosis and hyperkeratosis with no dermal change",
+    "Atrophic epidermis with homogenised collagen in the upper dermis",
+    "Full-thickness keratinocyte atypia with intact basement membrane",
+    "Intraepidermal large cells with pale, mucin-rich cytoplasm",
+    "Koilocytes with papillomatosis"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Lichen sclerosus produces thin, white, wrinkled skin in a figure-of-eight around the vulva and anus, with scarring that resorbs the labia minora. Histology shows epidermal atrophy with loss of rete ridges, a pale band of homogenised (hyalinised) collagen in the upper dermis and a lymphocytic infiltrate beneath it. It is treated with high-potency topical corticosteroids and followed because it carries a small risk of HPV-independent squamous carcinoma.</p><p><strong>Takeaway:</strong> Lichen sclerosus: atrophic epidermis over hyalinised dermis; small risk of HPV-independent vulvar SCC.</p>",
+   "whyNot": {
+    "A": "Acanthosis and hyperkeratosis without dermal sclerosis describe lichen simplex chronicus, which gives thickened leathery skin from scratching.",
+    "C": "Full-thickness atypia describes vulvar HSIL, which appears as raised, often pigmented or red lesions rather than diffuse atrophic white skin.",
+    "D": "Large pale intraepidermal cells describe extramammary Paget disease, which looks red and eczematous.",
+    "E": "Koilocytes with papillomatosis describe condyloma acuminatum, a raised warty lesion."
+   },
+   "objective": "Recognise the histology of vulvar lichen sclerosus.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "vulvar disease",
+    "dermatopathology"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 63-year-old woman comes to the clinic because of 2 months of abdominal bloating, early satiety and a 4-kg weight loss. Abdominal examination shows shifting dullness. Pelvic examination shows a fixed, irregular right adnexal mass.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Hemoglobin</td><td>11.4 g/dL (114 g/L)</td></tr><tr><td>Albumin</td><td>3.2 g/dL (32 g/L)</td></tr><tr><td>CA-125</td><td>840 U/mL (reference less than 35 U/mL)</td></tr><tr><td>Transvaginal ultrasound</td><td>9-cm right adnexal mass with solid areas, thick septations and internal blood flow; moderate ascites</td></tr><tr><td>CT abdomen and pelvis</td><td>Omental thickening; no liver or lung lesions</td></tr></tbody></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Laparoscopic cystectomy by a general gynaecologist",
+    "Referral to a gynaecologic oncologist for surgical evaluation",
+    "Repeat CA-125 and ultrasound in 6 weeks",
+    "Serial paracentesis and palliative care referral",
+    "Ultrasound-guided needle aspiration of the mass"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A postmenopausal woman with a complex adnexal mass, ascites, omental disease and a high CA-125 very likely has advanced epithelial ovarian cancer. Outcomes are best when a gynaecologic oncologist directs care: either primary cytoreductive surgery aiming for no visible residual disease or tissue diagnosis followed by neoadjuvant platinum-taxane chemotherapy and interval surgery. She should also be offered germline genetic testing.</p><p><strong>Takeaway:</strong> A suspicious adnexal mass in a postmenopausal patient goes to a gynaecologic oncologist.</p>",
+   "whyNot": {
+    "A": "Cystectomy of a likely malignant mass risks rupture and incomplete staging, and generalist surgery is associated with worse survival.",
+    "C": "Delay is inappropriate with findings this suggestive of cancer.",
+    "D": "She has no distant metastases and has a treatable cancer; palliation alone is premature.",
+    "E": "Needle aspiration of a possibly malignant ovarian mass risks spilling tumour and gives poor diagnostic yield."
+   },
+   "objective": "Refer a postmenopausal patient with a suspicious adnexal mass to a gynaecologic oncologist.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "adnexal mass"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old transgender man comes for a health maintenance visit. He has taken testosterone for 6 years and has not had gender-affirming genital surgery; he has a uterus and cervix. He has had two female partners in the past 5 years. He has never had cervical screening. He has no symptoms. He is healthy and not immunosuppressed. Which of the following is the most appropriate recommendation for cervical cancer screening?</p>",
+   "options": [
+    "Annual cytology because testosterone increases the risk of dysplasia",
+    "Begin screening at 40 years of age",
+    "No screening because his sexual partners are female",
+    "No screening while he continues testosterone",
+    "Primary high-risk HPV testing now, and every 5 years if negative"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Screening follows anatomy: a person with a cervix aged 30&ndash;65 should be screened with primary HPV testing every 5 years (or cotesting every 5 years, or cytology every 3 years). HPV is transmitted through skin and mucosal contact with partners of any gender. Testosterone causes cervical atrophy that increases unsatisfactory cytology, which makes HPV-based testing especially useful; noting testosterone use on the request helps the laboratory. Self-collected vaginal swabs may make screening more acceptable for some transgender men.</p><p><strong>Takeaway:</strong> Transgender men with a cervix follow standard cervical screening; primary HPV testing works well on testosterone.</p>",
+   "whyNot": {
+    "A": "Testosterone does not raise dysplasia risk, and annual cytology is not recommended for average-risk people.",
+    "B": "Screening starts at 21 regardless of gender; he is overdue.",
+    "C": "HPV spreads through sexual contact between partners of any gender, including female partners, so screening is still needed.",
+    "D": "Testosterone does not remove the cervix or HPV risk, so screening continues."
+   },
+   "objective": "Apply standard cervical screening to a transgender man with a cervix.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [
+    "uspstf"
+   ],
+   "figures": [],
+   "tags": [
+    "cancer screening",
+    "transgender health"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman at 22 weeks' gestation has cervical screening at her first prenatal visit. Cytology shows a high-grade squamous intraepithelial lesion (HSIL), and high-risk HPV is positive. Her pregnancy is uncomplicated. Speculum examination shows no visible cervical lesion. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Cold-knife conization",
+    "Colposcopy with biopsy of suspicious areas, without endocervical curettage",
+    "Loop electrosurgical excision procedure",
+    "Repeat cytology at the 6-week postpartum visit without colposcopy",
+    "Termination of pregnancy followed by hysterectomy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>HSIL in pregnancy needs colposcopy, preferably by an experienced colposcopist, to exclude invasive cancer. Biopsy of lesions suspicious for high-grade disease or cancer is safe, but endocervical curettage is not performed. If invasion is excluded, treatment of CIN is deferred until after delivery, with repeat evaluation postpartum.</p><p><strong>Takeaway:</strong> HSIL in pregnancy: colposcopy (no endocervical curettage) to exclude invasion; defer treatment until postpartum.</p>",
+   "whyNot": {
+    "A": "Conization in pregnancy causes bleeding, preterm birth and pregnancy loss and is reserved for suspected invasion that biopsy cannot clarify.",
+    "C": "Excisional treatment of CIN is deferred in pregnancy because most lesions do not progress before delivery.",
+    "D": "Waiting for postpartum cytology without colposcopy could miss invasive cancer.",
+    "E": "There is no evidence of invasive cancer; such drastic treatment is not indicated."
+   },
+   "objective": "Manage HSIL cytology in pregnancy with colposcopy and deferred treatment.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cervical neoplasia",
+    "pregnancy"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 39-year-old woman, gravida 0, has had heavy, prolonged menses for 1 year, soaking a pad every hour on the heaviest days, and increasing fatigue. Her cycles are regular. She hopes to become pregnant in the next year. Bimanual examination shows an enlarged, irregular, firm, nontender uterus consistent with 12 weeks' size. Urine beta-hCG is negative. Hemoglobin is 9.1 g/dL (91 g/L) and MCV is 74 fL. Which of the following is the most appropriate initial imaging study?</p>",
+   "options": [
+    "CT scan of the abdomen and pelvis",
+    "Hysterosalpingography",
+    "MRI of the pelvis",
+    "PET-CT scan",
+    "Transvaginal pelvic ultrasound"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Heavy regular menses, iron-deficiency anaemia and an enlarged irregular uterus suggest leiomyomas. Pelvic (transvaginal with or without transabdominal) ultrasound is the first-line imaging test: it is inexpensive, accurate for fibroids and also assesses the endometrium and adnexa. MRI or saline infusion sonography is added when the location of fibroids relative to the cavity must be mapped before treatment.</p><p><strong>Takeaway:</strong> Ultrasound is the first imaging test for suspected fibroids.</p>",
+   "whyNot": {
+    "A": "CT exposes her to radiation and poorly defines uterine anatomy.",
+    "B": "Hysterosalpingography assesses tubal patency and outlines the cavity crudely; it is not the initial test for an enlarged uterus.",
+    "C": "MRI maps fibroids precisely but is reserved for planning surgery or embolisation after ultrasound.",
+    "D": "PET-CT has no role in evaluating suspected benign fibroids."
+   },
+   "objective": "Order pelvic ultrasound first for suspected uterine leiomyomas.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "abnormal uterine bleeding",
+    "pelvic mass"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient from the previous item has a transvaginal ultrasound followed by saline infusion sonography, showing a 3-cm fibroid that is entirely within the uterine cavity on a narrow stalk, and two 2-cm subserosal fibroids. The endometrium is otherwise normal. Her iron stores are being replaced. She still wishes to conceive soon. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Abdominal hysterectomy",
+    "Endometrial ablation",
+    "Hysteroscopic myomectomy",
+    "Long-term GnRH agonist therapy",
+    "Uterine artery embolisation"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A submucosal fibroid inside the cavity causes heavy bleeding and lowers fertility, and it can be removed through the hysteroscope without an abdominal incision while preserving the uterus. Small subserosal fibroids do not affect fertility and can be left. This approach treats her bleeding and improves her chances of conception.</p><p><strong>Takeaway:</strong> For a cavity-distorting submucosal fibroid in someone wanting pregnancy, choose hysteroscopic myomectomy.</p>",
+   "whyNot": {
+    "A": "Hysterectomy ends fertility, which she wants to preserve.",
+    "B": "Endometrial ablation is for people who have completed childbearing; pregnancy after ablation is dangerous.",
+    "D": "GnRH agonists suppress ovulation and cause bone loss; they shrink fibroids only temporarily and are used as a bridge, not as long-term treatment for someone trying to conceive.",
+    "E": "Embolisation is generally avoided in people who want future pregnancy because of concerns about ovarian reserve and pregnancy outcomes, and it is less suited to pedunculated submucosal fibroids."
+   },
+   "objective": "Choose hysteroscopic myomectomy for a submucosal fibroid when fertility is desired.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "abnormal uterine bleeding",
+    "fertility"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 41-year-old woman, para 2, was found to carry a pathogenic <em>MSH2</em> variant after her brother developed colon cancer at 45 years of age. She has no symptoms. Her colonoscopy last year was normal. She does not want more children. Pelvic examination and transvaginal ultrasound are normal. Which of the following is the most appropriate recommendation to reduce her risk of gynaecologic cancer?</p>",
+   "options": [
+    "Annual CA-125 measurement and pelvic ultrasound",
+    "Bilateral salpingectomy with ovarian preservation",
+    "Combined oral contraceptives until menopause, with no surgery",
+    "Endometrial ablation",
+    "Total hysterectomy with bilateral salpingo-oophorectomy"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>People with Lynch syndrome have a high lifetime risk of endometrial cancer and an increased risk of ovarian cancer (especially with <em>MLH1</em> and <em>MSH2</em>). Once childbearing is complete, risk-reducing total hysterectomy with bilateral salpingo-oophorectomy is recommended, with timing tailored to the gene and individual factors. It virtually eliminates endometrial cancer and greatly lowers ovarian cancer risk. Colonoscopy surveillance continues.</p><p><strong>Takeaway:</strong> Lynch syndrome after childbearing: risk-reducing hysterectomy with bilateral salpingo-oophorectomy.</p>",
+   "whyNot": {
+    "A": "Ultrasound and CA-125 screening have not been shown to reduce ovarian cancer mortality and do not address the endometrial risk.",
+    "B": "Salpingectomy alone leaves the uterus and ovaries, which are the main sites of Lynch-associated gynaecologic cancer.",
+    "C": "Hormonal contraception may lower endometrial and ovarian cancer risk but is not a substitute for risk-reducing surgery in a carrier who has completed childbearing.",
+    "D": "Ablation does not remove all endometrium, can mask bleeding from cancer and does not address ovarian risk."
+   },
+   "objective": "Recommend risk-reducing hysterectomy with salpingo-oophorectomy for Lynch syndrome carriers after childbearing.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hereditary cancer"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 33-year-old woman, gravida 0, with polycystic ovary syndrome and a BMI of 38 kg/m<sup>2</sup> has had irregular heavy bleeding for 8 months. Endometrial biopsy shows atypical endometrial hyperplasia. Pelvic MRI shows no myometrial invasion or adnexal abnormality. She strongly wishes to have children. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Combined oral contraceptive and repeat biopsy in 2 years",
+    "Endometrial ablation",
+    "Levonorgestrel intrauterine device with endometrial sampling every 3 to 6 months",
+    "Observation with repeat biopsy only if bleeding persists",
+    "Total hysterectomy now"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Atypical hyperplasia carries a high risk of coexisting or future endometrial carcinoma, so hysterectomy is standard for people who have finished childbearing. For someone who wants to preserve fertility and has no evidence of invasion, high-dose progestin therapy, ideally the levonorgestrel IUD, with endometrial sampling every 3&ndash;6 months is the accepted alternative. Weight reduction is encouraged, and hysterectomy is advised after childbearing or if the lesion persists or progresses.</p><p><strong>Takeaway:</strong> Atypical hyperplasia with a desire for fertility: levonorgestrel IUD or high-dose progestin with close sampling.</p>",
+   "whyNot": {
+    "A": "A combined pill provides less endometrial progestin effect than a levonorgestrel IUD and a 2-year interval is far too long for atypical hyperplasia.",
+    "B": "Ablation leaves endometrium that may harbour cancer, hides future bleeding and is incompatible with pregnancy.",
+    "D": "Atypical hyperplasia is a premalignant lesion and requires treatment and surveillance.",
+    "E": "Hysterectomy is standard only when fertility is not desired; she wants children and has no evidence of invasion."
+   },
+   "objective": "Offer progestin therapy with close surveillance for atypical hyperplasia when fertility is desired.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "endometrial hyperplasia",
+    "fertility"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which HPV oncoprotein degrades p53?",
+   "back": "E6, via the E6AP ubiquitin ligase.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which HPV oncoprotein binds Rb, and what surrogate marker results?",
+   "back": "E7; diffuse p16 overexpression.",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Where do most cervical precancers arise?",
+   "back": "In the transformation zone, between the original and current squamocolumnar junctions.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "What defines CIN 3?",
+   "back": "Atypical cells in more than two thirds to the full thickness of the epithelium with an intact basement membrane.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Classic cause of death in advanced cervical cancer?",
+   "back": "Kidney failure from ureteral obstruction (hydronephrosis).",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Histology of lichen sclerosus?",
+   "back": "Atrophic epidermis, hyalinised upper dermal collagen and a band of lymphocytes below.",
+   "question": 6
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Grape-like vaginal mass in a girl under 5 years?",
+   "back": "Embryonal rhabdomyosarcoma, botryoid type (desmin and myogenin positive).",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Vaginal tumour linked to in utero DES exposure?",
+   "back": "Clear cell adenocarcinoma.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Main molecular change in endometrial serous carcinoma?",
+   "back": "TP53 mutation.",
+   "question": 3
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Early molecular event in endometrioid carcinoma from atypical hyperplasia?",
+   "back": "PTEN loss.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Genes mutated in Lynch syndrome?",
+   "back": "MLH1, MSH2, MSH6, PMS2 and EPCAM (mismatch repair).",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Does leiomyosarcoma arise from leiomyoma?",
+   "back": "No; it arises de novo. Fibroids are not precursors.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Where do most high-grade serous ovarian carcinomas begin?",
+   "back": "In the distal fallopian tube (serous tubal intraepithelial carcinoma).",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Tumour marker for an ovarian yolk sac tumour?",
+   "back": "Alpha-fetoprotein (Schiller-Duval bodies on histology).",
+   "question": 5
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Granulosa cell tumour: hormones and markers?",
+   "back": "Estrogen and inhibin; Call-Exner bodies in the adult type.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Virilising solid ovarian tumour with tubules and Leydig-type cells?",
+   "back": "Sertoli-Leydig cell tumour (sex cord-stromal origin).",
+   "question": 2
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "What is Meigs syndrome?",
+   "back": "Ovarian fibroma with ascites and pleural effusion that resolve after removal.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "When does cervical screening begin?",
+   "back": "At 21, regardless of sexual history.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Screening options at 30 to 65?",
+   "back": "Primary HPV every 5 years, cotesting every 5 years, or cytology every 3 years.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "When can cervical screening stop?",
+   "back": "After 65 with adequate negative prior screening and no CIN 2+ in 25 years, or after hysterectomy with cervix removed for benign disease.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "HPV 16 positive with normal cytology: next step?",
+   "back": "Colposcopy.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "ASC-US or LSIL at age 21 to 24?",
+   "back": "Repeat cytology in 1 year.",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "HSIL in pregnancy?",
+   "back": "Colposcopy without endocervical curettage; defer treatment until after delivery.",
+   "question": 9
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Treatment of locally advanced cervical cancer?",
+   "back": "Concurrent cisplatin-based chemoradiation with brachytherapy.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Transgender man with a cervix on testosterone: screening?",
+   "back": "Same schedule as anyone with a cervix; HPV testing is useful because atrophy limits cytology.",
+   "question": 8
+  },
+  {
+   "n": 26,
+   "section": 4,
+   "front": "Endometrial thickness that makes cancer unlikely in postmenopausal bleeding?",
+   "back": "4 mm or less on transvaginal ultrasound.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Atypical hyperplasia, childbearing complete?",
+   "back": "Total hysterectomy.",
+   "question": null
+  },
+  {
+   "n": 28,
+   "section": 4,
+   "front": "Atypical hyperplasia, fertility desired?",
+   "back": "Levonorgestrel IUD or high-dose progestin with sampling every 3 to 6 months.",
+   "question": 13
+  },
+  {
+   "n": 29,
+   "section": 4,
+   "front": "First imaging for suspected fibroids?",
+   "back": "Pelvic (transvaginal) ultrasound.",
+   "question": 10
+  },
+  {
+   "n": 30,
+   "section": 4,
+   "front": "Submucosal fibroid, wants pregnancy?",
+   "back": "Hysteroscopic myomectomy.",
+   "question": 11
+  },
+  {
+   "n": 31,
+   "section": 4,
+   "front": "Complex adnexal mass with ascites and high CA-125 after menopause?",
+   "back": "Refer to a gynaecologic oncologist.",
+   "question": 7
+  },
+  {
+   "n": 32,
+   "section": 4,
+   "front": "Risk-reducing salpingo-oophorectomy timing in BRCA1 carriers?",
+   "back": "Typically at 35 to 40, after childbearing.",
+   "question": null
+  },
+  {
+   "n": 33,
+   "section": 4,
+   "front": "Should average-risk people be screened for ovarian cancer?",
+   "back": "No; USPSTF recommends against screening.",
+   "question": null
+  }
+ ]
+}

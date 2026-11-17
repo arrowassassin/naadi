@@ -1,0 +1,933 @@
+{
+ "area": "06.01.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Bacterial skin infections: organisms, toxins and depth",
+   "html": "<p>Intact skin resists infection through a dry, acidic, constantly shedding stratum corneum, antimicrobial peptides (cathelicidins, defensins), lipids and a resident flora that competes for niches. Bacterial skin infection usually needs a break in that barrier: a scratch, an insect bite, eczema, tinea between the toes, a surgical wound, or edema that stretches and splits the skin. Once inside, the organism's virulence factors and the depth it reaches decide the clinical picture.</p>\n[[figure:s23f-fig060101-1]]\n<h3>Depth determines the disease</h3>\n<ul>\n<li><strong>Impetigo</strong> is confined to the upper epidermis. The non-bullous form (most cases) gives honey-coloured crusts; the bullous form gives flaccid blisters that leave a collarette of scale.</li>\n<li><strong>Ecthyma</strong> ulcerates through the epidermis into the dermis and heals with a scar.</li>\n<li><strong>Erysipelas</strong> involves the upper dermis and its lymphatics. Lymphatic spread explains the raised, sharply demarcated edge.</li>\n<li><strong>Cellulitis</strong> involves the deep dermis and subcutaneous fat; its border is flat and indistinct.</li>\n<li><strong>Necrotizing fasciitis</strong> spreads along the superficial fascia, thrombosing perforating vessels so the overlying skin becomes ischemic late. Pain is severe before the skin looks impressive.</li>\n<li><strong>Myonecrosis</strong> (gas gangrene) destroys muscle.</li>\n</ul>\n<h3>Staphylococcus aureus</h3>\n<p>A gram-positive, catalase-positive, coagulase-positive coccus that colonises the anterior nares. Its skin weapons:</p>\n<ul>\n<li><strong>Protein A</strong> binds the Fc portion of IgG, so antibody cannot opsonise the bacterium.</li>\n<li><strong>Coagulase</strong> converts fibrinogen to fibrin, walling off the focus; this is why staphylococcal infection tends to <em>localise</em> into abscesses and furuncles.</li>\n<li><strong>Exfoliative toxins A and B</strong> are serine proteases that cleave <strong>desmoglein-1</strong>. Desmoglein-1 is the main desmosomal cadherin of the superficial epidermis, so the split forms in or just under the granular layer. Locally this gives bullous impetigo; when the toxin circulates (young children clear it poorly through the kidney) it gives staphylococcal scalded skin syndrome (SSSS). Mucosa is spared because mucosal epithelium relies on desmoglein-3.</li>\n<li><strong>Panton–Valentine leukocidin</strong>, a pore-forming toxin carried by many community-associated MRSA strains, kills neutrophils and is linked to necrotic furuncles and recurrent abscesses.</li>\n<li><strong>Methicillin resistance</strong> comes from <em>mecA</em>, which encodes penicillin-binding protein 2a with low affinity for beta-lactams.</li>\n<li><strong>TSST-1</strong> is a superantigen: it cross-links MHC class II and the T-cell receptor V-beta region outside the peptide groove, releasing IL-1, IL-2, TNF and interferon-gamma in bulk.</li>\n</ul>\n<h3>Streptococcus pyogenes (group A strep)</h3>\n<p>A gram-positive, catalase-negative, beta-hemolytic coccus in chains. <strong>M protein</strong> resists phagocytosis by blocking complement deposition. <strong>Streptokinase</strong> activates plasminogen and <strong>hyaluronidase</strong> digests ground substance, so streptococcal infection <em>spreads</em> through tissue planes (cellulitis, erysipelas, necrotizing fasciitis). Streptococcal pyrogenic exotoxins act as superantigens in streptococcal toxic shock and scarlet fever.</p>\n<div class=\"pearl\"><p>Skin infection with nephritogenic group A strep strains can be followed 2 to 4 weeks later by post-streptococcal glomerulonephritis, and antibiotics do not prevent it. Acute rheumatic fever follows pharyngitis, not impetigo.</p></div>\n<h3>Other organisms tied to an exposure</h3>\n<table class=\"hy\">\n<thead><tr><th>Organism</th><th>Setting</th><th>Skin finding and key biology</th></tr></thead>\n<tbody>\n<tr><td><em>Clostridium perfringens</em></td><td>Deep contaminated wounds, crush injury</td><td>Crepitant myonecrosis; alpha toxin is a phospholipase C (lecithinase) that lyses cell membranes</td></tr>\n<tr><td><em>Vibrio vulnificus</em></td><td>Warm seawater wound or raw shellfish, especially with cirrhosis or iron overload</td><td>Hemorrhagic bullae and rapid septic shock; curved gram-negative rod</td></tr>\n<tr><td><em>Aeromonas hydrophila</em></td><td>Fresh-water wounds, medicinal leeches</td><td>Rapid cellulitis or myonecrosis</td></tr>\n<tr><td><em>Pseudomonas aeruginosa</em></td><td>Hot tubs; neutropenia</td><td>Follicular papules in swimsuit areas; ecthyma gangrenosum (necrotic ulcer from vascular invasion)</td></tr>\n<tr><td><em>Corynebacterium minutissimum</em></td><td>Warm, moist skin folds</td><td>Erythrasma: brown patches that fluoresce coral-red under a Wood lamp (porphyrins)</td></tr>\n<tr><td><em>Bacillus anthracis</em></td><td>Animal hides, wool</td><td>Painless papule that becomes a black eschar with marked edema; edema factor is an adenylate cyclase</td></tr>\n<tr><td><em>Borrelia burgdorferi</em></td><td>Ixodes tick bite</td><td>Expanding erythema migrans at the bite site; may be uniform rather than target-like</td></tr>\n<tr><td><em>Mycobacterium marinum</em></td><td>Fish tanks, fish handling</td><td>Nodules ascending the lymphatics of the arm; grows best at 30-32 °C</td></tr>\n</tbody></table>\n<h3>Host factors</h3>\n<p>Diabetes (neutrophil dysfunction, neuropathy, vascular disease), lymphedema, venous insufficiency, obesity, injection drug use and immunosuppression all raise the risk and severity of soft-tissue infection. Neutropenia removes pus formation, so infection may look deceptively mild. Older adults often lack fever. In darker skin, erythema can look violaceous, brown or barely visible; warmth, swelling, tenderness and induration are more reliable signs.</p>\n<div class=\"trap\"><p>Coagulase and fibrin favour localisation (abscess) in staphylococcal disease; streptokinase and hyaluronidase favour spread in streptococcal disease. A spreading, non-purulent erythema points first to streptococci; pus points first to <em>S. aureus</em>.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Impetigo"
+    },
+    {
+     "statpearls": "Necrotizing Fasciitis"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Viral, fungal and parasitic skin infections: biology and drug mechanisms",
+   "html": "<p>Viral, fungal and parasitic skin infections are tested through the organism's life cycle, its histology and how the drugs work. This section covers the common pathogens; drug choice by clinical scenario is in the Step 2 CK section.</p>\n<h3>Herpesviruses</h3>\n<p><strong>Herpes simplex virus</strong> (HSV-1 and HSV-2) infects epithelial cells, travels retrograde along sensory axons and becomes latent in sensory ganglia (trigeminal for most orolabial disease, sacral for most genital disease). Reactivation with fever, UV light, stress or immunosuppression produces grouped vesicles on an erythematous base at the same site. Infected keratinocytes fuse into <strong>multinucleated giant cells</strong> with molded nuclei and intranuclear inclusions; a Tzanck smear shows them but cannot tell HSV from varicella-zoster virus (VZV). Special forms include herpetic whitlow on a finger, herpes gladiatorum in wrestlers, and <strong>eczema herpeticum</strong>, widespread punched-out erosions on skin with a damaged barrier, usually atopic dermatitis.</p>\n<p><strong>VZV</strong> causes varicella on first exposure, with lesions in different stages at once, and stays latent in dorsal root and cranial nerve ganglia. Reactivation as herpes zoster follows a dermatome, does not cross the midline and is often preceded by burning pain. Waning cell-mediated immunity with age is the main driver.</p>\n<p><strong>Acyclovir</strong> and valacyclovir (its prodrug) are guanosine analogues. Viral thymidine kinase adds the first phosphate, so the drug is concentrated in infected cells; host kinases complete the triphosphate, which inhibits viral DNA polymerase and terminates the chain. Resistance usually arises from loss or alteration of viral thymidine kinase. <strong>Foscarnet</strong> binds the pyrophosphate site of the viral DNA polymerase directly and needs no activation, so it works against thymidine-kinase-deficient virus; it is nephrotoxic and chelates calcium and magnesium.</p>\n<h3>Poxvirus and papillomavirus</h3>\n<p><strong>Molluscum contagiosum</strong>, a poxvirus that replicates in the cytoplasm, gives firm, pearly, umbilicated papules. Histology shows keratinocytes stuffed with large eosinophilic intracytoplasmic inclusions (molluscum bodies). Spread is by contact, autoinoculation and, in adults, sex. Extensive or giant facial molluscum in an adult suggests reduced T-cell immunity, such as advanced HIV.</p>\n<p><strong>Human papillomavirus</strong> infects basal keratinocytes through microabrasions and drives epidermal hyperplasia. Types 1, 2 and 4 cause common and plantar warts; types 6 and 11 cause anogenital warts; types 16 and 18 drive anogenital and oropharyngeal cancer through E6 (p53 degradation) and E7 (Rb inactivation). Histology shows koilocytes: keratinocytes with a wrinkled nucleus and a clear halo.</p>\n<h3>Fungi</h3>\n<ul>\n<li><strong>Dermatophytes</strong> (<em>Trichophyton</em>, <em>Microsporum</em>, <em>Epidermophyton</em>) live on keratin in the stratum corneum, hair and nail and do not invade living tissue. KOH preparation of scale shows septate branching hyphae. Tinea capitis in North American children is mostly <em>T. tonsurans</em>, an endothrix species that breaks hairs at the surface (\"black dots\") and does not fluoresce under a Wood lamp. An intense inflammatory reaction produces a boggy, pustular plaque called a <strong>kerion</strong>.</li>\n<li><strong><em>Malassezia</em></strong> species are lipophilic yeasts that cause tinea (pityriasis) versicolor: fine-scaled macules that may be lighter or darker than the surrounding skin. Lightening is most noticeable in darker skin; azelaic acid made by the yeast inhibits tyrosinase. KOH shows short hyphae with round yeast forms.</li>\n<li><strong><em>Candida albicans</em></strong> favours warm, moist folds and forms pseudohyphae and budding yeast; satellite papules and pustules beyond the main plaque are characteristic.</li>\n<li><strong><em>Sporothrix schenckii</em></strong> is a dimorphic fungus (cigar-shaped yeast at body temperature) inoculated by thorns or sphagnum moss; it causes nodules that ascend along lymphatics.</li>\n</ul>\n<h3>Ectoparasites</h3>\n<p><em>Sarcoptes scabiei</em> var. <em>hominis</em> burrows in the stratum corneum. Itching comes from a delayed-type (type IV) hypersensitivity to mites, eggs and feces, so it starts 2 to 6 weeks after a first infestation but within days of a re-infestation. Crusted scabies, with thick crusts teeming with mites, occurs when immunity or the ability to scratch is reduced (HIV, transplant, older adults in care homes, people with paralysis or intellectual disability). Head lice (<em>Pediculus humanus capitis</em>) cement nits to hair shafts; pubic lice (<em>Pthirus pubis</em>) are sexually transmitted. Cutaneous larva migrans is a serpiginous, intensely itchy track from dog or cat hookworm larvae (<em>Ancylostoma</em>) entering bare skin on contaminated sand.</p>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Target</th><th>Clinical point</th></tr></thead>\n<tbody>\n<tr><td>Terbinafine</td><td>Squalene epoxidase (blocks ergosterol synthesis, squalene accumulates)</td><td>Oral for tinea capitis and nail disease; check liver tests if symptoms</td></tr>\n<tr><td>Azoles (ketoconazole, fluconazole, itraconazole)</td><td>Lanosterol 14-alpha-demethylase, a fungal cytochrome P450</td><td>Inhibit human CYP3A4 too; drug interactions</td></tr>\n<tr><td>Griseofulvin</td><td>Binds tubulin and disrupts the mitotic spindle; deposits in keratin</td><td>Tinea capitis; induces CYP450, teratogenic, photosensitivity</td></tr>\n<tr><td>Nystatin</td><td>Binds ergosterol, forms membrane pores</td><td>Topical or swish only; not absorbed</td></tr>\n<tr><td>Permethrin</td><td>Holds arthropod voltage-gated sodium channels open, paralysing the parasite</td><td>First-line topical for scabies and lice</td></tr>\n<tr><td>Ivermectin</td><td>Opens glutamate-gated chloride channels in invertebrate nerve and muscle, causing hyperpolarisation and paralysis</td><td>Oral for scabies (crusted or outbreaks) and larva migrans</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>A Tzanck smear showing multinucleated giant cells means \"HSV or VZV\", not which one. Molluscum inclusions are cytoplasmic, because poxviruses replicate in the cytoplasm; herpesvirus inclusions are nuclear.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Molluscum Contagiosum"
+    },
+    {
+     "statpearls": "Tinea Capitis"
+    },
+    {
+     "statpearls": "Scabies"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Bacterial skin and soft-tissue infections: diagnosis and management",
+   "html": "<p>Most skin and soft-tissue infections (SSTI) are diagnosed at the bedside. The first decisions are whether there is pus to drain, whether the patient is systemically unwell, and whether anything suggests a necrotizing process that needs a surgeon now.</p>\n<h3>Impetigo</h3>\n<p>Impetigo is most common in children aged 2 to 5, in warm weather and in crowded living conditions. It spreads easily within families and day care. Limited disease is treated with topical <strong>mupirocin</strong> (or retapamulin or ozenoxacin) after gently removing crusts. Many lesions, outbreaks or bullous disease warrant an oral agent active against both <em>S. aureus</em> and <em>S. pyogenes</em>, such as cephalexin; if MRSA is likely, use clindamycin or trimethoprim-sulfamethoxazole (TMP-SMX). Children can return to school or day care after 24 hours of treatment. Check blood pressure and urine if edema or dark urine develops in the following weeks.</p>\n<h3>Cellulitis and erysipelas</h3>\n<p>Cellulitis presents as a warm, tender, swollen area of erythema, usually unilateral on the leg. Erysipelas is brighter, raised and sharply bordered, often on the face or leg. Both are clinical diagnoses: blood cultures are low-yield and are reserved for systemic toxicity, immunosuppression, animal bites, water exposure or malignancy. In skin of colour, erythema may look dusky, violaceous or barely visible, so rely on warmth, induration and tenderness, and compare with the other limb.</p>\n<table class=\"hy\">\n<thead><tr><th>Presentation</th><th>Mild</th><th>Moderate (systemic signs)</th><th>Severe (sepsis, failed oral therapy, immunosuppression, deep infection)</th></tr></thead>\n<tbody>\n<tr><td><strong>Non-purulent</strong> (cellulitis, erysipelas)</td><td>Oral beta-lactam with streptococcal activity: cephalexin, penicillin V, amoxicillin, dicloxacillin</td><td>IV cefazolin, ceftriaxone or penicillin</td><td>Vancomycin plus piperacillin-tazobactam; evaluate for necrotizing infection</td></tr>\n<tr><td><strong>Purulent</strong> (abscess, furuncle, carbuncle)</td><td>Incision and drainage; antibiotics may add benefit</td><td>Incision and drainage plus oral MRSA-active agent: TMP-SMX or doxycycline</td><td>Incision and drainage plus IV vancomycin (or linezolid, daptomycin)</td></tr>\n</tbody></table>\n<p>Add MRSA coverage to non-purulent cellulitis only when there is penetrating trauma, injection drug use, known MRSA colonisation, a purulent focus or systemic toxicity. TMP-SMX alone covers streptococci less reliably than a beta-lactam. Mark the border, elevate the limb, and treat the portal of entry: interdigital tinea pedis, eczema, venous edema. Recurrent leg cellulitis is reduced by compression for edema and, for frequent recurrences, prophylactic oral penicillin.</p>\n<div class=\"trap\"><p>Red, warm legs on <em>both</em> sides are rarely cellulitis. Think stasis dermatitis, lipodermatosclerosis, contact dermatitis or heart-failure edema. Cellulitis mimics on one leg include deep vein thrombosis, gout and a ruptured Baker cyst.</p></div>\n<h3>Abscesses</h3>\n<p>A fluctuant, tender nodule is drained. Bedside ultrasound helps when fluctuance is uncertain. Drainage is the treatment; adding TMP-SMX or clindamycin modestly raises cure rates and is clearly indicated with surrounding cellulitis, systemic signs, very young or old age, immunosuppression, or sites that are hard to drain (face, hands, genitalia). For recurrent abscesses, culture the pus and consider decolonisation (intranasal mupirocin, chlorhexidine washes) for the patient and household.</p>\n<h3>Necrotizing soft-tissue infection</h3>\n<p>Suspect it with pain out of proportion to the skin findings, tenderness beyond the visible erythema, tense edema, bullae (often hemorrhagic), skin anesthesia, crepitus, rapid spread despite antibiotics, or shock. Type I is polymicrobial (anaerobes plus gram-negative rods and streptococci) and favours diabetes, the perineum (Fournier gangrene) and postoperative wounds. Type II is monomicrobial, usually group A strep, sometimes after minor trauma or varicella in children.</p>\n<ul>\n<li><strong>Next step:</strong> immediate surgical exploration and debridement. The finding of grey, devitalised fascia that separates easily with a finger, with thin \"dishwater\" fluid, confirms the diagnosis. Imaging (CT may show fascial gas) must never delay surgery in an unstable patient, and laboratory scores are not sensitive enough to rule the disease out.</li>\n<li><strong>Empiric antibiotics:</strong> vancomycin (or linezolid) plus piperacillin-tazobactam (or a carbapenem) plus clindamycin. Clindamycin suppresses toxin synthesis at the ribosome independent of bacterial growth phase. For proven group A strep, narrow to penicillin plus clindamycin.</li>\n<li>Return to the operating room every 24 to 48 hours until no further necrosis is found.</li>\n</ul>\n<h3>Staphylococcal scalded skin syndrome</h3>\n<p>SSSS affects mainly infants and children under 5 and adults with kidney failure. Fever and irritability precede tender erythema that starts around the mouth, eyes and flexures, followed by superficial flaccid blisters and sheet-like peeling with a positive Nikolsky sign. Mucous membranes are spared. The blisters are sterile; culture the likely source (nares, conjunctiva, umbilicus, nasopharynx). Treat with IV anti-staphylococcal therapy (nafcillin, oxacillin or cefazolin; vancomycin where MRSA is likely), fluids, pain control and gentle skin care. Healing is without scarring because the split is superficial.</p>\n<div class=\"pearl\"><p>Mucosal erosions point away from SSSS and toward Stevens-Johnson syndrome or toxic epidermal necrolysis, which also has a full-thickness epidermal split on biopsy and usually follows a new drug.</p></div>\n<h3>Special populations</h3>\n<p>Doxycycline is generally avoided for long courses in children younger than 8 and in pregnancy. TMP-SMX can raise potassium, especially in older adults taking an ACE inhibitor, an angiotensin receptor blocker or spironolactone, and it displaces warfarin. Clindamycin carries the highest risk of <em>Clostridioides difficile</em> colitis among these agents. People with spinal cord injury or limited mobility may not feel pain from a developing infection, so examine the skin directly.</p>",
+   "furtherReading": [
+    {
+     "statpearls": "Cellulitis"
+    },
+    {
+     "statpearls": "Staphylococcal Scalded Skin Syndrome"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Viral, fungal and parasitic skin infections: diagnosis and management",
+   "html": "<p>Viral, fungal and parasitic skin infections are common in primary care, pediatrics and long-term care. Most are diagnosed clinically; a quick bedside test (KOH preparation, skin scraping, PCR swab) confirms the diagnosis when the picture is atypical.</p>\n<h3>Herpes simplex and eczema herpeticum</h3>\n<p>The most accurate test for a vesicle or erosion is HSV <strong>PCR</strong> of a swab from an unroofed lesion; viral culture is less sensitive and the Tzanck smear is obsolete. Oral acyclovir, valacyclovir or famciclovir shortens a first episode most when started early. <strong>Eczema herpeticum</strong> (monomorphic punched-out erosions, sometimes with fever, on atopic skin) is a dermatologic emergency: start systemic acyclovir without waiting for PCR, give it IV if the child is ill or cannot take oral medicine, look for secondary staphylococcal infection, and arrange ophthalmology review for any periocular lesions. A herpetic whitlow is not incised, because drainage spreads infection and finds no pus.</p>\n<h3>Herpes zoster</h3>\n<p>Start oral valacyclovir or famciclovir (or acyclovir) within 72 hours of rash onset, or later if new lesions are still forming, there is eye involvement, or the patient is immunocompromised. Disseminated zoster or zoster in a severely immunocompromised patient needs IV acyclovir and airborne plus contact precautions. Vesicles on the tip, side or root of the nose (nasociliary branch of V1) predict eye involvement and need same-day ophthalmology assessment. Ramsay Hunt syndrome (ear vesicles with facial palsy) involves the geniculate ganglion.</p>\n<p><strong>Postherpetic neuralgia</strong>, pain persisting 90 days or more after the rash, is the commonest complication and rises steeply with age. Options are topical lidocaine, gabapentin or pregabalin (start low and adjust for kidney function in older adults), and tricyclic antidepressants; nortriptyline is better tolerated than amitriptyline, and both carry anticholinergic and fall risk in older people. Prevention is the <strong>recombinant zoster vaccine</strong>, two doses, recommended for adults 50 and older and for immunocompromised adults 19 and older, including those who previously had zoster or the old live vaccine.</p>\n<h3>Molluscum contagiosum and warts</h3>\n<p>Molluscum in children resolves on its own over months to a couple of years; a surrounding eczematous reaction or inflamed papules often signal approaching clearance. Treatment is optional and is chosen for symptoms, spread or social reasons: curettage, cryotherapy, topical cantharidin applied in the office, or topical berdazimer. Avoid painful procedures on young children when watchful waiting is acceptable. Anogenital molluscum in an adult warrants screening for other sexually transmitted infections, and extensive facial lesions in an adult warrant HIV testing. Common warts also regress spontaneously; salicylic acid and cryotherapy are first-line when treatment is wanted.</p>\n<h3>Superficial fungal infection</h3>\n<table class=\"hy\">\n<thead><tr><th>Infection</th><th>Clue</th><th>Treatment</th></tr></thead>\n<tbody>\n<tr><td>Tinea corporis, cruris, pedis</td><td>Annular plaque with scaly, active edge and central clearing; KOH positive</td><td>Topical azole or allylamine (terbinafine) for 2 to 4 weeks</td></tr>\n<tr><td>Tinea capitis</td><td>Child with scaling, broken hairs, patchy alopecia, posterior cervical nodes; kerion if boggy</td><td><strong>Oral</strong> griseofulvin or terbinafine for weeks; selenium sulfide or ketoconazole shampoo to cut shedding; household contacts checked</td></tr>\n<tr><td>Tinea (pityriasis) versicolor</td><td>Fine-scaled hypo- or hyperpigmented macules on upper trunk of adolescents and young adults</td><td>Topical ketoconazole or selenium sulfide; oral fluconazole or itraconazole if extensive. Oral terbinafine does not work</td></tr>\n<tr><td>Cutaneous candidiasis</td><td>Beefy-red plaque in folds with satellite pustules</td><td>Topical azole or nystatin; keep dry</td></tr>\n</tbody></table>\n<p>Tinea capitis does not respond to topical antifungals because the fungus lives inside the hair shaft and follicle. A kerion is an inflammatory reaction, not an abscess; incising it causes scarring alopecia and does not help. In infants, irritant diaper dermatitis spares the skin folds, whereas candidal diaper dermatitis involves the folds and shows satellite lesions.</p>\n<div class=\"trap\"><p>Treating tinea with a topical corticosteroid, or a steroid-antifungal combination, blunts the scale and spreads the infection (\"tinea incognito\"). Scrape any scaly annular plaque before calling it eczema or psoriasis.</p></div>\n<h3>Scabies</h3>\n<p>Itching that is worse at night, in several household members, with papules and burrows in the finger webs, wrists, waistband, axillae, areolae and genitalia is scabies until proved otherwise. Infants often have lesions on the palms, soles, scalp and face. Diagnosis is clinical, supported by dermoscopy or a scraping showing a mite, eggs or feces.</p>\n<ul>\n<li><strong>Permethrin 5% cream</strong> applied from the neck down (including the scalp and face in infants and older adults), left on overnight and repeated in 1 to 2 weeks.</li>\n<li>Treat <strong>all household and close contacts at the same time</strong>, even without symptoms, and machine-wash bedding and clothing on a hot cycle or seal it in a bag for several days.</li>\n<li>Oral ivermectin, two doses 1 to 2 weeks apart, suits institutional outbreaks and people who cannot apply cream; it is not used in small children or in pregnancy.</li>\n<li>Crusted scabies needs combined oral ivermectin and topical permethrin, isolation and outbreak control in the care setting.</li>\n<li>Itch can persist for 2 to 4 weeks after cure; this alone is not treatment failure. Antihistamines and a mild topical corticosteroid help.</li>\n</ul>\n<h3>Lice and larva migrans</h3>\n<p>Head lice are treated with permethrin 1% or pyrethrins (repeat in 7 to 10 days), or with ivermectin lotion, spinosad or malathion where resistance is common. Children should not be sent home or excluded from school for nits. Pubic lice in a child should prompt evaluation for sexual abuse. Cutaneous larva migrans responds to oral ivermectin or albendazole.</p>\n<div class=\"pearl\"><p>Hand, foot and mouth disease (enteroviruses such as coxsackievirus A16 and A6) gives oval grey vesicles on the palms, soles and buttocks with oral erosions in young children. Care is supportive with hydration; nail shedding can follow weeks later.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Herpes Zoster"
+    },
+    {
+     "statpearls": "Eczema Herpeticum"
+    },
+    {
+     "statpearls": "Scabies"
+    },
+    {
+     "label": "MedlinePlus: Skin conditions",
+     "url": "https://medlineplus.gov/skinconditions.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Depth of common skin and soft-tissue infections, from impetigo in the upper epidermis to myonecrosis in muscle (original schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Thigh pain after a scrape"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 4-year-old boy is brought to the clinic with blisters on his forearm and neck for 3 days. He attends day care, where another child has a similar rash. Examination shows several 1- to 2-cm flaccid bullae with clear yellow fluid and shallow erosions rimmed by a thin collar of scale. The oral mucosa is normal. He is afebrile. Gram stain of blister fluid shows gram-positive cocci in clusters. The organism produces a protease that causes this lesion by cleaving which of the following proteins?</p>",
+   "options": [
+    "Bullous pemphigoid antigen 180 (type XVII collagen)",
+    "Desmoglein-1",
+    "Desmoglein-3",
+    "Laminin-332",
+    "Type VII collagen"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Flaccid bullae that rupture into erosions with a collar of scale, in a child at day care, with gram-positive cocci in clusters, is bullous impetigo from <em>Staphylococcus aureus</em>. Its exfoliative toxins are serine proteases that cleave desmoglein-1, the main adhesion molecule of desmosomes in the superficial epidermis. The split forms in the granular layer, so the blister roof is thin and breaks easily. The same toxin, carried in the blood, causes staphylococcal scalded skin syndrome.</p><p>Mucosa is spared because mucosal epithelium relies mainly on desmoglein-3, which the toxin does not cut.</p><p><strong>Takeaway:</strong> Staphylococcal exfoliative toxins cleave desmoglein-1, producing a superficial, subgranular blister.</p>",
+   "whyNot": {
+    "A": "BP180 is a hemidesmosomal protein at the dermal-epidermal junction targeted by autoantibodies in bullous pemphigoid, which gives tense subepidermal blisters in older adults.",
+    "C": "Desmoglein-3 is the target of autoantibodies in mucosal pemphigus vulgaris; the staphylococcal toxin does not cleave it, which is why oral mucosa is spared here.",
+    "D": "Laminin-332 is a basement membrane protein targeted in mucous membrane pemphigoid and mutated in junctional epidermolysis bullosa, both of which split below the epidermis.",
+    "E": "Type VII collagen forms anchoring fibrils below the lamina densa; antibodies to it cause epidermolysis bullosa acquisita, a deep subepidermal blistering disease."
+   },
+   "objective": "Identify desmoglein-1 as the target of staphylococcal exfoliative toxin in bullous impetigo.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "skin infection",
+    "blistering"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 61-year-old man with alcohol-associated cirrhosis comes to the emergency department 20 hours after cutting his shin on a crab trap while wading in the Gulf of Mexico in August. The leg is swollen, purple and very painful, with large hemorrhagic bullae spreading toward the knee. Temperature is 39.2 °C (102.6 °F), pulse is 124/min and blood pressure is 82/48 mm Hg. Blood cultures grow a curved, oxidase-positive, gram-negative rod that ferments lactose. Which of the following organisms is the most likely cause?</p>",
+   "options": [
+    "<em>Aeromonas hydrophila</em>",
+    "<em>Clostridium perfringens</em>",
+    "<em>Mycobacterium marinum</em>",
+    "<em>Pasteurella multocida</em>",
+    "<em>Vibrio vulnificus</em>"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A seawater wound in summer, a host with cirrhosis, hemorrhagic bullae and septic shock within a day is classic <em>Vibrio vulnificus</em>. It is a halophilic, curved, oxidase-positive gram-negative rod and, unlike most vibrios, ferments lactose. Liver disease and iron overload (including hemochromatosis) raise the risk because the organism thrives on available iron and the host clears it poorly. Mortality is high; management is early debridement plus doxycycline combined with a third-generation cephalosporin.</p><p><strong>Takeaway:</strong> Warm seawater or raw shellfish plus cirrhosis or iron overload, then hemorrhagic bullae and shock, points to <em>V. vulnificus</em>.</p>",
+   "whyNot": {
+    "A": "<em>Aeromonas</em> is also an oxidase-positive gram-negative rod that causes rapid wound infection, but it is linked to fresh or brackish water and leeches, and it is not curved.",
+    "B": "<em>C. perfringens</em> causes crepitant myonecrosis after deep contaminated wounds; it is a gram-positive anaerobic rod, not a curved gram-negative rod.",
+    "C": "<em>M. marinum</em> causes slowly ascending nodules on the hand after fish-tank exposure over weeks, not septic shock in a day; it is an acid-fast bacillus.",
+    "D": "<em>Pasteurella</em> is a gram-negative coccobacillus from cat and dog bites that causes cellulitis within hours of a bite, not after seawater exposure."
+   },
+   "objective": "Recognize Vibrio vulnificus wound infection in a patient with cirrhosis exposed to warm seawater.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue infection"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old man is brought to the emergency department 2 days after a motorcycle crash in which his thigh was crushed and contaminated with soil. He now has severe pain and brown, foul-smelling discharge from the wound. The skin around it is bronze and tense, and palpation produces crackling. Gram stain of the exudate shows large, boxcar-shaped gram-positive rods with very few neutrophils. The main toxin of this organism damages tissue by which of the following mechanisms?</p>",
+   "options": [
+    "ADP-ribosylation of elongation factor 2",
+    "Activation of adenylate cyclase with a rise in cAMP",
+    "Cleavage of SNARE proteins at the neuromuscular junction",
+    "Cross-linking of MHC class II with the T-cell receptor",
+    "Hydrolysis of membrane lecithin by phospholipase C"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Crepitant myonecrosis after a crush injury, with boxcar-shaped gram-positive rods and few neutrophils, is gas gangrene from <em>Clostridium perfringens</em>. Its alpha toxin is a phospholipase C (lecithinase) that hydrolyses lecithin in cell membranes, lysing muscle cells, red cells, platelets and leukocytes. The toxin also kills and paralyses neutrophils at the margin, which explains the scant inflammatory cells. Treatment is emergency debridement or amputation with high-dose penicillin plus clindamycin.</p><p><strong>Takeaway:</strong> Clostridial alpha toxin is a lecithinase (phospholipase C) that destroys cell membranes in gas gangrene.</p>",
+   "whyNot": {
+    "A": "ADP-ribosylation of elongation factor 2 is the mechanism of diphtheria toxin and <em>Pseudomonas</em> exotoxin A, not clostridial alpha toxin.",
+    "B": "Raising cAMP through adenylate cyclase describes anthrax edema factor, pertussis toxin effects and cholera toxin, not the membrane damage of gas gangrene.",
+    "C": "SNARE cleavage is the mechanism of tetanus and botulinum toxins, which cause spastic or flaccid paralysis without local tissue necrosis.",
+    "D": "Superantigens such as TSST-1 and streptococcal pyrogenic exotoxins cross-link MHC II and the T-cell receptor and cause toxic shock, not local myonecrosis."
+   },
+   "objective": "Explain how Clostridium perfringens alpha toxin causes myonecrosis.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "wound infection"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 7-year-old boy is brought to the clinic for a scaly patch of hair loss on his scalp for 6 weeks. Examination shows a 3-cm round patch with fine scale and broken hairs at the skin surface that look like black dots, plus a tender posterior cervical lymph node. Wood lamp examination shows no fluorescence. KOH preparation of plucked hairs shows spores inside the hair shafts. An oral drug is prescribed that causes squalene to accumulate in the fungal cell. This drug most likely inhibits which of the following enzymes?</p>",
+   "options": [
+    "1,3-beta-glucan synthase",
+    "Cytosine deaminase",
+    "Lanosterol 14-alpha-demethylase",
+    "Squalene epoxidase",
+    "Thymidylate synthase"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Black-dot tinea capitis with endothrix spores and no Wood lamp fluorescence is typical of <em>Trichophyton tonsurans</em>, the commonest cause of tinea capitis in North American children. It needs oral therapy. Terbinafine, an allylamine, inhibits squalene epoxidase, the enzyme that converts squalene to squalene 2,3-epoxide on the path to ergosterol. Ergosterol falls and squalene accumulates to toxic levels, which is why terbinafine is fungicidal for dermatophytes. It concentrates in keratin, hair and nail.</p><p><strong>Takeaway:</strong> Terbinafine blocks squalene epoxidase; azoles block the later step, lanosterol 14-alpha-demethylase.</p>",
+   "whyNot": {
+    "A": "1,3-beta-glucan synthase builds the fungal cell wall and is inhibited by echinocandins such as caspofungin, which are not used for dermatophytes and do not cause squalene buildup.",
+    "B": "Cytosine deaminase converts flucytosine to 5-fluorouracil inside fungal cells; flucytosine is used for cryptococcal meningitis, not tinea.",
+    "C": "Lanosterol 14-alpha-demethylase is the azole target; blocking it causes methylated sterols, not squalene, to accumulate.",
+    "E": "Thymidylate synthase is inhibited by 5-fluorouracil (the active product of flucytosine), which acts on DNA synthesis rather than ergosterol synthesis."
+   },
+   "objective": "Identify squalene epoxidase as the target of terbinafine used for tinea capitis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "fungal infection",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>Several residents and two staff members at a long-term care facility develop intense itching that is worse at night. An 84-year-old resident with dementia has thick, gray, crusted plaques on her hands, elbows and buttocks; skin scrapings show many mites and eggs. The facility treats all residents and staff with an oral drug given in two doses 1 week apart. In the parasite, this drug acts mainly on which of the following targets?</p>",
+   "options": [
+    "Beta-tubulin, blocking microtubule polymerization",
+    "Glutamate-gated chloride channels, causing hyperpolarization",
+    "Nicotinic acetylcholine receptors, causing depolarizing paralysis",
+    "Tegument calcium channels, causing calcium influx",
+    "Voltage-gated sodium channels, delaying repolarization"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Crusted scabies in an older resident and an institutional outbreak are the main indications for oral ivermectin, often combined with topical permethrin for the index case. Ivermectin binds glutamate-gated chloride channels in invertebrate nerve and muscle. Chloride influx hyperpolarises the cells and paralyses the parasite. Mammals lack these channels, and the blood-brain barrier normally keeps ivermectin away from mammalian GABA-gated channels, which explains its safety.</p><p><strong>Takeaway:</strong> Ivermectin opens invertebrate glutamate-gated chloride channels; permethrin keeps arthropod sodium channels open.</p>",
+   "whyNot": {
+    "A": "Binding beta-tubulin is how benzimidazoles such as albendazole work against helminths; they are not used for scabies.",
+    "C": "Depolarizing nicotinic agonism is the mechanism of pyrantel pamoate against intestinal roundworms.",
+    "D": "Increasing tegument calcium permeability is how praziquantel kills schistosomes and tapeworms.",
+    "E": "Holding voltage-gated sodium channels open is the action of topical permethrin, not of the oral agent used here."
+   },
+   "objective": "Describe the mechanism of oral ivermectin used for crusted and institutional scabies.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infestation",
+    "older adults"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 5-year-old girl with atopic dermatitis has had a cluster of 2- to 4-mm skin-colored papules on her trunk and inner arm for 4 months. Each papule is firm and pearly with a central depression, and a few are surrounded by an itchy eczematous patch. She is otherwise well. A papule is curetted for diagnosis. Microscopic examination is most likely to show which of the following?</p>",
+   "options": [
+    "Acantholytic keratinocytes floating in an intraepidermal cleft",
+    "Keratinocytes with clear perinuclear halos and wrinkled nuclei",
+    "Large eosinophilic inclusions filling the cytoplasm of keratinocytes",
+    "Multinucleated keratinocytes with molded nuclei and nuclear inclusions",
+    "Noncaseating granulomas in the dermis"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Firm, pearly, umbilicated papules in a child, sometimes with surrounding dermatitis, are molluscum contagiosum. The poxvirus replicates in the cytoplasm of keratinocytes and fills them with large eosinophilic inclusion bodies (molluscum bodies) that push the nucleus aside. Children with atopic dermatitis get more lesions because of their impaired barrier and scratching, and the eczematous halo often heralds immune clearance.</p><p><strong>Takeaway:</strong> Molluscum shows large eosinophilic intracytoplasmic inclusions; poxviruses replicate in the cytoplasm.</p>",
+   "whyNot": {
+    "A": "Acantholysis in an intraepidermal cleft is seen in pemphigus and in herpesvirus vesicles, not in solid molluscum papules.",
+    "B": "Koilocytes with perinuclear halos indicate papillomavirus infection, which gives rough warts without central umbilication.",
+    "D": "Multinucleated keratinocytes with nuclear inclusions indicate HSV or VZV, which produce vesicles rather than firm, long-lasting papules.",
+    "E": "Noncaseating granulomas suggest sarcoidosis or a foreign-body reaction, not a contagious umbilicated papule."
+   },
+   "objective": "Recognize the histology of molluscum contagiosum.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "viral skin infection"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old man with advanced HIV infection (CD4+ T-lymphocyte count 40/mm<sup>3</sup>) has a 4-cm painful, shallow perianal ulcer with scalloped borders that has enlarged over 6 weeks despite full-dose oral valacyclovir. PCR of the ulcer base is positive for herpes simplex virus type 2. Genotype testing shows a mutation that prevents the virus from phosphorylating nucleoside analogues. Which of the following describes the mechanism of the most appropriate drug for this patient?</p>",
+   "options": [
+    "Blocks the viral neuraminidase",
+    "Inhibits viral DNA polymerase at the pyrophosphate-binding site",
+    "Inhibits viral uncoating by blocking the M2 ion channel",
+    "Is phosphorylated by viral thymidine kinase before inhibiting DNA polymerase",
+    "Is phosphorylated by the viral UL97 kinase before inhibiting DNA polymerase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Chronic HSV ulcers that progress despite valacyclovir in advanced HIV usually reflect thymidine kinase-deficient virus. Acyclovir, valacyclovir, famciclovir and ganciclovir all need a viral kinase for the first phosphorylation, so they fail. Foscarnet, a pyrophosphate analogue, binds the pyrophosphate site of viral DNA polymerase directly and needs no activation. Its main toxicities are acute kidney injury and electrolyte losses (low calcium, magnesium, potassium and phosphate), with seizures from low ionized calcium.</p><p><strong>Takeaway:</strong> For thymidine kinase-deficient, acyclovir-resistant HSV, use foscarnet, which inhibits viral DNA polymerase without activation.</p>",
+   "whyNot": {
+    "A": "Neuraminidase inhibitors such as oseltamivir act on influenza release and have no activity against herpesviruses.",
+    "C": "M2 channel blockers (amantadine) act on influenza A uncoating, not on HSV.",
+    "D": "A drug that needs viral thymidine kinase, such as acyclovir, cannot be activated by this mutant virus, which is the reason for treatment failure.",
+    "E": "Activation by UL97 kinase describes ganciclovir in cytomegalovirus; HSV lacks UL97 and ganciclovir in HSV also depends on thymidine kinase."
+   },
+   "objective": "Select foscarnet for thymidine kinase-deficient acyclovir-resistant HSV and explain its mechanism.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "viral skin infection",
+    "HIV"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 54-year-old man with type 2 diabetes comes to the emergency department because of worsening pain in his right thigh for 18 hours. Two days ago he scraped the thigh on a fence. He describes the pain as 10/10. Temperature is 38.9 °C (102 °F), pulse is 118/min, respirations are 22/min and blood pressure is 96/58 mm Hg. There is a 10-cm area of dusky erythema with two violaceous bullae; the thigh is tense, tender well beyond the erythema, and numb in the center. Leukocyte count is 21,500/mm<sup>3</sup>, serum sodium is 129 mEq/L and creatinine is 1.9 mg/dL. Blood cultures are drawn and IV fluids started. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "CT scan of the thigh with contrast",
+    "Emergency surgical exploration and debridement",
+    "Hyperbaric oxygen therapy",
+    "Needle aspiration of a bulla for Gram stain",
+    "Observation on IV antibiotics with repeat examination in 12 hours"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Pain out of proportion, tenderness beyond the erythema, violaceous bullae, central anesthesia and sepsis with hyponatremia and acute kidney injury add up to necrotizing soft-tissue infection. The diagnosis is made and the disease is treated in the operating room: fascia that is grey, non-bleeding and easily separated confirms it, and debridement of all necrotic tissue is life-saving. Broad-spectrum antibiotics are started at the same time, but they cannot reach thrombosed tissue. Each hour of delay raises mortality.</p><p><strong>Takeaway:</strong> When necrotizing fasciitis is clinically likely, go straight to surgical exploration and debridement; imaging and laboratory scores must not delay it.</p>",
+   "whyNot": {
+    "A": "CT can show fascial gas or fluid, but in a septic patient with hard clinical signs it delays definitive care and a normal scan does not exclude the disease.",
+    "C": "Hyperbaric oxygen is at most an adjunct after debridement in selected centers and must never replace or delay surgery.",
+    "D": "Aspirating a bulla may grow the organism but neither confirms fascial necrosis nor treats it, and it wastes time.",
+    "E": "Watching for progression is how patients with necrotizing infection die; worsening over 12 hours is expected without source control."
+   },
+   "objective": "Choose emergency surgical debridement for clinically suspected necrotizing soft-tissue infection.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue infection"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient in the previous item is taken to the operating room, where grey, non-bleeding fascia separates easily from the overlying fat and thin, cloudy fluid is found. Wide debridement is performed. Gram stain of the tissue shows gram-positive cocci in chains and clusters and gram-negative rods. He has no drug allergies. Which of the following is the most appropriate empiric antibiotic regimen while cultures are pending?</p>",
+   "options": [
+    "Cefazolin",
+    "Ceftriaxone and azithromycin",
+    "Doxycycline and metronidazole",
+    "Vancomycin",
+    "Vancomycin, piperacillin-tazobactam and clindamycin"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Operative findings confirm necrotizing fasciitis, and the Gram stain suggests polymicrobial (type I) infection, common in diabetes. Empiric therapy must cover MRSA (vancomycin or linezolid), streptococci, gram-negative rods and anaerobes (piperacillin-tazobactam or a carbapenem), and suppress toxin production (clindamycin, which acts on the ribosome regardless of growth phase). Narrow the regimen once cultures return, and plan a second-look operation within 24 to 48 hours.</p><p><strong>Takeaway:</strong> Empiric therapy for necrotizing fasciitis is MRSA cover plus broad gram-negative and anaerobic cover plus clindamycin for toxin suppression.</p>",
+   "whyNot": {
+    "A": "Cefazolin covers streptococci and methicillin-susceptible staphylococci but misses MRSA, anaerobes and many gram-negative rods.",
+    "B": "Ceftriaxone with azithromycin is a pneumonia regimen; it misses MRSA and anaerobes and gives no toxin suppression.",
+    "C": "Doxycycline with metronidazole is not an adequate regimen for life-threatening polymicrobial fasciitis; streptococcal and gram-negative coverage is unreliable.",
+    "D": "Vancomycin alone treats gram-positive organisms only and leaves the gram-negative rods and anaerobes seen on Gram stain untreated."
+   },
+   "objective": "Select empiric triple therapy for polymicrobial necrotizing fasciitis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue infection",
+    "antibiotics"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 2-year-old girl is brought to the emergency department because of fever, irritability and a painful rash for 2 days. It began as redness around her mouth and nose and in her neck folds and has spread to her trunk. Today the skin has started peeling in sheets. She takes no medications. She cries when held. There is crusting around the mouth and nostrils with radial fissures. Diffuse tender erythema with superficial flaccid bullae covers the trunk and flexures, and gentle rubbing of normal-appearing skin causes the upper layer to wrinkle and slide off. The conjunctivae, lips and oral mucosa are not eroded.</p><table><thead><tr><th>Measure</th><th>Result</th></tr></thead><tbody><tr><td>Temperature</td><td>38.6 °C (101.5 °F)</td></tr><tr><td>Pulse</td><td>152/min</td></tr><tr><td>Blood pressure</td><td>94/58 mm Hg</td></tr><tr><td>Leukocytes</td><td>13,800/mm<sup>3</sup></td></tr><tr><td>Platelets</td><td>310,000/mm<sup>3</sup></td></tr><tr><td>Creatinine</td><td>0.3 mg/dL</td></tr><tr><td>Culture of bulla fluid</td><td>No growth at 48 hours</td></tr></tbody></table><p>Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Kawasaki disease",
+    "Scarlet fever",
+    "Staphylococcal scalded skin syndrome",
+    "Stevens-Johnson syndrome",
+    "Toxic epidermal necrolysis"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A toddler with fever, tender erythema starting around the mouth and in flexures, perioral crusting with radial fissures, superficial flaccid bullae, a positive Nikolsky sign, <strong>no mucosal erosions</strong> and sterile blister fluid has staphylococcal scalded skin syndrome. Toxin from a distant focus (often nasopharynx, conjunctiva or umbilicus) circulates and cleaves desmoglein-1; the blisters contain toxin, not bacteria. Treat with IV anti-staphylococcal antibiotics, fluids and analgesia, and culture the suspected source. The skin heals without scars.</p><p><strong>Takeaway:</strong> Tender erythroderma with superficial peeling, a positive Nikolsky sign, spared mucosa and sterile bullae in a young child is SSSS.</p>",
+   "whyNot": {
+    "A": "Kawasaki disease causes fever for 5 days or more with conjunctival injection, red cracked lips, extremity changes and adenopathy; peeling is periungual and late, and blisters are not a feature.",
+    "B": "Scarlet fever gives a sandpaper-like rash with circumoral pallor and strawberry tongue after streptococcal pharyngitis; it desquamates later but does not form bullae or a Nikolsky sign.",
+    "D": "Stevens-Johnson syndrome almost always involves two or more mucosal surfaces and usually follows a drug; this child has no mucosal erosions and takes no medications.",
+    "E": "Toxic epidermal necrolysis has full-thickness epidermal necrosis with prominent mucosal erosions and is typically drug-induced; the mucosa is spared here."
+   },
+   "objective": "Diagnose staphylococcal scalded skin syndrome and distinguish it from drug-induced epidermal necrolysis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "blistering",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old woman comes to the clinic because of redness and pain in her left lower leg for 2 days. She has interdigital scaling and maceration between her left fourth and fifth toes. Temperature is 37.9 °C (100.2 °F), pulse is 88/min and blood pressure is 128/76 mm Hg. There is a 12 × 8-cm warm, tender, edematous area of erythema on the anterior shin with indistinct borders. There is no fluctuance, drainage, crepitus or wound. Pedal pulses are normal. She has no drug allergies, no history of MRSA and does not use injection drugs. Which of the following is the most appropriate pharmacotherapy?</p>",
+   "options": [
+    "Oral cephalexin",
+    "Oral ciprofloxacin",
+    "Oral trimethoprim-sulfamethoxazole alone",
+    "IV vancomycin",
+    "Topical mupirocin"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is mild non-purulent cellulitis: warm, tender, poorly demarcated erythema without pus, a penetrating wound or systemic toxicity, with interdigital tinea as the portal of entry. Beta-hemolytic streptococci are the usual cause, so an oral beta-lactam such as cephalexin is first line; routine MRSA coverage adds nothing. She should also treat the tinea pedis with a topical antifungal and elevate the leg to cut the risk of recurrence.</p><p><strong>Takeaway:</strong> Mild non-purulent cellulitis is treated with an oral beta-lactam active against streptococci; treat the portal of entry too.</p>",
+   "whyNot": {
+    "B": "Ciprofloxacin has weak streptococcal activity and is not a recommended agent for uncomplicated cellulitis.",
+    "C": "Trimethoprim-sulfamethoxazole alone covers MRSA well but covers beta-hemolytic streptococci less reliably than a beta-lactam, the main pathogens in non-purulent cellulitis.",
+    "D": "IV vancomycin is reserved for severe infection or MRSA risk factors; she is stable and can be treated orally as an outpatient.",
+    "E": "Topical mupirocin treats limited impetigo, not infection of the dermis and subcutaneous fat."
+   },
+   "objective": "Treat mild non-purulent cellulitis with an oral anti-streptococcal beta-lactam.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue infection"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 6-year-old boy is brought to the clinic because of a painful, oozing lump on his scalp for 10 days. Three weeks ago his mother noticed a scaly patch with hair loss there. His younger brother has a similar scaly patch. Examination shows a 5 × 4-cm boggy, tender plaque studded with pustules on the occipital scalp; hairs pull out easily and painlessly. There are tender posterior cervical lymph nodes. He is afebrile and otherwise well. KOH preparation of plucked hairs shows spores within the hair shafts. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Incision and drainage of the plaque",
+    "Oral cephalexin",
+    "Oral terbinafine",
+    "Topical clotrimazole cream",
+    "Topical high-potency corticosteroid"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A boggy, pustular scalp plaque that began as scaly alopecia, with easily plucked hairs, endothrix spores and a sibling with similar lesions, is a <strong>kerion</strong>: an intense inflammatory reaction to tinea capitis. It needs oral antifungal therapy (terbinafine or griseofulvin) because the fungus lives inside the follicle and hair shaft where topicals do not reach. Adding a medicated shampoo for the patient and household reduces spore shedding; his brother needs treatment too.</p><p><strong>Takeaway:</strong> Kerion is tinea capitis, not an abscess: treat with an oral antifungal and never incise it.</p>",
+   "whyNot": {
+    "A": "Incision finds no pus, does not treat the fungus and increases the risk of permanent scarring alopecia.",
+    "B": "Antibacterial therapy is not needed unless there is clear secondary bacterial infection; the KOH result shows a dermatophyte.",
+    "D": "Topical azoles do not penetrate the hair shaft and follicle and fail in tinea capitis.",
+    "E": "A high-potency corticosteroid alone would suppress the inflammatory response and let the fungal infection spread."
+   },
+   "objective": "Recognize a kerion and treat tinea capitis with an oral antifungal.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "scalp"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman comes to the clinic because of severe itching for 5 weeks that keeps her awake at night. Her partner and their 10-year-old son have started to itch over the past week. She has tried an over-the-counter hydrocortisone cream without relief. Examination shows excoriated papules on the finger webs, flexor wrists, waistband and around the umbilicus, and several short, wavy, grey lines on the sides of her fingers. No one in the household is pregnant. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Oral antihistamine and reassessment in 2 weeks",
+    "Oral prednisone taper for the patient",
+    "Permethrin cream for the patient and household, repeated in 1 to 2 weeks",
+    "Permethrin cream for the patient now, and for household members if they develop burrows",
+    "Skin biopsy before any treatment"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Nocturnal itch, burrows in the finger webs, lesions at the wrists, waist and umbilicus, and itching household members make scabies the diagnosis. Permethrin 5% cream is applied to the whole body from the neck down, left on overnight and repeated in 1 to 2 weeks to kill mites hatched from surviving eggs. All household and close contacts are treated at the same time, symptomatic or not, because asymptomatic carriers reinfest the family. Bedding, towels and clothes used in the past few days are hot-washed or bagged.</p><p><strong>Takeaway:</strong> Treat scabies in the patient and every close contact simultaneously, and repeat the application.</p>",
+   "whyNot": {
+    "A": "Antihistamines relieve itch but do nothing to the mites, so the infestation spreads further while waiting.",
+    "B": "Systemic corticosteroids worsen scabies and can promote crusted disease; they do not treat the cause.",
+    "D": "Treating contacts only when they show burrows allows asymptomatic, still-incubating contacts to reinfest the patient.",
+    "E": "Scabies is diagnosed clinically, ideally supported by a scraping or dermoscopy; a biopsy is unnecessary and would delay treatment."
+   },
+   "objective": "Manage scabies by treating the patient and all close contacts at the same time.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infestation",
+    "pruritus"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 74-year-old man comes to the clinic because of a painful rash on his forehead for 1 day. Four days ago he had burning pain over the right side of his forehead. He takes lisinopril and atorvastatin and has not received any zoster vaccine. Examination shows grouped vesicles on an erythematous base over the right forehead and upper eyelid, and three vesicles on the right side of the tip of the nose. Visual acuity is 20/25 in both eyes. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Oral prednisone and follow-up in 1 week",
+    "Oral valacyclovir and same-day ophthalmology evaluation",
+    "Recombinant zoster vaccine today",
+    "Topical acyclovir ointment",
+    "Viral PCR of a vesicle, with treatment once the result returns"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Herpes zoster in the ophthalmic division with vesicles on the tip of the nose (involvement of the nasociliary branch) carries a high risk of eye disease such as keratitis, uveitis and retinitis. He needs an oral antiviral now (valacyclovir, famciclovir or acyclovir) and an ophthalmologist's slit-lamp examination the same day. Recombinant zoster vaccine is recommended once the acute episode has resolved, to reduce recurrence.</p><p><strong>Takeaway:</strong> Zoster involving the nose tip predicts ocular disease: treat with an oral antiviral and arrange same-day ophthalmology review.</p>",
+   "whyNot": {
+    "A": "Corticosteroids alone do not treat viral replication and do not reliably prevent postherpetic neuralgia; they are not a substitute for an antiviral.",
+    "C": "The vaccine is a preventive measure given after the acute illness resolves; it does not treat active zoster.",
+    "D": "Topical acyclovir has no role in herpes zoster and would leave the eye at risk.",
+    "E": "The clinical picture is diagnostic, and delaying the antiviral until a test returns loses the benefit of early therapy."
+   },
+   "objective": "Recognize zoster involving the nasociliary branch and arrange antiviral therapy with urgent eye assessment.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "viral skin infection",
+    "older adults"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 3-year-old boy with moderate atopic dermatitis is brought to the clinic because his eczema suddenly worsened 2 days ago and became painful. He has been irritable and eating less. Temperature is 38.4 °C (101.1 °F). On the face, neck and upper chest there are dozens of uniform 2- to 3-mm punched-out erosions with hemorrhagic crusts, some grouped and coalescing, on top of his usual eczematous plaques. There are no lesions on or around the eyelids. He is drinking adequately. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Increase the potency of his topical corticosteroid",
+    "Oral acyclovir",
+    "Oral cephalexin alone",
+    "Start dupilumab",
+    "Wet wraps and bleach baths"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Sudden painful worsening of atopic dermatitis with fever and monomorphic punched-out erosions is eczema herpeticum, a disseminated HSV infection of barrier-damaged skin. Start an antiviral at once without waiting for confirmation; send a swab for HSV PCR. A child who looks well and is drinking can take oral acyclovir with close follow-up; IV acyclovir is used if he is ill, cannot drink, or has eye involvement. Add an antistaphylococcal antibiotic only if there is evidence of secondary bacterial infection.</p><p><strong>Takeaway:</strong> Punched-out erosions on atopic skin with fever mean eczema herpeticum: start acyclovir promptly.</p>",
+   "whyNot": {
+    "A": "Stronger topical corticosteroids could worsen a spreading viral infection and do not treat HSV.",
+    "C": "Cephalexin treats staphylococcal superinfection, which may coexist, but alone it leaves the herpes infection untreated.",
+    "D": "Dupilumab is a long-term systemic therapy for moderate to severe atopic dermatitis and has no role in an acute viral infection.",
+    "E": "Wet wraps and dilute bleach baths are maintenance measures for eczema and would not control disseminated HSV."
+   },
+   "objective": "Diagnose eczema herpeticum and start antiviral therapy promptly.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatrics",
+    "viral skin infection"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which desmosomal protein do staphylococcal exfoliative toxins cleave?",
+   "back": "Desmoglein-1, giving a superficial (granular-layer) split in bullous impetigo and SSSS.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Why does staphylococcal infection localise into abscesses?",
+   "back": "Coagulase converts fibrinogen to fibrin and walls off the focus.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which group A strep enzymes help infection spread through tissue planes?",
+   "back": "Streptokinase (activates plasminogen) and hyaluronidase (digests ground substance).",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Can impetigo be followed by acute rheumatic fever?",
+   "back": "No. Skin infection can trigger post-streptococcal glomerulonephritis; rheumatic fever follows pharyngitis.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "What gene makes S. aureus methicillin-resistant, and what does it encode?",
+   "back": "mecA, encoding penicillin-binding protein 2a with low beta-lactam affinity.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Wound in warm seawater plus cirrhosis, then hemorrhagic bullae and shock?",
+   "back": "Vibrio vulnificus.",
+   "question": 2
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "What does Clostridium perfringens alpha toxin do?",
+   "back": "It is a phospholipase C (lecithinase) that hydrolyses membrane lecithin, lysing cells in gas gangrene.",
+   "question": 3
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Which skin infection fluoresces coral-red under a Wood lamp?",
+   "back": "Erythrasma (Corynebacterium minutissimum), from porphyrins.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Raised, sharply demarcated border: erysipelas or cellulitis?",
+   "back": "Erysipelas; it involves the upper dermis and lymphatics. Cellulitis has an indistinct, flat border.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Where does HSV establish latency?",
+   "back": "Sensory ganglia: trigeminal for most orolabial disease, sacral for most genital disease.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "What does a Tzanck smear show, and what can it not tell you?",
+   "back": "Multinucleated giant cells; it cannot distinguish HSV from VZV.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "What enzyme first phosphorylates acyclovir?",
+   "back": "Viral thymidine kinase; loss of this enzyme is the usual cause of resistance.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Drug for thymidine kinase-deficient HSV and its mechanism?",
+   "back": "Foscarnet: binds the pyrophosphate site of viral DNA polymerase without activation.",
+   "question": 7
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Histology of molluscum contagiosum?",
+   "back": "Large eosinophilic intracytoplasmic inclusions (molluscum bodies) in keratinocytes.",
+   "question": 6
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Terbinafine inhibits which enzyme?",
+   "back": "Squalene epoxidase; squalene accumulates and ergosterol falls.",
+   "question": 4
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Why does tinea versicolor lighten skin?",
+   "back": "Malassezia makes azelaic acid, which inhibits tyrosinase.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "What causes the itch of scabies?",
+   "back": "A delayed-type (type IV) hypersensitivity to mites, eggs and feces.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Ivermectin acts on which channel in parasites?",
+   "back": "Glutamate-gated chloride channels, causing hyperpolarisation and paralysis.",
+   "question": 5
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "First-line oral drug for mild non-purulent cellulitis?",
+   "back": "A streptococcus-active beta-lactam such as cephalexin.",
+   "question": 11
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Main treatment of a skin abscess?",
+   "back": "Incision and drainage; antibiotics are adjuncts.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "When does non-purulent cellulitis need MRSA coverage?",
+   "back": "Penetrating trauma, injection drug use, known MRSA colonisation, purulence or systemic toxicity.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Next step for suspected necrotizing fasciitis?",
+   "back": "Emergency surgical exploration and debridement, with broad antibiotics; imaging must not delay it.",
+   "question": 8
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Why add clindamycin in necrotizing fasciitis?",
+   "back": "It suppresses toxin synthesis at the ribosome independent of growth phase.",
+   "question": null
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Mucosa in SSSS versus SJS/TEN?",
+   "back": "Spared in SSSS; eroded in SJS/TEN.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Where do you culture in SSSS?",
+   "back": "The likely source (nares, conjunctiva, umbilicus), not the sterile bullae.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Bilateral red, warm lower legs: most likely?",
+   "back": "Not cellulitis; usually stasis dermatitis or another bilateral process.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Most accurate test for a suspected HSV lesion?",
+   "back": "PCR of a swab from an unroofed vesicle or erosion.",
+   "question": null
+  },
+  {
+   "n": 28,
+   "section": 4,
+   "front": "Why is eczema herpeticum urgent?",
+   "back": "Disseminated HSV on damaged skin can cause sepsis and eye disease; start acyclovir without waiting for results.",
+   "question": 15
+  },
+  {
+   "n": 29,
+   "section": 4,
+   "front": "Vesicles on the tip of the nose in V1 zoster mean what?",
+   "back": "Nasociliary involvement and high risk of eye disease; same-day ophthalmology.",
+   "question": 14
+  },
+  {
+   "n": 30,
+   "section": 4,
+   "front": "Who should get recombinant zoster vaccine?",
+   "back": "Adults 50 and older, and immunocompromised adults 19 and older; two doses.",
+   "question": null
+  },
+  {
+   "n": 31,
+   "section": 4,
+   "front": "Why does tinea capitis need oral therapy?",
+   "back": "The fungus is inside the hair shaft and follicle, out of reach of topicals.",
+   "question": 12
+  },
+  {
+   "n": 32,
+   "section": 4,
+   "front": "Kerion: incise or not?",
+   "back": "Do not incise; it is an inflammatory reaction to tinea and needs an oral antifungal.",
+   "question": null
+  },
+  {
+   "n": 33,
+   "section": 4,
+   "front": "Which oral antifungal does not work for tinea versicolor?",
+   "back": "Terbinafine; use topical agents or oral fluconazole or itraconazole.",
+   "question": null
+  },
+  {
+   "n": 34,
+   "section": 4,
+   "front": "Who is treated when one person has scabies?",
+   "back": "The patient and all household and close contacts at the same time.",
+   "question": 13
+  },
+  {
+   "n": 35,
+   "section": 4,
+   "front": "Candidal vs irritant diaper dermatitis?",
+   "back": "Candida involves skin folds with satellite lesions; irritant dermatitis spares the folds.",
+   "question": null
+  },
+  {
+   "n": 36,
+   "section": 4,
+   "front": "Is itch 2 weeks after scabies treatment failure?",
+   "back": "Not by itself; post-scabetic itch can last 2 to 4 weeks.",
+   "question": null
+  }
+ ]
+}

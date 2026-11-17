@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 392" width="760" height="392" role="img" aria-label="Six schematic long bones showing transverse, oblique, spiral, comminuted, torus (buckle) and greenstick fracture patterns with labels for the force that causes each" font-family="sans-serif" fill="#0f172a">
+<title>Six schematic long bones showing transverse, oblique, spiral, comminuted, torus (buckle) and greenstick fracture patterns with labels for the force that causes each</title>
+<rect x="0" y="0" width="760" height="392" fill="#ffffff"/>
+<text x="380" y="28" font-size="18" font-weight="bold" text-anchor="middle">Fracture patterns</text>
+<rect x="52" y="60" width="36" height="230" rx="16" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<line x1="50" y1="175" x2="90" y2="175" stroke="#b91c1c" stroke-width="4" fill="none"/>
+<text x="70" y="318" font-size="14" font-weight="bold" text-anchor="middle">Transverse</text>
+<text x="70" y="337" font-size="12" text-anchor="middle">bending</text>
+<rect x="174" y="60" width="36" height="230" rx="16" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<line x1="172" y1="195" x2="212" y2="150" stroke="#b91c1c" stroke-width="4" fill="none"/>
+<text x="192" y="318" font-size="14" font-weight="bold" text-anchor="middle">Oblique</text>
+<text x="192" y="337" font-size="12" text-anchor="middle">compression and bending</text>
+<rect x="296" y="60" width="36" height="230" rx="16" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<path d="M296,200 C344,185 284,160 332,140" stroke="#b91c1c" stroke-width="4" fill="none"/>
+<text x="314" y="318" font-size="14" font-weight="bold" text-anchor="middle">Spiral</text>
+<text x="314" y="337" font-size="12" text-anchor="middle">twisting</text>
+<rect x="418" y="60" width="36" height="230" rx="16" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<polyline points="416,160 436,175 456,158" stroke="#b91c1c" stroke-width="4" fill="none"/><polyline points="416,195 438,180 456,198" stroke="#b91c1c" stroke-width="4" fill="none"/><line x1="436" y1="175" x2="438" y2="180" stroke="#b91c1c" stroke-width="4" fill="none"/>
+<text x="436" y="318" font-size="14" font-weight="bold" text-anchor="middle">Comminuted</text>
+<text x="436" y="337" font-size="12" text-anchor="middle">high energy</text>
+<rect x="540" y="60" width="36" height="230" rx="16" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<polyline points="540,222 531,231 540,240" stroke="#b91c1c" stroke-width="4" fill="none"/><polyline points="576,222 585,231 576,240" stroke="#b91c1c" stroke-width="4" fill="none"/>
+<text x="558" y="318" font-size="14" font-weight="bold" text-anchor="middle">Torus (buckle)</text>
+<text x="558" y="337" font-size="12" text-anchor="middle">child: cortex buckles</text>
+<rect x="662" y="60" width="36" height="230" rx="16" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<line x1="700" y1="170" x2="676" y2="180" stroke="#b91c1c" stroke-width="4" fill="none"/><path d="M662,165 q-8,15 0,30" stroke="#334155" stroke-width="3" fill="none"/>
+<text x="680" y="318" font-size="14" font-weight="bold" text-anchor="middle">Greenstick</text>
+<text x="680" y="337" font-size="12" text-anchor="middle">child: one cortex breaks</text>
+<text x="380" y="372" font-size="13" text-anchor="middle">Thick dark lines mark the fracture. Torus and greenstick patterns occur in children because their bone bends before it breaks.</text>
+</svg>

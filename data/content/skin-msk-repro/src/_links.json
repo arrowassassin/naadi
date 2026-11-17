@@ -1,7 +1,2144 @@
 {
+ "5α-Reductase Deficiency": {
+  "exact": true,
+  "nbk": "NBK539904",
+  "title": "5α-Reductase Deficiency"
+ },
+ "APGAR Score": {
+  "exact": true,
+  "nbk": "NBK470569",
+  "title": "APGAR Score"
+ },
+ "Abnormal Papanicolaou Smear": {
+  "exact": true,
+  "nbk": "NBK560850",
+  "title": "Abnormal Papanicolaou Smear"
+ },
+ "Abnormal Uterine Bleeding": {
+  "exact": true,
+  "nbk": "NBK532913",
+  "title": "Abnormal Uterine Bleeding"
+ },
+ "Abusive Head Trauma": {
+  "exact": false,
+  "nbk": "NBK499836",
+  "title": "Pediatric Abusive Head Trauma"
+ },
+ "Acanthosis Nigricans": {
+  "exact": true,
+  "nbk": "NBK431057",
+  "title": "Acanthosis Nigricans"
+ },
+ "Achilles Tendinopathy": {
+  "exact": true,
+  "nbk": "NBK538149",
+  "title": "Achilles Tendinopathy"
+ },
+ "Achilles Tendon Rupture": {
+  "exact": true,
+  "nbk": "NBK430844",
+  "title": "Achilles Tendon Rupture"
+ },
+ "Acne Vulgaris": {
+  "exact": true,
+  "nbk": "NBK459173",
+  "title": "Acne Vulgaris"
+ },
+ "Actinic Keratosis": {
+  "exact": true,
+  "nbk": "NBK557401",
+  "title": "Actinic Keratosis"
+ },
+ "Acute Ankle Sprain": {
+  "exact": true,
+  "nbk": "NBK459212",
+  "title": "Acute Ankle Sprain"
+ },
+ "Acute Bacterial Prostatitis": {
+  "exact": true,
+  "nbk": "NBK459257",
+  "title": "Acute Bacterial Prostatitis"
+ },
+ "Acute Compartment Syndrome": {
+  "exact": true,
+  "nbk": "NBK448124",
+  "title": "Acute Compartment Syndrome"
+ },
+ "Acute Mastitis": {
+  "exact": true,
+  "nbk": "NBK557782",
+  "title": "Acute Mastitis"
+ },
+ "Acute Prostatitis": {
+  "exact": false,
+  "nbk": "NBK459257",
+  "title": "Acute Bacterial Prostatitis"
+ },
+ "Adolescent Idiopathic Scoliosis": {
+  "exact": true,
+  "nbk": "NBK499908",
+  "title": "Adolescent Idiopathic Scoliosis"
+ },
+ "Alcohol Use Disorder": {
+  "exact": false,
+  "nbk": "NBK436003",
+  "title": "Alcohol Use Disorder: Screening, Evaluation, and Management"
+ },
+ "Alendronate": {
+  "exact": true,
+  "nbk": "NBK526073",
+  "title": "Alendronate"
+ },
+ "Allopurinol": {
+  "exact": true,
+  "nbk": "NBK499942",
+  "title": "Allopurinol"
+ },
+ "Alopecia Areata": {
+  "exact": true,
+  "nbk": "NBK537000",
+  "title": "Alopecia Areata"
+ },
+ "Ambiguous Genitalia and Disorders of Sexual Differentiation": {
+  "exact": true,
+  "nbk": "NBK557435",
+  "title": "Ambiguous Genitalia and Disorders of Sexual Differentiation"
+ },
+ "Amniocentesis": {
+  "exact": true,
+  "nbk": "NBK559247",
+  "title": "Amniocentesis"
+ },
+ "Amputation": {
+  "exact": false,
+  "nbk": "NBK551692",
+  "title": "Hand Amputation"
+ },
+ "Anatomy, Abdomen and Pelvis, Prostate": {
+  "exact": true,
+  "nbk": "NBK540987",
+  "title": "Anatomy, Abdomen and Pelvis, Prostate"
+ },
+ "Androgen Insensitivity Syndrome": {
+  "exact": true,
+  "nbk": "NBK542206",
+  "title": "Androgen Insensitivity Syndrome"
+ },
+ "Androgenetic Alopecia": {
+  "exact": true,
+  "nbk": "NBK430924",
+  "title": "Androgenetic Alopecia"
+ },
+ "Ankle Sprain": {
+  "exact": false,
+  "nbk": "NBK459212",
+  "title": "Acute Ankle Sprain"
+ },
+ "Ankylosing Spondylitis": {
+  "exact": true,
+  "nbk": "NBK470173",
+  "title": "Ankylosing Spondylitis"
+ },
+ "Anterior Cruciate Ligament Injury": {
+  "exact": false,
+  "nbk": "NBK499848",
+  "title": "Anterior Cruciate Ligament Knee Injury"
+ },
+ "Anterior Cruciate Ligament Knee Injury": {
+  "exact": true,
+  "nbk": "NBK499848",
+  "title": "Anterior Cruciate Ligament Knee Injury"
+ },
+ "Anterior Shoulder Dislocation": {
+  "nbk": null,
+  "title": "Anterior Shoulder Dislocation"
+ },
+ "Aphthous Ulcers": {
+  "nbk": null,
+  "title": "Aphthous Ulcers"
+ },
+ "Atopic Dermatitis": {
+  "exact": true,
+  "nbk": "NBK448071",
+  "title": "Atopic Dermatitis"
+ },
+ "Avascular Necrosis": {
+  "exact": true,
+  "nbk": "NBK537007",
+  "title": "Avascular Necrosis"
+ },
+ "BRCA1 and BRCA2": {
+  "exact": false,
+  "nbk": "NBK470239",
+  "title": "BRCA1 and BRCA2 Mutations"
+ },
+ "Bacterial Vaginosis": {
+  "exact": true,
+  "nbk": "NBK459216",
+  "title": "Bacterial Vaginosis"
+ },
+ "Balanitis": {
+  "exact": true,
+  "nbk": "NBK537143",
+  "title": "Balanitis"
+ },
+ "Balanitis Xerotica Obliterans (Male Penile Lichen Sclerosus)": {
+  "exact": true,
+  "nbk": "NBK567770",
+  "title": "Balanitis Xerotica Obliterans (Male Penile Lichen Sclerosus)"
+ },
+ "Bartholin Gland Cyst": {
+  "exact": true,
+  "nbk": "NBK532271",
+  "title": "Bartholin Gland Cyst"
+ },
+ "Basal Cell Carcinoma": {
+  "exact": true,
+  "nbk": "NBK482439",
+  "title": "Basal Cell Carcinoma"
+ },
+ "Behcet Disease": {
+  "exact": true,
+  "nbk": "NBK470257",
+  "title": "Behcet Disease"
+ },
+ "Below-Knee Amputation": {
+  "exact": true,
+  "nbk": "NBK534773",
+  "title": "Below-Knee Amputation"
+ },
+ "Benign Prostatic Hyperplasia": {
+  "exact": true,
+  "nbk": "NBK558920",
+  "title": "Benign Prostatic Hyperplasia"
+ },
+ "Bisphosphonate": {
+  "exact": true,
+  "nbk": "NBK470248",
+  "title": "Bisphosphonate"
+ },
+ "Bisphosphonate-Related Jaw Osteonecrosis": {
+  "exact": true,
+  "nbk": "NBK534771",
+  "title": "Bisphosphonate-Related Jaw Osteonecrosis"
+ },
+ "Blast Injuries": {
+  "exact": true,
+  "nbk": "NBK430914",
+  "title": "Blast Injuries"
+ },
+ "Brachial Plexus Injury": {
+  "nbk": null,
+  "title": "Brachial Plexus Injury"
+ },
+ "Breast Cancer Genetics": {
+  "nbk": null,
+  "title": "Breast Cancer Genetics"
+ },
+ "Breast Cancer Screening in the Average-Risk Patient": {
+  "exact": true,
+  "nbk": "NBK556050",
+  "title": "Breast Cancer Screening in the Average-Risk Patient"
+ },
+ "Breast Fibroadenoma": {
+  "exact": true,
+  "nbk": "NBK535345",
+  "title": "Breast Fibroadenoma"
+ },
+ "Breast Milk": {
+  "exact": false,
+  "nbk": "NBK537334",
+  "title": "Breast Milk Jaundice"
+ },
+ "Breastfeeding": {
+  "exact": true,
+  "nbk": "NBK534767",
+  "title": "Breastfeeding"
+ },
+ "Bullous Pemphigoid": {
+  "exact": true,
+  "nbk": "NBK535374",
+  "title": "Bullous Pemphigoid"
+ },
+ "Calcium Pyrophosphate Deposition Disease": {
+  "exact": true,
+  "nbk": "NBK540151",
+  "title": "Calcium Pyrophosphate Deposition Disease"
+ },
+ "Cannabinoid Hyperemesis Syndrome": {
+  "exact": true,
+  "nbk": "NBK549915",
+  "title": "Cannabinoid Hyperemesis Syndrome"
+ },
+ "Carpal Tunnel Syndrome": {
+  "exact": true,
+  "nbk": "NBK448179",
+  "title": "Carpal Tunnel Syndrome"
+ },
+ "Cauda Equina Syndrome": {
+  "nbk": null,
+  "title": "Cauda Equina Syndrome"
+ },
+ "Cauda Equina and Conus Medullaris Syndromes": {
+  "exact": true,
+  "nbk": "NBK537200",
+  "title": "Cauda Equina and Conus Medullaris Syndromes"
+ },
+ "Cellulitis": {
+  "exact": true,
+  "nbk": "NBK549770",
+  "title": "Cellulitis"
+ },
+ "Cephalohematoma": {
+  "exact": true,
+  "nbk": "NBK470192",
+  "title": "Cephalohematoma"
+ },
+ "Cervical Cancer": {
+  "exact": true,
+  "nbk": "NBK431093",
+  "title": "Cervical Cancer"
+ },
+ "Chancroid": {
+  "exact": true,
+  "nbk": "NBK513331",
+  "title": "Chancroid"
+ },
+ "Charcot Arthropathy": {
+  "nbk": null,
+  "title": "Charcot Arthropathy"
+ },
+ "Charcot Joint": {
+  "nbk": null,
+  "title": "Charcot Joint"
+ },
+ "Charcot Neuroarthropathy": {
+  "nbk": null,
+  "title": "Charcot Neuroarthropathy"
+ },
+ "Child Abuse": {
+  "exact": false,
+  "nbk": "NBK459146",
+  "title": "Child Abuse and Neglect"
+ },
+ "Child Abuse and Neglect": {
+  "exact": true,
+  "nbk": "NBK459146",
+  "title": "Child Abuse and Neglect"
+ },
+ "Chlamydia": {
+  "exact": false,
+  "nbk": "NBK537286",
+  "title": "Chlamydia trachomatis Infection"
+ },
+ "Chlamydia trachomatis Infection": {
+  "exact": true,
+  "nbk": "NBK537286",
+  "title": "Chlamydia trachomatis Infection"
+ },
+ "Chorionic Villus Sampling": {
+  "exact": true,
+  "nbk": "NBK563301",
+  "title": "Chorionic Villus Sampling"
+ },
+ "Chronic Prostatitis and Chronic Pelvic Pain Syndrome in Men": {
+  "exact": true,
+  "nbk": "NBK599550",
+  "title": "Chronic Prostatitis and Chronic Pelvic Pain Syndrome in Men"
+ },
+ "Chronic Urticaria": {
+  "exact": true,
+  "nbk": "NBK555910",
+  "title": "Chronic Urticaria"
+ },
+ "Circumcision": {
+  "exact": true,
+  "nbk": "NBK535436",
+  "title": "Circumcision"
+ },
+ "Clavicle Fracture": {
+  "exact": true,
+  "nbk": "NBK507892",
+  "title": "Clavicle Fracture"
+ },
+ "Cocaine Toxicity": {
+  "exact": true,
+  "nbk": "NBK430976",
+  "title": "Cocaine Toxicity"
+ },
+ "Colchicine": {
+  "exact": true,
+  "nbk": "NBK431102",
+  "title": "Colchicine"
+ },
+ "Colchicine Toxicity": {
+  "nbk": null,
+  "title": "Colchicine Toxicity"
+ },
+ "Colposcopy": {
+  "exact": true,
+  "nbk": "NBK564514",
+  "title": "Colposcopy"
+ },
+ "Compartment Syndrome": {
+  "exact": false,
+  "nbk": "NBK448124",
+  "title": "Acute Compartment Syndrome"
+ },
+ "Congenital Adrenal Hyperplasia": {
+  "exact": true,
+  "nbk": "NBK448098",
+  "title": "Congenital Adrenal Hyperplasia"
+ },
+ "Congenital Cytomegalovirus Infection": {
+  "exact": true,
+  "nbk": "NBK541003",
+  "title": "Congenital Cytomegalovirus Infection"
+ },
+ "Congenital Syphilis": {
+  "exact": false,
+  "nbk": "NBK537087",
+  "title": "Congenital and Maternal Syphilis"
+ },
+ "Congenital and Maternal Syphilis": {
+  "exact": true,
+  "nbk": "NBK537087",
+  "title": "Congenital and Maternal Syphilis"
+ },
+ "Contact Dermatitis": {
+  "exact": true,
+  "nbk": "NBK459230",
+  "title": "Contact Dermatitis"
+ },
+ "Contracture": {
+  "exact": false,
+  "nbk": "NBK557754",
+  "title": "Volkmann Contracture"
+ },
+ "Contractures": {
+  "nbk": null,
+  "title": "Contractures"
+ },
+ "Corticosteroid-Induced Myopathy": {
+  "exact": false,
+  "nbk": "NBK557731",
+  "title": "Corticosteroid Induced Myopathy"
+ },
+ "Crush Syndrome": {
+  "exact": false,
+  "nbk": "NBK482232",
+  "title": "Hyperbaric Treatment of Crush Injury and Compartment Syndrome"
+ },
+ "Cutaneous Melanoma: Guideline-Based Management and Interprofessional Collaboration": {
+  "exact": true,
+  "nbk": "NBK572149",
+  "title": "Cutaneous Melanoma: Guideline-Based Management and Interprofessional Collaboration"
+ },
+ "Cutaneous Squamous Cell Carcinoma": {
+  "exact": true,
+  "nbk": "NBK441939",
+  "title": "Cutaneous Squamous Cell Carcinoma"
+ },
+ "Dantrolene": {
+  "exact": true,
+  "nbk": "NBK535398",
+  "title": "Dantrolene"
+ },
+ "Daptomycin": {
+  "exact": true,
+  "nbk": "NBK470407",
+  "title": "Daptomycin"
+ },
+ "De Quervain Tenosynovitis": {
+  "exact": true,
+  "nbk": "NBK442005",
+  "title": "De Quervain Tenosynovitis"
+ },
+ "Deep Venous Thrombosis in Pregnancy": {
+  "nbk": null,
+  "title": "Deep Venous Thrombosis in Pregnancy"
+ },
+ "Denosumab": {
+  "exact": true,
+  "nbk": "NBK535388",
+  "title": "Denosumab"
+ },
+ "Dermatitis Herpetiformis": {
+  "exact": true,
+  "nbk": "NBK493163",
+  "title": "Dermatitis Herpetiformis"
+ },
+ "Dermatomyositis": {
+  "exact": true,
+  "nbk": "NBK558917",
+  "title": "Dermatomyositis"
+ },
+ "Diabetic Foot Ulcer": {
+  "nbk": null,
+  "title": "Diabetic Foot Ulcer"
+ },
+ "Distal Radius Fractures": {
+  "exact": true,
+  "nbk": "NBK536916",
+  "title": "Distal Radius Fractures"
+ },
+ "Domestic Violence": {
+  "exact": true,
+  "nbk": "NBK499891",
+  "title": "Domestic Violence"
+ },
+ "Down Syndrome": {
+  "exact": true,
+  "nbk": "NBK526016",
+  "title": "Down Syndrome"
+ },
+ "Drug-Induced Myopathies": {
+  "nbk": null,
+  "title": "Drug-Induced Myopathies"
+ },
+ "Ductal Carcinoma In Situ": {
+  "exact": false,
+  "nbk": "NBK567766",
+  "title": "Ductal Carcinoma In Situ (DCIS) of the Breast"
+ },
+ "Ductal Carcinoma In Situ (DCIS) of the Breast": {
+  "exact": true,
+  "nbk": "NBK567766",
+  "title": "Ductal Carcinoma In Situ (DCIS) of the Breast"
+ },
+ "Dupuytren Contracture": {
+  "exact": true,
+  "nbk": "NBK526074",
+  "title": "Dupuytren Contracture"
+ },
+ "Dyspareunia": {
+  "exact": true,
+  "nbk": "NBK562159",
+  "title": "Dyspareunia"
+ },
+ "Eczema Herpeticum": {
+  "exact": true,
+  "nbk": "NBK560781",
+  "title": "Eczema Herpeticum"
+ },
+ "Elbow Dislocation": {
+  "exact": false,
+  "nbk": "NBK559277",
+  "title": "Anterior Elbow Dislocation"
+ },
+ "Embryology, Mullerian Ducts (Paramesonephric Ducts)": {
+  "exact": true,
+  "nbk": "NBK557727",
+  "title": "Embryology, Mullerian Ducts (Paramesonephric Ducts)"
+ },
+ "Embryology, Sexual Development": {
+  "exact": true,
+  "nbk": "NBK557601",
+  "title": "Embryology, Sexual Development"
+ },
+ "Enchondroma": {
+  "exact": true,
+  "nbk": "NBK536938",
+  "title": "Enchondroma"
+ },
+ "Endocrine-Related Adverse Events From Immune Checkpoint Inhibitors": {
+  "exact": true,
+  "nbk": "NBK594266",
+  "title": "Endocrine-Related Adverse Events From Immune Checkpoint Inhibitors"
+ },
+ "Endometrial Cancer": {
+  "exact": true,
+  "nbk": "NBK525981",
+  "title": "Endometrial Cancer"
+ },
+ "Endometrial Hyperplasia": {
+  "exact": true,
+  "nbk": "NBK560693",
+  "title": "Endometrial Hyperplasia"
+ },
+ "Endometriosis": {
+  "exact": true,
+  "nbk": "NBK567777",
+  "title": "Endometriosis"
+ },
+ "Epidermal Inclusion Cyst": {
+  "exact": true,
+  "nbk": "NBK532310",
+  "title": "Epidermal Inclusion Cyst"
+ },
+ "Epidermoid Cyst": {
+  "nbk": null,
+  "title": "Epidermoid Cyst"
+ },
+ "Epididymitis": {
+  "exact": true,
+  "nbk": "NBK430814",
+  "title": "Epididymitis"
+ },
+ "Epilepsy in Pregnancy": {
+  "nbk": null,
+  "title": "Epilepsy in Pregnancy"
+ },
+ "Epithelial Ovarian Cancer": {
+  "exact": true,
+  "nbk": "NBK567760",
+  "title": "Epithelial Ovarian Cancer"
+ },
+ "Erb Palsy": {
+  "exact": true,
+  "nbk": "NBK513260",
+  "title": "Erb Palsy"
+ },
+ "Erectile Dysfunction": {
+  "exact": true,
+  "nbk": "NBK562253",
+  "title": "Erectile Dysfunction"
+ },
+ "Erosive Osteoarthritis": {
+  "nbk": null,
+  "title": "Erosive Osteoarthritis"
+ },
+ "Erythema Multiforme": {
+  "exact": true,
+  "nbk": "NBK470259",
+  "title": "Erythema Multiforme"
+ },
+ "Erythroblastosis Fetalis": {
+  "nbk": null,
+  "title": "Erythroblastosis Fetalis"
+ },
+ "Estradiol": {
+  "exact": true,
+  "nbk": "NBK549797",
+  "title": "Estradiol"
+ },
+ "Exertional Rhabdomyolysis": {
+  "nbk": null,
+  "title": "Exertional Rhabdomyolysis"
+ },
+ "Fall Prevention": {
+  "exact": false,
+  "nbk": "NBK560761",
+  "title": "Falls and Fall Prevention in Older Adults"
+ },
+ "Falls and Fall Prevention in Older Adults": {
+  "exact": true,
+  "nbk": "NBK560761",
+  "title": "Falls and Fall Prevention in Older Adults"
+ },
+ "Falls in the Elderly": {
+  "nbk": null,
+  "title": "Falls in the Elderly"
+ },
+ "Fat Embolism Syndrome": {
+  "exact": false,
+  "nbk": "NBK499885",
+  "title": "Fat Embolism and Fat Embolism Syndrome"
+ },
+ "Fat Embolism and Fat Embolism Syndrome": {
+  "exact": true,
+  "nbk": "NBK499885",
+  "title": "Fat Embolism and Fat Embolism Syndrome"
+ },
+ "Fat Necrosis": {
+  "exact": false,
+  "nbk": "NBK542191",
+  "title": "Breast Fat Necrosis"
+ },
+ "Fat Necrosis of the Breast": {
+  "nbk": null,
+  "title": "Fat Necrosis of the Breast"
+ },
+ "Febuxostat": {
+  "exact": true,
+  "nbk": "NBK544239",
+  "title": "Febuxostat"
+ },
+ "Female Infertility": {
+  "exact": true,
+  "nbk": "NBK556033",
+  "title": "Female Infertility"
+ },
+ "Female Sexual Interest and Arousal Disorder": {
+  "exact": true,
+  "nbk": "NBK603746",
+  "title": "Female Sexual Interest and Arousal Disorder"
+ },
+ "Femoral Neck Fractures": {
+  "exact": true,
+  "nbk": "NBK537347",
+  "title": "Femoral Neck Fractures"
+ },
+ "Fertility Preservation": {
+  "nbk": null,
+  "title": "Fertility Preservation"
+ },
+ "Fertility Sparing Management in Uterine Fibroids": {
+  "exact": true,
+  "nbk": "NBK574504",
+  "title": "Fertility Sparing Management in Uterine Fibroids"
+ },
+ "Fetal Alcohol Syndrome": {
+  "exact": true,
+  "nbk": "NBK448178",
+  "title": "Fetal Alcohol Syndrome"
+ },
+ "Fetal Radiation Exposure": {
+  "nbk": null,
+  "title": "Fetal Radiation Exposure"
+ },
+ "Fibroadenoma": {
+  "exact": false,
+  "nbk": "NBK535345",
+  "title": "Breast Fibroadenoma"
+ },
+ "Fibrocystic Breast Disease": {
+  "exact": true,
+  "nbk": "NBK551609",
+  "title": "Fibrocystic Breast Disease"
+ },
+ "Fibromyalgia": {
+  "exact": true,
+  "nbk": "NBK540974",
+  "title": "Fibromyalgia"
+ },
+ "Flibanserin": {
+  "exact": true,
+  "nbk": "NBK589649",
+  "title": "Flibanserin"
+ },
+ "Fluoroquinolone Toxicity": {
+  "nbk": null,
+  "title": "Fluoroquinolone Toxicity"
+ },
+ "Fluoroquinolones": {
+  "nbk": null,
+  "title": "Fluoroquinolones"
+ },
+ "Folic Acid Deficiency": {
+  "exact": true,
+  "nbk": "NBK535377",
+  "title": "Folic Acid Deficiency"
+ },
+ "Folliculitis": {
+  "exact": true,
+  "nbk": "NBK547754",
+  "title": "Folliculitis"
+ },
+ "Fournier Gangrene": {
+  "exact": true,
+  "nbk": "NBK549821",
+  "title": "Fournier Gangrene"
+ },
+ "Gender Dysphoria": {
+  "exact": true,
+  "nbk": "NBK532313",
+  "title": "Gender Dysphoria"
+ },
+ "Gender-Affirming Hormone Therapy": {
+  "nbk": null,
+  "title": "Gender-Affirming Hormone Therapy"
+ },
+ "Genital Herpes": {
+  "nbk": null,
+  "title": "Genital Herpes"
+ },
+ "Genital Ulcers": {
+  "nbk": null,
+  "title": "Genital Ulcers"
+ },
+ "Genitourinary Syndrome of Menopause": {
+  "exact": true,
+  "nbk": "NBK559297",
+  "title": "Genitourinary Syndrome of Menopause"
+ },
+ "Geriatric Fall": {
+  "nbk": null,
+  "title": "Geriatric Fall"
+ },
+ "Gestational Age Assessment": {
+  "exact": true,
+  "nbk": "NBK526000",
+  "title": "Gestational Age Assessment"
+ },
+ "Gestational Diabetes": {
+  "exact": true,
+  "nbk": "NBK545196",
+  "title": "Gestational Diabetes"
+ },
+ "Gleason Score": {
+  "exact": true,
+  "nbk": "NBK553178",
+  "title": "Gleason Score"
+ },
+ "Glucocorticoid-Induced Osteoporosis": {
+  "nbk": null,
+  "title": "Glucocorticoid-Induced Osteoporosis"
+ },
+ "Gonadotropin-Releasing Hormone Agonists": {
+  "nbk": null,
+  "title": "Gonadotropin-Releasing Hormone Agonists"
+ },
+ "Gonococcal Arthritis": {
+  "exact": true,
+  "nbk": "NBK470439",
+  "title": "Gonococcal Arthritis"
+ },
+ "Gonorrhea": {
+  "exact": true,
+  "nbk": "NBK558903",
+  "title": "Gonorrhea"
+ },
+ "Gout": {
+  "exact": true,
+  "nbk": "NBK546606",
+  "title": "Gout"
+ },
+ "Greenstick Fractures": {
+  "nbk": null,
+  "title": "Greenstick Fractures"
+ },
+ "Group B Streptococcus": {
+  "exact": false,
+  "nbk": "NBK482443",
+  "title": "Group B Streptococcus and Pregnancy"
+ },
+ "Group B Streptococcus and Pregnancy": {
+  "exact": true,
+  "nbk": "NBK482443",
+  "title": "Group B Streptococcus and Pregnancy"
+ },
+ "Gynecomastia": {
+  "exact": true,
+  "nbk": "NBK430812",
+  "title": "Gynecomastia"
+ },
+ "HER2-Positive Breast Cancer": {
+  "nbk": null,
+  "title": "HER2-Positive Breast Cancer"
+ },
+ "HIV in Pregnancy": {
+  "exact": true,
+  "nbk": "NBK558972",
+  "title": "HIV in Pregnancy"
+ },
+ "HMG-CoA Reductase Inhibitors": {
+  "exact": true,
+  "nbk": "NBK542212",
+  "title": "HMG-CoA Reductase Inhibitors"
+ },
+ "Heart Disease in Pregnancy": {
+  "nbk": null,
+  "title": "Heart Disease in Pregnancy"
+ },
+ "Hemangioma": {
+  "exact": true,
+  "nbk": "NBK538232",
+  "title": "Hemangioma"
+ },
+ "Hemochromatosis": {
+  "exact": true,
+  "nbk": "NBK430862",
+  "title": "Hemochromatosis"
+ },
+ "Hemochromatosis Arthropathy": {
+  "nbk": null,
+  "title": "Hemochromatosis Arthropathy"
+ },
+ "Hemolytic Disease of the Newborn": {
+  "nbk": null,
+  "title": "Hemolytic Disease of the Newborn"
+ },
+ "Hepatitis B": {
+  "exact": true,
+  "nbk": "NBK555945",
+  "title": "Hepatitis B"
+ },
+ "Hepatitis B Vaccine": {
+  "exact": true,
+  "nbk": "NBK554400",
+  "title": "Hepatitis B Vaccine"
+ },
+ "Hereditary Breast and Ovarian Cancer": {
+  "nbk": null,
+  "title": "Hereditary Breast and Ovarian Cancer"
+ },
+ "Hereditary Nonpolyposis Colon Cancer (Lynch Syndrome)": {
+  "exact": true,
+  "nbk": "NBK564511",
+  "title": "Hereditary Nonpolyposis Colon Cancer (Lynch Syndrome)"
+ },
+ "Herpes Simplex Type 2 Infection": {
+  "exact": true,
+  "nbk": "NBK554427",
+  "title": "Herpes Simplex Type 2 Infection"
+ },
+ "Herpes Zoster": {
+  "exact": true,
+  "nbk": "NBK441824",
+  "title": "Herpes Zoster"
+ },
+ "Heterotopic Ossification": {
+  "exact": true,
+  "nbk": "NBK519029",
+  "title": "Heterotopic Ossification"
+ },
+ "Hidradenitis Suppurativa": {
+  "exact": true,
+  "nbk": "NBK534867",
+  "title": "Hidradenitis Suppurativa"
+ },
+ "Hip Dislocation": {
+  "exact": false,
+  "nbk": "NBK507814",
+  "title": "Anterior Hip Dislocation"
+ },
+ "Hip Fracture": {
+  "exact": false,
+  "nbk": "NBK557514",
+  "title": "Hip Fracture Overview"
+ },
+ "Hip Fractures": {
+  "exact": false,
+  "nbk": "NBK603729",
+  "title": "Table. Classification of Hip and Pelvic Apophyseal Fractures"
+ },
+ "Hirsutism": {
+  "exact": true,
+  "nbk": "NBK470417",
+  "title": "Hirsutism"
+ },
+ "Histology, Nail": {
+  "exact": true,
+  "nbk": "NBK539733",
+  "title": "Histology, Nail"
+ },
+ "Hormone Replacement Therapy": {
+  "exact": true,
+  "nbk": "NBK493191",
+  "title": "Hormone Replacement Therapy"
+ },
+ "Hydrocele": {
+  "exact": true,
+  "nbk": "NBK559125",
+  "title": "Hydrocele"
+ },
+ "Hyperhidrosis": {
+  "exact": true,
+  "nbk": "NBK459227",
+  "title": "Hyperhidrosis"
+ },
+ "Hyperprolactinemia": {
+  "exact": true,
+  "nbk": "NBK537331",
+  "title": "Hyperprolactinemia"
+ },
+ "Hypertension in Pregnancy": {
+  "exact": true,
+  "nbk": "NBK430839",
+  "title": "Hypertension In Pregnancy"
+ },
+ "Hyperthyroidism in Pregnancy": {
+  "exact": true,
+  "nbk": "NBK559203",
+  "title": "Hyperthyroidism in Pregnancy"
+ },
+ "Hypertrichosis": {
+  "exact": true,
+  "nbk": "NBK534854",
+  "title": "Hypertrichosis"
+ },
+ "Hyperuricemia": {
+  "exact": true,
+  "nbk": "NBK459218",
+  "title": "Hyperuricemia"
+ },
+ "Hypophosphatemia": {
+  "exact": true,
+  "nbk": "NBK493172",
+  "title": "Hypophosphatemia"
+ },
+ "Hypophosphatemic Rickets": {
+  "nbk": null,
+  "title": "Hypophosphatemic Rickets"
+ },
+ "Hypothyroid Myopathy": {
+  "exact": true,
+  "nbk": "NBK519513",
+  "title": "Hypothyroid Myopathy"
+ },
+ "Hypothyroidism in Pregnancy": {
+  "exact": false,
+  "nbk": "NBK538485",
+  "title": "Table. Dosing in levothyroxine-naïve hypothyroidism individuals diagnosed during pregnancy"
+ },
+ "IgA Vasculitis (Henoch-Schönlein Purpura)": {
+  "exact": true,
+  "nbk": "NBK537252",
+  "title": "IgA Vasculitis (Henoch-Schönlein Purpura)"
+ },
+ "Immune Checkpoint Inhibitors": {
+  "exact": false,
+  "nbk": "NBK594266",
+  "title": "Endocrine-Related Adverse Events From Immune Checkpoint Inhibitors"
+ },
+ "Imperforate Hymen": {
+  "exact": true,
+  "nbk": "NBK560576",
+  "title": "Imperforate Hymen"
+ },
+ "Impetigo": {
+  "exact": true,
+  "nbk": "NBK430974",
+  "title": "Impetigo"
+ },
+ "In Vitro Fertilization": {
+  "exact": true,
+  "nbk": "NBK562266",
+  "title": "In Vitro Fertilization"
+ },
+ "Inclusion Body Myositis": {
+  "exact": true,
+  "nbk": "NBK538200",
+  "title": "Inclusion Body Myositis"
+ },
+ "Infant of Diabetic Mother": {
+  "nbk": null,
+  "title": "Infant of Diabetic Mother"
+ },
+ "Infantile Hemangioma": {
+  "exact": false,
+  "nbk": "NBK518988",
+  "title": "Congenital and Infantile Hepatic Hemangioma"
+ },
+ "Infertility": {
+  "exact": false,
+  "nbk": "NBK562258",
+  "title": "Male Infertility"
+ },
+ "Inflammatory Breast Cancer": {
+  "exact": true,
+  "nbk": "NBK564324",
+  "title": "Inflammatory Breast Cancer"
+ },
+ "Ingrown Toenail": {
+  "nbk": null,
+  "title": "Ingrown Toenail"
+ },
+ "Ingrown Toenails": {
+  "exact": true,
+  "nbk": "NBK546697",
+  "title": "Ingrown Toenails"
+ },
+ "Intimate Partner Violence": {
+  "nbk": null,
+  "title": "Intimate Partner Violence"
+ },
+ "Intraductal Papilloma": {
+  "exact": true,
+  "nbk": "NBK519539",
+  "title": "Intraductal Papilloma"
+ },
+ "Invasive Lobular Carcinoma": {
+  "exact": true,
+  "nbk": "NBK554578",
+  "title": "Invasive Lobular Carcinoma"
+ },
+ "Isotretinoin": {
+  "exact": true,
+  "nbk": "NBK525949",
+  "title": "Isotretinoin"
+ },
+ "Juvenile Idiopathic Arthritis": {
+  "exact": true,
+  "nbk": "NBK554605",
+  "title": "Juvenile Idiopathic Arthritis"
+ },
+ "Kaposi Sarcoma": {
+  "exact": true,
+  "nbk": "NBK534839",
+  "title": "Kaposi Sarcoma"
+ },
+ "Kernicterus": {
+  "exact": true,
+  "nbk": "NBK559120",
+  "title": "Kernicterus"
+ },
+ "Knee Meniscal Tears": {
+  "exact": true,
+  "nbk": "NBK431067",
+  "title": "Knee Meniscal Tears"
+ },
+ "Kyphosis": {
+  "exact": true,
+  "nbk": "NBK558945",
+  "title": "Kyphosis"
+ },
+ "Lactation and Medication Use": {
+  "nbk": null,
+  "title": "Lactation and Medication Use"
+ },
+ "Lateral Epicondylitis": {
+  "exact": false,
+  "nbk": "NBK431092",
+  "title": "Lateral Epicondylitis (Tennis Elbow)"
+ },
+ "Legg-Calve-Perthes Disease": {
+  "exact": true,
+  "nbk": "NBK513230",
+  "title": "Legg-Calve-Perthes Disease"
+ },
+ "Leuprolide": {
+  "exact": true,
+  "nbk": "NBK551662",
+  "title": "Leuprolide"
+ },
+ "Lichen Planus": {
+  "exact": true,
+  "nbk": "NBK526126",
+  "title": "Lichen Planus"
+ },
+ "Lichen Sclerosus": {
+  "exact": true,
+  "nbk": "NBK538246",
+  "title": "Lichen Sclerosus"
+ },
+ "Lipoma": {
+  "exact": true,
+  "nbk": "NBK507906",
+  "title": "Lipoma"
+ },
+ "Lobular Breast Carcinoma": {
+  "nbk": null,
+  "title": "Lobular Breast Carcinoma"
+ },
+ "Lobular Carcinoma In Situ": {
+  "nbk": null,
+  "title": "Lobular Carcinoma In Situ"
+ },
+ "Low Back Pain": {
+  "exact": false,
+  "nbk": "NBK538173",
+  "title": "Low Back Pain: Evaluation and Management"
+ },
+ "Low Back Pain: Evaluation and Management": {
+  "exact": true,
+  "nbk": "NBK538173",
+  "title": "Low Back Pain: Evaluation and Management"
+ },
+ "Lower Extremity Amputation": {
+  "exact": true,
+  "nbk": "NBK546594",
+  "title": "Lower Extremity Amputation"
+ },
+ "Lower Genitourinary Trauma": {
+  "exact": true,
+  "nbk": "NBK557527",
+  "title": "Lower Genitourinary Trauma"
+ },
+ "Ludwig Angina": {
+  "exact": true,
+  "nbk": "NBK482354",
+  "title": "Ludwig Angina"
+ },
+ "Lumbar Disc Herniation": {
+  "exact": true,
+  "nbk": "NBK560878",
+  "title": "Lumbar Disc Herniation"
+ },
+ "Lyme Disease": {
+  "exact": true,
+  "nbk": "NBK431066",
+  "title": "Lyme Disease"
+ },
+ "Magnesium Sulfate": {
+  "exact": true,
+  "nbk": "NBK554553",
+  "title": "Magnesium Sulfate"
+ },
+ "Male Breast Cancer": {
+  "exact": true,
+  "nbk": "NBK526036",
+  "title": "Male Breast Cancer"
+ },
+ "Male Hypogonadism": {
+  "exact": true,
+  "nbk": "NBK532933",
+  "title": "Male Hypogonadism"
+ },
+ "Male Infertility": {
+  "exact": true,
+  "nbk": "NBK562258",
+  "title": "Male Infertility"
+ },
+ "Male Urinary Retention: Acute and Chronic": {
+  "exact": true,
+  "nbk": "NBK538499",
+  "title": "Male Urinary Retention: Acute and Chronic"
+ },
+ "Malignant Hyperthermia": {
+  "exact": true,
+  "nbk": "NBK430828",
+  "title": "Malignant Hyperthermia"
+ },
+ "Malignant Melanoma": {
+  "exact": true,
+  "nbk": "NBK470409",
+  "title": "Malignant Melanoma"
+ },
+ "Mammary Duct Ectasia": {
+  "exact": true,
+  "nbk": "NBK557665",
+  "title": "Mammary Duct Ectasia"
+ },
+ "Mastitis": {
+  "exact": false,
+  "nbk": "NBK557782",
+  "title": "Acute Mastitis"
+ },
+ "Meconium Aspiration": {
+  "exact": true,
+  "nbk": "NBK557425",
+  "title": "Meconium Aspiration"
+ },
+ "Meconium Aspiration Syndrome": {
+  "nbk": null,
+  "title": "Meconium Aspiration Syndrome"
+ },
+ "Medial Meniscus Tear": {
+  "nbk": null,
+  "title": "Medial Meniscus Tear"
+ },
+ "Medication-Related Osteonecrosis of the Jaw": {
+  "nbk": null,
+  "title": "Medication-Related Osteonecrosis of the Jaw"
+ },
+ "Medications in Pregnancy": {
+  "exact": false,
+  "nbk": "NBK507858",
+  "title": "Pregnancy Medications"
+ },
+ "Melanoma": {
+  "exact": false,
+  "nbk": "NBK513276",
+  "title": "Oral Melanoma"
+ },
+ "Meniscal Tears": {
+  "exact": false,
+  "nbk": "NBK431067",
+  "title": "Knee Meniscal Tears"
+ },
+ "Meniscus Tear": {
+  "nbk": null,
+  "title": "Meniscus Tear"
+ },
+ "Menopause": {
+  "exact": true,
+  "nbk": "NBK507826",
+  "title": "Menopause"
+ },
+ "Merkel Cell Carcinoma": {
+  "exact": false,
+  "nbk": "NBK482329",
+  "title": "Merkel Cell Carcinoma of the Skin"
+ },
+ "Merkel Cell Carcinoma of the Skin": {
+  "exact": true,
+  "nbk": "NBK482329",
+  "title": "Merkel Cell Carcinoma of the Skin"
+ },
+ "Miliaria": {
+  "exact": true,
+  "nbk": "NBK537176",
+  "title": "Miliaria"
+ },
+ "Mitochondrial Myopathy": {
+  "nbk": null,
+  "title": "Mitochondrial Myopathy"
+ },
+ "Molluscum Contagiosum": {
+  "exact": true,
+  "nbk": "NBK441898",
+  "title": "Molluscum Contagiosum"
+ },
+ "Myasthenia Gravis": {
+  "exact": true,
+  "nbk": "NBK559331",
+  "title": "Myasthenia Gravis"
+ },
+ "Mycosis Fungoides": {
+  "exact": true,
+  "nbk": "NBK519572",
+  "title": "Mycosis Fungoides"
+ },
+ "Myopathy": {
+  "exact": true,
+  "nbk": "NBK562290",
+  "title": "Myopathy"
+ },
+ "Myositis Ossificans": {
+  "nbk": null,
+  "title": "Myositis Ossificans"
+ },
+ "Nail Clubbing": {
+  "exact": true,
+  "nbk": "NBK539713",
+  "title": "Nail Clubbing"
+ },
+ "Necrotizing Enterocolitis": {
+  "exact": true,
+  "nbk": "NBK513357",
+  "title": "Necrotizing Enterocolitis"
+ },
+ "Necrotizing Fasciitis": {
+  "exact": true,
+  "nbk": "NBK430756",
+  "title": "Necrotizing Fasciitis"
+ },
+ "Neonatal Abstinence Syndrome": {
+  "exact": true,
+  "nbk": "NBK551498",
+  "title": "Neonatal Abstinence Syndrome"
+ },
+ "Neonatal Brachial Plexus Palsy": {
+  "nbk": null,
+  "title": "Neonatal Brachial Plexus Palsy"
+ },
+ "Neonatal Conjunctivitis": {
+  "exact": false,
+  "nbk": "NBK551572",
+  "title": "Ophthalmia Neonatorum (Neonatal Conjunctivitis)"
+ },
+ "Neonatal Encephalopathy": {
+  "exact": false,
+  "nbk": "NBK567714",
+  "title": "Therapeutic Hypothermia for Neonatal Hypoxic-Ischemic Encephalopathy"
+ },
+ "Neonatal Herpes Simplex Virus Infections": {
+  "nbk": null,
+  "title": "Neonatal Herpes Simplex Virus Infections"
+ },
+ "Neonatal Hyperbilirubinemia": {
+  "nbk": null,
+  "title": "Neonatal Hyperbilirubinemia"
+ },
+ "Neonatal Hypoglycemia": {
+  "exact": true,
+  "nbk": "NBK537105",
+  "title": "Neonatal Hypoglycemia"
+ },
+ "Neonatal Jaundice": {
+  "exact": true,
+  "nbk": "NBK532930",
+  "title": "Neonatal Jaundice"
+ },
+ "Neonatal Respiratory Distress Syndrome": {
+  "exact": true,
+  "nbk": "NBK560779",
+  "title": "Neonatal Respiratory Distress Syndrome"
+ },
+ "Neonatal Resuscitation": {
+  "exact": false,
+  "nbk": "NBK572069",
+  "title": "Pediatric and Neonatal Resuscitation"
+ },
+ "Neonatal Sepsis": {
+  "exact": true,
+  "nbk": "NBK531478",
+  "title": "Neonatal Sepsis"
+ },
+ "Neuroleptic Malignant Syndrome": {
+  "exact": true,
+  "nbk": "NBK482282",
+  "title": "Neuroleptic Malignant Syndrome"
+ },
+ "Neuropathic Arthropathy": {
+  "nbk": null,
+  "title": "Neuropathic Arthropathy"
+ },
+ "Newborn Assessment": {
+  "nbk": null,
+  "title": "Newborn Assessment"
+ },
+ "Newborn Screening": {
+  "exact": true,
+  "nbk": "NBK558983",
+  "title": "Newborn Screening"
+ },
+ "Nonaccidental Trauma": {
+  "nbk": null,
+  "title": "Nonaccidental Trauma"
+ },
+ "Nursemaid Elbow": {
+  "exact": true,
+  "nbk": "NBK430777",
+  "title": "Nursemaid Elbow"
+ },
+ "Obesity in Pregnancy": {
+  "exact": true,
+  "nbk": "NBK572113",
+  "title": "Obesity in Pregnancy"
+ },
+ "Obstetric Cholestasis": {
+  "nbk": null,
+  "title": "Obstetric Cholestasis"
+ },
+ "Onychomycosis": {
+  "exact": true,
+  "nbk": "NBK441853",
+  "title": "Onychomycosis"
+ },
+ "Ophthalmia Neonatorum": {
+  "exact": false,
+  "nbk": "NBK551572",
+  "title": "Table 2. Ophthalmia Neonatorum Etiologies"
+ },
+ "Opioid Use Disorder in Pregnancy": {
+  "nbk": null,
+  "title": "Opioid Use Disorder in Pregnancy"
+ },
+ "Oral Candidiasis": {
+  "exact": true,
+  "nbk": "NBK545282",
+  "title": "Oral Candidiasis"
+ },
  "Oral Leukoplakia": {
   "exact": true,
   "nbk": "NBK442013",
   "title": "Oral Leukoplakia"
+ },
+ "Osteoarthritis": {
+  "exact": true,
+  "nbk": "NBK482326",
+  "title": "Osteoarthritis"
+ },
+ "Osteochondroma": {
+  "exact": true,
+  "nbk": "NBK544296",
+  "title": "Osteochondroma"
+ },
+ "Osteoid Osteoma": {
+  "exact": true,
+  "nbk": "NBK537279",
+  "title": "Osteoid Osteoma"
+ },
+ "Osteomalacia": {
+  "exact": true,
+  "nbk": "NBK551616",
+  "title": "Osteomalacia"
+ },
+ "Osteomyelitis": {
+  "exact": true,
+  "nbk": "NBK532250",
+  "title": "Osteomyelitis"
+ },
+ "Osteonecrosis": {
+  "exact": false,
+  "nbk": "NBK604199",
+  "title": "Osteonecrosis Imaging"
+ },
+ "Osteonecrosis of the Jaw": {
+  "nbk": null,
+  "title": "Osteonecrosis of the Jaw"
+ },
+ "Osteopenia": {
+  "exact": true,
+  "nbk": "NBK499878",
+  "title": "Osteopenia"
+ },
+ "Osteoporosis": {
+  "exact": false,
+  "nbk": "NBK538531",
+  "title": "Osteoporosis in Males"
+ },
+ "Osteoporosis in Females": {
+  "exact": true,
+  "nbk": "NBK559156",
+  "title": "Osteoporosis in Females"
+ },
+ "Osteoporosis in Males": {
+  "exact": true,
+  "nbk": "NBK538531",
+  "title": "Osteoporosis in Males"
+ },
+ "Osteoporotic Compression Fractures": {
+  "nbk": null,
+  "title": "Osteoporotic Compression Fractures"
+ },
+ "Ovarian Hyperstimulation Syndrome": {
+  "nbk": null,
+  "title": "Ovarian Hyperstimulation Syndrome"
+ },
+ "Ovarian Torsion": {
+  "exact": true,
+  "nbk": "NBK560675",
+  "title": "Ovarian Torsion"
+ },
+ "Ovulation Induction Techniques": {
+  "exact": true,
+  "nbk": "NBK574564",
+  "title": "Ovulation Induction Techniques"
+ },
+ "Oxytocin": {
+  "exact": true,
+  "nbk": "NBK507848",
+  "title": "Oxytocin"
+ },
+ "Paget Bone Disease": {
+  "exact": true,
+  "nbk": "NBK430805",
+  "title": "Paget Bone Disease"
+ },
+ "Paget Disease of Bone": {
+  "exact": false,
+  "nbk": "NBK430805",
+  "title": "Paget Bone Disease"
+ },
+ "Paget Disease of the Breast": {
+  "nbk": null,
+  "title": "Paget Disease of the Breast"
+ },
+ "Paraphimosis": {
+  "exact": true,
+  "nbk": "NBK459233",
+  "title": "Paraphimosis"
+ },
+ "Paronychia": {
+  "exact": true,
+  "nbk": "NBK544307",
+  "title": "Paronychia"
+ },
+ "Pediatric and Neonatal Resuscitation": {
+  "exact": true,
+  "nbk": "NBK572069",
+  "title": "Pediatric and Neonatal Resuscitation"
+ },
+ "Pegloticase": {
+  "exact": true,
+  "nbk": "NBK572054",
+  "title": "Pegloticase"
+ },
+ "Pelvic Inflammatory Disease": {
+  "exact": true,
+  "nbk": "NBK499959",
+  "title": "Pelvic Inflammatory Disease"
+ },
+ "Pelvic Organ Prolapse": {
+  "exact": true,
+  "nbk": "NBK563229",
+  "title": "Pelvic Organ Prolapse"
+ },
+ "Pemphigus Vulgaris": {
+  "exact": true,
+  "nbk": "NBK560860",
+  "title": "Pemphigus Vulgaris"
+ },
+ "Penile Cancer": {
+  "exact": false,
+  "nbk": "NBK499930",
+  "title": "Penile Cancer and Penile Intraepithelial Neoplasia"
+ },
+ "Penile Cancer and Penile Intraepithelial Neoplasia": {
+  "exact": true,
+  "nbk": "NBK499930",
+  "title": "Penile Cancer and Penile Intraepithelial Neoplasia"
+ },
+ "Penile Fracture": {
+  "exact": true,
+  "nbk": "NBK551618",
+  "title": "Penile Fracture"
+ },
+ "Periductal Mastitis": {
+  "nbk": null,
+  "title": "Periductal Mastitis"
+ },
+ "Peripartum Cardiomyopathy": {
+  "exact": true,
+  "nbk": "NBK482185",
+  "title": "Peripartum Cardiomyopathy"
+ },
+ "Peyronie Disease": {
+  "exact": true,
+  "nbk": "NBK560628",
+  "title": "Peyronie Disease"
+ },
+ "Phantom Limb Pain": {
+  "exact": true,
+  "nbk": "NBK448188",
+  "title": "Phantom Limb Pain"
+ },
+ "Phimosis": {
+  "exact": true,
+  "nbk": "NBK525972",
+  "title": "Phimosis"
+ },
+ "Phyllodes Tumor": {
+  "exact": false,
+  "nbk": "NBK541138",
+  "title": "Phyllodes Tumor of the Breast"
+ },
+ "Phyllodes Tumor of the Breast": {
+  "exact": true,
+  "nbk": "NBK541138",
+  "title": "Phyllodes Tumor of the Breast"
+ },
+ "Physeal Fractures": {
+  "nbk": null,
+  "title": "Physeal Fractures"
+ },
+ "Physical Abuse": {
+  "nbk": null,
+  "title": "Physical Abuse"
+ },
+ "Physiology, Bilirubin": {
+  "exact": true,
+  "nbk": "NBK470290",
+  "title": "Physiology, Bilirubin"
+ },
+ "Physiology, Fetal Circulation": {
+  "exact": true,
+  "nbk": "NBK539710",
+  "title": "Physiology, Fetal Circulation"
+ },
+ "Physiology, Lactation": {
+  "nbk": null,
+  "title": "Physiology, Lactation"
+ },
+ "Physiology, Maternal Changes": {
+  "exact": true,
+  "nbk": "NBK539766",
+  "title": "Physiology, Maternal Changes"
+ },
+ "Physiology, Menstrual Cycle": {
+  "exact": true,
+  "nbk": "NBK500020",
+  "title": "Physiology, Menstrual Cycle"
+ },
+ "Physiology, Pregnancy": {
+  "exact": true,
+  "nbk": "NBK559304",
+  "title": "Physiology, Pregnancy"
+ },
+ "Plantar Fasciitis": {
+  "exact": true,
+  "nbk": "NBK431073",
+  "title": "Plantar Fasciitis"
+ },
+ "Polymyalgia Rheumatica": {
+  "exact": true,
+  "nbk": "NBK537274",
+  "title": "Polymyalgia Rheumatica"
+ },
+ "Polymyositis": {
+  "exact": true,
+  "nbk": "NBK563129",
+  "title": "Polymyositis"
+ },
+ "Posterior Elbow Dislocation": {
+  "exact": true,
+  "nbk": "NBK470574",
+  "title": "Posterior Elbow Dislocation"
+ },
+ "Posterior Shoulder Dislocation": {
+  "nbk": null,
+  "title": "Posterior Shoulder Dislocation"
+ },
+ "Postmenopausal Bleeding": {
+  "exact": true,
+  "nbk": "NBK562188",
+  "title": "Postmenopausal Bleeding"
+ },
+ "Preconception Counseling": {
+  "exact": true,
+  "nbk": "NBK441880",
+  "title": "Preconception Counseling"
+ },
+ "Pregnancy Medications": {
+  "exact": true,
+  "nbk": "NBK507858",
+  "title": "Pregnancy Medications"
+ },
+ "Premature Ejaculation": {
+  "exact": true,
+  "nbk": "NBK546701",
+  "title": "Premature Ejaculation"
+ },
+ "Premenstrual Disorders": {
+  "exact": true,
+  "nbk": "NBK532307",
+  "title": "Premenstrual Disorders"
+ },
+ "Premenstrual Dysphoric Disorder": {
+  "nbk": null,
+  "title": "Premenstrual Dysphoric Disorder"
+ },
+ "Prenatal Genetic Screening": {
+  "exact": true,
+  "nbk": "NBK557702",
+  "title": "Prenatal Genetic Screening"
+ },
+ "Prenatal Radiation Exposure": {
+  "nbk": null,
+  "title": "Prenatal Radiation Exposure"
+ },
+ "Priapism": {
+  "exact": true,
+  "nbk": "NBK459178",
+  "title": "Priapism"
+ },
+ "Primary Ovarian Insufficiency": {
+  "exact": true,
+  "nbk": "NBK589674",
+  "title": "Primary Ovarian Insufficiency"
+ },
+ "Probenecid": {
+  "nbk": null,
+  "title": "Probenecid"
+ },
+ "Prostate Cancer": {
+  "exact": true,
+  "nbk": "NBK470550",
+  "title": "Prostate Cancer"
+ },
+ "Pseudogout": {
+  "nbk": null,
+  "title": "Pseudogout"
+ },
+ "Psoriasis": {
+  "exact": true,
+  "nbk": "NBK448194",
+  "title": "Psoriasis"
+ },
+ "Psoriatic Arthritis": {
+  "exact": true,
+  "nbk": "NBK547710",
+  "title": "Psoriatic Arthritis"
+ },
+ "Pulmonary Embolism in Pregnancy": {
+  "nbk": null,
+  "title": "Pulmonary Embolism in Pregnancy"
+ },
+ "Pyogenic Granuloma": {
+  "exact": true,
+  "nbk": "NBK556077",
+  "title": "Pyogenic Granuloma"
+ },
+ "Quinolones": {
+  "exact": true,
+  "nbk": "NBK557777",
+  "title": "Quinolones"
+ },
+ "Raloxifene": {
+  "exact": true,
+  "nbk": "NBK544233",
+  "title": "Raloxifene"
+ },
+ "Reactive Arthritis": {
+  "exact": true,
+  "nbk": "NBK499831",
+  "title": "Reactive Arthritis"
+ },
+ "Recurrent Aphthous Stomatitis": {
+  "exact": true,
+  "nbk": "NBK431059",
+  "title": "Recurrent Aphthous Stomatitis"
+ },
+ "Rhabdomyolysis": {
+  "exact": true,
+  "nbk": "NBK448168",
+  "title": "Rhabdomyolysis"
+ },
+ "Rheumatoid Arthritis": {
+  "exact": true,
+  "nbk": "NBK441999",
+  "title": "Rheumatoid Arthritis"
+ },
+ "Rickets": {
+  "exact": true,
+  "nbk": "NBK562285",
+  "title": "Rickets"
+ },
+ "Romosozumab": {
+  "exact": true,
+  "nbk": "NBK585139",
+  "title": "Romosozumab"
+ },
+ "Rosacea": {
+  "exact": true,
+  "nbk": "NBK557574",
+  "title": "Rosacea"
+ },
+ "Rotator Cuff Injury": {
+  "exact": true,
+  "nbk": "NBK547664",
+  "title": "Rotator Cuff Injury"
+ },
+ "Rotator Cuff Tendinitis": {
+  "nbk": null,
+  "title": "Rotator Cuff Tendinitis"
+ },
+ "Salter Harris Fractures": {
+  "nbk": null,
+  "title": "Salter Harris Fractures"
+ },
+ "Salter-Harris Fractures": {
+  "nbk": null,
+  "title": "Salter-Harris Fractures"
+ },
+ "Scabies": {
+  "exact": true,
+  "nbk": "NBK544306",
+  "title": "Scabies"
+ },
+ "Scaphoid Fracture": {
+  "exact": false,
+  "nbk": "NBK536907",
+  "title": "Scaphoid Wrist Fracture"
+ },
+ "Scaphoid Wrist Fracture": {
+  "exact": true,
+  "nbk": "NBK536907",
+  "title": "Scaphoid Wrist Fracture"
+ },
+ "Scheuermann Disease": {
+  "exact": true,
+  "nbk": "NBK499966",
+  "title": "Scheuermann Disease"
+ },
+ "Scoliosis": {
+  "exact": false,
+  "nbk": "NBK499908",
+  "title": "Adolescent Idiopathic Scoliosis"
+ },
+ "Sebaceous Hyperplasia": {
+  "exact": true,
+  "nbk": "NBK562148",
+  "title": "Sebaceous Hyperplasia"
+ },
+ "Seborrheic Dermatitis": {
+  "exact": true,
+  "nbk": "NBK551707",
+  "title": "Seborrheic Dermatitis"
+ },
+ "Seborrheic Keratosis": {
+  "exact": true,
+  "nbk": "NBK545285",
+  "title": "Seborrheic Keratosis"
+ },
+ "Secondary Amenorrhea": {
+  "exact": true,
+  "nbk": "NBK431055",
+  "title": "Secondary Amenorrhea"
+ },
+ "Seizures in Pregnancy": {
+  "nbk": null,
+  "title": "Seizures in Pregnancy"
+ },
+ "Semen Analysis": {
+  "exact": true,
+  "nbk": "NBK564369",
+  "title": "Semen Analysis"
+ },
+ "Septic Arthritis": {
+  "exact": true,
+  "nbk": "NBK538176",
+  "title": "Septic Arthritis"
+ },
+ "Septic Bursitis": {
+  "exact": true,
+  "nbk": "NBK470331",
+  "title": "Septic Bursitis"
+ },
+ "Sexual Assault Evidence Collection and Documentation": {
+  "exact": true,
+  "nbk": "NBK557397",
+  "title": "Sexual Assault Evidence Collection and Documentation"
+ },
+ "Sexual Assault Infectious Disease Prophylaxis": {
+  "exact": true,
+  "nbk": "NBK482239",
+  "title": "Sexual Assault Infectious Disease Prophylaxis"
+ },
+ "Shoulder Dislocation": {
+  "nbk": null,
+  "title": "Shoulder Dislocation"
+ },
+ "Sickle Cell Disease in Pregnancy": {
+  "nbk": null,
+  "title": "Sickle Cell Disease in Pregnancy"
+ },
+ "Slipped Capital Femoral Epiphysis": {
+  "exact": true,
+  "nbk": "NBK538302",
+  "title": "Slipped Capital Femoral Epiphysis"
+ },
+ "Smoking in Pregnancy": {
+  "nbk": null,
+  "title": "Smoking in Pregnancy"
+ },
+ "Spermatocele": {
+  "nbk": null,
+  "title": "Spermatocele"
+ },
+ "Spinal Stenosis": {
+  "exact": false,
+  "nbk": "NBK531493",
+  "title": "Lumbar Spinal Stenosis"
+ },
+ "Spironolactone": {
+  "exact": true,
+  "nbk": "NBK554421",
+  "title": "Spironolactone"
+ },
+ "Spondylolisthesis": {
+  "exact": true,
+  "nbk": "NBK430767",
+  "title": "Spondylolisthesis"
+ },
+ "Staphylococcal Scalded Skin Syndrome": {
+  "exact": true,
+  "nbk": "NBK448135",
+  "title": "Staphylococcal Scalded Skin Syndrome"
+ },
+ "Statin Intolerance": {
+  "nbk": null,
+  "title": "Statin Intolerance"
+ },
+ "Statin Medications": {
+  "exact": true,
+  "nbk": "NBK430940",
+  "title": "Statin Medications"
+ },
+ "Statin Myopathy": {
+  "nbk": null,
+  "title": "Statin Myopathy"
+ },
+ "Statin Toxicity": {
+  "nbk": null,
+  "title": "Statin Toxicity"
+ },
+ "Steroid Myopathy": {
+  "nbk": null,
+  "title": "Steroid Myopathy"
+ },
+ "Stress Urinary Incontinence": {
+  "exact": true,
+  "nbk": "NBK539769",
+  "title": "Stress Urinary Incontinence"
+ },
+ "Substance Use Disorder in Pregnancy": {
+  "nbk": null,
+  "title": "Substance Use Disorder in Pregnancy"
+ },
+ "Supracondylar Humerus Fractures": {
+  "exact": true,
+  "nbk": "NBK560933",
+  "title": "Supracondylar Humerus Fractures"
+ },
+ "Syphilis": {
+  "exact": true,
+  "nbk": "NBK534780",
+  "title": "Syphilis"
+ },
+ "Systemic Lupus Erythematosus": {
+  "exact": true,
+  "nbk": "NBK535405",
+  "title": "Systemic Lupus Erythematosus"
+ },
+ "Systemic Sclerosis (Scleroderma)": {
+  "exact": true,
+  "nbk": "NBK430875",
+  "title": "Systemic Sclerosis (Scleroderma)"
+ },
+ "TORCH Complex": {
+  "exact": true,
+  "nbk": "NBK560528",
+  "title": "TORCH Complex"
+ },
+ "Tamoxifen": {
+  "exact": true,
+  "nbk": "NBK532905",
+  "title": "Tamoxifen"
+ },
+ "Telogen Effluvium": {
+  "exact": true,
+  "nbk": "NBK430848",
+  "title": "Telogen Effluvium"
+ },
+ "Tendinopathy": {
+  "exact": false,
+  "nbk": "NBK538149",
+  "title": "Achilles Tendinopathy"
+ },
+ "Tendon Rupture": {
+  "exact": false,
+  "nbk": "NBK513235",
+  "title": "Biceps Tendon Rupture"
+ },
+ "Teratogenic Medications": {
+  "exact": true,
+  "nbk": "NBK553086",
+  "title": "Teratogenic Medications"
+ },
+ "Teratogens": {
+  "nbk": null,
+  "title": "Teratogens"
+ },
+ "Teriparatide": {
+  "exact": true,
+  "nbk": "NBK559248",
+  "title": "Teriparatide"
+ },
+ "Testicle Trauma": {
+  "nbk": null,
+  "title": "Testicle Trauma"
+ },
+ "Testicular Cancer": {
+  "exact": true,
+  "nbk": "NBK563159",
+  "title": "Testicular Cancer"
+ },
+ "Testicular Torsion": {
+  "exact": true,
+  "nbk": "NBK448199",
+  "title": "Testicular Torsion"
+ },
+ "Therapeutic Hypothermia for Neonatal Hypoxic-Ischemic Encephalopathy": {
+  "exact": true,
+  "nbk": "NBK567714",
+  "title": "Therapeutic Hypothermia for Neonatal Hypoxic-Ischemic Encephalopathy"
+ },
+ "Thoracic Kyphosis": {
+  "nbk": null,
+  "title": "Thoracic Kyphosis"
+ },
+ "Thyroid Disease and Pregnancy": {
+  "exact": true,
+  "nbk": "NBK538485",
+  "title": "Thyroid Disease and Pregnancy"
+ },
+ "Thyroid Disease in Pregnancy": {
+  "exact": false,
+  "nbk": "NBK538485",
+  "title": "Thyroid Disease and Pregnancy"
+ },
+ "Tinea Capitis": {
+  "exact": true,
+  "nbk": "NBK536909",
+  "title": "Tinea Capitis"
+ },
+ "Tocolytic Medications": {
+  "nbk": null,
+  "title": "Tocolytic Medications"
+ },
+ "Toddler Fracture": {
+  "nbk": null,
+  "title": "Toddler Fracture"
+ },
+ "Toxic Shock Syndrome": {
+  "exact": true,
+  "nbk": "NBK459345",
+  "title": "Toxic Shock Syndrome"
+ },
+ "Transgender Health": {
+  "nbk": null,
+  "title": "Transgender Health"
+ },
+ "Transient Synovitis": {
+  "exact": true,
+  "nbk": "NBK459181",
+  "title": "Transient Synovitis"
+ },
+ "Transient Tachypnea of the Newborn": {
+  "exact": true,
+  "nbk": "NBK537354",
+  "title": "Transient Tachypnea of the Newborn"
+ },
+ "Trichomoniasis": {
+  "exact": true,
+  "nbk": "NBK534826",
+  "title": "Trichomoniasis"
+ },
+ "Turner Syndrome": {
+  "exact": true,
+  "nbk": "NBK554621",
+  "title": "Turner Syndrome"
+ },
+ "Urethral Injury": {
+  "exact": true,
+  "nbk": "NBK554575",
+  "title": "Urethral Injury"
+ },
+ "Urethral Trauma": {
+  "nbk": null,
+  "title": "Urethral Trauma"
+ },
+ "Urinary Incontinence": {
+  "exact": true,
+  "nbk": "NBK559095",
+  "title": "Urinary Incontinence"
+ },
+ "Valproic Acid": {
+  "exact": true,
+  "nbk": "NBK559112",
+  "title": "Valproic Acid"
+ },
+ "Varicocele": {
+  "exact": true,
+  "nbk": "NBK448113",
+  "title": "Varicocele"
+ },
+ "Venous Thromboembolism in Pregnancy": {
+  "nbk": null,
+  "title": "Venous Thromboembolism in Pregnancy"
+ },
+ "Vertebral Compression Fractures": {
+  "exact": true,
+  "nbk": "NBK448171",
+  "title": "Vertebral Compression Fractures"
+ },
+ "Vesicovaginal Fistula": {
+  "exact": true,
+  "nbk": "NBK564389",
+  "title": "Vesicovaginal Fistula"
+ },
+ "Vitamin D Deficiency": {
+  "exact": true,
+  "nbk": "NBK532266",
+  "title": "Vitamin D Deficiency"
+ },
+ "Vitamin K Deficiency": {
+  "exact": false,
+  "nbk": "NBK536983",
+  "title": "Vitamin K Deficiency in Neonates and Adults"
+ },
+ "Vitamin K Deficiency in Neonates and Adults": {
+  "exact": true,
+  "nbk": "NBK536983",
+  "title": "Vitamin K Deficiency in Neonates and Adults"
+ },
+ "Vulvodynia": {
+  "exact": true,
+  "nbk": "NBK430792",
+  "title": "Vulvodynia"
+ },
+ "Warfarin": {
+  "exact": true,
+  "nbk": "NBK470313",
+  "title": "Warfarin"
+ },
+ "X-linked Hypophosphatemia": {
+  "nbk": null,
+  "title": "X-linked Hypophosphatemia"
+ },
+ "Xerostomia": {
+  "exact": true,
+  "nbk": "NBK545287",
+  "title": "Xerostomia"
+ },
+ "Zidovudine": {
+  "exact": true,
+  "nbk": "NBK554419",
+  "title": "Zidovudine"
  }
 }

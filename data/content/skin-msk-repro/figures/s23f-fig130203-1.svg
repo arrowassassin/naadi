@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-label="Schematic of the hypothalamic-pituitary-ovarian axis with drug sites. Hypothalamus releases GnRH to the pituitary, which releases FSH and LH to the ovary; the ovary's estradiol feeds back negatively. Clomiphene blocks hypothalamic estrogen receptors. Letrozole blocks ovarian aromatase, lowering estradiol. Both reduce negative feedback and raise FSH. GnRH agonists and antagonists act at the pituitary to prevent a premature LH surge during IVF. Gonadotropins act directly on the ovary. hCG mimics LH to trigger final maturation." font-family="sans-serif">
+<title>Ovulation induction drug sites</title>
+<desc>Schematic of the hypothalamic-pituitary-ovarian axis with drug sites. Hypothalamus releases GnRH to the pituitary, which releases FSH and LH to the ovary; the ovary's estradiol feeds back negatively. Clomiphene blocks hypothalamic estrogen receptors. Letrozole blocks ovarian aromatase, lowering estradiol. Both reduce negative feedback and raise FSH. GnRH agonists and antagonists act at the pituitary to prevent a premature LH surge during IVF. Gonadotropins act directly on the ovary. hCG mimics LH to trigger final maturation.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+<text x="380" y="30" font-size="18" text-anchor="middle" font-weight="bold" fill="#0f172a">Ovulation induction: where the drugs act</text>
+<rect x="250" y="55" width="260" height="50" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="380.0" y="75.9" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="380.0" dy="0">HYPOTHALAMUS</tspan><tspan x="380.0" dy="18">(pulsatile GnRH)</tspan></text>
+<rect x="250" y="175" width="260" height="50" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="380.0" y="195.9" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="380.0" dy="0">ANTERIOR PITUITARY</tspan><tspan x="380.0" dy="18">(FSH and LH)</tspan></text>
+<rect x="250" y="300" width="260" height="60" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="380.0" y="318.6" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="380.0" dy="0">OVARY</tspan><tspan x="380.0" dy="16">Follicle: androgen to estradiol</tspan><tspan x="380.0" dy="16">via aromatase</tspan></text>
+<line x1="360" y1="105" x2="360" y2="173" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="370" y="145" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">GnRH</text>
+<line x1="360" y1="225" x2="360" y2="298" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="370" y="268" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">FSH, LH</text>
+<path d="M510 330 C 600 330, 600 80, 512 80" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+<text x="600" y="205" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Estradiol:</text>
+<text x="600" y="222" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">negative feedback (-)</text>
+<rect x="20" y="55" width="200" height="60" rx="8" fill="#fef9c3" stroke="#334155" stroke-width="1.5"/>
+<text x="120.0" y="74.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="120.0" dy="0">CLOMIPHENE</tspan><tspan x="120.0" dy="15">blocks hypothalamic</tspan><tspan x="120.0" dy="15">estrogen receptors</tspan></text>
+<line x1="220" y1="85" x2="248" y2="85" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="20" y="175" width="200" height="60" rx="8" fill="#fef9c3" stroke="#334155" stroke-width="1.5"/>
+<text x="120.0" y="194.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="120.0" dy="0">GnRH AGONIST or</tspan><tspan x="120.0" dy="15">ANTAGONIST: prevent</tspan><tspan x="120.0" dy="15">premature LH surge</tspan></text>
+<line x1="220" y1="205" x2="248" y2="205" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="20" y="300" width="200" height="60" rx="8" fill="#fef9c3" stroke="#334155" stroke-width="1.5"/>
+<text x="120.0" y="319.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="120.0" dy="0">LETROZOLE</tspan><tspan x="120.0" dy="15">blocks aromatase,</tspan><tspan x="120.0" dy="15">lowers estradiol</tspan></text>
+<line x1="220" y1="330" x2="248" y2="330" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="250" y="380" width="260" height="48" rx="8" fill="#fef9c3" stroke="#334155" stroke-width="1.5"/>
+<text x="380.0" y="400.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="380.0" dy="0">GONADOTROPINS stimulate follicles</tspan><tspan x="380.0" dy="15">directly; hCG mimics the LH surge</tspan></text>
+<line x1="380" y1="380" x2="380" y2="362" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="560" y="300" width="190" height="60" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="655.0" y="319.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="655.0" dy="0">Less feedback means</tspan><tspan x="655.0" dy="15">more GnRH and FSH</tspan><tspan x="655.0" dy="15">(clomiphene, letrozole)</tspan></text>
+</svg>

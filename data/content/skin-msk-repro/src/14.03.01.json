@@ -1,0 +1,956 @@
+{
+ "area": "14.03.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Erection, ejaculation and priapism: physiology and pharmacology",
+   "html": "<p>An erection is a vascular event under neural control. It needs intact parasympathetic outflow, healthy endothelium and cavernosal smooth muscle, a competent veno-occlusive mechanism, and a permissive hormonal and psychological state. Ejaculation is a separate reflex with sympathetic and somatic phases. Most drugs that help or harm sexual function act on one of these steps.</p>\n<h2>Erection: from nerve to smooth muscle</h2>\n<ol>\n<li>Sexual stimulation activates parasympathetic fibres in the <strong>pelvic splanchnic nerves (S2&ndash;S4)</strong>, which reach the penis as the cavernous nerves running beside the prostate.</li>\n<li>Nitrergic nerve terminals (neuronal NO synthase) and the endothelium (endothelial NO synthase, stimulated by shear stress and acetylcholine) release <strong>nitric oxide</strong>.</li>\n<li>NO activates soluble <strong>guanylyl cyclase</strong> in smooth muscle; <strong>cGMP</strong> rises and activates protein kinase G, which lowers intracellular calcium and relaxes the helicine arteries and trabecular smooth muscle.</li>\n<li>Arterial inflow fills the sinusoids, which compress the subtunical venules against the rigid tunica albuginea: <strong>veno-occlusion</strong> traps blood and produces rigidity.</li>\n<li><strong>Detumescence</strong> follows sympathetic norepinephrine release (alpha-1 receptors contract smooth muscle) and degradation of cGMP by <strong>phosphodiesterase type 5</strong>.</li>\n</ol>\n[[figure:s23f-fig140301-1]]\n<h2>Ejaculation</h2>\n<ul>\n<li><strong>Emission</strong> is sympathetic (thoracolumbar outflow, T10&ndash;L2, through the hypogastric plexus): the vas deferens, seminal vesicles and prostate contract, and the bladder neck closes through alpha-1 receptors so semen cannot enter the bladder.</li>\n<li><strong>Expulsion</strong> is somatic (pudendal nerve): rhythmic contraction of the bulbospongiosus and pelvic floor.</li>\n<li>Serotonin, acting centrally, delays ejaculation; this is why SSRIs treat premature ejaculation and cause delayed ejaculation. Alpha-1A blockade (tamsulosin, silodosin) or sympathetic damage (diabetes, retroperitoneal lymph node dissection) causes <strong>retrograde ejaculation</strong> or anejaculation.</li>\n</ul>\n<h2>Why erectile dysfunction predicts cardiovascular disease</h2>\n<p>Most organic erectile dysfunction is vasculogenic. Endothelial dysfunction reduces NO bioavailability throughout the body, and the small cavernosal arteries (1&ndash;2 mm) show reduced flow before the larger coronary arteries narrow enough to cause angina. Diabetes, hypertension, dyslipidemia, smoking and obesity damage both beds. ED therefore often precedes symptomatic coronary disease by several years and is an independent marker of cardiovascular risk. Diabetes also causes autonomic neuropathy, and pelvic surgery or radiation can damage the cavernous nerves.</p>\n<h2>Pharmacology</h2>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Mechanism</th><th>Key points</th></tr></thead>\n<tbody>\n<tr><td>Sildenafil, vardenafil</td><td>Inhibit PDE-5, so cGMP persists</td><td>Need sexual stimulation (NO release) to work; taken about an hour before; cross-inhibition of retinal PDE-6 can tint vision blue</td></tr>\n<tr><td>Tadalafil</td><td>PDE-5 inhibitor with a long half-life</td><td>Effective for up to about 36 hours; also used daily for BPH symptoms; back pain and myalgia (PDE-11)</td></tr>\n<tr><td>Alprostadil (prostaglandin E1)</td><td>Activates adenylyl cyclase; cAMP relaxes smooth muscle</td><td>Intracavernosal or intraurethral; works without intact nerves; pain and priapism risk</td></tr>\n<tr><td>Phenylephrine</td><td>Alpha-1 agonist; contracts cavernosal smooth muscle</td><td>Intracavernosal treatment of ischemic priapism</td></tr>\n<tr><td>Trazodone, some antipsychotics</td><td>Alpha-1 antagonism prevents detumescence</td><td>Drug-induced priapism</td></tr>\n</tbody></table>\n<p><strong>Interactions</strong>: nitrates (and riociguat) also raise cGMP; with a PDE-5 inhibitor the combination causes profound vasodilation and hypotension, so they are contraindicated together. Alpha-blockers add to hypotension; patients should be on a stable alpha-blocker dose and start with a low PDE-5 dose. CYP3A4 inhibitors (ritonavir, ketoconazole, clarithromycin) raise PDE-5 inhibitor levels. Rare serious effects are sudden hearing loss and non-arteritic anterior ischemic optic neuropathy.</p>\n<h2>Priapism: two mechanisms</h2>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Ischemic (veno-occlusive, low-flow)</th><th>Non-ischemic (arterial, high-flow)</th></tr></thead>\n<tbody>\n<tr><td>Mechanism</td><td>Outflow fails; trapped blood becomes hypoxic and acidotic; the corpora act like a compartment syndrome</td><td>Unregulated arterial inflow through a ruptured cavernosal artery into the sinusoids</td></tr>\n<tr><td>Causes</td><td>Sickle cell disease (sickled cells obstruct venous outflow), alpha-blocking drugs, intracavernosal injections, leukemia, cocaine</td><td>Blunt perineal or penile trauma (straddle injury)</td></tr>\n<tr><td>Pain and rigidity</td><td>Painful, fully rigid corpora, soft glans</td><td>Painless, partially rigid</td></tr>\n<tr><td>Corporal blood gas</td><td>Dark blood; pH below about 7.25, PO2 below about 30 mm Hg, PCO2 above about 60 mm Hg</td><td>Bright red; values like arterial blood</td></tr>\n<tr><td>Urgency</td><td>Emergency: smooth muscle necrosis and fibrosis follow within hours</td><td>Not an emergency</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>PDE-5 inhibitors do not cause an erection without sexual stimulation, because they only slow the breakdown of cGMP that NO creates. A patient who reports &ldquo;no effect&rdquo; may have taken the drug with no arousal, with a heavy meal (sildenafil), or after too short an interval.</p></div>\n<div class=\"pearl\"><p>Naadi memory aid, &ldquo;Para Pumps, Sympathy Spills&rdquo;: parasympathetic signalling fills the corpora; sympathetic outflow empties the ducts at emission and ends the erection.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Erectile Dysfunction"
+    },
+    {
+     "statpearls": "Priapism"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "The male reproductive axis: hypogonadism and mechanisms of infertility",
+   "html": "<p>The male reproductive axis has two linked outputs: testosterone from Leydig cells and sperm from the seminiferous tubules. Recognising which part is broken (hypothalamus, pituitary or testis) is the key to both hypogonadism and male infertility.</p>\n<h2>The axis</h2>\n<ul>\n<li>Pulsatile <strong>GnRH</strong> from the hypothalamus drives pituitary <strong>LH</strong> and <strong>FSH</strong>. Continuous GnRH (as with GnRH agonist therapy) desensitises the pituitary.</li>\n<li><strong>LH</strong> acts on Leydig cells to make testosterone. Intratesticular testosterone is many times higher than serum testosterone and is essential for spermatogenesis.</li>\n<li><strong>FSH</strong> acts on Sertoli cells, which nourish germ cells, make androgen-binding protein (which concentrates testosterone in the tubule) and secrete <strong>inhibin B</strong>.</li>\n<li>Testosterone (directly and after aromatisation to estradiol) feeds back on the hypothalamus and pituitary to lower LH; inhibin B selectively lowers FSH.</li>\n<li>Spermatogenesis from spermatogonium to mature sperm takes about 2.5 months, so a semen analysis reflects events of the previous 3 months.</li>\n</ul>\n[[figure:s23f-fig140301-2]]\n<h2>Primary versus secondary hypogonadism</h2>\n<table class=\"hy\">\n<thead><tr><th></th><th>Primary (testicular)</th><th>Secondary (hypothalamic or pituitary)</th></tr></thead>\n<tbody>\n<tr><td>Testosterone</td><td>Low</td><td>Low</td></tr>\n<tr><td>LH and FSH</td><td>High</td><td>Low or inappropriately normal</td></tr>\n<tr><td>Causes</td><td>Klinefelter syndrome, cryptorchidism, mumps orchitis, chemotherapy or radiation, testicular trauma or torsion</td><td>Hyperprolactinemia, pituitary tumours, opioids, glucocorticoids, exogenous androgens or anabolic steroids, severe obesity and diabetes, hemochromatosis, Kallmann syndrome</td></tr>\n<tr><td>Fertility treatment possible?</td><td>Rarely with hormones; sperm retrieval and ICSI</td><td>Yes: gonadotropin therapy (hCG with FSH) or treatment of the cause</td></tr>\n</tbody></table>\n<h2>Exogenous testosterone and anabolic steroids</h2>\n<p>Exogenous androgen suppresses GnRH, LH and FSH. Serum testosterone is normal or high, but <strong>intratesticular testosterone falls</strong>, spermatogenesis stops, and the testes shrink. The result can be azoospermia, which usually recovers over months after stopping but not always. Testosterone therapy is therefore a cause of infertility, not a treatment for it. Aromatisation of excess androgen to estradiol causes gynecomastia; androgens also stimulate erythropoiesis (erythrocytosis), acne, sleep apnoea and a rise in PSA.</p>\n<h2>Obesity, aging and nutrition</h2>\n<p>Adipose tissue aromatises testosterone to estradiol, and insulin resistance lowers SHBG; both suppress LH, so severe obesity and type 2 diabetes cause a functional secondary hypogonadism that often improves with weight loss. Testosterone falls gradually with age, but most older men keep levels in the normal range; illness, opioids and glucocorticoids explain many low values. Severe undernutrition and energy deficit (including in athletes and in eating disorders) suppress GnRH in men as they do in women.</p>\n<h2>Drugs that act on the axis</h2>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Mechanism</th><th>Use</th></tr></thead>\n<tbody>\n<tr><td>hCG</td><td>Acts on the LH receptor; raises intratesticular testosterone</td><td>Secondary hypogonadism when fertility is desired (often with FSH)</td></tr>\n<tr><td>Recombinant FSH or menotropins</td><td>FSH receptor agonist</td><td>Added to hCG to support spermatogenesis</td></tr>\n<tr><td>Clomiphene (off-label in men)</td><td>Estrogen receptor antagonist at the hypothalamus; removes negative feedback, raising LH and FSH</td><td>Secondary hypogonadism with preserved pituitary function</td></tr>\n<tr><td>Pulsatile GnRH</td><td>Replaces missing hypothalamic signal</td><td>Kallmann syndrome or other hypothalamic causes</td></tr>\n<tr><td>Cabergoline</td><td>Dopamine D2 agonist that lowers prolactin</td><td>Prolactinoma causing hypogonadism</td></tr>\n<tr><td>Estradiol, spironolactone, GnRH agonists</td><td>Suppress LH and FSH or block androgen action</td><td>Gender-affirming hormones; impair spermatogenesis</td></tr>\n</tbody></table>\n<h2>Mechanisms of male infertility</h2>\n<ul>\n<li><strong>Pre-testicular</strong>: hypogonadotropic hypogonadism, hyperprolactinemia, exogenous androgens.</li>\n<li><strong>Testicular</strong>: Klinefelter syndrome, Y-chromosome microdeletions (AZF regions), cryptorchidism, varicocele, orchitis, gonadotoxic therapy, heat.</li>\n<li><strong>Post-testicular</strong>: obstruction (vasectomy, infection), <strong>congenital bilateral absence of the vas deferens</strong> (CFTR variants; low-volume, acidic, fructose-negative ejaculate because the seminal vesicles are also affected), retrograde ejaculation, and antisperm antibodies.</li>\n</ul>\n<p>A <strong>varicocele</strong> is dilation of the pampiniform plexus. It is much more common on the left, because the left testicular vein drains into the left renal vein at a right angle and has less effective valves, whereas the right drains obliquely into the inferior vena cava. Raised scrotal temperature and venous reflux impair spermatogenesis. A new or isolated right-sided varicocele, or one that does not decompress when supine, suggests venous obstruction by a retroperitoneal mass.</p>\n<div class=\"trap\"><p>A man using testosterone or anabolic steroids can have normal or high serum testosterone and azoospermia at the same time. Serum testosterone does not reflect the intratesticular level that sperm need.</p></div>\n<div class=\"pearl\"><p>Low-volume, acidic ejaculate without fructose and with no sperm, normal FSH and testosterone, and impalpable vasa: test for CFTR variants in both partners.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Male Hypogonadism"
+    },
+    {
+     "statpearls": "Male Infertility"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Erectile dysfunction, premature ejaculation and priapism: evaluation and management",
+   "html": "<h2>Erectile dysfunction</h2>\n<p>ED is the persistent inability to achieve or maintain an erection sufficient for satisfactory sexual activity. Prevalence rises steeply with age. Treat it as a window onto cardiovascular and metabolic health.</p>\n<h3>Evaluation</h3>\n<ul>\n<li><strong>History</strong>: onset and course, morning or nocturnal erections, situational variation, libido, ejaculation, relationship and mood, and a full drug review. Sudden onset with preserved morning erections and situational variation suggests a psychogenic component; gradual, consistent loss suggests an organic cause.</li>\n<li><strong>Risk factors and drugs</strong>: diabetes, hypertension, dyslipidemia, smoking, obesity, sleep apnoea, depression, pelvic surgery or radiation, spinal cord disease; thiazide diuretics, non-selective beta-blockers, spironolactone, SSRIs, antipsychotics, opioids, 5-alpha-reductase inhibitors, antiandrogens, alcohol and cannabis.</li>\n<li><strong>Exam</strong>: blood pressure, BMI, peripheral pulses, secondary sex characteristics, testicular size, gynecomastia, penile plaques.</li>\n<li><strong>Tests</strong>: fasting glucose or HbA1c, lipid profile, and a morning total testosterone. If testosterone is low, repeat it and add LH, FSH and prolactin. Specialised tests (penile duplex ultrasound, nocturnal tumescence testing) are for selected cases.</li>\n<li>Assess cardiovascular fitness for sexual activity; refer patients with unstable or symptomatic heart disease for cardiac evaluation first.</li>\n</ul>\n<h3>Treatment ladder</h3>\n<table class=\"hy\">\n<thead><tr><th>Step</th><th>Options</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Always</td><td>Weight loss, exercise, smoking cessation, glycemic and blood pressure control; review drugs; treat depression; sex therapy or couples counselling</td><td>Lifestyle changes improve erectile function and cardiovascular risk</td></tr>\n<tr><td>First drug</td><td>Oral PDE-5 inhibitor</td><td>Contraindicated with nitrates or riociguat; caution with alpha-blockers; try several doses with stimulation before calling it a failure</td></tr>\n<tr><td>Hypogonadal men</td><td>Testosterone replacement</td><td>Improves libido and can improve PDE-5 response; not effective for ED with normal testosterone</td></tr>\n<tr><td>Next options</td><td>Vacuum erection device; intracavernosal alprostadil (or combination injections); intraurethral alprostadil</td><td>Injections work without nerves (useful after prostatectomy); risk of priapism</td></tr>\n<tr><td>Definitive</td><td>Inflatable penile prosthesis</td><td>High satisfaction; infection and device failure are the main risks</td></tr>\n</tbody></table>\n<p>A patient who uses sublingual nitroglycerin must not take a PDE-5 inhibitor within the drug's window (about 24 hours for sildenafil or vardenafil, 48 hours for tadalafil); if chest pain occurs after a PDE-5 inhibitor, emergency teams must be told so that nitrates are withheld.</p>\n<h2>Premature ejaculation</h2>\n<p>Lifelong premature ejaculation is ejaculation that always or nearly always occurs within about a minute of vaginal penetration from the first sexual experiences; acquired premature ejaculation is a clinically significant reduction in latency, often to about 3 minutes or less. Both require inability to delay ejaculation and distress. Ask about ED, because men with acquired premature ejaculation often hurry to ejaculate before losing the erection; treat ED first in that case.</p>\n<ul>\n<li>Behavioural techniques (stop-start, squeeze) and couples therapy.</li>\n<li>Topical anaesthetic sprays or creams applied before intercourse (lidocaine-prilocaine); a condom or washing prevents partner numbness.</li>\n<li>Daily SSRIs (paroxetine, sertraline) or clomipramine, used off-label in the US; on-demand dosing is less effective. Adverse effects include nausea, fatigue and reduced libido.</li>\n</ul>\n<h2>Priapism</h2>\n<p>An erection lasting more than 4 hours that is unrelated to sexual stimulation. Distinguish ischemic from non-ischemic by history, exam, <strong>corporal blood gas</strong> and, when needed, penile duplex Doppler ultrasound.</p>\n<ul>\n<li><strong>Ischemic priapism</strong> is a urologic emergency. Give analgesia (often a dorsal penile nerve block), then aspirate blood from the corpora (with or without saline irrigation) and inject intracavernosal <strong>phenylephrine</strong> repeatedly at intervals while monitoring blood pressure and heart rate. If this fails, perform a surgical shunt (distal corporoglanular first, then proximal). Very prolonged episodes cause fibrosis and permanent ED, and early prosthesis placement may be discussed.</li>\n<li>In <strong>sickle cell disease</strong>, give hydration, oxygen and analgesia, but do not rely on systemic therapy alone: intracavernosal treatment proceeds at the same time. Exchange transfusion is not first-line for priapism.</li>\n<li><strong>Non-ischemic priapism</strong> (painless, partial, after perineal trauma, with arterial gas values and a fistula on Doppler) often resolves spontaneously; observation is initial management, with selective arterial embolization for persistent cases. Do not inject phenylephrine.</li>\n<li><strong>Stuttering priapism</strong> (recurrent brief episodes, typical in sickle cell disease) needs a prevention plan with hematology and urology.</li>\n</ul>\n<div class=\"trap\"><p>A young man with sickle cell disease and a 6-hour painful erection needs corporal aspiration and phenylephrine now; exchange transfusion or fluids alone while waiting allows irreversible damage.</p></div>\n<div class=\"pearl\"><p>Ask every man with ED about chest pain on exertion, and screen for diabetes and dyslipidemia. ED is often the first clinical sign of vascular disease.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Erectile Dysfunction"
+    },
+    {
+     "statpearls": "Premature Ejaculation"
+    },
+    {
+     "statpearls": "Priapism"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Male hypogonadism, infertility and fertility preservation: evaluation and management",
+   "html": "<h2>Diagnosing male hypogonadism</h2>\n<p>Diagnose hypogonadism only when consistent symptoms (low libido, reduced morning erections, ED, fatigue, loss of body hair, small testes, low bone density, anemia) coincide with <strong>unequivocally low morning fasting total testosterone on at least two occasions</strong>. Do not screen asymptomatic men, and avoid testing during acute illness. Measure free testosterone when SHBG is likely abnormal (obesity, aging, liver disease, hyperthyroidism, HIV).</p>\n<ol>\n<li>Confirm low testosterone.</li>\n<li>Measure LH and FSH: high values mean primary (testicular) failure; low or normal values mean secondary failure.</li>\n<li>Primary: consider karyotype (Klinefelter syndrome), especially with small firm testes.</li>\n<li>Secondary: check prolactin, iron studies (hemochromatosis), other pituitary hormones, and review opioids, glucocorticoids and anabolic steroids. Obtain pituitary MRI for very low testosterone, high prolactin, other pituitary hormone deficits, or visual or mass symptoms.</li>\n</ol>\n<h2>Testosterone therapy</h2>\n<ul>\n<li><strong>Do not start</strong> in men who wish to conceive soon, with breast or prostate cancer, with a prostate nodule or raised PSA not yet evaluated, with erythrocytosis, untreated severe obstructive sleep apnoea, poorly controlled heart failure, or a recent myocardial infarction or stroke.</li>\n<li><strong>Monitor</strong> symptoms and testosterone at 3&ndash;6 months, hematocrit (withhold therapy if it rises above 54%), and PSA and prostate risk in men for whom screening applies.</li>\n<li>A large randomised trial in middle-aged and older hypogonadal men with cardiovascular risk found no excess of major adverse cardiovascular events with testosterone.</li>\n<li>In secondary hypogonadism, treat reversible causes first (stop opioids or anabolic steroids where possible, weight loss, cabergoline for prolactinoma).</li>\n</ul>\n<h2>Male factor infertility</h2>\n<p>About half of infertile couples have a male factor. Evaluate both partners together after 12 months of trying (6 months if the female partner is 35 or older), or sooner with known risk factors such as cryptorchidism or chemotherapy.</p>\n<h3>Semen analysis</h3>\n<p>Collect after 2&ndash;7 days of abstinence. If abnormal, repeat at least once because results vary. Compare with WHO lower reference limits (5th percentile of fertile men), which are approximately:</p>\n<table class=\"hy\">\n<thead><tr><th>Parameter</th><th>Approximate lower reference limit</th><th>If abnormal, think of</th></tr></thead>\n<tbody>\n<tr><td>Volume</td><td>1.4 mL</td><td>Retrograde ejaculation, ejaculatory duct obstruction, absent vasa or seminal vesicles, incomplete collection, hypogonadism</td></tr>\n<tr><td>Concentration</td><td>16 million/mL</td><td>Testicular failure, varicocele, endocrine causes, obstruction (if zero)</td></tr>\n<tr><td>Total motility</td><td>42%</td><td>Varicocele, infection, antisperm antibodies, ciliary disorders</td></tr>\n<tr><td>Normal forms (strict criteria)</td><td>4%</td><td>Varicocele, heat, toxins</td></tr>\n</tbody></table>\n<h3>Next steps by finding</h3>\n<ul>\n<li><strong>Low volume</strong>: post-ejaculatory urinalysis for sperm (retrograde ejaculation from diabetes, alpha-blockers, prostate or bladder-neck surgery); transrectal ultrasound for ejaculatory duct obstruction.</li>\n<li><strong>Azoospermia with normal FSH and testes</strong>: suspect obstruction; palpate for the vasa; CFTR testing if absent.</li>\n<li><strong>Azoospermia or severe oligozoospermia with high FSH and small testes</strong>: non-obstructive; karyotype and Y-chromosome microdeletion testing; sperm retrieval (microdissection testicular sperm extraction) with ICSI for some.</li>\n<li><strong>Clinical (palpable) varicocele with abnormal semen parameters</strong> in a man trying to conceive with a partner who has normal or treatable fertility: varicocele repair (surgical or radiologic embolization).</li>\n<li><strong>Exogenous testosterone</strong>: stop it; consider hCG to restore spermatogenesis faster.</li>\n<li><strong>Secondary hypogonadism</strong> with infertility: hCG with or without FSH, not testosterone.</li>\n</ul>\n<h2>Fertility preservation</h2>\n<ul>\n<li><strong>Before gonadotoxic cancer therapy</strong>: offer sperm cryopreservation before the first treatment; testicular sperm extraction if ejaculation is not possible. In prepubertal boys, testicular tissue cryopreservation is experimental.</li>\n<li><strong>Before gender-affirming hormones in transgender women and transfeminine nonbinary people</strong>: estradiol, antiandrogens (spironolactone) and GnRH agonists suppress spermatogenesis, and recovery after stopping is unpredictable. Counsel about fertility before treatment starts and offer sperm banking (several samples if possible) <em>before</em> starting hormones. Adolescents who start puberty suppression in early puberty have not yet produced mature sperm; fertility options must be discussed with them and their families before that decision. Hormones do not provide reliable contraception, so ask about pregnancy risk with partners who could become pregnant.</li>\n<li>After orchiectomy, fertility with one's own gametes depends on previously banked sperm.</li>\n</ul>\n<div class=\"trap\"><p>Prescribing testosterone to a man with low testosterone who wants children is a classic error: it lowers sperm production. Use hCG (with FSH as needed) or clomiphene in secondary hypogonadism.</p></div>\n<div class=\"pearl\"><p>Older men taking alpha-blockers for BPH who notice &ldquo;dry&rdquo; orgasms usually have retrograde or absent emission. Reassure them; switching to a less uroselective alpha-blocker or another class can help if fertility or bother matters.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Male Hypogonadism"
+    },
+    {
+     "statpearls": "Semen Analysis"
+    },
+    {
+     "statpearls": "Male Infertility"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Second-messenger signalling in cavernosal smooth muscle and sites of drug action."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. The male hypothalamic-pituitary-gonadal axis with sites of drug action."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Priapism in sickle cell disease"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old man with type 2 diabetes has had gradually worsening difficulty maintaining erections for 2 years. He is prescribed an oral drug to take about 1 hour before sexual activity and is told that it will work only with sexual stimulation. Which of the following intracellular changes in cavernosal smooth muscle most directly mediates the drug's effect?</p>",
+   "options": [
+    "Increased cAMP from adenylyl cyclase activation",
+    "Increased cGMP from reduced degradation",
+    "Increased inositol trisphosphate from Gq activation",
+    "Decreased nitric oxide synthase activity",
+    "Increased calcium release from the sarcoplasmic reticulum"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>PDE-5 inhibitors such as sildenafil block the enzyme that degrades cGMP. Sexual stimulation releases NO, which activates guanylyl cyclase; with PDE-5 blocked, cGMP accumulates, protein kinase G lowers intracellular calcium, and cavernosal smooth muscle relaxes. Without NO release, there is no cGMP to preserve, which is why stimulation is needed.</p><p><strong>Takeaway:</strong> PDE-5 inhibitors raise cGMP by blocking its breakdown and depend on NO release from sexual stimulation.</p>",
+   "whyNot": {
+    "A": "Raised cAMP from adenylyl cyclase is the mechanism of alprostadil (prostaglandin E1), which is injected or given intraurethrally.",
+    "C": "Gq-mediated IP3 release raises calcium and causes contraction, the effect of alpha-1 stimulation during detumescence.",
+    "D": "Less NO synthase activity would reduce cGMP and worsen erections.",
+    "E": "Calcium release causes smooth muscle contraction, the opposite of the drug's effect."
+   },
+   "objective": "Explain how PDE-5 inhibitors increase cGMP in cavernosal smooth muscle.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual function",
+    "pharmacology"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 63-year-old man takes an oral drug for erectile dysfunction before intercourse. Afterwards he notices that objects appear to have a bluish tint and that he is more sensitive to bright light for a few hours. Visual acuity and fundoscopic examination the next day are normal. Inhibition of which of the following enzymes most likely explains his visual symptoms?</p>",
+   "options": [
+    "Phosphodiesterase type 3 in cardiac myocytes",
+    "Phosphodiesterase type 6 in retinal photoreceptors",
+    "Phosphodiesterase type 11 in skeletal muscle",
+    "Carbonic anhydrase in the ciliary body",
+    "Acetylcholinesterase at the iris sphincter"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Sildenafil and vardenafil also inhibit PDE-6, the enzyme in rod and cone photoreceptors that hydrolyses cGMP during phototransduction. Partial inhibition produces transient blue-tinged vision and light sensitivity. These effects are dose-related and reversible, unlike the rare non-arteritic ischemic optic neuropathy, which causes sudden painless vision loss and needs urgent evaluation.</p><p><strong>Takeaway:</strong> Blue-tinged vision with sildenafil reflects cross-inhibition of retinal PDE-6.</p>",
+   "whyNot": {
+    "A": "PDE-3 inhibition (milrinone, cilostazol) increases cardiac contractility and causes arrhythmias, not color vision changes.",
+    "C": "PDE-11 inhibition is linked to the back pain and myalgia seen with tadalafil.",
+    "D": "Carbonic anhydrase inhibitors lower intraocular pressure and can cause paresthesias, not blue vision.",
+    "E": "Acetylcholinesterase inhibition causes miosis and accommodation spasm, not a color tint."
+   },
+   "objective": "Attribute PDE-5 inhibitor color vision changes to PDE-6 inhibition.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual function",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 37-year-old man comes to the emergency department with a painful erection that has lasted 6 hours and is unrelated to sexual activity. Three days ago he began taking a new drug at bedtime for insomnia accompanying his depression. He has no history of trauma or hematologic disease. The corpora cavernosa are rigid and tender, and the glans is soft. The adverse effect is most likely due to which of the following actions of the new drug?</p>",
+   "options": [
+    "Alpha-1 adrenergic receptor antagonism",
+    "Beta-2 adrenergic receptor agonism",
+    "Muscarinic receptor antagonism",
+    "Histamine H2 receptor antagonism",
+    "Dopamine D2 receptor agonism"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Trazodone, commonly prescribed at bedtime for insomnia, is a potent alpha-1 antagonist. Detumescence depends on sympathetic norepinephrine acting on alpha-1 receptors to contract cavernosal smooth muscle; blocking this allows a prolonged, painful ischemic priapism. Some antipsychotics cause priapism the same way.</p><p><strong>Takeaway:</strong> Trazodone causes ischemic priapism through alpha-1 blockade that prevents detumescence.</p>",
+   "whyNot": {
+    "B": "Beta-2 agonism (terbutaline) relaxes smooth muscle in vessels and airways and is not the mechanism of drug-induced priapism.",
+    "C": "Muscarinic blockade does not prevent detumescence; parasympathetic tone promotes erection.",
+    "D": "Trazodone has no relevant H2 activity, and H2 antagonism does not affect penile smooth muscle.",
+    "E": "Dopamine agonists can increase libido but do not block the adrenergic detumescence pathway."
+   },
+   "objective": "Explain trazodone-induced priapism by alpha-1 receptor blockade.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug adverse effects",
+    "penile emergencies"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old man with sickle cell disease has had a painful, rigid erection for 7 hours. Blood is aspirated from the corpus cavernosum for blood gas analysis. Which of the following sets of results is most likely?</p>",
+   "options": [
+    "pH 7.40, PO2 95 mm Hg, PCO2 40 mm Hg",
+    "pH 7.10, PO2 20 mm Hg, PCO2 75 mm Hg",
+    "pH 7.36, PO2 40 mm Hg, PCO2 46 mm Hg",
+    "pH 7.50, PO2 60 mm Hg, PCO2 30 mm Hg",
+    "pH 7.25, PO2 100 mm Hg, PCO2 25 mm Hg"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>In ischemic priapism, sickled red cells obstruct venous outflow from the corpora. The trapped blood consumes its oxygen and accumulates carbon dioxide and lactate, so the corporal gas shows severe hypoxia, hypercarbia and acidosis (pH below about 7.25, PO2 below about 30 mm Hg, PCO2 above about 60 mm Hg), and the blood is dark. Ongoing ischemia leads to smooth muscle necrosis and fibrosis.</p><p><strong>Takeaway:</strong> Ischemic priapism gives a hypoxic, hypercarbic, acidotic corporal blood gas.</p>",
+   "whyNot": {
+    "A": "Arterial values like these are found in non-ischemic, high-flow priapism after trauma, not in sickle cell veno-occlusion.",
+    "C": "These resemble normal mixed venous blood and indicate no stasis.",
+    "D": "An alkalotic, hypocapnic sample does not reflect trapped, ischemic blood.",
+    "E": "A high PO2 is incompatible with ischemia; this combination suggests an arterial sample with a metabolic acidosis."
+   },
+   "objective": "Predict corporal blood gas values in ischemic priapism.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "penile emergencies",
+    "hematology"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old competitive bodybuilder is evaluated for infertility after 18 months of unprotected intercourse. He has injected anabolic steroids intermittently for 4 years. He has acne and mild bilateral gynecomastia; both testes are small and soft. Hematocrit is 54%. Semen analysis shows no sperm. Which of the following best explains his azoospermia?</p>",
+   "options": [
+    "Obstruction of the ejaculatory ducts by prostatic hypertrophy",
+    "Suppressed gonadotropin secretion lowering intratesticular testosterone",
+    "Antisperm antibodies induced by testicular injury",
+    "Direct toxicity of erythropoietin on germ cells",
+    "Elevated FSH causing Sertoli cell exhaustion"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Exogenous androgens strengthen negative feedback on the hypothalamus and pituitary, so GnRH, LH and FSH fall. Leydig cells stop making testosterone and the very high intratesticular testosterone concentration that spermatogenesis needs collapses, even if serum androgen levels are high. Without FSH and local testosterone, the seminiferous tubules shrink and sperm production stops. Aromatisation explains gynecomastia, and androgen-driven erythropoiesis explains the high hematocrit.</p><p><strong>Takeaway:</strong> Anabolic steroids cause azoospermia by suppressing LH and FSH and therefore intratesticular testosterone.</p>",
+   "whyNot": {
+    "A": "Ejaculatory duct obstruction causes low-volume ejaculate with normal testes; his testes are small and soft.",
+    "C": "Antisperm antibodies impair motility but do not cause small testes or azoospermia with this history.",
+    "D": "His high hematocrit reflects androgen-stimulated erythropoiesis; erythropoietin is not toxic to germ cells.",
+    "E": "FSH is suppressed, not elevated, by exogenous androgens."
+   },
+   "objective": "Explain anabolic steroid-induced azoospermia by suppression of gonadotropins and intratesticular testosterone.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infertility",
+    "endocrine"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old man began tamsulosin 3 months ago for lower urinary tract symptoms from benign prostatic hyperplasia. His urinary stream has improved. He now notices that he has orgasms with little or no fluid. A urine sample collected immediately after ejaculation contains many sperm. Which of the following best explains this finding?</p>",
+   "options": [
+    "Failure of the bladder neck to contract during emission",
+    "Loss of parasympathetic outflow to the seminal vesicles",
+    "Paralysis of the bulbospongiosus muscle",
+    "Obstruction of both vasa deferentia",
+    "Absent sperm production after hormonal suppression"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>During emission, sympathetic alpha-1 stimulation closes the bladder neck so that semen is propelled forward into the urethra. Tamsulosin selectively blocks alpha-1A receptors in the prostate and bladder neck, so the neck stays open and semen enters the bladder: retrograde ejaculation. Sperm in post-ejaculatory urine confirms it.</p><p><strong>Takeaway:</strong> Alpha-1A blockade causes retrograde ejaculation by preventing bladder neck closure; sperm appear in post-ejaculate urine.</p>",
+   "whyNot": {
+    "B": "Emission is sympathetic, not parasympathetic; and loss of seminal vesicle emptying would not put sperm in the urine.",
+    "C": "Bulbospongiosus weakness would reduce the force of expulsion but would not direct semen into the bladder.",
+    "D": "Vasal obstruction would remove sperm from both the ejaculate and the urine.",
+    "E": "Tamsulosin does not affect hormones; sperm are present in the urine."
+   },
+   "objective": "Explain retrograde ejaculation from alpha-1A blockade of the bladder neck.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ejaculation",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old man and his partner have been unable to conceive for 2 years. He had frequent sinus infections as a child but no lung disease. Neither vas deferens can be palpated in the scrotum. Testes are normal in size. Semen volume is 0.6 mL (reference at least 1.4 mL) with pH 6.6 (reference at least 7.2), no sperm, and absent fructose. Serum FSH, LH and testosterone are normal. Variants in which of the following genes are most likely responsible?</p>",
+   "options": [
+    "Androgen receptor gene",
+    "CFTR",
+    "AZF region of the Y chromosome",
+    "ANOS1 (KAL1)",
+    "SRY"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Impalpable vasa with azoospermia, low-volume acidic ejaculate without fructose, normal testes and normal hormones indicate congenital bilateral absence of the vas deferens. The seminal vesicles, which normally contribute alkaline, fructose-rich fluid, are also absent or hypoplastic. It is caused by variants in CFTR, often one severe variant plus a milder one, and may occur without lung disease. Sperm can be retrieved from the testis for ICSI, and the partner should be offered CFTR carrier testing.</p><p><strong>Takeaway:</strong> Absent vasa with low-volume, acidic, fructose-negative azoospermia points to CFTR variants.</p>",
+   "whyNot": {
+    "A": "Androgen receptor variants cause androgen insensitivity with undervirilisation, not isolated absent vasa with normal testes.",
+    "C": "AZF microdeletions cause non-obstructive azoospermia with normal ejaculate volume and often high FSH.",
+    "D": "ANOS1 variants cause Kallmann syndrome with low gonadotropins and anosmia.",
+    "E": "SRY variants cause 46,XY gonadal dysgenesis with a female phenotype."
+   },
+   "objective": "Link congenital bilateral absence of the vas deferens and its semen profile to CFTR variants.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infertility",
+    "genetics"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old man has a dull ache in the left scrotum after standing for long periods. Examination while standing shows a soft, irregular mass above the left testis that feels like a bag of worms and enlarges with Valsalva; it decompresses when he lies down. The left testis is slightly smaller than the right. Which of the following anatomic features best explains why this condition is more common on the left side?</p>",
+   "options": [
+    "The left testicular vein drains into the left renal vein at a right angle",
+    "The left testicular artery arises from the left renal artery",
+    "The left testicular vein drains directly into the inferior vena cava",
+    "The left testis lies higher in the scrotum than the right",
+    "The left pampiniform plexus lacks connection to the cremasteric veins"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is a varicocele, a dilation of the pampiniform plexus. The left testicular vein is longer and enters the left renal vein at a right angle, often with incompetent valves, so hydrostatic pressure and reflux are greater on the left. The right testicular vein enters the inferior vena cava obliquely. Varicoceles impair spermatogenesis through raised testicular temperature and can cause ipsilateral testicular atrophy.</p><p><strong>Takeaway:</strong> Left-sided predominance of varicocele reflects drainage of the left testicular vein into the left renal vein.</p>",
+   "whyNot": {
+    "B": "Both testicular arteries normally arise from the abdominal aorta; arterial anatomy does not cause a venous varicocele.",
+    "C": "Direct, oblique drainage into the inferior vena cava describes the right testicular vein.",
+    "D": "The left testis usually hangs lower, not higher, and position does not explain venous reflux.",
+    "E": "Collateral veins are present on both sides and do not explain left-sided predominance."
+   },
+   "objective": "Relate the left-sided predominance of varicocele to testicular venous drainage.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infertility",
+    "scrotal mass"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old man comes to the office because of difficulty obtaining and maintaining erections for 1 year that has slowly worsened. He no longer has morning erections. Libido is normal. He smokes one pack of cigarettes daily, has a sedentary job and has not seen a physician in 8 years. He has no chest pain or dyspnea with walking two flights of stairs. Blood pressure is 146/92 mm Hg, and BMI is 32 kg/m&sup2;. Genital examination is normal, with normal-sized testes. Which of the following is the most appropriate next step in evaluation?</p>",
+   "options": [
+    "Nocturnal penile tumescence testing",
+    "Fasting glucose or HbA1c and lipid profile",
+    "Penile duplex Doppler ultrasound",
+    "Coronary angiography",
+    "Referral for psychotherapy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Gradual loss of erections, including morning erections, in a man with hypertension, obesity and smoking suggests vasculogenic ED. ED shares the endothelial dysfunction of atherosclerosis and often precedes coronary disease, so the evaluation focuses on cardiovascular and metabolic risk: fasting glucose or HbA1c, a lipid profile and a morning testosterone, with blood pressure management and smoking cessation. Lifestyle change and a PDE-5 inhibitor would follow.</p><p><strong>Takeaway:</strong> New ED is a cardiovascular risk marker; screen for diabetes and dyslipidemia.</p>",
+   "whyNot": {
+    "A": "Nocturnal tumescence testing helps separate psychogenic from organic ED in selected cases; his history already suggests organic disease.",
+    "C": "Penile duplex ultrasound is reserved for selected patients, such as before vascular surgery or with Peyronie disease.",
+    "D": "He has no anginal symptoms and good exercise tolerance, so invasive angiography is not indicated.",
+    "E": "Loss of morning erections and multiple vascular risk factors point to an organic cause, not a primarily psychogenic one."
+   },
+   "objective": "Screen for diabetes and dyslipidemia in a man presenting with erectile dysfunction.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual function",
+    "cardiovascular risk"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 41-year-old man has had decreased libido, erectile dysfunction and fatigue for 9 months. He takes no medications or supplements and does not use opioids or anabolic steroids. He has occasional headaches but no visual symptoms. BMI is 26 kg/m&sup2;. Testes are normal in size and consistency, and there is no gynecomastia. Laboratory results from two morning fasting samples are shown.</p><table><thead><tr><th>Test</th><th>Result</th><th>Reference range</th></tr></thead><tbody><tr><td>Total testosterone (sample 1)</td><td>172 ng/dL</td><td>264&ndash;916 ng/dL</td></tr><tr><td>Total testosterone (sample 2)</td><td>160 ng/dL</td><td>264&ndash;916 ng/dL</td></tr><tr><td>LH</td><td>1.4 mIU/mL</td><td>1.5&ndash;9.0 mIU/mL</td></tr><tr><td>FSH</td><td>1.8 mIU/mL</td><td>1.5&ndash;12.0 mIU/mL</td></tr><tr><td>Prolactin</td><td>96 ng/mL</td><td>below 18 ng/mL</td></tr><tr><td>TSH</td><td>1.9 &mu;U/mL</td><td>0.5&ndash;5.0 &mu;U/mL</td></tr><tr><td>Ferritin</td><td>110 ng/mL</td><td>30&ndash;400 ng/mL</td></tr></tbody></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Begin transdermal testosterone gel",
+    "MRI of the pituitary gland",
+    "Peripheral blood karyotype",
+    "Scrotal ultrasound",
+    "Begin oral clomiphene"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has secondary hypogonadism: low testosterone on two morning samples with low-normal LH and FSH. Prolactin is markedly elevated with no drug cause, and TSH is normal, so a prolactin-secreting pituitary adenoma is likely; prolactin suppresses GnRH pulses. Pituitary MRI is the next step, followed by dopamine agonist therapy (cabergoline) if a prolactinoma is confirmed, which often restores testosterone without androgen replacement.</p><p><strong>Takeaway:</strong> Secondary hypogonadism with high prolactin calls for pituitary MRI before any testosterone.</p>",
+   "whyNot": {
+    "A": "Testosterone would treat the number but miss a pituitary tumour that may be causing mass effect and is treatable.",
+    "C": "Karyotype is for primary hypogonadism with high gonadotropins, such as Klinefelter syndrome.",
+    "D": "Scrotal ultrasound evaluates testicular masses; his problem is central.",
+    "E": "Clomiphene would not address a prolactinoma, which suppresses GnRH regardless of estrogen feedback."
+   },
+   "objective": "Obtain pituitary MRI for secondary hypogonadism with hyperprolactinemia.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "endocrine",
+    "sexual function"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 22-year-old man with sickle cell disease comes to the emergency department with a painful erection that began 6 hours ago on waking. He has not used any drugs. Temperature is 37.0&deg;C (98.6&deg;F), pulse is 102/min, and blood pressure is 128/76 mm Hg. The penile shaft is rigid and tender, and the glans is soft. Hemoglobin is 8.6 g/dL. Intravenous fluids, oxygen and analgesia are started, and a dorsal penile nerve block is performed. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Exchange transfusion before any penile procedure",
+    "Corporal aspiration and intracavernosal phenylephrine",
+    "Observation with ice packs for 6 more hours",
+    "Selective arterial embolization",
+    "Oral terbutaline and discharge home"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A painful, rigid erection lasting more than 4 hours in sickle cell disease is ischemic priapism, a urologic emergency. After analgesia, the corpora are aspirated (sending blood for a gas to confirm ischemia), with or without irrigation, and phenylephrine is injected intracavernosally and repeated as needed, with blood pressure and heart rate monitoring. Systemic sickle cell measures run in parallel but must not delay penile treatment.</p><p><strong>Takeaway:</strong> Ischemic priapism, including in sickle cell disease, is treated promptly with aspiration and intracavernosal phenylephrine.</p>",
+   "whyNot": {
+    "A": "Exchange transfusion is slow, has risks, and is not first-line for priapism; delaying intracavernosal treatment allows irreversible damage.",
+    "C": "More delay increases the risk of smooth muscle necrosis, fibrosis and permanent erectile dysfunction.",
+    "D": "Embolization treats non-ischemic arterial priapism; it would worsen ischemia here.",
+    "E": "Oral agents are unreliable for an established ischemic episode, and discharge would be unsafe."
+   },
+   "objective": "Treat ischemic priapism in sickle cell disease with aspiration and intracavernosal phenylephrine.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "penile emergencies",
+    "hematology"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Aspiration yields dark blood with pH 6.98, PO2 14 mm Hg and PCO2 82 mm Hg. Over the next 60 minutes he receives aspiration with saline irrigation and repeated intracavernosal phenylephrine injections at appropriate intervals. Vital signs remain stable, but the corpora remain rigid and tender. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Continue phenylephrine injections every hour for 24 hours",
+    "Distal surgical shunt between the corpora cavernosa and glans",
+    "Selective embolization of the internal pudendal artery",
+    "Immediate exchange transfusion and observation",
+    "Intravenous alprostadil infusion"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The gas confirms ischemic priapism, and adequate aspiration, irrigation and phenylephrine have failed. The next step is a surgical shunt, starting with a distal corporoglanular shunt, which creates an outflow path from the corpora cavernosa into the glans and corpus spongiosum. Proximal shunts are used if distal shunts fail. Patients should be counselled that prolonged ischemia carries a high risk of ED, and in very prolonged cases early prosthesis placement may be discussed.</p><p><strong>Takeaway:</strong> Ischemic priapism refractory to aspiration and phenylephrine needs a surgical shunt, distal first.</p>",
+   "whyNot": {
+    "A": "Prolonged injections without effect waste time while smooth muscle dies and expose him to cumulative cardiovascular effects.",
+    "C": "Embolization is for high-flow, non-ischemic priapism; reducing inflow does nothing for blocked outflow.",
+    "D": "Exchange transfusion does not reliably reverse established priapism and delays definitive drainage.",
+    "E": "Alprostadil relaxes cavernosal smooth muscle and would worsen the erection."
+   },
+   "objective": "Escalate refractory ischemic priapism to a distal surgical shunt.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "penile emergencies"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 10-year-old boy is brought to the clinic because of a persistent, painless, partially rigid erection for 3 days. Four days ago he slipped while riding a bicycle and struck his perineum on the crossbar. He has no hematologic disease and takes no medications. The penis is semi-rigid and not tender; there is faint perineal bruising. Corporal aspirate is bright red with pH 7.40, PO2 92 mm Hg and PCO2 40 mm Hg. Duplex Doppler ultrasound shows a cavernosal artery-sinusoidal fistula with turbulent high flow. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Intracavernosal phenylephrine injection",
+    "Observation with outpatient follow-up",
+    "Distal corporoglanular shunt",
+    "Emergency exchange transfusion",
+    "Immediate penile prosthesis placement"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A painless, partial erection days after perineal blunt trauma, with arterial corporal gas values and a fistula on Doppler, is non-ischemic (high-flow) priapism. The tissue is well oxygenated, so this is not an emergency, and many cases resolve spontaneously as the fistula closes. Initial management is observation, with selective arterial embolization if it persists or the family prefers intervention after counselling.</p><p><strong>Takeaway:</strong> Non-ischemic priapism after perineal trauma is observed first; embolization is for persistent cases.</p>",
+   "whyNot": {
+    "A": "Phenylephrine treats ischemic priapism; it is not indicated for an arterial fistula and adds cardiovascular risk.",
+    "C": "Shunts drain trapped deoxygenated blood in ischemic priapism; here outflow is normal.",
+    "D": "He has no sickle cell disease, and transfusion has no role in arterial priapism.",
+    "E": "A prosthesis is never initial management and would destroy erectile tissue in a child with recoverable function."
+   },
+   "objective": "Manage non-ischemic high-flow priapism with initial observation.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "penile emergencies",
+    "pediatric urology"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old man comes to the office because he has ejaculated within about 30 seconds of vaginal penetration in nearly every sexual encounter since his first sexual experience at age 18. Erections are firm and sustained, and desire is normal. He and his partner are distressed. Six weeks of stop-start exercises with his partner did not help. He tried a topical anesthetic spray once, but his partner developed genital numbness and they do not want to use it again. He has no depression. Which of the following is the most appropriate pharmacotherapy?</p>",
+   "options": [
+    "Daily sildenafil",
+    "Daily sertraline",
+    "Testosterone gel",
+    "Tamsulosin before intercourse",
+    "Bupropion"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has lifelong premature ejaculation with distress and no ED. When behavioural therapy fails and a topical anaesthetic is not acceptable, a daily SSRI (sertraline or paroxetine, off-label in the US) is the most effective drug option; serotonin acting centrally delays the ejaculatory reflex. Counsel about nausea, fatigue and reduced libido, and about tapering rather than stopping abruptly.</p><p><strong>Takeaway:</strong> Lifelong premature ejaculation not helped by behavioural measures responds to daily SSRIs.</p>",
+   "whyNot": {
+    "A": "PDE-5 inhibitors help premature ejaculation mainly when it coexists with ED; his erections are normal.",
+    "C": "He has no features of hypogonadism, and testosterone does not delay ejaculation.",
+    "D": "Alpha-blockers can impair emission but are not a recommended treatment for premature ejaculation.",
+    "E": "Bupropion has little serotonergic activity and does not delay ejaculation."
+   },
+   "objective": "Choose a daily SSRI for lifelong premature ejaculation after behavioural therapy fails.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "psychiatry"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ejaculation"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old man and his 29-year-old female partner have been unable to conceive after 15 months of regular intercourse. Her evaluation, including ovulation testing, tubal patency and ovarian reserve, is normal. He is healthy and takes no medications. Examination while standing shows a palpable left-sided varicocele that enlarges with Valsalva; the left testis is slightly smaller than the right. Two semen analyses 6 weeks apart both show a concentration of 7 million/mL (reference at least 16 million/mL), total motility of 25% (reference at least 42%) and normal volume. Serum FSH and testosterone are normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Testosterone replacement therapy",
+    "Varicocele repair",
+    "Immediate in vitro fertilisation with ICSI",
+    "Repeat semen analysis in 12 months",
+    "Daily anastrozole"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A palpable varicocele with abnormal semen parameters in a man trying to conceive, whose partner has a normal evaluation and is under 35, is an indication for varicocele repair (microsurgical ligation or radiologic embolization). Repair improves semen parameters in many men and can improve the chance of natural conception. Results take about 3&ndash;6 months to appear because of the length of spermatogenesis.</p><p><strong>Takeaway:</strong> Repair a clinical varicocele in an infertile man with abnormal semen and a partner with normal fertility.</p>",
+   "whyNot": {
+    "A": "Testosterone suppresses spermatogenesis and would worsen his semen parameters.",
+    "C": "IVF with ICSI is reasonable if repair fails or the partner's age limits time, but she is 29 with normal fertility, so a correctable male factor should be treated first.",
+    "D": "Waiting another year without treating a correctable cause delays conception.",
+    "E": "Aromatase inhibitors are used in selected men with a low testosterone-to-estradiol ratio, which he does not have, and do not correct a varicocele."
+   },
+   "objective": "Recommend varicocele repair for an infertile man with a clinical varicocele and abnormal semen analysis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infertility",
+    "scrotal mass"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 33-year-old man has used testosterone gel for 2 years for hypogonadotropic hypogonadism associated with obesity; his symptoms improved. He and his partner now want to conceive. He has lost 18 kg over the past year, and his BMI is now 27 kg/m&sup2;. Testes are 12 mL bilaterally. Semen analysis shows a sperm concentration of 0.5 million/mL (reference at least 16 million/mL). Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Double the testosterone gel dose",
+    "Stop testosterone and begin hCG injections",
+    "Continue testosterone and add an aromatase inhibitor",
+    "Proceed directly to IVF with ICSI",
+    "Continue testosterone and repeat semen analysis in 6 months"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Exogenous testosterone suppresses LH and FSH and therefore intratesticular testosterone and sperm production. In a man with secondary hypogonadism who wants fertility, testosterone should be stopped, and hCG (acting on the LH receptor to stimulate Leydig cells and raise intratesticular testosterone) begun, adding FSH if sperm production does not recover. His weight loss may also allow some recovery of his own axis.</p><p><strong>Takeaway:</strong> For fertility in secondary hypogonadism, stop testosterone and use hCG (with FSH as needed).</p>",
+   "whyNot": {
+    "A": "More testosterone would suppress gonadotropins further and worsen sperm production.",
+    "C": "Adding an aromatase inhibitor does not overcome the gonadotropin suppression caused by continued testosterone.",
+    "D": "IVF is premature when spermatogenesis is likely to recover with hormonal treatment.",
+    "E": "Continuing testosterone keeps spermatogenesis suppressed; repeating the test changes nothing."
+   },
+   "objective": "Stop exogenous testosterone and start hCG when a man with secondary hypogonadism wants fertility.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infertility",
+    "endocrine"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 20-year-old transgender woman comes to the clinic to start gender-affirming hormone therapy with estradiol and spironolactone. She has had a persistent, well-documented gender identity since childhood and meets criteria for treatment, and she has given informed consent after discussing the expected effects. She says she might want to have biological children in the future. She has not had any genital surgery. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Start hormones now and plan sperm banking after 1 year of therapy",
+    "Offer sperm cryopreservation before starting hormones",
+    "Advise that fertility is unaffected by these hormones",
+    "Recommend orchiectomy before starting estradiol",
+    "Delay hormone therapy until she has had children"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Estradiol and antiandrogens suppress gonadotropins and spermatogenesis, and recovery after stopping is unpredictable. Guidelines recommend counselling about fertility before gender-affirming hormones start and offering sperm cryopreservation (ideally several samples) beforehand. Banking does not require delaying treatment for long, and she can begin hormones once samples are stored. She should also know that hormones are not reliable contraception.</p><p><strong>Takeaway:</strong> Offer sperm banking before starting feminising hormones; spermatogenesis may not recover reliably afterwards.</p>",
+   "whyNot": {
+    "A": "After a year of estradiol and spironolactone, sperm production is often severely reduced, so banking at that point is less likely to succeed.",
+    "C": "These hormones do impair spermatogenesis, and saying otherwise denies her an informed choice.",
+    "D": "Orchiectomy is a later, optional surgery and would end fertility with her own sperm unless banked first.",
+    "E": "Delaying needed gender-affirming care is not required; banking addresses her fertility wishes without postponing treatment."
+   },
+   "objective": "Offer sperm cryopreservation before feminising hormone therapy in transgender women.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance",
+    "communication"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gender-affirming care",
+    "fertility"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Second messenger raised by PDE-5 inhibitors in cavernosal smooth muscle?",
+   "back": "cGMP (via NO and guanylyl cyclase).",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Second messenger raised by alprostadil?",
+   "back": "cAMP (adenylyl cyclase).",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Cause of blue-tinged vision with sildenafil?",
+   "back": "Cross-inhibition of retinal PDE-6.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Mechanism of trazodone-induced priapism?",
+   "back": "Alpha-1 antagonism prevents detumescence.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Corporal blood gas in ischemic priapism?",
+   "back": "Dark blood with low pH, low PO2 and high PCO2.",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Why are nitrates contraindicated with PDE-5 inhibitors?",
+   "back": "Both raise cGMP; combined vasodilation causes severe hypotension.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Nervous control of emission versus expulsion?",
+   "back": "Emission sympathetic (T10&ndash;L2) with bladder neck closure; expulsion somatic (pudendal).",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 2,
+   "front": "LH and FSH in primary versus secondary hypogonadism?",
+   "back": "High in primary; low or inappropriately normal in secondary.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "How do anabolic steroids cause azoospermia?",
+   "back": "Suppress LH and FSH, lowering intratesticular testosterone.",
+   "question": 5
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Mechanism of tamsulosin-induced 'dry' orgasm?",
+   "back": "Alpha-1A blockade leaves the bladder neck open: retrograde ejaculation.",
+   "question": 6
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Semen profile of congenital bilateral absence of the vas deferens?",
+   "back": "Low volume, acidic, fructose-negative, azoospermic; CFTR variants.",
+   "question": 7
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Why is varicocele more common on the left?",
+   "back": "Left testicular vein enters the left renal vein at a right angle.",
+   "question": 8
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Mechanism of clomiphene in male secondary hypogonadism?",
+   "back": "Blocks hypothalamic estrogen feedback, raising LH and FSH.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "How long does spermatogenesis take?",
+   "back": "About 2.5 months; semen reflects the previous ~3 months.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 3,
+   "front": "Initial labs in a man with new ED?",
+   "back": "Glucose or HbA1c, lipids and morning total testosterone.",
+   "question": 9
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "First step in ischemic priapism after analgesia?",
+   "back": "Corporal aspiration and intracavernosal phenylephrine.",
+   "question": 11
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Ischemic priapism refractory to aspiration and phenylephrine?",
+   "back": "Distal corporoglanular shunt.",
+   "question": 12
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Initial management of non-ischemic priapism after perineal trauma?",
+   "back": "Observation; embolization if persistent.",
+   "question": 13
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Drug treatment for lifelong premature ejaculation after behavioural therapy?",
+   "back": "Daily SSRI (or topical anaesthetic).",
+   "question": 14
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "How long to avoid nitrates after tadalafil?",
+   "back": "About 48 hours (about 24 hours after sildenafil or vardenafil).",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 4,
+   "front": "Secondary hypogonadism with high prolactin: next step?",
+   "back": "Pituitary MRI.",
+   "question": 10
+  },
+  {
+   "n": 22,
+   "section": 4,
+   "front": "Palpable varicocele, abnormal semen, partner with normal fertility: management?",
+   "back": "Varicocele repair.",
+   "question": 15
+  },
+  {
+   "n": 23,
+   "section": 4,
+   "front": "Hypogonadal man on testosterone who wants children?",
+   "back": "Stop testosterone; start hCG (add FSH as needed).",
+   "question": 16
+  },
+  {
+   "n": 24,
+   "section": 4,
+   "front": "Fertility counselling before feminising hormones?",
+   "back": "Offer sperm cryopreservation before starting.",
+   "question": 17
+  },
+  {
+   "n": 25,
+   "section": 4,
+   "front": "Hematocrit threshold to withhold testosterone therapy?",
+   "back": "Above 54%.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 4,
+   "front": "Genetic tests for non-obstructive azoospermia?",
+   "back": "Karyotype and Y-chromosome microdeletion testing.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Test for low-volume ejaculate with suspected retrograde ejaculation?",
+   "back": "Post-ejaculatory urinalysis for sperm.",
+   "question": null
+  }
+ ]
+}

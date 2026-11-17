@@ -1,0 +1,724 @@
+{
+ "area": "14.01.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Microbiology and host response in male genital infections",
+   "html": "<p>Most infections of the male genital tract begin in the urethra and climb. The organisms that do this differ by age and exposure: in sexually active people they are mainly <em>Neisseria gonorrhoeae</em>, <em>Chlamydia trachomatis</em> and <em>Mycoplasma genitalium</em>; in older men, after catheterisation, or after insertive anal intercourse they are mainly enteric gram-negative rods such as <em>Escherichia coli</em>. Viruses (mumps, herpes simplex) and spirochetes reach the genitals by other routes. Knowing the organism's structure explains which drugs work and why reinfection is common.</p>\n[[figure:s23f-fig140101-1]]\n<h3>Neisseria gonorrhoeae</h3>\n<p>A gram-negative, oxidase-positive diplococcus that ferments glucose but not maltose (which separates it from <em>N. meningitidis</em>). It grows on enriched selective chocolate agar (modified Thayer-Martin), but nucleic acid amplification testing (NAAT) has replaced culture for diagnosis; culture still matters when resistance testing is needed. Key virulence features:</p>\n<ul>\n<li><strong>Type IV pili and Opa proteins</strong> mediate attachment to columnar urethral epithelium. Both undergo <strong>antigenic and phase variation</strong> through gene recombination, so an infection does not leave protective immunity and repeat infections are common. This is also why there is no licensed gonococcal vaccine.</li>\n<li><strong>Lipooligosaccharide</strong> (LOS, lacking the long O-antigen of LPS) drives the intense neutrophilic inflammation that produces purulent discharge.</li>\n<li><strong>IgA1 protease</strong> cleaves mucosal IgA.</li>\n</ul>\n<p>People with deficiencies of the terminal complement components (C5 to C9) cannot form the membrane attack complex and are prone to recurrent or disseminated neisserial infection. In a Gram stain of urethral discharge, gram-negative diplococci <em>inside</em> neutrophils are diagnostic in a symptomatic man.</p>\n<h3>Chlamydia trachomatis</h3>\n<p>An obligate intracellular bacterium that depends on the host for ATP. Its cell envelope has very little peptidoglycan, so beta-lactams are unreliable. The life cycle has two forms: the small, metabolically inert <strong>elementary body</strong> is the infectious form that enters epithelial cells by endocytosis; inside a membrane-bound inclusion that avoids lysosomal fusion it becomes the larger <strong>reticulate body</strong>, which divides by binary fission and then reorganises into elementary bodies released when the cell lyses. Serovars D to K cause urethritis and epididymitis; serovars L1 to L3 cause lymphogranuloma venereum (LGV), which invades lymphatics and regional nodes. Most male infections are asymptomatic, which sustains transmission.</p>\n<h3>Mycoplasma genitalium</h3>\n<p>The smallest free-living bacteria have <strong>no cell wall</strong>; their membrane contains sterols. Beta-lactams therefore have no target, Gram stain shows nothing, and routine culture is impractical, so diagnosis is by NAAT. It is a leading cause of persistent or recurrent non-gonococcal urethritis after doxycycline, and macrolide resistance is widespread, so treatment is guided by resistance testing where available.</p>\n<h3>Agents of genital ulcers</h3>\n<table class=\"hy\">\n<thead><tr><th>Organism</th><th>Biology</th><th>Lesion and nodes</th></tr></thead>\n<tbody>\n<tr><td><em>Treponema pallidum</em> (syphilis)</td><td>Spirochete; too thin for Gram stain; not cultured routinely; detected by PCR, dark-field microscopy or serology</td><td>Single painless, indurated, clean-based chancre; firm, nontender nodes</td></tr>\n<tr><td>Herpes simplex virus (usually HSV-2; HSV-1 increasingly)</td><td>Enveloped double-stranded DNA virus; latency in sacral dorsal root ganglia; reactivation causes recurrences</td><td>Grouped painful vesicles that erode to shallow ulcers; tender nodes in primary infection</td></tr>\n<tr><td><em>Haemophilus ducreyi</em> (chancroid)</td><td>Small gram-negative coccobacillus that clusters in chains on smear; fastidious culture</td><td>Painful, ragged, purulent ulcer; tender nodes that can suppurate (buboes)</td></tr>\n<tr><td><em>C. trachomatis</em> L1 to L3 (LGV)</td><td>Obligate intracellular; invades lymphatic tissue</td><td>Small transient painless papule, then painful inguinal or femoral nodes; proctocolitis after receptive anal exposure</td></tr>\n<tr><td><em>Klebsiella granulomatis</em> (granuloma inguinale)</td><td>Gram-negative rod seen in macrophages as Donovan bodies on tissue crush preparation</td><td>Painless, beefy-red, friable ulcer that bleeds easily; no true adenopathy</td></tr>\n</tbody></table>\n<div class=\"pearl\"><p>Pain and the base of the ulcer separate the classic causes: painless and clean suggests syphilis; painless and beefy-red suggests granuloma inguinale; painful vesicles suggest herpes; painful and purulent with suppurating nodes suggests chancroid. In practice more than one agent can coexist, so test rather than rely on appearance.</p></div>\n<h3>Mumps orchitis</h3>\n<p>Mumps virus is an enveloped, single-stranded, negative-sense RNA paramyxovirus. After respiratory entry and viremia it targets glandular tissue. In postpubertal males, orchitis typically follows parotitis by several days; it is usually unilateral. Inflammation within the unyielding tunica albuginea raises intratesticular pressure, causes ischemic pressure necrosis of seminiferous tubules, and can leave an atrophic testis. Infertility is uncommon but possible, especially when both testes are involved. Two doses of MMR vaccine are the prevention.</p>\n<h3>Host anatomy that matters</h3>\n<p>The scrotal skin and fascia are supplied by the external and internal pudendal arteries, whereas the testis receives the testicular artery from the abdominal aorta. In Fournier gangrene, a polymicrobial necrotising infection that tracks along the fascial planes of the perineum and abdominal wall (Colles fascia, dartos and Scarpa fascia), the testes therefore usually survive even when scrotal skin is necrotic.</p>\n<h3>Drugs by mechanism</h3>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Mechanism</th><th>Exam-relevant adverse effects</th></tr></thead>\n<tbody>\n<tr><td>Ceftriaxone</td><td>Third-generation cephalosporin; binds penicillin-binding proteins and blocks peptidoglycan cross-linking</td><td>Biliary sludge; hypersensitivity</td></tr>\n<tr><td>Doxycycline</td><td>Binds the 30S subunit and blocks aminoacyl-tRNA attachment</td><td>Photosensitivity, pill esophagitis, tooth discoloration in young children</td></tr>\n<tr><td>Azithromycin</td><td>Binds the 50S subunit and blocks translocation</td><td>GI upset, QT prolongation</td></tr>\n<tr><td>Levofloxacin, moxifloxacin</td><td>Inhibit DNA gyrase (topoisomerase II) and topoisomerase IV; concentrate well in prostatic tissue</td><td>Tendinopathy and rupture, QT prolongation, dysglycemia, aortic aneurysm warning</td></tr>\n<tr><td>Penicillin G benzathine</td><td>Cell-wall synthesis inhibitor; depot gives prolonged low levels suited to slow-dividing treponemes</td><td>Jarisch-Herxheimer reaction (cytokine release from lysed spirochetes), allergy</td></tr>\n<tr><td>Acyclovir, valacyclovir</td><td>Guanosine analogues phosphorylated first by viral thymidine kinase; inhibit viral DNA polymerase</td><td>Crystalline nephropathy if poorly hydrated</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>A man whose urethritis persists after a cephalosporin may not have gonococcal resistance: an organism without a cell wall (<em>M. genitalium</em>) or with almost none (<em>Chlamydia</em>) is untouched by beta-lactams. Think about the target, not just the drug class.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Gonorrhea"
+    },
+    {
+     "statpearls": "Chlamydia trachomatis Infection"
+    },
+    {
+     "statpearls": "Fournier Gangrene"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Urethritis, epididymitis, orchitis and prostatitis: diagnosis and treatment",
+   "html": "<p>This section covers the syndromes a clinician meets most often: urethritis, epididymitis, orchitis and prostatitis. Torsion must be excluded whenever acute scrotal pain is the complaint (see traumatic and mechanical disorders). Throughout, record the patient's anatomy and partners' anatomy rather than assumptions: a transgender woman who has not had genital surgery has a penis, urethra, prostate and possibly testes, and is evaluated for these syndromes like any patient with that anatomy; after vaginoplasty the prostate remains in place.</p>\n<h3>Urethritis</h3>\n<p>Typical symptoms are dysuria, urethral itching and discharge (purulent in gonorrhea, often scant and mucoid in chlamydia), but many infections are silent. Urethritis is confirmed by any of: mucopurulent discharge on exam; a Gram stain of urethral secretions with at least 2 white cells per oil-immersion field; a positive leukocyte esterase test on first-void urine; or at least 10 white cells per high-power field in first-void urine sediment. Every patient gets NAAT for gonorrhea and chlamydia (first-void urine, or swabs of exposed sites: pharynx and rectum when there is oral or receptive anal exposure), plus HIV and syphilis testing.</p>\n<table class=\"hy\">\n<thead><tr><th>Situation</th><th>Preferred treatment (CDC, adults)</th></tr></thead>\n<tbody>\n<tr><td>Gonorrhea (urethral, rectal or pharyngeal)</td><td>Ceftriaxone 500 mg IM once (1 g if weight is 150 kg or more); add doxycycline 100 mg twice daily for 7 days if chlamydia has not been excluded</td></tr>\n<tr><td>Chlamydia</td><td>Doxycycline 100 mg twice daily for 7 days; azithromycin is an alternative when adherence or pregnancy makes doxycycline unsuitable</td></tr>\n<tr><td>Nongonococcal urethritis, organism not yet known</td><td>Doxycycline 100 mg twice daily for 7 days</td></tr>\n<tr><td>Persistent or recurrent urethritis after treatment</td><td>Test for <em>M. genitalium</em> (and trichomonas); treat by resistance result: doxycycline first, then moxifloxacin if macrolide-resistant or resistance unknown, or high-dose azithromycin if macrolide-sensitive</td></tr>\n<tr><td>Trichomonas in a person with a penis</td><td>Metronidazole 2 g orally once</td></tr>\n</tbody></table>\n<p>Patients abstain from sex for 7 days after treatment and until partners are treated. Partners from the previous 60 days are evaluated; expedited partner therapy is used where law allows. Everyone treated for gonorrhea or chlamydia is retested about 3 months later because reinfection is common. Pharyngeal gonorrhea needs a test of cure 7 to 14 days after treatment because it is harder to eradicate.</p>\n<div class=\"trap\"><p>The old regimen of ceftriaxone 250 mg plus azithromycin was replaced in 2020-2021. Higher-dose ceftriaxone monotherapy treats gonorrhea; doxycycline is added only to cover untested or proven chlamydia, not to \"double cover\" the gonococcus.</p></div>\n<h3>Epididymitis</h3>\n<p>Epididymitis produces unilateral scrotal pain and swelling that builds over hours to days, often with urinary symptoms or discharge. The epididymis is tender and indurated (tail before head), the testis usually lies normally, and the cremasteric reflex is preserved. Elevation relieving pain (Prehn sign) is a weak discriminator and should never be used to rule out torsion. Doppler ultrasonography shows increased epididymal blood flow; if the story or exam allows torsion, the patient goes to urology rather than waiting for a scan. Send urinalysis, urine culture and NAAT for gonorrhea and chlamydia.</p>\n<table class=\"hy\">\n<thead><tr><th>Likely organisms</th><th>Typical patient</th><th>Empiric regimen (CDC)</th></tr></thead>\n<tbody>\n<tr><td>Gonorrhea or chlamydia</td><td>Sexually active, often younger than 35</td><td>Ceftriaxone 500 mg IM once plus doxycycline 100 mg twice daily for 10 days</td></tr>\n<tr><td>Sexually transmitted plus enteric organisms</td><td>Practises insertive anal intercourse</td><td>Ceftriaxone 500 mg IM once plus levofloxacin 500 mg daily for 10 days</td></tr>\n<tr><td>Enteric organisms only</td><td>Older man with bladder outlet obstruction, recent catheter or cystoscopy, no STI risk</td><td>Levofloxacin 500 mg daily for 10 days</td></tr>\n</tbody></table>\n<p>Supportive care includes scrotal elevation, ice and NSAIDs. Failure to improve within about 3 days prompts reassessment for abscess, testicular infarction, tumour, tuberculosis or fungal infection (in immunosuppressed patients). In prepubertal boys epididymitis is usually a post-infectious inflammatory process managed with analgesia; antibiotics are reserved for pyuria or a positive culture, and bacterial epididymitis in a young boy prompts evaluation for a urinary tract anomaly. Amiodarone can cause a sterile, dose-related epididymitis. Older men with chronic or recurrent episodes should be checked for retention and tuberculosis.</p>\n<h3>Orchitis</h3>\n<p>Isolated orchitis is mostly viral, with mumps the classic cause in an unvaccinated or incompletely vaccinated adolescent or young adult. Bacterial orchitis is usually an extension of epididymitis (epididymo-orchitis) and is treated as above. Mumps is confirmed by buccal-swab PCR or serology, care is supportive (analgesia, support, ice), and the case is reported to public health. Counsel about possible atrophy; semen analysis can be considered later if fertility is a concern.</p>\n<h3>Prostatitis</h3>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Acute bacterial</th><th>Chronic bacterial</th></tr></thead>\n<tbody>\n<tr><td>Presentation</td><td>Fever, chills, dysuria, perineal or rectal pain, obstructive voiding; may be septic</td><td>Relapsing urinary infections with the same organism, mild pelvic discomfort, afebrile between episodes</td></tr>\n<tr><td>Examination</td><td>Exquisitely tender, warm, boggy prostate; examine gently once and do not massage</td><td>Often normal</td></tr>\n<tr><td>Testing</td><td>Midstream urine Gram stain and culture; blood cultures if febrile; STI NAAT if sexually active; post-void residual</td><td>Lower urinary tract localisation (urine before and after prostatic massage)</td></tr>\n<tr><td>Treatment</td><td>Fluoroquinolone or TMP-SMX if outpatient and stable; IV broad-spectrum therapy if septic; total course usually weeks</td><td>Prolonged fluoroquinolone course (commonly 4 to 6 weeks)</td></tr>\n</tbody></table>\n<p>Prostatic massage during acute infection is avoided because it is very painful and may cause bacteremia. Acute retention is relieved by catheter drainage; many urologists prefer a suprapubic tube or a brief in-and-out catheter over an indwelling urethral catheter. Persistent fever after 48 to 72 hours of appropriate therapy suggests a <strong>prostatic abscess</strong>, best shown by transrectal ultrasonography or CT or MRI, and treated with drainage plus antibiotics. Abscess risk is higher with diabetes, immunosuppression and recent instrumentation. Acute prostatitis after transrectal biopsy is often caused by fluoroquinolone-resistant <em>E. coli</em>, so local resistance shapes the empiric choice.</p>\n<div class=\"pearl\"><p>Prostate-specific antigen rises during prostatitis. Do not order it during an acute infection, and if it was measured, repeat it weeks after recovery before acting on it.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Epididymitis"
+    },
+    {
+     "statpearls": "Acute Bacterial Prostatitis"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Genital ulcers, balanitis, Fournier gangrene and STI prevention",
+   "html": "<p>Genital ulcers, balanitis and Fournier gangrene share a theme: the appearance of a lesion is a clue, but tests and timing decide management. This section also covers prevention, including doxycycline post-exposure prophylaxis (doxy-PEP).</p>\n<h3>Genital ulcer disease</h3>\n<p>In the United States, herpes is the most common cause, followed by syphilis; chancroid, LGV and granuloma inguinale are uncommon and often travel-associated or outbreak-related. Mpox can also produce painful genital or perianal lesions. Every patient with a genital ulcer needs syphilis serology and HSV testing of the lesion (NAAT preferred), plus HIV testing; add <em>H. ducreyi</em> testing or LGV NAAT when the picture or exposure suggests them.</p>\n<table class=\"hy\">\n<thead><tr><th>Cause</th><th>Key test</th><th>Treatment</th></tr></thead>\n<tbody>\n<tr><td>Primary or secondary syphilis</td><td>Nontreponemal (RPR, VDRL) plus treponemal antibody; lesion PCR or dark-field where available</td><td>Benzathine penicillin G 2.4 million units IM once; doxycycline 100 mg twice daily for 14 days if nonpregnant and penicillin-allergic</td></tr>\n<tr><td>Genital herpes, first episode</td><td>HSV NAAT of the lesion; type-specific serology helps only when no lesion is present</td><td>Oral acyclovir or valacyclovir for 7 to 10 days; episodic or daily suppressive therapy for recurrences</td></tr>\n<tr><td>Chancroid</td><td>Clinical diagnosis after excluding syphilis and HSV; special culture or NAAT</td><td>Azithromycin 1 g orally once or ceftriaxone 250 mg IM once; fluctuant nodes may need aspiration or incision</td></tr>\n<tr><td>LGV</td><td>C. trachomatis NAAT of lesion, node aspirate or rectum (genotyping where available)</td><td>Doxycycline 100 mg twice daily for 21 days</td></tr>\n<tr><td>Granuloma inguinale</td><td>Donovan bodies on tissue crush preparation or biopsy</td><td>Azithromycin for at least 3 weeks and until lesions heal</td></tr>\n</tbody></table>\n<p>After syphilis treatment, nontreponemal titers are repeated at about 6 and 12 months; a fourfold fall marks an adequate response. Treponemal tests stay positive for life and are not used to follow treatment. Fever, headache and myalgia within 24 hours of the first dose is the Jarisch-Herxheimer reaction, treated with antipyretics, not by stopping therapy. Neurologic, ocular or otic symptoms at any stage call for neurosyphilis evaluation and IV aqueous penicillin.</p>\n<div class=\"trap\"><p>A painless ulcer with a negative nontreponemal test does not exclude syphilis: antibodies may not have formed yet in early primary disease. Treat presumptively when exposure is likely and repeat serology, or use a treponemal test or lesion PCR.</p></div>\n<h3>Balanitis and balanoposthitis</h3>\n<p>Inflammation of the glans (balanitis) or of the glans and foreskin (balanoposthitis) is most common in uncircumcised males. Causes include <em>Candida</em> (favoured by diabetes, SGLT2 inhibitor use, antibiotics and poor hygiene), irritant or allergic contact dermatitis, streptococcal infection in young boys, and sexually transmitted infections. Candidal balanitis shows red, glazed plaques with satellite papules or pustules; KOH preparation confirms it, and topical azoles treat it. Check glucose in any man with candidal balanitis, because it can be the presenting sign of diabetes. Recurrent episodes may require circumcision. Balanitis that persists despite treatment in an older man needs biopsy to exclude lichen sclerosus or penile intraepithelial neoplasia. Circinate balanitis (painless, serpiginous, shallow erosions) points to reactive arthritis.</p>\n<h3>Fournier gangrene</h3>\n<p>Fournier gangrene is necrotising fasciitis of the perineum, scrotum and penis. It is polymicrobial (aerobic gram-negative rods, streptococci, staphylococci and anaerobes) and arises from colorectal, urogenital or skin sources. Risk factors include diabetes, obesity, alcohol use disorder, immunosuppression, chronic urinary catheters, perineal trauma or surgery, and SGLT2 inhibitor therapy (an FDA safety warning). Early signs are pain out of proportion to the visible findings, swelling, fever and tachycardia; later the skin turns dusky or black, crepitus appears, bullae form and the patient becomes septic.</p>\n<ul>\n<li><strong>Diagnosis is clinical.</strong> Imaging (CT shows fascial gas and fluid) helps only when the diagnosis is genuinely uncertain and must not delay surgery.</li>\n<li><strong>Management</strong>: fluid resuscitation, broad-spectrum IV antibiotics covering gram-positives including MRSA, gram-negatives and anaerobes (for example vancomycin plus piperacillin-tazobactam, often with clindamycin to suppress toxin production), and <strong>emergency surgical debridement</strong> with planned re-look operations. Stop SGLT2 inhibitors. Diversion (colostomy or suprapubic cystostomy) is used when needed, and reconstruction follows.</li>\n<li>Mortality remains substantial and rises with delay to debridement.</li>\n</ul>\n<h3>Prevention: vaccination, PrEP and doxy-PEP</h3>\n<p>HPV vaccination is routine at ages 11 to 12 (can start at 9) with catch-up through 26, and shared decision-making through 45. Hepatitis B vaccination is recommended for all adults aged 19 to 59 and for older adults with risk factors; hepatitis A vaccination is offered to men who have sex with men. HIV pre-exposure prophylaxis is offered to people with ongoing risk.</p>\n<p><strong>Doxy-PEP</strong> (CDC, 2024): a single dose of doxycycline 200 mg taken as soon as possible, and within 72 hours, after condomless oral, anal or vaginal sex. It is recommended for gay, bisexual and other men who have sex with men, and for transgender women, who have had a bacterial STI (syphilis, chlamydia or gonorrhea) in the past 12 months. It sharply reduces syphilis and chlamydia and reduces gonorrhea less, because tetracycline resistance in the gonococcus is common. Evidence was insufficient to recommend it for cisgender women and heterosexual cisgender men. Users continue STI screening every 3 to 6 months, take no more than one 200 mg dose in 24 hours, and are counselled about photosensitivity and pill esophagitis.</p>\n<div class=\"pearl\"><p>Doxy-PEP is a prescription for after sex, not a daily antibiotic. It does not prevent HIV, so it is offered alongside HIV PrEP and routine testing, not instead of them.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Syphilis"
+    },
+    {
+     "statpearls": "Chancroid"
+    },
+    {
+     "statpearls": "Balanitis"
+    },
+    {
+     "label": "CDC: STI Treatment Guidelines",
+     "url": "https://www.cdc.gov/std/treatment-guidelines/default.htm",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Ascending and hematogenous routes of infection in the male genital tract, with the organisms typical of each route."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Fever and perineal pain in a 58-year-old man"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 22-year-old man comes to the clinic because of burning on urination and a thick yellow urethral discharge for 3 days. He was treated for the same condition 8 months ago and had a negative test after that treatment. A Gram stain of the discharge shows gram-negative diplococci within neutrophils. Which of the following best explains why this patient remained susceptible to infection by the same organism?</p>",
+   "options": [
+    "Antigenic variation of surface pilin and outer membrane proteins",
+    "Capsular polysaccharide that resists phagocytosis",
+    "Exotoxin that inactivates elongation factor 2",
+    "Intracellular survival within inclusion bodies of macrophages",
+    "Production of a beta-lactamase that degrades ceftriaxone"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Gram-negative intracellular diplococci in urethral pus indicate <em>Neisseria gonorrhoeae</em>. Its type IV pili and Opa proteins switch antigenic type by recombination among silent gene copies, so antibodies made during one infection do not recognise the next strain or variant. This is the reason natural infection gives no lasting immunity and no vaccine is licensed.</p><p><strong>Takeaway:</strong> Repeat gonococcal infections reflect antigenic and phase variation of pili and Opa proteins, not failed treatment.</p>",
+   "whyNot": {
+    "B": "A polysaccharide capsule is a key virulence factor of <em>N. meningitidis</em>, not the gonococcus, and would not explain reinfection after a cure.",
+    "C": "Inactivation of elongation factor 2 is the action of diphtheria toxin and Pseudomonas exotoxin A.",
+    "D": "Survival within inclusion bodies describes Chlamydia, an obligate intracellular organism that would not be seen as diplococci on Gram stain.",
+    "E": "His earlier infection was cured, so resistance does not explain a new infection; it also says nothing about immunity."
+   },
+   "objective": "Explain how antigenic variation of gonococcal pili and Opa proteins permits repeated infection.",
+   "disciplines": [
+    "microbiology",
+    "immunology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "urethritis",
+    "bacterial virulence"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 30-year-old man has dysuria and a scant clear urethral discharge 3 weeks after completing a 7-day course of doxycycline for nongonococcal urethritis. He reports no new sexual partners. First-void urine NAAT is negative for <em>Neisseria gonorrhoeae</em> and <em>Chlamydia trachomatis</em> but positive for an organism that cannot be seen on Gram stain and does not grow in routine culture. A 23S rRNA mutation is detected. The causal organism is unaffected by penicillins because of which of the following features?</p>",
+   "options": [
+    "Absence of a peptidoglycan cell wall",
+    "Efflux pump that exports beta-lactams",
+    "Methylation of the 23S ribosomal RNA",
+    "Mutation in penicillin-binding protein 2",
+    "Outer membrane porin loss"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Persistent urethritis after doxycycline with negative gonorrhea and chlamydia tests points to <em>Mycoplasma genitalium</em>. Mycoplasmas have no cell wall (their membrane contains sterols), so beta-lactams, which block peptidoglycan cross-linking, have no target. The 23S rRNA mutation is a separate finding that predicts macrolide resistance, which guides the choice between azithromycin and moxifloxacin after doxycycline.</p><p><strong>Takeaway:</strong> Mycoplasma lacks a cell wall, so cell-wall-active drugs never work; macrolide resistance arises from 23S rRNA mutations.</p>",
+   "whyNot": {
+    "B": "Efflux pumps contribute to resistance in organisms such as gonococci, but Mycoplasma is intrinsically insensitive to beta-lactams regardless of efflux.",
+    "C": "23S rRNA alteration confers macrolide resistance; it has no bearing on beta-lactam activity.",
+    "D": "Altered penicillin-binding proteins explain penicillin resistance in pneumococci or reduced cephalosporin susceptibility in gonococci; Mycoplasma has no peptidoglycan for these enzymes to build.",
+    "E": "Porin loss limits drug entry in some gram-negative rods; Mycoplasma has no outer membrane."
+   },
+   "objective": "Relate the lack of a cell wall in Mycoplasma genitalium to its intrinsic resistance to beta-lactams.",
+   "disciplines": [
+    "microbiology",
+    "pharmacology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "urethritis",
+    "antimicrobial resistance"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old man has a positive first-void urine NAAT for <em>Chlamydia trachomatis</em> on routine screening. He has no symptoms. Which form of the organism is responsible for transmitting the infection to a new host cell?</p>",
+   "options": [
+    "Elementary body taken up by endocytosis",
+    "Endospore resistant to desiccation",
+    "Reticulate body released by budding",
+    "Spirochete penetrating intact mucosa",
+    "Trophozoite attaching by an adhesive disc"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p><em>C. trachomatis</em> alternates between two forms. The small, metabolically inactive elementary body is the infectious particle: it binds columnar epithelium and is taken in by endocytosis, then converts to the reticulate body, which replicates by binary fission inside an inclusion before reorganising into new elementary bodies.</p><p><strong>Takeaway:</strong> Elementary bodies infect; reticulate bodies replicate.</p>",
+   "whyNot": {
+    "B": "Endospores are formed by Bacillus and Clostridium species, not by Chlamydia.",
+    "C": "Reticulate bodies are the replicating intracellular form and are not infectious; release occurs by cell lysis or extrusion, not budding.",
+    "D": "Penetration of mucosa by a spirochete describes <em>Treponema pallidum</em>.",
+    "E": "An adhesive disc is a feature of the Giardia trophozoite, an intestinal protozoan."
+   },
+   "objective": "Identify the elementary body as the infectious form of Chlamydia trachomatis.",
+   "disciplines": [
+    "microbiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "sexually transmitted infections"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 20-year-old college student comes to student health because of painful swelling of his right testis for 1 day. Six days ago he developed fever and painful swelling in front of both ears. Several students in his residence hall have had a similar illness. He did not receive childhood vaccines. The right testis is swollen, warm and diffusely tender. Which of the following best describes the genome of the most likely causal agent?</p>",
+   "options": [
+    "Double-stranded DNA, enveloped",
+    "Double-stranded RNA, segmented, nonenveloped",
+    "Single-stranded RNA, negative-sense, enveloped",
+    "Single-stranded RNA, positive-sense, nonenveloped",
+    "Single-stranded DNA, nonenveloped"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Parotitis followed several days later by unilateral orchitis in an unvaccinated young man is mumps. Mumps virus is a paramyxovirus: an enveloped, nonsegmented, single-stranded, negative-sense RNA virus that carries its own RNA-dependent RNA polymerase. Orchitis results from viremic spread to the testis, where swelling inside the tunica albuginea can cause pressure atrophy.</p><p><strong>Takeaway:</strong> Mumps orchitis is caused by an enveloped negative-sense RNA paramyxovirus and is prevented by MMR vaccination.</p>",
+   "whyNot": {
+    "A": "Enveloped double-stranded DNA describes herpesviruses, which cause vesicular genital lesions rather than parotitis with orchitis.",
+    "B": "Segmented double-stranded RNA without an envelope describes rotavirus, a cause of infant gastroenteritis.",
+    "D": "Nonenveloped positive-sense RNA viruses include enteroviruses such as coxsackievirus; they can rarely cause orchitis but not this outbreak of parotitis.",
+    "E": "Nonenveloped single-stranded DNA describes parvovirus B19, which causes erythema infectiosum and aplastic crises."
+   },
+   "objective": "Identify mumps virus as an enveloped negative-sense RNA paramyxovirus that causes postpubertal orchitis.",
+   "disciplines": [
+    "microbiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "orchitis",
+    "viral infections"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 54-year-old man has had three episodes of <em>Escherichia coli</em> urinary tract infection in 1 year, each with the same antibiotic susceptibility pattern. Between episodes he has mild perineal discomfort. Urine collected after prostatic massage grows the same organism at a higher count than urine collected before massage. He is prescribed a 4-week course of an oral drug chosen for its high concentration in prostatic tissue. The drug's labeling warns about tendon rupture. This drug acts by inhibiting which of the following?</p>",
+   "options": [
+    "Bacterial dihydrofolate reductase",
+    "DNA gyrase and topoisomerase IV",
+    "Peptidoglycan transpeptidation",
+    "The 30S ribosomal subunit",
+    "The 50S ribosomal subunit"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Recurrent infection with the same organism, localised to the prostate by the pre- and post-massage urine test, is chronic bacterial prostatitis. Fluoroquinolones such as levofloxacin penetrate prostatic tissue well and are given for several weeks. They inhibit DNA gyrase (topoisomerase II) and topoisomerase IV, blocking DNA supercoiling and separation of daughter chromosomes. Tendinopathy and rupture, especially in older adults and those taking glucocorticoids, is a boxed warning.</p><p><strong>Takeaway:</strong> Chronic bacterial prostatitis is treated with a prolonged fluoroquinolone course; fluoroquinolones inhibit DNA gyrase and topoisomerase IV.</p>",
+   "whyNot": {
+    "A": "Trimethoprim inhibits bacterial dihydrofolate reductase and is an alternative for prostatitis, but it does not carry the tendon-rupture warning.",
+    "C": "Beta-lactams block transpeptidation; they penetrate the prostate poorly and do not cause tendon rupture.",
+    "D": "Tetracyclines bind the 30S subunit; they are not the standard choice for enteric gram-negative prostatitis and do not cause tendon rupture.",
+    "E": "Macrolides bind the 50S subunit and are not used for <em>E. coli</em> prostatitis."
+   },
+   "objective": "Identify the mechanism of the fluoroquinolones used for chronic bacterial prostatitis and their tendon toxicity.",
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "prostate",
+    "antibiotics"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 63-year-old man with poorly controlled type 2 diabetes undergoes emergency debridement for a rapidly spreading necrotizing infection of the perineum and scrotum. Most of the scrotal skin and dartos fascia is necrotic and is excised. Both testes are pink, bleed when incised and are preserved. Which of the following best explains the viability of the testes?</p>",
+   "options": [
+    "The testes are drained by the pampiniform plexus to the inferior vena cava on both sides",
+    "The testes are enclosed by the tunica vaginalis, which is impermeable to bacteria",
+    "The testes receive arterial blood from branches of the abdominal aorta",
+    "The testes receive arterial blood from the external pudendal arteries",
+    "The testes receive arterial blood from the inferior epigastric arteries"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Fournier gangrene spreads along the superficial perineal (Colles), dartos and Scarpa fascial planes and thromboses the small vessels that supply the scrotal skin, which come from the external and internal pudendal arteries. The testes are supplied separately by the testicular arteries, which arise from the abdominal aorta and travel in the spermatic cord, so they are usually spared.</p><p><strong>Takeaway:</strong> In Fournier gangrene the testes usually survive because their blood supply comes from the aorta, not from the pudendal vessels that supply the scrotum.</p>",
+   "whyNot": {
+    "A": "Venous drainage does not explain arterial perfusion; also, the left testicular vein drains to the left renal vein, not directly to the inferior vena cava.",
+    "B": "The tunica vaginalis is a serous sac, not a barrier that reliably stops necrotizing infection; preservation reflects blood supply.",
+    "D": "The external pudendal arteries supply the scrotal skin, which is exactly the tissue that became necrotic.",
+    "E": "The inferior epigastric artery gives a small cremasteric branch but is not the main testicular supply."
+   },
+   "objective": "Explain testicular sparing in Fournier gangrene by the aortic origin of the testicular arteries.",
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "necrotizing soft-tissue infection",
+    "scrotal anatomy"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 27-year-old man returns from several months of travel and has a painful ulcer on the coronal sulcus for 6 days. It has ragged, undermined edges and a gray purulent base, and bleeds easily. A tender, fluctuant left inguinal lymph node is present. Dark-field microscopy and HSV NAAT of the lesion are negative. A smear of the ulcer base shows small gram-negative coccobacilli arranged in parallel chains. Which of the following is the most likely causal organism?</p>",
+   "options": [
+    "Chlamydia trachomatis serovar L2",
+    "Haemophilus ducreyi",
+    "Herpes simplex virus type 2",
+    "Klebsiella granulomatis",
+    "Treponema pallidum"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A painful, ragged, purulent ulcer with a tender suppurative inguinal node, after syphilis and herpes are excluded, is chancroid. <em>Haemophilus ducreyi</em> is a small gram-negative coccobacillus that often lines up in chains on smear. Treatment is single-dose azithromycin or ceftriaxone, with drainage of fluctuant nodes when needed.</p><p><strong>Takeaway:</strong> Painful ulcer plus suppurative bubo plus gram-negative coccobacilli in chains indicates <em>H. ducreyi</em>.</p>",
+   "whyNot": {
+    "A": "LGV begins with a small painless papule that heals before painful adenopathy appears; the organism is intracellular and not seen as coccobacilli on smear.",
+    "C": "Herpes causes grouped vesicles and shallow painful erosions, and the lesion NAAT was negative.",
+    "D": "Granuloma inguinale produces a painless beefy-red ulcer and Donovan bodies within macrophages, without suppurative nodes.",
+    "E": "A syphilitic chancre is painless and indurated with a clean base, and dark-field microscopy was negative."
+   },
+   "objective": "Identify Haemophilus ducreyi as the cause of a painful genital ulcer with suppurative inguinal lymphadenitis.",
+   "disciplines": [
+    "microbiology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "genital ulcers"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 23-year-old man comes to an urgent care clinic because of dysuria and a purulent urethral discharge for 2 days. He has had two female partners in the past month and uses condoms inconsistently. He weighs 78 kg (172 lb) and has no drug allergies. Temperature is 37.0°C (98.6°F). There is copious yellow discharge at the meatus; testes and epididymides are normal. A Gram stain of the discharge shows gram-negative intracellular diplococci. First-void urine NAAT for gonorrhea and chlamydia has been sent and results will be available in 3 days. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Azithromycin 2 g orally once",
+    "Ceftriaxone 250 mg IM once plus azithromycin 1 g orally once",
+    "Ceftriaxone 500 mg IM once plus doxycycline 100 mg orally twice daily for 7 days",
+    "Ciprofloxacin 500 mg orally once",
+    "Doxycycline 100 mg orally twice daily for 7 days"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The Gram stain establishes gonococcal urethritis. Current CDC treatment is a single dose of ceftriaxone 500 mg IM (1 g if weight is 150 kg or more). Because chlamydia has not yet been excluded and NAAT results are days away, doxycycline 100 mg twice daily for 7 days is added. He should abstain for 7 days, his partners need evaluation or expedited therapy, and he should be retested in about 3 months.</p><p><strong>Takeaway:</strong> Gonorrhea: ceftriaxone 500 mg IM once, plus doxycycline for 7 days unless chlamydia has been excluded.</p>",
+   "whyNot": {
+    "A": "Azithromycin monotherapy is not recommended for gonorrhea because of rising macrolide resistance, and it does not cover the possibility of chlamydia as reliably as doxycycline.",
+    "B": "This dual regimen was the earlier standard and has been replaced; the ceftriaxone dose is now higher and azithromycin is no longer the companion drug.",
+    "D": "Fluoroquinolones are no longer recommended for gonorrhea because resistance is widespread.",
+    "E": "Doxycycline alone treats chlamydia and nongonococcal urethritis but does not reliably treat gonorrhea, which this Gram stain confirms."
+   },
+   "objective": "Select the current CDC regimen for gonococcal urethritis when chlamydia has not been excluded.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "tags": [
+    "urethritis",
+    "sexually transmitted infections"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 71-year-old man comes to the emergency department because of left scrotal pain and swelling that began gradually 2 days ago. He had flexible cystoscopy for hematuria 5 days ago, which was normal. He has benign prostatic hyperplasia treated with tamsulosin. He has been married to the same partner for 40 years and reports no other partners. The left epididymis is swollen and tender, the testis lies normally, and the cremasteric reflex is present bilaterally. Doppler ultrasonography shows an enlarged hyperemic left epididymis with normal testicular blood flow.</p><table><thead><tr><th>Measurement</th><th>Result</th></tr></thead><tbody><tr><td>Temperature</td><td>38.0°C (100.4°F)</td></tr><tr><td>Pulse</td><td>92/min</td></tr><tr><td>Blood pressure</td><td>138/80 mm Hg</td></tr><tr><td>Leukocytes</td><td>12,800/mm<sup>3</sup> (12.8 x 10<sup>9</sup>/L)</td></tr><tr><td>Creatinine</td><td>1.0 mg/dL (88 umol/L)</td></tr><tr><td>Urinalysis</td><td>Leukocyte esterase positive, nitrite positive, 30-50 WBC/hpf</td></tr></tbody></table><p>Urine culture is pending. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Ceftriaxone 500 mg IM once plus doxycycline 100 mg orally twice daily for 10 days",
+    "Levofloxacin 500 mg orally daily for 10 days",
+    "Metronidazole 500 mg orally twice daily for 7 days",
+    "Nitrofurantoin 100 mg orally twice daily for 5 days",
+    "Scrotal support and NSAIDs without antibiotics"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>An older man with bladder outlet obstruction, recent instrumentation, no STI risk and a nitrite-positive urine most likely has epididymitis caused by enteric gram-negative rods. The CDC regimen for epididymitis caused by enteric organisms alone is levofloxacin 500 mg daily for 10 days; the regimen is adjusted when culture results return. He is febrile but hemodynamically stable, so oral outpatient therapy is reasonable.</p><p><strong>Takeaway:</strong> Epididymitis from likely enteric organisms (older age, obstruction, instrumentation, no STI risk) is treated with a fluoroquinolone such as levofloxacin for 10 days.</p>",
+   "whyNot": {
+    "A": "Ceftriaxone plus doxycycline targets gonorrhea and chlamydia in sexually active patients and would not reliably cover enteric organisms after cystoscopy.",
+    "C": "Metronidazole treats trichomonas and anaerobes, which are not the cause here.",
+    "D": "Nitrofurantoin reaches therapeutic levels only in bladder urine and does not treat infection of the epididymis or other tissue.",
+    "E": "Supportive care alone suits post-infectious epididymitis in young boys, not a febrile man with pyuria and bacteriuria."
+   },
+   "objective": "Choose levofloxacin for epididymitis likely caused by enteric organisms in an older man after instrumentation.",
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "tags": [
+    "scrotal pain",
+    "older adults"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 58-year-old man comes to the emergency department because of fever, chills, burning urination and deep perineal pain for 1 day. He has had to strain to void since this morning. He has hypertension treated with lisinopril. Temperature is 39.2°C (102.6°F), pulse is 104/min and blood pressure is 128/76 mm Hg. A gentle digital rectal examination shows an exquisitely tender, warm, boggy prostate. Bladder scan shows a post-void residual of 180 mL. Leukocyte count is 15,600/mm<sup>3</sup> (15.6 x 10<sup>9</sup>/L). Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    "Culture of secretions expressed by prostatic massage",
+    "Midstream urine culture and blood cultures",
+    "Serum prostate-specific antigen",
+    "Transrectal prostate biopsy",
+    "Urethral swab Gram stain only"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Fever, perineal pain, obstructive voiding and a tender boggy prostate indicate acute bacterial prostatitis. The organism is identified from a midstream urine culture, with blood cultures because he is febrile and tachycardic. Antibiotics are started right after the cultures are collected.</p><p><strong>Takeaway:</strong> In acute bacterial prostatitis, culture urine and blood; do not massage the prostate.</p>",
+   "whyNot": {
+    "A": "Prostatic massage during acute infection is very painful and can seed the bloodstream; it is reserved for evaluation of chronic prostatitis.",
+    "C": "PSA rises with prostatic inflammation and would be misleading; it has no role in diagnosing acute prostatitis.",
+    "D": "Biopsy is contraindicated during acute infection and does not identify the organism.",
+    "E": "A urethral Gram stain may help when urethritis is suspected, but on its own it misses the enteric gram-negative rods that usually cause prostatitis at this age."
+   },
+   "objective": "Obtain urine and blood cultures, and avoid prostatic massage, in suspected acute bacterial prostatitis.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "prostate",
+    "fever"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient is admitted and treated with IV piperacillin-tazobactam after cultures are drawn. Urine culture grows <em>Escherichia coli</em> susceptible to the antibiotic. Seventy-two hours later he still has temperatures to 38.9°C (102.0°F) and severe perineal pain. Blood cultures are negative. The prostate remains tender, with a soft area on the left. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Add vancomycin and continue current therapy",
+    "Cystoscopy with retrograde urethrography",
+    "Obtain serum prostate-specific antigen",
+    "Switch to oral trimethoprim-sulfamethoxazole for discharge",
+    "Transrectal ultrasonography of the prostate"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Persistent fever after 48 to 72 hours of an antibiotic to which the organism is susceptible, with a fluctuant area in the gland, suggests a prostatic abscess. Transrectal ultrasonography (or CT or MRI) defines the collection and can guide drainage, which is combined with continued antibiotics.</p><p><strong>Takeaway:</strong> Acute prostatitis that does not respond within 48 to 72 hours calls for imaging to look for an abscess that needs drainage.</p>",
+   "whyNot": {
+    "A": "The organism is susceptible to current therapy; adding MRSA coverage does not address an undrained collection.",
+    "B": "Cystoscopy and urethrography evaluate the bladder and urethra, not the prostatic parenchyma, and instrumentation during infection is avoided.",
+    "C": "PSA will be raised by the infection and does not change management.",
+    "D": "Stepping down to oral therapy is appropriate after clinical improvement, which has not occurred."
+   },
+   "objective": "Image the prostate to detect an abscess when acute prostatitis fails to improve after 48 to 72 hours of appropriate antibiotics.",
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "prostate",
+    "complications"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old man comes to the clinic because of a sore on his penis for 10 days. It is not painful. He has sex with men and has had four partners in the past 3 months. Examination shows a single 1-cm ulcer with a clean base and firm, indurated border on the shaft, and bilateral rubbery, nontender inguinal lymph nodes. Rapid plasma reagin is reactive at 1:32 and a treponemal antibody test is positive. HIV testing is negative. He has no drug allergies and no neurologic or visual symptoms. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Azithromycin 1 g orally once",
+    "Benzathine penicillin G 2.4 million units IM once",
+    "Benzathine penicillin G 2.4 million units IM weekly for 3 weeks",
+    "Doxycycline 100 mg orally twice daily for 21 days",
+    "Valacyclovir 1 g orally twice daily for 10 days"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A painless indurated ulcer with nontender adenopathy and reactive nontreponemal and treponemal tests is primary syphilis. A single IM dose of benzathine penicillin G 2.4 million units treats primary, secondary and early latent syphilis. He should be warned about the Jarisch-Herxheimer reaction, have RPR repeated at 6 and 12 months, be offered HIV PrEP, and, given his recent bacterial STI, be offered doxy-PEP.</p><p><strong>Takeaway:</strong> Primary syphilis is treated with one IM dose of benzathine penicillin G 2.4 million units.</p>",
+   "whyNot": {
+    "A": "Azithromycin treats chancroid; macrolide resistance in <em>T. pallidum</em> makes it unreliable for syphilis.",
+    "C": "Three weekly doses are for late latent syphilis or syphilis of unknown duration, not a primary chancre.",
+    "D": "A 21-day doxycycline course treats LGV; doxycycline for syphilis is an alternative only with penicillin allergy, and the course is 14 days for early syphilis.",
+    "E": "Valacyclovir treats genital herpes, which causes painful vesicles and erosions rather than a painless indurated ulcer."
+   },
+   "objective": "Treat primary syphilis with a single IM dose of benzathine penicillin G.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "tags": [
+    "genital ulcers"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 31-year-old transgender woman comes for a routine visit. She takes estradiol and spironolactone and has not had genital surgery. She takes daily tenofovir disoproxil fumarate-emtricitabine for HIV pre-exposure prophylaxis. Six months ago she was treated for rectal chlamydia. She has condomless receptive anal sex with cisgender male partners about twice a month and asks whether anything else can lower her risk of bacterial STIs. HIV and STI screening today are negative. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    "Azithromycin 1 g orally once weekly",
+    "Ceftriaxone 500 mg IM every 3 months",
+    "Doxycycline 100 mg orally once daily",
+    "Doxycycline 200 mg orally once within 72 hours after condomless sex",
+    "Penicillin V 500 mg orally twice daily"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>CDC recommends doxycycline post-exposure prophylaxis for men who have sex with men and transgender women who have had a bacterial STI (syphilis, chlamydia or gonorrhea) in the past 12 months. The dose is a single 200 mg tablet taken as soon as possible, and within 72 hours, after condomless oral, anal or vaginal sex, with no more than one dose in 24 hours. Screening for STIs continues every 3 to 6 months, and HIV PrEP continues.</p><p><strong>Takeaway:</strong> Doxy-PEP is doxycycline 200 mg once within 72 hours after condomless sex for MSM and transgender women with a recent bacterial STI.</p>",
+   "whyNot": {
+    "A": "Weekly azithromycin is not a recommended prevention strategy and would promote macrolide resistance.",
+    "B": "Periodic ceftriaxone injections are not a prevention strategy and would not cover chlamydia or syphilis.",
+    "C": "Daily continuous doxycycline is not the studied or recommended regimen; doxy-PEP is event-driven.",
+    "E": "Daily oral penicillin is not used to prevent STIs and would not cover chlamydia."
+   },
+   "objective": "Recommend event-driven doxycycline post-exposure prophylaxis for an eligible transgender woman.",
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 4,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "tags": [
+    "STI prevention",
+    "gender-affirming care"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old man is brought to the emergency department because of severe scrotal and perineal pain that began 1 day ago and is spreading. He has type 2 diabetes treated with metformin and empagliflozin. Temperature is 38.9°C (102.0°F), pulse is 118/min and blood pressure is 96/58 mm Hg. The scrotum is swollen and erythematous with a dusky patch near the perineum; palpation shows crepitus and causes pain far greater than the visible findings suggest. Glucose is 312 mg/dL (17.3 mmol/L) and leukocyte count is 21,000/mm<sup>3</sup> (21 x 10<sup>9</sup>/L). IV fluids and broad-spectrum antibiotics are started. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Bedside needle aspiration of the scrotum for Gram stain",
+    "Emergency surgical debridement",
+    "Hyperbaric oxygen therapy",
+    "MRI of the pelvis",
+    "Scrotal ultrasonography with Doppler"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Pain out of proportion, crepitus, dusky skin and septic shock in a man with diabetes taking an SGLT2 inhibitor indicate Fournier gangrene. With this clinical picture, imaging only delays care; the patient needs resuscitation, broad-spectrum antibiotics and emergency surgical debridement of all necrotic tissue, usually with planned repeat operations. Empagliflozin is stopped.</p><p><strong>Takeaway:</strong> Fournier gangrene is a surgical emergency; do not delay debridement for imaging when the diagnosis is clinically clear.</p>",
+   "whyNot": {
+    "A": "Aspiration does not drain or remove necrotic fascia and delays definitive treatment.",
+    "C": "Hyperbaric oxygen is at most an adjunct in selected centres and never replaces debridement.",
+    "D": "MRI can show fascial involvement when the diagnosis is uncertain, but here it would delay life-saving surgery.",
+    "E": "Ultrasonography can show gas or testicular flow but adds nothing that changes the need for immediate debridement."
+   },
+   "objective": "Proceed directly to surgical debridement in clinically evident Fournier gangrene.",
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "necrotizing soft-tissue infection",
+    "prescription-drug adverse effects"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which fermentation result separates Neisseria gonorrhoeae from N. meningitidis?",
+   "back": "The gonococcus ferments glucose only; the meningococcus ferments glucose and maltose.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Why does gonorrhea not produce lasting immunity?",
+   "back": "Pilin and Opa proteins undergo antigenic and phase variation.",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which complement defect predisposes to recurrent neisserial infection?",
+   "back": "Deficiency of a terminal component (C5 to C9), which prevents membrane attack complex formation.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Which chlamydial form is infectious, and which replicates?",
+   "back": "Elementary body infects; reticulate body replicates by binary fission in an inclusion.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Why are beta-lactams useless against Mycoplasma genitalium?",
+   "back": "It has no peptidoglycan cell wall.",
+   "question": 2
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Where does HSV establish latency after genital infection?",
+   "back": "Sacral dorsal root (sensory) ganglia.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which genital ulcer shows Donovan bodies?",
+   "back": "Granuloma inguinale (Klebsiella granulomatis): a painless, beefy-red ulcer that bleeds easily.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why are the testes usually spared in Fournier gangrene?",
+   "back": "Testicular arteries arise from the aorta, separate from the pudendal supply of the scrotal skin.",
+   "question": 6
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Current CDC treatment for uncomplicated gonorrhea in an adult under 150 kg?",
+   "back": "Ceftriaxone 500 mg IM once; add doxycycline 100 mg twice daily for 7 days if chlamydia is not excluded.",
+   "question": 8
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "First-line treatment for chlamydia in a nonpregnant adult?",
+   "back": "Doxycycline 100 mg twice daily for 7 days.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Name the four findings that each confirm urethritis.",
+   "back": "Mucopurulent discharge; at least 2 WBC per oil-immersion field on Gram stain; positive leukocyte esterase on first-void urine; at least 10 WBC/hpf in first-void sediment.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Empiric epididymitis regimen when enteric organisms alone are likely?",
+   "back": "Levofloxacin 500 mg daily for 10 days.",
+   "question": 9
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Epididymitis regimen for a man who has insertive anal sex?",
+   "back": "Ceftriaxone 500 mg IM once plus levofloxacin 500 mg daily for 10 days.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "What should be avoided on exam in acute bacterial prostatitis?",
+   "back": "Prostatic massage (painful, risks bacteremia).",
+   "question": 10
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Fever persists 72 hours into appropriate therapy for acute prostatitis. What is suspected and how is it found?",
+   "back": "Prostatic abscess; transrectal ultrasonography, CT or MRI.",
+   "question": 11
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "When is a test of cure required after gonorrhea treatment?",
+   "back": "For pharyngeal infection, 7 to 14 days after treatment.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Treatment of primary syphilis in a nonpregnant adult without allergy?",
+   "back": "Benzathine penicillin G 2.4 million units IM once.",
+   "question": 12
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "How is response to syphilis treatment monitored?",
+   "back": "A fourfold fall in nontreponemal titer (RPR or VDRL) at 6 to 12 months.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Doxy-PEP dose and timing?",
+   "back": "Doxycycline 200 mg once, within 72 hours after condomless sex; at most one dose per 24 hours.",
+   "question": 13
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Who is doxy-PEP recommended for by CDC?",
+   "back": "MSM and transgender women with a bacterial STI in the past 12 months.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Which diabetes drug class carries an FDA warning for Fournier gangrene?",
+   "back": "SGLT2 inhibitors.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "What test should a man with candidal balanitis have?",
+   "back": "Blood glucose or HbA1c, because the balanitis can reveal diabetes.",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Treatment for lymphogranuloma venereum?",
+   "back": "Doxycycline 100 mg twice daily for 21 days.",
+   "question": null
+  }
+ ]
+}

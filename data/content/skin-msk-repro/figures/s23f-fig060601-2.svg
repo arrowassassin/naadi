@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 510" width="760" height="510" role="img" aria-label="Two body outlines comparing the adult rule of nines with a young child, in whom the head is about 18 percent and each leg about 14 percent of body surface area" font-family="sans-serif">
+<title>Two body outlines comparing the adult rule of nines with a young child, in whom the head is about 18 percent and each leg about 14 percent of body surface area</title>
+<rect x="0" y="0" width="760" height="510" fill="#ffffff"/>
+<text x="20" y="30" font-size="16" font-weight="bold" fill="#0f172a">Estimating burned body surface area</text>
+<text x="20" y="60" font-size="14" font-weight="bold" fill="#0f172a">Adult (rule of nines)</text>
+<circle cx="140" cy="116" r="26" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="140" y="121" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">9%</text>
+<rect x="95" y="146" width="90" height="140" rx="8" fill="#f3c6b1" stroke="#334155" stroke-width="1.5"/>
+<text x="140" y="206" font-size="12" text-anchor="middle" fill="#0f172a">Front 18%</text>
+<text x="140" y="226" font-size="12" text-anchor="middle" fill="#0f172a">Back 18%</text>
+<rect x="69" y="150" width="26" height="130" rx="10" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="48" y="216" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">9%</text>
+<rect x="100" y="288" width="38" height="150" rx="10" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="119" y="363.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">18%</text>
+<rect x="185" y="150" width="26" height="130" rx="10" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="232" y="216" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">9%</text>
+<rect x="142" y="288" width="38" height="150" rx="10" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="161" y="363.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">18%</text>
+<text x="20" y="470" font-size="12" fill="#0f172a">Each arm 9%, each leg 18%, perineum 1%.</text>
+<text x="400" y="60" font-size="14" font-weight="bold" fill="#0f172a">Young child</text>
+<circle cx="520" cy="124" r="34" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="520" y="129" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">18%</text>
+<rect x="475" y="162" width="90" height="140" rx="8" fill="#f3c6b1" stroke="#334155" stroke-width="1.5"/>
+<text x="520" y="222" font-size="12" text-anchor="middle" fill="#0f172a">Front 18%</text>
+<text x="520" y="242" font-size="12" text-anchor="middle" fill="#0f172a">Back 18%</text>
+<rect x="449" y="166" width="26" height="130" rx="10" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="428" y="232" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">9%</text>
+<rect x="480" y="304" width="38" height="120" rx="10" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="499" y="364.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">14%</text>
+<rect x="565" y="166" width="26" height="130" rx="10" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="612" y="232" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">9%</text>
+<rect x="522" y="304" width="38" height="120" rx="10" fill="#f6d9b8" stroke="#334155" stroke-width="1.5"/>
+<text x="541" y="364.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">14%</text>
+<text x="400" y="470" font-size="12" fill="#0f172a">Head larger (about 18%), each leg about 14%.</text>
+<text x="20" y="495" font-size="12" fill="#0f172a">Leg percentages are front plus back. For small or scattered burns, the patient's palm with fingers is about 1%.</text>
+</svg>

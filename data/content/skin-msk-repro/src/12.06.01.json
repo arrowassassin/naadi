@@ -1,0 +1,904 @@
+{
+ "area": "12.06.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Teratology: timing, placental transfer and mechanisms",
+   "html": "<p>A teratogen is an exposure that causes a structural or functional abnormality in the embryo or fetus. Whether harm occurs depends on four things: <strong>the agent, the dose, the timing and the genotype</strong> of both parent and fetus. Most medicines are not teratogens, and the baseline risk of a major malformation in any pregnancy is about 3%. The Step 1 skill is to connect each classic teratogen to its mechanism and its sensitive window.</p>\n<h2>Timing</h2>\n<ul>\n<li><strong>Weeks 0 to 2 after conception (about 2 to 4 weeks from the last menstrual period):</strong> the \"all-or-none\" period. Cells are still totipotent; an exposure either kills the conceptus or is fully repaired.</li>\n<li><strong>Weeks 3 to 8 (embryonic period):</strong> organogenesis. Major structural malformations arise here, and each organ has its own peak window (the neural tube closes by about day 28; the heart septates during weeks 3 to 8; the palate fuses by about week 9 to 10).</li>\n<li><strong>Weeks 9 to term (fetal period):</strong> growth and functional maturation. Exposures cause growth restriction, organ dysfunction (renal, CNS) and minor anomalies rather than major malformations. The brain stays vulnerable throughout pregnancy.</li>\n</ul>\n[[figure:s23f-fig120601-1]]\n<h2>Placental transfer</h2>\n<p>Most drugs cross the placenta by passive diffusion. Transfer is greater for drugs that are lipid-soluble, small (below about 500 to 600 Da), un-ionized at physiologic pH and unbound to plasma protein. Large molecules (insulin, heparin and low-molecular-weight heparin) cross poorly, which is why they are preferred in pregnancy. IgG antibodies, including monoclonal antibodies, cross actively by the FcRn receptor, mostly in the third trimester. The placenta also metabolizes some drugs: <strong>11-beta-hydroxysteroid dehydrogenase type 2</strong> converts cortisol and prednisolone to inactive forms, protecting the fetus, but betamethasone and dexamethasone resist it, so they are the steroids used to mature fetal lungs.</p>\n<h2>Mechanisms of the classic teratogens</h2>\n<table class=\"hy\"><thead><tr><th>Mechanism</th><th>Drugs</th><th>Typical effects</th></tr></thead><tbody>\n<tr><td>Folate antagonism</td><td>Methotrexate, trimethoprim, and (through other pathways as well) valproate, carbamazepine and phenytoin</td><td>Neural tube defects, cardiac defects, oral clefts; methotrexate causes skull and limb anomalies and pregnancy loss</td></tr>\n<tr><td>Retinoic acid receptor activation</td><td>Isotretinoin, acitretin, high-dose vitamin A</td><td>Disrupted neural crest migration and HOX gene patterning: microtia, cleft palate, conotruncal heart defects, thymic hypoplasia, CNS malformations</td></tr>\n<tr><td>Vitamin K antagonism</td><td>Warfarin</td><td>Weeks 6 to 12: nasal hypoplasia and stippled epiphyses (impaired carboxylation of bone proteins). Later: fetal intracranial hemorrhage</td></tr>\n<tr><td>Renin-angiotensin blockade</td><td>ACE inhibitors, ARBs, direct renin inhibitors</td><td>Second and third trimesters: fetal hypotension and renal failure, oligohydramnios, pulmonary hypoplasia, limb contractures, skull hypoossification</td></tr>\n<tr><td>Prostaglandin synthesis inhibition</td><td>NSAIDs</td><td>From about 20 weeks: fetal renal dysfunction and oligohydramnios; after about 30 weeks: premature constriction of the ductus arteriosus</td></tr>\n<tr><td>Angiogenesis inhibition, cereblon binding</td><td>Thalidomide</td><td>Limb reduction defects (phocomelia), ear and heart defects; narrow window early in organogenesis</td></tr>\n<tr><td>Histone deacetylase inhibition and other effects</td><td>Valproate</td><td>Spina bifida, cardiac and limb defects, lower IQ and higher autism risk with dose-dependent effect</td></tr>\n<tr><td>Androgen or antiandrogen action</td><td>Testosterone, danazol; spironolactone, finasteride</td><td>Virilization of a female fetus; undervirilization (such as hypospadias) of a male fetus</td></tr>\n<tr><td>Calcium chelation in bone and teeth</td><td>Tetracyclines</td><td>Tooth discoloration, enamel hypoplasia, reduced bone growth</td></tr>\n<tr><td>Eighth-nerve toxicity</td><td>Aminoglycosides (streptomycin, kanamycin)</td><td>Sensorineural hearing loss</td></tr>\n<tr><td>Uterine contraction and vascular disruption</td><td>Misoprostol (failed abortion)</td><td>Mobius sequence (facial nerve palsy), limb defects</td></tr>\n</tbody></table>\n<p>Other important associations are lithium (a small absolute increase in Ebstein anomaly and other cardiac defects), methimazole (aplasia cutis of the scalp, choanal and esophageal atresia), mycophenolate (pregnancy loss, microtia and oral clefts), phenytoin (fetal hydantoin syndrome with hypoplastic nails and distal phalanges), topiramate (oral clefts), fluconazole at high doses (skeletal and craniofacial anomalies) and diethylstilbestrol (vaginal clear cell adenocarcinoma and uterine anomalies in exposed offspring).</p>\n<h2>Alcohol, tobacco and other substances</h2>\n<ul>\n<li><strong>Alcohol</strong> is the most common preventable cause of intellectual disability. Ethanol and acetaldehyde cause apoptosis of neural crest and neuronal precursors and disturb neuronal migration. Fetal alcohol syndrome combines a smooth philtrum, thin upper lip and short palpebral fissures with growth deficiency, microcephaly and neurodevelopmental impairment; No amount or timing is known to be safe.</li>\n<li><strong>Tobacco smoke</strong>: nicotine constricts uteroplacental vessels, and carbon monoxide shifts the oxygen dissociation curve left and lowers oxygen delivery. Effects are fetal growth restriction, placental abruption and previa, preterm birth, preterm rupture of membranes, oral clefts and sudden infant death.</li>\n<li><strong>Cocaine and amphetamines</strong> are vasoconstrictors: placental abruption, growth restriction and preterm birth.</li>\n<li><strong>Cannabis</strong>: THC crosses the placenta and enters milk; exposure is associated with lower birth weight, and no use is considered safe.</li>\n<li><strong>Opioids</strong> are not major structural teratogens; their main fetal effect is neonatal withdrawal.</li>\n</ul>\n<h2>Radiation and heat</h2>\n<p>Ionizing radiation damages dividing cells. Below about 50 mGy (5 rad), fetal dose has not been associated with anomalies or loss, and almost all diagnostic radiographs and single CT scans fall below it. Higher doses cause pregnancy loss in the first 2 weeks after conception and microcephaly and intellectual disability later, with greatest CNS sensitivity at about 8 to 15 weeks after conception. Radioactive iodine is contraindicated in pregnancy because the fetal thyroid concentrates iodine from about 10 to 12 weeks of gestation. High maternal fever in early pregnancy is associated with neural tube defects.</p>\n<div class=\"bridge\"><p>Most teratogens have a \"two-stage\" story. Early in pregnancy they disturb patterning or cell migration (malformations); later the same class can disturb organ function (renal failure with ACE inhibitors, ductal constriction with NSAIDs, hemorrhage with warfarin).</p></div>\n<div class=\"trap\"><p>ACE inhibitors are best known for damage in the second and third trimesters, not the first. Their effect is hemodynamic: the fetal kidney depends on angiotensin II to maintain glomerular filtration.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Teratogenic Medications"
+    },
+    {
+     "statpearls": "Fetal Alcohol Syndrome"
+    },
+    {
+     "statpearls": "Warfarin"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Pharmacology of uterotonics, tocolytics, magnesium and labor analgesia",
+   "html": "<p>Drugs given in labor act on the myometrium, the uterine vessels, the neuromuscular junction and the fetus. Their adverse effects follow directly from their receptors, which is what Step 1 asks.</p>\n<h2>Uterotonics</h2>\n<table class=\"hy\"><thead><tr><th>Drug</th><th>Mechanism</th><th>Key adverse effects and cautions</th></tr></thead><tbody>\n<tr><td>Oxytocin</td><td>Gq-coupled oxytocin receptor on myometrium; phospholipase C, IP3 and intracellular calcium; receptor density rises sharply at term</td><td>Tachysystole and fetal heart-rate changes; hyponatremia and water intoxication with high doses in hypotonic fluid (structural similarity to vasopressin, V2 receptor activation); hypotension with rapid undiluted IV bolus</td></tr>\n<tr><td>Methylergonovine</td><td>Ergot alkaloid; partial agonist at alpha-adrenergic and serotonin 5-HT2 receptors causing sustained smooth-muscle contraction</td><td>Vasoconstriction, severe hypertension, coronary spasm; avoid in hypertension, preeclampsia and coronary disease; interacts with strong CYP3A4 inhibitors</td></tr>\n<tr><td>Carboprost</td><td>15-methyl prostaglandin F2-alpha analogue</td><td>Bronchoconstriction (avoid in asthma), diarrhea, vomiting, fever, pulmonary hypertension</td></tr>\n<tr><td>Misoprostol</td><td>Prostaglandin E1 analogue</td><td>Fever and shivering, diarrhea; also used for cervical ripening</td></tr>\n<tr><td>Dinoprostone</td><td>Prostaglandin E2 for cervical ripening</td><td>Tachysystole; removable vaginal insert allows rapid withdrawal</td></tr>\n<tr><td>Tranexamic acid</td><td>Lysine analogue that blocks plasminogen binding to fibrin (antifibrinolytic)</td><td>Given early in postpartum hemorrhage; benefit is lost if started more than 3 hours after birth</td></tr>\n</tbody></table>\n<h2>Tocolytics</h2>\n<p>Tocolytics delay preterm delivery for about 48 hours, enough to complete antenatal corticosteroids, give magnesium for neuroprotection and transfer to a hospital with a NICU. None improves neonatal outcome by itself.</p>\n<table class=\"hy\"><thead><tr><th>Drug</th><th>Mechanism</th><th>Adverse effects</th></tr></thead><tbody>\n<tr><td>Nifedipine</td><td>Blocks L-type calcium channels in myometrium</td><td>Hypotension, flushing, headache, reflex tachycardia</td></tr>\n<tr><td>Indomethacin</td><td>Nonselective cyclooxygenase inhibitor; lowers prostaglandin-driven contraction</td><td>Fetal: constriction of the ductus arteriosus and oligohydramnios, so it is limited to before 32 weeks and about 48 hours; maternal: gastritis, platelet dysfunction</td></tr>\n<tr><td>Terbutaline</td><td>Beta-2 agonist; Gs, cAMP and protein kinase A reduce myosin light-chain kinase activity</td><td>Maternal tachycardia, arrhythmia, hyperglycemia, hypokalemia (potassium shifted into cells by Na-K-ATPase), pulmonary edema; boxed warning against prolonged or oral use for tocolysis</td></tr>\n<tr><td>Magnesium sulfate</td><td>Competes with calcium at membranes and at the neuromuscular junction</td><td>Weak tocolytic; used mainly for seizure prophylaxis and fetal neuroprotection (see below)</td></tr>\n</tbody></table>\n<h2>Magnesium sulfate</h2>\n<p>Magnesium is the drug of choice to prevent and treat eclamptic seizures and is given before 32 weeks when delivery is likely to reduce cerebral palsy in the infant. It acts as a calcium antagonist: it blocks NMDA receptor channels in the brain, relaxes vascular smooth muscle and <strong>reduces acetylcholine release at the neuromuscular junction</strong>. Magnesium is cleared entirely by the kidneys, so toxicity follows oliguria or renal impairment. Toxicity progresses in a predictable order as the level rises: loss of deep tendon reflexes, then respiratory depression, then cardiac conduction block and arrest. Monitor reflexes, respiratory rate, urine output and, when indicated, serum levels; the antidote is <strong>intravenous calcium gluconate</strong>. In the newborn, maternal magnesium can cause hypotonia and poor respiratory effort, and very prolonged exposure (more than about 5 to 7 days) has been linked to fetal bone demineralization.</p>\n<h2>Corticosteroids for fetal maturation</h2>\n<p>Betamethasone and dexamethasone cross the placenta because they are poor substrates for placental 11-beta-hydroxysteroid dehydrogenase type 2. They induce surfactant enzymes and structural maturation of the lung, and also reduce intraventricular hemorrhage and necrotizing enterocolitis. In the parent they transiently raise glucose and white-cell count. Prednisone and hydrocortisone are used instead when the aim is to treat the pregnant patient while limiting fetal exposure.</p>\n<h2>Analgesia and anesthesia in labor</h2>\n<ul>\n<li><strong>Neuraxial analgesia</strong> with dilute local anesthetic and opioid blocks sympathetic fibers as well as pain fibers, so the main adverse effect is <strong>hypotension</strong> from vasodilation, which can reduce uteroplacental perfusion. Treat with fluids, left uterine displacement and phenylephrine or ephedrine. Other effects include pruritus (from neuraxial opioids), intrapartum fever and post-dural-puncture headache.</li>\n<li><strong>Local anesthetic systemic toxicity</strong> (perioral numbness, tinnitus, seizures, then arrhythmia and cardiovascular collapse) is most dangerous with bupivacaine, which binds cardiac sodium channels tightly; treatment includes lipid emulsion.</li>\n<li><strong>Systemic opioids</strong> given close to delivery cross the placenta and can depress neonatal breathing.</li>\n</ul>\n<h2>Other drugs at delivery with neonatal effects</h2>\n<p>Beta-blockers (such as labetalol) can cause neonatal hypoglycemia and bradycardia; benzodiazepines can cause hypotonia and poor feeding; SSRIs late in pregnancy can cause a transient neonatal adaptation syndrome (jitteriness, tachypnea, poor feeding) and carry a small increase in persistent pulmonary hypertension; maternal anticonvulsants that induce hepatic enzymes increase the risk of early vitamin K deficiency bleeding.</p>\n<div class=\"pearl\"><p>Naadi memory aid for postpartum hemorrhage contraindications: \"pressure for ergots, pipes for prostaglandin F.\" Methylergonovine is avoided with high blood pressure; carboprost is avoided with reactive airways.</p></div>\n<div class=\"trap\"><p>Indomethacin is a tocolytic only before 32 weeks and for a short course. After that, its effect on the fetal ductus arteriosus outweighs its benefit.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Oxytocin"
+    },
+    {
+     "statpearls": "Magnesium Sulfate"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Prescribing in pregnancy: safer choices, substances and radiation",
+   "html": "<p>Most pregnant people take at least one prescription medicine. The Step 2 CK task is to choose a drug that treats the parent effectively with the least fetal risk, to stop or switch known teratogens before conception, and to counsel accurately about exposures that have already happened. Untreated maternal disease (seizures, depression, hypertension, asthma, infection) often harms the fetus more than the drug that treats it.</p>\n<h2>How to approach a prescribing question</h2>\n<ul>\n<li><strong>Plan ahead.</strong> About half of pregnancies are unplanned. Anyone who could become pregnant and takes a teratogen needs effective contraception or a switch to a safer drug, and preconception folic acid.</li>\n<li><strong>Use the label sections and evidence, not letters.</strong> Since 2015, the FDA Pregnancy and Lactation Labeling Rule has replaced the old A, B, C, D and X categories with narrative risk summaries. Drug-specific registries and the NIH LactMed database add data.</li>\n<li><strong>Counsel in absolute terms.</strong> A doubling of a 1-in-1,000 risk is still a 2-in-1,000 risk.</li>\n<li><strong>Do not stop essential medicines abruptly</strong> when pregnancy is discovered (antiseizure drugs, antidepressants, lithium, asthma controllers, immunosuppressants for transplant) without a plan.</li>\n</ul>\n<h2>Safer choices by condition</h2>\n<table class=\"hy\"><thead><tr><th>Condition</th><th>Preferred in pregnancy</th><th>Avoid or switch</th></tr></thead><tbody>\n<tr><td>Chronic hypertension</td><td>Labetalol, extended-release nifedipine; methyldopa</td><td>ACE inhibitors, ARBs, direct renin inhibitors; atenolol (growth restriction)</td></tr>\n<tr><td>Venous thromboembolism, prophylaxis or treatment</td><td>Low-molecular-weight heparin; unfractionated heparin near delivery</td><td>Warfarin (except selected mechanical valves after counseling); direct oral anticoagulants</td></tr>\n<tr><td>Epilepsy</td><td>Lamotrigine or levetiracetam, with level monitoring and folic acid</td><td>Valproate (and topiramate, phenobarbital, phenytoin, carbamazepine where alternatives work)</td></tr>\n<tr><td>Hyperthyroidism</td><td>Propylthiouracil in the first trimester, then methimazole</td><td>Methimazole in the first trimester; radioactive iodine</td></tr>\n<tr><td>Diabetes</td><td>Insulin</td><td>Most noninsulin agents; metformin and glyburide cross the placenta and are second-line</td></tr>\n<tr><td>Depression and anxiety</td><td>SSRIs such as sertraline; psychotherapy</td><td>Paroxetine when planning pregnancy (possible cardiac defects); benzodiazepines long term</td></tr>\n<tr><td>Bipolar disorder</td><td>Lithium with close level monitoring, or selected antipsychotics, after shared decision-making</td><td>Valproate, carbamazepine</td></tr>\n<tr><td>Nausea and vomiting</td><td>Pyridoxine with or without doxylamine; then antihistamines, metoclopramide or ondansetron</td><td>Cannabis</td></tr>\n<tr><td>Pain and fever</td><td>Acetaminophen at the lowest effective dose</td><td>NSAIDs from 20 weeks (low-dose aspirin for preeclampsia prevention is the exception); codeine</td></tr>\n<tr><td>Bacterial infection</td><td>Penicillins, cephalosporins, azithromycin; nitrofurantoin (avoid near term and, if alternatives exist, in the first trimester)</td><td>Tetracyclines, fluoroquinolones, aminoglycosides unless essential; trimethoprim in the first trimester and sulfonamides near term</td></tr>\n<tr><td>Autoimmune disease</td><td>Hydroxychloroquine, sulfasalazine, azathioprine, low-dose prednisone, tacrolimus</td><td>Methotrexate, mycophenolate, leflunomide (needs washout), cyclophosphamide</td></tr>\n<tr><td>Acne</td><td>Topical benzoyl peroxide, azelaic acid, topical erythromycin or clindamycin</td><td>Isotretinoin (iPLEDGE program), topical and oral retinoids, tetracyclines, spironolactone</td></tr>\n<tr><td>Asthma</td><td>Continue inhaled corticosteroids (budesonide has the most data) and short-acting beta agonists</td><td>Stopping controllers</td></tr>\n</tbody></table>\n<h2>Specific exposures</h2>\n<ul>\n<li><strong>Isotretinoin</strong> requires enrollment in a risk-management program with pregnancy testing before, during and after treatment and contraception as the program specifies (typically two methods unless the patient commits to abstinence). An exposed pregnancy is referred for counseling about the high risk of serious anomalies.</li>\n<li><strong>Antiseizure drugs:</strong> switch from valproate before conception when another drug controls seizures; give folic acid (at least 0.4 mg daily; higher doses are often used, per specialist advice). Lamotrigine and levetiracetam clearance rise in pregnancy, so levels are checked and doses increased, then reduced after delivery.</li>\n<li><strong>Lithium:</strong> the absolute risk of Ebstein anomaly is small. When lithium is continued, monitor levels often (clearance rises, then falls abruptly after delivery), offer fetal echocardiography and plan careful hydration at delivery.</li>\n<li><strong>Gender-affirming hormones:</strong> testosterone is contraindicated in pregnancy because it can virilize a fetus, and it does not reliably prevent pregnancy; transgender men and nonbinary people with a uterus who use testosterone and have penile-vaginal sex need contraception. Pregnant people should not handle crushed finasteride or dutasteride tablets.</li>\n<li><strong>Vaccines:</strong> inactivated vaccines are recommended in pregnancy (influenza in any trimester, Tdap at 27 to 36 weeks, RSV vaccine at 32 0/7 to 36 6/7 weeks in season unless the infant will receive nirsevimab). Live vaccines (MMR, varicella) are deferred until after delivery.</li>\n</ul>\n<h2>Alcohol, tobacco and other substances</h2>\n<p>Screen every pregnant patient for alcohol, tobacco, cannabis and other drug use with a validated tool and without judgment. Advise that no amount of alcohol is known to be safe. For tobacco, start with <strong>behavioral counseling</strong>, which the USPSTF recommends for pregnant people; evidence is insufficient to recommend pharmacotherapy routinely, though nicotine replacement may be considered when counseling fails. E-cigarettes are not recommended as cessation tools in pregnancy. For opioid use disorder, offer <strong>buprenorphine or methadone</strong>; medically supervised withdrawal raises relapse and overdose risk. Universal drug testing without consent is not recommended, and substance use disclosed in care should be handled within local reporting laws.</p>\n<h2>Imaging and radiation</h2>\n<p>Ultrasound and MRI without contrast are preferred. A medically indicated CT or radiograph should not be withheld: typical fetal doses are well below 50 mGy, the level below which no increase in anomalies or loss has been shown. Iodinated contrast can be used when needed (newborn thyroid function is checked per routine screening). Gadolinium is avoided unless it clearly changes management. Exposure counseling should state the estimated dose and the absolute risk.</p>\n<div class=\"trap\"><p>A patient who learns she is pregnant at 6 weeks while taking an antiseizure drug, an SSRI or a thyroid medicine should not stop it on her own. The embryo has already been exposed, and abrupt withdrawal risks seizures, relapse or thyroid storm. Review and adjust instead.</p></div>\n<div class=\"pearl\"><p>Folic acid at least 0.4 mg daily, started at least 1 month before conception, prevents most neural tube defects. Patients with a previous affected pregnancy take 4 mg daily.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Pregnancy Medications"
+    },
+    {
+     "statpearls": "Isotretinoin"
+    },
+    {
+     "statpearls": "Valproic Acid"
+    },
+    {
+     "label": "CDC: Vaccines during pregnancy (clinician guidance)",
+     "url": "https://www.cdc.gov/vaccines-pregnancy/hcp/vaccination-guidelines/index.html",
+     "sourceId": "cdc-guidelines"
+    },
+    {
+     "label": "USPSTF recommendation topics",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics",
+     "sourceId": "uspstf"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Drugs at delivery and during lactation: adverse effects and management",
+   "html": "<p>Obstetric drugs are powerful, and their adverse effects are tested as clinical vignettes: a patient on magnesium who stops breathing, oxytocin with an abnormal fetal heart-rate tracing, a uterotonic given to the wrong patient or a breastfeeding parent who needs a prescription.</p>\n<h2>Magnesium sulfate: use and toxicity</h2>\n<ul>\n<li><strong>Indications:</strong> seizure prophylaxis in preeclampsia with severe features and treatment of eclampsia (usually continued for 24 hours after delivery), and fetal neuroprotection when delivery is expected before 32 weeks.</li>\n<li><strong>Dosing:</strong> a 4 to 6 g intravenous load followed by 1 to 2 g per hour; the dose is reduced, and levels followed, with renal impairment.</li>\n<li><strong>Monitoring:</strong> patellar reflexes, respiratory rate, oxygen saturation, mental status and urine output at regular intervals; serum magnesium with oliguria, renal disease or signs of toxicity.</li>\n<li><strong>Toxicity:</strong> loss of reflexes, then respiratory depression, then cardiac conduction block and arrest. Stop the infusion, give <strong>calcium gluconate</strong> intravenously, support breathing and check a level. Concurrent calcium-channel blockers may add to neuromuscular weakness and hypotension.</li>\n<li><strong>Newborn:</strong> hypotonia and respiratory depression are possible; the pediatric team should know the infant was exposed.</li>\n</ul>\n<h2>Oxytocin</h2>\n<p>Tachysystole means more than 5 contractions in 10 minutes, averaged over 30 minutes. With a concerning fetal heart-rate tracing, decrease or stop oxytocin, reposition the patient, give an intravenous fluid bolus if hypotensive and, if tachysystole continues, give terbutaline. Prolonged high-dose oxytocin, especially with large volumes of hypotonic fluid, can cause water intoxication: headache, vomiting, confusion and seizures with hyponatremia. Rapid undiluted intravenous boluses can cause hypotension and are avoided. After long exposure, oxytocin receptors desensitize, raising the risk of postpartum uterine atony.</p>\n<h2>Postpartum hemorrhage drugs</h2>\n<table class=\"hy\"><thead><tr><th>Drug</th><th>Use</th><th>Do not give when</th></tr></thead><tbody>\n<tr><td>Oxytocin</td><td>First line for prevention and treatment</td><td>No absolute contraindication; avoid rapid undiluted IV bolus</td></tr>\n<tr><td>Methylergonovine (IM)</td><td>Second-line uterotonic</td><td>Hypertension, preeclampsia, coronary or cerebrovascular disease, use of strong CYP3A4 inhibitors such as some HIV protease inhibitors</td></tr>\n<tr><td>Carboprost (IM)</td><td>Second-line uterotonic</td><td>Asthma; caution in cardiac, hepatic or renal disease</td></tr>\n<tr><td>Misoprostol</td><td>Adjunct, especially where other drugs are unavailable</td><td>Few contraindications; expect fever and shivering</td></tr>\n<tr><td>Tranexamic acid</td><td>1 g IV over 10 minutes as soon as hemorrhage is diagnosed, within 3 hours of birth; a second dose may follow if bleeding continues</td><td>Started more than 3 hours after birth (no benefit); caution with active thromboembolic disease</td></tr>\n</tbody></table>\n<h2>Tocolytics in practice</h2>\n<p>Choose by gestational age and maternal disease. Nifedipine is the usual first choice from 32 to 34 weeks and is avoided with hypotension or cardiac disease. Indomethacin is used before 32 weeks for up to about 48 hours; stop it if oligohydramnios or ductal constriction appears, and avoid it with platelet dysfunction, renal disease or peptic ulcer. Terbutaline is limited to short-term use, such as treating tachysystole, and is avoided with heart disease or poorly controlled diabetes. Tocolysis is contraindicated with intrauterine fetal demise, lethal anomaly, nonreassuring fetal status, preeclampsia with severe features or eclampsia, maternal bleeding with hemodynamic instability, intra-amniotic infection, and it is generally not recommended after preterm prelabor rupture of membranes.</p>\n<h2>Drugs and breastfeeding</h2>\n<p>Most medicines pass into milk in small amounts and are compatible with breastfeeding. The infant dose depends on the drug's milk-to-plasma ratio, protein binding, oral bioavailability and half-life, and on the infant's age (preterm and newborn infants clear drugs slowly). When a choice exists, pick a drug with a short half-life, high protein binding, low oral bioavailability and an established pediatric use.</p>\n<table class=\"hy\"><thead><tr><th>Usually compatible</th><th>Avoid or use only with specialist advice</th></tr></thead><tbody>\n<tr><td>Acetaminophen, ibuprofen; short courses of oxycodone or morphine at the lowest dose</td><td>Codeine and tramadol (ultrarapid CYP2D6 metabolizers make excess active opioid; infant sedation and deaths have occurred)</td></tr>\n<tr><td>Penicillins, cephalosporins, macrolides</td><td>Chemotherapy; radioactive iodine (stop breastfeeding for that infant)</td></tr>\n<tr><td>Sertraline and most SSRIs; most antipsychotics with monitoring</td><td>Lithium (monitor infant levels, renal and thyroid function if used)</td></tr>\n<tr><td>Labetalol, nifedipine, enalapril and captopril</td><td>Amiodarone (iodine load and long half-life)</td></tr>\n<tr><td>Levothyroxine, insulin, metformin, heparin and LMWH, warfarin</td><td>Ergot alkaloids and dopamine agonists (suppress prolactin and milk)</td></tr>\n<tr><td>Progestin-only contraception and IUDs at any time</td><td>Estrogen-containing contraception in the first weeks postpartum (may reduce milk supply and adds thrombosis risk; follow US MEC)</td></tr>\n</tbody></table>\n<p>For postpartum depression, sertraline is a common first choice because infant levels are very low. Zuranolone, an oral neuroactive steroid that modulates GABA-A receptors, is approved specifically for postpartum depression as a 14-day course and causes sedation, so patients must not drive for 12 hours after a dose. Pseudoephedrine can lower milk supply. Infants exposed to sedating drugs through milk should be watched for sleepiness and poor feeding.</p>\n<div class=\"trap\"><p>Codeine is not a safe \"mild\" opioid for a breastfeeding parent. Its effect depends on CYP2D6, and an ultrarapid metabolizer can pass toxic amounts of morphine to the infant. Use nonopioid analgesia first, then a short course of a nonprodrug opioid if needed.</p></div>\n<div class=\"pearl\"><p>Pump-and-discard is rarely needed. For most drugs, including iodinated and gadolinium contrast and most general anesthetics, breastfeeding can continue once the parent is awake and alert.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Magnesium Sulfate"
+    },
+    {
+     "statpearls": "Breastfeeding"
+    },
+    {
+     "label": "CDC: US Medical Eligibility Criteria for Contraceptive Use",
+     "url": "https://www.cdc.gov/contraception/hcp/usmec/index.html",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Sensitive periods for teratogenic exposure, counted in weeks after conception, with examples by timing (original schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "First-trimester antiemetic exposure and oral clefts",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> Investigators used a national pregnancy registry to follow a cohort of 44,000 people with a live birth. Exposure was defined as at least one dispensing of an oral antiemetic (called drug A) between 5 and 12 weeks of gestation; the comparison group had no antiemetic dispensed in pregnancy. Outcomes were oral clefts diagnosed by 1 year of age, ascertained from linked infant records by coders unaware of exposure.</p><table><thead><tr><th>Group</th><th>Births</th><th>Infants with an oral cleft</th></tr></thead><tbody><tr><td>Drug A in the first trimester</td><td>4,000</td><td>6</td></tr><tr><td>No antiemetic</td><td>40,000</td><td>40</td></tr></tbody></table><p>The adjusted relative risk, controlling for age, smoking, BMI, diabetes and folic acid prescription, was 1.5 (95% CI 0.6 to 3.5). The registry did not record the severity of nausea and vomiting or the number of days the drug was taken.</p>",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A newborn girl has small, malformed external ears with narrow ear canals, a cleft palate, a small jaw and an interrupted aortic arch. Laboratory studies show low serum calcium and few circulating T cells. Chromosomal microarray is normal. Her mother took a prescription medication for severe nodular acne until she learned she was pregnant at 10 weeks' gestation. The drug most likely caused these anomalies by which of the following mechanisms?</p>",
+   "options": [
+    "Inhibition of dihydrofolate reductase",
+    "Activation of nuclear retinoic acid receptors that alter HOX gene expression",
+    "Inhibition of 5-alpha-reductase in genital tissue",
+    "Binding to calcium in developing teeth and bone",
+    "Inhibition of bacterial 30S ribosomal subunits"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Isotretinoin, a vitamin A derivative used for severe nodular acne, acts through nuclear retinoic acid receptors that regulate HOX and other patterning genes. Excess signaling during organogenesis disrupts cranial neural crest migration and pharyngeal arch development, producing microtia and ear canal anomalies, cleft palate, micrognathia, conotruncal and aortic arch defects, thymic and parathyroid hypoplasia (hence hypocalcemia and T-cell deficiency) and CNS malformations. The picture resembles 22q11.2 deletion, which the normal microarray excludes.</p><p><strong>Takeaway:</strong> Isotretinoin embryopathy comes from retinoic acid receptor activation that disrupts neural crest and pharyngeal arch development.</p>",
+   "whyNot": {
+    "A": "Dihydrofolate reductase inhibition (methotrexate, trimethoprim) causes neural tube, skull and limb defects rather than a pharyngeal arch pattern.",
+    "C": "5-Alpha-reductase inhibitors affect male genital development and are not acne treatments.",
+    "D": "Calcium binding in teeth and bone is the effect of tetracyclines, which discolor teeth but do not cause ear and arch malformations.",
+    "E": "Tetracyclines used for acne act on bacterial 30S subunits, but that antibacterial action is not how the fetal anomalies arise."
+   },
+   "objective": "Explain isotretinoin embryopathy through retinoic acid receptor signaling in neural crest development.",
+   "disciplines": [
+    "pharmacology",
+    "anatomy_embryology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "teratology"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A newborn boy has a flattened nasal bridge with small nostrils and a radiograph showing punctate calcifications in the epiphyses of the long bones and vertebrae. His mother has a mechanical mitral valve and took an oral anticoagulant throughout pregnancy. The maternal drug inhibits which of the following enzymes?</p>",
+   "options": [
+    "Thrombin",
+    "Factor Xa",
+    "Vitamin K epoxide reductase",
+    "Antithrombin",
+    "Plasminogen activator"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Warfarin embryopathy (nasal hypoplasia and stippled epiphyses) results from exposure in about weeks 6 to 12 of gestation. Warfarin inhibits vitamin K epoxide reductase (VKORC1), which regenerates the reduced vitamin K needed by gamma-glutamyl carboxylase. Besides clotting factors, this enzyme carboxylates bone and cartilage proteins such as osteocalcin and matrix Gla protein; failure of this step disturbs skeletal mineralization. Later exposure can cause fetal intracranial hemorrhage. Warfarin crosses the placenta because it is small and lipid-soluble, unlike heparin.</p><p><strong>Takeaway:</strong> Warfarin inhibits vitamin K epoxide reductase; first-trimester exposure causes nasal hypoplasia and stippled epiphyses.</p>",
+   "whyNot": {
+    "A": "Direct thrombin inhibitors such as dabigatran act on thrombin; they are not used for mechanical valves and are not linked to this embryopathy.",
+    "B": "Factor Xa inhibitors such as apixaban act on factor Xa and are not the drugs associated with stippled epiphyses.",
+    "D": "Heparins work by enhancing antithrombin, not inhibiting it, and they do not cross the placenta.",
+    "E": "Plasminogen activators are thrombolytics, not oral anticoagulants."
+   },
+   "objective": "Identify warfarin's target and its embryopathy.",
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "teratology"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old woman with chronic hypertension continued taking lisinopril through an unplanned pregnancy until she presented at 31 weeks' gestation. Ultrasound showed severe oligohydramnios. Her son is born at 33 weeks with limb contractures, a poorly ossified skull and respiratory insufficiency, and he makes almost no urine in the first 2 days despite normal renal anatomy on ultrasound. Which of the following best explains his renal failure?</p>",
+   "options": [
+    "Obstruction of the fetal ureters by crystals",
+    "Loss of angiotensin II-mediated efferent arteriolar constriction",
+    "Immune complex deposition in fetal glomeruli",
+    "Direct tubular toxicity from the drug's sulfhydryl group",
+    "Failure of ureteric bud branching during the first trimester"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Fetal renin-angiotensin blockade in the second and third trimesters causes ACE inhibitor fetopathy. The fetal kidney, with low perfusion pressure, depends on angiotensin II constricting the efferent arteriole to maintain glomerular filtration. Without it, filtration falls, fetal urine output drops and oligohydramnios follows, with pulmonary hypoplasia, contractures and skull hypoossification. Renal tubular dysgenesis can occur, and anuria may persist after birth. The same applies to ARBs and direct renin inhibitors.</p><p><strong>Takeaway:</strong> ACE inhibitors and ARBs cause fetal renal failure in later pregnancy by removing angiotensin II support of glomerular filtration.</p>",
+   "whyNot": {
+    "A": "Crystal nephropathy is linked to drugs such as acyclovir or sulfonamides at high doses, not to ACE inhibitors.",
+    "C": "Immune complex glomerulonephritis is not a mechanism of drug fetopathy.",
+    "D": "Sulfhydryl-related effects (rash, taste disturbance) are specific to captopril, and lisinopril has no sulfhydryl group.",
+    "E": "Early ureteric bud failure produces renal agenesis or dysplasia with abnormal anatomy; this infant's kidneys look normal and the injury occurred later."
+   },
+   "objective": "Explain why renin-angiotensin blockade causes fetal renal failure in later pregnancy.",
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "teratology"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A newborn girl has a lumbosacral myelomeningocele. Her mother has juvenile myoclonic epilepsy and took a single antiseizure drug for several years, including throughout the first trimester; she did not take folic acid. Which of the following drugs was she most likely taking?</p>",
+   "options": [
+    "Lamotrigine",
+    "Levetiracetam",
+    "Valproate",
+    "Ethosuximide",
+    "Gabapentin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Valproate carries the highest risk of major malformations among common antiseizure drugs, especially neural tube defects (spina bifida), along with cardiac, limb and craniofacial anomalies. Its effect is dose dependent. It also lowers childhood IQ and increases autism risk after exposure in pregnancy. Valproate inhibits histone deacetylases and interferes with folate metabolism. It is very effective for generalized epilepsies such as juvenile myoclonic epilepsy, which is why it is still prescribed; anyone who could become pregnant should be offered alternatives such as lamotrigine or levetiracetam before conception.</p><p><strong>Takeaway:</strong> Valproate is the antiseizure drug most strongly linked to neural tube defects.</p>",
+   "whyNot": {
+    "A": "Lamotrigine has one of the lowest malformation rates and is a preferred drug in pregnancy.",
+    "B": "Levetiracetam also has a low malformation rate and is a preferred drug in pregnancy.",
+    "D": "Ethosuximide treats absence seizures only and does not control myoclonic or tonic-clonic seizures; it is not strongly linked to neural tube defects.",
+    "E": "Gabapentin is not effective for generalized epilepsy and has not been linked to neural tube defects."
+   },
+   "objective": "Identify valproate as the antiseizure drug with the highest neural tube defect risk.",
+   "disciplines": [
+    "pharmacology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "extraAreas": [
+    "12.07.01"
+   ],
+   "tags": [
+    "teratology",
+    "epilepsy"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 27-year-old woman at 30 weeks' gestation with lupus nephritis takes prednisone 10 mg daily. She is admitted with preterm labor, and the team plans to give a corticosteroid to accelerate fetal lung maturity. They choose intramuscular betamethasone rather than increasing her prednisone. Which of the following properties of betamethasone explains this choice?</p>",
+   "options": [
+    "It is a poor substrate for placental 11-beta-hydroxysteroid dehydrogenase type 2",
+    "It has stronger mineralocorticoid activity than prednisone",
+    "It is more highly bound to albumin than prednisone",
+    "It is converted to its active form in the fetal liver",
+    "It is a larger molecule that is actively transported by FcRn"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The placenta expresses 11-beta-hydroxysteroid dehydrogenase type 2, which oxidizes cortisol and prednisolone to inactive 11-keto forms and shields the fetus from maternal glucocorticoids. Fluorinated steroids (betamethasone and dexamethasone) are poor substrates, so they reach the fetus largely intact and induce surfactant synthesis and lung maturation. That is why they are used for antenatal maturation, while prednisone or hydrocortisone is chosen to treat the pregnant patient with less fetal exposure.</p><p><strong>Takeaway:</strong> Betamethasone and dexamethasone reach the fetus because they escape placental 11-beta-HSD2; prednisolone and cortisol do not.</p>",
+   "whyNot": {
+    "B": "Betamethasone has almost no mineralocorticoid activity; mineralocorticoid effect is unrelated to fetal lung maturation.",
+    "C": "Higher protein binding would reduce, not increase, placental transfer.",
+    "D": "Betamethasone is active as given; it is prednisone that needs hepatic conversion to prednisolone.",
+    "E": "FcRn transports IgG antibodies, not small steroid molecules."
+   },
+   "objective": "Explain why fluorinated corticosteroids are used for fetal lung maturation.",
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "antenatal corticosteroids"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 23-year-old woman at 41 weeks' gestation has received a high-dose intravenous oxytocin infusion in 5% dextrose in water for 18 hours for induction of labor. She develops headache, vomiting and confusion, then a generalized seizure. Her blood pressure is 122/76 mm Hg, and urine has no protein. Serum sodium is 119 mEq/L (119 mmol/L). Activation of which of the following receptors most directly caused her electrolyte abnormality?</p>",
+   "options": [
+    "Vasopressin V1a receptors on vascular smooth muscle",
+    "Vasopressin V2 receptors in renal collecting ducts",
+    "Oxytocin receptors on myometrial cells",
+    "Mineralocorticoid receptors in the distal nephron",
+    "Natriuretic peptide receptors in the glomerulus"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Oxytocin and vasopressin are both nonapeptides that differ by two amino acids. At high doses, oxytocin activates vasopressin V2 receptors in the collecting duct, which signal through Gs and cAMP to insert aquaporin-2 channels and retain free water. Given with large volumes of electrolyte-free fluid over many hours, this causes dilutional hyponatremia and water intoxication, with headache, vomiting, confusion and seizures. Normal blood pressure and no proteinuria point away from eclampsia.</p><p><strong>Takeaway:</strong> Prolonged high-dose oxytocin can cause water intoxication through its antidiuretic (V2) effect.</p>",
+   "whyNot": {
+    "A": "V1a receptors mediate vasoconstriction and would not cause water retention or hyponatremia.",
+    "C": "Myometrial oxytocin receptors cause contractions and tachysystole, not changes in renal water handling.",
+    "D": "Mineralocorticoid receptor activation causes sodium retention and hypokalemia, not dilutional hyponatremia.",
+    "E": "Natriuretic peptides promote sodium and water loss; their activation would not explain water retention."
+   },
+   "objective": "Explain oxytocin-induced water intoxication through vasopressin V2 receptor activation.",
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "labor drugs"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 32-year-old woman with preeclampsia has uterine atony and heavy bleeding 15 minutes after a vaginal delivery despite uterine massage and an oxytocin infusion. She is given an intramuscular ergot alkaloid. Ten minutes later her blood pressure rises from 148/94 mm Hg to 196/118 mm Hg, and she reports a severe headache. Which of the following pharmacologic actions most directly explains the rise in blood pressure?</p>",
+   "options": [
+    "Agonism at alpha-adrenergic and serotonin 5-HT2 receptors on vascular smooth muscle",
+    "Agonism at prostaglandin F receptors in bronchial smooth muscle",
+    "Blockade of L-type calcium channels in arterioles",
+    "Inhibition of plasminogen binding to fibrin",
+    "Stimulation of oxytocin receptors in the myometrium"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Methylergonovine is an ergot alkaloid that acts as a partial agonist at alpha-adrenergic and serotonin 5-HT2 receptors. It causes sustained contraction of uterine smooth muscle, which helps treat atony, but also of vascular smooth muscle, which raises blood pressure and can cause stroke, coronary spasm and seizures. It is contraindicated in hypertension and preeclampsia. In this patient, carboprost, misoprostol or tranexamic acid would have been better second-line choices.</p><p><strong>Takeaway:</strong> Ergot uterotonics constrict vessels through alpha-adrenergic and 5-HT2 agonism; avoid them in hypertensive disorders.</p>",
+   "whyNot": {
+    "B": "Prostaglandin F receptor agonism describes carboprost, whose typical adverse effect is bronchospasm, not a hypertensive crisis.",
+    "C": "Calcium-channel blockade lowers blood pressure and relaxes the uterus.",
+    "D": "Inhibition of plasminogen binding is the action of tranexamic acid, an antifibrinolytic that does not raise blood pressure.",
+    "E": "Oxytocin receptor stimulation contracts the uterus; oxytocin at usual doses does not cause hypertension."
+   },
+   "objective": "Explain how methylergonovine causes hypertension and why it is avoided in preeclampsia.",
+   "disciplines": [
+    "pharmacology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "postpartum hemorrhage drugs"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 28-year-old woman at 32 weeks' gestation is given subcutaneous terbutaline because of uterine tachysystole during labor. Thirty minutes later she has palpitations and a tremor. Pulse is 128/min. Serum potassium is 3.0 mEq/L (3.0 mmol/L), down from 3.9 mEq/L (3.9 mmol/L) an hour earlier, and plasma glucose is 176 mg/dL. Which of the following mechanisms best explains the fall in potassium?</p>",
+   "options": [
+    "Increased potassium secretion in the cortical collecting duct due to aldosterone",
+    "Increased Na-K-ATPase activity shifting potassium into cells",
+    "Potassium loss in vomitus",
+    "Inhibition of the Na-K-2Cl cotransporter in the loop of Henle",
+    "Dilution by intravenous fluids"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Terbutaline is a beta-2 adrenergic agonist. Beta-2 stimulation raises cAMP and activates Na-K-ATPase in skeletal muscle and other tissues, shifting potassium into cells within minutes; total body potassium is unchanged. The same beta-2 action increases hepatic glycogenolysis and gluconeogenesis (hyperglycemia) and causes tachycardia and tremor. Because of these effects and the risk of pulmonary edema and arrhythmia, terbutaline is used only briefly in obstetrics.</p><p><strong>Takeaway:</strong> Beta-2 agonists lower serum potassium by shifting it into cells through Na-K-ATPase.</p>",
+   "whyNot": {
+    "A": "Aldosterone-mediated secretion develops over hours to days and is not the mechanism of acute beta-agonist hypokalemia.",
+    "C": "There is no vomiting in the history, and the fall is too rapid to reflect losses.",
+    "D": "Loop diuretics inhibit Na-K-2Cl; terbutaline has no such action.",
+    "E": "Dilution cannot lower potassium by nearly 1 mEq/L in 30 minutes without lowering other electrolytes, and no large infusion is described."
+   },
+   "objective": "Explain beta-2 agonist hypokalemia from transcellular potassium shift.",
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "tocolytics"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old woman comes to the office because a home pregnancy test was positive. Her last menstrual period was 6 weeks ago. She has had chronic hypertension for 4 years treated with lisinopril 20 mg daily, and her blood pressure today is 134/84 mm Hg. Creatinine is 0.8 mg/dL, and urine protein:creatinine ratio is 0.1. Which of the following is the most appropriate change to her antihypertensive treatment?</p>",
+   "options": [
+    "Continue lisinopril until 20 weeks' gestation",
+    "Stop lisinopril and start labetalol",
+    "Stop lisinopril and start losartan",
+    "Stop lisinopril and start hydrochlorothiazide",
+    "Stop all antihypertensive medication until the third trimester"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>ACE inhibitors should be stopped as soon as pregnancy is recognized; their main fetal harm (renal failure, oligohydramnios, skull hypoossification) comes from second- and third-trimester exposure, so early discovery allows a safe switch. Labetalol or extended-release nifedipine are first-line for chronic hypertension in pregnancy, with methyldopa an alternative. Treating to keep blood pressure below 140/90 mm Hg reduces progression to severe hypertension and preeclampsia without harming fetal growth. She should also start low-dose aspirin at 12 to 16 weeks for preeclampsia prevention.</p><p><strong>Takeaway:</strong> When a patient taking an ACE inhibitor becomes pregnant, switch to labetalol or nifedipine and keep treating to below 140/90 mm Hg.</p>",
+   "whyNot": {
+    "A": "Continuing an ACE inhibitor exposes the fetus as renal function develops; there is no benefit to waiting until 20 weeks.",
+    "C": "ARBs carry the same fetal renal toxicity as ACE inhibitors.",
+    "D": "Thiazides are not first-line in pregnancy because of concern about reduced plasma volume, although some patients already taking them continue.",
+    "E": "Stopping treatment risks severe hypertension; current evidence supports treating chronic hypertension in pregnancy to a goal below 140/90 mm Hg."
+   },
+   "objective": "Replace an ACE inhibitor with a pregnancy-appropriate antihypertensive when pregnancy is diagnosed.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "extraAreas": [
+    "12.07.01"
+   ],
+   "tags": [
+    "hypertension in pregnancy"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 26-year-old woman with juvenile myoclonic epilepsy comes for preconception counseling. She has been seizure-free for 3 years on valproate. She stopped her oral contraceptive last month because she and her partner want to conceive in the next few months. She has no other medical conditions. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    "Continue valproate and start folic acid",
+    "Stop valproate now and attempt conception without medication",
+    "Use effective contraception while switching from valproate to levetiracetam or lamotrigine, with folic acid",
+    "Add lamotrigine to valproate and start folic acid",
+    "Switch valproate to carbamazepine and start folic acid"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Valproate carries the highest risk of neural tube and other major malformations and of reduced IQ and autism in exposed children. When another drug can control seizures, it should be replaced before conception. Levetiracetam and lamotrigine are effective for generalized epilepsies and have among the lowest malformation risks. The switch is done gradually while she uses effective contraception, so that seizure control on the new drug is confirmed before pregnancy. Folic acid should be started now. In pregnancy, drug levels are monitored because clearance of lamotrigine and levetiracetam rises.</p><p><strong>Takeaway:</strong> Before conception, switch from valproate to lamotrigine or levetiracetam under contraception, with folic acid.</p>",
+   "whyNot": {
+    "A": "Folic acid does not remove the valproate-specific risks to the fetus.",
+    "B": "Stopping antiseizure treatment risks tonic-clonic seizures, which endanger both her and a future pregnancy.",
+    "D": "Valproate in combination therapy keeps, and may increase, the fetal risk.",
+    "E": "Carbamazepine is a poor choice for juvenile myoclonic epilepsy, can worsen myoclonic seizures and has its own neural tube defect risk."
+   },
+   "objective": "Switch from valproate to a lower-risk antiseizure drug before conception.",
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "extraAreas": [
+    "12.07.01"
+   ],
+   "tags": [
+    "epilepsy",
+    "preconception care"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 29-year-old woman, gravida 2, para 1, at 24 weeks' gestation comes for a routine prenatal visit. She has hypothyroidism, generalized anxiety disorder and chronic low back pain. Her current medications are listed.</p><table><thead><tr><th>Medication</th><th>Dose</th><th>Started</th></tr></thead><tbody><tr><td>Levothyroxine</td><td>100 mcg daily</td><td>Before pregnancy (dose increased at 6 weeks)</td></tr><tr><td>Sertraline</td><td>100 mg daily</td><td>Before pregnancy</td></tr><tr><td>Ibuprofen</td><td>600 mg three times daily</td><td>2 weeks ago, for back pain</td></tr><tr><td>Doxylamine-pyridoxine</td><td>At bedtime</td><td>8 weeks' gestation</td></tr><tr><td>Prenatal vitamin with iron</td><td>Daily</td><td>Before pregnancy</td></tr></tbody></table><p>TSH is 1.6 &mu;U/mL (1.6 mU/L). Fundal height is 24 cm. Which of the following medications should be stopped?</p>",
+   "options": [
+    "Levothyroxine",
+    "Sertraline",
+    "Ibuprofen",
+    "Doxylamine-pyridoxine",
+    "Prenatal vitamin with iron"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>NSAIDs should be avoided from about 20 weeks of gestation: they reduce fetal renal blood flow and urine output, causing oligohydramnios and, rarely, neonatal renal impairment; after about 30 weeks they can also constrict the fetal ductus arteriosus. Regular ibuprofen at 24 weeks should be stopped, and her back pain managed with acetaminophen, physical therapy, heat and activity modification. If an NSAID were essential between 20 and 30 weeks, it would be limited to the lowest dose for the shortest time with amniotic fluid monitoring. Low-dose aspirin for preeclampsia prevention is the exception to this warning.</p><p><strong>Takeaway:</strong> Stop regular NSAIDs at 20 weeks or later because of fetal renal effects and oligohydramnios; use acetaminophen instead.</p>",
+   "whyNot": {
+    "A": "Levothyroxine is essential, her TSH is at goal, and untreated hypothyroidism harms the pregnancy.",
+    "B": "Sertraline is a well-studied SSRI that controls her anxiety; stopping it risks relapse.",
+    "D": "Doxylamine-pyridoxine is first-line treatment for nausea and vomiting of pregnancy and is safe to continue if needed.",
+    "E": "Prenatal vitamins with iron and folic acid are recommended throughout pregnancy."
+   },
+   "objective": "Identify NSAIDs as drugs to stop from 20 weeks of gestation.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "prescribing in pregnancy"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 31-year-old woman with bipolar I disorder is seen at 7 weeks' gestation in an unplanned pregnancy. She has taken lithium for 5 years with stable mood. Before that she had three hospitalizations for manic episodes with psychotic features, two of them within months of stopping medication. Her lithium level is 0.7 mEq/L (therapeutic 0.6 to 1.2), and thyroid and renal function are normal. After discussing risks and benefits, she wants to continue the pregnancy. Which of the following is the most appropriate plan?</p>",
+   "options": [
+    "Stop lithium immediately and restart it after delivery",
+    "Continue lithium with frequent level monitoring and fetal echocardiography",
+    "Switch lithium to valproate",
+    "Switch lithium to carbamazepine",
+    "Taper lithium over 2 weeks and use lorazepam for symptoms"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Her bipolar disorder is severe, with psychotic mania and relapses after previous discontinuation. Stopping lithium in pregnancy, especially abruptly, carries a high relapse risk, and postpartum relapse is common. The first-trimester risk of Ebstein anomaly and other cardiac defects is increased but small in absolute terms. Continuing lithium with shared decision-making, monitoring levels frequently (clearance rises during pregnancy and falls abruptly after delivery), a detailed anatomy scan with fetal echocardiography, attention to hydration at delivery and close psychiatric follow-up is the most appropriate plan.</p><p><strong>Takeaway:</strong> For severe bipolar disorder stable on lithium, continuing lithium with level monitoring and fetal echocardiography usually outweighs the small teratogenic risk.</p>",
+   "whyNot": {
+    "A": "Abrupt discontinuation carries a high risk of relapse into psychotic mania, which endangers both her and the pregnancy.",
+    "C": "Valproate carries a much higher risk of neural tube defects and neurodevelopmental harm than lithium.",
+    "D": "Carbamazepine is also teratogenic (neural tube defects) and is less effective for her disorder.",
+    "E": "A taper still exposes her to high relapse risk, and benzodiazepines do not prevent mania."
+   },
+   "objective": "Continue lithium with monitoring in a pregnant patient with severe bipolar disorder.",
+   "clinicalSciences": [
+    "psychiatry",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "extraAreas": [
+    "12.07.01"
+   ],
+   "tags": [
+    "psychiatric medications in pregnancy"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 30-year-old woman, gravida 2, para 1, at 29 weeks' gestation was admitted 4 days ago with preterm labor. She received betamethasone and magnesium sulfate, and contractions were controlled with oral indomethacin, which has been continued since admission. Contractions are now infrequent. Ultrasound today shows an amniotic fluid index of 4 cm (it was 12 cm on admission), and fetal echocardiography shows tricuspid regurgitation with increased flow velocity across the ductus arteriosus. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Continue indomethacin and repeat ultrasound in 1 week",
+    "Discontinue indomethacin",
+    "Start amnioinfusion",
+    "Increase the indomethacin dose",
+    "Deliver by cesarean today"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Indomethacin inhibits fetal prostaglandin synthesis. Beyond about 48 hours, and increasingly as gestation advances, it constricts the fetal ductus arteriosus (seen as raised ductal velocity and tricuspid regurgitation from right-heart pressure load) and reduces fetal urine output (oligohydramnios). Both effects usually reverse within days of stopping the drug. Indomethacin tocolysis is limited to before 32 weeks and to about 48 hours, so it should be stopped now. Contractions are already infrequent, and there is no indication for delivery.</p><p><strong>Takeaway:</strong> Stop indomethacin if oligohydramnios or ductal constriction appears; limit its use to under 32 weeks and about 48 hours.</p>",
+   "whyNot": {
+    "A": "Continuing the drug risks persistent ductal constriction, fetal heart failure and pulmonary hypertension at birth.",
+    "C": "Amnioinfusion does not address the cause and is not a treatment for drug-induced oligohydramnios in this setting.",
+    "D": "A higher dose would worsen the fetal adverse effects.",
+    "E": "These adverse effects are reversible after stopping the drug; a 29-week delivery would add preterm morbidity without need."
+   },
+   "objective": "Stop indomethacin tocolysis when ductal constriction or oligohydramnios develops.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "tocolytics"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 33-year-old woman had a cesarean delivery 2 days ago and is exclusively breastfeeding her healthy term son. Her incision pain is moderate. She has no drug allergies, normal renal function and no history of peptic ulcer disease. Her blood pressure is 118/74 mm Hg. Which of the following is the most appropriate analgesic regimen for discharge?</p>",
+   "options": [
+    "Acetaminophen with codeine as needed for pain",
+    "Tramadol every 6 hours as needed for pain",
+    "Scheduled ibuprofen and acetaminophen, with oxycodone only for severe pain",
+    "Oxycodone every 4 hours around the clock for 2 weeks",
+    "Extended-release hydromorphone twice daily for 1 week"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Postcesarean analgesia should be multimodal and opioid-sparing: scheduled NSAIDs and acetaminophen, with a small supply of a low-dose, immediate-release opioid only for breakthrough pain. Ibuprofen and acetaminophen pass into milk in very small amounts and are compatible with breastfeeding. Codeine and tramadol are prodrugs activated by CYP2D6; in ultrarapid metabolizers they generate high levels of active opioid that reach the infant through milk and have caused sedation, respiratory depression and death, so the FDA advises against their use in breastfeeding. Infants exposed to any opioid through milk should be watched for sleepiness and poor feeding.</p><p><strong>Takeaway:</strong> For breastfeeding parents, use scheduled NSAIDs and acetaminophen, a short course of a nonprodrug opioid if needed, and avoid codeine and tramadol.</p>",
+   "whyNot": {
+    "A": "Codeine is converted to morphine by CYP2D6, and ultrarapid metabolizers can pass dangerous amounts to the infant.",
+    "B": "Tramadol has the same CYP2D6 problem and carries the same warning in breastfeeding.",
+    "D": "Scheduled opioids for 2 weeks exceed need, increase infant exposure and raise the risk of persistent opioid use.",
+    "E": "Extended-release opioids are not appropriate for acute postoperative pain and increase infant exposure."
+   },
+   "objective": "Choose breastfeeding-compatible, opioid-sparing analgesia after cesarean delivery.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "drugs in lactation"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 25-year-old woman had a CT scan of the abdomen and pelvis with intravenous contrast in the emergency department 3 weeks ago for right lower quadrant pain, which was diagnosed as a hemorrhagic ovarian cyst and has resolved. A urine pregnancy test at that visit was negative. She now has a positive pregnancy test; by her last menstrual period she is 7 weeks pregnant, and ultrasound confirms a 7-week intrauterine pregnancy with cardiac activity. The radiologist estimates the fetal dose from the scan at 20 mGy. She asks whether the scan has harmed the pregnancy. Which of the following is the most appropriate response?</p>",
+   "options": [
+    "Advise that the dose is well below the level associated with fetal anomalies or loss",
+    "Recommend termination because of the risk of malformations",
+    "Recommend chorionic villus sampling to look for radiation damage",
+    "Advise that the risk of intellectual disability is high and recommend a fetal MRI",
+    "Advise a repeat ultrasound every 2 weeks to look for radiation injury"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>At 7 weeks by last menstrual period, conception was about 5 weeks ago, so the scan occurred around 2 weeks after conception, near the end of the all-or-none period. More importantly, the estimated fetal dose of 20 mGy is well below 50 mGy, the dose below which no increase in anomalies, growth restriction or pregnancy loss has been shown. The appropriate response is reassurance with routine prenatal care. Any increase in later childhood cancer risk at this dose is very small. A negative urine test can miss a very early pregnancy, so the earlier test result does not change this advice.</p><p><strong>Takeaway:</strong> Fetal doses below 50 mGy, which include nearly all diagnostic studies, are not associated with anomalies or loss; reassure.</p>",
+   "whyNot": {
+    "B": "There is no indication for termination at this dose; recommending it would be based on a misunderstanding of risk.",
+    "C": "Chorionic villus sampling detects chromosomal abnormalities, not radiation effects, and adds procedure risk.",
+    "D": "Intellectual disability is associated with much higher doses, mainly at 8 to 15 weeks after conception.",
+    "E": "Serial ultrasounds for radiation injury are not indicated after a low-dose exposure."
+   },
+   "objective": "Counsel a patient that diagnostic radiation below 50 mGy does not raise anomaly risk.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "communication"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "radiation in pregnancy"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 22-year-old woman at 11 weeks' gestation comes for her first prenatal visit. She smokes 15 cigarettes daily and says she wants to quit. She has no history of depression, seizures or eating disorders, and she drinks no alcohol. Which of the following is the most appropriate initial intervention?</p>",
+   "options": [
+    "Behavioral counseling for smoking cessation",
+    "Bupropion",
+    "Varenicline",
+    "Switching to electronic cigarettes",
+    "Advice to reduce to 5 cigarettes daily until after delivery"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Smoking in pregnancy causes fetal growth restriction, placental abruption and previa, preterm birth, preterm rupture of membranes and sudden infant death. The USPSTF recommends that clinicians ask all pregnant people about tobacco use, advise them to stop and provide behavioral interventions; the evidence is insufficient to assess the balance of benefits and harms of pharmacotherapy in pregnancy. Counseling, ideally pregnancy-tailored with follow-up and quitline referral, is the first step. Nicotine replacement may be considered if counseling alone fails, after discussing risks and benefits.</p><p><strong>Takeaway:</strong> For a pregnant smoker, start with behavioral counseling; pharmacotherapy evidence in pregnancy is insufficient.</p>",
+   "whyNot": {
+    "B": "Bupropion may be used in some cases, but evidence in pregnancy is insufficient for it to be the initial intervention.",
+    "C": "Varenicline has limited pregnancy safety data and is not first-line in pregnancy.",
+    "D": "Electronic cigarettes deliver nicotine and other toxicants and are not recommended as a cessation method in pregnancy.",
+    "E": "Cutting down does not remove the harms; complete cessation is the goal at any point in pregnancy."
+   },
+   "objective": "Recommend behavioral counseling as the first intervention for tobacco use in pregnancy.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "references": [
+    "uspstf"
+   ],
+   "tags": [
+    "substance use in pregnancy"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>Based on the crude counts in the study summary, how many pregnant people would need to be exposed to drug A in the first trimester for one additional infant to have an oral cleft, if the association were causal?</p>",
+   "options": [
+    "150",
+    "500",
+    "667",
+    "1,000",
+    "2,000"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>The risk of an oral cleft is 6/4,000 = 1.5 per 1,000 in the exposed group and 40/40,000 = 1.0 per 1,000 in the unexposed group. The absolute risk increase is 0.5 per 1,000, or 0.0005. The number needed to harm is 1/0.0005 = 2,000. Expressing a relative risk of 1.5 as an absolute difference of 1 in 2,000 is the most useful way to counsel a patient, and the confidence interval for the relative risk includes 1.0.</p><p><strong>Takeaway:</strong> Number needed to harm = 1 / (risk in exposed minus risk in unexposed).</p>",
+   "whyNot": {
+    "A": "150 does not correspond to any risk or risk difference in these data; it may come from dividing the group sizes by the case counts incorrectly.",
+    "B": "500 would require an absolute risk increase of 2 per 1,000, four times the observed difference.",
+    "C": "667 is the reciprocal of the risk in the exposed group (1.5 per 1,000), not of the risk difference.",
+    "D": "1,000 is the reciprocal of the baseline risk in unexposed infants, not of the risk difference."
+   },
+   "objective": "Calculate the number needed to harm from cohort risks.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "drug safety studies"
+   ]
+  },
+  {
+   "n": 18,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Which of the following is the most important alternative explanation for an association between drug A and oral clefts in this study?</p>",
+   "options": [
+    "Recall bias",
+    "Confounding by indication",
+    "Lead-time bias",
+    "Loss to follow-up",
+    "Observer bias in outcome ascertainment"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>People were prescribed drug A because they had nausea and vomiting, often severe. The underlying condition, or factors linked to it (such as poor intake, ketosis, other medicines or vitamin deficiency), may itself be associated with the outcome. Because the registry did not record nausea severity, the comparison of treated people with people who took no antiemetic cannot separate the effect of the drug from the effect of the reason it was prescribed. Comparing users of drug A with users of a different antiemetic (an active comparator) would reduce this bias.</p><p><strong>Takeaway:</strong> In drug-safety studies, confounding by indication arises when the reason for treatment is itself linked to the outcome; active comparators reduce it.</p>",
+   "whyNot": {
+    "A": "Recall bias affects case-control studies that rely on interviews; this cohort used dispensing records collected before outcomes were known.",
+    "C": "Lead-time bias is a problem of screening studies that measure survival from diagnosis.",
+    "D": "The cohort was built from linked records of live births, and the summary gives no reason to suspect differential loss.",
+    "E": "Outcome coders were unaware of exposure, which limits observer bias."
+   },
+   "objective": "Recognize confounding by indication in an observational drug-safety study.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "drug safety studies"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "What is the \"all-or-none\" period?",
+   "back": "The first 2 weeks after conception: an exposure either causes loss or is fully repaired; malformations are rare.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "When do most major structural malformations arise?",
+   "back": "Weeks 3 to 8 after conception (organogenesis).",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which drug properties increase placental transfer?",
+   "back": "Lipid solubility, low molecular weight, being un-ionized and unbound to protein.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Isotretinoin embryopathy: mechanism and key anomalies?",
+   "back": "Retinoic acid receptor activation disrupting neural crest: microtia, cleft palate, conotruncal heart defects, thymic hypoplasia, CNS defects.",
+   "question": 1
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Warfarin embryopathy features and timing?",
+   "back": "Nasal hypoplasia and stippled epiphyses after exposure at about 6 to 12 weeks.",
+   "question": 2
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Why do ACE inhibitors cause fetal renal failure?",
+   "back": "The fetal kidney relies on angiotensin II efferent constriction to maintain filtration.",
+   "question": 3
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Which antiseizure drug has the highest neural tube defect risk?",
+   "back": "Valproate.",
+   "question": 4
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Fetal dose below which no increase in anomalies or loss has been shown?",
+   "back": "About 50 mGy (5 rad).",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Why do betamethasone and dexamethasone reach the fetus while prednisolone does not?",
+   "back": "They resist placental 11-beta-hydroxysteroid dehydrogenase type 2.",
+   "question": 5
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "How can high-dose oxytocin cause hyponatremia?",
+   "back": "It activates vasopressin V2 receptors and retains free water.",
+   "question": 6
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Receptors behind methylergonovine's hypertension?",
+   "back": "Alpha-adrenergic and serotonin 5-HT2 receptors on vascular smooth muscle.",
+   "question": 7
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Why is carboprost avoided in asthma?",
+   "back": "As a prostaglandin F2-alpha analogue, it causes bronchoconstriction.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Order of magnesium toxicity signs as the level rises?",
+   "back": "Loss of deep tendon reflexes, then respiratory depression, then cardiac conduction block and arrest.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Mechanism of terbutaline-induced hypokalemia?",
+   "back": "Beta-2 stimulation of Na-K-ATPase shifts potassium into cells.",
+   "question": 8
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Fetal adverse effects of indomethacin tocolysis?",
+   "back": "Ductus arteriosus constriction and oligohydramnios.",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "First-line antihypertensives in pregnancy?",
+   "back": "Labetalol and extended-release nifedipine (methyldopa as an alternative).",
+   "question": 9
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "From what gestational age should NSAIDs be avoided?",
+   "back": "About 20 weeks (fetal renal effects and oligohydramnios), with ductal constriction risk after about 30 weeks.",
+   "question": 11
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Preferred antiseizure drugs for people who may become pregnant?",
+   "back": "Lamotrigine and levetiracetam, with folic acid and level monitoring.",
+   "question": 10
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Antithyroid drug of choice in the first trimester?",
+   "back": "Propylthiouracil; switch to methimazole after the first trimester.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "First intervention for tobacco use in pregnancy per USPSTF?",
+   "back": "Behavioral counseling.",
+   "question": 16
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Why must testosterone be stopped in pregnancy?",
+   "back": "It can virilize a fetus; it also does not reliably prevent pregnancy.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Number needed to harm formula?",
+   "back": "1 divided by (risk in exposed minus risk in unexposed).",
+   "question": 17
+  },
+  {
+   "n": 23,
+   "section": 4,
+   "front": "Antidote for magnesium toxicity?",
+   "back": "Intravenous calcium gluconate (and stop the infusion).",
+   "question": null
+  },
+  {
+   "n": 24,
+   "section": 4,
+   "front": "Tranexamic acid in postpartum hemorrhage: dose and time limit?",
+   "back": "1 g IV over 10 minutes, started within 3 hours of birth.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 4,
+   "front": "Why avoid codeine and tramadol in breastfeeding?",
+   "back": "CYP2D6 ultrarapid metabolizers make excess active opioid that reaches the infant.",
+   "question": 14
+  },
+  {
+   "n": 26,
+   "section": 4,
+   "front": "When should indomethacin tocolysis be stopped?",
+   "back": "After about 48 hours, at 32 weeks, or sooner if oligohydramnios or ductal constriction appears.",
+   "question": 13
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Which contraceptives can be used at any time while breastfeeding?",
+   "back": "Progestin-only methods and IUDs.",
+   "question": null
+  },
+  {
+   "n": 28,
+   "section": 4,
+   "front": "Common first-choice antidepressant for postpartum depression in a breastfeeding parent?",
+   "back": "Sertraline (very low infant levels).",
+   "question": null
+  }
+ ]
+}

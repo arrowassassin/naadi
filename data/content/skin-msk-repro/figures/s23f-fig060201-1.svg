@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" role="img" aria-label="Three panels comparing junctional, compound and intradermal melanocytic nevi, showing nests of nevus cells at the dermal-epidermal junction, at the junction and in the dermis, and only in the dermis" font-family="sans-serif">
+<title>Three panels comparing junctional, compound and intradermal melanocytic nevi, showing nests of nevus cells at the dermal-epidermal junction, at the junction and in the dermis, and only in the dermis</title>
+<rect x="0" y="0" width="760" height="380" fill="#ffffff"/>
+<text x="20" y="30" font-size="16" font-weight="bold" fill="#0f172a">Acquired melanocytic nevi: where the nests sit</text>
+<text x="20" y="56" font-size="14" font-weight="bold" fill="#0f172a">Junctional nevus</text>
+<rect x="20" y="90" width="220" height="50" fill="#f6d9b8" stroke="#475569"/>
+<rect x="20" y="140" width="220" height="120" fill="#f3c6b1" stroke="#475569"/>
+<line x1="20" y1="140" x2="240" y2="140" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="90" cy="138" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="130" cy="138" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="170" cy="138" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<text x="26" y="120" font-size="12" fill="#0f172a">Epidermis</text>
+<text x="26" y="250" font-size="12" fill="#0f172a">Dermis</text>
+<text x="20" y="285" font-size="12" fill="#0f172a">Nests at the dermal-epidermal junction</text>
+<text x="20" y="303" font-size="12" fill="#0f172a">Flat, evenly brown macule</text>
+<text x="270" y="56" font-size="14" font-weight="bold" fill="#0f172a">Compound nevus</text>
+<path d="M270,90 L330,90 Q380,70 430,90 L490,90 L490,140 L270,140 Z" fill="#f6d9b8" stroke="#475569"/>
+<rect x="270" y="140" width="220" height="120" fill="#f3c6b1" stroke="#475569"/>
+<line x1="270" y1="140" x2="490" y2="140" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="340" cy="138" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="380" cy="138" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="420" cy="138" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="365" cy="170" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="400" cy="175" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="380" cy="200" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<text x="276" y="120" font-size="12" fill="#0f172a">Epidermis</text>
+<text x="276" y="250" font-size="12" fill="#0f172a">Dermis</text>
+<text x="270" y="285" font-size="12" fill="#0f172a">Junctional nests plus dermal nests</text>
+<text x="270" y="303" font-size="12" fill="#0f172a">Slightly raised, brown papule</text>
+<text x="520" y="56" font-size="14" font-weight="bold" fill="#0f172a">Intradermal nevus</text>
+<path d="M520,90 L560,90 Q630,58 700,90 L740,90 L740,140 L520,140 Z" fill="#f6d9b8" stroke="#475569"/>
+<rect x="520" y="140" width="220" height="120" fill="#f3c6b1" stroke="#475569"/>
+<line x1="520" y1="140" x2="740" y2="140" stroke="#0f172a" stroke-width="2"/>
+<ellipse cx="610" cy="160" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="650" cy="165" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="630" cy="190" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="605" cy="215" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<ellipse cx="655" cy="220" rx="13" ry="8" fill="#5b3a29" stroke="#0f172a"/>
+<text x="526" y="120" font-size="12" fill="#0f172a">Epidermis</text>
+<text x="526" y="250" font-size="12" fill="#0f172a">Dermis</text>
+<text x="520" y="285" font-size="12" fill="#0f172a">Nests only in the dermis</text>
+<text x="520" y="303" font-size="12" fill="#0f172a">Dome-shaped, skin-coloured to tan</text>
+<text x="20" y="340" font-size="12" fill="#0f172a">Brown ovals = nests of nevus cells. With age, nests tend to move from the junction into the dermis.</text>
+<text x="20" y="360" font-size="12" fill="#0f172a">Black horizontal line = dermal-epidermal junction. Schematic, not to scale.</text>
+</svg>

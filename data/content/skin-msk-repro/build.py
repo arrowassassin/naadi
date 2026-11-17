@@ -455,23 +455,48 @@ def load_src(only: list[str] | None) -> dict[str, dict]:
     return docs
 
 
+def _get(url: str) -> dict:
+    """GET JSON from NCBI, backing off on HTTP 429 (3 requests/s without an API key)."""
+    import time
+    import urllib.error
+
+    for attempt in range(6):
+        try:
+            time.sleep(0.4)
+            with urllib.request.urlopen(url, timeout=30) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as exc:
+            if exc.code != 429 or attempt == 5:
+                raise
+            time.sleep(2 * (attempt + 1))
+    raise RuntimeError("unreachable")
+
+
 def _esearch(term: str) -> list[dict]:
     base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
     q = urllib.parse.urlencode({"db": "books", "term": term, "retmode": "json", "retmax": 20})
-    with urllib.request.urlopen(f"{base}esearch.fcgi?{q}", timeout=30) as r:
-        ids = json.load(r)["esearchresult"]["idlist"]
+    ids = _get(f"{base}esearch.fcgi?{q}")["esearchresult"]["idlist"]
     if not ids:
         return []
     q = urllib.parse.urlencode({"db": "books", "id": ",".join(ids), "retmode": "json"})
-    with urllib.request.urlopen(f"{base}esummary.fcgi?{q}", timeout=30) as r:
-        res = json.load(r)["result"]
+    res = _get(f"{base}esummary.fcgi?{q}")["result"]
     return [res[i] for i in res.get("uids", []) if res[i].get("book") == "statpearls" and res[i].get("chapteraccessionid")]
+
+
+def _save_links(found: dict[str, dict]) -> None:
+    import fcntl
+
+    with open(SRC / "_links.lock", "w") as lk:
+        fcntl.flock(lk, fcntl.LOCK_EX)
+        links = load_links()
+        links.update(found)
+        tmp = LINKS.with_suffix(f".{__import__('os').getpid()}.tmp")
+        tmp.write_text(json.dumps(links, indent=1, sort_keys=True, ensure_ascii=False) + "\n")
+        tmp.replace(LINKS)
 
 
 def resolve(docs: dict[str, dict]) -> int:
     """Resolve StatPearls titles to NBK ids. Safe to run from several agents at once (file lock, merge on write)."""
-    import fcntl
-
     def wanted(links: dict) -> list[str]:
         return sorted(
             {e["statpearls"] for d in docs.values() for s in d.get("sections", []) for e in s.get("furtherReading", [])
@@ -489,17 +514,11 @@ def resolve(docs: dict[str, dict]) -> int:
         hit = {"title": pick[0]["title"], "nbk": pick[0]["chapteraccessionid"], "exact": bool(exact)} if pick else {
             "title": title, "nbk": None}
         found[title] = hit
+        _save_links({title: hit})
         print(f"{title!r} -> {hit}")
         if pick and not exact:
             others = ", ".join(repr(c["title"]) for c in cands[:6])
             print(f"   (not exact; candidates: {others})")
-    with open(SRC / "_links.lock", "w") as lk:
-        fcntl.flock(lk, fcntl.LOCK_EX)
-        links = load_links()
-        links.update(found)
-        tmp = LINKS.with_suffix(".tmp")
-        tmp.write_text(json.dumps(links, indent=1, sort_keys=True, ensure_ascii=False) + "\n")
-        tmp.replace(LINKS)
     for t, h in found.items():
         if not h.get("nbk"):
             print(f"UNRESOLVED {t!r}: pick a title that exists in StatPearls", file=sys.stderr)

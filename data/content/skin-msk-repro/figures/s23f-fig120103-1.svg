@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-label="Schematic front view of the abdomen with the uterine fundus at 12 weeks just above the pubic symphysis, 16 weeks midway to the umbilicus, 20 weeks at the umbilicus, 28 weeks above it and 36 weeks near the xiphoid">
+<title>Schematic front view of the abdomen with the uterine fundus at 12 weeks just above the pubic symphysis, 16 weeks midway to the umbilicus, 20 weeks at the umbilicus, 28 weeks above it and 36 weeks near the xiphoid</title>
+<rect x="0" y="0" width="760" height="520" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="30" font-size="16" text-anchor="middle" font-weight="bold">Fundal height landmarks by gestational age (schematic, front view)</text>
+<path d="M 230 470 C 200 380 205 200 260 80 L 500 80 C 555 200 560 380 530 470 Z" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<path d="M 340 462 Q 380 448 420 462" fill="none" stroke="#0f172a" stroke-width="4"/>
+<circle cx="380" cy="290" r="7" fill="none" stroke="#0f172a" stroke-width="2"/>
+<polygon points="372,96 388,96 380,116" fill="#0f172a"/>
+<path d="M 320 462 Q 380 418 440 462" fill="none" stroke="#4338ca" stroke-width="3" stroke-dasharray="7 4"/>
+<line x1="448" y1="440" x2="575" y2="440" stroke="#94a3b8" stroke-width="1"/>
+<text x="582" y="445" font-size="14" text-anchor="start" font-weight="bold">12 weeks</text>
+<path d="M 285 387 Q 380 343 475 387" fill="none" stroke="#4338ca" stroke-width="3" stroke-dasharray="7 4"/>
+<line x1="483" y1="365" x2="575" y2="365" stroke="#94a3b8" stroke-width="1"/>
+<text x="582" y="370" font-size="14" text-anchor="start" font-weight="bold">16 weeks</text>
+<path d="M 260 312 Q 380 268 500 312" fill="none" stroke="#4338ca" stroke-width="3" stroke-dasharray="7 4"/>
+<line x1="508" y1="290" x2="575" y2="290" stroke="#94a3b8" stroke-width="1"/>
+<text x="582" y="295" font-size="14" text-anchor="start" font-weight="bold">20 weeks</text>
+<path d="M 240 237 Q 380 193 520 237" fill="none" stroke="#4338ca" stroke-width="3" stroke-dasharray="7 4"/>
+<line x1="528" y1="215" x2="575" y2="215" stroke="#94a3b8" stroke-width="1"/>
+<text x="582" y="220" font-size="14" text-anchor="start" font-weight="bold">28 weeks</text>
+<path d="M 230 152 Q 380 108 530 152" fill="none" stroke="#4338ca" stroke-width="3" stroke-dasharray="7 4"/>
+<line x1="538" y1="130" x2="575" y2="130" stroke="#94a3b8" stroke-width="1"/>
+<text x="582" y="135" font-size="14" text-anchor="start" font-weight="bold">36 weeks</text>
+<text x="222" y="466" font-size="13" text-anchor="end">Pubic symphysis</text>
+<text x="222" y="295" font-size="13" text-anchor="end">Umbilicus</text>
+<text x="222" y="112" font-size="13" text-anchor="end">Xiphoid</text>
+<line x1="226" y1="462" x2="338" y2="460" stroke="#94a3b8" stroke-width="1"/>
+<line x1="226" y1="290" x2="372" y2="290" stroke="#94a3b8" stroke-width="1"/>
+<line x1="226" y1="108" x2="370" y2="106" stroke="#94a3b8" stroke-width="1"/>
+<text x="582" y="400" font-size="12" text-anchor="start">12 wk: just palpable</text>
+<text x="582" y="416" font-size="12" text-anchor="start">above the symphysis</text>
+<text x="582" y="330" font-size="12" text-anchor="start">16 wk: midway</text>
+<text x="582" y="255" font-size="12" text-anchor="start">20 to 36 wk: fundal height</text>
+<text x="582" y="271" font-size="12" text-anchor="start">in cm about equals weeks</text>
+<text x="380" y="505" font-size="12" text-anchor="middle">Dashed arcs mark the top of the uterus (fundus). A lag or excess of 3 cm or more prompts ultrasonography.</text>
+</g>
+</svg>
