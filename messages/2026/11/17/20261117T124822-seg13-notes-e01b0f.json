@@ -1,0 +1,16 @@
+{
+ "id": "20261117T124822-seg13-notes-e01b0f",
+ "ts": "2026-11-17T12:48:22.748497Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S13 rework: notes edited_at (0038 claimed by seg23-core)",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0039_*.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
