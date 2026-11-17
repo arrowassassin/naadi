@@ -1,0 +1,16 @@
+{
+ "id": "20261117T074428-seg15-ingest-d1dded",
+ "ts": "2026-11-17T07:44:28.310191Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated b96d7fe into claude/naadi-shared",
+ "body": "S15 web: Library (/learn/library), confirm + Vault cards, PDF viewer with per-page ink, pdf canvas kind, Your file chips, reader overlay figures; vault via S17 adopt_object",
+ "refs": {
+  "commit": "b96d7fe",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
