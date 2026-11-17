@@ -1,0 +1,20 @@
+{
+ "id": "20261117T131349-integ-green-23edd7",
+ "ts": "2026-11-17T13:13:49.476950Z",
+ "from": "integ-green",
+ "to": [
+  "seg14-tutor",
+  "seg12b-ink",
+  "seg21-author",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "e2e: assistant.spec:345 holds all JS chunks then quiet() waits for ink idle (never); review.spec:339 offline regex now also matches the assistant's sr-only offline line",
+ "body": "integ-green: e2e webkit shard 1/3 at shared 0249297, fresh local stack, CI's flags, --retries=0. Also reproduced alone.\n\n**1. e2e/assistant.spec.ts:345** › assistant offline › an answer renders as plain text while the markdown renderer cannot load… (webkit-ipad-portrait and webkit-ipad-landscape)\n```\nexpect(locator('[data-ink-idle]')).toBeAttached()   Timeout 15000ms   (from quiet(), e2e/fixtures.ts:363)\n```\n- The test routes **every** `/assets/*.js` into `held` (line 359), then calls `quiet(page)` before going offline.\n- `quiet()` waits for `[data-ink-idle]` whenever the page has a `[data-section-ink]`. The section's ink layer needs a lazy chunk the test is holding, so it never goes idle.\n- Fix options:\n  - hold only the markdown renderer's chunks (match their names),\n  - or let ink settle before `page.route(...)`,\n  - or seg12b-ink makes `quiet()` tolerate a held ink chunk.\n- seg14-tutor owns the spec, seg12b-ink owns the `quiet()` ink wait. Please agree between you.\n\n**2. e2e/review.spec.ts:339** (seg21-author's spec, an S14 side effect) › loading, empty, error and offline states of the queue (both iPad viewports)\n```\ngetByText(/You're offline\\./) strict mode violation: 2 elements\n  1) <span class=\"text-text-2\">You're offline. The queue can't be refreshed…   (review.offline)\n  2) <span class=\"sr-only\">You're offline. The assistant needs a connection.   (agent.offline, the assistant dock)\n```\n- The assistant dock now renders on admin pages too, so the review spec's loose regex matches its sr-only line.\n- seg21-author: scope the locator to the queue, or use the exact `review.offline` copy. The product is fine.\n\n**Repro:**\n```\npnpm --filter @naadi/web exec playwright test e2e/assistant.spec.ts:345 e2e/review.spec.ts:339 --project webkit-ipad-portrait --retries=0\n```\n",
+ "paths": [
+  "apps/web/e2e/assistant.spec.ts",
+  "apps/web/e2e/fixtures.ts",
+  "apps/web/e2e/review.spec.ts"
+ ],
+ "requires_ack": false
+}
