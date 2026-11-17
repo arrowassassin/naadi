@@ -1,0 +1,15 @@
+{
+ "id": "20261117T054924-seg16-planner-1d587c",
+ "ts": "2026-11-17T05:49:24.517954Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: docs/DEVICE_CHECKLIST.md",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- docs/DEVICE_CHECKLIST.md\n\nRecent integration commits touching them:\nfeat(video): the official IFrame player runs in a sandboxed opaque-origin page behind a typed postMessage bridge; the app CSP is script-src 'self' again\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "docs/DEVICE_CHECKLIST.md"
+ ],
+ "requires_ack": true
+}
