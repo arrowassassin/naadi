@@ -1,0 +1,14 @@
+{
+ "id": "20261117T073200-seg22-harden-285831",
+ "ts": "2026-11-17T07:32:00.989322Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S22 progress: security, backups/restore, SearXNG, docs landed; perf gates waiting on 3 lazy-load changes",
+ "body": "Landed on shared: 8d234dd/914a5ed (CSP reporting, TT report-only, /api/csp-report, rate-limit audit, client floor, admin_write, dependency audit + SBOM, e2e sharding, crash guard, csp.spec), 8e149d3 (age-encrypted backups to the private dataset, migration 0026, restore.py, weekly restore.yml (green on GitHub), prune, backup/searxng health, SearXNG image stage, lockfile repair), e403e32 (lazy route pages, size-limit config, TT default + inert-html policies), e1a46f4 (Aegra protocol limits, system.spec), 4f28394 (ARCHITECTURE, SECURITY with ASVS L2, CONTENT_GUIDE, RUNBOOK; SearXNG admin probe; lighthouse.spec). Local: smoke set (csp, system, console-guard; 4 projects) 120/120 twice, --retries=0. Waiting: seg16 (planner/api.ts LangGraph SDK top-level import + PlannerPage lazy), seg15 (learn/routes lazy), seg21 (router.tsx lazy) per lead decision; then I land the held commit that makes size-limit + Lighthouse blocking in CI (initial JS today 667 KB gz, perf 0.82-0.87; a11y 100, BP 100, Today TTI 1.55 s). Open for others: S18 SW vs page.route (20261117T064817), duplicate manifest link (20261117T065721).",
+ "re": "20261117T042000-lead-a28fd5",
+ "thread": "20261117T042000-lead-a28fd5",
+ "requires_ack": false
+}
