@@ -60,3 +60,50 @@ describe("assistant markdown (Streamdown)", () => {
     expect(container).toHaveTextContent("[7]");
   });
 });
+
+describe("markdown renderer loading (offline-safe)", () => {
+  it("never fetches while offline, shows plain text, retries on `online` and after a failed load", async () => {
+    const { act } = await import("@testing-library/react");
+    const { vi } = await import("vitest");
+    const { setMarkdownLoaderForTests } = await import("./Markdown");
+    const real = () =>
+      Promise.all([import("streamdown"), import("@streamdown/math"), import("@streamdown/code")]) as Promise<
+        [typeof import("streamdown"), typeof import("@streamdown/math"), typeof import("@streamdown/code")]
+      >;
+    const errors = vi.spyOn(console, "error");
+    const online = vi.spyOn(navigator, "onLine", "get").mockReturnValue(false);
+    let calls = 0;
+    let fail = true;
+    setMarkdownLoaderForTests(() => {
+      calls += 1;
+      if (fail) return Promise.reject(new TypeError("Failed to fetch dynamically imported module"));
+      return real();
+    });
+    try {
+      const { container } = render(<Markdown text="**Gap** is high" streaming={false} />);
+      // offline: plain text, and nothing was fetched
+      expect(container.querySelector('[data-markdown="plain"]')).toHaveTextContent("**Gap** is high");
+      expect(calls).toBe(0);
+      // back online: one load, which fails (the connection dropped mid-fetch): still plain, no error
+      online.mockReturnValue(true);
+      await act(async () => {
+        window.dispatchEvent(new Event("online"));
+        await Promise.resolve();
+      });
+      expect(calls).toBe(1);
+      expect(container.querySelector('[data-markdown="plain"]')).not.toBeNull();
+      // the next `online` retries, and the answer renders
+      fail = false;
+      await act(async () => {
+        window.dispatchEvent(new Event("online"));
+      });
+      await waitFor(() => expect(container.querySelector('[data-streamdown="strong"]')).toHaveTextContent("Gap"));
+      expect(calls).toBe(2);
+      expect(errors).not.toHaveBeenCalled();
+    } finally {
+      online.mockRestore();
+      errors.mockRestore();
+      setMarkdownLoaderForTests(null);
+    }
+  });
+});

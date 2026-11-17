@@ -6,7 +6,7 @@ import { createContext, type ReactNode, useContext, useEffect, useMemo } from "r
 import { useUiText } from "../copy/useUiText";
 import { type ActionHandlers, BlockView, NoticeBlock, SourcesBlock } from "./blocks";
 import { ConfirmChip } from "./ConfirmChip";
-import { Markdown } from "./Markdown";
+import { ensureMarkdown, Markdown } from "./Markdown";
 import { type Block, type Citation, TOOL_NAMES } from "./protocol";
 import type { Tutor } from "./useTutor";
 
@@ -175,6 +175,8 @@ export function ThreadView({ tutor, empty, onAsk }: { tutor: Tutor; empty: React
   // assistant-ui's thread auto-scroll observes this viewport and its rows and updates its store from the observer
   // callback; when a turn adds several blocks in one frame the browser defers the rest to the next frame and
   // reports it. Only that exact report is cancelled, and only while this thread viewport is on screen.
+  // The chat is open: warm the markdown renderer now (only while online), before the first answer streams.
+  useEffect(() => ensureMarkdown(), []);
   useEffect(() => {
     const onError = (e: ErrorEvent) => {
       if (e.message === RO_LOOP) e.preventDefault();

@@ -5,7 +5,8 @@ loopback URL), so the tutor runs end to end through the real gateway, ChatOpenRo
 and the Aegra runtime, with deterministic answers chosen by a keyword in the student's latest message:
 
 - `e2e:answer` → calls search_knowledge, then streams an answer citing [1];
-- `e2e:save`   → calls save_note (the confirm chip), then confirms or acknowledges the cancel;
+- `e2e:save`   → calls save_note (the confirm chip), then confirms or acknowledges the cancel (`e2e:save#tok`
+  puts `ref tok` in the note text);
 - `e2e:canvas` → calls open_in_canvas with a document draft;
 - anything else → a short text answer.
 
@@ -20,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import time
 import uuid
 from collections.abc import AsyncIterator
@@ -54,9 +56,13 @@ def decide(messages: list[dict[str, Any]]) -> dict[str, Any]:
         return {"text": "Distal (type 1) RTA cannot acidify the urine, so urine pH stays above 5.5 [1]."}
     if "e2e:save" in user:
         if not tool_results:
+            # `e2e:save#<token>` puts the token in the note, so a test counts only its own saves (projects and
+            # repeats run in parallel on one student and one section note).
+            tok = re.search(r"e2e:save#([A-Za-z0-9-]{1,40})", user)
+            ref = f" (ref {tok.group(1)})" if tok else ""
             return {
                 "tool": "save_note",
-                "args": {"markdown": "**Winters' formula**: expected PCO2 = 1.5 x HCO3 + 8 (+/- 2)"},
+                "args": {"markdown": f"**Winters' formula**: expected PCO2 = 1.5 x HCO3 + 8 (+/- 2){ref}"},
             }
         if any("declined" in r for r in tool_results):
             return {"text": "Okay, I did not save anything."}

@@ -1,5 +1,5 @@
 import { cx } from "@naadi/ui";
-import { type ComponentProps, memo, type ReactNode, useEffect, useMemo, useState } from "react";
+import { type ComponentProps, memo, type ReactNode, useEffect, useMemo, useSyncExternalStore } from "react";
 import type { CustomRendererProps, PluginConfig, StreamdownProps } from "streamdown";
 import { useAuth } from "../auth/session";
 import { MermaidBlock } from "../content/RichNodes";
@@ -17,8 +17,8 @@ import type { Citation } from "./protocol";
  * - Mermaid uses the app's sandboxed renderer (content/mermaidHost.ts, mermaid 12), not @streamdown/mermaid.
  * - [n] markers become citation chips linked to the citation with that n; unknown n stays text.
  * - Streamdown and its plugins (unified, micromark, Shiki, KaTeX) load on demand, outside the surface's chunk
- *   (performance budget): `preloadMarkdown()` starts the load when the surface mounts; until it lands, text
- *   shows as plain wrapped text.
+ *   (performance budget): `ensureMarkdown()` starts the load when the chat opens or an answer needs it, only
+ *   while online; until it lands (or while offline), text shows as plain wrapped text.
  */
 
 type Pluggable = NonNullable<StreamdownProps["rehypePlugins"]>[number];
@@ -39,60 +39,107 @@ interface MarkdownLib {
   sanitize: Pluggable;
 }
 
-let lib: MarkdownLib | null = null;
-let loading: Promise<MarkdownLib> | null = null;
+type Modules = [typeof import("streamdown"), typeof import("@streamdown/math"), typeof import("@streamdown/code")];
 
-/** Loads Streamdown and its math/code plugins once (separate chunks); safe to call repeatedly. */
-export function preloadMarkdown(): Promise<MarkdownLib> {
-  loading ??= Promise.all([import("streamdown"), import("@streamdown/math"), import("@streamdown/code")]).then(
-    ([sd, { createMathPlugin }, { createCodePlugin }]) => {
-      const mathBase = createMathPlugin({ singleDollarTextMath: true });
-      const [rehypeKatex, katexOptions] = mathBase.rehypePlugin as [Pluggable, Record<string, unknown>];
-      const [harden, hardenDefaults] = sd.defaultRehypePlugins.harden as [Pluggable, Record<string, unknown>];
-      lib = {
-        Streamdown: sd.Streamdown,
-        math: {
-          ...mathBase,
-          rehypePlugin: [
-            rehypeKatex,
-            {
-              ...katexOptions,
-              output: "mathml",
-              throwOnError: false,
-              trust: false,
-              strict: "ignore",
-              maxSize: 50,
-              maxExpand: 500,
-            },
-          ] as unknown as Pluggable,
-          getStyles: undefined,
+type LoadModules = () => ModulesLoad;
+type ModulesLoad = Promise<Modules>;
+
+const importModules: LoadModules = () =>
+  Promise.all([import("streamdown"), import("@streamdown/math"), import("@streamdown/code")]);
+
+let loadModules: LoadModules = importModules;
+let lib: MarkdownLib | null = null;
+let loading = false;
+let waitingForOnline = false;
+const listeners = new Set<() => void>();
+
+function build([sd, { createMathPlugin }, { createCodePlugin }]: Modules): MarkdownLib {
+  const mathBase = createMathPlugin({ singleDollarTextMath: true });
+  const [rehypeKatex, katexOptions] = mathBase.rehypePlugin as [Pluggable, Record<string, unknown>];
+  const [harden, hardenDefaults] = sd.defaultRehypePlugins.harden as [Pluggable, Record<string, unknown>];
+  return {
+    Streamdown: sd.Streamdown,
+    math: {
+      ...mathBase,
+      rehypePlugin: [
+        rehypeKatex,
+        {
+          ...katexOptions,
+          output: "mathml",
+          throwOnError: false,
+          trust: false,
+          strict: "ignore",
+          maxSize: 50,
+          maxExpand: 500,
         },
-        code: createCodePlugin({ themes: ["github-dark", "github-dark"] }),
-        harden,
-        hardenDefaults,
-        sanitize: sd.defaultRehypePlugins.sanitize as Pluggable,
-      };
-      return lib;
+      ] as unknown as Pluggable,
+      getStyles: undefined,
+    },
+    code: createCodePlugin({ themes: ["github-dark", "github-dark"] }),
+    harden,
+    hardenDefaults,
+    sanitize: sd.defaultRehypePlugins.sanitize as Pluggable,
+  };
+}
+
+function retryWhenOnline(): void {
+  if (waitingForOnline || typeof window === "undefined") return;
+  waitingForOnline = true;
+  window.addEventListener(
+    "online",
+    () => {
+      waitingForOnline = false;
+      ensureMarkdown();
+    },
+    { once: true },
+  );
+}
+
+/**
+ * Starts loading Streamdown and its math/code plugins (their own chunks) if they are not loaded yet. Never while
+ * offline: the load waits for the next `online` event. A failed load (the connection dropped mid-fetch) is caught
+ * and tried again on the next `online` event or the next render that needs it; meanwhile text renders plain.
+ */
+export function ensureMarkdown(): void {
+  if (lib || loading) return;
+  if (typeof navigator !== "undefined" && navigator.onLine === false) {
+    retryWhenOnline();
+    return;
+  }
+  loading = true;
+  loadModules().then(
+    (mods) => {
+      lib = build(mods);
+      loading = false;
+      for (const l of listeners) l();
+    },
+    () => {
+      loading = false;
+      retryWhenOnline();
     },
   );
-  loading.catch(() => {
-    loading = null; // a failed chunk load (offline) is retried on the next render that needs it
-  });
-  return loading;
+}
+
+/** Tests only: replace the chunk loader and forget what was loaded. */
+export function setMarkdownLoaderForTests(loader: LoadModules | null): void {
+  loadModules = loader ?? importModules;
+  lib = null;
+  loading = false;
+}
+
+function subscribe(cb: () => void): () => void {
+  listeners.add(cb);
+  return () => listeners.delete(cb);
 }
 
 function useMarkdownLib(): MarkdownLib | null {
-  const [ready, setReady] = useState<MarkdownLib | null>(lib);
+  const ready = useSyncExternalStore(
+    subscribe,
+    () => lib,
+    () => null,
+  );
   useEffect(() => {
-    if (ready) return;
-    let alive = true;
-    preloadMarkdown().then(
-      (l) => alive && setReady(l),
-      () => undefined,
-    );
-    return () => {
-      alive = false;
-    };
+    if (!ready) ensureMarkdown();
   }, [ready]);
   return ready;
 }
@@ -190,7 +237,7 @@ function MarkdownImpl(props: MarkdownProps) {
   const md = useMarkdownLib();
   if (!md) {
     return (
-      <div className={cx("naadi-md flex flex-col gap-3 text-reading text-text", props.className)}>
+      <div data-markdown="plain" className={cx("naadi-md flex flex-col gap-3 text-reading text-text", props.className)}>
         <p className="m-0 whitespace-pre-wrap">{props.text}</p>
       </div>
     );

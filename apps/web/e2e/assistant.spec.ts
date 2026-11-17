@@ -96,10 +96,10 @@ async function api<T>(page: Page, method: string, url: string, body?: unknown): 
 /** The student's notes (S13 notes API): the count is what a confirmed save_note changes. */
 /** How many times the fake model's note text is stored across the student's notes (a save appends to the
  * section's page note when one exists, so counting notes would miss it). */
-async function noteCount(page: Page): Promise<number> {
+async function noteCount(page: Page, marker = "Winters' formula"): Promise<number> {
   const res = await api<{ items: { body_text?: string | null }[] }>(page, "GET", "/api/notes?limit=200");
   expect(res.status, "GET /api/notes").toBe(200);
-  return res.json.items.reduce((n, item) => n + ((item.body_text ?? "").split("Winters' formula").length - 1), 0);
+  return res.json.items.reduce((n, item) => n + ((item.body_text ?? "").split(marker).length - 1), 0);
 }
 
 test.describe("tutor assistant", () => {
@@ -150,9 +150,12 @@ test.describe("tutor assistant", () => {
   test("save_note: Accept writes the note; Cancel leaves nothing", async ({ page, consoleErrors }, info) => {
     trackApi(page);
     await openFirstSection(page);
-    const before = await noteCount(page);
+    // Projects and repeats run in parallel on one student and one section note: count only this run's saves.
+    const tok = `t${info.project.name.replace(/[^a-z0-9]/g, "")}${info.repeatEachIndex}${Date.now().toString(36)}`;
+    const mine = `(ref ${tok})`;
+    const before = await noteCount(page, mine);
 
-    await ask(page, "e2e:save Save the key points of this section as a note");
+    await ask(page, `e2e:save#${tok} Save the key points of this section as a note`);
     const panel = conversation(page);
     const chip = panel.locator('[data-confirm="note"]');
     await expect(chip).toBeVisible({ timeout: STREAM_TIMEOUT });
@@ -166,14 +169,18 @@ test.describe("tutor assistant", () => {
     await snap(page, info, consoleErrors, "confirm-note");
     await chip.getByRole("button", { name: "Cancel" }).click();
     await expect(chip).toBeHidden({ timeout: STREAM_TIMEOUT });
-    await expect.poll(() => noteCount(page)).toBe(before);
+    await expect.poll(() => noteCount(page, mine)).toBe(before);
+    // The cancel is a run of its own: wait until it has answered and the bar is idle again (a send while a run is
+    // still going is not accepted), then ask again.
+    await expect(panel.getByText("Okay, I did not save anything.")).toBeVisible({ timeout: STREAM_TIMEOUT });
+    await expect(panel.getByRole("button", { name: "Stop the answer" })).toHaveCount(0, { timeout: STREAM_TIMEOUT });
 
-    await ask(page, "e2e:save Save the key points of this section as a note");
+    await ask(page, `e2e:save#${tok} Save the key points of this section as a note`);
     const again = panel.locator('[data-confirm="note"]');
     await expect(again).toBeVisible({ timeout: STREAM_TIMEOUT });
     await again.getByRole("button", { name: "Accept" }).click();
     await expect(again).toBeHidden({ timeout: STREAM_TIMEOUT });
-    await expect.poll(() => noteCount(page), { timeout: STREAM_TIMEOUT }).toBe(before + 1);
+    await expect.poll(() => noteCount(page, mine), { timeout: STREAM_TIMEOUT }).toBe(before + 1);
   });
 
   for (const view of [
@@ -268,6 +275,52 @@ test.describe("exam mode", () => {
     } finally {
       await student.done();
     }
+  });
+});
+
+test.describe("assistant offline", () => {
+  test.use(asStudent);
+
+  test("an answer renders as plain text while the markdown renderer cannot load, then as markdown once back online", async ({
+    page,
+    consoleErrors,
+  }, info) => {
+    test.setTimeout(120_000);
+    await openFirstSection(page);
+    // From here on, hold the lazily loaded scripts the chat asks for (the markdown renderer's chunks), as if the
+    // connection went before they arrived.
+    const held: Route[] = [];
+    let holding = true;
+    const hold = async (route: Route) => {
+      if (holding) held.push(route);
+      else await route.continue();
+    };
+    await page.route(/\/assets\/[^/]+\.js(\?.*)?$/, hold);
+    await ask(page, "e2e:answer What does the anion gap tell me?");
+    const panel = conversation(page);
+    const answer = panel.locator('[data-message-role="assistant"]').last();
+    await expect(answer.locator('[data-markdown="plain"]').first()).toBeVisible({ timeout: STREAM_TIMEOUT });
+    await expect(answer).toContainText("RTA");
+    await expect(panel.locator('[data-status="thinking"], [data-status="tool"]')).toHaveCount(0, {
+      timeout: STREAM_TIMEOUT,
+    });
+
+    await quiet(page);
+    await page.context().setOffline(true);
+    await page.evaluate(() => window.dispatchEvent(new Event("offline")));
+    await expect(page.getByText("You're offline. The assistant needs a connection.").first()).toBeVisible();
+    await expect(answer.locator('[data-markdown="plain"]').first()).toBeVisible();
+    await expect(answer).toContainText("RTA");
+    await snap(page, info, consoleErrors, "offline-plain-answer");
+
+    await page.context().setOffline(false);
+    await page.evaluate(() => window.dispatchEvent(new Event("online")));
+    holding = false;
+    // Release first, then unroute: unrouting a handler with routes still pending marks them handled.
+    for (const r of held.splice(0)) await r.continue();
+    await page.unroute(/\/assets\/[^/]+\.js(\?.*)?$/, hold);
+    await expect(answer.locator('[data-markdown="plain"]')).toHaveCount(0, { timeout: STREAM_TIMEOUT });
+    await expect(answer.getByRole("link", { name: /^Source 1/ }).first()).toBeVisible();
   });
 });
 

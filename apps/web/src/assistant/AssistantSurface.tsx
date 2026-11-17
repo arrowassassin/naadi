@@ -12,7 +12,6 @@ import { attachmentFromContext } from "./attachments";
 import { Composer } from "./Composer";
 import { useCanvasKeepNotes } from "./canvasKeep";
 import { type AssistantLayout, useAssistantLayout } from "./layout";
-import { preloadMarkdown } from "./Markdown";
 import { usePageContext } from "./pageContext";
 import { TutorRuntimeProvider } from "./runtime";
 import { closeAssistant, getAssistantUi, openAssistant, setAssistantUi, useAssistantUi } from "./store";
@@ -308,10 +307,6 @@ export default function AssistantSurface({ dockSlot }: { dockSlot: HTMLElement |
   }, [tutor.isRunning, invalidateThreads]);
 
   useEffect(() => registerBuiltInCanvasKinds(), []);
-  // The markdown renderer is its own chunk (budget): start loading it now, before the first answer streams.
-  useEffect(() => {
-    void preloadMarkdown().catch(() => undefined);
-  }, []);
 
   // The ask handler, registered while this surface lives (feature on, no exam).
   useEffect(
