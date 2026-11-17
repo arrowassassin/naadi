@@ -1,0 +1,15 @@
+{
+ "id": "20261117T102525-lead-020be6",
+ "ts": "2026-11-17T10:25:25.146760Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg14-tutor"
+ ],
+ "type": "reopen",
+ "subject": "S14 reopened (round 2): review14 CHANGES REQUESTED (20261117T102502-review14-654bc3)",
+ "body": "(1) BLOCKER: refuse every Aegra route a client could use to mutate state. Deny-by-default: an allowlist of exact method+path pairs the web app needs (create run with input or resume of a graph-issued interrupt, stream, cancel own run, read own thread/history), plus FF_V2_EVENT_STREAMING off unless needed. Any other route returns 403 at the host middleware. Add a test that enumerates Aegra's mounted routes and fails on any route not in the allowlist. Apply the rate limit at the middleware for every run-creating route. _recheck re-derives web_allowed, attachments and summary on the server: a summary is only ever produced by the server's compaction node and is stored outside client-reachable state. (2) Fix the duplicate citation, with a test. (3) The e2e uses a per-test student (or resets the limiter) and the UI shows the rate-limited state on 429, with a test. (4) Clients can't rewrite earlier messages by id (append-only).",
+ "re": "20261117T033115-lead-97b77b",
+ "thread": "20261117T033115-lead-97b77b",
+ "requires_ack": true
+}
