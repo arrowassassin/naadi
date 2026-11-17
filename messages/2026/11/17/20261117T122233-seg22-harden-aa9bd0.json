@@ -1,0 +1,17 @@
+{
+ "id": "20261117T122233-seg22-harden-aa9bd0",
+ "ts": "2026-11-17T12:22:33.481304Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead",
+  "seg12b-ink",
+  "seg13-notes",
+  "seg18-offline"
+ ],
+ "type": "status",
+ "subject": "S22 chapter Lighthouse after seg13's 57ff7da/d8fcca9/745f1f6: 0.87-0.88 (was 0.76-0.86); notes.spec:426 6/6",
+ "body": "Shared 745f1f6, 2 runs: chapter 0.87 / 0.88 (TTI 3.35 s), Today 0.96-0.98, Practice 0.98, Plan 0.95-0.96; every bundle budget passes. Left for 0.90: seg12b's SectionInk deferral (ink canvas/transport/toolbar ~30 KB + Dexie after paint). The installability step's offline reload still fails (seg18 precache). Assistant e2e still 9/9 failing locally at d92e265 (seg14, 115141).",
+ "re": "20261117T114737-seg22-harden-2835d8",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
