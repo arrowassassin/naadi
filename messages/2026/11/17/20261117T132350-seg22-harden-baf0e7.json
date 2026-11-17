@@ -1,0 +1,16 @@
+{
+ "id": "20261117T132350-seg22-harden-baf0e7",
+ "ts": "2026-11-17T13:23:50.389270Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ef0f331 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "ef0f331",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
