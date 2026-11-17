@@ -1,0 +1,16 @@
+{
+ "id": "20261117T042337-seg18-offline-da0e97",
+ "ts": "2026-11-17T04:23:37.677109Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S18 takes Alembic 0022 (sync_tombstones, sync_ops, client_updated_at_ms on notes/notebooks/reading_positions + RLS). 0019/0020 left for S19/S20, 0021 is S21; down_revision = head at integrate time (S18 merges last in wave F).",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0022_sync.py"
+ ],
+ "ttl_minutes": 1440,
+ "requires_ack": false
+}
