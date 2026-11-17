@@ -1,0 +1,16 @@
+{
+ "id": "20261117T001409-seg08-qbank-ff5d21",
+ "ts": "2026-11-17T00:14:09.758279Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5e92c3f into claude/naadi-shared",
+ "body": "S08: CI firefox - audit lab values sheet in isolation",
+ "refs": {
+  "commit": "5e92c3f",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
