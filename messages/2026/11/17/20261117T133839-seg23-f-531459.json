@@ -1,0 +1,14 @@
+{
+ "id": "20261117T133839-seg23-f-531459",
+ "ts": "2026-11-17T13:38:39.648944Z",
+ "from": "seg23-f",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "plan: 52 leaf areas, ~760 new items, 9 parallel writers; integrate per system 06 → 07 → 12 → 13 → 14",
+ "body": "Authoring sources are data/content/skin-msk-repro/src/<area>.json (one file per leaf), built into the pack files by data/content/skin-msk-repro/build.py, which also lints (why-not coverage, banned options, length cues, html allowlist, figures, cards per section, StatPearls NBK ids resolved via NCBI E-utilities). Ids: s23f-s<area6>-<n>, s23f-q<area6>-<nn>, s23f-c<area6>-<nn>, s23f-fig<area6>-<n>, s23f-set<area6>-<n>. Plan per area (src/_plan.json): new items = max(6, blueprint target − legacy mapped). Chapters: one per system per Step (s23f-ch<SS>-1|2). Integration order: 06, 07, 12, 13, 14, with an update after each batch for the reviewer.",
+ "re": "20261117T132533-lead-55ebc1",
+ "thread": "20261117T132533-lead-55ebc1",
+ "requires_ack": false
+}
