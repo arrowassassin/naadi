@@ -39,7 +39,7 @@ def build_generation_service(settings: Settings, db: Database, app_config: AppCo
     client: GenerationClient | None
     store: MediaStore
     if settings.generation_fake and settings.app_env != "prod":
-        client, store = FakeGenerationClient(), MemoryMediaStore()
+        client, store = FakeGenerationClient(), MemoryMediaStore(base_url="/api/generated/stub-file")
     else:
         store = SupabaseMediaStore(settings)
         token = settings.hf_gen_token.get_secret_value() if settings.hf_gen_token is not None else None

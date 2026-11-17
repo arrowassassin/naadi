@@ -12,6 +12,7 @@ export * from "./gen/sdk.gen";
 export type * from "./gen/types.gen";
 export * from "./gen/zod.gen";
 // Hand-written (no endpoint carries strokes yet); its JSON Schema is committed as ink.schema.json.
+export * from "./generation";
 export * from "./ink";
 // ui_copy text with a non-empty fallback generated from config/app_config.yaml (segment 05).
 export * from "./uiCopy";

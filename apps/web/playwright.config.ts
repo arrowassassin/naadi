@@ -162,6 +162,10 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     APP_ENV: "local",
     // Aegra reads DEBUG as a boolean; Playwright's own DEBUG=pw:* must not reach the API process.
     DEBUG: "false",
+    // Generation runs against the in-process fake (no Space call, in-memory media served by the app itself). The
+    // production-mode server ignores this and reports `not configured`, like a deploy without HF_GEN_TOKEN.
+    GENERATION_FAKE: "1",
+    HF_GEN_TOKEN: "",
     APP_VERSION: process.env.APP_VERSION ?? "e2e",
     // The local API is checked against throwaway test accounts, never the owner's address.
     ADMIN_EMAILS: `naadi-e2e-admin-${process.env.E2E_RUN_ID}@example.com`,

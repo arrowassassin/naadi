@@ -161,7 +161,7 @@ def key() -> SigningKey:
     return SigningKey()
 
 
-def build_client(url: str, key: SigningKey, static_dir: Path, rig: Rig) -> TestClient:
+def build_client(url: str, key: SigningKey, static_dir: Path, rig: Rig | None, **settings: Any) -> TestClient:
     s = make_settings(
         static_dir=static_dir,
         supabase_url=SUPABASE_URL,
@@ -170,7 +170,8 @@ def build_client(url: str, key: SigningKey, static_dir: Path, rig: Rig) -> TestC
         supabase_service_role_key=None,
         supabase_jwt_secret=None,
         admin_emails=SecretStr(ADMIN_EMAIL),
-        hf_gen_token=SecretStr("hf_test_token_value"),
+        **({"hf_gen_token": SecretStr("hf_test_token_value")} if rig is not None else {}),
+        **settings,
     )
     app = create_app(
         s,
@@ -178,7 +179,8 @@ def build_client(url: str, key: SigningKey, static_dir: Path, rig: Rig) -> TestC
         db=Database(s.database_url),
         verifier=TokenVerifier(SUPABASE_URL, transport=JwksServer(key).transport()),
     )
-    app.state.generation = rig.service  # the same fake-backed service the test drives directly
+    if rig is not None:
+        app.state.generation = rig.service  # the same fake-backed service the test drives directly
     return TestClient(app, raise_server_exceptions=False)
 
 

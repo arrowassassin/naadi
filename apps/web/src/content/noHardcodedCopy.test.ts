@@ -13,6 +13,7 @@ const ROOTS = [
   "cards",
   "content",
   "exam",
+  "generation",
   "highlights",
   "ink",
   "learn",

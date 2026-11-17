@@ -183,6 +183,17 @@ async def stub_generate(
     return await _service(request).run(user.user_id, body.kind, body.prompt, body.seconds)
 
 
+@stub_router.get("/generated/stub-file/{bucket}/{path:path}")
+async def stub_file(request: Request, bucket: str, path: str) -> Response:
+    """Serves the in-memory store's bytes from the app's own origin (the CSP allows it), only in the stub."""
+    store = _service(request)._store
+    try:
+        data, mime = store.objects[(bucket, path)]  # type: ignore[attr-defined]
+    except (KeyError, AttributeError):
+        return Response(status_code=404)
+    return Response(content=data, media_type=mime, headers={"cache-control": "no-store"})
+
+
 async def _generation_error(_: Request, exc: Exception) -> JSONResponse:
     assert isinstance(exc, GenerationError)
     return error_response(exc.status, exc.code, exc.code)

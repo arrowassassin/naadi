@@ -18,9 +18,11 @@ def content_security_policy(settings: Settings) -> str:
     supa = settings.supabase_origin
     connect = ["'self'"]
     img = ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS]
+    media = ["'self'", "blob:"]
     if supa:
         connect += [supa, supa.replace("https://", "wss://", 1)]
         img.append(supa)  # Supabase Storage serves from the project origin (/storage/v1/...)
+        media.append(supa)  # generated clips (segment 15b) are signed Storage URLs
     directives = [
         "default-src 'self'",
         # The IFrame Player API script (and the widget it loads) come from www.youtube.com, only after a student
@@ -30,7 +32,7 @@ def content_security_policy(settings: Settings) -> str:
         "font-src 'self'",
         f"img-src {' '.join(img)}",
         f"connect-src {' '.join(connect)}",
-        "media-src 'self' blob:",
+        f"media-src {' '.join(media)}",
         # YouTube only through the official IFrame player on its privacy-enhanced domain; 'self' is the
         # sandboxed diagram renderer (SANDBOX_DOCUMENTS), which runs with an opaque origin.
         "frame-src 'self' https://www.youtube-nocookie.com",

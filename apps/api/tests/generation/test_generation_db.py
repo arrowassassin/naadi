@@ -426,3 +426,26 @@ async def test_approval_refusals(
         0,
     )
     assert not [k for k in rig.store.objects if k[0] == PUBLIC]
+
+
+def test_the_local_stub_generates_serves_and_labels_through_the_real_routes(
+    url: str, key: SigningKey, static_dir: Any, world: World
+) -> None:
+    from .conftest import build_client
+
+    with build_client(url, key, static_dir, None, app_env="local", generation_fake=True) as c:
+        h = bearer(key, world.user_a)
+        r = c.post("/api/generated/stub", headers=h, json={"prompt": "Nephron cross-section"})
+        assert r.status_code == 200, r.text
+        item = r.json()
+        assert item["status"] == "ready" and item["ai_generated"] is True
+        assert item["url"].startswith("/api/generated/stub-file/generated-media/")
+        file = c.get(item["url"])
+        assert file.status_code == 200 and file.headers["content-type"] == "image/webp" and file.content[:4] == b"RIFF"
+        assert c.get("/api/generation/status", headers=h).json()["state"] == "ready"
+        failed = c.post("/api/generated/stub", headers=h, json={"prompt": "FAILME heart"})
+        assert (failed.status_code, failed.json()["error"]["code"]) == (502, "generation_failed")
+        listing = c.get("/api/generated", headers=h).json()["items"]
+        assert {i["status"] for i in listing} == {"ready", "failed"}
+        assert c.delete(f"/api/generated/{item['id']}", headers=h).status_code == 204
+        assert c.get(item["url"]).status_code == 404  # the file went with the row

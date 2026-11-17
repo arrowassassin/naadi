@@ -254,6 +254,8 @@ class FakeGenerationClient:
     async def generate(self, req: GenerationRequest, progress: ProgressFn) -> GenerationResult:
         self.calls.append(req)
         await progress("queued", 1)
+        if "FAILME" in req.prompt:  # the e2e stub's way to ask for a failed generation
+            raise GenerationClientError("generation_failed")
         if self.quota_reset is not None:
             raise QuotaExceeded(self.quota_reset)
         if self.fail_with is not None:

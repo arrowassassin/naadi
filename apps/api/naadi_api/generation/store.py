@@ -93,9 +93,10 @@ class SupabaseMediaStore:
 class MemoryMediaStore:
     """In-memory store for tests and the non-production stub."""
 
-    def __init__(self) -> None:
+    def __init__(self, base_url: str = "http://storage.test") -> None:
         self.objects: dict[tuple[str, str], tuple[bytes, str]] = {}
         self.fail_put = False
+        self._base = base_url.rstrip("/")
 
     async def put(self, bucket: str, path: str, data: bytes, mime: str) -> None:
         if self.fail_put:
@@ -115,7 +116,7 @@ class MemoryMediaStore:
     async def sign(self, bucket: str, path: str, expires_in: int = SIGNED_URL_TTL_S) -> str | None:
         if (bucket, path) not in self.objects:
             return None
-        return f"http://storage.test/{bucket}/{path}?token=t&exp={expires_in}"
+        return f"{self._base}/{bucket}/{path}?token=t&exp={expires_in}"
 
 
 __all__ = ["SIGNED_URL_TTL_S", "MediaStore", "MediaStoreError", "MemoryMediaStore", "SupabaseMediaStore"]
