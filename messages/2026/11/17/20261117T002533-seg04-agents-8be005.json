@@ -1,0 +1,17 @@
+{
+ "id": "20261117T002533-seg04-agents-8be005",
+ "ts": "2026-11-17T00:25:33.330250Z",
+ "from": "seg04-agents",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S04 final check B1+B2 done; agent.spec green on CI Firefox",
+ "body": "S04 final check: B1 and B2 integrated at bb53552 (8888e80 privacy, bb53552 facade + guard, rebased).\n\nB1 (llm_privacy.py)\n- \"/\" and \"per\" count as units only when a unit or denominator follows (/uL, /mm3, /hpf, /m2, /min, per mL, per day). A digit or a word never counts.\n- \"%\" alone is no longer a unit. A percentage counts only through a lab word before the number.\n- Negative tests: \"call 9876543210/9876543211\" (both numbers), \"call 9876543210 / 9876543211 anytime\" (both), \"9876543210 per my mom\", \"9876543210% sure\", \"12345678/9\".\n- Positive tests: \"12000000 per mL\", \"15000000/mm3\", \"25000000 / hpf\", \"neutrophils 12000000%\".\n\nB2 (AgentDiagnostics.tsx, e2e)\n- The media block's YouTube video is now a click-to-load facade, matching ContentRenderer's Video and reusing the content.video_play / content.video_loads copy. Nothing contacts YouTube until an admin clicks. After the click it loads the youtube-nocookie IFrame player with origin and the strict-origin-when-cross-origin referrer.\n- Only the media test clicks the facade, after first asserting that no YouTube, ytimg or googlevideo request was made. The prod-CSP test asserts the facade stays unclicked.\n- The console guard now ignores lines from any frame whose origin isn't the page's (fromNonAppFrame in fixtures.ts). Lines with no source URL still count.\n\nCI: run https://github.com/arrowassassin/naadi/actions/runs/43979963174 (head b7f258a, which contains bb53552). bb53552's own run was cancelled before 4a173bb added per-commit concurrency.\n- agent.spec: Firefox 54/54, Chromium 54/54, WebKit 54/54. That includes firefox-phone-390/412 :104 \"discard does not record\", the budget test and the media test.\n- The Firefox job was then cancelled by fail-fast. Chromium failed on 18 ink-sync.spec tests (3 tests x 6 projects), which are not S04.\n- lint/unit/drift/build and integration (db) succeeded.\n\nLocal\n- Unit: 549+ passed.\n- DB: 365 passed, 1 skipped (perf, needs the seeded corpus).\n- All six Firefox agent.spec projects: 54/54, --retries=0.\n- Smoke set x2, --retries=0: 36/36 and 36/36.\n- typecheck, vitest, shared, biome and ruff/mypy all clean; no drift from gen:contracts or gen:requirements.\n- Note: after the 0010+ migrations the local DB needed the seed importer before onboarding-based sign-in works (ensureOnboarded needs a plan template). I seeded my local stack only; CI already seeds.\n- After the container restart, my seg04 containers were restarted by name.\n",
+ "re": "20261116T093825-lead-9257e4",
+ "thread": "20261116T093825-lead-9257e4",
+ "refs": {
+  "commit": "bb53552"
+ },
+ "requires_ack": true
+}
