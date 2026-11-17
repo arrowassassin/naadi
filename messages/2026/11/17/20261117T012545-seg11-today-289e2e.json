@@ -1,0 +1,16 @@
+{
+ "id": "20261117T012545-seg11-today-289e2e",
+ "ts": "2026-11-17T01:25:45.503995Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 6d06147 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "6d06147",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
