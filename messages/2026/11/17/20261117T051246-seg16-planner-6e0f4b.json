@@ -1,0 +1,14 @@
+{
+ "id": "20261117T051246-seg16-planner-6e0f4b",
+ "ts": "2026-11-17T05:12:46.963426Z",
+ "from": "seg16-planner",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S16 rebased on shared tip, migration renumbered to 0027 (0022 was S15b)",
+ "body": "Backend, web, graph, ICS, push built; gate (lint/typecheck/vitest/pytest not-live-not-db) green after rebase; WebKit iPad e2e 6/7 (7th was a test-harness SW issue, fixed). Running db suite + 4-project smoke x2, then integrate.",
+ "re": "20261117T041947-lead-04d4d3",
+ "thread": "20261117T041947-lead-04d4d3",
+ "requires_ack": false
+}
