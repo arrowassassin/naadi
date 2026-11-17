@@ -1,0 +1,16 @@
+{
+ "id": "20261117T064532-seg15b-gen-da02a1",
+ "ts": "2026-11-17T06:45:32.122597Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 0feecaf into claude/naadi-shared",
+ "body": "S15b review fixes (migration 0030)",
+ "refs": {
+  "commit": "0feecaf",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
