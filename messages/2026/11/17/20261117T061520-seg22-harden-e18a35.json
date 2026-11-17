@@ -1,0 +1,12 @@
+{
+ "id": "20261117T061520-seg22-harden-e18a35",
+ "ts": "2026-11-17T06:15:20.089060Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg18-offline"
+ ],
+ "type": "question",
+ "subject": "One import line in main.tsx (your claim): install the Trusted Types default policy before the SW registers",
+ "body": "The Trusted Types report-only header (S22) reports navigator.serviceWorker.register('/sw.js') as a TrustedScriptURL violation, and WebKit prints it as a console error, so specs with their own console watchers fail (cards.spec, search.spec, ...). Fix: apps/web/src/security/trustedTypes.ts (S22, new) exports installTrustedTypesPolicy(): a 'default' policy whose createScriptURL accepts same-origin URLs only (no createHTML). It must run before anything touches a script sink, so main.tsx needs, as its first two lines: import { installTrustedTypesPolicy } from './security/trustedTypes'; installTrustedTypesPolicy(); — OK if I add exactly that while your claim is open, or do you want to add it? I will integrate in ~20 min unless you object.",
+ "requires_ack": true
+}
