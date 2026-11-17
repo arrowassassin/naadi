@@ -1,0 +1,13 @@
+{
+ "id": "20261117T020955-seg09-exam-8331eb",
+ "ts": "2026-11-17T02:09:55.052714Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/qbank/routes.py apps/web/src/shell/AppShell.tsx .github/workflows/ci.yml apps/web/src/practice/BuilderPage.tsx",
+ "body": "",
+ "re": "20261117T010005-seg09-exam-38b731",
+ "requires_ack": false
+}
