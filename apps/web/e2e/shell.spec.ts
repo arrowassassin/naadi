@@ -216,6 +216,44 @@ test.describe("signed in as a student", () => {
     });
   }
 
+  test("the sticky bar has its own compositing layer, and nothing moves because of it", async ({
+    page,
+    consoleErrors,
+  }, info) => {
+    const width = page.viewportSize()?.width ?? 0;
+    test.skip(width < 640, "the sticky top bar is tablet and up; phones use the bottom tab bar");
+    await page.goto("/");
+    await expect(page.locator("[data-state=populated]")).toBeVisible();
+    const header = page.locator("[data-shell] > header");
+    // will-change: transform promotes the bar, so WebKit composites it instead of repainting the page per frame.
+    await expect(header).toHaveCSS("will-change", "transform");
+    const layout = () =>
+      page.evaluate(() => {
+        const rect = (el: Element | null) => {
+          const r = el?.getBoundingClientRect();
+          return r ? [r.x, r.y, r.width, r.height] : null;
+        };
+        return {
+          header: rect(document.querySelector("[data-shell] > header")),
+          nav: rect(document.querySelector("[data-shell] > header nav")),
+          main: rect(document.querySelector("main#main")),
+          shellTop: getComputedStyle(document.documentElement).getPropertyValue("--shell-top"),
+        };
+      });
+    const promoted = await layout();
+    await header.evaluate((el) => {
+      (el as HTMLElement).style.willChange = "auto";
+    });
+    expect(await layout()).toEqual(promoted);
+    await header.evaluate((el) => {
+      (el as HTMLElement).style.willChange = "";
+    });
+    // Still sticky: scrolled content passes under the bar, which stays at the top.
+    await page.evaluate(() => window.scrollTo(0, 400));
+    expect((await header.boundingBox())?.y).toBe(0);
+    await snap(page, info, consoleErrors, "sticky-bar-scrolled");
+  });
+
   test("skip link moves focus to the content", async ({ page, browserName }) => {
     await page.goto("/");
     await expect(page.locator("[data-state=populated]")).toBeVisible();

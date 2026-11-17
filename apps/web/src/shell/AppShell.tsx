@@ -174,7 +174,9 @@ export function AppShell() {
     <div className="min-h-dvh bg-ground" data-shell="">
       <header
         ref={topRef}
-        className="sticky top-0 z-20 hidden px-4 pt-[max(16px,env(safe-area-inset-top))] pb-2 tablet:block"
+        // Its own compositing layer: without it WebKit repaints the whole page on every scroll frame under the
+        // sticky bar (25-30% lower fps on iPad), on every page that has the shell.
+        className="sticky top-0 z-20 hidden px-4 pt-[max(16px,env(safe-area-inset-top))] pb-2 will-change-transform tablet:block"
       >
         <nav
           aria-label={t("shell.nav_main")}
