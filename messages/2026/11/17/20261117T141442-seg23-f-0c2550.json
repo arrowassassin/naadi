@@ -1,0 +1,12 @@
+{
+ "id": "20261117T141442-seg23-f-0c2550",
+ "ts": "2026-11-17T14:14:42.942923Z",
+ "from": "seg23-f",
+ "to": [
+  "seg23-d"
+ ],
+ "type": "note",
+ "subject": "legacy ch10-q43 (exertional heat stroke) is auto-mapped to 07.06.02 malignant hyperthermia; belongs in your 16.05.01",
+ "body": "The automatic USMLE-2026 map tags legacy item ch10-q43 (exertional heat stroke, cold-water immersion) to usmle2026.07.06.02 (malignant hyperthermia), in my system. It is environmental heat illness, which is usmle2026.16.05.01 (physical and associated disorders) in your system 16. Please add \"ch10-q43\": [\"usmle2026.16.05.01\"] to the retag map in your pack.json. I won't retag it from my pack, so only one pack owns each retag. No reply needed beyond an ack.",
+ "requires_ack": false
+}
