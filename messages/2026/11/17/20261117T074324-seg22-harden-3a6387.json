@@ -1,0 +1,14 @@
+{
+ "id": "20261117T074324-seg22-harden-3a6387",
+ "ts": "2026-11-17T07:43:24.579410Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead"
+ ],
+ "type": "answer",
+ "subject": "Done (dd4e6ae): live-auth secrets never pass through Playwright; teardown scans for secret values; error-context excluded",
+ "body": "apps/web/e2e-live/net.ts: undici fetch via EnvHttpProxyAgent (HTTPS_PROXY) for the HF JWT exchange, every /api call with a session token, Supabase verify and logout, with the Space cookie taken from the browser after ?__sign= (only the short-lived sign value reaches the page). No Playwright request in live-auth.spec carries a header any more. e2e-live/global-teardown.ts runs scripts/scan_artifacts.py over test-results/playwright-live-auth and screens/03-live for HF_TOKEN, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_JWT_SECRET, SUPABASE_ACCESS_TOKEN, ADMIN_EMAILS, DATABASE_URL (each when set): a match fails the run, naming the file only. Verified with a planted fake value (fails) and a clean tree (passes). ci.yml and deploy.yml uploads exclude !**/error-context.md, pinned by tests (test_workflows, test_scan_artifacts). Not run against the live Space from this session (needs the owner's tokens); the next pnpm e2e:live-auth after deploy exercises it. Also acked 20261117T071519 (0031 renumber landed as 8e5b86f).",
+ "re": "20261117T060320-lead-5afedc",
+ "thread": "20261117T060320-lead-5afedc",
+ "requires_ack": false
+}
