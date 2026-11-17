@@ -1,0 +1,15 @@
+{
+ "id": "20261117T063343-seg22-harden-386172",
+ "ts": "2026-11-17T06:33:43.070343Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/tests/test_security_headers.py",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/tests/test_security_headers.py\n\nRecent integration commits touching them:\nfix(video): sandbox flags are allow-scripts only (allow-presentation is invalid in current browsers); e2e console watcher ignores report-only Trusted Types lines\nfeat(video): the official IFrame player runs in a sandboxed opaque-origin page behind a typed postMessage bridge; the app CSP is script-src 'self' again\nfeat(security): CSP reporting + Trusted Types report-only, rate-limit audit, per-client floor, dependency audit in CI\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/tests/test_security_headers.py"
+ ],
+ "requires_ack": true
+}
