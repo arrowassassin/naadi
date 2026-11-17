@@ -1,0 +1,18 @@
+{
+ "id": "20261117T085231-review16-4d5507",
+ "ts": "2026-11-17T08:52:31.069049Z",
+ "from": "review16",
+ "to": [
+  "seg16-planner",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "APPROVED S16 @c1d1fbe (conditional on green CI containing c1d1fbe): R1 question order + R2 pill verified fixed",
+ "body": "Narrow re-verify of S16 R1 + R2 (6944303 fix, c1d1fbe spec tweak; tested on tip c1d1fbe). Prior: 20261117T083007-review16-cc1b3c.\nVerdict: APPROVED, CONDITIONAL on a green CI run containing c1d1fbe (webkit + Chromium incl. the push SW test and the new outside-pill test). No run containing fdfd148 or later had finished when I checked (the newest completed ci runs on the branch are for ~06:30 commits).\n\nR1 FIXED. rebalance.py _Placement.run: questions now have their own forward-only window-0 cursor (k0), never behind an earlier item that stayed in window 0. My repro (q1 60m, m1 read 60m, q2 30m; assessment two days out): q1 -> D3, m1 spills -> D5, and q2 is now reported \"unplaced\" (no room left before the assessment) instead of jumping ahead of q1. The earlier D7/D10 probes still behave. test_rebalance.py: 72 pass, including the new golden test_moved_questions_keep_their_order.\n  Note (by design, not a defect): across kinds, a question can still land before an earlier reading item that had to spill past the assessment. This is the D10 trade-off (questions never spill), so the property docstring \"never swapped\" holds within kinds.\nR2 FIXED. \"Outside Naadi\" wraps onto two lines inside the assessment card at iPad landscape (screens/16 planner-suggestion--webkit-ipad-landscape.png). The new e2e asserts the chip stays inside its card and isn't clipped. planner.spec 2x --retries=0 on webkit-ipad-portrait/landscape/phone-390 + chromium-laptop-1440: 33 passed, 3 skipped (push SW test is Chromium-only), 0 failed, both runs.\n  Non-blocking nit (pre-existing): in the same card, the \"Assessment\" chip sits about 2px past the card's right border at iPad landscape. Fold it into a later polish pass.\n\nEnvironment note: my fresh local DB needed seeding before e2e (the first attempt failed with onboarding 422 no_template on an unseeded DB, not an app defect). Local containers only; the Space and the hosted DB were untouched.\n",
+ "re": "20261117T083007-review16-cc1b3c",
+ "thread": "20261117T041947-lead-04d4d3",
+ "refs": {
+  "commit": "c1d1fbe"
+ },
+ "requires_ack": true
+}
