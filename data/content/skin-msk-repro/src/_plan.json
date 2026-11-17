@@ -1,0 +1,470 @@
+{
+ "06.01.01": {
+  "label": "Infectious disorders and infestations",
+  "step1": 7,
+  "step1_target": 9,
+  "step1_legacy": 2,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.01.02": {
+  "label": "Immunologic and inflammatory disorders",
+  "step1": 9,
+  "step1_target": 9,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.02.01": {
+  "label": "Benign neoplasms, cysts and other skin lesions",
+  "step1": 8,
+  "step1_target": 9,
+  "step1_legacy": 1,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.02.02": {
+  "label": "Malignant neoplasms",
+  "step1": 9,
+  "step1_target": 9,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.03.01": {
+  "label": "Disorders of the hair and hair follicles",
+  "step1": 9,
+  "step1_target": 9,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.03.02": {
+  "label": "Disorders of the nails (including ingrowing nail)",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.03.03": {
+  "label": "Disorders of sweat and sebaceous glands",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.04.01": {
+  "label": "Oral disease",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.05.01": {
+  "label": "Disorders of pigmentation",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 8,
+  "step2ck_legacy": 0
+ },
+ "06.06.01": {
+  "label": "Traumatic and mechanical disorders",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 8,
+  "step2ck_legacy": 2
+ },
+ "06.07.01": {
+  "label": "Congenital disorders",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "06.08.01": {
+  "label": "Drug reactions, eruptions, including local reaction to vaccine",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 1
+ },
+ "07.01.01": {
+  "label": "Infectious disorders",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "07.01.02": {
+  "label": "Immunologic disorders",
+  "step1": 6,
+  "step1_target": 8,
+  "step1_legacy": 2,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 1
+ },
+ "07.01.03": {
+  "label": "Inflammatory disorders",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "07.02.01": {
+  "label": "Benign neoplasms",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "07.02.02": {
+  "label": "Malignant and metastatic bone neoplasms",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 1
+ },
+ "07.03.01": {
+  "label": "Degenerative/metabolic disorders of bone, tendon, and cartilage",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 1
+ },
+ "07.03.02": {
+  "label": "Degenerative/metabolic disorders of joints",
+  "step1": 6,
+  "step1_target": 8,
+  "step1_legacy": 2,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 2
+ },
+ "07.03.03": {
+  "label": "Degenerative/metabolic disorders of muscles, ligaments, fascia",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "07.04.01": {
+  "label": "Traumatic and mechanical disorders",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 1,
+  "step2ck": 8,
+  "step2ck_target": 7,
+  "step2ck_legacy": 2
+ },
+ "07.05.01": {
+  "label": "Congenital disorders",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "07.06.01": {
+  "label": "Drug-induced myopathy",
+  "step1": 6,
+  "step1_target": 8,
+  "step1_legacy": 3,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "07.06.02": {
+  "label": "Malignant hyperthermia",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 1
+ },
+ "12.01.01": {
+  "label": "Preconception counseling and care",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 10,
+  "step2ck_legacy": 2
+ },
+ "12.01.02": {
+  "label": "Prenatal risk assessment/prevention",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 10,
+  "step2ck_target": 10,
+  "step2ck_legacy": 0
+ },
+ "12.01.03": {
+  "label": "Supervision of normal pregnancy",
+  "step1": 6,
+  "step1_target": 8,
+  "step1_legacy": 3,
+  "step2ck": 6,
+  "step2ck_target": 10,
+  "step2ck_legacy": 5
+ },
+ "12.02.01": {
+  "label": "Obstetric complications",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 2,
+  "step2ck": 10,
+  "step2ck_target": 10,
+  "step2ck_legacy": 4
+ },
+ "12.03.01": {
+  "label": "Labor and delivery",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 8,
+  "step2ck_target": 10,
+  "step2ck_legacy": 8
+ },
+ "12.04.01": {
+  "label": "Puerperium, including complications",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 10,
+  "step2ck_legacy": 3
+ },
+ "12.05.01": {
+  "label": "Normal newborn",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 10,
+  "step2ck_legacy": 4
+ },
+ "12.05.02": {
+  "label": "Disorders of the newborn",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 9,
+  "step2ck_target": 10,
+  "step2ck_legacy": 1
+ },
+ "12.06.01": {
+  "label": "Adverse effects of drugs on pregnancy, childbirth, and the puerperium",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 10,
+  "step2ck_target": 10,
+  "step2ck_legacy": 0
+ },
+ "12.07.01": {
+  "label": "Systemic disorders affecting pregnancy, labor and delivery, and puerperium",
+  "step1": 8,
+  "step1_target": 8,
+  "step1_legacy": 0,
+  "step2ck": 9,
+  "step2ck_target": 9,
+  "step2ck_legacy": 0
+ },
+ "13.01.01": {
+  "label": "Infectious, immunologic, and inflammatory disorders",
+  "step1": 6,
+  "step1_target": 7,
+  "step1_legacy": 4,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 6
+ },
+ "13.01.02": {
+  "label": "Neoplasms",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "13.02.01": {
+  "label": "Infectious, immunologic, and inflammatory disorders",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 2
+ },
+ "13.02.02": {
+  "label": "Neoplasms of the vulva, vagina, cervix, uterus, or ovaries",
+  "step1": 6,
+  "step1_target": 7,
+  "step1_legacy": 3,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 3
+ },
+ "13.02.03": {
+  "label": "Fertility and infertility",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 3
+ },
+ "13.02.04": {
+  "label": "Menopause",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 2
+ },
+ "13.02.05": {
+  "label": "Menstrual and endocrine disorders",
+  "step1": 6,
+  "step1_target": 7,
+  "step1_legacy": 2,
+  "step2ck": 6,
+  "step2ck_target": 7,
+  "step2ck_legacy": 1
+ },
+ "13.02.06": {
+  "label": "Sexual dysfunction",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "13.02.07": {
+  "label": "Traumatic and mechanical disorders",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "13.02.08": {
+  "label": "Congenital disorders",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "13.02.09": {
+  "label": "Adverse effects of drugs on the female reproductive system and breast",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "14.01.01": {
+  "label": "Infectious disorders",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "14.01.02": {
+  "label": "Immunologic and inflammatory disorders",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "14.02.01": {
+  "label": "Malignant neoplasms, penile, prostate, testicular, breast",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "14.03.01": {
+  "label": "Metabolic and regulatory disorders, including sexual dysfunction",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "14.04.01": {
+  "label": "Traumatic and mechanical disorders",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 1,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 2
+ },
+ "14.05.01": {
+  "label": "Congenital disorders",
+  "step1": 7,
+  "step1_target": 7,
+  "step1_legacy": 0,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ },
+ "14.06.01": {
+  "label": "Adverse effects of drugs on the male reproductive system",
+  "step1": 6,
+  "step1_target": 7,
+  "step1_legacy": 3,
+  "step2ck": 7,
+  "step2ck_target": 7,
+  "step2ck_legacy": 0
+ }
+}
