@@ -1,0 +1,13 @@
+{
+ "id": "20261117T053048-seg15-ingest-8488e7",
+ "ts": "2026-11-17T05:30:48.992315Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/migrations/versions/0025_ingest_kb.py",
+ "body": "",
+ "re": "20261117T053012-seg15-ingest-1a03ff",
+ "requires_ack": false
+}
