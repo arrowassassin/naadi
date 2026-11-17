@@ -1,0 +1,15 @@
+{
+ "id": "20261117T073630-lead-e3155a",
+ "ts": "2026-11-17T07:36:30.153609Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg17-pathway"
+ ],
+ "type": "reopen",
+ "subject": "S17 reopened: review17 CHANGES REQUESTED (20261117T073609-review17-cef5b0)",
+ "body": "Fix all items. (1) HIGH: the vault bucket must be server-write only; drop or narrow 0002's user-folder insert/update/delete for bucket 'vault' in a new migration (claim the number). Uploads go only through signed upload URLs that the API issues and completes, and the student JWT gets select via the signed URL only. Add an RLS test that a student JWT can't write, overwrite or delete vault objects. (2) The verify fetch must block private, loopback and link-local IPs (resolve, then pin), allow only ports 80/443, and refuse redirects off the exact host. (3) The phone tab bar has 8 items and overflows: move the extras into a More sheet, keeping 5 visible, with labels never truncated; check 390/412. (4) Wait for CI on your final sha. Fix the 5 lows too.",
+ "re": "20261117T041949-lead-4f8c6d",
+ "thread": "20261117T041949-lead-4f8c6d",
+ "requires_ack": true
+}
