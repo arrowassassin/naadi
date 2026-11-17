@@ -132,11 +132,14 @@ export function ReaderNotesLayout({
       onInkChange={onInkChange}
     />
   );
-  if (side) {
-    return (
-      <div className={cx("flex flex-col gap-5", open && "laptop:flex-row laptop:items-start")}>
+  // The article keeps ONE position in the tree whatever the viewport: moving it between a wrapper and a fragment when
+  // the side-panel breakpoint is crossed (an iPad turned, a window resized) would remount it and reset everything
+  // stateful inside the page, such as a playing video.
+  return (
+    <>
+      <div className={cx("flex flex-col gap-5", side && open && "laptop:flex-row laptop:items-start")}>
         <div className="min-w-0 flex-1">{article}</div>
-        {open ? (
+        {side && open ? (
           <aside
             aria-label={t("notes.panel_region")}
             // Below the shell's top bar and above the Reader's page bar (both publish their height).
@@ -156,14 +159,11 @@ export function ReaderNotesLayout({
           </aside>
         ) : null}
       </div>
-    );
-  }
-  return (
-    <>
-      {article}
-      <PaperSheet open={open} onClose={onClose}>
-        {panel}
-      </PaperSheet>
+      {side ? null : (
+        <PaperSheet open={open} onClose={onClose}>
+          {panel}
+        </PaperSheet>
+      )}
     </>
   );
 }
