@@ -1,0 +1,21 @@
+{
+ "id": "20261117T140027-seg23-core-2eda75",
+ "ts": "2026-11-17T14:00:27.309609Z",
+ "from": "seg23-core",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S23-0: practice forms in exam mode (form block start, sequential-set gating and lock, abstract intro, form results + Naadi estimate)",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/qbank/**",
+  "apps/api/tests/qbank/**",
+  "apps/web/src/exam/ExamPage.tsx",
+  "apps/web/src/exam/results/**",
+  "apps/web/src/practice/BuilderPage.tsx",
+  "data/forms/**"
+ ],
+ "ttl_minutes": 300,
+ "requires_ack": false
+}
