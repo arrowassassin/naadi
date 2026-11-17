@@ -2,7 +2,7 @@ import type { MilestoneOut } from "@naadi/shared";
 import { Tile, TileLabel } from "@naadi/ui";
 import { ClipboardCheck, Flag, Moon } from "lucide-react";
 import { useUiText } from "../copy/useUiText";
-import { dayMonthYear, relativeDays } from "./format";
+import { dayMonthYear, examName, relativeDays } from "./format";
 
 const MAX = 7;
 
@@ -26,7 +26,7 @@ export function Milestones({ items, exam }: { items: MilestoneOut[]; exam: strin
       case "rest":
         return t("planner.milestone_rest");
       case "exam":
-        return t("planner.milestone_exam", { exam });
+        return t("planner.milestone_exam", { exam: examName(exam) });
     }
   };
   const icon = (m: MilestoneOut) =>

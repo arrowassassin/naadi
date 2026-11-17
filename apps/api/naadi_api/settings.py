@@ -192,6 +192,7 @@ class Settings(BaseSettings):
             self.tavily_api_key,
             self.hf_gen_token,
             self.youtube_api_key,
+            self.vapid_private_key,
             self.admin_emails,
         ):
             if s is not None:

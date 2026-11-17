@@ -39,3 +39,10 @@ export function relativeDays(t: T, daysAway: number): string {
 
 export const isOpen = (i: Pick<WeekItemOut, "status">): boolean =>
   i.status === "planned" || i.status === "now" || i.status === "behind";
+
+const EXAMS: Record<string, string> = { step1: "Step 1", step2ck: "Step 2 CK", step3: "Step 3" };
+
+/** The exam's proper name (a proper noun, not copy): "step1" → "Step 1". */
+export function examName(id: string): string {
+  return EXAMS[id] ?? id;
+}

@@ -11,7 +11,7 @@ import { useUserId } from "../practice/api";
 import { duration, itemTitle } from "../today/format";
 import { useRunAction } from "../today/useRunAction";
 import { useDecideRebalance, useFlushPlanOutbox, usePlanWeek, useSetItemStatus, useStartRebalance } from "./api";
-import { hours, range } from "./format";
+import { examName, hours, range } from "./format";
 import { ItemSheet } from "./ItemSheet";
 import { itemLink } from "./itemLink";
 import { Milestones } from "./Milestones";
@@ -163,8 +163,8 @@ function Header({
               <>
                 {" · "}
                 {days === 1
-                  ? t("planner.exam_countdown_one", { exam: week.exam })
-                  : t("planner.exam_countdown", { exam: week.exam, days: String(days) })}
+                  ? t("planner.exam_countdown_one", { exam: examName(week.exam) })
+                  : t("planner.exam_countdown", { exam: examName(week.exam), days: String(days) })}
               </>
             ) : null}
           </p>
