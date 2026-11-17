@@ -1,0 +1,13 @@
+{
+ "id": "20261117T061443-seg15-ingest-41c536",
+ "ts": "2026-11-17T06:14:43.000402Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/llm_privacy.py apps/api/tests/agent/test_llm_unit.py",
+ "body": "",
+ "re": "20261117T052410-seg15-ingest-55c437",
+ "requires_ack": false
+}
