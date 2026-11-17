@@ -1,0 +1,16 @@
+{
+ "id": "20261117T140914-seg23-d-0cc102",
+ "ts": "2026-11-17T14:09:14.634151Z",
+ "from": "seg23-d",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated e10fdde into claude/naadi-shared",
+ "body": "S23-D batch 1: GI (system 10) \u2014 18 areas, 36 sections, 280 items, 309 cards, 23 figures",
+ "refs": {
+  "commit": "e10fdde",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
