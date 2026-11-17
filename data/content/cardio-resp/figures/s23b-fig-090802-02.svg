@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" role="img" aria-label="Flail chest in cross section: during inspiration the broken segment of chest wall moves inward while the rest of the chest expands; during expiration it moves outward">
+<rect x="0" y="0" width="700" height="360" fill="#ffffff"/>
+<defs><marker id="s23b-fig-090802-02-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b91c1c"/></marker></defs>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="175" y="34" font-size="16" text-anchor="middle" font-weight="bold">Inspiration</text>
+<text x="525" y="34" font-size="16" text-anchor="middle" font-weight="bold">Expiration</text>
+</g>
+<g fill="none" stroke="#334155" stroke-width="4">
+<path d="M228,96 C200,70 150,70 110,95 C60,130 55,240 110,275 C150,300 200,300 228,274"/>
+<path d="M232,108 C248,140 250,230 232,262" stroke="#b91c1c" stroke-width="5"/>
+<path d="M228,96 C268,116 278,150 280,185 C278,220 268,254 228,274" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,5"/>
+<path d="M578,96 C550,70 500,70 460,95 C410,130 405,240 460,275 C500,300 550,300 578,274"/>
+<path d="M590,108 C625,140 630,230 590,262" stroke="#b91c1c" stroke-width="5"/>
+</g>
+<g stroke="#0f172a" stroke-width="3">
+<line x1="222" y1="92" x2="236" y2="108"/><line x1="222" y1="278" x2="236" y2="262"/>
+<line x1="574" y1="92" x2="592" y2="106"/><line x1="574" y1="278" x2="592" y2="264"/>
+</g>
+<line x1="300" y1="185" x2="258" y2="185" stroke="#b91c1c" stroke-width="2.5" marker-end="url(#s23b-fig-090802-02-ar)"/>
+<line x1="616" y1="185" x2="658" y2="185" stroke="#b91c1c" stroke-width="2.5" marker-end="url(#s23b-fig-090802-02-ar)"/>
+<g font-family="sans-serif" font-size="13" fill="#0f172a">
+<text x="175" y="320" text-anchor="middle">Segment drawn inward by falling</text>
+<text x="175" y="338" text-anchor="middle">pleural pressure; rest of chest expands</text>
+<text x="525" y="320" text-anchor="middle">Segment pushed outward as</text>
+<text x="525" y="338" text-anchor="middle">pleural pressure rises</text>
+<text x="150" y="190" text-anchor="middle" fill="#334155">chest wall</text>
+<text x="300" y="155" fill="#334155" font-size="12">normal position</text>
+<text x="300" y="215" fill="#b91c1c" font-size="12">flail segment</text>
+</g>
+</svg>

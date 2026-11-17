@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" role="img" aria-label="Schematic neck radiographs. Left, lateral view: a swollen, rounded epiglottis (thumb sign) in front of the cervical spine. Right, frontal view: the tracheal air column tapers to a point below the vocal cords (steeple sign), compared with the normal squared outline.">
+<defs><marker id="s23b-fig-090101-01-arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+<text x="175" y="28" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Lateral neck view</text>
+<text x="525" y="28" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Frontal (AP) neck view</text>
+<line x1="350" y1="45" x2="350" y2="385" stroke="#cbd5e1" stroke-width="1.5"/>
+<!-- lateral: cervical spine -->
+<g fill="#e2e8f0" stroke="#334155" stroke-width="1.5">
+<rect x="235" y="70" width="44" height="36" rx="4"/><rect x="235" y="114" width="44" height="36" rx="4"/><rect x="235" y="158" width="44" height="36" rx="4"/><rect x="235" y="202" width="44" height="36" rx="4"/><rect x="235" y="246" width="44" height="36" rx="4"/><rect x="235" y="290" width="44" height="36" rx="4"/>
+</g>
+<text x="292" y="200" font-family="sans-serif" font-size="12" fill="#334155">C-spine</text>
+<!-- lateral: air column -->
+<path d="M150,60 C150,90 165,110 170,140 L176,330 L206,330 L206,140 C206,110 210,85 210,60 Z" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="120" y="350" font-family="sans-serif" font-size="12" fill="#334155">Airway (air)</text>
+<!-- swollen epiglottis -->
+<path d="M171,182 C192,174 202,152 198,134 C194,118 178,116 169,126 Z" fill="#334155"/>
+<line x1="80" y1="105" x2="176" y2="140" stroke="#0f172a" stroke-width="1.5" marker-end="url(#s23b-fig-090101-01-arw)"/>
+<text x="20" y="84" font-family="sans-serif" font-size="13" fill="#0f172a">Swollen epiglottis</text>
+<text x="20" y="100" font-family="sans-serif" font-size="13" fill="#0f172a" font-weight="bold">"thumb sign"</text>
+<text x="20" y="380" font-family="sans-serif" font-size="12" fill="#334155">Epiglottitis: a normal epiglottis is a thin curved leaf</text>
+<!-- AP: normal outline dashed -->
+<path d="M495,330 L495,175 L505,165 L512,120 L538,120 L545,165 L555,175 L555,330" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,4"/>
+<!-- AP: croup tapered column -->
+<path d="M497,330 L499,230 C501,190 515,150 522,124 L528,124 C535,150 549,190 551,230 L553,330 Z" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+<!-- vocal cords / larynx above -->
+<path d="M500,60 L512,118 L538,118 L550,60" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="560" y="80" font-family="sans-serif" font-size="12" fill="#334155">Larynx</text>
+<line x1="600" y1="150" x2="534" y2="150" stroke="#0f172a" stroke-width="1.5" marker-end="url(#s23b-fig-090101-01-arw)"/>
+<text x="560" y="128" font-family="sans-serif" font-size="13" fill="#0f172a">Subglottic tapering</text>
+<text x="560" y="144" font-family="sans-serif" font-size="13" fill="#0f172a" font-weight="bold">"steeple sign"</text>
+<line x1="400" y1="200" x2="490" y2="176" stroke="#64748b" stroke-width="1.5" marker-end="url(#s23b-fig-090101-01-arw)"/>
+<text x="362" y="216" font-family="sans-serif" font-size="12" fill="#64748b">Normal: squared</text>
+<text x="362" y="231" font-family="sans-serif" font-size="12" fill="#64748b">"shoulders" (dashed)</text>
+<text x="580" y="300" font-family="sans-serif" font-size="12" fill="#334155">Trachea</text>
+<text x="370" y="380" font-family="sans-serif" font-size="12" fill="#334155">Croup: inflammation narrows the subglottic trachea</text>
+</svg>
