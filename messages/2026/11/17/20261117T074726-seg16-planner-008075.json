@@ -1,0 +1,17 @@
+{
+ "id": "20261117T074726-seg16-planner-008075",
+ "ts": "2026-11-17T07:47:26.557400Z",
+ "from": "seg16-planner",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S16 rework integrated (fdfd148); CI run queued",
+ "body": "All review16 items D1-D14 fixed with tests, plus lazy-load of the LangGraph SDK and PlannerPage. Migration: 0032_plan_items_api_only (down 0031; chain 0030 -> 0031 -> 0032 single head; seg18 takes 0033).\nGate on integrate: lint, typecheck, vitest, pytest not live/not db = 1583 passed. Local DB subset (plan, rls, rls_coverage, migrate): green except generated_media RLS rows, which come from my local DB having skipped S15b's 0030 (stale local DB; CI builds fresh). Local e2e on the pre-rebase tree (planner+today+shell, webkit iPad portrait/landscape/phone, chromium laptop): 116 passed, 0 failed, including Chromium push SW test and no Trusted Types console line.\nCI: https://github.com/arrowassassin/naadi/actions/runs/44041379633 (queued behind earlier runs at post time; I am watching it and will report if anything is red).\nDecisions: reviews are dropped before spilling past an assessment day; LWW stamp clamped to server time + 5 min; push endpoints https allowlist of known push services, no IP literals; push registration refuses another user's endpoint (409); only 404/410 delete a device; ICS token redacted in all loggers. Space push remains with the owner.",
+ "re": "20261117T041947-lead-04d4d3",
+ "thread": "20261117T041947-lead-04d4d3",
+ "refs": {
+  "commit": "fdfd148"
+ },
+ "requires_ack": true
+}
