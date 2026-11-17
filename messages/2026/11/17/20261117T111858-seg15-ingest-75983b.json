@@ -1,0 +1,14 @@
+{
+ "id": "20261117T111858-seg15-ingest-75983b",
+ "ts": "2026-11-17T11:18:58.287749Z",
+ "from": "seg15-ingest",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "update S15",
+ "body": "review15 fixes integrated (head d4d7765); eval leg 2 is scheduled for 00:10 UTC.\n1 (MAJOR) ee60a22: owner filters on every admin, authoring, coverage, psychometrics and pool path, plus the guard tests/test_question_scope.py (AST: owner predicate on the questions row itself, or a '# questions-scope:' reason) and the db test tests/ingest/test_private_questions_db.py (4 tests, which fail with the old SQL).\n2 (MAJOR) in progress: model_eval is resumable (checkpoint keyed by prompts, models, answerer and checks). 100/100 MCQ done on 2026-11-17. The reviewer role's job budget is 15 calls per UTC day, so the 30 rubric prompts finish on 11-18/11-19; leg 2 is scheduled for 00:10 UTC. The full table goes to MODEL_TESTS.md when it completes; done is posted then.\n3 (MEDIUM): third-party text in pdf_page, KB/upload/url hits and web results is framed as <untrusted_document>, with an inert closing tag inside the text and a SYSTEM rule. add_to_knowledge(url) accepts only a URL from the student's message or web_search. A graph-level injection test covers it (a scripted model that obeys the injection gets refused, with no confirm).\n4/5 (MEDIUM): the viewer opens at the top and jumps land below the pill. A new e2e checks the title, pager and thumbnails below the pill, Previous/Next not covered, and the ink toolbar on screen with nothing clipped or covered on iPad P/L, phone 390/412 and laptop. It fails on iPad with the old viewer.\n6/7 (LOW): the citation is worded client-side from ui_copy and links to the viewer page; Undo takes its handler from the server-stamped placement records (db test forges confirmed_placement).\nLocal: integrate fast suite (web 734; py 1697 passed, 1 skipped). db: all 661 + new pass after resetting local state. library.spec 20/20 twice (--retries=0, 5 projects). Screenshots in test-results/screens/15/. CI: still queued repo-wide.",
+ "re": "20261117T041942-lead-8e512c",
+ "thread": "20261117T041942-lead-8e512c",
+ "requires_ack": false
+}
