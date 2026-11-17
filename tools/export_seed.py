@@ -8,7 +8,6 @@ Outputs (in handoff/data/):
   figures.json    - figure index (id, chapter, caption, file)
   study_plan_step1_60d.csv - copy of the 60-day plan
 """
-
 import json, re, csv, shutil, pathlib, sys
 from bs4 import BeautifulSoup
 
@@ -16,15 +15,11 @@ BOOK = pathlib.Path("/home/claude/book")
 OUT = pathlib.Path("/home/claude/handoff/data")
 (OUT / "figures").mkdir(parents=True, exist_ok=True)
 
-ORDER = [
-    ("step1", ["ch01", "ch02", "ch03", "ch04", "ch05", "ch06", "ch07", "mock1"]),
-    ("step2ck", ["ch08", "ch09", "ch10", "ch11", "ch12", "mock2"]),
-]
-
+ORDER = [("step1", ["ch01", "ch02", "ch03", "ch04", "ch05", "ch06", "ch07", "mock1"]),
+         ("step2ck", ["ch08", "ch09", "ch10", "ch11", "ch12", "mock2"])]
 
 def inner(tag):
     return "".join(str(c) for c in tag.contents).strip() if tag else ""
-
 
 chapters, questions, figures = [], [], []
 for exam, ids in ORDER:
@@ -46,14 +41,8 @@ for exam, ids in ORDER:
                 if "xmlns=" not in s[:200]:
                     s = s.replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg"', 1)
                 (OUT / "figures" / f"{fid}.svg").write_text(s)
-            figures.append(
-                {
-                    "id": fid,
-                    "chapterId": cid,
-                    "caption": cap.get_text(" ", strip=True) if cap else "",
-                    "file": f"figures/{fid}.svg",
-                }
-            )
+            figures.append({"id": fid, "chapterId": cid, "caption": cap.get_text(" ", strip=True) if cap else "",
+                            "file": f"figures/{fid}.svg"})
             fig.replace_with(soup.new_string(f"[[figure:{fid}]]"))
             fig_ids.append(fid)
 
@@ -80,25 +69,19 @@ for exam, ids in ORDER:
                 block = int(bm.group(1)) if bm else None
             stem_html = inner(stem)
             stem_html = re.sub(r"^<b>\s*\d+\.\s*</b>\s*", "", stem_html)
-            questions.append(
-                {
-                    "id": qid,
-                    "chapterId": cid,
-                    "exam": exam,
-                    "number": qn,
-                    "block": block,
-                    "stemHtml": stem_html,
-                    "options": [{"label": chr(65 + i), "html": o} for i, o in enumerate(opts)],
-                    "answer": key,
-                    "answerHtml": inner(ans_p),
-                    "explanationHtml": "".join(str(p) for p in expl_ps),
-                    "whyNotHtml": inner(why_not),
-                    "tags": [t.strip() for t in tag_txt.split("·")] if tag_txt else [],
-                    "difficulty": diff.group(1).lower() if diff else None,
-                    "source": "naadi-original-v1",
-                    "review": {"status": "ai-authored, independent-ai-reviewed", "humanExpertReviewed": False},
-                }
-            )
+            questions.append({
+                "id": qid, "chapterId": cid, "exam": exam, "number": qn, "block": block,
+                "stemHtml": stem_html,
+                "options": [{"label": chr(65 + i), "html": o} for i, o in enumerate(opts)],
+                "answer": key,
+                "answerHtml": inner(ans_p),
+                "explanationHtml": "".join(str(p) for p in expl_ps),
+                "whyNotHtml": inner(why_not),
+                "tags": [t.strip() for t in tag_txt.split("·")] if tag_txt else [],
+                "difficulty": diff.group(1).lower() if diff else None,
+                "source": "naadi-original-v1",
+                "review": {"status": "ai-authored, independent-ai-reviewed", "humanExpertReviewed": False},
+            })
             q_ids.append(qid)
             q.decompose()
 
@@ -123,28 +106,10 @@ for exam, ids in ORDER:
             s["figureIds"] = re.findall(r"\[\[figure:([\w-]+)\]\]", s["html"])
             s["html"] = s["html"].strip()
 
-        chapters.append(
-            {
-                "id": cid,
-                "exam": exam,
-                "order": order,
-                "kind": kind,
-                "title": title,
-                "meta": meta.get_text(" ", strip=True) if meta else "",
-                "sections": sections
-                if kind == "chapter"
-                else [
-                    {
-                        "id": f"{cid}-s01",
-                        "heading": "Instructions",
-                        "html": sections[0]["html"] if sections else "",
-                        "figureIds": [],
-                    }
-                ],
-                "figureIds": fig_ids,
-                "questionIds": q_ids,
-            }
-        )
+        chapters.append({"id": cid, "exam": exam, "order": order, "kind": kind, "title": title,
+                         "meta": meta.get_text(" ", strip=True) if meta else "",
+                         "sections": sections if kind == "chapter" else [{"id": f"{cid}-s01", "heading": "Instructions", "html": sections[0]["html"] if sections else "", "figureIds": []}],
+                         "figureIds": fig_ids, "questionIds": q_ids})
 
 (OUT / "chapters.json").write_text(json.dumps(chapters, indent=1, ensure_ascii=False))
 (OUT / "questions.json").write_text(json.dumps(questions, indent=1, ensure_ascii=False))
@@ -154,13 +119,5 @@ shutil.copy("/home/claude/plan/Step1_60_day_plan.csv", OUT / "study_plan_step1_6
 # sanity
 assert len(questions) == len({q["id"] for q in questions})
 assert all(q["answer"] and len(q["options"]) >= 4 for q in questions)
-print(
-    len(chapters),
-    "chapters;",
-    len(questions),
-    "questions;",
-    len(figures),
-    "figures;",
-    sum(len(c["sections"]) for c in chapters),
-    "sections",
-)
+print(len(chapters), "chapters;", len(questions), "questions;", len(figures), "figures;",
+      sum(len(c["sections"]) for c in chapters), "sections")
