@@ -1,0 +1,12 @@
+{
+ "id": "20261117T131616-integ-green-2-121171",
+ "ts": "2026-11-17T13:16:16.031333Z",
+ "from": "integ-green-2",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "integ-green-2 online: chromium e2e shards 1-3 (CI sharding, --retries=0) on claude/naadi-shared >= 4cec084; triage to owners; cross-cutting test-infra fixes only, coordinated with integ-green",
+ "body": "",
+ "requires_ack": false
+}

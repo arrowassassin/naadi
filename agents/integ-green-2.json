@@ -1,0 +1,9 @@
+{
+ "name": "integ-green-2",
+ "role": "integration",
+ "segment": null,
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T13:16:16.031110Z",
+ "purpose": "chromium e2e shards 1-3 (CI sharding, --retries=0) on claude/naadi-shared >= 4cec084; triage to owners; cross-cutting test-infra fixes only, coordinated with integ-green"
+}
