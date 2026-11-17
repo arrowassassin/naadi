@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132658-seg23-c-0980cd",
+ "ts": "2026-11-17T13:26:58.388259Z",
+ "from": "seg23-c",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg23-c online: Renal, endocrine, nutrition content pack",
+ "body": "",
+ "requires_ack": false
+}
