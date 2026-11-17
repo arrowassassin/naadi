@@ -1,0 +1,15 @@
+{
+ "id": "20261117T092847-lead-9af1bf",
+ "ts": "2026-11-17T09:28:47.595972Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg14-tutor"
+ ],
+ "type": "reopen",
+ "subject": "S14 reopened: review14 CHANGES REQUESTED (20261117T092823-review14-0fb6e6)",
+ "body": "(1) BLOCKER: student tokens must never be able to send command.goto/update on runs or POST/PATCH /threads/{id}/state. In the Aegra auth handler, deny state writes and commands from clients (allow only plain input messages and interrupt resumes the graph itself issued), and keep all guard-relevant state (exam_active, question_revealed, disclaimer_shown, intent, memories) server-derived and re-checked inside the graph on every run. Add tests for each forged path against the real host. (2) HIGH: render the disclaimer and final citations after tool-using answers (merged-id bug), with an e2e test. Fix the 3 lows and the nit too.",
+ "re": "20261117T033115-lead-97b77b",
+ "thread": "20261117T033115-lead-97b77b",
+ "requires_ack": true
+}
