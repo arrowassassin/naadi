@@ -58,6 +58,16 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
   return { open, done };
 }
 
+/**
+ * Wait for real signals before leaving a page: every font face loaded and no request in flight. A fetch that is
+ * still pending when the next navigation starts is cancelled by the browser, and WebKit and Chromium log that
+ * cancellation as a console error.
+ */
+async function quiet(page: Page): Promise<void> {
+  await settle(page);
+  await page.waitForLoadState("networkidle");
+}
+
 const isPhone = (page: Page) => (page.viewportSize()?.width ?? 1000) < 640;
 
 /** Console errors of pages opened outside the fixture's own page, with the fixture's rule for the screenshot tool. */
@@ -199,7 +209,7 @@ test.describe("builder", () => {
           }),
         });
       });
-      await settle(page); // Firefox logs aborted font loads
+      await quiet(page); // Firefox logs aborted font loads
       await page.reload();
       await expect(page.getByText("Practice could not be loaded")).toBeVisible();
       await expect(page.getByText("Request ID e2e-pool-503")).toBeVisible();
@@ -306,6 +316,7 @@ test.describe("tutor block", () => {
       await expect(page.getByRole("button", { name: "Flagged" })).toBeVisible();
 
       // past blocks list the block with its progress, and Continue resumes at question 3
+      await quiet(page);
       await page.goto("/practice");
       const past = page.getByRole("region", { name: "Past blocks" }).or(page.locator("section#past-blocks"));
       await expect(past.getByText("2 of 10 answered")).toBeVisible();
@@ -334,7 +345,7 @@ test.describe("tutor block", () => {
         seed: 4,
       });
       expect(made.status).toBe(201);
-      await settle(page);
+      await quiet(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
 
@@ -428,6 +439,7 @@ test.describe("tutor block", () => {
         });
         expect(out.status).toBe(200);
       }
+      await quiet(page);
       await page.goto("/practice");
       await page.getByRole("button", { name: "Build my weak-spot block" }).click();
       await page.waitForURL(/\/practice\/blocks\/[0-9a-f-]{36}\/\d+$/);
@@ -445,13 +457,14 @@ test.describe("tutor block", () => {
     try {
       const { page } = await student.open();
       const { errors } = watchConsole(page);
+      await quiet(page);
       await page.goto("/practice/question/ch01-q01");
       await page.waitForURL(/\/practice\/blocks\/[0-9a-f-]{36}\/1$/);
       await expect(page.getByRole("radio")).toHaveCount(5);
       await expect(page.getByText(/Why it's/)).toHaveCount(0);
       await expect(page.getByText(/xeroderma|Endonuclease excision/)).toHaveCount(1); // the option text only
       // let pending font loads finish, so the navigation does not abort them (Firefox logs aborted font loads)
-      await settle(page);
+      await quiet(page);
       await page.goto("/practice/question/does-not-exist");
       await expect(page.getByText("This question is not available")).toBeVisible();
       expect(errors.filter((e) => !/404/.test(e))).toEqual([]);
@@ -475,11 +488,11 @@ test.describe("tutor block", () => {
         status: "all",
         seed: 2,
       });
-      await settle(page);
+      await quiet(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
       await page.waitForTimeout(800); // the next question is read ahead and saved on this device
-      await settle(page); // no font download may be cut off by going offline
+      await quiet(page); // no font download may be cut off by going offline
       await context.setOffline(true);
       await page.keyboard.press("b");
       await page.keyboard.press("Control+Enter");
@@ -511,7 +524,7 @@ test.describe("phone layout", () => {
         status: "all",
         seed: 6,
       });
-      await settle(page);
+      await quiet(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
       for (const name of ["Flag", "Lab values", "Submit"]) {
@@ -525,7 +538,7 @@ test.describe("phone layout", () => {
       await expectNoHorizontalOverflow(page);
       if (isPhone(page)) await snap(page, info, guard, "question-phone");
       else await snap(page, info, guard, "question-wide");
-      await settle(page);
+      await quiet(page);
       expect(errors).toEqual([]);
     } finally {
       await student.done();
@@ -547,7 +560,7 @@ test("the practice entry is in the navigation", async ({ browser, baseURL }, inf
       ? page.getByRole("navigation", { name: "Tabs" })
       : page.getByRole("navigation", { name: "Main" });
     await expect(nav.getByRole("link", { name: "Practice" })).toHaveAttribute("aria-current", "page");
-    await settle(page);
+    await quiet(page);
     expect(errors).toEqual([]);
   } finally {
     await student.done();
