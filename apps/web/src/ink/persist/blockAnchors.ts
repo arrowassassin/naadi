@@ -21,10 +21,37 @@ function same(a: { pm: number; y: number }[], b: { pm: number; y: number }[]): b
 }
 
 /**
+ * A resolver that measures the blocks when asked (cached until the next animation frame), so an anchor is always
+ * stamped against the layout the student is looking at, never against a measurement taken before fonts, figures
+ * or the save-state row settled (a stale measurement would make the stroke jump once re-measured).
+ */
+export function liveBlockResolver(surface: HTMLElement): InkAnchorResolver {
+  let cached: InkAnchorResolver | null = null;
+  let frame = 0;
+  const current = (): InkAnchorResolver | null => {
+    if (!cached) {
+      cached = blockResolver(measureBlocks(surface));
+      if (!frame && typeof requestAnimationFrame === "function") {
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          cached = null;
+        });
+      }
+    }
+    return cached;
+  };
+  return {
+    at: (y) => current()?.at(y) ?? null,
+    offset: (pm) => current()?.offset(pm) ?? null,
+  };
+}
+
+/**
  * The anchor resolver for a text surface (segment 12b): ContentRenderer marks each top-level block with
- * `data-block-pm` (its ProseMirror position); this hook measures where those blocks are now and re-measures when
- * the surface or its content changes size (rotation, Split View, a figure loading), so the engine can re-place
- * anchored ink beside the same paragraph. Null until the blocks are measured (ink then keeps plain coordinates).
+ * `data-block-pm` (its ProseMirror position). The resolver measures them live (liveBlockResolver); this hook hands
+ * the engine a new one whenever the blocks move (rotation, Split View, a figure or a web font loading), so the
+ * engine re-places anchored ink beside the same paragraph. Null until there are blocks (ink keeps plain
+ * coordinates).
  */
 export function useBlockAnchors(surface: RefObject<HTMLElement | null>, key: unknown): InkAnchorResolver | null {
   const [resolver, setResolver] = useState<InkAnchorResolver | null>(null);
@@ -39,7 +66,7 @@ export function useBlockAnchors(surface: RefObject<HTMLElement | null>, key: unk
       const blocks = measureBlocks(el);
       if (same(blocks, last)) return;
       last = blocks;
-      setResolver(blockResolver(blocks));
+      setResolver(blocks.length ? liveBlockResolver(el) : null);
     };
     const soon = () => {
       if (!raf) raf = requestAnimationFrame(run);
@@ -49,10 +76,15 @@ export function useBlockAnchors(surface: RefObject<HTMLElement | null>, key: unk
     ro?.observe(el);
     for (const child of el.querySelectorAll<HTMLElement>("[data-block-pm]")) ro?.observe(child);
     window.addEventListener("resize", soon, { passive: true });
+    // A web font arriving re-wraps the text without resizing the surface's own box.
+    const fonts = typeof document !== "undefined" ? document.fonts : undefined;
+    fonts?.addEventListener?.("loadingdone", soon);
+    void fonts?.ready.then(soon);
     return () => {
       if (raf) cancelAnimationFrame(raf);
       ro?.disconnect();
       window.removeEventListener("resize", soon);
+      fonts?.removeEventListener?.("loadingdone", soon);
     };
   }, [surface, key]);
   return resolver;

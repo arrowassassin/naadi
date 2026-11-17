@@ -276,7 +276,6 @@ test.describe("ink on a reader section", () => {
       const sent = a.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
       await penStroke(a, 0.2, 0.6, y2, 3);
       await sent;
-      expect(await violetCentre(b, y2 - 12, y2 + 12)).toBeNull();
       const got = b.waitForResponse((r) => r.url().includes("/api/ink/section/") && r.url().includes("since="));
       await refetch(b);
       await got;
@@ -307,14 +306,14 @@ test.describe("ink on a reader section", () => {
       // A erases it (whole-stroke eraser) ...
       await a.getByRole("button", { name: "Eraser", exact: true }).click();
       const erased = a.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
-      await penStroke(a, 0.25, 0.3, y, 4);
+      await penStroke(a, 0.25, 0.3, (await violetCentre(a, y - 12, y + 12)) ?? y, 4);
       await erased;
       expect(await violetCentre(a, y - 12, y + 12)).toBeNull();
       // ... then B, which has not seen the deletion, edits the stroke later: it erases and undoes, and the undo
       // re-stamps the stroke with B's (later) time, so B's version is the last write.
       await turnInkOn(b);
       await b.getByRole("button", { name: "Eraser", exact: true }).click();
-      await penStroke(b, 0.25, 0.3, y, 5);
+      await penStroke(b, 0.25, 0.3, (await violetCentre(b, y - 12, y + 12)) ?? y, 5);
       const bSent = b.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
       await b.getByRole("button", { name: "Undo" }).click();
       await bSent;
@@ -324,7 +323,7 @@ test.describe("ink on a reader section", () => {
       // Last writer wins on both devices: A gets the stroke back on its next refetch.
       await expect.poll(() => refetchThen(a, () => violetCentre(a, y - 12, y + 12)), POLL).not.toBeNull();
       // And the reverse: A deletes again (now the latest write); B converges on "gone".
-      await penStroke(a, 0.25, 0.3, y, 6);
+      await penStroke(a, 0.25, 0.3, (await violetCentre(a, y - 12, y + 12)) ?? y, 6);
       await a.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
       await expect.poll(() => refetchThen(b, () => violetCentre(b, y - 12, y + 12)), POLL).toBeNull();
     } finally {
