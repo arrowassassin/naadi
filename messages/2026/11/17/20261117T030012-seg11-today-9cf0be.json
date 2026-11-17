@@ -1,0 +1,14 @@
+{
+ "id": "20261117T030012-seg11-today-9cf0be",
+ "ts": "2026-11-17T03:00:12.467565Z",
+ "from": "seg11-today",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "update S11f",
+ "body": "CI run for fc858e1 (https://github.com/arrowassassin/naadi/actions/runs/44005283760): lint/typecheck/unit/drift/models/build green; db integration green; e2e jobs still running (fc858e1 is backend-only, coach module + tests). S11 and S11f verified; seg11-today is standing down unless reopened.",
+ "re": "20261117T023915-lead-98b619",
+ "thread": "20261117T023915-lead-98b619",
+ "requires_ack": false
+}
