@@ -226,6 +226,21 @@ test.describe("mock exam A", () => {
       await expectNoAxeViolations(page);
       await expectNoHorizontalOverflow(page);
       await snap(page, info, guard, "exam-question");
+      // the sticky header and the phone bar keep their place while the exam scrolls (own compositing layers)
+      const bars = async () =>
+        page.evaluate(() => {
+          const header = document.querySelector("[data-exam-root] header")?.getBoundingClientRect().top ?? -1;
+          const frame = document.querySelector("[data-exam-root]") as HTMLElement | null;
+          frame?.scrollBy(0, 600);
+          return header;
+        });
+      const headerTop = await bars();
+      await page.waitForTimeout(200);
+      expect(
+        await page.evaluate(() => document.querySelector("[data-exam-root] header")?.getBoundingClientRect().top),
+      ).toBe(headerTop);
+      await snap(page, info, guard, "exam-question-scrolled");
+      await page.evaluate(() => (document.querySelector("[data-exam-root]") as HTMLElement | null)?.scrollTo(0, 0));
 
       // 40 answers with the keyboard (B, then N), the first one changed (A -> B)
       await expect(page.getByRole("group", { name: "Answer options" }).getByRole("button")).toHaveCount(5);

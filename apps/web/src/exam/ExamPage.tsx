@@ -42,7 +42,9 @@ import { useExamChrome } from "./useExamChrome";
 
 type T = ReturnType<typeof useCopy>;
 
-/** The exam covers the app shell (Exam board: no navigation), scrolling on its own. */
+/** The exam covers the app shell (Exam board: no navigation), scrolling on its own. No transform or will-change
+ * here: its fixed phone bar must stay pinned to the viewport. The sticky/fixed bars inside get their own
+ * compositing layer (will-change-transform) so WebKit does not repaint the page on every scroll frame. */
 const FRAME = "fixed inset-0 z-30 overflow-y-auto overscroll-contain bg-ground text-text";
 
 // ── Time ──
@@ -145,7 +147,7 @@ function Header({
   const pausable = clock.pausable;
   const multi = clock.sections > 1;
   return (
-    <header className="sticky top-0 z-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-line-soft border-b bg-ground/95 px-4 pt-[max(10px,env(safe-area-inset-top))] pb-2.5 backdrop-blur-[12px] tablet:px-6">
+    <header className="sticky top-0 z-10 flex will-change-transform flex-wrap items-center gap-x-3 gap-y-2 border-line-soft border-b bg-ground px-4 pt-[max(10px,env(safe-area-inset-top))] pb-2.5 tablet:px-6">
       <Link
         to="/practice"
         aria-label={t("exam.leave")}
@@ -876,7 +878,7 @@ function Running({ t, blockId, n, block, clock, layout, server, offsetMs, now }:
         {live}
       </p>
       <div className="flex flex-col gap-4 px-4 pt-4 pb-[calc(96px+env(safe-area-inset-bottom))] tablet:px-6 tablet:pb-10 laptop:flex-row laptop:items-start laptop:gap-5">
-        <div className="hidden w-full rounded-[28px] border border-line bg-surface-1 p-4 tablet:block laptop:sticky laptop:top-24 laptop:w-[240px] laptop:shrink-0">
+        <div className="hidden w-full rounded-[28px] border border-line bg-surface-1 p-4 tablet:block laptop:sticky laptop:top-24 laptop:w-[240px] laptop:will-change-transform laptop:shrink-0">
           <Navigator blockId={blockId} questions={sectionQs} firstN={firstN} currentN={n} chosenLocally={queued} />
         </div>
         <section
@@ -887,7 +889,7 @@ function Running({ t, blockId, n, block, clock, layout, server, offsetMs, now }:
         </section>
         <aside
           aria-label={t("exam.tools")}
-          className="hidden flex-col gap-2 tablet:flex laptop:sticky laptop:top-24 laptop:w-[230px] laptop:shrink-0"
+          className="hidden flex-col gap-2 tablet:flex laptop:sticky laptop:top-24 laptop:w-[230px] laptop:will-change-transform laptop:shrink-0"
         >
           <div className="grid grid-cols-2 gap-2 laptop:grid-cols-1">{tools}</div>
           {spans.length ? (
@@ -907,7 +909,7 @@ function Running({ t, blockId, n, block, clock, layout, server, offsetMs, now }:
       </div>
 
       {/* Phone: progress, tools and Next in a bar (PhoneQbank board). */}
-      <div className="fixed inset-x-0 bottom-0 z-10 flex items-center gap-2 border-line-soft border-t bg-ground/95 px-3 pt-2 pb-[max(10px,env(safe-area-inset-bottom))] backdrop-blur-[12px] tablet:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-10 flex will-change-transform items-center gap-2 border-line-soft border-t bg-ground/95 px-3 pt-2 pb-[max(10px,env(safe-area-inset-bottom))] backdrop-blur-[12px] tablet:hidden">
         <Button
           variant="secondary"
           onClick={toggleFlag}
