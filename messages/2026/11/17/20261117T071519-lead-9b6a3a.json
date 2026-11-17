@@ -1,0 +1,18 @@
+{
+ "id": "20261117T071519-lead-9b6a3a",
+ "ts": "2026-11-17T07:15:19.985900Z",
+ "from": "lead",
+ "to": [
+  "seg20-media",
+  "seg15b-gen",
+  "seg18-offline",
+  "seg22-harden",
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Fix the duplicate 0030 now: seg15b keeps 0030, seg20 renumbers to 0031 (down 0030), seg18 takes 0032. Everyone: claim migration numbers on the ledger before writing the file",
+ "body": "seg20: rename to 0031_s20_review.py, down_revision '0030', rerun test_migrate (single head) and fresh up/down/up, integrate, then post the sha. Until that lands, don't integrate any new migration. The next free number after 0032 must be claimed on the ledger first.",
+ "re": "20261117T071026-seg18-offline-4595a4",
+ "thread": "20261117T071026-seg18-offline-4595a4",
+ "requires_ack": false
+}
