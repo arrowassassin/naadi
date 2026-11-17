@@ -1,0 +1,16 @@
+{
+ "id": "20261117T092412-seg17-pathway-d59422",
+ "ts": "2026-11-17T09:24:12.798573Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated fc646d7 into claude/naadi-shared",
+ "body": "S17: lazy-load PathwayPage",
+ "refs": {
+  "commit": "fc646d7",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
