@@ -1,0 +1,804 @@
+{
+ "area": "07.02.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Bone and soft-tissue sarcomas, myeloma and skeletal metastases: pathology and mechanisms",
+   "html": "<p>Malignant tumours of bone fall into two groups. Primary sarcomas are rare and affect mainly children, adolescents and young adults. Secondary tumours are common and affect older adults: metastatic carcinoma and myeloma. A destructive bone lesion in a person over 40 is metastasis or myeloma until proven otherwise. In a teenager it is osteosarcoma or Ewing sarcoma until proven otherwise. Step 1 tests the cell of origin, the matrix the tumour makes, the driver genetics, and the biology of bone destruction.</p>\n<h2>Primary bone sarcomas</h2>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Osteosarcoma</th><th>Ewing sarcoma</th><th>Chondrosarcoma</th></tr></thead>\n<tbody>\n<tr><td>Age</td><td>Adolescents (growth spurt); second peak in older adults with Paget disease or prior radiation</td><td>About 5 to 20 years</td><td>Adults, usually over 40</td></tr>\n<tr><td>Site</td><td>Metaphysis: distal femur, proximal tibia, proximal humerus</td><td>Diaphysis or metadiaphysis of long bones; pelvis, ribs</td><td>Pelvis, proximal femur and humerus, ribs</td></tr>\n<tr><td>Radiograph</td><td>Destructive mixed lesion; \"sunburst\" spicules; Codman triangle</td><td>Permeative lesion; \"onion-skin\" lamellated periosteum; large soft-tissue mass</td><td>Lucent lesion with rings-and-arcs calcification; deep endosteal scalloping</td></tr>\n<tr><td>Histology</td><td>Pleomorphic malignant cells that <strong>directly make osteoid</strong></td><td>Sheets of uniform small round blue cells; membranous <strong>CD99</strong>; NKX2.2</td><td>Malignant hyaline cartilage, from low to high grade</td></tr>\n<tr><td>Genetics</td><td><em>RB1</em> and <em>TP53</em> loss; complex karyotype</td><td><strong>t(11;22) <em>EWSR1–FLI1</em></strong> (an aberrant transcription factor)</td><td><em>IDH1/2</em> in many; secondary forms from enchondroma or osteochondroma</td></tr>\n<tr><td>Behaviour</td><td>Hematogenous spread to lung; chemosensitive</td><td>Lung, bone and marrow spread; fever and raised ESR mimic infection; chemo- and radiosensitive</td><td>Slow-growing; resistant to chemotherapy and radiation</td></tr>\n</tbody></table>\n[[figure:s23f-fig070202-1]]\n<h3>Osteosarcoma risk factors</h3>\n<ul>\n<li><strong>Hereditary retinoblastoma</strong> (germline <em>RB1</em>). Hypophosphorylated Rb normally binds E2F and holds cells in G1. Survivors of bilateral retinoblastoma have a high lifetime risk of osteosarcoma, especially in the radiation field.</li>\n<li><strong>Li–Fraumeni syndrome</strong> (germline <em>TP53</em>). Sarcomas, breast cancer, brain tumours, adrenocortical carcinoma and leukemia at young ages.</li>\n<li><strong>Paget disease of bone</strong>, prior radiation, and Rothmund–Thomson syndrome (a RECQL4 helicase defect).</li>\n</ul>\n<p>Osteosarcoma may contain cartilage and fibrous areas, but the defining feature is malignant cells laying down lace-like osteoid. Serum alkaline phosphatase and LDH are often raised and carry prognostic weight. After preoperative chemotherapy, the percentage of tumour necrosis in the resected specimen (90% or more is a good response) is a key prognostic factor.</p>\n<h2>Soft-tissue sarcomas</h2>\n<p>These tumours of mesenchymal tissue mostly spread through the blood to the lung, not to lymph nodes. Rhabdomyosarcoma, synovial sarcoma, clear-cell sarcoma, epithelioid sarcoma and angiosarcoma are the exceptions that can reach regional nodes.</p>\n<ul>\n<li><strong>Rhabdomyosarcoma.</strong> The most common soft-tissue sarcoma of childhood. Skeletal-muscle markers are positive: desmin and the myogenic transcription factors <strong>myogenin (MYF4) and MyoD1</strong>. <em>Embryonal</em> rhabdomyosarcoma affects young children in the head and neck (orbit, nasopharynx) and genitourinary tract. The <em>botryoid</em> variant forms a grape-like mass in the vagina or bladder, with a dense \"cambium layer\" of tumour cells under the epithelium. <em>Alveolar</em> rhabdomyosarcoma affects adolescents in the extremities and trunk. It carries <em>PAX3–FOXO1</em> t(2;13) or <em>PAX7–FOXO1</em> t(1;13) fusions and has a worse prognosis. Predisposing conditions include Li–Fraumeni syndrome, neurofibromatosis type 1, <em>DICER1</em> syndrome and Beckwith–Wiedemann syndrome.</li>\n<li><strong>Synovial sarcoma.</strong> Young adults, often next to the knee or another large joint. Despite the name, it does not arise from synovium. Histology is biphasic (spindle and epithelial) or monophasic. TLE1 is positive and keratin is focal. The defining fusion is <strong>t(X;18) <em>SS18–SSX</em></strong>.</li>\n<li><strong>Liposarcoma.</strong> Well-differentiated or dedifferentiated forms (12q <em>MDM2</em> amplification) in the thigh and retroperitoneum. Myxoid forms carry <em>FUS–DDIT3</em> t(12;16).</li>\n<li><strong>Leiomyosarcoma.</strong> Smooth-muscle sarcoma (desmin, smooth-muscle actin) of the uterus, retroperitoneum and large veins such as the inferior vena cava.</li>\n<li><strong>Undifferentiated pleomorphic sarcoma.</strong> A common high-grade sarcoma of older adults' limbs.</li>\n<li><strong>Malignant peripheral nerve sheath tumour.</strong> Arises in plexiform neurofibromas in NF1. Suspect it when a known neurofibroma becomes painful and grows.</li>\n</ul>\n<h2>Myeloma bone disease</h2>\n<p>Myeloma cells in the marrow push bone remodelling toward resorption by two routes:</p>\n<ol>\n<li>They and the marrow stroma increase <strong>RANKL</strong> and reduce osteoprotegerin, and they release MIP-1α and IL-6, all of which recruit and activate osteoclasts.</li>\n<li>They secrete <strong>DKK1</strong> and sclerostin, which block Wnt signalling and stop osteoblasts from forming new bone.</li>\n</ol>\n<p>Because no reparative bone is laid down, myeloma lesions are purely lytic \"punched-out\" holes. Alkaline phosphatase is usually normal, and the technetium bone scan, which detects osteoblast activity, can be falsely negative. The consequences are hypercalcemia, pathologic fractures, vertebral collapse and bone pain.</p>\n<h2>Metastases to bone</h2>\n<p>Metastasis is the most common malignant tumour in adult bone. Breast, prostate, lung, kidney and thyroid cancers spread there most often. They seed red marrow in the axial skeleton and proximal limbs. Prostate and other pelvic cancers reach the lumbar spine and pelvis through <strong>Batson's plexus</strong>, a valveless vertebral venous network. Rising intra-abdominal pressure (coughing, straining) can push blood backwards into it, bypassing the lungs. Tumour cells exploit normal remodelling in a \"vicious cycle\":</p>\n<ul>\n<li><strong>Lytic metastases</strong> (lung, kidney, thyroid, melanoma, most breast cancers). Tumour PTH-related peptide increases RANKL on osteoblasts. The osteoclasts that result free growth factors such as TGF-β and IGF from the matrix, which then stimulate the tumour.</li>\n<li><strong>Blastic metastases</strong> (prostate, and also carcinoid and some breast cancers). Tumour cells secrete endothelin-1, BMPs and Wnt ligands that drive disorganised new bone. Prostate-specific antigen can cleave PTHrP and activate growth factors. Alkaline phosphatase is high, and the bone scan is strongly positive.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Pattern</th><th>Typical primaries</th><th>Clues</th></tr></thead>\n<tbody>\n<tr><td>Lytic</td><td>Lung, kidney, thyroid, melanoma, myeloma</td><td>Kidney and thyroid are hypervascular and can bleed at surgery</td></tr>\n<tr><td>Blastic</td><td>Prostate, carcinoid, small-cell lung (some)</td><td>Dense vertebrae; high alkaline phosphatase</td></tr>\n<tr><td>Mixed</td><td>Breast</td><td>Lytic or blastic; can change appearance with treatment</td></tr>\n</tbody></table>\n<div class=\"pearl\"><p>Pharmacology to tie in: bisphosphonates (zoledronic acid) bind hydroxyapatite and are taken up by osteoclasts. They inhibit farnesyl pyrophosphate synthase, which disrupts prenylation of small GTPases and causes osteoclast apoptosis. Denosumab is a monoclonal antibody that neutralises RANKL. Both reduce skeletal events. Both cause osteonecrosis of the jaw, and both can cause hypocalcemia, especially denosumab. In osteosarcoma regimens, high-dose methotrexate needs leucovorin rescue, doxorubicin causes dose-dependent cardiomyopathy, and cisplatin causes ototoxicity and nephrotoxicity. In Ewing regimens, ifosfamide and cyclophosphamide produce acrolein, which causes hemorrhagic cystitis that mesna prevents.</p></div>\n<div class=\"trap\"><p>A small-round-blue-cell tumour of bone in a child is not always Ewing sarcoma. Lymphoma, metastatic neuroblastoma (in younger children, with raised urine catecholamines) and alveolar rhabdomyosarcoma look similar. CD99 with an <em>EWSR1</em> rearrangement confirms Ewing.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Osteosarcoma (Osteogenic Sarcoma)"
+    },
+    {
+     "statpearls": "Ewing Sarcoma"
+    },
+    {
+     "statpearls": "Rhabdomyosarcoma"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Malignant bone tumours and skeletal metastases: diagnosis and management",
+   "html": "<p>The outcome of a bone sarcoma depends heavily on what happens before the diagnosis is made. Recognise the warning signs, image correctly, and send the patient to a sarcoma centre <em>before</em> biopsy. Treatment combines systemic therapy with surgery and, for some tumours, radiation.</p>\n<h2>Recognising a primary bone sarcoma</h2>\n<ul>\n<li><strong>Symptoms.</strong> Bone pain that persists, worsens and is present at rest or at night, often first blamed on a sports injury. Then a swelling. Occasionally a pathologic fracture. A teenager with knee pain that does not settle in a few weeks needs a radiograph.</li>\n<li><strong>Ewing sarcoma</strong> can bring fever, weight loss, anemia, leukocytosis and a high ESR. It is easily mistaken for osteomyelitis, so send any \"osteomyelitis\" biopsy for histology as well as culture.</li>\n<li><strong>Radiograph first.</strong> An aggressive lesion has a permeative or moth-eaten margin, cortical destruction, interrupted periosteal reaction (Codman triangle, sunburst, onion skin) and a soft-tissue mass.</li>\n<li><strong>Then refer.</strong> The sarcoma team arranges:\n<ul>\n<li><strong>MRI of the entire involved bone</strong> for local extent and \"skip\" metastases;</li>\n<li>staging with <strong>CT of the chest</strong> and bone scan or PET-CT, plus marrow assessment in Ewing sarcoma;</li>\n<li>a <strong>core-needle biopsy</strong> along a track that the surgeon will later remove.</li>\n</ul></li>\n</ul>\n<h2>Treatment</h2>\n<table class=\"hy\">\n<thead><tr><th>Tumour</th><th>Systemic therapy</th><th>Local control</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Osteosarcoma</td><td>Neoadjuvant and adjuvant multiagent chemotherapy (high-dose methotrexate, doxorubicin, cisplatin)</td><td>Wide resection, usually limb-salvage with endoprosthesis; amputation if margins cannot be achieved</td><td>Relatively radioresistant; resect lung metastases where possible</td></tr>\n<tr><td>Ewing sarcoma</td><td>Intensive multiagent chemotherapy (alternating vincristine–doxorubicin–cyclophosphamide with ifosfamide–etoposide)</td><td>Surgery and/or radiation (radiosensitive)</td><td>Radiation is preferred where resection would be mutilating, for example in the pelvis or spine</td></tr>\n<tr><td>Conventional chondrosarcoma</td><td>Not effective</td><td><strong>Wide surgical resection</strong>; intralesional curettage only for low-grade lesions in limb bones</td><td>Resistant to chemotherapy and radiation</td></tr>\n<tr><td>Soft-tissue sarcoma (adult, high grade, deep)</td><td>Selected patients (anthracycline-based)</td><td>Wide excision plus radiation before or after surgery</td><td>Chest CT for staging</td></tr>\n<tr><td>Rhabdomyosarcoma</td><td>Multiagent chemotherapy for all</td><td>Surgery and/or radiation, chosen by site</td><td>Risk group depends on histology, fusion status, site and stage</td></tr>\n</tbody></table>\n<p><strong>Supportive and survivorship care</strong> for adolescents and young adults:</p>\n<ul>\n<li>Fertility preservation before gonadotoxic chemotherapy: sperm banking, or oocyte or ovarian tissue cryopreservation.</li>\n<li>Echocardiographic monitoring for anthracycline cardiotoxicity, with dexrazoxane as a cardioprotectant in selected regimens.</li>\n<li>Audiology for cisplatin.</li>\n<li>Kidney monitoring for ifosfamide (Fanconi syndrome) and cisplatin.</li>\n<li>Lifelong surveillance for second cancers.</li>\n<li>Rehabilitation, prosthetic care and psychosocial support. Many survivors live with an amputation or an endoprosthesis.</li>\n</ul>\n<h2>Metastatic bone disease</h2>\n<p><strong>A new lytic lesion with no known cancer.</strong> Do not fix a solitary destructive lesion as if it were a simple fracture. Work up the patient first:</p>\n<ul>\n<li>history and examination, including breast, thyroid and prostate;</li>\n<li>CBC, calcium, creatinine and alkaline phosphatase;</li>\n<li>serum protein electrophoresis with free light chains;</li>\n<li>PSA where relevant;</li>\n<li>CT of the chest, abdomen and pelvis;</li>\n<li>a bone scan or PET-CT;</li>\n<li>then biopsy the most accessible lesion. A solitary lesion may be a primary sarcoma that needs a completely different operation.</li>\n</ul>\n<p><strong>Impending pathologic fracture.</strong> Fracture risk is scored on four features: site (peritrochanteric lesions are highest risk), pain (pain with function is worse), lesion type (lytic is worse) and size (cortical involvement over two-thirds is worse). High-risk long-bone lesions are fixed prophylactically, usually with an intramedullary device, and then the whole bone is irradiated. Hypervascular metastases from renal or thyroid cancer may need embolisation before surgery.</p>\n<p><strong>Pain and skeletal events.</strong></p>\n<ul>\n<li>External-beam radiation relieves pain from uncomplicated bone metastases. A single fraction works about as well as longer courses for pain, although retreatment is more common.</li>\n<li>Bone-modifying agents (zoledronic acid or denosumab) reduce fractures, cord compression and the need for radiation or surgery. Before starting them, obtain a dental evaluation and correct calcium and vitamin D. Adjust or avoid zoledronic acid in kidney impairment.</li>\n<li>Vertebral augmentation can help painful compression fractures.</li>\n</ul>\n[[figure:s23f-fig070202-2]]\n<p><strong>Metastatic spinal cord compression is an emergency.</strong></p>\n<ul>\n<li><strong>Warning signs.</strong> New or worsening back pain in a person with cancer, especially thoracic pain, pain worse lying down, or band-like radicular pain, needs urgent assessment. Weakness, a sensory level and bladder or bowel dysfunction are late signs.</li>\n<li><strong>Immediate steps.</strong> Start high-dose dexamethasone when there is a neurologic deficit, and obtain <strong>MRI of the entire spine</strong> the same day, because lesions at more than one level are common.</li>\n<li><strong>Definitive treatment.</strong> Surgical decompression and stabilisation followed by radiation is preferred for spinal instability, bony retropulsion, radioresistant tumours (renal cell carcinoma, melanoma, sarcoma) or progression despite radiation, in patients fit enough and with reasonable life expectancy. Radiation alone is standard for radiosensitive tumours (myeloma, lymphoma, many prostate and breast cancers) and for patients who are not surgical candidates.</li>\n</ul>\n<p>Ambulatory status at treatment strongly predicts ambulatory status afterwards.</p>\n<h2>Myeloma bone disease</h2>\n<p>Evaluate bone with <strong>whole-body low-dose CT</strong> (or PET-CT or whole-body MRI). These have replaced the plain skeletal survey. The technetium bone scan is <em>not</em> used, because it misses purely lytic lesions. All patients receiving myeloma therapy should get a bone-modifying agent. Denosumab is preferred when kidney function is impaired. Treat hypercalcemia with IV fluids, then calcitonin and a bisphosphonate or denosumab. Use radiation for painful lesions or cord compression, and stabilise long bones at risk of fracture.</p>\n<div class=\"trap\"><p>An older adult with a \"compression fracture\" and anemia, kidney injury or hypercalcemia has myeloma until proven otherwise. Check serum protein electrophoresis and free light chains before calling it osteoporotic. A normal bone scan does not exclude myeloma.</p></div>\n<div class=\"pearl\"><p>In someone with cancer, back pain that is worse lying flat, wakes them at night, or is thoracic should be treated as possible epidural metastasis. MRI before weakness develops preserves the ability to walk.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Bone Metastasis"
+    },
+    {
+     "statpearls": "Chondrosarcoma"
+    },
+    {
+     "statpearls": "Multiple Myeloma"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Periosteal reaction patterns. A solid, smooth reaction suggests a slow process; lamellated (onion-skin), spiculated (sunburst) and Codman triangle patterns suggest an aggressive lesion such as Ewing sarcoma or osteosarcoma, though infection can mimic them."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Suspected metastatic spinal cord compression: a simplified pathway from new back pain or neurologic signs in a person with cancer to steroids, whole-spine MRI and definitive treatment."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Back pain and weak legs in a man with kidney cancer"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old boy has 2 months of worsening pain and swelling above his right knee. As an infant he was treated for tumours in both eyes, and his father had one eye removed in childhood. A radiograph shows a destructive lesion of the distal femoral metaphysis with spiculated periosteal new bone. Biopsy shows pleomorphic malignant cells surrounded by lace-like osteoid. The germline gene most likely responsible for both of his tumours encodes a protein whose normal function is to do which of the following?</p>",
+   "options": [
+    "Bind E2F to hold cells in G1",
+    "Degrade β-catenin in the cytoplasm",
+    "Hydrolyse GTP bound to Ras",
+    "Inhibit cyclin-dependent kinase 4 directly",
+    "Repair mismatched DNA bases after replication"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Bilateral retinoblastoma in infancy, a father with an enucleated eye and now osteosarcoma indicate hereditary retinoblastoma from a germline <em>RB1</em> mutation, with loss of the second allele in the tumours (Knudson two-hit model). Hypophosphorylated Rb binds E2F and represses genes needed for DNA synthesis, holding cells at the G1/S checkpoint until cyclin D–CDK4/6 phosphorylates it. Survivors have a high lifetime risk of osteosarcoma and other sarcomas, especially after radiation.</p><p><strong>Takeaway:</strong> Germline <em>RB1</em> loss predisposes to retinoblastoma and osteosarcoma. Rb normally binds E2F to block G1-to-S progression.</p>",
+   "whyNot": {
+    "B": "Degrading β-catenin is the function of the APC destruction complex. <em>APC</em> loss causes familial adenomatous polyposis.",
+    "C": "Hydrolysing Ras-GTP is the job of GTPase-activating proteins such as neurofibromin (<em>NF1</em>).",
+    "D": "Direct CDK4 inhibition is performed by p16 (<em>CDKN2A</em>), which acts upstream of Rb. It is not the protein lost here.",
+    "E": "Mismatch repair proteins (<em>MLH1</em>, <em>MSH2</em>) are lost in Lynch syndrome, which causes colorectal and endometrial cancers."
+   },
+   "objective": "Relate hereditary retinoblastoma and osteosarcoma to loss of Rb's E2F-binding function.",
+   "extraAreas": [
+    "16.02.02"
+   ],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone tumour",
+    "tumour suppressors"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 12-year-old boy has 6 weeks of pain in his left thigh, fever to 38.4°C (101.1°F) and a 3-kg weight loss. ESR is 74 mm/h. A radiograph shows a permeative lesion in the femoral diaphysis with layered, onion-skin periosteal reaction and a large soft-tissue mass. Biopsy shows sheets of uniform small round cells with scant cytoplasm and strong membranous staining for CD99. Which of the following genetic abnormalities is most likely in the tumour cells?</p>",
+   "options": [
+    "t(2;13) <em>PAX3–FOXO1</em>",
+    "t(12;22) <em>EWSR1–ATF1</em>",
+    "t(11;22) <em>EWSR1–FLI1</em>",
+    "t(12;16) <em>FUS–DDIT3</em>",
+    "t(X;18) <em>SS18–SSX</em>"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A diaphyseal, permeative bone tumour with onion-skin periosteal reaction, systemic symptoms and CD99-positive small round blue cells is Ewing sarcoma. About 85% carry t(11;22)(q24;q12), which fuses <em>EWSR1</em> to the ETS transcription factor gene <em>FLI1</em>. The fusion protein acts as an aberrant transcription factor that reprograms the cell.</p><p><strong>Takeaway:</strong> Ewing sarcoma is a CD99-positive small round blue cell tumour with <em>EWSR1–FLI1</em> t(11;22).</p>",
+   "whyNot": {
+    "A": "<em>PAX3–FOXO1</em> defines alveolar rhabdomyosarcoma, which is desmin and myogenin positive and usually arises in soft tissue.",
+    "B": "<em>EWSR1–ATF1</em> defines clear cell sarcoma of tendons and aponeuroses, a melanocytic (S-100- and HMB-45-positive) soft-tissue tumour, not a CD99-positive bone tumour.",
+    "D": "<em>FUS–DDIT3</em> defines myxoid liposarcoma of adult soft tissue.",
+    "E": "<em>SS18–SSX</em> defines synovial sarcoma, a spindle-cell or biphasic soft-tissue tumour of young adults."
+   },
+   "objective": "Identify the EWSR1–FLI1 translocation in Ewing sarcoma.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric bone tumour",
+    "translocations"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old girl has a painful, enlarging mass over the proximal right tibia. A radiograph shows a destructive metaphyseal lesion with cloud-like mineralisation, a sunburst periosteal reaction and a Codman triangle. A core biopsy shows malignant spindle and pleomorphic cells, some areas of atypical cartilage and areas of fibrous stroma. Which additional histologic finding is required to establish the most likely diagnosis?</p>",
+   "options": [
+    "Atypical cartilage invading the marrow spaces",
+    "Malignant cells producing osteoid directly",
+    "Multinucleated osteoclast-like giant cells",
+    "Rosettes surrounding a fibrillary core",
+    "Small round blue cells expressing CD99"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The picture is osteosarcoma. Its defining feature is malignant cells that directly lay down osteoid (unmineralised bone matrix), even if large areas of the tumour form cartilage or fibrous tissue. Chondroblastic and fibroblastic osteosarcomas are still osteosarcomas when tumour osteoid is present.</p><p><strong>Takeaway:</strong> Osteosarcoma is defined by osteoid produced directly by malignant cells.</p>",
+   "whyNot": {
+    "A": "Malignant cartilage alone, without tumour osteoid, would indicate chondrosarcoma, which usually occurs in older adults.",
+    "C": "Osteoclast-like giant cells occur in giant cell tumour and in some osteosarcomas but do not define osteosarcoma.",
+    "D": "Rosettes suggest neuroblastoma or other neuroectodermal tumours.",
+    "E": "CD99-positive small round blue cells indicate Ewing sarcoma."
+   },
+   "objective": "State that tumour osteoid produced by malignant cells defines osteosarcoma.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone tumour",
+    "histopathology"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 3-year-old girl is brought to the clinic because of blood-stained vaginal discharge and a soft, grape-like mass protruding from the vaginal introitus. Biopsy shows a polypoid tumour covered by intact epithelium, with a dense band of small, round to spindle-shaped tumour cells directly beneath the epithelium and a loose myxoid stroma deeper in. Some cells have eccentric eosinophilic cytoplasm. Immunostaining of the tumour cells is most likely to be positive for which of the following?</p>",
+   "options": [
+    "CD99",
+    "Cytokeratin",
+    "Myogenin",
+    "S-100",
+    "Synaptophysin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A grape-like vaginal mass in a young child with a dense subepithelial cambium layer is the botryoid subtype of embryonal rhabdomyosarcoma, the most common soft-tissue sarcoma of childhood. Rhabdomyoblasts express skeletal-muscle markers. Desmin is sensitive, and the nuclear myogenic transcription factors myogenin (MYF4) and MyoD1 are specific.</p><p><strong>Takeaway:</strong> Rhabdomyosarcoma stains for desmin, myogenin and MyoD1. The botryoid variant forms grape-like vaginal or bladder masses in young children.</p>",
+   "whyNot": {
+    "A": "CD99 is the classic marker of Ewing sarcoma, a bone tumour of older children.",
+    "B": "Cytokeratin marks carcinomas and would be negative in this mesenchymal tumour.",
+    "D": "S-100 marks melanocytic, nerve sheath and some cartilage tumours.",
+    "E": "Synaptophysin marks neuroendocrine and neuroblastic tumours such as neuroblastoma."
+   },
+   "objective": "Identify myogenin positivity in embryonal (botryoid) rhabdomyosarcoma.",
+   "extraAreas": [
+    "13.02.02"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric tumour",
+    "immunohistochemistry"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old man has a slowly enlarging, mildly painful mass in the soft tissue behind his left knee, present for 10 months. MRI shows a 6-cm heterogeneous mass next to, but not inside, the knee joint, with small foci of calcification. Biopsy shows a biphasic tumour of uniform spindle cells with scattered glandular structures lined by epithelial cells. Tumour cells show strong nuclear TLE1 staining and focal cytokeratin. Which of the following genetic abnormalities is most likely?</p>",
+   "options": [
+    "t(9;22) <em>BCR–ABL1</em>",
+    "t(11;22) <em>EWSR1–FLI1</em>",
+    "t(12;16) <em>FUS–DDIT3</em>",
+    "t(2;13) <em>PAX3–FOXO1</em>",
+    "t(X;18) <em>SS18–SSX</em>"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A biphasic spindle-cell and glandular tumour near a large joint in a young adult, with calcifications, TLE1 positivity and focal keratin, is synovial sarcoma. It is defined by t(X;18)(p11;q11), fusing <em>SS18</em> to <em>SSX1</em> or <em>SSX2</em>. The fusion disrupts chromatin remodelling. Despite the name, it does not arise from synovium.</p><p><strong>Takeaway:</strong> Synovial sarcoma carries t(X;18) <em>SS18–SSX</em>.</p>",
+   "whyNot": {
+    "A": "<em>BCR–ABL1</em> is the Philadelphia chromosome of chronic myeloid leukemia and some acute lymphoblastic leukemias.",
+    "B": "<em>EWSR1–FLI1</em> defines Ewing sarcoma, a small round cell tumour, not a biphasic spindle and glandular one.",
+    "C": "<em>FUS–DDIT3</em> defines myxoid liposarcoma, which has lipoblasts and a chicken-wire vascular pattern.",
+    "D": "<em>PAX3–FOXO1</em> defines alveolar rhabdomyosarcoma, which is myogenin positive."
+   },
+   "objective": "Link synovial sarcoma to the t(X;18) SS18–SSX fusion.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "soft-tissue sarcoma",
+    "translocations"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 67-year-old woman has back pain, fatigue and a creatinine of 1.9 mg/dL. Hemoglobin is 9.4 g/dL, calcium is 11.2 mg/dL, and total protein is 9.6 g/dL with albumin 3.4 g/dL. Serum protein electrophoresis shows an M spike. Whole-body low-dose CT shows many small, round, punched-out lytic lesions in the skull, spine and pelvis without surrounding sclerosis. A technetium-99m bone scan done earlier at another hospital was reported as normal, and alkaline phosphatase is normal. Which of the following best explains the normal bone scan and alkaline phosphatase?</p>",
+   "options": [
+    "Antibody-mediated destruction of osteoclasts",
+    "Calcitonin excess suppressing all bone turnover",
+    "Excess osteoprotegerin blocking RANKL",
+    "Wnt inhibitors suppressing osteoblasts",
+    "Renal failure preventing technetium uptake"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>This is multiple myeloma. Myeloma cells raise RANKL and lower osteoprotegerin to activate osteoclasts. They also secrete Wnt inhibitors, DKK1 and sclerostin, that prevent osteoblast differentiation. Bone formation is uncoupled from resorption, so lesions are purely lytic without reactive new bone. Technetium bone scans detect osteoblastic activity, and alkaline phosphatase reflects osteoblast activity, so both can be normal despite extensive destruction.</p><p><strong>Takeaway:</strong> Myeloma suppresses osteoblasts through DKK1 and sclerostin, so bone scans and alkaline phosphatase can be normal despite lytic lesions.</p>",
+   "whyNot": {
+    "A": "Osteoclasts are activated, not destroyed, in myeloma, which is why lesions are lytic.",
+    "B": "Calcitonin is not elevated in myeloma and does not explain uncoupled bone turnover.",
+    "C": "Myeloma <em>lowers</em> osteoprotegerin. Excess osteoprotegerin would prevent the lytic lesions.",
+    "E": "Technetium-labelled bisphosphonates bind bone mineral wherever osteoblasts are active. Kidney function does not prevent their uptake at lesions."
+   },
+   "objective": "Explain why myeloma lesions are cold on bone scan through osteoblast suppression.",
+   "extraAreas": [
+    "03.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone lesions",
+    "older adults"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 71-year-old man has low back pain. Radiographs show multiple dense, sclerotic lesions in the lumbar vertebral bodies and pelvis. Alkaline phosphatase is 410 U/L, and serum PSA is 186 ng/mL (reference, under 4 ng/mL). CT of the chest shows no lung lesions. Spread of his tumour to the lumbar spine without passing through the lungs is best explained by which of the following?</p>",
+   "options": [
+    "Direct invasion through the sacrospinous ligament",
+    "Lymphatic drainage through the thoracic duct",
+    "Perineural spread along the sacral plexus",
+    "Portal venous drainage to the liver and then bone",
+    "Retrograde flow in the vertebral venous plexus"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Sclerotic metastases with a very high PSA are from prostate cancer. The prostatic venous plexus connects with Batson's plexus, the valveless epidural and vertebral venous network. Increases in intra-abdominal pressure can push venous blood backwards into it, delivering tumour cells to the lumbar spine and pelvis without passing through the pulmonary capillaries. That is why axial bone metastases can appear without lung involvement.</p><p><strong>Takeaway:</strong> Prostate cancer reaches the spine through the valveless vertebral (Batson) venous plexus.</p>",
+   "whyNot": {
+    "A": "Direct ligamentous invasion would affect only bone next to the prostate, not distant lumbar vertebrae.",
+    "B": "Thoracic duct drainage leads to the systemic veins and then the lungs, which the plexus route bypasses.",
+    "C": "Perineural spread occurs locally around the prostate and explains pain, not multifocal vertebral metastases.",
+    "D": "The prostate does not drain into the portal system. Portal drainage explains liver metastases from gut cancers."
+   },
+   "objective": "Explain vertebral metastasis from prostate cancer through Batson's valveless venous plexus.",
+   "extraAreas": [
+    "14.02.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "metastatic disease",
+    "older adults"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old woman with breast cancer and multiple lytic bone metastases is started on a monthly IV drug to reduce fractures. The drug binds to bone mineral, is taken up by osteoclasts during resorption, and inhibits an enzyme in the mevalonate pathway, which causes osteoclast apoptosis. Which of the following enzymes does this drug inhibit?</p>",
+   "options": [
+    "Farnesyl pyrophosphate synthase",
+    "3-Hydroxy-3-methylglutaryl-CoA reductase",
+    "Squalene epoxidase",
+    "Thymidylate synthase",
+    "Tyrosine kinase of RANK"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Nitrogen-containing bisphosphonates such as zoledronic acid concentrate on exposed hydroxyapatite and are internalised by resorbing osteoclasts. They inhibit farnesyl pyrophosphate synthase, which blocks the prenylation of small GTPases (Ras, Rho, Rab) needed for the ruffled border and cell survival, so osteoclasts undergo apoptosis. In bone metastases they reduce fractures, cord compression and the need for radiation. Osteonecrosis of the jaw and acute-phase reactions are adverse effects.</p><p><strong>Takeaway:</strong> Zoledronic acid inhibits farnesyl pyrophosphate synthase in osteoclasts.</p>",
+   "whyNot": {
+    "B": "HMG-CoA reductase is the statin target, upstream in the same pathway. Bisphosphonates act on a later enzyme.",
+    "C": "Squalene epoxidase is inhibited by terbinafine in fungi.",
+    "D": "Thymidylate synthase is inhibited by 5-fluorouracil and pemetrexed.",
+    "E": "RANK has no intrinsic tyrosine kinase that drugs target. Denosumab blocks its ligand, RANKL, with an antibody."
+   },
+   "objective": "Identify farnesyl pyrophosphate synthase as the target of nitrogen-containing bisphosphonates.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "metastatic disease",
+    "bone-modifying agents"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 14-year-old boy has had 6 weeks of aching pain above his left knee. It started after soccer practice, now wakes him at night and is not improving with rest. There is a firm, tender swelling over the distal medial thigh with mildly reduced knee flexion. A radiograph shows an ill-defined destructive lesion of the distal femoral metaphysis with cortical breakthrough, cloud-like mineralisation in a soft-tissue mass and a Codman triangle. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Excisional biopsy by the on-call general orthopedic surgeon tonight",
+    "IV antibiotics for presumed osteomyelitis",
+    "MRI of the whole femur and referral to a sarcoma centre for biopsy",
+    "Physical therapy and repeat radiograph in 6 weeks",
+    "Technetium-99m bone scan alone, followed by observation"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The radiograph is highly suggestive of osteosarcoma. Before any tissue is taken, he needs MRI of the entire femur, to define local extent and detect skip lesions, and referral to a sarcoma centre. There, staging (chest CT, bone scan or PET) and a core-needle biopsy are planned so that the biopsy track can be excised with the tumour at limb-salvage surgery.</p><p><strong>Takeaway:</strong> A suspected bone sarcoma needs whole-bone MRI and sarcoma-centre referral before biopsy.</p>",
+   "whyNot": {
+    "A": "A biopsy by a surgeon who will not do the definitive resection, through a poorly placed incision, can contaminate compartments and prevent limb salvage.",
+    "B": "Nothing suggests infection, and antibiotics would delay the diagnosis of a malignant tumour.",
+    "D": "Night pain with an aggressive radiograph must not be treated as a sports injury.",
+    "E": "A bone scan is part of staging, not a substitute for local MRI and tissue diagnosis."
+   },
+   "objective": "Image the whole bone with MRI and refer suspected osteosarcoma to a sarcoma centre before biopsy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "adolescent knee pain",
+    "bone tumour"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-year-old girl has 2 months of right hip and thigh pain, intermittent fevers and fatigue. ESR is 68 mm/h, and leukocyte count is 13,200/mm<sup>3</sup>. Radiographs and MRI show a permeative lesion of the proximal femoral diaphysis with lamellated periosteal reaction and a large soft-tissue mass. Biopsy cultures are negative. Histology shows small round blue cells with membranous CD99 staining, and an <em>EWSR1</em> rearrangement is confirmed. Chest CT and PET-CT show no metastases, and bone marrow biopsy is negative. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Multiagent chemotherapy plus local control",
+    "IV antibiotics for 6 weeks with repeat MRI",
+    "Primary amputation without systemic therapy",
+    "Radiation therapy alone to the femur",
+    "Wide excision followed by observation"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is localised Ewing sarcoma. Even without visible metastases, most patients have micrometastatic disease. Treatment is intensive multiagent chemotherapy (alternating vincristine–doxorubicin–cyclophosphamide with ifosfamide–etoposide) given before and after local control. Local control is by surgical resection, radiation or both, chosen by site and expected function. Ewing sarcoma is radiosensitive.</p><p><strong>Takeaway:</strong> Ewing sarcoma is treated with multiagent chemotherapy plus local control by surgery and/or radiation.</p>",
+   "whyNot": {
+    "B": "The biopsy and molecular test establish malignancy, so antibiotics would be inappropriate. Ewing sarcoma often mimics osteomyelitis clinically.",
+    "C": "Local treatment alone without chemotherapy leads to metastatic relapse in most patients.",
+    "D": "Radiation alone, without systemic therapy, fails to control micrometastatic disease.",
+    "E": "Excision without chemotherapy leaves micrometastases untreated."
+   },
+   "objective": "Treat localised Ewing sarcoma with multiagent chemotherapy plus local control.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pediatric bone tumour",
+    "oncology"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 63-year-old man with metastatic clear-cell renal cell carcinoma, treated with an immune checkpoint inhibitor, comes to the emergency department because of 3 weeks of mid-back pain that is worse lying down and now radiates around his chest in a band. Since yesterday his legs feel heavy and he has had difficulty starting urination. Strength in hip flexion is 4/5 bilaterally, with hyperreflexia at the knees and a sensory level at T10. He can walk with assistance. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "CT of the abdomen and pelvis",
+    "Dexamethasone and whole-spine MRI today",
+    "Lumbar puncture for cytology",
+    "Outpatient MRI of the thoracic spine within 1 week",
+    "Plain radiographs of the thoracic spine"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Back pain worse lying down, band-like radicular pain, leg weakness, hyperreflexia, a sensory level and urinary hesitancy in a person with cancer indicate metastatic epidural spinal cord compression. Give high-dose dexamethasone immediately to reduce cord edema, and obtain MRI of the <em>entire</em> spine urgently, because multilevel disease is common and changes the plan.</p><p><strong>Takeaway:</strong> Suspected malignant cord compression with deficits needs dexamethasone and same-day whole-spine MRI.</p>",
+   "whyNot": {
+    "A": "Abdominal and pelvic CT does not image the spinal canal and delays the diagnosis.",
+    "C": "Lumbar puncture is not the test for epidural compression and can worsen herniation through a spinal block.",
+    "D": "Waiting a week risks permanent paraplegia, and imaging only the thoracic spine misses other levels.",
+    "E": "Plain films are insensitive for epidural disease and cannot show the cord."
+   },
+   "objective": "Start dexamethasone and obtain urgent whole-spine MRI for suspected metastatic cord compression.",
+   "extraAreas": [
+    "05.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "oncologic emergency",
+    "back pain"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>MRI shows a single T10 vertebral metastasis with retropulsed bone fragments compressing the cord, collapse of more than half of the vertebral body height and involvement of both pedicles, consistent with mechanical instability. No other spinal lesions are present. His renal cancer elsewhere is stable, and his oncologist estimates life expectancy well over 6 months. He has a good performance status. Which of the following is the most appropriate definitive management?</p>",
+   "options": [
+    "Conventional external-beam radiation therapy alone",
+    "Dexamethasone alone with repeat MRI in 2 weeks",
+    "Intrathecal chemotherapy",
+    "Decompression and stabilisation, then radiation",
+    "Vertebroplasty without decompression"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>He has single-level cord compression from a radioresistant tumour (renal cell carcinoma), mechanical instability and bony retropulsion, a good performance status and meaningful life expectancy. Direct surgical decompression with stabilisation, followed by radiation, gives the best chance of keeping him walking. Preoperative embolisation is often used for hypervascular renal metastases.</p><p><strong>Takeaway:</strong> Unstable cord compression from a radioresistant metastasis in a fit patient needs surgery, then radiation.</p>",
+   "whyNot": {
+    "A": "Conventional radiation alone is less effective for radioresistant renal metastases and cannot relieve compression by bone fragments or correct instability.",
+    "B": "Steroids are a temporising measure, not definitive treatment, and waiting risks permanent paralysis.",
+    "C": "Intrathecal chemotherapy treats leptomeningeal disease, not epidural bony compression.",
+    "E": "Cement augmentation without decompression cannot relieve cord compression from retropulsed bone and may worsen it."
+   },
+   "objective": "Choose surgery plus radiation for unstable cord compression from a radioresistant metastasis.",
+   "extraAreas": [
+    "05.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "oncologic emergency",
+    "spinal metastasis"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 56-year-old woman with metastatic breast cancer to bone has 6 weeks of increasing pain in her right upper thigh when she walks or climbs stairs. A radiograph shows a 4-cm lytic lesion in the subtrochanteric femur that destroys about three-quarters of the cortical width. She has no fracture. Other results are shown.</p><table><thead><tr><th>Variable</th><th>Result</th></tr></thead><tbody><tr><td>Performance status</td><td>Fully ambulatory, works part time</td></tr><tr><td>Expected survival (oncologist)</td><td>More than 1 year</td></tr><tr><td>Hemoglobin</td><td>11.8 g/dL</td></tr><tr><td>Platelets</td><td>226,000/mm<sup>3</sup></td></tr><tr><td>Calcium, total</td><td>9.6 mg/dL (2.4 mmol/L)</td></tr><tr><td>Creatinine</td><td>0.8 mg/dL</td></tr><tr><td>INR</td><td>1.0</td></tr><tr><td>Current therapy</td><td>Endocrine therapy with a CDK4/6 inhibitor; monthly denosumab</td></tr></tbody></table><p>Which of the following is the most appropriate management of the femoral lesion?</p>",
+   "options": [
+    "Crutches and protected weight-bearing alone",
+    "Prophylactic fixation, then radiation",
+    "Radiation therapy alone",
+    "Repeat radiograph in 3 months",
+    "Switching denosumab to zoledronic acid"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A painful, lytic lesion in the peritrochanteric femur destroying more than two-thirds of the cortex scores high on all four fracture-risk features (site, functional pain, lytic type and size). Fracture is likely with normal walking. In a fit patient with good expected survival, prophylactic fixation with an intramedullary nail protecting the whole femur, followed by radiation to the whole bone, prevents a fracture and preserves function. Fixing a fracture after it happens is technically harder and has worse outcomes.</p><p><strong>Takeaway:</strong> An impending pathologic fracture of the proximal femur is fixed prophylactically and then irradiated.</p>",
+   "whyNot": {
+    "A": "Protected weight-bearing does not prevent fracture of a lesion this large in the proximal femur.",
+    "C": "Radiation alone relieves pain, but the weakened bone can still fracture while it heals. Fixation comes first.",
+    "D": "Waiting risks a displaced pathologic fracture.",
+    "E": "Changing the bone-modifying agent does not address the immediate mechanical risk."
+   },
+   "objective": "Fix an impending pathologic fracture of the proximal femur prophylactically, then irradiate.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "metastatic disease",
+    "fracture prevention"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 54-year-old man has 9 months of deep, aching right hip pain that is worse at night. A radiograph and CT show a 9-cm lesion of the right ilium with rings-and-arcs calcification, deep endosteal scalloping, cortical breach and a soft-tissue component. Staging chest CT is normal. A planned core biopsy shows malignant hyaline cartilage with moderate cellularity and nuclear atypia (grade 2). Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Curettage and bone grafting",
+    "Doxorubicin-based chemotherapy alone",
+    "External-beam radiation alone",
+    "Observation with MRI every 6 months",
+    "Wide en bloc surgical resection"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A large, painful cartilage tumour of the pelvis in a middle-aged adult with cortical breach and a soft-tissue mass is conventional chondrosarcoma. These tumours respond poorly to chemotherapy and radiation, so cure depends on wide en bloc resection with negative margins. In the pelvis this needs a specialised sarcoma surgeon. Radiation is kept for unresectable disease or positive margins.</p><p><strong>Takeaway:</strong> Conventional chondrosarcoma is treated with wide surgical resection. It resists chemotherapy and radiation.</p>",
+   "whyNot": {
+    "A": "Intralesional curettage leaves tumour behind and is acceptable only for selected low-grade lesions in limb bones, not a grade 2 pelvic tumour.",
+    "B": "Conventional chondrosarcoma is largely resistant to cytotoxic chemotherapy.",
+    "C": "Radiation alone rarely controls chondrosarcoma and is not first-line for resectable disease.",
+    "D": "Observation allows growth of a malignant tumour that is still resectable."
+   },
+   "objective": "Treat conventional chondrosarcoma with wide surgical resection.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone tumour",
+    "adult"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 69-year-old woman has 2 months of low back pain and fatigue. Hemoglobin is 9.8 g/dL, creatinine is 1.6 mg/dL, calcium is 10.9 mg/dL, total protein is 9.1 g/dL and albumin is 3.5 g/dL. Serum protein electrophoresis shows a monoclonal band, and the serum free κ:λ light-chain ratio is 48. Bone marrow biopsy shows 34% clonal plasma cells. Which of the following is the most appropriate test to evaluate her skeleton?</p>",
+   "options": [
+    "Dual-energy x-ray absorptiometry",
+    "Plain radiographs of the lumbar spine only",
+    "Technetium-99m bone scintigraphy",
+    "Ultrasonography of the spine",
+    "Whole-body low-dose CT"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>She has multiple myeloma with anemia, kidney injury and hypercalcemia. Lytic bone disease must be mapped to stage the disease, find lesions at risk of fracture or cord compression, and plan radiation or stabilisation. Whole-body low-dose CT (or PET-CT or whole-body MRI) is the recommended skeletal assessment. It is far more sensitive than the plain skeletal survey it replaced.</p><p><strong>Takeaway:</strong> Assess myeloma bone disease with whole-body low-dose CT, PET-CT or whole-body MRI, not a bone scan.</p>",
+   "whyNot": {
+    "A": "DEXA measures bone density for osteoporosis. It does not detect focal lytic lesions.",
+    "B": "Imaging only the lumbar spine misses lesions elsewhere, and plain films detect lysis only after substantial bone loss.",
+    "C": "Bone scans depend on osteoblast activity and often miss purely lytic myeloma lesions.",
+    "D": "Ultrasound cannot evaluate the bones of the spine or the marrow."
+   },
+   "objective": "Select whole-body low-dose CT to evaluate myeloma bone disease.",
+   "extraAreas": [
+    "03.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bone lesions",
+    "older adults"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Histologic hallmark of osteosarcoma?",
+   "back": "Malignant cells directly making osteoid.",
+   "question": 3
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Germline syndromes that predispose to osteosarcoma?",
+   "back": "Hereditary retinoblastoma (<em>RB1</em>) and Li–Fraumeni syndrome (<em>TP53</em>).",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Translocation and marker of Ewing sarcoma?",
+   "back": "t(11;22) <em>EWSR1–FLI1</em>; membranous CD99.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Typical site of osteosarcoma vs Ewing sarcoma?",
+   "back": "Osteosarcoma: metaphysis near the knee. Ewing: diaphysis and pelvis.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Markers of rhabdomyosarcoma?",
+   "back": "Desmin, myogenin (MYF4), MyoD1.",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Fusion in alveolar rhabdomyosarcoma?",
+   "back": "<em>PAX3–FOXO1</em> t(2;13) (or <em>PAX7–FOXO1</em>).",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Fusion in synovial sarcoma?",
+   "back": "t(X;18) <em>SS18–SSX</em>.",
+   "question": 5
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why are myeloma lesions cold on bone scan?",
+   "back": "DKK1 and sclerostin suppress osteoblasts, so there is no reactive bone formation.",
+   "question": 6
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Route of prostate cancer to the lumbar spine?",
+   "back": "The valveless vertebral venous (Batson) plexus.",
+   "question": 7
+  },
+  {
+   "n": 10,
+   "section": 1,
+   "front": "Target of zoledronic acid?",
+   "back": "Farnesyl pyrophosphate synthase in osteoclasts.",
+   "question": 8
+  },
+  {
+   "n": 20,
+   "section": 2,
+   "front": "Next step for a suspected bone sarcoma on radiograph?",
+   "back": "MRI of the whole bone and referral to a sarcoma centre before biopsy.",
+   "question": 9
+  },
+  {
+   "n": 21,
+   "section": 2,
+   "front": "Treatment of localised Ewing sarcoma?",
+   "back": "Multiagent chemotherapy plus local control by surgery and/or radiation.",
+   "question": 10
+  },
+  {
+   "n": 22,
+   "section": 2,
+   "front": "Treatment of conventional chondrosarcoma?",
+   "back": "Wide en bloc resection; resistant to chemotherapy and radiation.",
+   "question": 14
+  },
+  {
+   "n": 23,
+   "section": 2,
+   "front": "Suspected metastatic cord compression with deficits: first steps?",
+   "back": "High-dose dexamethasone and same-day MRI of the entire spine.",
+   "question": 11
+  },
+  {
+   "n": 24,
+   "section": 2,
+   "front": "When is surgery preferred for metastatic cord compression?",
+   "back": "Instability or bony retropulsion, radioresistant tumour, fit patient with reasonable survival.",
+   "question": 12
+  },
+  {
+   "n": 25,
+   "section": 2,
+   "front": "Four features in long-bone metastasis fracture-risk scoring?",
+   "back": "Site, pain, lesion type (lytic is worse), size (cortical involvement).",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 2,
+   "front": "Before starting denosumab or zoledronic acid?",
+   "back": "Dental evaluation; correct calcium and vitamin D.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 2,
+   "front": "Preferred imaging for myeloma bone disease?",
+   "back": "Whole-body low-dose CT (or PET-CT or whole-body MRI).",
+   "question": 15
+  },
+  {
+   "n": 28,
+   "section": 2,
+   "front": "Solitary lytic lesion, no known cancer: fix first?",
+   "back": "No. Work up and biopsy first; it may be a primary sarcoma or renal metastasis.",
+   "question": null
+  }
+ ]
+}

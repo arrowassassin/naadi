@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-label="Line chart of lesion prominence against age from birth to over 10 years. Infantile haemangioma, a solid line, starts small, grows fast to a peak at about 3 to 5 months and then slowly involutes over years. Port-wine stain, a long-dashed line, is present at birth and slowly becomes more prominent. Nevus simplex, a dotted line, is present at birth and fades by 1 to 2 years.">
+<title>Line chart of lesion prominence against age from birth to over 10 years. Infantile haemangioma, a solid line, starts small, grows fast to a peak at about 3 to 5 months and then slowly involutes over years. Port-wine stain, a long-dashed line, is present at birth and slowly becomes more prominent. Nevus simplex, a dotted line, is present at birth and fades by 1 to 2 years.</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+<text x="380" y="26" font-family="sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f172a">Vascular birthmarks: how they change with age</text>
+<line x1="90" y1="320" x2="650" y2="320" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="90" y1="60" x2="90" y2="320" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="90" y1="320" x2="90" y2="326" stroke="#0f172a" stroke-width="1"/>
+<text x="90" y="342" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">birth</text>
+<line x1="130" y1="320" x2="130" y2="326" stroke="#0f172a" stroke-width="1"/>
+<text x="130" y="342" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">1 mo</text>
+<line x1="180" y1="320" x2="180" y2="326" stroke="#0f172a" stroke-width="1"/>
+<text x="180" y="342" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">3 mo</text>
+<line x1="240" y1="320" x2="240" y2="326" stroke="#0f172a" stroke-width="1"/>
+<text x="240" y="342" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">6 mo</text>
+<line x1="320" y1="320" x2="320" y2="326" stroke="#0f172a" stroke-width="1"/>
+<text x="320" y="342" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">1 yr</text>
+<line x1="420" y1="320" x2="420" y2="326" stroke="#0f172a" stroke-width="1"/>
+<text x="420" y="342" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">2 yr</text>
+<line x1="520" y1="320" x2="520" y2="326" stroke="#0f172a" stroke-width="1"/>
+<text x="520" y="342" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">5 yr</text>
+<line x1="630" y1="320" x2="630" y2="326" stroke="#0f172a" stroke-width="1"/>
+<text x="630" y="342" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">10 yr+</text>
+<text x="370.0" y="364" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">age (not to scale)</text>
+<text x="78" y="70" font-family="sans-serif" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">size or</text>
+<text x="78" y="86" font-family="sans-serif" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">prominence</text>
+<path d="M90 312 C130 290 160 100 200 90 S290 100 350 150 S520 260 630 282" fill="none" stroke="#0f172a" stroke-width="3"/>
+<text x="210" y="80" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Infantile haemangioma: small or absent at birth; fast growth, mostly by 3-5 months;</text>
+<text x="210" y="96" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">slow involution over years, sometimes leaving fibrofatty tissue or telangiectasia</text>
+<path d="M90 210 L630 160" fill="none" stroke="#0f172a" stroke-width="3" stroke-dasharray="10 5"/>
+<text x="420" y="164" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Port-wine stain (capillary malformation): present at birth,</text>
+<text x="420" y="180" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">grows with the child, darkens and thickens with age</text>
+<path d="M90 240 C210 250 310 305 420 314 L630 316" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-dasharray="2 4"/>
+<text x="230" y="274" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Nevus simplex (salmon patch): present at birth, fades by 1-2 years;</text>
+<text x="230" y="290" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">nape lesions often persist</text>
+<text x="20" y="382" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Line styles: solid = infantile haemangioma; long dashes = port-wine stain; dots = nevus simplex.</text>
+<text x="20" y="400" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Haemangiomas stain for GLUT1 and are tumours (proliferating endothelium); port-wine stains and nevus simplex are malformations</text>
+<text x="20" y="418" font-family="sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">or ectasias of capillaries and never involute on their own (port-wine stain) or fade early (nevus simplex).</text>
+</svg>

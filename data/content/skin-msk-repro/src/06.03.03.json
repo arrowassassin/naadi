@@ -203,7 +203,7 @@
    "stemHtml": "<p>A 27-year-old woman who smokes has had painful nodules in both axillae and the groin for 6 years. They drain foul-smelling material and leave rope-like scars. Examination shows several interconnected draining tunnels and paired open comedones in the axillae. A biopsy from the edge of a lesion is taken. Which of the following is most likely the initiating event in this disease?</p>",
    "options": [
     "Autoantibodies against hemidesmosomal proteins",
-    "Lymphocytic attack on eccrine sweat ducts",
+    "Lymphocytic attack on the coiled eccrine sweat ducts",
     "Occlusion and rupture of the terminal hair follicle",
     "Primary bacterial infection of apocrine glands",
     "Vasculitis of small dermal vessels"
@@ -478,11 +478,11 @@
    "setOrder": null,
    "stemHtml": "<p>A 58-year-old man has had lifelong heavy axillary sweating that soaks through his shirts. Nightly aluminium chloride for 3 months has helped only slightly and irritates his skin. He has chronic angle-closure glaucoma managed by ophthalmology, and benign prostatic hyperplasia with an episode of acute urinary retention last year. He asks for a stronger treatment. Which of the following is the most appropriate next step?</p>",
    "options": [
-    "Intradermal botulinum toxin A injections in both axillae",
-    "Endoscopic thoracic sympathectomy",
-    "Oral glycopyrrolate",
-    "Oral oxybutynin",
-    "Topical glycopyrronium cloths"
+    "Botulinum toxin A injections in both axillae",
+    "Bilateral endoscopic thoracic sympathectomy",
+    "Oral glycopyrrolate twice daily with meals",
+    "Oral oxybutynin, starting at a low dose",
+    "Topical glycopyrronium cloths applied once daily"
    ],
    "answer": "A",
    "explanationHtml": "<p>Primary axillary hyperhidrosis has not responded to aluminium chloride. Antimuscarinic drugs, oral or topical, are <strong>relatively contraindicated</strong> in angle-closure glaucoma and in prostatic obstruction with previous urinary retention, because they can precipitate an acute attack or retention. Topical glycopyrronium can be absorbed and carries the same warnings. <strong>Intradermal botulinum toxin A</strong> acts locally on sweat gland innervation without these systemic effects. It is an established second-line therapy for axillary hyperhidrosis, and its effect lasts several months.</p><p><strong>Takeaway:</strong> When antimuscarinics are unsafe (angle-closure glaucoma, urinary retention), botulinum toxin is the preferred next step for axillary hyperhidrosis.</p>",
@@ -560,7 +560,7 @@
     "Culture the drainage and give antibiotics based on susceptibilities",
     "Oral isotretinoin for 5 months",
     "Wide surgical excision of both axillae and the groin",
-    "Oral doxycycline for 12 weeks, with smoking cessation and weight-loss support",
+    "Oral doxycycline for 12 weeks plus smoking cessation",
     "Further incision and drainage of each nodule as it arises"
    ],
    "answer": "D",
@@ -596,11 +596,11 @@
    "setOrder": 2,
    "stemHtml": "<p>After 12 weeks of oral doxycycline, then 10 weeks of clindamycin with rifampin, the patient has new nodules every month and two more draining tunnels. She has cut down to 3 cigarettes a day. Her clinician recommends starting adalimumab, a subcutaneous anti-TNF-α antibody. She has no cough or fever and has never been tested for tuberculosis. Which of the following is most important to complete before the first dose?</p>",
    "options": [
-    "Antinuclear antibody titre",
-    "Echocardiography",
-    "Interferon-γ release assay and hepatitis B serologies",
-    "Serum IgE concentration",
-    "Thiopurine methyltransferase activity"
+    "Antinuclear and anti-dsDNA antibody titres",
+    "Transthoracic echocardiography and ECG",
+    "Interferon-γ release assay and hepatitis B tests",
+    "Total serum IgE and eosinophil count",
+    "Thiopurine methyltransferase enzyme activity"
    ],
    "answer": "C",
    "explanationHtml": "<p>Moderate to severe hidradenitis suppurativa that persists despite oral antibiotics is an indication for a <strong>biologic</strong>. Adalimumab was the first approved agent, and IL-17 inhibitors are alternatives. <strong>TNF-α blockade</strong> impairs granuloma maintenance and can reactivate latent tuberculosis, and it can also reactivate hepatitis B. Before starting, screen for <strong>latent TB</strong> (interferon-γ release assay or tuberculin skin test) and for <strong>hepatitis B</strong> (surface antigen, core antibody), and update non-live vaccines. Latent TB should be treated before or alongside the start of the biologic.</p><p><strong>Takeaway:</strong> Screen for latent tuberculosis and hepatitis B before any TNF-α inhibitor.</p>",

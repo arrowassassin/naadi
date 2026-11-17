@@ -27,10 +27,13 @@
    "html": "<h2>Choosing a method safely: the US Medical Eligibility Criteria</h2>\n<p>The CDC US Medical Eligibility Criteria (US MEC, updated 2024) rate each method for each condition: <strong>1</strong> no restriction, <strong>2</strong> benefits generally outweigh risks, <strong>3</strong> risks usually outweigh benefits, <strong>4</strong> unacceptable health risk. Most contraindications apply to estrogen. Conditions rated <strong>category 4 for combined hormonal contraception</strong> include:</p>\n<ul>\n<li>Migraine with aura (any age).</li>\n<li>Age 35 or older and smoking 15 or more cigarettes a day.</li>\n<li>Blood pressure of 160/100 mm Hg or higher, or hypertension with vascular disease.</li>\n<li>Acute venous thromboembolism, or past VTE with a higher risk of recurrence; known thrombogenic mutations; major surgery with prolonged immobilisation.</li>\n<li>Ischaemic heart disease, stroke, complicated valvular heart disease, peripartum cardiomyopathy.</li>\n<li>Current breast cancer.</li>\n<li>Decompensated cirrhosis, hepatocellular adenoma or malignant liver tumour.</li>\n<li>Systemic lupus erythematosus with positive or unknown antiphospholipid antibodies.</li>\n<li>Less than 21 days postpartum.</li>\n</ul>\n<p>Category 3 examples for combined methods include adequately controlled hypertension or blood pressure of 140&ndash;159/90&ndash;99 mm Hg, age 35 or older with lighter smoking, multiple cardiovascular risk factors, the early postpartum weeks with other VTE risk factors, malabsorptive bariatric surgery (for pills), and use of enzyme-inducing anticonvulsants or rifampin. For these patients, choose an IUD, the implant or DMPA; with enzyme inducers, IUDs and DMPA are preferred because implant levels can fall (implant rated category 2). Progestin-only methods and IUDs have very few category 4 conditions (current breast cancer for hormonal methods; for IUDs, current PID, purulent cervicitis, distorted cavity, unexplained bleeding, pregnancy).</p>\n<table class=\"hy\"><thead><tr><th>Situation</th><th>Good choices</th><th>Avoid</th></tr></thead><tbody>\n<tr><td>Migraine with aura; smoker 35 or older; past VTE</td><td>LNG or copper IUD, implant, progestin pill, DMPA</td><td>Pill, patch, ring</td></tr>\n<tr><td>Enzyme-inducing anticonvulsant or rifampin</td><td>LNG or copper IUD, DMPA</td><td>Pill, patch, ring, progestin pill (implant efficacy may also fall)</td></tr>\n<tr><td>Adolescent wanting the most effective method</td><td>Implant or IUD (long-acting reversible contraception)</td><td>No method is contraindicated by age alone</td></tr>\n<tr><td>Testosterone therapy</td><td>IUDs, implant, DMPA, progestin pill</td><td>Relying on testosterone-induced amenorrhea</td></tr>\n<tr><td>Heavy menstrual bleeding</td><td>LNG IUD, combined methods</td><td>Copper IUD may worsen bleeding</td></tr>\n</tbody></table>\n<h2>Starting and using methods (US Selected Practice Recommendations)</h2>\n<ul>\n<li>Start any method on any day if it is reasonably certain the person is not pregnant (\"quick start\"). Backup contraception: 7 days for combined methods, the implant, DMPA and the levonorgestrel IUD (unless started early in the cycle); 2 days for progestin-only pills; none for the copper IUD.</li>\n<li>No pelvic examination or routine laboratory tests are needed before starting pills; blood pressure is measured before combined methods.</li>\n<li>Gonorrhea and chlamydia testing can be done at IUD insertion without delaying it. If PID develops with an IUD in place, treat with antibiotics and leave the IUD unless there is no improvement. The small increase in PID risk is confined to the first weeks after insertion.</li>\n<li>Pregnancy with an IUD in place: exclude ectopic pregnancy; for an intrauterine pregnancy, remove the IUD if the strings are visible, which lowers the risk of miscarriage and infection.</li>\n<li>DMPA does not need DEXA monitoring or a time limit; discuss the reversible bone effect.</li>\n<li>After <strong>ulipristal</strong> emergency contraception, wait 5 days before starting or restarting hormonal contraception, then use backup or abstain for the next 7 days. After levonorgestrel emergency contraception, hormonal contraception can be started immediately.</li>\n</ul>\n<h2>Tamoxifen and the uterus</h2>\n<p>People with a uterus taking tamoxifen should report any abnormal bleeding, which is evaluated promptly; because tamoxifen produces a thickened, cystic-appearing endometrium on ultrasound, office biopsy or hysteroscopy is often used directly. Routine screening without symptoms is not recommended. Premenopausal patients need nonhormonal contraception because tamoxifen is teratogenic and does not reliably prevent ovulation; the copper IUD is a common choice, and the levonorgestrel IUD is sometimes used with oncology input.</p>\n<h2>Drug-induced hyperprolactinemia</h2>\n<p>When galactorrhea or amenorrhea starts after a D2-blocking drug, confirm hyperprolactinemia, exclude pregnancy and hypothyroidism, and ask whether the drug can be changed. For antipsychotics, discuss with the prescribing psychiatrist: options are a lower dose or a switch to a prolactin-sparing agent (aripiprazole, or adding low-dose aripiprazole). Pituitary MRI is needed when symptoms began without a clear temporal link to the drug, when prolactin is very high, when headaches or visual symptoms are present or when it does not normalise after stopping the drug. Dopamine agonists can worsen psychosis and are not the first choice.</p>\n<h2>Testosterone in transmasculine patients</h2>\n<p>Counsel before starting: amenorrhea usually develops within months, but ovulation and pregnancy can still occur; contraception is needed if sexual activity could cause pregnancy, and testosterone is stopped if pregnancy occurs. Breakthrough bleeding may need a check of adherence and testosterone level, a progestin, or evaluation of the endometrium if persistent. Pelvic pain is common and needs the usual differential. Monitor hematocrit; for erythrocytosis, reduce the dose, lengthen the dosing interval or change to a transdermal preparation, and look for contributing smoking or sleep apnoea.</p>\n<div class=\"trap\"><p>Testosterone is not contraception. A transmasculine patient who has receptive vaginal sex with a partner who produces sperm needs a contraceptive method, and estrogen-free options are effective and compatible with masculinization.</p></div>\n<div class=\"pearl\"><p>For anyone on an enzyme inducer, the safest choices are methods that do not depend on liver metabolism: the copper IUD, the levonorgestrel IUD or DMPA.</p></div>",
    "furtherReading": [
     {
-     "statpearls": "Emergency Contraception"
+     "statpearls": "Postcoital Contraception"
     },
     {
-     "statpearls": "Intrauterine Device"
+     "statpearls": "Intrauterine Device Placement and Removal"
+    },
+    {
+     "statpearls": "Contraception"
     },
     {
      "label": "CDC: US Medical Eligibility Criteria for Contraceptive Use",
@@ -154,7 +157,7 @@
    "tasks": [
     "pc_pharmacotherapy"
    ],
-   "difficulty": 3,
+   "difficulty": 4,
    "references": [],
    "figures": [],
    "tags": [
@@ -431,7 +434,7 @@
    "tasks": [
     "pc_pharmacotherapy"
    ],
-   "difficulty": 4,
+   "difficulty": 5,
    "references": [
     "cdc-guidelines"
    ],
@@ -554,7 +557,7 @@
    "tasks": [
     "pc_pharmacotherapy"
    ],
-   "difficulty": 3,
+   "difficulty": 4,
    "references": [],
    "figures": [],
    "tags": [

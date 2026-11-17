@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 610" width="760" height="610" role="img" aria-label="Schematic of the breast duct and lobule system showing where lactational mastitis, periductal mastitis, duct ectasia and fat necrosis arise" font-family="sans-serif">
+<title>Schematic of the breast duct and lobule system showing where lactational mastitis, periductal mastitis, duct ectasia and fat necrosis arise</title>
+<rect x="0" y="0" width="760" height="610" fill="#ffffff"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">Where inflammatory breast disorders arise</text>
+<path d="M 60 470 C 60 300, 300 110, 560 140 C 640 150, 660 210, 676 250 L 700 250 L 700 290 L 676 290 C 660 330, 640 390, 560 400 C 420 420, 300 440, 260 470" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<rect x="676" y="250" width="24" height="40" rx="4" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M 660 262 L 560 210" stroke="#0f172a" stroke-width="6" fill="none"/>
+<ellipse cx="630.0" cy="236.0" rx="10" ry="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M 560 210 L 440 166.8" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="426" cy="156.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="422" cy="174.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="436" cy="182.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="438" cy="148.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M 560 210 L 440 210.0" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="426" cy="200.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="422" cy="218.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="436" cy="226.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="438" cy="192.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M 560 210 L 440 253.2" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="426" cy="243.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="422" cy="261.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="436" cy="269.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="438" cy="235.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M 660 270 L 540 270" stroke="#0f172a" stroke-width="6" fill="none"/>
+<ellipse cx="620.0" cy="270.0" rx="10" ry="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M 540 270 L 420 226.8" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="406" cy="216.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="402" cy="234.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="416" cy="242.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="418" cy="208.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M 540 270 L 420 270.0" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="406" cy="260.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="402" cy="278.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="416" cy="286.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="418" cy="252.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M 540 270 L 420 313.2" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="406" cy="303.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="402" cy="321.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="416" cy="329.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="418" cy="295.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M 660 278 L 560 335" stroke="#0f172a" stroke-width="6" fill="none"/>
+<ellipse cx="630.0" cy="306.5" rx="10" ry="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M 560 335 L 440 291.8" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="426" cy="281.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="422" cy="299.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="436" cy="307.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="438" cy="273.8" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M 560 335 L 440 335.0" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="426" cy="325.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="422" cy="343.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="436" cy="351.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="438" cy="317.0" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M 560 335 L 440 378.2" stroke="#0f172a" stroke-width="3" fill="none"/>
+<circle cx="426" cy="368.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="422" cy="386.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="436" cy="394.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<circle cx="438" cy="360.2" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2"/>
+<line x1="240" y1="120" x2="440" y2="210" stroke="#0f172a" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="244" y="92" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Lactational mastitis</text>
+<text x="244" y="108" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">and abscess: milk stasis in</text>
+<text x="244" y="124" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">lobules and ducts, often</text>
+<text x="244" y="140" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">S. aureus</text>
+<line x1="740" y1="96" x2="640" y2="266" stroke="#0f172a" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="736" y="76" font-size="13" font-weight="bold" text-anchor="end" fill="#0f172a">Periductal mastitis:</text>
+<text x="736" y="92" font-size="13" font-weight="normal" text-anchor="end" fill="#0f172a">squamous metaplasia of</text>
+<text x="736" y="108" font-size="13" font-weight="normal" text-anchor="end" fill="#0f172a">subareolar ducts (smoking)</text>
+<line x1="740" y1="452" x2="600" y2="300" stroke="#0f172a" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="736" y="432" font-size="13" font-weight="bold" text-anchor="end" fill="#0f172a">Duct ectasia:</text>
+<text x="736" y="448" font-size="13" font-weight="normal" text-anchor="end" fill="#0f172a">dilated subareolar ducts,</text>
+<text x="736" y="464" font-size="13" font-weight="normal" text-anchor="end" fill="#0f172a">older parous patients</text>
+<line x1="120" y1="500" x2="420" y2="382" stroke="#0f172a" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="124" y="480" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">Fat necrosis: injured</text>
+<text x="124" y="496" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">fat in the stroma (trauma,</text>
+<text x="124" y="512" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">surgery, radiation)</text>
+<text x="20" y="540" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Schematic, not to scale. Nipple on the right; lactiferous ducts branch toward the lobules on the left.</text>
+<text x="20" y="560" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">Lesions near the nipple (periductal mastitis, duct ectasia) cause discharge, retraction and fistulas;</text>
+<text x="20" y="580" font-size="13" font-weight="normal" text-anchor="start" fill="#0f172a">lactational mastitis usually affects a wedge of breast tissue away from the nipple.</text>
+</svg>

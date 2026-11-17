@@ -221,7 +221,7 @@
    "tasks": [
     "pc_history_pe"
    ],
-   "difficulty": 2,
+   "difficulty": 1,
    "references": [],
    "figures": [],
    "tags": [
@@ -376,7 +376,7 @@
    "tasks": [
     "medical_knowledge"
    ],
-   "difficulty": 4,
+   "difficulty": 5,
    "references": [],
    "figures": [],
    "tags": [

@@ -180,7 +180,7 @@
    "tasks": [
     "medical_knowledge"
    ],
-   "difficulty": 3,
+   "difficulty": 4,
    "references": [],
    "figures": [],
    "tags": [
@@ -258,7 +258,7 @@
    "tasks": [
     "medical_knowledge"
    ],
-   "difficulty": 2,
+   "difficulty": 1,
    "references": [],
    "figures": [],
    "tags": [
@@ -533,7 +533,7 @@
    "tasks": [
     "pc_pharmacotherapy"
    ],
-   "difficulty": 4,
+   "difficulty": 5,
    "references": [],
    "figures": [],
    "tags": [

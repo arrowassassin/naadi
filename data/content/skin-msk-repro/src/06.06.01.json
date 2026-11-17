@@ -1,0 +1,972 @@
+{
+ "area": "06.06.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Wound healing, scars, UV injury and mechanical skin injury",
+   "html": "<p>Every skin injury, from a surgical incision to a burn, is repaired by the same sequence of overlapping phases. Exams test the timing of each phase, the cells and collagen types involved, the nutrients repair depends on, and what happens when healing overshoots (keloids, hypertrophic scars) or never finishes (chronic ulcers).</p>\n<h3>Phases of wound healing</h3>\n<table class=\"hy\">\n<thead><tr><th>Phase</th><th>Timing</th><th>Main events and cells</th></tr></thead>\n<tbody>\n<tr><td>Hemostasis and inflammation</td><td>Minutes to about day 3</td><td>Platelet plug and fibrin clot release PDGF and TGF-beta; neutrophils arrive first (first 1 to 2 days), then macrophages, which clear debris and are the key source of growth factors</td></tr>\n<tr><td>Proliferation</td><td>About day 3 to week 3</td><td>Granulation tissue: fibroblasts lay down <strong>type III collagen</strong> and matrix; angiogenesis driven by VEGF and FGF; re-epithelialization from wound edges and adnexa; <strong>myofibroblasts</strong> (smooth-muscle actin) contract the wound</td></tr>\n<tr><td>Remodelling (maturation)</td><td>Week 3 to a year or more</td><td>Type III collagen replaced by <strong>type I</strong>; cross-linking by lysyl oxidase (copper); turnover by zinc-dependent matrix metalloproteinases. Tensile strength reaches about 70 to 80% of normal by 3 months and never fully recovers</td></tr>\n</tbody></table>\n<p>Collagen synthesis needs <strong>vitamin C</strong> (prolyl and lysyl hydroxylation), and remodelling and epithelial proliferation need <strong>zinc</strong>. Protein-energy malnutrition, diabetes (impaired neutrophils and microvessels), smoking (vasoconstriction, carbon monoxide), glucocorticoids (which suppress inflammation, fibroblasts and collagen synthesis; vitamin A partly counters this), ischemia, infection, radiation and older age all delay healing. Zinc deficiency can be inherited (acrodermatitis enteropathica, from <em>SLC39A4</em> mutations affecting intestinal zinc uptake) or acquired after bariatric surgery, in alcohol use disorder, with chronic diarrhea or with parenteral nutrition lacking zinc; it gives scaly, crusted dermatitis around the mouth, anus and digits, hair loss, diarrhea, poor taste and slow healing.</p>\n<h3>Keloids and hypertrophic scars</h3>\n<p>Both reflect excess fibroblast activity with persistent TGF-beta signalling and reduced collagen breakdown. A <strong>hypertrophic scar</strong> stays within the original wound, appears within weeks, often follows tension or infection, and tends to flatten over months to years. A <strong>keloid</strong> extends beyond the original wound margins, may appear months later or after trivial injury (ear piercing, acne, vaccination), rarely regresses and recurs after simple excision. Keloids are most common in people of African, Asian and Hispanic descent and favour the earlobes, chest, shoulders and upper back. Histology shows thick, glassy, hyalinized (keloidal) collagen bundles in disorganized whorls.</p>\n<div class=\"trap\"><p>\"Beyond the borders of the wound\" is the defining feature of a keloid. A raised scar confined to the incision line is hypertrophic, not keloidal, and is more likely to improve on its own.</p></div>\n<h3>Ultraviolet injury, sunburn and tattoos</h3>\n<p><strong>Sunburn</strong> is mainly a UVB injury: DNA damage triggers keratinocyte apoptosis (sunburn cells) and release of prostaglandins, cytokines and nitric oxide, which dilate dermal vessels. Redness begins within hours and peaks around 12 to 24 hours. Repeated sunburns, particularly in childhood, raise melanoma risk. <strong>UVA</strong> penetrates to the dermis and drives photoaging (solar elastosis, from degraded elastic fibres and matrix metalloproteinase activity), tanning and most drug photosensitivity. People with darker skin burn less but still develop photoaging and hyperpigmentation, and need vitamin D intake to be considered when sun is avoided.</p>\n<p><strong>Tattoo</strong> pigment is phagocytosed by dermal macrophages and stays because those macrophages are replaced by new ones that recapture it. Reactions include allergic contact or lichenoid reactions (classically to red pigments), sarcoidal granulomas (sarcoidosis can first appear in a tattoo), infection from contaminated ink (nontuberculous mycobacteria) or equipment (hepatitis B and C), and rare swelling or burning during MRI.</p>\n<h3>Mechanical injuries: pressure, cartilage and blast</h3>\n<p><strong>Pressure injuries</strong> form where soft tissue is compressed between a bony prominence (sacrum, ischium, heels, greater trochanters) and a surface for long enough to exceed capillary perfusion pressure. Shear, friction and moisture add damage. Muscle and fat are more sensitive to ischemia than skin, so damage often starts deep at the bone interface and reaches the surface later; deep tissue pressure injury appears as purple or maroon intact skin. Immobility, sensory loss (spinal cord injury, neuropathy), incontinence, malnutrition and low perfusion are the main risk factors.</p>\n<p><strong>Auricular hematoma</strong>, from a blow or shearing force in wrestling, rugby or boxing, separates the perichondrium from the cartilage. Cartilage is avascular and depends on the perichondrium for nutrients by diffusion, so the separated cartilage dies and the hematoma organizes into fibrous tissue and new cartilage, producing a thickened, deformed <strong>cauliflower ear</strong>.</p>\n<p><strong>Blast injuries</strong> are grouped by mechanism: primary (the pressure wave, which damages air-filled organs: eardrums, lungs, bowel), secondary (fragments and debris), tertiary (being thrown against objects) and quaternary (burns, crush, inhalation and everything else). Skin wounds from blasts are often heavily contaminated with soil and foreign material.</p>\n<div class=\"pearl\"><p>Two micronutrients to check in a non-healing wound: zinc (cofactor for metalloproteinases and DNA synthesis) and vitamin C (collagen hydroxylation). Protein intake matters most of all.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Hypertrophic Scarring Keloids"
+    },
+    {
+     "statpearls": "Physiology, Wound Healing"
+    },
+    {
+     "statpearls": "Cauliflower Ear"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Burns, smoke, electrical, chemical and cold injury, and bites: mechanisms",
+   "html": "<p>Thermal, electrical, chemical and cold injuries share a mechanism: direct cell death in the centre, an injured but salvageable zone around it, and a systemic response that can kill. Bites add a microbiology problem shaped by the animal's mouth flora.</p>\n<h3>Thermal burns</h3>\n<p>A burn wound has three concentric zones. The central <strong>zone of coagulation</strong> is irreversibly necrotic. Around it, the <strong>zone of stasis</strong> has reduced perfusion and can either recover or die over 24 to 72 hours, depending on resuscitation, infection and edema; inadequate fluids convert it to necrosis and deepen the burn. The outer <strong>zone of hyperemia</strong> recovers. Depth determines the clinical appearance: superficial burns involve the epidermis; superficial partial-thickness burns extend into the papillary dermis and blister; deep partial-thickness burns reach the reticular dermis; full-thickness burns destroy the whole dermis, including nerve endings, so they are painless.</p>\n<p>In large burns, inflammatory mediators (histamine, prostaglandins, bradykinin, cytokines) increase capillary permeability throughout the body, not just in the burn, causing <strong>burn shock</strong>: hypovolemia from protein-rich fluid leaking into tissues, with hemoconcentration. After resuscitation comes a <strong>hypermetabolic state</strong> driven by catecholamines, cortisol and glucagon, with high resting energy expenditure, muscle protein breakdown, insulin resistance and fever that lasts months. Early enteral feeding with high protein limits muscle wasting. Loss of the skin barrier and immune suppression make infection (<em>Pseudomonas aeruginosa</em>, <em>S. aureus</em>, <em>Candida</em>) the leading late cause of death.</p>\n<h3>Smoke inhalation</h3>\n<ul>\n<li><strong>Carbon monoxide</strong> binds hemoglobin with about 200 to 250 times the affinity of oxygen, lowering oxygen content, and shifts the oxygen dissociation curve to the left so the remaining oxygen is released less readily. It also binds cytochrome oxidase and myoglobin. PaO2 is normal and standard pulse oximetry reads falsely normal because it cannot tell carboxyhemoglobin from oxyhemoglobin; co-oximetry is required.</li>\n<li><strong>Hydrogen cyanide</strong>, from burning plastics, wool and silk, inhibits cytochrome c oxidase (complex IV), so cells cannot use oxygen: severe lactic acidosis with a high venous oxygen saturation. <strong>Hydroxocobalamin</strong> binds cyanide to form cyanocobalamin, which is excreted in urine; it turns skin and urine red and interferes with some colorimetric laboratory tests.</li>\n<li>Heat injures the upper airway, causing edema that can close it within hours; soot and toxic chemicals injure the lower airways.</li>\n</ul>\n<h3>Electrical and chemical injury</h3>\n<p>Electric current follows the path of least resistance through nerves, vessels and muscle, generating heat deep in tissue. Small entry and exit wounds can hide massive muscle necrosis, compartment syndrome, <strong>rhabdomyolysis</strong> (myoglobin causes pigment acute kidney injury; urine dipstick is positive for heme without red cells on microscopy) and cardiac arrhythmias. Lightning causes transient cardiac and respiratory arrest and fern-like (Lichtenberg) skin markings.</p>\n<p><strong>Alkalis</strong> (drain cleaners, cement, lye) cause liquefactive necrosis, saponifying fats and penetrating deeply; <strong>acids</strong> cause coagulative necrosis that limits penetration. <strong>Hydrofluoric acid</strong> penetrates and binds calcium and magnesium, causing pain out of proportion and potentially fatal hypocalcemia; calcium gluconate is the antidote.</p>\n<h3>Cold injury</h3>\n<p><strong>Frostbite</strong> is freezing of tissue. Ice crystals form in extracellular fluid and draw water out of cells; cells dehydrate and rupture. On rewarming, damaged endothelium triggers platelet aggregation, thromboxane release and <strong>microvascular thrombosis</strong>, and ischemia-reperfusion injury extends the damage, which is why thrombolytics and the prostacyclin analogue iloprost can limit tissue loss when given early. Refreezing after thawing is especially destructive. <strong>Non-freezing cold injury</strong> includes immersion (trench) foot from prolonged wet cold, which damages nerves and vessels, and <strong>pernio</strong> (chilblains), an abnormal inflammatory vascular response to damp cold above freezing that causes tender red to violaceous papules on the toes and fingers; pernio can be idiopathic or associated with lupus, cryoproteins and some viral infections.</p>\n<h3>Bites</h3>\n<table class=\"hy\">\n<thead><tr><th>Bite</th><th>Key organisms</th><th>Points</th></tr></thead>\n<tbody>\n<tr><td>Dog</td><td><em>Pasteurella canis</em>, streptococci, staphylococci, anaerobes; <em>Capnocytophaga canimorsus</em></td><td>Crush injuries; <em>Capnocytophaga</em> causes fulminant sepsis with DIC in asplenia, alcohol use disorder and cirrhosis</td></tr>\n<tr><td>Cat</td><td><em>Pasteurella multocida</em> (gram-negative coccobacillus), anaerobes</td><td>Deep punctures inoculate tendon sheaths and joints; infection often within 24 hours; cat scratches transmit <em>Bartonella henselae</em></td></tr>\n<tr><td>Human (including clenched-fist injury)</td><td>Viridans streptococci, <em>S. aureus</em>, <em>Eikenella corrodens</em>, oral anaerobes</td><td>A small wound over a knuckle after a punch often reaches the joint</td></tr>\n<tr><td>Bat, raccoon, skunk, fox</td><td>Rabies virus</td><td>Bat bites may be unnoticed</td></tr>\n</tbody></table>\n<p><strong>Rabies</strong> virus is a bullet-shaped, enveloped, negative-sense RNA virus (rhabdovirus). It replicates in muscle at the bite, binds nicotinic acetylcholine receptors at the neuromuscular junction, then travels to the central nervous system by <strong>retrograde fast axonal transport</strong> (dynein) in peripheral nerves. The incubation period, usually weeks to months, depends on the distance to the brain, which leaves time for post-exposure prophylaxis. Encephalitis (agitation, hydrophobia from laryngeal spasm, autonomic instability) or paralytic disease is almost always fatal once symptoms begin. Eosinophilic cytoplasmic inclusions in neurons (Negri bodies), most prominent in the hippocampus and Purkinje cells, are the classic histologic finding.</p>\n<div class=\"trap\"><p>Carbon monoxide poisoning gives a normal PaO2 and normal standard pulse oximetry despite severe tissue hypoxia. Cyanide poisoning gives lactic acidosis with an unusually high venous oxygen saturation, because tissues cannot extract oxygen.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Frostbite"
+    },
+    {
+     "statpearls": "Carbon Monoxide Poisoning"
+    },
+    {
+     "statpearls": "Rabies"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Burns: assessment, resuscitation and referral",
+   "html": "<p>Burn care starts as trauma care. The first hour decides the airway, the fluid plan and whether the patient goes to a burn centre; later outcomes depend on wound closure, infection control, nutrition and rehabilitation.</p>\n[[figure:s23f-fig060601-1]]\n<h3>Primary survey</h3>\n<ul>\n<li><strong>Airway</strong>: suspect inhalation injury with burns in an enclosed space, facial burns, singed nasal hair, soot in the mouth or sputum, hoarseness, stridor or drooling. Intubate early when there are signs of airway compromise or very large or deep facial and neck burns, before swelling makes it impossible.</li>\n<li><strong>Breathing</strong>: give 100% oxygen by non-rebreather to anyone from a fire, which shortens carboxyhemoglobin's half-life from several hours to about an hour. Measure carboxyhemoglobin by co-oximetry. Consider hyperbaric oxygen for severe CO poisoning (loss of consciousness, neurologic deficits, high levels in pregnancy) when it can be given safely. Give <strong>hydroxocobalamin</strong> for suspected cyanide toxicity: altered mental status or shock with severe lactic acidosis after smoke exposure. Circumferential full-thickness chest burns that restrict ventilation need <strong>escharotomy</strong>.</li>\n<li><strong>Circulation</strong>: two large-bore IV lines through unburned skin if possible. Check pulses in burned limbs; circumferential full-thickness burns of a limb that compromise distal perfusion need escharotomy.</li>\n<li>Stop the burning: remove clothing and jewellery, cool the burn with cool running water for up to about 20 minutes in the first hours (not ice), and then keep the patient warm. Irrigate chemical burns copiously with water for a prolonged time; brush off dry powder first.</li>\n</ul>\n<h3>Size, depth and fluids</h3>\n<p>Estimate the total body surface area (TBSA) burned, counting partial- and full-thickness burns only. Use the rule of nines in adults and an age-adjusted chart (Lund-Browder) in children, whose heads are proportionally larger and legs smaller; for scattered burns, the patient's palm and fingers are about 1% TBSA.</p>\n[[figure:s23f-fig060601-2]]\n<p>Formal fluid resuscitation is needed for larger burns (around 20% TBSA or more in adults, with a lower threshold in children). Give warmed <strong>lactated Ringer's</strong>. Consensus formulas estimate 24-hour fluid at 2 to 4 mL/kg per %TBSA (the Parkland formula uses 4; current burn-life-support teaching starts adults at 2 and children at 3, and high-voltage electrical injury at 4), with half in the first 8 hours <strong>from the time of the burn</strong> and half over the next 16 hours. Children under about 30 kg also receive maintenance fluid with dextrose because they have small glycogen stores. The formula is only a starting point: adjust the rate hourly to <strong>urine output</strong> via a bladder catheter.</p>\n<table class=\"hy\">\n<thead><tr><th>Patient</th><th>Urine output target</th></tr></thead>\n<tbody>\n<tr><td>Adult</td><td>0.5 mL/kg/h (about 30 to 50 mL/h)</td></tr>\n<tr><td>Child under about 30 kg</td><td>1 mL/kg/h</td></tr>\n<tr><td>Electrical injury with pigmented (myoglobin) urine</td><td>Higher output (about 1 to 1.5 mL/kg/h in adults) until the urine clears</td></tr>\n</tbody></table>\n<p>Over-resuscitation (\"fluid creep\") causes abdominal and limb compartment syndromes, pulmonary edema and deeper burns from tissue edema; under-resuscitation causes shock and kidney injury. Albumin may be added after the first 12 to 24 hours if requirements climb.</p>\n<h3>Transfer to a burn centre</h3>\n<p>Refer partial-thickness burns of about 10% TBSA or more, any full-thickness burn, burns of the face, hands, feet, genitals, perineum or over major joints, circumferential burns, electrical (including lightning) and chemical burns, inhalation injury, burns in people with significant comorbidities or other trauma, and burns in children when the hospital lacks pediatric burn expertise or abuse is suspected.</p>\n<h3>Wound care, tetanus and nutrition</h3>\n<p>Superficial burns need only moisturiser and analgesia. Partial-thickness burns are cleaned, large or tense blisters debrided according to local practice, and covered with non-adherent or antimicrobial dressings. Deep partial- and full-thickness burns need <strong>early excision and grafting</strong> within days, which reduces infection, length of stay and mortality. Prophylactic systemic antibiotics are not given; treat proven infection. Update tetanus immunization. Start enteral feeding early with high protein. Burns of the hands and joints need splinting and early therapy to prevent contractures. Pain, itch, depression and post-traumatic stress need attention through recovery.</p>\n<h3>Burns that suggest abuse</h3>\n<p>In children, and in older adults or people with disabilities who depend on others, suspect inflicted burns when the history does not match the injury or the developmental stage, care was delayed, or the pattern is typical of intentional injury: <strong>immersion burns</strong> with sharp, symmetric \"stocking\" or \"glove\" margins, uniform depth and no splash marks, sparing of flexural creases (knees and hips held flexed) or of the buttock centre pressed against the tub; and contact burns with the clear shape of an object (cigarettes, irons). Management includes full examination, a skeletal survey in young children and a report to child protective services (or adult protective services).</p>\n<div class=\"trap\"><p>Fluid formulas count only partial- and full-thickness burns, and the first half is given in the first 8 hours <em>after the burn</em>, not after arrival. If a patient arrives 3 hours late, that half is given over the remaining 5 hours, then adjusted to urine output.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Burn Fluid Resuscitation"
+    },
+    {
+     "statpearls": "Burn Classification"
+    },
+    {
+     "statpearls": "Inhalation Injury"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step2ck",
+   "heading": "Bites, rabies, pressure injuries, cold injury and scars: management",
+   "html": "<p>Bites, lacerations, pressure injuries, cold injuries and abnormal scars are common in emergency departments, primary care and long-term care. Each has a few decisions that are frequently tested: who gets antibiotics and rabies prophylaxis, which wounds are closed, how pressure injuries are staged and prevented, and how frozen tissue is rewarmed.</p>\n<h3>Bites and lacerations</h3>\n<ul>\n<li><strong>Irrigate</strong> all bite wounds and lacerations with large volumes of clean water or saline, remove foreign material and debride devitalized tissue. Examine tendons, nerves and joints, especially on the hand.</li>\n<li><strong>Closure</strong>: most clean lacerations are closed primarily. Facial dog bites are usually closed after irrigation for cosmesis. Puncture wounds, cat bites, hand bites, human bites and wounds presenting late are generally left open or closed later.</li>\n<li><strong>Antibiotic prophylaxis</strong> (3 to 5 days of amoxicillin-clavulanate) is given for cat bites, human bites, hand, foot, face and genital bites, deep punctures, crush injuries, wounds near joints or prostheses, and bites in people who are immunocompromised, asplenic or have cirrhosis. For penicillin allergy, use doxycycline or TMP-SMX plus an agent active against anaerobes such as metronidazole or clindamycin.</li>\n<li>A <strong>clenched-fist injury</strong> over a knuckle needs exploration (often surgical) because the joint may be penetrated; hand surgery referral is common.</li>\n<li><strong>Tetanus</strong>: for clean minor wounds, give a tetanus toxoid booster (Tdap if not already given as an adult, otherwise Td or Tdap) if the last dose was 10 or more years ago; for all other wounds, if 5 or more years ago. Add tetanus immune globulin for contaminated or major wounds when the person has had fewer than three doses or the history is unknown.</li>\n</ul>\n<h3>Rabies post-exposure prophylaxis</h3>\n<p>Wash the wound thoroughly with soap and water. A healthy dog, cat or ferret that bit someone can be confined and observed for 10 days; prophylaxis is given only if it develops signs of rabies. Bites from bats, raccoons, skunks, foxes and most carnivores in the United States are treated as rabies exposures unless the animal is tested and negative. <strong>Any direct contact with a bat</strong>, or finding a bat in the room of a sleeping person, a young child or someone who cannot reliably report contact, warrants prophylaxis when the bat cannot be tested. Rodents and rabbits almost never require it.</p>\n<table class=\"hy\">\n<thead><tr><th>Person</th><th>Rabies immune globulin</th><th>Vaccine</th></tr></thead>\n<tbody>\n<tr><td>Never vaccinated, immunocompetent</td><td>Yes, on day 0: infiltrate as much as possible into and around the wound, rest intramuscularly at a site away from the vaccine</td><td>4 doses: days 0, 3, 7 and 14</td></tr>\n<tr><td>Never vaccinated, immunocompromised</td><td>Yes, as above</td><td>5 doses: days 0, 3, 7, 14 and 28; check antibody response</td></tr>\n<tr><td>Previously vaccinated</td><td>No</td><td>2 doses: days 0 and 3</td></tr>\n</tbody></table>\n<h3>Pressure injuries</h3>\n<table class=\"hy\">\n<thead><tr><th>Stage</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>Intact skin with non-blanchable redness; in darker skin, look for colour change, warmth, edema or firmness, because blanching is hard to see</td></tr>\n<tr><td>2</td><td>Partial-thickness loss with exposed dermis: shallow open wound or intact or ruptured serum-filled blister</td></tr>\n<tr><td>3</td><td>Full-thickness skin loss with visible fat; no exposed fascia, muscle, tendon or bone</td></tr>\n<tr><td>4</td><td>Full-thickness skin and tissue loss with exposed or palpable fascia, muscle, tendon, ligament, cartilage or bone</td></tr>\n<tr><td>Unstageable</td><td>Base obscured by slough or eschar</td></tr>\n<tr><td>Deep tissue pressure injury</td><td>Intact or non-intact skin with persistent deep red, maroon or purple discoloration</td></tr>\n</tbody></table>\n<p><strong>Prevention</strong> is the main treatment: assess risk on admission (for example with the Braden scale), reposition bed-bound patients regularly, use pressure-redistributing mattresses and heel offloading, manage incontinence and moisture, optimise nutrition with dietitian input, and mobilise early. People using wheelchairs need pressure-relieving cushions and weight shifts. <strong>Treatment</strong> adds offloading, moist wound care, debridement of necrotic tissue (stable dry heel eschar without infection is left alone), treatment of infection and, for selected stage 3 and 4 wounds, surgical flap closure. Stages are not reversed as a wound heals (\"healing stage 4\", not \"stage 2\"). Suspect <strong>osteomyelitis</strong> when a stage 4 wound has exposed or probe-to-bone contact, fails to heal or inflammatory markers are high; MRI helps, but <strong>bone biopsy with culture and histology</strong> is the most accurate test and guides antibiotics. Swab cultures of the wound surface reflect colonisation and are unhelpful.</p>\n<h3>Frostbite and other cold injuries</h3>\n<p>Treat hypothermia first. Do not thaw frozen tissue if it might refreeze. Rewarm affected parts rapidly in circulating water at about 37 to 39 °C until the skin is red or purple and soft (often 15 to 30 minutes), with parenteral analgesia; never rub the tissue or use dry heat. Give ibuprofen, leave clear blisters intact or aspirate them, leave hemorrhagic blisters intact, and update tetanus. For severe frostbite threatening digits or limbs, seen within about 24 hours of rewarming, imaging of perfusion (angiography or a technetium bone scan) guides <strong>thrombolysis</strong> or <strong>iloprost</strong>, which reduce amputation rates where available. Amputation is usually delayed for weeks until demarcation is clear, unless infection or wet gangrene forces earlier surgery. <strong>Pernio</strong> is treated by keeping the extremities warm and dry and stopping smoking; nifedipine helps recurrent cases. Check for lupus when pernio persists beyond the cold season.</p>\n<h3>Scars, ears and sunburn</h3>\n<ul>\n<li><strong>Keloids</strong>: first-line therapy is <strong>intralesional triamcinolone</strong> every few weeks, often with silicone gel sheeting and pressure (pressure earrings after earlobe excision). Excision alone recurs in most cases, so excise only with adjuvant steroid injections or radiation. Counsel people prone to keloids before elective piercing or cosmetic surgery.</li>\n<li><strong>Auricular hematoma</strong>: drain promptly (within days) by needle aspiration or incision, then apply a <strong>compressive bolster dressing</strong> to keep the perichondrium against the cartilage and prevent reaccumulation; review within 24 hours. Untreated, it becomes cauliflower ear.</li>\n<li><strong>Sunburn</strong>: cool compresses, emollients, oral NSAIDs and fluids; extensive blistering sunburn with fever or dehydration in a child may need admission.</li>\n</ul>\n<div class=\"pearl\"><p>Older adults are at special risk across this whole area: thin skin tears easily, pressure injuries develop within hours of immobility, burns are deeper for the same exposure, and frostbite and hypothermia are more likely with dementia, alcohol use or homelessness.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Animal Bites"
+    },
+    {
+     "statpearls": "Pressure Injury"
+    },
+    {
+     "statpearls": "Frostbite"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "caption": "Figure. Burn depth classes compared with the skin layers they destroy, with appearance and expected healing (original schematic)."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. Estimating burned body surface area: adult rule of nines compared with the proportions of a young child (original schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "A scald in a toddler"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old Black woman comes to the clinic because of a firm, shiny, raised lesion on her left earlobe that began 6 months after the ear was pierced and has slowly enlarged. It is itchy and extends well beyond the original piercing site onto the surrounding skin. A similar lesion on her chest appeared after a minor acne lesion. Her mother has similar lesions. Which of the following best describes the histology and pathogenesis of this lesion?</p>",
+   "options": [
+    "Hyalinized collagen whorls from overactive TGF-beta-driven fibroblasts",
+    "Encapsulated mature adipocytes from a clonal fat cell proliferation",
+    "Granulomas around birefringent foreign material from a jewelry reaction",
+    "Dermal nests of nevus cells from a benign melanocyte proliferation",
+    "Parallel collagen fibers with myofibroblasts from normal wound contraction"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A raised, firm, itchy lesion that appears months after an ear piercing, extends beyond the original wound and occurs after trivial injury in a patient with a family history is a keloid. Keloid fibroblasts respond excessively to TGF-beta and other growth factors and produce collagen in excess while breakdown lags. Histology shows thick, glassy, hyalinized (keloidal) collagen bundles in disorganized whorls. Keloids are more common in people with darker skin, favour the earlobes, chest and shoulders, and recur after simple excision.</p><p><strong>Takeaway:</strong> Keloids extend beyond the wound edge and contain thick, disorganized hyalinized collagen from overactive TGF-beta-driven fibroblasts.</p>",
+   "whyNot": {
+    "B": "Encapsulated mature fat cells describe a lipoma, which is soft and mobile and unrelated to injury.",
+    "C": "A foreign-body granuloma to earring material is possible but would not explain a second lesion on the chest after acne or extension beyond the wound.",
+    "D": "Dermal nevus cells describe an intradermal nevus, which is not triggered by trauma and does not spread beyond a wound.",
+    "E": "Organized parallel collagen with myofibroblasts is normal scar maturation; it stays within the wound and does not continue growing."
+   },
+   "objective": "Recognize a keloid and explain its histology and pathogenesis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "scars"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 45-year-old woman had a Roux-en-Y gastric bypass 3 years ago and has stopped taking her vitamin supplements. A surgical incision on her abdomen from a recent hernia repair has failed to heal after 6 weeks. She also reports thinning hair, diarrhea and a reduced sense of taste. Examination shows crusted, red, scaly plaques around her mouth, at the corners of the nose and on the fingertips, and a pale, non-granulating wound. Deficiency of which of the following is most likely?</p>",
+   "options": [
+    "Copper",
+    "Niacin",
+    "Selenium",
+    "Vitamin A",
+    "Zinc"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Periorificial and acral crusted dermatitis, alopecia, diarrhea, taste loss and poor wound healing after malabsorptive bariatric surgery are acquired zinc deficiency. Zinc is a cofactor for DNA and RNA polymerases needed for cell proliferation and for zinc-dependent matrix metalloproteinases that remodel collagen, so epithelialization and granulation stall. The inherited form, acrodermatitis enteropathica, results from mutations in the intestinal zinc transporter ZIP4 (<em>SLC39A4</em>) and appears in infancy after weaning.</p><p><strong>Takeaway:</strong> Periorificial and acral dermatitis with alopecia, diarrhea, dysgeusia and poor wound healing indicates zinc deficiency.</p>",
+   "whyNot": {
+    "A": "Copper deficiency after bariatric surgery causes anemia, neutropenia and a myeloneuropathy resembling B12 deficiency, not periorificial dermatitis.",
+    "B": "Niacin deficiency causes pellagra, a photosensitive dermatitis on sun-exposed skin with diarrhea and dementia, rather than periorificial and fingertip plaques.",
+    "C": "Selenium deficiency causes cardiomyopathy and muscle weakness and whitened nail beds.",
+    "D": "Vitamin A deficiency causes night blindness, xerophthalmia and follicular hyperkeratosis; it impairs healing but does not produce periorificial crusted plaques."
+   },
+   "objective": "Recognize zinc deficiency as a cause of poor wound healing with periorificial dermatitis.",
+   "extraAreas": [],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "wound healing",
+    "nutrition"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old man is brought to the emergency department after being rescued from a house fire. He is confused and has a headache and nausea. He has minor burns on his hands. Pulse is 112/min and respirations are 24/min. Pulse oximetry on room air shows an oxygen saturation of 99%. Arterial blood gas shows a PaO2 of 98 mm Hg and a pH of 7.29. Co-oximetry shows a carboxyhemoglobin level of 32%. Which of the following best explains the discrepancy between his pulse oximetry and his clinical state?</p>",
+   "options": [
+    "Carbon monoxide increases the amount of oxygen dissolved in plasma",
+    "Carbon monoxide shifts the oxygen dissociation curve to the right",
+    "Carboxyhemoglobin absorbs light like oxyhemoglobin",
+    "Cyanide raises the oxygen saturation of venous blood",
+    "Methemoglobin causes the oximeter to read a fixed saturation"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Standard pulse oximeters measure absorbance at two wavelengths and assume only oxyhemoglobin and deoxyhemoglobin are present. Carboxyhemoglobin absorbs red light much like oxyhemoglobin, so the device counts it as oxygenated and reports a falsely normal saturation. PaO2 is normal because it reflects dissolved oxygen, not hemoglobin binding. True oxygen content is reduced, and the left-shifted dissociation curve impairs unloading in tissues, causing confusion and lactic acidosis. Co-oximetry measures carboxyhemoglobin directly. Treatment is 100% oxygen, with hyperbaric oxygen considered for severe cases.</p><p><strong>Takeaway:</strong> In carbon monoxide poisoning, standard pulse oximetry and PaO2 look normal; measure carboxyhemoglobin with co-oximetry.</p>",
+   "whyNot": {
+    "A": "Dissolved oxygen (reflected in PaO2) is unchanged by carbon monoxide; the problem is hemoglobin binding and oxygen unloading.",
+    "B": "Carbon monoxide shifts the curve to the left, not the right, so hemoglobin holds on to oxygen more tightly.",
+    "D": "Cyanide can raise venous oxygen saturation, but it does not explain a falsely normal arterial pulse oximetry reading when carboxyhemoglobin is 32%.",
+    "E": "Methemoglobinemia drives oximetry readings toward about 85%; it is not present here and does not explain a reading of 99%."
+   },
+   "objective": "Explain why pulse oximetry is falsely normal in carbon monoxide poisoning.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "smoke inhalation"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old woman is pulled from a burning apartment filled with smoke from burning furniture and carpets. She is unresponsive with a blood pressure of 78/40 mm Hg. Carboxyhemoglobin is 9%. Serum lactate is 13 mmol/L, and central venous oxygen saturation is 88%. She is intubated, given 100% oxygen and fluids, and receives an IV antidote that turns her urine red. Which of the following best describes the mechanism of this antidote?</p>",
+   "options": [
+    "Binds cyanide to form a compound excreted in the urine",
+    "Donates a sulfur group to rhodanese to form thiocyanate",
+    "Oxidizes hemoglobin to methemoglobin, which binds cyanide",
+    "Reactivates acetylcholinesterase",
+    "Reduces methemoglobin to hemoglobin"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Shock, coma and severe lactic acidosis with a high central venous oxygen saturation after smoke inhalation, out of proportion to a modest carboxyhemoglobin level, indicate cyanide poisoning from burning synthetic and natural polymers. Cyanide blocks cytochrome c oxidase, so cells cannot use oxygen and venous blood stays highly saturated. Hydroxocobalamin, a vitamin B12 precursor, binds cyanide to form cyanocobalamin, which is excreted in urine; it causes red skin and urine and interferes with colorimetric laboratory tests. It is preferred in fire victims because it does not reduce oxygen-carrying capacity.</p><p><strong>Takeaway:</strong> Hydroxocobalamin treats smoke-related cyanide poisoning by binding cyanide to form cyanocobalamin.</p>",
+   "whyNot": {
+    "B": "Sodium thiosulfate donates sulfur to rhodanese to make thiocyanate; it is a cyanide antidote but does not turn urine red.",
+    "C": "Nitrites create methemoglobin to bind cyanide, but this further reduces oxygen delivery and is avoided in fire victims who may also have carbon monoxide poisoning.",
+    "D": "Pralidoxime reactivates acetylcholinesterase in organophosphate poisoning, not cyanide toxicity.",
+    "E": "Methylene blue reduces methemoglobin; it would not bind cyanide."
+   },
+   "objective": "Explain the mechanism of hydroxocobalamin for cyanide poisoning in smoke inhalation.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "smoke inhalation",
+    "toxicology"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old electrical lineworker is brought to the emergency department after contact with a high-voltage line. He has a 2-cm charred wound on his right palm and a 3-cm wound on his left heel. His right forearm is tense and swollen. Pulse is 108/min and blood pressure is 124/78 mm Hg. His urine is dark brown. Which of the following findings on urinalysis is most likely?</p>",
+   "options": [
+    "Dipstick negative for blood with many red blood cells on microscopy",
+    "Dipstick positive for blood with few or no red blood cells on microscopy",
+    "Dipstick positive for glucose with normal serum glucose",
+    "Dipstick positive for nitrite and leukocyte esterase",
+    "Many red blood cell casts and dysmorphic red blood cells"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>High-voltage current passes through deep tissues and generates heat that destroys muscle, so small entry and exit wounds can hide extensive muscle necrosis, compartment syndrome and rhabdomyolysis. Myoglobin released from muscle is filtered and darkens the urine. The dipstick heme reaction cannot distinguish myoglobin from hemoglobin and reads positive, but microscopy shows few or no red cells. Myoglobin damages tubules directly and by forming casts, especially in acidic, concentrated urine; aggressive fluids with a higher urine output target protect the kidneys.</p><p><strong>Takeaway:</strong> Rhabdomyolysis gives a heme-positive dipstick without red cells on microscopy; electrical injuries hide deep muscle damage.</p>",
+   "whyNot": {
+    "A": "A negative dipstick with many red cells is uncommon in practice and does not describe pigment from muscle breakdown.",
+    "C": "Glycosuria with normal serum glucose indicates proximal tubular dysfunction such as Fanconi syndrome, not rhabdomyolysis.",
+    "D": "Nitrite and leukocyte esterase indicate urinary tract infection, which does not cause dark brown urine after electrical injury.",
+    "E": "Red cell casts and dysmorphic red cells indicate glomerulonephritis, not myoglobinuria."
+   },
+   "objective": "Predict urinalysis findings of rhabdomyolysis after high-voltage electrical injury.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "electrical injury"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 49-year-old man who had a splenectomy after a car crash 10 years ago is brought to the emergency department with fever, confusion and a spreading purpuric rash 2 days after his dog nipped his hand while playing. Temperature is 39.7 °C (103.5 °F), pulse is 132/min and blood pressure is 76/40 mm Hg. Platelet count is 32,000/mm<sup>3</sup>, and fibrinogen is low. Blood culture grows a fastidious, thin, capnophilic gram-negative rod after 3 days. Which of the following organisms is most likely?</p>",
+   "options": [
+    "Bartonella henselae",
+    "Capnocytophaga canimorsus",
+    "Eikenella corrodens",
+    "Pasteurella multocida",
+    "Streptococcus pneumoniae"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Fulminant sepsis with purpura fulminans and disseminated intravascular coagulation after a dog bite or lick in an asplenic person is the classic presentation of <em>Capnocytophaga canimorsus</em>, a fastidious, slow-growing, capnophilic gram-negative rod in canine mouth flora. Asplenia, alcohol use disorder and cirrhosis are the main risk factors. Asplenic patients bitten by dogs should receive prophylactic amoxicillin-clavulanate, and sepsis is treated with a beta-lactam/beta-lactamase inhibitor or a carbapenem.</p><p><strong>Takeaway:</strong> Dog bite plus asplenia plus sepsis with DIC suggests Capnocytophaga canimorsus.</p>",
+   "whyNot": {
+    "A": "<em>Bartonella henselae</em> follows cat scratches and causes regional lymphadenopathy or bacillary angiomatosis, not fulminant sepsis after a dog bite.",
+    "C": "<em>Eikenella</em> is a human oral organism associated with human bites and clenched-fist injuries.",
+    "D": "<em>Pasteurella</em> commonly infects dog and cat bites, but it typically causes rapid local cellulitis and grows readily, rather than slow-growing capnophilic sepsis with DIC in asplenia.",
+    "E": "<em>S. pneumoniae</em> causes overwhelming sepsis in asplenia, but it is a gram-positive diplococcus and is not linked to a dog bite."
+   },
+   "objective": "Identify Capnocytophaga canimorsus sepsis after a dog bite in an asplenic patient.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bites",
+    "asplenia"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-year-old boy dies of encephalitis 6 weeks after he was bitten on the ankle by a raccoon at summer camp; no medical care was sought. In his final week he had agitation, painful throat spasms when trying to drink, and excessive salivation. Brain autopsy shows eosinophilic cytoplasmic inclusions in hippocampal neurons. Which of the following best explains how the causative agent reached his central nervous system?</p>",
+   "options": [
+    "Hematogenous spread to the choroid plexus",
+    "Infection of olfactory neurons from the nasal mucosa",
+    "Retrograde transport within peripheral nerve axons",
+    "Spread through lymphatic vessels to the cerebrospinal fluid",
+    "Transport inside infected monocytes across the blood-brain barrier"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Encephalitis with agitation, hydrophobia from pharyngeal spasm and hypersalivation after a raccoon bite, with Negri bodies (eosinophilic cytoplasmic inclusions) in hippocampal neurons, is rabies. The virus replicates locally in muscle, binds nicotinic acetylcholine receptors at the neuromuscular junction, enters peripheral nerve terminals and travels to the CNS by retrograde fast axonal transport along microtubules (dynein). Because the virus is hidden in nerves during this long incubation, wound washing, rabies immune globulin and vaccination after exposure prevent disease.</p><p><strong>Takeaway:</strong> Rabies reaches the CNS by retrograde axonal transport in peripheral nerves, which is why the incubation period allows post-exposure prophylaxis.</p>",
+   "whyNot": {
+    "A": "Hematogenous spread to the choroid plexus is a route for some bacteria and viruses but not for rabies, which is not viremic.",
+    "B": "Olfactory spread is used by <em>Naegleria fowleri</em> and possibly HSV, not by a virus inoculated through a bite on the ankle.",
+    "D": "Lymphatic spread to the CSF is not a recognized route of rabies infection.",
+    "E": "Trojan-horse spread inside monocytes is proposed for HIV, not rabies."
+   },
+   "objective": "Describe the retrograde axonal transport of rabies virus to the CNS.",
+   "extraAreas": [],
+   "disciplines": [
+    "microbiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bites",
+    "pediatrics"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 43-year-old man is brought to the emergency department after spending a night outdoors in -20 °C (-4 °F) weather while intoxicated. His fingers are white, hard and numb. After rapid rewarming in a warm water bath, the fingers become purple and develop hemorrhagic blisters. Technetium-99m scintigraphy 6 hours later shows no perfusion of three fingertips. He receives an intravenous prostacyclin analogue. The additional tissue loss that this drug aims to limit after rewarming is mainly caused by which of the following?</p>",
+   "options": [
+    "Extracellular ice crystal formation",
+    "Intracellular dehydration from osmotic water loss",
+    "Microvascular thrombosis from endothelial injury",
+    "Neutropenia with secondary bacterial infection",
+    "Vasodilation causing tissue edema"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Frostbite injures tissue in two stages. During freezing, extracellular ice crystals pull water out of cells, which dehydrate and rupture. After thawing, damaged endothelium exposes collagen, platelets aggregate, thromboxane and prostaglandin F2-alpha cause vasoconstriction, and microvascular thrombosis with ischemia-reperfusion injury extends tissue death. Iloprost, a prostacyclin analogue, vasodilates and inhibits platelet aggregation; thrombolytics dissolve microthrombi. Given early after rewarming in severe frostbite with perfusion defects, they reduce digit amputation.</p><p><strong>Takeaway:</strong> After rewarming, frostbite progresses by endothelial injury and microvascular thrombosis, the target of iloprost and thrombolysis.</p>",
+   "whyNot": {
+    "A": "Extracellular ice crystals cause injury during freezing; they have already melted by the time the drug is given and are not its target.",
+    "B": "Cellular dehydration occurs during freezing, not after rewarming, and is not reversed by a prostacyclin analogue.",
+    "D": "Infection can complicate frostbite later, but neutropenia is not part of its pathophysiology and iloprost has no antimicrobial effect.",
+    "E": "The harmful process is vasoconstriction and thrombosis, not vasodilation; iloprost is itself a vasodilator."
+   },
+   "objective": "Explain the microvascular thrombotic mechanism of tissue loss after frostbite rewarming.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cold injury"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 2-year-old girl, weight 12 kg, is brought to the emergency department by her mother's partner 6 hours after he says she climbed into a bath and turned on the hot water by herself while he was in another room. Examination shows blistered, moist, pink partial-thickness burns of both feet and legs up to the mid-calf, with a sharp, symmetric, horizontal upper margin and no splash marks, and a burn of the buttocks that spares a central circle. The skin behind the knees is spared. There are no other injuries on initial examination. The burns are estimated at 18% of body surface area. In addition to burn care, which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Discharge with outpatient burn clinic follow-up",
+    "Report to child protective services and obtain a skeletal survey",
+    "Teach the family about setting the water heater temperature",
+    "Topical silver dressings and review in 48 hours",
+    "Urine toxicology screen for the child"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The pattern strongly suggests an inflicted immersion burn: symmetric \"stocking\" burns with a sharp horizontal margin and no splash marks, uniform depth, sparing of the flexural creases (knees held flexed) and central sparing of the buttocks where they pressed against the cooler tub bottom. A delay in seeking care and a history that does not fit the child's development or the injury add concern. Clinicians must report suspected abuse to child protective services. A skeletal survey in a child younger than 2 years looks for occult fractures. She also needs admission, ideally to a burn centre, given her age and burn size.</p><p><strong>Takeaway:</strong> Symmetric stocking or glove immersion burns with sharp margins, no splash marks and flexural sparing suggest abuse: report and perform a skeletal survey.</p>",
+   "whyNot": {
+    "A": "An 18% partial-thickness burn in a toddler needs admission and fluid resuscitation, and the pattern raises concern for abuse that must be addressed before discharge.",
+    "C": "Water heater safety is appropriate after accidental scalds but does not address a pattern that suggests intentional immersion.",
+    "D": "Dressings are part of care, but this child needs admission and evaluation for abuse, not outpatient review.",
+    "E": "Toxicology screening is not the priority; the burn pattern itself is the warning sign and mandates a report."
+   },
+   "objective": "Recognize an inflicted immersion burn pattern and report suspected child abuse.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "professionalism",
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "burns",
+    "child safety"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The girl in the previous item is admitted to a burn centre, a report is made, and fluid resuscitation is started with lactated Ringer's solution according to a weight- and burn-size-based formula, plus a dextrose-containing maintenance infusion. A urinary catheter is placed. Which of the following urine output targets is most appropriate to guide the rate of her resuscitation fluid?</p>",
+   "options": [
+    "0.25 mL/kg/h",
+    "0.5 mL/kg/h",
+    "1 mL/kg/h",
+    "2 mL/kg/h",
+    "3 mL/kg/h"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Burn resuscitation formulas only estimate the starting rate; the infusion is adjusted hourly to urine output. For children who weigh less than about 30 kg, the target is about 1 mL/kg/h. Adults are targeted at 0.5 mL/kg/h. Young children also receive dextrose-containing maintenance fluid because their glycogen stores are small and they become hypoglycemic. Exceeding the target leads to fluid creep, with edema, compartment syndromes and respiratory compromise.</p><p><strong>Takeaway:</strong> Titrate burn resuscitation to urine output of about 1 mL/kg/h in children under 30 kg and 0.5 mL/kg/h in adults.</p>",
+   "whyNot": {
+    "A": "0.25 mL/kg/h is oliguria in a child and would signal under-resuscitation and risk of kidney injury.",
+    "B": "0.5 mL/kg/h is the adult target; small children need a higher target per kilogram.",
+    "D": "2 mL/kg/h is higher than needed and would encourage over-resuscitation and edema.",
+    "E": "3 mL/kg/h indicates excessive fluid, which risks compartment syndromes and pulmonary edema."
+   },
+   "objective": "Choose the urine output target for burn resuscitation in a young child.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "burns",
+    "fluids"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman comes to the urgent care center 4 hours after her cat bit her right hand while she was separating it from another cat. There are two deep puncture wounds over the dorsum of the right index metacarpophalangeal joint. The surrounding skin is mildly red and swollen, and finger movement is full with normal sensation. She has no drug allergies. Her last tetanus booster was 3 years ago. After thorough irrigation, which of the following is the most appropriate management?</p>",
+   "options": [
+    "Close the wounds with sutures and give no antibiotics",
+    "Close the wounds with sutures and give oral cephalexin",
+    "Leave the wounds open and give no antibiotics",
+    "Leave the wounds open and give oral amoxicillin-clavulanate",
+    "Leave the wounds open and give oral clindamycin alone"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Cat bites produce deep punctures that inoculate <em>Pasteurella multocida</em> and anaerobes into tendon sheaths and joints, and hand bites carry the highest infection risk. Puncture wounds and hand bites are irrigated and left open rather than sutured. Prophylaxis with amoxicillin-clavulanate covers <em>Pasteurella</em>, streptococci, staphylococci and anaerobes. Her tetanus booster is current. She needs review within 24 to 48 hours, with urgent reassessment for spreading redness, pain on finger movement or joint swelling.</p><p><strong>Takeaway:</strong> Cat bites to the hand are left open and treated with prophylactic amoxicillin-clavulanate.</p>",
+   "whyNot": {
+    "A": "Suturing deep punctures traps bacteria, and omitting antibiotics after a cat bite to the hand risks septic arthritis or tenosynovitis.",
+    "B": "Suturing is inappropriate, and cephalexin has poor activity against <em>Pasteurella multocida</em>.",
+    "C": "Leaving the wound open is correct, but a cat bite over a hand joint needs prophylactic antibiotics.",
+    "E": "Clindamycin covers anaerobes and gram-positive organisms but not <em>Pasteurella</em>; it needs a partner drug such as TMP-SMX."
+   },
+   "objective": "Manage a cat bite to the hand with open wound care and amoxicillin-clavulanate prophylaxis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "bites"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 40-year-old man comes to the emergency department in the morning because he woke at 3 AM to find a bat flying in his bedroom. He and his wife chased it out of a window before they thought to capture it. He has no bites or scratches that he can find, and examination shows no wounds. He has never received rabies vaccine and is healthy. His wife was awake in the room but was not touched. Which of the following is the most appropriate management for him?</p>",
+   "options": [
+    "No prophylaxis, because no bite or scratch is visible",
+    "Rabies immune globulin plus vaccine on days 0, 3, 7 and 14",
+    "Rabies immune globulin alone, given on day 0 only",
+    "Rabies vaccine on days 0 and 3, without immune globulin",
+    "Observation for rabies symptoms over the next 10 days"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Bat bites can be tiny and go unnoticed. When a bat is found in the room of a person who was asleep (or a young child or someone who cannot report contact) and the bat cannot be tested, post-exposure prophylaxis is recommended. For a previously unvaccinated, immunocompetent person, this is wound care if any, human rabies immune globulin on day 0 (infiltrated around any wound, the rest given intramuscularly away from the vaccine site), and rabies vaccine on days 0, 3, 7 and 14. His wife, who was awake and certain she had no contact, does not need prophylaxis.</p><p><strong>Takeaway:</strong> A bat in the room of a sleeping person that cannot be tested warrants rabies immune globulin plus four vaccine doses in an unvaccinated person.</p>",
+   "whyNot": {
+    "A": "Bat bites often leave no visible mark, so a lack of wounds does not exclude exposure in a person who was asleep.",
+    "C": "Immune globulin alone gives only short-lived passive protection; the vaccine is needed to induce active immunity.",
+    "D": "Two vaccine doses without immune globulin is the regimen for people who were previously vaccinated, which he was not.",
+    "E": "Ten-day observation applies to a healthy dog, cat or ferret that can be confined, not to the person or to an uncaptured bat."
+   },
+   "objective": "Apply rabies post-exposure prophylaxis after a bat in the room of a sleeping person.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "bites",
+    "prevention"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>An 86-year-old woman who lives in a nursing home has had a sacral wound for 3 months. She has advanced dementia, is bed-bound and is incontinent. The wound has not improved despite pressure-redistributing mattress, repositioning and dressings. Examination shows a 6 × 5-cm wound over the sacrum with exposed bone at its base, a moderate amount of purulent drainage and surrounding induration. A sterile probe touches bone.</p><table><thead><tr><th>Measure</th><th>Result</th></tr></thead><tbody><tr><td>Temperature</td><td>37.8 °C (100.0 °F)</td></tr><tr><td>Leukocytes</td><td>12,400/mm<sup>3</sup></td></tr><tr><td>ESR, female</td><td>92 mm/h</td></tr><tr><td>Albumin</td><td>2.6 g/dL</td></tr><tr><td>Glucose, fasting</td><td>96 mg/dL</td></tr><tr><td>Swab culture of wound surface</td><td>Mixed growth: <em>Proteus mirabilis</em>, <em>Enterococcus faecalis</em>, coagulase-negative staphylococci</td></tr></tbody></table><p>Which of the following is the most accurate test to confirm the suspected complication and guide therapy?</p>",
+   "options": [
+    "Blood cultures",
+    "Bone biopsy for culture and histology",
+    "Plain x-ray of the pelvis",
+    "Repeat swab culture after debridement",
+    "Technetium-99m bone scan"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A stage 4 sacral pressure injury with exposed bone, a positive probe-to-bone test and a markedly raised ESR is strongly suspicious for underlying osteomyelitis. Bone biopsy (usually during surgical debridement, or image-guided) with culture and histology is the most accurate test: histology confirms bone inflammation and necrosis, and culture identifies the organisms that matter, allowing targeted antibiotics. Surface swabs reflect colonising flora. MRI is the most useful imaging test but cannot identify organisms. Management also includes debridement, offloading, nutrition and continence care, and a discussion of goals of care given her advanced dementia.</p><p><strong>Takeaway:</strong> For osteomyelitis under a pressure injury, bone biopsy with culture and histology is the most accurate test; surface swabs are misleading.</p>",
+   "whyNot": {
+    "A": "Blood cultures are often negative in contiguous osteomyelitis and do not reliably identify all bone pathogens.",
+    "C": "Plain films are insensitive early and cannot separate pressure-related bone remodelling from infection.",
+    "D": "Swab cultures, even after debridement, grow colonising surface organisms that may not match bone pathogens.",
+    "E": "Bone scans are sensitive but nonspecific, especially with overlying soft-tissue inflammation and pressure changes, and do not identify organisms."
+   },
+   "objective": "Use bone biopsy as the most accurate test for osteomyelitis beneath a pressure injury.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pressure injury",
+    "older adults"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old man who is experiencing homelessness is brought to the emergency department after a night outdoors in freezing temperatures. His core temperature is 36.4 °C (97.5 °F) after warm blankets. He is alert and can stay in the hospital. His left hand fingers are pale, waxy, cold and hard, with no sensation. There are no blisters yet. Which of the following is the most appropriate initial treatment for his hand?</p>",
+   "options": [
+    "Apply ice packs to the hand to reduce swelling",
+    "Immerse the hand in circulating water at about 37 to 39 °C",
+    "Rub the fingers vigorously with snow or warm hands",
+    "Warm the hand slowly at room temperature over 24 hours",
+    "Warm the hand with a heating pad set on high heat"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Frozen, pale, waxy, hard and numb fingers are frostbite. His core temperature is normal and there is no risk of refreezing, so the frozen tissue should be rewarmed rapidly by immersion in circulating water at about 37 to 39 °C until the skin becomes soft and red or purple, usually 15 to 30 minutes. Rewarming is very painful and needs parenteral analgesia. Ibuprofen, tetanus update and, for severe injury seen early, perfusion imaging and thrombolysis or iloprost follow.</p><p><strong>Takeaway:</strong> Rewarm frostbite rapidly in circulating water at about 37 to 39 °C when there is no risk of refreezing; never rub or use dry heat.</p>",
+   "whyNot": {
+    "A": "Ice causes further cold injury and vasoconstriction.",
+    "C": "Rubbing damages frozen tissue mechanically and does not rewarm it effectively.",
+    "D": "Slow rewarming prolongs the time tissue spends partly frozen and worsens injury.",
+    "E": "Dry heat sources heat unevenly and burn insensate tissue."
+   },
+   "objective": "Treat frostbite with rapid rewarming in warm circulating water.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cold injury"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old college wrestler comes to the clinic the day after a match because his left ear is swollen and painful. Examination shows a tense, fluctuant, purple swelling of the anterior auricle that obscures the normal contours of the helix and antihelix. There is no laceration, and the ear canal and tympanic membrane are normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Cold compresses and review in 2 weeks",
+    "Drainage and a compressive bolster dressing",
+    "Oral cephalexin for 7 days",
+    "Oral ibuprofen and return to wrestling with headgear",
+    "Referral for elective cartilage reconstruction"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A tense, fluctuant swelling that obscures the contours of the auricle after a wrestling match is an auricular hematoma. Blood separates the perichondrium from the avascular cartilage, which depends on it for nutrients; without drainage, the cartilage necroses and fibrosis produces cauliflower ear. Prompt drainage by needle aspiration or incision, followed by a compressive bolster dressing to keep the perichondrium against the cartilage, prevents reaccumulation. He should be reviewed the next day and avoid contact until healed, then wear protective headgear.</p><p><strong>Takeaway:</strong> Drain an auricular hematoma promptly and apply a compressive dressing to prevent cauliflower ear.</p>",
+   "whyNot": {
+    "A": "Waiting allows the hematoma to organize and the cartilage to die, producing a permanent deformity.",
+    "C": "There is no infection; antibiotics alone do not remove the hematoma.",
+    "D": "Returning to contact sport without drainage risks further bleeding and deformity.",
+    "E": "Reconstruction is for established cauliflower ear; the aim now is to prevent it."
+   },
+   "objective": "Manage an auricular hematoma with drainage and compression to prevent cauliflower ear.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "ear trauma"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 22-year-old woman comes to the clinic because of an enlarging firm, itchy, raised lesion on her left upper chest that appeared at the site of an acne lesion 8 months ago. It is a 3 × 1.5-cm, smooth, rubbery, shiny plaque with claw-like extensions beyond the original lesion. She has a similar lesion on her earlobe that recurred within a year after it was surgically excised. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    "Cryotherapy alone",
+    "Intralesional triamcinolone injections",
+    "Oral isotretinoin",
+    "Surgical excision with primary closure",
+    "Topical tretinoin"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A firm, itchy plaque extending beyond the site of the original injury, with recurrence after excision of a prior lesion, is a keloid. First-line treatment is intralesional triamcinolone repeated every few weeks, which flattens the lesion and relieves itch by reducing fibroblast proliferation and collagen synthesis. Silicone gel sheeting and pressure are useful adjuncts, and 5-fluorouracil can be combined. Excision alone has a high recurrence rate, often with a larger keloid, and should only be combined with adjuvant steroid injection or radiation. Steroid injections can cause atrophy and hypopigmentation, which is more noticeable in darker skin.</p><p><strong>Takeaway:</strong> First-line treatment for a keloid is intralesional corticosteroid; excision alone tends to recur.</p>",
+   "whyNot": {
+    "A": "Cryotherapy can help some keloids as an adjunct but risks lasting hypopigmentation and is less effective alone.",
+    "C": "Isotretinoin treats severe acne and does not shrink an established keloid.",
+    "D": "Excision without adjuvant therapy commonly recurs, as her earlobe lesion shows.",
+    "E": "Topical retinoids do not penetrate or treat keloid collagen."
+   },
+   "objective": "Treat a keloid with intralesional corticosteroid injection.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "scars"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Collagen types in early and mature wounds?",
+   "back": "Type III in granulation tissue, replaced by type I during remodelling.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Cell responsible for wound contraction?",
+   "back": "The myofibroblast (contains smooth-muscle actin).",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Maximum tensile strength of a mature scar?",
+   "back": "About 70 to 80% of normal skin, reached by about 3 months.",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Keloid vs hypertrophic scar?",
+   "back": "Keloid extends beyond the wound and rarely regresses; hypertrophic stays within it and often flattens.",
+   "question": 1
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Nutrient deficiency with periorificial dermatitis and poor healing?",
+   "back": "Zinc.",
+   "question": 2
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Why does an auricular hematoma cause cauliflower ear?",
+   "back": "Cartilage depends on the perichondrium for nutrients; separated cartilage dies and fibroses.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Where does pressure injury damage often begin?",
+   "back": "Deep, at the muscle-bone interface, because muscle tolerates ischemia poorly.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Main UV band behind sunburn?",
+   "back": "UVB.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Why is pulse oximetry normal in CO poisoning?",
+   "back": "Carboxyhemoglobin absorbs light like oxyhemoglobin; use co-oximetry.",
+   "question": 3
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "CO effect on the oxygen dissociation curve?",
+   "back": "Shifts it to the left.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Cyanide poisoning clue on blood gases?",
+   "back": "Severe lactic acidosis with high venous oxygen saturation.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Hydroxocobalamin mechanism?",
+   "back": "Binds cyanide to form cyanocobalamin, excreted in urine.",
+   "question": 4
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Urinalysis in rhabdomyolysis?",
+   "back": "Dipstick heme-positive with few or no red cells.",
+   "question": 5
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Dog bite plus asplenia plus sepsis with DIC?",
+   "back": "Capnocytophaga canimorsus.",
+   "question": 6
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "How does rabies reach the brain?",
+   "back": "Retrograde fast axonal transport in peripheral nerves.",
+   "question": 7
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Mechanism of tissue loss after frostbite rewarming?",
+   "back": "Endothelial injury and microvascular thrombosis (reperfusion).",
+   "question": 8
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Organism in human bites and clenched-fist injuries?",
+   "back": "Eikenella corrodens (with streptococci, S. aureus, anaerobes).",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Alkali vs acid chemical burns?",
+   "back": "Alkali: liquefactive necrosis, deeper. Acid: coagulative necrosis.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Which burns count toward TBSA for resuscitation?",
+   "back": "Partial- and full-thickness burns only.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "When is the first half of burn resuscitation fluid given?",
+   "back": "In the first 8 hours from the time of the burn.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Urine output target for burn resuscitation in adults?",
+   "back": "0.5 mL/kg/h.",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Urine output target in children under 30 kg?",
+   "back": "About 1 mL/kg/h.",
+   "question": 10
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "Pattern suggesting inflicted immersion burn?",
+   "back": "Symmetric stocking or glove burns with sharp margins, no splash marks, flexural sparing.",
+   "question": 9
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Indication for escharotomy?",
+   "back": "Circumferential full-thickness burns compromising limb perfusion or chest ventilation.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Smoke inhalation with altered mental status and lactic acidosis: antidote?",
+   "back": "Hydroxocobalamin, with 100% oxygen.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Definitive treatment of deep partial- and full-thickness burns?",
+   "back": "Early excision and grafting.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 4,
+   "front": "Antibiotic prophylaxis for cat or hand bites?",
+   "back": "Amoxicillin-clavulanate.",
+   "question": 11
+  },
+  {
+   "n": 28,
+   "section": 4,
+   "front": "Rabies PEP for an unvaccinated immunocompetent person?",
+   "back": "Rabies immune globulin on day 0 plus vaccine on days 0, 3, 7, 14.",
+   "question": 12
+  },
+  {
+   "n": 29,
+   "section": 4,
+   "front": "Bat in the room of a sleeping person?",
+   "back": "Give rabies post-exposure prophylaxis unless the bat tests negative.",
+   "question": null
+  },
+  {
+   "n": 30,
+   "section": 4,
+   "front": "Most accurate test for osteomyelitis under a pressure injury?",
+   "back": "Bone biopsy with culture and histology.",
+   "question": 13
+  },
+  {
+   "n": 31,
+   "section": 4,
+   "front": "Stage 4 pressure injury definition?",
+   "back": "Full-thickness loss with exposed or palpable fascia, muscle, tendon, ligament, cartilage or bone.",
+   "question": null
+  },
+  {
+   "n": 32,
+   "section": 4,
+   "front": "How to rewarm frostbite?",
+   "back": "Circulating water at about 37 to 39 °C, only if refreezing is not a risk.",
+   "question": 14
+  },
+  {
+   "n": 33,
+   "section": 4,
+   "front": "Auricular hematoma management?",
+   "back": "Prompt drainage plus compressive bolster dressing.",
+   "question": 15
+  },
+  {
+   "n": 34,
+   "section": 4,
+   "front": "First-line treatment of a keloid?",
+   "back": "Intralesional triamcinolone.",
+   "question": 16
+  },
+  {
+   "n": 35,
+   "section": 4,
+   "front": "Tetanus booster rule for dirty wounds?",
+   "back": "Give if 5 or more years since last dose; add immune globulin if fewer than 3 doses or unknown.",
+   "question": null
+  }
+ ]
+}

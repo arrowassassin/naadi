@@ -1,0 +1,941 @@
+{
+ "area": "06.05.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Melanocyte biology, albinism, vitiligo and lentigines: mechanisms",
+   "html": "<h2>Melanocytes and melanin</h2>\n<p>Melanocytes come from the <strong>neural crest</strong>. In the embryo, melanoblasts migrate to the basal epidermis, the hair bulbs, the uveal tract, the inner ear (stria vascularis) and the leptomeninges. Migration and survival depend on KIT signalling (activated by stem cell factor) and on the transcription factors MITF, PAX3 and SOX10, with endothelin-3 signalling through its receptor. Defects in these genes cause congenital white patches (piebaldism) and the Waardenburg syndromes, in which hearing loss reflects missing melanocytes in the cochlea. Each basal melanocyte supplies melanin to dozens of keratinocytes through its dendrites. Inside the keratinocyte, the melanin forms a cap over the nucleus that shields DNA from ultraviolet light.</p>\n<p><strong>People of all skin tones have about the same number of melanocytes.</strong> Darker skin has larger, more numerous melanosomes that are dispersed singly and degraded more slowly, and a higher ratio of eumelanin to pheomelanin. This is why skin of colour burns less, but also why inflammation so often leaves visible post-inflammatory hyper- or hypopigmentation.</p>\n[[figure:s23f-fig060501-1]]\n<h3>Control of pigmentation</h3>\n<ul><li><strong>Tyrosinase</strong>, a copper-dependent enzyme, catalyses the rate-limiting steps from tyrosine to DOPA to dopaquinone inside the melanosome, a lysosome-related organelle.</li>\n<li><strong>MC1R</strong> is a G<sub>s</sub>-coupled receptor on melanocytes. When α-melanocyte-stimulating hormone (α-MSH) binds it, cAMP rises and production shifts toward brown-black eumelanin. Loss-of-function MC1R variants give red hair, freckles, a tendency to burn and higher melanoma risk.</li>\n<li><strong>Tanning:</strong> ultraviolet damage activates p53 in keratinocytes, which induces pro-opiomelanocortin (POMC) and α-MSH release. Excess ACTH, which shares its sequence with α-MSH, darkens the skin in <strong>primary adrenal insufficiency</strong> (palmar creases, buccal mucosa, scars, knuckles), Nelson syndrome and ectopic ACTH production.</li></ul>\n<h2>Too little pigment: three mechanisms</h2>\n<table class=\"hy\"><thead><tr><th>Mechanism</th><th>Examples</th><th>Clinical clues</th></tr></thead><tbody>\n<tr><td>Melanocytes absent</td><td>Vitiligo (acquired, immune); piebaldism (congenital, <em>KIT</em>, autosomal dominant); Waardenburg syndrome</td><td>Chalk-white (depigmented) patches that glow under a Wood lamp; piebaldism has a white forelock and stable patches from birth</td></tr>\n<tr><td>Melanocytes present, little melanin made</td><td>Oculocutaneous albinism (OCA1 <em>TYR</em>; OCA2 <em>OCA2</em>/P protein, the commonest worldwide; others); phenylketonuria; copper deficiency (Menkes disease); pityriasis versicolor (azelaic acid from <em>Malassezia</em> inhibits tyrosinase)</td><td>Diffuse light skin, hair and irides in albinism, with eye involvement</td></tr>\n<tr><td>Melanin made but not packaged or delivered</td><td>Hermansky–Pudlak syndrome; Chédiak–Higashi syndrome; Griscelli syndrome</td><td>Partial albinism plus bleeding, infection or immune problems</td></tr></tbody></table>\n<h3>Albinism</h3>\n<p>Oculocutaneous albinism (OCA) is autosomal recessive. In OCA1A, tyrosinase has no activity, and skin and hair stay white for life. Other types make some pigment over time. The <strong>eye findings define albinism</strong>: reduced retinal and iris pigment, foveal hypoplasia, nystagmus, reduced visual acuity, photophobia, and excess crossing of optic nerve fibres at the chiasm, which causes strabismus and poor depth perception. Ocular albinism (X-linked, <em>GPR143</em>) affects the eyes while skin is near normal. With little melanin to absorb ultraviolet light, people with OCA develop actinic damage early, and <strong>squamous cell carcinoma</strong> is the leading skin cancer, a major cause of death where sun exposure is high and dermatologic care is scarce.</p>\n<h3>Syndromes with partial albinism</h3>\n<ul><li><strong>Hermansky–Pudlak syndrome</strong> (several genes for complexes that build lysosome-related organelles; especially common in northwest Puerto Rico): melanosomes and <strong>platelet dense granules</strong> both form poorly, so there is albinism plus a bleeding tendency with a prolonged bleeding time but normal platelet counts. Some types develop pulmonary fibrosis and granulomatous colitis.</li>\n<li><strong>Chédiak–Higashi syndrome</strong> (<em>LYST</em>, autosomal recessive): defective lysosomal trafficking produces giant cytoplasmic granules in neutrophils and other cells. Features are partial albinism with silvery hair, recurrent pyogenic infections (poor phagolysosome fusion and chemotaxis), peripheral neuropathy and mild bleeding. An \"accelerated phase\" of haemophagocytic lymphohistiocytosis is usually fatal without haematopoietic stem cell transplantation.</li></ul>\n<h3>Vitiligo</h3>\n<p>Vitiligo is acquired loss of melanocytes from the epidermis. Oxidative stress makes melanocytes release danger signals and melanocyte antigens (such as tyrosinase and gp100). <strong>Cytotoxic CD8+ T cells</strong> then kill melanocytes. They make interferon-γ, which, signalling through JAK1/2 in keratinocytes, induces the chemokines CXCL9 and CXCL10. These chemokines recruit more CXCR3+ T cells. Resident memory T cells left in the skin explain relapse at old sites when treatment stops. This pathway is the basis of <strong>JAK inhibitor</strong> therapy (ruxolitinib cream). Repigmentation, whether spontaneous or during phototherapy, starts as <strong>dots around hair follicles</strong>, because melanocyte stem cells in the follicle bulge are spared. Hairless sites (lips, fingertips) and patches with white hairs respond poorly. Vitiligo is linked with autoimmune thyroid disease (the most common association), type 1 diabetes, pernicious anaemia, Addison disease and alopecia areata. Depigmentation appearing during checkpoint-inhibitor therapy for melanoma reflects T cells attacking shared melanocyte antigens, and it signals a better tumour response.</p>\n[[figure:s23f-fig060501-2]]\n<h2>Too much pigment</h2>\n<ul><li><strong>More melanin, normal melanocyte number:</strong> ephelides (freckles), melasma, café-au-lait macules and epidermal post-inflammatory hyperpigmentation.</li>\n<li><strong>More melanocytes:</strong> lentigines (solar lentigo, lentigo simplex) and melanocytic naevi.</li>\n<li><strong>Pigment in the dermis:</strong> melanin in dermal macrophages (dermal post-inflammatory hyperpigmentation, deep melasma) or dermal melanocytes (dermal melanocytosis). It looks blue-grey because shorter wavelengths scatter back from deep pigment (Tyndall effect).</li>\n<li><strong>Non-melanin pigment:</strong> haemosiderin; drug deposits (minocycline, amiodarone, antimalarials, clofazimine); metals (silver in argyria); carotene (yellow skin that spares the sclerae); homogentisic acid in alkaptonuria (ochronosis), which can also follow long-term topical hydroquinone (exogenous ochronosis).</li></ul>\n<p><strong>Syndromic lentigines</strong> matter because they mark internal disease. Peutz–Jeghers syndrome (<em>STK11</em>, a serine/threonine kinase tumour suppressor, autosomal dominant) causes dark macules on the lips, buccal mucosa, fingers and toes in childhood, with hamartomatous GI polyps that cause intussusception and bleeding, and raised risks of GI, pancreatic, breast and gonadal cancers. Carney complex (<em>PRKAR1A</em>) links lentigines with cardiac myxomas and adrenal disease. Noonan syndrome with multiple lentigines (<em>PTPN11</em>) adds cardiac defects and hearing loss.</p>\n<table class=\"hy\"><thead><tr><th>Drug</th><th>Mechanism</th><th>Use and cautions</th></tr></thead><tbody>\n<tr><td>Hydroquinone (topical)</td><td>Inhibits tyrosinase; toxic to melanocytes at high strength</td><td>Melasma, PIH, lentigines; irritation; exogenous ochronosis with long use; avoided in pregnancy</td></tr>\n<tr><td>Azelaic acid (topical)</td><td>Competitive tyrosinase inhibitor; anti-inflammatory</td><td>Melasma, PIH, acne; usable in pregnancy</td></tr>\n<tr><td>Topical retinoids</td><td>Speed epidermal turnover; reduce melanosome transfer</td><td>PIH, melasma (in combination); avoid in pregnancy</td></tr>\n<tr><td>Tranexamic acid (oral, off-label)</td><td>Blocks plasminogen activation, reducing ultraviolet-driven, plasmin-mediated melanocyte stimulation</td><td>Refractory melasma; screen for thrombosis risk</td></tr>\n<tr><td>Ruxolitinib cream</td><td>JAK1/2 inhibitor; blocks interferon-γ signalling</td><td>Nonsegmental vitiligo (age 12 and older, limited body surface)</td></tr>\n<tr><td>Narrowband UVB</td><td>Immunomodulation; activates follicular melanocyte stem cells</td><td>Widespread vitiligo</td></tr>\n<tr><td>Monobenzone (topical)</td><td>Destroys melanocytes (permanent)</td><td>Depigmenting residual skin in very extensive vitiligo</td></tr></tbody></table>\n<div class=\"pearl\"><p>Vitiligo and albinism are both pale, but they are opposites under the microscope. Vitiligo has no melanocytes. Albinism has normal numbers of melanocytes that make little melanin.</p></div>\n<div class=\"trap\"><p>Freckles and lentigines look alike but differ. Freckles have normal melanocyte numbers with extra melanin and fade in winter. Lentigines have more melanocytes and do not fade.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Albinism"
+    },
+    {
+     "statpearls": "Vitiligo"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Light patches: vitiligo, albinism and other hypopigmentation",
+   "html": "<h2>Approach to light patches</h2>\n<p>First decide whether the skin is <strong>depigmented</strong> (milk- or chalk-white, no melanin; it glows brightly under a Wood lamp) or <strong>hypopigmented</strong> (lighter than normal but not white). Then ask whether the patches were present at birth or acquired, whether they are stable or spreading, whether they scale, and whether sensation is normal. Contrast is much greater in darker skin, so even subtle hypopigmentation can be distressing and stigmatising.</p>\n<table class=\"hy\"><thead><tr><th>Condition</th><th>Key features</th><th>Next step</th></tr></thead><tbody>\n<tr><td>Vitiligo</td><td>Acquired depigmented macules, often symmetric (periorificial, hands, genitals, friction sites) or segmental; Koebner phenomenon; white hairs</td><td>Clinical with Wood lamp; check TSH</td></tr>\n<tr><td>Piebaldism</td><td>Present at birth; white forelock; stable ventral and limb patches</td><td>Clinical; genetic counselling</td></tr>\n<tr><td>Pityriasis alba</td><td>Children with atopy; faint, slightly scaly hypopigmented patches on cheeks and arms, more obvious after summer</td><td>Emollient, sunscreen, low-potency steroid; reassure</td></tr>\n<tr><td>Pityriasis versicolor</td><td>Fine scale on upper trunk, hypo- or hyperpigmented; adolescents and adults</td><td>KOH shows short hyphae and yeasts; topical azole or selenium sulfide</td></tr>\n<tr><td>Post-inflammatory hypopigmentation</td><td>After eczema, psoriasis, cryotherapy, burns or steroid injections</td><td>Treat the cause; repigments over months</td></tr>\n<tr><td>Idiopathic guttate hypomelanosis</td><td>Many small, sharply defined white macules on sun-exposed shins and forearms of older adults</td><td>Reassurance; sun protection</td></tr>\n<tr><td>Hypomelanotic macules of tuberous sclerosis</td><td>Three or more ash-leaf or confetti macules in an infant or child</td><td>Full tuberous sclerosis evaluation</td></tr>\n<tr><td>Hypopigmented mycosis fungoides</td><td>Persistent, slightly scaly patches on the trunk and buttocks, often in young people with darker skin</td><td>Biopsy</td></tr>\n<tr><td>Leprosy (tuberculoid)</td><td>Hypopigmented patches with reduced sensation and thickened nerves; residence in an endemic area</td><td>Biopsy; sensory testing</td></tr></tbody></table>\n<h2>Vitiligo: assessment and treatment</h2>\n<p>Diagnosis is clinical, helped by a Wood lamp. Biopsy is needed only if the picture is unclear. Signs of <strong>active</strong> disease include confetti-like macules, poorly defined inflamed borders, three-coloured (trichrome) lesions and new lesions at sites of friction or trauma. Check <strong>thyroid function</strong> (TSH, with thyroid peroxidase antibodies where available), because autoimmune thyroid disease is common. Test for other autoimmune diseases only when symptoms suggest them. Ask about the psychological burden and screen for depression and anxiety.</p>\n<ul><li><strong>Limited disease:</strong> a topical corticosteroid for the body, for limited periods; a <strong>topical calcineurin inhibitor</strong> (tacrolimus, pimecrolimus) for the face, eyelids, flexures and genitals, where steroids cause atrophy; or <strong>ruxolitinib cream</strong> for nonsegmental vitiligo in people aged 12 and older over a limited body surface area.</li>\n<li><strong>Widespread or progressive disease:</strong> <strong>narrowband UVB phototherapy</strong> two to three times a week for months, often combined with topical therapy. A short course of oral corticosteroid can halt rapid spread (specialist).</li>\n<li><strong>Stable segmental or localised disease</strong> that has not responded: surgical grafting of melanocytes.</li>\n<li><strong>Very extensive disease</strong> with little remaining pigment: some patients choose permanent depigmentation of the remaining skin with monobenzone.</li>\n<li><strong>For everyone:</strong> broad-spectrum sunscreen for depigmented skin, which burns easily; camouflage cosmetics; and support groups.</li></ul>\n<p>The face and neck respond best, and the hands, feet and lips respond worst. Segmental vitiligo starts young, spreads for a year or two and then stabilises. Nonsegmental vitiligo relapses and remits. In children, calcineurin inhibitors are preferred on the face, and narrowband UVB is safe.</p>\n<h2>Albinism: lifelong care</h2>\n<ul><li><strong>Diagnosis:</strong> clinical (skin, hair and eye findings) and confirmed by genetic testing, which also allows family counselling.</li>\n<li><strong>Eyes:</strong> early paediatric ophthalmology, with correction of refractive errors, low-vision aids, management of strabismus and educational support. Most children attend mainstream school with accommodations. Many adults can drive, depending on local vision standards.</li>\n<li><strong>Skin:</strong> strict sun protection from infancy (shade, long sleeves, wide-brimmed hats, broad-spectrum sunscreen) and regular skin examinations, with early treatment of actinic keratoses and squamous cell carcinoma.</li>\n<li><strong>Red flags for a syndrome:</strong> easy bruising, nosebleeds or heavy menses (Hermansky–Pudlak syndrome; check platelet function before surgery and avoid antiplatelet drugs), recurrent bacterial infections (Chédiak–Higashi syndrome).</li>\n<li><strong>Social:</strong> people with albinism face stigma and, in some regions, violence. Ask about safety and connect families with advocacy groups.</li></ul>\n<div class=\"trap\"><p>A depigmented patch with reduced sensation is not vitiligo until leprosy is excluded in anyone who has lived in an endemic area. Test sensation and feel for thickened nerves.</p></div>\n<div class=\"pearl\"><p>Vitiligo repigments from hair follicles. Expect dots of colour around follicles first, and poor results on lips, fingertips and patches where the hairs have turned white.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Vitiligo"
+    },
+    {
+     "statpearls": "Albinism"
+    },
+    {
+     "label": "MedlinePlus: Skin conditions",
+     "url": "https://medlineplus.gov/skinconditions.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Dark patches: melasma, post-inflammatory hyperpigmentation, lentigines and drug pigment",
+   "html": "<h2>Approach to dark patches</h2>\n<p>Look at the <strong>colour</strong> (brown suggests epidermal melanin; blue-grey suggests dermal melanin or a deposit), the <strong>distribution</strong> (sun-exposed, flexural, mucosal, generalised, at sites of previous inflammation) and the <strong>timeline</strong>. Take a full drug and supplement history, including skin-lightening products. A Wood lamp sharpens epidermal pigment but not dermal pigment.</p>\n<h2>Melasma</h2>\n<p>Melasma is symmetric light- to dark-brown patches on the cheeks, forehead, upper lip, nose and jawline. It is most common in people with darker skin and in women. Triggers are ultraviolet <em>and visible</em> light, heat, estrogen and progestins (pregnancy, combined hormonal contraception, gender-affirming estradiol), and family history. Pregnancy-associated melasma often fades after delivery but may persist.</p>\n<ul><li><strong>Photoprotection is the foundation.</strong> Use daily broad-spectrum sunscreen that is <strong>tinted with iron oxides</strong>, which also block visible light, plus a hat and shade. Reapply sunscreen during the day.</li>\n<li><strong>First-line lightening (outside pregnancy):</strong> topical hydroquinone 4% in courses of a few months, or a triple-combination cream (hydroquinone, a retinoid and a low-potency steroid). Azelaic acid and other tyrosinase inhibitors are alternatives. Long, unsupervised hydroquinone use causes exogenous ochronosis (blue-black darkening), especially in darker skin.</li>\n<li><strong>Refractory melasma:</strong> oral tranexamic acid (off-label) after screening for thrombosis risk (personal or family history of venous thromboembolism, estrogen-containing contraception, smoking). Chemical peels and lasers are used cautiously because they can worsen pigment in darker skin.</li>\n<li><strong>Pregnancy:</strong> photoprotection and azelaic acid. Defer hydroquinone, retinoids and tranexamic acid. Reassess after delivery.</li>\n<li>Where possible, consider a nonestrogen contraceptive (progestin intrauterine device or implant). Melasma tends to relapse, so maintenance therapy and sun protection continue long term.</li></ul>\n<h2>Post-inflammatory hyperpigmentation (PIH)</h2>\n<p>PIH follows acne, eczema, insect bites, burns, lichen planus and cosmetic procedures. It is far more frequent and long-lasting in darker skin, and in acne it is often what bothers patients most. Epidermal PIH is brown and fades over months. Dermal PIH is blue-grey and can last years. <strong>Treat the inflammation first.</strong> For acne-related PIH, a topical retinoid or azelaic acid treats both the acne and the pigment. Add daily sunscreen, and use hydroquinone for persistent patches. Avoid harsh scrubs, irritating regimens and aggressive procedures, which create new PIH.</p>\n<h2>Lentigines and freckles</h2>\n<ul><li><strong>Solar lentigines</strong> (\"age spots\") are uniform tan-brown macules on the face, hands and forearms of older adults. They mark cumulative ultraviolet exposure and higher skin cancer risk. A lesion that is darker, irregular, growing or different from the others needs dermoscopy and possibly biopsy. A large, irregular, slowly enlarging patch on the face of an older adult may be <strong>lentigo maligna</strong> (melanoma in situ). Cosmetic options include cryotherapy (risk of white marks in darker skin), lasers and topical lightening.</li>\n<li><strong>Ephelides</strong> are small tan macules in fair-skinned, often red-haired children. They darken in summer and fade in winter, and their main significance is ultraviolet sensitivity. Counsel on sun protection.</li>\n<li><strong>Multiple lentigines on the lips and buccal mucosa of a child</strong> suggest Peutz–Jeghers syndrome. Check for anaemia and abdominal pain, refer to genetics, and start endoscopic polyp surveillance in childhood (often from about age 8). Lip freckles alone without mucosal involvement are common and benign.</li>\n<li><strong>Café-au-lait macules:</strong> six or more (over 5 mm before puberty, over 15 mm after) with axillary or inguinal freckling suggest neurofibromatosis type 1. Large, jagged-edged macules that respect the midline, with precocious puberty or bone lesions, suggest McCune–Albright syndrome.</li></ul>\n<h2>Drug and systemic causes</h2>\n<table class=\"hy\"><thead><tr><th>Cause</th><th>Pattern</th><th>Action</th></tr></thead><tbody>\n<tr><td>Minocycline</td><td>Blue-grey in scars, on shins and in sun-exposed skin; teeth, sclerae, nails</td><td>Stop the drug; fades slowly; lasers for persistent pigment</td></tr>\n<tr><td>Amiodarone</td><td>Slate-grey to violet in sun-exposed skin after long use; also phototoxicity</td><td>Strict sun protection; discuss alternatives with cardiology; fades slowly after stopping</td></tr>\n<tr><td>Hydroxychloroquine and other antimalarials</td><td>Grey-blue on shins, face and hard palate</td><td>Usually continue if needed; reassure</td></tr>\n<tr><td>Cytotoxic drugs</td><td>Bleomycin: linear \"whip-mark\" streaks; 5-fluorouracil: pigment over veins; hydroxyurea and zidovudine: nail bands</td><td>Usually continue; document</td></tr>\n<tr><td>Silver (colloidal supplements), mercury (some skin-lightening creams)</td><td>Diffuse blue-grey (silver); mercury creams can cause kidney and nerve damage</td><td>Stop exposure; check kidney function and urine protein for mercury</td></tr>\n<tr><td>Primary adrenal insufficiency</td><td>Generalised tan, darker creases, scars, gums and buccal mucosa; fatigue, hypotension, salt craving</td><td>Morning cortisol and ACTH; ACTH stimulation test</td></tr>\n<tr><td>Haemochromatosis</td><td>Bronze-grey skin with diabetes, liver disease, arthropathy</td><td>Transferrin saturation and ferritin; <em>HFE</em> testing</td></tr>\n<tr><td>Vitamin B<sub>12</sub> deficiency</td><td>Hyperpigmentation of the knuckles and palms, especially in darker skin, with anaemia and neuropathy</td><td>B<sub>12</sub> level; replace (strict vegan diet, metformin, malabsorption)</td></tr>\n<tr><td>Acanthosis nigricans</td><td>Velvety dark plaques in the neck and axillae</td><td>HbA1c and assessment for insulin resistance; sudden widespread onset in an older adult suggests internal malignancy</td></tr></tbody></table>\n<p>Physiologic hyperpigmentation of pregnancy (linea nigra, darker areolae and genital skin) needs only reassurance. Many people from regions where skin lighteners are sold use them, and some products contain mercury, potent corticosteroids or high-strength hydroquinone. Ask about them without judgment.</p>\n<div class=\"pearl\"><p>Iron oxide-tinted sunscreen blocks visible light as well as ultraviolet light, and visible light drives melasma, especially in darker skin.</p></div>\n<div class=\"trap\"><p>Hydroquinone used for years without a break can cause exogenous ochronosis, a blue-black darkening that is much harder to treat than the original melasma.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Melasma"
+    },
+    {
+     "statpearls": "Postinflammatory Hyperpigmentation"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. The tyrosinase pathway of melanin synthesis, MC1R control, and the steps that fail in albinism and related syndromes."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. Melanocyte number versus melanin content in common pigmentary disorders."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "Oral antifibrinolytic therapy for melasma (fictional trial)",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> A multicentre, double-blind trial randomly assigned 240 adults (228 women, 12 men; skin phototypes III–VI) with moderate to severe facial melasma to oral tranexamic acid or matching placebo for 12 weeks. All participants used the same iron oxide-tinted broad-spectrum sunscreen daily. Exclusion criteria were pregnancy or breastfeeding, any use of estrogen-containing contraception or hormone therapy, a personal or family history of venous thromboembolism, known thrombophilia, current smoking and anticoagulant use.</p><table><tr><th>Outcome at 12 weeks</th><th>Tranexamic acid (n = 120)</th><th>Placebo (n = 120)</th></tr><tr><td>At least 50% reduction in melasma severity score (primary outcome)</td><td>60 (50%)</td><td>30 (25%)</td></tr><tr><td>Oligomenorrhoea</td><td>10 (8%)</td><td>4 (3%)</td></tr><tr><td>Venous thromboembolism</td><td>0</td><td>0</td></tr></table><p>Twelve weeks after treatment stopped, 40% of responders in the tranexamic acid group had returned to their baseline severity. The authors conclude that oral tranexamic acid is effective and safe for melasma.</p>"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 4-month-old girl born to parents who are first cousins has had white hair, very pale pink skin and blue-grey irides since birth. Her eyes make rapid side-to-side movements, and she squints in bright light. Her parents have typical pigmentation for their family. Genetic testing confirms a form of albinism in which no pigment will develop over time. Loss of function of which of the following enzymes is the most likely cause?</p>",
+   "options": [
+    "DOPA decarboxylase",
+    "Homogentisate 1,2-dioxygenase",
+    "Tyrosinase",
+    "Phenylalanine hydroxylase",
+    "Tyrosine hydroxylase"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Complete absence of skin, hair and eye pigment from birth, with nystagmus and photophobia, in a child of consanguineous parents is <strong>oculocutaneous albinism type 1A</strong>. This autosomal recessive condition is caused by loss-of-function variants in <em>TYR</em>. The melanocytes are present in normal numbers, but <strong>tyrosinase</strong>, the copper-dependent enzyme that converts tyrosine to DOPA and DOPA to dopaquinone inside melanosomes, has no activity. In OCA1A no melanin forms throughout life. Variants with partial activity (OCA1B) allow some pigment to develop.</p><p><strong>Takeaway:</strong> OCA1 is caused by tyrosinase deficiency; melanocyte numbers are normal, but no melanin is made.</p>",
+   "whyNot": {
+    "A": "DOPA decarboxylase converts DOPA to dopamine in catecholamine synthesis; its deficiency causes a neurotransmitter disorder, not albinism.",
+    "B": "Homogentisate dioxygenase deficiency causes alkaptonuria, with dark urine and ochronosis, which is excess pigment rather than absent pigment.",
+    "D": "Phenylalanine hydroxylase deficiency (PKU) causes lighter pigmentation, but untreated infants also have intellectual disability and a musty odour; it does not cause the eye findings of albinism.",
+    "E": "Tyrosine hydroxylase makes L-DOPA for catecholamines in neurons and the adrenal medulla, not melanin in melanocytes."
+   },
+   "objective": "Identify tyrosinase deficiency as the cause of oculocutaneous albinism type 1.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "inborn errors"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman with Hashimoto thyroiditis has had sharply bordered, milk-white patches around her mouth and eyes and on the backs of her hands for 1 year. The patches glow brightly under a Wood lamp, and some of the hairs within them are white. A biopsy of the edge of a patch is examined with stains for melanocyte markers. Which of the following findings in the white skin is most likely?</p>",
+   "options": [
+    "Increased melanophages in the papillary dermis",
+    "Increased number of basal melanocytes",
+    "Normal melanocyte number with little melanin",
+    "Spongiosis with eosinophils",
+    "Absent melanocytes in the basal layer"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Acquired, sharply bordered, depigmented macules around the orifices and on the hands, with leukotrichia and Wood lamp accentuation, in a patient with autoimmune thyroid disease are <strong>vitiligo</strong>. Cytotoxic CD8+ T cells destroy epidermal melanocytes, so stains such as MART-1 or SOX10 show <strong>absent melanocytes</strong> in the lesion, sometimes with a sparse lymphocytic infiltrate at an active edge. This separates vitiligo from albinism and from post-inflammatory hypopigmentation, in which melanocytes remain.</p><p><strong>Takeaway:</strong> Vitiligo skin has no melanocytes; albinism has melanocytes that make little melanin.</p>",
+   "whyNot": {
+    "A": "Melanophages in the dermis indicate dermal pigment, as in post-inflammatory hyperpigmentation, which looks darker, not white.",
+    "B": "More basal melanocytes are seen in lentigines and naevi, which are pigmented.",
+    "C": "Normal melanocyte numbers with little melanin describe albinism or hypopigmentation, not vitiligo.",
+    "D": "Spongiosis with eosinophils suggests eczematous or allergic dermatitis, which does not produce chalk-white, Wood lamp-bright patches."
+   },
+   "objective": "Distinguish vitiligo histologically by the absence of melanocytes.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "autoimmunity"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 3-year-old boy has had five episodes of staphylococcal skin abscesses and pneumonia. He has silvery-grey hair, light skin compared with his parents and siblings, and nystagmus. His blood smear shows neutrophils containing very large cytoplasmic granules. Neutrophil count is mildly decreased. Which of the following best explains his recurrent bacterial infections?</p>",
+   "options": [
+    "Absent CD18 adhesion molecule on leukocytes",
+    "Defective lysosomal trafficking in phagocytes",
+    "Absent NADPH oxidase activity in phagocytes",
+    "Deficiency of the terminal complement components",
+    "Loss of IL-12 receptor signalling"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Partial albinism with silvery hair, nystagmus, recurrent pyogenic infections and <strong>giant cytoplasmic granules</strong> in neutrophils indicate <strong>Chédiak–Higashi syndrome</strong>. It is autosomal recessive and caused by variants in <em>LYST</em>, a regulator of lysosomal trafficking. Lysosome-related organelles fuse abnormally into giant granules. In neutrophils, chemotaxis, degranulation and <strong>phagolysosome fusion</strong> fail, so bacteria are not killed. In melanocytes, melanosomes clump and are poorly transferred, causing the pigment defect. Peripheral neuropathy, bleeding and a life-threatening haemophagocytic “accelerated phase” can follow. Haematopoietic stem cell transplantation treats the immune and haematological disease.</p><p><strong>Takeaway:</strong> Chédiak–Higashi syndrome (<em>LYST</em>) causes partial albinism and infections through defective lysosomal trafficking.</p>",
+   "whyNot": {
+    "A": "Absent CD18 causes leukocyte adhesion deficiency, with delayed umbilical cord separation and neutrophilia, without giant granules or albinism.",
+    "C": "Absent NADPH oxidase causes chronic granulomatous disease, with catalase-positive infections and normal pigmentation.",
+    "D": "Terminal complement deficiency predisposes to recurrent <em>Neisseria</em> infections, not staphylococcal abscesses with albinism.",
+    "E": "IL-12 receptor defects cause mycobacterial and <em>Salmonella</em> infections with normal pigmentation."
+   },
+   "objective": "Explain Chédiak–Higashi syndrome as a defect of lysosomal trafficking causing partial albinism and pyogenic infections.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "immunodeficiency"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman whose family comes from northwest Puerto Rico has had light skin, light hair and reduced vision with nystagmus since childhood. She bruises easily, had heavy bleeding after a dental extraction, and has had progressive breathlessness on exertion for a year. Platelet count is 245,000/mm<sup>3</sup>, and PT and aPTT are within the reference ranges. Electron microscopy of her platelets shows almost no dense granules. Chest CT shows bilateral reticular opacities in the lower lobes. A defect in which of the following cellular processes best explains her findings?</p>",
+   "options": [
+    "Biogenesis of lysosome-related organelles",
+    "Glycosylation of von Willebrand factor",
+    "Mitochondrial oxidative phosphorylation",
+    "Peroxisomal fatty acid oxidation",
+    "Vesicle transport from the endoplasmic reticulum to Golgi"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Albinism with poor vision, a platelet storage-pool bleeding disorder (normal count and coagulation times, absent <strong>dense granules</strong>) and pulmonary fibrosis in a person of northwest Puerto Rican ancestry indicate <strong>Hermansky–Pudlak syndrome</strong>. It is autosomal recessive and caused by variants in genes for protein complexes (BLOC and AP-3) that build <strong>lysosome-related organelles</strong>, a family that includes melanosomes, platelet dense granules and lamellar bodies in type II pneumocytes. Faulty melanosomes cause albinism, missing dense granules impair platelet aggregation, and abnormal lamellar bodies lead to pulmonary fibrosis in some subtypes.</p><p><strong>Takeaway:</strong> Hermansky–Pudlak syndrome links albinism, bleeding and lung fibrosis through defective biogenesis of lysosome-related organelles.</p>",
+   "whyNot": {
+    "B": "Abnormal von Willebrand factor causes mucocutaneous bleeding but not albinism or pulmonary fibrosis, and dense granules are normal.",
+    "C": "Mitochondrial disorders cause myopathy, lactic acidosis and neurological disease rather than albinism with a storage-pool defect.",
+    "D": "Peroxisomal disorders such as adrenoleukodystrophy cause neurological and adrenal disease, not albinism and bleeding.",
+    "E": "ER-to-Golgi transport defects cause other syndromes (for example, combined factor V and VIII deficiency) without albinism."
+   },
+   "objective": "Recognise Hermansky–Pudlak syndrome as a disorder of lysosome-related organelle biogenesis.",
+   "extraAreas": [],
+   "disciplines": [
+    "histology_cell_biology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "bleeding disorders"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old man has had fatigue, weight loss, salt craving and dizziness on standing for 4 months. His skin has darkened, most noticeably in his palmar creases, knuckles, a recent surgical scar and the inside of his cheeks. Blood pressure is 92/58 mm Hg. Serum sodium is 129 mEq/L (129 mmol/L) and potassium is 5.6 mEq/L (5.6 mmol/L). Increased production of which of the following best explains his skin changes?</p>",
+   "options": [
+    "Aldosterone",
+    "Cortisol",
+    "Melatonin",
+    "Pro-opiomelanocortin",
+    "Thyroid-stimulating hormone"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Fatigue, weight loss, orthostatic hypotension, salt craving, hyponatraemia, hyperkalaemia and hyperpigmentation of creases, scars and buccal mucosa indicate <strong>primary adrenal insufficiency</strong> (Addison disease). Low cortisol removes negative feedback on the pituitary, so corticotrophs make more <strong>pro-opiomelanocortin (POMC)</strong>. POMC is cleaved into ACTH and melanocyte-stimulating hormones. ACTH contains the α-MSH sequence, and both stimulate MC1R on melanocytes, increasing eumelanin. Secondary (pituitary) adrenal insufficiency has low ACTH and causes no hyperpigmentation.</p><p><strong>Takeaway:</strong> In primary adrenal insufficiency, high POMC-derived ACTH and MSH activate MC1R and darken the skin.</p>",
+   "whyNot": {
+    "A": "Aldosterone is low in primary adrenal insufficiency, which explains the hyperkalaemia; it does not affect pigmentation.",
+    "B": "Cortisol is low, and the loss of its feedback is what drives the excess POMC.",
+    "C": "Melatonin regulates circadian rhythm in humans and does not darken the skin.",
+    "E": "TSH is not raised in adrenal insufficiency and does not cause hyperpigmentation."
+   },
+   "objective": "Explain hyperpigmentation in primary adrenal insufficiency by increased POMC cleavage to ACTH and MSH.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hyperpigmentation",
+    "endocrine disease"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 12-year-old girl is brought to the emergency department with colicky abdominal pain and vomiting. Ultrasonography shows a jejunojejunal intussusception, which is reduced surgically. A 2-cm polyp is found at the lead point. Histology shows branching bands of smooth muscle covered by normal-appearing mucosa. Examination shows many 2–5 mm dark brown macules on her lips, buccal mucosa and fingertips. Her father had similar spots. A germline loss-of-function variant in a gene encoding which of the following is most likely?</p>",
+   "options": [
+    "GTPase-activating protein that inactivates Ras",
+    "Non-receptor protein tyrosine phosphatase",
+    "Receptor tyrosine kinase for stem cell factor",
+    "Regulatory subunit of protein kinase A",
+    "Serine/threonine kinase upstream of AMPK"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Mucocutaneous lentigines on the lips, buccal mucosa and digits, hamartomatous small-bowel polyps with branching smooth muscle, intussusception and autosomal dominant inheritance define <strong>Peutz–Jeghers syndrome</strong>. It is caused by variants in <em>STK11</em> (<em>LKB1</em>), a tumour-suppressor <strong>serine/threonine kinase</strong> that activates AMP-activated protein kinase and so restrains mTOR signalling. Affected people need lifelong surveillance for GI, pancreatic, breast and gonadal cancers. The pigmented macules may fade in adulthood, but buccal macules usually persist.</p><p><strong>Takeaway:</strong> Mucosal lentigines with hamartomatous polyps mean Peutz–Jeghers syndrome, caused by <em>STK11</em>, a serine/threonine kinase.</p>",
+   "whyNot": {
+    "A": "A Ras GTPase-activating protein (neurofibromin) is lost in NF1, which causes café-au-lait macules and neurofibromas, not mucosal lentigines and polyps.",
+    "B": "A protein tyrosine phosphatase (SHP2, <em>PTPN11</em>) is altered in Noonan syndrome with multiple lentigines, which lacks GI hamartomas.",
+    "C": "Receptor tyrosine kinases (for example, KIT in piebaldism, RET in MEN2) are not the defect in this syndrome.",
+    "D": "The protein kinase A regulatory subunit (<em>PRKAR1A</em>) is mutated in Carney complex, which links lentigines with cardiac myxomas."
+   },
+   "objective": "Link mucocutaneous lentigines and hamartomatous polyps to STK11 in Peutz–Jeghers syndrome.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hyperpigmentation",
+    "hereditary cancer"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A newborn girl has a white forelock and sharply bordered white patches on the central forehead, abdomen and both knees. The patches contain small islands of normal and darker pigment. Her mother and grandfather have the same pattern, which has not changed over their lives. Hearing and eye examinations are normal, and the irides are the same colour. A biopsy would show no melanocytes in the white skin. A loss-of-function variant in a gene for which of the following is most likely?</p>",
+   "options": [
+    "Melanocortin 1 receptor",
+    "Stem cell factor receptor (KIT)",
+    "PAX3 transcription factor",
+    "P protein of the melanosome membrane",
+    "Tyrosinase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A congenital, stable white forelock and symmetric ventral and knee patches without melanocytes, inherited in an autosomal dominant pattern, with normal hearing and irides, is <strong>piebaldism</strong>. Heterozygous loss-of-function variants in <em>KIT</em>, the receptor tyrosine kinase for stem cell factor, impair the <strong>migration and survival of neural crest-derived melanoblasts</strong>. Melanocytes therefore never populate those areas, especially the ventral midline. Unlike vitiligo, the patches are present at birth and do not spread.</p><p><strong>Takeaway:</strong> Piebaldism is a congenital, stable absence of melanocytes caused by <em>KIT</em> variants that disrupt melanoblast migration.</p>",
+   "whyNot": {
+    "A": "MC1R variants change the eumelanin to pheomelanin ratio, causing red hair and freckles, not white patches without melanocytes.",
+    "C": "<em>PAX3</em> variants cause Waardenburg syndrome type 1, which adds sensorineural deafness, dystopia canthorum and heterochromia irides.",
+    "D": "P protein (<em>OCA2</em>) defects cause diffuse albinism with eye involvement, and melanocytes are present.",
+    "E": "Tyrosinase defects cause diffuse albinism with normal melanocyte numbers, not patchy white skin."
+   },
+   "objective": "Identify piebaldism as a KIT-related failure of melanoblast migration.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "congenital skin markers"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-year-old girl with red hair and fair skin has many small, light-brown macules on her cheeks, nose and forearms. They appeared at age 3, become darker and more numerous every summer and fade each winter. She burns easily and rarely tans. Her father has the same features. A variant in which of the following genes is most likely to explain her pigment phenotype?</p>",
+   "options": [
+    "<em>KIT</em>",
+    "<em>NF1</em>",
+    "<em>STK11</em>",
+    "<em>MC1R</em>",
+    "<em>TYR</em>"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Red hair, fair skin that burns, and <strong>ephelides</strong> (freckles) that darken in summer and fade in winter are the classic phenotype of <strong>loss-of-function <em>MC1R</em> variants</strong>. MC1R is a G<sub>s</sub>-coupled receptor for α-MSH. When it signals poorly, melanocytes make mostly red-yellow pheomelanin instead of brown-black eumelanin. Pheomelanin protects less against ultraviolet light and generates more reactive oxygen species. Freckles contain a <strong>normal number of melanocytes</strong> that make more melanin after sun exposure. These children have a higher risk of melanoma and need consistent sun protection.</p><p><strong>Takeaway:</strong> <em>MC1R</em> variants cause red hair, freckling and ultraviolet sensitivity, with a higher melanoma risk.</p>",
+   "whyNot": {
+    "A": "<em>KIT</em> variants cause piebaldism (white patches without melanocytes), not freckling.",
+    "B": "<em>NF1</em> variants cause café-au-lait macules and axillary freckling that do not fade in winter, along with neurofibromas.",
+    "C": "<em>STK11</em> variants cause mucocutaneous lentigines that do not depend on sun exposure.",
+    "E": "<em>TYR</em> loss causes albinism with little pigment, not seasonal freckles."
+   },
+   "objective": "Relate MC1R variants to red hair, freckling and ultraviolet sensitivity.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old woman has had white patches on her fingers, around her mouth and on her knees for 6 months. She feels well but has had some hair thinning and constipation. Examination shows symmetric, sharply bordered, depigmented macules that glow brightly under a Wood lamp, without scale. Thyroid examination shows a firm, slightly enlarged gland. In addition to discussing treatment options, which of the following laboratory tests is most appropriate?</p>",
+   "options": [
+    "Serum TSH",
+    "Antinuclear antibody titre",
+    "Fasting plasma glucose",
+    "Morning serum cortisol",
+    "Serum vitamin B<sub>12</sub> concentration"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Symmetric, Wood lamp-bright depigmented macules in acral and periorificial sites are <strong>vitiligo</strong>. Autoimmune thyroid disease is the most common associated autoimmune condition, and this patient has symptoms (hair thinning, constipation) and a goitre suggesting <strong>Hashimoto thyroiditis</strong>. Measuring <strong>TSH</strong> (with thyroid peroxidase antibodies where available) is recommended when vitiligo is diagnosed. Other autoimmune screening is guided by symptoms rather than done routinely.</p><p><strong>Takeaway:</strong> Check thyroid function in people with vitiligo; autoimmune thyroid disease is the commonest association.</p>",
+   "whyNot": {
+    "B": "An ANA is not part of routine vitiligo assessment and would not explain her thyroid symptoms.",
+    "C": "Type 1 diabetes is associated, but she has no symptoms of hyperglycaemia; thyroid testing is the priority.",
+    "D": "Addison disease is a rarer association and she has no hypotension, salt craving or hyperpigmentation.",
+    "E": "Pernicious anaemia is associated, but she has no anaemia or neurological symptoms; testing is guided by symptoms."
+   },
+   "objective": "Screen patients with vitiligo for autoimmune thyroid disease with a TSH.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "autoimmunity"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-year-old boy has had white patches around both eyes and on his eyelids for 5 months, and they are slowly enlarging. His older brother has vitiligo. Examination shows symmetric, sharply bordered, depigmented macules on both upper eyelids and in the periorbital skin, about 1% of body surface area, with no other lesions. TSH is normal. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    "High-potency topical corticosteroid twice daily for 6 months",
+    "Topical tacrolimus",
+    "Oral prednisone for 4 weeks",
+    "Topical hydroquinone 4%",
+    "Topical monobenzone"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Limited facial and eyelid <strong>vitiligo</strong> in a child is best treated first with a <strong>topical calcineurin inhibitor</strong> such as tacrolimus. These drugs suppress T-cell activation without causing skin atrophy, telangiectasia or (around the eyes) glaucoma and cataract, which are risks of prolonged steroid use on thin facial skin. Ruxolitinib cream is approved from age 12 and narrowband UVB is used for more extensive disease. Sun protection of the depigmented skin and psychological support are part of care.</p><p><strong>Takeaway:</strong> Use topical calcineurin inhibitors for vitiligo on the face and eyelids, especially in children.</p>",
+   "whyNot": {
+    "A": "Long courses of high-potency steroids on eyelid skin risk atrophy, glaucoma and cataract.",
+    "C": "Systemic corticosteroids are reserved for rapidly progressive widespread disease, not 1% stable-to-slow facial vitiligo.",
+    "D": "Hydroquinone lightens pigmented skin and would widen the contrast; it does not repigment vitiligo.",
+    "E": "Monobenzone permanently destroys melanocytes and is used only to depigment remaining skin in very extensive disease."
+   },
+   "objective": "Treat limited facial vitiligo in a child with a topical calcineurin inhibitor.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "pediatric dermatology"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 35-year-old man with darker skin has had vitiligo for 3 years. Over the past 6 months, new depigmented patches have appeared on his trunk, arms, legs, hands and face, and they now cover about 30% of his body surface. Several new lesions have appeared in scratches and at his belt line. Topical corticosteroids applied to selected patches helped only a little. He finds the appearance very distressing. TSH is normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Autologous melanocyte grafting of all patches",
+    "Monobenzone to depigment the remaining skin",
+    "Oral isotretinoin",
+    "Topical hydroquinone to the normal skin",
+    "Narrowband UVB phototherapy"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>He has <strong>widespread, active nonsegmental vitiligo</strong>: about 30% of body surface, new lesions and a Koebner phenomenon at sites of trauma. Topical therapy is impractical at this extent. <strong>Narrowband UVB phototherapy</strong>, two to three times a week for months, is the standard next step. It suppresses the immune attack and stimulates follicular melanocyte stem cells. A short course of oral corticosteroid can be added to halt rapid spread. Topical agents can continue on the face. The distress he describes warrants psychological support.</p><p><strong>Takeaway:</strong> Widespread or rapidly spreading vitiligo is treated with narrowband UVB phototherapy.</p>",
+   "whyNot": {
+    "A": "Grafting is only for small, stable patches; it fails in active disease and is impractical for 30% of the body.",
+    "B": "Depigmentation with monobenzone is permanent and is considered only with very extensive disease and little remaining pigment, after counselling.",
+    "C": "Isotretinoin has no role in vitiligo.",
+    "D": "Bleaching normal skin is not standard care, and hydroquinone cannot produce uniform, permanent depigmentation."
+   },
+   "objective": "Choose narrowband UVB phototherapy for widespread, active vitiligo.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "skin of colour"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 74-year-old man has noticed a blue-grey discolouration of his face, ears and the backs of his hands over the past year. It is worse in summer, and his skin burns easily in sunlight. He has no new symptoms otherwise. Covered skin and his mucous membranes are normal in colour. His medication list:</p><table><tr><th>Medication</th><th>Duration</th></tr><tr><td>Amiodarone 200 mg daily</td><td>4 years</td></tr><tr><td>Apixaban 5 mg twice daily</td><td>4 years</td></tr><tr><td>Lisinopril 10 mg daily</td><td>9 years</td></tr><tr><td>Metoprolol succinate 50 mg daily</td><td>4 years</td></tr><tr><td>Tamsulosin 0.4 mg daily</td><td>2 years</td></tr></table><p>Which of the following is the most likely cause of his skin change?</p>",
+   "options": [
+    "Apixaban",
+    "Lisinopril",
+    "Amiodarone",
+    "Metoprolol",
+    "Tamsulosin"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A slate-grey to blue-grey discolouration limited to <strong>sun-exposed skin</strong> after years of treatment, together with easy burning, is typical of <strong>amiodarone</strong>. The drug causes phototoxicity, and long-term use leads to lipofuscin-like drug–lipid deposits and melanin in dermal macrophages. Management is strict sun protection and a discussion with cardiology about alternatives. The pigment fades only slowly, over months to years, after the drug is stopped. Amiodarone also needs monitoring for thyroid, liver, lung and eye toxicity.</p><p><strong>Takeaway:</strong> Blue-grey photodistributed pigmentation after long-term therapy suggests amiodarone.</p>",
+   "whyNot": {
+    "A": "Apixaban can cause bruising, which is patchy, purple and evolving, not a stable, photodistributed blue-grey colour.",
+    "B": "Lisinopril causes cough and angio-oedema and is rarely photosensitising, but it does not cause blue-grey pigmentation.",
+    "D": "Metoprolol does not cause pigmentation; β-blockers may worsen psoriasis.",
+    "E": "Tamsulosin causes orthostatic hypotension and floppy iris syndrome, not skin pigmentation."
+   },
+   "objective": "Identify amiodarone as a cause of blue-grey photodistributed hyperpigmentation.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hyperpigmentation",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman at 22 weeks' gestation has had symmetric brown patches on her cheeks, upper lip and forehead for 2 months. The patches have well-defined, irregular borders and become more obvious under a Wood lamp. Before pregnancy she took a combined oral contraceptive. She works outdoors as a school sports coach and asks for something to fade the patches before her wedding photographs in 3 months. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Oral tranexamic acid daily until delivery",
+    "Q-switched laser sessions in the second trimester",
+    "Topical hydroquinone 4% nightly on the patches",
+    "Tinted (iron oxide) sunscreen plus azelaic acid",
+    "Triple-combination cream with tretinoin"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Symmetric brown facial patches that appear during pregnancy and are accentuated by a Wood lamp (epidermal pigment) are <strong>melasma</strong>. Hormones and ultraviolet and visible light drive it. In pregnancy the cornerstone is <strong>strict photoprotection</strong> with a broad-spectrum sunscreen tinted with <strong>iron oxides</strong>, which block visible light, along with hats and shade. <strong>Azelaic acid</strong> is a lightening agent considered acceptable in pregnancy. Hydroquinone, retinoids and oral tranexamic acid are deferred until after pregnancy (and usually breastfeeding). Melasma often improves after delivery, and avoiding estrogen-containing contraception afterwards reduces recurrence.</p><p><strong>Takeaway:</strong> In pregnancy, manage melasma with tinted sunscreen and azelaic acid; defer hydroquinone, retinoids and tranexamic acid.</p>",
+   "whyNot": {
+    "A": "Tranexamic acid increases thrombotic risk, which is already raised in pregnancy, and is not used for melasma during pregnancy.",
+    "B": "Lasers can worsen melasma and cause post-inflammatory hyperpigmentation in darker skin; they are not first-line and not suitable during pregnancy.",
+    "C": "Hydroquinone is substantially absorbed through the skin and is generally avoided during pregnancy.",
+    "E": "Triple-combination cream contains a retinoid, which is avoided in pregnancy."
+   },
+   "objective": "Manage melasma in pregnancy with tinted sunscreen and azelaic acid while deferring other lightening agents.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hyperpigmentation",
+    "pregnancy"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old Black woman is upset by dark spots on her cheeks and jawline. She has had acne for 4 years and picks at the lesions. Examination shows scattered comedones, about 15 inflammatory papules and many flat, dark-brown macules at sites of previous lesions. There are no nodules or scars. She is not pregnant and uses a progestin implant for contraception. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Topical retinoid and benzoyl peroxide plus sunscreen",
+    "Aggressive mechanical microdermabrasion every month",
+    "Medium-depth chemical peel every 4 weeks",
+    "Oral isotretinoin for 5 months with monthly labs",
+    "Topical hydroquinone 4% alone on the dark spots"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has mild to moderate inflammatory acne with <strong>post-inflammatory hyperpigmentation</strong> (PIH), which is common and long-lasting in darker skin and often the patient's main concern. The key principle is to <strong>treat the inflammation that creates new pigment</strong>. A <strong>topical retinoid</strong> treats comedones and inflammation and also speeds the fading of epidermal PIH. Benzoyl peroxide adds antibacterial action. Daily sunscreen limits darkening of existing spots. Azelaic acid is a good alternative or addition. Discourage picking. Irritating procedures can themselves cause new PIH.</p><p><strong>Takeaway:</strong> For acne-related PIH, treat the acne with a retinoid-based regimen and add sunscreen; lightening agents come second.</p>",
+   "whyNot": {
+    "B": "Aggressive abrasion irritates darker skin and can cause more post-inflammatory hyperpigmentation.",
+    "C": "Medium-depth peels carry a high risk of dyspigmentation in darker skin and are not first-line.",
+    "D": "Isotretinoin is reserved for severe, nodular, scarring or refractory acne; her acne is mild to moderate.",
+    "E": "Hydroquinone alone may fade existing spots, but new PIH will keep forming if the acne is not treated."
+   },
+   "objective": "Treat acne-related post-inflammatory hyperpigmentation by controlling inflammation with a retinoid-based regimen and sunscreen.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hyperpigmentation",
+    "skin of colour"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 6-year-old boy with oculocutaneous albinism type 2, who recently immigrated from Tanzania, comes for his first well-child visit. He has nystagmus, wears glasses and is doing well in school with large-print materials. His skin is very fair and burns easily. Several freckles and a few small rough, scaly spots are present on his face, ears and the backs of his hands. His parents ask what the main long-term threat to his health from his skin is. Which of the following cancers is he at greatest risk of developing?</p>",
+   "options": [
+    "Cutaneous melanoma",
+    "Dermatofibrosarcoma protuberans",
+    "Cutaneous squamous cell carcinoma",
+    "Kaposi sarcoma",
+    "Merkel cell carcinoma"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>People with <strong>oculocutaneous albinism</strong> have normal numbers of melanocytes but little melanin to absorb ultraviolet light. Chronic ultraviolet damage begins in childhood, with actinic keratoses (the rough, scaly spots) appearing early. <strong>Cutaneous squamous cell carcinoma</strong> is the leading skin cancer and a major cause of death, especially in sunny regions with limited access to dermatology. Melanoma is less common than expected given the extreme photosensitivity. Care includes strict photoprotection, regular skin examinations and early treatment of actinic keratoses.</p><p><strong>Takeaway:</strong> In albinism, squamous cell carcinoma is the main skin cancer risk; prevent it with lifelong photoprotection and surveillance.</p>",
+   "whyNot": {
+    "A": "Melanoma does occur in albinism, but squamous cell carcinoma is far more common in people with albinism.",
+    "B": "DFSP is a rare dermal sarcoma unrelated to ultraviolet exposure or albinism.",
+    "D": "Kaposi sarcoma depends on HHV-8 and immunosuppression, not on albinism.",
+    "E": "Merkel cell carcinoma is rare and occurs mainly in older or immunosuppressed adults."
+   },
+   "objective": "Counsel families that squamous cell carcinoma is the main skin cancer risk in albinism.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pigment disorders",
+    "cancer prevention"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>Based on the study results, approximately how many patients must be treated with tranexamic acid for 12 weeks for one additional patient to achieve at least a 50% reduction in melasma severity?</p>",
+   "options": [
+    "2",
+    "4",
+    "10",
+    "25",
+    "50"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The primary outcome occurred in 50% of the tranexamic acid group and 25% of the placebo group. The <strong>absolute risk reduction</strong> (here, an absolute benefit increase) is 0.50 − 0.25 = 0.25. The <strong>number needed to treat</strong> is 1/0.25 = <strong>4</strong>. Four patients must be treated for 12 weeks for one more to reach the response threshold than with sunscreen and placebo alone.</p><p><strong>Takeaway:</strong> NNT = 1 / absolute difference in event rates; a 25-percentage-point difference gives an NNT of 4.</p>",
+   "whyNot": {
+    "A": "An NNT of 2 would need a 50-percentage-point difference; 50% is the response rate in the treated group, not the difference.",
+    "C": "An NNT of 10 would follow from a 10-percentage-point difference, which is not what was observed.",
+    "D": "25 confuses the placebo response rate (25%) with the NNT.",
+    "E": "50 confuses the treatment response rate (50%) with the NNT."
+   },
+   "objective": "Calculate the number needed to treat from response rates in a melasma trial.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hyperpigmentation",
+    "study interpretation"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>A 36-year-old woman with melasma read about this trial and asks whether the treatment is right for her. She takes a combined estrogen–progestin pill, which she wants to continue, and her mother had a pulmonary embolism at age 50. Which of the following is the most accurate interpretation of the trial for her?</p>",
+   "options": [
+    "Because no thromboembolism occurred, the drug is proven safe for her",
+    "The relapse data show that the benefit persists after stopping",
+    "The response rate in men was too low to draw conclusions about women",
+    "Its findings on thrombotic safety do not apply to her, because people like her were excluded",
+    "The trial shows the drug works only when combined with sunscreen in people taking estrogen"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The trial deliberately <strong>excluded</strong> people taking estrogen-containing contraception and people with a personal or family history of venous thromboembolism, because tranexamic acid is an antifibrinolytic. This patient has both exclusion features. The trial's finding of <strong>no thromboembolic events cannot be generalised</strong> to her: this is a question of <strong>external validity (applicability)</strong>. A sample of 120 treated low-risk participants is also far too small to detect a rare serious harm. The authors' conclusion that the drug is “safe” goes beyond what the design can show for higher-risk people. For her, tranexamic acid would generally be avoided or require specialist review, and photoprotection and topical therapy remain first line.</p><p><strong>Takeaway:</strong> Results do not apply to patients the trial excluded, and small trials cannot rule out rare serious harms.</p>",
+   "whyNot": {
+    "A": "Zero events among 120 low-risk participants cannot exclude a clinically important risk, especially in an excluded higher-risk group.",
+    "B": "The relapse data show the opposite: 40% of responders lost their improvement within 12 weeks of stopping.",
+    "C": "Men made up a small part of the sample, but that does not determine how the results apply to her; the key issue is exclusion of her risk group.",
+    "E": "People taking estrogen were excluded, so the trial says nothing about efficacy or safety in them."
+   },
+   "objective": "Judge the applicability of a trial to a patient with features that were exclusion criteria.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "obgyn"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hyperpigmentation",
+    "study interpretation"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Embryologic origin of melanocytes?",
+   "back": "Neural crest.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Do people with darker skin have more melanocytes?",
+   "back": "No. Numbers are similar; melanosomes are larger, more numerous and dispersed, with more eumelanin.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Enzyme deficient in OCA1, and its cofactor?",
+   "back": "Tyrosinase; copper.",
+   "question": 1
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Commonest type of albinism worldwide?",
+   "back": "OCA2 (P protein, OCA2 gene).",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Vitiligo vs albinism on biopsy?",
+   "back": "Vitiligo: melanocytes absent. Albinism: melanocytes present but making little melanin.",
+   "question": 2
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Albinism plus bleeding plus pulmonary fibrosis?",
+   "back": "Hermansky–Pudlak syndrome (defective lysosome-related organelles, absent platelet dense granules).",
+   "question": 4
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Partial albinism, giant neutrophil granules, recurrent pyogenic infections?",
+   "back": "Chédiak–Higashi syndrome (LYST).",
+   "question": 3
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why does primary adrenal insufficiency darken the skin?",
+   "back": "Low cortisol increases POMC; ACTH and α-MSH stimulate MC1R.",
+   "question": 5
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Where does repigmentation start in treated vitiligo, and why?",
+   "back": "Around hair follicles, from melanocyte stem cells in the follicle.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 1,
+   "front": "Congenital stable white forelock with ventral white patches, no deafness?",
+   "back": "Piebaldism (KIT).",
+   "question": 7
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Depigmented vs hypopigmented on Wood lamp?",
+   "back": "Depigmented (no melanin, as in vitiligo) glows bright white; hypopigmented is less accentuated.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Lab test recommended at vitiligo diagnosis?",
+   "back": "TSH (with thyroid peroxidase antibodies where available).",
+   "question": 9
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "First-line treatment for vitiligo on the face or eyelids?",
+   "back": "Topical calcineurin inhibitor (tacrolimus, pimecrolimus).",
+   "question": 10
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Treatment for widespread or rapidly spreading vitiligo?",
+   "back": "Narrowband UVB phototherapy (with or without a short oral steroid course).",
+   "question": 11
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Topical JAK inhibitor approved for nonsegmental vitiligo?",
+   "back": "Ruxolitinib cream (age 12 and older, limited body surface).",
+   "question": null
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Main skin cancer in people with albinism?",
+   "back": "Cutaneous squamous cell carcinoma.",
+   "question": 15
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Hypopigmented patch with reduced sensation in someone from an endemic area?",
+   "back": "Consider leprosy: test sensation, feel nerves, biopsy.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Faint scaly light patches on the cheeks of a child with atopy?",
+   "back": "Pityriasis alba; emollient, sunscreen and reassurance.",
+   "question": null
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Foundation of melasma treatment?",
+   "back": "Iron oxide-tinted broad-spectrum sunscreen (blocks visible light) and photoprotection.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Melasma treatment that is acceptable in pregnancy?",
+   "back": "Photoprotection plus azelaic acid; defer hydroquinone, retinoids and tranexamic acid.",
+   "question": 13
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Complication of prolonged hydroquinone use?",
+   "back": "Exogenous ochronosis (blue-black darkening).",
+   "question": null
+  },
+  {
+   "n": 22,
+   "section": 3,
+   "front": "Before oral tranexamic acid for melasma, screen for what?",
+   "back": "Thrombosis risk: VTE history, thrombophilia, estrogen-containing contraception, smoking.",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 3,
+   "front": "First step for acne-related PIH?",
+   "back": "Treat the acne (topical retinoid-based regimen) and add sunscreen.",
+   "question": 14
+  },
+  {
+   "n": 24,
+   "section": 3,
+   "front": "Blue-grey pigment only on sun-exposed skin after years of an antiarrhythmic?",
+   "back": "Amiodarone.",
+   "question": 12
+  },
+  {
+   "n": 25,
+   "section": 3,
+   "front": "Mucosal lentigines in a child with abdominal pain?",
+   "back": "Peutz–Jeghers syndrome; genetics referral and GI surveillance.",
+   "question": null
+  },
+  {
+   "n": 26,
+   "section": 3,
+   "front": "Hyperpigmented knuckles with anaemia and neuropathy?",
+   "back": "Vitamin B12 deficiency.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 3,
+   "front": "NNT formula?",
+   "back": "1 divided by the absolute difference in event rates.",
+   "question": 16
+  }
+ ]
+}

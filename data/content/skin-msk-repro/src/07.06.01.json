@@ -123,7 +123,7 @@
    "tasks": [
     "medical_knowledge"
    ],
-   "difficulty": 4,
+   "difficulty": 5,
    "references": [],
    "figures": [],
    "tags": [
@@ -507,7 +507,7 @@
    "tasks": [
     "pbli"
    ],
-   "difficulty": 3,
+   "difficulty": 4,
    "references": [],
    "figures": [],
    "tags": [

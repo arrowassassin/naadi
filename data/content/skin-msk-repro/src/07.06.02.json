@@ -1,0 +1,721 @@
+{
+ "area": "07.06.02",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Malignant hyperthermia and other drug effects on muscle, tendon and bone: mechanisms",
+   "html": "<p>Malignant hyperthermia (MH) is a pharmacogenetic disorder of skeletal muscle. In susceptible people, certain anesthetics open the calcium floodgates of the sarcoplasmic reticulum. This section also covers other drug effects on the musculoskeletal system that are tested by mechanism: succinylcholine hyperkalemia, fluoroquinolone tendon injury, and glucocorticoid damage to bone.</p>\n<h3>Excitation–contraction coupling</h3>\n<p>An action potential travels down the T-tubule and changes the shape of the <strong>dihydropyridine receptor</strong> (DHPR, the L-type calcium channel Ca<sub>v</sub>1.1, gene <em>CACNA1S</em>). In skeletal muscle the DHPR is mechanically linked (through the adaptor STAC3) to the <strong>ryanodine receptor type 1</strong> (RYR1), the calcium release channel of the sarcoplasmic reticulum. RYR1 opens, Ca<sup>2+</sup> binds troponin C and cross-bridges cycle. Relaxation needs ATP: SERCA pumps calcium back into the sarcoplasmic reticulum, and myosin needs ATP to detach from actin.</p>\n[[figure:s23f-fig070602-1]]\n<h3>Malignant hyperthermia</h3>\n<ul>\n<li><strong>Genetics:</strong> autosomal dominant with variable penetrance. Most families carry gain-of-function variants in <strong><em>RYR1</em></strong>; fewer carry <em>CACNA1S</em> variants, and <em>STAC3</em> causes a related myopathy. A susceptible person may have had uneventful anesthetics before. First-degree relatives have up to a 50% chance of carrying the variant.</li>\n<li><strong>Associated myopathies:</strong> central core disease and other <em>RYR1</em>-related congenital myopathies, King–Denborough syndrome and Native American myopathy carry MH risk. Some <em>RYR1</em> variants are also linked to exertional heat illness and exertional rhabdomyolysis. Duchenne and Becker muscular dystrophies are <em>not</em> MH, but succinylcholine and volatile agents can cause rhabdomyolysis and hyperkalemic cardiac arrest in them.</li>\n<li><strong>Triggers:</strong> all potent volatile anesthetics (sevoflurane, desflurane, isoflurane, halothane) and succinylcholine. Safe: propofol, etomidate, ketamine, barbiturates, benzodiazepines, opioids, nitrous oxide, nondepolarizing neuromuscular blockers and local anesthetics.</li>\n<li><strong>Pathophysiology:</strong> mutant RYR1 leaks calcium when exposed to a trigger. Cytosolic calcium stays high, causing sustained contraction (masseter spasm, generalized rigidity). ATP is consumed frantically by SERCA and myosin. Aerobic and then anaerobic metabolism accelerate, producing CO<sub>2</sub>, heat and lactate. Eventually the membrane fails (rhabdomyolysis), releasing potassium, myoglobin and CK.</li>\n<li><strong>Clinical sequence:</strong> an unexplained rise in end-tidal CO<sub>2</sub> despite more ventilation (often the earliest sign), tachycardia, rigidity, mixed respiratory and metabolic acidosis, hyperkalemia with arrhythmias, then a rising temperature (often a late sign), myoglobinuria, DIC and kidney failure.</li>\n<li><strong>Dantrolene</strong> binds RYR1 and reduces calcium release from the sarcoplasmic reticulum without blocking neuromuscular transmission. It is the specific antidote. It also has a role in severe neuroleptic malignant syndrome and in spasticity. Adverse effects: weakness (including of breathing and swallowing), and hepatotoxicity with long-term oral use.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Malignant hyperthermia</th><th>Neuroleptic malignant syndrome</th><th>Serotonin syndrome</th><th>Exertional heat stroke</th></tr></thead>\n<tbody>\n<tr><td>Trigger</td><td>Volatile anesthetic, succinylcholine</td><td>Dopamine antagonists, or stopping levodopa</td><td>Serotonergic drug combinations</td><td>Exercise in heat</td></tr>\n<tr><td>Onset</td><td>Minutes to hours</td><td>Days</td><td>Hours</td><td>During exertion</td></tr>\n<tr><td>Mechanism</td><td>RYR1 calcium leak in muscle</td><td>Central D2 blockade</td><td>Excess 5-HT2A stimulation</td><td>Heat gain exceeds loss</td></tr>\n<tr><td>Neuromuscular signs</td><td>Rigidity, masseter spasm</td><td>\"Lead-pipe\" rigidity, bradykinesia</td><td>Clonus, hyperreflexia, tremor</td><td>Collapse, confusion</td></tr>\n<tr><td>Specific treatment</td><td>Dantrolene</td><td>Stop the drug; benzodiazepines, bromocriptine or dantrolene</td><td>Stop the drug; benzodiazepines, cyproheptadine</td><td>Cold-water immersion</td></tr>\n</tbody></table>\n<h3>Succinylcholine and hyperkalemia</h3>\n<p>Succinylcholine is a depolarizing blocker that opens nicotinic receptors and lets potassium leave muscle. Normally serum potassium rises by about 0.5 mEq/L. After <strong>denervation</strong> (stroke, spinal cord injury), <strong>burns</strong>, <strong>crush injury</strong>, prolonged immobilization or critical illness, muscle expresses immature (γ-subunit) and α7 nicotinic receptors across the whole membrane, not just at the endplate. Depolarizing all of them releases a massive amount of potassium and can cause cardiac arrest. This risk begins a few days after the injury and lasts for months. Use a nondepolarizing agent instead (rocuronium, with sugammadex available for reversal). Prolonged paralysis after succinylcholine is a separate problem caused by <strong>butyrylcholinesterase deficiency</strong>.</p>\n<h3>Fluoroquinolones and tendons</h3>\n<p>Fluoroquinolones (ciprofloxacin, levofloxacin, moxifloxacin) inhibit bacterial DNA gyrase and topoisomerase IV. In tendons they increase matrix metalloproteinase activity, reduce tenocyte proliferation and collagen synthesis, and cause oxidative injury. Tendinopathy and rupture follow, most often of the Achilles tendon, sometimes in both legs, from within days to months after the drug is stopped. The risk is highest in people over 60, those taking glucocorticoids, kidney, heart or lung transplant recipients and people with CKD. Fluoroquinolones also damage growing cartilage in juvenile animals, which is why they are avoided in children except for specific indications. They can worsen myasthenia gravis and cause peripheral neuropathy.</p>\n<h3>Glucocorticoids and bone</h3>\n<ul>\n<li><strong>Osteoporosis:</strong> glucocorticoids induce apoptosis of osteoblasts and osteocytes and suppress osteoblast formation (Wnt inhibition through raised sclerostin and Dickkopf-1). <strong>Bone formation falls</strong>, and osteocyte death weakens the bone's ability to sense and repair microdamage. They also raise RANKL and lower OPG early in treatment, reduce intestinal calcium absorption, increase urinary calcium loss, and cause hypogonadism and myopathy. Bone loss is fastest in the first months, and fractures occur at higher bone density than in postmenopausal osteoporosis.</li>\n<li><strong>Osteonecrosis</strong> of the femoral head and other sites is dose-related: fat accumulates in the marrow, intraosseous pressure rises, osteocytes die and venous outflow is impaired.</li>\n</ul>\n<p>Other drugs that harm bone: aromatase inhibitors and androgen-deprivation therapy (sex-steroid withdrawal), excess thyroid hormone, long-term heparin, enzyme-inducing anticonvulsants (faster vitamin D catabolism), thiazolidinediones (marrow stem cells diverted to fat), long-term proton-pump inhibitors, depot medroxyprogesterone (reversible loss of bone density), and chronic excess vitamin A.</p>\n<div class=\"trap\"><p>A temperature rise is often a <em>late</em> sign of MH. The early clue is an end-tidal CO<sub>2</sub> that keeps rising while the ventilator is turned up.</p></div>\n<div class=\"pearl\"><p>Naadi memory aid: \"MH is a muscle disease, NMS is a brain disease.\" Dantrolene fixes the muscle channel; dopamine agonists fix the brain receptor.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Malignant Hyperthermia"
+    },
+    {
+     "statpearls": "Dantrolene"
+    },
+    {
+     "statpearls": "Quinolones"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Malignant hyperthermia crisis, fluoroquinolone tendinopathy and glucocorticoid bone protection in practice",
+   "html": "<p>This section covers how to recognize and treat malignant hyperthermia in the operating room and how to prevent it, then the bedside management of fluoroquinolone tendon injury and glucocorticoid-induced bone disease.</p>\n<h3>Before anesthesia</h3>\n<ul>\n<li>Ask every patient about personal or family problems with anesthesia: unexplained fever, rigidity, death under anesthesia, or \"a reaction\" to anesthetics. Also ask about myopathies (central core disease), exertional rhabdomyolysis and heat stroke.</li>\n<li><strong>Known or suspected MH susceptibility:</strong> use a trigger-free anesthetic (total intravenous anesthesia with propofol and opioids, a nondepolarizing blocker, or regional anesthesia). Prepare the anesthesia machine by flushing it or fitting activated charcoal filters. Monitor end-tidal CO<sub>2</sub> and temperature. Many susceptible patients can have outpatient surgery under these conditions.</li>\n<li><strong>Dantrolene must be immediately available</strong> wherever volatile agents or succinylcholine are used. Prophylactic dantrolene is not routinely given.</li>\n</ul>\n<h3>Recognizing a crisis</h3>\n<p>Suspect MH with an unexplained rise in end-tidal CO<sub>2</sub>, tachycardia, masseter spasm after succinylcholine (jaw too tight to open the mouth), generalized rigidity, rising temperature, arrhythmias, cola-coloured urine or a mixed acidosis on blood gas. It can also appear in the recovery room soon after anesthesia. Check whether other causes better explain the picture: light anesthesia, sepsis, thyroid storm, pheochromocytoma, CO<sub>2</sub> absorption during laparoscopy, an exhausted CO<sub>2</sub> absorber (which raises <em>inspired</em> CO<sub>2</sub>), or an overheated patient. Do not let the search delay treatment.</p>\n<h3>Treating a crisis</h3>\n<ol>\n<li><strong>Stop all triggers</strong> and call for help and the MH cart. Tell the surgeon to finish quickly or stop. Continue anesthesia with nontriggering agents (propofol).</li>\n<li><strong>Hyperventilate with 100% oxygen</strong> at high fresh-gas flow.</li>\n<li><strong>Dantrolene IV</strong>, 2.5 mg/kg rapid bolus, repeated until the hypermetabolism resolves. Total doses can exceed 10 mg/kg.</li>\n<li><strong>Cool</strong> if the patient is hyperthermic (cold IV fluids, ice packs, body-cavity lavage). Stop cooling at about 38°C to avoid overshoot.</li>\n<li><strong>Treat hyperkalemia:</strong> calcium chloride or gluconate, insulin with glucose, and hyperventilation. Do <strong>not</strong> give calcium channel blockers with dantrolene: the combination can cause hyperkalemia and cardiovascular collapse. Standard antiarrhythmics such as amiodarone may be used.</li>\n<li><strong>Treat acidosis</strong> (bicarbonate for severe metabolic acidosis) and rhabdomyolysis (fluids to keep urine output high; monitor CK, potassium, creatinine and coagulation for DIC).</li>\n<li><strong>ICU for at least 24 hours</strong>, because recrudescence occurs in a minority. Continue dantrolene (for example 1 mg/kg every 4–6 hours) for 24 hours or more.</li>\n</ol>\n<h3>After a crisis</h3>\n<ul>\n<li>Give the patient a letter and medical-alert identification, and report the event to an MH registry.</li>\n<li>Refer for <strong>genetic counseling and <em>RYR1</em>/<em>CACNA1S</em> testing</strong>. A known pathogenic variant confirms susceptibility and allows family members to be tested for it. A negative genetic test does not exclude MH. The <strong>caffeine–halothane (or caffeine–isoflurane) contracture test</strong> on a fresh muscle biopsy at a specialized center is the reference test.</li>\n<li>First-degree relatives are treated as susceptible until evaluated.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Situation</th><th>Correct choice</th></tr></thead>\n<tbody>\n<tr><td>Rising end-tidal CO<sub>2</sub>, tachycardia, rigidity under sevoflurane</td><td>Stop the volatile agent, hyperventilate with 100% O<sub>2</sub>, dantrolene</td></tr>\n<tr><td>Hyperkalemic arrhythmia during an MH crisis</td><td>Calcium, insulin with glucose; avoid calcium channel blockers</td></tr>\n<tr><td>Known RYR1 variant needing surgery</td><td>Trigger-free anesthetic, prepared machine, dantrolene on hand</td></tr>\n<tr><td>Need for rapid intubation in a patient with recent burns or spinal cord injury</td><td>Rocuronium, not succinylcholine</td></tr>\n<tr><td>Recruit collapses on a hot run with a temperature of 41°C</td><td>Cold-water immersion (dantrolene is not indicated)</td></tr>\n</tbody></table>\n<h3>Fluoroquinolone tendinopathy</h3>\n<ul>\n<li>New heel, calf or other tendon pain during or after a fluoroquinolone course: stop the drug immediately and switch to a non-fluoroquinolone antibiotic. Rest the tendon and avoid exercise. Check for rupture (Thompson test, palpable gap); imaging helps if unclear.</li>\n<li><strong>Prevention:</strong> avoid fluoroquinolones in older adults taking glucocorticoids, in transplant recipients and in people with prior fluoroquinolone tendon problems, unless there is no alternative. Reserve them for infections without other good options, given their other serious effects (aortic aneurysm and dissection, QT prolongation, dysglycemia, neuropathy, CNS effects, and worsening of myasthenia gravis).</li>\n</ul>\n<h3>Glucocorticoid-induced osteoporosis</h3>\n<ul>\n<li>For anyone starting prednisone of 2.5 mg/day or more for 3 months or longer:\n<ul>\n<li>Assess fracture risk early (history, FRAX and DXA in adults 40 and older).</li>\n<li>Advise adequate calcium and vitamin D, exercise and falls prevention, and use the lowest effective glucocorticoid dose.</li>\n</ul></li>\n<li><strong>Moderate or high risk</strong> (prior fragility fracture, low T-score, high FRAX, or high doses such as prednisone 30 mg/day or more): start an <strong>oral bisphosphonate</strong>. Alternatives are IV zoledronic acid, denosumab and, for the highest risk, teriparatide or abaloparatide. Raloxifene is an option only for postmenopausal women when others are unsuitable.</li>\n<li>Reassess regularly while steroids continue. When glucocorticoids stop, reassess the need for treatment.</li>\n<li><strong>Transgender and nonbinary patients:</strong> estimate risk using current hormones and gonadal status. Gender-affirming hormones generally protect bone, but long-term glucocorticoids still need the same risk assessment.</li>\n<li><strong>Children on long-term glucocorticoids</strong> (for example, for Duchenne muscular dystrophy, nephrotic syndrome or inflammatory bowel disease) are at risk of vertebral fractures and poor growth. Monitor them and refer to pediatric bone specialists.</li>\n</ul>\n<div class=\"trap\"><p>Dantrolene is not the treatment for exertional heat stroke, serotonin syndrome or anticholinergic toxicity. Cold-water immersion is the treatment for exertional heat stroke.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Malignant Hyperthermia"
+    },
+    {
+     "statpearls": "Neuroleptic Malignant Syndrome"
+    },
+    {
+     "statpearls": "Osteoporosis in Males"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Skeletal muscle excitation–contraction coupling, the malignant hyperthermia defect and the site of dantrolene (original schematic)."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Crisis in the operating room"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old man develops masseter rigidity, rising end-tidal CO<sub>2</sub>, tachycardia and a temperature of 40.1°C during anesthesia with sevoflurane and succinylcholine. He recovers after treatment. His mother had a similar reaction during surgery years ago, and one of his two siblings later has an abnormal muscle contracture test. A pathogenic variant is most likely present in a gene encoding which of the following?</p>",
+   "options": [
+    "Sarcoplasmic reticulum calcium release channel",
+    "Voltage-gated sodium channel of skeletal muscle",
+    "Dystrophin",
+    "Skeletal muscle chloride channel",
+    "Plasma butyrylcholinesterase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Malignant hyperthermia susceptibility is inherited in an autosomal dominant pattern, most often from gain-of-function variants in <em>RYR1</em>, which encodes the ryanodine receptor calcium release channel of the sarcoplasmic reticulum. Triggering anesthetics cause uncontrolled calcium release, sustained contraction and hypermetabolism.</p><p><strong>Takeaway:</strong> MH = autosomal dominant <em>RYR1</em> (less often <em>CACNA1S</em>) variants.</p>",
+   "whyNot": {
+    "B": "Skeletal muscle sodium channel (<em>SCN4A</em>) variants cause periodic paralysis and paramyotonia, not anesthetic-triggered hypermetabolism.",
+    "C": "Dystrophin defects cause Duchenne or Becker dystrophy; volatile agents can cause rhabdomyolysis in these patients, but that is not inherited MH in a family without dystrophy.",
+    "D": "Chloride channel (<em>CLCN1</em>) variants cause myotonia congenita.",
+    "E": "Butyrylcholinesterase deficiency causes prolonged paralysis after succinylcholine, not rigidity and hyperthermia."
+   },
+   "objective": "Identify RYR1 as the main gene of malignant hyperthermia susceptibility.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [
+    1
+   ],
+   "tags": [
+    "anesthesia complications"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman is having an open cholecystectomy under desflurane anesthesia. Forty minutes after induction, end-tidal CO<sub>2</sub> rises from 36 to 62 mm Hg even though minute ventilation has been doubled. Inspired CO<sub>2</sub> remains 0 mm Hg. Heart rate is 128/min, and the masseter and limb muscles are stiff. Temperature is 37.9°C (100.2°F). Which of the following best explains the rise in end-tidal CO<sub>2</sub>?</p>",
+   "options": [
+    "Increased CO<sub>2</sub> production by hypermetabolic skeletal muscle",
+    "Exhausted CO<sub>2</sub> absorber in the breathing circuit",
+    "Absorption of insufflated CO<sub>2</sub> from the peritoneum",
+    "Hypoventilation caused by the anesthetic",
+    "Pulmonary embolism increasing dead space"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In malignant hyperthermia, uncontrolled sarcoplasmic calcium drives ATP consumption by SERCA and myosin, so aerobic metabolism and CO<sub>2</sub> production rise steeply. End-tidal CO<sub>2</sub> keeps rising despite increased ventilation, often before the temperature rises.</p><p><strong>Takeaway:</strong> a rising end-tidal CO<sub>2</sub> despite more ventilation is the earliest sign of MH.</p>",
+   "whyNot": {
+    "B": "An exhausted absorber lets CO<sub>2</sub> be rebreathed, raising inspired CO<sub>2</sub>, which is zero here.",
+    "C": "This is an open operation, so there is no CO<sub>2</sub> insufflation.",
+    "D": "Minute ventilation has been doubled, so hypoventilation cannot explain a rising CO<sub>2</sub>.",
+    "E": "Pulmonary embolism increases dead space and lowers end-tidal CO<sub>2</sub>."
+   },
+   "objective": "Explain rising end-tidal CO<sub>2</sub> as a sign of hypermetabolism in malignant hyperthermia.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "anesthesia complications"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old girl develops rigidity, tachycardia, hypercarbia and fever during anesthesia with sevoflurane. The volatile agent is stopped, and she receives a drug that rapidly reverses her rigidity and hypermetabolism without blocking neuromuscular transmission. Which of the following is the mechanism of this drug?</p>",
+   "options": [
+    "Inhibition of calcium release from the sarcoplasmic reticulum",
+    "Competitive blockade of nicotinic acetylcholine receptors",
+    "Inhibition of the sarcoplasmic reticulum calcium ATPase",
+    "Activation of presynaptic GABA-B receptors in the spinal cord",
+    "Activation of central α2-adrenergic receptors"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Dantrolene binds the RYR1 channel and reduces calcium release from the sarcoplasmic reticulum, which stops the contraction and hypermetabolism of malignant hyperthermia. It acts beyond the neuromuscular junction, so it does not cause neuromuscular block in the usual sense, although it can cause muscle weakness.</p><p><strong>Takeaway:</strong> dantrolene inhibits RYR1-mediated calcium release; it is the antidote for MH.</p>",
+   "whyNot": {
+    "B": "Nondepolarizing blockers such as rocuronium act at the nicotinic receptor and would not stop calcium leak from the sarcoplasmic reticulum.",
+    "C": "SERCA inhibition would keep cytosolic calcium high and worsen rigidity.",
+    "D": "GABA-B agonism is the action of baclofen, a spasmolytic without a role in MH.",
+    "E": "Central α2 agonism is the action of tizanidine and clonidine."
+   },
+   "objective": "State the mechanism of dantrolene.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [
+    1
+   ],
+   "tags": [
+    "anesthesia complications"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 28-year-old man is known to carry a pathogenic <em>RYR1</em> variant after his father's anesthetic crisis. He needs laparoscopic appendectomy. The anesthesiologist plans a technique that avoids all triggers of his condition. Which of the following agents is safe to use for maintenance of anesthesia?</p>",
+   "options": [
+    "Sevoflurane",
+    "Desflurane",
+    "Isoflurane",
+    "Propofol",
+    "Halothane"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>All potent volatile anesthetics and succinylcholine can trigger malignant hyperthermia in susceptible people. Propofol, other intravenous agents, opioids, benzodiazepines, nitrous oxide, nondepolarizing neuromuscular blockers and local anesthetics are safe. A trigger-free anesthetic uses total intravenous anesthesia, a prepared machine and dantrolene on hand.</p><p><strong>Takeaway:</strong> for MH-susceptible patients use propofol-based total intravenous anesthesia and avoid volatile agents and succinylcholine.</p>",
+   "whyNot": {
+    "A": "Sevoflurane is a halogenated volatile agent and a potent MH trigger.",
+    "B": "Desflurane is a volatile agent and triggers MH.",
+    "C": "Isoflurane is a volatile agent and triggers MH.",
+    "E": "Halothane is the classic volatile trigger and is used in the diagnostic contracture test."
+   },
+   "objective": "Choose a non-triggering anesthetic for a patient susceptible to malignant hyperthermia.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "anesthesia safety"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 44-year-old man has 40% total body surface area burns. On hospital day 12 he needs urgent reintubation. Succinylcholine is given, and within 2 minutes he has ventricular fibrillation; serum potassium is 8.4 mEq/L. Which of the following best explains this reaction?</p>",
+   "options": [
+    "Spread of nicotinic acetylcholine receptors across the whole muscle membrane",
+    "Deficiency of plasma butyrylcholinesterase",
+    "Gain-of-function variant in the ryanodine receptor",
+    "Release of potassium from hemolyzed red cells",
+    "Direct blockade of cardiac potassium channels by succinylcholine"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>After burns, denervation, crush injury, prolonged immobilization or critical illness, muscle expresses immature (γ-subunit) and α7 nicotinic receptors all along the membrane. Succinylcholine depolarizes all of them at once, releasing enough potassium to cause cardiac arrest. The risk begins a few days after injury and persists for months; a nondepolarizing blocker should be used instead.</p><p><strong>Takeaway:</strong> avoid succinylcholine from a few days after burns, denervation or prolonged immobility because of extrajunctional receptor upregulation.</p>",
+   "whyNot": {
+    "B": "Butyrylcholinesterase deficiency prolongs paralysis but does not cause hyperkalemia.",
+    "C": "An RYR1 variant causes malignant hyperthermia, with hypercarbia and rigidity developing over minutes to hours rather than immediate hyperkalemic arrest after a burn.",
+    "D": "Hemolysis does not occur with succinylcholine and would not release this much potassium in 2 minutes.",
+    "E": "Succinylcholine causes hyperkalemia and bradycardia through receptor effects, not through blocking cardiac potassium channels."
+   },
+   "objective": "Explain succinylcholine-induced hyperkalemia after burns or denervation.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "anesthesia safety"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 76-year-old man taking prednisone 10 mg daily for polymyalgia rheumatica is treated for community-acquired pneumonia with an oral antibiotic. On day 6 he feels a sudden snap at the back of his right ankle while climbing stairs. There is a palpable gap 4 cm above the calcaneus, and squeezing the calf does not plantar-flex the foot. The antibacterial action of the drug most likely responsible is inhibition of which of the following?</p>",
+   "options": [
+    "DNA gyrase and topoisomerase IV",
+    "Peptidyl transferase on the 50S ribosomal subunit",
+    "Aminoacyl-tRNA binding to the 30S ribosomal subunit",
+    "Transpeptidation of peptidoglycan",
+    "Dihydropteroate synthase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Achilles tendon rupture during treatment of pneumonia in an older adult taking glucocorticoids is a classic fluoroquinolone adverse effect, for example with levofloxacin or moxifloxacin. Fluoroquinolones kill bacteria by inhibiting DNA gyrase (topoisomerase II) and topoisomerase IV. In tendons they raise matrix metalloproteinase activity and injure tenocytes, and age over 60 and glucocorticoids multiply the risk.</p><p><strong>Takeaway:</strong> fluoroquinolones (DNA gyrase and topoisomerase IV inhibitors) cause tendon rupture, especially in older adults on steroids.</p>",
+   "whyNot": {
+    "B": "50S peptidyl transferase inhibitors such as macrolides (azithromycin) and chloramphenicol are not associated with tendon rupture.",
+    "C": "Tetracyclines such as doxycycline block aminoacyl-tRNA binding to the 30S subunit and do not cause tendon rupture.",
+    "D": "β-Lactams such as amoxicillin or ceftriaxone inhibit transpeptidation and do not cause tendinopathy.",
+    "E": "Sulfonamides inhibit dihydropteroate synthase; their adverse effects include rash and cytopenias, not tendon rupture."
+   },
+   "objective": "Link fluoroquinolone mechanism to the adverse effect of tendon rupture.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "antibiotic adverse effects",
+    "older adults"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 39-year-old woman with lupus nephritis has taken prednisone 30 mg daily for 7 months. A vertebral compression fracture occurs while she lifts a laundry basket. Bone biopsy shows reduced osteoid surfaces, few osteoblasts and many empty osteocyte lacunae. Which of the following is the primary mechanism of her bone loss?</p>",
+   "options": [
+    "Reduced osteoblast formation and increased osteoblast and osteocyte apoptosis",
+    "Excess PTH secretion from a parathyroid adenoma",
+    "Increased calcitonin secretion by thyroid C cells",
+    "Failure of osteoid mineralization due to phosphate wasting",
+    "Increased bone turnover with mosaic lamellar bone"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Glucocorticoid-induced osteoporosis is mainly a disorder of reduced bone formation. Glucocorticoids divert stromal cells away from the osteoblast lineage, inhibit Wnt signalling (raising sclerostin and Dickkopf-1) and trigger apoptosis of osteoblasts and osteocytes; empty lacunae reflect osteocyte death. Early RANKL-driven resorption, lower intestinal calcium absorption and hypogonadism add to the loss. Fractures occur early and at relatively preserved bone density.</p><p><strong>Takeaway:</strong> glucocorticoids suppress bone formation and kill osteocytes; start bone protection early.</p>",
+   "whyNot": {
+    "B": "A parathyroid adenoma would cause hypercalcemia and increased resorption with osteitis fibrosa, not suppressed osteoblasts.",
+    "C": "Calcitonin inhibits osteoclasts; excess calcitonin does not cause bone loss.",
+    "D": "Mineralization failure with wide osteoid seams is osteomalacia, whereas here osteoid surfaces are reduced.",
+    "E": "High turnover with mosaic bone describes Paget disease."
+   },
+   "objective": "Explain the formation-suppressing mechanism of glucocorticoid-induced osteoporosis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 9-year-old boy has had mild proximal weakness and delayed motor milestones since infancy. CK is normal. A muscle biopsy shows type 1 fiber predominance with well-demarcated central areas in many fibers that lack oxidative enzyme activity on NADH staining. He needs dental surgery under general anesthesia. Which of the following perioperative complications is he at greatest risk of?</p>",
+   "options": [
+    "Malignant hyperthermia",
+    "Neuroleptic malignant syndrome",
+    "Serotonin syndrome",
+    "Prolonged apnea from butyrylcholinesterase deficiency",
+    "Propofol infusion syndrome"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Central cores lacking oxidative enzyme activity in type 1 fibers define central core disease, a congenital myopathy usually caused by <em>RYR1</em> variants. Many patients are susceptible to malignant hyperthermia, so they need a trigger-free anesthetic with dantrolene available.</p><p><strong>Takeaway:</strong> central core disease is an <em>RYR1</em> myopathy; treat these patients as MH-susceptible.</p>",
+   "whyNot": {
+    "B": "NMS follows dopamine antagonists and is unrelated to congenital myopathy genetics.",
+    "C": "Serotonin syndrome follows serotonergic drug combinations and has no link to central core disease.",
+    "D": "Butyrylcholinesterase deficiency is a separate inherited trait that prolongs succinylcholine paralysis; it is not associated with central cores.",
+    "E": "Propofol infusion syndrome follows prolonged high-dose infusions, not routine dental anesthesia, and is not linked to RYR1."
+   },
+   "objective": "Recognize central core disease as a risk factor for malignant hyperthermia.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_prognosis"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "congenital myopathy",
+    "anesthesia safety"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 19-year-old man is having open reduction and internal fixation of an ankle fracture. Anesthesia was induced with propofol and succinylcholine and maintained with sevoflurane; the anesthesiologist noted unusual jaw tightness at intubation. Forty minutes into the case, end-tidal CO<sub>2</sub> has risen from 38 to 70 mm Hg despite doubling minute ventilation. Pulse is 142/min with occasional premature ventricular beats. The limbs are rigid, and temperature has risen from 36.8°C to 38.6°C. Which of the following is the most appropriate immediate step?</p>",
+   "options": [
+    "Stop sevoflurane and give intravenous dantrolene",
+    "Give intravenous acetaminophen and apply a cooling blanket",
+    "Increase the sevoflurane concentration to deepen anesthesia",
+    "Give bromocriptine through a nasogastric tube",
+    "Give a second dose of succinylcholine to relieve rigidity"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Masseter spasm after succinylcholine, then rising end-tidal CO<sub>2</sub> despite more ventilation, tachycardia with ectopy, rigidity and a rising temperature under a volatile agent are malignant hyperthermia. Stop all triggers, call for help, hyperventilate with 100% oxygen at high flow, continue anesthesia with propofol, and give dantrolene 2.5 mg/kg IV, repeated until signs resolve.</p><p><strong>Takeaway:</strong> MH treatment is stop the trigger, hyperventilate with 100% O<sub>2</sub>, and give dantrolene immediately.</p>",
+   "whyNot": {
+    "B": "MH fever comes from muscle heat production, not a hypothalamic set point; antipyretics do not help, and cooling alone does not stop the calcium leak.",
+    "C": "More volatile agent adds trigger and worsens the crisis.",
+    "D": "Bromocriptine is a dopamine agonist used for neuroleptic malignant syndrome, which is a central disorder.",
+    "E": "Succinylcholine is a trigger and would worsen rigidity and hyperkalemia."
+   },
+   "objective": "Treat a malignant hyperthermia crisis by stopping triggers and giving dantrolene.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "anesthesia complications"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>The patient in the previous item has received two doses of dantrolene, and rigidity is easing. Arterial blood gas on 100% oxygen shows pH 7.14, PaCO<sub>2</sub> 64 mm Hg and HCO<sub>3</sub><sup>-</sup> 20 mEq/L. Serum potassium is 6.9 mEq/L, and the ECG shows peaked T waves with runs of ventricular ectopy. Which of the following is the most appropriate treatment for the hyperkalemia and arrhythmia?</p>",
+   "options": [
+    "Intravenous calcium and insulin with dextrose",
+    "Intravenous verapamil",
+    "Intravenous diltiazem",
+    "Oral sodium polystyrene sulfonate alone",
+    "Stopping dantrolene"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Hyperkalemia with ECG changes in an MH crisis is treated with IV calcium to stabilize the myocardium and insulin with dextrose to shift potassium into cells, along with continued hyperventilation and bicarbonate for severe metabolic acidosis. Calcium channel blockers must be avoided with dantrolene, because the combination can cause severe hyperkalemia, myocardial depression and cardiovascular collapse. Standard antiarrhythmics such as amiodarone can be used if needed.</p><p><strong>Takeaway:</strong> in MH, treat hyperkalemia with calcium and insulin–glucose; never give calcium channel blockers with dantrolene.</p>",
+   "whyNot": {
+    "B": "Verapamil with dantrolene has caused hyperkalemia and cardiovascular collapse and is contraindicated.",
+    "C": "Diltiazem is a calcium channel blocker with the same dangerous interaction with dantrolene.",
+    "D": "Oral resins act too slowly to treat hyperkalemia with ECG changes.",
+    "E": "Stopping dantrolene would allow the calcium leak and potassium release to continue; it must be continued."
+   },
+   "objective": "Manage hyperkalemia during malignant hyperthermia while avoiding calcium channel blockers.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "anesthesia complications"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 3,
+   "stemHtml": "<p>The patient from the previous items recovers fully after 48 hours in the ICU. He asks what this means for him and his family. His parents and a 16-year-old sister have never had general anesthesia. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    "Genetic counseling and RYR1 testing, with relatives treated as susceptible until evaluated",
+    "No further action, because reactions do not recur once survived",
+    "Avoid all forms of anesthesia, including local anesthesia, for life",
+    "Test only his sister, because the trait is X-linked",
+    "Take oral dantrolene daily for life to prevent recurrence"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>After a clinical MH episode, the patient should carry medical-alert identification and be referred for genetic counseling and testing of <em>RYR1</em> and <em>CACNA1S</em>. If a pathogenic variant is found, relatives can be tested for it directly. Because inheritance is autosomal dominant, each first-degree relative should be managed as MH-susceptible (trigger-free anesthesia) until testing shows otherwise; a negative genetic result may need a contracture test to exclude susceptibility.</p><p><strong>Takeaway:</strong> after MH, test the patient genetically and treat first-degree relatives as susceptible until evaluated.</p>",
+   "whyNot": {
+    "B": "Susceptibility is lifelong; triggers can cause MH again even after uneventful or survived exposures.",
+    "C": "Local and regional anesthesia, and general anesthesia without triggers, are safe.",
+    "D": "MH susceptibility is autosomal dominant, so both parents and the sister may carry the variant.",
+    "E": "Daily dantrolene is not used for prevention; avoiding triggers is the strategy."
+   },
+   "objective": "Counsel a patient and family after malignant hyperthermia about genetic testing and future anesthesia.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "communication",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "anesthesia safety",
+    "genetic counseling"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 68-year-old man is diagnosed with giant cell arteritis and starts prednisone 60 mg daily, with a planned taper over at least a year. He has no prior fractures. He drinks 2 alcoholic drinks a week and does not smoke. Results are shown.</p><table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody><tr><td>Calcium, total</td><td>9.4 mg/dL</td></tr><tr><td>Creatinine</td><td>0.9 mg/dL</td></tr><tr><td>25-Hydroxyvitamin D</td><td>34 ng/mL (sufficient range)</td></tr><tr><td>Testosterone, morning</td><td>Normal</td></tr><tr><td>DXA T-score, femoral neck</td><td>−1.8</td></tr><tr><td>DXA T-score, lumbar spine</td><td>−1.5</td></tr></tbody></table><p>He has no swallowing problems or esophageal disease. In addition to adequate calcium and vitamin D intake, which of the following is the most appropriate next step to protect his bones?</p>",
+   "options": [
+    "Start oral alendronate",
+    "Repeat DXA in 2 years before deciding",
+    "Start daily teriparatide",
+    "Start raloxifene",
+    "Start intranasal calcitonin"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>High-dose glucocorticoids (prednisone 30 mg/day or more) planned for many months put him at high fracture risk, especially in the first months, even though his T-score is only in the low-bone-mass range; glucocorticoid-related fractures occur at higher bone density. An oral bisphosphonate is first-line, with calcium, vitamin D, exercise and falls prevention, and is continued while steroid exposure persists.</p><p><strong>Takeaway:</strong> start bone protection (usually an oral bisphosphonate) at the outset of long-term, high-dose glucocorticoid therapy.</p>",
+   "whyNot": {
+    "B": "Most glucocorticoid-related bone loss happens in the first 3–6 months; waiting 2 years leaves him untreated during the riskiest period.",
+    "C": "Teriparatide is effective but is generally reserved for very high risk, such as prior fractures or very low T-scores, or when bisphosphonates cannot be used.",
+    "D": "Raloxifene is studied in postmenopausal women and is not an option for a man.",
+    "E": "Calcitonin lacks good antifracture evidence."
+   },
+   "objective": "Start an oral bisphosphonate at the start of high-dose, long-term glucocorticoid therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug adverse effects",
+    "older adults"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 74-year-old woman with COPD who takes prednisone 7.5 mg daily began levofloxacin 5 days ago for an exacerbation with purulent sputum. She now has pain and swelling at the back of both heels, worse on the left, that started 2 days ago. She can walk on her toes with pain. There is tenderness and thickening of both Achilles tendons about 4 cm above the insertion; squeezing either calf plantar-flexes the foot, and there is no palpable gap. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Stop levofloxacin and switch to a different class of antibiotic",
+    "Continue levofloxacin and add an NSAID",
+    "Inject glucocorticoid around both Achilles tendons",
+    "Complete the levofloxacin course, then reassess",
+    "Increase the prednisone dose"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Bilateral Achilles tendinopathy within days of starting a fluoroquinolone, in an older adult taking glucocorticoids, is a fluoroquinolone adverse effect with a high risk of progression to rupture. The drug should be stopped at the first sign of tendon pain and replaced by an antibiotic from another class (for example, amoxicillin–clavulanate or doxycycline for a COPD exacerbation). She should rest the tendons, avoid strenuous activity and be reassessed for rupture.</p><p><strong>Takeaway:</strong> tendon pain on a fluoroquinolone: stop it and switch class at once.</p>",
+   "whyNot": {
+    "B": "Continuing the fluoroquinolone risks rupture; an NSAID does not reduce that risk.",
+    "C": "Peritendinous glucocorticoid injection would further raise the risk of rupture.",
+    "D": "Tendon damage can progress, and rupture can occur during or after the course; finishing it adds risk without benefit when alternatives exist.",
+    "E": "Glucocorticoids are themselves a risk factor for fluoroquinolone tendon rupture."
+   },
+   "objective": "Stop a fluoroquinolone at the first sign of tendinopathy, especially in older adults on glucocorticoids.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "antibiotic adverse effects",
+    "older adults"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old man with schizophrenia was started on haloperidol 10 days ago, and the dose was increased 3 days ago. He is now confused and diaphoretic. Temperature is 40.2°C (104.4°F), pulse 128/min and blood pressure 168/102 mm Hg, fluctuating. He has generalized \"lead-pipe\" rigidity without clonus, and reflexes are normal. Creatine kinase is 14,000 U/L (reference 25–200), and leukocyte count is 15,000/mm<sup>3</sup>. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    "Stop haloperidol and give supportive care with cooling and IV fluids",
+    "Switch haloperidol to risperidone",
+    "Give oral cyproheptadine",
+    "Give intramuscular haloperidol for agitation",
+    "Give intravenous physostigmine"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Fever, lead-pipe rigidity, confusion, autonomic instability, a very high CK and leukocytosis days after starting or increasing a dopamine antagonist are neuroleptic malignant syndrome. Initial management is stopping all antipsychotics, ICU-level supportive care with cooling, IV fluids for rhabdomyolysis and benzodiazepines for agitation. Bromocriptine or dantrolene are added for severe or unresponsive cases.</p><p><strong>Takeaway:</strong> NMS: stop the antipsychotic and give supportive care first; dopamine agonists or dantrolene for severe cases.</p>",
+   "whyNot": {
+    "B": "Any dopamine antagonist, including risperidone, can maintain or worsen NMS.",
+    "C": "Cyproheptadine treats serotonin syndrome, which causes clonus and hyperreflexia rather than lead-pipe rigidity.",
+    "D": "More haloperidol would worsen the syndrome.",
+    "E": "Physostigmine reverses anticholinergic toxicity, which causes dry skin and no rigidity."
+   },
+   "objective": "Recognize neuroleptic malignant syndrome and start by stopping the antipsychotic with supportive care.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "psychiatry",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hyperthermia syndromes"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Main gene and inheritance of malignant hyperthermia?",
+   "back": "RYR1 (sometimes CACNA1S); autosomal dominant.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Which anesthetics trigger malignant hyperthermia?",
+   "back": "All volatile halogenated agents and succinylcholine.",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Earliest sign of MH during anesthesia?",
+   "back": "Rising end-tidal CO2 despite increased ventilation.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Mechanism of dantrolene?",
+   "back": "Binds RYR1 and reduces calcium release from the sarcoplasmic reticulum.",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Why does succinylcholine cause hyperkalemia after burns or denervation?",
+   "back": "Extrajunctional (immature and α7) nicotinic receptors spread over the muscle membrane.",
+   "question": 5
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Congenital myopathy linked to MH susceptibility?",
+   "back": "Central core disease (RYR1).",
+   "question": 8
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Main mechanism of glucocorticoid-induced osteoporosis?",
+   "back": "Suppressed bone formation with osteoblast and osteocyte apoptosis.",
+   "question": 7
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Who is at highest risk of fluoroquinolone tendon rupture?",
+   "back": "Adults over 60, people on glucocorticoids, transplant recipients, people with CKD.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Initial dantrolene dose in an MH crisis?",
+   "back": "2.5 mg/kg IV, repeated until signs resolve.",
+   "question": 9
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Drug class to avoid with dantrolene during MH?",
+   "back": "Calcium channel blockers (risk of hyperkalemia and cardiovascular collapse).",
+   "question": 10
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "How long to monitor after an MH crisis?",
+   "back": "At least 24 hours in an ICU because of recrudescence.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Reference test for MH susceptibility?",
+   "back": "Caffeine–halothane contracture test on fresh muscle biopsy.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Treatment of exertional heat stroke?",
+   "back": "Cold-water immersion (not dantrolene).",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "First step for tendon pain on a fluoroquinolone?",
+   "back": "Stop the drug and switch to another antibiotic class.",
+   "question": 13
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Bone protection for long-term high-dose prednisone?",
+   "back": "Calcium, vitamin D and an oral bisphosphonate from the start.",
+   "question": 12
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "First step in neuroleptic malignant syndrome?",
+   "back": "Stop the antipsychotic and give supportive care.",
+   "question": 14
+  }
+ ]
+}

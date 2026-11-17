@@ -135,7 +135,7 @@
    "options": [
     "Blockade of androgen receptors in sebocytes",
     "Free-radical killing of follicular bacteria",
-    "Inhibition of the bacterial 30S ribosomal subunit",
+    "Inhibition of the 30S ribosomal subunit of follicular bacteria",
     "Inhibition of 5α-reductase in the follicle",
     "Shrinkage of sebaceous glands with reduced sebum output"
    ],
@@ -173,7 +173,7 @@
    "stemHtml": "<p>A 27-year-old man has had gradual hair thinning at the temples and crown for 3 years. His father had similar hair loss. Examination shows recession of the frontotemporal hairline and fine, short hairs at the vertex. He starts a daily oral drug that lowers scalp dihydrotestosterone concentrations. His partner is trying to conceive. Exposure of a 46,XY fetus to this drug during early pregnancy carries the greatest risk of which of the following?</p>",
    "options": [
     "Absent or malformed external ears",
-    "Downward displacement of the tricuspid valve",
+    "Downward displacement of the septal tricuspid leaflet",
     "Failure of neural tube closure",
     "Incomplete virilisation of the external genitalia",
     "Shortened limbs with absent long bones"
@@ -254,7 +254,7 @@
    "options": [
     "Androgen-driven miniaturisation of scalp follicles",
     "Arrest of matrix cell division in growing hairs",
-    "Synchronised early shift of follicles into the resting phase",
+    "Synchronised early shift of follicles into telogen",
     "Destruction of bulge stem cells by lymphocytes",
     "Fungal invasion of the hair shaft"
    ],
@@ -609,10 +609,10 @@
    "stemHtml": "<p>A 7-year-old girl is brought to the clinic because her mother found a bald patch on the back of her head 3 weeks ago. The girl is otherwise well and has atopic dermatitis. Examination shows a single round, 3-cm patch of complete hair loss with smooth, normal-coloured skin and no scale, redness or scarring. Several short broken hairs at the margin narrow toward the scalp. There is no cervical lymphadenopathy. Several fingernails show fine pits. Which of the following is the most appropriate initial treatment?</p>",
    "options": [
     "High-potency topical corticosteroid",
-    "Ketoconazole shampoo",
-    "Oral baricitinib",
-    "Oral griseofulvin",
-    "Oral prednisone"
+    "Ketoconazole 2% shampoo twice weekly",
+    "Oral baricitinib once daily",
+    "Oral griseofulvin for 8 weeks",
+    "Oral prednisone taper over 4 weeks"
    ],
    "answer": "A",
    "explanationHtml": "<p>A smooth, nonscarring, round patch with tapered short hairs (exclamation-point hairs) and nail pitting in a child with atopy is <strong>alopecia areata</strong>. For a young child with limited disease, a <strong>high-potency topical corticosteroid</strong> is a reasonable first-line choice, because intralesional injections are poorly tolerated at this age. Counsel the family that limited patches often regrow but that relapses are common. Check thyroid function if symptoms suggest it.</p><p><strong>Takeaway:</strong> Limited alopecia areata in a young child is usually treated first with a potent topical corticosteroid.</p>",

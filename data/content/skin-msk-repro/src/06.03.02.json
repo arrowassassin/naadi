@@ -102,7 +102,7 @@
    "options": [
     "Chronic hypoxia that stimulates erythropoietin production in the digits",
     "Deposition of immune complexes in the digital arterioles",
-    "Megakaryocytes bypassing the lungs and releasing growth factors in the digits",
+    "Megakaryocytes bypassing the lungs and releasing growth factors",
     "Iron deficiency that thins and softens the nail matrix",
     "Thrombotic occlusion of the digital capillaries by sickled cells"
    ],
@@ -533,7 +533,7 @@
    "setOrder": null,
    "stemHtml": "<p>A 44-year-old woman who works as a restaurant dishwasher has had swollen, mildly tender skin around several fingernails for 5 months. Examination of four fingers on her dominant hand shows erythematous, boggy proximal nail folds with no cuticles, and irregular transverse ridges on the nail plates. There is no pus or vesicle. Her symptoms improve on holidays. Which of the following is the most appropriate initial management?</p>",
    "options": [
-    "Daily oral terbinafine for 12 weeks",
+    "Daily oral terbinafine for 12 weeks with nail debridement",
     "Incision and drainage of each nail fold",
     "Oral cephalexin for 10 days",
     "Protection from wet work and a topical corticosteroid",
@@ -572,10 +572,10 @@
    "setOrder": null,
    "stemHtml": "<p>A 15-year-old boy who plays football has had pain at the lateral edge of his right great toenail for 3 weeks. He has had two similar episodes in the past year, both treated with warm soaks and a course of oral antibiotics. He trims his nails short and rounds the corners. Examination shows swelling of the lateral nail fold with a mass of friable, moist granulation tissue covering the nail edge and a little serous drainage. There is no spreading redness. Pedal pulses are normal. Which of the following is the most appropriate management?</p>",
    "options": [
-    "Another course of oral antibiotics",
+    "Another course of oral antibiotics with warm soaks",
     "Partial nail avulsion with lateral phenol matricectomy",
     "Complete nail avulsion without matricectomy",
-    "Cotton wisp under the nail corner and observation",
+    "Cotton wisp under the nail corner with daily warm soaks",
     "Topical antifungal applied to the nail for 6 months"
    ],
    "answer": "B",

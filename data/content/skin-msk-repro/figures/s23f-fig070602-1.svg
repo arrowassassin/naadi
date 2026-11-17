@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" role="img" aria-label="Schematic of skeletal muscle excitation-contraction coupling: the DHPR in the T-tubule is mechanically linked to RYR1 on the sarcoplasmic reticulum, which releases calcium to troponin C; SERCA pumps calcium back using ATP; dantrolene inhibits RYR1; in malignant hyperthermia mutant RYR1 leaks calcium after triggers, causing rigidity, hypermetabolism and hyperkalemia" font-family="sans-serif" fill="#0f172a">
+<title>Schematic of skeletal muscle excitation-contraction coupling: the DHPR in the T-tubule is mechanically linked to RYR1 on the sarcoplasmic reticulum, which releases calcium to troponin C; SERCA pumps calcium back using ATP; dantrolene inhibits RYR1; in malignant hyperthermia mutant RYR1 leaks calcium after triggers, causing rigidity, hypermetabolism and hyperkalemia</title>
+<rect x="0" y="0" width="760" height="470" fill="#ffffff"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker><marker id="b" markerWidth="6" markerHeight="14" refX="3" refY="7" orient="auto"><rect x="0" y="0" width="5" height="14" fill="#0f172a"/></marker></defs>
+<text x="380" y="28" font-size="18" font-weight="bold" text-anchor="middle">Excitation–contraction coupling and malignant hyperthermia</text>
+<rect x="40" y="60" width="300" height="46" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<text x="190" y="88" font-size="14" text-anchor="middle">T-tubule membrane (action potential)</text>
+<rect x="150" y="106" width="80" height="40" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="190" y="131" font-size="13" text-anchor="middle">DHPR</text>
+<text x="250" y="131" font-size="12">(CACNA1S)</text>
+<rect x="40" y="190" width="300" height="120" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="270" y="296" font-size="13" text-anchor="middle">Sarcoplasmic reticulum</text>
+<rect x="150" y="160" width="80" height="44" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="190" y="187" font-size="13" text-anchor="middle">RYR1</text>
+<line x1="190" y1="146" x2="190" y2="160" stroke="#0f172a" stroke-width="3"/>
+<text x="238" y="154" font-size="12">mechanical link (STAC3)</text>
+<rect x="60" y="210" width="80" height="40" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="100" y="235" font-size="13" text-anchor="middle">SERCA</text>
+<text x="100" y="268" font-size="12" text-anchor="middle">uses ATP</text>
+<line x1="232" y1="182" x2="400" y2="182" stroke="#0f172a" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="316" y="202" font-size="13" text-anchor="middle">Ca2+ release</text>
+<rect x="404" y="150" width="320" height="70" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="564" y="176" font-size="14" font-weight="bold" text-anchor="middle">Cytosolic Ca2+ binds troponin C</text>
+<text x="564" y="198" font-size="13" text-anchor="middle">cross-bridge cycling = contraction</text>
+<line x1="404" y1="232" x2="144" y2="232" stroke="#0f172a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<text x="300" y="250" font-size="12" text-anchor="middle">reuptake</text>
+<rect x="20" y="330" width="330" height="62" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="185" y="355" font-size="14" font-weight="bold" text-anchor="middle">Dantrolene binds RYR1</text>
+<text x="185" y="376" font-size="13" text-anchor="middle">and reduces Ca2+ release (bar = inhibits)</text>
+<line x1="190" y1="328" x2="190" y2="210" stroke="#0f172a" stroke-width="2.5" marker-end="url(#b)"/>
+<rect x="404" y="250" width="320" height="200" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+<text x="564" y="276" font-size="14" font-weight="bold" text-anchor="middle">Malignant hyperthermia</text>
+<text x="420" y="302" font-size="13">Mutant RYR1 + volatile agent or succinylcholine</text>
+<text x="420" y="326" font-size="13">uncontrolled Ca2+ leak</text>
+<text x="420" y="350" font-size="13">sustained contraction: rigidity, masseter spasm</text>
+<text x="420" y="374" font-size="13">ATP use soars: CO2 up, heat, lactate</text>
+<text x="420" y="398" font-size="13">membrane failure: K+ up, CK up, myoglobin</text>
+<text x="420" y="422" font-size="13">Treat: stop trigger, 100% O2, dantrolene</text>
+</svg>

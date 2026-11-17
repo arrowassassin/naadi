@@ -84,6 +84,11 @@
   "nbk": "NBK499908",
   "title": "Adolescent Idiopathic Scoliosis"
  },
+ "Albinism": {
+  "exact": true,
+  "nbk": "NBK519018",
+  "title": "Albinism"
+ },
  "Alcohol Use Disorder": {
   "exact": false,
   "nbk": "NBK436003",
@@ -133,6 +138,11 @@
   "exact": true,
   "nbk": "NBK430924",
   "title": "Androgenetic Alopecia"
+ },
+ "Animal Bites": {
+  "exact": true,
+  "nbk": "NBK430852",
+  "title": "Animal Bites"
  },
  "Ankle Sprain": {
   "exact": false,
@@ -242,9 +252,19 @@
   "nbk": "NBK430914",
   "title": "Blast Injuries"
  },
+ "Bone Metastasis": {
+  "exact": true,
+  "nbk": "NBK507911",
+  "title": "Bone Metastasis"
+ },
  "Brachial Plexus Injury": {
   "nbk": null,
   "title": "Brachial Plexus Injury"
+ },
+ "Breast Abscess": {
+  "exact": true,
+  "nbk": "NBK459122",
+  "title": "Breast Abscess"
  },
  "Breast Cancer Genetics": {
   "nbk": null,
@@ -254,6 +274,11 @@
   "exact": true,
   "nbk": "NBK556050",
   "title": "Breast Cancer Screening in the Average-Risk Patient"
+ },
+ "Breast Fat Necrosis": {
+  "exact": true,
+  "nbk": "NBK542191",
+  "title": "Breast Fat Necrosis"
  },
  "Breast Fibroadenoma": {
   "exact": true,
@@ -275,6 +300,20 @@
   "nbk": "NBK535374",
   "title": "Bullous Pemphigoid"
  },
+ "Burn Classification": {
+  "exact": true,
+  "nbk": "NBK539773",
+  "title": "Burn Classification"
+ },
+ "Burn Evaluation and Management": {
+  "nbk": null,
+  "title": "Burn Evaluation and Management"
+ },
+ "Burn Fluid Resuscitation": {
+  "exact": true,
+  "nbk": "NBK534227",
+  "title": "Burn Fluid Resuscitation"
+ },
  "Calcium Pyrophosphate Deposition Disease": {
   "exact": true,
   "nbk": "NBK540151",
@@ -284,6 +323,16 @@
   "exact": true,
   "nbk": "NBK549915",
   "title": "Cannabinoid Hyperemesis Syndrome"
+ },
+ "Carbon Monoxide Poisoning": {
+  "exact": true,
+  "nbk": "NBK557888",
+  "title": "Carbon Monoxide Poisoning"
+ },
+ "Carbon Monoxide Toxicity": {
+  "exact": false,
+  "nbk": "NBK470531",
+  "title": "Hyperbaric Treatment of Carbon Monoxide Toxicity"
  },
  "Carpal Tunnel Syndrome": {
   "exact": true,
@@ -298,6 +347,11 @@
   "exact": true,
   "nbk": "NBK537200",
   "title": "Cauda Equina and Conus Medullaris Syndromes"
+ },
+ "Cauliflower Ear": {
+  "exact": true,
+  "nbk": "NBK470424",
+  "title": "Cauliflower Ear"
  },
  "Cellulitis": {
   "exact": true,
@@ -355,6 +409,11 @@
   "exact": true,
   "nbk": "NBK537286",
   "title": "Chlamydia trachomatis Infection"
+ },
+ "Chondrosarcoma": {
+  "exact": true,
+  "nbk": "NBK538132",
+  "title": "Chondrosarcoma"
  },
  "Chorionic Villus Sampling": {
   "exact": true,
@@ -429,6 +488,11 @@
   "exact": true,
   "nbk": "NBK459230",
   "title": "Contact Dermatitis"
+ },
+ "Contraception": {
+  "exact": true,
+  "nbk": "NBK536949",
+  "title": "Contraception"
  },
  "Contracture": {
   "exact": false,
@@ -661,6 +725,11 @@
   "nbk": "NBK549797",
   "title": "Estradiol"
  },
+ "Ewing Sarcoma": {
+  "exact": true,
+  "nbk": "NBK559183",
+  "title": "Ewing Sarcoma"
+ },
  "Exertional Rhabdomyolysis": {
   "nbk": null,
   "title": "Exertional Rhabdomyolysis"
@@ -783,6 +852,11 @@
   "exact": true,
   "nbk": "NBK549821",
   "title": "Fournier Gangrene"
+ },
+ "Frostbite": {
+  "exact": true,
+  "nbk": "NBK536914",
+  "title": "Frostbite"
  },
  "Gender Dysphoria": {
   "exact": true,
@@ -1022,6 +1096,11 @@
   "nbk": "NBK534854",
   "title": "Hypertrichosis"
  },
+ "Hypertrophic Scarring Keloids": {
+  "exact": true,
+  "nbk": "NBK537058",
+  "title": "Hypertrophic Scarring Keloids"
+ },
  "Hyperuricemia": {
   "exact": true,
   "nbk": "NBK459218",
@@ -1109,6 +1188,11 @@
   "nbk": "NBK546697",
   "title": "Ingrown Toenails"
  },
+ "Inhalation Injury": {
+  "exact": true,
+  "nbk": "NBK513261",
+  "title": "Inhalation Injury"
+ },
  "Intimate Partner Violence": {
   "nbk": null,
   "title": "Intimate Partner Violence"
@@ -1120,6 +1204,11 @@
  },
  "Intrauterine Device": {
   "exact": false,
+  "nbk": "NBK557403",
+  "title": "Intrauterine Device Placement and Removal"
+ },
+ "Intrauterine Device Placement and Removal": {
+  "exact": true,
   "nbk": "NBK557403",
   "title": "Intrauterine Device Placement and Removal"
  },
@@ -1147,6 +1236,10 @@
   "exact": true,
   "nbk": "NBK534839",
   "title": "Kaposi Sarcoma"
+ },
+ "Keloid": {
+  "nbk": null,
+  "title": "Keloid"
  },
  "Kernicterus": {
   "exact": true,
@@ -1317,6 +1410,11 @@
   "nbk": "NBK513276",
   "title": "Oral Melanoma"
  },
+ "Melasma": {
+  "exact": true,
+  "nbk": "NBK459271",
+  "title": "Melasma"
+ },
  "Meniscal Tears": {
   "exact": false,
   "nbk": "NBK431067",
@@ -1354,6 +1452,11 @@
   "exact": true,
   "nbk": "NBK441898",
   "title": "Molluscum Contagiosum"
+ },
+ "Multiple Myeloma": {
+  "exact": true,
+  "nbk": "NBK534764",
+  "title": "Multiple Myeloma"
  },
  "Myasthenia Gravis": {
   "exact": true,
@@ -1569,6 +1672,11 @@
   "nbk": null,
   "title": "Osteoporotic Compression Fractures"
  },
+ "Osteosarcoma (Osteogenic Sarcoma)": {
+  "exact": true,
+  "nbk": "NBK563177",
+  "title": "Osteosarcoma (Osteogenic Sarcoma)"
+ },
  "Ovarian Hyperstimulation Syndrome": {
   "nbk": null,
   "title": "Ovarian Hyperstimulation Syndrome"
@@ -1723,6 +1831,11 @@
   "nbk": "NBK559304",
   "title": "Physiology, Pregnancy"
  },
+ "Physiology, Wound Healing": {
+  "exact": true,
+  "nbk": "NBK535406",
+  "title": "Physiology, Wound Healing"
+ },
  "Placenta Previa": {
   "exact": true,
   "nbk": "NBK539818",
@@ -1753,6 +1866,11 @@
   "nbk": "NBK563129",
   "title": "Polymyositis"
  },
+ "Postcoital Contraception": {
+  "exact": true,
+  "nbk": "NBK559157",
+  "title": "Postcoital Contraception"
+ },
  "Posterior Elbow Dislocation": {
   "exact": true,
   "nbk": "NBK470574",
@@ -1761,6 +1879,11 @@
  "Posterior Shoulder Dislocation": {
   "nbk": null,
   "title": "Posterior Shoulder Dislocation"
+ },
+ "Postinflammatory Hyperpigmentation": {
+  "exact": true,
+  "nbk": "NBK559150",
+  "title": "Postinflammatory Hyperpigmentation"
  },
  "Postmenopausal Bleeding": {
   "exact": true,
@@ -1815,6 +1938,11 @@
   "nbk": null,
   "title": "Prenatal Radiation Exposure"
  },
+ "Pressure Injury": {
+  "exact": true,
+  "nbk": "NBK553107",
+  "title": "Pressure Injury"
+ },
  "Priapism": {
   "exact": true,
   "nbk": "NBK459178",
@@ -1862,6 +1990,11 @@
   "nbk": "NBK557777",
   "title": "Quinolones"
  },
+ "Rabies": {
+  "exact": true,
+  "nbk": "NBK448076",
+  "title": "Rabies"
+ },
  "Raloxifene": {
   "exact": true,
   "nbk": "NBK544233",
@@ -1881,6 +2014,11 @@
   "exact": true,
   "nbk": "NBK448168",
   "title": "Rhabdomyolysis"
+ },
+ "Rhabdomyosarcoma": {
+  "exact": true,
+  "nbk": "NBK507721",
+  "title": "Rhabdomyosarcoma"
  },
  "Rheumatoid Arthritis": {
   "exact": true,
@@ -2005,6 +2143,10 @@
   "exact": true,
   "nbk": "NBK538302",
   "title": "Slipped Capital Femoral Epiphysis"
+ },
+ "Smoke Inhalation Injury": {
+  "nbk": null,
+  "title": "Smoke Inhalation Injury"
  },
  "Smoking in Pregnancy": {
   "nbk": null,
@@ -2255,6 +2397,11 @@
   "exact": true,
   "nbk": "NBK536983",
   "title": "Vitamin K Deficiency in Neonates and Adults"
+ },
+ "Vitiligo": {
+  "exact": true,
+  "nbk": "NBK559149",
+  "title": "Vitiligo"
  },
  "Vulvodynia": {
   "exact": true,

@@ -1,0 +1,552 @@
+{
+ "area": "13.01.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Breast inflammation: anatomy, lactation physiology, microbiology and pathology",
+   "html": "<p>The breast is a modified apocrine gland: 15 to 20 lobes, each drained by a lactiferous duct that widens into a sinus beneath the nipple. The functional unit is the <strong>terminal duct lobular unit</strong> (TDLU), where most epithelial disease begins. Ducts and lobules are lined by two cell layers: inner luminal epithelial cells and outer <strong>myoepithelial cells</strong>, which contract in response to oxytocin to eject milk and which define the boundary between in situ and invasive disease. Fibrous Cooper ligaments run from the deep fascia to the skin, which is why both inflammation and cancer can dimple or retract the skin. Lymph drains mostly to the axillary nodes, with medial drainage to the internal mammary chain.</p>\n<h2>Lactation physiology and milk stasis</h2>\n<p>During pregnancy, estrogen drives duct growth and progesterone drives lobular-alveolar development, while high levels of both block milk secretion. After delivery of the placenta, progesterone falls and <strong>prolactin</strong> (secreted by the anterior pituitary when dopamine inhibition is relieved by suckling) drives milk synthesis. <strong>Oxytocin</strong> from the posterior pituitary contracts myoepithelial cells to eject milk. Inflammation in the lactating breast usually starts with impaired drainage: oversupply, missed feeds, poor latch, pressure from a bra or sling, or overpumping. Stasis causes ductal narrowing and interstitial edema; milk components leak into the stroma and provoke a sterile inflammatory response. Bacteria, most often <em>Staphylococcus aureus</em>, may then enter through cracked nipples.</p>\n<h2>Lactational mastitis and abscess</h2>\n<p>Bacterial mastitis is acute inflammation with neutrophilic infiltration of the stroma. <em>S. aureus</em> (including community MRSA) is the main pathogen; streptococci and coagulase-negative staphylococci are less common. If the infection is not controlled, neutrophil enzymes digest tissue and an <strong>abscess</strong> forms: a localized collection of pus with <strong>liquefactive necrosis</strong>, surrounded by granulation tissue and later a fibrous wall. <em>S. aureus</em> virulence factors suit abscess formation: coagulase converts fibrinogen to fibrin and walls off the lesion, protein A binds the Fc region of IgG and blocks opsonization, and leukocidins such as Panton-Valentine leukocidin kill neutrophils. MRSA resists all beta-lactams other than ceftaroline because the <em>mecA</em> gene encodes an altered penicillin-binding protein (PBP2a) with low affinity for these drugs.</p>\n<h2>Periductal mastitis and duct ectasia</h2>\n<table class=\"hy\"><thead><tr><th>Feature</th><th>Periductal mastitis (subareolar abscess)</th><th>Mammary duct ectasia</th></tr></thead><tbody>\n<tr><td>Typical patient</td><td>Younger, nonlactating, strongly associated with smoking</td><td>Perimenopausal or postmenopausal, often multiparous</td></tr>\n<tr><td>Pathogenesis</td><td>Smoking-associated <strong>squamous metaplasia</strong> of the lactiferous ducts; keratin plugs the duct, which dilates and ruptures, and keratin in the stroma provokes intense inflammation and secondary infection with mixed aerobes and anaerobes</td><td>Dilation of subareolar ducts filled with inspissated secretions; periductal inflammation with many plasma cells, then fibrosis</td></tr>\n<tr><td>Presentation</td><td>Painful subareolar mass or abscess, nipple retraction, recurrent infection, a fistula opening at the areolar edge</td><td>Thick, sticky, multicolored nipple discharge; slit-like nipple retraction; a firm retroareolar mass that can mimic cancer</td></tr>\n</tbody></table>\n<h2>Fat necrosis</h2>\n<p>Fat necrosis follows trauma (a seat belt injury, a blow), surgery (biopsy, lumpectomy, reduction or reconstruction with fat grafting) or radiation, although many patients do not remember an injury. Damaged adipocytes release triglycerides; lipases free fatty acids, which combine with calcium (<strong>saponification</strong>), producing chalky deposits and later dystrophic calcification. Histology shows anucleate fat cells, <strong>lipid-laden (foamy) macrophages</strong>, multinucleated giant cells, then fibrosis. Clinically and on mammography it can mimic carcinoma: a firm, irregular mass with skin retraction and calcifications. A classic oil cyst with thin rim calcification is benign; anything indeterminate needs a biopsy.</p>\n[[figure:s23f-fig130101-1]]\n<h2>Other inflammatory and immune conditions</h2>\n<ul>\n<li><strong>Idiopathic granulomatous mastitis:</strong> young parous people, usually within a few years of pregnancy; noncaseating granulomas centered on lobules, with abscesses and sinuses. Some cases (cystic neutrophilic granulomatous mastitis) are associated with <em>Corynebacterium kroppenstedtii</em>. Tuberculosis and fungal infection must be excluded.</li>\n<li><strong>Diabetic (lymphocytic) mastopathy:</strong> long-standing type 1 diabetes; a hard, painless mass with dense keloid-like fibrosis and lymphocytes around lobules and vessels. It needs biopsy because it mimics cancer clinically and on imaging.</li>\n<li><strong>Silicone granulomas</strong> after implant rupture or illicit silicone injection: foreign-body giant cells around silicone droplets. Free silicone injection is more common in some transgender women who could not access safe care and can cause recurrent infection and migration.</li>\n<li><strong>Mondor disease:</strong> superficial thrombophlebitis of a chest-wall vein producing a tender cord, often after surgery or trauma; self-limited.</li>\n</ul>\n<div class=\"trap\"><p>Inflammatory breast cancer looks like infection: a red, warm, swollen breast with peau d'orange. Its cause is tumor emboli blocking dermal lymphatics, not neutrophils. A nonlactating patient with breast \"cellulitis\" that does not resolve needs a biopsy.</p></div>\n<div class=\"pearl\"><p>Squamous metaplasia of the lactiferous ducts links smoking to recurrent subareolar abscesses and fistulas; recurrence is common until the patient stops smoking and the diseased duct is excised.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Acute Mastitis"
+    },
+    {
+     "statpearls": "Mammary Duct Ectasia"
+    },
+    {
+     "statpearls": "Breast Fat Necrosis"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Mastitis, breast abscess and inflammatory mimics: diagnosis and management",
+   "html": "<p>Breast inflammation is common in lactating people, and most of it resolves with good milk drainage, analgesia and, when bacterial infection is present, antibiotics that cover <em>Staphylococcus aureus</em>. In nonlactating patients, recurrent subareolar infection usually points to periductal mastitis, and persistent inflammation must be evaluated for cancer.</p>\n<h2>Lactational inflammation: a spectrum</h2>\n<p>Current lactation guidance describes a continuum rather than separate diseases: ductal narrowing and engorgement, inflammatory mastitis, bacterial mastitis, phlegmon and abscess, with galactocele (a milk-filled cyst) at the side. Inflammatory mastitis causes a tender, warm, red or darker wedge-shaped area, often with fever and malaise, typically in the first 6 to 12 weeks postpartum.</p>\n<ul>\n<li><strong>First-line measures:</strong> keep breastfeeding or chestfeeding on demand from both sides; avoid overfeeding and overpumping, which stimulate more supply; use ice packs and NSAIDs (ibuprofen) or acetaminophen; apply gentle lymphatic drainage rather than deep massage; correct latch and position with lactation support.</li>\n<li><strong>Antibiotics</strong> when symptoms do not improve within 12 to 24 hours, when the patient is systemically unwell, or when there are signs of bacterial infection: a penicillinase-resistant penicillin (dicloxacillin) or a first-generation cephalosporin (cephalexin) for 10 to 14 days. For MRSA risk or proven MRSA, clindamycin; trimethoprim-sulfamethoxazole is an option except when the infant is under about 1 month old, jaundiced, preterm or G6PD deficient. All of these are compatible with continued breastfeeding.</li>\n<li><strong>Milk culture</strong> when infection is severe, hospital-acquired, recurrent or not responding to the first antibiotic.</li>\n<li><strong>Admission</strong> for sepsis, rapid progression or inability to take oral therapy, with intravenous vancomycin or another MRSA-active drug.</li>\n<li>Stopping breastfeeding is not recommended: it worsens stasis and raises abscess risk. Milk from an inflamed breast is safe for a healthy term infant.</li>\n</ul>\n<h2>Breast abscess</h2>\n<p>Suspect an abscess when a tender, fluctuant or well-defined mass persists or fever continues despite 48 to 72 hours of antibiotics. <strong>Ultrasound</strong> confirms a fluid collection and guides treatment. Management is <strong>needle aspiration</strong> (repeated as needed) or ultrasound-guided catheter drainage plus antibiotics, with culture of the aspirate. Surgical incision and drainage is reserved for large, multiloculated abscesses, those that fail aspiration or those with thinned or necrotic overlying skin. Breastfeeding can continue on the affected side if the drainage site is away from the infant's mouth; otherwise, express milk from that side until it heals.</p>\n<h2>Nonlactational infection</h2>\n<table class=\"hy\"><thead><tr><th>Condition</th><th>Clues</th><th>Management</th></tr></thead><tbody>\n<tr><td>Periductal mastitis or subareolar abscess</td><td>Smoker, periareolar pain and mass, nipple retraction, recurrent abscess or a draining fistula at the areolar margin</td><td>Antibiotics covering staphylococci and anaerobes (for example, amoxicillin-clavulanate, or clindamycin with penicillin allergy); aspiration or drainage of abscess; smoking cessation; excision of the diseased subareolar duct and fistula tract for recurrent disease</td></tr>\n<tr><td>Peripheral nonlactational abscess</td><td>Diabetes, immunosuppression, skin infection, nipple piercing</td><td>Aspiration or drainage and antibiotics; control of underlying conditions</td></tr>\n<tr><td>Idiopathic granulomatous mastitis</td><td>Young parous patient, painful mass with sinuses, sterile cultures; biopsy shows lobular granulomas</td><td>Exclude infection (including tuberculosis); corticosteroids or methotrexate; observation in mild cases; avoid wide excision first</td></tr>\n<tr><td>Mondor disease</td><td>Tender subcutaneous cord</td><td>NSAIDs and warmth; age-appropriate breast imaging</td></tr>\n</tbody></table>\n<h2>When inflammation might be cancer</h2>\n<p>Inflammatory breast cancer develops over weeks to a few months with erythema and edema covering a third or more of the breast, peau d'orange and often a diffusely firm breast without a discrete mass; fever and leukocytosis are absent, and the patient is often not lactating. Any breast \"infection\" that does not resolve after a course of antibiotics (1 to 2 weeks), or any inflammatory change in a nonlactating patient without a clear source, needs <strong>diagnostic mammography and ultrasound</strong> and <strong>biopsy</strong> (core biopsy of any mass and a punch biopsy of the skin). Similarly, a persistent mass after an abscess has been drained should be imaged again and, if not clearly resolved, biopsied.</p>\n<h2>Other inflammatory lesions</h2>\n<ul>\n<li><strong>Fat necrosis:</strong> a firm, sometimes tethered mass after trauma, surgery or radiation. If imaging shows a classic benign pattern (an oil cyst or coarse rim calcification), routine follow-up is appropriate; an irregular mass or suspicious calcifications need core biopsy.</li>\n<li><strong>Duct ectasia:</strong> thick, multicolored, often bilateral discharge from several ducts in an older patient. Diagnostic imaging excludes an associated lesion; symptomatic disease may be treated by duct excision. New nipple retraction always needs evaluation for cancer.</li>\n<li><strong>Nipple pain in lactation:</strong> usually latch-related trauma; vasospasm (blanching with cold, associated with Raynaud phenomenon) responds to warmth and, if needed, nifedipine. Treat candidiasis only when there are clear signs.</li>\n</ul>\n<h2>Populations to keep in mind</h2>\n<p>Transgender women and nonbinary people using estrogen develop true breast tissue and can have the same infections, fat necrosis after augmentation and complications of free silicone injection (infection, granulomas, migration). Transgender men and nonbinary people may chestfeed after birth, even after chest masculinization surgery when glandular tissue remains, and can develop lactational mastitis; use their terms for anatomy and feeding. Older adults with duct ectasia or fat necrosis need the same cancer exclusion as anyone their age.</p>\n<div class=\"trap\"><p>A breastfeeding patient with mastitis should not be told to stop feeding from the affected side. Stopping increases stasis and abscess risk; the milk is safe for a healthy term infant.</p></div>\n<div class=\"pearl\"><p>Diagnose a breast abscess by ultrasound and treat it first with needle aspiration and antibiotics; open incision and drainage is the exception, not the rule.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Breast Abscess"
+    },
+    {
+     "statpearls": "Acute Mastitis"
+    },
+    {
+     "statpearls": "Inflammatory Breast Cancer"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Schematic of the breast duct-lobular system showing where the main inflammatory disorders arise (original schematic; not to scale)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 31-year-old woman who is breastfeeding her 4-week-old son has had 2 days of fever and a painful, red, wedge-shaped area in the upper outer quadrant of her right breast. Her nipples have been cracked since the second week. Culture of expressed milk grows gram-positive cocci in clusters that are catalase positive. A virulence factor of this organism converts fibrinogen to fibrin, helping to wall off the infection. Which of the following is this factor?</p>",
+   "options": [
+    "Coagulase",
+    "Hyaluronidase",
+    "Streptokinase",
+    "Protein A",
+    "Exfoliative toxin"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Lactational mastitis is most often caused by <em>Staphylococcus aureus</em>, a catalase-positive, gram-positive coccus in clusters that enters through nipple fissures. Coagulase (free and bound clumping factor) converts fibrinogen to fibrin. The fibrin coat shields bacteria from phagocytes and contributes to the walled-off, localized collections typical of staphylococcal abscesses. Coagulase positivity also distinguishes <em>S. aureus</em> from coagulase-negative staphylococci in the laboratory.</p><p><strong>Takeaway:</strong> Staphylococcus aureus coagulase converts fibrinogen to fibrin and helps form the walled-off abscesses of lactational breast infection.</p>",
+   "whyNot": {
+    "B": "Hyaluronidase breaks down connective tissue ground substance and promotes spread rather than walling off infection.",
+    "C": "Streptokinase, made by streptococci, activates plasminogen and dissolves fibrin, the opposite effect.",
+    "D": "Protein A binds the Fc portion of IgG and blocks opsonization, but it does not convert fibrinogen to fibrin.",
+    "E": "Exfoliative toxin cleaves desmoglein 1 and causes staphylococcal scalded skin syndrome, not localized abscesses."
+   },
+   "objective": "Identify coagulase as the Staphylococcus aureus factor that converts fibrinogen to fibrin.",
+   "disciplines": [
+    "microbiology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "breast infection"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old woman who has never been pregnant has had three episodes of a painful mass just beside the areola of her left breast in 2 years, each drained in the emergency department. She has smoked a pack of cigarettes daily for 18 years. A small opening at the edge of the areola now drains intermittently. The affected subareolar duct and tract are excised. Which of the following histologic findings in the duct is most likely?</p>",
+   "options": [
+    "Squamous metaplasia with keratin plugging",
+    "Apocrine metaplasia with cyst formation",
+    "Atypical lobular hyperplasia",
+    "Noncaseating granulomas centered on lobules",
+    "Arborizing fibrovascular cores lined by epithelium and myoepithelium"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Recurrent subareolar abscesses with a periareolar fistula in a smoker are the picture of periductal mastitis (sometimes called Zuska disease). Toxic components of tobacco smoke induce squamous metaplasia of the normally columnar epithelium of the lactiferous ducts. Keratin produced by the metaplastic epithelium plugs the duct, which dilates and ruptures; keratin in the surrounding stroma provokes intense chronic and granulomatous inflammation, and secondary infection with mixed aerobes and anaerobes follows. Fistulas form when the process drains through the skin at the areolar margin.</p><p><strong>Takeaway:</strong> Smoking-associated squamous metaplasia of lactiferous ducts causes recurrent subareolar abscesses and fistulas.</p>",
+   "whyNot": {
+    "B": "Apocrine metaplasia with cysts is part of fibrocystic change, which does not cause recurrent abscesses or fistulas.",
+    "C": "Atypical lobular hyperplasia is a risk-marking proliferative lesion found incidentally; it does not cause inflammation.",
+    "D": "Lobular granulomas suggest idiopathic granulomatous mastitis, which is centered on lobules rather than subareolar ducts and is not linked to smoking.",
+    "E": "Fibrovascular cores lined by two cell layers describe an intraductal papilloma, which causes bloody discharge rather than recurrent abscesses."
+   },
+   "objective": "Link periductal mastitis to smoking-associated squamous metaplasia of lactiferous ducts.",
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "breast inflammation"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 54-year-old woman has a firm, irregular, slightly tethered 1.5-cm mass in the upper inner quadrant of her right breast. Four months ago she was the driver in a motor vehicle collision and had bruising across her chest from the seat belt. Core biopsy shows anucleate adipocytes, numerous foamy macrophages, multinucleated giant cells and early fibrosis, with chalky basophilic deposits. Which of the following processes produced the chalky deposits?</p>",
+   "options": [
+    "Calcium binding to fatty acids released by lipases",
+    "Precipitation of calcium phosphate on secretory material in ducts",
+    "Hypercalcemia causing deposition in normal tissue",
+    "Calcification of necrotic tumor cells",
+    "Deposition of calcium oxalate by apocrine cells"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Traumatic fat necrosis begins when injured adipocytes release triglycerides that lipases break into free fatty acids. The fatty acids combine with calcium to form soaps (saponification), seen as chalky deposits; dystrophic calcification follows in the damaged tissue. Macrophages engulf the lipid and become foamy, giant cells form and fibrosis can tether the skin, so fat necrosis can mimic carcinoma on examination and imaging. The same saponification occurs in peripancreatic fat in acute pancreatitis.</p><p><strong>Takeaway:</strong> Fat necrosis calcifies through saponification of released fatty acids followed by dystrophic calcification in normal serum calcium.</p>",
+   "whyNot": {
+    "B": "Calcium phosphate precipitating on intraluminal secretions is typical of calcifications in ducts and lobules (for example, in DCIS or fibrocystic change), not in fat necrosis.",
+    "C": "Metastatic calcification from hypercalcemia occurs in normal tissue; this is dystrophic calcification in injured fat with normal calcium.",
+    "D": "The biopsy shows no tumor cells; necrotic tumor calcification is seen in comedo-type DCIS.",
+    "E": "Calcium oxalate crystals can occur in benign apocrine cysts, but they do not form the soaps of fat necrosis."
+   },
+   "objective": "Explain the saponification and dystrophic calcification of breast fat necrosis.",
+   "disciplines": [
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "breast inflammation"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old woman is breastfeeding her 2-week-old daughter. She notices that milk drips from the opposite breast as soon as the infant latches, and she feels uterine cramping during feeds. The hormone responsible for these effects acts on which of the following cells in the breast?</p>",
+   "options": [
+    "Luminal epithelial cells of the lobules",
+    "Myoepithelial cells around the alveoli and ducts",
+    "Stromal fibroblasts",
+    "Adipocytes",
+    "Plasma cells in the interlobular stroma"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Suckling stimulates sensory nerves in the nipple, which signal the hypothalamus to release oxytocin from the posterior pituitary. Oxytocin contracts the myoepithelial cells that surround the alveoli and small ducts, ejecting milk (the let-down reflex), and it also contracts the uterus, causing afterpains. Milk synthesis by luminal epithelial cells is driven by prolactin. Poor let-down, from pain, stress or alcohol, contributes to milk stasis and mastitis.</p><p><strong>Takeaway:</strong> Oxytocin ejects milk by contracting myoepithelial cells; prolactin drives milk synthesis by luminal cells.</p>",
+   "whyNot": {
+    "A": "Luminal epithelial cells synthesize milk under prolactin stimulation; they do not contract to eject it.",
+    "C": "Stromal fibroblasts support the gland but do not respond to oxytocin to eject milk.",
+    "D": "Adipocytes store fat and are not involved in milk ejection.",
+    "E": "Plasma cells secrete IgA into milk but play no role in let-down."
+   },
+   "objective": "Identify myoepithelial cells as the oxytocin target in milk ejection.",
+   "disciplines": [
+    "physiology",
+    "histology_cell_biology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "lactation"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 27-year-old woman who is breastfeeding has had mastitis for 4 days and has not improved despite taking oral dicloxacillin as prescribed. Culture of expressed milk grows <em>Staphylococcus aureus</em> resistant to oxacillin and susceptible to vancomycin, clindamycin and trimethoprim-sulfamethoxazole. Which of the following best explains the failure of dicloxacillin?</p>",
+   "options": [
+    "Production of a beta-lactamase that cleaves dicloxacillin",
+    "An altered penicillin-binding protein with low affinity for beta-lactams",
+    "Efflux pumps that remove the drug from the cytoplasm",
+    "Modification of the D-Ala-D-Ala terminus to D-Ala-D-Lac",
+    "Methylation of the 23S ribosomal RNA binding site"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Methicillin-resistant <em>S. aureus</em> carries the <em>mecA</em> gene (on the SCCmec cassette), which encodes penicillin-binding protein 2a. PBP2a continues cross-linking peptidoglycan but binds penicillinase-resistant penicillins (oxacillin, dicloxacillin) and most cephalosporins poorly, so these drugs fail. Ceftaroline is the beta-lactam that binds PBP2a. Breastfeeding-compatible options for MRSA mastitis include clindamycin and, for an older healthy infant, trimethoprim-sulfamethoxazole.</p><p><strong>Takeaway:</strong> MRSA resists penicillinase-resistant penicillins through mecA-encoded PBP2a, an altered penicillin-binding protein.</p>",
+   "whyNot": {
+    "A": "Dicloxacillin is designed to resist staphylococcal penicillinase; beta-lactamase does not explain oxacillin resistance.",
+    "C": "Efflux pumps are a mechanism for tetracycline and macrolide resistance, not beta-lactam resistance in MRSA.",
+    "D": "D-Ala-D-Lac substitution causes vancomycin resistance in enterococci and is not relevant to an organism susceptible to vancomycin.",
+    "E": "23S rRNA methylation causes macrolide and clindamycin resistance; this isolate is clindamycin susceptible."
+   },
+   "objective": "Explain MRSA resistance to penicillinase-resistant penicillins by PBP2a.",
+   "disciplines": [
+    "microbiology",
+    "pharmacology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "breast infection"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 33-year-old woman develops a tender, fluctuant 3-cm mass in her left breast 6 weeks after delivery while breastfeeding. Ultrasound-guided aspiration yields 8 mL of thick yellow fluid. Microscopy of the aspirate would most likely show which of the following?</p>",
+   "options": [
+    "Neutrophils and necrotic debris in a liquefied matrix",
+    "Ghost outlines of cells with preserved architecture",
+    "Caseous material with epithelioid granulomas",
+    "Fibrinoid material in vessel walls",
+    "Foamy macrophages with saponified fat"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A breast abscess is a localized collection of pus. Neutrophils recruited by bacteria such as <em>Staphylococcus aureus</em> release lysosomal enzymes that digest the tissue, producing <strong>liquefactive necrosis</strong>: a fluid mixture of viable and dead neutrophils, bacteria and necrotic debris. With time it is walled off by granulation tissue and fibrosis. Liquefactive necrosis is also typical of brain infarcts, where enzymes digest lipid-rich tissue.</p><p><strong>Takeaway:</strong> Bacterial abscesses show liquefactive necrosis: pus made of neutrophils and digested tissue.</p>",
+   "whyNot": {
+    "B": "Ghost cells with preserved architecture describe coagulative necrosis, typical of ischemic infarcts in solid organs other than the brain.",
+    "C": "Caseous necrosis with granulomas suggests tuberculosis or fungal infection, not acute lactational infection.",
+    "D": "Fibrinoid necrosis occurs in vessel walls in vasculitis and malignant hypertension.",
+    "E": "Foamy macrophages with saponified fat describe fat necrosis, which is firm rather than fluctuant and yields little pus."
+   },
+   "objective": "Recognize liquefactive necrosis as the pathology of a bacterial breast abscess.",
+   "disciplines": [
+    "pathology"
+   ],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "breast infection"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 30-year-old woman who is exclusively breastfeeding her healthy 5-week-old son has had 36 hours of pain, redness and warmth in the lower outer quadrant of her left breast, with fever to 38.9&deg;C (102&deg;F) and body aches. Ice and ibuprofen have not helped. The area is tender, firm and red, without fluctuance. A nipple fissure is present. There is no axillary mass. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Stop breastfeeding from the left breast until symptoms resolve",
+    "Oral cephalexin and continued breastfeeding from both breasts",
+    "Incision and drainage of the affected area",
+    "Diagnostic mammography",
+    "Admission for intravenous vancomycin"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>She has lactational mastitis that has not improved within 24 hours of conservative care and is accompanied by high fever and a nipple fissure, which suggests bacterial infection. Treat with an oral antibiotic active against <em>Staphylococcus aureus</em> (cephalexin or dicloxacillin) while continuing breastfeeding on demand from both sides, with NSAIDs, ice and lactation support. Ultrasound is indicated if a fluctuant mass develops or fever persists after 48 to 72 hours, to look for abscess.</p><p><strong>Takeaway:</strong> Bacterial lactational mastitis: an antistaphylococcal oral antibiotic and continued breastfeeding.</p>",
+   "whyNot": {
+    "A": "Stopping feeding from the affected breast worsens stasis and raises abscess risk; the milk is safe for her infant.",
+    "C": "There is no fluctuance or fluid collection to drain; drainage is for abscesses.",
+    "D": "Mammography is not useful in acute lactational mastitis; ultrasound is the imaging test if an abscess is suspected.",
+    "E": "She is not septic and can take oral therapy; admission and IV therapy are for severe or rapidly progressive infection."
+   },
+   "objective": "Treat bacterial lactational mastitis with an oral antistaphylococcal antibiotic while continuing breastfeeding.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "tags": [
+    "breast infection"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 28-year-old woman who is breastfeeding her 7-week-old daughter has taken dicloxacillin for 3 days for mastitis. Her fever has persisted, and she now has a tender, fluctuant area in the upper outer quadrant of her right breast. The overlying skin is red but intact. Ultrasound shows a 3.5-cm unilocular fluid collection. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Continue dicloxacillin and reassess in 1 week",
+    "Ultrasound-guided needle aspiration with culture, and continued antibiotics",
+    "Open incision and drainage under general anesthesia",
+    "Stop breastfeeding and start cabergoline to suppress lactation",
+    "Core needle biopsy of the collection wall"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Persistent fever and a fluctuant area after several days of antibiotics, with a fluid collection on ultrasound, indicate a lactational breast abscess. First-line treatment is ultrasound-guided needle aspiration (repeated if fluid reaccumulates) or catheter drainage, with culture of the aspirate to guide antibiotics, which are continued. This approach heals most abscesses with less scarring and less disruption of breastfeeding than surgery. Breastfeeding can continue.</p><p><strong>Takeaway:</strong> A lactational breast abscess is treated first with ultrasound-guided aspiration and antibiotics, not open drainage.</p>",
+   "whyNot": {
+    "A": "Antibiotics alone do not resolve an established abscess, and a week of delay risks enlargement and skin necrosis.",
+    "C": "Open incision and drainage is for large, multiloculated abscesses, those that fail aspiration or those with compromised skin.",
+    "D": "Suppressing lactation is unnecessary and removes the benefits of breastfeeding; stopping abruptly can worsen engorgement.",
+    "E": "A biopsy is reserved for a mass that persists after treatment or has suspicious features, not for a simple abscess at presentation."
+   },
+   "objective": "Treat a lactational breast abscess with ultrasound-guided aspiration and antibiotics.",
+   "clinicalSciences": [
+    "obgyn",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "tags": [
+    "breast infection"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 32-year-old woman delivered at 37 weeks' gestation 11 days ago and is breastfeeding. Her son is mildly jaundiced and is being followed for hyperbilirubinemia. She has had 3 days of mastitis treated with cephalexin with no improvement. Temperature is 38.6&deg;C (101.5&deg;F). There is no fluctuance, and ultrasound shows no fluid collection. She has no drug allergies. Milk culture results are shown.</p><table><thead><tr><th>Organism</th><th>Antibiotic</th><th>Result</th></tr></thead><tbody><tr><td rowspan=\"5\"><em>Staphylococcus aureus</em></td><td>Oxacillin</td><td>Resistant</td></tr><tr><td>Cefazolin</td><td>Resistant</td></tr><tr><td>Clindamycin (inducible resistance test negative)</td><td>Susceptible</td></tr><tr><td>Trimethoprim-sulfamethoxazole</td><td>Susceptible</td></tr><tr><td>Vancomycin</td><td>Susceptible</td></tr></tbody></table><p>Which of the following is the most appropriate change in therapy?</p>",
+   "options": [
+    "Continue cephalexin at a higher dose",
+    "Switch to oral dicloxacillin",
+    "Switch to oral trimethoprim-sulfamethoxazole",
+    "Switch to oral clindamycin",
+    "Switch to oral amoxicillin-clavulanate"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The isolate is methicillin-resistant <em>S. aureus</em>, so all of the beta-lactams listed will fail. Both clindamycin and trimethoprim-sulfamethoxazole are active, but her infant is 11 days old, was born at 37 weeks and is jaundiced. Sulfonamides pass into milk and can displace bilirubin from albumin, so trimethoprim-sulfamethoxazole is avoided while breastfeeding an infant under about 1 month old, a preterm or jaundiced infant, or one with G6PD deficiency. Oral clindamycin is compatible with breastfeeding; the infant should be watched for diarrhea. She should continue to breastfeed.</p><p><strong>Takeaway:</strong> For MRSA mastitis while breastfeeding a young or jaundiced infant, choose clindamycin over trimethoprim-sulfamethoxazole.</p>",
+   "whyNot": {
+    "A": "MRSA is resistant to cephalexin at any dose because PBP2a binds it poorly.",
+    "B": "Dicloxacillin, like oxacillin, does not treat MRSA.",
+    "C": "Trimethoprim-sulfamethoxazole is active, but the sulfonamide in milk could raise free bilirubin in this young, jaundiced, late-preterm infant.",
+    "E": "Amoxicillin-clavulanate is a beta-lactam combination with no activity against MRSA."
+   },
+   "objective": "Choose a breastfeeding-compatible antibiotic for MRSA mastitis in a parent of a young jaundiced infant.",
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "extraAreas": [
+    "12.06.01"
+   ],
+   "tags": [
+    "breast infection"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old woman has had four periareolar abscesses in her right breast over 3 years, each treated with aspiration or drainage and antibiotics. She has never been pregnant and smokes 20 cigarettes daily. Examination shows a retracted right nipple and a small opening at the edge of the areola that drains cloudy fluid; there is no current fluctuance. Diagnostic mammography and ultrasound show only a dilated subareolar duct with a tract to the skin, and no suspicious mass. Which of the following is the most appropriate definitive management, together with smoking cessation?</p>",
+   "options": [
+    "Another course of oral antibiotics",
+    "Excision of the affected subareolar duct and fistula tract",
+    "Total mastectomy",
+    "Long-term daily prophylactic doxycycline",
+    "Radiation therapy to the subareolar region"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Recurrent subareolar abscesses with nipple retraction and a periareolar mammary duct fistula in a smoker are periductal mastitis. Repeated drainage and antibiotics treat each episode but do not remove the metaplastic, keratin-plugged duct that drives recurrence. Definitive treatment is surgical excision of the diseased subareolar duct (or the whole retroareolar duct system) with the fistula tract, performed when acute infection has settled, under antibiotic cover that includes anaerobes. Stopping smoking lowers the high recurrence rate. Imaging has excluded an underlying malignancy.</p><p><strong>Takeaway:</strong> Recurrent periductal mastitis with a fistula needs excision of the diseased duct and tract, plus smoking cessation.</p>",
+   "whyNot": {
+    "A": "Another antibiotic course would treat a flare but leave the diseased duct, so recurrence would continue.",
+    "C": "Mastectomy is excessive for a benign localized duct disease.",
+    "D": "Long-term antibiotic prophylaxis does not remove the cause and promotes resistance.",
+    "E": "Radiation has no role in benign inflammatory breast disease."
+   },
+   "objective": "Treat recurrent periductal mastitis with fistula by excision of the duct and tract.",
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "tags": [
+    "breast inflammation"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old woman has had 4 weeks of redness, swelling and heaviness of her left breast. She is not breastfeeding and has no fever. A 10-day course of cephalexin for presumed cellulitis did not help. The erythema covers more than half of the breast, the skin has a pitted, orange-peel texture, and the whole breast feels firm without a discrete mass. A firm 1.5-cm left axillary lymph node is palpable. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "A different oral antibiotic for 2 more weeks",
+    "Warm compresses and reassessment in 1 month",
+    "Diagnostic mammography and ultrasound with core biopsy and skin punch biopsy",
+    "Incision and drainage of the breast",
+    "Screening mammography at her next scheduled interval"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Erythema and edema over more than a third of the breast with peau d'orange, developing over weeks in a nonlactating, afebrile patient who did not respond to antibiotics, with a firm axillary node, is inflammatory breast cancer until proven otherwise. The skin changes are caused by tumor emboli in the dermal lymphatics. The next step is diagnostic bilateral mammography and ultrasound (breast and axilla) and tissue diagnosis: core biopsy of any abnormality and a skin punch biopsy, along with receptor testing. Staging and trimodality therapy (neoadjuvant systemic therapy, modified radical mastectomy and radiation) follow.</p><p><strong>Takeaway:</strong> Breast \"cellulitis\" that fails antibiotics in a nonlactating patient needs diagnostic imaging and biopsy to exclude inflammatory breast cancer.</p>",
+   "whyNot": {
+    "A": "More antibiotics delay the diagnosis of a rapidly progressive cancer.",
+    "B": "Observation for a month is dangerous with this presentation.",
+    "D": "There is no abscess to drain, and incision of a cancer seeds tissue and delays treatment.",
+    "E": "Screening mammography is for asymptomatic patients; symptomatic patients need diagnostic imaging now."
+   },
+   "objective": "Evaluate antibiotic-unresponsive breast inflammation in a nonlactating patient for inflammatory breast cancer.",
+   "clinicalSciences": [
+    "surgery",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "extraAreas": [
+    "13.01.02"
+   ],
+   "tags": [
+    "breast inflammation"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 49-year-old woman has a firm, slightly tender 2-cm lump in the upper inner quadrant of her right breast. Five months ago she had a seat belt bruise across her chest after a car crash. Diagnostic mammography shows a round, fat-density lesion with a thin rim of curvilinear (eggshell) calcification and no spiculation or associated mass; ultrasound shows a circumscribed lesion consistent with an oil cyst. The radiologist reports a benign finding (BI-RADS 2). Her previous screening mammograms were normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Core needle biopsy",
+    "Excisional biopsy",
+    "Breast MRI",
+    "Return to routine screening",
+    "Mammography in 6 months"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Fat necrosis after chest trauma can feel firm and worrying, but when imaging shows a classic benign pattern (a fat-containing oil cyst with eggshell rim calcification) and correlates with the palpable finding, it is BI-RADS 2 and needs no biopsy or short-interval follow-up. She returns to routine screening. If the lesion had irregular margins, an associated soft-tissue mass, suspicious calcifications or discordance between imaging and examination, core biopsy would be required.</p><p><strong>Takeaway:</strong> Fat necrosis with a classic benign imaging pattern (oil cyst, rim calcification) is BI-RADS 2: routine screening, no biopsy.</p>",
+   "whyNot": {
+    "A": "Biopsy is not indicated for a classic benign finding that matches the palpable lump.",
+    "B": "Excision adds scarring and cost without benefit for a benign oil cyst.",
+    "C": "MRI adds nothing when mammography and ultrasound are diagnostic of a benign process.",
+    "E": "Short-interval follow-up is for probably benign (BI-RADS 3) findings; this finding is definitively benign."
+   },
+   "objective": "Manage fat necrosis with classic benign imaging features as BI-RADS 2.",
+   "clinicalSciences": [
+    "surgery",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "tags": [
+    "breast inflammation"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which hormone ejects milk, and which cells does it act on?",
+   "back": "Oxytocin, acting on myoepithelial cells.",
+   "question": 4
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Most common organism in lactational mastitis?",
+   "back": "Staphylococcus aureus, including community MRSA.",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which S. aureus enzyme converts fibrinogen to fibrin?",
+   "back": "Coagulase.",
+   "question": 1
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Mechanism of MRSA resistance to dicloxacillin?",
+   "back": "mecA-encoded PBP2a with low affinity for beta-lactams.",
+   "question": 5
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Histology of periductal mastitis?",
+   "back": "Squamous metaplasia of lactiferous ducts with keratin plugging and periductal inflammation; linked to smoking.",
+   "question": 2
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Duct ectasia vs periductal mastitis: typical patient?",
+   "back": "Duct ectasia: older parous patients with thick discharge. Periductal mastitis: younger smokers with recurrent subareolar abscesses.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Histology of fat necrosis?",
+   "back": "Anucleate fat cells, foamy macrophages, giant cells, saponification and calcification, then fibrosis.",
+   "question": 3
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Type of necrosis in a breast abscess?",
+   "back": "Liquefactive necrosis.",
+   "question": 6
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Should a patient with lactational mastitis stop breastfeeding on the affected side?",
+   "back": "No; continue feeding on demand from both sides.",
+   "question": 7
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "First-line oral antibiotics for bacterial lactational mastitis?",
+   "back": "Dicloxacillin or cephalexin.",
+   "question": 7
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "First-line treatment of a lactational breast abscess?",
+   "back": "Ultrasound-guided needle aspiration (or catheter drainage) with antibiotics.",
+   "question": 8
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Why avoid TMP-SMX for MRSA mastitis when the infant is under 1 month old or jaundiced?",
+   "back": "Sulfonamide in milk can displace bilirubin; use clindamycin instead.",
+   "question": 9
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Definitive treatment of recurrent periductal mastitis with a fistula?",
+   "back": "Excision of the diseased subareolar duct and fistula tract, plus smoking cessation.",
+   "question": 10
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Breast cellulitis that fails antibiotics in a nonlactating patient: next step?",
+   "back": "Diagnostic mammography and ultrasound with core and skin punch biopsy to exclude inflammatory breast cancer.",
+   "question": 11
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Management of fat necrosis with a classic oil cyst on imaging?",
+   "back": "BI-RADS 2: routine screening, no biopsy.",
+   "question": 12
+  }
+ ]
+}

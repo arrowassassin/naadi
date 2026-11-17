@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" role="img" aria-label="Flowchart for suspected metastatic spinal cord compression: new back pain or neurologic signs in cancer, dexamethasone if deficit, MRI of the entire spine, then surgery plus radiation or radiation alone depending on stability, tumour radiosensitivity and fitness" font-family="sans-serif" fill="#0f172a"><title>Flowchart for suspected metastatic spinal cord compression: new back pain or neurologic signs in cancer, dexamethasone if deficit, MRI of the entire spine, then surgery plus radiation or radiation alone depending on stability, tumour radiosensitivity and fitness</title><rect x="0" y="0" width="760" height="470" fill="#ffffff"/>
+<text x="380" y="30" font-size="18" text-anchor="middle" font-weight="bold">Suspected metastatic spinal cord compression</text>
+<rect x="180" y="50" width="400" height="56" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+<text x="380" y="74" font-size="13" text-anchor="middle">Person with cancer: new or worse back pain, night pain,</text>
+<text x="380" y="92" font-size="13" text-anchor="middle">radicular band pain, weakness, sensory level, sphincter change</text>
+<line x1="380" y1="106" x2="380" y2="130" stroke="#0f172a" stroke-width="2"/>
+<polygon points="374,124 386,124 380,134" fill="#0f172a"/>
+<rect x="180" y="134" width="400" height="56" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="380" y="158" font-size="13" text-anchor="middle">Neurologic deficit: start high-dose dexamethasone now</text>
+<text x="380" y="176" font-size="13" text-anchor="middle">MRI of the ENTIRE spine the same day</text>
+<line x1="380" y1="190" x2="380" y2="214" stroke="#0f172a" stroke-width="2"/>
+<polygon points="374,208 386,208 380,218" fill="#0f172a"/>
+<rect x="180" y="218" width="400" height="56" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+<text x="380" y="242" font-size="13" text-anchor="middle">Assess: spinal stability, tumour radiosensitivity,</text>
+<text x="380" y="260" font-size="13" text-anchor="middle">fitness for surgery, expected survival, number of levels</text>
+<line x1="300" y1="274" x2="190" y2="310" stroke="#0f172a" stroke-width="2"/>
+<line x1="460" y1="274" x2="570" y2="310" stroke="#0f172a" stroke-width="2"/>
+<rect x="20" y="310" width="340" height="120" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+<text x="190" y="334" font-size="14" text-anchor="middle" font-weight="bold">Surgery, then radiation</text>
+<text x="190" y="356" font-size="13" text-anchor="middle">Unstable spine or bony retropulsion;</text>
+<text x="190" y="374" font-size="13" text-anchor="middle">radioresistant tumour (renal cell,</text>
+<text x="190" y="392" font-size="13" text-anchor="middle">melanoma, sarcoma); fit patient with</text>
+<text x="190" y="410" font-size="13" text-anchor="middle">reasonable life expectancy</text>
+<rect x="400" y="310" width="340" height="120" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+<text x="570" y="334" font-size="14" text-anchor="middle" font-weight="bold">Radiation alone</text>
+<text x="570" y="356" font-size="13" text-anchor="middle">Stable spine and radiosensitive tumour</text>
+<text x="570" y="374" font-size="13" text-anchor="middle">(myeloma, lymphoma, many prostate</text>
+<text x="570" y="392" font-size="13" text-anchor="middle">and breast cancers), or not a</text>
+<text x="570" y="410" font-size="13" text-anchor="middle">surgical candidate</text>
+<text x="380" y="455" font-size="12" text-anchor="middle">Walking ability at the start of treatment predicts walking ability afterwards.</text>
+</svg>
