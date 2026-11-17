@@ -171,6 +171,66 @@ def test_clock_more_than_five_minutes_ahead_is_clamped(client: TestClient, key: 
     assert items[b["id"]]["updatedAt"] == near  # inside the window: kept
 
 
+def test_a_clamped_item_comes_back_in_remote_with_the_server_stamp(
+    client: TestClient, key: SigningKey, ink: Ink
+) -> None:
+    """Review P1: a device whose clock runs ahead must adopt the server's stamp, or a later delete elsewhere loses
+    to its future copy. The clamped item is applied *and* echoed; one inside the window is not echoed."""
+    h = ink.h(key)
+    ahead = int(time.time() * 1000) + 600_000
+    x, near = stroke(updated=ahead), stroke(updated=int(time.time() * 1000) + 60_000)
+    out = post(client, h, "section", ink.section, [x, near]).json()
+    assert sorted(out["applied"]) == sorted([x["id"], near["id"]])
+    assert [i["id"] for i in out["remote"]] == [x["id"]]
+    echoed = out["remote"][0]
+    assert echoed["updatedAt"] == out["server_now"] and echoed["points"] == x["points"]
+    # Another device erases X after the clamp: the tombstone wins, and device A's next sync carries it.
+    dead = {**echoed, "deleted": True, "updatedAt": echoed["updatedAt"] + 1}
+    b = post(client, h, "section", ink.section, [dead], base=out["rev"]).json()
+    assert b["applied"] == [x["id"]]
+    inc = get(client, h, "section", ink.section, since=out["rev"])
+    assert [(i["id"], i.get("deleted")) for i in inc["items"]] == [(x["id"], True)]
+    # Device A re-sends the version it adopted (a lost response): stale, and X stays deleted.
+    again = post(client, h, "section", ink.section, [echoed], base=out["rev"]).json()
+    assert again["rejected"] == [{"id": x["id"], "reason": "stale"}]
+    assert x["id"] not in {i["id"] for i in get(client, h, "section", ink.section)["items"]}
+
+
+def test_integral_floats_are_stored_as_integers(client: TestClient, key: SigningKey, ink: Ink) -> None:
+    """Review P2: `1794883405009.0` is an integer to zod and pydantic; it used to reach Postgres' ::bigint as text
+    and fail the whole batch with 500. Now it is stored as 1794883405009 (and t / anchor.pm likewise), and a
+    non-integral stamp is refused for that item alone."""
+    h = ink.h(key)
+    now = int(time.time() * 1000)
+    a = stroke(updated=now)
+    raw = {
+        **a,
+        "updatedAt": float(now),
+        "createdAt": float(now),
+        "points": [[0.1, 0.1, 0.5, 0.0], [0.2, 0.2, 0.5, 8.0]],
+        "anchor": {"pm": 12.0, "dy": 0.01},
+    }
+    bad = stroke(updated=now)
+    bad["updatedAt"] = now + 0.5
+    res = post(client, h, "section", ink.section, [raw, bad])
+    assert res.status_code == 200, res.text
+    out = res.json()
+    assert out["applied"] == [a["id"]] and out["rejected"] == [{"id": bad["id"], "reason": "invalid"}]
+    stored = get(client, h, "section", ink.section)["items"][0]
+    assert stored["updatedAt"] == now and isinstance(stored["updatedAt"], int)
+    assert isinstance(stored["createdAt"], int) and stored["anchor"] == {"pm": 12, "dy": 0.01}
+    assert [p[3] for p in stored["points"]] == [0, 8] and all(isinstance(p[3], int) for p in stored["points"])
+    body = (
+        '{"base_rev": 0, "items": ['
+        + json.dumps({**stroke(), "updatedAt": 0}).replace('"updatedAt": 0', '"updatedAt": 1.79e12')
+        + "]}"
+    )
+    res = client.post(
+        path("section", ink.section) + "/changes", content=body, headers={**h, "content-type": "application/json"}
+    )
+    assert res.status_code == 200 and len(res.json()["applied"]) == 1, res.text
+
+
 def test_invalid_and_duplicate_items_are_rejected_individually(client: TestClient, key: SigningKey, ink: Ink) -> None:
     h = ink.h(key)
     good = stroke()
@@ -334,6 +394,20 @@ def test_purge_removes_old_tombstones_and_resets_old_cursors(
     assert late["reset"] is True and keep["id"] in {i["id"] for i in late["remote"]}
     # A cursor from the future (restored database) also resets.
     assert get(client, h, "section", ink.section, since=10**12)["reset"] is True
+    # Review P3: the purge horizon. A long-offline device's edit of dead_old, older than its (purged) deletion, is
+    # stale and forces a full list without it; it must not bring the stroke back.
+    horizon = pg.execute(
+        "select purged_before_ms from public.ink_layers where id = %s", (after["layer_id"],)
+    ).fetchone()
+    assert horizon is not None and horizon[0] == t1["updatedAt"]
+    old_edit = {**dead_old, "color": "violet", "updatedAt": dead_old["updatedAt"]}
+    back = post(client, h, "section", ink.section, [old_edit], base=late["rev"]).json()
+    assert back["applied"] == [] and back["rejected"] == [{"id": dead_old["id"], "reason": "stale"}]
+    assert back["reset"] is True and dead_old["id"] not in {i["id"] for i in back["remote"]}
+    assert dead_old["id"] not in {i["id"] for i in get(client, h, "section", ink.section)["items"]}
+    # An item the table still holds merges as usual below the horizon, and anything newer than it is applied.
+    newer = {**dead_old, "updatedAt": t1["updatedAt"] + 5}
+    assert post(client, h, "section", ink.section, [newer], base=back["rev"]).json()["applied"] == [dead_old["id"]]
 
 
 def test_request_bodies_are_never_logged(

@@ -392,11 +392,13 @@ create table public.ink_layers (
   recognized_text text,
   updated_at timestamptz not null default now(),
   -- 0009: written by the API only; rev = max(ink_items.seq), item_count = live items, content_hash = sha256 over
-  -- every item's id:updatedAt:deleted (sorted by id), purged_rev = highest seq of a purged tombstone
+  -- every item's id:updatedAt:deleted (sorted by id), purged_rev = highest seq of a purged tombstone;
+  -- 0016: purged_before_ms = highest updatedAt of a purged tombstone (absent items at or below it are stale)
   rev bigint not null default 0 check (rev >= 0),
   item_count int not null default 0 check (item_count >= 0),
   content_hash text,
   purged_rev bigint not null default 0 check (purged_rev >= 0),
+  purged_before_ms bigint not null default 0 check (purged_before_ms >= 0),
   unique (user_id, surface_type, surface_id),
   unique (id, user_id)
 );

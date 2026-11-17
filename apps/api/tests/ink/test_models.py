@@ -11,7 +11,7 @@ import pytest
 from pydantic import ValidationError
 
 from naadi_api.ink import models
-from naadi_api.ink.models import InkSettings, parse_item
+from naadi_api.ink.models import InkSettings, normalise_ints, parse_item
 
 from ..conftest import REPO_ROOT
 
@@ -44,6 +44,20 @@ def test_fixtures_cover_both_outcomes() -> None:
 @pytest.mark.parametrize("case", CASES, ids=[c["name"] for c in CASES])
 def test_fixture_parity_with_zod(case: dict[str, Any]) -> None:
     assert _valid(_expand(case["item"])) is case["valid"]
+
+
+@pytest.mark.parametrize("case", [c for c in CASES if c["valid"]], ids=[c["name"] for c in CASES if c["valid"]])
+def test_normalise_ints_writes_integers_and_keeps_the_rest(case: dict[str, Any]) -> None:
+    item = _expand(case["item"])
+    out = normalise_ints(item)
+    assert out == item  # 3.0 == 3: same values
+    for k in ("createdAt", "updatedAt"):
+        assert type(out[k]) is int
+    if "anchor" in out:
+        assert type(out["anchor"]["pm"]) is int
+    for p in out.get("points", []):
+        assert type(p[3]) is int
+    parse_item(out)
 
 
 def _variants() -> dict[str, dict[str, Any]]:

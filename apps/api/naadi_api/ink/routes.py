@@ -37,6 +37,7 @@ from .models import (
     InkChangesOut,
     InkLayerOut,
     InkRejected,
+    normalise_ints,
     parse_item,
 )
 from .store import (
@@ -171,11 +172,14 @@ async def _body_within_limit(request: Request) -> None:
         raise HTTPException(413)
 
 
-def _prepare(raw: list[Any], server_now: int) -> tuple[list[dict[str, Any]], list[InkRejected]]:
-    """Validate each item (one bad item does not sink the batch), clamp clocks ahead of the server, and keep one
-    version per id (the newer by the merge order; on a full tie the first sent)."""
+def _prepare(raw: list[Any], server_now: int) -> tuple[list[dict[str, Any]], list[InkRejected], set[str]]:
+    """Validate each item (one bad item does not sink the batch), write integral numbers as integers, clamp clocks
+    ahead of the server, and keep one version per id (the newer by the merge order; on a full tie the first sent).
+    Returns the items, the rejections and the ids whose stamp was clamped (their stored copy goes back in `remote`,
+    so the device adopts the server's stamp instead of keeping its future one)."""
     rejected: list[InkRejected] = []
     by_id: dict[str, dict[str, Any]] = {}
+    clamped: set[str] = set()
     for item in raw:
         item_id = item.get("id") if isinstance(item, dict) else None
         try:
@@ -183,19 +187,24 @@ def _prepare(raw: list[Any], server_now: int) -> tuple[list[dict[str, Any]], lis
         except ValidationError:
             rejected.append(InkRejected(id=item_id if isinstance(item_id, str) else None, reason="invalid"))
             continue
-        it = dict(item)
-        if int(it["updatedAt"]) > server_now + FUTURE_SKEW_MS:
+        it = normalise_ints(item)
+        was_clamped = it["updatedAt"] > server_now + FUTURE_SKEW_MS
+        if was_clamped:
             it["updatedAt"] = server_now
         prev = by_id.get(it["id"])
         if prev is not None:
             rejected.append(InkRejected(id=it["id"], reason="duplicate"))
-            newer = int(it["updatedAt"]) > int(prev["updatedAt"]) or (
-                int(it["updatedAt"]) == int(prev["updatedAt"]) and bool(it.get("deleted")) and not prev.get("deleted")
+            newer = it["updatedAt"] > prev["updatedAt"] or (
+                it["updatedAt"] == prev["updatedAt"] and bool(it.get("deleted")) and not prev.get("deleted")
             )
             if not newer:
                 continue
         by_id[it["id"]] = it
-    return list(by_id.values()), rejected
+        if was_clamped:
+            clamped.add(it["id"])
+        else:
+            clamped.discard(it["id"])
+    return list(by_id.values()), rejected, clamped
 
 
 @router.post(
@@ -221,11 +230,11 @@ async def post_ink_changes(
     db = _db(request)
     surface = await _surface(db, user, surface_type, surface_id)
     server_now = now_ms()
-    items, rejected = _prepare(body.items, server_now)
+    items, rejected, clamped = _prepare(body.items, server_now)
 
     async def run() -> InkChangesOut:
         async with _service_tx(db) as conn:
-            r = await apply_changes(conn, user.user_id, surface, body.base_rev, items)
+            r = await apply_changes(conn, user.user_id, surface, body.base_rev, items, echo=clamped)
         stale = {i: InkRejected(id=i, reason="stale") for i in r.stale}
         log.info(
             "ink_changes",
@@ -235,6 +244,7 @@ async def post_ink_changes(
             stale=len(stale),
             rejected=len(rejected),
             remote=len(r.remote),
+            clamped=len(clamped),
         )
         return InkChangesOut(
             layer_id=r.layer_id,

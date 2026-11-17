@@ -121,7 +121,7 @@ async def resolve_surface(conn: psycopg.AsyncConnection[Any], surface_type: str,
 # ── Reads ──
 
 _LAYER = (
-    "select id::text as id, rev, item_count, content_hash, purged_rev from public.ink_layers"
+    "select id::text as id, rev, item_count, content_hash, purged_rev, purged_before_ms from public.ink_layers"
     " where user_id = %s and surface_type = %s and surface_id = %s"
 )
 _OUTDATED = (
@@ -179,6 +179,10 @@ _UPSERT = """
 insert into public.ink_items (user_id, layer_id, item_id, updated_at_ms, deleted, item, content_rev)
 select %(uid)s, %(layer)s, x.item_id, x.updated_at_ms, x.deleted, x.item, %(content_rev)s
 from jsonb_to_recordset(%(rows)s::jsonb) as x(item_id uuid, updated_at_ms bigint, deleted boolean, item jsonb)
+-- At or below the purge horizon, only an item the table still holds can be merged: one that is gone may have
+-- been deleted later by a tombstone that is now purged, and must not come back.
+where x.updated_at_ms > %(horizon)s
+   or exists (select 1 from public.ink_items i where i.layer_id = %(layer)s and i.item_id = x.item_id)
 on conflict (layer_id, item_id) do update set
   updated_at_ms = excluded.updated_at_ms,
   deleted = excluded.deleted,
@@ -243,9 +247,16 @@ async def apply_changes(
     surface: Surface,
     base_rev: int,
     items: list[dict[str, Any]],
+    *,
+    echo: set[str] | frozenset[str] = frozenset(),
 ) -> ChangeResult:
     """Merge validated items into the caller's layer (privileged `conn`, one transaction). Raises TooManyItems
-    (the caller's transaction then rolls back) when the layer would hold more than INK_MAX_ITEMS live items."""
+    (the caller's transaction then rolls back) when the layer would hold more than INK_MAX_ITEMS live items.
+
+    `remote` holds what the client lacks: changes after `base_rev` from elsewhere, the stored version of every
+    stale item, and the stored version of the `echo` ids (items this request wrote with a stamp the server
+    changed, i.e. clamped). An item at or below the layer's purge horizon that the table no longer holds is stale
+    and forces `reset` (a full list without it), so the device drops it as well."""
     await conn.execute(_ENSURE, (user_id, surface.type, surface.id))
     layer = await _one(conn, _LOCK, (user_id, surface.type, surface.id))
     assert layer is not None
@@ -263,7 +274,13 @@ async def apply_changes(
         ]
         cur = await conn.execute(
             _UPSERT,
-            {"uid": user_id, "layer": layer_id, "content_rev": surface.content_rev, "rows": json.dumps(rows)},
+            {
+                "uid": user_id,
+                "layer": layer_id,
+                "content_rev": surface.content_rev,
+                "rows": json.dumps(rows),
+                "horizon": int(layer["purged_before_ms"]),
+            },
         )
         applied = [r["id"] for r in await cur.fetchall()]
     stats = await _one(conn, _STATS, {"layer": layer_id})
@@ -273,6 +290,13 @@ async def apply_changes(
     done = set(applied)
     stale = [i["id"] for i in items if i["id"] not in done]
     reset = base_rev < layer["purged_rev"] or base_rev > layer["rev"]
+    if any(i["updatedAt"] <= layer["purged_before_ms"] for i in items if i["id"] not in done):
+        cur = await conn.execute(
+            "select count(*)::int as n from public.ink_items where layer_id = %s and item_id = any(%s::uuid[])",
+            (layer_id, stale),
+        )
+        row = await cur.fetchone()
+        reset = reset or (row is not None and row["n"] < len(stale))
     if reset:
         cur = await conn.execute(
             "select item from public.ink_items where layer_id = %s and not deleted order by item_id", (layer_id,)
@@ -283,7 +307,7 @@ async def apply_changes(
         cur = await conn.execute(
             "select item from public.ink_items where layer_id = %s"
             " and ((seq > %s and not (item_id = any(%s::uuid[]))) or item_id = any(%s::uuid[])) order by seq",
-            (layer_id, base_rev, applied, stale),
+            (layer_id, base_rev, applied, [*stale, *(i for i in applied if i in echo)]),
         )
     remote = [r["item"] for r in await cur.fetchall()]
     return ChangeResult(
@@ -300,9 +324,10 @@ with dead as (
     where deleted and written_at < now() - make_interval(days => %(days)s)
     limit %(limit)s
   ))
-  returning layer_id, seq
+  returning layer_id, seq, updated_at_ms
 )
-select layer_id::text as layer_id, max(seq) as max_seq, count(*)::int as n from dead group by layer_id
+select layer_id::text as layer_id, max(seq) as max_seq, max(updated_at_ms) as max_ms, count(*)::int as n
+from dead group by layer_id
 """
 
 
@@ -319,8 +344,9 @@ async def purge_tombstones(
             return total
         for g in groups:
             await conn.execute(
-                "update public.ink_layers set purged_rev = greatest(purged_rev, %s) where id = %s",
-                (g["max_seq"], g["layer_id"]),
+                "update public.ink_layers set purged_rev = greatest(purged_rev, %s),"
+                " purged_before_ms = greatest(purged_before_ms, %s) where id = %s",
+                (g["max_seq"], g["max_ms"], g["layer_id"]),
             )
             await conn.execute(_STATS, {"layer": g["layer_id"]})
             total += g["n"]

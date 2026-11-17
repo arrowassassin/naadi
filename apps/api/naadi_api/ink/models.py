@@ -32,6 +32,7 @@ INK_MAX_ITEMS = 20_000
 INK_MAX_TEXT = 2_000
 UUID_V7_PATTERN = r"^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
 JS_MAX_SAFE_INTEGER = 9_007_199_254_740_991
+ANCHOR_FP_PATTERN = r"^[A-Za-z][A-Za-z0-9]{0,30}:[0-9a-f]{8}$"
 
 SurfaceType = Literal["section", "question", "flashcard", "pdf_page", "notebook_page", "exam_scratch"]
 InkColor = Literal["ink", "violet", "lime", "amber"]
@@ -79,6 +80,8 @@ class InkAnchor(BaseModel):
     # Optional but never null, like zod's `.optional()`: an explicit null fails (defaults are not validated).
     dx: Su = None  # type: ignore[assignment]
     dy: Su = None  # type: ignore[assignment]
+    # The block's fingerprint (`<node type>:<fnv1a-32 hex>` of its JSON): an anchor resolves only on a match.
+    fp: Annotated[str, Field(pattern=ANCHOR_FP_PATTERN)] = None  # type: ignore[assignment]
 
 
 class _ItemBase(BaseModel):
@@ -117,6 +120,26 @@ def parse_item(raw: Any) -> InkStroke | InkTextBox:
     The API stores and returns the item as sent (the validated JSON object, not a re-serialisation), so the bytes a
     client wrote are the bytes every replica merges: a model dump would turn 1 into 1.0."""
     return INK_ITEM.validate_python(raw)
+
+
+def _int(v: Any) -> Any:
+    return int(v) if isinstance(v, float) else v
+
+
+def normalise_ints(item: dict[str, Any]) -> dict[str, Any]:
+    """The item as sent, with its integer fields as JSON integers. Call it after parse_item. parse_item accepts
+    3.0 where an integer belongs, as zod's `.int()` does, but Postgres' `::bigint` and every JS replica want 3.
+    A writer other than the web engine (PencilKit, a script) may send `1794883405009.0`."""
+    out = dict(item)
+    for k in ("createdAt", "updatedAt"):
+        out[k] = _int(out[k])
+    anchor = out.get("anchor")
+    if isinstance(anchor, dict) and isinstance(anchor.get("pm"), float):
+        out["anchor"] = {**anchor, "pm": int(anchor["pm"])}
+    points = out.get("points")
+    if isinstance(points, list) and any(isinstance(p[3], float) for p in points):
+        out["points"] = [[p[0], p[1], p[2], _int(p[3])] for p in points]
+    return out
 
 
 # ── API ──
