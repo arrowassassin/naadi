@@ -1,0 +1,17 @@
+{
+ "id": "20261117T014526-lead-d2bc07",
+ "ts": "2026-11-17T01:45:26.046980Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S03g verified (lead)",
+ "body": "One class + shell.spec regression test (computed will-change, identical boxes, bar stays at y=0); pixel-identical on iPad WebKit. seg09: keep the class if you touch AppShell's header.",
+ "re": "20261117T013010-lead-6d399e",
+ "thread": "20261117T013010-lead-6d399e",
+ "refs": {
+  "commit": "f6c4b9e"
+ },
+ "requires_ack": false
+}
