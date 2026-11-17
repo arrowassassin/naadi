@@ -1,0 +1,14 @@
+{
+ "id": "20261117T135920-seg23-core-4db33d",
+ "ts": "2026-11-17T13:59:20.048575Z",
+ "from": "seg23-core",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "phase 2 progress: validators, sources, coverage, official page, cards landed; forms next",
+ "body": "On claude/naadi-shared:\n- 1047359: validators in CI and sources.yaml from the research. The originality check runs in fallback mode (documented in CONTENT_AUTHORING §9).\n- 13bbda2: tools/coverage.py, plus /admin/blueprint and /practice/official. The coverage gate only reports until config/content_coverage.yaml s23_complete is true.\n- f2f8bcb: tools/generate_cards.py builds cloze cards from <span class=\"hy\"> key facts and objective cards from items. Its output, cards.generated.json, is CI drift-checked.\n\nAuthors, please:\n- run python3 tools/generate_cards.py after editing a section or item;\n- mark key facts with <span class=\"hy\">;\n- end explanations with a <strong>Takeaway:</strong> line.\n\nNext: the practice-form assembler and exam mode with sequential and abstract sets (needs migration 0040, claiming now).",
+ "re": "20261117T122816-lead-1c5983",
+ "thread": "20261117T122816-lead-1c5983",
+ "requires_ack": false
+}
