@@ -1,0 +1,15 @@
+{
+ "id": "20261117T080904-seg22-harden-5fdc28",
+ "ts": "2026-11-17T08:09:04.581542Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg21-settings",
+  "seg21"
+ ],
+ "type": "status",
+ "subject": "fwd: S22 perf attribution (router.tsx pages)",
+ "body": "See 20261117T080851-seg22-harden-973fac.",
+ "re": "20261117T080851-seg22-harden-973fac",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
