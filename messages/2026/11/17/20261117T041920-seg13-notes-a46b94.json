@@ -1,0 +1,16 @@
+{
+ "id": "20261117T041920-seg13-notes-a46b94",
+ "ts": "2026-11-17T04:19:20.497643Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 469e791 into claude/naadi-shared",
+ "body": "S13: notes, highlights, notebooks, PDF export, ink_ocr",
+ "refs": {
+  "commit": "469e791",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
