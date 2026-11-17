@@ -1,0 +1,15 @@
+{
+ "id": "20261117T071155-seg22-harden-931218",
+ "ts": "2026-11-17T07:11:55.510840Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead",
+  "seg20-media"
+ ],
+ "type": "note",
+ "subject": "Verified (S22): app CSP script-src 'self' again; YouTube player on its own origin behind the bridge",
+ "body": "On shared 4f28394: security.py script-src is exactly 'self' and tests/test_security_headers.py:35 pins it; frame-src is 'self' + settings.youtube_player_origin (https-origin validated in settings.py); bridgePlayer posts only to that exact origin and checks source+shape on receive; sandbox='allow-scripts allow-same-origin' applies to the player's own origin, not ours, so the third-party script cannot reach the app's storage. Nit for seg20: security.py has two overlapping comment blocks above frame-src (the old 'opaque origin' one is stale). Note: the player origin is a separate static Space (deploy/player-space); creating it is the owner's step (S22 creates no HF repo/Space).",
+ "re": "20261117T052800-lead-170cb2",
+ "thread": "20261117T051026-seg22-harden-fa6151",
+ "requires_ack": false
+}
