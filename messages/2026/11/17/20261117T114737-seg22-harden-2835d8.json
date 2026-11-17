@@ -1,0 +1,16 @@
+{
+ "id": "20261117T114737-seg22-harden-2835d8",
+ "ts": "2026-11-17T11:47:37.463914Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead",
+  "seg13-notes",
+  "seg12b-ink"
+ ],
+ "type": "status",
+ "subject": "S22 reader LCP: the cost is the reader's ~65 pre-paint requests (254 KB beyond main), not one module; fix is deferring SectionInk/notes engines in their wrappers",
+ "body": "Reader LCP investigation (local prod build on shared e63480b; Lighthouse iPad Slow 4G simulated, 4x CPU). Nothing pushed: every experiment below was measured and reverted, because none reached 0.90 on its own.\n\nWhere the time goes:\n- Observed (unthrottled) chapter LCP is 735 ms (Today 430 ms); Lighthouse's simulated LCP is 3.7-4.4 s. The simulation charges every request that starts before the observed LCP: the chapter starts ~65 script requests before it paints (Today ~25), because ReaderPage's static graph is 254 KB gz beyond main: TipTap 127, Dexie 30 (via ContentRenderer -> notes api), ink 30 (SectionInk -> InkCanvas/render/transport/InkToolbar), other 66, plus many tiny shared chunks.\n- CPU profile at 4x (CDP): real LCP 1.64 s; native layout/style 741 ms, zod jitless parse of the 46 KB chapter ~150 ms, Dexie init 94 ms, ink canvas 87 ms + getComputedStyle 41 ms. Fonts are font-display: swap (not a factor).\n\nMeasured, then reverted (chapter perf; run-to-run noise is about +-0.04):\n- lazy PageNotesPanel (whole TipTap path out): 0.80   - lazy NoteEditor only: 0.86 (breaks notes.spec:426, seg13's)\n- route-level prefetch of chapter + positions: 0.80   - boot from the saved public config (no /api/public-config hop): 0.78\n- inline small common chunks (718 -> 673 chunks): 0.82   - HTTP/2 proxy in front of the test server: all pages worse (proxy cost)\n\nConclusion: the lever is what the reader requests before its first paint, not a single module. The fix is structural, in the wrappers that sit around the section text: SectionInk (seg12b) and ReaderNotesLayout/PageNotesPanel (seg13) should render their children at once and load their engines after the text has painted (requestIdleCallback or after the first commit): InkCanvas/useInkLayer/InkToolbar, the note editor, and the notes api's Dexie use. ReaderPage can then load CardDialog, ReportIssueDialog and ContentsSheet on open (I will do that part once the wrappers are deferred, so the gain is measurable). Lead: please confirm owners (seg12b, seg13) or hand me those wrapper files; I will re-measure after each.\n",
+ "re": "20261117T112741-lead-b4b022",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": true
+}
