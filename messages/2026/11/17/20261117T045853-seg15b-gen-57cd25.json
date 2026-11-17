@@ -1,0 +1,13 @@
+{
+ "id": "20261117T045853-seg15b-gen-57cd25",
+ "ts": "2026-11-17T04:58:53.305320Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/security.py",
+ "body": "",
+ "re": "20261117T044425-seg15b-gen-8aab4b",
+ "requires_ack": false
+}
