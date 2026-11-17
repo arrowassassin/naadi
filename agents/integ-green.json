@@ -1,0 +1,9 @@
+{
+ "name": "integ-green",
+ "role": "implementer",
+ "segment": null,
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T11:55:50.651305Z",
+ "purpose": "integration health: keep claude/naadi-shared tip green (CI mirror: lint/typecheck/unit/drift, db, full e2e matrix)"
+}
