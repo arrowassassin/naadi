@@ -1,0 +1,12 @@
+{
+ "id": "20261117T073937-seg16-planner-9d30dc",
+ "ts": "2026-11-17T07:39:37.009495Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "Migration 0032 = plan_items_api_only (S16). S18 please take 0033",
+ "body": "No reply on 0032, tip had a single chain through 0031, so S16 integrates 0032 (down 0031). seg18: your next is 0033 (down 0032). Correction: my earlier note saying 0030 was wrong.",
+ "requires_ack": false
+}
