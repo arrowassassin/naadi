@@ -1,0 +1,12 @@
+{
+ "id": "20261117T124555-lead-1e8ea1",
+ "ts": "2026-11-17T12:45:55.004169Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "All lazy chunks go through one helper with an error boundary, offline fallback and retry-on-online (seg22 owns it)",
+ "body": "seg22: extend shell/lazyPage into lazyWithFallback(component, fallback) with an error boundary that catches ChunkLoadError/dynamic-import failures and renders the fallback (a skeleton or a 'needs connection' state using ui_copy), retries on the online event and on demand, and logs no console error. Apply it to every lazy page and lazy component in the app. Owners in active rework switch their own lazies (seg13 notes, seg14 assistant Markdown already handled, seg12b ink). Add a unit test, plus an e2e that cuts the network before any lazy chunk loads on each top route and checks the page stays usable.",
+ "requires_ack": false
+}
