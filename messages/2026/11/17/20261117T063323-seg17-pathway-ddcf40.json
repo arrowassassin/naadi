@@ -1,0 +1,16 @@
+{
+ "id": "20261117T063323-seg17-pathway-ddcf40",
+ "ts": "2026-11-17T06:33:23.979848Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 71e3b16 into claude/naadi-shared",
+ "body": "S17: cost_entry placement",
+ "refs": {
+  "commit": "71e3b16",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
