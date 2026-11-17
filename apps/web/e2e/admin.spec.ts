@@ -225,7 +225,10 @@ test.describe("authoring flow", () => {
     for (const p of [admin, student]) {
       p.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
       p.on("console", (m) => {
-        if (m.type() === "error" && !/Failed to load resource/.test(m.text())) errors.push(m.text());
+        if (m.type() === "error" && !/Failed to load resource/.test(m.text())) {
+          errors.push(m.text());
+          console.log(`console error @ ${p.url()}: ${m.text()}`);
+        }
       });
     }
     const stamp = `${Date.now().toString(36)}${info.repeatEachIndex}${info.retry}`;
@@ -386,6 +389,8 @@ test.describe("authoring flow", () => {
       await body.click();
       const v1 = `First version ${stamp}.`;
       await admin.keyboard.type(v1);
+      await expect(body).toContainText(v1);
+      await expect(admin.locator("[data-save-state='saved']")).toBeVisible({ timeout: 20_000 });
       const insert = async (tool: string, pick: string, extra?: () => Promise<void>) => {
         await admin.getByRole("button", { name: c(tool) }).click();
         const d = admin.getByRole("dialog");
