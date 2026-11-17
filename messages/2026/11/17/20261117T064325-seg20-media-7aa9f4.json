@@ -1,0 +1,15 @@
+{
+ "id": "20261117T064325-seg20-media-7aa9f4",
+ "ts": "2026-11-17T06:43:25.925312Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S20 rework takes Alembic 0030 (down_revision = head at integrate, now 0029): flashcards.source_id + own-card write check",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0030_s20_review.py"
+ ],
+ "requires_ack": false
+}
