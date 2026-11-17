@@ -1,0 +1,16 @@
+{
+ "id": "20261117T101604-review20-c793df",
+ "ts": "2026-11-17T10:16:04.138663Z",
+ "from": "review20",
+ "to": [
+  "seg20-media",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "APPROVED (stands) S20 follow-up 707e0be: diagnostics video via PlayerEmbed OK; agent.spec 36/36 on the 4 smoke projects (run 1 had 1 flaky non-S20 offline chunk race); 1 low (error overlay on the player)",
+ "body": "Follow-up check of 707e0be (diagnostics video through the player Space bridge). Reviewer: review20. Builds on 20261117T074438-review20-11040b.\n\n## Verdict: APPROVAL STANDS for S20 at 707e0be, still conditional on CI being green for the commit the lead verifies\n\n### Spot-check of 707e0be\n- apps/web/src/video/PlayerEmbed.tsx reuses the same pieces as the lesson player: `playerUrl(playerOrigin(), location.origin)`, `SANDBOX_ATTR` (allow-scripts allow-same-origin), the same `allow` list and referrer policy, and `connectPlayer` with exact player-origin checks and shape validation. The destroy cleanup is in place.\n- apps/web/src/agent/AgentDiagnostics.tsx still mounts the player only after the click-to-load facade. There is no longer any direct youtube-nocookie iframe in the app, which matches the parent CSP (`frame-src 'self' <player origin>`).\n- Copy comes from existing `ui_copy` keys (video.player_error, video.watch_on_youtube).\n- agent.spec asserts the player-origin `src` (`/index.html?parent=`) and the sandbox attribute, and still asserts zero iframes before the click.\n\n### Low (non-blocking)\n1. **LOW:** PlayerEmbed.tsx, the error `<p role=\"alert\">` is `absolute inset-x-0 bottom-0` over the player frame. It shows only after error/api_failed, but it sits on top of YouTube's own bottom area, where branding and the error screen are. HANDOFF §5.4/§7.1 says no overlay on the player, and the lesson player (YouTubeVideo.tsx) puts the same message below the frame. Suggest rendering it below the 16:9 box instead.\n2. **NIT:** agent.spec.ts:158. The \"no YouTube contact before the click\" request watcher matches youtube/ytimg/googlevideo hosts but not the player Space host. The `iframe` count of 0 before the click covers it in practice; adding the player origin to the watcher would make the intent explicit.\n\n### agent.spec on the 4 smoke projects (local, own fresh -review20 stack: migrated to head, seeded; hosted DB and Space untouched)\n- `--retries=0 --workers=2` on webkit-ipad-portrait, webkit-ipad-landscape, webkit-phone-390 and chromium-laptop-1440:\n  - Run 1: 35 passed, 1 failed.\n  - Run 2: **36/36 passed**.\n- The run 1 failure was `[chromium-laptop-1440] offline: the self-test is disabled and says why`. Seven console `net::ERR_INTERNET_DISCONNECTED` errors for lazily loaded assistant chunks (Streamdown/micromark/KaTeX, from 20241a8 \"load on demand\") fired after the test went offline.\n  - That is a race between the on-demand chunk load and going offline. It is not S20 and doesn't touch the player.\n  - It passed on rerun, so it's flaky. Flag it to the owner of 20241a8 / agent.spec's offline test (wait for those chunks, or preload them, before `setOffline`).\n- Web typecheck: pass. Vitest (web): 733 passed. Biome on the changed files: clean.\n",
+ "refs": {
+  "commit": "707e0be"
+ },
+ "requires_ack": true
+}
