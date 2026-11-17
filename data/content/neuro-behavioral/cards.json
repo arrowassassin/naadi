@@ -5842,5 +5842,2117 @@
   "tags": [
    "ear"
   ]
+ },
+ {
+  "id": "s23e-c10001",
+  "frontHtml": "D2 blockade in which dopamine pathway raises prolactin?",
+  "backHtml": "The <strong>tuberoinfundibular</strong> pathway (hypothalamus to pituitary); dopamine normally inhibits lactotrophs.",
+  "sectionId": "s23e-s10a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10002",
+  "frontHtml": "Acute dystonia vs tardive dyskinesia: timing and treatment?",
+  "backHtml": "Dystonia: hours to days, give benztropine or diphenhydramine. Tardive dyskinesia: months to years, give a <strong>VMAT2 inhibitor</strong>; anticholinergics worsen it.",
+  "sectionId": "s23e-s10a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10003",
+  "frontHtml": "Why does aripiprazole tend to lower prolactin?",
+  "backHtml": "It is a <strong>D2 partial agonist</strong>, providing enough stimulation at lactotrophs to keep prolactin suppressed.",
+  "sectionId": "s23e-s10a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10004",
+  "frontHtml": "Which drug class reproduces both positive and negative symptoms of schizophrenia?",
+  "backHtml": "<strong>NMDA receptor antagonists</strong> (phencyclidine, ketamine), supporting the glutamate hypothesis.",
+  "sectionId": "s23e-s10a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10005",
+  "frontHtml": "Most dangerous haematological effect of clozapine and how it is monitored?",
+  "backHtml": "<strong>Severe neutropenia</strong>; measure the absolute neutrophil count before and regularly during treatment.",
+  "sectionId": "s23e-s10a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10006",
+  "frontHtml": "Receptor blockade behind antipsychotic orthostatic hypotension?",
+  "backHtml": "<strong>Alpha-1 adrenergic</strong> blockade, worst with low-potency agents, clozapine and quetiapine.",
+  "sectionId": "s23e-s10a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10007",
+  "frontHtml": "Benzodiazepines vs barbiturates at the GABA-A receptor?",
+  "backHtml": "Benzodiazepines raise the <strong>frequency</strong> of chloride channel opening; barbiturates raise its <strong>duration</strong> and can open it directly.",
+  "sectionId": "s23e-s10a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10008",
+  "frontHtml": "Mechanism and key features of buspirone?",
+  "backHtml": "<strong>5-HT1A partial agonist</strong>: no sedation or dependence, slow onset, no use in acute panic.",
+  "sectionId": "s23e-s10a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10009",
+  "frontHtml": "Why does hyperventilation cause carpopedal spasm?",
+  "backHtml": "Respiratory alkalosis increases calcium binding to albumin, lowering <strong>ionised calcium</strong>.",
+  "sectionId": "s23e-s10a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10010",
+  "frontHtml": "Which structure is essential for acquiring conditioned fear?",
+  "backHtml": "The <strong>amygdala</strong>; extinction learning relies on the medial prefrontal cortex.",
+  "sectionId": "s23e-s10a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10011",
+  "frontHtml": "Which tricyclic is effective for OCD and why?",
+  "backHtml": "<strong>Clomipramine</strong>, the most serotonergic tricyclic.",
+  "sectionId": "s23e-s10a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10012",
+  "frontHtml": "How does lithium cause nephrogenic diabetes insipidus, and what treats it?",
+  "backHtml": "Lithium enters principal cells through <strong>ENaC</strong> and impairs vasopressin action; <strong>amiloride</strong> blocks its entry.",
+  "sectionId": "s23e-s10a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10013",
+  "frontHtml": "Why do thiazides raise lithium levels?",
+  "backHtml": "Volume depletion increases <strong>proximal tubular</strong> reabsorption of sodium and lithium.",
+  "sectionId": "s23e-s10a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10014",
+  "frontHtml": "Mechanism of the MAO inhibitor-tyramine reaction?",
+  "backHtml": "Unmetabolised tyramine releases stored <strong>noradrenaline</strong> from sympathetic terminals: hypertensive crisis.",
+  "sectionId": "s23e-s10a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10015",
+  "frontHtml": "Mechanism of mirtazapine and its clinical niche?",
+  "backHtml": "<strong>Alpha-2 antagonist</strong> (plus H1 blockade): helps insomnia and poor appetite.",
+  "sectionId": "s23e-s10a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10016",
+  "frontHtml": "Why is QRS widening dangerous in tricyclic overdose, and what is the antidote?",
+  "backHtml": "Sodium channel blockade predicts arrhythmias and seizures; give <strong>sodium bicarbonate</strong>.",
+  "sectionId": "s23e-s10a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10017",
+  "frontHtml": "Sleep changes typical of depression?",
+  "backHtml": "<strong>Shortened REM latency</strong>, more early REM, less slow-wave sleep, early waking.",
+  "sectionId": "s23e-s10a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10018",
+  "frontHtml": "Durations: brief psychotic, schizophreniform, schizophrenia?",
+  "backHtml": "Brief: over 1 day, under 1 month. Schizophreniform: 1 to 6 months. Schizophrenia: <strong>6 months or more</strong>.",
+  "sectionId": "s23e-s10b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10019",
+  "frontHtml": "What separates schizoaffective disorder from a mood disorder with psychotic features?",
+  "backHtml": "In schizoaffective disorder, psychosis occurs for <strong>2 weeks or more without a mood episode</strong>.",
+  "sectionId": "s23e-s10b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10020",
+  "frontHtml": "Definition of treatment-resistant schizophrenia and its treatment?",
+  "backHtml": "Inadequate response to <strong>two adequate antipsychotic trials</strong>: use <strong>clozapine</strong>.",
+  "sectionId": "s23e-s10b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10021",
+  "frontHtml": "Core management of neuroleptic malignant syndrome?",
+  "backHtml": "<strong>Stop the drug</strong>, cool, IV fluids, ICU care; benzodiazepines; dantrolene or bromocriptine if severe.",
+  "sectionId": "s23e-s10b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10022",
+  "frontHtml": "When is a long-acting injectable antipsychotic most useful?",
+  "backHtml": "When relapse follows <strong>non-adherence</strong> to an effective oral drug.",
+  "sectionId": "s23e-s10b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10023",
+  "frontHtml": "First-line treatment of catatonia?",
+  "backHtml": "<strong>Lorazepam</strong>; ECT if it fails or the patient is endangered.",
+  "sectionId": "s23e-s10b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10024",
+  "frontHtml": "First-line drug treatment for generalized anxiety or panic disorder?",
+  "backHtml": "An <strong>SSRI or SNRI</strong>, with CBT; avoid long-term benzodiazepines.",
+  "sectionId": "s23e-s10b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10025",
+  "frontHtml": "Treatment of a specific phobia?",
+  "backHtml": "<strong>Exposure therapy</strong>.",
+  "sectionId": "s23e-s10b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10026",
+  "frontHtml": "Treatment of performance-only social anxiety?",
+  "backHtml": "<strong>Propranolol</strong> taken before the performance.",
+  "sectionId": "s23e-s10b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10027",
+  "frontHtml": "Acute stress disorder vs PTSD?",
+  "backHtml": "Same picture; acute stress disorder lasts <strong>3 days to 1 month</strong>, PTSD more than 1 month.",
+  "sectionId": "s23e-s10b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10028",
+  "frontHtml": "First-line treatment of PTSD?",
+  "backHtml": "<strong>Trauma-focused psychotherapy</strong> (CPT, prolonged exposure, EMDR); SSRI or venlafaxine if needed; no benzodiazepines.",
+  "sectionId": "s23e-s10b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10029",
+  "frontHtml": "Psychotherapy of choice for OCD?",
+  "backHtml": "<strong>Exposure and response prevention</strong>.",
+  "sectionId": "s23e-s10b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10030",
+  "frontHtml": "Partial response to an SSRI at the starting dose after 4 weeks: next step?",
+  "backHtml": "<strong>Increase the dose</strong> before switching or augmenting.",
+  "sectionId": "s23e-s10b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10031",
+  "frontHtml": "Main indications for ECT in depression?",
+  "backHtml": "Psychotic features, catatonia, refusal to eat or drink, high suicide risk needing rapid response, treatment resistance; safe in pregnancy.",
+  "sectionId": "s23e-s10b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10032",
+  "frontHtml": "Postpartum blues vs depression vs psychosis?",
+  "backHtml": "Blues: first days, gone by 2 weeks, reassure. Depression: lasting, treat. <strong>Psychosis</strong>: emergency admission.",
+  "sectionId": "s23e-s10b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10033",
+  "frontHtml": "Strongest single predictor of suicide?",
+  "backHtml": "A <strong>previous suicide attempt</strong>.",
+  "sectionId": "s23e-s10b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10034",
+  "frontHtml": "First-line drug for adolescent depression?",
+  "backHtml": "<strong>Fluoxetine</strong> (or escitalopram) with CBT and close follow-up.",
+  "sectionId": "s23e-s10b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10035",
+  "frontHtml": "First-line treatment of PMDD?",
+  "backHtml": "An <strong>SSRI</strong>, continuously or in the luteal phase; a drospirenone combined pill is an alternative.",
+  "sectionId": "s23e-s10b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10036",
+  "frontHtml": "Bipolar I vs bipolar II?",
+  "backHtml": "Bipolar I: at least one <strong>manic</strong> episode. Bipolar II: hypomania plus major depression, never mania.",
+  "sectionId": "s23e-s10b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10037",
+  "frontHtml": "Why avoid antidepressant monotherapy in bipolar disorder?",
+  "backHtml": "It can trigger <strong>mania</strong> or rapid cycling.",
+  "sectionId": "s23e-s10b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10038",
+  "frontHtml": "Tests before starting lithium?",
+  "backHtml": "<strong>Creatinine, TSH, calcium</strong>, pregnancy test; ECG if cardiac risk.",
+  "sectionId": "s23e-s10b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10039",
+  "frontHtml": "Drugs that raise lithium levels?",
+  "backHtml": "<strong>Thiazides</strong>, ACE inhibitors and ARBs, NSAIDs, dehydration.",
+  "sectionId": "s23e-s10b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c10040",
+  "frontHtml": "Why is valproate avoided in people who can become pregnant?",
+  "backHtml": "High risk of <strong>neural tube defects</strong> and impaired neurodevelopment.",
+  "sectionId": "s23e-s10b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11001",
+  "frontHtml": "Somatic symptom disorder: do the symptoms need to be medically unexplained?",
+  "backHtml": "No. The core is a <strong>disproportionate response</strong> (thoughts, anxiety, time) to distressing symptoms, even when a real disease is present.",
+  "sectionId": "s23e-s11a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11002",
+  "frontHtml": "Fear of having a serious disease, with mild or no bodily symptoms, for 6 months or more?",
+  "backHtml": "<strong>Illness anxiety disorder</strong>.",
+  "sectionId": "s23e-s11a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11003",
+  "frontHtml": "Describe the Hoover sign.",
+  "backHtml": "Weak hip extension on request becomes strong when the patient flexes the <strong>opposite</strong> hip against resistance: a positive sign of functional weakness.",
+  "sectionId": "s23e-s11a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11004",
+  "frontHtml": "Three features of a convulsive event that favour a functional (non-epileptic) attack?",
+  "backHtml": "Eyes closed and resisting opening; side-to-side head shaking or pelvic thrusting with out-of-phase movements; long duration with rapid recovery.",
+  "sectionId": "s23e-s11a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11005",
+  "frontHtml": "A known disease made worse by denial or nonadherence: which diagnosis?",
+  "backHtml": "<strong>Psychological factors affecting other medical conditions</strong>.",
+  "sectionId": "s23e-s11a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11006",
+  "frontHtml": "Hypoglycemia with high insulin and low C-peptide?",
+  "backHtml": "<strong>Exogenous insulin</strong>: injected insulin has no C-peptide and suppresses the patient's own secretion.",
+  "sectionId": "s23e-s11a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11007",
+  "frontHtml": "Hypoglycemia with high insulin, C-peptide and proinsulin: two causes?",
+  "backHtml": "<strong>Insulinoma</strong> or <strong>sulfonylurea/meglitinide</strong> ingestion; a drug screen separates them.",
+  "sectionId": "s23e-s11a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11008",
+  "frontHtml": "Thyrotoxicosis with low radioiodine uptake: which test points to ingested thyroid hormone?",
+  "backHtml": "A <strong>low serum thyroglobulin</strong> (it is high in thyroiditis).",
+  "sectionId": "s23e-s11a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11009",
+  "frontHtml": "Factitious disorder versus malingering: the key difference?",
+  "backHtml": "Both are deliberate; <strong>malingering</strong> has an obvious external reward, while factitious disorder seeks the sick role.",
+  "sectionId": "s23e-s11a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11010",
+  "frontHtml": "In factitious disorder imposed on another, who receives the diagnosis?",
+  "backHtml": "The <strong>caregiver</strong>; the child is a victim of maltreatment.",
+  "sectionId": "s23e-s11a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11011",
+  "frontHtml": "Reproductive hormone pattern in anorexia nervosa?",
+  "backHtml": "Low GnRH pulses: <strong>low LH, FSH and estradiol</strong> (hypothalamic amenorrhea).",
+  "sectionId": "s23e-s11a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11012",
+  "frontHtml": "Acid-base pattern of self-induced vomiting?",
+  "backHtml": "<strong>Hypochloremic, hypokalemic metabolic alkalosis</strong> with low urine chloride.",
+  "sectionId": "s23e-s11a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11013",
+  "frontHtml": "Why does phosphate fall during refeeding?",
+  "backHtml": "Insulin drives glucose and <strong>phosphate</strong> (with potassium and magnesium) into cells for glycolysis and ATP synthesis.",
+  "sectionId": "s23e-s11a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11014",
+  "frontHtml": "Why is bupropion contraindicated in bulimia nervosa?",
+  "backHtml": "Seizures. Bupropion lowers the seizure threshold, and early trials in people with bulimia had an unusually high seizure rate.",
+  "sectionId": "s23e-s11a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11015",
+  "frontHtml": "Low T3 with normal TSH in a starving patient: treat?",
+  "backHtml": "No. It is an adaptation (more reverse T3); <strong>weight restoration</strong> corrects it.",
+  "sectionId": "s23e-s11a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11016",
+  "frontHtml": "Which drug is approved for binge-eating disorder in adults?",
+  "backHtml": "<strong>Lisdexamfetamine</strong>, a prodrug of dextroamphetamine.",
+  "sectionId": "s23e-s11a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11017",
+  "frontHtml": "Ice craving is a clue to which deficiency?",
+  "backHtml": "<strong>Iron deficiency</strong> (pagophagia).",
+  "sectionId": "s23e-s11a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11018",
+  "frontHtml": "Which two heme-synthesis enzymes does lead inhibit?",
+  "backHtml": "<strong>ALA dehydratase</strong> and <strong>ferrochelatase</strong>.",
+  "sectionId": "s23e-s11a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11019",
+  "frontHtml": "ARFID versus anorexia nervosa: the key difference?",
+  "backHtml": "ARFID has <strong>no fear of weight gain or body-image disturbance</strong>; restriction is driven by sensory aversion, low interest or fear of choking or vomiting.",
+  "sectionId": "s23e-s11a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11020",
+  "frontHtml": "Which drug class can cause new compulsive gambling in Parkinson disease?",
+  "backHtml": "<strong>Dopamine agonists</strong> (pramipexole, ropinirole), via D2/D3 stimulation in the reward pathway.",
+  "sectionId": "s23e-s11a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11021",
+  "frontHtml": "Stealing unneeded items, with tension before and relief after?",
+  "backHtml": "<strong>Kleptomania</strong>.",
+  "sectionId": "s23e-s11a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11022",
+  "frontHtml": "Core care model for somatic symptom disorder?",
+  "backHtml": "One physician, <strong>regularly scheduled brief visits</strong>, no unindicated tests, focus on function, CBT.",
+  "sectionId": "s23e-s11b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11023",
+  "frontHtml": "Diagnostic test for suspected non-epileptic attacks?",
+  "backHtml": "<strong>Video-EEG</strong> that records a typical event.",
+  "sectionId": "s23e-s11b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11024",
+  "frontHtml": "First-line treatment for functional weakness after explaining the diagnosis?",
+  "backHtml": "<strong>Specialist physiotherapy</strong>, with psychological therapy as needed.",
+  "sectionId": "s23e-s11b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11025",
+  "frontHtml": "Which drugs to avoid escalating in somatic symptom disorder?",
+  "backHtml": "<strong>Opioids and benzodiazepines</strong>.",
+  "sectionId": "s23e-s11b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11026",
+  "frontHtml": "An extensor plantar response in suspected functional weakness means?",
+  "backHtml": "An objective sign of disease: <strong>investigate</strong> for a structural lesion.",
+  "sectionId": "s23e-s11b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11027",
+  "frontHtml": "Suspected factitious illness in a child: next step?",
+  "backHtml": "<strong>Report to child protective services</strong> and protect the child; suspicion is enough.",
+  "sectionId": "s23e-s11b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11028",
+  "frontHtml": "How to confirm a suspected factitious fever?",
+  "backHtml": "<strong>Observed</strong> temperature measurement (or the temperature of freshly voided urine).",
+  "sectionId": "s23e-s11b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11029",
+  "frontHtml": "How to discuss proven factitious disorder with the patient?",
+  "backHtml": "<strong>Supportively and without punishment</strong>, with psychiatry involved, offering ongoing care.",
+  "sectionId": "s23e-s11b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11030",
+  "frontHtml": "Long-acting rodenticide anticoagulant (brodifacoum): ongoing treatment?",
+  "backHtml": "<strong>High-dose oral vitamin K for months</strong>, guided by the INR.",
+  "sectionId": "s23e-s11b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11031",
+  "frontHtml": "Symptoms that vanish when unobserved, plus a pending claim?",
+  "backHtml": "<strong>Malingering</strong>.",
+  "sectionId": "s23e-s11b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11032",
+  "frontHtml": "Give what before starting nutrition in a severely malnourished patient?",
+  "backHtml": "<strong>Thiamine</strong>, and check potassium, phosphate and magnesium first.",
+  "sectionId": "s23e-s11b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11033",
+  "frontHtml": "First-line treatment for adolescent anorexia nervosa after stabilisation?",
+  "backHtml": "<strong>Family-based treatment</strong>.",
+  "sectionId": "s23e-s11b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11034",
+  "frontHtml": "Medication for bulimia nervosa?",
+  "backHtml": "<strong>Fluoxetine</strong> (60 mg daily) with CBT.",
+  "sectionId": "s23e-s11b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11035",
+  "frontHtml": "Best treatment for low bone density in anorexia nervosa?",
+  "backHtml": "<strong>Weight restoration</strong> with return of menses; oral contraceptives do not help.",
+  "sectionId": "s23e-s11b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11036",
+  "frontHtml": "Name four reasons to admit a patient with anorexia nervosa.",
+  "backHtml": "Any four of: marked bradycardia, hypotension or orthostasis, hypothermia, electrolyte disturbance, arrhythmia or long QT, syncope, very low weight, food refusal, suicidality.",
+  "sectionId": "s23e-s11b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11037",
+  "frontHtml": "Young child eating paint chips in an old house: first test?",
+  "backHtml": "<strong>Venous blood lead level</strong>.",
+  "sectionId": "s23e-s11b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11038",
+  "frontHtml": "Treatment of ARFID?",
+  "backHtml": "CBT with <strong>graded food exposure</strong>, a dietitian and family involvement.",
+  "sectionId": "s23e-s11b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11039",
+  "frontHtml": "Gambling on ropinirole for restless legs: next step?",
+  "backHtml": "<strong>Taper and stop</strong> the agonist; switch to an alpha-2-delta ligand and check iron.",
+  "sectionId": "s23e-s11b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11040",
+  "frontHtml": "Impulsive outbursts out of proportion, followed by remorse?",
+  "backHtml": "<strong>Intermittent explosive disorder</strong>; treat with CBT and an SSRI.",
+  "sectionId": "s23e-s11b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c11041",
+  "frontHtml": "Which opioid antagonist has some evidence in kleptomania and gambling disorder?",
+  "backHtml": "<strong>Naltrexone</strong>.",
+  "sectionId": "s23e-s11b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12001",
+  "frontHtml": "Mechanism of methylphenidate versus amphetamine?",
+  "backHtml": "Methylphenidate <strong>blocks</strong> dopamine and noradrenaline reuptake; amphetamines <strong>release</strong> them by reversing transporters and emptying vesicles.",
+  "sectionId": "s23e-s12a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12002",
+  "frontHtml": "Which two settings rule is needed to diagnose ADHD?",
+  "backHtml": "Symptoms must cause problems in <strong>two or more settings</strong> (for example, home and school), with several present before age 12.",
+  "sectionId": "s23e-s12a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12003",
+  "frontHtml": "Most common inherited cause of intellectual disability, and its mutation?",
+  "backHtml": "<strong>Fragile X syndrome</strong>: CGG-repeat expansion in FMR1 with methylation and silencing.",
+  "sectionId": "s23e-s12a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12004",
+  "frontHtml": "Most common preventable cause of intellectual disability?",
+  "backHtml": "<strong>Fetal alcohol spectrum disorder</strong>.",
+  "sectionId": "s23e-s12a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12005",
+  "frontHtml": "Criteria for Tourette disorder?",
+  "backHtml": "Multiple motor tics <em>and</em> at least one vocal tic, onset before 18, present for more than a year.",
+  "sectionId": "s23e-s12a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12006",
+  "frontHtml": "How does conduct disorder differ from oppositional defiant disorder?",
+  "backHtml": "ODD is defiance and anger at authority; <strong>conduct disorder</strong> violates others' rights (aggression, cruelty, theft, destruction, serious rule-breaking).",
+  "sectionId": "s23e-s12a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12007",
+  "frontHtml": "Age rules for disruptive mood dysregulation disorder?",
+  "backHtml": "Onset before 10; first diagnosed only between ages <strong>6 and 18</strong>; outbursts about 3+ times a week with irritability between.",
+  "sectionId": "s23e-s12a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12008",
+  "frontHtml": "Minimum age for enuresis and for encopresis?",
+  "backHtml": "Enuresis: developmental age <strong>5</strong>. Encopresis: developmental age <strong>4</strong>.",
+  "sectionId": "s23e-s12a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12009",
+  "frontHtml": "After severe neglect, which disorder shows indiscriminate friendliness to strangers?",
+  "backHtml": "<strong>Disinhibited social engagement disorder</strong> (reactive attachment disorder is the withdrawn pattern).",
+  "sectionId": "s23e-s12a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12010",
+  "frontHtml": "A child speaks freely at home but not at school for months: diagnosis?",
+  "backHtml": "<strong>Selective mutism</strong>, an anxiety disorder linked to social anxiety.",
+  "sectionId": "s23e-s12a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12011",
+  "frontHtml": "Schizoid versus avoidant personality disorder?",
+  "backHtml": "Schizoid: does <strong>not want</strong> relationships. Avoidant: <strong>wants</strong> them but fears rejection.",
+  "sectionId": "s23e-s12a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12012",
+  "frontHtml": "Schizotypal versus schizophrenia?",
+  "backHtml": "Schizotypal: odd beliefs and ideas of reference <em>without</em> fixed delusions or persistent hallucinations; schizophrenia has frank psychosis for a month or more.",
+  "sectionId": "s23e-s12a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12013",
+  "frontHtml": "Required history for antisocial personality disorder?",
+  "backHtml": "Age 18 or older plus <strong>conduct disorder beginning before 15</strong>.",
+  "sectionId": "s23e-s12a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12014",
+  "frontHtml": "Defence mechanism typical of borderline personality disorder?",
+  "backHtml": "<strong>Splitting</strong>: seeing people as all good or all bad (also projective identification).",
+  "sectionId": "s23e-s12a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12015",
+  "frontHtml": "OCPD versus OCD?",
+  "backHtml": "OCPD traits are <strong>ego-syntonic</strong> (felt as right); OCD obsessions and compulsions are ego-dystonic (unwanted).",
+  "sectionId": "s23e-s12a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12016",
+  "frontHtml": "First-line ADHD treatment for a 4- or 5-year-old?",
+  "backHtml": "<strong>Parent training in behaviour management</strong>; add methylphenidate only if that is not enough.",
+  "sectionId": "s23e-s12b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12017",
+  "frontHtml": "When is an ECG needed before starting a stimulant?",
+  "backHtml": "Only with a red flag: exertional syncope or chest pain, palpitations, known heart disease, or <strong>unexplained sudden death in a young relative</strong>.",
+  "sectionId": "s23e-s12b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12018",
+  "frontHtml": "Toddler autism screening schedule?",
+  "backHtml": "Validated autism screen at the <strong>18- and 24-month</strong> visits, plus ongoing developmental surveillance.",
+  "sectionId": "s23e-s12b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12019",
+  "frontHtml": "Genetic tests offered after an autism diagnosis?",
+  "backHtml": "<strong>Chromosomal microarray and fragile X testing</strong> (exome sequencing where available).",
+  "sectionId": "s23e-s12b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12020",
+  "frontHtml": "First-line treatment for impairing tics?",
+  "backHtml": "<strong>Comprehensive behavioural intervention for tics</strong> (habit reversal); alpha-2 agonists or antipsychotics for severe cases.",
+  "sectionId": "s23e-s12b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12021",
+  "frontHtml": "Most effective long-term treatment for primary nocturnal enuresis?",
+  "backHtml": "The <strong>enuresis alarm</strong> (lowest relapse); desmopressin works fast but relapse is common.",
+  "sectionId": "s23e-s12b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12022",
+  "frontHtml": "Safety rule with desmopressin for bed-wetting?",
+  "backHtml": "No drinks from 1 hour before the dose until morning: risk of <strong>hyponatraemia</strong>.",
+  "sectionId": "s23e-s12b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12023",
+  "frontHtml": "First test in secondary enuresis?",
+  "backHtml": "<strong>Urinalysis</strong> (glucose for diabetes, infection, specific gravity).",
+  "sectionId": "s23e-s12b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12024",
+  "frontHtml": "Treatment of retentive encopresis?",
+  "backHtml": "<strong>Disimpaction</strong> (high-dose polyethylene glycol or enemas), then months of maintenance laxative with scheduled toilet sitting.",
+  "sectionId": "s23e-s12b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12025",
+  "frontHtml": "First-line treatment of conduct disorder?",
+  "backHtml": "Intensive <strong>family- and community-based therapy</strong> (multisystemic therapy) and parent management training.",
+  "sectionId": "s23e-s12b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12026",
+  "frontHtml": "Best-evidence treatment for borderline personality disorder?",
+  "backHtml": "<strong>Dialectical behaviour therapy</strong>.",
+  "sectionId": "s23e-s12b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12027",
+  "frontHtml": "How should a team respond when a patient splits staff into good and bad?",
+  "backHtml": "Hold a <strong>team meeting</strong> and agree one consistent plan with clear limits.",
+  "sectionId": "s23e-s12b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12028",
+  "frontHtml": "Best approach to a patient with paranoid traits?",
+  "backHtml": "Clear, honest, matter-of-fact explanations of each step; avoid excessive warmth.",
+  "sectionId": "s23e-s12b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12029",
+  "frontHtml": "New personality change at age 50: what should you think of?",
+  "backHtml": "A <strong>neurological cause</strong> such as frontotemporal dementia or a frontal lesion; personality disorders begin by early adulthood.",
+  "sectionId": "s23e-s12b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c12030",
+  "frontHtml": "Prescribing for depression in a patient with borderline personality disorder and prior overdoses?",
+  "backHtml": "An agent safe in overdose (such as an SSRI), <strong>small quantities</strong>, close follow-up; avoid tricyclics, lithium and benzodiazepines.",
+  "sectionId": "s23e-s12b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13001",
+  "frontHtml": "How long after a death can prolonged grief disorder be diagnosed in an adult?",
+  "backHtml": "At least <strong>12 months</strong> (6 months in children and adolescents).",
+  "sectionId": "s23e-s13a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13002",
+  "frontHtml": "Is briefly hearing a dead spouse's voice while falling asleep a sign of psychosis?",
+  "backHtml": "No. Brief perceptions of the deceased are common in ordinary grief.",
+  "sectionId": "s23e-s13a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13003",
+  "frontHtml": "Strongest single predictor of death by suicide?",
+  "backHtml": "A <strong>previous suicide attempt</strong>.",
+  "sectionId": "s23e-s13a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13004",
+  "frontHtml": "Which method causes the largest share of US suicide deaths?",
+  "backHtml": "<strong>Firearms</strong>, about half of suicide deaths.",
+  "sectionId": "s23e-s13a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13005",
+  "frontHtml": "Nonsuicidal self-injury that relieves tension persists through which learning mechanism?",
+  "backHtml": "<strong>Negative reinforcement</strong>: removing an aversive state strengthens the behaviour.",
+  "sectionId": "s23e-s13a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13006",
+  "frontHtml": "Which stage of change: aware of the problem and weighing it up, but no plan or date?",
+  "backHtml": "<strong>Contemplation</strong>; the clinician explores ambivalence.",
+  "sectionId": "s23e-s13a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13007",
+  "frontHtml": "Elder with a paid family caregiver who is malnourished with pressure injuries: which form of abuse?",
+  "backHtml": "<strong>Caregiver neglect</strong>.",
+  "sectionId": "s23e-s13a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13008",
+  "frontHtml": "Feature that best separates delirium from dementia?",
+  "backHtml": "Acute onset with <strong>fluctuating attention and awareness</strong>.",
+  "sectionId": "s23e-s13a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13009",
+  "frontHtml": "Typical EEG in delirium (not sedative withdrawal)?",
+  "backHtml": "<strong>Diffuse slowing</strong> of background activity.",
+  "sectionId": "s23e-s13a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13010",
+  "frontHtml": "What is a double-sided reflection in motivational interviewing?",
+  "backHtml": "A reflection that states both sides of the patient's ambivalence back to them.",
+  "sectionId": "s23e-s13a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13011",
+  "frontHtml": "Which autonomic division and nerves mediate erection?",
+  "backHtml": "<strong>Parasympathetic</strong>: pelvic splanchnic nerves (S2 to S4) via the cavernous nerves; nitric oxide and cGMP.",
+  "sectionId": "s23e-s13a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13012",
+  "frontHtml": "Mechanism of sildenafil?",
+  "backHtml": "Inhibits <strong>PDE5</strong>, so cGMP persists in cavernosal smooth muscle.",
+  "sectionId": "s23e-s13a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13013",
+  "frontHtml": "Why never combine a PDE5 inhibitor with a nitrate?",
+  "backHtml": "Both raise cGMP; the combination causes profound hypotension.",
+  "sectionId": "s23e-s13a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13014",
+  "frontHtml": "Antidepressant least likely to cause sexual dysfunction?",
+  "backHtml": "<strong>Bupropion</strong> (norepinephrine and dopamine reuptake inhibitor).",
+  "sectionId": "s23e-s13a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13015",
+  "frontHtml": "When is a paraphilia a paraphilic disorder?",
+  "backHtml": "When, for at least 6 months, it causes distress or impairment, or is acted on with a non-consenting person.",
+  "sectionId": "s23e-s13a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13016",
+  "frontHtml": "How does risperidone cause low libido and gynecomastia?",
+  "backHtml": "D2 blockade raises <strong>prolactin</strong>, which suppresses GnRH, LH and testosterone.",
+  "sectionId": "s23e-s13a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13017",
+  "frontHtml": "What does the diagnosis of gender dysphoria require?",
+  "backHtml": "Marked gender incongruence for at least 6 months with clinically significant <strong>distress or impairment</strong>.",
+  "sectionId": "s23e-s13a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13018",
+  "frontHtml": "Main laboratory risk of testosterone therapy and its mechanism?",
+  "backHtml": "<strong>Erythrocytosis</strong>: androgens raise erythropoietin and suppress hepcidin.",
+  "sectionId": "s23e-s13a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13019",
+  "frontHtml": "Why is ethinyl estradiol avoided in gender-affirming care?",
+  "backHtml": "It is the most thrombogenic estrogen; transdermal estradiol carries the lowest VTE risk.",
+  "sectionId": "s23e-s13a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13020",
+  "frontHtml": "Key risk of spironolactone as an anti-androgen?",
+  "backHtml": "<strong>Hyperkalemia</strong>, especially with ACE inhibitors, ARBs or kidney disease.",
+  "sectionId": "s23e-s13a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13021",
+  "frontHtml": "Continuous versus pulsatile GnRH agonist?",
+  "backHtml": "Continuous suppresses LH, FSH and sex steroids; pulsatile stimulates them.",
+  "sectionId": "s23e-s13a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13022",
+  "frontHtml": "Mechanism of cocaine versus amphetamine?",
+  "backHtml": "Cocaine <strong>blocks reuptake</strong> of monoamines; amphetamines <strong>release</strong> them.",
+  "sectionId": "s23e-s13a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13023",
+  "frontHtml": "Benzodiazepines versus barbiturates at the GABA-A receptor?",
+  "backHtml": "Benzodiazepines raise the <em>frequency</em> of channel opening; barbiturates raise the <em>duration</em>.",
+  "sectionId": "s23e-s13a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13024",
+  "frontHtml": "Drug class with violence, analgesia and vertical nystagmus?",
+  "backHtml": "<strong>PCP</strong> (NMDA antagonist).",
+  "sectionId": "s23e-s13a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13025",
+  "frontHtml": "Why can buprenorphine precipitate withdrawal?",
+  "backHtml": "It is a high-affinity <strong>partial</strong> mu agonist that displaces full agonists.",
+  "sectionId": "s23e-s13a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13026",
+  "frontHtml": "Mechanism of varenicline?",
+  "backHtml": "Partial agonist at <strong>alpha-4 beta-2 nicotinic</strong> receptors.",
+  "sectionId": "s23e-s13a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13027",
+  "frontHtml": "Pupils in opioid intoxication versus withdrawal?",
+  "backHtml": "Intoxication: miosis. Withdrawal: mydriasis, with yawning, tearing and piloerection.",
+  "sectionId": "s23e-s13a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13028",
+  "frontHtml": "Why does a fasting heavy drinker become hypoglycemic?",
+  "backHtml": "A high <strong>NADH/NAD+</strong> ratio blocks gluconeogenesis once glycogen is used up.",
+  "sectionId": "s23e-s13a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13029",
+  "frontHtml": "Enzyme inhibited by disulfiram?",
+  "backHtml": "<strong>Aldehyde dehydrogenase</strong>; acetaldehyde accumulates.",
+  "sectionId": "s23e-s13a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13030",
+  "frontHtml": "Thiamine-dependent enzymes?",
+  "backHtml": "Pyruvate dehydrogenase, alpha-ketoglutarate dehydrogenase, transketolase, branched-chain keto acid dehydrogenase.",
+  "sectionId": "s23e-s13a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13031",
+  "frontHtml": "Usual onset of delirium tremens after the last drink?",
+  "backHtml": "About <strong>48 to 96 hours</strong>, occasionally later.",
+  "sectionId": "s23e-s13a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13032",
+  "frontHtml": "Alcoholic hallucinosis versus delirium tremens?",
+  "backHtml": "Hallucinosis: clear sensorium and normal vital signs, 12 to 48 hours. Delirium tremens: confusion and autonomic instability, later.",
+  "sectionId": "s23e-s13a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13033",
+  "frontHtml": "Patient with a suicide plan, intent and means who refuses admission: next step?",
+  "backHtml": "<strong>Involuntary emergency psychiatric hold</strong>.",
+  "sectionId": "s23e-s13b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13034",
+  "frontHtml": "Lower-risk suicidal ideation in an adolescent with guns at home: key intervention?",
+  "backHtml": "<strong>Lethal-means counselling</strong>: remove or lock up firearms and medicines, plus a safety plan.",
+  "sectionId": "s23e-s13b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13035",
+  "frontHtml": "Treatment for recurrent self-harm with emotion dysregulation?",
+  "backHtml": "<strong>Dialectical behavior therapy</strong>.",
+  "sectionId": "s23e-s13b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13036",
+  "frontHtml": "Do no-suicide contracts protect patients?",
+  "backHtml": "No; they are not a substitute for assessment and safety planning.",
+  "sectionId": "s23e-s13b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13037",
+  "frontHtml": "Drugs shown to reduce suicide risk?",
+  "backHtml": "<strong>Lithium</strong> in mood disorders and <strong>clozapine</strong> in schizophrenia.",
+  "sectionId": "s23e-s13b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13038",
+  "frontHtml": "Does bereavement exclude a diagnosis of major depression?",
+  "backHtml": "No. Treat a depressive episode after a loss like any other.",
+  "sectionId": "s23e-s13b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13039",
+  "frontHtml": "First step when partner violence is suspected and the partner is present?",
+  "backHtml": "Interview the patient <strong>alone</strong>.",
+  "sectionId": "s23e-s13b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13040",
+  "frontHtml": "Competent adult discloses partner violence and declines reporting: approach?",
+  "backHtml": "Respect autonomy; assess danger, make a <strong>safety plan</strong>, offer resources, document.",
+  "sectionId": "s23e-s13b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13041",
+  "frontHtml": "Suspected abuse of a dependent older adult: duty?",
+  "backHtml": "Report to <strong>adult protective services</strong>; proof and consent are not required.",
+  "sectionId": "s23e-s13b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13042",
+  "frontHtml": "First-line management of delirium without dangerous agitation?",
+  "backHtml": "Non-drug measures (glasses, hearing aids, reorientation, remove tethers) and treat the cause.",
+  "sectionId": "s23e-s13b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13043",
+  "frontHtml": "Drug classes that worsen delirium in older adults?",
+  "backHtml": "Benzodiazepines (outside withdrawal) and anticholinergics such as diphenhydramine.",
+  "sectionId": "s23e-s13b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13044",
+  "frontHtml": "Erectile dysfunction in a smoker with hypertension: what to check?",
+  "backHtml": "Cardiovascular risk: <strong>lipids and glucose or HbA1c</strong>, blood pressure.",
+  "sectionId": "s23e-s13b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13045",
+  "frontHtml": "Erectile dysfunction treatment for a patient on nitrates?",
+  "backHtml": "Not a PDE5 inhibitor: vacuum device, alprostadil or prosthesis.",
+  "sectionId": "s23e-s13b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13046",
+  "frontHtml": "Persistent SSRI sexual dysfunction with depression in remission?",
+  "backHtml": "<strong>Add bupropion</strong> (or switch to a lower-risk drug).",
+  "sectionId": "s23e-s13b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13047",
+  "frontHtml": "Drug treatment of premature ejaculation?",
+  "backHtml": "An <strong>SSRI</strong> (for example, daily paroxetine), or a topical anaesthetic.",
+  "sectionId": "s23e-s13b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13048",
+  "frontHtml": "Treatment of genito-pelvic pain/penetration disorder?",
+  "backHtml": "<strong>Pelvic floor physical therapy</strong>, graded dilators, CBT.",
+  "sectionId": "s23e-s13b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13049",
+  "frontHtml": "Low desire with amenorrhea and galactorrhea: first test?",
+  "backHtml": "<strong>Serum prolactin</strong> (after a pregnancy test).",
+  "sectionId": "s23e-s13b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13050",
+  "frontHtml": "How do you decide cancer screening for a transgender patient?",
+  "backHtml": "By <strong>organ inventory</strong>: screen the organs the person has.",
+  "sectionId": "s23e-s13b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13051",
+  "frontHtml": "Is the prostate removed in vaginoplasty?",
+  "backHtml": "No; it remains and can be palpated through the anterior neovaginal wall.",
+  "sectionId": "s23e-s13b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13052",
+  "frontHtml": "Hematocrit above 54% on testosterone: action?",
+  "backHtml": "<strong>Reduce or hold</strong> the dose (or change formulation) and recheck.",
+  "sectionId": "s23e-s13b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13053",
+  "frontHtml": "Does testosterone prevent pregnancy?",
+  "backHtml": "No. It is teratogenic and is not a contraceptive; offer contraception.",
+  "sectionId": "s23e-s13b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13054",
+  "frontHtml": "Transgender woman on spironolactone started on an ACE inhibitor: what to monitor?",
+  "backHtml": "<strong>Potassium</strong> and creatinine.",
+  "sectionId": "s23e-s13b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13055",
+  "frontHtml": "Positive AUDIT-C screen: next step?",
+  "backHtml": "<strong>Brief intervention</strong> (feedback, advice, goal) and assessment for alcohol use disorder.",
+  "sectionId": "s23e-s13b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13056",
+  "frontHtml": "Preferred dosing strategy for alcohol withdrawal benzodiazepines?",
+  "backHtml": "<strong>Symptom-triggered</strong> dosing guided by CIWA-Ar.",
+  "sectionId": "s23e-s13b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13057",
+  "frontHtml": "Management of delirium tremens?",
+  "backHtml": "ICU, escalating IV benzodiazepines, fluids, electrolytes, thiamine; phenobarbital or propofol if refractory.",
+  "sectionId": "s23e-s13b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13058",
+  "frontHtml": "Alcohol use disorder drug for a patient who needs opioids?",
+  "backHtml": "<strong>Acamprosate</strong> (naltrexone would block the opioids).",
+  "sectionId": "s23e-s13b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13059",
+  "frontHtml": "Alcohol use disorder drug with creatinine clearance of 22 mL/min and normal liver tests?",
+  "backHtml": "<strong>Naltrexone</strong> (acamprosate is contraindicated at 30 mL/min or less).",
+  "sectionId": "s23e-s13b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13060",
+  "frontHtml": "Does buprenorphine still need a special DEA waiver?",
+  "backHtml": "No. The waiver was eliminated in 2023; a standard DEA registration suffices.",
+  "sectionId": "s23e-s13b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13061",
+  "frontHtml": "Opioid use disorder in pregnancy: treatment?",
+  "backHtml": "<strong>Buprenorphine or methadone</strong>; avoid withdrawal (detoxification).",
+  "sectionId": "s23e-s13b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13062",
+  "frontHtml": "Sedation and bradycardia persisting after naloxone, with necrotic wounds?",
+  "backHtml": "<strong>Xylazine</strong> adulteration; supportive care.",
+  "sectionId": "s23e-s13b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13063",
+  "frontHtml": "First drug for cocaine chest pain with agitation and hypertension?",
+  "backHtml": "A <strong>benzodiazepine</strong>.",
+  "sectionId": "s23e-s13b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13064",
+  "frontHtml": "Methadone patient develops withdrawal after starting tuberculosis treatment: cause?",
+  "backHtml": "<strong>Rifampin</strong> induces methadone metabolism; raise the dose.",
+  "sectionId": "s23e-s13b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c13065",
+  "frontHtml": "Smoking cessation in a patient with bulimia nervosa?",
+  "backHtml": "<strong>Varenicline</strong> or combination nicotine replacement; bupropion is contraindicated.",
+  "sectionId": "s23e-s13b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.04.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
  }
 ]

@@ -2789,5 +2789,1005 @@
     ]
    }
   ]
+ },
+ {
+  "id": "s23e-ch10a",
+  "exam": "step1",
+  "order": 520,
+  "title": "Behavioral health · Psychotic, anxiety and mood disorders",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s10a01",
+    "heading": "Psychotic disorders: neurobiology and antipsychotic pharmacology",
+    "html": "<p><strong>Psychosis</strong> means losing contact with reality: delusions (fixed false beliefs that do not yield to evidence), hallucinations (perceptions without a stimulus, most often voices in primary psychotic illness), disorganised speech or behaviour, and catatonia. <strong>Negative symptoms</strong> (flat affect, poverty of speech, loss of motivation and pleasure, social withdrawal) and cognitive deficits often matter more for long-term function, and they respond poorly to medication.</p><h3>Neurobiology</h3><ul><li><strong>Dopamine</strong>: too much dopamine signalling in the mesolimbic pathway is linked to positive symptoms, and too little in the mesocortical pathway to negative and cognitive symptoms. Every licensed antipsychotic blocks D2 receptors to some degree.</li><li><strong>Glutamate</strong>: NMDA-receptor antagonists such as phencyclidine and ketamine reproduce both positive and negative symptoms, supporting an NMDA hypofunction model.</li><li><strong>Structure</strong>: enlarged lateral and third ventricles, reduced cortical and hippocampal volume, and fewer dendritic spines on cortical pyramidal neurons.</li><li><strong>Risk factors</strong>: a first-degree relative (risk rises steeply with genetic closeness; identical twins are concordant in well under 100%), 22q11.2 deletion, heavy cannabis use in adolescence, older paternal age, obstetric complications, migration and urban upbringing.</li></ul>[[figure:s23e-fig1001]]<h3>Antipsychotic drugs by mechanism</h3><table><tr><th>Group</th><th>Examples</th><th>Receptor profile</th><th>Signature adverse effects</th></tr><tr><td>First-generation, high potency</td><td>Haloperidol, fluphenazine</td><td>Strong D2 blockade</td><td>Extrapyramidal effects, high prolactin, neuroleptic malignant syndrome</td></tr><tr><td>First-generation, low potency</td><td>Chlorpromazine, thioridazine</td><td>Weaker D2; strong muscarinic, alpha-1 and H1 blockade</td><td>Sedation, orthostatic hypotension, dry mouth and constipation; thioridazine prolongs QT and deposits in the retina; chlorpromazine causes corneal and lens deposits and photosensitivity</td></tr><tr><td>Second-generation</td><td>Risperidone, olanzapine, quetiapine, ziprasidone, lurasidone</td><td>D2 plus 5-HT2A antagonism</td><td>Metabolic syndrome (most with olanzapine and clozapine), high prolactin (most with risperidone and paliperidone), QT prolongation (ziprasidone)</td></tr><tr><td>D2 partial agonists</td><td>Aripiprazole, brexpiprazole, cariprazine</td><td>Partial agonism at D2</td><td>Akathisia; prolactin tends to fall rather than rise</td></tr><tr><td>Clozapine</td><td>Clozapine</td><td>Weak D2, many other receptors</td><td>Severe neutropenia, myocarditis, seizures, sialorrhoea, constipation that can progress to ileus, weight gain</td></tr></table><p>A newer, non-D2 option pairs a muscarinic M1/M4 agonist with a peripherally restricted muscarinic antagonist that limits gut and bladder side effects. It shows that cholinergic modulation of striatal dopamine release can also treat positive symptoms.</p><h3>Movement adverse effects and their timing</h3><table><tr><th>Effect</th><th>Typical onset</th><th>Mechanism and treatment</th></tr><tr><td>Acute dystonia (torticollis, oculogyric crisis, jaw or tongue spasm)</td><td>Hours to days</td><td>Sudden cholinergic excess relative to dopamine in the striatum; give an anticholinergic (benztropine) or diphenhydramine</td></tr><tr><td>Akathisia (inner restlessness, cannot sit still)</td><td>Days to weeks</td><td>Lower the dose; propranolol or a benzodiazepine</td></tr><tr><td>Drug-induced parkinsonism</td><td>Weeks</td><td>Lower the dose or switch; an anticholinergic helps</td></tr><tr><td>Tardive dyskinesia (orofacial and limb choreiform movements)</td><td>Months to years</td><td>Thought to reflect D2 receptor supersensitivity; a VMAT2 inhibitor (valbenazine, deutetrabenazine) is first-line; anticholinergics make it worse</td></tr></table><div class=\"trap\"><strong>Exam trap:</strong> an anticholinergic treats dystonia and parkinsonism but worsens tardive dyskinesia. Ask how long the patient has been on the drug before choosing.</div><div class=\"pearl\"><strong>High-yield:</strong> D2 blockade in the tuberoinfundibular pathway removes dopamine's tonic inhibition of lactotrophs, so prolactin rises: galactorrhoea, amenorrhoea, erectile dysfunction and, over time, low bone density.</div>",
+    "figureIds": [
+     "s23e-fig1001"
+    ],
+    "areas": [
+     "usmle2026.04.01.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Schizophrenia (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK539864/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Antipsychotic Medications (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519503/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Tardive Dyskinesia (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448207/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23e-s10a02",
+    "heading": "Anxiety, obsessive-compulsive and trauma-related disorders: neurobiology and drugs",
+    "html": "<p>Fear is a normal response to present danger; anxiety is anticipation of a future threat. Disorders arise when either is out of proportion, persistent and disabling. The <strong>amygdala</strong> drives fear responses and fear learning; the medial prefrontal cortex normally damps it, and this top-down control is weak in anxiety disorders and PTSD. The <strong>locus coeruleus</strong> (noradrenaline) produces the arousal and autonomic surge of panic, and the hypothalamic-pituitary-adrenal axis links chronic stress to the body.</p><h3>Recognising the disorders</h3><table><tr><th>Disorder</th><th>Core feature</th><th>Minimum duration</th></tr><tr><td>Generalized anxiety disorder</td><td>Excessive, hard-to-control worry about many things, with restlessness, fatigue, poor concentration, irritability, muscle tension or poor sleep</td><td>6 months</td></tr><tr><td>Panic disorder</td><td>Recurrent unexpected panic attacks, then a month or more of worry about further attacks or avoidance</td><td>1 month after an attack</td></tr><tr><td>Agoraphobia</td><td>Fear of places where escape or help would be hard (transport, open or enclosed spaces, crowds, being outside alone)</td><td>6 months</td></tr><tr><td>Specific phobia</td><td>Fear of one object or situation (animals, heights, injections)</td><td>6 months</td></tr><tr><td>Social anxiety disorder</td><td>Fear of scrutiny or embarrassment in social or performance settings</td><td>6 months</td></tr><tr><td>Obsessive-compulsive disorder</td><td>Intrusive, unwanted thoughts (obsessions) and repetitive acts done to reduce the distress (compulsions); insight varies</td><td>No minimum; time-consuming or impairing</td></tr><tr><td>Posttraumatic stress disorder</td><td>After a trauma: intrusions, avoidance, negative changes in thinking and mood, and hyperarousal</td><td>More than 1 month</td></tr><tr><td>Acute stress disorder</td><td>The same picture soon after the trauma</td><td>3 days to 1 month</td></tr><tr><td>Adjustment disorder</td><td>Distress or impairment out of proportion to an identifiable non-traumatic stressor</td><td>Begins within 3 months; ends within 6 months of the stressor ending</td></tr></table><p>The obsessive-compulsive spectrum also includes body dysmorphic disorder (preoccupation with a perceived flaw in appearance), hoarding disorder, trichotillomania (hair pulling) and excoriation (skin picking). OCD is linked to overactivity of cortico-striato-thalamo-cortical loops, especially orbitofrontal cortex and caudate.</p><h3>Drugs by mechanism</h3><ul><li><strong>SSRIs and SNRIs</strong> are first-line for most of these disorders. Benefit builds over weeks; OCD usually needs higher doses and longer trials. Clomipramine, a serotonergic tricyclic, is an older alternative for OCD.</li><li><strong>Benzodiazepines</strong> bind between the alpha and gamma subunits of the GABA-A receptor and <em>increase the frequency</em> of chloride-channel opening. Barbiturates instead increase the <em>duration</em> of opening and can open the channel directly at high doses, so they are far more dangerous in overdose. Flumazenil is a competitive antagonist at the benzodiazepine site.</li><li><strong>Buspirone</strong> is a 5-HT1A partial agonist for generalized anxiety: no sedation, no dependence, no cross-tolerance with alcohol, but it takes weeks to work and does not abort panic.</li><li><strong>Propranolol</strong> blunts the peripheral adrenergic symptoms (tremor, palpitations) of performance anxiety.</li><li><strong>Hydroxyzine</strong>, an H1 antihistamine, is a non-addictive sedating option.</li></ul><div class=\"trap\"><strong>Exam trap:</strong> benzodiazepines plus alcohol or opioids depress breathing more than either alone. Long-acting benzodiazepines accumulate in older adults and raise the risk of falls and confusion.</div><div class=\"pearl\"><strong>High-yield:</strong> before diagnosing panic disorder, think of hyperthyroidism, arrhythmia, stimulant or caffeine use, and alcohol or sedative withdrawal.</div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.04.02.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Generalized Anxiety Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441870/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Panic Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK430973/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Obsessive-Compulsive Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK553162/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Posttraumatic Stress Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559129/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23e-s10a03",
+    "heading": "Mood disorders: neurobiology and pharmacology of antidepressants and mood stabilisers",
+    "html": "<p>A <strong>major depressive episode</strong> is at least 2 weeks of depressed mood or loss of interest or pleasure, with enough other symptoms (sleep, appetite or weight change, psychomotor change, fatigue, guilt or worthlessness, poor concentration, thoughts of death) to total five or more. A <strong>manic episode</strong> is at least 1 week (or any length if hospitalisation is needed) of abnormally elevated or irritable mood with more energy, plus symptoms such as grandiosity, less need for sleep, pressured speech, racing thoughts, distractibility and risky behaviour, causing marked impairment. <strong>Hypomania</strong> is the same picture for at least 4 days without marked impairment or psychosis.</p>[[figure:s23e-fig1003]]<h3>Biology</h3><ul><li>Monoamine deficits (serotonin, noradrenaline, dopamine) explain how antidepressants were found, but the weeks-long delay in their benefit points to downstream changes in receptor sensitivity, neuroplasticity and BDNF signalling.</li><li>The HPA axis is often overactive in depression: high cortisol and failure to suppress it with dexamethasone.</li><li>Sleep in depression: shorter REM latency, more REM early in the night, less slow-wave sleep and early-morning waking.</li><li>Bipolar disorder is among the most heritable psychiatric disorders.</li></ul><h3>Antidepressants</h3><table><tr><th>Class</th><th>Mechanism</th><th>Notable adverse effects</th></tr><tr><td>SSRIs (fluoxetine, sertraline, citalopram, escitalopram, paroxetine)</td><td>Block the serotonin transporter</td><td>Sexual dysfunction, GI upset, hyponatraemia from SIADH (older adults), bleeding risk with NSAIDs or anticoagulants, QT prolongation with higher citalopram doses, discontinuation symptoms (worst with paroxetine)</td></tr><tr><td>SNRIs (venlafaxine, duloxetine, desvenlafaxine)</td><td>Block serotonin and noradrenaline transporters</td><td>As SSRIs, plus dose-related hypertension; duloxetine also treats neuropathic pain</td></tr><tr><td>Bupropion</td><td>Inhibits noradrenaline and dopamine reuptake</td><td>Lowers the seizure threshold (avoid in eating disorders and seizure disorders); no sexual dysfunction or weight gain; also aids smoking cessation</td></tr><tr><td>Mirtazapine</td><td>Alpha-2 antagonist that increases noradrenaline and serotonin release; strong H1 blockade</td><td>Sedation, increased appetite and weight gain</td></tr><tr><td>Trazodone</td><td>5-HT2A antagonist with weak reuptake inhibition</td><td>Sedation (used for insomnia), orthostasis, priapism</td></tr><tr><td>Tricyclics (amitriptyline, nortriptyline, clomipramine)</td><td>Block serotonin and noradrenaline reuptake; also block muscarinic, H1, alpha-1 and cardiac sodium channels</td><td>Anticholinergic effects, orthostasis; in overdose, wide QRS, arrhythmia, seizures and coma</td></tr><tr><td>MAO inhibitors (phenelzine, tranylcypromine, selegiline patch)</td><td>Irreversibly inhibit monoamine oxidase</td><td>Hypertensive crisis with tyramine-rich foods; serotonin syndrome with serotonergic drugs</td></tr><tr><td>Esketamine (nasal)</td><td>NMDA receptor antagonist</td><td>Dissociation, sedation, raised blood pressure; given under observation</td></tr><tr><td>Zuranolone, brexanolone</td><td>Neuroactive steroids; positive allosteric modulators of GABA-A receptors</td><td>Sedation; used for postpartum depression</td></tr></table><p><strong>Tyramine</strong> is normally broken down by MAO-A in the gut wall and liver. When MAO is blocked, it reaches sympathetic nerve endings and releases stored noradrenaline, causing a sudden severe rise in blood pressure.</p><h3>Mood stabilisers</h3><ul><li><strong>Lithium</strong> inhibits inositol monophosphatase (depleting inositol for phosphoinositide signalling) and glycogen synthase kinase-3. It has a narrow therapeutic range and is cleared unchanged by the kidney, reabsorbed like sodium in the proximal tubule. Anything that makes the kidney hold on to sodium (thiazides, dehydration, low-salt diet, NSAIDs, ACE inhibitors) raises lithium levels. Adverse effects: tremor, hypothyroidism, nephrogenic diabetes insipidus (lithium enters collecting-duct principal cells through ENaC; amiloride blocks this), hypercalcaemia from hyperparathyroidism, chronic kidney disease, and a small rise in the risk of Ebstein anomaly with first-trimester exposure.</li><li><strong>Valproate</strong>: hepatotoxicity, pancreatitis, weight gain, thrombocytopenia, and a high risk of neural tube defects and lower IQ in exposed children.</li><li><strong>Lamotrigine</strong> prevents depressive relapse; titrate slowly because of Stevens-Johnson syndrome; valproate doubles its level.</li><li><strong>Carbamazepine</strong>: agranulocytosis, SIADH, liver enzyme induction, and Stevens-Johnson syndrome linked to HLA-B*15:02.</li></ul><div class=\"trap\"><strong>Exam trap:</strong> an antidepressant given alone to someone with unrecognised bipolar disorder can switch them into mania. Ask about past elevated-mood episodes and family history first.</div><div class=\"pearl\"><strong>High-yield:</strong> serotonin syndrome (clonus, hyperreflexia, agitation, sweating, diarrhoea, fever) develops within about a day of adding or raising a serotonergic drug; treat by stopping the drugs, giving benzodiazepines and, if needed, cyproheptadine (a 5-HT2A antagonist).</div>",
+    "figureIds": [
+     "s23e-fig1003"
+    ],
+    "areas": [
+     "usmle2026.04.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Major Depressive Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559078/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Bipolar Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK558998/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Selective Serotonin Reuptake Inhibitors (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554406/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Serotonin Syndrome (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482377/",
+      "sourceId": "statpearls"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s23e-ch10b",
+  "exam": "step2ck",
+  "order": 521,
+  "title": "Psychiatry · Psychosis, anxiety and mood disorders",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s10b01",
+    "heading": "Psychosis: diagnosis, first-episode work-up and antipsychotic management",
+    "html": "<h3>Telling the psychotic disorders apart</h3><table><tr><th>Diagnosis</th><th>Key features</th></tr><tr><td>Brief psychotic disorder</td><td>Psychotic symptoms for more than 1 day and less than 1 month, then full return to previous function; often after a severe stressor or after childbirth</td></tr><tr><td>Schizophreniform disorder</td><td>Schizophrenia-like illness lasting 1 to 6 months</td></tr><tr><td>Schizophrenia</td><td>Two or more of delusions, hallucinations, disorganised speech, grossly disorganised or catatonic behaviour and negative symptoms (at least one of the first three) for at least 1 month, with continuous signs for at least 6 months and a fall in function</td></tr><tr><td>Schizoaffective disorder</td><td>Mood episodes present for most of the illness, plus at least 2 weeks of delusions or hallucinations with no mood episode</td></tr><tr><td>Delusional disorder</td><td>One or more delusions for at least 1 month; behaviour and function otherwise largely preserved; no prominent hallucinations or disorganisation</td></tr><tr><td>Mood disorder with psychotic features</td><td>Psychosis occurs only during depressive or manic episodes</td></tr></table><h3>First episode: exclude other causes</h3><ul><li>History of substances (stimulants, cannabis, hallucinogens, phencyclidine), prescribed drugs (corticosteroids, levodopa, high-dose anticholinergics) and alcohol withdrawal.</li><li>Look for delirium: fluctuating attention and consciousness point to a medical cause, not a primary psychosis.</li><li>Basic tests: blood count, electrolytes, glucose, kidney and liver function, TSH, urine drug screen, HIV and syphilis testing. Brain imaging, EEG or lumbar puncture when there are neurological signs, an atypical course, older age at onset or confusion (for example, anti-NMDA receptor encephalitis).</li></ul><h3>Treatment</h3><ul><li>A <strong>second-generation antipsychotic</strong> at the lowest effective dose, chosen by side-effect profile, plus psychoeducation, family support, supported employment and cognitive behavioural therapy for psychosis. Coordinated specialty care for a first episode improves outcomes.</li><li><strong>Baseline and follow-up monitoring</strong>: weight or BMI, waist, blood pressure, fasting glucose or HbA1c, lipids; ECG when the drug or patient raises QT risk; prolactin if symptoms appear; regular checks for abnormal movements.</li><li><strong>Long-acting injectables</strong> (for example, paliperidone, aripiprazole, haloperidol or fluphenazine preparations) help when adherence is poor or relapses follow stopping medication.</li><li><strong>Treatment-resistant schizophrenia</strong> (no adequate response to two antipsychotics given at an adequate dose and duration) calls for <strong>clozapine</strong>. Clozapine is also the drug that lowers suicidal behaviour in schizophrenia. The absolute neutrophil count is measured before starting and regularly during treatment; watch for fever and chest pain in the first weeks (myocarditis), constipation, sialorrhoea and seizures.</li><li><strong>Acute agitation</strong>: verbal de-escalation first; then an oral or intramuscular antipsychotic, often with a benzodiazepine (but avoid parenteral olanzapine with parenteral benzodiazepines).</li></ul><h3>Emergencies</h3><table><tr><th>Syndrome</th><th>Clues</th><th>Management</th></tr><tr><td>Neuroleptic malignant syndrome</td><td>Days after starting or raising a dopamine blocker (or stopping a dopamine agonist): fever, lead-pipe rigidity, confusion, unstable blood pressure and pulse, very high creatine kinase, raised white count</td><td>Stop the drug; cooling, IV fluids, ICU care; benzodiazepines; dantrolene or bromocriptine in severe cases</td></tr><tr><td>Catatonia</td><td>Mutism, posturing, staring, rigidity, negativism, waxy flexibility</td><td>Lorazepam challenge and treatment; ECT if benzodiazepines fail or the patient is in danger</td></tr></table><div class=\"trap\"><strong>Exam trap:</strong> a patient who became confused and febrile after receiving haloperidol needs the drug stopped. Giving more antipsychotic for \"worsening agitation\" can be fatal.</div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.04.01.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Schizophrenia (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK539864/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Neuroleptic Malignant Syndrome (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482282/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Schizophrenia",
+      "url": "https://medlineplus.gov/schizophrenia.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23e-s10b02",
+    "heading": "Anxiety, OCD and trauma-related disorders: management",
+    "html": "<h3>General approach</h3><ul><li>Screen for medical and substance causes: hyperthyroidism, arrhythmia, asthma or COPD drugs, caffeine, stimulants, alcohol or benzodiazepine withdrawal. A TSH and, where symptoms suggest it, an ECG are reasonable.</li><li>Ask about depression, substance use and suicidal thinking, which often coexist.</li><li>First-line treatment for most disorders is <strong>cognitive behavioural therapy</strong>, an <strong>SSRI or SNRI</strong>, or both. Start low (anxious patients are sensitive to early jitteriness), increase to an effective dose, and continue for 6 to 12 months after response before a slow taper.</li></ul><table><tr><th>Disorder</th><th>Preferred treatment</th><th>Notes</th></tr><tr><td>Generalized anxiety</td><td>CBT and/or SSRI or SNRI</td><td>Buspirone is an alternative or add-on; avoid long-term benzodiazepines</td></tr><tr><td>Panic disorder</td><td>CBT and/or SSRI or SNRI</td><td>A short benzodiazepine course can bridge the first weeks in selected patients without substance use</td></tr><tr><td>Specific phobia</td><td>Exposure-based CBT</td><td>Medication has little role</td></tr><tr><td>Social anxiety</td><td>CBT and/or SSRI or SNRI</td><td>Propranolol before a performance helps the performance-only form</td></tr><tr><td>OCD</td><td>Exposure and response prevention and/or an SSRI, often at higher doses</td><td>Clomipramine or antipsychotic augmentation for partial response</td></tr><tr><td>Body dysmorphic disorder</td><td>CBT and/or SSRI</td><td>Cosmetic procedures rarely help and often worsen the preoccupation</td></tr><tr><td>PTSD</td><td>Trauma-focused psychotherapy (prolonged exposure, cognitive processing therapy, EMDR)</td><td>SSRI (sertraline, paroxetine) or venlafaxine if therapy is unavailable or not enough; benzodiazepines are not recommended</td></tr><tr><td>Adjustment disorder</td><td>Supportive or problem-focused psychotherapy</td><td>Medication only for specific symptoms</td></tr></table><h3>Children and adolescents</h3><ul><li><strong>Separation anxiety disorder</strong> (excessive distress at separation from attachment figures, refusing school, fear of harm to parents) lasting at least 4 weeks in children: CBT with parent involvement first; an SSRI for moderate to severe cases.</li><li>Selective mutism: consistent failure to speak in specific social settings despite speaking elsewhere.</li><li>SSRIs carry a boxed warning for suicidal thinking in people under 25; monitor closely after starting.</li></ul><h3>Benzodiazepines: when and how</h3><ul><li>Use them only short-term and avoid them in older adults, people with substance use disorders, sleep apnoea, or those taking opioids.</li><li>After long-term use, taper gradually; abrupt stopping can cause rebound anxiety, insomnia, tremor and seizures.</li></ul><div class=\"trap\"><strong>Exam trap:</strong> after a trauma, routine single-session debriefing does not prevent PTSD. Offer support, watch for persistent symptoms, and start trauma-focused therapy when acute stress disorder or PTSD develops.</div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.04.02.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Generalized Anxiety Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441870/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Posttraumatic Stress Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559129/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Obsessive-Compulsive Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK553162/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Anxiety",
+      "url": "https://medlineplus.gov/anxiety.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23e-s10b03",
+    "heading": "Depressive disorders: diagnosis, treatment steps and special populations",
+    "html": "<h3>Diagnosis</h3><ul><li>Screen with a brief questionnaire (for example, the PHQ-2 then PHQ-9) and confirm with an interview.</li><li>Check TSH, a blood count and other tests guided by the history; review medicines and alcohol use.</li><li>Always ask about past mania or hypomania and family history of bipolar disorder.</li></ul><table><tr><th>Disorder</th><th>Distinguishing feature</th></tr><tr><td>Major depressive disorder</td><td>One or more major depressive episodes, no mania or hypomania ever</td></tr><tr><td>Persistent depressive disorder</td><td>Depressed mood most days for at least 2 years (1 year in children and adolescents)</td></tr><tr><td>Premenstrual dysphoric disorder</td><td>Mood symptoms in the week before menses that improve within days of onset of menses, confirmed by prospective daily ratings over at least two cycles</td></tr><tr><td>Seasonal pattern</td><td>Episodes that regularly begin and remit at particular times of year</td></tr><tr><td>Bereavement</td><td>Waves of grief tied to reminders, self-esteem preserved; consider depression when worthlessness, pervasive anhedonia or suicidal intent appear</td></tr></table><h3>Treatment steps</h3><ol><li>Mild depression: psychotherapy (CBT, interpersonal therapy, behavioural activation) or an antidepressant.</li><li>Moderate to severe: an antidepressant plus psychotherapy. SSRIs are usually first; choose by side-effect profile (for example, mirtazapine for poor sleep and weight loss; bupropion when sexual side effects matter).</li><li>Assess response after 4 to 8 weeks at an adequate dose. If response is partial, optimise the dose, then switch or augment (a second-generation antipsychotic such as aripiprazole, lithium, bupropion or mirtazapine).</li><li>Continue for at least 6 to 12 months after remission; longer (often indefinitely) after recurrent episodes.</li><li>Treatment-resistant depression: esketamine, ECT or other neuromodulation such as transcranial magnetic stimulation.</li></ol><p><strong>ECT</strong> is the most effective acute treatment for severe depression. It is preferred when depression has psychotic features, catatonia, refusal to eat or drink, or a high suicide risk that needs rapid response, and it is safe in pregnancy. The main adverse effects are transient confusion and memory loss around the treatment period.</p><h3>Peripartum and premenstrual</h3><ul><li><strong>Postpartum blues</strong> (tearfulness, mood lability in the first days, gone within 2 weeks): reassure and watch.</li><li><strong>Depression with peripartum onset</strong> (in pregnancy or the weeks after delivery): psychotherapy, an SSRI (sertraline is commonly used in breastfeeding), or zuranolone, a 14-day oral course for postpartum depression.</li><li><strong>Postpartum psychosis</strong> (confusion, delusions, often bipolar-related) is an emergency: admit, ensure the infant's safety, and treat.</li><li><strong>PMDD</strong>: SSRIs (continuously or in the luteal phase only) or a combined oral contraceptive containing drospirenone.</li></ul><h3>Children, adolescents and older adults</h3><ul><li>Adolescents: CBT or interpersonal therapy; fluoxetine or escitalopram for moderate to severe depression, with close follow-up for emerging suicidal thinking.</li><li>Older adults: depression can present as cognitive complaints (\"pseudodementia\"); start antidepressants at low doses, check sodium on SSRIs, and avoid tricyclics and paroxetine (anticholinergic load).</li></ul><h3>Suicide risk</h3><ul><li>Ask directly about thoughts, plans, intent, preparation and access to means. Asking does not raise risk.</li><li>Strongest predictor: a previous attempt. Other factors: male sex, older age, living alone, chronic illness or pain, substance use, recent discharge from psychiatric care, and access to firearms.</li><li>High imminent risk (a plan with intent, or a recent serious attempt): keep the patient safe and admit, involuntarily if needed. Lower risk: a written safety plan, removal or locking of lethal means, treatment of the underlying disorder and early follow-up.</li></ul><div class=\"trap\"><strong>Exam trap:</strong> new energy in the first weeks of antidepressant treatment, before mood lifts, can make it easier to act on suicidal thoughts. Schedule early review.</div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.04.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Major Depressive Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559078/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Perinatal Depression (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519070/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Electroconvulsive Therapy (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538266/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Suicidal Ideation (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK565877/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23e-s10b04",
+    "heading": "Bipolar disorder: acute mania, bipolar depression and lithium safety",
+    "html": "<h3>Diagnosis</h3><ul><li><strong>Bipolar I</strong>: at least one manic episode. <strong>Bipolar II</strong>: at least one hypomanic and one major depressive episode, never mania. <strong>Cyclothymic disorder</strong>: at least 2 years (1 in young people) of many hypomanic and depressive symptoms that never meet episode criteria.</li><li>Exclude stimulants, corticosteroids, hyperthyroidism and frontal lobe lesions when mania appears for the first time, especially in later life.</li></ul><h3>Acute mania</h3><ul><li>Stop any antidepressant.</li><li>First line: <strong>lithium</strong>, <strong>valproate</strong> or a second-generation antipsychotic; in severe mania, an antipsychotic combined with lithium or valproate.</li><li>Agitation: an antipsychotic with or without a benzodiazepine. ECT for refractory or dangerous mania.</li><li>Admission when the patient is a danger to self or others or cannot care for themselves.</li></ul><h3>Bipolar depression</h3><ul><li>Evidence-based options: quetiapine, lurasidone, lumateperone, cariprazine, an olanzapine-fluoxetine combination, or lithium. Lamotrigine is useful mainly for preventing depressive relapse because it must be titrated slowly.</li><li>Avoid antidepressant monotherapy: it can trigger mania or rapid cycling.</li></ul><h3>Maintenance and lithium safety</h3><ul><li>Lithium lowers relapse and suicide risk. Before starting, check kidney function, TSH, calcium, a pregnancy test where relevant and an ECG if there is cardiac disease. Recheck levels 5 days after a change (about 12 hours after the last dose), then kidney function and TSH periodically.</li><li>Interactions that raise lithium levels: thiazides, ACE inhibitors and angiotensin receptor blockers, NSAIDs, dehydration, vomiting and diarrhoea, low-salt diets.</li><li><strong>Toxicity</strong>: GI upset, coarse tremor, ataxia, slurred speech, confusion, myoclonus, seizures; chronic toxicity can occur at only modestly raised levels. Stop lithium, give IV saline, avoid nephrotoxins; activated charcoal does not bind lithium. Whole-bowel irrigation can help after a large sustained-release ingestion. Haemodialysis for severe neurological toxicity or very high levels, especially with poor kidney function.</li><li>Pregnancy: plan ahead. Valproate is avoided in people who can become pregnant. Lithium may be continued with specialist care, fetal echocardiography and close level monitoring, because clearance rises in pregnancy and falls abruptly after delivery.</li></ul><div class=\"trap\"><strong>Exam trap:</strong> a stable patient on lithium who starts hydrochlorothiazide or ibuprofen and becomes tremulous and confused has lithium toxicity until proved otherwise.</div><div class=\"pearl\"><strong>High-yield:</strong> lithium-induced polyuria with dilute urine that does not concentrate after desmopressin is nephrogenic diabetes insipidus; amiloride reduces lithium entry into principal cells.</div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.04.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Bipolar Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK558998/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Lithium Toxicity (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499992/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Bipolar Disorder",
+      "url": "https://medlineplus.gov/bipolardisorder.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s23e-ch11a",
+  "exam": "step1",
+  "order": 522,
+  "title": "Behavioral health · Somatic symptom, factitious, eating and impulse-control disorders",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s11a01",
+    "heading": "Somatic symptom and related disorders: definitions and mechanisms",
+    "areas": [
+     "usmle2026.04.04.01",
+     "usmle2026.04.05.01"
+    ],
+    "figureIds": [
+     "s23e-fig1101"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Somatic Symptom Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532253/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Illness Anxiety Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554399/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Functional Neurologic Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK551567/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<p>This group of disorders shares one feature: bodily symptoms, or worry about illness, cause distress and impairment out of proportion to any medical finding. The symptoms are <strong>not intentionally produced</strong>, which separates the whole group from factitious disorder and malingering.</p>\n<h3>The four main diagnoses</h3>\n<table><tr><th>Disorder</th><th>Core feature</th><th>Key point</th></tr>\n<tr><td>Somatic symptom disorder</td><td>One or more distressing bodily symptoms plus excessive thoughts, worry or time spent on them, usually for 6 months or more</td><td>The symptoms do <em>not</em> have to be medically unexplained; a real disease with a disproportionate response still qualifies</td></tr>\n<tr><td>Illness anxiety disorder</td><td>Preoccupation with having or getting a serious illness; bodily symptoms absent or mild</td><td>Repeated checking and reassurance-seeking, or avoidance of doctors altogether</td></tr>\n<tr><td>Functional neurological symptom disorder (conversion disorder)</td><td>Motor or sensory symptoms (weakness, abnormal movements, non-epileptic attacks, sensory or visual loss) that are inconsistent with recognised neurological disease</td><td>Diagnosed by <strong>positive clinical signs</strong>; a recent stressor is common but no longer required</td></tr>\n<tr><td>Psychological factors affecting other medical conditions</td><td>A known medical condition is made worse by behaviour or emotion (denial, nonadherence, anxiety triggering attacks)</td><td>The medical disease is the primary problem</td></tr></table>\n<p>The decision tree below separates these disorders from the conditions in which symptoms are produced on purpose.</p>[[figure:s23e-fig1101]]\n<h3>Positive signs of functional weakness and sensory loss</h3>\n<ul><li><strong>Hoover sign</strong>: hip extension on the weak side is weak when tested directly but becomes strong when the patient flexes the opposite hip against resistance, an automatic movement.</li>\n<li><strong>Hip abductor sign</strong>: the same principle, using hip abduction.</li>\n<li><strong>Dragging gait</strong> with the leg pulled behind like a dead weight, rather than circumducted.</li>\n<li><strong>Tubular visual field</strong>: the field stays the same width whether tested at 1 metre or at 2 metres, which is optically impossible.</li>\n<li><strong>Functional tremor</strong> that changes frequency to match a rhythm tapped by the other hand (entrainment) and stops with distraction.</li></ul>\n<h3>Non-epileptic attacks versus epileptic seizures</h3>\n<table><tr><th>Feature</th><th>Favours functional (non-epileptic) attack</th><th>Favours epileptic seizure</th></tr>\n<tr><td>Eyes</td><td>Closed, resisting opening</td><td>Open</td></tr>\n<tr><td>Movements</td><td>Side-to-side head shaking, out-of-phase limb movements, pelvic thrusting, waxing and waning</td><td>Synchronous, stereotyped from one event to the next</td></tr>\n<tr><td>Duration and recovery</td><td>Often longer than 2 minutes; rapid recovery, sometimes with crying</td><td>Usually under 2 minutes; postictal confusion</td></tr>\n<tr><td>Other</td><td>Recall of the event</td><td>Tongue bitten on its side; events arising from sleep</td></tr></table>\n<p>Video-EEG that records a typical event, with no epileptiform activity, establishes the diagnosis.</p>\n<div class=\"trap\"><b>Exam trap:</b> a patient with confirmed rheumatoid arthritis who spends hours a day researching her pain and visits the emergency department weekly can still have somatic symptom disorder. Ask about the response to the symptom, not only whether a disease explains it.</div>\n<div class=\"pearl\"><b>High-yield:</b> two questions sort most vignettes. Are the symptoms produced on purpose? If yes, is there an obvious external reward? No and no points to a somatic symptom disorder; yes and no to factitious disorder; yes and yes to malingering.</div>"
+   },
+   {
+    "id": "s23e-s11a02",
+    "heading": "Factitious disorder and malingering: how deception shows up in the laboratory",
+    "areas": [
+     "usmle2026.04.05.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Factitious Disorder Overview (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK518999/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Malingering (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507837/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<p>In <strong>factitious disorder imposed on self</strong>, a person falsifies symptoms or deliberately causes illness or injury in themselves and presents as ill, <em>without</em> an obvious external reward. The motive is psychological, usually the care and attention of the sick role. In <strong>factitious disorder imposed on another</strong>, a caregiver does the same to a dependent, most often a parent to a young child; the diagnosis belongs to the caregiver, and the child is a victim of abuse. <strong>Malingering</strong> is deliberate feigning for an external goal such as money, drugs, time off work or avoiding prosecution. It is a behaviour, not a mental disorder.</p>\n<table><tr><th></th><th>Somatic symptom disorders</th><th>Factitious disorder</th><th>Malingering</th></tr>\n<tr><td>Symptoms produced on purpose</td><td>No</td><td>Yes</td><td>Yes</td></tr>\n<tr><td>Motive</td><td>Not conscious</td><td>Internal: to be seen as ill</td><td>External: an identifiable reward</td></tr>\n<tr><td>Response to the end of the reward</td><td>Persists</td><td>Often moves on to another hospital</td><td>Symptoms fade once the goal is reached or lost</td></tr></table>\n<h3>Laboratory clues to self-induced illness</h3>\n<p>Many factitious presentations rest on a drug the patient can obtain, often through health care work. The physiology of each hormone or drug explains the pattern.</p>\n<table><tr><th>Presentation</th><th>Pattern</th><th>Why</th></tr>\n<tr><td>Hypoglycemia from injected insulin</td><td>High insulin, <strong>low C-peptide</strong></td><td>Beta cells cleave proinsulin into insulin and C-peptide in equal amounts; injected insulin carries no C-peptide and suppresses the patient's own secretion</td></tr>\n<tr><td>Hypoglycemia from a sulfonylurea</td><td>High insulin, high C-peptide, positive drug screen</td><td>The drug closes beta-cell ATP-sensitive potassium channels, so the patient's own beta cells secrete; only the screen separates this from an insulinoma</td></tr>\n<tr><td>Thyrotoxicosis from thyroid hormone tablets</td><td>Low TSH, high free T4, low radioiodine uptake, <strong>low thyroglobulin</strong></td><td>The gland is suppressed and releases little thyroglobulin, whereas thyroiditis releases it from damaged follicles</td></tr>\n<tr><td>Bleeding from warfarin or a long-acting rodenticide anticoagulant</td><td>Prolonged PT and INR that correct on mixing; low factors II, VII, IX and X</td><td>Vitamin K epoxide reductase is blocked, so the vitamin K-dependent factors are not activated</td></tr>\n<tr><td>Recurrent infections or wounds</td><td>Mixed skin or gut organisms in blood; wounds only where the hands can reach</td><td>Injection of contaminated material, or self-inflicted injury</td></tr></table>\n<div class=\"trap\"><b>Exam trap:</b> a high insulin with a high C-peptide is <em>not</em> proof of an insulinoma. Screen for sulfonylureas and meglitinides before imaging the pancreas.</div>\n<div class=\"pearl\"><b>High-yield:</b> people with factitious disorder are often eager for invasive tests and surgery, give a dramatic but inconsistent history, and have records at several hospitals. Many work in health care.</div>"
+   },
+   {
+    "id": "s23e-s11a03",
+    "heading": "Eating disorders: starvation physiology, acid-base and pharmacology",
+    "areas": [
+     "usmle2026.04.06.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Anorexia Nervosa (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459148/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Bulimia Nervosa (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562178/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Binge Eating Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK551700/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Refeeding Syndrome (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK564513/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>The three main eating disorders</h3>\n<table><tr><th></th><th>Anorexia nervosa</th><th>Bulimia nervosa</th><th>Binge-eating disorder</th></tr>\n<tr><td>Weight</td><td>Significantly low</td><td>Usually normal or above</td><td>Often obesity</td></tr>\n<tr><td>Core behaviour</td><td>Restriction, sometimes with bingeing and purging (binge-eating/purging type)</td><td>Binges with compensatory purging, fasting or exercise, at least weekly for 3 months</td><td>Binges with distress, at least weekly for 3 months, <em>without</em> regular compensation</td></tr>\n<tr><td>Body image</td><td>Intense fear of weight gain; distorted view of own body</td><td>Self-worth tied to shape and weight</td><td>Not required</td></tr></table>\n<p>Amenorrhea is common in anorexia nervosa but is no longer a diagnostic criterion.</p>\n<h3>Starvation physiology in anorexia nervosa</h3>\n<ul><li><strong>Fuel</strong>: after the first days of fasting the brain shifts largely to ketone bodies, which spares muscle protein from being burned for gluconeogenesis.</li>\n<li><strong>Reproductive axis</strong>: low leptin and energy deficit slow hypothalamic GnRH pulses, so LH, FSH and estradiol are all low (hypothalamic amenorrhea). Low estrogen, together with high cortisol and low IGF-1, causes bone loss.</li>\n<li><strong>Thyroid</strong>: peripheral conversion shifts from T3 to reverse T3, so T3 is low with a normal or low TSH; this is an adaptation, not hypothyroidism, and is not treated.</li>\n<li><strong>Growth hormone</strong> is raised but IGF-1 is low (hepatic resistance).</li>\n<li><strong>Other findings</strong>: bradycardia, hypotension, hypothermia, lanugo hair, yellowish skin from high carotene, leukopenia, and delayed gastric emptying.</li></ul>\n<h3>Acid-base clues to purging</h3>\n<table><tr><th>Behaviour</th><th>Blood</th><th>Urine chloride</th></tr>\n<tr><td>Self-induced vomiting</td><td>Hypochloremic, hypokalemic metabolic alkalosis</td><td>Low (chloride is conserved)</td></tr>\n<tr><td>Diuretic misuse</td><td>Hypokalemic metabolic alkalosis</td><td>High while the drug is acting</td></tr>\n<tr><td>Laxative misuse</td><td>Hypokalemia; often a normal anion gap metabolic acidosis from stool bicarbonate loss</td><td>Variable</td></tr></table>\n<p>Vomiting removes hydrochloric acid, so bicarbonate rises. The volume loss stimulates aldosterone, which drives potassium and hydrogen ion secretion in the collecting duct and keeps the alkalosis going. Parotid swelling raises the serum amylase (salivary type), and gastric acid erodes the inner surfaces of the upper front teeth.</p>\n<h3>Refeeding: why phosphate falls</h3>\n<p>Feeding after starvation releases insulin. Insulin moves glucose into cells, where glycolysis and ATP production consume phosphate, and it shifts potassium and magnesium inward too. Total-body stores are already depleted, so serum phosphate can fall steeply within the first days. Low phosphate means low ATP and low red-cell 2,3-bisphosphoglycerate, with muscle and diaphragm weakness, heart failure, arrhythmias, hemolysis, rhabdomyolysis, seizures and delirium. A carbohydrate load can also use up the remaining thiamine.</p>\n<h3>Drugs by mechanism</h3>\n<ul><li><strong>Fluoxetine</strong> (serotonin reuptake inhibitor) reduces binge and purge frequency in bulimia nervosa.</li>\n<li><strong>Bupropion</strong> (norepinephrine and dopamine reuptake inhibitor) is contraindicated in bulimia and anorexia nervosa because it lowers the seizure threshold, and the electrolyte disturbances add to the risk.</li>\n<li><strong>Lisdexamfetamine</strong> is a prodrug converted to dextroamphetamine, which releases dopamine and norepinephrine; it is approved for moderate to severe binge-eating disorder in adults.</li></ul>\n<div class=\"trap\"><b>Exam trap:</b> a low T3 in a starving patient is not hypothyroidism. Thyroid hormone replacement is wrong; weight restoration corrects it.</div>"
+   },
+   {
+    "id": "s23e-s11a04",
+    "heading": "Pica, avoidant/restrictive food intake disorder and impulse-control disorders",
+    "areas": [
+     "usmle2026.04.06.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Pica (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532242/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Avoidant Restrictive Food Intake Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK603710/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Impulse Control Disorders (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562279/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Pica</h3>\n<p>Pica is persistent eating of non-food substances (soil, clay, paint chips, ice, paper) for at least 1 month at an age when this is developmentally inappropriate, usually after age 2. It is common in iron deficiency, pregnancy, intellectual disability and autism.</p>\n<ul><li><strong>Ice craving</strong> (pagophagia) is closely tied to iron deficiency and usually stops with iron replacement.</li>\n<li><strong>Paint chips in an older home</strong> raise the concern of lead poisoning. Lead inhibits ALA dehydratase and ferrochelatase, so heme synthesis fails: microcytic anemia with basophilic stippling, abdominal pain, and neurodevelopmental harm in children.</li>\n<li>Other complications are bowel obstruction from bezoars and parasite infection from soil.</li></ul>\n<h3>Avoidant/restrictive food intake disorder (ARFID)</h3>\n<p>Eating is restricted because of sensory aversion to texture, smell or taste, lack of interest in food, or fear of choking or vomiting. The result is weight loss, failure to grow, nutritional deficiency, dependence on supplements or social impairment. Unlike anorexia nervosa there is <strong>no fear of weight gain and no body-image disturbance</strong>. It often begins in childhood and is common in autism.</p>\n<h3>Impulse-control disorders</h3>\n<table><tr><th>Disorder</th><th>Pattern</th><th>Distinguish from</th></tr>\n<tr><td>Intermittent explosive disorder</td><td>Recurrent, unplanned outbursts of verbal or physical aggression grossly out of proportion to the trigger, followed by regret; age 6 or older</td><td>Antisocial personality (planned, for gain), mania, borderline personality</td></tr>\n<tr><td>Kleptomania</td><td>Repeated failure to resist stealing objects not needed for use or for their value; tension before and relief during the act</td><td>Ordinary theft (for gain), mania, conduct disorder</td></tr>\n<tr><td>Pyromania</td><td>Deliberate fire-setting on more than one occasion, with arousal beforehand and fascination with fire, not for money, revenge or ideology</td><td>Conduct disorder, arson for gain</td></tr>\n<tr><td>Gambling disorder</td><td>Persistent problem gambling with chasing of losses, lying and escalating stakes; classified with the addictive disorders</td><td>Gambling during a manic episode</td></tr></table>\n<div class=\"bridge\"><h3>Drug-induced impulse control</h3><p>Dopamine agonists such as pramipexole and ropinirole stimulate D2 and D3 receptors, including those in the mesolimbic reward pathway. They can cause compulsive gambling, shopping, eating or sexual behaviour in patients with Parkinson disease or restless legs syndrome. Patients often hide it, so ask directly.</p></div>\n<div class=\"pearl\"><b>High-yield:</b> naltrexone, a mu-opioid receptor antagonist, dampens the reward of the behaviour and has some evidence in kleptomania and gambling disorder.</div>"
+   }
+  ]
+ },
+ {
+  "id": "s23e-ch11b",
+  "exam": "step2ck",
+  "order": 523,
+  "title": "Psychiatry · Somatic symptom, factitious, eating and impulse-control disorders",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s11b01",
+    "heading": "Somatic symptom disorders in practice: diagnosis, communication and management",
+    "areas": [
+     "usmle2026.04.04.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Somatic Symptom Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532253/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Illness Anxiety Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554399/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Functional Neurologic Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK551567/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<p>Patients with somatic symptom disorders are common in primary care and emergency medicine. They are not choosing their symptoms, and they deserve the same respect as any other patient.</p>\n<h3>Diagnosis</h3>\n<ul><li>Take the symptoms seriously and do an appropriate assessment once. Look for red flags that need further testing, such as weight loss, fever, objective neurological signs or abnormal laboratory results.</li>\n<li>Make the diagnosis on positive grounds: the disproportionate thoughts and behaviours in somatic symptom disorder, the health anxiety in illness anxiety disorder, and the positive neurological signs in functional neurological symptom disorder.</li>\n<li>Screen for depression, anxiety, substance use and suicidal thinking, which often coexist.</li>\n<li>In suspected non-epileptic attacks, <strong>video-EEG monitoring</strong> that records a typical event is the diagnostic test.</li></ul>\n<h3>Management of somatic symptom disorder and illness anxiety disorder</h3>\n<ul><li>One primary care physician coordinates all care.</li>\n<li><strong>Regularly scheduled, brief visits</strong> (for example every 4 to 6 weeks) instead of visits on demand, with a focused examination each time.</li>\n<li>Avoid tests, referrals and procedures that are not clinically indicated; each normal result gives only short relief.</li>\n<li>Set goals around function (work, sleep, activity) rather than cure.</li>\n<li><strong>Cognitive behavioural therapy</strong> has the best evidence. An SSRI or SNRI helps when depression or anxiety coexists.</li>\n<li>Avoid escalating opioids and benzodiazepines.</li></ul>\n<h3>Management of functional neurological symptom disorder</h3>\n<ul><li>Explain the diagnosis clearly. Show the patient the positive signs, for example the Hoover sign, and explain that the nervous system is not damaged but is not working properly. Say that the condition is real, common and can improve.</li>\n<li>Refer for <strong>specialist physiotherapy</strong> for functional weakness and gait disorders, and for psychological therapy (CBT-based) for non-epileptic attacks.</li>\n<li>Taper antiseizure drugs that were started for non-epileptic attacks alone, under neurology supervision, once the diagnosis is secure.</li>\n<li>A better outcome is linked to short duration, acute onset and early diagnosis that the patient accepts. Long duration and ongoing disability claims predict a poorer outcome.</li></ul>\n<h3>Psychological factors affecting other medical conditions</h3>\n<p>Here a medical illness is real and is worsened by behaviour or emotion: for example, a man whose fear of bad news delays assessment of chest pain, or an adolescent who omits insulin because of anxiety. Treat the medical illness and address the psychological factor directly.</p>\n<div class=\"trap\"><b>Exam trap:</b> \"There is nothing wrong with you\" and \"it is all stress\" are the wrong things to say. The right answer acknowledges the symptoms, names the diagnosis and offers a plan.</div>\n<div class=\"pearl\"><b>High-yield:</b> an objective sign of neurological disease (an extensor plantar response, a fixed field defect, muscle wasting) does not fit a functional diagnosis and needs investigation.</div>"
+   },
+   {
+    "id": "s23e-s11b02",
+    "heading": "Factitious disorder and malingering: recognition, reporting and management",
+    "areas": [
+     "usmle2026.04.05.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Factitious Disorder Overview (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK518999/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Malingering (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507837/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Recognising factitious disorder imposed on self</h3>\n<ul><li>A dramatic but inconsistent history, symptoms that appear only when unobserved, and failure to respond to standard treatment.</li>\n<li>Eagerness for invasive tests and operations, many hospital records, and new symptoms when tests come back normal.</li>\n<li>Specific tests can expose deception: supervised temperature measurement for factitious fever, C-peptide and drug screens for hypoglycemia, thyroglobulin for thyrotoxicosis, stool laxative screens for chronic diarrhea, and drug levels for unexplained bleeding.</li></ul>\n<h3>Management</h3>\n<ul><li>Involve psychiatry early, and keep the team's approach consistent.</li>\n<li>Discuss the findings with the patient in a <strong>supportive, nonpunitive</strong> way. Express concern, and offer continued care and psychological treatment. An angry confrontation usually makes the patient leave and present elsewhere.</li>\n<li>Avoid unnecessary procedures, and have one physician coordinate care.</li>\n<li>For long-acting rodenticide anticoagulants, bleeding is reversed with intravenous vitamin K and prothrombin complex concentrate. High-dose oral vitamin K is then continued for weeks to months, with INR checks, because the poison persists.</li></ul>\n<h3>Factitious disorder imposed on another</h3>\n<p>Suspect it when a child has repeated, unexplained illness that occurs only with one caregiver present, unusual organisms or drugs in samples, or symptoms nobody else has witnessed, and that improves when the child is separated from that caregiver. It is <strong>child maltreatment</strong>: protect the child and report to child protective services. The physician does not need proof before reporting; reasonable suspicion is enough.</p>\n<h3>Malingering</h3>\n<p>Look for a clear external incentive: a pending lawsuit or disability claim, a request for opioids or benzodiazepines, avoidance of work or military duty, or a court date. Symptoms are vague or exaggerated, the patient is reluctant to cooperate with assessment, and the complaints fade once the goal is reached. Document the objective findings and discuss the inconsistencies with the patient calmly. Do not give the drug or certificate that is not indicated.</p>\n<div class=\"trap\"><b>Exam trap:</b> in a child, the next step after recognising possible factitious illness is a report to child protective services, not confrontation of the parent or more tests on the child.</div>"
+   },
+   {
+    "id": "s23e-s11b03",
+    "heading": "Anorexia nervosa, bulimia nervosa and binge-eating disorder: assessment and treatment",
+    "areas": [
+     "usmle2026.04.06.01"
+    ],
+    "figureIds": [
+     "s23e-fig1102"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Anorexia Nervosa (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459148/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Bulimia Nervosa (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562178/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Binge Eating Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK551700/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Refeeding Syndrome (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK564513/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Eating disorders",
+      "url": "https://medlineplus.gov/eatingdisorders.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ],
+    "html": "<h3>Assessment</h3>\n<ul><li>Weight, height and BMI (BMI percentile or percent of median BMI in children and adolescents), heart rate and blood pressure lying and standing, and temperature.</li>\n<li>Electrolytes, including phosphate and magnesium, glucose, kidney and liver function, a blood count and an ECG (bradycardia, QT prolongation).</li>\n<li>Ask about purging, laxatives, diuretics, exercise, suicidal thoughts and substance use.</li></ul>\n<h3>When to admit</h3>\n<p>Admit for medical stabilisation when there is instability. Examples are marked bradycardia (in adolescents, a daytime heart rate below 50/min), hypotension or marked orthostatic change, hypothermia, electrolyte disturbance, arrhythmia or a prolonged QT interval, or syncope. Very low weight (for example below 75% of median BMI in adolescents), acute food refusal, failed outpatient treatment and suicidality are further reasons. Thresholds differ between adults and adolescents.</p>\n<h3>Refeeding syndrome: prevent, then watch</h3>\n<p>Risk is highest with very low BMI, rapid recent weight loss, little or no intake for more than about 10 days, or low potassium, phosphate or magnesium before feeding.</p>\n<ul><li>Check electrolytes before feeding and give <strong>thiamine</strong> before carbohydrate.</li>\n<li>Start nutrition and advance it steadily under monitoring; correct low levels as they appear.</li>\n<li>Check phosphate, potassium, magnesium and glucose daily for the first several days, and watch for edema, heart failure and arrhythmia.</li></ul>\n[[figure:s23e-fig1102]]\n<h3>Treatment</h3>\n<table><tr><th>Disorder</th><th>First line</th><th>Medication</th></tr>\n<tr><td>Anorexia nervosa</td><td>Nutritional rehabilitation with weight restoration and psychotherapy; <strong>family-based treatment</strong> for adolescents</td><td>No drug reliably restores weight; treat coexisting depression or anxiety as needed</td></tr>\n<tr><td>Bulimia nervosa</td><td>Cognitive behavioural therapy for eating disorders</td><td><strong>Fluoxetine</strong>, at a higher dose than for depression (60 mg daily); never bupropion</td></tr>\n<tr><td>Binge-eating disorder</td><td>Cognitive behavioural therapy</td><td><strong>Lisdexamfetamine</strong> (approved in adults) or an SSRI</td></tr></table>\n<h3>Complications to know</h3>\n<ul><li>Bone loss in anorexia nervosa: <strong>weight restoration</strong> with return of menses is the main treatment. Combined oral contraceptives do not protect bone and can mask recovery of menses.</li>\n<li>Purging: hypokalemia with arrhythmia, dental erosion, parotid swelling, esophagitis, and rarely esophageal rupture.</li>\n<li>Binge-eating disorder: obesity, type 2 diabetes and the metabolic syndrome.</li></ul>\n<div class=\"trap\"><b>Exam trap:</b> weight restoration, not an antidepressant, is the treatment for depressed mood and obsessional thinking in a starving patient; both often improve with refeeding.</div>"
+   },
+   {
+    "id": "s23e-s11b04",
+    "heading": "Pica, ARFID and impulse-control disorders: management",
+    "areas": [
+     "usmle2026.04.06.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Pica (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532242/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Avoidant Restrictive Food Intake Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK603710/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Impulse Control Disorders (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562279/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Pica</h3>\n<ul><li>Check a blood count and ferritin, and replace iron when it is low. Ice craving in pregnancy or heavy menstrual bleeding is a common clue.</li>\n<li>In a young child who eats paint chips or soil, measure a <strong>venous blood lead level</strong> and look at the home for sources of lead.</li>\n<li>Treat with behavioural approaches, supervision and removal of the substances; look for intellectual disability or autism.</li></ul>\n<h3>ARFID</h3>\n<ul><li>Assess growth, nutrition and complications as you would in anorexia nervosa; severe cases also need medical stabilisation.</li>\n<li>Rule out medical causes of poor intake (celiac disease, eosinophilic esophagitis, swallowing problems).</li>\n<li>Treatment is graded exposure to feared or new foods within cognitive behavioural therapy, with a dietitian and family involvement.</li></ul>\n<h3>Impulse-control disorders</h3>\n<table><tr><th>Disorder</th><th>Treatment</th></tr>\n<tr><td>Intermittent explosive disorder</td><td>Cognitive behavioural therapy (relaxation, recognising triggers); an SSRI such as fluoxetine has some evidence</td></tr>\n<tr><td>Kleptomania</td><td>Cognitive behavioural therapy; naltrexone has some evidence</td></tr>\n<tr><td>Pyromania</td><td>Psychotherapy; assess for conduct disorder and risk to others</td></tr>\n<tr><td>Gambling disorder</td><td>Cognitive behavioural therapy and peer support groups; naltrexone has some evidence; address debt and suicide risk</td></tr></table>\n<div class=\"bridge\"><h3>Ask about dopamine agonists</h3><p>A patient with Parkinson disease or restless legs syndrome who starts gambling, shopping or eating compulsively should have the dopamine agonist reduced or stopped gradually. Stopping abruptly risks a withdrawal syndrome of anxiety, low mood and pain.</p></div>\n<div class=\"pearl\"><b>High-yield:</b> before diagnosing intermittent explosive disorder, rule out mania, substance intoxication, a head injury and a personality disorder with planned aggression.</div>"
+   }
+  ]
+ },
+ {
+  "id": "s23e-ch12a",
+  "exam": "step1",
+  "order": 524,
+  "title": "Behavioral health · Childhood-onset and personality disorders",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s12a01",
+    "heading": "Neurodevelopmental disorders: ADHD, autism, intellectual disability, tics and learning",
+    "areas": [
+     "usmle2026.04.07.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Attention Deficit Hyperactivity Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441838/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Autism Spectrum Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK525976/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Intellectual Disability (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547654/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Tourette Syndrome and Other Tic Disorders (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499958/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<p>Neurodevelopmental disorders begin in the developmental period, often before school entry, and impair personal, social, academic or occupational functioning. Several cluster together: a child with one has a high chance of another.</p>\n<h3>Attention-deficit/hyperactivity disorder (ADHD)</h3>\n<ul><li><strong>Core features:</strong> a persistent pattern of inattention and/or hyperactivity-impulsivity, present in <em>two or more settings</em> (for example, home and school), with several symptoms present before age 12 and lasting at least 6 months.</li>\n<li><strong>Neurobiology:</strong> heritability is high (twin estimates around 70–80%). Imaging shows delayed cortical maturation and altered fronto-striatal circuits, where dopamine and noradrenaline tune attention and inhibition.</li>\n<li><strong>Course:</strong> hyperactivity tends to fade in adolescence; inattention more often persists into adulthood.</li></ul>\n<table><tr><th>Drug</th><th>Mechanism</th><th>Notable adverse effects</th></tr>\n<tr><td>Methylphenidate</td><td>Blocks the dopamine and noradrenaline transporters (reuptake inhibition)</td><td>Reduced appetite, insomnia, raised heart rate and blood pressure, slowed growth velocity</td></tr>\n<tr><td>Amphetamines</td><td>Enter the terminal, reverse the transporters and displace monoamines from vesicles (release)</td><td>As for methylphenidate; higher misuse potential</td></tr>\n<tr><td>Atomoxetine, viloxazine</td><td>Selective noradrenaline reuptake inhibition (nonstimulants)</td><td>Suicidal thinking in young people (boxed warning for atomoxetine), rare liver injury</td></tr>\n<tr><td>Guanfacine, clonidine (extended release)</td><td>Alpha-2 adrenergic agonists</td><td>Sedation, hypotension, bradycardia; rebound hypertension if stopped abruptly</td></tr></table>\n<h3>Autism spectrum disorder (ASD)</h3>\n<p>ASD combines <strong>persistent deficits in social communication and interaction</strong> (reciprocity, nonverbal communication, relationships) with <strong>restricted, repetitive patterns</strong> of behaviour, interests or activities, including insistence on sameness and unusual sensory responses. Signs appear in early childhood. It is about four times more common in boys. Intellectual ability ranges from impaired to superior, and language may be absent, delayed or fluent.</p>\n<p>Genetic contributors include <strong>fragile X syndrome</strong> (FMR1 CGG-repeat expansion), tuberous sclerosis, copy-number variants found on chromosomal microarray, and many single-gene variants. Vaccines do not cause autism.</p>\n<h3>Intellectual disability</h3>\n<p>Deficits in intellectual functioning (reasoning, problem solving, learning; usually an IQ about two standard deviations below the mean, near 70 or lower) <em>together with</em> deficits in adaptive functioning (conceptual, social and practical). Severity is graded by adaptive function, not by IQ alone.</p>\n<ul><li><strong>Down syndrome</strong> (trisomy 21) is the most common genetic cause.</li>\n<li><strong>Fragile X syndrome</strong> is the most common inherited cause: long face, large ears, large testes after puberty, hyperextensible joints, often with autistic features.</li>\n<li>Other causes: fetal alcohol spectrum disorder (the most common preventable cause), congenital hypothyroidism and untreated phenylketonuria (both prevented by newborn screening), congenital infections, and perinatal hypoxia.</li></ul>\n<h3>Tic disorders and Tourette disorder</h3>\n<p>Tics are sudden, rapid, recurrent, nonrhythmic movements or vocalisations, often preceded by an urge and briefly suppressible. <strong>Tourette disorder</strong> needs multiple motor tics and at least one vocal tic, beginning before age 18 and present for more than a year. Tics usually peak around age 10–12 and lessen by adulthood. ADHD and obsessive-compulsive disorder commonly co-occur; dopamine pathways in the basal ganglia are implicated, which is why dopamine-blocking drugs suppress tics.</p>\n<h3>Specific learning disorder</h3>\n<p>Persistent difficulty in reading (dyslexia), written expression or mathematics, well below what is expected for age despite adequate intelligence, instruction and sensory function. Dyslexia reflects a phonological processing deficit.</p>\n<div class=\"pearl\"><strong>High-yield:</strong> a child whose hyperactivity appears only at school, or only at home, does not meet the setting requirement for ADHD. Look instead for a setting-specific stressor, a learning disorder or an anxiety disorder.</div>\n<div class=\"trap\"><strong>Exam trap:</strong> a child with autism and an IQ in the normal range still has autism. Language and intelligence are specifiers, not diagnostic criteria.</div>"
+   },
+   {
+    "id": "s23e-s12a02",
+    "heading": "Disruptive, elimination and early-relationship disorders of childhood",
+    "areas": [
+     "usmle2026.04.07.01"
+    ],
+    "figureIds": [
+     "s23e-fig1201"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Oppositional Defiant Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557443/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Conduct Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470238/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Enuresis (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK545181/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Encopresis (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560560/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<p>Several childhood diagnoses describe anger, rule-breaking or irritability. They are separated by <strong>what the behaviour targets</strong>, <strong>how severe it is</strong> and <strong>the age limits written into the criteria</strong>.</p>\n[[figure:s23e-fig1201]]\n<table><tr><th>Disorder</th><th>Core picture</th><th>Key age rule</th></tr>\n<tr><td>Oppositional defiant disorder (ODD)</td><td>Angry or irritable mood, arguing with and defying authority figures, spitefulness; no serious violation of others' rights</td><td>Lasts at least 6 months</td></tr>\n<tr><td>Conduct disorder</td><td>Violates the basic rights of others or major social rules: aggression to people or animals, destroying property, deceit or theft, serious rule-breaking such as truancy or running away</td><td>Childhood-onset type if a symptom appears before 10</td></tr>\n<tr><td>Disruptive mood dysregulation disorder (DMDD)</td><td>Severe temper outbursts about three or more times a week, with persistently irritable or angry mood between them, for at least a year</td><td>Onset before 10; first diagnosed only between ages 6 and 18</td></tr>\n<tr><td>Antisocial personality disorder</td><td>Adult pattern of disregard for others' rights</td><td>Age 18 or older, with conduct disorder that began before 15</td></tr></table>\n<p>DMDD was introduced partly to avoid labelling chronically irritable children with bipolar disorder: it predicts later depression and anxiety, not mania. When a child meets criteria for both DMDD and ODD, only DMDD is diagnosed.</p>\n<h3>Elimination disorders</h3>\n<ul><li><strong>Enuresis:</strong> repeated voiding into bed or clothes at least twice a week for 3 months (or with marked distress), at a developmental age of at least 5. Most cases are primary and nocturnal, with a strong family history; delayed maturation of arousal to bladder signals and nighttime vasopressin release both contribute. <em>Secondary</em> enuresis (after at least 6 months dry) raises concern for urinary infection, diabetes mellitus or insipidus, constipation, sleep apnoea or psychosocial stress.</li>\n<li><strong>Encopresis:</strong> repeated passage of stool in inappropriate places at a developmental age of at least 4. Most children have chronic constipation with liquid stool leaking around retained faeces (overflow).</li></ul>\n<h3>Disorders after severe neglect</h3>\n<p>Children who have lacked consistent caregivers (institutional care, repeated changes of foster carer) can develop one of two patterns:</p>\n<ul><li><strong>Reactive attachment disorder:</strong> emotionally withdrawn and inhibited; rarely seeks or responds to comfort when distressed.</li>\n<li><strong>Disinhibited social engagement disorder:</strong> overly familiar with strangers, wanders off without checking back with the caregiver.</li></ul>\n<h3>Selective mutism</h3>\n<p>A child who speaks normally at home consistently fails to speak in specific social settings such as school, for at least a month (not counting the first month of school). It is closely tied to social anxiety rather than to a language disorder.</p>\n<div class=\"pearl\"><strong>High-yield:</strong> the anger in ODD is aimed at authority figures; conduct disorder harms other people, animals or property. The age-15 link to antisocial personality disorder is a favourite exam fact.</div>"
+   },
+   {
+    "id": "s23e-s12a03",
+    "heading": "Personality disorders: clusters, defences and how they differ",
+    "areas": [
+     "usmle2026.04.08.01"
+    ],
+    "figureIds": [
+     "s23e-fig1202"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Personality Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK556058/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Borderline Personality Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK430883/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Schizotypal Personality Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK603720/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Personality disorders",
+      "url": "https://medlineplus.gov/personalitydisorders.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ],
+    "html": "<p>A personality disorder is an <strong>enduring, inflexible and pervasive</strong> pattern of inner experience and behaviour that deviates from cultural expectations, begins by adolescence or early adulthood, is stable over time and causes distress or impairment. The traits usually feel natural to the person (<em>ego-syntonic</em>), so they rarely seek help for the traits themselves; they present with the consequences.</p>\n[[figure:s23e-fig1202]]\n<h3>Cluster A: odd or eccentric</h3>\n<ul><li><strong>Paranoid:</strong> pervasive distrust; reads hidden threats into benign remarks; bears grudges. Main defence: <em>projection</em>.</li>\n<li><strong>Schizoid:</strong> detached, prefers solitary activities, little interest in relationships or sex, emotionally flat. No odd beliefs.</li>\n<li><strong>Schizotypal:</strong> odd beliefs or magical thinking, ideas of reference (not fixed delusions), unusual perceptions, odd speech and appearance, social anxiety that does not fade with familiarity. It is genetically linked to schizophrenia and can precede it.</li></ul>\n<h3>Cluster B: dramatic, emotional or erratic</h3>\n<ul><li><strong>Antisocial:</strong> disregard for and violation of others' rights, deceit, impulsivity, irritability and aggression, recklessness, lack of remorse. Needs age at least 18 and conduct disorder before 15. Much more common in men.</li>\n<li><strong>Borderline:</strong> unstable relationships and self-image, frantic efforts to avoid abandonment, impulsivity, recurrent suicidal behaviour or self-harm, intense mood reactivity, chronic emptiness, intense anger, and transient stress-related paranoia or dissociation. Typical defences: <em>splitting</em> (people are all good or all bad) and projective identification. Childhood trauma and invalidating environments are risk factors.</li>\n<li><strong>Histrionic:</strong> attention-seeking, seductive or provocative behaviour, shallow and rapidly shifting emotion, impressionistic speech, uses appearance to draw attention.</li>\n<li><strong>Narcissistic:</strong> grandiosity, need for admiration, sense of entitlement, lack of empathy; fragile self-esteem beneath, so criticism provokes rage or humiliation.</li></ul>\n<h3>Cluster C: anxious or fearful</h3>\n<ul><li><strong>Avoidant:</strong> <em>wants</em> relationships but avoids them for fear of criticism or rejection; feels inadequate.</li>\n<li><strong>Dependent:</strong> needs others to take responsibility and make everyday decisions; cannot disagree for fear of losing support; quickly seeks a new relationship when one ends.</li>\n<li><strong>Obsessive-compulsive personality disorder (OCPD):</strong> preoccupation with order, rules and perfection that defeats the purpose of the task; rigid, stubborn, reluctant to delegate.</li></ul>\n<h3>Look-alikes</h3>\n<table><tr><th>Pair</th><th>How to tell them apart</th></tr>\n<tr><td>Schizoid vs schizotypal</td><td>Schizoid people are detached but not odd; schizotypal people have eccentric beliefs and perceptions</td></tr>\n<tr><td>Schizotypal vs schizophrenia</td><td>Schizophrenia has frank psychosis (fixed delusions, persistent hallucinations) for a month or more</td></tr>\n<tr><td>Schizoid vs avoidant</td><td>Schizoid people do not want relationships; avoidant people do but are afraid</td></tr>\n<tr><td>OCPD vs OCD</td><td>OCPD traits are ego-syntonic, with no true obsessions or compulsions; OCD symptoms are intrusive and unwanted (ego-dystonic)</td></tr>\n<tr><td>Borderline vs bipolar disorder</td><td>Borderline mood shifts last hours and follow interpersonal triggers; bipolar episodes last days to weeks</td></tr></table>\n<div class=\"trap\"><strong>Exam trap:</strong> a personality disorder should not be diagnosed from behaviour that appears only during a mood episode, intoxication or a new medical illness. The pattern must be long-standing.</div>"
+   }
+  ]
+ },
+ {
+  "id": "s23e-ch12b",
+  "exam": "step2ck",
+  "order": 525,
+  "title": "Psychiatry · Children, adolescents and personality disorders",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s12b01",
+    "heading": "Evaluating and treating ADHD, autism and tics in children",
+    "areas": [
+     "usmle2026.04.07.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Attention Deficit Hyperactivity Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441838/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Autism Spectrum Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK525976/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Tourette Syndrome and Other Tic Disorders (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499958/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>ADHD</h3>\n<p><strong>Diagnosis</strong> is clinical. Collect standardised rating scales from parents <em>and</em> teachers to confirm symptoms in more than one setting, and screen for look-alikes and comorbidity: hearing or vision problems, learning disorders, anxiety, depression, sleep problems (including sleep apnoea), absence seizures, substance use in adolescents, and adversity or abuse. Laboratory tests, EEG and imaging are not part of routine evaluation.</p>\n<table><tr><th>Age</th><th>First-line approach</th></tr>\n<tr><td>Preschool (4–5 years)</td><td>Parent training in behaviour management and classroom behavioural support first; add methylphenidate only if improvement is inadequate and impairment is moderate to severe</td></tr>\n<tr><td>School age (6–11 years)</td><td>A stimulant medication together with behavioural therapy and school supports</td></tr>\n<tr><td>Adolescents (12–18 years)</td><td>A stimulant, with the adolescent's agreement, plus behavioural and school interventions; watch for diversion of stimulants</td></tr></table>\n<ul><li><strong>Before a stimulant:</strong> ask about fainting with exercise, palpitations, chest pain and sudden cardiac death in young relatives, and examine the heart. A routine ECG is not needed without such findings.</li>\n<li><strong>Monitoring:</strong> height, weight, heart rate and blood pressure. Appetite loss and insomnia are the commonest problems; give the dose with or after breakfast and avoid late doses.</li>\n<li><strong>Nonstimulants</strong> (atomoxetine, viloxazine, extended-release guanfacine or clonidine) are used when stimulants fail or are not tolerated, when there is concern about misuse, or, for alpha-2 agonists, when tics or sleep problems coexist.</li></ul>\n<h3>Autism spectrum disorder</h3>\n<ul><li><strong>Screen all toddlers</strong> with a validated autism tool at the 18- and 24-month visits, in addition to general developmental surveillance.</li>\n<li><strong>Red flags at any age:</strong> no babbling or pointing by 12 months, no single words by 16 months, no spontaneous two-word phrases by 24 months, and <em>any loss of language or social skills</em>.</li>\n<li><strong>When screening is positive:</strong> refer at the same time for a diagnostic evaluation <em>and</em> for early intervention services; do not wait for the diagnosis to start therapy. Arrange a formal hearing test.</li>\n<li><strong>Genetic testing</strong> is offered to every child diagnosed with ASD: chromosomal microarray and fragile X testing (more targeted tests if the examination suggests a syndrome).</li>\n<li><strong>Treatment:</strong> intensive behavioural intervention (such as applied behaviour analysis), speech-language and occupational therapy, and educational supports. Medication treats associated symptoms only: risperidone and aripiprazole for severe irritability and aggression (monitor weight, glucose and lipids), and ADHD medicines for co-occurring ADHD.</li></ul>\n<h3>Tics and Tourette disorder</h3>\n<p>Explain the usual course (waxing and waning, improvement in adolescence) and treat only if tics cause pain, social harm or impairment. <strong>Comprehensive behavioural intervention for tics</strong> (habit reversal) is first-line. Medication options: alpha-2 agonists (guanfacine, clonidine), especially with ADHD; antipsychotics (aripiprazole, risperidone, haloperidol) for severe tics, at the cost of metabolic or movement side effects. Look for co-occurring ADHD and obsessive-compulsive disorder, which often cause more impairment than the tics.</p>\n<div class=\"trap\"><strong>Exam trap:</strong> a child with a positive autism screen and parents worried about speech should be referred for early intervention immediately, not after \"watchful waiting\" or a repeat screen in 6 months.</div>"
+   },
+   {
+    "id": "s23e-s12b02",
+    "heading": "Managing disruptive behaviour, irritability, elimination problems and selective mutism",
+    "areas": [
+     "usmle2026.04.07.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Conduct Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470238/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Oppositional Defiant Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557443/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Enuresis (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK545181/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Encopresis (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560560/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Oppositional defiant disorder and conduct disorder</h3>\n<ul><li><strong>First-line treatment is psychosocial:</strong> parent management training (consistent limits, praise and rewards for wanted behaviour, predictable consequences), plus school-based and, for older children and teens, multisystemic or family therapy.</li>\n<li>Treat comorbid ADHD, which is common and worsens outcomes; stimulants often reduce aggression too.</li>\n<li>Antipsychotics are reserved for severe, persistent aggression that has not responded to psychosocial treatment.</li>\n<li>Always ask about abuse, bullying, substance use and learning problems. In conduct disorder, assess for safety risks to others and the legal context.</li></ul>\n<h3>Disruptive mood dysregulation disorder</h3>\n<p>Parent training and psychotherapy (cognitive behavioural approaches to irritability) come first; stimulants help when ADHD coexists, and SSRIs are sometimes used for the irritability. Mood stabilisers for bipolar disorder are not indicated, because DMDD is not a bipolar condition.</p>\n<h3>Nocturnal enuresis</h3>\n<ul><li><strong>Evaluate:</strong> history (daytime symptoms, constipation, snoring, thirst, stressors), examination of the abdomen, back and genitals, and a <strong>urinalysis</strong> (glucose, specific gravity, infection).</li>\n<li><strong>Before age 5</strong> it is developmentally normal and needs only reassurance. Many children outgrow it each year without treatment.</li>\n<li><strong>Behavioural measures:</strong> void before bed, limit evening fluids, avoid caffeine, never punish.</li>\n<li><strong>Enuresis alarm:</strong> the most effective long-term treatment with the lowest relapse rate, but it needs weeks of family commitment.</li>\n<li><strong>Desmopressin:</strong> works quickly (useful for sleepovers or camp) but relapse after stopping is common. Restrict fluids from an hour before the dose until morning because of the risk of water intoxication and hyponatraemia.</li>\n<li>Treat constipation first if present; it often resolves the wetting.</li></ul>\n<h3>Encopresis</h3>\n<p>Most children with soiling have retentive constipation. Treatment: education that removes blame, <strong>disimpaction</strong> (oral polyethylene glycol at high dose, or enemas), then <strong>maintenance</strong> stool softener for months with scheduled toilet sitting after meals and a reward chart. Consider abuse if soiling begins suddenly with behaviour change.</p>\n<h3>Selective mutism</h3>\n<p>Treat as an anxiety disorder: cognitive behavioural therapy with graded exposure, involving school staff; an SSRI may be added for severe or persistent cases. Check hearing and language development first.</p>\n<h3>After severe neglect</h3>\n<p>For reactive attachment disorder the core treatment is a <em>stable, nurturing caregiver</em>, supported by caregiver-focused therapy. Report suspected ongoing neglect or abuse to child protective services.</p>\n<div class=\"pearl\"><strong>High-yield:</strong> a previously dry 7-year-old who starts wetting again needs a urinalysis and a search for a medical or psychosocial cause, not an alarm.</div>"
+   },
+   {
+    "id": "s23e-s12b03",
+    "heading": "Personality disorders in clinical practice: treatment and the difficult encounter",
+    "areas": [
+     "usmle2026.04.08.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Borderline Personality Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK430883/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Antisocial Personality Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK546673/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Avoidant Personality Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559325/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Personality disorders",
+      "url": "https://medlineplus.gov/personalitydisorders.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ],
+    "html": "<p><strong>Psychotherapy is the main treatment</strong> for every personality disorder. Medication treats co-occurring conditions (depression, anxiety disorders, substance use) or specific target symptoms for short periods; no drug is approved for a personality disorder itself.</p>\n<h3>Borderline personality disorder</h3>\n<ul><li><strong>Dialectical behaviour therapy (DBT)</strong> has the strongest evidence for reducing self-harm and suicide attempts. It teaches distress tolerance, emotion regulation, mindfulness and interpersonal skills. Mentalisation-based therapy and other structured therapies are alternatives.</li>\n<li>Assess suicide risk at every visit: lifetime risk of death by suicide is substantially raised.</li>\n<li>Avoid benzodiazepines (disinhibition, misuse) and be cautious with drugs that are dangerous in overdose; prescribe limited quantities.</li>\n<li>Many patients improve markedly over years; symptom remission is common by middle age.</li></ul>\n<h3>Other disorders</h3>\n<ul><li><strong>Antisocial:</strong> treat substance use and other comorbidity; structured programmes can reduce reoffending, but engagement is often poor.</li>\n<li><strong>Schizotypal:</strong> supportive and social-skills therapy; low-dose antipsychotics for brief psychotic-like periods.</li>\n<li><strong>Avoidant:</strong> cognitive behavioural therapy with graded exposure, as for social anxiety, with which it overlaps; SSRIs help when social anxiety disorder coexists.</li>\n<li><strong>Dependent, OCPD, narcissistic, histrionic:</strong> individual psychotherapy.</li></ul>\n<h3>Working with patients who have personality disorders</h3>\n<table><tr><th>Pattern</th><th>Helpful approach</th></tr>\n<tr><td>Borderline: idealises then devalues staff, splits the team, frequent unscheduled calls</td><td>One consistent clinician or plan, clear and predictable boundaries, regularly scheduled visits, team meetings so all staff give the same message; stay calm and nonjudgmental</td></tr>\n<tr><td>Narcissistic: demands the \"best\" doctor, dismisses others</td><td>Acknowledge the patient's concerns and expertise without confrontation; frame recommendations in terms of the patient's own goals</td></tr>\n<tr><td>Paranoid: suspicious of motives</td><td>Explain each step clearly and honestly, be straightforward and avoid overly friendly behaviour</td></tr>\n<tr><td>Histrionic: flirtatious or dramatic</td><td>Maintain professional boundaries, use a chaperone where appropriate, focus on objective findings</td></tr>\n<tr><td>Dependent: frequent calls, cannot decide</td><td>Regularly scheduled visits, reassurance with firm limits, encourage self-reliance</td></tr>\n<tr><td>Obsessive-compulsive personality: wants every detail</td><td>Give thorough, precise information and involve the patient in planning</td></tr></table>\n<div class=\"trap\"><strong>Exam trap:</strong> when a patient with borderline traits praises you and criticises a colleague, do not agree or defend the colleague's character; acknowledge the patient's feelings, restate the shared care plan and keep the team aligned.</div>"
+   }
+  ]
+ },
+ {
+  "id": "s23e-ch13a",
+  "exam": "step1",
+  "order": 526,
+  "title": "Behavioral health · Psychosocial behaviors, sexuality and substance use",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s13a01",
+    "heading": "Grief, prolonged grief, suicide and self-injury",
+    "areas": [
+     "usmle2026.04.09.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Grief and Prolonged Grief Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507832/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Suicide: Assessment and Management (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK617057/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<p><strong>Grief</strong> is the expected response to the death of someone close. It comes in waves, often set off by reminders, and the person can still feel pleasure and keeps a sense of self-worth. Briefly hearing or seeing the dead person, especially when falling asleep, is common and is not psychosis. Most people find that the intensity eases over months while the loss stays part of life.</p><h3>Telling grief from its disorders</h3><table><tr><th>Feature</th><th>Ordinary grief</th><th>Prolonged grief disorder</th><th>Major depressive episode</th></tr><tr><td>Time since the death</td><td>Any</td><td>At least 12 months in adults (6 months in children and adolescents)</td><td>Any; bereavement does not rule it out</td></tr><tr><td>Core experience</td><td>Waves of sadness tied to reminders</td><td>Persistent yearning for, or preoccupation with, the dead person nearly every day</td><td>Pervasive low mood or loss of pleasure in almost everything</td></tr><tr><td>Self-image</td><td>Preserved</td><td>Feels part of self has died; identity disrupted</td><td>Worthlessness, guilt beyond the loss</td></tr><tr><td>Other features</td><td>Function returns gradually</td><td>Avoidance of reminders, disbelief, numbness, life feels meaningless, intense loneliness</td><td>Psychomotor change, sleep and appetite change, suicidal thoughts</td></tr></table><p>Prolonged grief disorder also needs clinically significant distress or impairment and a reaction that clearly exceeds the person's cultural and religious norms.</p><h3>Suicide: who is at risk</h3><ul><li>The strongest single predictor of death by suicide is a <strong>previous suicide attempt</strong>.</li><li>Women make more attempts; men die by suicide more often, largely because they use more lethal methods.</li><li>In the United States, <strong>firearms</strong> account for about half of suicide deaths, so access to a gun greatly raises the chance that an attempt is fatal.</li><li>Other risk factors: psychiatric illness (depression, bipolar disorder, schizophrenia, substance use), hopelessness, older age in men, living alone, recent loss or discharge from a psychiatric unit, chronic pain or serious illness, and a family history of suicide.</li><li>Protective factors: social connection, children at home, reasons for living, religious or cultural beliefs against suicide, and access to care.</li></ul><h3>Nonsuicidal self-injury</h3><p>Deliberate damage to one's own body, such as cutting or burning the skin, <em>without</em> the intent to die. It usually starts in adolescence. People describe quick relief from tension or emotional pain. In learning-theory terms, the removal of an unpleasant state makes the behaviour more likely: <strong>negative reinforcement</strong>. Self-injury is not a suicide attempt, but it raises the long-term risk of suicide and always deserves a suicide risk assessment.</p><div class=\"trap\"><strong>Exam trap:</strong> asking directly about suicidal thoughts does not plant the idea or raise risk. Not asking is the error.</div><div class=\"pearl\"><strong>High-yield:</strong> in learning theory, reinforcement (positive or negative) always increases a behaviour, and punishment always decreases it. \"Negative\" means something is taken away.</div>"
+   },
+   {
+    "id": "s23e-s13a02",
+    "heading": "Abuse, confusion in older adults and changing health behaviour",
+    "areas": [
+     "usmle2026.04.09.01"
+    ],
+    "figureIds": [
+     "s23e-fig1303"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Elder Abuse (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560883/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Domestic Violence (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499891/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Motivational Interviewing (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK589705/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Differentiating Delirium Versus Dementia in Older Adults (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK570594/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Intimate partner violence</h3><p>Physical, sexual or psychological harm, or controlling behaviour, by a current or former partner. Clues include injuries that do not match the story, delay in seeking care, injuries in different stages of healing, injuries during pregnancy, frequent visits with vague complaints, and a partner who will not leave the room or answers for the patient. Risk of serious harm rises when the victim tries to leave, and with threats involving weapons or attempted strangulation.</p><h3>Elder abuse and neglect</h3><table><tr><th>Form</th><th>What it looks like</th></tr><tr><td>Physical</td><td>Unexplained bruises (for example, grip marks on the upper arms), fractures, burns</td></tr><tr><td>Psychological</td><td>Threats, humiliation, isolation from friends and family</td></tr><tr><td>Financial exploitation</td><td>Money or property taken or misused; sudden changes to a will or bank accounts</td></tr><tr><td>Caregiver neglect</td><td>A responsible caregiver fails to provide food, hygiene, medicines or care: weight loss, pressure injuries, soiled clothing</td></tr><tr><td>Self-neglect</td><td>An older adult living alone who cannot or does not meet their own basic needs</td></tr><tr><td>Sexual</td><td>Any non-consensual sexual contact</td></tr></table><p>The abuser is most often someone the person depends on, usually a family member. Cognitive impairment, dependence for daily care and social isolation raise the risk.</p><h3>Delirium, dementia and depression in older adults</h3><table><tr><th>Feature</th><th>Delirium</th><th>Dementia</th><th>Depression</th></tr><tr><td>Onset</td><td>Hours to days</td><td>Months to years</td><td>Weeks to months</td></tr><tr><td>Attention and awareness</td><td>Impaired and <strong>fluctuating</strong></td><td>Usually intact until late</td><td>Effortful, poor concentration</td></tr><tr><td>Course</td><td>Worse at night; usually reversible if the cause is treated</td><td>Slowly progressive</td><td>Improves with treatment</td></tr><tr><td>Testing behaviour</td><td>Distractible, cannot sustain a task</td><td>Tries, may confabulate</td><td>\"I don't know\" answers, low effort</td></tr><tr><td>EEG</td><td>Diffuse slowing (fast activity in sedative withdrawal)</td><td>Normal early, slowing late</td><td>Normal</td></tr></table><h3>Changing health behaviour</h3>[[figure:s23e-fig1303]]<p>The stages-of-change model describes readiness, not a fixed sequence: people move back and forth, and relapse is expected rather than a failure. Matching the conversation to the stage is more effective than pushing for action that the person is not ready for.</p><p><strong>Motivational interviewing</strong> is a collaborative, non-confrontational style that helps a person find their own reasons to change. Its tools are open questions, affirmations, reflections and summaries. A double-sided reflection states both sides of the person's ambivalence back to them. The clinician avoids arguing, lecturing and labelling, and draws out \"change talk\" from the patient.</p><div class=\"trap\"><strong>Exam trap:</strong> in delirium the defining problem is attention and level of awareness. Memory loss alone does not separate delirium from dementia.</div>"
+   },
+   {
+    "id": "s23e-s13a03",
+    "heading": "Sexual response, drugs that disturb it and paraphilic disorders",
+    "areas": [
+     "usmle2026.04.10.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Erectile Dysfunction (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562253/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Paraphilia (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554425/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Premature Ejaculation (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK546701/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Autonomic control of the male sexual response</h3><table><tr><th>Phase</th><th>Main pathway</th><th>Mechanism</th></tr><tr><td>Erection</td><td>Parasympathetic: pelvic splanchnic nerves (S2 to S4) via the cavernous nerves</td><td>Nitric oxide activates guanylyl cyclase; cGMP relaxes cavernosal smooth muscle and blood fills the sinusoids</td></tr><tr><td>Emission</td><td>Sympathetic: hypogastric nerves (T11 to L2)</td><td>Contraction of the vas deferens, seminal vesicles and prostate; the internal urethral sphincter closes</td></tr><tr><td>Expulsion (ejaculation)</td><td>Somatic: pudendal nerve</td><td>Rhythmic contraction of the bulbospongiosus and ischiocavernosus</td></tr></table><p>The cavernous nerves run along the posterolateral prostate, so <strong>radical prostatectomy</strong> and pelvic surgery or radiation commonly cause erectile dysfunction.</p><p><strong>PDE5 inhibitors</strong> (sildenafil, tadalafil, vardenafil) block the breakdown of cGMP, so they amplify the nitric oxide signal; they need sexual stimulation to work. Nitrates also raise cGMP, and the combination can cause profound hypotension. Adverse effects: headache, flushing, nasal congestion, and blue-tinged vision with sildenafil (it also inhibits PDE6 in the retina).</p><h3>Drugs that impair sexual function</h3><table><tr><th>Drug group</th><th>Typical effect and mechanism</th></tr><tr><td>SSRIs and SNRIs</td><td>Delayed orgasm or anorgasmia, lower desire (serotonergic). Bupropion and mirtazapine carry much less risk.</td></tr><tr><td>Dopamine-blocking antipsychotics (for example, risperidone)</td><td>Raised prolactin suppresses GnRH, so desire falls; gynecomastia, galactorrhea, amenorrhea</td></tr><tr><td>Alpha-1 blockers and some antipsychotics</td><td>Ejaculatory problems; rarely priapism</td></tr><tr><td>Spironolactone, 5-alpha-reductase inhibitors</td><td>Anti-androgen effects: lower desire, gynecomastia</td></tr><tr><td>Opioids, chronic alcohol</td><td>Low testosterone and reduced desire</td></tr></table><h3>Paraphilias and paraphilic disorders</h3><p>A <strong>paraphilia</strong> is an intense, persistent sexual interest outside the usual range. It becomes a <strong>paraphilic disorder</strong> only when, for at least 6 months, it causes the person distress or impairment, or the person has acted on it with someone who did not or could not consent. A consensual, non-distressing atypical interest is not a mental disorder.</p><table><tr><th>Disorder</th><th>Focus of arousal</th></tr><tr><td>Voyeuristic</td><td>Watching an unsuspecting person undress or have sex</td></tr><tr><td>Exhibitionistic</td><td>Exposing the genitals to an unsuspecting person</td></tr><tr><td>Frotteuristic</td><td>Touching or rubbing against a non-consenting person</td></tr><tr><td>Sexual masochism / sadism</td><td>Being humiliated or made to suffer / causing suffering</td></tr><tr><td>Pedophilic</td><td>Prepubescent children (the person is at least 16 and at least 5 years older)</td></tr><tr><td>Fetishistic</td><td>Non-living objects or non-genital body parts</td></tr><tr><td>Transvestic</td><td>Cross-dressing</td></tr></table><div class=\"pearl\"><strong>High-yield:</strong> cross-dressing for arousal in a man who identifies as a man is not gender dysphoria; it is a transvestic interest, and a disorder only with distress or impairment.</div>"
+   },
+   {
+    "id": "s23e-s13a04",
+    "heading": "Gender identity, gender dysphoria and the pharmacology of gender-affirming hormones",
+    "areas": [
+     "usmle2026.04.10.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Gender Dysphoria (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532313/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Terms</h3><ul><li><strong>Sex assigned at birth</strong>: usually recorded from external genitalia.</li><li><strong>Gender identity</strong>: a person's inner sense of their own gender, which may or may not match the sex assigned at birth. <em>Transgender</em> people have a gender identity that differs from it; <em>cisgender</em> people have one that matches it; some people are nonbinary.</li><li><strong>Gender expression</strong>: how a person presents gender outwardly.</li><li><strong>Sexual orientation</strong>: whom a person is attracted to. It is separate from gender identity.</li></ul><h3>Gender dysphoria</h3><p>A diagnosis describing <strong>clinically significant distress or impairment</strong> that arises from a marked incongruence between experienced gender and assigned gender, lasting at least 6 months. Being transgender or gender-nonconforming is not itself a disorder; the diagnosis rests on the distress. Transgender people have higher rates of depression, anxiety and suicidal thoughts, which studies link largely to stigma, rejection and discrimination (minority stress), and family and social support is protective.</p><h3>How gender-affirming hormones work</h3><table><tr><th>Drug</th><th>Mechanism</th><th>Expected effects</th><th>Key risks to monitor</th></tr><tr><td>Testosterone</td><td>Androgen receptor agonist</td><td>Deeper voice (permanent), facial and body hair, cessation of menses, clitoral growth, more muscle mass</td><td><strong>Erythrocytosis</strong> (androgens raise erythropoietin and suppress hepcidin), acne, lipid changes. It is teratogenic and is not a contraceptive.</td></tr><tr><td>Estradiol</td><td>Estrogen receptor agonist; also suppresses LH and so testosterone</td><td>Breast growth, softer skin, fat redistribution, less body hair</td><td><strong>Venous thromboembolism</strong>, lowest with transdermal estradiol. Ethinyl estradiol is avoided because it is the most thrombogenic.</td></tr><tr><td>Spironolactone</td><td>Androgen receptor antagonist and mineralocorticoid antagonist</td><td>Blocks androgen effects</td><td><strong>Hyperkalemia</strong>, especially with ACE inhibitors, ARBs or kidney disease</td></tr><tr><td>GnRH agonists</td><td>Continuous stimulation down-regulates pituitary GnRH receptors, so LH, FSH and sex steroids fall</td><td>Suppress gonadal hormone production</td><td>Bone mineral density</td></tr></table><div class=\"trap\"><strong>Exam trap:</strong> a GnRH agonist given <em>continuously</em> suppresses the gonads; given in <em>pulses</em> it stimulates them.</div><div class=\"pearl\"><strong>High-yield:</strong> after gender-affirming surgery, screen the organs the person has: the prostate stays after vaginoplasty, and a cervix stays unless it was removed.</div>"
+   },
+   {
+    "id": "s23e-s13a05",
+    "heading": "How addictive drugs act: intoxication and withdrawal",
+    "areas": [
+     "usmle2026.04.11.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Opioid Withdrawal (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK526012/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Cannabis Use Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538131/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Varenicline (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK534846/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<p>Every drug of abuse raises dopamine release from the <strong>ventral tegmental area to the nucleus accumbens</strong> (the mesolimbic reward pathway), directly or indirectly. Repeated use shifts control from pleasure toward habit and craving, and chronic exposure causes adaptive changes that are unmasked as withdrawal when the drug stops. A substance use disorder is a problematic pattern of use with features of impaired control, social impairment, risky use and pharmacological criteria (tolerance, withdrawal), graded mild, moderate or severe by the number of criteria met.</p><table><tr><th>Drug</th><th>Main mechanism</th><th>Intoxication</th><th>Withdrawal</th></tr><tr><td>Alcohol</td><td>Enhances GABA-A; inhibits NMDA</td><td>Disinhibition, ataxia, slurred speech, nystagmus</td><td>Tremor, sweating, tachycardia, seizures, delirium tremens (can be fatal)</td></tr><tr><td>Benzodiazepines</td><td>Raise the <em>frequency</em> of GABA-A chloride channel opening</td><td>Sedation; respiratory depression mainly with alcohol or opioids</td><td>Like alcohol: anxiety, tremor, seizures (can be fatal)</td></tr><tr><td>Barbiturates</td><td>Raise the <em>duration</em> of channel opening</td><td>Sedation, respiratory depression</td><td>Like alcohol; severe</td></tr><tr><td>Opioids</td><td>Mu-receptor agonists (G<sub>i</sub>): less cAMP, K<sup>+</sup> efflux, less presynaptic Ca<sup>2+</sup> entry</td><td>Miosis, respiratory depression, constipation, euphoria</td><td>Mydriasis, yawning, tearing, rhinorrhea, piloerection, diarrhea, cramps; distressing but rarely fatal in adults</td></tr><tr><td>Cocaine</td><td>Blocks reuptake of dopamine, norepinephrine and serotonin</td><td>Mydriasis, tachycardia, hypertension, chest pain, agitation, psychosis</td><td>Low mood, fatigue, hypersomnia, increased appetite</td></tr><tr><td>Amphetamines</td><td>Release monoamines (reverse transport through VMAT and the plasma membrane transporters)</td><td>Like cocaine; prolonged psychosis, bruxism</td><td>Like cocaine</td></tr><tr><td>Nicotine</td><td>Agonist at nicotinic receptors (alpha-4 beta-2 in the reward pathway)</td><td>Alertness, appetite suppression</td><td>Irritability, anxiety, craving, more appetite</td></tr><tr><td>Cannabis</td><td>CB1 agonist (G<sub>i</sub>, presynaptic)</td><td>Conjunctival injection, appetite, dry mouth, slowed time, anxiety or paranoia</td><td>Irritability, insomnia, low appetite</td></tr><tr><td>PCP, ketamine</td><td>NMDA receptor antagonists</td><td>Agitation, violence, horizontal and vertical nystagmus, analgesia, hypertension</td><td>Not clinically prominent</td></tr><tr><td>LSD, psilocybin</td><td>Serotonin 5-HT<sub>2A</sub> agonists</td><td>Perceptual distortion, synesthesia, anxiety</td><td>None significant</td></tr><tr><td>MDMA</td><td>Serotonin (and other monoamine) release</td><td>Euphoria, empathy, hyperthermia, bruxism, <strong>hyponatremia</strong></td><td>Low mood</td></tr></table><h3>Drugs used to treat dependence</h3><ul><li><strong>Buprenorphine</strong>: high-affinity <em>partial</em> mu agonist. Its ceiling on respiratory depression makes it safer than full agonists. Given to someone with a full agonist on board, it displaces that drug and causes sudden (precipitated) withdrawal.</li><li><strong>Methadone</strong>: long-acting full mu agonist, metabolised by CYP3A4 and other enzymes; it prolongs the QT interval.</li><li><strong>Naltrexone</strong>: mu antagonist; reduces the reward from alcohol and blocks opioids.</li><li><strong>Varenicline</strong>: partial agonist at alpha-4 beta-2 nicotinic receptors. It eases craving and blunts the reward of smoking.</li><li><strong>Bupropion</strong>: inhibits norepinephrine and dopamine reuptake; lowers the seizure threshold.</li></ul><div class=\"trap\"><strong>Exam trap:</strong> pinpoint pupils point to opioids. Dilated pupils with yawning, tearing and gooseflesh point to opioid <em>withdrawal</em>.</div>"
+   },
+   {
+    "id": "s23e-s13a06",
+    "heading": "Alcohol: metabolism, thiamine and the withdrawal timeline",
+    "areas": [
+     "usmle2026.04.11.01"
+    ],
+    "figureIds": [
+     "s23e-fig1301"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Alcohol Withdrawal Syndrome (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441882/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Wernicke-Korsakoff Syndrome (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470344/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Metabolism</h3><p>Ethanol is oxidised to acetaldehyde by <strong>alcohol dehydrogenase</strong> (and by CYP2E1, which is induced by heavy drinking). Acetaldehyde is oxidised to acetate by <strong>aldehyde dehydrogenase</strong>. Both steps reduce NAD<sup>+</sup> to NADH. A high NADH/NAD<sup>+</sup> ratio:</p><ul><li>blocks gluconeogenesis (pyruvate is driven to lactate and oxaloacetate to malate), so a fasting drinker becomes <strong>hypoglycemic</strong>;</li><li>favours lactate, so <strong>lactic acidosis</strong> follows, and lactate competes with urate excretion (gout flares);</li><li>favours glycerol-3-phosphate and blocks fatty acid oxidation, so <strong>fatty liver</strong> develops;</li><li>contributes to <strong>alcoholic ketoacidosis</strong>, in which beta-hydroxybutyrate predominates.</li></ul><p><strong>Disulfiram</strong> inhibits aldehyde dehydrogenase. Acetaldehyde builds up after a drink and causes flushing, nausea, vomiting, headache and palpitations. Metronidazole and some cephalosporins can cause a similar reaction. <strong>Fomepizole</strong> inhibits alcohol dehydrogenase and is used for methanol and ethylene glycol poisoning.</p><h3>Thiamine</h3><p>Thiamine pyrophosphate is the cofactor for <strong>pyruvate dehydrogenase</strong>, alpha-ketoglutarate dehydrogenase, transketolase and branched-chain keto acid dehydrogenase. Deficiency starves neurons of aerobic energy. Glucose given to a deficient patient pushes more pyruvate into a blocked pathway, so thiamine is given before or with glucose. <strong>Wernicke encephalopathy</strong> (confusion, ophthalmoplegia or nystagmus, ataxia) damages the mammillary bodies and the tissue around the third ventricle and aqueduct. <strong>Korsakoff syndrome</strong> adds lasting anterograde amnesia with confabulation.</p><h3>Withdrawal</h3><p>Chronic alcohol down-regulates GABA-A responsiveness and up-regulates NMDA glutamate receptors. When drinking stops, the brain is left over-excited.</p>[[figure:s23e-fig1301]]<p>The syndromes overlap and are best read as a timeline from the last drink. Minor withdrawal is the earliest and most common. Seizures are usually single or few. Hallucinosis is distinguished by a clear sensorium and normal vital signs. <strong>Delirium tremens</strong> combines fluctuating confusion with autonomic hyperactivity (fever, tachycardia, hypertension, sweating) and can be fatal.</p><div class=\"pearl\"><strong>High-yield:</strong> GGT and an AST/ALT ratio above 2 support heavy drinking, and an MCV above the normal range is common.</div>"
+   }
+  ]
+ },
+ {
+  "id": "s23e-ch13b",
+  "exam": "step2ck",
+  "order": 527,
+  "title": "Psychiatry · Grief, suicide risk, sexual health and substance use",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s13b01",
+    "heading": "Managing grief, prolonged grief and suicide risk",
+    "areas": [
+     "usmle2026.04.09.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Suicide: Assessment and Management (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK617057/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Suicide Risk in Children and Adolescents: Assessment and Management (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK576416/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Grief and Prolonged Grief Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507832/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Bereavement</h3><ul><li><strong>Ordinary grief</strong>: support, information and follow-up. Medication is not needed, and a sedative-hypnotic for weeks after a death is not a treatment for grief.</li><li><strong>Major depressive episode after a loss</strong>: diagnose and treat it like any depression (psychotherapy, an antidepressant, or both). Bereavement does not exclude the diagnosis.</li><li><strong>Prolonged grief disorder</strong> (12 months or more in adults): grief-focused psychotherapy designed for the disorder works best. Treat coexisting depression as well.</li></ul><h3>Assessing suicide risk</h3><ol><li>Ask directly and in plain words about thoughts of death or suicide.</li><li>If present: how often, any <strong>plan</strong>, <strong>intent</strong>, preparation, access to <strong>means</strong> (firearms, stored medicines), past attempts, substance use, and protective factors.</li><li>Collect information from family or others where possible, and document the reasoning.</li></ol><table><tr><th>Picture</th><th>Usual disposition</th></tr><tr><td>Thoughts of death without plan or intent, good supports, engaged in care</td><td>Outpatient care with a written <strong>safety plan</strong>, lethal-means counselling, treatment of the underlying disorder and early follow-up</td></tr><tr><td>Plan or intent, recent attempt, psychosis, intoxication, or no safe setting</td><td>Emergency psychiatric evaluation and inpatient admission</td></tr><tr><td>Imminent danger and the person refuses admission</td><td><strong>Involuntary emergency hold</strong> under local law</td></tr></table><p><strong>Lethal-means counselling</strong>: ask about guns and medicines at home, and advise removing firearms or storing them locked and unloaded, and locking up or disposing of medicines. Restricting access to lethal means reduces suicide deaths. A \"no-suicide contract\" has no protective value and is not a substitute for assessment.</p><h3>Treatments that lower suicide risk</h3><ul><li><strong>Lithium</strong> in mood disorders and <strong>clozapine</strong> in schizophrenia both reduce suicidal behaviour.</li><li><strong>Dialectical behaviour therapy</strong> reduces repeated self-harm in people with emotion dysregulation, including borderline personality disorder.</li><li>Cognitive therapy focused on suicide prevention, and brief contact after discharge, also help.</li></ul><div class=\"trap\"><strong>Exam trap:</strong> a first antidepressant prescription does not make an outpatient with a plan safe; the danger is now. Admit first, then treat.</div>"
+   },
+   {
+    "id": "s23e-s13b02",
+    "heading": "Partner violence, elder abuse, delirium and motivational interviewing in practice",
+    "areas": [
+     "usmle2026.04.09.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Domestic Violence (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499891/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Elder Abuse (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560883/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Delirium (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470399/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Motivational Interviewing (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK589705/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Intimate partner violence</h3><ul><li>Screen women of reproductive age, and ask any patient with suggestive clues, <strong>in private</strong>. Interview the patient without the partner present, and use a professional interpreter rather than a relative.</li><li>Be direct and non-judgemental. Believe the patient and say that violence is not their fault.</li><li>Assess immediate danger: escalating violence, threats to kill, weapons, attempted strangulation, pregnancy, children at risk.</li><li>Offer a <strong>safety plan</strong>, advocacy services and a hotline, and document injuries carefully in the patient's words with diagrams or photographs.</li><li>A competent adult decides whether to leave or report. Reporting duties for adults vary by state (for example, some injuries from weapons); <strong>child abuse</strong> must always be reported.</li><li>Couples counselling is not recommended while abuse is ongoing, because it can increase danger.</li></ul><h3>Elder abuse</h3><p>Suspected abuse or neglect of an older or dependent adult is reportable to <strong>adult protective services</strong> in nearly every state, and the clinician does not need proof or the patient's consent. Interview the patient alone, examine fully, and admit to hospital if the person is unsafe at home.</p><h3>Delirium in hospital</h3><ol><li>Look for the cause: infection, drugs (anticholinergics, benzodiazepines, opioids), urinary retention, constipation, pain, hypoxia, electrolyte and glucose disturbance, withdrawal.</li><li>Use <strong>non-drug measures</strong> first: reorientation, family presence, glasses and hearing aids, a day-night routine, early mobilisation, and removing catheters and restraints.</li><li>Reserve a low-dose antipsychotic for severe agitation that puts the patient or staff at risk. Avoid benzodiazepines except in alcohol or sedative withdrawal.</li></ol><h3>Depression that looks like dementia</h3><p>Older adults with depression may complain of poor memory, answer \"I don't know\" and give little effort on testing. After checking for reversible causes, treat the depression and reassess cognition. Late-life depression can also be an early sign of a neurodegenerative disease, so follow these patients.</p><h3>Motivational interviewing in the clinic</h3><table><tr><th>Stage</th><th>What helps</th></tr><tr><td>Precontemplation</td><td>Ask permission to share information; personalised feedback without pressure</td></tr><tr><td>Contemplation</td><td>Explore pros and cons; reflect both sides of the ambivalence</td></tr><tr><td>Preparation</td><td>Agree a concrete plan and a start date; offer medication where it helps</td></tr><tr><td>Action and maintenance</td><td>Reinforce progress, plan for high-risk situations, treat a lapse as information</td></tr></table>"
+   },
+   {
+    "id": "s23e-s13b03",
+    "heading": "Treating sexual dysfunction and paraphilic disorders",
+    "areas": [
+     "usmle2026.04.10.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Erectile Dysfunction (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562253/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Female Sexual Interest and Arousal Disorder (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK603746/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Premature Ejaculation (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK546701/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Paraphilia (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554425/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Erectile dysfunction</h3><ul><li>Take a sexual, medical and medication history. Gradual onset with loss of morning erections suggests an organic cause; sudden, situational loss with preserved morning erections suggests a psychological one.</li><li>Erectile dysfunction often precedes coronary disease by years: check <strong>glucose or HbA1c, lipids and blood pressure</strong>, and address smoking. Measure morning testosterone if desire is low or there are signs of hypogonadism.</li><li>First-line treatment: lifestyle change and a <strong>PDE5 inhibitor</strong>.</li><li>PDE5 inhibitors are contraindicated with any <strong>nitrate</strong> (and with riociguat). Alternatives: vacuum erection device, intracavernosal or intraurethral alprostadil, or a penile prosthesis.</li><li>Use caution with alpha-blockers (start at a low dose; risk of hypotension).</li></ul><h3>Antidepressant-related sexual dysfunction</h3><p>Options: wait for tolerance if it is early, lower the dose, switch to a lower-risk drug (<strong>bupropion</strong>, mirtazapine), or <strong>add bupropion</strong>, which preserves a response that has taken months to achieve. A PDE5 inhibitor helps antidepressant-related erectile dysfunction. Never stop an SSRI abruptly.</p><h3>Other sexual dysfunctions</h3><table><tr><th>Disorder</th><th>Key features</th><th>Management</th></tr><tr><td>Premature (early) ejaculation</td><td>Ejaculation within about a minute of penetration on most occasions, for at least 6 months, with distress</td><td>Behavioural techniques; daily or on-demand SSRI (off-label); topical anaesthetic</td></tr><tr><td>Genito-pelvic pain/penetration disorder</td><td>Pain, fear of pain or pelvic floor tightening with attempted penetration</td><td>Pelvic floor physical therapy, graded vaginal dilators, cognitive behavioural therapy</td></tr><tr><td>Female sexual interest/arousal disorder</td><td>Persistently reduced interest or arousal with distress</td><td>Look for causes: depression, relationship problems, drugs, hyperprolactinemia, menopause; sex therapy. Specific drugs are approved for premenopausal women in selected cases.</td></tr><tr><td>Delayed ejaculation, female orgasmic disorder</td><td>Often drug-related (SSRIs)</td><td>Adjust the drug; sex therapy</td></tr></table><p>In postmenopausal women, painful intercourse from genitourinary syndrome of menopause responds to lubricants, moisturisers and low-dose vaginal estrogen.</p><h3>Paraphilic disorders</h3><p>Treatment is <strong>cognitive behavioural therapy</strong> with relapse prevention. An SSRI can reduce the intensity of urges. In people at high risk of harming others, anti-androgen treatment (a GnRH agonist or medroxyprogesterone) lowers testosterone and sexual drive.</p>"
+   },
+   {
+    "id": "s23e-s13b04",
+    "heading": "Primary care for transgender and gender-diverse patients",
+    "areas": [
+     "usmle2026.04.10.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Gender Dysphoria (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532313/",
+      "sourceId": "statpearls"
+     }
+    ],
+    "html": "<h3>Respectful care</h3><ul><li>Ask for and use the patient's <strong>name and pronouns</strong>, and record them. Use the patient's own words for their body where possible.</li><li>Take an <strong>organ inventory</strong>: screening follows the organs the person has, not the gender listed in the record.</li><li>Screen for depression, anxiety, suicidal thoughts, substance use and violence, which are more common because of stigma and rejection. Family acceptance is strongly protective, particularly for young people.</li></ul><h3>Screening by organ</h3><table><tr><th>Organ</th><th>Approach</th></tr><tr><td>Cervix (transgender men and nonbinary people assigned female at birth)</td><td>Cervical cancer screening on the same schedule as for anyone with a cervix; testosterone can make cytology samples harder to read</td></tr><tr><td>Breast</td><td>Transgender men who have not had chest surgery are screened like other people with breasts; some tissue remains after chest masculinisation. For transgender women on estrogen, screening advice varies and follows specialist guidance.</td></tr><tr><td>Prostate (transgender women)</td><td>The prostate is retained after vaginoplasty; it is usually palpable through the anterior wall of the neovagina. Shared decision-making as for others of the same age; PSA is lower on estrogen.</td></tr></table><h3>Monitoring hormone therapy</h3><ul><li><strong>Testosterone</strong>: hematocrit and testosterone level. If the hematocrit rises above 54%, reduce or hold the dose (or change the formulation) and look for other causes such as sleep apnea or smoking. Testosterone does not prevent pregnancy and is teratogenic, so anyone who can become pregnant and has sex that could cause pregnancy needs <strong>contraception</strong>; an IUD or progestin-only method works well.</li><li><strong>Estradiol</strong>: estradiol level, and testosterone if an anti-androgen is used. Advise stopping smoking because of thrombosis risk; transdermal estradiol has the lowest risk. Do not use ethinyl estradiol.</li><li><strong>Spironolactone</strong>: potassium and creatinine, especially with ACE inhibitors, ARBs or kidney disease. If hyperkalemia occurs, stop it; other anti-androgen options exist.</li><li>Discuss <strong>fertility preservation</strong> before starting hormones or having gonadal surgery.</li></ul><h3>Young people</h3><p>Gender-diverse children are supported without pressure toward any outcome. Decisions about medical treatment for adolescents are made by specialist multidisciplinary teams, and the rules and recommendations differ between countries and states and continue to change.</p><div class=\"trap\"><strong>Exam trap:</strong> amenorrhea on testosterone does not mean a person cannot become pregnant.</div>"
+   },
+   {
+    "id": "s23e-s13b05",
+    "heading": "Alcohol use disorder: screening, withdrawal and relapse prevention",
+    "areas": [
+     "usmle2026.04.11.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Alcohol Withdrawal Syndrome (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441882/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Naltrexone (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK534811/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Alcohol Use Disorder (AUD)",
+      "url": "https://medlineplus.gov/alcoholusedisorderaud.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ],
+    "html": "<h3>Screening and brief intervention</h3><p>Screen adults for unhealthy alcohol use with a validated tool such as <strong>AUDIT-C</strong> or a single question about heavy-drinking days. A positive screen leads to a brief, non-judgemental intervention (feedback, advice, a goal) and assessment for alcohol use disorder, with referral or treatment when the disorder is present (screening, brief intervention and referral to treatment).</p><h3>Withdrawal</h3><ul><li>Give <strong>thiamine</strong> before or with glucose to anyone at risk; never delay treating hypoglycemia.</li><li>Measure severity with <strong>CIWA-Ar</strong> in patients who can communicate. Benzodiazepines are the treatment: <strong>symptom-triggered</strong> dosing uses less drug than fixed schedules.</li><li>Long-acting agents (chlordiazepoxide, diazepam) give a smoother course. Lorazepam (no active metabolites) is preferred in advanced liver disease and in many older adults.</li><li><strong>Delirium tremens</strong>: intensive care, escalating intravenous benzodiazepines, fluids, electrolytes and thiamine; phenobarbital or propofol for refractory cases. Antipsychotics lower the seizure threshold and do not treat withdrawal.</li><li>Outpatient management is reasonable only for mild withdrawal without past seizures or delirium tremens, serious illness or an unsafe home.</li></ul><h3>Medicines that reduce drinking</h3><table><tr><th>Drug</th><th>Best use</th><th>Avoid when</th></tr><tr><td>Naltrexone (oral or monthly injection)</td><td>First line; reduces heavy drinking</td><td>Taking or needing opioids; acute hepatitis or liver failure</td></tr><tr><td>Acamprosate</td><td>First line; maintains abstinence; safe in liver disease</td><td>Severe kidney impairment (creatinine clearance 30 mL/min or less)</td></tr><tr><td>Disulfiram</td><td>Highly motivated patients with supervised dosing</td><td>Not yet abstinent; heart disease; psychosis; cannot comply</td></tr><tr><td>Gabapentin, topiramate</td><td>Off-label alternatives</td><td>Kidney disease (gabapentin dose); cognitive side effects (topiramate)</td></tr></table><p>Combine medication with psychosocial support (counselling, mutual-help groups) and treat coexisting psychiatric disorders.</p><div class=\"trap\"><strong>Exam trap:</strong> hallucinations in a fully oriented patient with normal vital signs on day 1 or 2 are alcoholic hallucinosis, not delirium tremens.</div>"
+   },
+   {
+    "id": "s23e-s13b06",
+    "heading": "Opioids, stimulants, cannabis and tobacco: emergencies and long-term treatment",
+    "areas": [
+     "usmle2026.04.11.01"
+    ],
+    "figureIds": [],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Buprenorphine (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459126/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Methadone (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562216/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Nicotine Replacement Therapy (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK493148/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Cannabis (Marijuana) Overview (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK430801/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Quitting Smoking",
+      "url": "https://medlineplus.gov/quittingsmoking.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ],
+    "html": "<h3>Opioid overdose</h3><p>Support breathing (bag-mask ventilation) and give <strong>naloxone</strong>, repeating it as needed: potent synthetic opioids such as fentanyl may need several doses, and naloxone can wear off before a long-acting opioid, so observe the patient. Prescribe naloxone to anyone at risk and to their family.</p><p><strong>Xylazine</strong>, an alpha-2 agonist sedative, is now a common adulterant of illicit fentanyl. It causes sedation, bradycardia and hypotension that naloxone does not reverse, and severe chronic skin wounds. Naloxone is still given for the opioid component; the rest is supportive.</p><h3>Medications for opioid use disorder</h3><ul><li>Medication reduces overdose death. <strong>Buprenorphine</strong> can be prescribed by any clinician with a standard DEA registration; the separate waiver was removed in 2023. Start it once the patient has objective withdrawal, or use a low-dose start, to avoid precipitated withdrawal; after fentanyl the wait is often longer.</li><li><strong>Methadone</strong> for opioid use disorder is dispensed through opioid treatment programmes. Watch the QT interval and interactions: CYP3A4 inducers such as rifampin lower its level and cause withdrawal.</li><li><strong>Extended-release naltrexone</strong> needs about 7 to 10 days without opioids first.</li><li><strong>Pregnancy</strong>: continue or start buprenorphine or methadone. Withdrawal management (detoxification) carries a high risk of relapse and overdose. The newborn is monitored for neonatal opioid withdrawal syndrome.</li></ul><h3>Sedative withdrawal</h3><p>Long-term benzodiazepine users who stop suddenly (for example, on hospital admission) can have seizures. Restart a benzodiazepine and taper slowly over weeks to months.</p><h3>Stimulants</h3><p>Cocaine or methamphetamine toxicity with agitation, tachycardia, hypertension or chest pain is treated first with <strong>benzodiazepines</strong>, cooling and supportive care. Do not give a beta-blocker alone early in cocaine toxicity. Evaluate chest pain for acute coronary syndrome, aortic dissection and stroke.</p><h3>Cannabis</h3><p><strong>Cannabinoid hyperemesis syndrome</strong>: years of heavy use, recurrent bouts of vomiting and abdominal pain, relief from hot showers. Acute care: fluids, haloperidol or topical capsaicin. The only lasting treatment is <strong>stopping cannabis</strong>.</p><h3>Tobacco</h3><ul><li>Ask every patient about tobacco, advise quitting, and offer counselling and medication.</li><li><strong>Varenicline</strong> or <strong>combination nicotine replacement</strong> (patch plus a short-acting form) are the most effective options. A large trial found no significant excess of neuropsychiatric events with varenicline or bupropion.</li><li>Bupropion is contraindicated with seizure disorders, bulimia or anorexia nervosa, and abrupt alcohol or sedative withdrawal.</li></ul><div class=\"trap\"><strong>Exam trap:</strong> a patient who still needs regular opioids for pain cannot take naltrexone for alcohol use disorder; choose acamprosate.</div>"
+   }
+  ]
  }
 ]

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" role="img" aria-label="Timeline of alcohol withdrawal in hours since the last drink: minor withdrawal from about 6 to 36 hours, withdrawal seizures 6 to 48 hours, alcoholic hallucinosis 12 to 48 hours, delirium tremens 48 to 96 hours and occasionally later.">
+<rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="30" font-size="16" font-weight="bold" text-anchor="middle">Alcohol withdrawal: when each syndrome usually appears</text>
+<line x1="110.0" y1="56" x2="110.0" y2="318" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="110.0" y1="318" x2="110.0" y2="326" stroke="#334155" stroke-width="1.5"/>
+<text x="110.0" y="344" font-size="13" text-anchor="middle">0</text>
+<line x1="172.0" y1="56" x2="172.0" y2="318" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="172.0" y1="318" x2="172.0" y2="326" stroke="#334155" stroke-width="1.5"/>
+<text x="172.0" y="344" font-size="13" text-anchor="middle">12</text>
+<line x1="234.0" y1="56" x2="234.0" y2="318" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="234.0" y1="318" x2="234.0" y2="326" stroke="#334155" stroke-width="1.5"/>
+<text x="234.0" y="344" font-size="13" text-anchor="middle">24</text>
+<line x1="358.0" y1="56" x2="358.0" y2="318" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="358.0" y1="318" x2="358.0" y2="326" stroke="#334155" stroke-width="1.5"/>
+<text x="358.0" y="344" font-size="13" text-anchor="middle">48</text>
+<line x1="482.0" y1="56" x2="482.0" y2="318" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="482.0" y1="318" x2="482.0" y2="326" stroke="#334155" stroke-width="1.5"/>
+<text x="482.0" y="344" font-size="13" text-anchor="middle">72</text>
+<line x1="606.0" y1="56" x2="606.0" y2="318" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="606.0" y1="318" x2="606.0" y2="326" stroke="#334155" stroke-width="1.5"/>
+<text x="606.0" y="344" font-size="13" text-anchor="middle">96</text>
+<line x1="730.0" y1="56" x2="730.0" y2="318" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="730.0" y1="318" x2="730.0" y2="326" stroke="#334155" stroke-width="1.5"/>
+<text x="730.0" y="344" font-size="13" text-anchor="middle">120</text>
+<line x1="110" y1="318" x2="730" y2="318" stroke="#334155" stroke-width="1.5"/>
+<text x="420" y="368" font-size="13" text-anchor="middle">Hours since the last drink</text>
+<rect x="141.0" y="84" width="155.0" height="26" rx="6" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/>
+<text x="141.0" y="76" font-size="13">Minor withdrawal: tremor, sweating, anxiety, insomnia; oriented</text>
+<rect x="141.0" y="146" width="217.0" height="26" rx="6" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/>
+<text x="141.0" y="138" font-size="13">Withdrawal seizures: generalised, usually brief; peak near 24 h</text>
+<rect x="172.0" y="208" width="186.0" height="26" rx="6" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/>
+<text x="172.0" y="200" font-size="13">Alcoholic hallucinosis: hallucinations with a clear sensorium</text>
+<line x1="606.0" y1="283" x2="730.0" y2="283" stroke="#334155" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="358.0" y="270" width="248.0" height="26" rx="6" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/>
+<text x="358.0" y="262" font-size="13">Delirium tremens: confusion, fever, autonomic instability</text>
+<text x="40" y="392" font-size="11" fill="#334155">Dashed: delirium tremens occasionally starts as late as day 5. Bars show usual ranges, not limits.</text>
+</g></svg>
