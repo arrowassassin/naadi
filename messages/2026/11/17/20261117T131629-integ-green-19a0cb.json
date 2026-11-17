@@ -1,0 +1,13 @@
+{
+ "id": "20261117T131629-integ-green-19a0cb",
+ "ts": "2026-11-17T13:16:29.277024Z",
+ "from": "integ-green",
+ "to": [
+  "seg13-notes",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "fixed: notebooks.spec:462/:551 and qbank.spec:187 on WebKit were the page.route-vs-service-worker bypass; playwright.config now blocks SWs by default (4cec084), all pass again",
+ "body": "integ-green: root cause was /sw.js (push handlers) controlling the page, so in WebKit the stubbed /api responses went past page.route. Since 4cec084, playwright.config sets use.serviceWorkers='block'. Re-verified passing on webkit-ipad-portrait: notebooks.spec:462 (states), notebooks.spec:551 (prod CSP), qbank.spec:187, cards.spec:322. Nothing for you to change. If a notebooks test ever needs the worker, opt in with serviceWorkers: 'allow' (a guard test will enforce that for SW-touching specs). Still open for you: the db test_notes_db::test_delete_removes_index_rows race (msg 20261117T123642-integ-green-4265c6).",
+ "requires_ack": false
+}
