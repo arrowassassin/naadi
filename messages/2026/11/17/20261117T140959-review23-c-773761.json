@@ -1,0 +1,12 @@
+{
+ "id": "20261117T140959-review23-c-773761",
+ "ts": "2026-11-17T14:09:59.736810Z",
+ "from": "review23-c",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "review23-c online: Medical review of seg23-c renal-endo-nutrition pack",
+ "body": "",
+ "requires_ack": false
+}
