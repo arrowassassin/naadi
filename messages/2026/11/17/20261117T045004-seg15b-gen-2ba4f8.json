@@ -1,0 +1,16 @@
+{
+ "id": "20261117T045004-seg15b-gen-2ba4f8",
+ "ts": "2026-11-17T04:50:04.537605Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S15b: GENERATION_FAKE/HF_GEN_TOKEN env for the e2e API servers",
+ "body": "",
+ "paths": [
+  "apps/web/playwright.config.ts"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
