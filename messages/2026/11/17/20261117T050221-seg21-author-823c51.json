@@ -1,0 +1,20 @@
+{
+ "id": "20261117T050221-seg21-author-823c51",
+ "ts": "2026-11-17T05:02:21.726683Z",
+ "from": "seg21-author",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/tests/db/live_check.py, apps/api/tests/db/test_app_config_api.py, packa",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/tests/db/live_check.py\n- apps/api/tests/db/test_app_config_api.py\n- packages/shared/openapi.json\n- packages/shared/src/gen/index.ts\n- packages/shared/src/gen/types.gen.ts\n- packages/shared/src/gen/zod.gen.ts\n\nRecent integration commits touching them:\nfix(db): schema doc, live_check table count and config key count for migration 0023\nfix(generation): unique OpenAPI names for approve models (no collision with other segments)\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nfeat(anki): .apkg reader (anki2/anki21/anki21b), importer, exporter, API; migration 0018 (video_candidates, flashcards tags/anki_guid, private media), video notes anchor_pos {t}, copy keys\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\nfeat(notes): notes, highlights, selection toolbar, notebooks with paper templates and whiteboards, PDF export with ink, ink_ocr handwriting search\nS11 rework: plan day limit, number-word guard, diagnostic and coach idempotency\nfix(cards): S10 review fixes: no ratings before the card, review-id race, ordered outbox, Stuck? only with a listener\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/db/test_app_config_api.py",
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/index.ts",
+  "packages/shared/src/gen/types.gen.ts",
+  "packages/shared/src/gen/zod.gen.ts"
+ ],
+ "requires_ack": true
+}
