@@ -338,6 +338,41 @@ test.describe("rebalance", () => {
   });
 });
 
+test.describe("outside items", () => {
+  test("the 'Outside Naadi' pill stays inside its card at every viewport", async ({ browser, baseURL }, info) => {
+    const { page, errors, done } = await fresh(browser, baseURL as string, info, "pout", { plan: true, missed: 0 });
+    try {
+      const w = await week(page);
+      const day = w.days.find((d) => d.date >= w.days[0].date && !d.assessment) ?? w.days[0];
+      const res = await page.request.post("/api/plan/items", {
+        headers: { authorization: `Bearer ${await token(page)}` },
+        data: {
+          items: [{ day: day.date, kind: "admin", title: "Register for the exam", ref_type: "external" }],
+        },
+      });
+      expect(res.ok()).toBe(true);
+      await openPlan(page);
+      const pill = page.getByText("Outside Naadi", { exact: true }).first();
+      await expect(pill).toBeVisible();
+      const fits = await pill.evaluate((el) => {
+        const chip = el.closest("[data-tone]") as HTMLElement;
+        const card = el.closest("button") as HTMLElement;
+        const c = chip.getBoundingClientRect();
+        const k = card.getBoundingClientRect();
+        return {
+          inside: c.left >= k.left - 0.5 && c.right <= k.right + 0.5,
+          clipped: chip.scrollWidth > chip.clientWidth + 1,
+        };
+      });
+      expect(fits).toEqual({ inside: true, clipped: false });
+      await expectNoHorizontalOverflow(page);
+      expect(errors).toEqual([]);
+    } finally {
+      await done();
+    }
+  });
+});
+
 test.describe("offline", () => {
   test("a status change made offline says it will sync, and syncs when the connection returns", async ({
     browser,

@@ -185,29 +185,42 @@ class _Placement:
         start, so an earlier reading item that had to move past the assessment never makes them look unplaceable."""
         placed: list[tuple[RItem, dt.date]] = []
         unplaced: list[RItem] = []
-        w, k = 0, 0  # window index, day index within the window
+        w, k = 0, 0  # cursor of the items that may spill: window index, day index within the window
+        k0 = 0  # separate forward-only cursor in window 0 for the items that may not spill (questions)
         for it in queue:
             m = _minutes(it)
-            spills = spill and it.kind in SPILLS
-            ww, kk = (w, k) if spills or w == 0 else (0, 0)
-            found: dt.date | None = None
-            while ww < len(self.windows):
-                if ww > 0 and not spills:
-                    break  # questions never spill past the assessment they prepare for
-                days = self.windows[ww]
-                while kk < len(days):
-                    if self.fits(days[kk].date, m):
-                        found = days[kk].date
+            if spill and it.kind in SPILLS:
+                found: dt.date | None = None
+                ww, kk = w, k
+                while ww < len(self.windows):
+                    days = self.windows[ww]
+                    while kk < len(days):
+                        if self.fits(days[kk].date, m):
+                            found = days[kk].date
+                            break
+                        kk += 1
+                    if found is not None:
                         break
-                    kk += 1
-                if found is not None:
-                    break
-                ww, kk = ww + 1, 0
-            if found is None:
-                unplaced.append(it)
-                continue
-            if spills or w == 0:
+                    ww, kk = ww + 1, 0
+                if found is None:
+                    unplaced.append(it)
+                    continue
                 w, k = ww, kk
+            else:
+                # Questions never spill past the assessment they prepare for. Their own cursor only moves forward,
+                # so two questions keep their order, and an earlier reading item that had to move past the
+                # assessment never makes them look unplaceable.
+                days = self.windows[0] if self.windows else []
+                kk = max(k0, k if w == 0 else 0)  # never behind an earlier item that stayed in window 0
+                while kk < len(days) and not self.fits(days[kk].date, m):
+                    kk += 1
+                if kk >= len(days):
+                    unplaced.append(it)
+                    continue
+                k0 = kk
+                if w == 0:
+                    k = kk
+                found = days[kk].date
             self.load[found] += m
             placed.append((it, found))
         return placed, unplaced

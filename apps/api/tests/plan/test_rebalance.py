@@ -301,3 +301,36 @@ def test_questions_that_fit_before_the_assessment_are_not_reported_as_not_fittin
     assert by["r"].to_day > dt.date(2026, 12, 3)  # the reading item spilled past the assessment
     assert by["q"].to_day == d1  # the questions still fit today
     assert not [w for w in p.warnings if w.code == "unplaced"]
+
+
+def test_moved_questions_keep_their_order() -> None:
+    d = [dt.date(2026, 12, 1) + dt.timedelta(days=n) for n in range(9)]
+    rdays = [RDay(d[n], n + 1, 1.0, assessment=(n == 4)) for n in range(7)]
+    # Missed d0: a read too long for any non-empty day (it spills past the assessment), then q1 (60 min) and q2
+    # (30 min). Today d1 has only 45 min free, so q1 lands on d2; q2 would fit d1 if it searched from the window's
+    # start again after the spill, but must not overtake q1.
+    missed = [
+        RItem("r", d[0], "read", "planned", 0, 80),
+        RItem("q1", d[0], "questions", "planned", 1, 60),
+        RItem("q2", d[0], "questions", "planned", 2, 30),
+    ]
+    today = [
+        RItem("t1", d[1], "read", "planned", 0, 30),
+        RItem("t2", d[2], "read", "planned", 0, 10),
+        RItem("t3", d[3], "read", "planned", 0, 10),
+    ]
+    p = rebalance(
+        RebalanceInput(
+            days=rdays,
+            items=[*missed, *today],
+            today=d[1],
+            missed_before=d[1],
+            exam_date=d[8],
+            study_days=frozenset(range(1, 8)),
+            daily_hours=1.0,
+        )
+    )
+    by = {m.item_id: m for m in p.moves}
+    assert by["r"].to_day > d[4]
+    assert by["q1"].to_day == d[2]
+    assert by["q2"].to_day >= by["q1"].to_day

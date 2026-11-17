@@ -27,12 +27,20 @@ export function ItemChips({ item, pending }: { item: WeekItemOut; pending: boole
         </Chip>
       ) : null}
       {item.moved_from ? (
-        <Chip tone="meta" icon={<CornerDownRight size={11} />} className="max-w-full whitespace-normal text-left">
+        <Chip
+          tone="meta"
+          icon={<CornerDownRight size={11} />}
+          className="max-w-full rounded-block-sm! whitespace-normal! text-left"
+        >
           {t("planner.moved_from", { date: dayMonth(item.moved_from) })}
         </Chip>
       ) : null}
       {item.ref_type === "external" ? (
-        <Chip tone="meta" icon={<ExternalLink size={11} />} className="max-w-full whitespace-normal text-left">
+        <Chip
+          tone="meta"
+          icon={<ExternalLink size={11} />}
+          className="max-w-full rounded-block-sm! whitespace-normal! text-left"
+        >
           {t("planner.sheet_outside")}
         </Chip>
       ) : null}
