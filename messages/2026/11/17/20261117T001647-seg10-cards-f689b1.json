@@ -1,0 +1,16 @@
+{
+ "id": "20261117T001647-seg10-cards-f689b1",
+ "ts": "2026-11-17T00:16:47.268610Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated df4470d into claude/naadi-shared",
+ "body": "S10: card scratch pad persists via S12b ink (flashcard surface)",
+ "refs": {
+  "commit": "df4470d",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
