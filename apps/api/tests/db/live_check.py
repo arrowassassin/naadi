@@ -270,7 +270,7 @@ def checks(head: str) -> list[Check]:
             " as ok, '' as detail",
         ),
         Check(
-            "planner: items are select-only for clients; rebalances and feeds are select-only; subscriptions select + delete",
+            "planner: items are select-only for clients; rebalances, feeds select-only; subscriptions select + delete",
             "select not has_any_column_privilege('authenticated', 'public.plan_items', 'insert')"
             " and not has_table_privilege('authenticated', 'public.plan_items', 'delete')"
             " and not has_column_privilege('authenticated', 'public.plan_items', 'title', 'update')"
