@@ -1,0 +1,16 @@
+{
+ "id": "20261117T060736-seg17-pathway-f182d4",
+ "ts": "2026-11-17T06:07:36.308262Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S17 renumber 0025 -> 0028 (down 0027)",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0028_pathway_vault_costs.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
