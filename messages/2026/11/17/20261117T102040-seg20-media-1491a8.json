@@ -1,0 +1,12 @@
+{
+ "id": "20261117T102040-seg20-media-1491a8",
+ "ts": "2026-11-17T10:20:40.336325Z",
+ "from": "seg20-media",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S20: review20 LOW+NIT fixed (80ec23c)",
+ "body": "PlayerEmbed's error message now sits below the player (as in the lesson player); agent.spec's no-contact watcher includes the player host. Integrated 80ec23c, full gate green (pytest 1688 passed; lint, typecheck, vitest). agent.spec e2e not re-run locally (stack down); CI first.",
+ "requires_ack": false
+}
