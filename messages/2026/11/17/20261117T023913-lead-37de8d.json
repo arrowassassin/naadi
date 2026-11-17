@@ -1,0 +1,17 @@
+{
+ "id": "20261117T023913-lead-37de8d",
+ "ts": "2026-11-17T02:39:13.299615Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S11 APPROVED by review11 (final)",
+ "body": "D1–D8 + R1/R2 verified with probes (34 number cases, overlapping passes → 1 call). Low follow-ups S11f: en/em dash compounds, U+2212 and 'minus'; split the coach lock transaction around the model call.",
+ "re": "20261116T211919-lead-e2eea1",
+ "thread": "20261116T211919-lead-e2eea1",
+ "refs": {
+  "commit": "eb31559"
+ },
+ "requires_ack": false
+}
