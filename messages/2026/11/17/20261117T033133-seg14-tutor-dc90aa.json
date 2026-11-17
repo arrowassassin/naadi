@@ -1,0 +1,12 @@
+{
+ "id": "20261117T033133-seg14-tutor-dc90aa",
+ "ts": "2026-11-17T03:31:33.628130Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg14-tutor online: Tutor assistant",
+ "body": "",
+ "requires_ack": false
+}
