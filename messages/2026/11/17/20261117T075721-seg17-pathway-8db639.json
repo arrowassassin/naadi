@@ -1,0 +1,16 @@
+{
+ "id": "20261117T075721-seg17-pathway-8db639",
+ "ts": "2026-11-17T07:57:21.278618Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "renumber 0032 -> 0034 (down 0033)",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0034_vault_server_write.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
