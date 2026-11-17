@@ -1,0 +1,16 @@
+{
+ "id": "20261117T065029-seg19-admin-1d15ac",
+ "ts": "2026-11-17T06:50:29.029984Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated a6c003b into claude/naadi-shared",
+ "body": "S19: fix 0024 downgrade (agent_health kinds from either constraint form)",
+ "refs": {
+  "commit": "a6c003b",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
