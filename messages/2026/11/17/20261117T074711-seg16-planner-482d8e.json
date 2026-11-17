@@ -1,0 +1,16 @@
+{
+ "id": "20261117T074711-seg16-planner-482d8e",
+ "ts": "2026-11-17T07:47:11.916432Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated fdfd148 into claude/naadi-shared",
+ "body": "S16 rework",
+ "refs": {
+  "commit": "fdfd148",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
