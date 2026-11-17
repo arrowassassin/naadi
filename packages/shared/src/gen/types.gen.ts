@@ -29,6 +29,98 @@ export type ActiveExamOut = {
 };
 
 /**
+ * AdminGeneratedItem
+ */
+export type AdminGeneratedItem = {
+  /**
+   * Ai Generated
+   */
+  ai_generated?: true;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Duration S
+   */
+  duration_s?: number | null;
+  /**
+   * Error
+   *
+   * Stable error code of a failed or paused item
+   */
+  error?: string | null;
+  /**
+   * Height
+   */
+  height?: number | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "image" | "video";
+  /**
+   * Model
+   */
+  model: string;
+  /**
+   * Paused Until
+   *
+   * When a quota pause ends
+   */
+  paused_until?: string | null;
+  /**
+   * Prompt
+   *
+   * The scrubbed prompt that was sent (never the raw input)
+   */
+  prompt: string;
+  /**
+   * Published
+   *
+   * True once an admin approved it as a shared chapter figure
+   */
+  published: boolean;
+  /**
+   * Status
+   */
+  status: "queued" | "generating" | "ready" | "failed" | "paused";
+  /**
+   * Title
+   */
+  title?: string | null;
+  /**
+   * Url
+   *
+   * Signed URL (10 minutes) for a ready item; None otherwise
+   */
+  url?: string | null;
+  /**
+   * User Ref
+   *
+   * Short opaque owner reference (first 8 characters of the user id)
+   */
+  user_ref: string;
+  /**
+   * Width
+   */
+  width?: number | null;
+};
+
+/**
+ * AdminGeneratedList
+ */
+export type AdminGeneratedList = {
+  /**
+   * Items
+   */
+  items: Array<AdminGeneratedItem>;
+};
+
+/**
  * AdminOverview
  */
 export type AdminOverview = {
@@ -144,6 +236,35 @@ export type AnchorPos = {
    * To
    */
   to: number;
+};
+
+/**
+ * ApproveBody
+ */
+export type ApproveBody = {
+  /**
+   * Caption
+   */
+  caption: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
+};
+
+/**
+ * ApproveOut
+ */
+export type ApproveOut = {
+  item: AdminGeneratedItem;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
 };
 
 /**
@@ -1188,6 +1309,10 @@ export type ComponentHealth = {
    */
   free_tier?: boolean | null;
   /**
+   * generation only: state and pause reset time (None if not configured)
+   */
+  generation?: GenerationFacts | null;
+  /**
    * Latency Ms
    *
    * Time the check took; None if it could not run
@@ -1861,6 +1986,144 @@ export type FsrsSchedulerConfig = {
 };
 
 /**
+ * GeneratedItem
+ *
+ * One generated image or clip. Always AI-generated: the client shows the label chip, alt text and caption.
+ */
+export type GeneratedItem = {
+  /**
+   * Ai Generated
+   */
+  ai_generated?: true;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Duration S
+   */
+  duration_s?: number | null;
+  /**
+   * Error
+   *
+   * Stable error code of a failed or paused item
+   */
+  error?: string | null;
+  /**
+   * Height
+   */
+  height?: number | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "image" | "video";
+  /**
+   * Model
+   */
+  model: string;
+  /**
+   * Paused Until
+   *
+   * When a quota pause ends
+   */
+  paused_until?: string | null;
+  /**
+   * Prompt
+   *
+   * The scrubbed prompt that was sent (never the raw input)
+   */
+  prompt: string;
+  /**
+   * Published
+   *
+   * True once an admin approved it as a shared chapter figure
+   */
+  published: boolean;
+  /**
+   * Status
+   */
+  status: "queued" | "generating" | "ready" | "failed" | "paused";
+  /**
+   * Title
+   */
+  title?: string | null;
+  /**
+   * Url
+   *
+   * Signed URL (10 minutes) for a ready item; None otherwise
+   */
+  url?: string | null;
+  /**
+   * Width
+   */
+  width?: number | null;
+};
+
+/**
+ * GeneratedList
+ */
+export type GeneratedList = {
+  /**
+   * Items
+   */
+  items: Array<GeneratedItem>;
+  /**
+   * Next Before
+   *
+   * Pass as `before` for the next page
+   */
+  next_before?: string | null;
+};
+
+/**
+ * GenerationFacts
+ *
+ * generation only: the Space state as codes and numbers (a not-configured Space has `configured: false`).
+ */
+export type GenerationFacts = {
+  /**
+   * Resets At
+   *
+   * End of an active ZeroGPU quota pause
+   */
+  resets_at?: string | null;
+  /**
+   * State
+   */
+  state: "ready" | "paused" | "disabled";
+};
+
+/**
+ * GenerationStatusOut
+ */
+export type GenerationStatusOut = {
+  image: UsageOut;
+  /**
+   * Max Video Seconds
+   */
+  max_video_seconds: number;
+  /**
+   * Resets At
+   *
+   * End of the pause, or the next daily-cap reset
+   */
+  resets_at?: string | null;
+  /**
+   * State
+   */
+  state: "not_configured" | "disabled" | "ready" | "paused";
+  video: UsageOut;
+  /**
+   * Video Enabled
+   */
+  video_enabled: boolean;
+};
+
+/**
  * HTTPValidationError
  */
 export type HttpValidationError = {
@@ -1879,6 +2142,10 @@ export type HealthComponents = {
    */
   agent_runtime?: ComponentHealth | null;
   database: ComponentHealth;
+  /**
+   * Image/video generation on the naadi-gen Space: `configured: false` until HF_GEN_TOKEN is set. Never changes the overall status (a quota pause is expected, not an outage)
+   */
+  generation?: ComponentHealth | null;
   nvidia: ComponentHealth;
   openrouter: ComponentHealth;
   storage: ComponentHealth;
@@ -4773,6 +5040,24 @@ export type TrendPoint = {
 };
 
 /**
+ * UsageOut
+ */
+export type UsageOut = {
+  /**
+   * Cap
+   */
+  cap: number;
+  /**
+   * Remaining
+   */
+  remaining: number;
+  /**
+   * Used
+   */
+  used: number;
+};
+
+/**
  * ValidationError
  */
 export type ValidationError = {
@@ -5299,6 +5584,122 @@ export type ReindexEmbeddingsResponses = {
 };
 
 export type ReindexEmbeddingsResponse = ReindexEmbeddingsResponses[keyof ReindexEmbeddingsResponses];
+
+export type AdminListGeneratedApiAdminGeneratedGetData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Pending
+     *
+     * Only items not yet approved (the default list)
+     */
+    pending?: boolean;
+  };
+  url: "/api/admin/generated";
+};
+
+export type AdminListGeneratedApiAdminGeneratedGetErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * generated_not_found or section_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * generated_not_ready
+   */
+  409: ErrorResponse;
+  /**
+   * validation_error or generated_video_not_publishable
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code generation_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type AdminListGeneratedApiAdminGeneratedGetError =
+  AdminListGeneratedApiAdminGeneratedGetErrors[keyof AdminListGeneratedApiAdminGeneratedGetErrors];
+
+export type AdminListGeneratedApiAdminGeneratedGetResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminGeneratedList;
+};
+
+export type AdminListGeneratedApiAdminGeneratedGetResponse =
+  AdminListGeneratedApiAdminGeneratedGetResponses[keyof AdminListGeneratedApiAdminGeneratedGetResponses];
+
+export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostData = {
+  body: ApproveBody;
+  path: {
+    /**
+     * Media Id
+     *
+     * Generated media id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/admin/generated/{media_id}/approve";
+};
+
+export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * generated_not_found or section_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * generated_not_ready
+   */
+  409: ErrorResponse;
+  /**
+   * validation_error or generated_video_not_publishable
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code generation_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostError =
+  AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostErrors[keyof AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostErrors];
+
+export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses = {
+  /**
+   * Successful Response
+   */
+  200: ApproveOut;
+};
+
+export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse =
+  AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses[keyof AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses];
 
 export type GetAdminOverviewData = {
   body?: never;
@@ -6658,6 +7059,195 @@ export type GetActiveExamResponses = {
 };
 
 export type GetActiveExamResponse = GetActiveExamResponses[keyof GetActiveExamResponses];
+
+export type ListGeneratedApiGeneratedGetData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Kind
+     */
+    kind?: "image" | "video" | null;
+    /**
+     * Before
+     *
+     * Return items older than this timestamp
+     */
+    before?: string | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/generated";
+};
+
+export type ListGeneratedApiGeneratedGetErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code generation_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type ListGeneratedApiGeneratedGetError =
+  ListGeneratedApiGeneratedGetErrors[keyof ListGeneratedApiGeneratedGetErrors];
+
+export type ListGeneratedApiGeneratedGetResponses = {
+  /**
+   * Successful Response
+   */
+  200: GeneratedList;
+};
+
+export type ListGeneratedApiGeneratedGetResponse =
+  ListGeneratedApiGeneratedGetResponses[keyof ListGeneratedApiGeneratedGetResponses];
+
+export type DeleteGeneratedApiGeneratedMediaIdDeleteData = {
+  body?: never;
+  path: {
+    /**
+     * Media Id
+     *
+     * Generated media id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/generated/{media_id}";
+};
+
+export type DeleteGeneratedApiGeneratedMediaIdDeleteErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * generated_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code generation_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteGeneratedApiGeneratedMediaIdDeleteError =
+  DeleteGeneratedApiGeneratedMediaIdDeleteErrors[keyof DeleteGeneratedApiGeneratedMediaIdDeleteErrors];
+
+export type DeleteGeneratedApiGeneratedMediaIdDeleteResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteGeneratedApiGeneratedMediaIdDeleteResponse =
+  DeleteGeneratedApiGeneratedMediaIdDeleteResponses[keyof DeleteGeneratedApiGeneratedMediaIdDeleteResponses];
+
+export type GetGeneratedApiGeneratedMediaIdGetData = {
+  body?: never;
+  path: {
+    /**
+     * Media Id
+     *
+     * Generated media id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/generated/{media_id}";
+};
+
+export type GetGeneratedApiGeneratedMediaIdGetErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * generated_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code generation_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetGeneratedApiGeneratedMediaIdGetError =
+  GetGeneratedApiGeneratedMediaIdGetErrors[keyof GetGeneratedApiGeneratedMediaIdGetErrors];
+
+export type GetGeneratedApiGeneratedMediaIdGetResponses = {
+  /**
+   * Successful Response
+   */
+  200: GeneratedItem;
+};
+
+export type GetGeneratedApiGeneratedMediaIdGetResponse =
+  GetGeneratedApiGeneratedMediaIdGetResponses[keyof GetGeneratedApiGeneratedMediaIdGetResponses];
+
+export type GenerationStatusApiGenerationStatusGetData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/generation/status";
+};
+
+export type GenerationStatusApiGenerationStatusGetErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code generation_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GenerationStatusApiGenerationStatusGetError =
+  GenerationStatusApiGenerationStatusGetErrors[keyof GenerationStatusApiGenerationStatusGetErrors];
+
+export type GenerationStatusApiGenerationStatusGetResponses = {
+  /**
+   * Successful Response
+   */
+  200: GenerationStatusOut;
+};
+
+export type GenerationStatusApiGenerationStatusGetResponse =
+  GenerationStatusApiGenerationStatusGetResponses[keyof GenerationStatusApiGenerationStatusGetResponses];
 
 export type GetHealthData = {
   body?: never;

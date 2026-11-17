@@ -657,9 +657,26 @@ create table public.generated_media (
   duration_s numeric(5,2) check (duration_s is null or duration_s > 0),
   ai_generated boolean not null default true check (ai_generated),
   approved_for_publish boolean not null default false,
-  created_at timestamptz not null default now()
+  created_at timestamptz not null default now(),
+  -- 0022: lifecycle and approval. Rows are written by the API only (clients select and delete their own).
+  status text not null default 'queued' check (status in ('queued','generating','ready','failed','paused')),
+  error text check (error is null or char_length(error) <= 120),
+  approved_by uuid references auth.users(id) on delete set null,
+  approved_at timestamptz,
+  media_asset_id text references public.media_assets(id) on delete set null,
+  paused_until timestamptz,
+  constraint generated_media_ready_has_file check (status <> 'ready' or storage_path is not null),
+  constraint generated_media_prompt_len check (char_length(prompt) between 1 and 500),
+  constraint generated_media_pause_shape check (status <> 'paused' or paused_until is not null),
+  constraint generated_media_approval_shape check (
+    not approved_for_publish or (approved_at is not null and media_asset_id is not null)
+  )
 );
 create index generated_media_user_idx on public.generated_media (user_id, created_at desc);
+create index generated_media_user_day_idx on public.generated_media (user_id, kind, created_at desc)
+  where status in ('queued','generating','ready');
+create index generated_media_pending_idx on public.generated_media (created_at desc)
+  where status = 'ready' and not approved_for_publish;
 
 create table public.report_issues (
   id uuid primary key default gen_random_uuid(),

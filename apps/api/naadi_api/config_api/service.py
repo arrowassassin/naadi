@@ -19,7 +19,7 @@ import datetime as dt
 import json
 import time
 import uuid
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Collection, Mapping
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Literal
@@ -37,6 +37,15 @@ from .schemas import KEY_SPECS, FeatureFlags, UnknownConfigKey, cross_key_proble
 log = get_logger("naadi.app_config")
 
 CACHE_TTL_S = 60.0
+
+
+def _default_unavailable() -> Collection[str]:
+    """Flags whose backing secret is absent in this process (read through settings.py)."""
+    from ..settings import get_settings
+
+    return () if get_settings().generation_configured else ("generation",)
+
+
 CHANNEL = "naadi_app_config"
 DB_DEADLINE_S = 3.0
 
@@ -84,11 +93,15 @@ class AppConfigService:
         *,
         ttl_s: float = CACHE_TTL_S,
         clock: Callable[[], float] = time.monotonic,
+        unavailable: Callable[[], Collection[str]] | None = None,
     ) -> None:
         self._db = db
         self._config_dir = config_dir
         self._ttl = ttl_s
         self._clock = clock
+        # Flags that stay off whatever app_config says, because what they need is not configured (e.g. `generation`
+        # without HF_GEN_TOKEN). The default reads the process settings, so the Aegra host agrees with the API.
+        self._unavailable = unavailable or _default_unavailable
         self._cache: dict[str, tuple[float, ConfigRow]] = {}
         self._files: dict[str, Any] | None = None
         self._lock = asyncio.Lock()
@@ -203,10 +216,14 @@ class AppConfigService:
 
     async def feature_enabled(self, name: str, *, is_admin: bool, app_env: str) -> bool:
         flag = (await self.flags()).root.get(name)
-        return flag is not None and flag.on_for(is_admin=is_admin, app_env=app_env)
+        return flag is not None and name not in self._unavailable() and flag.on_for(is_admin=is_admin, app_env=app_env)
 
     async def resolved_features(self, *, is_admin: bool, app_env: str) -> dict[str, bool]:
-        return {k: f.on_for(is_admin=is_admin, app_env=app_env) for k, f in (await self.flags()).root.items()}
+        off = set(self._unavailable())
+        return {
+            k: k not in off and f.on_for(is_admin=is_admin, app_env=app_env)
+            for k, f in (await self.flags()).root.items()
+        }
 
     async def nav_for(self, *, is_admin: bool, app_env: str) -> list[dict[str, Any]]:
         on = await self.resolved_features(is_admin=is_admin, app_env=app_env)

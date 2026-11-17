@@ -17,6 +17,8 @@ from .config_api.routes import install_app_config
 from .courses import install_courses_routes
 from .db import Database
 from .errors import install_error_handlers
+from .generation.health import generation_check
+from .generation.routes import install_generation_routes
 from .health.checks import (
     database_check,
     nvidia_check,
@@ -65,6 +67,7 @@ def default_health_service(settings: Settings, db: Database) -> HealthService:
             "tavily": Check(
                 "tavily", tavily_check(settings, models.search.monthly_credit_guard, tavily_db_reader(db)), ttl_s=60.0
             ),
+            "generation": Check("generation", generation_check(settings, db), ttl_s=30.0),
         },
         version=settings.app_version,
         environment=settings.app_env,
@@ -134,6 +137,7 @@ def create_app(
     install_ink_routes(app)
     install_notes_routes(app)
     install_app_config(app, settings)
+    install_generation_routes(app)  # needs app.state.app_config
     app.include_router(seed_router)
     install_spa(app, settings.static_dir)
     # Chapter JSON is large and repetitive; Starlette's GZip skips text/event-stream, so SSE is untouched.

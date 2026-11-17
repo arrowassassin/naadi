@@ -84,6 +84,12 @@ class Settings(BaseSettings):
     openrouter_app_title: str = "Naadi"
     nvidia_api_key: SecretStr | None = None
     tavily_api_key: SecretStr | None = None
+    # Image/video generation (segment 15b): a fine-grained Hugging Face token with access to the private
+    # `naadi-gen` Space only. Until it is set, generation reports `not_configured` and its tools and UI stay hidden.
+    hf_gen_token: SecretStr | None = None
+    # Non-production stub (tests, e2e): generation runs against an in-process fake and an in-memory store, with no
+    # Space call. Ignored when APP_ENV=prod.
+    generation_fake: bool = False
     # Local search (segment 07): bring the embeddings index in line with the content when the API starts
     # (a background task; a no-op when nothing changed or the models are not cached).
     embeddings_autostart: bool = True
@@ -107,6 +113,7 @@ class Settings(BaseSettings):
         "openrouter_app_url",
         "nvidia_api_key",
         "tavily_api_key",
+        "hf_gen_token",
         "admin_emails",
         "app_base_url",
         mode="before",
@@ -136,6 +143,11 @@ class Settings(BaseSettings):
         return None
 
     @property
+    def generation_configured(self) -> bool:
+        """The Space is reachable only with the token; the stub stands in outside production."""
+        return self.hf_gen_token is not None or (self.generation_fake and self.app_env != "prod")
+
+    @property
     def is_local(self) -> bool:
         return self.app_env == "local"
 
@@ -149,6 +161,7 @@ class Settings(BaseSettings):
             self.openrouter_api_key,
             self.nvidia_api_key,
             self.tavily_api_key,
+            self.hf_gen_token,
             self.admin_emails,
         ):
             if s is not None:

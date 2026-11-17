@@ -158,6 +158,41 @@ describe("HealthPanel", () => {
     expect(card.queryByRole("list", { name: "Configured models" })).not.toBeInTheDocument();
   });
 
+  it("shows generation as not configured (not an outage) until the token is set", async () => {
+    const report = structuredClone(healthy);
+    (report.components as Record<string, Json>).generation = {
+      status: "ok",
+      latency_ms: null,
+      detail: "Not configured: HF_GEN_TOKEN",
+      checked_at: "2026-11-16T05:51:11.430770Z",
+      cached: false,
+      configured: false,
+    };
+    fetchMock.mockResolvedValue(jsonResponse(200, report));
+    renderPanel();
+    const card = within((await screen.findByRole("heading", { name: "Generation" })).closest("li") as HTMLElement);
+    expect(card.getByText("Not configured")).toBeInTheDocument();
+    expect(card.getByText(/HF_GEN_TOKEN/)).toBeInTheDocument();
+  });
+
+  it("shows a generation quota pause with its reset time", async () => {
+    const report = structuredClone(healthy);
+    (report.components as Record<string, Json>).generation = {
+      status: "degraded",
+      latency_ms: 4,
+      detail: "ZeroGPU quota paused",
+      checked_at: "2026-11-16T05:51:11.430770Z",
+      cached: false,
+      configured: true,
+      generation: { state: "paused", resets_at: "2026-11-17T00:00:00Z" },
+    };
+    fetchMock.mockResolvedValue(jsonResponse(200, report));
+    renderPanel();
+    const card = within((await screen.findByRole("heading", { name: "Generation" })).closest("li") as HTMLElement);
+    expect(card.getByText("Degraded")).toBeInTheDocument();
+    expect(card.getByText(/Quota paused until/)).toBeInTheDocument();
+  });
+
   it("labels the last result stale when a refetch fails, with the request id and a retry", async () => {
     fetchMock.mockResolvedValueOnce(jsonResponse(200, healthy));
     renderPanel();

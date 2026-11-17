@@ -34,6 +34,24 @@ sources:
     verified: true
     verified_url: null   # internal source; no external license to verify
 
+  - id: naadi-ai-generated
+    name: Naadi AI-generated illustrations
+    url: null
+    license: proprietary-naadi
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: false
+    attribution_template: "AI-generated illustration — not clinical reference"
+    notes: >-
+      Images and clips produced on the private naadi-gen Space (FLUX.1-schnell, Apache-2.0,
+      and LTX-Video). Naadi-owned output; never a clinical reference. Every item carries the AI
+      label (chip, alt text, caption). A generated item becomes a shared chapter figure only
+      after admin approval. allow_ai_ingest is false so generated media never enter RAG,
+      embeddings or prompts.
+    verified: true
+    verified_url: null   # internal source; the model licence is Apache-2.0 (FLUX.1-schnell)
+
   - id: youtube
     name: YouTube (official embedded player via YouTube API Services)
     url: https://www.youtube.com

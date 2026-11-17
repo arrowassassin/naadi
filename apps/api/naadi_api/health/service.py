@@ -22,7 +22,7 @@ log = get_logger("naadi.health")
 
 COMPONENTS = ("database", "storage", "openrouter", "nvidia", "tavily")
 # Reported only when registered (the Aegra host adds `agent_runtime`; a plain API process has no runtime).
-OPTIONAL_COMPONENTS = ("agent_runtime",)
+OPTIONAL_COMPONENTS = ("agent_runtime", "generation")
 FAILURE_TTL_CAP_S = 15.0
 
 
@@ -89,6 +89,7 @@ class HealthService:
             configured=configured,
             models=outcome.models,
             agent=outcome.agent,
+            generation=outcome.generation,
         )
 
     async def component(self, name: str) -> ComponentHealth:
@@ -122,6 +123,7 @@ class HealthService:
 def overall_status(comps: dict[str, ComponentHealth]) -> Status:
     if comps["database"].status == "down":
         return "down"
-    if any(c.status != "ok" for c in comps.values()):
+    # `generation` is optional and a ZeroGPU quota pause is expected, so it never degrades the whole app.
+    if any(c.status != "ok" for name, c in comps.items() if name != "generation"):
         return "degraded"
     return "ok"

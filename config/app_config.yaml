@@ -27,6 +27,7 @@ feature_flags:
   search: {enabled: true}         # S07 Search
   cards: {enabled: true}          # S10 Flashcards (FSRS review, create/edit; Builder link, Save as flashcard)
   assistant: {enabled: false}     # S14 (also always off in exam mode)
+  generation: {enabled: true}     # S15b image/video generation; stays off until HF_GEN_TOKEN is set (not configured)
   ink_lab: {enabled: true, audience: admins, everyone_outside_prod: true}
 
 # Top-level navigation, in display order. An item shows only while its feature flag is on, so the shell never

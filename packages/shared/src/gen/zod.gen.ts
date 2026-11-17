@@ -3,6 +3,35 @@
 import * as z from "zod";
 
 /**
+ * AdminGeneratedItem
+ */
+export const zAdminGeneratedItem = z.object({
+  ai_generated: z.literal(true).optional().default(true),
+  created_at: z.iso.datetime(),
+  duration_s: z.number().nullish(),
+  error: z.string().nullish(),
+  height: z.int().nullish(),
+  id: z.uuid(),
+  kind: z.enum(["image", "video"]),
+  model: z.string(),
+  paused_until: z.iso.datetime().nullish(),
+  prompt: z.string(),
+  published: z.boolean(),
+  status: z.enum(["queued", "generating", "ready", "failed", "paused"]),
+  title: z.string().max(200).nullish(),
+  url: z.string().nullish(),
+  user_ref: z.string(),
+  width: z.int().nullish(),
+});
+
+/**
+ * AdminGeneratedList
+ */
+export const zAdminGeneratedList = z.object({
+  items: z.array(zAdminGeneratedItem),
+});
+
+/**
  * AdminOverview
  */
 export const zAdminOverview = z.object({
@@ -50,6 +79,27 @@ export const zAnchorPos = z.object({
   revision: z.string().max(128).nullish(),
   suffix: z.string().max(64).optional().default(""),
   to: z.int().gte(0).lte(100000000),
+});
+
+/**
+ * ApproveBody
+ */
+export const zApproveBody = z.object({
+  caption: z.string().min(1).max(300),
+  section_id: z
+    .string()
+    .min(1)
+    .max(120)
+    .regex(/^[A-Za-z0-9._-]+$/),
+});
+
+/**
+ * ApproveOut
+ */
+export const zApproveOut = z.object({
+  item: zAdminGeneratedItem,
+  media_id: z.string(),
+  section_id: z.string(),
 });
 
 /**
@@ -512,6 +562,47 @@ export const zDueResponse = z.object({
   next_due: z.iso.datetime().nullable(),
   now: z.iso.datetime(),
   scheduler: zFsrsSchedulerConfig,
+});
+
+/**
+ * GeneratedItem
+ *
+ * One generated image or clip. Always AI-generated: the client shows the label chip, alt text and caption.
+ */
+export const zGeneratedItem = z.object({
+  ai_generated: z.literal(true).optional().default(true),
+  created_at: z.iso.datetime(),
+  duration_s: z.number().nullish(),
+  error: z.string().nullish(),
+  height: z.int().nullish(),
+  id: z.uuid(),
+  kind: z.enum(["image", "video"]),
+  model: z.string(),
+  paused_until: z.iso.datetime().nullish(),
+  prompt: z.string(),
+  published: z.boolean(),
+  status: z.enum(["queued", "generating", "ready", "failed", "paused"]),
+  title: z.string().max(200).nullish(),
+  url: z.string().nullish(),
+  width: z.int().nullish(),
+});
+
+/**
+ * GeneratedList
+ */
+export const zGeneratedList = z.object({
+  items: z.array(zGeneratedItem),
+  next_before: z.iso.datetime().nullish(),
+});
+
+/**
+ * GenerationFacts
+ *
+ * generation only: the Space state as codes and numbers (a not-configured Space has `configured: false`).
+ */
+export const zGenerationFacts = z.object({
+  resets_at: z.iso.datetime().nullish(),
+  state: z.enum(["ready", "paused", "disabled"]),
 });
 
 /**
@@ -1353,6 +1444,7 @@ export const zComponentHealth = z.object({
   configured: z.boolean().optional().default(true),
   detail: z.string().max(240),
   free_tier: z.boolean().nullish(),
+  generation: zGenerationFacts.nullish(),
   latency_ms: z.number().nullable(),
   models: z.array(zModelProbe).nullish(),
   quota: zQuota.nullish(),
@@ -1365,6 +1457,7 @@ export const zComponentHealth = z.object({
 export const zHealthComponents = z.object({
   agent_runtime: zComponentHealth.nullish(),
   database: zComponentHealth,
+  generation: zComponentHealth.nullish(),
   nvidia: zComponentHealth,
   openrouter: zComponentHealth,
   storage: zComponentHealth,
@@ -1867,6 +1960,27 @@ export const zTrendPoint = z.object({
 });
 
 /**
+ * UsageOut
+ */
+export const zUsageOut = z.object({
+  cap: z.int().gte(0),
+  remaining: z.int().gte(0),
+  used: z.int().gte(0),
+});
+
+/**
+ * GenerationStatusOut
+ */
+export const zGenerationStatusOut = z.object({
+  image: zUsageOut,
+  max_video_seconds: z.int(),
+  resets_at: z.iso.datetime().nullish(),
+  state: z.enum(["not_configured", "disabled", "ready", "paused"]),
+  video: zUsageOut,
+  video_enabled: z.boolean(),
+});
+
+/**
  * ValidationError
  */
 export const zValidationError = z.object({
@@ -2071,6 +2185,26 @@ export const zReindexEmbeddingsBody = zReindexRequest.nullable();
  * Successful Response
  */
 export const zReindexEmbeddingsResponse = zIndexStatus;
+
+export const zAdminListGeneratedApiAdminGeneratedGetQuery = z.object({
+  pending: z.boolean().optional().default(true),
+});
+
+/**
+ * Successful Response
+ */
+export const zAdminListGeneratedApiAdminGeneratedGetResponse = zAdminGeneratedList;
+
+export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostBody = zApproveBody;
+
+export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostPath = z.object({
+  media_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse = zApproveOut;
 
 /**
  * Successful Response
@@ -2332,6 +2466,40 @@ export const zCreateDiagnosticResponse = zDiagnosticOut;
  * Successful Response
  */
 export const zGetActiveExamResponse = zActiveExamOut;
+
+export const zListGeneratedApiGeneratedGetQuery = z.object({
+  kind: z.enum(["image", "video"]).nullish(),
+  before: z.iso.datetime().nullish(),
+  limit: z.int().gte(1).lte(60).optional().default(24),
+});
+
+/**
+ * Successful Response
+ */
+export const zListGeneratedApiGeneratedGetResponse = zGeneratedList;
+
+export const zDeleteGeneratedApiGeneratedMediaIdDeletePath = z.object({
+  media_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zDeleteGeneratedApiGeneratedMediaIdDeleteResponse = z.void();
+
+export const zGetGeneratedApiGeneratedMediaIdGetPath = z.object({
+  media_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetGeneratedApiGeneratedMediaIdGetResponse = zGeneratedItem;
+
+/**
+ * Successful Response
+ */
+export const zGenerationStatusApiGenerationStatusGetResponse = zGenerationStatusOut;
 
 /**
  * Successful Response

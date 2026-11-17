@@ -42,6 +42,16 @@ class AgentRuntimeFacts(BaseModel):
     last_cron_ping: datetime | None = Field(default=None, description="When the hourly system ping last recorded")
 
 
+GenerationHealthState = Literal["ready", "paused", "disabled"]
+
+
+class GenerationFacts(BaseModel):
+    """generation only: the Space state as codes and numbers (a not-configured Space has `configured: false`)."""
+
+    state: GenerationHealthState
+    resets_at: datetime | None = Field(default=None, description="End of an active ZeroGPU quota pause")
+
+
 class ComponentHealth(BaseModel):
     status: Status
     latency_ms: float | None = Field(description="Time the check took; None if it could not run")
@@ -55,6 +65,9 @@ class ComponentHealth(BaseModel):
     agent: AgentRuntimeFacts | None = Field(
         default=None, description="agent_runtime only: structured facts behind the status (None if the check failed)"
     )
+    generation: GenerationFacts | None = Field(
+        default=None, description="generation only: state and pause reset time (None if not configured)"
+    )
 
 
 class HealthComponents(BaseModel):
@@ -63,6 +76,12 @@ class HealthComponents(BaseModel):
     openrouter: ComponentHealth
     nvidia: ComponentHealth
     tavily: ComponentHealth
+    generation: ComponentHealth | None = Field(
+        default=None,
+        exclude_if=lambda v: v is None,
+        description="Image/video generation on the naadi-gen Space: `configured: false` until HF_GEN_TOKEN is set. "
+        "Never changes the overall status (a quota pause is expected, not an outage)",
+    )
     agent_runtime: ComponentHealth | None = Field(
         default=None,
         exclude_if=lambda v: v is None,

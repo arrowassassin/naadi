@@ -24,7 +24,7 @@ from supabase import AsyncClient, acreate_client
 from ..db import Database
 from ..llm import ProbeResult, probe_nvidia
 from ..settings import Settings
-from .models import AgentRuntimeFacts, ModelProbe, Quota, Status
+from .models import AgentRuntimeFacts, GenerationFacts, ModelProbe, Quota, Status
 
 TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 
@@ -37,6 +37,7 @@ class CheckOutcome:
     free_tier: bool | None = None
     models: list[ModelProbe] | None = None
     agent: AgentRuntimeFacts | None = None
+    generation: GenerationFacts | None = None
 
 
 CheckFn = Callable[[], Awaitable[CheckOutcome]]

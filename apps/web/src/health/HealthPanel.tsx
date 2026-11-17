@@ -7,7 +7,8 @@ import { useOnlineStatus } from "./useOnlineStatus";
 
 type Status = HealthResponse["status"];
 // `agent_runtime` is optional (only the Aegra host reports it) and has its own panel at /admin/agent.
-type ComponentName = Exclude<keyof HealthResponse["components"], "agent_runtime">;
+// `generation` is optional too: it shows "Not configured" until HF_GEN_TOKEN is set (segment 15b).
+type ComponentName = Exclude<keyof HealthResponse["components"], "agent_runtime" | "generation">;
 
 /** Display order: infrastructure first, then the two LLM providers side by side (NVIDIA spans two columns
  * from tablet up so its per-model list has room and the grid stays full). */
@@ -18,6 +19,8 @@ const COMPONENTS: Array<{ key: ComponentName; name: string; what: string; wide?:
   { key: "openrouter", name: "OpenRouter", what: "Free-model daily quota" },
   { key: "nvidia", name: "NVIDIA", what: "Model probes, hourly", wide: true },
 ];
+
+const GENERATION_CARD = { name: "Generation", what: "naadi-gen ZeroGPU Space" };
 
 const STATUS_WORD: Record<Status, string> = { ok: "OK", degraded: "Degraded", down: "Down" };
 const STATUS_TONE: Record<Status, ChipTone> = { ok: "done", degraded: "warning", down: "critical" };
@@ -114,9 +117,20 @@ function ComponentCard({ name, what, c, wide }: { name: string; what: string; c:
           <h3 className="m-0 font-display text-[1.125rem] font-bold">{name}</h3>
           <span className="font-mono text-label-sm text-text-3 uppercase tracking-[0.1em]">{what}</span>
         </div>
-        <StatusChip status={c.status} prefix={`${name} status`} />
+        {c.configured === false && c.status === "ok" ? (
+          <Chip tone="meta" icon={<X size={14} strokeWidth={2.8} />} srPrefix={`${name} status`}>
+            Not configured
+          </Chip>
+        ) : (
+          <StatusChip status={c.status} prefix={`${name} status`} />
+        )}
       </div>
       <p className="m-0 text-ui-sm break-words text-text-2">{c.detail}</p>
+      {c.generation?.state === "paused" && c.generation.resets_at ? (
+        <p className="m-0 text-ui-sm font-semibold text-amber">
+          Quota paused until {formatTime(c.generation.resets_at)}
+        </p>
+      ) : null}
       {c.quota ? <QuotaLine quota={c.quota} /> : null}
       {c.models && c.models.length > 0 ? <ModelList models={c.models} /> : null}
       <dl className="m-0 mt-auto flex flex-wrap gap-x-4 gap-y-1 font-mono text-label-sm text-text-3">
@@ -193,6 +207,9 @@ export function HealthPanel() {
           {COMPONENTS.map(({ key, name, what, wide }) => (
             <ComponentCard key={key} name={name} what={what} wide={wide} c={health.components[key]} />
           ))}
+          {health.components.generation ? (
+            <ComponentCard key="generation" {...GENERATION_CARD} c={health.components.generation} />
+          ) : null}
         </ul>
         <p className="m-0 font-mono text-label-sm text-text-3">
           {stale ? "Stale · " : ""}Version {health.version} · {health.environment} · last checked{" "}

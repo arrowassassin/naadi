@@ -8,6 +8,12 @@ import type {
   AcceptCoachSuggestionData,
   AcceptCoachSuggestionErrors,
   AcceptCoachSuggestionResponses,
+  AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostData,
+  AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostErrors,
+  AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses,
+  AdminListGeneratedApiAdminGeneratedGetData,
+  AdminListGeneratedApiAdminGeneratedGetErrors,
+  AdminListGeneratedApiAdminGeneratedGetResponses,
   ChangeBlockSectionData,
   ChangeBlockSectionErrors,
   ChangeBlockSectionResponses,
@@ -47,6 +53,9 @@ import type {
   DeleteCardData,
   DeleteCardErrors,
   DeleteCardResponses,
+  DeleteGeneratedApiGeneratedMediaIdDeleteData,
+  DeleteGeneratedApiGeneratedMediaIdDeleteErrors,
+  DeleteGeneratedApiGeneratedMediaIdDeleteResponses,
   DeleteNotebookData,
   DeleteNotebookErrors,
   DeleteNotebookResponses,
@@ -65,6 +74,9 @@ import type {
   FlagAttemptData,
   FlagAttemptErrors,
   FlagAttemptResponses,
+  GenerationStatusApiGenerationStatusGetData,
+  GenerationStatusApiGenerationStatusGetErrors,
+  GenerationStatusApiGenerationStatusGetResponses,
   GetActiveExamData,
   GetActiveExamErrors,
   GetActiveExamResponses,
@@ -107,6 +119,9 @@ import type {
   GetEmbeddingsStatusData,
   GetEmbeddingsStatusErrors,
   GetEmbeddingsStatusResponses,
+  GetGeneratedApiGeneratedMediaIdGetData,
+  GetGeneratedApiGeneratedMediaIdGetErrors,
+  GetGeneratedApiGeneratedMediaIdGetResponses,
   GetHealthData,
   GetHealthErrors,
   GetHealthResponses,
@@ -157,6 +172,9 @@ import type {
   ListBlocksData,
   ListBlocksErrors,
   ListBlocksResponses,
+  ListGeneratedApiGeneratedGetData,
+  ListGeneratedApiGeneratedGetErrors,
+  ListGeneratedApiGeneratedGetResponses,
   ListNotebooksData,
   ListNotebooksErrors,
   ListNotebooksResponses,
@@ -221,6 +239,11 @@ import type {
 import {
   zAcceptCoachSuggestionPath,
   zAcceptCoachSuggestionResponse,
+  zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostBody,
+  zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostPath,
+  zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse,
+  zAdminListGeneratedApiAdminGeneratedGetQuery,
+  zAdminListGeneratedApiAdminGeneratedGetResponse,
   zChangeBlockSectionPath,
   zChangeBlockSectionResponse,
   zConvertInkToTextBody,
@@ -248,6 +271,8 @@ import {
   zCreateWeakSpotBlockResponse,
   zDeleteCardPath,
   zDeleteCardResponse,
+  zDeleteGeneratedApiGeneratedMediaIdDeletePath,
+  zDeleteGeneratedApiGeneratedMediaIdDeleteResponse,
   zDeleteNotebookPath,
   zDeleteNotebookResponse,
   zDeleteNotePath,
@@ -259,6 +284,7 @@ import {
   zFlagAttemptBody,
   zFlagAttemptPath,
   zFlagAttemptResponse,
+  zGenerationStatusApiGenerationStatusGetResponse,
   zGetActiveExamResponse,
   zGetAdminOverviewResponse,
   zGetAppConfigHistoryPath,
@@ -285,6 +311,8 @@ import {
   zGetDueCardsQuery,
   zGetDueCardsResponse,
   zGetEmbeddingsStatusResponse,
+  zGetGeneratedApiGeneratedMediaIdGetPath,
+  zGetGeneratedApiGeneratedMediaIdGetResponse,
   zGetHealthResponse,
   zGetInkLayerPath,
   zGetInkLayerQuery,
@@ -310,6 +338,8 @@ import {
   zListAppConfigResponse,
   zListBlocksQuery,
   zListBlocksResponse,
+  zListGeneratedApiGeneratedGetQuery,
+  zListGeneratedApiGeneratedGetResponse,
   zListNotebooksResponse,
   zListNotesQuery,
   zListNotesResponse,
@@ -501,6 +531,67 @@ export const reindexEmbeddings = <ThrowOnError extends boolean = false>(
     headers: {
       "Content-Type": "application/json",
       ...options?.headers,
+    },
+  });
+
+/**
+ * Ready generated images waiting for approval (admin)
+ */
+export const adminListGeneratedApiAdminGeneratedGet = <ThrowOnError extends boolean = false>(
+  options?: Options<AdminListGeneratedApiAdminGeneratedGetData, ThrowOnError>,
+): RequestResult<
+  AdminListGeneratedApiAdminGeneratedGetResponses,
+  AdminListGeneratedApiAdminGeneratedGetErrors,
+  ThrowOnError
+> =>
+  (options?.client ?? client).get<
+    AdminListGeneratedApiAdminGeneratedGetResponses,
+    AdminListGeneratedApiAdminGeneratedGetErrors,
+    ThrowOnError
+  >({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zAdminListGeneratedApiAdminGeneratedGetQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zAdminListGeneratedApiAdminGeneratedGetResponse.parseAsync(data),
+    url: "/api/admin/generated",
+    ...options,
+  });
+
+/**
+ * Publish a generated image as a shared chapter figure (admin)
+ */
+export const adminApproveGeneratedApiAdminGeneratedMediaIdApprovePost = <ThrowOnError extends boolean = false>(
+  options: Options<AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostData, ThrowOnError>,
+): RequestResult<
+  AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses,
+  AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).post<
+    AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses,
+    AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostErrors,
+    ThrowOnError
+  >({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostBody,
+          path: zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) =>
+      await zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse.parseAsync(data),
+    url: "/api/admin/generated/{media_id}/approve",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
     },
   });
 
@@ -1141,6 +1232,110 @@ export const getActiveExam = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetActiveExamResponse.parseAsync(data),
     url: "/api/exam/active",
+    ...options,
+  });
+
+/**
+ * The caller's generated images and clips
+ */
+export const listGeneratedApiGeneratedGet = <ThrowOnError extends boolean = false>(
+  options?: Options<ListGeneratedApiGeneratedGetData, ThrowOnError>,
+): RequestResult<ListGeneratedApiGeneratedGetResponses, ListGeneratedApiGeneratedGetErrors, ThrowOnError> =>
+  (options?.client ?? client).get<
+    ListGeneratedApiGeneratedGetResponses,
+    ListGeneratedApiGeneratedGetErrors,
+    ThrowOnError
+  >({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListGeneratedApiGeneratedGetQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListGeneratedApiGeneratedGetResponse.parseAsync(data),
+    url: "/api/generated",
+    ...options,
+  });
+
+/**
+ * Delete a generated item and its private file
+ */
+export const deleteGeneratedApiGeneratedMediaIdDelete = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteGeneratedApiGeneratedMediaIdDeleteData, ThrowOnError>,
+): RequestResult<
+  DeleteGeneratedApiGeneratedMediaIdDeleteResponses,
+  DeleteGeneratedApiGeneratedMediaIdDeleteErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).delete<
+    DeleteGeneratedApiGeneratedMediaIdDeleteResponses,
+    DeleteGeneratedApiGeneratedMediaIdDeleteErrors,
+    ThrowOnError
+  >({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteGeneratedApiGeneratedMediaIdDeletePath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteGeneratedApiGeneratedMediaIdDeleteResponse.parseAsync(data),
+    url: "/api/generated/{media_id}",
+    ...options,
+  });
+
+/**
+ * One generated item (fresh signed URL)
+ */
+export const getGeneratedApiGeneratedMediaIdGet = <ThrowOnError extends boolean = false>(
+  options: Options<GetGeneratedApiGeneratedMediaIdGetData, ThrowOnError>,
+): RequestResult<GetGeneratedApiGeneratedMediaIdGetResponses, GetGeneratedApiGeneratedMediaIdGetErrors, ThrowOnError> =>
+  (options.client ?? client).get<
+    GetGeneratedApiGeneratedMediaIdGetResponses,
+    GetGeneratedApiGeneratedMediaIdGetErrors,
+    ThrowOnError
+  >({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetGeneratedApiGeneratedMediaIdGetPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetGeneratedApiGeneratedMediaIdGetResponse.parseAsync(data),
+    url: "/api/generated/{media_id}",
+    ...options,
+  });
+
+/**
+ * Generation state, reset time and today's usage for the caller
+ */
+export const generationStatusApiGenerationStatusGet = <ThrowOnError extends boolean = false>(
+  options?: Options<GenerationStatusApiGenerationStatusGetData, ThrowOnError>,
+): RequestResult<
+  GenerationStatusApiGenerationStatusGetResponses,
+  GenerationStatusApiGenerationStatusGetErrors,
+  ThrowOnError
+> =>
+  (options?.client ?? client).get<
+    GenerationStatusApiGenerationStatusGetResponses,
+    GenerationStatusApiGenerationStatusGetErrors,
+    ThrowOnError
+  >({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGenerationStatusApiGenerationStatusGetResponse.parseAsync(data),
+    url: "/api/generation/status",
     ...options,
   });
 

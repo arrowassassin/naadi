@@ -205,6 +205,7 @@ class SearchSection(_Open):
 class GenerationMedia(_Open):
     model: str
     max_per_user_per_day: int = Field(ge=0)
+    max_seconds: int | None = Field(default=None, ge=1, le=5, description="Video clips only")
 
 
 class GenerationSection(_Open):

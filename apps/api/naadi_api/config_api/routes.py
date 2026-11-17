@@ -264,7 +264,11 @@ async def config_history(
 
 def install_app_config(app: Any, settings: Settings) -> AppConfigService:
     """Attach the service (app.state.app_config) and the routes. The app lifespan calls start()/stop()."""
-    svc = AppConfigService(app.state.db, settings.config_dir)
+    svc = AppConfigService(
+        app.state.db,
+        settings.config_dir,
+        unavailable=lambda: () if settings.generation_configured else ("generation",),
+    )
     app.state.app_config = svc
     app.include_router(router)
     return svc

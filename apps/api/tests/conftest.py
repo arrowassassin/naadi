@@ -38,6 +38,8 @@ ENV_NAMES = [
     "OPENROUTER_APP_TITLE",
     "NVIDIA_API_KEY",
     "TAVILY_API_KEY",
+    "HF_GEN_TOKEN",
+    "GENERATION_FAKE",
     "ADMIN_EMAILS",
     "GOOGLE_OAUTH_CONFIGURED",
     "APP_ENV",
@@ -92,6 +94,7 @@ _SECRET_SETTINGS = (
     "openrouter_api_key",
     "nvidia_api_key",
     "tavily_api_key",
+    "hf_gen_token",
     "admin_emails",
 )
 

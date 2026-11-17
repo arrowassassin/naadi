@@ -33,6 +33,7 @@ dependencies = [
     "fastembed==0.9.1",
     "fsrs==6.3.3",
     "pillow==13.0.0",
+    "gradio-client==2.7.2",
 ]
 
 [dependency-groups]
@@ -74,7 +75,7 @@ plugins = ["pydantic.mypy"]
 packages = ["naadi_api"]
 
 [[tool.mypy.overrides]]
-module = ["supabase.*", "openrouter.*", "psycopg_pool.*", "aegra_api.*"]
+module = ["supabase.*", "openrouter.*", "psycopg_pool.*", "aegra_api.*", "gradio_client.*"]
 follow_untyped_imports = true
 
 [tool.pytest.ini_options]

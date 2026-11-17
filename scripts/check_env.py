@@ -67,6 +67,7 @@ KEYS: list[Key] = [
     Key("OPENROUTER_APP_TITLE", False, True),
     Key("TAVILY_API_KEY", True, True),
     Key("HF_TOKEN", True, True),
+    Key("HF_GEN_TOKEN", True, False),  # fine-grained, naadi-gen Space only; generation is hidden until it is set
     Key("HF_SPACE_ID", False, True),
     Key("HF_BACKUP_DATASET", False, True),
     Key("ADMIN_EMAILS", False, True),
@@ -438,6 +439,25 @@ def check_tavily(enabled: bool) -> None:
         report("FAIL", "Tavily basic search", f"{type(e).__name__}: {e}")
 
 
+def check_generation() -> None:
+    """The naadi-gen Space: token present and the Space visible to it. Metadata read only: no GPU quota is spent."""
+    token = get("HF_GEN_TOKEN")
+    if not token:
+        report("SKIP", "naadi-gen Space", "HF_GEN_TOKEN not set (optional: generation stays hidden as not configured)", False)
+        return
+    import yaml
+    from huggingface_hub import HfApi
+
+    try:
+        space_id = yaml.safe_load((ROOT / "config" / "models.yaml").read_text(encoding="utf-8"))["generation"]["space_id"]
+        info = HfApi(token=token).space_info(space_id)
+        hw = getattr(getattr(info, "runtime", None), "hardware", None)
+        report("PASS", "naadi-gen Space", f"{space_id} reachable with the generation token; stage {getattr(info.runtime, 'stage', '?')}; hardware {hw or '?'}")
+        report("PASS" if getattr(info, "private", False) else "WARN", "naadi-gen Space privacy", "private" if getattr(info, "private", False) else "Space is public: keep it private")
+    except Exception as e:  # noqa: BLE001
+        report("FAIL", "naadi-gen Space", f"{type(e).__name__}: {e}")
+
+
 def check_hf() -> None:
     token = get("HF_TOKEN")
     if not token:
@@ -504,6 +524,7 @@ def main() -> int:
     check_nvidia()
     check_tavily(not args.no_tavily)
     check_hf()
+    check_generation()
     check_optional()
 
     fails = [r for r in RESULTS if r[0] == "FAIL" and r[3]]

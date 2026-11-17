@@ -193,6 +193,15 @@ def checks(head: str) -> list[Check]:
             f" from unnest({_array(SELECT_ONLY_TABLES)}) t",
         ),
         Check(
+            "generated media: clients may only select and delete their own rows",
+            "select has_table_privilege('authenticated', 'public.generated_media', 'select,delete')"
+            " and not has_any_column_privilege('authenticated', 'public.generated_media', 'insert,update')"
+            " and not has_table_privilege('anon', 'public.generated_media', 'select')"
+            " and exists (select 1 from information_schema.columns where table_schema = 'public'"
+            " and table_name = 'generated_media' and column_name = 'media_asset_id')"
+            " as ok, '' as detail",
+        ),
+        Check(
             "handwriting OCR columns present (ocr_status, ocr_hash, ocr_at) and notes.body_text",
             "select count(*) = 4 as ok, count(*)::text as detail from information_schema.columns"
             " where table_schema = 'public' and (table_name, column_name) in (('ink_layers','ocr_status'),"

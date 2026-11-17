@@ -48,6 +48,174 @@
         "title": "ActiveExamOut",
         "type": "object"
       },
+      "AdminGeneratedItem": {
+        "properties": {
+          "ai_generated": {
+            "const": true,
+            "default": true,
+            "title": "Ai Generated",
+            "type": "boolean"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Stable error code of a failed or paused item",
+            "title": "Error"
+          },
+          "height": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Height"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "image",
+              "video"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "model": {
+            "title": "Model",
+            "type": "string"
+          },
+          "paused_until": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When a quota pause ends",
+            "title": "Paused Until"
+          },
+          "prompt": {
+            "description": "The scrubbed prompt that was sent (never the raw input)",
+            "title": "Prompt",
+            "type": "string"
+          },
+          "published": {
+            "description": "True once an admin approved it as a shared chapter figure",
+            "title": "Published",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "generating",
+              "ready",
+              "failed",
+              "paused"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Signed URL (10 minutes) for a ready item; None otherwise",
+            "title": "Url"
+          },
+          "user_ref": {
+            "description": "Short opaque owner reference (first 8 characters of the user id)",
+            "title": "User Ref",
+            "type": "string"
+          },
+          "width": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Width"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "status",
+          "prompt",
+          "model",
+          "published",
+          "created_at",
+          "user_ref"
+        ],
+        "title": "AdminGeneratedItem",
+        "type": "object"
+      },
+      "AdminGeneratedList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AdminGeneratedItem"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "AdminGeneratedList",
+        "type": "object"
+      },
       "AdminOverview": {
         "properties": {
           "admins_configured": {
@@ -232,6 +400,51 @@
           "quote"
         ],
         "title": "AnchorPos",
+        "type": "object"
+      },
+      "ApproveBody": {
+        "properties": {
+          "caption": {
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Caption",
+            "type": "string"
+          },
+          "section_id": {
+            "maxLength": 120,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._-]+$",
+            "title": "Section Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "section_id",
+          "caption"
+        ],
+        "title": "ApproveBody",
+        "type": "object"
+      },
+      "ApproveOut": {
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/AdminGeneratedItem"
+          },
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item",
+          "media_id",
+          "section_id"
+        ],
+        "title": "ApproveOut",
         "type": "object"
       },
       "AttemptIn": {
@@ -2045,6 +2258,17 @@
             "description": "OpenRouter only: account has no credit purchase",
             "title": "Free Tier"
           },
+          "generation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GenerationFacts"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "generation only: state and pause reset time (None if not configured)"
+          },
           "latency_ms": {
             "anyOf": [
               {
@@ -3158,6 +3382,264 @@
         "title": "FsrsSchedulerConfig",
         "type": "object"
       },
+      "GeneratedItem": {
+        "description": "One generated image or clip. Always AI-generated: the client shows the label chip, alt text and caption.",
+        "properties": {
+          "ai_generated": {
+            "const": true,
+            "default": true,
+            "title": "Ai Generated",
+            "type": "boolean"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Stable error code of a failed or paused item",
+            "title": "Error"
+          },
+          "height": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Height"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "image",
+              "video"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "model": {
+            "title": "Model",
+            "type": "string"
+          },
+          "paused_until": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When a quota pause ends",
+            "title": "Paused Until"
+          },
+          "prompt": {
+            "description": "The scrubbed prompt that was sent (never the raw input)",
+            "title": "Prompt",
+            "type": "string"
+          },
+          "published": {
+            "description": "True once an admin approved it as a shared chapter figure",
+            "title": "Published",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "generating",
+              "ready",
+              "failed",
+              "paused"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Signed URL (10 minutes) for a ready item; None otherwise",
+            "title": "Url"
+          },
+          "width": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Width"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "status",
+          "prompt",
+          "model",
+          "published",
+          "created_at"
+        ],
+        "title": "GeneratedItem",
+        "type": "object"
+      },
+      "GeneratedList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/GeneratedItem"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_before": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Pass as `before` for the next page",
+            "title": "Next Before"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "GeneratedList",
+        "type": "object"
+      },
+      "GenerationFacts": {
+        "description": "generation only: the Space state as codes and numbers (a not-configured Space has `configured: false`).",
+        "properties": {
+          "resets_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "End of an active ZeroGPU quota pause",
+            "title": "Resets At"
+          },
+          "state": {
+            "enum": [
+              "ready",
+              "paused",
+              "disabled"
+            ],
+            "title": "State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "state"
+        ],
+        "title": "GenerationFacts",
+        "type": "object"
+      },
+      "GenerationStatusOut": {
+        "properties": {
+          "image": {
+            "$ref": "#/components/schemas/UsageOut"
+          },
+          "max_video_seconds": {
+            "title": "Max Video Seconds",
+            "type": "integer"
+          },
+          "resets_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "End of the pause, or the next daily-cap reset",
+            "title": "Resets At"
+          },
+          "state": {
+            "enum": [
+              "not_configured",
+              "disabled",
+              "ready",
+              "paused"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "video": {
+            "$ref": "#/components/schemas/UsageOut"
+          },
+          "video_enabled": {
+            "title": "Video Enabled",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "state",
+          "image",
+          "video",
+          "max_video_seconds",
+          "video_enabled"
+        ],
+        "title": "GenerationStatusOut",
+        "type": "object"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -3186,6 +3668,17 @@
           },
           "database": {
             "$ref": "#/components/schemas/ComponentHealth"
+          },
+          "generation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ComponentHealth"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Image/video generation on the naadi-gen Space: `configured: false` until HF_GEN_TOKEN is set. Never changes the overall status (a quota pause is expected, not an outage)"
           },
           "nvidia": {
             "$ref": "#/components/schemas/ComponentHealth"
@@ -8446,6 +8939,32 @@
         "title": "TrendPoint",
         "type": "object"
       },
+      "UsageOut": {
+        "properties": {
+          "cap": {
+            "minimum": 0.0,
+            "title": "Cap",
+            "type": "integer"
+          },
+          "remaining": {
+            "minimum": 0.0,
+            "title": "Remaining",
+            "type": "integer"
+          },
+          "used": {
+            "minimum": 0.0,
+            "title": "Used",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "used",
+          "cap",
+          "remaining"
+        ],
+        "title": "UsageOut",
+        "type": "object"
+      },
       "ValidationError": {
         "properties": {
           "ctx": {
@@ -9372,6 +9891,226 @@
         "tags": [
           "search",
           "admin"
+        ]
+      }
+    },
+    "/api/admin/generated": {
+      "get": {
+        "operationId": "admin_list_generated_api_admin_generated_get",
+        "parameters": [
+          {
+            "description": "Only items not yet approved (the default list)",
+            "in": "query",
+            "name": "pending",
+            "required": false,
+            "schema": {
+              "default": true,
+              "description": "Only items not yet approved (the default list)",
+              "title": "Pending",
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminGeneratedList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "generated_not_found or section_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "generated_not_ready"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or generated_video_not_publishable"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code generation_unavailable)"
+          }
+        },
+        "summary": "Ready generated images waiting for approval (admin)",
+        "tags": [
+          "generation"
+        ]
+      }
+    },
+    "/api/admin/generated/{media_id}/approve": {
+      "post": {
+        "operationId": "admin_approve_generated_api_admin_generated__media_id__approve_post",
+        "parameters": [
+          {
+            "description": "Generated media id",
+            "in": "path",
+            "name": "media_id",
+            "required": true,
+            "schema": {
+              "description": "Generated media id",
+              "format": "uuid",
+              "title": "Media Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApproveBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApproveOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "generated_not_found or section_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "generated_not_ready"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or generated_video_not_publishable"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code generation_unavailable)"
+          }
+        },
+        "summary": "Publish a generated image as a shared chapter figure (admin)",
+        "tags": [
+          "generation"
         ]
       }
     },
@@ -11898,6 +12637,332 @@
         "summary": "The caller's timed/exam session that is running, paused or on a break, if any",
         "tags": [
           "qbank"
+        ]
+      }
+    },
+    "/api/generated": {
+      "get": {
+        "operationId": "list_generated_api_generated_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "kind",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "image",
+                    "video"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Kind"
+            }
+          },
+          {
+            "description": "Return items older than this timestamp",
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Return items older than this timestamp",
+              "title": "Before"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 24,
+              "maximum": 60,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code generation_unavailable)"
+          }
+        },
+        "summary": "The caller's generated images and clips",
+        "tags": [
+          "generation"
+        ]
+      }
+    },
+    "/api/generated/{media_id}": {
+      "delete": {
+        "operationId": "delete_generated_api_generated__media_id__delete",
+        "parameters": [
+          {
+            "description": "Generated media id",
+            "in": "path",
+            "name": "media_id",
+            "required": true,
+            "schema": {
+              "description": "Generated media id",
+              "format": "uuid",
+              "title": "Media Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "generated_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code generation_unavailable)"
+          }
+        },
+        "summary": "Delete a generated item and its private file",
+        "tags": [
+          "generation"
+        ]
+      },
+      "get": {
+        "operationId": "get_generated_api_generated__media_id__get",
+        "parameters": [
+          {
+            "description": "Generated media id",
+            "in": "path",
+            "name": "media_id",
+            "required": true,
+            "schema": {
+              "description": "Generated media id",
+              "format": "uuid",
+              "title": "Media Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedItem"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "generated_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code generation_unavailable)"
+          }
+        },
+        "summary": "One generated item (fresh signed URL)",
+        "tags": [
+          "generation"
+        ]
+      }
+    },
+    "/api/generation/status": {
+      "get": {
+        "operationId": "generation_status_api_generation_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationStatusOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code generation_unavailable)"
+          }
+        },
+        "summary": "Generation state, reset time and today's usage for the caller",
+        "tags": [
+          "generation"
         ]
       }
     },

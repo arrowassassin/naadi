@@ -77,7 +77,7 @@ def test_user_b_cannot_touch_user_a_rows(
 
     with as_user(pg, user_b) as conn:
         assert _count(conn, table.name, user_a) == 0, "B can see A's rows"
-        if table.name == "blocks" or table.name in SELECT_ONLY:
+        if table.name == "blocks" or table.name in SELECT_ONLY or table.name in CREATE_BLOCKED:
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 _update(conn, table, user_a)
         else:
@@ -89,7 +89,7 @@ def test_user_b_cannot_touch_user_a_rows(
             assert _delete(conn, table, user_a) == 0, "B deleted A's rows"
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             insert_row(conn, table.name, table.row(user_a, shared))
-    if table.name in API_WRITTEN or table.name in SELECT_ONLY or table.name in API_ROWS:
+    if table.name in API_WRITTEN or table.name in SELECT_ONLY or table.name in API_ROWS or table.name in CREATE_BLOCKED:
         # an item needs its own user's layer, a section its own user's block, a plan day its own user's plan
         parent = {"ink_items": "ink_layers", "block_sections": "blocks", "study_plan_days": "study_plans"}.get(
             table.name
@@ -99,7 +99,12 @@ def test_user_b_cannot_touch_user_a_rows(
         insert_row(pg, table.name, table.row(user_b, shared))  # written by the API, never by the client
     with as_user(pg, user_b) as conn:
         # B also cannot move one of its own rows over to A.
-        if table.name not in API_WRITTEN and table.name not in SELECT_ONLY and table.name not in API_ROWS:
+        if (
+            table.name not in API_WRITTEN
+            and table.name not in SELECT_ONLY
+            and table.name not in API_ROWS
+            and table.name not in CREATE_BLOCKED
+        ):
             insert_row(conn, table.name, table.row(user_b, shared))
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             conn.execute(
@@ -133,6 +138,17 @@ def test_user_a_can_select_update_delete_insert_own_rows(
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 insert_row(conn, table.name, table.row(user_a, shared))
             assert _count(conn, table.name, user_a) == 1
+        return
+    if table.name in CREATE_BLOCKED:
+        with as_user(pg, user_a) as conn:
+            assert _count(conn, table.name, user_a) == 1
+            for write in (_update,):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    write(conn, table, user_a)
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table.name, table.row(user_a, shared))
+            assert _delete(conn, table, user_a) == 1  # the student may delete their own row
+            assert _count(conn, table.name, user_a) == 0
         return
     with as_user(pg, user_a) as conn:
         assert _count(conn, table.name, user_a) == 1
@@ -172,6 +188,9 @@ SELECT_ONLY = (
     "notes",
     "notebooks",
 )
+# Generated media (0022): the API creates and updates rows (it counts the daily caps from them and writes status
+# and approval); students may read and delete their own.
+CREATE_BLOCKED = ("generated_media",)
 # Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
 # plan day's score notes), never insert, delete or re-point them.
 API_ROWS = ("study_plan_days", "coach_suggestions")
@@ -284,15 +303,6 @@ def test_anon_has_no_access_to_user_tables(
 
 # (table, row the student may insert, statements that must be refused) for every backend-only column.
 BACKEND_ONLY: list[tuple[str, dict[str, object], list[str], list[dict[str, object]]]] = [
-    (
-        "generated_media",
-        {"kind": "image", "prompt": "p", "model": "m"},
-        [
-            "update public.generated_media set approved_for_publish = true",
-            "update public.generated_media set ai_generated = false",
-        ],
-        [{"approved_for_publish": True}],
-    ),
     (
         "report_issues",
         {"ref_type": "other", "body": "b"},
