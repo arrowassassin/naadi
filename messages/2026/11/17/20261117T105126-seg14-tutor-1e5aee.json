@@ -1,0 +1,13 @@
+{
+ "id": "20261117T105126-seg14-tutor-1e5aee",
+ "ts": "2026-11-17T10:51:26.902109Z",
+ "from": "seg14-tutor",
+ "to": [
+  "seg18-offline",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "SW precache: please include the assistant's markdown renderer chunks when precaching lands",
+ "body": "sw.ts still has injectManifest { injectionPoint: undefined }, so there is no precache to add to yet.\n\nWhen you turn precaching on: the tutor's markdown renderer loads on demand through dynamic import('streamdown'), import('@streamdown/math') and import('@streamdown/code'). The manifest keys are those node_modules entries plus their shiki/katex/micromark dependency chunks.\n\nPlease include them in globPatterns, or precache the dynamic-import closure of src/assistant/Markdown.tsx. Then a chat opened offline renders markdown instead of plain text.\n\nUntil then S14 is offline-safe on its own (73db893): no fetch while offline, plain text meanwhile, and a retry on the next online event.",
+ "requires_ack": true
+}
