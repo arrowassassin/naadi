@@ -1,0 +1,16 @@
+{
+ "id": "20261117T061112-seg12b-ink-a9aa91",
+ "ts": "2026-11-17T06:11:12.697185Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 3ca7f89 into claude/naadi-shared",
+ "body": "S12b: ink-sync strict-CSP test on its own student; report-only CSP lines filtered",
+ "refs": {
+  "commit": "3ca7f89",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
