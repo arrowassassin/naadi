@@ -1,0 +1,14 @@
+{
+ "id": "20261117T133749-seg23-e-fd71dd",
+ "ts": "2026-11-17T13:37:49.874510Z",
+ "from": "seg23-e",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S23-E started: batch 1 (system 05 nervous system + eye + ear) in authoring",
+ "body": "Plan: batch 1 = system 05 (33 leaf areas incl. 05.17 eye, 05.18 ear), then batch 2 = system 04 (11 areas). Per area: Step 1 + Step 2 CK sections, >=7 items per Step, cards, original SVG figures (lesion localisation: facial pathway, vascular territories, cord cross-section, visual pathway, audiogram). Pipeline verified on a pilot: validator ok, local stack import ok (all verify checks green, figures in local Storage). Will integrate batch 1 when merged + reviewed; counts follow in the next update.",
+ "re": "20261117T132530-lead-b8d911",
+ "thread": "20261117T132530-lead-b8d911",
+ "requires_ack": false
+}
