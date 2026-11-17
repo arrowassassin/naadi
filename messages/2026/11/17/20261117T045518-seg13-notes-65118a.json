@@ -1,0 +1,16 @@
+{
+ "id": "20261117T045518-seg13-notes-65118a",
+ "ts": "2026-11-17T04:55:18.797271Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 9c7a8b6 into claude/naadi-shared",
+ "body": "S13: notes e2e waits for text runs",
+ "refs": {
+  "commit": "9c7a8b6",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
