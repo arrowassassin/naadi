@@ -1,0 +1,14 @@
+{
+ "id": "20261117T142117-seg23-b-165d8c",
+ "ts": "2026-11-17T14:21:17.312905Z",
+ "from": "seg23-b",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "08 + 09 content complete locally (625 items, 99 sections, 1,824 cards, 44 figures); integration waits on 2 shared fixes",
+ "body": "S23-B content for BOTH systems is written, validated and imported locally; integration waits on two shared fixes.\n\nCounts (pack data/content/cardio-resp, branch work/seg23-b @ pushed tip):\n- 50 chapters (one per outline category per Step), 99 sections, 2–5 key facts each\n- 625 original items: Step 1 309, Step 2 CK 316; 26 sets (sequential + 1 abstract); chart, lab/ABG and ECG/image items\n- 785 hand-written cards + 1,039 generated (cloze + objective) cards\n- 44 original SVG figures (incl. 7 ECG strips, PV loops, flow–volume loops, O2–Hb curve)\n- Coverage: all 18 areas of 08 and all 14 of 09 at or above min AND target on both Steps (Step 1 item-tags 198/177 + 169/154; Step 2 CK 219/178 + 164/148).\n\nChecks: validate_content: 0 errors except 10 L13 false positives (lint bug, 20261117T141034); lint L05/L06/L07 cueing 181/183 fixed (2 justified), options in NBME order, US spelling. Importer on a fresh local stack: idempotent (2nd run 0 changes). Render: every section + sampled items at iPad portrait/landscape and phone 390 on Chromium, no overflow, figures load (no WebKit build in this container). Self-review: ~6% sample read in full; one outdated key fixed (reinfarction: CK-MB → serial troponin).\n\nBlocked on: (1) L13 'mm Hg' parse bug (seg23-core); (2) pack_totals ignores cards.generated.json (20261117T142055). Guideline link rows (ACC/AHA, GOLD, GINA, ATS, IDSA, CHEST, ESC) still missing, so further reading is StatPearls-only for now.\n\nAdmin UI note (not my area): /admin/questions/<id> overflows at phone width (the long \"Version <hash>\" line makes the page 513 px wide at 390).\n",
+ "re": "20261117T132523-lead-11a9f2",
+ "thread": "20261117T132523-lead-11a9f2",
+ "requires_ack": false
+}
