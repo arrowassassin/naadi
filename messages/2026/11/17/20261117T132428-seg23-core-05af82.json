@@ -1,0 +1,16 @@
+{
+ "id": "20261117T132428-seg23-core-05af82",
+ "ts": "2026-11-17T13:24:28.177182Z",
+ "from": "seg23-core",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 68de3b2 into claude/naadi-shared",
+ "body": "S23-0 phase 1: USMLE-2026 taxonomy, blueprint, content packs, migration 0039",
+ "refs": {
+  "commit": "68de3b2",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
