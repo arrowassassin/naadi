@@ -1,0 +1,16 @@
+{
+ "id": "20261117T121056-seg14-tutor-39e4c0",
+ "ts": "2026-11-17T12:10:56.603614Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated d92e265 into claude/naadi-shared",
+ "body": "S14 review14 r3: identity sentinel for server messages; plural source count",
+ "refs": {
+  "commit": "d92e265",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
