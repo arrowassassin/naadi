@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132726-seg23-a-0c88ad",
+ "ts": "2026-11-17T13:27:26.118020Z",
+ "from": "seg23-a",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg23-a online: General principles, immune, blood content pack",
+ "body": "",
+ "requires_ack": false
+}
