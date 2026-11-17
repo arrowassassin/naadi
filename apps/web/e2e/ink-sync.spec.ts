@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
@@ -10,7 +10,6 @@ import {
   snapSegment,
   test,
 } from "./fixtures";
-import { signedInState } from "./session";
 
 /**
  * Segment 12b: ink persistence and cross-device sync against the real API and database. Each test signs in its own
@@ -46,6 +45,8 @@ function consoleOf(page: Page) {
     if (m.type() !== "error") return;
     const text = m.text();
     if (tool > 0 && text.startsWith("Refused to apply a stylesheet")) return;
+    // Trusted Types ship report-only (security.py): csp.spec.ts collects those reports; they are not errors.
+    if (/\[Report Only\]|report-only|Report-Only/i.test(text)) return;
     const where = m.location().url ?? "";
     if (allowed.some((a) => text.includes(a) || where.includes(a))) return;
     errors.push(text);
@@ -701,17 +702,27 @@ test.describe("on the production server (strict CSP)", () => {
   test.skip(!PROD, "needs the local APP_ENV=prod API");
 
   test("section ink loads, draws and saves with zero console errors", async ({ browser, baseURL }, info) => {
-    // The shared student's session moved to the https prod origin (see ink-gate.spec.ts).
-    const file = await signedInState(browser, baseURL as string, "student");
-    const state = JSON.parse(readFileSync(file, "utf8")) as {
-      origins: { origin: string; localStorage: { name: string; value: string }[] }[];
-    };
+    // Its own throwaway student (a copy of the shared student's session dies as soon as another test refreshes
+    // that session: refresh tokens rotate). Signed in on the test origin, then the session moves to the https
+    // prod origin; the first context is closed first, so nothing else ever refreshes it.
+    const email = emailFor(info, "prod");
+    runUsers(["delete", "--email", email]);
+    const signIn = await browser.newContext({ ...info.project.use, baseURL });
+    let origins: { origin: string; localStorage: { name: string; value: string }[] }[];
+    try {
+      const p = await signIn.newPage();
+      await p.goto(callbackPath(toLink(runUsers(["link", "--email", email])), "/"));
+      await p.waitForURL((u) => !u.pathname.startsWith("/auth/"), { timeout: 30_000 });
+      origins = (await signIn.storageState()).origins;
+    } finally {
+      await signIn.close();
+    }
     const origin = new URL(PROD as string).origin;
     const ctx = await browser.newContext({
       ...info.project.use,
       baseURL: PROD,
       ignoreHTTPSErrors: true,
-      storageState: { cookies: [], origins: state.origins.map((o) => ({ ...o, origin })) },
+      storageState: { cookies: [], origins: origins.map((o) => ({ ...o, origin })) },
     });
     try {
       const page = await ctx.newPage();
@@ -729,6 +740,7 @@ test.describe("on the production server (strict CSP)", () => {
       expect(c.errors).toEqual([]);
     } finally {
       await ctx.close();
+      runUsers(["delete", "--email", email]);
     }
   });
 });
