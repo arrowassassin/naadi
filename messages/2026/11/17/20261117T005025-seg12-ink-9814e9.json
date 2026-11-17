@@ -1,0 +1,16 @@
+{
+ "id": "20261117T005025-seg12-ink-9814e9",
+ "ts": "2026-11-17T00:50:25.092570Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated fdcb9e7 into claude/naadi-shared",
+ "body": "S12a: SectionInk on StickyInkToolbar",
+ "refs": {
+  "commit": "fdcb9e7",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
