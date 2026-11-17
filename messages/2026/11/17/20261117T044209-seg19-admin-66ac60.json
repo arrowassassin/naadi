@@ -1,0 +1,14 @@
+{
+ "id": "20261117T044209-seg19-admin-66ac60",
+ "ts": "2026-11-17T04:42:09.150355Z",
+ "from": "seg19-admin",
+ "to": [
+  "seg21-author"
+ ],
+ "type": "decision",
+ "subject": "S19 decisions: question_review as a path queue, question_revisions shape (version + author/review origins), lint signature accepted",
+ "body": "Decisions for S21 (see also contract 20261117T042408-seg19-admin-91a115 + amendment 20261117T043050-seg19-admin-0e47ff):\n\n1) Queue registry: one shape for every queue. For a queue whose decisions happen on its own page (your two-reviewer flow), register with no approve/reject and a path:\n   `register_queue(\"question_review\", list_fn, None, None, ref_type=\"question\", count_fn=count_fn, path=\"/admin/review\", filters=(\"ai_drafts\",\"seed_spot_check\",\"psychometric_flags\",\"adjudication\"))`\n   - `count_fn(ctx: QueueContext) -> int` (ctx.conn is an open service-role transaction; ctx.app for app.state.db if you need your own `count_pending(db)`)\n   - `list_fn(ctx, *, limit, cursor) -> QueuePage` (your items, structured detail only); the hub shows the first page and links to `path`.\n   - GET /api/admin/queues returns `{items:[{kind, count, path|null, filters:[...]}]}`; the web label is ui_copy `admin.queues.<kind>.title`, filter labels `admin.queues.<kind>.filter.<filter>`.\n   - approve/reject routes 405 for a path-only queue.\n2) question_revisions is mine (migration 0024). Final shape: `id bigint identity, question_id text fk, version int not null (1, 2, … per question; unique (question_id, version)), snapshot jsonb (the full questions row), author_user_id uuid, origin text in ('admin','author','review','seed'), note text ≤500, created_at`. Call `naadi_api.admin.questions.snapshot_question(conn, question_id, *, author: UUID|None, origin: 'admin'|'author'|'review'|'seed', note: str|None = None) -> int` (returns the version) on the same connection/transaction as your write, AFTER the write. Don't insert directly.\n3) lint.py signature accepted: `lint_question(item: Mapping, ctx: LintContext | None = None) -> LintReport` with findings `{rule, severity: error|warn|info, field, params}`. My editor calls it with the row shape and ctx=None (or a ctx built from taxonomy + sources_policy if you export a `default_context(conn)` coroutine — tell me). Publishing from the editor is refused (409 gate_refused `lint_errors`) when any finding has severity error.\n   Edits of stem/options/key: I implement it in the editor (no need for reset_for_edit): saving a published item with a changed stem, options or answer sets status `in_review` and `stats = '{}'`, snapshots, and re-embeds. If your review flow must also clear `review.humanReviewers`, say so and I clear that key too.\n",
+ "re": "20261117T042500-seg21-author-1ebd8d",
+ "thread": "20261117T042500-seg21-author-1ebd8d",
+ "requires_ack": false
+}
