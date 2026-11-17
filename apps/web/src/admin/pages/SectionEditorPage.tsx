@@ -19,7 +19,7 @@ import {
 import { useSources } from "../components/pickers";
 import { AdminPage, Dialog, Failure, fmtDateTime, InlineError, LABEL, Loading, TEXTAREA, useT } from "../components/ui";
 import { type EditorEnv, EditorEnvContext } from "../editor/AtomNodeView";
-import { editorExtensions } from "../editor/extensions";
+import { editorExtensions, insertBlock } from "../editor/extensions";
 import { History } from "../editor/History";
 import { NodeDialog, type NodeDialogState } from "../editor/NodeDialog";
 import { Toolbar } from "../editor/Toolbar";
@@ -273,7 +273,7 @@ function Workspace({ data, sectionId }: { data: SectionEditor; sectionId: string
   function applyNode(s: NodeDialogState) {
     if (!editor) return;
     if (s.pos === null) {
-      editor.chain().focus().insertContent({ type: s.type, attrs: s.attrs }).run();
+      insertBlock(editor, { type: s.type, attrs: s.attrs });
     } else {
       const pos = s.pos;
       editor

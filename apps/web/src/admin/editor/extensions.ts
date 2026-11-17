@@ -1,5 +1,5 @@
 import { contentExtensions } from "@naadi/shared/content";
-import { type AnyExtension, type Extensions, ReactNodeViewRenderer } from "@tiptap/react";
+import { type AnyExtension, type Editor, type Extensions, ReactNodeViewRenderer } from "@tiptap/react";
 import { AtomNodeView } from "./AtomNodeView";
 
 /**
@@ -67,4 +67,14 @@ export function editorExtensions(opts: { nodeViews?: boolean } = {}): Extensions
     }
     return withEditorDom(ext);
   });
+}
+
+/**
+ * Insert a block at the cursor. When a block is selected (the figure or video just inserted is), the new block goes
+ * after it: TipTap's insertContent would replace the selected node.
+ */
+export function insertBlock(editor: Editor, content: { type: string; attrs?: Record<string, unknown> }): void {
+  const sel = editor.state.selection;
+  if ("node" in sel && sel.node) editor.chain().focus().insertContentAt(sel.to, content).run();
+  else editor.chain().focus().insertContent(content).run();
 }

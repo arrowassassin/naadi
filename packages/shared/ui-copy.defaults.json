@@ -3920,7 +3920,7 @@
     "admin.revision.origin.review": "Review",
     "admin.revision.origin.rollback": "Restored",
     "admin.revision.origin.seed": "Seed import",
-    "admin.revision.rollback": "Restore as draft",
+    "admin.revision.rollback": "Restore and publish",
     "admin.revision.show_diff": "Show changes",
     "admin.revision.title": "History",
     "admin.revision.version": "Version {n}",

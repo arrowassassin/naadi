@@ -81,13 +81,7 @@ export function MediaPicker({
           onChange={setKind}
         />
       ) : null}
-      <form
-        className="relative flex"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setQ(draft.trim());
-        }}
-      >
+      <search className="relative flex">
         <label className="flex w-full">
           <span className="sr-only">{t("admin.media.search")}</span>
           <Search
@@ -100,10 +94,17 @@ export function MediaPicker({
             value={draft}
             placeholder={t("admin.media.search")}
             onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={(e) => {
+              // This picker sits inside the dialog's own form: Enter searches, it never submits that form.
+              if (e.key === "Enter") {
+                e.preventDefault();
+                setQ(draft.trim());
+              }
+            }}
             className={cx(INPUT, "pl-10")}
           />
         </label>
-      </form>
+      </search>
       {list.isPending ? (
         <Loading rows={2} />
       ) : list.isError ? (
@@ -180,13 +181,7 @@ export function QuestionPicker({
   const items = list.data?.pages.flatMap((p) => p.items) ?? [];
   return (
     <div className="flex flex-col gap-4">
-      <form
-        className="relative flex"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setQ(draft.trim());
-        }}
-      >
+      <search className="relative flex">
         <label className="flex w-full">
           <span className="sr-only">{t("admin.questions.search")}</span>
           <Search
@@ -199,10 +194,17 @@ export function QuestionPicker({
             value={draft}
             placeholder={t("admin.questions.search")}
             onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={(e) => {
+              // This picker sits inside the dialog's own form: Enter searches, it never submits that form.
+              if (e.key === "Enter") {
+                e.preventDefault();
+                setQ(draft.trim());
+              }
+            }}
             className={cx(INPUT, "pl-10")}
           />
         </label>
-      </form>
+      </search>
       {list.isPending ? (
         <Loading rows={2} />
       ) : list.isError ? (

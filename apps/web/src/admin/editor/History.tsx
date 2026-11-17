@@ -97,7 +97,7 @@ function RevisionRow({
           {t(open ? "admin.revision.hide_diff" : "admin.revision.show_diff")}
         </Button>
         {isLive ? null : (
-          <Button icon={<RotateCcw size={16} />} disabled={busy} onClick={() => onRollback(rev)}>
+          <Button icon={<RotateCcw size={16} />} disabled={busy} onClick={() => onRollback(rev)} data-rollback={rev.id}>
             {t("admin.revision.rollback")}
           </Button>
         )}

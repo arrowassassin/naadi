@@ -10,7 +10,7 @@ import { Editor, getSchema } from "@tiptap/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { ContentRenderer } from "../../content/ContentRenderer";
 import { RENDERED_NODE_TYPES } from "../../content/types";
-import { ATOM_NODE_TYPES, editorExtensions } from "./extensions";
+import { ATOM_NODE_TYPES, editorExtensions, insertBlock } from "./extensions";
 import { validateAtom } from "./NodeDialog";
 import { invalidPath } from "./useAutosave";
 
@@ -146,6 +146,16 @@ describe("editor ↔ ContentRenderer node parity", () => {
     expect(e.view.dom.querySelector("[style]")).toBeNull();
     expect(e.view.dom.querySelector("td[data-align='center']")).not.toBeNull();
     expect(ContentDocSchema.safeParse(e.getJSON()).success).toBe(true);
+  });
+
+  it("inserting blocks one after another keeps every block (a selected block is never replaced)", () => {
+    const e = editor();
+    for (const type of ATOM_NODE_TYPES) insertBlock(e, { type, attrs: ATOM_ATTRS[type] });
+    const types = (e.getJSON().content ?? []).map((n) => n.type);
+    for (const type of ATOM_NODE_TYPES) expect(types, type).toContain(type);
+    expect(types.filter((t) => (ATOM_NODE_TYPES as readonly string[]).includes(t as string))).toEqual([
+      ...ATOM_NODE_TYPES,
+    ]);
   });
 
   it("the attribute dialog accepts exactly what the schema accepts", () => {

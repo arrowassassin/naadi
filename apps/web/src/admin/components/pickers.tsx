@@ -167,6 +167,10 @@ export function TaxonomyPicker({
               type="search"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
+              // Inside a form: Enter filters the list, it never submits the form.
+              onKeyDown={(e) => {
+                if (e.key === "Enter") e.preventDefault();
+              }}
               placeholder={t("admin.field.taxonomy_filter")}
               className={cx(INPUT, "pl-10")}
             />
