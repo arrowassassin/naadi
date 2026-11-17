@@ -1,0 +1,16 @@
+{
+ "id": "20261117T101306-seg15-ingest-9f3e74",
+ "ts": "2026-11-17T10:13:06.860582Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ee60a22 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "ee60a22",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
