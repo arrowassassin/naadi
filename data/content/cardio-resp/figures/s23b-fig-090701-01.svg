@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="Two schematic frontal chest radiographs. Left: simple right pneumothorax with a visible pleural line, partly collapsed right lung and a midline trachea and mediastinum. Right: right tension pneumothorax with a fully collapsed right lung, a depressed right hemidiaphragm, and the trachea and heart shifted to the left.">
+<rect x="0" y="0" width="720" height="440" fill="#ffffff"/>
+<text x="180" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0f172a">Simple pneumothorax</text>
+<text x="540" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0f172a">Tension pneumothorax</text>
+<!-- LEFT PANEL -->
+<rect x="20" y="40" width="320" height="320" rx="8" fill="#111827"/>
+<!-- right lung (viewer's left): partly collapsed, black air rim -->
+<path d="M60,110 C60,80 100,70 140,80 L150,300 C120,320 80,315 60,300 Z" fill="#000000"/>
+<path d="M80,130 C82,104 110,96 135,104 L146,296 C120,306 92,304 80,292 Z" fill="#6b7280"/>
+<path d="M80,130 C82,104 110,96 135,104" fill="none" stroke="#f8fafc" stroke-width="2"/>
+<!-- left lung (viewer's right): normal -->
+<path d="M220,80 C260,70 300,80 300,110 L300,300 C280,315 240,320 210,300 Z" fill="#6b7280"/>
+<!-- mediastinum + heart midline -->
+<rect x="168" y="48" width="24" height="70" rx="10" fill="#9ca3af"/>
+<path d="M150,180 C150,150 210,145 225,175 C250,210 245,290 205,300 L155,300 Z" fill="#d1d5db"/>
+<!-- diaphragms -->
+<path d="M58,300 C80,285 130,285 152,302" fill="none" stroke="#e5e7eb" stroke-width="4"/>
+<path d="M208,302 C230,288 280,288 302,300" fill="none" stroke="#e5e7eb" stroke-width="4"/>
+<text x="180" y="384" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Visible visceral pleural line, no lung markings beyond it</text>
+<text x="180" y="404" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Trachea and heart midline</text>
+<!-- RIGHT PANEL -->
+<rect x="380" y="40" width="320" height="320" rx="8" fill="#111827"/>
+<!-- right hemithorax entirely black, lung collapsed at hilum, enlarged -->
+<path d="M405,100 C405,70 455,60 505,72 L520,330 C470,345 425,340 405,330 Z" fill="#000000"/>
+<ellipse cx="500" cy="190" rx="16" ry="34" fill="#6b7280"/>
+<!-- left lung compressed -->
+<path d="M600,85 C630,78 660,88 662,112 L662,300 C645,312 615,315 590,300 Z" fill="#6b7280"/>
+<!-- trachea shifted to viewer's right (patient's left) -->
+<path d="M540,48 C545,70 560,95 566,120" fill="none" stroke="#9ca3af" stroke-width="22" stroke-linecap="round"/>
+<path d="M545,185 C548,155 600,150 612,180 C632,215 628,290 596,300 L548,300 Z" fill="#d1d5db"/>
+<!-- depressed flattened right diaphragm, normal left -->
+<path d="M405,332 C440,326 490,326 520,334" fill="none" stroke="#e5e7eb" stroke-width="4"/>
+<path d="M592,302 C612,290 645,290 662,300" fill="none" stroke="#e5e7eb" stroke-width="4"/>
+<text x="540" y="384" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Lung collapsed toward the hilum; flattened hemidiaphragm</text>
+<text x="540" y="404" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Trachea and heart pushed to the opposite side</text>
+<text x="360" y="430" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">Patient's right is on the viewer's left. Tension is a clinical diagnosis: decompress before imaging.</text>
+</svg>

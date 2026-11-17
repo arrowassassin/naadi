@@ -214,5 +214,141 @@
     "source": "naadi-original-v1",
     "chapterId": "s23b-ch0814-s1",
     "attribution": null
+  },
+  {
+    "id": "s23b-fig-090101-01",
+    "caption": "Figure. Schematic neck radiographs: a swollen epiglottis on the lateral view (thumb sign, epiglottitis) and a tapered subglottic air column on the frontal view (steeple sign, croup).",
+    "file": "figures/s23b-fig-090101-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0901-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090102-01",
+    "caption": "Figure. Three radiographic patterns of lower-airway infection: lobar consolidation (typical of pneumococcus), a diffuse interstitial pattern (atypical organisms, viruses, Pneumocystis) and an upper-lobe cavity (reactivation tuberculosis, abscess, necrotizing pneumonia). Schematic, not to scale.",
+    "file": "figures/s23b-fig-090102-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0901-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090201-01",
+    "caption": "Figure. CT appearance of solitary pulmonary nodules: four benign calcification patterns (top) and two features that raise concern for cancer (bottom).",
+    "file": "figures/s23b-fig-090201-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0902-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090202-01",
+    "caption": "Figure. Central versus peripheral lung tumours and the syndromes each location produces.",
+    "file": "figures/s23b-fig-090202-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0902-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090203-01",
+    "caption": "Figure. Four routes of metastatic spread to the chest: hematogenous nodules, lymphangitic spread along septa and bronchovascular bundles, endobronchial tumor, and pleural disease with effusion.",
+    "file": "figures/s23b-fig-090203-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0902-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090301-01",
+    "caption": "Figure. Flow–volume loops: normal, obstructive, restrictive and fixed upper airway obstruction (original diagram).",
+    "file": "figures/s23b-fig-090301-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0903-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090301-02",
+    "caption": "Flow–volume loop.",
+    "file": "figures/s23b-fig-090301-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0903-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090401-01",
+    "caption": "Figure. Where the main pneumoconioses and fibrosing diseases cluster in the lung: upper-zone (silica, coal, sarcoidosis) versus lower-zone and pleural (asbestos, IPF).",
+    "file": "figures/s23b-fig-090401-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0904-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090501-01",
+    "caption": "Figure. Hydrostatic (cardiogenic) versus permeability (ARDS) pulmonary edema at the alveolar–capillary unit.",
+    "file": "figures/s23b-fig-090501-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0905-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090601-01",
+    "caption": "Figure. Oxygen–hemoglobin dissociation curve with right and left shifts (original diagram).",
+    "file": "figures/s23b-fig-090601-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0906-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090601-02",
+    "caption": "Figure. The ventilation–perfusion spectrum from shunt to dead space (original diagram).",
+    "file": "figures/s23b-fig-090601-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0906-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090701-01",
+    "caption": "Figure. Schematic chest radiographs: simple right pneumothorax (left) versus right tension pneumothorax with mediastinal shift (right).",
+    "file": "figures/s23b-fig-090701-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0907-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090801-01",
+    "caption": "Figure. Anterior view of the larynx and upper trachea, showing the landmarks for an emergency surgical airway.",
+    "file": "figures/s23b-fig-090801-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0908-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090802-01",
+    "caption": "Figure. Schematic chest x-ray of a right tension pneumothorax: no lung markings on the right, a collapsed lung at the hilum, a depressed hemidiaphragm and the mediastinum pushed to the left.",
+    "file": "figures/s23b-fig-090802-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0908-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090802-02",
+    "caption": "Figure. Flail segment: during inspiration the free segment moves inward while the rest of the chest wall expands; during expiration it moves outward.",
+    "file": "figures/s23b-fig-090802-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0908-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090901-01",
+    "caption": "Figure. Five configurations of esophageal atresia and tracheoesophageal fistula.",
+    "file": "figures/s23b-fig-090901-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0909-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090901-02",
+    "caption": "Figure. Stages of fetal lung development, with the approximate limit of viability and surfactant adequacy.",
+    "file": "figures/s23b-fig-090901-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0909-s1",
+    "attribution": null
   }
 ]

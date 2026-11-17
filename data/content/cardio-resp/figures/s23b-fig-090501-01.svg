@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Two alveolar-capillary units compared. Left, hydrostatic edema: high capillary pressure pushes low-protein fluid across an intact barrier. Right, ARDS: damaged epithelium and endothelium leak protein-rich fluid at normal pressure, with hyaline membranes and neutrophils.">
+<defs><marker id="s23b-fig-090501-01-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+<text x="180" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0f172a">Hydrostatic (cardiogenic) edema</text>
+<text x="540" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0f172a">Permeability edema (ARDS)</text>
+<line x1="360" y1="45" x2="360" y2="400" stroke="#cbd5e1" stroke-width="2"/>
+<!-- left alveolus -->
+<rect x="50" y="60" width="260" height="170" rx="18" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+<text x="180" y="85" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#334155">Alveolus</text>
+<path d="M54,170 C110,160 250,160 306,170 L306,226 L54,226 Z" fill="#bfdbfe"/>
+<text x="180" y="205" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Low-protein transudate</text>
+<text x="180" y="125" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Epithelium intact</text>
+<!-- left capillary -->
+<rect x="50" y="270" width="260" height="60" rx="30" fill="#fee2e2" stroke="#334155" stroke-width="3"/>
+<text x="180" y="305" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Capillary: high hydrostatic pressure</text>
+<line x1="120" y1="268" x2="120" y2="234" stroke="#334155" stroke-width="2.5" marker-end="url(#s23b-fig-090501-01-ar)"/>
+<line x1="180" y1="268" x2="180" y2="234" stroke="#334155" stroke-width="2.5" marker-end="url(#s23b-fig-090501-01-ar)"/>
+<line x1="240" y1="268" x2="240" y2="234" stroke="#334155" stroke-width="2.5" marker-end="url(#s23b-fig-090501-01-ar)"/>
+<text x="180" y="358" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Raised left atrial pressure, PCWP high</text>
+<text x="180" y="378" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Large heart, effusions, Kerley B lines</text>
+<!-- right alveolus -->
+<rect x="410" y="60" width="260" height="170" rx="18" fill="#f8fafc" stroke="#334155" stroke-width="3" stroke-dasharray="14,8"/>
+<text x="540" y="85" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#334155">Alveolus (epithelium injured)</text>
+<path d="M414,140 C470,130 610,130 666,140 L666,226 L414,226 Z" fill="#fde68a"/>
+<path d="M418,140 C470,128 610,128 662,140" fill="none" stroke="#b45309" stroke-width="6"/>
+<text x="540" y="122" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Hyaline membrane</text>
+<circle cx="470" cy="180" r="9" fill="#ffffff" stroke="#334155" stroke-width="2"/><circle cx="467" cy="178" r="2.5" fill="#334155"/><circle cx="473" cy="183" r="2.5" fill="#334155"/>
+<circle cx="610" cy="190" r="9" fill="#ffffff" stroke="#334155" stroke-width="2"/><circle cx="607" cy="188" r="2.5" fill="#334155"/><circle cx="613" cy="193" r="2.5" fill="#334155"/>
+<text x="540" y="200" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Protein-rich exudate</text>
+<text x="540" y="218" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">neutrophils, inactivated surfactant</text>
+<!-- right capillary -->
+<rect x="410" y="270" width="260" height="60" rx="30" fill="#fee2e2" stroke="#334155" stroke-width="3" stroke-dasharray="14,8"/>
+<text x="540" y="305" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Capillary: normal pressure, leaky</text>
+<line x1="480" y1="268" x2="480" y2="234" stroke="#334155" stroke-width="2.5" marker-end="url(#s23b-fig-090501-01-ar)"/>
+<line x1="600" y1="268" x2="600" y2="234" stroke="#334155" stroke-width="2.5" marker-end="url(#s23b-fig-090501-01-ar)"/>
+<text x="540" y="358" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">PCWP normal; shunt → refractory hypoxemia</text>
+<text x="540" y="378" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Normal heart size, patchy peripheral opacities</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" role="img" aria-label="Front view of the larynx and upper trachea: hyoid bone, thyrohyoid membrane, thyroid cartilage, cricothyroid membrane as the surgical airway site, cricoid cartilage, tracheal rings and the thyroid isthmus over rings two to four">
+<rect x="0" y="0" width="700" height="520" fill="#ffffff"/>
+<g font-family="sans-serif" font-size="14" fill="#0f172a">
+<rect x="150" y="40" width="200" height="16" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<rect x="190" y="56" width="120" height="34" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3"/>
+<path d="M175,90 L325,90 L310,170 L250,200 L190,170 Z" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<path d="M232,90 L250,108 L268,90" fill="none" stroke="#334155" stroke-width="2"/>
+<rect x="215" y="200" width="70" height="26" fill="#d9f99d" stroke="#3f6212" stroke-width="2"/>
+<rect x="200" y="226" width="100" height="26" rx="6" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<g fill="#f1f5f9" stroke="#334155" stroke-width="1.5">
+<rect x="210" y="258" width="80" height="14" rx="5"/><rect x="210" y="278" width="80" height="14" rx="5"/>
+<rect x="210" y="298" width="80" height="14" rx="5"/><rect x="210" y="318" width="80" height="14" rx="5"/>
+<rect x="210" y="338" width="80" height="14" rx="5"/><rect x="210" y="358" width="80" height="14" rx="5"/>
+<rect x="210" y="378" width="80" height="14" rx="5"/><rect x="210" y="398" width="80" height="14" rx="5"/>
+</g>
+<path d="M150,270 C120,300 125,380 170,400 C190,380 200,330 205,290 Z" fill="#fecaca" stroke="#b91c1c" stroke-width="1.5" opacity="0.85"/>
+<path d="M350,270 C380,300 375,380 330,400 C310,380 300,330 295,290 Z" fill="#fecaca" stroke="#b91c1c" stroke-width="1.5" opacity="0.85"/>
+<rect x="200" y="280" width="100" height="50" rx="12" fill="#fecaca" stroke="#b91c1c" stroke-width="1.5" opacity="0.85"/>
+<line x1="235" y1="213" x2="265" y2="213" stroke="#3f6212" stroke-width="3"/>
+<g stroke="#334155" stroke-width="1.2">
+<line x1="350" y1="48" x2="420" y2="48"/><line x1="310" y1="72" x2="420" y2="82"/>
+<line x1="320" y1="120" x2="420" y2="125"/><line x1="285" y1="213" x2="420" y2="200"/>
+<line x1="300" y1="239" x2="420" y2="245"/><line x1="290" y1="372" x2="420" y2="372"/>
+<line x1="300" y1="305" x2="420" y2="305"/>
+</g>
+<text x="428" y="53">Hyoid bone</text>
+<text x="428" y="87">Thyrohyoid membrane</text>
+<text x="428" y="122">Thyroid cartilage</text>
+<text x="428" y="140" font-size="12" fill="#334155">(laryngeal prominence; vocal folds lie</text>
+<text x="428" y="156" font-size="12" fill="#334155">behind it)</text>
+<text x="428" y="198" font-weight="bold" fill="#3f6212">Cricothyroid membrane</text>
+<text x="428" y="215" font-size="12" fill="#3f6212">site of emergency cricothyrotomy</text>
+<text x="428" y="250">Cricoid cartilage (complete ring)</text>
+<text x="428" y="310">Thyroid isthmus (rings 2–4)</text>
+<text x="428" y="377">Tracheal rings (C-shaped)</text>
+<text x="250" y="470" text-anchor="middle" font-size="12" fill="#334155">Front view, schematic; not to scale</text>
+</g>
+</svg>
