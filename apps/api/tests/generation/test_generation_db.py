@@ -449,3 +449,25 @@ def test_the_local_stub_generates_serves_and_labels_through_the_real_routes(
         assert {i["status"] for i in listing} == {"ready", "failed"}
         assert c.delete(f"/api/generated/{item['id']}", headers=h).status_code == 204
         assert c.get(item["url"]).status_code == 404  # the file went with the row
+
+
+async def test_tool_core_returns_blocks_canvas_and_code_only_results(rig: Rig, world: World) -> None:
+    from naadi_api.generation.tools import prepare_preview, run_tool
+
+    prev = await prepare_preview(rig.service, world.user_a, "image", "A heart")
+    assert prev.remaining_today == 30
+    events: list[dict[str, Any]] = []
+
+    async def on_event(e: dict[str, Any]) -> None:
+        events.append(e)
+
+    out = await run_tool(rig.service, world.user_a, "image", "A heart", on_event=on_event)
+    assert out.status == "ok" and out.blocks[0]["type"] == "image"
+    mid = out.blocks[0]["data"]["media_id"]
+    assert out.canvas[0]["kind"] == "generated_media" and out.canvas[0]["ref"] == {"type": "generated_media", "id": mid}
+    assert [e["stage"] for e in events][-2:] == ["generating", "saving"]
+    refused_out = await run_tool(rig.service, world.user_a, "image", "Portrait of Albert Einstein")
+    assert (refused_out.status, refused_out.content) == ("refused", "prompt_real_person") and not refused_out.blocks
+    rig.client.quota_reset = datetime.now(UTC) + timedelta(minutes=5)
+    paused = await run_tool(rig.service, world.user_a, "image", "another heart")
+    assert paused.status == "error" and paused.content.startswith("generation_paused until=")
