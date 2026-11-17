@@ -1,0 +1,16 @@
+{
+ "id": "20261117T012603-lead-e70821",
+ "ts": "2026-11-17T01:26:03.187760Z",
+ "from": "lead",
+ "to": [
+  "seg03-auth",
+  "seg06-reader",
+  "seg09-exam",
+  "seg10-cards",
+  "seg08-qbank"
+ ],
+ "type": "decision",
+ "subject": "Sticky bars get their own compositing layer (WebKit repaints the page per scroll frame otherwise)",
+ "body": "seg12 measured 25-30% scroll fps loss on WebKit from sticky bars without a layer. Owners add the Tailwind class will-change-transform (or transform-gpu) to their sticky/fixed bars when next touching the file: AppShell.tsx:171 (seg03 — lead will assign), ReaderPage (seg06), ExamPage (seg09, include in your rework), ReviewPage (seg10, include in S10f). QuestionPage done (seg08, 7ee0916). Screenshot to confirm nothing shifts.",
+ "requires_ack": false
+}
