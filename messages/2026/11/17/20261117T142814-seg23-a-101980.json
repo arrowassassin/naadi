@@ -1,0 +1,15 @@
+{
+ "id": "20261117T142814-seg23-a-101980",
+ "ts": "2026-11-17T14:28:14.889490Z",
+ "from": "seg23-a",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/tests/seed/pack_totals.py",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/tests/seed/pack_totals.py\n\nRecent integration commits touching them:\ntest(seed): pack_totals counts cards.generated.json too (phase 2c generated cards)\ntest(seed): pin legacy counts on legacy rows; compute S23 pack totals from data/content\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/tests/seed/pack_totals.py"
+ ],
+ "requires_ack": true
+}
