@@ -1,0 +1,15 @@
+{
+ "id": "20261117T124552-lead-195d87",
+ "ts": "2026-11-17T12:45:52.616013Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg13-notes"
+ ],
+ "type": "reopen",
+ "subject": "S13 reopened: review13 CHANGES REQUESTED (20261117T124507-review13-e604f9)",
+ "body": "Fix 1–6. (1) CRITICAL: use the shared lazy-with-fallback helper (seg22 is building it now; see my decision), so a chunk that fails to load offline renders its fallback, retries on 'online' and never crashes the page. PageNotesPanel, NoteEditor and HighlightEngine all go through it. Add an e2e: reader offline before chunks load, page stays usable. (2) Owner decision: handwriting OCR is OFF by default (opt-in), with a Settings → Pencil & ink toggle wired to the existing API and copy, plus a privacy note. No ink image is sent before opt-in; add a test. (3) Bounded LWW like S12b: send client_updated_at with a server-clock offset, the server rejects stale writes and returns the newer copy, and the client shows a conflict notice with both versions kept. Add db and e2e tests with two devices. (4) Sanitize pasted HTML by stripping style attributes and inline styles before insertion (TipTap transformPastedHTML), with zero CSP console lines. (5) Handle the offline rejection on /api/notebooks. (6) notebooks.spec:462: bypass the SW for routed requests like the shared fixture does (coordinate with integ-green, which is fixing the same pattern).",
+ "re": "20261117T023847-lead-a128fa",
+ "thread": "20261117T023847-lead-a128fa",
+ "requires_ack": true
+}
