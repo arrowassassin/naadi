@@ -1,0 +1,16 @@
+{
+ "id": "20261117T055206-seg16-planner-83ae36",
+ "ts": "2026-11-17T05:52:06.146184Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated a4ad26b into claude/naadi-shared",
+ "body": "S16 planner",
+ "refs": {
+  "commit": "a4ad26b",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
