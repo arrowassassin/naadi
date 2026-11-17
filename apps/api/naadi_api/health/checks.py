@@ -323,3 +323,26 @@ def backup_check(settings: Settings, db: Database, *, clock: Callable[[], dateti
         return CheckOutcome(status, detail, backup=facts)  # type: ignore[arg-type]
 
     return run
+
+
+# ── SearXNG (segment 22, search layer 8) ──
+SEARXNG_BIN = "/opt/searxng/.venv/bin/granian"  # present only in the Space image (deploy/space/Dockerfile)
+
+
+def searxng_check(base_url: str, *, timeout_s: float = 2.0) -> CheckFn:
+    """SearXNG's own liveness endpoint on loopback. Whether students' searches use it is app_config's
+    `search.layers.searxng.enabled`; this only says whether the process answers."""
+
+    async def run() -> CheckOutcome:
+        import httpx  # raw httpx: SearXNG has no SDK, and this is one GET to its /healthz on 127.0.0.1
+
+        try:
+            async with httpx.AsyncClient(timeout=timeout_s) as http:
+                r = await http.get(base_url.rstrip("/") + "/healthz")
+        except httpx.HTTPError as exc:
+            return CheckOutcome("degraded", f"Not answering on loopback ({type(exc).__name__}); web search falls back")
+        if r.status_code != 200:
+            return CheckOutcome("degraded", f"HTTP {r.status_code} from /healthz; web search falls back")
+        return CheckOutcome("ok", "Answering on loopback")
+
+    return run

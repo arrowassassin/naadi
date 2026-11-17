@@ -1,0 +1,49 @@
+# SearXNG for Naadi's search layer 8 (segment 22). Runs in the Space container on 127.0.0.1:8888 only; the API is its
+# one client (naadi_api/search.py `_searxng`, `format=json`). Off for students until `app_config.search.layers.searxng
+# .enabled` is turned on in the admin editor (docs/RUNBOOK.md "SearXNG").
+#
+# - Engines: general web + Wikipedia only. No image, video, map, music, social or file engines.
+# - Limiter: OFF on purpose. SearXNG's limiter needs a Valkey database (without one it logs an error and does
+#   nothing) and exists to stop bots on PUBLIC instances. This one listens on loopback only; callers are throttled
+#   before they reach it: per user (search_web bucket, 20/min), per layer (rps 1) and by the per-client floor.
+# - secret_key comes from SEARXNG_SECRET, made fresh at each container start (start.sh); it is never logged.
+use_default_settings:
+  engines:
+    keep_only:
+      - duckduckgo
+      - brave
+      - mojeek
+      - wikipedia
+
+general:
+  instance_name: "naadi-search"
+  debug: false
+  enable_metrics: false
+
+search:
+  safe_search: 1
+  autocomplete: ""
+  formats:
+    - html
+    - json
+
+server:
+  bind_address: "127.0.0.1"
+  port: 8888
+  base_url: false
+  limiter: false
+  public_instance: false
+  image_proxy: false
+  method: "GET"
+
+ui:
+  static_use_hash: true
+
+outgoing:
+  request_timeout: 3.0
+  max_request_timeout: 6.0
+  pool_connections: 20
+  pool_maxsize: 10
+
+categories_as_tabs:
+  general:

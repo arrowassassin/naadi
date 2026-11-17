@@ -364,3 +364,21 @@ def test_unconfigured_backups_leave_the_overall_status_but_a_failed_backup_degra
     base = {n: comp("ok") for n in ("database", "storage", "openrouter", "nvidia", "tavily")}
     assert overall_status({**base, "backup": comp("degraded", configured=False)}) == "ok"
     assert overall_status({**base, "backup": comp("degraded", configured=True)}) == "degraded"
+
+
+async def test_searxng_check_reports_loopback_liveness() -> None:
+    import httpx
+    import respx
+
+    from naadi_api.health.checks import searxng_check
+
+    with respx.mock(assert_all_called=False) as mock:
+        route = mock.get("http://127.0.0.1:8888/healthz")
+        route.respond(200, text="OK")
+        assert (await searxng_check("http://127.0.0.1:8888/")()).status == "ok"
+        route.respond(503)
+        out = await searxng_check("http://127.0.0.1:8888")()
+        assert out.status == "degraded" and "503" in out.detail
+        route.side_effect = httpx.ConnectError("refused")
+        out = await searxng_check("http://127.0.0.1:8888")()
+        assert out.status == "degraded" and "ConnectError" in out.detail

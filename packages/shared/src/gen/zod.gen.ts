@@ -2339,6 +2339,7 @@ export const zHealthComponents = z.object({
   generation: zComponentHealth.nullish(),
   nvidia: zComponentHealth,
   openrouter: zComponentHealth,
+  searxng: zComponentHealth.nullish(),
   storage: zComponentHealth,
   tavily: zComponentHealth,
 });

@@ -39,7 +39,13 @@ SPACE_DIR = ROOT / "deploy" / "space"
 
 INCLUDE_FILES = {"package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "tsconfig.base.json"}
 INCLUDE_PREFIXES = ("packages/", "apps/web/", "apps/api/naadi_api/", "apps/api/migrations/", "config/", "data/")
-INCLUDE_EXTRA = {"apps/api/requirements.txt", "apps/api/aegra.json"}
+INCLUDE_EXTRA = {
+    "apps/api/requirements.txt",
+    "apps/api/aegra.json",
+    # Segment 22: the entrypoint (SearXNG, migrations, uvicorn) and SearXNG's settings, at their repo paths.
+    "deploy/space/start.sh",
+    "deploy/searxng/settings.yml",
+}
 EXCLUDE_PARTS = ("/e2e/", "/__fixtures__/", "/test/", "__pycache__")
 EXCLUDE_SUFFIXES = (".test.ts", ".test.tsx", ".pyc")
 SECRET_ENV = (

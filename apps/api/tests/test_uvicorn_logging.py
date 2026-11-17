@@ -24,9 +24,12 @@ def _free_port() -> int:
 
 def test_dockerfile_uses_the_json_log_config() -> None:
     dockerfile = (REPO_ROOT / "deploy" / "space" / "Dockerfile").read_text()
-    # The CMD is shell form (migrate, then exec uvicorn), so the flag is a plain `--log-config <path>` pair.
-    assert "uvicorn naadi_api.agent.host:app" in dockerfile
-    assert "--log-config naadi_api/uvicorn_logging.json" in dockerfile
+    start = (REPO_ROOT / "deploy" / "space" / "start.sh").read_text()
+    # The CMD runs start.sh (SearXNG in the background, migrate, then exec uvicorn): the flags live there.
+    assert 'CMD ["sh", "./start.sh"]' in dockerfile
+    assert "exec uvicorn naadi_api.agent.host:app" in start
+    assert "--log-config naadi_api/uvicorn_logging.json" in start
+    assert "--workers 1" in start and "python -m naadi_api.agent.migrate_all" in start
 
 
 def test_production_command_logs_only_json() -> None:

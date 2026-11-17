@@ -106,6 +106,11 @@ class HealthComponents(BaseModel):
         "`configured: false` until HF_BACKUP_TOKEN and BACKUP_AGE_RECIPIENT are set, which leaves the overall "
         "status alone; a failed or stale backup degrades it",
     )
+    searxng: ComponentHealth | None = Field(
+        default=None,
+        exclude_if=lambda v: v is None,
+        description="Self-hosted SearXNG (search layer 8) on loopback; present where it is installed (the Space)",
+    )
     agent_runtime: ComponentHealth | None = Field(
         default=None,
         exclude_if=lambda v: v is None,

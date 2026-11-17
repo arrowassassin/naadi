@@ -217,6 +217,18 @@ def build() -> FastAPI:
     health.checks["agent_runtime"] = Check(
         "agent_runtime", agent_runtime_check(aegra_app.state.db), ttl_s=30.0, timeout_s=8.0
     )
+    # SearXNG runs beside the API only in the Space image (start.sh); elsewhere there is nothing to report.
+    from pathlib import Path
+
+    from ..config import load_models_config
+    from ..health.checks import SEARXNG_BIN, searxng_check
+
+    if Path(SEARXNG_BIN).exists():
+        layer = (
+            (load_models_config(get_settings().config_dir).search.model_extra or {}).get("layers", {}).get("searxng")
+        )
+        base = (layer or {}).get("base_url") or "http://127.0.0.1:8888"
+        health.checks["searxng"] = Check("searxng", searxng_check(base), ttl_s=30.0, timeout_s=4.0)
     reorder_routes(aegra_app)
     _wrap_lifespan(aegra_app)
     configure_logging(get_settings().log_level)  # Aegra reconfigures logging on import; restore JSON lines

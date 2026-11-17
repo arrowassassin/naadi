@@ -121,6 +121,29 @@ jobs:
           path: sbom
           retention-days: 90
 
+  searxng:
+    name: SearXNG stage builds and answers on loopback
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Build the pinned SearXNG stage of the Space image
+        run: docker build --target searxng -t naadi-searxng-ci -f deploy/space/Dockerfile .
+      - name: Start it with the Space's settings; /healthz must answer (no search engine is queried)
+        run: |
+          docker run -d --name searxng-ci --network host -e SEARXNG_SECRET="$(openssl rand -hex 32)" \
+            -e SEARXNG_SETTINGS_PATH=/settings.yml -v "$PWD/deploy/searxng/settings.yml:/settings.yml:ro" \
+            -w /opt/searxng/src naadi-searxng-ci \
+            /opt/searxng/.venv/bin/granian --interface wsgi --host 127.0.0.1 --port 8888 --workers 1 searx.webapp:app
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:8888/healthz && break; sleep 2; done
+          curl -fsS http://127.0.0.1:8888/healthz
+          # The engines it may query are exactly the allow-listed ones (general web + Wikipedia, nothing else).
+          curl -fsS http://127.0.0.1:8888/config | python3 -c 'import json,sys; c=json.load(sys.stdin); e=sorted(x["name"] for x in c["engines"] if x["enabled"]); print(e); assert set(e) <= {"duckduckgo","brave","mojeek","wikipedia"}, e'
+          docker stats --no-stream --format '{{.Name}} {{.MemUsage}}' searxng-ci
+      - name: SearXNG log (only on failure)
+        if: failure()
+        run: docker logs searxng-ci 2>&1 | tail -80 || true
+
   db:
     name: integration (db, supabase/postgres)
     runs-on: ubuntu-24.04

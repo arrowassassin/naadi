@@ -6393,6 +6393,17 @@
           "openrouter": {
             "$ref": "#/components/schemas/ComponentHealth"
           },
+          "searxng": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ComponentHealth"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Self-hosted SearXNG (search layer 8) on loopback; present where it is installed (the Space)"
+          },
           "storage": {
             "$ref": "#/components/schemas/ComponentHealth"
           },

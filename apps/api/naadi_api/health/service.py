@@ -22,7 +22,7 @@ log = get_logger("naadi.health")
 
 COMPONENTS = ("database", "storage", "openrouter", "nvidia", "tavily")
 # Reported only when registered (the Aegra host adds `agent_runtime`; a plain API process has no runtime).
-OPTIONAL_COMPONENTS = ("agent_runtime", "generation", "backup")
+OPTIONAL_COMPONENTS = ("agent_runtime", "generation", "backup", "searxng")
 FAILURE_TTL_CAP_S = 15.0
 
 

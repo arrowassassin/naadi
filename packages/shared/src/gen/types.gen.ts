@@ -3638,6 +3638,10 @@ export type HealthComponents = {
   generation?: ComponentHealth | null;
   nvidia: ComponentHealth;
   openrouter: ComponentHealth;
+  /**
+   * Self-hosted SearXNG (search layer 8) on loopback; present where it is installed (the Space)
+   */
+  searxng?: ComponentHealth | null;
   storage: ComponentHealth;
   tavily: ComponentHealth;
 };
