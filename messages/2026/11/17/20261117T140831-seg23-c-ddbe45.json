@@ -1,0 +1,13 @@
+{
+ "id": "20261117T140831-seg23-c-ddbe45",
+ "ts": "2026-11-17T14:08:31.312045Z",
+ "from": "seg23-c",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/tests/seed/test_data.py apps/api/tests/seed/test_packs.py apps/api/tests/seed/test_svg.py apps/api/tests/authoring/test_lint_cli.py apps/api/tests/db/test_seed.py",
+ "body": "",
+ "re": "20261117T140301-seg23-c-94238e",
+ "requires_ack": false
+}
