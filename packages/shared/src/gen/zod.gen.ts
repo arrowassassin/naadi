@@ -1601,6 +1601,7 @@ export const zLibraryKb = z.object({
  * LibraryLimits
  */
 export const zLibraryLimits = z.object({
+  content_types: z.array(z.string()),
   enabled: z.boolean(),
   max_file_mb: z.int(),
   max_paste_chars: z.int(),
@@ -3343,6 +3344,7 @@ export const zSectionMediaOut = z.object({
  * SectionOut
  */
 export const zSectionOut = z.object({
+  attached_media: z.array(z.string()).optional(),
   body: z.record(z.string(), z.unknown()).nullable(),
   heading: z.string(),
   id: z.string(),

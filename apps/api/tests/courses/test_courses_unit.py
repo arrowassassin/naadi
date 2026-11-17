@@ -11,7 +11,7 @@ from pydantic import SecretStr, ValidationError
 from naadi_api.chapters_content import scan_body
 from naadi_api.chapters_media import SIGNED_URL_TTL_S, MediaUrlResolver, configured_buckets, parse_storage_path
 from naadi_api.config_api.schemas import StorageBuckets
-from naadi_api.courses import ReadingPositionIn, ReportIssueIn, chapter_systems, next_section
+from naadi_api.courses import ReadingPositionIn, ReportIssueIn, chapter_systems, next_section, owned_attachments
 from tests.conftest import make_settings
 
 SUPA = "https://ref.supabase.co"
@@ -277,3 +277,19 @@ def test_report_body_is_trimmed_and_bounded() -> None:
     assert ReportIssueIn(ref_type="section", ref_id="ch01-s01", body="  typo ").body == "typo"
     with pytest.raises(ValidationError):
         ReportIssueIn(ref_type="section", ref_id="ch01-s01", body="x" * 4001)
+
+
+def test_owned_attachments_lists_only_the_callers_visible_figures_per_section() -> None:
+    other = uuid.UUID("22222222-2222-4222-8222-222222222222")
+    rows = [
+        {"section_id": "s1", "media_id": "shared-fig", "owner_user_id": None},
+        {"section_id": "s1", "media_id": "mine-a", "owner_user_id": OWNER},
+        {"section_id": "s1", "media_id": "theirs", "owner_user_id": other},
+        {"section_id": "s2", "media_id": "mine-b", "owner_user_id": str(OWNER)},
+        {"section_id": "s2", "media_id": "mine-gone", "owner_user_id": OWNER},
+        {"section_id": "s1", "media_id": "mine-a", "owner_user_id": OWNER},
+    ]
+    visible = {"shared-fig", "mine-a", "theirs", "mine-b"}
+    assert owned_attachments(rows, OWNER, visible) == {"s1": ["mine-a"], "s2": ["mine-b"]}
+    assert owned_attachments(rows, other, visible) == {"s1": ["theirs"]}
+    assert owned_attachments([], OWNER, visible) == {}

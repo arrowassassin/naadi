@@ -12,7 +12,11 @@ import { useSyncExternalStore } from "react";
  */
 export interface AssistantAsk {
   kind: "hint" | "explain";
-  context: { type: "flashcard"; id: string };
+  context:
+    | { type: "flashcard"; id: string }
+    /** Segment 15, lasso → Ask on a PDF page: `id` is the ink surface `{upload_id}:{page}` (read the page text
+     * through GET /api/ingest/uploads/{id}/pages/{n}); `image` is the circled region as a PNG (page + ink). */
+    | { type: "pdf_page"; id: string; image: Blob | null };
 }
 
 export type AssistantAskHandler = (ask: AssistantAsk) => void;

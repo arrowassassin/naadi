@@ -1,8 +1,9 @@
 import type { CourseChapter, CourseSystem, CoursesResponse } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useRouter } from "@tanstack/react-router";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, FileText, FolderOpen } from "lucide-react";
 import { Fragment } from "react";
+import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import type { TextLookup } from "../content/types";
 import { useUiText } from "../copy/useUiText";
@@ -192,6 +193,7 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
   const t = useUiText();
   const router = useRouter();
   const cacheIdle = useOfflineWritesIdle();
+  const library = Boolean(useMe().data?.features.library);
 
   if (q.isPending && !q.data) return <Loading t={t} />;
   if (!q.data) {
@@ -335,16 +337,32 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
         )}
       </section>
 
-      {own.length ? (
+      {own.length || library ? (
         <section aria-labelledby="own-h" className="flex flex-col gap-4">
-          <h2 id="own-h" className="m-0 font-bold font-display text-[1.75rem] tracking-[-0.02em]">
-            {t("learn.your_files")}
-          </h2>
-          <ol className="m-0 flex list-none flex-col rounded-tile-sm border border-line-soft bg-surface-1 p-0 px-5">
-            {own.map((c) => (
-              <ChapterRow key={c.id} c={c} t={t} />
-            ))}
-          </ol>
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <h2 id="own-h" className="m-0 font-bold font-display text-[1.75rem] tracking-[-0.02em]">
+              {t("learn.your_files")}
+            </h2>
+            {library ? (
+              <Link
+                to="/learn/library"
+                className="inline-flex min-h-11 items-center gap-2 text-ui-sm"
+                data-library-link=""
+              >
+                <FolderOpen aria-hidden="true" size={16} />
+                {t("learn.open_library")}
+              </Link>
+            ) : null}
+          </div>
+          {own.length ? (
+            <ol className="m-0 flex list-none flex-col rounded-tile-sm border border-line-soft bg-surface-1 p-0 px-5">
+              {own.map((c) => (
+                <ChapterRow key={c.id} c={c} t={t} />
+              ))}
+            </ol>
+          ) : (
+            <p className="m-0 text-text-2">{t("learn.your_files_empty")}</p>
+          )}
         </section>
       ) : null}
     </section>

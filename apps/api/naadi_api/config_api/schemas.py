@@ -3253,9 +3253,6 @@ class UiCopy(RootModel[dict[str, str]]):
         # real ceiling (at most 4000 strings of up to 500 chars would not fit it either way).
         if len(v) > 4000:
             raise ValueError("at most 4000 ui_copy strings")
-        # S12a's ink block landed, over 1500 by S17), so the bound leaves room for the remaining segments.
-        if len(v) > 3000:
-            raise ValueError("at most 3000 ui_copy strings")
         missing = sorted(REQUIRED_UI_COPY_KEYS - set(v))
         if missing:
             raise ValueError(f"ui_copy is missing keys the app shows: {', '.join(missing)}")

@@ -60,12 +60,13 @@ async def _record(db: Database, item_id: uuid.UUID, user_id: uuid.UUID, thread_i
 
 class AegraRunner:
     async def _run(self, user_id: uuid.UUID, is_admin: bool, thread_id: str, **req: Any) -> str:
-        from aegra_api.core.database import db_manager
+        from aegra_api.core.orm import get_session_maker
         from aegra_api.models import RunCreate, User
         from aegra_api.services.run_preparation import _prepare_run
-        from sqlalchemy.ext.asyncio import AsyncSession
 
-        async with AsyncSession(db_manager.get_engine()) as session:
+        # Aegra's own session factory (expire_on_commit=False): _prepare_run commits and then reads the run row
+        # back into its pydantic model, which a plain AsyncSession refuses (expired attributes need a lazy load).
+        async with get_session_maker()() as session:
             run_id, _run, _job = await _prepare_run(
                 session,
                 thread_id,

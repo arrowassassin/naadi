@@ -27,6 +27,7 @@ import { useShellBottomSlot } from "../shell/chrome";
 import { useChapter, usePositions } from "./api";
 import { ContentsSheet } from "./ContentsSheet";
 import { count, errorText, minutesLabel } from "./format";
+import { OwnFigures } from "./OwnFigures";
 import { useOfflineWritesIdle } from "./offlineCache";
 import { ReportIssueDialog } from "./ReportIssueDialog";
 import { useReadingPosition } from "./useReadingPosition";
@@ -528,6 +529,14 @@ function Reader({
                 <p className="m-0 text-text-2">{t("learn.section_empty")}</p>
               )}
             </div>
+            {section.attached_media?.length ? (
+              <OwnFigures
+                sectionId={section.id}
+                mediaIds={section.attached_media}
+                media={detail.media}
+                onUnknown={logUnknown}
+              />
+            ) : null}
             <div ref={endRef} aria-hidden="true" className="h-px" />
             <div className="mx-auto flex w-full max-w-[46rem] flex-wrap items-center justify-between gap-3 border-line-soft border-t pt-5">
               <span className="text-text-3 text-ui-sm">{t("content.report_issue_prompt")}</span>

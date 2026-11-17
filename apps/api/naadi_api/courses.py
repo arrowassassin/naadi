@@ -140,6 +140,10 @@ class SectionOut(BaseModel):
     reading_minutes: int
     taxonomy_ids: list[str]
     body: dict[str, Any] | None = Field(description="TipTap JSON (schema: @naadi/shared/content); null if empty")
+    attached_media: list[str] = Field(
+        default_factory=list,
+        description="The caller's own figures attached to this section (ids in `media`; shown after the body)",
+    )
 
 
 class MediaSource(BaseModel):
@@ -673,10 +677,27 @@ from public.chapter_sections s where s.chapter_id = %(id)s order by s.sort, s.id
 """  # noqa: S608 - module constants only
 
 _Q_SECTION_MEDIA = """
-select sm.media_id from public.section_media sm
+select sm.section_id, sm.media_id, m.owner_user_id from public.section_media sm
 join public.chapter_sections s on s.id = sm.section_id
+left join public.media_assets m on m.id = sm.media_id
 where s.chapter_id = %(id)s order by s.sort, sm.sort nulls last, sm.media_id
 """
+
+
+def owned_attachments(rows: list[Row], user_id: Any, visible: set[str]) -> dict[str, list[str]]:
+    """Media the caller owns (their own figures, segment 15) attached to each section, in attachment order.
+
+    Shared figures attached by `section_media` are not listed (the content places those itself); a row whose media
+    the caller cannot see (RLS) or that is gone is skipped.
+    """
+    out: dict[str, list[str]] = defaultdict(list)
+    uid = str(user_id)
+    for r in rows:
+        if r["owner_user_id"] is None or str(r["owner_user_id"]) != uid or r["media_id"] not in visible:
+            continue
+        if r["media_id"] not in out[r["section_id"]]:
+            out[r["section_id"]].append(r["media_id"])
+    return dict(out)
 
 _Q_MEDIA = """
 select m.id, m.kind, m.url, m.title, m.caption, m.attribution, m.width, m.height, m.youtube_id, m.duration_s,
@@ -728,16 +749,18 @@ async def get_chapter(
         scan = ContentScan()
         for s in sections:
             scan_body(s["body"], scan)
-        attached = [r["media_id"] for r in await _rows(conn, _Q_SECTION_MEDIA, {"id": chapter_id})]
-        media_ids = list(dict.fromkeys([*scan.media_ids, *attached]))
+        attached = await _rows(conn, _Q_SECTION_MEDIA, {"id": chapter_id})
+        media_ids = list(dict.fromkeys([*scan.media_ids, *(r["media_id"] for r in attached)]))
         media = await _rows(conn, _Q_MEDIA, {"ids": media_ids}) if media_ids else []
         questions = await _rows(conn, _Q_EMBED_QUESTIONS, {"ids": scan.question_ids}) if scan.question_ids else []
         order = await _rows(conn, _Q_SHARED_ORDER, {"exam": ch["exam"]})
         st = await _ChapterStats.load(conn, [chapter_id], positions=False)
         nodes = await _rows(conn, _Q_SYSTEM_NODES, {"ids": sorted(st.all_system_ids())})
-        return ch, sections, media, questions, order, (scan, st, nodes)
+        return ch, sections, media, questions, order, (scan, st, nodes, attached)
 
-    ch, sections, media_rows, question_rows, order, (scan, st, nodes) = await as_user(_db(request), user, run)
+    ch, sections, media_rows, question_rows, order, (scan, st, nodes, attached) = await as_user(
+        _db(request), user, run
+    )
 
     if scan.unknown_nodes or scan.unknown_marks or scan.truncated:
         log.warning(
@@ -748,6 +771,7 @@ async def get_chapter(
             truncated=scan.truncated,
         )
     visible = {r["id"] for r in media_rows}
+    own_figures = owned_attachments(attached, user.user_id, visible)
     missing = [m for m in scan.media_ids if m not in visible]
     if missing:
         log.warning("content_media_missing", chapter_id=chapter_id, media_ids=missing[:20], count=len(missing))
@@ -796,6 +820,7 @@ async def get_chapter(
                 reading_minutes=int(s["minutes"]),
                 taxonomy_ids=list(s["taxonomy_ids"]),
                 body=s["body"] if isinstance(s["body"], dict) else None,
+                attached_media=own_figures.get(s["id"], []),
             )
             for s in sections
         ],

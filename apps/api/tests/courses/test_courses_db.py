@@ -377,6 +377,37 @@ def test_chapter_detail_resolves_media_and_never_embeds_answers(
     assert body["sections"][0]["body"]["content"][-1]["type"] == "sparkle"
 
 
+def test_own_attached_figures_are_listed_for_their_owner_only(
+    client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    own = f"{world.fig}-own"
+    _insert(
+        pg,
+        "media_assets",
+        {
+            "id": own,
+            "kind": "image",
+            "source_id": "user-provided",  # owned media must reference the student's own-material source
+            "caption": "My photo",
+            "url": f"content-public/figures/{own}.webp",
+            "review_status": "approved",
+            "owner_user_id": world.owner,
+        },
+    )
+    try:
+        _insert(pg, "section_media", {"section_id": world.s12, "media_id": own, "sort": 1000})
+        mine = client.get(f"/api/chapters/{world.ch1}", headers=h(key, world.owner)).json()
+        by_id = {s["id"]: s for s in mine["sections"]}
+        assert by_id[world.s12]["attached_media"] == [own]
+        assert by_id[world.s11]["attached_media"] == []  # shared attachments are placed by the content itself
+        assert own in mine["media"]
+        theirs = client.get(f"/api/chapters/{world.ch1}", headers=h(key, world.other)).json()
+        assert all(s["attached_media"] == [] for s in theirs["sections"])
+        assert own not in theirs["media"]
+    finally:
+        pg.execute("delete from public.media_assets where id = %s", (own,))
+
+
 def test_unknown_nodes_and_missing_media_are_logged_with_the_request_id(
     client: TestClient, key: SigningKey, world: World, caplog: pytest.LogCaptureFixture
 ) -> None:

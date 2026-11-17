@@ -4847,6 +4847,12 @@ export type LibraryKb = {
  */
 export type LibraryLimits = {
   /**
+   * Content Types
+   *
+   * Content types an upload may declare (the drop zone refuses others before uploading)
+   */
+  content_types: Array<string>;
+  /**
    * Enabled
    */
   enabled: boolean;
@@ -8802,6 +8808,12 @@ export type SectionMediaOut = {
  * SectionOut
  */
 export type SectionOut = {
+  /**
+   * Attached Media
+   *
+   * The caller's own figures attached to this section (ids in `media`; shown after the body)
+   */
+  attached_media?: Array<string>;
   /**
    * Body
    *

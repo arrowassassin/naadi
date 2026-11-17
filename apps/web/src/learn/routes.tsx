@@ -1,4 +1,5 @@
 import { type AnyRoute, createRoute, Navigate, Outlet } from "@tanstack/react-router";
+import { libraryRoutes } from "../library/route";
 import { useChapter, usePositions } from "./api";
 import { CoursesPage, type CoursesSearch } from "./CoursesPage";
 import { ReaderPage } from "./ReaderPage";
@@ -70,5 +71,6 @@ export function learnRoutes(parent: AnyRoute) {
       return <ReaderPage chapterId={chapterId} sectionId={sectionId} />;
     },
   });
-  return learn.addChildren([courses, chapter.addChildren([resume, section])]);
+  // The Library (segment 15) before `$chapterId`, so "library" is never read as a chapter id.
+  return learn.addChildren([courses, libraryRoutes(learn), chapter.addChildren([resume, section])]);
 }

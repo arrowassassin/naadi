@@ -1,7 +1,7 @@
 import type { SearchHit, Segment, WebResult } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useNavigate, useRouter } from "@tanstack/react-router";
-import { Search as SearchIcon, X } from "lucide-react";
+import { FileText, Search as SearchIcon, X } from "lucide-react";
 import { type RefObject, useEffect, useId, useMemo, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useOnlineStatus } from "../health/useOnlineStatus";
@@ -82,6 +82,8 @@ function HitRow({ hit, copy }: { hit: SearchHit; copy: Copy }) {
   const dest = resolveTarget(hit.target, router.routesByPath as Record<string, unknown>);
   const ink = hit.type === "ink";
   const kind = copy(`search.kind.${hit.type === "kb_doc" ? "upload" : hit.type}` as SearchCopyKey);
+  // Segment 15: a hit in the student's own private chapter (an upload or a knowledge-base entry).
+  const own = hit.type === "upload" || hit.type === "kb_doc";
   const body = (
     <>
       <span className="flex min-w-0 flex-col gap-0.5">
@@ -96,9 +98,16 @@ function HitRow({ hit, copy }: { hit: SearchHit; copy: Copy }) {
         <span className="text-text-3 text-ui-sm">{metaLine(hit, copy)}</span>
         {hit.snippet.length > 0 ? <Snippet segments={hit.snippet} /> : null}
       </span>
-      <Chip tone="meta" srPrefix={copy("search.type_label")}>
-        {kind}
-      </Chip>
+      <span className="flex flex-col items-end gap-1.5">
+        <Chip tone="meta" srPrefix={copy("search.type_label")}>
+          {kind}
+        </Chip>
+        {own ? (
+          <Chip tone="meta" icon={<FileText size={12} />}>
+            {copy("search.your_file")}
+          </Chip>
+        ) : null}
+      </span>
     </>
   );
   return (

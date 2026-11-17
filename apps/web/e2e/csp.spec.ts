@@ -120,6 +120,7 @@ const ROUTES: RouteCase[] = [
   { name: "notes", path: "/notes", role: "student", ready: h1 },
   { name: "notebooks", path: "/notes/notebooks", role: "student", ready: h1 },
   { name: "search", path: "/search", role: "student", ready: h1 },
+  { name: "library", path: "/learn/library", role: "student", ready: h1 },
   { name: "plan (onboarding)", path: "/welcome", role: "student", ready: h1 },
   { name: "settings", path: "/settings/account", role: "student", ready: h1 },
   { name: "system", path: "/system", role: null, ready: h1 },

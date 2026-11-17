@@ -8577,6 +8577,14 @@
       },
       "LibraryLimits": {
         "properties": {
+          "content_types": {
+            "description": "Content types an upload may declare (the drop zone refuses others before uploading)",
+            "items": {
+              "type": "string"
+            },
+            "title": "Content Types",
+            "type": "array"
+          },
           "enabled": {
             "title": "Enabled",
             "type": "boolean"
@@ -8593,7 +8601,8 @@
         "required": [
           "max_file_mb",
           "max_paste_chars",
-          "enabled"
+          "enabled",
+          "content_types"
         ],
         "title": "LibraryLimits",
         "type": "object"
@@ -15882,6 +15891,14 @@
       },
       "SectionOut": {
         "properties": {
+          "attached_media": {
+            "description": "The caller's own figures attached to this section (ids in `media`; shown after the body)",
+            "items": {
+              "type": "string"
+            },
+            "title": "Attached Media",
+            "type": "array"
+          },
           "body": {
             "anyOf": [
               {

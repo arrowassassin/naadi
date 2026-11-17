@@ -189,6 +189,9 @@ class LibraryLimits(BaseModel):
     max_file_mb: int
     max_paste_chars: int
     enabled: bool
+    content_types: list[str] = Field(
+        description="Content types an upload may declare (the drop zone refuses others before uploading)"
+    )
 
 
 class LibraryOut(BaseModel):

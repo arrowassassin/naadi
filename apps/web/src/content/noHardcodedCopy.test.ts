@@ -18,6 +18,8 @@ const ROOTS = [
   "highlights",
   "ink",
   "learn",
+  "library",
+  "canvas",
   "notebooks",
   "notes",
   "pathway",

@@ -293,6 +293,26 @@ def _kind_of(stored_mime: str) -> str:
     return kind if kind in ("image", "audio", "video") or kind in KIND_MIME else "txt"
 
 
+async def _unreserve(request: Request, user: CurrentUser, planned: list[Any]) -> None:
+    """Drop the rows of a reservation whose upload URLs could not be signed (no ticket ever left the server)."""
+    items = [p[1] for p in planned]
+    upload_ids = [p[2] for p in planned]
+
+    async def run() -> None:
+        async with st.service_tx(_db(request)) as conn:
+            await conn.execute(
+                "delete from public.ingest_items where user_id = %s and id = any(%s)", (user.user_id, items)
+            )
+            await conn.execute(
+                "delete from public.uploads where user_id = %s and id = any(%s)", (user.user_id, upload_ids)
+            )
+
+    try:
+        await _guard(run)
+    except IngestError:
+        log.warning("ingest.unreserve_failed", items=len(items))
+
+
 async def _reserve(
     request: Request, user: CurrentUser, bodies: list[UploadCreate], batch: uuid.UUID | None
 ) -> list[UploadTicket]:
@@ -333,6 +353,7 @@ async def _reserve(
             t = await storage.signed_upload(buckets.user_uploads, path)
         except Exception as exc:
             log.warning("ingest.sign_failed", error=type(exc).__name__)
+            await _unreserve(request, user, planned)
             raise IngestError(503, "ingest_unavailable") from exc
         tickets.append(
             UploadTicket(
@@ -957,7 +978,10 @@ async def get_library(request: Request, user: Annotated[CurrentUser, limited("in
         storage=StorageOut(used_bytes=used, limit_bytes=limit, remaining_bytes=max(0, limit - used)),
         accepts=accepted_inputs(on),
         limits=LibraryLimits(
-            max_file_mb=rules.max_file_mb, max_paste_chars=rules.max_paste_chars, enabled=rules.enabled
+            max_file_mb=rules.max_file_mb,
+            max_paste_chars=rules.max_paste_chars,
+            enabled=rules.enabled,
+            content_types=sorted(UPLOAD_MIMES),
         ),
     )
 
