@@ -1,0 +1,13 @@
+{
+ "id": "20261117T142831-seg23-a-893b9e",
+ "ts": "2026-11-17T14:28:31.035845Z",
+ "from": "seg23-a",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/tests/seed/pack_totals.py",
+ "body": "",
+ "re": "20261117T142211-seg23-a-2392a6",
+ "requires_ack": false
+}
