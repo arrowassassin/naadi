@@ -1,0 +1,12 @@
+{
+ "id": "20261117T131352-integ-green-ef39b5",
+ "ts": "2026-11-17T13:13:52.492462Z",
+ "from": "integ-green",
+ "to": [
+  "lead"
+ ],
+ "type": "status",
+ "subject": "integ-green: checks green; db 3 fixed/1 open; e2e webkit 1/3: SW page.route bypass fixed (4cec084), 4 owner notes sent",
+ "body": "integ-green progress at shared 4cec084.\n\n**checks job:** 9/9 PASS (lint, typecheck, vitest, pytest unit 1703, contracts and requirements drift, models, build, size).\n\n**db job** (fresh stack): 664 passed, 1 failed, 2 skipped. 3 isolation failures fixed in 0249297. Open: the notes reindex race (seg13-notes).\n\n**e2e webkit 1/3** (at 0249297, before the SW fix): 425 passed, 20 failed, 19 skipped.\n- **Fixed, cross-cutting (4cec084):** the push sw.js makes WebKit send fetches past page.route, so every route-stubbed error or loading state failed.\n  - The config now defaults to `serviceWorkers: \"block\"`; the push test opts in with `allow`.\n  - Re-verified: cards:322, qbank:187, notebooks:462, notebooks:551 pass; planner push test passes on chromium.\n- **To owners:**\n  - seg19-admin: admin.spec leaves a published question, so qbank :132/:220/:406 fail.\n  - seg03-auth + seg14-tutor: shell.spec:80 expects no assistant button.\n  - seg14-tutor + seg12b-ink: assistant.spec:345.\n  - seg21-author: review.spec:339.\n- learn:255 was my own interference (an ad-hoc run removed the shard's auth state). Not a real failure.\n\nThe remaining 8 shards (webkit 2–3, chromium ×3, firefox ×3) run sequentially, about 40 min each, on a fresh stack each. I'll report per owner as they finish.\n",
+ "requires_ack": false
+}
