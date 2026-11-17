@@ -710,6 +710,8 @@ test.describe("ink lab", () => {
     frameMs: number;
     /** Main-thread time of every ink engine on the page, per animation frame of the round (ms). */
     engineMs: number[];
+    /** Per callback kind: total ms, and ms within frames whose engine time reached 2 ms (what to fix). */
+    kinds: Record<string, { ms: number; slowFrameMs: number }>;
   }
 
   /**
@@ -739,6 +741,9 @@ test.describe("ink lab", () => {
           const show = (v: boolean) => {
             shown = v;
             for (const el of layers) el.style.visibility = v ? "" : "hidden";
+            // Settle the style change here, in the test's own callback: otherwise the next layout read
+            // (the engine's scroll handler measuring the visible range) pays for the test's restyle.
+            void document.documentElement.getBoundingClientRect();
           };
           window.scrollTo(0, from);
           show(true);
@@ -775,20 +780,61 @@ test.describe("ink lab", () => {
             // Engine callbacks belong to the frame they started in: [stamp i, stamp i+1).
             const engineMs = new Array<number>(stamps.length).fill(0);
             const p = probe.stop();
-            for (let j = 0; j < p.length; j += 2) {
+            const frameOf: number[] = [];
+            for (let j = 0; j < p.length; j += 3) {
               const t0 = p[j] as number;
               let f = stamps.length - 1;
               while (f > 0 && (stamps[f] as number) > t0) f--;
+              frameOf.push(f);
               engineMs[f] = (engineMs[f] as number) + (p[j + 1] as number);
+            }
+            const kinds: Record<string, { ms: number; slowFrameMs: number }> = {};
+            for (let j = 0; j < p.length; j += 3) {
+              const name = lab?.probeKinds[p[j + 2] as number] ?? "other";
+              const k = (kinds[name] ??= { ms: 0, slowFrameMs: 0 });
+              const ms = p[j + 1] as number;
+              k.ms += ms;
+              if ((engineMs[frameOf[j / 3] as number] as number) >= 2) k.slowFrameMs += ms;
             }
             const fps = (k2: "ink" | "base") => Math.round((frames[k2] / Math.max(1, time[k2])) * 10000) / 10;
             const n = stamps.length - 1;
-            resolve({ ink: fps("ink"), base: fps("base"), frames, frameMs: (ts - start) / Math.max(1, n), engineMs });
+            resolve({
+              ink: fps("ink"),
+              base: fps("base"),
+              frames,
+              frameMs: (ts - start) / Math.max(1, n),
+              engineMs,
+              kinds,
+            });
           };
           requestAnimationFrame(step);
         }),
       { sliceMs, durationMs: Math.max(6000, sliceMs * 16) },
     );
+
+  /** The smallest step this page's performance.now() takes (1 ms in WebKit, 0.1 ms or less elsewhere). */
+  const clockStep = () => {
+    let step = Number.POSITIVE_INFINITY;
+    let last = performance.now();
+    for (let i = 0; i < 200_000 && step > 0.01; i++) {
+      const t = performance.now();
+      if (t > last) {
+        step = Math.min(step, t - last);
+        last = t;
+      }
+    }
+    return Math.round(step * 1000) / 1000;
+  };
+
+  /** The mean of each `n` consecutive values (the last, shorter window included). */
+  const windowMeans = (a: number[], n: number) => {
+    const out: number[] = [];
+    for (let i = 0; i < a.length; i += n) {
+      const w = a.slice(i, i + n);
+      out.push(w.reduce((x, y) => x + y, 0) / w.length);
+    }
+    return out;
+  };
 
   const percentile = (a: number[], q: number) => {
     const s = [...a].sort((x, y) => x - y);
@@ -833,11 +879,15 @@ test.describe("ink lab", () => {
     // 2. Engine time: the engine's scroll and frame work runs whether the layers are shown or not, so the
     //    ratio cannot see it. The page-wide probe (packages/ink/src/probe.ts) times every engine callback:
     //    scroll, frames, resize, settle timers, the encode worker's replies, and the promise continuations
-    //    of encoding, decoding and restoring a parked slab, each including the microtasks it queued. The
-    //    probe is summed per animation frame during the rounds; its p95 must stay under 2 ms. WebKit
-    //    reports performance.now() in whole milliseconds (Chromium in 0.1 ms steps), so on WebKit a frame
-    //    reads 0, 1, 2 ... ms and "under 2" means at most 1 ms; real per-frame work up to just under 2 ms
-    //    can read 1 or 2. Proof that the gate sees what the ratio cannot: the tests below add 12 ms of work
+    //    of encoding and decoding, each including the microtasks it queued. The
+    //    probe is summed per animation frame during the rounds; its p95 must stay under 2 ms.
+    //    Timer resolution: WebKit reports performance.now() in whole milliseconds (Chromium and Firefox in
+    //    0.1 ms steps or finer). Each sample is then off by up to 1 ms, and a frame sums two or three of
+    //    them (each engine's scroll handler, a frame callback), so a frame with 0.3 ms of real work can read
+    //    2 ms. Where the clock is that coarse (measured in the page: its smallest step is above 0.5 ms), the
+    //    p95 is taken over the mean of each four consecutive frames instead: rounding errors are unbiased,
+    //    so the mean converges on the real cost, and sustained work still shows in full (12 ms on every
+    //    scroll reads about 12 ms). Both figures are recorded. Proof that the gate sees what the ratio cannot: the tests below add 12 ms of work
     //    to the stress engine's scroll handler, directly or in a microtask, and require the probe to
     //    reach 2 ms. (Reviewer checks of the old gate: 12 ms in the handler cost 25-29 % of the frame rate,
     //    and a 12 ms microtask held the ratio at 0.79, and both still passed.)
@@ -846,6 +896,7 @@ test.describe("ink lab", () => {
     const ink: number[] = [];
     const base: number[] = [];
     const engineMs: number[] = [];
+    const engineKinds: Record<string, { ms: number; slowFrameMs: number }> = {};
     let rounds = 0;
     let sliceMs = 250;
     let frameMs = 0;
@@ -854,6 +905,11 @@ test.describe("ink lab", () => {
       const r = await scrollRound(page, sliceMs);
       frameMs = r.frameMs;
       engineMs.push(...r.engineMs);
+      for (const [name, k] of Object.entries(r.kinds)) {
+        const t = (engineKinds[name] ??= { ms: 0, slowFrameMs: 0 });
+        t.ms += k.ms;
+        t.slowFrameMs += k.slowFrameMs;
+      }
       // Eight frames per slice at the rate this round drew (250 ms down to 32 fps, 2 s at most).
       sliceMs = Math.min(2000, Math.max(sliceMs, Math.ceil(r.frameMs * 8)));
       if (r.frames.ink < 12 || r.frames.base < 12) continue;
@@ -866,7 +922,9 @@ test.describe("ink lab", () => {
     const ratio = median(ratios);
     const medInk = median(ink);
     const medBase = median(base);
-    const engineP95 = percentile(engineMs, 0.95);
+    const clockStepMs = await page.evaluate(clockStep);
+    const engineP95PerFrame = percentile(engineMs, 0.95);
+    const engineP95 = clockStepMs > 0.5 ? percentile(windowMeans(engineMs, 4), 0.95) : engineP95PerFrame;
     // Settled ink is shown as images (canvases only while editing); record what the page actually had.
     const layers = await page.evaluate(() => {
       const shown = (sel: string) =>
@@ -883,14 +941,24 @@ test.describe("ink lab", () => {
       frameMs,
       sliceMs,
       rounds,
-      engine: { frames: engineMs.length, p95Ms: engineP95, maxMs: Math.max(0, ...engineMs) },
+      engine: {
+        frames: engineMs.length,
+        clockStepMs,
+        p95Ms: engineP95,
+        p95PerFrameMs: engineP95PerFrame,
+        maxMs: Math.max(0, ...engineMs),
+        kinds: engineKinds,
+      },
       paint: { passes, afterFirst, afterRounds },
       tall,
       layers,
     });
     expect(ink.length, `rounds with at least 12 frames per state (slice ${sliceMs} ms, ${rounds} rounds)`).toBe(5);
     expect(layers.canvases, "settled ink is not left on canvases").toBe(0);
-    expect(engineP95, `engine main-thread time per frame, p95 over ${engineMs.length} frames`).toBeLessThan(2);
+    expect(
+      engineP95,
+      `engine main-thread time per frame, p95 over ${engineMs.length} frames (clock step ${clockStepMs} ms)`,
+    ).toBeLessThan(2);
     expect(afterRounds.tilesPainted - afterFirst.tilesPainted, "tiles painted after the first pass").toBe(0);
     expect(afterRounds.repaints, "wasted repaints").toBe(0);
     if (tall) expect(afterRounds.slabsRestored, "slabs shown again from parked pictures").toBeGreaterThan(0);
@@ -943,9 +1011,11 @@ test.describe("ink lab", () => {
         };
       }, regression);
       const r = await scrollRound(page, 250);
-      const p95 = percentile(r.engineMs, 0.95);
+      const clockStepMs = await page.evaluate(clockStep);
+      const p95 = clockStepMs > 0.5 ? percentile(windowMeans(r.engineMs, 4), 0.95) : percentile(r.engineMs, 0.95);
       record(info, `scroll-engine-negative-${regression.replace(" ", "-")}`, {
         engineP95Ms: p95,
+        kinds: r.kinds,
         frames: r.engineMs.length,
         ink: r.ink,
         base: r.base,

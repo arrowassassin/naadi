@@ -11,6 +11,7 @@ import {
   inkProbe,
   inputCapabilities,
   LatencyRecorder,
+  PROBE_KINDS,
   parkedPictureBudget,
   type SampleStats,
   type SelectionInfo,
@@ -46,6 +47,7 @@ declare global {
       slabs: typeof slabBudget;
       parked: typeof parkedPictureBudget;
       probe: typeof inkProbe;
+      probeKinds: typeof PROBE_KINDS;
     };
   }
 }
@@ -254,6 +256,7 @@ export function InkLab() {
       slabs: slabBudget,
       parked: parkedPictureBudget,
       probe: inkProbe,
+      probeKinds: PROBE_KINDS,
     };
     return () => {
       window.naadiInkLab = undefined;

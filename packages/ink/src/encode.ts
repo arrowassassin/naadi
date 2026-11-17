@@ -27,7 +27,7 @@ function getWorker(): Worker | null {
         const done = pending.get(e.data.id);
         pending.delete(e.data.id);
         done?.(e.data.blob);
-      });
+      }, "encode");
     w.onerror = () => {
       // The worker could not start (e.g. blocked): fail what is pending and use toBlob from now on.
       for (const done of pending.values()) done(null);
@@ -42,7 +42,7 @@ function getWorker(): Worker | null {
 }
 
 function toBlob(canvas: HTMLCanvasElement): Promise<Blob | null> {
-  return new Promise((resolve) => canvas.toBlob((b) => inkProbe.time(() => resolve(b)), "image/png"));
+  return new Promise((resolve) => canvas.toBlob((b) => inkProbe.time(() => resolve(b), "encode"), "image/png"));
 }
 
 export async function encodePng(canvas: HTMLCanvasElement): Promise<Blob | null> {

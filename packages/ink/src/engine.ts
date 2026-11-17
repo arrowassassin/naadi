@@ -42,7 +42,7 @@ import {
 } from "./input";
 import type { LatencyRecorder } from "./latency";
 import { markPenPresent, onPenPresence, penPresent } from "./presence";
-import { inkProbe } from "./probe";
+import { inkProbe, type ProbeKind } from "./probe";
 import {
   drawItem,
   type InkTheme,
@@ -618,8 +618,8 @@ export class InkEngine {
   }
 
   /** Every engine callback runs through the page-wide main-thread probe (see probe.ts). */
-  private timed(fn: () => void): void {
-    inkProbe.time(fn);
+  private timed(fn: () => void, kind: ProbeKind): void {
+    inkProbe.time(fn, kind);
   }
 
   destroy(): void {
@@ -743,11 +743,11 @@ export class InkEngine {
     on(l, "contextmenu", (e: Event) => {
       if (this.state.enabled) e.preventDefault();
     });
-    on(window, "scroll", () => this.timed(() => this.onScroll()), { passive: true, capture: true });
-    on(window, "resize", () => this.timed(() => this.measure()), { passive: true });
+    on(window, "scroll", () => this.timed(() => this.onScroll(), "scroll"), { passive: true, capture: true });
+    on(window, "resize", () => this.timed(() => this.measure(), "resize"), { passive: true });
     if (window.visualViewport)
-      on(window.visualViewport, "resize", () => this.timed(() => this.measure()), { passive: true });
-    const ro = new ResizeObserver(() => this.timed(() => this.measure()));
+      on(window.visualViewport, "resize", () => this.timed(() => this.measure(), "resize"), { passive: true });
+    const ro = new ResizeObserver(() => this.timed(() => this.measure(), "resize"));
     ro.observe(this.host);
     this.cleanups.push(() => ro.disconnect());
   }
@@ -976,16 +976,12 @@ export class InkEngine {
       img.dataset.bytes = String(pic.bytes);
       layer.version = 1;
       layer.settledVersion = 1;
+      // Shown at once, no img.decode(): WebKit runs decode() on the main thread (85-106 ms for an 8 Mpx
+      // picture, measured in the e2e WebKit build), and this runs while the student scrolls. With
+      // decoding="async" the browser decodes off the main thread, and a slab restored here is usually still
+      // just outside the viewport.
       img.src = pic.url;
-      img
-        .decode()
-        .catch(() => undefined)
-        .then(() =>
-          this.timed(() => {
-            if (this.slabs.get(slab.i) === slab && layer.settledVersion === layer.version && !this.destroyed)
-              img.style.display = "";
-          }),
-        );
+      img.style.display = "";
     }
     this.renderStats.slabsRestored++;
     return true;
@@ -1008,6 +1004,9 @@ export class InkEngine {
     img.alt = "";
     img.setAttribute("aria-hidden", "true");
     img.draggable = false;
+    // Decode off the main thread: a slab picture is up to 8 Mpx, and WebKit otherwise decodes it in a
+    // microtask right after src is set (110-140 ms at dpr 2, inside the scroll that restored the slab).
+    img.decoding = "async";
     img.dataset.inkImage = layer.kind;
     Object.assign(img.style, {
       position: "absolute",
@@ -1378,7 +1377,7 @@ export class InkEngine {
 
   private requestFrame(): void {
     if (this.raf || this.destroyed) return;
-    this.raf = requestAnimationFrame((ts) => this.timed(() => this.onFrame(ts)));
+    this.raf = requestAnimationFrame((ts) => this.timed(() => this.onFrame(ts), "frame"));
   }
 
   /** After painting tiles: show the canvases that hold the newest pixels, hide stale images, re-settle. */
@@ -1436,7 +1435,7 @@ export class InkEngine {
             return;
           }
           for (const slab of this.slabs.values()) this.settleSlab(slab);
-        }),
+        }, "settle"),
       SETTLE_MS,
     );
   }
@@ -1477,9 +1476,9 @@ export class InkEngine {
                   this.dropBacking(layer);
                 }
                 done();
-              }),
+              }, "decode"),
             );
-        }),
+        }, "encode"),
       );
     }
   }

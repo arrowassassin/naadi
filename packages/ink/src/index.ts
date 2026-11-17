@@ -35,7 +35,7 @@ export * from "./geometry";
 export * from "./input";
 export * from "./latency";
 export { forgetPen, markPenPresent, onPenPresence, penPresent } from "./presence";
-export { inkProbe, MainThreadProbe } from "./probe";
+export { inkProbe, MainThreadProbe, PROBE_KINDS, type ProbeKind } from "./probe";
 export * from "./render";
 export * from "./shapes";
 export { registerShortcutTarget, type ShortcutAction, shortcutFor } from "./shortcuts";
