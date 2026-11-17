@@ -179,6 +179,18 @@ export const zAdminSourceList = z.object({
 });
 
 /**
+ * AdminTaskOut
+ */
+export const zAdminTaskOut = z.object({
+  cost_usd: z.number().nullable(),
+  detail_md: z.string(),
+  id: z.string(),
+  last_verified: z.iso.date().nullable(),
+  needs_review: z.boolean(),
+  official_url: z.string().nullable(),
+});
+
+/**
  * AgentCronLastRun
  */
 export const zAgentCronLastRun = z.object({
@@ -701,6 +713,51 @@ export const zChapterStatusChange = z.object({
 });
 
 /**
+ * CheckQuote
+ */
+export const zCheckQuote = z.object({
+  text: z.string().max(300),
+  url: z.string(),
+});
+
+/**
+ * CheckFinding
+ */
+export const zCheckFinding = z.object({
+  differences: z.array(z.string()).optional().default([]),
+  quotes: z.array(zCheckQuote).optional().default([]),
+  status: z.enum(["unchanged", "changed", "unreachable", "moved"]),
+  still_accurate: z.boolean().nullish(),
+  summary_key: z.string().nullish(),
+});
+
+/**
+ * CheckOut
+ */
+export const zCheckOut = z.object({
+  changed: z.boolean(),
+  checked_at: z.iso.datetime(),
+  finding: zCheckFinding,
+  http_status: z.int().nullable(),
+  id: z.int(),
+  last_verified: z.iso.date().nullable(),
+  needs_review: z.boolean(),
+  resolved_at: z.iso.datetime().nullable(),
+  stage_key: z.string(),
+  task_id: z.string(),
+  task_title: z.string(),
+  url: z.string(),
+});
+
+/**
+ * CheckList
+ */
+export const zCheckList = z.object({
+  items: z.array(zCheckOut),
+  open_count: z.int(),
+});
+
+/**
  * CoachSuggestionOut
  */
 export const zCoachSuggestionOut = z.object({
@@ -751,6 +808,83 @@ export const zConfigKeyList = z.object({
 export const zConfigRevert = z.object({
   expected_updated_at: z.iso.datetime().nullable(),
   history_id: z.int().gte(1),
+});
+
+/**
+ * CostCreate
+ *
+ * `id` is made on the device, so replaying the same request is safe.
+ */
+export const zCostCreate = z.object({
+  amount: z.number().gte(0).lte(1000000000),
+  client_updated_at_ms: z.int().gte(0).lte(10000000000000),
+  currency: z.string().regex(/^[A-Z]{3}$/),
+  id: z.uuid().nullish(),
+  label: z.string().min(1).max(200),
+  paid_on: z.iso.date().nullish(),
+  stage_key: z
+    .string()
+    .regex(/^[a-z0-9_]{1,64}$/)
+    .nullish(),
+  task_id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9_-]{0,63}$/)
+    .nullish(),
+});
+
+/**
+ * CostOut
+ */
+export const zCostOut = z.object({
+  amount: z.string(),
+  client_updated_at_ms: z.int().nullable(),
+  created_at: z.iso.datetime(),
+  currency: z.string(),
+  id: z.uuid(),
+  label: z.string(),
+  paid_on: z.iso.date().nullable(),
+  stage_key: z.string().nullable(),
+  task_id: z.string().nullable(),
+  updated_at: z.iso.datetime(),
+});
+
+/**
+ * CostList
+ */
+export const zCostList = z.object({
+  currencies: z.array(z.string()),
+  items: z.array(zCostOut),
+  max_entries: z.int(),
+});
+
+/**
+ * CostPatch
+ */
+export const zCostPatch = z.object({
+  amount: z.number().gte(0).lte(1000000000).nullish(),
+  client_updated_at_ms: z.int().gte(0).lte(10000000000000),
+  currency: z
+    .string()
+    .regex(/^[A-Z]{3}$/)
+    .nullish(),
+  label: z.string().min(1).max(200).nullish(),
+  paid_on: z.iso.date().nullish(),
+  stage_key: z
+    .string()
+    .regex(/^[a-z0-9_]{1,64}$/)
+    .nullish(),
+  task_id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9_-]{0,63}$/)
+    .nullish(),
+});
+
+/**
+ * CostResult
+ */
+export const zCostResult = z.object({
+  applied: z.boolean(),
+  cost: zCostOut,
 });
 
 /**
@@ -844,6 +978,20 @@ export const zDiffBlock = z.object({
   kind: z.string(),
   op: z.enum(["equal", "insert", "delete"]),
   text: z.string(),
+});
+
+/**
+ * DueRuleOut
+ *
+ * A seeded due rule as structure: `anchor` + `days` (negative = before), a fixed `date`, or `annual`.
+ */
+export const zDueRuleOut = z.object({
+  anchor: z.string().nullish(),
+  date: z.iso.date().nullish(),
+  day: z.int().nullish(),
+  days: z.int().nullish(),
+  kind: z.enum(["anchor", "date", "annual"]),
+  month: z.int().nullish(),
 });
 
 /**
@@ -1137,6 +1285,15 @@ export const zGoals = z.object({
   questions: z.int().optional().default(15),
   sections: z.int().optional().default(1),
   videos: z.int().optional().default(1),
+});
+
+/**
+ * GuideOut
+ */
+export const zGuideOut = z.object({
+  body_md: z.string(),
+  key: z.string(),
+  title: z.string(),
 });
 
 /**
@@ -1638,6 +1795,14 @@ export const zModelProbe = z.object({
 });
 
 /**
+ * MoneyOut
+ */
+export const zMoneyOut = z.object({
+  amount: z.string(),
+  currency: z.string(),
+});
+
+/**
  * NavEntry
  */
 export const zNavEntry = z.object({
@@ -1669,6 +1834,17 @@ export const zNavResponse = z.object({
   features: z.record(z.string(), z.boolean()),
   items: z.array(zNavItem),
   source: z.enum(["app_config", "file_fallback"]),
+});
+
+/**
+ * NextFeeOut
+ */
+export const zNextFeeOut = z.object({
+  amount: z.string(),
+  currency: z.string(),
+  id: z.uuid(),
+  label: z.string(),
+  stage_key: z.string().nullable(),
 });
 
 /**
@@ -1767,6 +1943,14 @@ export const zNotebookPatch = z.object({
   cover: z.enum(["lime", "violet", "amber", "paper", "surface-2", "ink-violet"]).nullish(),
   paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]).nullish(),
   title: z.string().min(1).max(200).nullish(),
+});
+
+/**
+ * OfficialLink
+ */
+export const zOfficialLink = z.object({
+  label: z.string(),
+  url: z.string(),
 });
 
 /**
@@ -3240,6 +3424,46 @@ export const zLabValuesOut = z.object({
 });
 
 /**
+ * StageChosenOut
+ */
+export const zStageChosenOut = z.object({
+  stage_key: z.string().nullable(),
+});
+
+/**
+ * StageCostOut
+ */
+export const zStageCostOut = z.object({
+  entries: z.int(),
+  paid: z.array(zMoneyOut),
+  planned_usd: z.string(),
+  stage_key: z.string().nullable(),
+  upcoming: z.array(zMoneyOut),
+});
+
+/**
+ * CostSummary
+ */
+export const zCostSummary = z.object({
+  by_stage: z.array(zStageCostOut),
+  currencies: z.array(z.string()),
+  next_fee: zNextFeeOut.nullable(),
+  paid: z.array(zMoneyOut),
+  planned_usd: z.string(),
+  upcoming: z.array(zMoneyOut),
+});
+
+/**
+ * StagePut
+ */
+export const zStagePut = z.object({
+  stage_key: z
+    .string()
+    .regex(/^[a-z0-9_]{1,64}$/)
+    .nullable(),
+});
+
+/**
  * StorageOut
  */
 export const zStorageOut = z.object({
@@ -3368,6 +3592,85 @@ export const zSearchResponse = z.object({
   scope: z.enum(["all", "chapters", "questions", "notes", "handwriting", "uploads", "pathway"]),
   suggest_web: z.boolean(),
   took_ms: z.int(),
+});
+
+/**
+ * TaskAdminPatch
+ */
+export const zTaskAdminPatch = z.object({
+  cost_usd: z.number().gte(0).lte(1000000).nullish(),
+  detail_md: z.string().min(1).max(20000).nullish(),
+  official_url: z
+    .string()
+    .max(500)
+    .regex(/^https:\/\/[^\s]+$/)
+    .nullish(),
+});
+
+/**
+ * TaskOut
+ */
+export const zTaskOut = z.object({
+  client_updated_at_ms: z.int().nullable(),
+  cost_usd: z.number().nullable(),
+  days_since_verified: z.int().nullable(),
+  detail_md: z.string(),
+  due: z.iso.date().nullable(),
+  due_rule: zDueRuleOut.nullable(),
+  id: z.string(),
+  last_verified: z.iso.date().nullable(),
+  needs_review: z.boolean(),
+  notes: z.string().nullable(),
+  official: z.boolean(),
+  official_url: z.string().nullable(),
+  reverify: z.enum(["age", "flagged"]).nullable(),
+  sort: z.int(),
+  status: z.enum(["todo", "doing", "done", "na"]),
+  title: z.string(),
+  updated_at: z.iso.datetime().nullable(),
+});
+
+/**
+ * StageOut
+ */
+export const zStageOut = z.object({
+  done: z.int(),
+  guide: zGuideOut.nullable(),
+  key: z.string(),
+  last_verified: z.iso.date().nullable(),
+  official_links: z.array(zOfficialLink),
+  reverify: z.enum(["age", "flagged"]).nullable(),
+  reverify_count: z.int(),
+  sort: z.int(),
+  spend_planned_usd: z.number(),
+  summary_md: z.string(),
+  tasks: z.array(zTaskOut),
+  title: z.string(),
+  total: z.int(),
+});
+
+/**
+ * PathwayOut
+ */
+export const zPathwayOut = z.object({
+  current_stage: z.string().nullable(),
+  current_stage_source: z.enum(["chosen", "derived"]).nullable(),
+  overview: zGuideOut.nullable(),
+  reverify_days: z.int(),
+  stages: z.array(zStageOut),
+  today: z.iso.date(),
+});
+
+/**
+ * TaskPatch
+ *
+ * Last-writer-wins per row: send the fields you changed with your clock's stamp.
+ */
+export const zTaskPatch = z.object({
+  client_updated_at_ms: z.int().gte(0).lte(10000000000000),
+  due: z.iso.date().nullish(),
+  notes: z.string().max(4000).nullish(),
+  status: z.enum(["todo", "doing", "done", "na"]).nullish(),
 });
 
 /**
@@ -3579,6 +3882,28 @@ export const zGenerationStatusOut = z.object({
 });
 
 /**
+ * UserTaskOut
+ *
+ * The student's own state for one task.
+ */
+export const zUserTaskOut = z.object({
+  client_updated_at_ms: z.int().nullable(),
+  due: z.iso.date().nullable(),
+  notes: z.string().nullable(),
+  status: z.enum(["todo", "doing", "done", "na"]),
+  task_id: z.string(),
+  updated_at: z.iso.datetime().nullable(),
+});
+
+/**
+ * TaskPatchResult
+ */
+export const zTaskPatchResult = z.object({
+  applied: z.boolean(),
+  task: zUserTaskOut,
+});
+
+/**
  * ValidationError
  */
 export const zValidationError = z.object({
@@ -3594,6 +3919,79 @@ export const zValidationError = z.object({
  */
 export const zHttpValidationError = z.object({
   detail: z.array(zValidationError).optional(),
+});
+
+/**
+ * VaultDocOut
+ */
+export const zVaultDocOut = z.object({
+  bytes: z.int(),
+  created_at: z.iso.datetime(),
+  doc_type: z.string(),
+  expires_in_days: z.int().nullable(),
+  expires_on: z.iso.date().nullable(),
+  expiry: z.enum(["none", "ok", "soon", "expired"]),
+  id: z.uuid(),
+  mime: z.string(),
+  title: z.string(),
+});
+
+/**
+ * VaultList
+ */
+export const zVaultList = z.object({
+  expiry_soon_days: z.int(),
+  items: z.array(zVaultDocOut),
+  max_bytes: z.int(),
+  max_documents: z.int(),
+  types: z.array(z.string()),
+});
+
+/**
+ * VaultPatch
+ */
+export const zVaultPatch = z.object({
+  doc_type: z
+    .string()
+    .regex(/^[a-z][a-z0-9_]{0,31}$/)
+    .nullish(),
+  expires_on: z.iso.date().nullish(),
+  title: z.string().min(1).max(200).nullish(),
+});
+
+/**
+ * VaultUploadOut
+ */
+export const zVaultUploadOut = z.object({
+  bucket: z.string(),
+  id: z.uuid(),
+  path: z.string(),
+  signed_url: z.string(),
+  token: z.string(),
+});
+
+/**
+ * VaultUploadRequest
+ */
+export const zVaultUploadRequest = z.object({
+  bytes: z.int().gte(1).lte(20971520),
+  doc_type: z
+    .string()
+    .regex(/^[a-z][a-z0-9_]{0,31}$/)
+    .optional()
+    .default("other"),
+  expires_on: z.iso.date().nullish(),
+  id: z.uuid().nullish(),
+  mime: z.enum(["application/pdf", "image/jpeg", "image/png", "image/heic", "image/heif"]),
+  title: z.string().min(1).max(200),
+});
+
+/**
+ * VaultUrlOut
+ */
+export const zVaultUrlOut = z.object({
+  expires_in: z.int(),
+  url: z.string(),
 });
 
 /**
@@ -4427,6 +4825,36 @@ export const zReviewAdminMediaResponse = zAdminMedia;
  */
 export const zGetAdminOverviewResponse = zAdminOverview;
 
+export const zListPathwayChecksQuery = z.object({
+  open: z.boolean().optional().default(false),
+  limit: z.int().gte(1).lte(200).optional().default(100),
+});
+
+/**
+ * Successful Response
+ */
+export const zListPathwayChecksResponse = zCheckList;
+
+export const zPatchPathwayTaskAdminBody = zTaskAdminPatch;
+
+export const zPatchPathwayTaskAdminPath = z.object({
+  task_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{0,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zPatchPathwayTaskAdminResponse = zAdminTaskOut;
+
+export const zVerifyPathwayTaskPath = z.object({
+  task_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{0,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zVerifyPathwayTaskResponse = zAdminTaskOut;
+
 export const zListAdminQuestionsQuery = z.object({
   exam: z.enum(["step1", "step2ck", "step3"]).nullish(),
   status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]).nullish(),
@@ -5106,6 +5534,56 @@ export const zDismissCoachSuggestionPath = z.object({
  */
 export const zDismissCoachSuggestionResponse = zCoachSuggestionOut;
 
+/**
+ * Successful Response
+ */
+export const zListCostsResponse = zCostList;
+
+export const zCreateCostBody = zCostCreate;
+
+export const zCreateCostHeaders = z.object({
+  "idempotency-key": z.string().max(100).nullish(),
+});
+
+/**
+ * Replayed: the stored entry
+ */
+export const zCreateCostResponse = zCostResult;
+
+/**
+ * Successful Response
+ */
+export const zGetCostSummaryResponse = zCostSummary;
+
+export const zDeleteCostHeaders = z.object({
+  "idempotency-key": z.string().max(100).nullish(),
+});
+
+export const zDeleteCostPath = z.object({
+  cost_id: z.uuid(),
+});
+
+export const zDeleteCostQuery = z.object({
+  client_updated_at_ms: z.int().gte(0).lte(10000000000000).nullish(),
+});
+
+export const zDeleteCostResponse = z.union([zCostResult, z.void()]);
+
+export const zPatchCostBody = zCostPatch;
+
+export const zPatchCostHeaders = z.object({
+  "idempotency-key": z.string().max(100).nullish(),
+});
+
+export const zPatchCostPath = z.object({
+  cost_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zPatchCostResponse = zCostResult;
+
 export const zGetCoursesQuery = z.object({
   exam: z
     .string()
@@ -5393,6 +5871,13 @@ export const zUpdateMeBody = zMeUpdate;
  */
 export const zUpdateMeResponse = zMeResponse;
 
+export const zPutPathwayStageBody = zStagePut;
+
+/**
+ * Successful Response
+ */
+export const zPutPathwayStageResponse = zStageChosenOut;
+
 /**
  * Successful Response
  */
@@ -5525,6 +6010,26 @@ export const zSaveOnboardingBody = zOnboardingIn;
  * Successful Response
  */
 export const zSaveOnboardingResponse = zOnboardingOut;
+
+/**
+ * Successful Response
+ */
+export const zGetPathwayResponse = zPathwayOut;
+
+export const zPatchPathwayTaskBody = zTaskPatch;
+
+export const zPatchPathwayTaskHeaders = z.object({
+  "idempotency-key": z.string().max(100).nullish(),
+});
+
+export const zPatchPathwayTaskPath = z.object({
+  task_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{0,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zPatchPathwayTaskResponse = zTaskPatchResult;
 
 /**
  * Successful Response
@@ -5723,3 +6228,53 @@ export const zSearchWebResponse = zWebResponse;
  * Successful Response
  */
 export const zGetTodayResponse = zTodayOut;
+
+/**
+ * Successful Response
+ */
+export const zListVaultResponse = zVaultList;
+
+export const zCreateVaultUploadBody = zVaultUploadRequest;
+
+/**
+ * Successful Response
+ */
+export const zCreateVaultUploadResponse = zVaultUploadOut;
+
+export const zDeleteVaultDocumentPath = z.object({
+  doc_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zDeleteVaultDocumentResponse = z.void();
+
+export const zPatchVaultDocumentBody = zVaultPatch;
+
+export const zPatchVaultDocumentPath = z.object({
+  doc_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zPatchVaultDocumentResponse = zVaultDocOut;
+
+export const zCompleteVaultUploadPath = z.object({
+  doc_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zCompleteVaultUploadResponse = zVaultDocOut;
+
+export const zGetVaultUrlPath = z.object({
+  doc_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetVaultUrlResponse = zVaultUrlOut;

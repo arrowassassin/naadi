@@ -633,6 +633,36 @@ export type AdminSourceList = {
 };
 
 /**
+ * AdminTaskOut
+ */
+export type AdminTaskOut = {
+  /**
+   * Cost Usd
+   */
+  cost_usd: number | null;
+  /**
+   * Detail Md
+   */
+  detail_md: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Last Verified
+   */
+  last_verified: string | null;
+  /**
+   * Needs Review
+   */
+  needs_review: boolean;
+  /**
+   * Official Url
+   */
+  official_url: string | null;
+};
+
+/**
  * AgentCron
  */
 export type AgentCron = {
@@ -2388,6 +2418,111 @@ export type ChapterStatusChange = {
 };
 
 /**
+ * CheckFinding
+ */
+export type CheckFinding = {
+  /**
+   * Differences
+   */
+  differences?: Array<string>;
+  /**
+   * Quotes
+   */
+  quotes?: Array<CheckQuote>;
+  /**
+   * Status
+   */
+  status: "unchanged" | "changed" | "unreachable" | "moved";
+  /**
+   * Still Accurate
+   */
+  still_accurate?: boolean | null;
+  /**
+   * Summary Key
+   */
+  summary_key?: string | null;
+};
+
+/**
+ * CheckList
+ */
+export type CheckList = {
+  /**
+   * Items
+   */
+  items: Array<CheckOut>;
+  /**
+   * Open Count
+   */
+  open_count: number;
+};
+
+/**
+ * CheckOut
+ */
+export type CheckOut = {
+  /**
+   * Changed
+   */
+  changed: boolean;
+  /**
+   * Checked At
+   */
+  checked_at: string;
+  finding: CheckFinding;
+  /**
+   * Http Status
+   */
+  http_status: number | null;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Last Verified
+   */
+  last_verified: string | null;
+  /**
+   * Needs Review
+   */
+  needs_review: boolean;
+  /**
+   * Resolved At
+   */
+  resolved_at: string | null;
+  /**
+   * Stage Key
+   */
+  stage_key: string;
+  /**
+   * Task Id
+   */
+  task_id: string;
+  /**
+   * Task Title
+   */
+  task_title: string;
+  /**
+   * Url
+   */
+  url: string;
+};
+
+/**
+ * CheckQuote
+ */
+export type CheckQuote = {
+  /**
+   * Text
+   */
+  text: string;
+  /**
+   * Url
+   */
+  url: string;
+};
+
+/**
  * CoachActionOut
  */
 export type CoachActionOut = {
@@ -2707,6 +2842,192 @@ export type ConfirmBody = {
    * Vault
    */
   vault?: "vault" | "continue" | "discard" | null;
+};
+
+/**
+ * CostCreate
+ *
+ * `id` is made on the device, so replaying the same request is safe.
+ */
+export type CostCreate = {
+  /**
+   * Amount
+   */
+  amount: number;
+  /**
+   * Client Updated At Ms
+   *
+   * Device clock, ms since the epoch
+   */
+  client_updated_at_ms: number;
+  /**
+   * Currency
+   */
+  currency: string;
+  /**
+   * Id
+   */
+  id?: string | null;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Paid On
+   */
+  paid_on?: string | null;
+  /**
+   * Stage Key
+   */
+  stage_key?: string | null;
+  /**
+   * Task Id
+   */
+  task_id?: string | null;
+};
+
+/**
+ * CostList
+ */
+export type CostList = {
+  /**
+   * Currencies
+   *
+   * Currencies the student can add entries in
+   */
+  currencies: Array<string>;
+  /**
+   * Items
+   */
+  items: Array<CostOut>;
+  /**
+   * Max Entries
+   */
+  max_entries: number;
+};
+
+/**
+ * CostOut
+ */
+export type CostOut = {
+  /**
+   * Amount
+   *
+   * Decimal string, two places
+   */
+  amount: string;
+  /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms: number | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Currency
+   */
+  currency: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Paid On
+   */
+  paid_on: string | null;
+  /**
+   * Stage Key
+   */
+  stage_key: string | null;
+  /**
+   * Task Id
+   */
+  task_id: string | null;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * CostPatch
+ */
+export type CostPatch = {
+  /**
+   * Amount
+   */
+  amount?: number | null;
+  /**
+   * Client Updated At Ms
+   *
+   * Device clock, ms since the epoch
+   */
+  client_updated_at_ms: number;
+  /**
+   * Currency
+   */
+  currency?: string | null;
+  /**
+   * Label
+   */
+  label?: string | null;
+  /**
+   * Paid On
+   */
+  paid_on?: string | null;
+  /**
+   * Stage Key
+   */
+  stage_key?: string | null;
+  /**
+   * Task Id
+   */
+  task_id?: string | null;
+};
+
+/**
+ * CostResult
+ */
+export type CostResult = {
+  /**
+   * Applied
+   */
+  applied: boolean;
+  cost: CostOut;
+};
+
+/**
+ * CostSummary
+ */
+export type CostSummary = {
+  /**
+   * By Stage
+   */
+  by_stage: Array<StageCostOut>;
+  /**
+   * Currencies
+   *
+   * Currencies the student can add entries in
+   */
+  currencies: Array<string>;
+  next_fee: NextFeeOut | null;
+  /**
+   * Paid
+   */
+  paid: Array<MoneyOut>;
+  /**
+   * Planned Usd
+   */
+  planned_usd: string;
+  /**
+   * Upcoming
+   */
+  upcoming: Array<MoneyOut>;
 };
 
 /**
@@ -3045,6 +3366,38 @@ export type DueResponse = {
    */
   now: string;
   scheduler: FsrsSchedulerConfig;
+};
+
+/**
+ * DueRuleOut
+ *
+ * A seeded due rule as structure: `anchor` + `days` (negative = before), a fixed `date`, or `annual`.
+ */
+export type DueRuleOut = {
+  /**
+   * Anchor
+   */
+  anchor?: string | null;
+  /**
+   * Date
+   */
+  date?: string | null;
+  /**
+   * Day
+   */
+  day?: number | null;
+  /**
+   * Days
+   */
+  days?: number | null;
+  /**
+   * Kind
+   */
+  kind: "anchor" | "date" | "annual";
+  /**
+   * Month
+   */
+  month?: number | null;
 };
 
 /**
@@ -3691,6 +4044,24 @@ export type Goals = {
    * Videos
    */
   videos?: number;
+};
+
+/**
+ * GuideOut
+ */
+export type GuideOut = {
+  /**
+   * Body Md
+   */
+  body_md: string;
+  /**
+   * Key
+   */
+  key: string;
+  /**
+   * Title
+   */
+  title: string;
 };
 
 /**
@@ -4848,6 +5219,20 @@ export type ModelProbe = {
 };
 
 /**
+ * MoneyOut
+ */
+export type MoneyOut = {
+  /**
+   * Amount
+   */
+  amount: string;
+  /**
+   * Currency
+   */
+  currency: string;
+};
+
+/**
  * NavEntry
  */
 export type NavEntry = {
@@ -4935,6 +5320,32 @@ export type NavResponse = {
    * file_fallback = app_config could not be read; config/app_config.yaml was used (logged)
    */
   source: "app_config" | "file_fallback";
+};
+
+/**
+ * NextFeeOut
+ */
+export type NextFeeOut = {
+  /**
+   * Amount
+   */
+  amount: string;
+  /**
+   * Currency
+   */
+  currency: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Stage Key
+   */
+  stage_key: string | null;
 };
 
 /**
@@ -5441,6 +5852,20 @@ export type NotebookPatch = {
 };
 
 /**
+ * OfficialLink
+ */
+export type OfficialLink = {
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Url
+   */
+  url: string;
+};
+
+/**
  * OnboardingIn
  */
 export type OnboardingIn = {
@@ -5667,6 +6092,33 @@ export type PasteCreate = {
    * Title
    */
   title?: string | null;
+};
+
+/**
+ * PathwayOut
+ */
+export type PathwayOut = {
+  /**
+   * Current Stage
+   */
+  current_stage: string | null;
+  /**
+   * Current Stage Source
+   */
+  current_stage_source: "chosen" | "derived" | null;
+  overview: GuideOut | null;
+  /**
+   * Reverify Days
+   */
+  reverify_days: number;
+  /**
+   * Stages
+   */
+  stages: Array<StageOut>;
+  /**
+   * Today
+   */
+  today: string;
 };
 
 /**
@@ -8475,6 +8927,117 @@ export type SourceRef = {
 };
 
 /**
+ * StageChosenOut
+ */
+export type StageChosenOut = {
+  /**
+   * Stage Key
+   */
+  stage_key: string | null;
+};
+
+/**
+ * StageCostOut
+ */
+export type StageCostOut = {
+  /**
+   * Entries
+   */
+  entries: number;
+  /**
+   * Paid
+   */
+  paid: Array<MoneyOut>;
+  /**
+   * Planned Usd
+   *
+   * Task cost estimates (USD) for this stage, tasks not needed left out
+   */
+  planned_usd: string;
+  /**
+   * Stage Key
+   *
+   * null: entries not filed under a stage
+   */
+  stage_key: string | null;
+  /**
+   * Upcoming
+   *
+   * Entries with no paid date
+   */
+  upcoming: Array<MoneyOut>;
+};
+
+/**
+ * StageOut
+ */
+export type StageOut = {
+  /**
+   * Done
+   *
+   * Tasks done or not needed
+   */
+  done: number;
+  guide: GuideOut | null;
+  /**
+   * Key
+   */
+  key: string;
+  /**
+   * Last Verified
+   */
+  last_verified: string | null;
+  /**
+   * Official Links
+   */
+  official_links: Array<OfficialLink>;
+  /**
+   * Reverify
+   */
+  reverify: "age" | "flagged" | null;
+  /**
+   * Reverify Count
+   */
+  reverify_count: number;
+  /**
+   * Sort
+   */
+  sort: number;
+  /**
+   * Spend Planned Usd
+   *
+   * Sum of this stage's task cost estimates (USD), tasks not needed left out
+   */
+  spend_planned_usd: number;
+  /**
+   * Summary Md
+   */
+  summary_md: string;
+  /**
+   * Tasks
+   */
+  tasks: Array<TaskOut>;
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Total
+   */
+  total: number;
+};
+
+/**
+ * StagePut
+ */
+export type StagePut = {
+  /**
+   * Stage Key
+   */
+  stage_key: string | null;
+};
+
+/**
  * StorageOut
  */
 export type StorageOut = {
@@ -8697,6 +9260,138 @@ export type Target = {
    * Type
    */
   type: "section" | "question" | "note" | "ink" | "pathway";
+};
+
+/**
+ * TaskAdminPatch
+ */
+export type TaskAdminPatch = {
+  /**
+   * Cost Usd
+   */
+  cost_usd?: number | null;
+  /**
+   * Detail Md
+   */
+  detail_md?: string | null;
+  /**
+   * Official Url
+   */
+  official_url?: string | null;
+};
+
+/**
+ * TaskOut
+ */
+export type TaskOut = {
+  /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms: number | null;
+  /**
+   * Cost Usd
+   */
+  cost_usd: number | null;
+  /**
+   * Days Since Verified
+   */
+  days_since_verified: number | null;
+  /**
+   * Detail Md
+   */
+  detail_md: string;
+  /**
+   * Due
+   */
+  due: string | null;
+  due_rule: DueRuleOut | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Last Verified
+   */
+  last_verified: string | null;
+  /**
+   * Needs Review
+   */
+  needs_review: boolean;
+  /**
+   * Notes
+   */
+  notes: string | null;
+  /**
+   * Official
+   *
+   * official_url is on an official domain (config search.include_domains)
+   */
+  official: boolean;
+  /**
+   * Official Url
+   */
+  official_url: string | null;
+  /**
+   * Reverify
+   *
+   * Why it shows Re-verify: 'age' or 'flagged'; null = fine
+   */
+  reverify: "age" | "flagged" | null;
+  /**
+   * Sort
+   */
+  sort: number;
+  /**
+   * Status
+   */
+  status: "todo" | "doing" | "done" | "na";
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Updated At
+   */
+  updated_at: string | null;
+};
+
+/**
+ * TaskPatch
+ *
+ * Last-writer-wins per row: send the fields you changed with your clock's stamp.
+ */
+export type TaskPatch = {
+  /**
+   * Client Updated At Ms
+   *
+   * Device clock, ms since the epoch
+   */
+  client_updated_at_ms: number;
+  /**
+   * Due
+   */
+  due?: string | null;
+  /**
+   * Notes
+   */
+  notes?: string | null;
+  /**
+   * Status
+   */
+  status?: "todo" | "doing" | "done" | "na" | null;
+};
+
+/**
+ * TaskPatchResult
+ */
+export type TaskPatchResult = {
+  /**
+   * Applied
+   *
+   * false: a newer write was already stored; this is the stored row
+   */
+  applied: boolean;
+  task: UserTaskOut;
 };
 
 /**
@@ -9152,6 +9847,38 @@ export type UsageOut = {
 };
 
 /**
+ * UserTaskOut
+ *
+ * The student's own state for one task.
+ */
+export type UserTaskOut = {
+  /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms: number | null;
+  /**
+   * Due
+   */
+  due: string | null;
+  /**
+   * Notes
+   */
+  notes: string | null;
+  /**
+   * Status
+   */
+  status: "todo" | "doing" | "done" | "na";
+  /**
+   * Task Id
+   */
+  task_id: string;
+  /**
+   * Updated At
+   */
+  updated_at: string | null;
+};
+
+/**
  * ValidationError
  */
 export type ValidationError = {
@@ -9177,6 +9904,164 @@ export type ValidationError = {
    * Error Type
    */
   type: string;
+};
+
+/**
+ * VaultDocOut
+ */
+export type VaultDocOut = {
+  /**
+   * Bytes
+   */
+  bytes: number;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Doc Type
+   */
+  doc_type: string;
+  /**
+   * Expires In Days
+   */
+  expires_in_days: number | null;
+  /**
+   * Expires On
+   */
+  expires_on: string | null;
+  /**
+   * Expiry
+   */
+  expiry: "none" | "ok" | "soon" | "expired";
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Mime
+   */
+  mime: string;
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * VaultList
+ */
+export type VaultList = {
+  /**
+   * Expiry Soon Days
+   */
+  expiry_soon_days: number;
+  /**
+   * Items
+   */
+  items: Array<VaultDocOut>;
+  /**
+   * Max Bytes
+   */
+  max_bytes: number;
+  /**
+   * Max Documents
+   */
+  max_documents: number;
+  /**
+   * Types
+   */
+  types: Array<string>;
+};
+
+/**
+ * VaultPatch
+ */
+export type VaultPatch = {
+  /**
+   * Doc Type
+   */
+  doc_type?: string | null;
+  /**
+   * Expires On
+   */
+  expires_on?: string | null;
+  /**
+   * Title
+   */
+  title?: string | null;
+};
+
+/**
+ * VaultUploadOut
+ */
+export type VaultUploadOut = {
+  /**
+   * Bucket
+   */
+  bucket: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Path
+   */
+  path: string;
+  /**
+   * Signed Url
+   */
+  signed_url: string;
+  /**
+   * Token
+   *
+   * Signed upload token for supabase-js uploadToSignedUrl
+   */
+  token: string;
+};
+
+/**
+ * VaultUploadRequest
+ */
+export type VaultUploadRequest = {
+  /**
+   * Bytes
+   */
+  bytes: number;
+  /**
+   * Doc Type
+   */
+  doc_type?: string;
+  /**
+   * Expires On
+   */
+  expires_on?: string | null;
+  /**
+   * Id
+   */
+  id?: string | null;
+  /**
+   * Mime
+   */
+  mime: "application/pdf" | "image/jpeg" | "image/png" | "image/heic" | "image/heif";
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * VaultUrlOut
+ */
+export type VaultUrlOut = {
+  /**
+   * Expires In
+   */
+  expires_in: number;
+  /**
+   * Url
+   */
+  url: string;
 };
 
 /**
@@ -11334,6 +12219,158 @@ export type GetAdminOverviewResponses = {
 };
 
 export type GetAdminOverviewResponse = GetAdminOverviewResponses[keyof GetAdminOverviewResponses];
+
+export type ListPathwayChecksData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Open
+     *
+     * Only checks that still need an admin
+     */
+    open?: boolean;
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/admin/pathway/checks";
+};
+
+export type ListPathwayChecksErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * This needs an admin account
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * pathway_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListPathwayChecksError = ListPathwayChecksErrors[keyof ListPathwayChecksErrors];
+
+export type ListPathwayChecksResponses = {
+  /**
+   * Successful Response
+   */
+  200: CheckList;
+};
+
+export type ListPathwayChecksResponse = ListPathwayChecksResponses[keyof ListPathwayChecksResponses];
+
+export type PatchPathwayTaskAdminData = {
+  body: TaskAdminPatch;
+  path: {
+    /**
+     * Task Id
+     */
+    task_id: string;
+  };
+  query?: never;
+  url: "/api/admin/pathway/tasks/{task_id}";
+};
+
+export type PatchPathwayTaskAdminErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * This needs an admin account
+   */
+  403: ErrorResponse;
+  /**
+   * pathway_task_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * validation_error or pathway_url_not_official
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * pathway_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PatchPathwayTaskAdminError = PatchPathwayTaskAdminErrors[keyof PatchPathwayTaskAdminErrors];
+
+export type PatchPathwayTaskAdminResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminTaskOut;
+};
+
+export type PatchPathwayTaskAdminResponse = PatchPathwayTaskAdminResponses[keyof PatchPathwayTaskAdminResponses];
+
+export type VerifyPathwayTaskData = {
+  body?: never;
+  path: {
+    /**
+     * Task Id
+     */
+    task_id: string;
+  };
+  query?: never;
+  url: "/api/admin/pathway/tasks/{task_id}/verify";
+};
+
+export type VerifyPathwayTaskErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * This needs an admin account
+   */
+  403: ErrorResponse;
+  /**
+   * pathway_task_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * pathway_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type VerifyPathwayTaskError = VerifyPathwayTaskErrors[keyof VerifyPathwayTaskErrors];
+
+export type VerifyPathwayTaskResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminTaskOut;
+};
+
+export type VerifyPathwayTaskResponse = VerifyPathwayTaskResponses[keyof VerifyPathwayTaskResponses];
 
 export type ListAdminQuestionsData = {
   body?: never;
@@ -14857,6 +15894,236 @@ export type DismissCoachSuggestionResponses = {
 
 export type DismissCoachSuggestionResponse = DismissCoachSuggestionResponses[keyof DismissCoachSuggestionResponses];
 
+export type ListCostsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/costs";
+};
+
+export type ListCostsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code pathway_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type ListCostsError = ListCostsErrors[keyof ListCostsErrors];
+
+export type ListCostsResponses = {
+  /**
+   * Successful Response
+   */
+  200: CostList;
+};
+
+export type ListCostsResponse = ListCostsResponses[keyof ListCostsResponses];
+
+export type CreateCostData = {
+  body: CostCreate;
+  headers?: {
+    /**
+     * Idempotency-Key
+     */
+    "idempotency-key"?: string | null;
+  };
+  path?: never;
+  query?: never;
+  url: "/api/costs";
+};
+
+export type CreateCostErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * pathway_task_not_found, pathway_stage_not_found or cost_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * cost_id_conflict or cost_limit
+   */
+  409: ErrorResponse;
+  /**
+   * validation_error or cost_currency_not_offered
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code pathway_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type CreateCostError = CreateCostErrors[keyof CreateCostErrors];
+
+export type CreateCostResponses = {
+  /**
+   * Replayed: the stored entry
+   */
+  200: CostResult;
+  /**
+   * Successful Response
+   */
+  201: CostResult;
+};
+
+export type CreateCostResponse = CreateCostResponses[keyof CreateCostResponses];
+
+export type GetCostSummaryData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/costs/summary";
+};
+
+export type GetCostSummaryErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code pathway_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetCostSummaryError = GetCostSummaryErrors[keyof GetCostSummaryErrors];
+
+export type GetCostSummaryResponses = {
+  /**
+   * Successful Response
+   */
+  200: CostSummary;
+};
+
+export type GetCostSummaryResponse = GetCostSummaryResponses[keyof GetCostSummaryResponses];
+
+export type DeleteCostData = {
+  body?: never;
+  headers?: {
+    /**
+     * Idempotency-Key
+     */
+    "idempotency-key"?: string | null;
+  };
+  path: {
+    /**
+     * Cost Id
+     */
+    cost_id: string;
+  };
+  query?: {
+    /**
+     * Client Updated At Ms
+     */
+    client_updated_at_ms?: number | null;
+  };
+  url: "/api/costs/{cost_id}";
+};
+
+export type DeleteCostErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code pathway_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteCostError = DeleteCostErrors[keyof DeleteCostErrors];
+
+export type DeleteCostResponses = {
+  /**
+   * A newer edit exists: not deleted
+   */
+  200: CostResult;
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteCostResponse = DeleteCostResponses[keyof DeleteCostResponses];
+
+export type PatchCostData = {
+  body: CostPatch;
+  headers?: {
+    /**
+     * Idempotency-Key
+     */
+    "idempotency-key"?: string | null;
+  };
+  path: {
+    /**
+     * Cost Id
+     */
+    cost_id: string;
+  };
+  query?: never;
+  url: "/api/costs/{cost_id}";
+};
+
+export type PatchCostErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * pathway_task_not_found, pathway_stage_not_found or cost_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * validation_error or cost_currency_not_offered
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code pathway_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type PatchCostError = PatchCostErrors[keyof PatchCostErrors];
+
+export type PatchCostResponses = {
+  /**
+   * Successful Response
+   */
+  200: CostResult;
+};
+
+export type PatchCostResponse = PatchCostResponses[keyof PatchCostResponses];
+
 export type GetCoursesData = {
   body?: never;
   path?: never;
@@ -16415,6 +17682,47 @@ export type UpdateMeResponses = {
 
 export type UpdateMeResponse = UpdateMeResponses[keyof UpdateMeResponses];
 
+export type PutPathwayStageData = {
+  body: StagePut;
+  path?: never;
+  query?: never;
+  url: "/api/me/pathway-stage";
+};
+
+export type PutPathwayStageErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * pathway_task_not_found, pathway_stage_not_found or cost_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * validation_error or cost_currency_not_offered
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code pathway_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type PutPathwayStageError = PutPathwayStageErrors[keyof PutPathwayStageErrors];
+
+export type PutPathwayStageResponses = {
+  /**
+   * Successful Response
+   */
+  200: StageChosenOut;
+};
+
+export type PutPathwayStageResponse = PutPathwayStageResponses[keyof PutPathwayStageResponses];
+
 export type GetNavData = {
   body?: never;
   path?: never;
@@ -17130,6 +18438,91 @@ export type SaveOnboardingResponses = {
 };
 
 export type SaveOnboardingResponse = SaveOnboardingResponses[keyof SaveOnboardingResponses];
+
+export type GetPathwayData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/pathway";
+};
+
+export type GetPathwayErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code pathway_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetPathwayError = GetPathwayErrors[keyof GetPathwayErrors];
+
+export type GetPathwayResponses = {
+  /**
+   * Successful Response
+   */
+  200: PathwayOut;
+};
+
+export type GetPathwayResponse = GetPathwayResponses[keyof GetPathwayResponses];
+
+export type PatchPathwayTaskData = {
+  body: TaskPatch;
+  headers?: {
+    /**
+     * Idempotency-Key
+     */
+    "idempotency-key"?: string | null;
+  };
+  path: {
+    /**
+     * Task Id
+     */
+    task_id: string;
+  };
+  query?: never;
+  url: "/api/pathway/tasks/{task_id}";
+};
+
+export type PatchPathwayTaskErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * pathway_task_not_found, pathway_stage_not_found or cost_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * validation_error or cost_currency_not_offered
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code pathway_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type PatchPathwayTaskError = PatchPathwayTaskErrors[keyof PatchPathwayTaskErrors];
+
+export type PatchPathwayTaskResponses = {
+  /**
+   * Successful Response
+   */
+  200: TaskPatchResult;
+};
+
+export type PatchPathwayTaskResponse = PatchPathwayTaskResponses[keyof PatchPathwayTaskResponses];
 
 export type GetPlanData = {
   body?: never;
@@ -18199,3 +19592,301 @@ export type GetTodayResponses = {
 };
 
 export type GetTodayResponse = GetTodayResponses[keyof GetTodayResponses];
+
+export type ListVaultData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/vault";
+};
+
+export type ListVaultErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * vault_storage_unavailable
+   */
+  502: ErrorResponse;
+  /**
+   * pathway_unavailable or vault_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListVaultError = ListVaultErrors[keyof ListVaultErrors];
+
+export type ListVaultResponses = {
+  /**
+   * Successful Response
+   */
+  200: VaultList;
+};
+
+export type ListVaultResponse = ListVaultResponses[keyof ListVaultResponses];
+
+export type CreateVaultUploadData = {
+  body: VaultUploadRequest;
+  path?: never;
+  query?: never;
+  url: "/api/vault/uploads";
+};
+
+export type CreateVaultUploadErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * vault_limit or vault_id_conflict
+   */
+  409: ErrorResponse;
+  /**
+   * vault_file_too_large
+   */
+  413: ErrorResponse;
+  /**
+   * validation_error or vault_type_unknown
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * vault_storage_unavailable
+   */
+  502: ErrorResponse;
+  /**
+   * pathway_unavailable or vault_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateVaultUploadError = CreateVaultUploadErrors[keyof CreateVaultUploadErrors];
+
+export type CreateVaultUploadResponses = {
+  /**
+   * Successful Response
+   */
+  201: VaultUploadOut;
+};
+
+export type CreateVaultUploadResponse = CreateVaultUploadResponses[keyof CreateVaultUploadResponses];
+
+export type DeleteVaultDocumentData = {
+  body?: never;
+  path: {
+    /**
+     * Doc Id
+     */
+    doc_id: string;
+  };
+  query?: never;
+  url: "/api/vault/{doc_id}";
+};
+
+export type DeleteVaultDocumentErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * vault_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * vault_storage_unavailable
+   */
+  502: ErrorResponse;
+  /**
+   * pathway_unavailable or vault_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteVaultDocumentError = DeleteVaultDocumentErrors[keyof DeleteVaultDocumentErrors];
+
+export type DeleteVaultDocumentResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteVaultDocumentResponse = DeleteVaultDocumentResponses[keyof DeleteVaultDocumentResponses];
+
+export type PatchVaultDocumentData = {
+  body: VaultPatch;
+  path: {
+    /**
+     * Doc Id
+     */
+    doc_id: string;
+  };
+  query?: never;
+  url: "/api/vault/{doc_id}";
+};
+
+export type PatchVaultDocumentErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * vault_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * vault_type_unknown
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * vault_storage_unavailable
+   */
+  502: ErrorResponse;
+  /**
+   * pathway_unavailable or vault_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PatchVaultDocumentError = PatchVaultDocumentErrors[keyof PatchVaultDocumentErrors];
+
+export type PatchVaultDocumentResponses = {
+  /**
+   * Successful Response
+   */
+  200: VaultDocOut;
+};
+
+export type PatchVaultDocumentResponse = PatchVaultDocumentResponses[keyof PatchVaultDocumentResponses];
+
+export type CompleteVaultUploadData = {
+  body?: never;
+  path: {
+    /**
+     * Doc Id
+     */
+    doc_id: string;
+  };
+  query?: never;
+  url: "/api/vault/{doc_id}/complete";
+};
+
+export type CompleteVaultUploadErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * vault_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * vault_upload_missing (nothing arrived in Storage)
+   */
+  409: ErrorResponse;
+  /**
+   * vault_file_too_large
+   */
+  413: ErrorResponse;
+  /**
+   * vault_file_type (the file is deleted)
+   */
+  415: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * vault_storage_unavailable
+   */
+  502: ErrorResponse;
+  /**
+   * pathway_unavailable or vault_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CompleteVaultUploadError = CompleteVaultUploadErrors[keyof CompleteVaultUploadErrors];
+
+export type CompleteVaultUploadResponses = {
+  /**
+   * Successful Response
+   */
+  200: VaultDocOut;
+};
+
+export type CompleteVaultUploadResponse = CompleteVaultUploadResponses[keyof CompleteVaultUploadResponses];
+
+export type GetVaultUrlData = {
+  body?: never;
+  path: {
+    /**
+     * Doc Id
+     */
+    doc_id: string;
+  };
+  query?: never;
+  url: "/api/vault/{doc_id}/url";
+};
+
+export type GetVaultUrlErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * vault_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * vault_storage_unavailable
+   */
+  502: ErrorResponse;
+  /**
+   * pathway_unavailable or vault_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetVaultUrlError = GetVaultUrlErrors[keyof GetVaultUrlErrors];
+
+export type GetVaultUrlResponses = {
+  /**
+   * Successful Response
+   */
+  200: VaultUrlOut;
+};
+
+export type GetVaultUrlResponse = GetVaultUrlResponses[keyof GetVaultUrlResponses];

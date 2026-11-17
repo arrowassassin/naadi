@@ -1210,6 +1210,66 @@
         "title": "AdminSourceList",
         "type": "object"
       },
+      "AdminTaskOut": {
+        "properties": {
+          "cost_usd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cost Usd"
+          },
+          "detail_md": {
+            "title": "Detail Md",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "last_verified": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Verified"
+          },
+          "needs_review": {
+            "title": "Needs Review",
+            "type": "boolean"
+          },
+          "official_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Official Url"
+          }
+        },
+        "required": [
+          "id",
+          "detail_md",
+          "cost_usd",
+          "official_url",
+          "last_verified",
+          "needs_review"
+        ],
+        "title": "AdminTaskOut",
+        "type": "object"
+      },
       "AgentCron": {
         "properties": {
           "cron_id": {
@@ -4319,6 +4379,194 @@
         "title": "ChapterStatusChange",
         "type": "object"
       },
+      "CheckFinding": {
+        "properties": {
+          "differences": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Differences",
+            "type": "array"
+          },
+          "quotes": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/CheckQuote"
+            },
+            "title": "Quotes",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "unchanged",
+              "changed",
+              "unreachable",
+              "moved"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "still_accurate": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Still Accurate"
+          },
+          "summary_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary Key"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "CheckFinding",
+        "type": "object"
+      },
+      "CheckList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CheckOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "open_count": {
+            "title": "Open Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "open_count"
+        ],
+        "title": "CheckList",
+        "type": "object"
+      },
+      "CheckOut": {
+        "properties": {
+          "changed": {
+            "title": "Changed",
+            "type": "boolean"
+          },
+          "checked_at": {
+            "format": "date-time",
+            "title": "Checked At",
+            "type": "string"
+          },
+          "finding": {
+            "$ref": "#/components/schemas/CheckFinding"
+          },
+          "http_status": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Http Status"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "last_verified": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Verified"
+          },
+          "needs_review": {
+            "title": "Needs Review",
+            "type": "boolean"
+          },
+          "resolved_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resolved At"
+          },
+          "stage_key": {
+            "title": "Stage Key",
+            "type": "string"
+          },
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "task_title": {
+            "title": "Task Title",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "task_id",
+          "task_title",
+          "stage_key",
+          "checked_at",
+          "url",
+          "http_status",
+          "changed",
+          "finding",
+          "resolved_at",
+          "last_verified",
+          "needs_review"
+        ],
+        "title": "CheckOut",
+        "type": "object"
+      },
+      "CheckQuote": {
+        "properties": {
+          "text": {
+            "maxLength": 300,
+            "title": "Text",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "url"
+        ],
+        "title": "CheckQuote",
+        "type": "object"
+      },
       "CoachActionOut": {
         "properties": {
           "added_items": {
@@ -4918,6 +5166,378 @@
         "title": "ConfirmBody",
         "type": "object"
       },
+      "CostCreate": {
+        "additionalProperties": false,
+        "description": "`id` is made on the device, so replaying the same request is safe.",
+        "properties": {
+          "amount": {
+            "maximum": 1000000000.0,
+            "minimum": 0.0,
+            "title": "Amount",
+            "type": "number"
+          },
+          "client_updated_at_ms": {
+            "description": "Device clock, ms since the epoch",
+            "maximum": 10000000000000.0,
+            "minimum": 0.0,
+            "title": "Client Updated At Ms",
+            "type": "integer"
+          },
+          "currency": {
+            "pattern": "^[A-Z]{3}$",
+            "title": "Currency",
+            "type": "string"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "label": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "paid_on": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paid On"
+          },
+          "stage_key": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z0-9_]{1,64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stage Key"
+          },
+          "task_id": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Task Id"
+          }
+        },
+        "required": [
+          "label",
+          "amount",
+          "currency",
+          "client_updated_at_ms"
+        ],
+        "title": "CostCreate",
+        "type": "object"
+      },
+      "CostList": {
+        "properties": {
+          "currencies": {
+            "description": "Currencies the student can add entries in",
+            "items": {
+              "type": "string"
+            },
+            "title": "Currencies",
+            "type": "array"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CostOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "max_entries": {
+            "title": "Max Entries",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "currencies",
+          "max_entries"
+        ],
+        "title": "CostList",
+        "type": "object"
+      },
+      "CostOut": {
+        "properties": {
+          "amount": {
+            "description": "Decimal string, two places",
+            "title": "Amount",
+            "type": "string"
+          },
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "currency": {
+            "title": "Currency",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "paid_on": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paid On"
+          },
+          "stage_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stage Key"
+          },
+          "task_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Task Id"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "task_id",
+          "stage_key",
+          "label",
+          "amount",
+          "currency",
+          "paid_on",
+          "client_updated_at_ms",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "CostOut",
+        "type": "object"
+      },
+      "CostPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "amount": {
+            "anyOf": [
+              {
+                "maximum": 1000000000.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Amount"
+          },
+          "client_updated_at_ms": {
+            "description": "Device clock, ms since the epoch",
+            "maximum": 10000000000000.0,
+            "minimum": 0.0,
+            "title": "Client Updated At Ms",
+            "type": "integer"
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Z]{3}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Currency"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "paid_on": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paid On"
+          },
+          "stage_key": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z0-9_]{1,64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stage Key"
+          },
+          "task_id": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Task Id"
+          }
+        },
+        "required": [
+          "client_updated_at_ms"
+        ],
+        "title": "CostPatch",
+        "type": "object"
+      },
+      "CostResult": {
+        "properties": {
+          "applied": {
+            "title": "Applied",
+            "type": "boolean"
+          },
+          "cost": {
+            "$ref": "#/components/schemas/CostOut"
+          }
+        },
+        "required": [
+          "cost",
+          "applied"
+        ],
+        "title": "CostResult",
+        "type": "object"
+      },
+      "CostSummary": {
+        "properties": {
+          "by_stage": {
+            "items": {
+              "$ref": "#/components/schemas/StageCostOut"
+            },
+            "title": "By Stage",
+            "type": "array"
+          },
+          "currencies": {
+            "description": "Currencies the student can add entries in",
+            "items": {
+              "type": "string"
+            },
+            "title": "Currencies",
+            "type": "array"
+          },
+          "next_fee": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NextFeeOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "paid": {
+            "items": {
+              "$ref": "#/components/schemas/MoneyOut"
+            },
+            "title": "Paid",
+            "type": "array"
+          },
+          "planned_usd": {
+            "title": "Planned Usd",
+            "type": "string"
+          },
+          "upcoming": {
+            "items": {
+              "$ref": "#/components/schemas/MoneyOut"
+            },
+            "title": "Upcoming",
+            "type": "array"
+          }
+        },
+        "required": [
+          "currencies",
+          "planned_usd",
+          "paid",
+          "upcoming",
+          "by_stage",
+          "next_fee"
+        ],
+        "title": "CostSummary",
+        "type": "object"
+      },
       "CourseChapter": {
         "properties": {
           "coverage": {
@@ -5457,6 +6077,81 @@
           "scheduler"
         ],
         "title": "DueResponse",
+        "type": "object"
+      },
+      "DueRuleOut": {
+        "description": "A seeded due rule as structure: `anchor` + `days` (negative = before), a fixed `date`, or `annual`.",
+        "properties": {
+          "anchor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor"
+          },
+          "date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date"
+          },
+          "day": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Day"
+          },
+          "days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Days"
+          },
+          "kind": {
+            "enum": [
+              "anchor",
+              "date",
+              "annual"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "month": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Month"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "title": "DueRuleOut",
         "type": "object"
       },
       "EditorQuestion": {
@@ -6498,6 +7193,29 @@
           }
         },
         "title": "Goals",
+        "type": "object"
+      },
+      "GuideOut": {
+        "properties": {
+          "body_md": {
+            "title": "Body Md",
+            "type": "string"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "title",
+          "body_md"
+        ],
+        "title": "GuideOut",
         "type": "object"
       },
       "HTTPValidationError": {
@@ -8586,6 +9304,24 @@
         "title": "ModelProbe",
         "type": "object"
       },
+      "MoneyOut": {
+        "properties": {
+          "amount": {
+            "title": "Amount",
+            "type": "string"
+          },
+          "currency": {
+            "title": "Currency",
+            "type": "string"
+          }
+        },
+        "required": [
+          "currency",
+          "amount"
+        ],
+        "title": "MoneyOut",
+        "type": "object"
+      },
       "NavEntry": {
         "additionalProperties": false,
         "properties": {
@@ -8700,6 +9436,47 @@
           "source"
         ],
         "title": "NavResponse",
+        "type": "object"
+      },
+      "NextFeeOut": {
+        "properties": {
+          "amount": {
+            "title": "Amount",
+            "type": "string"
+          },
+          "currency": {
+            "title": "Currency",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "stage_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stage Key"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "amount",
+          "currency",
+          "stage_key"
+        ],
+        "title": "NextFeeOut",
         "type": "object"
       },
       "NextUp": {
@@ -9781,6 +10558,24 @@
         "title": "NotebookPatch",
         "type": "object"
       },
+      "OfficialLink": {
+        "properties": {
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "url"
+        ],
+        "title": "OfficialLink",
+        "type": "object"
+      },
       "OnboardingIn": {
         "additionalProperties": false,
         "properties": {
@@ -10249,6 +11044,72 @@
           "text"
         ],
         "title": "PasteCreate",
+        "type": "object"
+      },
+      "PathwayOut": {
+        "properties": {
+          "current_stage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Stage"
+          },
+          "current_stage_source": {
+            "anyOf": [
+              {
+                "enum": [
+                  "chosen",
+                  "derived"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Stage Source"
+          },
+          "overview": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GuideOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reverify_days": {
+            "title": "Reverify Days",
+            "type": "integer"
+          },
+          "stages": {
+            "items": {
+              "$ref": "#/components/schemas/StageOut"
+            },
+            "title": "Stages",
+            "type": "array"
+          },
+          "today": {
+            "format": "date",
+            "title": "Today",
+            "type": "string"
+          }
+        },
+        "required": [
+          "today",
+          "reverify_days",
+          "current_stage",
+          "current_stage_source",
+          "overview",
+          "stages"
+        ],
+        "title": "PathwayOut",
         "type": "object"
       },
       "PathwayStageOut": {
@@ -15253,6 +16114,203 @@
         "title": "SourceRef",
         "type": "object"
       },
+      "StageChosenOut": {
+        "properties": {
+          "stage_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stage Key"
+          }
+        },
+        "required": [
+          "stage_key"
+        ],
+        "title": "StageChosenOut",
+        "type": "object"
+      },
+      "StageCostOut": {
+        "properties": {
+          "entries": {
+            "title": "Entries",
+            "type": "integer"
+          },
+          "paid": {
+            "items": {
+              "$ref": "#/components/schemas/MoneyOut"
+            },
+            "title": "Paid",
+            "type": "array"
+          },
+          "planned_usd": {
+            "description": "Task cost estimates (USD) for this stage, tasks not needed left out",
+            "title": "Planned Usd",
+            "type": "string"
+          },
+          "stage_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "null: entries not filed under a stage",
+            "title": "Stage Key"
+          },
+          "upcoming": {
+            "description": "Entries with no paid date",
+            "items": {
+              "$ref": "#/components/schemas/MoneyOut"
+            },
+            "title": "Upcoming",
+            "type": "array"
+          }
+        },
+        "required": [
+          "stage_key",
+          "planned_usd",
+          "paid",
+          "upcoming",
+          "entries"
+        ],
+        "title": "StageCostOut",
+        "type": "object"
+      },
+      "StageOut": {
+        "properties": {
+          "done": {
+            "description": "Tasks done or not needed",
+            "title": "Done",
+            "type": "integer"
+          },
+          "guide": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GuideOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "last_verified": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Verified"
+          },
+          "official_links": {
+            "items": {
+              "$ref": "#/components/schemas/OfficialLink"
+            },
+            "title": "Official Links",
+            "type": "array"
+          },
+          "reverify": {
+            "anyOf": [
+              {
+                "enum": [
+                  "age",
+                  "flagged"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reverify"
+          },
+          "reverify_count": {
+            "title": "Reverify Count",
+            "type": "integer"
+          },
+          "sort": {
+            "title": "Sort",
+            "type": "integer"
+          },
+          "spend_planned_usd": {
+            "description": "Sum of this stage's task cost estimates (USD), tasks not needed left out",
+            "title": "Spend Planned Usd",
+            "type": "number"
+          },
+          "summary_md": {
+            "title": "Summary Md",
+            "type": "string"
+          },
+          "tasks": {
+            "items": {
+              "$ref": "#/components/schemas/TaskOut"
+            },
+            "title": "Tasks",
+            "type": "array"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "key",
+          "sort",
+          "title",
+          "summary_md",
+          "official_links",
+          "last_verified",
+          "reverify",
+          "done",
+          "total",
+          "reverify_count",
+          "spend_planned_usd",
+          "guide",
+          "tasks"
+        ],
+        "title": "StageOut",
+        "type": "object"
+      },
+      "StagePut": {
+        "additionalProperties": false,
+        "properties": {
+          "stage_key": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z0-9_]{1,64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stage Key"
+          }
+        },
+        "required": [
+          "stage_key"
+        ],
+        "title": "StagePut",
+        "type": "object"
+      },
       "StorageOut": {
         "properties": {
           "limit_bytes": {
@@ -15686,6 +16744,306 @@
           "type"
         ],
         "title": "Target",
+        "type": "object"
+      },
+      "TaskAdminPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "cost_usd": {
+            "anyOf": [
+              {
+                "maximum": 1000000.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cost Usd"
+          },
+          "detail_md": {
+            "anyOf": [
+              {
+                "maxLength": 20000,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detail Md"
+          },
+          "official_url": {
+            "anyOf": [
+              {
+                "maxLength": 500,
+                "pattern": "^https://[^\\s]+$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Official Url"
+          }
+        },
+        "title": "TaskAdminPatch",
+        "type": "object"
+      },
+      "TaskOut": {
+        "properties": {
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
+          },
+          "cost_usd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cost Usd"
+          },
+          "days_since_verified": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Days Since Verified"
+          },
+          "detail_md": {
+            "title": "Detail Md",
+            "type": "string"
+          },
+          "due": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Due"
+          },
+          "due_rule": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DueRuleOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "last_verified": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Verified"
+          },
+          "needs_review": {
+            "title": "Needs Review",
+            "type": "boolean"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "official": {
+            "description": "official_url is on an official domain (config search.include_domains)",
+            "title": "Official",
+            "type": "boolean"
+          },
+          "official_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Official Url"
+          },
+          "reverify": {
+            "anyOf": [
+              {
+                "enum": [
+                  "age",
+                  "flagged"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Why it shows Re-verify: 'age' or 'flagged'; null = fine",
+            "title": "Reverify"
+          },
+          "sort": {
+            "title": "Sort",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "todo",
+              "doing",
+              "done",
+              "na"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          }
+        },
+        "required": [
+          "id",
+          "sort",
+          "title",
+          "detail_md",
+          "due_rule",
+          "cost_usd",
+          "official_url",
+          "official",
+          "last_verified",
+          "days_since_verified",
+          "needs_review",
+          "reverify",
+          "status",
+          "due",
+          "notes",
+          "client_updated_at_ms",
+          "updated_at"
+        ],
+        "title": "TaskOut",
+        "type": "object"
+      },
+      "TaskPatch": {
+        "additionalProperties": false,
+        "description": "Last-writer-wins per row: send the fields you changed with your clock's stamp.",
+        "properties": {
+          "client_updated_at_ms": {
+            "description": "Device clock, ms since the epoch",
+            "maximum": 10000000000000.0,
+            "minimum": 0.0,
+            "title": "Client Updated At Ms",
+            "type": "integer"
+          },
+          "due": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Due"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "maxLength": 4000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "enum": [
+                  "todo",
+                  "doing",
+                  "done",
+                  "na"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status"
+          }
+        },
+        "required": [
+          "client_updated_at_ms"
+        ],
+        "title": "TaskPatch",
+        "type": "object"
+      },
+      "TaskPatchResult": {
+        "properties": {
+          "applied": {
+            "description": "false: a newer write was already stored; this is the stored row",
+            "title": "Applied",
+            "type": "boolean"
+          },
+          "task": {
+            "$ref": "#/components/schemas/UserTaskOut"
+          }
+        },
+        "required": [
+          "task",
+          "applied"
+        ],
+        "title": "TaskPatchResult",
         "type": "object"
       },
       "TavilyCredits": {
@@ -16455,6 +17813,81 @@
         "title": "UsageOut",
         "type": "object"
       },
+      "UserTaskOut": {
+        "description": "The student's own state for one task.",
+        "properties": {
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
+          },
+          "due": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Due"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "status": {
+            "enum": [
+              "todo",
+              "doing",
+              "done",
+              "na"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          }
+        },
+        "required": [
+          "task_id",
+          "status",
+          "due",
+          "notes",
+          "client_updated_at_ms",
+          "updated_at"
+        ],
+        "title": "UserTaskOut",
+        "type": "object"
+      },
       "ValidationError": {
         "properties": {
           "ctx": {
@@ -16493,6 +17926,283 @@
           "type"
         ],
         "title": "ValidationError",
+        "type": "object"
+      },
+      "VaultDocOut": {
+        "properties": {
+          "bytes": {
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "doc_type": {
+            "title": "Doc Type",
+            "type": "string"
+          },
+          "expires_in_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires In Days"
+          },
+          "expires_on": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires On"
+          },
+          "expiry": {
+            "enum": [
+              "none",
+              "ok",
+              "soon",
+              "expired"
+            ],
+            "title": "Expiry",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "mime": {
+            "title": "Mime",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "doc_type",
+          "mime",
+          "bytes",
+          "expires_on",
+          "expires_in_days",
+          "expiry",
+          "created_at"
+        ],
+        "title": "VaultDocOut",
+        "type": "object"
+      },
+      "VaultList": {
+        "properties": {
+          "expiry_soon_days": {
+            "title": "Expiry Soon Days",
+            "type": "integer"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/VaultDocOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "max_bytes": {
+            "title": "Max Bytes",
+            "type": "integer"
+          },
+          "max_documents": {
+            "title": "Max Documents",
+            "type": "integer"
+          },
+          "types": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Types",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items",
+          "max_documents",
+          "max_bytes",
+          "expiry_soon_days",
+          "types"
+        ],
+        "title": "VaultList",
+        "type": "object"
+      },
+      "VaultPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "doc_type": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z][a-z0-9_]{0,31}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doc Type"
+          },
+          "expires_on": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires On"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "title": "VaultPatch",
+        "type": "object"
+      },
+      "VaultUploadOut": {
+        "properties": {
+          "bucket": {
+            "title": "Bucket",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "type": "string"
+          },
+          "signed_url": {
+            "title": "Signed Url",
+            "type": "string"
+          },
+          "token": {
+            "description": "Signed upload token for supabase-js uploadToSignedUrl",
+            "title": "Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "bucket",
+          "path",
+          "token",
+          "signed_url"
+        ],
+        "title": "VaultUploadOut",
+        "type": "object"
+      },
+      "VaultUploadRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "bytes": {
+            "maximum": 20971520.0,
+            "minimum": 1.0,
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "doc_type": {
+            "default": "other",
+            "pattern": "^[a-z][a-z0-9_]{0,31}$",
+            "title": "Doc Type",
+            "type": "string"
+          },
+          "expires_on": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires On"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "mime": {
+            "enum": [
+              "application/pdf",
+              "image/jpeg",
+              "image/png",
+              "image/heic",
+              "image/heif"
+            ],
+            "title": "Mime",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "mime",
+          "bytes"
+        ],
+        "title": "VaultUploadRequest",
+        "type": "object"
+      },
+      "VaultUrlOut": {
+        "properties": {
+          "expires_in": {
+            "title": "Expires In",
+            "type": "integer"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "expires_in"
+        ],
+        "title": "VaultUrlOut",
         "type": "object"
       },
       "VideoAdd": {
@@ -20778,6 +22488,299 @@
           }
         },
         "summary": "Admin only: environment, version, number of admins configured and of profiles",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/pathway/checks": {
+      "get": {
+        "operationId": "listPathwayChecks",
+        "parameters": [
+          {
+            "description": "Only checks that still need an admin",
+            "in": "query",
+            "name": "open",
+            "required": false,
+            "schema": {
+              "default": false,
+              "description": "Only checks that still need an admin",
+              "title": "Open",
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "This needs an admin account"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable"
+          }
+        },
+        "summary": "Official-page checks, newest first (`open=1`: changed, moved or unreachable and not yet resolved)",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/pathway/tasks/{task_id}": {
+      "patch": {
+        "operationId": "patchPathwayTaskAdmin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
+              "title": "Task Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskAdminPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminTaskOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "This needs an admin account"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_task_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or pathway_url_not_official"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable"
+          }
+        },
+        "summary": "Edit a task's detail, cost estimate or official link (does not change last_verified)",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/pathway/tasks/{task_id}/verify": {
+      "post": {
+        "operationId": "verifyPathwayTask",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
+              "title": "Task Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminTaskOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "This needs an admin account"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_task_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable"
+          }
+        },
+        "summary": "Confirm a task is still right: last_verified = today, needs_review cleared, open checks resolved",
         "tags": [
           "admin"
         ]
@@ -27615,6 +29618,445 @@
         ]
       }
     },
+    "/api/costs": {
+      "get": {
+        "operationId": "listCosts",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CostList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code pathway_unavailable)"
+          }
+        },
+        "summary": "The student's cost entries, newest first",
+        "tags": [
+          "pathway"
+        ]
+      },
+      "post": {
+        "operationId": "createCost",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 100,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CostCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CostResult"
+                }
+              }
+            },
+            "description": "Replayed: the stored entry"
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CostResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_task_not_found, pathway_stage_not_found or cost_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "cost_id_conflict or cost_limit"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or cost_currency_not_offered"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code pathway_unavailable)"
+          }
+        },
+        "summary": "Add a cost entry. A replay with the same id applies last-writer-wins and returns 200",
+        "tags": [
+          "pathway"
+        ]
+      }
+    },
+    "/api/costs/summary": {
+      "get": {
+        "operationId": "getCostSummary",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CostSummary"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code pathway_unavailable)"
+          }
+        },
+        "summary": "Totals by stage and by currency (no conversion), planned (task estimates, USD) vs paid",
+        "tags": [
+          "pathway"
+        ]
+      }
+    },
+    "/api/costs/{cost_id}": {
+      "delete": {
+        "operationId": "deleteCost",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cost_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Cost Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "client_updated_at_ms",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maximum": 10000000000000,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Client Updated At Ms"
+            }
+          },
+          {
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 100,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CostResult"
+                }
+              }
+            },
+            "description": "A newer edit exists: not deleted"
+          },
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code pathway_unavailable)"
+          }
+        },
+        "summary": "Delete an entry. 204 (also when it is already gone); 200 with the stored entry when a newer edit than `client_updated_at_ms` keeps it",
+        "tags": [
+          "pathway"
+        ]
+      },
+      "patch": {
+        "operationId": "patchCost",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cost_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Cost Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 100,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CostPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CostResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_task_not_found, pathway_stage_not_found or cost_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or cost_currency_not_offered"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code pathway_unavailable)"
+          }
+        },
+        "summary": "Change a cost entry. Last writer wins by `client_updated_at_ms`",
+        "tags": [
+          "pathway"
+        ]
+      }
+    },
     "/api/courses": {
       "get": {
         "operationId": "getCourses",
@@ -30512,6 +32954,87 @@
         ]
       }
     },
+    "/api/me/pathway-stage": {
+      "put": {
+        "operationId": "putPathwayStage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StagePut"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StageChosenOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_task_not_found, pathway_stage_not_found or cost_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or cost_currency_not_offered"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code pathway_unavailable)"
+          }
+        },
+        "summary": "The stage the student is in now (null: derive it from the first stage with open tasks)",
+        "tags": [
+          "pathway"
+        ]
+      }
+    },
     "/api/nav": {
       "get": {
         "operationId": "getNav",
@@ -31918,6 +34441,167 @@
         "summary": "Save the onboarding answers to the profile and generate the study plan",
         "tags": [
           "plan"
+        ]
+      }
+    },
+    "/api/pathway": {
+      "get": {
+        "operationId": "getPathway",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PathwayOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code pathway_unavailable)"
+          }
+        },
+        "summary": "The whole pathway: stages and tasks with the student's state, re-verify flags and official links",
+        "tags": [
+          "pathway"
+        ]
+      }
+    },
+    "/api/pathway/tasks/{task_id}": {
+      "patch": {
+        "operationId": "patchPathwayTask",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
+              "title": "Task Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "idempotency-key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 100,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskPatchResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_task_not_found, pathway_stage_not_found or cost_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or cost_currency_not_offered"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code pathway_unavailable)"
+          }
+        },
+        "summary": "Set a task's status, due date or notes. Last writer wins by `client_updated_at_ms`",
+        "tags": [
+          "pathway"
         ]
       }
     },
@@ -33866,6 +36550,571 @@
         "summary": "Today in one request: countdown, plan items, resume target, readiness, by-system, cards, coach",
         "tags": [
           "plan"
+        ]
+      }
+    },
+    "/api/vault": {
+      "get": {
+        "operationId": "listVault",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VaultList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_storage_unavailable"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable or vault_unavailable"
+          }
+        },
+        "summary": "The student's vault documents: metadata only",
+        "tags": [
+          "vault"
+        ]
+      }
+    },
+    "/api/vault/uploads": {
+      "post": {
+        "operationId": "createVaultUpload",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VaultUploadRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VaultUploadOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_limit or vault_id_conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_file_too_large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or vault_type_unknown"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_storage_unavailable"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable or vault_unavailable"
+          }
+        },
+        "summary": "Start an upload: a signed Storage URL for `vault/{user_id}/{id}` (at most 20 MB)",
+        "tags": [
+          "vault"
+        ]
+      }
+    },
+    "/api/vault/{doc_id}": {
+      "delete": {
+        "operationId": "deleteVaultDocument",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "doc_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Doc Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_storage_unavailable"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable or vault_unavailable"
+          }
+        },
+        "summary": "Delete the document: its Storage object first, then the row",
+        "tags": [
+          "vault"
+        ]
+      },
+      "patch": {
+        "operationId": "patchVaultDocument",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "doc_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Doc Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VaultPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VaultDocOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_type_unknown"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_storage_unavailable"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable or vault_unavailable"
+          }
+        },
+        "summary": "Rename a document, change its type or its expiry date",
+        "tags": [
+          "vault"
+        ]
+      }
+    },
+    "/api/vault/{doc_id}/complete": {
+      "post": {
+        "operationId": "completeVaultUpload",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "doc_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Doc Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VaultDocOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_upload_missing (nothing arrived in Storage)"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_file_too_large"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_file_type (the file is deleted)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_storage_unavailable"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable or vault_unavailable"
+          }
+        },
+        "summary": "Finish an upload: the stored bytes are checked (PDF, JPEG, PNG or HEIC) and sized",
+        "tags": [
+          "vault"
+        ]
+      }
+    },
+    "/api/vault/{doc_id}/url": {
+      "get": {
+        "operationId": "getVaultUrl",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "doc_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Doc Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VaultUrlOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "vault_storage_unavailable"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "pathway_unavailable or vault_unavailable"
+          }
+        },
+        "summary": "A signed URL to open the document (works `signed_url_seconds`, never cached)",
+        "tags": [
+          "vault"
         ]
       }
     }

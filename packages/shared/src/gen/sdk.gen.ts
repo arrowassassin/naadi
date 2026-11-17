@@ -38,6 +38,9 @@ import type {
   ChangeBlockSectionData,
   ChangeBlockSectionErrors,
   ChangeBlockSectionResponses,
+  CompleteVaultUploadData,
+  CompleteVaultUploadErrors,
+  CompleteVaultUploadResponses,
   ConfirmIngestBatchData,
   ConfirmIngestBatchErrors,
   ConfirmIngestBatchResponses,
@@ -65,6 +68,9 @@ import type {
   CreateCardData,
   CreateCardErrors,
   CreateCardResponses,
+  CreateCostData,
+  CreateCostErrors,
+  CreateCostResponses,
   CreateDiagnosticData,
   CreateDiagnosticErrors,
   CreateDiagnosticResponses,
@@ -101,12 +107,18 @@ import type {
   CreateSingleQuestionBlockData,
   CreateSingleQuestionBlockErrors,
   CreateSingleQuestionBlockResponses,
+  CreateVaultUploadData,
+  CreateVaultUploadErrors,
+  CreateVaultUploadResponses,
   CreateWeakSpotBlockData,
   CreateWeakSpotBlockErrors,
   CreateWeakSpotBlockResponses,
   DeleteCardData,
   DeleteCardErrors,
   DeleteCardResponses,
+  DeleteCostData,
+  DeleteCostErrors,
+  DeleteCostResponses,
   DeleteExportData,
   DeleteExportErrors,
   DeleteExportResponses,
@@ -128,6 +140,9 @@ import type {
   DeletePushSubscriptionData,
   DeletePushSubscriptionErrors,
   DeletePushSubscriptionResponses,
+  DeleteVaultDocumentData,
+  DeleteVaultDocumentErrors,
+  DeleteVaultDocumentResponses,
   DetachAdminSectionMediaData,
   DetachAdminSectionMediaErrors,
   DetachAdminSectionMediaResponses,
@@ -218,6 +233,9 @@ import type {
   GetChapterData,
   GetChapterErrors,
   GetChapterResponses,
+  GetCostSummaryData,
+  GetCostSummaryErrors,
+  GetCostSummaryResponses,
   GetCoursesData,
   GetCoursesErrors,
   GetCoursesResponses,
@@ -269,6 +287,9 @@ import type {
   GetOnboardingData,
   GetOnboardingErrors,
   GetOnboardingResponses,
+  GetPathwayData,
+  GetPathwayErrors,
+  GetPathwayResponses,
   GetPlanData,
   GetPlanErrors,
   GetPlanIcsData,
@@ -304,6 +325,9 @@ import type {
   GetTodayData,
   GetTodayErrors,
   GetTodayResponses,
+  GetVaultUrlData,
+  GetVaultUrlErrors,
+  GetVaultUrlResponses,
   ImportAnkiDeckData,
   ImportAnkiDeckErrors,
   ImportAnkiDeckResponses,
@@ -358,6 +382,9 @@ import type {
   ListBlocksData,
   ListBlocksErrors,
   ListBlocksResponses,
+  ListCostsData,
+  ListCostsErrors,
+  ListCostsResponses,
   ListExportsData,
   ListExportsErrors,
   ListExportsResponses,
@@ -373,6 +400,9 @@ import type {
   ListNotesData,
   ListNotesErrors,
   ListNotesResponses,
+  ListPathwayChecksData,
+  ListPathwayChecksErrors,
+  ListPathwayChecksResponses,
   ListPlanRebalancesData,
   ListPlanRebalancesErrors,
   ListPlanRebalancesResponses,
@@ -385,6 +415,9 @@ import type {
   ListSeedRunsData,
   ListSeedRunsErrors,
   ListSeedRunsResponses,
+  ListVaultData,
+  ListVaultErrors,
+  ListVaultResponses,
   ListYoutubeCandidatesData,
   ListYoutubeCandidatesErrors,
   ListYoutubeCandidatesResponses,
@@ -400,9 +433,21 @@ import type {
   PatchAdminSectionData,
   PatchAdminSectionErrors,
   PatchAdminSectionResponses,
+  PatchCostData,
+  PatchCostErrors,
+  PatchCostResponses,
+  PatchPathwayTaskAdminData,
+  PatchPathwayTaskAdminErrors,
+  PatchPathwayTaskAdminResponses,
+  PatchPathwayTaskData,
+  PatchPathwayTaskErrors,
+  PatchPathwayTaskResponses,
   PatchPlanItemData,
   PatchPlanItemErrors,
   PatchPlanItemResponses,
+  PatchVaultDocumentData,
+  PatchVaultDocumentErrors,
+  PatchVaultDocumentResponses,
   PostInkChangesData,
   PostInkChangesErrors,
   PostInkChangesResponses,
@@ -415,6 +460,9 @@ import type {
   PutAppConfigData,
   PutAppConfigErrors,
   PutAppConfigResponses,
+  PutPathwayStageData,
+  PutPathwayStageErrors,
+  PutPathwayStageResponses,
   PutReadingPositionData,
   PutReadingPositionErrors,
   PutReadingPositionResponses,
@@ -538,6 +586,9 @@ import type {
   UploadAdminMediaData,
   UploadAdminMediaErrors,
   UploadAdminMediaResponses,
+  VerifyPathwayTaskData,
+  VerifyPathwayTaskErrors,
+  VerifyPathwayTaskResponses,
 } from "./types.gen";
 import {
   zAcceptCoachSuggestionPath,
@@ -567,6 +618,8 @@ import {
   zCancelAdminAgentRunResponse,
   zChangeBlockSectionPath,
   zChangeBlockSectionResponse,
+  zCompleteVaultUploadPath,
+  zCompleteVaultUploadResponse,
   zConfirmIngestBatchBody,
   zConfirmIngestBatchPath,
   zConfirmIngestBatchResponse,
@@ -589,6 +642,9 @@ import {
   zCreateBlockResponse,
   zCreateCardBody,
   zCreateCardResponse,
+  zCreateCostBody,
+  zCreateCostHeaders,
+  zCreateCostResponse,
   zCreateDiagnosticResponse,
   zCreateIngestPasteBody,
   zCreateIngestPasteResponse,
@@ -613,10 +669,16 @@ import {
   zCreatePushSubscriptionResponse,
   zCreateSingleQuestionBlockBody,
   zCreateSingleQuestionBlockResponse,
+  zCreateVaultUploadBody,
+  zCreateVaultUploadResponse,
   zCreateWeakSpotBlockBody,
   zCreateWeakSpotBlockResponse,
   zDeleteCardPath,
   zDeleteCardResponse,
+  zDeleteCostHeaders,
+  zDeleteCostPath,
+  zDeleteCostQuery,
+  zDeleteCostResponse,
   zDeleteExportPath,
   zDeleteExportResponse,
   zDeleteGeneratedApiGeneratedMediaIdDeletePath,
@@ -631,6 +693,8 @@ import {
   zDeleteNoteResponse,
   zDeletePushSubscriptionPath,
   zDeletePushSubscriptionResponse,
+  zDeleteVaultDocumentPath,
+  zDeleteVaultDocumentResponse,
   zDetachAdminSectionMediaPath,
   zDetachAdminSectionMediaResponse,
   zDiffAdminRevisionPath,
@@ -688,6 +752,7 @@ import {
   zGetCardStatsResponse,
   zGetChapterPath,
   zGetChapterResponse,
+  zGetCostSummaryResponse,
   zGetCoursesQuery,
   zGetCoursesResponse,
   zGetDueCardsQuery,
@@ -716,6 +781,7 @@ import {
   zGetNotePath,
   zGetNoteResponse,
   zGetOnboardingResponse,
+  zGetPathwayResponse,
   zGetPlanIcsPath,
   zGetPlanResponse,
   zGetPlanWeekQuery,
@@ -733,6 +799,8 @@ import {
   zGetSeedRunPath,
   zGetSeedRunResponse,
   zGetTodayResponse,
+  zGetVaultUrlPath,
+  zGetVaultUrlResponse,
   zImportAnkiDeckQuery,
   zImportAnkiDeckResponse,
   zLintAdminQuestionPath,
@@ -764,6 +832,7 @@ import {
   zListAuthoringRunsResponse,
   zListBlocksQuery,
   zListBlocksResponse,
+  zListCostsResponse,
   zListExportsResponse,
   zListGeneratedApiGeneratedGetQuery,
   zListGeneratedApiGeneratedGetResponse,
@@ -772,12 +841,15 @@ import {
   zListNotebooksResponse,
   zListNotesQuery,
   zListNotesResponse,
+  zListPathwayChecksQuery,
+  zListPathwayChecksResponse,
   zListPlanRebalancesQuery,
   zListPlanRebalancesResponse,
   zListPushSubscriptionsResponse,
   zListReviewItemsQuery,
   zListReviewItemsResponse,
   zListSeedRunsResponse,
+  zListVaultResponse,
   zListYoutubeCandidatesQuery,
   zListYoutubeCandidatesResponse,
   zLookupAdminYoutubeBody,
@@ -791,9 +863,23 @@ import {
   zPatchAdminSectionBody,
   zPatchAdminSectionPath,
   zPatchAdminSectionResponse,
+  zPatchCostBody,
+  zPatchCostHeaders,
+  zPatchCostPath,
+  zPatchCostResponse,
+  zPatchPathwayTaskAdminBody,
+  zPatchPathwayTaskAdminPath,
+  zPatchPathwayTaskAdminResponse,
+  zPatchPathwayTaskBody,
+  zPatchPathwayTaskHeaders,
+  zPatchPathwayTaskPath,
+  zPatchPathwayTaskResponse,
   zPatchPlanItemBody,
   zPatchPlanItemPath,
   zPatchPlanItemResponse,
+  zPatchVaultDocumentBody,
+  zPatchVaultDocumentPath,
+  zPatchVaultDocumentResponse,
   zPostInkChangesBody,
   zPostInkChangesPath,
   zPostInkChangesResponse,
@@ -805,6 +891,8 @@ import {
   zPutAppConfigBody,
   zPutAppConfigPath,
   zPutAppConfigResponse,
+  zPutPathwayStageBody,
+  zPutPathwayStageResponse,
   zPutReadingPositionBody,
   zPutReadingPositionResponse,
   zReindexEmbeddingsBody,
@@ -901,6 +989,8 @@ import {
   zUploadAdminMediaBody,
   zUploadAdminMediaQuery,
   zUploadAdminMediaResponse,
+  zVerifyPathwayTaskPath,
+  zVerifyPathwayTaskResponse,
 } from "./zod.gen";
 
 export type Options<
@@ -1596,6 +1686,70 @@ export const getAdminOverview = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetAdminOverviewResponse.parseAsync(data),
     url: "/api/admin/overview",
+    ...options,
+  });
+
+/**
+ * Official-page checks, newest first (`open=1`: changed, moved or unreachable and not yet resolved)
+ */
+export const listPathwayChecks = <ThrowOnError extends boolean = false>(
+  options?: Options<ListPathwayChecksData, ThrowOnError>,
+): RequestResult<ListPathwayChecksResponses, ListPathwayChecksErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListPathwayChecksResponses, ListPathwayChecksErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListPathwayChecksQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListPathwayChecksResponse.parseAsync(data),
+    url: "/api/admin/pathway/checks",
+    ...options,
+  });
+
+/**
+ * Edit a task's detail, cost estimate or official link (does not change last_verified)
+ */
+export const patchPathwayTaskAdmin = <ThrowOnError extends boolean = false>(
+  options: Options<PatchPathwayTaskAdminData, ThrowOnError>,
+): RequestResult<PatchPathwayTaskAdminResponses, PatchPathwayTaskAdminErrors, ThrowOnError> =>
+  (options.client ?? client).patch<PatchPathwayTaskAdminResponses, PatchPathwayTaskAdminErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPatchPathwayTaskAdminBody,
+          path: zPatchPathwayTaskAdminPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPatchPathwayTaskAdminResponse.parseAsync(data),
+    url: "/api/admin/pathway/tasks/{task_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Confirm a task is still right: last_verified = today, needs_review cleared, open checks resolved
+ */
+export const verifyPathwayTask = <ThrowOnError extends boolean = false>(
+  options: Options<VerifyPathwayTaskData, ThrowOnError>,
+): RequestResult<VerifyPathwayTaskResponses, VerifyPathwayTaskErrors, ThrowOnError> =>
+  (options.client ?? client).post<VerifyPathwayTaskResponses, VerifyPathwayTaskErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zVerifyPathwayTaskPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zVerifyPathwayTaskResponse.parseAsync(data),
+    url: "/api/admin/pathway/tasks/{task_id}/verify",
     ...options,
   });
 
@@ -3159,6 +3313,117 @@ export const dismissCoachSuggestion = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * The student's cost entries, newest first
+ */
+export const listCosts = <ThrowOnError extends boolean = false>(
+  options?: Options<ListCostsData, ThrowOnError>,
+): RequestResult<ListCostsResponses, ListCostsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListCostsResponses, ListCostsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListCostsResponse.parseAsync(data),
+    url: "/api/costs",
+    ...options,
+  });
+
+/**
+ * Add a cost entry. A replay with the same id applies last-writer-wins and returns 200
+ */
+export const createCost = <ThrowOnError extends boolean = false>(
+  options: Options<CreateCostData, ThrowOnError>,
+): RequestResult<CreateCostResponses, CreateCostErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateCostResponses, CreateCostErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateCostBody,
+          headers: zCreateCostHeaders.optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateCostResponse.parseAsync(data),
+    url: "/api/costs",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Totals by stage and by currency (no conversion), planned (task estimates, USD) vs paid
+ */
+export const getCostSummary = <ThrowOnError extends boolean = false>(
+  options?: Options<GetCostSummaryData, ThrowOnError>,
+): RequestResult<GetCostSummaryResponses, GetCostSummaryErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetCostSummaryResponses, GetCostSummaryErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetCostSummaryResponse.parseAsync(data),
+    url: "/api/costs/summary",
+    ...options,
+  });
+
+/**
+ * Delete an entry. 204 (also when it is already gone); 200 with the stored entry when a newer edit than `client_updated_at_ms` keeps it
+ */
+export const deleteCost = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteCostData, ThrowOnError>,
+): RequestResult<DeleteCostResponses, DeleteCostErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteCostResponses, DeleteCostErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          headers: zDeleteCostHeaders.optional(),
+          path: zDeleteCostPath,
+          query: zDeleteCostQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteCostResponse.parseAsync(data),
+    url: "/api/costs/{cost_id}",
+    ...options,
+  });
+
+/**
+ * Change a cost entry. Last writer wins by `client_updated_at_ms`
+ */
+export const patchCost = <ThrowOnError extends boolean = false>(
+  options: Options<PatchCostData, ThrowOnError>,
+): RequestResult<PatchCostResponses, PatchCostErrors, ThrowOnError> =>
+  (options.client ?? client).patch<PatchCostResponses, PatchCostErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPatchCostBody,
+          headers: zPatchCostHeaders.optional(),
+          path: zPatchCostPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPatchCostResponse.parseAsync(data),
+    url: "/api/costs/{cost_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
  * Course map: chapters by system with coverage and the caller's progress, plus the next action
  */
 export const getCourses = <ThrowOnError extends boolean = false>(
@@ -3904,6 +4169,30 @@ export const updateMe = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * The stage the student is in now (null: derive it from the first stage with open tasks)
+ */
+export const putPathwayStage = <ThrowOnError extends boolean = false>(
+  options: Options<PutPathwayStageData, ThrowOnError>,
+): RequestResult<PutPathwayStageResponses, PutPathwayStageErrors, ThrowOnError> =>
+  (options.client ?? client).put<PutPathwayStageResponses, PutPathwayStageErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPutPathwayStageBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPutPathwayStageResponse.parseAsync(data),
+    url: "/api/me/pathway-stage",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
  * Navigation for the signed-in user: enabled items only, plus shell feature flags
  */
 export const getNav = <ThrowOnError extends boolean = false>(
@@ -4224,6 +4513,51 @@ export const saveOnboarding = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zSaveOnboardingResponse.parseAsync(data),
     url: "/api/onboarding",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * The whole pathway: stages and tasks with the student's state, re-verify flags and official links
+ */
+export const getPathway = <ThrowOnError extends boolean = false>(
+  options?: Options<GetPathwayData, ThrowOnError>,
+): RequestResult<GetPathwayResponses, GetPathwayErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetPathwayResponses, GetPathwayErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetPathwayResponse.parseAsync(data),
+    url: "/api/pathway",
+    ...options,
+  });
+
+/**
+ * Set a task's status, due date or notes. Last writer wins by `client_updated_at_ms`
+ */
+export const patchPathwayTask = <ThrowOnError extends boolean = false>(
+  options: Options<PatchPathwayTaskData, ThrowOnError>,
+): RequestResult<PatchPathwayTaskResponses, PatchPathwayTaskErrors, ThrowOnError> =>
+  (options.client ?? client).patch<PatchPathwayTaskResponses, PatchPathwayTaskErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPatchPathwayTaskBody,
+          headers: zPatchPathwayTaskHeaders.optional(),
+          path: zPatchPathwayTaskPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPatchPathwayTaskResponse.parseAsync(data),
+    url: "/api/pathway/tasks/{task_id}",
     ...options,
     headers: {
       "Content-Type": "application/json",
@@ -4790,5 +5124,133 @@ export const getToday = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetTodayResponse.parseAsync(data),
     url: "/api/today",
+    ...options,
+  });
+
+/**
+ * The student's vault documents: metadata only
+ */
+export const listVault = <ThrowOnError extends boolean = false>(
+  options?: Options<ListVaultData, ThrowOnError>,
+): RequestResult<ListVaultResponses, ListVaultErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListVaultResponses, ListVaultErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListVaultResponse.parseAsync(data),
+    url: "/api/vault",
+    ...options,
+  });
+
+/**
+ * Start an upload: a signed Storage URL for `vault/{user_id}/{id}` (at most 20 MB)
+ */
+export const createVaultUpload = <ThrowOnError extends boolean = false>(
+  options: Options<CreateVaultUploadData, ThrowOnError>,
+): RequestResult<CreateVaultUploadResponses, CreateVaultUploadErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateVaultUploadResponses, CreateVaultUploadErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateVaultUploadBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateVaultUploadResponse.parseAsync(data),
+    url: "/api/vault/uploads",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Delete the document: its Storage object first, then the row
+ */
+export const deleteVaultDocument = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteVaultDocumentData, ThrowOnError>,
+): RequestResult<DeleteVaultDocumentResponses, DeleteVaultDocumentErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteVaultDocumentResponses, DeleteVaultDocumentErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteVaultDocumentPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteVaultDocumentResponse.parseAsync(data),
+    url: "/api/vault/{doc_id}",
+    ...options,
+  });
+
+/**
+ * Rename a document, change its type or its expiry date
+ */
+export const patchVaultDocument = <ThrowOnError extends boolean = false>(
+  options: Options<PatchVaultDocumentData, ThrowOnError>,
+): RequestResult<PatchVaultDocumentResponses, PatchVaultDocumentErrors, ThrowOnError> =>
+  (options.client ?? client).patch<PatchVaultDocumentResponses, PatchVaultDocumentErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPatchVaultDocumentBody,
+          path: zPatchVaultDocumentPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPatchVaultDocumentResponse.parseAsync(data),
+    url: "/api/vault/{doc_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Finish an upload: the stored bytes are checked (PDF, JPEG, PNG or HEIC) and sized
+ */
+export const completeVaultUpload = <ThrowOnError extends boolean = false>(
+  options: Options<CompleteVaultUploadData, ThrowOnError>,
+): RequestResult<CompleteVaultUploadResponses, CompleteVaultUploadErrors, ThrowOnError> =>
+  (options.client ?? client).post<CompleteVaultUploadResponses, CompleteVaultUploadErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zCompleteVaultUploadPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCompleteVaultUploadResponse.parseAsync(data),
+    url: "/api/vault/{doc_id}/complete",
+    ...options,
+  });
+
+/**
+ * A signed URL to open the document (works `signed_url_seconds`, never cached)
+ */
+export const getVaultUrl = <ThrowOnError extends boolean = false>(
+  options: Options<GetVaultUrlData, ThrowOnError>,
+): RequestResult<GetVaultUrlResponses, GetVaultUrlErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetVaultUrlResponses, GetVaultUrlErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetVaultUrlPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetVaultUrlResponse.parseAsync(data),
+    url: "/api/vault/{doc_id}/url",
     ...options,
   });
