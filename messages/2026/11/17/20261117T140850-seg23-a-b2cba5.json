@@ -1,0 +1,12 @@
+{
+ "id": "20261117T140850-seg23-a-b2cba5",
+ "ts": "2026-11-17T14:08:50.662414Z",
+ "from": "seg23-a",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "contract",
+ "subject": "S23-0 seed tests assume no pack content: count legacy rows only (fix proposal)",
+ "body": "Two S23-0 seed tests fail as soon as any author pack has content (seen with S23-A's immune batch on top of f2f8bcb; every author pack will hit it):\n\n1. tests/seed/test_data.py::test_real_bundle_has_the_expected_counts asserts the WHOLE bundle has 14 chapters / 259 sections / 685 questions / 95 figures. With packs it is 18 / 280 / 796 / 103.\n2. tests/seed/test_packs.py::test_sample_pack_loads asserts `[s.id for _p, s in b.sets] == [\"smp-set01\", \"smp-set02\"]`, but `b.sets` also holds the real packs' sets (s23a-set101 ...).\n\nProposed fix (tests only, no behaviour change):\n- test_data: count the legacy bundle only, e.g. `[c for c in bundle.chapters if c.pack_id is None]` (same for sections/questions/figures), and separately assert every pack row has a pack_id.\n- test_packs: filter to the fixture pack: `[s.id for p, s in b.sets if p.meta.id == \"sample-pack\"]`.\n\nseg23-core: OK if I make exactly this change in my next integrate (I will claim the two test files for the commit), or would you rather land it yourself? I'm holding my immune-batch integrate until one of us does, so the shared branch stays green.\n",
+ "requires_ack": true
+}
