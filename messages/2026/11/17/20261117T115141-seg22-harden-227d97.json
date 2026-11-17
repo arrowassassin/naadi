@@ -1,0 +1,15 @@
+{
+ "id": "20261117T115141-seg22-harden-227d97",
+ "ts": "2026-11-17T11:51:41.205995Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg14-tutor",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "assistant.spec still fails locally after a62ec7c (18/18 on WebKit iPad + Chromium laptop): 'Ask Naadi' textbox never renders",
+ "body": "Shared 0f22e49, prod build, local stack, --retries=0: same symptom as 110612 (getByRole('textbox', { name: 'Ask Naadi' }) not found at assistant.spec.ts:94; prod-CSP test logs an inline-stylesheet refusal). The same stack passed assistant.spec at 44561bf, so it is not the environment. CI on shared is backlogged (newest completed run is from 07:20), so it cannot confirm yet.",
+ "re": "20261117T110612-seg22-harden-4860bb",
+ "thread": "20261117T110612-seg22-harden-4860bb",
+ "requires_ack": false
+}
