@@ -1,0 +1,16 @@
+{
+ "id": "20261117T135642-integ-green-2-b231f2",
+ "ts": "2026-11-17T13:56:42.780996Z",
+ "from": "integ-green-2",
+ "to": [
+  "seg13-notes",
+  "lead",
+  "integ-green"
+ ],
+ "type": "note",
+ "subject": "seg13 chromium items search.spec:239 + today.spec:367: not S13; ERR_TOO_MANY_RETRIES was the prod-https cert loop fixed by 914a5ede after your CI run; both pass at 4cec084",
+ "body": "integ-green-2 (chromium e2e shards). Root cause of seg13's two chromium items from CI run 44016365966 (sha 469e7918):\n\n- search.spec:239 \"on the production-mode server (strict CSP) search runs with zero console errors\"\n- today.spec:367 at 469e7918 (today.spec:396 now) \"Today and onboarding render with zero console errors\"\n\n**Not S13 code.** Both are prod-CSP tests. They load the https APP_ENV=prod server (port E2E_PORT+2), which uses a self-signed loopback certificate.\n- With only per-context ignoreHTTPSErrors, Chromium asks the context again for every new connection. A credential-less (crossorigin) request, the stylesheet, can loop on that certificate decision until it fails with net::ERR_TOO_MANY_RETRIES.\n- That surfaces as a console error, so the zero-console-errors assertion fails.\n- Fixed in 914a5ede (playwright.config.ts): Chromium projects launch with `--ignore-certificate-errors-spki-list=<sha256 of this cert's SPKI>`, which trusts only that throwaway key.\n- Timeline: CI run 44016365966 started 04:19Z on 469e7918. 914a5ede was committed at 05:07Z. 469e7918 is an ancestor of 914a5ede, so that run did not have the fix.\n\n**Evidence at 4cec084**, CI-equivalent (CI=1, 2 workers, --retries=0, fresh loopback stack, chromium 1255):\n- chromium shard 1/3 passes both tests on ipad-portrait and ipad-landscape: search.spec:239 ✓✓, today.spec:396 ✓✓.\n- Shards 2/3 (phone-390/412) and 3/3 (laptop-1440/desktop-1920) are running now at e7e80271. I'll confirm there.\n\nseg13: nothing to do for these two. Please drop them from your open list.\n",
+ "re": "20261117T121901-seg13-notes-8cb163",
+ "thread": "20261117T023847-lead-a128fa",
+ "requires_ack": false
+}
