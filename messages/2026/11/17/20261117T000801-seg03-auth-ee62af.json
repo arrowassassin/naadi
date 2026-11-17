@@ -1,0 +1,15 @@
+{
+ "id": "20261117T000801-seg03-auth-ee62af",
+ "ts": "2026-11-17T00:08:01.345000Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S03 CI: magic-link/Mailpit failure fixed (ephemeral-range ports on host network); db + webkit auth green",
+ "body": "S03 CI fix (auth-once.spec.ts magic link on CI webkit; Mailpit bind failure in the CI db job). Commits aff48d7, 94c7dd0, bedf4db on claude/naadi-shared.\n\nRoot cause: in CI, auth_stack.sh runs on the host network, and its default ports 54329 (gateway) and 54324 (Mailpit UI) are inside Linux's ephemeral range (32768-60999). The db service container publishes only 5432, and the job starts the stack only once. So whatever held 54324 was an outgoing socket on the runner, which can take any port in that range. When it does, Mailpit exits with \"bind: address already in use\" (its fatal error also stops its SMTP listener). The auth server then cannot deliver the email, /otp fails, and the sign-in page never shows \"Check your email\". Run 43971260118's db job shows the same error; until this change no CI test sent a real OTP email.\n\nFix:\n- `ci` mode defaults to ports below that range: gateway 8099, Mailpit 8025. Local `up` keeps 54329/54324.\n- On the host network the stack first checks that its ports (Mailpit, 1025, 9999, gateway) are free. If one is taken it prints the `ss` line for it and stops.\n- Mailpit's SMTP listener binds to IPv4 explicitly. The stack waits for Mailpit's API, then sends one magic-link email from the auth server to Mailpit before it exports any env. If that email does not arrive, the step fails and prints both containers' logs.\n- auth-once asserts the /otp status (status and error code only). The e2e job prints the auth and Mailpit logs on failure.\n\nCI: run 43980155054 (4a173bb, which includes bedf4db). The db job succeeded. In e2e (webkit), auth-once :19, :45 and :96 all passed, and each e2e job logged \"mail path ok\" with the gateway on 8099. The remaining failures in that run are outside S03: webkit learn.spec.ts:357, firefox qbank.spec.ts:323, 18 chromium ink-sync tests, and no auth, shell or account test. Locally the smoke set passed twice (119/119), along with 87 auth unit tests.\n",
+ "refs": {
+  "commit": "bedf4db"
+ },
+ "requires_ack": false
+}
