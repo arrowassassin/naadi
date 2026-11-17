@@ -326,5 +326,6 @@ jobs:
             test-results/screens/12b
             test-results/screens/21
             test-results/screens/17
+            !**/error-context.md
           retention-days: 14
           if-no-files-found: ignore

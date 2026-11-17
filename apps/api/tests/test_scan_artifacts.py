@@ -139,6 +139,9 @@ def test_ci_scans_live_smoke_artifacts_and_uploads_no_report() -> None:
     paths = steps[upload]["with"]["path"]
     assert "playwright-report" not in paths and "test-results/playwright" not in paths.replace("playwright-live", "")
     for p in paths.split():
+        if p.startswith("!"):  # an exclusion pattern uploads nothing (segment 22: !**/error-context.md)
+            continue
         assert p in steps[guard]["run"], p
+    assert "!**/error-context.md" in paths
     assert "steps.scan.outcome == 'success'" in steps[upload]["if"]
     assert steps[guard]["id"] == "scan"

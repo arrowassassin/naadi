@@ -144,3 +144,14 @@ def test_no_other_workflow_runs_the_model_eval() -> None:
     for path in WF.glob("*.yml"):
         if path.name != "model_eval.yml":
             assert "model_eval/run.py" not in path.read_text(), path.name
+
+
+def test_artifact_uploads_never_include_playwright_error_context() -> None:
+    """error-context.md holds Playwright's call log, which can carry request headers (segment 22)."""
+    checked = 0
+    for f, _job, step in _steps():
+        path = str(step.get("with", {}).get("path", ""))
+        if f in ("ci.yml", "deploy.yml") and "upload-artifact" in step.get("uses", "") and "test-results" in path:
+            assert "!**/error-context.md" in path, f"{f}: {step.get('name') or step['uses']}"
+            checked += 1
+    assert checked >= 2  # the e2e screenshots (ci) and the live smoke (deploy)

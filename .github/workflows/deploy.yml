@@ -91,5 +91,6 @@ jobs:
           path: |
             test-results/screens/01-live
             test-results/live-smoke
+            !**/error-context.md
           retention-days: 14
           if-no-files-found: ignore

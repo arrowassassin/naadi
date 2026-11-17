@@ -1,14 +1,20 @@
 import { randomBytes } from "node:crypto";
 import { mkdirSync } from "node:fs";
 import path from "node:path";
-import { type APIRequestContext, expect, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import { callbackPath, runUsers, toLink } from "../e2e/auth-users";
+import { cookieHeader, nodeFetch, spaceSignature } from "./net";
 
 /**
  * Real-project auth through the deployed Space. A throwaway user signs in with a server-generated magic
  * link in WebKit; then the owner's admin flag is checked through the API. Nothing about the owner is
  * printed or rendered: only `is_admin === true` is asserted, and the session created for that check is
  * revoked at once. The throwaway user is deleted at the end whatever happens.
+ *
+ * Secrets never touch Playwright (its call log ends up in error-context.md on a failure): the HF token exchange,
+ * every request with a session token, the Supabase verify/logout calls and the Space cookie go through Node fetch
+ * (./net.ts). The page only ever receives the short-lived `__sign` value. The config's global teardown scans
+ * test-results for every secret's value afterwards (scripts/scan_artifacts.py) and fails the run on a match.
  */
 const RUN = `live-${randomBytes(4).toString("hex")}`;
 const EMAIL = `naadi-e2e-live-${RUN}@example.com`;
@@ -18,16 +24,6 @@ function need(name: string): string {
   const v = process.env[name];
   if (!v) throw new Error(`${name} must be set`);
   return v;
-}
-
-/** Private Space: exchange HF_TOKEN for a Space JWT once; `?__sign=` sets the Space's own cookie. */
-async function spaceSignature(request: APIRequestContext, baseURL: string): Promise<string | null> {
-  if (!new URL(baseURL).hostname.endsWith(".hf.space")) return null;
-  const res = await request.get(`https://huggingface.co/api/spaces/${need("HF_SPACE_ID")}/jwt`, {
-    headers: { authorization: `Bearer ${need("HF_TOKEN")}` },
-  });
-  expect(res.status(), "HF Space JWT").toBe(200);
-  return ((await res.json()) as { token: string }).token;
 }
 
 test.beforeAll(() => {
@@ -41,15 +37,25 @@ test.afterAll(() => {
 test("real sign-in on the live Space; /api/me; owner is admin", async ({ page, context, baseURL }) => {
   need("SUPABASE_URL");
   need("SUPABASE_SERVICE_ROLE_KEY");
-  const base = baseURL as string;
-  const sign = await spaceSignature(context.request, base);
-  if (sign) await page.goto(`/?__sign=${encodeURIComponent(sign)}`);
+  const base = (baseURL as string).replace(/\/$/, "");
+  const privateSpace = new URL(base).hostname.endsWith(".hf.space");
+  if (privateSpace) {
+    const sign = await spaceSignature(need("HF_SPACE_ID"), need("HF_TOKEN"));
+    await page.goto(`/?__sign=${encodeURIComponent(sign)}`);
+  }
+  // Node-side calls to the Space carry the Space cookie the browser now holds (never through Playwright).
+  const spaceCookie = privateSpace ? cookieHeader(await context.cookies(base)) : "";
+  const api = (path: string, bearer?: string) =>
+    nodeFetch(`${base}${path}`, {
+      headers: {
+        ...(spaceCookie ? { cookie: spaceCookie } : {}),
+        ...(bearer ? { authorization: `Bearer ${bearer}` } : {}),
+      },
+    });
 
-  const cfg = (await (await context.request.get("/api/public-config")).json()) as {
-    supabase_url: string;
-    supabase_anon_key: string;
-    auth_configured: boolean;
-  };
+  const cfgRes = await api("/api/public-config");
+  expect(cfgRes.status, "public config").toBe(200);
+  const cfg = await cfgRes.json<{ supabase_url: string; supabase_anon_key: string; auth_configured: boolean }>();
   expect(cfg.auth_configured).toBe(true);
 
   // 1. A throwaway student signs in through the app's own callback (Supabase verifies the token).
@@ -65,31 +71,32 @@ test("real sign-in on the live Space; /api/me; owner is admin", async ({ page, c
     const raw = localStorage.getItem("naadi.auth");
     return raw ? (JSON.parse(raw) as { access_token: string }).access_token : null;
   });
-  expect(token).toBeTruthy();
-  const me = await context.request.get("/api/me", { headers: { authorization: `Bearer ${token}` } });
-  expect(me.status()).toBe(200);
-  const body = (await me.json()) as { profile: { user_id: string }; is_admin: boolean };
+  expect(token, "the student's session is in the page").toBeTruthy();
+  const me = await api("/api/me", token as string);
+  expect(me.status, "/api/me as the student").toBe(200);
+  const body = await me.json<{ profile: { user_id: string }; is_admin: boolean }>();
   expect(body.profile.user_id).toBe(link.userId);
   expect(body.is_admin).toBe(false);
-  const denied = await context.request.get("/api/admin/overview", { headers: { authorization: `Bearer ${token}` } });
-  expect(denied.status()).toBe(403);
+  expect((await api("/api/admin/overview", token as string)).status, "admin overview as the student").toBe(403);
 
   // 2. The owner (first ADMIN_EMAILS entry) is an admin: verified in Node, never rendered or printed.
   const owner = toLink(runUsers(["link", "--owner"], false));
-  const verify = await context.request.post(`${cfg.supabase_url}/auth/v1/verify`, {
+  const verify = await nodeFetch(`${cfg.supabase_url}/auth/v1/verify`, {
+    method: "POST",
     headers: { apikey: cfg.supabase_anon_key, "content-type": "application/json" },
-    data: { type: "magiclink", token_hash: owner.tokenHash },
+    body: JSON.stringify({ type: "magiclink", token_hash: owner.tokenHash }),
   });
-  expect(verify.status(), "owner magic-link verification").toBe(200);
-  const ownerToken = ((await verify.json()) as { access_token: string }).access_token;
+  expect(verify.status, "owner magic-link verification").toBe(200);
+  const ownerToken = (await verify.json<{ access_token: string }>()).access_token;
   try {
-    const ownerMe = await context.request.get("/api/me", { headers: { authorization: `Bearer ${ownerToken}` } });
-    expect(ownerMe.status()).toBe(200);
-    expect(((await ownerMe.json()) as { is_admin: boolean }).is_admin).toBe(true);
+    const ownerMe = await api("/api/me", ownerToken);
+    expect(ownerMe.status, "/api/me as the owner").toBe(200);
+    expect((await ownerMe.json<{ is_admin: boolean }>()).is_admin).toBe(true);
   } finally {
-    const out = await context.request.post(`${cfg.supabase_url}/auth/v1/logout?scope=local`, {
+    const out = await nodeFetch(`${cfg.supabase_url}/auth/v1/logout?scope=local`, {
+      method: "POST",
       headers: { apikey: cfg.supabase_anon_key, authorization: `Bearer ${ownerToken}` },
     });
-    expect(out.status(), "the owner session created for this check is revoked").toBe(204);
+    expect(out.status, "the owner session created for this check is revoked").toBe(204);
   }
 });
