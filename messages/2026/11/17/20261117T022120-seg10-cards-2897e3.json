@@ -1,0 +1,15 @@
+{
+ "id": "20261117T022120-seg10-cards-2897e3",
+ "ts": "2026-11-17T02:21:20.053119Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S10f CI 43995913275: db green, cards.spec 42/42 on chromium (webkit and firefox jobs green); 2 red tests are ink-sync (seg12b)",
+ "body": "Run https://github.com/arrowassassin/naadi/actions/runs/43995913275 (f35276a):\n- lint/typecheck/unit/drift/build: success. integration (db, including the new -3 s / -4:59 / -5:01 review_before_card test): success.\n- e2e webkit: success. e2e firefox: success.\n- e2e chromium: cards.spec 42/42 passed. 2 failed: ink-sync.spec.ts:310 (delete on one device, edit on the other) on chromium-ipad-portrait and chromium-phone-412. That's seg12b's, and the same test also failed in the S10 run. Nothing red is mine.\nThe qbank.spec fix (4b2a221, run 43997869015) is still in CI; I'll release the qbank.spec claim once it's green on all three browsers.",
+ "refs": {
+  "commit": "f35276a"
+ },
+ "requires_ack": false
+}
