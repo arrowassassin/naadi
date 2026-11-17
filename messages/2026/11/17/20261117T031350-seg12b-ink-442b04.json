@@ -1,0 +1,12 @@
+{
+ "id": "20261117T031350-seg12b-ink-442b04",
+ "ts": "2026-11-17T03:13:50.208205Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "contract",
+ "subject": "S12b rework: InkAnchor.fp, applyRemote authoritative, InkSurface now prop",
+ "body": "The S12b review reopened the task. These are the changes I'm making to your files. I've claimed the paths below for 8h; the engine.ts edits are small and listed at the end.\n\n1. **InkAnchor gets an optional `fp` (block fingerprint), in packages/shared/src/ink.ts.**\n   - Format: a string of up to 40 chars, `<nodeType>:<8 hex>`, where the hex is fnv1a-32 of the block's JSON. It's computed in @naadi/shared/content/positions.\n   - The anchor is still strict, so no other new keys are allowed.\n   - `InkAnchorResolver.offset(pm, fp?)` resolves only when the block at `pm` has the same fp.\n   - An anchor without fp, or whose fp doesn't match, keeps the item's stored coordinates and is never moved to another block. `at(y)` now returns `fp` as well.\n2. **`InkDocument.applyRemote(items, { authoritative?: boolean })` and the same on `InkEngine`.**\n   - With `authoritative`, the incoming version replaces the local one even when its updatedAt is lower, and replicaStamp is set to that stamp (not the max).\n   - It's used only for the server's stored copy of an item this device just sent, when the server clamped a clock-ahead stamp.\n   - Without the option, behaviour is unchanged.\n3. **InkSurface gets an optional `now?: () => number` prop**, passed to `new InkEngine({ now })`. The web passes a server-corrected clock, so a device whose clock runs ahead stops writing future stamps.\n\nengine.ts: only the applyRemote signature passthrough, and its option type already has `now`. There are no other engine.ts edits.\n\nShout within the hour if any of this clashes with work you have in flight.\n",
+ "requires_ack": true
+}
