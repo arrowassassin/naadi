@@ -656,8 +656,9 @@ test.describe("ink lab", () => {
       .toBe(false);
 
   /**
-   * The first pass: scroll the stress page from top to bottom and back a viewport at a time, letting every
-   * slab paint and settle into its picture. After it, scrolling should paint nothing: slabs that leave
+   * The first pass: scroll the stress page from top to bottom and back in steps of 0.4 viewport, letting every
+   * slab paint and settle into its picture (the steps are short enough that every set of kept slabs
+   * the rounds will meet is met here). After it, scrolling should paint nothing: slabs that leave
    * the keep window park their pictures and show them again when they return.
    */
   async function firstPass(page: Page) {
@@ -668,7 +669,7 @@ test.describe("ink lab", () => {
       return {
         from: Math.max(0, top - 80),
         to: top + s.offsetHeight - window.innerHeight * 0.5,
-        step: window.innerHeight * 0.8,
+        step: window.innerHeight * 0.4,
       };
     });
     const stops: number[] = [];
@@ -683,7 +684,12 @@ test.describe("ink lab", () => {
   const engineStats = (page: Page) =>
     page.evaluate(() => {
       const r = window.naadiInkLab?.stress()?.renderStats;
-      return { tilesPainted: r?.tilesPainted ?? 0, repaints: r?.repaints ?? 0, slabsRestored: r?.slabsRestored ?? 0 };
+      return {
+        tilesPainted: r?.tilesPainted ?? 0,
+        repaints: r?.repaints ?? 0,
+        slabsRestored: r?.slabsRestored ?? 0,
+        parkSkipped: r?.parkSkipped ?? 0,
+      };
     });
 
   interface Round {
@@ -794,8 +800,17 @@ test.describe("ink lab", () => {
     await expect(page.getByRole("button", { name: "Measuring scroll…" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Measure scroll", exact: true })).toBeVisible({ timeout: 20_000 });
     expect(Number(await page.getByTestId("scroll-result").getAttribute("data-fps"))).toBeGreaterThan(0);
-    await firstPass(page);
-    const afterFirst = await engineStats(page);
+    // The first pass, repeated (at most twice more) until a whole pass paints nothing: slabs released
+    // mid-paint by the fast Measure scroll above are painted again on the way.
+    let afterFirst = await engineStats(page);
+    let passes = 0;
+    for (;;) {
+      const before = afterFirst.tilesPainted;
+      await firstPass(page);
+      passes++;
+      afterFirst = await engineStats(page);
+      if ((passes > 1 && afterFirst.tilesPainted === before) || passes === 3) break;
+    }
     // Three gates.
     // 1. Frames: five rounds, each one continuous scroll with the ink layers shown and hidden in alternating
     //    slices. Each frame counts for the state it was drawn in, and the first frame after each switch is
@@ -854,7 +869,7 @@ test.describe("ink lab", () => {
       sliceMs,
       rounds,
       engine: { frames: engineMs.length, p95Ms: engineP95, maxMs: Math.max(0, ...engineMs) },
-      paint: { afterFirst, afterRounds },
+      paint: { passes, afterFirst, afterRounds },
       tall,
       layers,
     });

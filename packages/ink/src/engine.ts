@@ -302,6 +302,8 @@ export class InkEngine {
     repaints: 0,
     /** Slabs shown again from their parked picture instead of being repainted. */
     slabsRestored: 0,
+    /** Slabs released without parking: still painting or settling, or their picture was not ready. */
+    parkSkipped: 0,
   };
   /** Main-thread time of each engine callback (scroll, frame, resize, settle) while a probe runs. */
   private probe: number[] | null = null;
@@ -1132,6 +1134,7 @@ export class InkEngine {
     const m = picture(slab.marker, slab.has.m);
     const k = picture(slab.ink, slab.has.k);
     const keep = park && !pending && m !== undefined && k !== undefined && (m !== null || k !== null);
+    if (park && !keep && (slab.has.m || slab.has.k)) this.renderStats.parkSkipped++;
     for (const layer of [slab.marker, slab.ink]) {
       this.dropBacking(layer);
       layer.canvas?.remove();
