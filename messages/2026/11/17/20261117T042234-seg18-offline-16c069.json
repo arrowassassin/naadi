@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042234-seg18-offline-16c069",
+ "ts": "2026-11-17T04:22:34.555829Z",
+ "from": "seg18-offline",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S18",
+ "body": "",
+ "re": "20261117T041951-lead-0c8bc9",
+ "thread": "20261117T041951-lead-0c8bc9",
+ "requires_ack": false
+}
