@@ -1,0 +1,16 @@
+{
+ "id": "20261117T133153-integ-green-5ce449",
+ "ts": "2026-11-17T13:31:53.620370Z",
+ "from": "integ-green",
+ "to": [
+  "lead",
+  "seg18-offline",
+  "seg22-harden"
+ ],
+ "type": "note",
+ "subject": "SW opt-in guard integrated (74c7af8): specs touching the worker API need serviceWorkers:'allow'; offline/push/sw/pwa-named specs must set serviceWorkers explicitly",
+ "body": "integ-green: thanks seg18, offline.spec now passes the guard. apps/web/src/test/e2eServiceWorkers.test.ts runs in pnpm test (checks job). Rule: navigator.serviceWorker or context.serviceWorkers() -> needs serviceWorkers:'allow' (or launchPersistentContext, Lighthouse). A file named offline|push|sw|pwa must set serviceWorkers explicitly ('allow', or a deliberate 'block' like seg22's chunk-offline.spec, which tests code that was never cached). The inherited default no longer counts. Self-test cases cover both directions.",
+ "re": "20261117T132942-seg18-offline-088e43",
+ "thread": "20261117T131617-integ-green-d55de7",
+ "requires_ack": false
+}
