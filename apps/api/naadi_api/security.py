@@ -14,9 +14,6 @@ SEARCH_MEDIA_HOSTS = (
 )
 # YouTube video thumbnails (the IFrame player's poster and the media mapper's previews, segment 20).
 YOUTUBE_IMG_HOSTS = ("https://i.ytimg.com",)
-# The official IFrame player, on its privacy-enhanced domain only. (www.youtube.com is deliberately absent: every
-# embed is built for youtube-nocookie.com, and the player is driven by postMessage, never by YouTube's script.)
-YOUTUBE_FRAME_HOSTS = ("https://www.youtube-nocookie.com",)
 
 # Violation reports (CSP and the Trusted Types report-only policy) go to this same-origin endpoint
 # (naadi_api/csp_report.py): rate-limited per client, bodies never logged.
@@ -35,17 +32,15 @@ def content_security_policy(settings: Settings) -> str:
         media.append(supa)  # generated clips (segment 15b) are signed Storage URLs
     directives = [
         "default-src 'self'",
-        # The IFrame Player API script (and the widget it loads) come from www.youtube.com, only after a student
-        # presses play on a video (segment 20); nothing else is allowed.
-        "script-src 'self' https://www.youtube.com",
+        "script-src 'self'",
         "style-src 'self'",
         "font-src 'self'",
         f"img-src {' '.join(img)}",
         f"connect-src {' '.join(connect)}",
         f"media-src {' '.join(media)}",
-        # YouTube only through the official IFrame player on its privacy-enhanced domain; 'self' is the
-        # sandboxed diagram renderer (SANDBOX_DOCUMENTS), which runs with an opaque origin.
-        f"frame-src 'self' {' '.join(YOUTUBE_FRAME_HOSTS)}",
+        # 'self' only: the sandboxed diagram renderer and the sandboxed YouTube player page (SANDBOX_DOCUMENTS), both
+        # with an opaque origin. The official YouTube player is a frame of that player page, under ITS policy.
+        "frame-src 'self'",
         "worker-src 'self'",
         "manifest-src 'self'",
         "object-src 'none'",
@@ -71,10 +66,12 @@ def trusted_types_report_only_policy() -> str:
     return "; ".join(["require-trusted-types-for 'script'", *_reporting()])
 
 
+YOUTUBE_SANDBOX_DOCUMENT = "sandbox/youtube.html"
+
 # Documents only ever loaded in `<iframe sandbox="allow-scripts">` (opaque origin: no cookies, storage or
 # access to the app). Mermaid lays out SVG text with inline styles, so they get their own policy; the app's own
 # CSP above stays strict.
-SANDBOX_DOCUMENTS = frozenset({"sandbox/mermaid.html"})
+SANDBOX_DOCUMENTS = frozenset({"sandbox/mermaid.html", YOUTUBE_SANDBOX_DOCUMENT})
 
 
 def sandbox_content_security_policy() -> str:
@@ -90,6 +87,28 @@ def sandbox_content_security_policy() -> str:
             "form-action 'none'",
             "frame-ancestors 'self'",
             "sandbox allow-scripts",
+        ]
+    )
+
+
+def youtube_sandbox_content_security_policy() -> str:
+    """The YouTube player page (segment 20): the ONLY document that may load the official IFrame Player API script
+    from www.youtube.com, and the only one that may frame the privacy-enhanced player. It has an opaque origin
+    (iframe sandbox without allow-same-origin, repeated here as a CSP sandbox), so that script can never read the
+    app's storage or session. It may style itself inline (the API sets styles on its own frame) and nothing else."""
+    return "; ".join(
+        [
+            "default-src 'none'",
+            "script-src 'self' https://www.youtube.com",
+            "style-src 'self' 'unsafe-inline'",
+            "frame-src https://www.youtube-nocookie.com",
+            "img-src data:",
+            "font-src 'none'",
+            "connect-src 'none'",
+            "base-uri 'none'",
+            "form-action 'none'",
+            "frame-ancestors 'self'",
+            "sandbox allow-scripts allow-presentation",
         ]
     )
 

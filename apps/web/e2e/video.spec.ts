@@ -7,18 +7,36 @@ import { freshStudent, richChapter, watchConsole } from "./support/student";
 
 /**
  * Segment 20: the YouTube IFrame Player API player, its chapter list, speed control and timestamped notes, against
- * the real API and database. CI never contacts YouTube: the API script and the embed page are answered here, and a
- * fake `YT.Player` stands in for the player (the real one is covered by the device checklist).
+ * the real API and database. The official player runs in a sandboxed page with an opaque origin and talks to the
+ * app over a typed postMessage bridge (src/video/bridge.ts). CI never contacts YouTube: the API script is answered
+ * here and a fake `YT.Player` stands in for the player inside that page (the real one is covered by the device
+ * checklist).
  */
 test.skip(!canMintUsers(), "signed-in tests need the service role (run pnpm e2e:live-auth against the Space)");
 
 const SHOTS = path.resolve(import.meta.dirname, "../../../.tmp/shots/video");
 
+interface Fake {
+  time: number;
+  rate: number;
+  seeks: number[];
+  played: number;
+}
 declare global {
   interface Window {
-    __yt: { time: number; rate: number; seeks: number[]; played: number };
+    __yt: Fake;
   }
 }
+
+/** The fake player lives in the sandboxed player page (an opaque-origin frame), not in the app's page. */
+function sandbox(page: Page) {
+  const f = page.frames().find((fr) => fr.url().endsWith("/sandbox/youtube.html"));
+  if (!f) throw new Error("the sandboxed player frame is not there");
+  return f;
+}
+const fake = <T>(page: Page, read: (y: Fake) => T): Promise<T> =>
+  sandbox(page).evaluate(`window.__yt ? (${read.toString()})(window.__yt) : undefined`) as Promise<T>;
+const setTime = (page: Page, t: number) => sandbox(page).evaluate(`window.__yt.time = ${t}`);
 
 const FAKE_API = `
 window.__yt = { time: 0, rate: 1, seeks: [], played: 0 };
@@ -82,8 +100,18 @@ test.describe("YouTube player and video notes", () => {
       await play.click();
       const frame = page.locator("[data-node=video] iframe");
       await expect(frame).toHaveAttribute("referrerpolicy", "strict-origin-when-cross-origin");
-      await expect(frame).toHaveAttribute("src", /^https:\/\/www\.youtube-nocookie\.com\/embed\/M7lc1UVf-VE\?/);
-      await expect.poll(() => page.evaluate(() => window.__yt?.played)).toBe(1);
+      await expect(frame).toHaveAttribute("src", "/sandbox/youtube.html");
+      await expect(frame).toHaveAttribute("sandbox", "allow-scripts allow-presentation");
+      // init over the bridge reached the player page, which started the (fake) official player and played
+      await expect.poll(() => fake(page, (y) => y.played)).toBe(1);
+      // the app's own document allows no third-party script; the player page has its own, sandboxed policy
+      const appCsp = (await page.request.get("/")).headers()["content-security-policy"] ?? "";
+      expect(appCsp).toContain("script-src 'self';");
+      expect(appCsp).not.toContain("youtube");
+      const playerCsp = (await page.request.get("/sandbox/youtube.html")).headers()["content-security-policy"] ?? "";
+      expect(playerCsp).toContain("script-src 'self' https://www.youtube.com");
+      expect(playerCsp).toContain("sandbox allow-scripts allow-presentation");
+      expect(playerCsp).not.toContain("allow-same-origin");
 
       // source line and Terms link under the player
       const video = page.locator("[data-node=video]");
@@ -94,15 +122,13 @@ test.describe("YouTube player and video notes", () => {
 
       // chapters (the node starts at 0:30) seek on tap; speed uses the player's rates
       await video.getByRole("button", { name: /^0:30\s*Part/ }).click();
-      await expect.poll(() => page.evaluate(() => window.__yt.seeks)).toEqual([30]);
+      await expect.poll(() => fake(page, (y) => y.seeks)).toEqual([30]);
       await video.getByRole("button", { name: "1.5×", exact: true }).click();
-      await expect.poll(() => page.evaluate(() => window.__yt.rate)).toBe(1.5);
+      await expect.poll(() => fake(page, (y) => y.rate)).toBe(1.5);
       await expect(video.getByRole("button", { name: "1.5×", exact: true })).toHaveAttribute("aria-pressed", "true");
 
       // a note at 12:34
-      await page.evaluate(() => {
-        window.__yt.time = 754;
-      });
+      await setTime(page, 754);
       const noteAt = video.getByRole("button", { name: "Note at 12:34" });
       await expect(noteAt).toBeVisible();
       await noteAt.click();
@@ -132,11 +158,9 @@ test.describe("YouTube player and video notes", () => {
       );
 
       // tap the note: the player jumps there
-      await page.evaluate(() => {
-        window.__yt.time = 0;
-      });
+      await setTime(page, 0);
       await item.click();
-      await expect.poll(() => page.evaluate(() => window.__yt.seeks.at(-1))).toBe(754);
+      await expect.poll(() => fake(page, (y) => y.seeks.at(-1))).toBe(754);
 
       // the note is on the server: reload, play, the list shows it again
       await page.reload();

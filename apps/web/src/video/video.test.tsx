@@ -1,10 +1,10 @@
 import type { MediaOut } from "@naadi/shared";
-import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { act, fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import { ContentRenderer } from "../content/ContentRenderer";
+import { NS, parseFromFrame, parseToFrame, SANDBOX_ATTR, SANDBOX_URL } from "./bridge";
 import { formatClock } from "./format";
 import { currentVideoPosition, VIDEO_POSITION_EVENT } from "./playback";
-import { embedSrc, IFRAME_API_SRC, resetYouTubeApiForTests } from "./youtubeApi";
 
 const VID: MediaOut = {
   id: "yt-abc",
@@ -21,52 +21,6 @@ const VID: MediaOut = {
   height: null,
 } as MediaOut;
 
-interface Fake {
-  time: number;
-  rate: number;
-  seeks: number[];
-  played: number;
-  onReady?: () => void;
-  destroyed: boolean;
-}
-let fake: Fake;
-
-function installApi(): void {
-  window.YT = {
-    Player: class {
-      constructor(_el: unknown, opts: { events?: { onReady?: () => void } }) {
-        fake.onReady = opts.events?.onReady;
-      }
-      playVideo() {
-        fake.played++;
-      }
-      pauseVideo() {}
-      seekTo(s: number) {
-        fake.seeks.push(s);
-        fake.time = s;
-      }
-      getCurrentTime() {
-        return fake.time;
-      }
-      getPlayerState() {
-        return 1;
-      }
-      setPlaybackRate(r: number) {
-        fake.rate = r;
-      }
-      getPlaybackRate() {
-        return fake.rate;
-      }
-      getAvailablePlaybackRates() {
-        return [0.5, 1, 1.5, 2];
-      }
-      destroy() {
-        fake.destroyed = true;
-      }
-    },
-  } as unknown as typeof window.YT;
-}
-
 function doc(...videos: { startS: number | null; endS: number | null }[]) {
   return {
     type: "doc",
@@ -78,17 +32,21 @@ function mount(d: object) {
   return render(<ContentRenderer sectionId="s1" mode="prod" media={{ "yt-abc": VID }} doc={d as never} />);
 }
 
-beforeEach(() => {
-  fake = { time: 0, rate: 1, seeks: [], played: 0, destroyed: false };
-  resetYouTubeApiForTests();
-  window.YT = undefined;
-  document.head.querySelectorAll(`script[src="${IFRAME_API_SRC}"]`).forEach((s) => {
-    s.remove();
+/** The sandboxed frame, played by the test: records what the app posts and posts frame messages back. */
+function frameOf(container: HTMLElement) {
+  const frame = container.querySelector("iframe") as HTMLIFrameElement;
+  const win = frame.contentWindow as Window;
+  const sent: unknown[] = [];
+  vi.spyOn(win, "postMessage").mockImplementation((m: unknown) => {
+    sent.push(m);
   });
-});
-afterEach(() => {
-  window.YT = undefined;
-});
+  const say = (data: unknown, origin = "null") =>
+    act(() => {
+      window.dispatchEvent(new MessageEvent("message", { data, origin, source: win }));
+    });
+  return { frame, sent, say };
+}
+const from = (type: string, extra: object = {}) => ({ ns: NS, type, ...extra });
 
 describe("format", () => {
   it("clock", () => {
@@ -96,21 +54,33 @@ describe("format", () => {
     expect(formatClock(754)).toBe("12:34");
     expect(formatClock(3725)).toBe("1:02:05");
   });
-  it("embed url is the privacy-enhanced host with the API enabled and no autoplay", () => {
-    const u = new URL(embedSrc("abc", "https://x.test", 30));
-    expect(u.origin).toBe("https://www.youtube-nocookie.com");
-    expect(u.searchParams.get("enablejsapi")).toBe("1");
-    expect(u.searchParams.get("origin")).toBe("https://x.test");
-    expect(u.searchParams.get("start")).toBe("30");
-    expect(u.searchParams.has("autoplay")).toBe(false);
+});
+
+describe("bridge messages", () => {
+  it("accepts only well-formed messages in each direction", () => {
+    expect(
+      parseToFrame({ ns: NS, type: "init", videoId: "abc_DEF-123", start: null, parentOrigin: "https://a.test" }),
+    ).not.toBeNull();
+    expect(parseToFrame({ ns: NS, type: "init", videoId: "../evil", start: null, parentOrigin: "x" })).toBeNull();
+    expect(parseToFrame({ ns: NS, type: "cmd", cmd: "seek", value: -1 })).toBeNull();
+    expect(parseToFrame({ ns: NS, type: "cmd", cmd: "seek", value: Number.NaN })).toBeNull();
+    expect(parseToFrame({ ns: NS, type: "cmd", cmd: "rate", value: 1.5 })).not.toBeNull();
+    expect(parseToFrame({ ns: NS, type: "cmd", cmd: "eval", value: 1 })).toBeNull();
+    expect(parseToFrame({ ns: "other", type: "cmd", cmd: "play" })).toBeNull();
+    expect(parseFromFrame(from("ready", { rates: [1, 2], rate: 1 }))).not.toBeNull();
+    expect(parseFromFrame(from("ready", { rates: ["1"], rate: 1 }))).toBeNull();
+    expect(parseFromFrame(from("time", { t: 5, state: 1 }))).not.toBeNull();
+    expect(parseFromFrame(from("time", { t: "5", state: 1 }))).toBeNull();
+    expect(parseFromFrame(from("nope"))).toBeNull();
+    expect(parseFromFrame("text")).toBeNull();
+    expect(parseFromFrame(null)).toBeNull();
   });
 });
 
-describe("YouTube player", () => {
+describe("YouTube player over the bridge", () => {
   it("requests nothing from YouTube until the play button is pressed", () => {
     const { container } = mount(doc({ startS: null, endS: null }));
     expect(container.querySelector("iframe")).toBeNull();
-    expect(document.head.querySelector(`script[src="${IFRAME_API_SRC}"]`)).toBeNull();
     expect(container.querySelector("img")).toBeNull();
     expect(screen.getByRole("link", { name: "YouTube Terms of Service" })).toHaveAttribute(
       "href",
@@ -119,64 +89,86 @@ describe("YouTube player", () => {
     expect(screen.getByText("YouTube")).toBeInTheDocument();
   });
 
-  it("one press loads the API script, then plays once the player is ready", async () => {
+  it("one press adds only the sandboxed same-origin player page; the video id goes over the bridge", () => {
     const { container } = mount(doc({ startS: 30, endS: null }));
     fireEvent.click(screen.getByRole("button", { name: /Play video/ }));
-    const script = document.head.querySelector<HTMLScriptElement>(`script[src="${IFRAME_API_SRC}"]`);
-    expect(script).not.toBeNull();
-    const frame = container.querySelector("iframe");
-    expect(frame?.getAttribute("referrerpolicy")).toBe("strict-origin-when-cross-origin");
-    expect(frame?.getAttribute("src")).toContain("https://www.youtube-nocookie.com/embed/abc_DEF-123");
-    installApi();
-    act(() => window.onYouTubeIframeAPIReady?.());
-    await waitFor(() => expect(fake.onReady).toBeDefined());
-    expect(fake.played).toBe(0);
-    act(() => fake.onReady?.());
-    expect(fake.played).toBe(1);
+    const frame = container.querySelector("iframe") as HTMLIFrameElement;
+    expect(frame.getAttribute("src")).toBe(SANDBOX_URL);
+    expect(frame.getAttribute("sandbox")).toBe(SANDBOX_ATTR);
+    expect(frame.getAttribute("sandbox")).not.toContain("allow-same-origin");
+    expect(container.querySelector('iframe[src*="youtube.com"], iframe[src*="nocookie"]')).toBeNull();
+    expect(document.querySelector('script[src*="youtube.com"]')).toBeNull();
+    const { sent, say } = frameOf(container);
+    say(from("hello"));
+    expect(sent).toEqual([
+      { ns: NS, type: "init", videoId: "abc_DEF-123", start: 30, parentOrigin: window.location.origin },
+    ]);
   });
 
-  it("chapters from the document's video ranges seek on tap; speed uses the rates the player reports", async () => {
-    mount(doc({ startS: 0, endS: 60 }, { startS: 90, endS: 150 }));
+  it("ignores messages from other windows, other origins and bad shapes", () => {
+    const { container } = mount(doc({ startS: null, endS: null }));
+    fireEvent.click(screen.getByRole("button", { name: /Play video/ }));
+    const { sent, say } = frameOf(container);
+    act(() => {
+      window.dispatchEvent(new MessageEvent("message", { data: from("hello"), origin: "null", source: window }));
+    });
+    say(from("hello"), "https://evil.test");
+    say({ ns: NS, type: "init" });
+    expect(sent).toEqual([]);
+  });
+
+  it("chapters seek over the bridge; speed uses the rates the frame reports", async () => {
+    const { container } = mount(doc({ startS: 0, endS: 60 }, { startS: 90, endS: 150 }));
     fireEvent.click(screen.getAllByRole("button", { name: /Play video/ })[0] as HTMLElement);
-    installApi();
-    act(() => window.onYouTubeIframeAPIReady?.());
-    await waitFor(() => expect(fake.onReady).toBeDefined());
-    act(() => fake.onReady?.());
+    const { sent, say } = frameOf(container);
+    say(from("hello"));
+    say(from("ready", { rates: [0.5, 1, 1.5, 2], rate: 1 }));
+    sent.length = 0;
     fireEvent.click((await screen.findAllByRole("button", { name: /^1:30\s*Part/ }))[0] as HTMLElement);
-    expect(fake.seeks).toEqual([90]);
+    expect(sent).toEqual([
+      { ns: NS, type: "cmd", cmd: "seek", value: 90 },
+      { ns: NS, type: "cmd", cmd: "play" },
+    ]);
     fireEvent.click(screen.getAllByRole("button", { name: "1.5×" })[0] as HTMLElement);
-    expect(fake.rate).toBe(1.5);
+    expect(sent.at(-1)).toEqual({ ns: NS, type: "cmd", cmd: "rate", value: 1.5 });
     expect(screen.getAllByRole("button", { name: "1.5×" })[0]).toHaveAttribute("aria-pressed", "true");
     expect(screen.queryByRole("button", { name: "0.75×" })).toBeNull();
   });
 
-  it("publishes the playhead for the assistant and clears it on unmount", async () => {
+  it("publishes the playhead for the assistant and clears it on unmount", () => {
     const seen: unknown[] = [];
     window.addEventListener(VIDEO_POSITION_EVENT, (e) => seen.push((e as CustomEvent).detail));
-    const { unmount } = mount(doc({ startS: null, endS: null }));
+    const { container, unmount } = mount(doc({ startS: null, endS: null }));
     fireEvent.click(screen.getByRole("button", { name: /Play video/ }));
-    installApi();
-    fake.time = 42.7;
-    vi.useFakeTimers();
-    act(() => window.onYouTubeIframeAPIReady?.());
-    await vi.advanceTimersByTimeAsync(0);
-    act(() => fake.onReady?.());
-    await vi.advanceTimersByTimeAsync(600);
+    const { say } = frameOf(container);
+    say(from("ready", { rates: [1], rate: 1 }));
+    say(from("time", { t: 42.7, state: 1 }));
     expect(currentVideoPosition()).toEqual({ media_id: "yt-abc", t: 42 });
-    vi.useRealTimers();
     unmount();
     expect(currentVideoPosition()).toBeNull();
-    expect(fake.destroyed).toBe(true);
     expect(seen).toContainEqual({ media_id: "yt-abc", t: 42 });
   });
 
-  it("an API that cannot load leaves the plain player and shows no controls", async () => {
+  it("pauses at the end of a range", () => {
+    const { container } = mount(doc({ startS: 0, endS: 60 }));
+    fireEvent.click(screen.getByRole("button", { name: /Play video/ }));
+    const { sent, say } = frameOf(container);
+    say(from("ready", { rates: [1], rate: 1 }));
+    say(from("time", { t: 61, state: 1 }));
+    expect(sent).toContainEqual({ ns: NS, type: "cmd", cmd: "pause" });
+  });
+
+  it("a player that cannot load or errors shows the message and a link, and no controls", () => {
     const { container } = mount(doc({ startS: null, endS: null }));
     fireEvent.click(screen.getByRole("button", { name: /Play video/ }));
-    const script = document.head.querySelector<HTMLScriptElement>(`script[src="${IFRAME_API_SRC}"]`);
-    act(() => script?.onerror?.(new Event("error")));
-    await waitFor(() => expect(document.head.querySelector(`script[src="${IFRAME_API_SRC}"]`)).toBeNull());
-    expect(container.querySelector("iframe")).not.toBeNull();
+    const { say } = frameOf(container);
+    say(from("api_failed"));
     expect(screen.queryByRole("button", { name: "1×" })).toBeNull();
+    say(from("error", { code: 153 }));
+    expect(screen.getByRole("alert")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Watch on YouTube" })).toHaveAttribute(
+      "href",
+      "https://www.youtube.com/watch?v=abc_DEF-123",
+    );
   });
 });

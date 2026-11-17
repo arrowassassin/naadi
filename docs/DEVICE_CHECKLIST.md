@@ -36,3 +36,8 @@ The cloud build runs Playwright WebKit, Chromium and Firefox at the device viewp
 - [ ] **Airplane-mode day:** "Download this week", turn on Airplane Mode, then read, answer questions, review cards and write ink. Turn networking back on: everything syncs and nothing is duplicated.
 - [ ] **Conflict:** edit the same note offline on the iPad and online on the laptop. The result matches the documented rule (last writer wins per row; ink merges by stroke id).
 - [ ] **Web Push:** from the home-screen PWA (iOS 16.4+), allow notifications; a reminder arrives.
+
+## From M6 (YouTube player and Anki)
+
+- [ ] **Sandboxed official player (real YouTube, iPad Safari, Chrome, laptop):** open a lesson with a video and press play. It plays with no error 150/152/153; the speed buttons, the chapter list and "Note at m:ss" work; tapping a note seeks. The player page runs with an opaque origin (`sandbox="allow-scripts allow-presentation"`), so check that the video still loads, fullscreen works, and that nothing is requested from YouTube before the press (Network tab). If YouTube refuses to play inside the sandbox, report it: the bridge (`src/video/bridge.ts`) is the single place to change.
+- [ ] **Anki round trip with a real deck of your own:** import an `.apkg` exported from the Anki desktop app (current and "support older versions" formats), review a card, export, import the file into Anki, and re-import it into Naadi (no duplicates).

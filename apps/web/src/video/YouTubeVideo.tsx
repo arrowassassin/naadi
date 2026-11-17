@@ -2,14 +2,14 @@ import type { MediaOut } from "@naadi/shared";
 import { cx } from "@naadi/ui";
 import { Component, type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import type { ContentEnv } from "../content/types";
+import { SANDBOX_ATTR, SANDBOX_URL } from "./bridge";
+import { type BridgePlayer, connectPlayer, STATE_PLAYING } from "./bridgePlayer";
 import { Facade } from "./Facade";
 import { formatClock } from "./format";
 import { clearVideoPosition, publishVideoPosition } from "./playback";
 import { VideoNotes } from "./VideoNotes";
-import { embedSrc, loadYouTubeApi, STATE_PLAYING, type YTPlayer } from "./youtubeApi";
 
 const DEFAULT_RATES = [0.5, 0.75, 1, 1.25, 1.5, 2];
-const POLL_MS = 500;
 
 /** The notes panel needs the app's providers; outside them (a preview, a bare test) it is simply absent. */
 class QuietBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
@@ -52,92 +52,63 @@ export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Prop
   const [now, setNow] = useState(startS ?? 0);
   const [range, setRange] = useState<{ start: number | null; end: number | null }>({ start: startS, end: endS });
   const frameRef = useRef<HTMLIFrameElement>(null);
-  const playerRef = useRef<YTPlayer | null>(null);
+  const playerRef = useRef<BridgePlayer | null>(null);
   const rangeRef = useRef(range);
   rangeRef.current = range;
 
   const time = useCallback((): number => {
     const p = playerRef.current;
-    try {
-      return p ? Math.floor(p.getCurrentTime()) : Math.floor(now);
-    } catch {
-      return Math.floor(now);
-    }
+    return Math.floor(p ? p.currentTime() : now);
   }, [now]);
 
   useEffect(() => {
     if (!loaded) return;
-    let cancelled = false;
-    let timer: number | undefined;
-    let player: YTPlayer | null = null;
-    loadYouTubeApi().then(
-      (YT) => {
-        const frame = frameRef.current;
-        if (cancelled || !frame) return;
-        const tick = () => {
-          const p = playerRef.current;
-          if (!p) return;
-          let s = 0;
-          try {
-            s = p.getCurrentTime();
-          } catch {
-            return;
-          }
+    const frame = frameRef.current;
+    if (!frame) return;
+    let live = true;
+    const player = connectPlayer(
+      frame,
+      { videoId: media.youtube_id, start: startS },
+      {
+        onReady: (r, current) => {
+          if (!live) return;
+          playerRef.current = player;
+          setReady(true);
+          if (r.length) setRates(r);
+          setRate(current);
+        },
+        onState: () => undefined,
+        onTime: (s, state) => {
+          if (!live) return;
           const end = rangeRef.current.end;
-          if (end !== null && s >= end && p.getPlayerState() === STATE_PLAYING) p.pauseVideo();
+          if (end !== null && s >= end && state === STATE_PLAYING) player.pause();
           setNow(s);
           publishVideoPosition(media.id, s);
-        };
-        player = new YT.Player(frame, {
-          events: {
-            onReady: () => {
-              if (cancelled || !player) return;
-              playerRef.current = player;
-              setReady(true);
-              try {
-                const r = player.getAvailablePlaybackRates();
-                if (r.length) setRates(r);
-                setRate(player.getPlaybackRate());
-              } catch {
-                // keep the default rates
-              }
-              player.playVideo();
-              timer = window.setInterval(tick, POLL_MS);
-            },
-            onStateChange: () => tick(),
-            onError: () => setPlayerError(true),
-          },
-        });
-      },
-      () => {
-        if (!cancelled) setApiFailed(true);
+        },
+        onError: () => live && setPlayerError(true),
+        onApiFailed: () => live && setApiFailed(true),
       },
     );
     return () => {
-      cancelled = true;
-      if (timer !== undefined) window.clearInterval(timer);
+      live = false;
       clearVideoPosition(media.id);
-      try {
-        player?.destroy();
-      } catch {
-        // already gone
-      }
+      player.destroy();
       playerRef.current = null;
       setReady(false);
     };
-  }, [loaded, media.id]);
+  }, [loaded, media.id, media.youtube_id, startS]);
 
   const seek = useCallback((seconds: number, to?: { start: number | null; end: number | null }) => {
     const p = playerRef.current;
     if (to) setRange(to);
     if (!p) return;
-    p.seekTo(seconds, true);
-    p.playVideo();
+    p.seek(seconds);
+    p.play();
     setNow(seconds);
   }, []);
 
   function setSpeed(r: number) {
-    playerRef.current?.setPlaybackRate(r);
+    playerRef.current?.setRate(r);
     setRate(r);
   }
 
@@ -154,8 +125,10 @@ export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Prop
           <iframe
             ref={frameRef}
             title={title}
-            src={embedSrc(media.youtube_id, env.embedOrigin, startS)}
-            // YouTube refuses to play without a referrer (error 153); this policy sends only the origin.
+            // The official player runs in a page with an opaque origin and its own CSP (sandbox/youtube.html): the
+            // third-party script never shares an origin with the signed-in app. See bridge.ts.
+            src={SANDBOX_URL}
+            sandbox={SANDBOX_ATTR}
             referrerPolicy="strict-origin-when-cross-origin"
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
             allowFullScreen
