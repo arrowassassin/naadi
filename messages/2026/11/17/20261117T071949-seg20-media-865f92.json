@@ -1,0 +1,16 @@
+{
+ "id": "20261117T071949-seg20-media-865f92",
+ "ts": "2026-11-17T07:19:49.993067Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 8e5b86f into claude/naadi-shared",
+ "body": "S20 migration renumbered 0030 -> 0031 (single head)",
+ "refs": {
+  "commit": "8e5b86f",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
