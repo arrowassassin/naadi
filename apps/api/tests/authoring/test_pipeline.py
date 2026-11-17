@@ -18,7 +18,7 @@ from naadi_api.authoring.prompts import Excerpt, part_a, system_prompt
 from naadi_api.authoring.selection import Cell, CellError, TaxNode, build_cell
 from naadi_api.authoring.store import Gap, RunRecord
 from naadi_api.config_api.schemas import AuthoringRules
-from naadi_api.llm import CallContext
+from naadi_api.llm import CallContext, LLMUnavailable
 from naadi_api.llm_budget import BudgetExhausted
 
 from .fixtures import ROOT, TAXONOMY_IDS, good_item, labs, taxonomy_kinds
@@ -438,7 +438,32 @@ async def test_the_night_stops_at_the_call_cap() -> None:
     gw = Script([draft_json()] * 5, solver_ok() * 5)
     stats = await pipeline.nightly(deps(store, gw, max_llm_calls_per_night=9))
     assert stats.in_review == 2 and stats.budget_stopped and stats.llm_calls == 9
-    assert [r.outcome for r in store.runs] == ["in_review", "in_review", "budget"]
+    # the third draft got its author call but not its solver calls: it is kept for an independent check later
+    assert [r.outcome for r in store.runs] == ["in_review", "in_review", "needs_independent_check"]
+    assert [s for _, s, _ in store.items.values()] == ["in_review", "in_review", "auto_checked"]
+
+
+async def test_an_unavailable_solver_keeps_the_linted_draft_for_a_later_check() -> None:
+    store = FakeStore()
+    out = await author(store, Script([draft_json()], [LLMUnavailable("reviewer", [{"model": "m"}])]))
+    assert out.outcome == "needs_independent_check"
+    _, status, review = store.items[out.question_id or ""]
+    assert (
+        status == "auto_checked"
+        and review["solver"]["error"] == "unavailable"
+        and review["solver"]["independent"] is False
+    )
+
+
+async def test_a_spent_daily_cap_in_the_solver_saves_the_draft_and_stops_the_night() -> None:
+    from datetime import UTC, datetime
+
+    gaps = [Gap("step1", "topic.renal.stones_urinary_tract", "UTI", 0, 0)] * 3
+    store = FakeStore(gaps=gaps)
+    gw = Script([draft_json()], [BudgetExhausted("daily_cap", datetime.now(UTC), purpose="job")])
+    stats = await pipeline.nightly(deps(store, gw))
+    assert stats.budget_stopped and stats.needs_independent_check == 0  # the run raised before counting: stopped
+    assert [r.outcome for r in store.runs] == ["needs_independent_check"] and len(store.items) == 1
 
 
 async def test_calls_already_spent_today_count_against_the_cap() -> None:

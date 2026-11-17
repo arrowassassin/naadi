@@ -224,9 +224,16 @@ async def author_item(
                     run.outcome = out.outcome = "discarded_lint"
                     return out
                 continue
-            solver_res = await blind_solve(
-                deps.gateway, row, CallContext(purpose="job", run_id=str(run.id)), budget, author_model
-            )
+            stop: BaseException | None = None
+            try:
+                solver_res = await blind_solve(
+                    deps.gateway, row, CallContext(purpose="job", run_id=str(run.id)), budget, author_model
+                )
+            except (LLMUnavailable, BudgetExhausted, CallCapReached) as exc:
+                # The draft passed the linter and the citation check: keep it for a later independent check (an admin
+                # re-runs it from the review screen) instead of throwing the author call away.
+                solver_res = SolverResult(error="unavailable", independent=False)
+                stop = exc if isinstance(exc, BudgetExhausted | CallCapReached) else None
             run.solver = solver_res.as_dict()
             if solver_res.agrees is False:
                 solver_fails += 1
@@ -263,9 +270,12 @@ async def author_item(
         run.question_id = qid
         run.outcome = out.outcome = "in_review" if independent_ok else "needs_independent_check"
         out.question_id = qid
+        if stop is not None:
+            raise stop  # the item is saved; the night's budget is spent
         return out
     except (BudgetExhausted, CallCapReached):
-        run.outcome = out.outcome = "budget"
+        if run.question_id is None:
+            run.outcome = out.outcome = "budget"
         raise
     except LLMUnavailable:
         run.outcome = out.outcome = "failed"
