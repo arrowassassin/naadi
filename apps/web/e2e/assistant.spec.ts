@@ -337,13 +337,7 @@ test.describe("production server (APP_ENV=prod, strict CSP)", () => {
       // Trusted Types ship report-only (segment 22): csp.spec.ts collects those reports; they are not errors.
       if (m.type() === "error" && !/\[Report Only\]|report-only/i.test(m.text())) errors.push(m.text());
     });
-    page.on("pageerror", (e) => {
-      // assistant-ui 0.15.32's thread auto-scroll controller scrolls inside its ResizeObserver callback; when the
-      // degraded turn adds the notice and the sources in one frame, WebKit defers the rest of the notifications a
-      // frame and says so. Benign by the ResizeObserver spec (delivered next frame); anything else is an error.
-      if (e.message === "ResizeObserver loop completed with undelivered notifications.") return;
-      errors.push(`pageerror: ${e.message}`);
-    });
+    page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
     try {
       await openFirstSection(page);
       // No provider in prod mode here (the loopback fake is refused outside non-prod): the turn degrades to the
