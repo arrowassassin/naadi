@@ -1,22 +1,21 @@
-import { Link } from "@tanstack/react-router";
-import { Unlink } from "lucide-react";
-import { type ReactNode, useMemo, useRef } from "react";
+import { lazy, type ReactNode, Suspense, useEffect, useRef, useState } from "react";
 import type { TextDecorator } from "../content/types";
-import { useUiText } from "../copy/useUiText";
-import { useNotesSync, useNoteWriter } from "../notes/api";
-import { fingerprint, flatten, type HighlightColor, type TextRun } from "./anchor";
-import { useHighlightDecorator } from "./Mark";
-import { PendingStatus } from "./PendingStatus";
-import { type SelectionInfo, SelectionToolbar, type ToolbarActions } from "./SelectionToolbar";
-import { useAnchoredHighlights } from "./useAnchoredHighlights";
+import type { TextRun } from "./anchor";
+import type { SelectionInfo } from "./SelectionToolbar";
+
+/** Highlight data, the selection toolbar and the offline queue: loaded once the content has painted. */
+const HighlightEngine = lazy(() => import("./HighlightEngine"));
 
 export interface HighlightableTextProps {
   anchorType: "section" | "question";
   anchorId: string;
   /** The surface's text runs (sectionRuns for a section body, htmlTextRuns for an explanation). */
   runs: readonly TextRun[];
-  /** Renders the content with this decorator (ContentRenderer / SafeHtml `decorateText`). */
-  children: (decorate: TextDecorator) => ReactNode;
+  /**
+   * Renders the content. `decorate` is undefined until the highlights are loaded: the content is on screen first,
+   * then repainted with the student's highlights (same elements, nothing remounts).
+   */
+  children: (decorate: TextDecorator | undefined) => ReactNode;
   onNote: (sel: SelectionInfo) => void;
   onCard?: (sel: SelectionInfo) => void;
   onAsk?: (sel: SelectionInfo) => void;
@@ -27,81 +26,41 @@ export interface HighlightableTextProps {
   toolbarLabel?: string;
 }
 
-/**
- * A text surface the student can highlight (segment 13): paints their highlights (located by quote when the text
- * changed), opens the selection toolbar, saves new highlights through the offline queue, and says when some could
- * not be placed (they stay in Notes as Detached, never dropped).
- */
-export function HighlightableText({
-  anchorType,
-  anchorId,
-  runs,
-  children,
-  onNote,
-  onCard,
-  onAsk,
-  enabled = true,
-  offline,
-  toolbarLabel,
-}: HighlightableTextProps) {
-  const t = useUiText();
-  const ref = useRef<HTMLDivElement>(null);
-  const revision = useMemo(() => fingerprint(flatten(runs).text), [runs]);
-  const hl = useAnchoredHighlights(anchorType, anchorId, runs, revision, { repair: !offline });
-  const writer = useNoteWriter();
-  // Send what this device queued (now, on reconnect, every 30 s while something waits).
-  useNotesSync();
-  const decorate = useHighlightDecorator(hl.ranges, null);
-
-  const colors = useMemo(() => new Map(hl.ranges.map((r) => [r.id, r.color])), [hl.ranges]);
-  const actions: ToolbarActions = {
-    onHighlight: (color: HighlightColor, sel) => {
-      writer.create({
-        kind: "highlight",
-        anchor_type: anchorType,
-        anchor_id: anchorId,
-        anchor_pos: sel.anchor,
-        highlight_color: color,
-      });
-    },
-    onNote,
-    onCard,
-    onAsk,
-    onRecolor: (id, color) => writer.update(id, { highlight_color: color }),
-    onRemove: (id) => writer.remove(id),
-    colorOf: (id) => colors.get(id) ?? null,
+/** Run `fn` once the browser has painted and is idle (a short timeout where there is no idle callback). */
+function afterFirstPaint(fn: () => void): () => void {
+  const w = window as Window & {
+    requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number;
+    cancelIdleCallback?: (id: number) => void;
   };
-  const ids = useMemo(() => [...hl.notes.map((n) => n.id)], [hl.notes]);
+  if (w.requestIdleCallback) {
+    const id = w.requestIdleCallback(fn, { timeout: 600 });
+    return () => w.cancelIdleCallback?.(id);
+  }
+  const id = window.setTimeout(fn, 120);
+  return () => window.clearTimeout(id);
+}
+
+/**
+ * A text surface the student can highlight (segment 13). It renders its content straight away; the highlight
+ * engine (TipTap-free, but with the notes API, the offline queue and the selection toolbar) loads after the first
+ * paint and then paints the student's highlights and opens the toolbar on a selection.
+ */
+export function HighlightableText({ children, ...engine }: HighlightableTextProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
+  const [decorate, setDecorate] = useState<TextDecorator | undefined>(undefined);
+  useEffect(() => afterFirstPaint(() => setReady(true)), []);
+  // A function in state: wrap it, or React would call it as an updater.
+  const [onDecorate] = useState(() => (d: TextDecorator) => setDecorate(() => d));
 
   return (
-    <div ref={ref} className="relative" data-highlightable={anchorType}>
+    <div ref={ref} className="relative" data-highlightable={engine.anchorType}>
       {children(decorate)}
-      <SelectionToolbar
-        surfaceRef={ref}
-        hostRef={ref}
-        runs={runs}
-        actions={actions}
-        enabled={enabled}
-        label={toolbarLabel}
-      />
-      {hl.detached.length > 0 ? (
-        <p
-          role="note"
-          data-detached-notice=""
-          className="mt-5 mb-0 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-block border border-line-control px-4 py-3 text-text-2 text-ui-sm"
-        >
-          <Unlink aria-hidden="true" size={16} className="shrink-0" />
-          <span>
-            {hl.detached.length === 1
-              ? t("highlights.detached_one")
-              : t("highlights.detached_many", { n: String(hl.detached.length) })}
-          </span>
-          <Link to="/notes" search={{ anchor: "detached" }} className="min-h-11 py-3">
-            {t("highlights.detached_link")}
-          </Link>
-        </p>
+      {ready ? (
+        <Suspense fallback={null}>
+          <HighlightEngine {...engine} hostRef={ref} onDecorate={onDecorate} />
+        </Suspense>
       ) : null}
-      <PendingStatus ids={ids} className="mt-3" />
     </div>
   );
 }

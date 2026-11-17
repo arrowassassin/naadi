@@ -1,8 +1,11 @@
 import { cx } from "@naadi/ui";
 import { X } from "lucide-react";
-import { type ReactNode, type RefObject, useEffect, useId, useRef, useSyncExternalStore } from "react";
+import { lazy, type ReactNode, type RefObject, Suspense, useEffect, useId, useRef, useSyncExternalStore } from "react";
 import { useUiText } from "../copy/useUiText";
-import { type PageNotesHandle, PageNotesPanel } from "./PageNotesPanel";
+import type { PageNotesHandle } from "./PageNotesPanel";
+
+/** The panel (the notes API, the offline queue, the ink page) loads when it is first opened, never with the page. */
+const PageNotesPanel = lazy(() => import("./PageNotesPanel").then((m) => ({ default: m.PageNotesPanel })));
 
 /** Laptop and iPad landscape (≥ 1100 px, the `laptop` breakpoint): the panel sits beside the page. */
 const SIDE_QUERY = "(min-width: 68.75rem)";
@@ -111,6 +114,7 @@ export function ReaderNotesLayout({
   sectionHeading,
   panelRef,
   onInkChange,
+  onPanelMounted,
   article,
 }: {
   open: boolean;
@@ -119,18 +123,23 @@ export function ReaderNotesLayout({
   sectionHeading: string;
   panelRef: RefObject<PageNotesHandle | null>;
   onInkChange: (on: boolean) => void;
+  /** The panel has mounted (it is a lazy chunk): `panelRef` is set, so anything queued for it can be sent. */
+  onPanelMounted?: () => void;
   article: ReactNode;
 }) {
   const side = useSidePanel();
   const t = useUiText();
   const panel = (
-    <PageNotesPanel
-      key={sectionId}
-      ref={panelRef}
-      sectionId={sectionId}
-      sectionHeading={sectionHeading}
-      onInkChange={onInkChange}
-    />
+    <Suspense fallback={null}>
+      <PageNotesPanel
+        key={sectionId}
+        ref={panelRef}
+        sectionId={sectionId}
+        sectionHeading={sectionHeading}
+        onInkChange={onInkChange}
+        onMounted={onPanelMounted}
+      />
+    </Suspense>
   );
   // The article keeps ONE position in the tree whatever the viewport: moving it between a wrapper and a fragment when
   // the side-panel breakpoint is crossed (an iPad turned, a window resized) would remount it and reset everything

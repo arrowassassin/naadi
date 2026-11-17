@@ -135,6 +135,12 @@ export function SelectionToolbar({
     if (!enabled) setMode(null);
   }, [enabled]);
 
+  // The toolbar mounts after the content has painted: a selection made meanwhile is picked up now.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: once, on mount
+  useEffect(() => {
+    if (enabled) readSelection();
+  }, []);
+
   // Follow the selection (debounced), and tapping one of the student's highlights.
   useEffect(() => {
     if (!enabled) return;

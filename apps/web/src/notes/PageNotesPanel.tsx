@@ -61,6 +61,7 @@ export function PageNotesPanel({
   sectionId,
   sectionHeading,
   onInkChange,
+  onMounted,
   ref,
   className,
 }: {
@@ -68,6 +69,8 @@ export function PageNotesPanel({
   sectionHeading: string;
   /** Ink on in the panel (the Reader hides its page bar and turns section ink off). */
   onInkChange: (on: boolean) => void;
+  /** Called once the panel is mounted and `ref` is set. */
+  onMounted?: () => void;
   ref?: Ref<PageNotesHandle>;
   className?: string;
 }) {
@@ -179,6 +182,10 @@ export function PageNotesPanel({
     [mode, pick],
   );
   const quoteInserted = useCallback((id: number) => setQuote((q) => (q && q.id === id ? null : q)), []);
+
+  const mountedRef = useRef(onMounted);
+  mountedRef.current = onMounted;
+  useEffect(() => mountedRef.current?.(), []);
 
   const pendingCreate = noteId ? ops.some((o) => o.id === noteId && o.create) : false;
   const showType = mode !== "write";

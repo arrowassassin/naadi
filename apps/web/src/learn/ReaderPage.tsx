@@ -258,13 +258,13 @@ function Reader({
   }, [section, detail.title, t]);
 
   const runs = useMemo(() => sectionRuns(section?.body ?? null), [section?.body]);
-  // A quote sent to the page notes before the panel was open: added once it is.
-  useEffect(() => {
-    if (notesOpen && quoteRef.current && panelRef.current) {
+  // A quote sent to the page notes before the panel was open (it is a lazy chunk): sent once it has mounted.
+  const sendQuote = useCallback(() => {
+    if (quoteRef.current && panelRef.current) {
       panelRef.current.addQuote(quoteRef.current);
       quoteRef.current = null;
     }
-  });
+  }, []);
 
   if (!section) {
     const first = detail.sections[0];
@@ -467,6 +467,7 @@ function Reader({
         sectionId={section.id}
         sectionHeading={section.heading}
         panelRef={panelRef}
+        onPanelMounted={sendQuote}
         onInkChange={onPanelInk}
         article={
           <article
