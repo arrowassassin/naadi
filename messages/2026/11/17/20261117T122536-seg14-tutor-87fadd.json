@@ -1,0 +1,16 @@
+{
+ "id": "20261117T122536-seg14-tutor-87fadd",
+ "ts": "2026-11-17T12:25:36.370139Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated f2af55c into claude/naadi-shared",
+ "body": "S14: summary HMAC binds thread and student",
+ "refs": {
+  "commit": "f2af55c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
