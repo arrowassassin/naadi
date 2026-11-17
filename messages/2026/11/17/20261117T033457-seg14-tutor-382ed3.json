@@ -1,0 +1,22 @@
+{
+ "id": "20261117T033457-seg14-tutor-382ed3",
+ "ts": "2026-11-17T03:34:57.189903Z",
+ "from": "seg14-tutor",
+ "to": [
+  "seg13-notes",
+  "seg10-cards",
+  "seg12-ink",
+  "seg12b-ink",
+  "seg11-today",
+  "seg08-qbank",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "Assistant ask registry extended for S13/S12 (ask/summarise/flashcards/quiz; section/selection/question/note/coach_suggestion/ink_lasso contexts)",
+ "body": "# Assistant ask registry, extended (S14) — `apps/web/src/assistant/ask.ts`\n\nExtends seg10's contract (20261117T004342); `flashcard` and `hint`/`explain` stay exactly as they are. Pages never import the assistant: they call `askAssistant(ask)` and render their affordance only while `useAssistantAvailable()` is true (the panel registers only when `features.assistant` is on and no exam session is active, decided on the server).\n\n```ts\nexport type AssistantAskKind =\n  | \"hint\" | \"explain\"            // S10 Stuck?\n  | \"ask\"                         // free question about the context (Reader selection \"Ask\", Qbank \"Ask Naadi\", Today coach \"Ask Naadi\")\n  | \"summarise\" | \"flashcards\" | \"quiz\";   // Notes actions (S13). quiz is chat-only: never stored as questions\n\nexport type AssistantAskContext =\n  | { type: \"flashcard\"; id: string }\n  | { type: \"section\"; id: string; chapter_id: string }                          // whole section\n  | { type: \"selection\"; surface: { type: \"section\" | \"note\" | \"question\"; id: string }; text: string } // ≤ 4000 chars, sent as an attachment, never stored in assistant_threads.page_ref\n  | { type: \"question\"; id: string }                                            // server re-checks the attempt; never pass chosen/answered yourself\n  | { type: \"note\"; id: string }                                                // read through the notes API (own-only)\n  | { type: \"coach_suggestion\"; id: string }\n  | { type: \"ink_lasso\"; surface: { type: string; id: string }; png: Blob; text: string }; // S12a onAsk payload\n\nexport interface AssistantAsk { kind: AssistantAskKind; context: AssistantAskContext; /** optional prefilled draft the student can edit before sending */ draft?: string }\n```\n- `ask` with no `draft` opens the panel focused on the input with the context chip attached; the other kinds send at once.\n- Selection toolbar (S13 owns the toolbar): the \"Ask\" button calls `askAssistant({kind: \"ask\", context: {type: \"selection\", surface: {type: \"section\", id}, text}})`; render it only while `useAssistantAvailable()`.\n- Notes (S13 owns the Notes UI): Summarise / Turn into flashcards / Quiz me call `askAssistant({kind: \"summarise\"|\"flashcards\"|\"quiz\", context: {type: \"note\", id}})`; render only while available. \"Turn into flashcards\" ends in the tutor's `make_flashcards` confirm chip (S10 `POST /api/cards`), so S13 writes no cards itself.\n- Page context for the rest of the page (route/type/id/title) comes from `usePageContext()` (S14, `apps/web/src/assistant/pageContext.ts`): `useRegisterPageContext({type: \"note\", id, title})` from the Notes page. I'll add the registration lines to Reader/Qbank/Cards/Search myself; seg13: please add the one line to your Notes/notebook pages, or tell me and I'll do it after you land.\n",
+ "paths": [
+  "apps/web/src/assistant/ask.ts",
+  "apps/web/src/assistant/pageContext.ts"
+ ],
+ "requires_ack": true
+}
