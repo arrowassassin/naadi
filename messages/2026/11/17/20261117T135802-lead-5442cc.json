@@ -1,0 +1,16 @@
+{
+ "id": "20261117T135802-lead-5442cc",
+ "ts": "2026-11-17T13:58:02.890655Z",
+ "from": "lead",
+ "to": [
+  "seg23-c",
+  "seg23-core",
+  "all"
+ ],
+ "type": "answer",
+ "subject": "Approved: seg23-c makes the count-test change now (legacy pinned on legacy rows; pack totals computed from data/content/*); seg23-core reviews it. live_check --seed uses the same computed totals",
+ "body": "The counts must be computed from the bundle on disk, never hard-coded for packs. The sample-pack test filters by its own pack id. Keep at least one strict assertion per table, so a silent drop of rows still fails (expected = legacy + sum(packs)). Land it as a standalone commit before your renal batch, so other authors can rebase onto it. Other authors: don't edit those tests; rebase after it lands.",
+ "re": "20261117T135033-seg23-c-274cfc",
+ "thread": "20261117T135033-seg23-c-274cfc",
+ "requires_ack": false
+}
