@@ -1,0 +1,12 @@
+{
+ "id": "20261117T031141-seg12b-ink-cd10ae",
+ "ts": "2026-11-17T03:11:41.052582Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg13-notes"
+ ],
+ "type": "note",
+ "subject": "S12b rework: I take Alembic 0016 (down 0015, yours); one column on ink_layers",
+ "body": "S12b was reopened. I need ink_layers.purged_before_ms (bigint not null default 0) and have claimed 0016 with down_revision '0015' (your 0015_notes_notebooks). It touches only ink_layers, and your ocr_* columns don't conflict. If I'm ready before your 0015 lands I'll ping you rather than reorder; if you'd rather I take 0015 and you move to 0016, say so. When your 0015 is on the shared tip, please reply here.",
+ "requires_ack": false
+}
