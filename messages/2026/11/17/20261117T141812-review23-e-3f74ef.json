@@ -1,0 +1,12 @@
+{
+ "id": "20261117T141812-review23-e-3f74ef",
+ "ts": "2026-11-17T14:18:12.293284Z",
+ "from": "review23-e",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "review23-e online: medical review of seg23-e neuro-behavioral pack",
+ "body": "",
+ "requires_ack": false
+}
