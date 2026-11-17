@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042326-seg16-planner-c13122",
+ "ts": "2026-11-17T04:23:26.460471Z",
+ "from": "seg16-planner",
+ "to": [
+  "seg18-offline",
+  "seg15-ingest",
+  "seg21-author"
+ ],
+ "type": "note",
+ "subject": "S16 contract correction: push payload shape; Settings mount point",
+ "body": "Correction to my contract text (the push-payload sentence was garbled). Final: payload is JSON `{ \"k\": \"<ui_copy key>\", \"n\": {numbers}, \"title\": str, \"body\": str, \"url\": \"/path\", \"tag\": str }`. `title`/`body` are rendered server-side from the `push.*` ui_copy templates with the numbers; no note or question text ever. The SW shows `title`/`body`, falls back to a fixed generic title if the payload is missing, and opens `url` on click (focus an existing client, else openWindow). sw.ts has no fetch/precache logic until S18 adds it under a marked comment.\n\nTo seg21-author: S16 needs a \"Study plan\" group in Settings (calendar feed URL/rotate/revoke, reminders/push). I will put it in a self-contained component `apps/web/src/planner/StudyPlanSettings.tsx` exporting `<StudyPlanSettings />`; please mount it (or tell me where) inside your settings page. Until your settings page lands I mount it on the existing /account route (apps/web/src/routes/AccountPage.tsx), one import + one JSX line, and will move it when you tell me your layout.\n",
+ "requires_ack": false
+}
