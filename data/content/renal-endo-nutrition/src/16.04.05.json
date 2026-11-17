@@ -1,0 +1,1164 @@
+{
+ "area": "usmle2026.16.04.05",
+ "sections": [
+  {
+   "id": "s23c-s160405-1-1",
+   "exam": "step1",
+   "heading": "Fuel metabolism in fasting and stress; nutrients that artificial feeding must supply",
+   "html": "<h3>Fasting: how fuel supply changes</h3>[[figure:s23c-fig160405-1]]<ol><li><strong>Hours after a meal:</strong> insulin falls and glucagon rises; liver glycogenolysis keeps blood glucose up. Liver glycogen is largely used up <span class=\"hy\">within about 24 hours</span>.</li><li><strong>Days 1–3:</strong> hepatic <strong>gluconeogenesis</strong> becomes the main glucose source, using amino acids from muscle (mainly alanine and glutamine), glycerol from lipolysis and lactate (Cori cycle). Fatty acids fuel muscle, heart and liver.</li><li><strong>After several days to weeks:</strong> the liver makes <strong>ketone bodies</strong> from fatty acids; the brain gradually adapts to use them, so less glucose, and therefore less muscle protein, is needed. The liver makes ketones but cannot use them (it lacks the transferase that activates acetoacetate).</li></ol><p>Severe illness (sepsis, trauma, burns) is different: catecholamines, cortisol, glucagon and cytokines keep protein breakdown and gluconeogenesis high and blunt ketone adaptation, so muscle is lost fast even with feeding. This is why critically ill patients lose lean mass quickly.</p><h3>Nitrogen balance</h3><p>Nitrogen balance = nitrogen intake − nitrogen losses. Protein is about 16% nitrogen, so nitrogen intake (g) ≈ <span class=\"hy\">protein intake (g) ÷ 6.25</span>. Losses ≈ 24-hour urine urea nitrogen + about 4 g/day for skin, stool and non-urea nitrogen. A negative balance means net protein breakdown (illness, inadequate intake); growth, pregnancy and recovery give a positive balance.</p><h3>Respiratory quotient</h3><p>RQ = CO<sub>2</sub> produced ÷ O<sub>2</sub> consumed: <span class=\"hy\">about 1.0 for carbohydrate</span>, 0.8 for protein, 0.7 for fat. <strong>Overfeeding</strong>, particularly with dextrose, drives lipogenesis (RQ above 1), raises CO<sub>2</sub> production and can make it harder to wean a patient from the ventilator.</p><h3>Nutrients that must be supplied</h3><table><tr><th>Nutrient</th><th>Role</th><th>Deficiency on long-term artificial nutrition</th></tr><tr><td>Linoleic acid (omega-6) and alpha-linolenic acid (omega-3)</td><td>Essential fatty acids; membranes, eicosanoids</td><td>Scaly dermatitis, hair loss, poor wound healing; essential fatty acid deficiency gives a <span class=\"hy\">raised triene:tetraene ratio</span>. Seen with lipid-free parenteral nutrition</td></tr><tr><td>Zinc</td><td>Cofactor of many enzymes (e.g. carbonic anhydrase, alkaline phosphatase)</td><td>Rash around the mouth, anus and on the extremities, hair loss, poor taste and wound healing; high losses with diarrhea, fistulas and burns</td></tr><tr><td>Copper</td><td>Cofactor for cytochrome c oxidase, lysyl oxidase, ceruloplasmin</td><td>Anemia, neutropenia, myeloneuropathy that mimics B12 deficiency</td></tr><tr><td>Selenium</td><td>Glutathione peroxidase</td><td>Cardiomyopathy, muscle weakness</td></tr><tr><td>Chromium</td><td>Thought to enhance insulin action</td><td>Glucose intolerance (rare)</td></tr><tr><td>Thiamine</td><td>Pyruvate and alpha-ketoglutarate dehydrogenase, transketolase</td><td>Wernicke encephalopathy, beriberi, lactic acidosis when glucose is given without it</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a ventilated patient who will not wean while receiving generous dextrose-based nutrition may be producing too much CO<sub>2</sub>. The fix is to reduce total calories, not to add more.</p></div>",
+   "figureIds": [
+    "s23c-fig160405-1"
+   ],
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Total Parenteral Nutrition",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559036/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Enteral Feeding",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532876/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Nutritional Support",
+     "url": "https://medlineplus.gov/nutritionalsupport.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160405-2-1",
+   "exam": "step2ck",
+   "heading": "Enteral and parenteral nutrition in practice",
+   "html": "<h3>Choosing the route</h3><p><strong>If the gut works, use it.</strong> Enteral nutrition keeps the intestinal barrier healthy, is cheaper and causes fewer infections than parenteral nutrition (PN).</p><table><tr><th>Situation</th><th>Usual choice</th></tr><tr><td>Can eat but not enough</td><td>Food fortification, oral supplements, help with eating</td></tr><tr><td>Cannot eat safely, expected for less than about 4–6 weeks</td><td>Nasogastric tube</td></tr><tr><td>Recurrent aspiration, gastroparesis or gastric outlet problem</td><td>Post-pyloric (nasojejunal) tube</td></tr><tr><td>Long-term need (for example, persistent dysphagia after stroke)</td><td>Gastrostomy (PEG), or jejunostomy</td></tr><tr><td>Gut cannot be used: obstruction, prolonged ileus, short bowel, high-output proximal fistula, severe malabsorption</td><td>Parenteral nutrition</td></tr></table><p><strong>Critically ill adults:</strong> start enteral feeding <span class=\"hy\">within about 24–48 hours</span> once the patient is hemodynamically stable, increasing over the first week. Patients who were well nourished and cannot be fed enterally can usually wait about a week before PN; those already malnourished should start PN sooner. In advanced dementia, tube feeding does not prolong life or prevent aspiration and is not recommended; careful hand feeding is preferred.</p><h3>Enteral feeding problems</h3><ul><li><strong>Aspiration:</strong> raise the head of the bed <span class=\"hy\">30–45°</span>, consider post-pyloric feeding or prokinetics for intolerance.</li><li><strong>Diarrhea:</strong> look for <em>C. difficile</em>, sorbitol-containing liquid medicines and antibiotics before blaming the feed; fibre-containing formulas can help.</li><li><strong>Tube misplacement</strong> (confirm the first placement by radiograph), blockage, sinusitis; refeeding syndrome in high-risk patients.</li></ul><h3>Parenteral nutrition</h3><ul><li><strong>Access:</strong> PN is hyperosmolar, so it needs a central vein (PICC or tunneled catheter). Peripheral PN is limited by osmolarity (<span class=\"hy\">roughly 900 mOsm/L</span>) and is only a short bridge.</li><li><strong>Contents:</strong> dextrose, amino acids, lipid emulsion, electrolytes, vitamins and trace elements (zinc, copper, selenium, manganese, chromium).</li><li><strong>Monitoring:</strong> glucose often at first, electrolytes including phosphate and magnesium daily until stable, triglycerides, liver tests, weight and fluid balance.</li></ul><table><tr><th>PN complication</th><th>Clue</th><th>Response</th></tr><tr><td>Catheter-related bloodstream infection</td><td>Fever or rigors, often when the infusion starts</td><td>Blood cultures from the catheter and a peripheral vein, empirical IV antibiotics; remove the line for <em>S. aureus</em>, <em>Candida</em>, tunnel infection or sepsis</td></tr><tr><td>Hyperglycemia</td><td>Glucose above about 180 mg/dL</td><td>Insulin (often added to the bag); avoid excess dextrose</td></tr><tr><td>Hypertriglyceridemia</td><td>Triglycerides above about 400 mg/dL</td><td>Reduce or pause lipid emulsion</td></tr><tr><td>PN-associated liver disease</td><td>Cholestasis (rising bilirubin, alkaline phosphatase), steatosis; worst in infants and short bowel</td><td>Start or increase enteral feeding, reduce soybean-oil lipid (use mixed or fish-oil lipid), avoid overfeeding, cycle PN</td></tr><tr><td>Gallstones and sludge</td><td>No enteral stimulus to gallbladder emptying</td><td>Enteral feeding when possible</td></tr><tr><td>Refeeding syndrome</td><td>Falling phosphate, potassium, magnesium</td><td>Start low, replace electrolytes, thiamine</td></tr><tr><td>Metabolic bone disease, trace element and essential fatty acid deficiencies</td><td>Long-term PN</td><td>Monitor and adjust additives</td></tr></table><p><strong>Transition:</strong> as enteral intake reaches <span class=\"hy\">roughly 60% of needs</span>, PN is reduced and stopped.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a malnourished patient with a functioning gut who cannot swallow needs a feeding tube, not PN.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Enteral Feeding",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532876/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Total Parenteral Nutrition",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559036/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Refeeding Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK564513/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Nutritional Support",
+     "url": "https://medlineplus.gov/nutritionalsupport.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig160405-1",
+   "caption": "Figure. Fuel sources during fasting: glycogen for about a day, then gluconeogenesis, then ketone bodies that let the brain spare muscle protein.",
+   "file": "figures/s23c-fig160405-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "id": "s23c-q160405-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A healthy 30-year-old man takes part in a supervised fasting study and drinks only water. After 72 hours of fasting, his blood glucose is 64 mg/dL. Which of the following is now the main source of his blood glucose?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Dietary glucose absorbed from the gut"
+    },
+    {
+     "label": "B",
+     "html": "Hepatic gluconeogenesis"
+    },
+    {
+     "label": "C",
+     "html": "Hepatic glycogenolysis"
+    },
+    {
+     "label": "D",
+     "html": "Ketone bodies converted to glucose"
+    },
+    {
+     "label": "E",
+     "html": "Muscle glycogenolysis releasing free glucose"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Liver glycogen is largely exhausted within about a day. By 72 hours, <strong>hepatic gluconeogenesis</strong> from muscle-derived amino acids, glycerol from lipolysis and lactate maintains blood glucose. Ketone bodies are rising and will increasingly fuel the brain.</p><p><strong>Takeaway:</strong> after about a day of fasting, gluconeogenesis (not glycogen) maintains blood glucose.</p>",
+   "whyNot": {
+    "A": "He has eaten nothing for 3 days.",
+    "C": "Liver glycogen stores are mostly used within about 24 hours.",
+    "D": "Ketone bodies (from acetyl-CoA) cannot be converted back into glucose.",
+    "E": "Muscle lacks glucose-6-phosphatase, so muscle glycogen cannot release free glucose into the blood."
+   },
+   "objective": "Identify gluconeogenesis as the main glucose source after a day of fasting.",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "fasting"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 26-year-old man has been on a hunger strike, drinking only water, for 5 weeks. Despite this, his rate of muscle protein breakdown is lower now than it was in the first week. Which of the following adaptations best explains this?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Brain use of ketone bodies for most of its energy"
+    },
+    {
+     "label": "B",
+     "html": "Increased hepatic glycogen storage"
+    },
+    {
+     "label": "C",
+     "html": "Increased insulin secretion"
+    },
+    {
+     "label": "D",
+     "html": "Muscle use of glucose instead of fatty acids"
+    },
+    {
+     "label": "E",
+     "html": "Rise in active T3 levels"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In prolonged starvation the brain adapts to use <strong>ketone bodies</strong> (β-hydroxybutyrate and acetoacetate) for most of its energy. Less glucose is needed, so less muscle protein must be broken down for gluconeogenesis: protein is spared.</p><p><strong>Takeaway:</strong> ketone use by the brain spares muscle protein in prolonged starvation.</p>",
+   "whyNot": {
+    "B": "Glycogen is depleted early in fasting and is not rebuilt without food.",
+    "C": "Insulin is low during starvation; that low level permits lipolysis and ketogenesis.",
+    "D": "Muscle shifts toward fatty acids and ketones, sparing glucose for the brain.",
+    "E": "T3 falls in starvation, lowering energy expenditure."
+   },
+   "objective": "Explain protein sparing in prolonged starvation by ketone use in the brain.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "starvation",
+    "ketone bodies"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old man with severe pancreatitis has been ventilated for 10 days and receives parenteral nutrition with a high dextrose content that supplies about 140% of his estimated energy needs. Spontaneous breathing trials fail because his PaCO<sub>2</sub> rises. Indirect calorimetry shows a respiratory quotient of 1.15. Which of the following best explains his high respiratory quotient?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Net lipogenesis from excess carbohydrate"
+    },
+    {
+     "label": "B",
+     "html": "Oxidation of fat as the main fuel"
+    },
+    {
+     "label": "C",
+     "html": "Oxidation of protein as the main fuel"
+    },
+    {
+     "label": "D",
+     "html": "Starvation ketosis"
+    },
+    {
+     "label": "E",
+     "html": "Metabolic alkalosis from diuretics"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The respiratory quotient (CO<sub>2</sub> produced ÷ O<sub>2</sub> consumed) is about 1.0 for carbohydrate, 0.8 for protein and 0.7 for fat. Values above 1 occur when excess carbohydrate is converted into fat (<strong>lipogenesis</strong>), which releases CO<sub>2</sub> without using much oxygen. The extra CO<sub>2</sub> load makes weaning harder; reducing total calories helps.</p><p><strong>Takeaway:</strong> an RQ above 1 signals overfeeding with lipogenesis and extra CO2 production.</p>",
+   "whyNot": {
+    "B": "Fat oxidation gives an RQ near 0.7.",
+    "C": "Protein oxidation gives an RQ near 0.8.",
+    "D": "Ketosis from starvation lowers the RQ toward that of fat.",
+    "E": "Metabolic alkalosis can cause compensatory hypoventilation but does not raise the RQ."
+   },
+   "objective": "Interpret a respiratory quotient above 1 as overfeeding with lipogenesis.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "respiratory quotient",
+    "overfeeding"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 41-year-old woman with short bowel syndrome has received home parenteral nutrition without any lipid emulsion for 2 months because of a supply problem. She now has dry, scaly skin on her legs, patchy hair loss and slow healing of a small cut. Plasma triene:tetraene ratio is increased. A lack of which of the following is the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Linoleic acid"
+    },
+    {
+     "label": "B",
+     "html": "Oleic acid"
+    },
+    {
+     "label": "C",
+     "html": "Palmitic acid"
+    },
+    {
+     "label": "D",
+     "html": "Selenium"
+    },
+    {
+     "label": "E",
+     "html": "Vitamin A"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p><strong>Linoleic acid</strong> (omega-6) and alpha-linolenic acid (omega-3) cannot be made by humans because we lack the desaturases that add double bonds beyond carbon 9. Without them, the body makes a substitute trienoic acid from oleic acid, raising the triene:tetraene ratio. Essential fatty acid deficiency appears with lipid-free parenteral nutrition and severe fat malabsorption.</p><p><strong>Takeaway:</strong> lipid-free PN causes essential fatty acid (linoleic acid) deficiency with a high triene:tetraene ratio.</p>",
+   "whyNot": {
+    "B": "Oleic acid (omega-9) can be made by the body; in fact it is the precursor of the abnormal triene.",
+    "C": "Palmitic acid is synthesised by fatty acid synthase and is not essential.",
+    "D": "Selenium deficiency causes cardiomyopathy and muscle weakness, not a raised triene:tetraene ratio.",
+    "E": "Vitamin A deficiency causes night blindness and dry eyes; it does not change the triene:tetraene ratio."
+   },
+   "objective": "Recognise essential fatty acid deficiency on lipid-free parenteral nutrition.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "essential fatty acids"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 35-year-old man with Crohn disease and a high-output enterocutaneous fistula has received parenteral nutrition for 6 weeks. He has a new red, scaly, crusted rash around his mouth and anus and on his hands, hair loss, diarrhea and loss of taste. His surgical wound is healing slowly. Serum alkaline phosphatase is low. Deficiency of which of the following is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Biotin"
+    },
+    {
+     "label": "B",
+     "html": "Copper"
+    },
+    {
+     "label": "C",
+     "html": "Niacin"
+    },
+    {
+     "label": "D",
+     "html": "Selenium"
+    },
+    {
+     "label": "E",
+     "html": "Zinc"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Large gastrointestinal losses from diarrhea or fistulas deplete <strong>zinc</strong>. Deficiency gives a rash around the body openings and on the extremities, hair loss, impaired taste, diarrhea and poor wound healing. Alkaline phosphatase is a zinc-dependent enzyme, so its activity falls. Zinc additions to PN are increased when intestinal losses are high.</p><p><strong>Takeaway:</strong> periorificial and acral dermatitis, alopecia, poor healing and low alkaline phosphatase point to zinc deficiency.</p>",
+   "whyNot": {
+    "A": "Biotin deficiency also causes periorificial dermatitis and alopecia, but it is rare and would not lower alkaline phosphatase; fistula losses favour zinc.",
+    "B": "Copper deficiency causes anemia, neutropenia and a myeloneuropathy rather than this rash.",
+    "C": "Niacin deficiency causes a photosensitive dermatitis on sun-exposed skin with diarrhea and dementia.",
+    "D": "Selenium deficiency causes cardiomyopathy and muscle weakness."
+   },
+   "objective": "Recognise zinc deficiency in a patient with high intestinal losses on parenteral nutrition.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.16.04.03"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "zinc",
+    "trace elements"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old woman has received long-term home parenteral nutrition for intestinal failure. Her solution has lacked a trace-element additive for many months. She now has fatigue, exertional dyspnea and leg weakness. Echocardiography shows a dilated left ventricle with an ejection fraction of 30%. Serum creatine kinase is mildly raised. Deficiency of which of the following enzyme cofactors is the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Chromium, which enhances insulin action"
+    },
+    {
+     "label": "B",
+     "html": "Copper, the cofactor of lysyl oxidase"
+    },
+    {
+     "label": "C",
+     "html": "Manganese, the cofactor of arginase"
+    },
+    {
+     "label": "D",
+     "html": "Selenium, the cofactor of glutathione peroxidase"
+    },
+    {
+     "label": "E",
+     "html": "Zinc, the cofactor of carbonic anhydrase"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p><strong>Selenium</strong> is part of glutathione peroxidase, which removes hydrogen peroxide and lipid peroxides. Deficiency leaves cardiac and skeletal muscle open to oxidative damage, giving a dilated cardiomyopathy and myopathy. It occurs with long-term PN lacking trace elements and in regions with selenium-poor soil.</p><p><strong>Takeaway:</strong> selenium deficiency (glutathione peroxidase) causes cardiomyopathy and myopathy.</p>",
+   "whyNot": {
+    "A": "Chromium deficiency causes glucose intolerance, not cardiomyopathy.",
+    "B": "Copper deficiency causes anemia, neutropenia and neurologic disease; poor collagen cross-linking affects vessels and bone.",
+    "C": "Manganese deficiency is very rare; on long-term PN, manganese more often accumulates and causes neurologic toxicity.",
+    "E": "Zinc deficiency causes dermatitis, alopecia and poor wound healing."
+   },
+   "objective": "Link selenium deficiency on parenteral nutrition to cardiomyopathy via glutathione peroxidase.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.16.04.03"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "selenium",
+    "trace elements"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-1-07",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 38-year-old man with extensive burns receives enteral nutrition. His intake and losses over 24 hours are:</p><table><tr><th>Measure</th><th>Value</th></tr><tr><td>Protein delivered</td><td>75 g/day</td></tr><tr><td>Urine urea nitrogen</td><td>16 g/day</td></tr><tr><td>Estimated other nitrogen losses (skin, stool, non-urea)</td><td>4 g/day</td></tr></table><p>Which of the following is closest to his nitrogen balance?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "−12 g/day"
+    },
+    {
+     "label": "B",
+     "html": "−8 g/day"
+    },
+    {
+     "label": "C",
+     "html": "−4 g/day"
+    },
+    {
+     "label": "D",
+     "html": "+4 g/day"
+    },
+    {
+     "label": "E",
+     "html": "+8 g/day"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Protein is about 16% nitrogen, so nitrogen intake = 75 ÷ 6.25 = 12 g/day. Losses = 16 + 4 = 20 g/day. Balance = 12 − 20 = <strong>−8 g/day</strong>. The negative balance reflects the hypercatabolic state of major burns: more protein is being broken down than supplied, so protein delivery should be increased.</p><p><strong>Takeaway:</strong> nitrogen balance = protein intake ÷ 6.25 − (urine urea nitrogen + about 4 g).</p>",
+   "whyNot": {
+    "A": "This would need losses of 24 g/day or an intake of only 8 g of nitrogen.",
+    "C": "This ignores the 4 g of non-urinary losses, or overestimates intake.",
+    "D": "A positive balance would need intake to exceed losses; losses here are larger.",
+    "E": "This reverses the subtraction (losses minus intake)."
+   },
+   "objective": "Calculate nitrogen balance from protein intake and urine urea nitrogen.",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "nitrogen balance"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man is intubated in the ICU for severe community-acquired pneumonia. After 24 hours of fluids and a low-dose vasopressor, he is hemodynamically stable and the vasopressor has been stopped. Bowel sounds are present, and there is no abdominal distention. He was well nourished before admission. He is expected to need ventilation for several more days. Which of the following is the most appropriate nutrition plan?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin parenteral nutrition through a central line today"
+    },
+    {
+     "label": "B",
+     "html": "Give intravenous dextrose 5% only until extubation"
+    },
+    {
+     "label": "C",
+     "html": "Start enteral feeding by nasogastric tube now and increase over several days"
+    },
+    {
+     "label": "D",
+     "html": "Start feeding only after a small-bowel follow-through study"
+    },
+    {
+     "label": "E",
+     "html": "Withhold nutrition for 7 days, then reassess"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>In a critically ill adult who is hemodynamically stable with a working gut, start <strong>enteral nutrition within about 24–48 hours</strong>, usually by nasogastric tube, increasing toward the target over the first week. Early enteral feeding supports gut barrier function and is preferred to PN.</p><p><strong>Takeaway:</strong> start early enteral feeding in stable critically ill patients with a functioning gut.</p>",
+   "whyNot": {
+    "A": "PN is for patients whose gut cannot be used; it adds infection and metabolic risk here.",
+    "B": "Dextrose alone provides little energy and no protein and does not count as nutrition support.",
+    "D": "No imaging is needed before feeding a patient with a normal-appearing gut.",
+    "E": "Delaying all nutrition is unnecessary once he is stable and his gut works."
+   },
+   "objective": "Start early enteral nutrition in a stable ventilated patient.",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "critical care nutrition"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 69-year-old woman with Parkinson disease and dysphagia is receiving continuous nasogastric feeding after a hip fracture. Despite elevation of the head of the bed to 40°, she has had two episodes of aspiration pneumonia in 10 days, and gastric emptying is slow. She is expected to need tube feeding for about 3 more weeks while swallowing therapy continues. Which of the following is the most appropriate change?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Change to a nasojejunal (post-pyloric) feeding tube"
+    },
+    {
+     "label": "B",
+     "html": "Change to parenteral nutrition"
+    },
+    {
+     "label": "C",
+     "html": "Place a surgical gastrostomy and continue gastric feeds"
+    },
+    {
+     "label": "D",
+     "html": "Stop feeding until swallowing improves"
+    },
+    {
+     "label": "E",
+     "html": "Switch to bolus gastric feeds three times daily"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>For a patient with recurrent aspiration or poor gastric emptying on gastric feeds, <strong>post-pyloric feeding</strong> (nasojejunal tube) reduces reflux of feed and aspiration risk while keeping the benefits of enteral nutrition. A long-term tube is not needed for a few weeks.</p><p><strong>Takeaway:</strong> with aspiration or gastroparesis on gastric feeds, move the tube beyond the pylorus.</p>",
+   "whyNot": {
+    "B": "Her gut still works, so PN adds risk without need.",
+    "C": "A gastrostomy is for long-term feeding and still delivers food into the stomach, so reflux and aspiration continue.",
+    "D": "Stopping feeding for weeks would worsen her malnutrition and recovery.",
+    "E": "Large bolus gastric volumes raise reflux and aspiration risk compared with continuous feeding."
+   },
+   "objective": "Choose post-pyloric feeding for recurrent aspiration on gastric feeds.",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "enteral feeding",
+    "aspiration"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 72-year-old man had an ischemic stroke 6 weeks ago. He is alert, communicates well and is working with therapy, but he still aspirates on all consistencies on repeated swallowing studies, and recovery is expected to take months. He has been fed by nasogastric tube, which he has pulled out three times. He and his family want continued nutrition. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue to replace the nasogastric tube as needed"
+    },
+    {
+     "label": "B",
+     "html": "Place a percutaneous endoscopic gastrostomy tube"
+    },
+    {
+     "label": "C",
+     "html": "Start long-term parenteral nutrition"
+    },
+    {
+     "label": "D",
+     "html": "Start oral feeding with thickened liquids"
+    },
+    {
+     "label": "E",
+     "html": "Use a nasal bridle and continue nasogastric feeds indefinitely"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>When enteral feeding is expected to be needed for more than about 4–6 weeks and the patient (or family) wants it, a <strong>gastrostomy</strong> (usually placed endoscopically) is more comfortable and reliable than a nasogastric tube and lets rehabilitation continue. This differs from advanced dementia, where tube feeding is not recommended.</p><p><strong>Takeaway:</strong> for long-term enteral feeding in a patient with expected recovery or a good quality of life, place a gastrostomy.</p>",
+   "whyNot": {
+    "A": "Repeated tube replacement is uncomfortable and interrupts nutrition for a need lasting months.",
+    "C": "PN is unnecessary when the gut works and adds infection risk.",
+    "D": "He aspirates all consistencies, so oral feeding is unsafe now.",
+    "E": "A bridle can secure a nasal tube short term but is not a good long-term solution."
+   },
+   "objective": "Choose gastrostomy for long-term enteral nutrition after stroke.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.05.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "PEG",
+    "stroke"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 47-year-old woman develops a high-output proximal jejunal fistula 5 days after surgery for a perforated bowel. Fistula output is 1,800 mL/day. She had lost 12% of her body weight over the 3 months before surgery and has eaten nothing since. She is afebrile and stable. Which of the following is the most appropriate nutrition plan?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin parenteral nutrition through a peripherally inserted central catheter"
+    },
+    {
+     "label": "B",
+     "html": "Encourage a normal oral diet"
+    },
+    {
+     "label": "C",
+     "html": "Give peripheral dextrose 10% and reassess in 7 days"
+    },
+    {
+     "label": "D",
+     "html": "Start nasogastric feeding at full rate"
+    },
+    {
+     "label": "E",
+     "html": "Withhold nutrition until the fistula closes"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A <strong>high-output proximal fistula</strong> means enteral feeding would mostly pour out of the fistula and increase output, and she is already malnourished, so <strong>parenteral nutrition</strong> should start now through central access (a PICC). Replace fistula fluid and electrolyte losses, including zinc and magnesium.</p><p><strong>Takeaway:</strong> a malnourished patient with a high-output proximal fistula needs central parenteral nutrition now.</p>",
+   "whyNot": {
+    "B": "Oral intake would raise fistula output and could not be absorbed above the fistula.",
+    "C": "Peripheral dextrose gives little energy and no protein, and waiting is harmful for an already malnourished patient.",
+    "D": "Full-rate gastric feeding would drain out of a proximal jejunal fistula.",
+    "E": "Withholding nutrition for weeks worsens malnutrition and delays fistula healing."
+   },
+   "objective": "Choose parenteral nutrition for a high-output proximal intestinal fistula in a malnourished patient.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.10.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "parenteral nutrition",
+    "fistula"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 33-year-old woman with short bowel syndrome receives home parenteral nutrition through a tunneled central catheter. Today she has rigors and a temperature of 39.1°C (102.4°F) that began 30 minutes after she started her nightly infusion. Blood pressure is 112/70 mm Hg. The catheter exit site looks normal. There is no cough, dysuria or diarrhea. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Paired catheter and peripheral blood cultures, then IV antibiotics"
+    },
+    {
+     "label": "B",
+     "html": "Chest radiography, then observation without antibiotics"
+    },
+    {
+     "label": "C",
+     "html": "Flush the catheter with alteplase and resume the infusion"
+    },
+    {
+     "label": "D",
+     "html": "Oral ciprofloxacin while continuing the nightly infusion"
+    },
+    {
+     "label": "E",
+     "html": "Urine culture and acetaminophen, then reassess in the morning"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Fever and rigors that start soon after the infusion begins in a patient with a central line point to a <strong>catheter-related bloodstream infection</strong>. Draw paired blood cultures from the catheter and a peripheral vein, then give empirical IV antibiotics covering gram-positive cocci (including MRSA) and, in many settings, gram-negative rods. Remove the catheter for <em>S. aureus</em>, <em>Candida</em>, tunnel infection, septic shock or persistent bacteremia.</p><p><strong>Takeaway:</strong> fever after the infusion starts in a PN patient is a line infection until proved otherwise: paired cultures and IV antibiotics.</p>",
+   "whyNot": {
+    "B": "Observation delays treatment of a likely bloodstream infection.",
+    "C": "Thrombolytic flushing treats a blocked catheter, not infection.",
+    "D": "Oral antibiotics are inadequate for a suspected central line infection, and the infusion should be stopped.",
+    "E": "Nothing points to a urinary source, and antipyretics alone miss the line infection."
+   },
+   "objective": "Manage suspected catheter-related bloodstream infection in a patient on parenteral nutrition.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.16.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "CLABSI",
+    "parenteral nutrition"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-2-06",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 61-year-old man with severe acute pancreatitis has received parenteral nutrition for 9 days because of ileus. His glucose is controlled with insulin. Routine monitoring today shows:</p><table><tr><th>Serum</th><th>Result</th></tr><tr><td>Triglycerides</td><td>640 mg/dL</td></tr><tr><td>Glucose</td><td>156 mg/dL</td></tr><tr><td>Phosphorus</td><td>3.2 mg/dL</td></tr><tr><td>Alkaline phosphatase</td><td>110 U/L</td></tr><tr><td>Bilirubin, total</td><td>0.9 mg/dL</td></tr></table><p>Which of the following is the most appropriate adjustment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add more dextrose to the solution"
+    },
+    {
+     "label": "B",
+     "html": "Increase the lipid emulsion to meet energy needs"
+    },
+    {
+     "label": "C",
+     "html": "No change; recheck in 1 week"
+    },
+    {
+     "label": "D",
+     "html": "Reduce or temporarily stop the lipid emulsion"
+    },
+    {
+     "label": "E",
+     "html": "Stop parenteral nutrition completely"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Triglycerides above about 400 mg/dL on PN mean the patient is not clearing the infused lipid. This raises the risk of pancreatitis, which is especially important here. <strong>Reduce or pause the lipid emulsion</strong>, recheck triglycerides, and avoid overfeeding. Other values are acceptable.</p><p><strong>Takeaway:</strong> reduce or pause IV lipid when triglycerides exceed about 400 mg/dL on PN.</p>",
+   "whyNot": {
+    "A": "More dextrose also raises triglycerides (through lipogenesis) and worsens glucose control.",
+    "B": "Raising lipid with impaired clearance would raise triglycerides further.",
+    "C": "A level this high in a patient with pancreatitis needs action now.",
+    "E": "He still needs nutrition because of ileus; only the lipid component needs adjusting."
+   },
+   "objective": "Adjust lipid emulsion for hypertriglyceridemia during parenteral nutrition.",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "parenteral nutrition",
+    "hypertriglyceridemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160405-2-07",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 4-month-old girl had most of her small bowel resected for midgut volvulus and has received parenteral nutrition for 10 weeks, with soybean-oil lipid emulsion. She tolerates only small volumes of enteral feeds. Direct bilirubin has risen to 4.2 mg/dL (N = 0.0–0.3 mg/dL), and aminotransferases and GGT are rising. Ultrasonography shows no biliary obstruction. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Advance enteral feeds and change to a fish-oil-containing lipid"
+    },
+    {
+     "label": "B",
+     "html": "Increase the dextrose infusion to provide more calories"
+    },
+    {
+     "label": "C",
+     "html": "Increase the soybean-oil lipid dose to prevent fatty acid deficiency"
+    },
+    {
+     "label": "D",
+     "html": "Refer for liver transplantation evaluation this week"
+    },
+    {
+     "label": "E",
+     "html": "Stop all parenteral nutrition today and feed by mouth"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is <strong>parenteral nutrition-associated liver disease</strong> (cholestasis), common in infants with short bowel on long-term PN. Measures that help: advancing enteral feeding to stimulate bile flow, reducing soybean-oil lipid (rich in phytosterols and omega-6 fats) and using mixed or fish-oil-containing emulsions, avoiding overfeeding and cycling PN. Intestinal rehabilitation is the long-term goal.</p><p><strong>Takeaway:</strong> manage PN cholestasis by advancing enteral feeds, limiting soybean lipid and avoiding overfeeding.</p>",
+   "whyNot": {
+    "B": "Excess dextrose worsens steatosis and liver injury.",
+    "C": "More soybean-oil lipid is linked to worse cholestasis; small amounts or other lipid sources prevent deficiency.",
+    "D": "Transplantation is for end-stage intestinal and liver failure after rehabilitation measures fail.",
+    "E": "She cannot yet meet her needs enterally, so stopping PN would cause malnutrition."
+   },
+   "objective": "Manage parenteral nutrition-associated cholestasis in an infant with short bowel syndrome.",
+   "areas": [
+    "usmle2026.16.04.05",
+    "usmle2026.10.10.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "PNALD",
+    "short bowel"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c160405-01",
+   "frontHtml": "Main source of blood glucose after about 24 hours of fasting?",
+   "backHtml": "Hepatic gluconeogenesis (amino acids, glycerol, lactate); liver glycogen is mostly used up.",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-02",
+   "frontHtml": "How does prolonged starvation spare muscle protein?",
+   "backHtml": "The brain switches to ketone bodies, so less glucose (and less gluconeogenesis from amino acids) is needed.",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-03",
+   "frontHtml": "Why can the liver not use the ketone bodies it makes?",
+   "backHtml": "It lacks the CoA transferase (thiophorase) that activates acetoacetate.",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-04",
+   "frontHtml": "Nitrogen balance formula?",
+   "backHtml": "Protein intake (g) ÷ 6.25 − (24-h urine urea nitrogen + about 4 g).",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-05",
+   "frontHtml": "Respiratory quotient of carbohydrate, protein, fat; and what does RQ above 1 mean?",
+   "backHtml": "About 1.0, 0.8, 0.7; above 1 means lipogenesis from overfeeding, with extra CO₂.",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-06",
+   "frontHtml": "Scaly dermatitis, hair loss and a high triene:tetraene ratio on lipid-free PN?",
+   "backHtml": "Essential fatty acid (linoleic acid) deficiency.",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-07",
+   "frontHtml": "Periorificial and acral rash, alopecia, poor taste and healing, low alkaline phosphatase?",
+   "backHtml": "Zinc deficiency (high fistula or diarrhea losses).",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-08",
+   "frontHtml": "Trace element deficiency on PN that causes cardiomyopathy?",
+   "backHtml": "Selenium (glutathione peroxidase).",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-09",
+   "frontHtml": "Copper deficiency: hematologic and neurologic picture?",
+   "backHtml": "Anemia and neutropenia with a myeloneuropathy that mimics B12 deficiency.",
+   "sectionId": "s23c-s160405-1-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-10",
+   "frontHtml": "Stable ICU patient with a working gut: when and how to feed?",
+   "backHtml": "Enteral nutrition, usually by nasogastric tube, within about 24–48 hours.",
+   "sectionId": "s23c-s160405-2-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-11",
+   "frontHtml": "Recurrent aspiration or gastroparesis on gastric feeds?",
+   "backHtml": "Post-pyloric (nasojejunal) feeding.",
+   "sectionId": "s23c-s160405-2-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-12",
+   "frontHtml": "Enteral feeding expected for more than about 4–6 weeks?",
+   "backHtml": "Gastrostomy (PEG), unless advanced dementia, where tube feeding is not recommended.",
+   "sectionId": "s23c-s160405-2-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-13",
+   "frontHtml": "Indications for parenteral nutrition?",
+   "backHtml": "Gut cannot be used: obstruction, prolonged ileus, short bowel, high-output proximal fistula, severe malabsorption.",
+   "sectionId": "s23c-s160405-2-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-14",
+   "frontHtml": "Why does full parenteral nutrition need a central vein?",
+   "backHtml": "It is hyperosmolar; peripheral veins tolerate only about 900 mOsm/L.",
+   "sectionId": "s23c-s160405-2-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-15",
+   "frontHtml": "Triglycerides above about 400 mg/dL on PN?",
+   "backHtml": "Reduce or pause the lipid emulsion.",
+   "sectionId": "s23c-s160405-2-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-16",
+   "frontHtml": "Management of PN-associated cholestasis?",
+   "backHtml": "Advance enteral feeds, reduce soybean-oil lipid (mixed or fish-oil lipid), avoid overfeeding, cycle PN.",
+   "sectionId": "s23c-s160405-2-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160405-17",
+   "frontHtml": "Fever and rigors soon after starting a PN infusion?",
+   "backHtml": "Suspect line infection: paired catheter and peripheral blood cultures, empirical IV antibiotics.",
+   "sectionId": "s23c-s160405-2-1",
+   "areas": [
+    "usmle2026.16.04.05"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

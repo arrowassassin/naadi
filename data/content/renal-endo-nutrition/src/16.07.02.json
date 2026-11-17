@@ -1,0 +1,1257 @@
+{
+ "area": "usmle2026.16.07.02",
+ "sections": [
+  {
+   "id": "s23c-s160702-1-1",
+   "exam": "step1",
+   "heading": "Acid-base physiology and stepwise interpretation",
+   "html": "<p>Blood pH is set by the ratio of bicarbonate (regulated by the kidney) to dissolved carbon dioxide (regulated by the lungs). The Henderson-Hasselbalch relation, pH = 6.1 + log[HCO₃⁻ ÷ (0.03 × PaCO₂)], means that only the <em>ratio</em> matters: a rise in PaCO₂ can be offset by a matching rise in bicarbonate, and the reverse.</p><h3>Buffers and the three lines of defence</h3><ul><li><strong>Seconds:</strong> chemical buffers. Bicarbonate/CO₂ in extracellular fluid is the most important because the lungs can adjust CO₂ continuously (an open system); hemoglobin and proteins buffer inside cells; bone buffers chronic acid loads.</li><li><strong>Minutes to hours:</strong> ventilation. Peripheral (carotid) and central chemoreceptors raise ventilation when pH falls and lower it when pH rises.</li><li><strong>Days:</strong> the kidney. The proximal tubule reclaims <span class=\"hy\">about 80% of filtered bicarbonate</span> (carbonic anhydrase, Na⁺/H⁺ exchange) and makes new bicarbonate by metabolising glutamine to ammonium (NH₄⁺). α-intercalated cells of the collecting duct secrete H⁺ through an H⁺-ATPase and H⁺/K⁺-ATPase; the H⁺ is carried away as NH₄⁺ (the main, adjustable route) and as titratable acid (mainly phosphate). Renal compensation takes 3–5 days to complete, which is why acute and chronic respiratory disorders differ.</li></ul><h3>Five steps</h3><ol><li><strong>pH:</strong> acidemia or alkalemia.</li><li><strong>Primary process:</strong> the variable that moved in the direction that explains the pH.</li><li><strong>Expected compensation:</strong> compensation brings pH toward, but not to, normal. If the measured partner value is outside the expected range, a second primary disorder is present.</li><li><strong>Anion gap</strong> in every metabolic acidosis, corrected for low albumin (albumin is the main unmeasured anion).</li><li>If the gap is high, compare the rise in gap with the fall in bicarbonate (<strong>delta ratio</strong>), and check the <strong>osmolal gap</strong> when a toxic alcohol is possible.</li></ol>[[figure:s23c-fig160702-1]]<table><tr><th>Primary disorder</th><th>Expected compensation</th></tr><tr><td>Metabolic acidosis</td><td>PaCO₂ = 1.5 × HCO₃⁻ + 8 (± 2) (Winter formula)</td></tr><tr><td>Metabolic alkalosis</td><td>PaCO₂ rises about 0.7 mm Hg per 1 mEq/L rise in HCO₃⁻</td></tr><tr><td>Acute respiratory acidosis</td><td>HCO₃⁻ rises about 1 per 10 mm Hg rise in PaCO₂</td></tr><tr><td>Chronic respiratory acidosis</td><td>HCO₃⁻ rises about 3.5–4 per 10 mm Hg</td></tr><tr><td>Acute respiratory alkalosis</td><td>HCO₃⁻ falls about 2 per 10 mm Hg fall in PaCO₂</td></tr><tr><td>Chronic respiratory alkalosis</td><td>HCO₃⁻ falls about 4–5 per 10 mm Hg</td></tr></table><h3>Gaps</h3><ul><li><strong>Serum anion gap</strong> = Na⁺ − (Cl⁻ + HCO₃⁻), normally <span class=\"hy\">about 8–12 mEq/L</span> depending on the laboratory. Add <span class=\"hy\">about 2.5 mEq/L</span> for each 1 g/dL that albumin is below 4 g/dL, or a real gap acidosis can hide behind hypoalbuminemia.</li><li><strong>Delta ratio</strong> = (AG − 12) ÷ (24 − HCO₃⁻). In a pure gap acidosis each unmeasured acid anion replaces about one bicarbonate, so the ratio is <span class=\"hy\">about 1–2</span>. A ratio well below 1 means a normal-gap acidosis is also present; above 2 means bicarbonate was raised to start with (metabolic alkalosis, for example from vomiting, or compensated chronic respiratory acidosis).</li><li><strong>Osmolal gap</strong> = measured − calculated osmolality (2 × Na⁺ + glucose/18 + BUN/2.8). A gap above about 10 mOsm/kg suggests an unmeasured osmole such as methanol, ethylene glycol, isopropyl alcohol or ethanol itself. Early after ingestion the osmolal gap is high and the anion gap normal; as the alcohol is metabolised to acids, the osmolal gap falls and the anion gap rises.</li><li><strong>Urine anion gap</strong> = urine (Na⁺ + K⁺) − urine Cl⁻, a rough index of urine NH₄⁺ in a normal-gap acidosis. Negative (NH₄⁺ carries chloride out): the kidney is responding, as in diarrhea. Positive: the kidney cannot excrete acid, as in distal (type 1) or type 4 renal tubular acidosis.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a normal pH does not exclude an acid-base disorder. Opposing disorders (for example a gap acidosis with vomiting-induced alkalosis) can cancel out; the anion gap and the delta ratio reveal them.</p></div><h3>Potassium and acid-base</h3><p>Mineral acid loads (normal-gap acidosis) shift K⁺ out of cells, while organic acidoses (lactate, ketoacids) shift less because the anion enters cells with H⁺. Alkalosis drives K⁺ into cells and, through aldosterone and distal sodium delivery, increases renal K⁺ loss. Hypokalemia in turn sustains alkalosis by stimulating ammoniagenesis and H⁺ secretion.</p>",
+   "figureIds": [
+    "s23c-fig160702-1"
+   ],
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Biochemistry, Anion Gap",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK539757/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Anion Gap and Non-Anion Gap Metabolic Acidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448090/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Physiology, Metabolic Alkalosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482291/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Respiratory Acidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482430/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160702-1-2",
+   "exam": "step1",
+   "heading": "Causes of each acid-base disorder and their mechanisms",
+   "html": "<h3>High anion gap metabolic acidosis</h3><table><tr><th>Cause</th><th>Acid that accumulates</th><th>Clues</th></tr><tr><td>Lactic acidosis, type A</td><td>L-lactate from anaerobic glycolysis</td><td>Shock, sepsis, severe hypoxemia, cyanide or carbon monoxide poisoning</td></tr><tr><td>Lactic acidosis, type B</td><td>L-lactate without hypoperfusion</td><td>Liver failure, metformin accumulation in kidney failure, thiamine deficiency (pyruvate dehydrogenase needs thiamine), malignancy, linezolid, nucleoside reverse transcriptase inhibitors</td></tr><tr><td>Diabetic ketoacidosis</td><td>β-hydroxybutyrate, acetoacetate</td><td>Insulin deficiency; high glucose (normal-to-mildly raised glucose with SGLT2 inhibitors)</td></tr><tr><td>Alcoholic and starvation ketoacidosis</td><td>Mostly β-hydroxybutyrate</td><td>Binge drinking then vomiting and no food; glucose low or normal; the nitroprusside test <span class=\"hy\">detects acetoacetate</span> and can underestimate ketosis</td></tr><tr><td>Kidney failure (uremia)</td><td>Sulfate, phosphate, urate</td><td>Usually once GFR is well below 20–30 mL/min; earlier CKD gives a normal-gap acidosis</td></tr><tr><td>Methanol</td><td>Formic acid (via alcohol dehydrogenase, then aldehyde dehydrogenase)</td><td>Visual blurring, optic disc hyperemia, blindness; basal ganglia injury</td></tr><tr><td>Ethylene glycol (antifreeze)</td><td>Glycolic and oxalic acid</td><td>Calcium oxalate crystals, hypocalcemia, acute kidney injury</td></tr><tr><td>Salicylates</td><td>Salicylate plus lactate and ketoacids</td><td>Early respiratory alkalosis (direct medullary stimulation), tinnitus, then mixed gap acidosis</td></tr><tr><td>Propylene glycol</td><td>L- and D-lactate</td><td>High-dose IV lorazepam or diazepam infusions (solvent)</td></tr><tr><td>D-lactic acidosis</td><td>D-lactate from colonic bacteria</td><td>Short bowel or bypass; episodes of confusion and ataxia after carbohydrate meals; standard lactate assays <span class=\"hy\">measure only L-lactate</span> and read normal</td></tr><tr><td>Pyroglutamic (5-oxoproline) acidosis</td><td>5-oxoproline</td><td>Regular acetaminophen use with glutathione depletion (malnutrition, sepsis, kidney disease), often in women</td></tr></table><p>The pyroglutamic mechanism: glutathione normally inhibits γ-glutamylcysteine synthetase. When glutathione is depleted, the γ-glutamyl cycle runs unchecked and 5-oxoproline accumulates.</p><h3>Normal anion gap (hyperchloremic) metabolic acidosis</h3><ul><li><strong>GI bicarbonate loss:</strong> diarrhea, pancreatic or biliary fistulas, ureterosigmoidostomy (colonic mucosa exchanges urinary Cl⁻ for HCO₃⁻); urine anion gap negative.</li><li><strong>Renal:</strong> proximal (type 2) RTA, distal (type 1) RTA, type 4 RTA (hypoaldosteronism, hyperkalemic), early CKD, carbonic anhydrase inhibitors (acetazolamide, topiramate).</li><li><strong>Chloride gain:</strong> large volumes of 0.9% saline, which has <span class=\"hy\">Cl⁻ 154 mEq/L</span> and no bicarbonate (dilution plus chloride load); parenteral nutrition with chloride-rich amino acid salts.</li></ul><h3>Metabolic alkalosis</h3><p>Generation needs a loss of acid or a gain of bicarbonate; maintenance needs a kidney that keeps the bicarbonate, usually because of volume and chloride depletion, hypokalemia or mineralocorticoid excess.</p><table><tr><th>Group</th><th>Urine chloride</th><th>Causes</th></tr><tr><td>Chloride-responsive (volume depleted)</td><td>Low (below about 20 mEq/L)</td><td>Vomiting, nasogastric suction, remote diuretic use, chloride-losing diarrhea, after correction of chronic hypercapnia</td></tr><tr><td>Chloride-resistant</td><td>High</td><td>Current diuretic use; mineralocorticoid excess (primary aldosteronism, Cushing, licorice) with hypertension; Bartter and Gitelman syndromes and severe hypokalemia without hypertension</td></tr><tr><td>Alkali load</td><td>Variable</td><td>Milk-alkali syndrome (calcium carbonate), large bicarbonate or citrate loads with reduced GFR</td></tr></table><p>With vomiting, gastric HCl is lost and bicarbonate generated by parietal cells enters blood. Volume depletion raises angiotensin II (more proximal Na⁺/H⁺ exchange) and aldosterone (more distal H⁺ and K⁺ secretion), so the kidney keeps the bicarbonate; early on, bicarbonaturia may even raise urine sodium, which is why urine chloride is the better volume marker.</p><h3>Respiratory disorders</h3><ul><li><strong>Respiratory acidosis</strong> (hypoventilation): opioids, sedatives, neuromuscular weakness (myasthenia, Guillain-Barré), chest wall disease, obesity hypoventilation, severe COPD or asthma exhaustion. Acute hypercapnia causes headache, confusion and CO₂ narcosis.</li><li><strong>Respiratory alkalosis</strong> (hyperventilation): anxiety, pain, hypoxemia (altitude, pulmonary embolism, pneumonia), early sepsis, salicylates, pregnancy (<span class=\"hy\">progesterone stimulates ventilation</span>), liver disease. Acute alkalosis lowers ionised calcium (more binding to albumin), causing perioral tingling and carpal spasm.</li></ul><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Chloride tells the kidney's story</em>\": in metabolic alkalosis read urine chloride; in normal-gap acidosis read the urine anion gap, which reflects ammonium travelling out with chloride.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Anion Gap and Non-Anion Gap Metabolic Acidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448090/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Physiology, Metabolic Alkalosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482291/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Methanol Toxicity",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482121/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Ethylene Glycol Toxicity",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK537009/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160702-2-1",
+   "exam": "step2ck",
+   "heading": "Acid-base disorders: bedside evaluation and management",
+   "html": "<h3>Approach</h3><p>Obtain an arterial (or venous, for pH and bicarbonate trends) blood gas, a basic metabolic panel with albumin, and, as the picture suggests, lactate, serum ketones (β-hydroxybutyrate), measured osmolality, salicylate and acetaminophen levels, and urine electrolytes. Interpret in five steps (pH, primary process, expected compensation, anion gap, delta ratio and osmolal gap), then treat the cause: the numbers usually correct when the cause is fixed.</p><h3>High anion gap acidosis</h3><ul><li><strong>Lactic acidosis in shock:</strong> restore perfusion (fluids, source control and antibiotics in sepsis, vasopressors) and repeat lactate. Routine bicarbonate does not improve outcomes; in severe metabolic acidemia (pH about 7.20 or lower) with moderate-to-severe acute kidney injury, trial data suggest bicarbonate may reduce the need for dialysis, so it is reasonable there.</li><li><strong>Ketoacidosis:</strong> DKA needs insulin, fluids and potassium (see the diabetes section). Alcoholic and starvation ketoacidosis respond to <span class=\"hy\">dextrose-containing fluids</span>, which switch off ketogenesis, given with thiamine first; insulin is not needed.</li><li><strong>Toxic alcohols</strong> (methanol, ethylene glycol): suspect with a high osmolal gap or unexplained gap acidosis. Give <strong>fomepizole</strong> (blocks alcohol dehydrogenase, stopping production of toxic acids) as soon as the diagnosis is suspected, without waiting for levels; ethanol is an alternative when fomepizole is unavailable. Arrange <strong>hemodialysis</strong> for severe acidemia, visual signs (methanol), kidney injury (ethylene glycol), very high levels or worsening despite treatment: it removes the parent alcohol and its acids. Bicarbonate is used for severe acidemia; folic or folinic acid helps clear formate, and thiamine and pyridoxine are given in ethylene glycol poisoning.</li><li><strong>Salicylates:</strong> urinary alkalinisation with IV bicarbonate <span class=\"hy\">traps salicylate in tubular fluid</span>; hemodialysis for very high levels, altered mental status, pulmonary edema or kidney failure. Avoid intubation if possible: if unavoidable, match the patient's high minute ventilation, because any rise in PaCO₂ drives salicylate into the brain.</li></ul><h3>Normal anion gap acidosis</h3><ul><li>Check the urine anion gap and urine pH; look for diarrhea, saline loads, carbonic anhydrase inhibitors and RTA.</li><li><strong>Hyperchloremic acidosis after resuscitation</strong> with large volumes of 0.9% saline: switch to <span class=\"hy\">a balanced crystalloid</span> (lactated Ringer or a multiple-electrolyte solution), which lowers the chloride load.</li><li>Oral alkali (bicarbonate or citrate) for chronic losses, such as distal RTA or CKD with bicarbonate persistently low.</li></ul><h3>Metabolic alkalosis</h3><ul><li>Chloride-responsive (urine chloride low): give isotonic saline and replace potassium (as KCl); stop the cause (antiemetics, a proton pump inhibitor with ongoing nasogastric suction).</li><li>Edematous patients on diuretics who cannot take saline: acetazolamide promotes bicarbonate excretion; potassium-sparing diuretics help when hypokalemia drives it.</li><li>Chloride-resistant with hypertension: look for mineralocorticoid excess.</li></ul><h3>Respiratory acidosis</h3><ul><li>Acute hypercapnic respiratory failure from a COPD exacerbation (pH below 7.35 with PaCO₂ above 45 mm Hg): <strong>noninvasive positive-pressure ventilation</strong> reduces intubation and mortality. Intubate for inability to protect the airway, worsening despite noninvasive ventilation, hemodynamic instability or apnea.</li><li>Give controlled oxygen to a target saturation of <span class=\"hy\">about 88–92%</span> in chronic hypercapnia; excess oxygen worsens hypercapnia (ventilation-perfusion mismatch and the Haldane effect).</li><li>Reverse opioids with naloxone; ventilate neuromuscular failure early.</li><li>When ventilating a patient with chronic hypercapnia, lower PaCO₂ gradually toward the patient's baseline, not to 40 mm Hg, or a posthypercapnic metabolic alkalosis follows.</li></ul><h3>Respiratory alkalosis</h3><p>Treat the cause, and do not attribute hyperventilation to anxiety until hypoxemia, pulmonary embolism, sepsis and salicylate toxicity are considered. Mild chronic respiratory alkalosis (PaCO₂ about 30 mm Hg) is normal in pregnancy.</p><div class=\"trap\"><p><strong>Exam trap:</strong> do not wait for a methanol or ethylene glycol level before giving fomepizole; and do not \"correct\" a chronic hypercapnic patient's PaCO₂ to 40 mm Hg on the ventilator.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Anion Gap and Non-Anion Gap Metabolic Acidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448090/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Methanol Toxicity",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482121/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Ethylene Glycol Toxicity",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK537009/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Respiratory Acidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482430/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Physiology, Metabolic Alkalosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482291/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig160702-1",
+   "caption": "Figure. Stepwise acid-base interpretation: pH, primary process, expected compensation, anion gap, then delta ratio and osmolal gap.",
+   "file": "figures/s23c-fig160702-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set160702-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Blurred vision after homemade spirit",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q160702-1-01",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 34-year-old man has had profuse watery diarrhea for 4 days after returning from travel. He is weak and orthostatic. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>136 mEq/L</td></tr><tr><td>Potassium</td><td>3.1 mEq/L</td></tr><tr><td>Chloride</td><td>114 mEq/L</td></tr><tr><td>Bicarbonate</td><td>12 mEq/L</td></tr><tr><td>Creatinine</td><td>1.3 mg/dL</td></tr><tr><td>Arterial pH</td><td>7.29</td></tr><tr><td>PaCO2</td><td>26 mmHg</td></tr></table><p>Which of the following urine findings is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Glucose and amino acids in the urine"
+    },
+    {
+     "label": "B",
+     "html": "Negative urine anion gap"
+    },
+    {
+     "label": "C",
+     "html": "Positive urine anion gap"
+    },
+    {
+     "label": "D",
+     "html": "Urine bicarbonate above 20 mEq/L"
+    },
+    {
+     "label": "E",
+     "html": "Urine pH above 7.0 with a low urine ammonium"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The anion gap is 136 − (114 + 12) = 10, so this is a normal-gap (hyperchloremic) metabolic acidosis, and PaCO₂ (expected 1.5 × 12 + 8 = 26 ± 2) shows appropriate respiratory compensation. With diarrheal bicarbonate loss the kidneys are healthy and respond by excreting much more ammonium, which leaves with chloride. Urine chloride then exceeds urine sodium plus potassium, so the urine anion gap is <strong>negative</strong>.</p><p><strong>Takeaway:</strong> a normal-gap acidosis with a negative urine anion gap points to an extrarenal cause such as diarrhea.</p>",
+   "whyNot": {
+    "A": "Glucosuria and aminoaciduria suggest proximal tubular dysfunction (Fanconi syndrome), not diarrhea.",
+    "C": "A positive urine anion gap means poor ammonium excretion, as in distal or type 4 renal tubular acidosis.",
+    "D": "Bicarbonaturia during acidosis occurs in proximal RTA when filtered load exceeds a lowered threshold, not with GI loss.",
+    "E": "An alkaline urine with low ammonium is the defect of distal RTA; healthy kidneys acidify urine here."
+   },
+   "objective": "Use the urine anion gap to separate diarrheal bicarbonate loss from renal tubular acidosis.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "normal anion gap acidosis",
+    "urine anion gap"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-1-02",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 41-year-old man is found confused in his garage beside an open jug of radiator fluid. He is not intoxicated on ethanol (level undetectable). Urine microscopy shows many envelope-shaped crystals. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>140 mEq/L</td></tr><tr><td>Chloride</td><td>102 mEq/L</td></tr><tr><td>Bicarbonate</td><td>8 mEq/L</td></tr><tr><td>Glucose</td><td>90 mg/dL</td></tr><tr><td>Urea nitrogen (BUN)</td><td>14 mg/dL</td></tr><tr><td>Creatinine</td><td>1.9 mg/dL</td></tr><tr><td>Calcium, total</td><td>7.6 mg/dL</td></tr><tr><td>Osmolality, serum (measured)</td><td>322 mOsm/kg</td></tr><tr><td>Arterial pH</td><td>7.22</td></tr><tr><td>PaCO2</td><td>20 mmHg</td></tr></table><p>Inhibition of which of the following enzymes would most directly limit further production of the toxic metabolites?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Alcohol dehydrogenase"
+    },
+    {
+     "label": "B",
+     "html": "Cytochrome P450 2E1"
+    },
+    {
+     "label": "C",
+     "html": "Glutathione synthetase"
+    },
+    {
+     "label": "D",
+     "html": "Lactate dehydrogenase"
+    },
+    {
+     "label": "E",
+     "html": "Pyruvate dehydrogenase"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The anion gap is 140 − (102 + 8) = 30 and the calculated osmolality is about 2 × 140 + 90/18 + 14/2.8 = 290, so the osmolal gap is about 32 mOsm/kg. With calcium oxalate crystals, hypocalcemia and kidney injury, this is <strong>ethylene glycol</strong> poisoning. Ethylene glycol itself is relatively harmless; <strong>alcohol dehydrogenase</strong> converts it to glycoaldehyde, then to glycolic acid (the main cause of the acidosis) and oxalic acid (which precipitates with calcium in the kidney). Fomepizole and ethanol work by blocking this first step.</p><p><strong>Takeaway:</strong> toxic alcohols injure through their metabolites, so blocking alcohol dehydrogenase (fomepizole) stops the damage.</p>",
+   "whyNot": {
+    "B": "CYP2E1 metabolises ethanol and acetaminophen at high levels but is not the main route for ethylene glycol.",
+    "C": "Glutathione synthetase deficiency causes 5-oxoproline accumulation, a different gap acidosis.",
+    "D": "Lactate dehydrogenase interconverts pyruvate and lactate; blocking it would not stop glycolate or oxalate formation.",
+    "E": "Pyruvate dehydrogenase links glycolysis to the citric acid cycle; it plays no role in ethylene glycol metabolism."
+   },
+   "objective": "Explain how alcohol dehydrogenase converts ethylene glycol to toxic acids and why fomepizole works.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ethylene glycol",
+    "osmolal gap"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-1-03",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 58-year-old woman with chronic kidney disease (eGFR 35 mL/min/1.73 m²) and poor appetite has taken acetaminophen 1 g four times daily for 6 weeks for hip pain. She is admitted with drowsiness. She does not drink alcohol or have diabetes. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>138 mEq/L</td></tr><tr><td>Chloride</td><td>106 mEq/L</td></tr><tr><td>Bicarbonate</td><td>10 mEq/L</td></tr><tr><td>Glucose</td><td>96 mg/dL</td></tr><tr><td>Lactate, venous</td><td>1.2 mmol/L</td></tr><tr><td>Albumin</td><td>3.9 g/dL</td></tr><tr><td>Serum β-hydroxybutyrate</td><td>negative</td></tr><tr><td>Osmolal gap</td><td>4 mOsm/kg</td></tr><tr><td>Arterial pH</td><td>7.26</td></tr><tr><td>PaCO2</td><td>23 mmHg</td></tr></table><p>Accumulation of which of the following is the most likely cause of her acidosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "5-Oxoproline"
+    },
+    {
+     "label": "B",
+     "html": "D-Lactate"
+    },
+    {
+     "label": "C",
+     "html": "Formic acid"
+    },
+    {
+     "label": "D",
+     "html": "Glycolic acid"
+    },
+    {
+     "label": "E",
+     "html": "Sulfate and phosphate"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has a high anion gap acidosis (138 − 116 = 22) with normal lactate, no ketones and no osmolal gap. Regular acetaminophen use in a poorly nourished woman with CKD depletes glutathione. Glutathione normally restrains γ-glutamylcysteine synthetase; without that feedback, the γ-glutamyl cycle overproduces <strong>5-oxoproline (pyroglutamic acid)</strong>. Stopping acetaminophen and giving N-acetylcysteine to restore glutathione correct it.</p><p><strong>Takeaway:</strong> unexplained gap acidosis with regular acetaminophen use and malnutrition suggests 5-oxoproline (pyroglutamic) acidosis.</p>",
+   "whyNot": {
+    "B": "D-lactic acidosis needs a short bowel or bypass that delivers carbohydrate to colonic bacteria.",
+    "C": "Formic acid comes from methanol, which would produce an osmolal gap early and visual symptoms.",
+    "D": "Glycolic acid comes from ethylene glycol, with an osmolal gap, oxalate crystals and kidney injury.",
+    "E": "Uremic retention of sulfate and phosphate usually needs much lower GFR and gives a smaller gap."
+   },
+   "objective": "Recognise pyroglutamic (5-oxoproline) acidosis from chronic acetaminophen use with glutathione depletion.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "biochemistry",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "5-oxoproline",
+    "high anion gap acidosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-1-04",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 47-year-old woman had most of her small bowel resected after a mesenteric infarction 2 years ago and has a jejunocolic anastomosis. After a large meal of bread and sweets she becomes confused, slurs her speech and walks unsteadily. She has not taken any drugs or alcohol. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>139 mEq/L</td></tr><tr><td>Chloride</td><td>104 mEq/L</td></tr><tr><td>Bicarbonate</td><td>15 mEq/L</td></tr><tr><td>Glucose</td><td>102 mg/dL</td></tr><tr><td>Lactate, venous (standard assay)</td><td>1.4 mmol/L</td></tr><tr><td>Serum β-hydroxybutyrate</td><td>negative</td></tr><tr><td>Arterial pH</td><td>7.31</td></tr><tr><td>PaCO2</td><td>31 mmHg</td></tr></table><p>Which of the following is the most likely source of the unmeasured anion?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Colonic bacterial fermentation of malabsorbed carbohydrate"
+    },
+    {
+     "label": "B",
+     "html": "Failure of hepatic gluconeogenesis after a large meal"
+    },
+    {
+     "label": "C",
+     "html": "Hypoperfusion of skeletal muscle during exertion"
+    },
+    {
+     "label": "D",
+     "html": "Thiamine-dependent block of pyruvate oxidation"
+    },
+    {
+     "label": "E",
+     "html": "Uncontrolled lipolysis from insulin deficiency"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The gap is 139 − (104 + 15) = 20 with normal L-lactate and no ketones. In short bowel syndrome with an intact colon, unabsorbed carbohydrate reaches colonic bacteria, which ferment it to <strong>D-lactate</strong>. Humans metabolise D-lactate slowly, it causes neurologic symptoms, and the usual lactate assay (L-lactate) misses it. Treatment is a low simple-carbohydrate diet and, sometimes, oral antibiotics.</p><p><strong>Takeaway:</strong> short bowel, neurologic episodes after carbohydrate and a gap acidosis with normal standard lactate suggest D-lactic acidosis.</p>",
+   "whyNot": {
+    "B": "Liver failure causes type B L-lactic acidosis, which the standard assay would detect.",
+    "C": "Hypoperfusion raises L-lactate, which is normal here, and she is not in shock.",
+    "D": "Thiamine deficiency also raises L-lactate, which the routine assay measures.",
+    "E": "Insulin deficiency would cause ketosis and hyperglycemia; ketones are negative."
+   },
+   "objective": "Recognise D-lactic acidosis in short bowel syndrome and explain why standard lactate is normal.",
+   "areas": [
+    "usmle2026.16.07.02",
+    "usmle2026.16.04.05"
+   ],
+   "disciplines": [
+    "physiology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "D-lactic acidosis",
+    "short bowel"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-1-05",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 67-year-old man with severe COPD comes for a routine visit. He feels at his baseline. Arterial blood gas on room air:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>pH</td><td>7.35</td></tr><tr><td>PaCO2</td><td>60 mmHg</td></tr><tr><td>PaO2</td><td>58 mmHg</td></tr><tr><td>HCO3-</td><td>32 mEq/L</td></tr></table><p>Which of the following processes is mainly responsible for his bicarbonate concentration?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Hemoglobin buffering of carbonic acid within red cells"
+    },
+    {
+     "label": "B",
+     "html": "Increased renal ammonium excretion over several days"
+    },
+    {
+     "label": "C",
+     "html": "Increased renal sodium chloride reabsorption with loop diuretics"
+    },
+    {
+     "label": "D",
+     "html": "Loss of gastric acid from vomiting"
+    },
+    {
+     "label": "E",
+     "html": "Reduced hepatic urea synthesis"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has <strong>chronic respiratory acidosis</strong>. For a 20 mm Hg rise in PaCO₂, acute buffering raises bicarbonate only about 2 mEq/L, but full renal compensation raises it about 7–8 mEq/L, to the observed 32. Over 3–5 days the proximal tubule increases glutamine metabolism and ammonium production, and the collecting duct secretes more H⁺, generating new bicarbonate. The pH returns close to, but not into, the normal-high range.</p><p><strong>Takeaway:</strong> chronic hypercapnia raises bicarbonate by about 3.5–4 mEq/L per 10 mm Hg through renal acid excretion over days.</p>",
+   "whyNot": {
+    "A": "Intracellular buffering is the acute response and raises bicarbonate only about 1 mEq/L per 10 mm Hg.",
+    "C": "Diuretics can cause contraction alkalosis, but he takes none and the values fit pure compensation.",
+    "D": "There is no vomiting, and the bicarbonate rise is exactly what chronic compensation predicts.",
+    "E": "Reduced ureagenesis is a minor, debated contributor and does not explain this degree of compensation."
+   },
+   "objective": "Explain renal compensation in chronic respiratory acidosis and its expected magnitude.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "respiratory acidosis",
+    "COPD"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-1-06",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 72-year-old man with heart failure has had his furosemide dose doubled over 2 weeks. His edema has resolved, and he is now mildly orthostatic. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>136 mEq/L</td></tr><tr><td>Potassium</td><td>3.0 mEq/L</td></tr><tr><td>Chloride</td><td>90 mEq/L</td></tr><tr><td>Bicarbonate</td><td>34 mEq/L</td></tr><tr><td>Arterial pH</td><td>7.48</td></tr><tr><td>PaCO2</td><td>47 mmHg</td></tr></table><p>Which of the following best explains why his kidneys keep the extra bicarbonate?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Hypokalemia, angiotensin II and aldosterone driving H⁺ secretion"
+    },
+    {
+     "label": "B",
+     "html": "Increased chloride delivery to the cortical collecting duct"
+    },
+    {
+     "label": "C",
+     "html": "Loss of carbonic anhydrase activity in the proximal tubule"
+    },
+    {
+     "label": "D",
+     "html": "Primary renal wasting of ammonium in the collecting duct"
+    },
+    {
+     "label": "E",
+     "html": "Respiratory compensation lowering the arterial PaCO₂"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>He has a <strong>metabolic alkalosis</strong> with appropriate compensation (expected PaCO₂ 40 + 0.7 × 10 = 47). Loop diuretics generate it (more distal sodium delivery with aldosterone-driven H⁺ and K⁺ secretion, plus contraction around a fixed bicarbonate mass). It is <em>maintained</em> because volume depletion raises angiotensin II (more proximal Na⁺/H⁺ exchange) and aldosterone (more distal H⁺ secretion), and hypokalemia stimulates ammoniagenesis and H⁺/K⁺-ATPase activity, so filtered bicarbonate is reclaimed instead of excreted.</p><p><strong>Takeaway:</strong> metabolic alkalosis is maintained by volume and chloride depletion, high angiotensin II and aldosterone, and hypokalemia.</p>",
+   "whyNot": {
+    "B": "More distal chloride delivery favours bicarbonate excretion (via pendrin) and would help correct the alkalosis.",
+    "C": "Carbonic anhydrase inhibition (acetazolamide) causes bicarbonate wasting and acidosis, the opposite.",
+    "D": "Renal ammonium loss means acid excretion; it is increased here, not a primary cause.",
+    "E": "Compensation for metabolic alkalosis raises PaCO₂, as seen; it does not explain renal bicarbonate retention."
+   },
+   "objective": "Explain the generation and maintenance of diuretic-induced metabolic alkalosis.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "metabolic alkalosis",
+    "loop diuretic"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-1-07",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A healthy 26-year-old woman flies to a city at 3,600 m (11,800 ft) and develops headache and breathlessness on exertion on the first evening. Arterial blood gas:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>pH</td><td>7.50</td></tr><tr><td>PaCO2</td><td>28 mmHg</td></tr><tr><td>PaO2</td><td>52 mmHg</td></tr><tr><td>HCO3-</td><td>21 mEq/L</td></tr></table><p>A drug that speeds her acclimatisation does so mainly by which of the following effects?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Blocking adenosine receptors in the brainstem"
+    },
+    {
+     "label": "B",
+     "html": "Increasing erythropoietin release within hours"
+    },
+    {
+     "label": "C",
+     "html": "Inhibiting carbonic anhydrase, causing bicarbonate loss in urine"
+    },
+    {
+     "label": "D",
+     "html": "Raising 2,3-bisphosphoglycerate in red cells"
+    },
+    {
+     "label": "E",
+     "html": "Stimulating peripheral chemoreceptors directly"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Hypoxemia drives hyperventilation, giving an <strong>acute respiratory alkalosis</strong> (bicarbonate falls about 2 per 10 mm Hg fall in PaCO₂: about 24 − 2.4 ≈ 21.6). The alkalosis blunts the central drive to breathe. <strong>Acetazolamide</strong> inhibits proximal tubular carbonic anhydrase, causing bicarbonaturia and a mild metabolic acidosis that removes this brake, so ventilation and oxygenation improve faster.</p><p><strong>Takeaway:</strong> acetazolamide speeds altitude acclimatisation by inducing a bicarbonate diuresis that offsets the respiratory alkalosis.</p>",
+   "whyNot": {
+    "A": "Adenosine antagonism (caffeine, theophylline) is not how altitude illness is prevented.",
+    "B": "Erythropoietin rises within days, and red cell mass takes weeks; no drug is used to accelerate it.",
+    "D": "2,3-BPG does rise at altitude, but this is a physiological change, not the action of the preventive drug.",
+    "E": "Acetazolamide acts on the kidney; direct carotid body stimulants are not used for acclimatisation."
+   },
+   "objective": "Explain the respiratory alkalosis of altitude and how acetazolamide helps acclimatisation.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "respiratory alkalosis",
+    "altitude"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-2-01",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 38-year-old man is brought to the emergency department 18 hours after drinking a large amount of homemade spirit with friends. He now has blurred, \"snowy\" vision, vomiting and abdominal pain. He is alert. Pulse is 104/min, respirations 28/min and blood pressure 134/82 mm Hg. Funduscopy shows hyperemic optic discs. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>141 mEq/L</td></tr><tr><td>Potassium</td><td>4.6 mEq/L</td></tr><tr><td>Chloride</td><td>100 mEq/L</td></tr><tr><td>Bicarbonate</td><td>7 mEq/L</td></tr><tr><td>Glucose</td><td>100 mg/dL</td></tr><tr><td>Urea nitrogen (BUN)</td><td>14 mg/dL</td></tr><tr><td>Creatinine</td><td>1.0 mg/dL</td></tr><tr><td>Lactate, venous</td><td>2.0 mmol/L</td></tr><tr><td>Ethanol</td><td>not detected</td></tr><tr><td>Osmolality, serum (measured)</td><td>330 mOsm/kg</td></tr><tr><td>Arterial pH</td><td>7.18</td></tr><tr><td>PaCO2</td><td>19 mmHg</td></tr></table><p>A serum methanol level has been sent and will take several hours. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activated charcoal by nasogastric tube"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous fomepizole now"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous N-acetylcysteine"
+    },
+    {
+     "label": "D",
+     "html": "Observe and repeat electrolytes in 4 hours"
+    },
+    {
+     "label": "E",
+     "html": "Wait for the methanol level before treatment"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has a large anion gap (34) and an osmolal gap of about 37 (calculated 2 × 141 + 100/18 + 14/2.8 ≈ 293) with visual symptoms after drinking illicit spirit: <strong>methanol poisoning</strong>. Give <strong>fomepizole</strong> immediately, without waiting for the level, to block alcohol dehydrogenase and stop formic acid production. Bicarbonate for severe acidemia and folic or folinic acid are added, and the nephrology team is called about hemodialysis.</p><p><strong>Takeaway:</strong> suspected toxic alcohol poisoning: give fomepizole at once; do not wait for confirmatory levels.</p>",
+   "whyNot": {
+    "A": "Alcohols are absorbed within an hour and bind charcoal poorly; it has no role 18 hours later.",
+    "C": "N-acetylcysteine is the antidote for acetaminophen, not methanol.",
+    "D": "Observation lets methanol continue to be converted to formic acid, which damages the optic nerve.",
+    "E": "Waiting for the level delays the antidote while formate accumulates."
+   },
+   "objective": "Start fomepizole immediately for suspected methanol poisoning.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "methanol",
+    "osmolal gap"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set160702-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q160702-2-02",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>The patient receives intravenous fomepizole and sodium bicarbonate. Two hours later his serum methanol level returns markedly elevated. He still has visual blurring, and arterial pH is 7.16 despite the bicarbonate. Urine output is adequate. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add an ethanol infusion to the fomepizole"
+    },
+    {
+     "label": "B",
+     "html": "Give intravenous methylene blue"
+    },
+    {
+     "label": "C",
+     "html": "Hemodialysis"
+    },
+    {
+     "label": "D",
+     "html": "Hyperbaric oxygen therapy"
+    },
+    {
+     "label": "E",
+     "html": "Increase the fomepizole dose and recheck in 12 hours"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Fomepizole stops new formic acid production, but it does not remove the methanol or the formate already present, and methanol's half-life becomes very long when alcohol dehydrogenase is blocked. Severe acidemia, visual involvement and a high level are indications for <strong>hemodialysis</strong>, which clears both methanol and formate and corrects the acidosis. Fomepizole is continued, with extra dosing during dialysis.</p><p><strong>Takeaway:</strong> methanol poisoning with severe acidosis or visual signs needs hemodialysis in addition to fomepizole.</p>",
+   "whyNot": {
+    "A": "Ethanol and fomepizole act on the same enzyme; adding ethanol gives no extra benefit.",
+    "B": "Methylene blue treats methemoglobinemia, which is not present.",
+    "D": "Hyperbaric oxygen treats carbon monoxide poisoning and does not remove methanol or formate.",
+    "E": "More fomepizole cannot clear the formate already causing acidosis and optic injury; delay risks blindness."
+   },
+   "objective": "Choose hemodialysis for methanol poisoning with severe acidemia or visual impairment.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "methanol",
+    "hemodialysis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set160702-1",
+   "setOrder": 2
+  },
+  {
+   "id": "s23c-q160702-2-03",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 49-year-old man with alcohol use disorder has vomited repeatedly for 3 days after a week of heavy drinking and has eaten nothing. He is alert. Blood pressure is 108/68 mm Hg and pulse 112/min. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>136 mEq/L</td></tr><tr><td>Potassium</td><td>3.2 mEq/L</td></tr><tr><td>Chloride</td><td>86 mEq/L</td></tr><tr><td>Bicarbonate</td><td>22 mEq/L</td></tr><tr><td>Glucose</td><td>82 mg/dL</td></tr><tr><td>Lactate, venous</td><td>2.0 mmol/L</td></tr><tr><td>Serum β-hydroxybutyrate</td><td>6.5 mmol/L (N below 0.4)</td></tr><tr><td>Albumin</td><td>4.0 g/dL</td></tr><tr><td>Ethanol</td><td>not detected</td></tr><tr><td>Arterial pH</td><td>7.39</td></tr><tr><td>PaCO2</td><td>38 mmHg</td></tr></table><p>Which of the following best describes his acid-base status?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "High anion gap metabolic acidosis alone"
+    },
+    {
+     "label": "B",
+     "html": "High anion gap metabolic acidosis with metabolic alkalosis"
+    },
+    {
+     "label": "C",
+     "html": "No acid-base disorder"
+    },
+    {
+     "label": "D",
+     "html": "Normal anion gap metabolic acidosis with respiratory alkalosis"
+    },
+    {
+     "label": "E",
+     "html": "Respiratory acidosis with metabolic alkalosis"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>pH and bicarbonate are almost normal, but the anion gap is 136 − (86 + 22) = 28. The gap has risen by about 16 while bicarbonate has fallen by only 2, a delta ratio of about 8. A pure gap acidosis would have dropped bicarbonate to about 8, so a <strong>metabolic alkalosis from vomiting</strong> is also present. The gap acidosis is <strong>alcoholic ketoacidosis</strong> (high β-hydroxybutyrate, normal glucose). PaCO₂ fits the measured bicarbonate. Treatment is thiamine, then dextrose in saline, potassium replacement and antiemetics.</p><p><strong>Takeaway:</strong> a high anion gap with near-normal bicarbonate (delta ratio above 2) means a coexisting metabolic alkalosis.</p>",
+   "whyNot": {
+    "A": "A gap acidosis alone would lower bicarbonate roughly as much as the gap rises; it barely fell.",
+    "C": "The anion gap of 28 shows an acidosis even though pH is normal.",
+    "D": "The gap is high, not normal, and PaCO₂ is not low.",
+    "E": "PaCO₂ is normal, so there is no respiratory acidosis."
+   },
+   "objective": "Use the delta ratio to detect a metabolic alkalosis hidden within a high anion gap acidosis.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "mixed disorder",
+    "alcoholic ketoacidosis",
+    "delta ratio"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-2-04",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 71-year-old woman with COPD has had 3 days of increased dyspnea and purulent sputum. She is drowsy but rousable, follows commands and can cough and clear secretions. Respirations are 30/min; oxygen saturation is 89% on 2 L/min oxygen by nasal cannula. She is using accessory muscles. Blood pressure is 142/84 mm Hg. Arterial blood gas on this oxygen:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>pH</td><td>7.26</td></tr><tr><td>PaCO2</td><td>72 mmHg</td></tr><tr><td>PaO2</td><td>58 mmHg</td></tr><tr><td>HCO3-</td><td>32 mEq/L</td></tr></table><p>Bronchodilators, a glucocorticoid and an antibiotic are started. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Change to a non-rebreather mask at 15 L/min"
+    },
+    {
+     "label": "B",
+     "html": "Endotracheal intubation and mechanical ventilation"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous sodium bicarbonate"
+    },
+    {
+     "label": "D",
+     "html": "Noninvasive positive-pressure ventilation"
+    },
+    {
+     "label": "E",
+     "html": "Oral acetazolamide"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Bicarbonate of 32 shows chronic hypercapnia; the pH of 7.26 shows an acute rise on top of it (<strong>acute-on-chronic respiratory acidosis</strong>). In a COPD exacerbation with pH below 7.35 and a raised PaCO₂, <strong>noninvasive positive-pressure ventilation</strong> lowers the work of breathing, improves alveolar ventilation and reduces intubation and death. She can protect her airway and is hemodynamically stable, so noninvasive ventilation is appropriate, with intubation if she worsens.</p><p><strong>Takeaway:</strong> acute hypercapnic COPD exacerbation (pH below 7.35): start noninvasive ventilation if the patient can protect the airway.</p>",
+   "whyNot": {
+    "A": "High-flow oxygen to high saturations worsens hypercapnia; the target is about 88–92%.",
+    "B": "Intubation is for failure of noninvasive ventilation, an unprotected airway, instability or arrest.",
+    "C": "Bicarbonate does not treat hypoventilation and may raise PaCO₂ further.",
+    "E": "Acetazolamide is not used to treat acute hypercapnic respiratory failure."
+   },
+   "objective": "Use noninvasive ventilation for acute hypercapnic respiratory acidosis in COPD.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "respiratory acidosis",
+    "COPD",
+    "NIV"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-2-05",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 63-year-old man is on day 5 after a small bowel resection for obstruction. A nasogastric tube has drained about 2 L of fluid daily. He has no edema; blood pressure is 104/62 mm Hg lying and he is tachycardic on sitting up. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>138 mEq/L</td></tr><tr><td>Potassium</td><td>2.9 mEq/L</td></tr><tr><td>Chloride</td><td>88 mEq/L</td></tr><tr><td>Bicarbonate</td><td>38 mEq/L</td></tr><tr><td>Creatinine</td><td>1.3 mg/dL</td></tr><tr><td>Urine chloride</td><td>below 10 mEq/L</td></tr><tr><td>Arterial pH</td><td>7.50</td></tr><tr><td>PaCO2</td><td>50 mmHg</td></tr></table><p>Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous isotonic saline plus potassium chloride"
+    },
+    {
+     "label": "B",
+     "html": "Dilute hydrochloric acid through a central venous line"
+    },
+    {
+     "label": "C",
+     "html": "Oral acetazolamide twice daily for 3 days"
+    },
+    {
+     "label": "D",
+     "html": "Oral spironolactone with a low-sodium diet"
+    },
+    {
+     "label": "E",
+     "html": "Urgent intermittent hemodialysis"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Gastric acid loss through the tube has produced a <strong>chloride-responsive metabolic alkalosis</strong> (urine chloride very low, volume depleted) with appropriate compensation (expected PaCO₂ about 40 + 0.7 × 14 ≈ 50). Isotonic saline restores volume and chloride, removing the stimulus for renal bicarbonate reabsorption; potassium chloride corrects hypokalemia, which also maintains the alkalosis. A proton pump inhibitor can reduce ongoing acid loss while the tube is needed.</p><p><strong>Takeaway:</strong> metabolic alkalosis with low urine chloride and volume depletion: give isotonic saline and potassium chloride.</p>",
+   "whyNot": {
+    "B": "Hydrochloric acid infusion is reserved for severe, life-threatening alkalosis when other measures cannot be used.",
+    "C": "Acetazolamide suits alkalosis in volume-overloaded patients who cannot receive saline; he is volume depleted.",
+    "D": "Spironolactone treats mineralocorticoid-driven, chloride-resistant alkalosis, not this one.",
+    "E": "Dialysis is not needed for this degree of alkalosis with preserved kidney function."
+   },
+   "objective": "Treat chloride-responsive metabolic alkalosis with saline and potassium chloride.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "metabolic alkalosis",
+    "nasogastric suction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-2-06",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 29-year-old man was resuscitated after a motorcycle crash with 8 L of 0.9% saline and 2 units of packed red cells over 12 hours. He is now hemodynamically stable, warm and well perfused, with good urine output. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>142 mEq/L</td></tr><tr><td>Potassium</td><td>4.0 mEq/L</td></tr><tr><td>Chloride</td><td>118 mEq/L</td></tr><tr><td>Bicarbonate</td><td>17 mEq/L</td></tr><tr><td>Lactate, venous</td><td>1.3 mmol/L</td></tr><tr><td>Albumin</td><td>3.8 g/dL</td></tr><tr><td>Creatinine</td><td>0.9 mg/dL</td></tr><tr><td>Arterial pH</td><td>7.33</td></tr><tr><td>PaCO2</td><td>33 mmHg</td></tr></table><p>He still needs maintenance intravenous fluid. Which of the following is the most appropriate change?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add sodium bicarbonate ampules every 4 hours"
+    },
+    {
+     "label": "B",
+     "html": "Continue 0.9% saline at the same rate"
+    },
+    {
+     "label": "C",
+     "html": "Start oral acetazolamide"
+    },
+    {
+     "label": "D",
+     "html": "Start intermittent hemodialysis"
+    },
+    {
+     "label": "E",
+     "html": "Switch to lactated Ringer solution"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>The anion gap is 142 − (118 + 17) = 7 with normal lactate: a <strong>hyperchloremic (normal-gap) acidosis</strong> from large-volume 0.9% saline, whose chloride (154 mEq/L) is far above plasma's and which contains no bicarbonate. Compensation is appropriate (expected PaCO₂ 1.5 × 17 + 8 ≈ 33.5). The simplest fix is to stop adding chloride by switching to a <strong>balanced crystalloid</strong>; the kidney then excretes the excess chloride.</p><p><strong>Takeaway:</strong> large-volume normal saline causes a hyperchloremic acidosis; change to a balanced crystalloid.</p>",
+   "whyNot": {
+    "A": "A mild, stable hyperchloremic acidosis in a well-perfused patient does not need bicarbonate.",
+    "B": "Continuing saline adds more chloride and worsens the acidosis.",
+    "C": "Acetazolamide causes bicarbonate loss and would worsen a normal-gap acidosis.",
+    "D": "There is no kidney failure, hyperkalemia or severe acidemia to justify dialysis."
+   },
+   "objective": "Recognise saline-induced hyperchloremic acidosis and switch to a balanced crystalloid.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "normal anion gap acidosis",
+    "fluids"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160702-2-07",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 66-year-old woman with urosepsis is in the ICU. She has received 30 mL/kg of crystalloid, blood cultures, and intravenous piperacillin-tazobactam. Mean arterial pressure is 58 mm Hg, and her extremities are cool and mottled. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>136 mEq/L</td></tr><tr><td>Potassium</td><td>4.4 mEq/L</td></tr><tr><td>Chloride</td><td>100 mEq/L</td></tr><tr><td>Bicarbonate</td><td>10 mEq/L</td></tr><tr><td>Lactate, venous</td><td>6.8 mmol/L</td></tr><tr><td>Creatinine</td><td>1.4 mg/dL</td></tr><tr><td>Arterial pH</td><td>7.24</td></tr><tr><td>PaCO2</td><td>24 mmHg</td></tr></table><p>Which of the following is most likely to correct her acidosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Hyperventilation on a mechanical ventilator to a PaCO₂ of 15 mm Hg"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous dichloroacetate"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous sodium bicarbonate to raise the pH to 7.40"
+    },
+    {
+     "label": "D",
+     "html": "Norepinephrine to restore perfusion pressure"
+    },
+    {
+     "label": "E",
+     "html": "Tromethamine (THAM) infusion"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The gap is 136 − 110 = 26 with a lactate of 6.8: <strong>type A lactic acidosis</strong> from septic shock, with appropriate respiratory compensation (Winter: 1.5 × 10 + 8 = 23 ± 2). Lactate is produced because tissues are underperfused, so the acidosis corrects as perfusion is restored. She remains hypotensive after fluids, so <strong>norepinephrine</strong> (target MAP 65 mm Hg or more) is the next step, with continued source control and antibiotics. Bicarbonate does not improve outcome at this pH and kidney function; it is considered for pH about 7.20 or lower with significant acute kidney injury.</p><p><strong>Takeaway:</strong> lactic acidosis in shock is corrected by restoring perfusion, not by alkali.</p>",
+   "whyNot": {
+    "A": "She is already compensating appropriately; forcing PaCO₂ far lower risks alkalemia-related harm and does not address lactate production.",
+    "B": "Dichloroacetate lowers lactate concentration but has not improved outcomes and is not standard care.",
+    "C": "Raising pH with bicarbonate does not treat the cause and can lower ionised calcium and raise PaCO₂.",
+    "E": "THAM is an alternative buffer with no outcome benefit in septic lactic acidosis."
+   },
+   "objective": "Treat lactic acidosis in septic shock by restoring perfusion (vasopressors), reserving bicarbonate for selected cases.",
+   "areas": [
+    "usmle2026.16.07.02",
+    "usmle2026.16.10.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "lactic acidosis",
+    "septic shock"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c160702-01",
+   "frontHtml": "Winter formula: expected PaCO₂ in metabolic acidosis?",
+   "backHtml": "1.5 × HCO₃⁻ + 8, give or take 2 mm Hg. Outside that range means a second, respiratory disorder.",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-02",
+   "frontHtml": "Expected PaCO₂ rise for each 1 mEq/L rise in bicarbonate in metabolic alkalosis?",
+   "backHtml": "About 0.7 mm Hg.",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-03",
+   "frontHtml": "Respiratory acidosis: bicarbonate rise per 10 mm Hg PaCO₂ rise, acute versus chronic?",
+   "backHtml": "Acute about 1 mEq/L; chronic (after 3–5 days of renal adaptation) about 3.5–4 mEq/L.",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-04",
+   "frontHtml": "Respiratory alkalosis: bicarbonate fall per 10 mm Hg PaCO₂ fall, acute versus chronic?",
+   "backHtml": "Acute about 2 mEq/L; chronic about 4–5 mEq/L.",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-05",
+   "frontHtml": "How should the anion gap be adjusted for low albumin?",
+   "backHtml": "Add about 2.5 mEq/L for every 1 g/dL of albumin below 4 g/dL.",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-06",
+   "frontHtml": "Delta ratio above 2 in a high-gap acidosis suggests what?",
+   "backHtml": "Bicarbonate was raised to begin with: a coexisting metabolic alkalosis (or compensated chronic respiratory acidosis).",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-07",
+   "frontHtml": "Delta ratio below 1 in a high-gap acidosis suggests what?",
+   "backHtml": "A coexisting normal-gap (hyperchloremic) acidosis.",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-08",
+   "frontHtml": "How is calculated serum osmolality worked out?",
+   "backHtml": "2 × Na⁺ + glucose/18 + BUN/2.8 (plus ethanol/3.7 if present). A measured value more than about 10 above it is an osmolal gap.",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-09",
+   "frontHtml": "Urine anion gap negative versus positive in a normal-gap acidosis?",
+   "backHtml": "Negative: kidney excreting ammonium normally (diarrhea). Positive: impaired ammonium excretion (distal or type 4 RTA).",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-10",
+   "frontHtml": "Main renal route for excreting extra acid?",
+   "backHtml": "Ammonium (NH₄⁺) made from glutamine in the proximal tubule; titratable acid (phosphate) is the smaller, less adjustable route.",
+   "sectionId": "s23c-s160702-1-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-11",
+   "frontHtml": "Ethylene glycol: toxic metabolites and urine clue?",
+   "backHtml": "Glycolic acid (acidosis) and oxalic acid (calcium oxalate crystals, hypocalcemia, kidney injury).",
+   "sectionId": "s23c-s160702-1-2",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-12",
+   "frontHtml": "Methanol: toxic metabolite and target organ?",
+   "backHtml": "Formic acid; optic nerve and retina (blurred, snowy vision, blindness) and basal ganglia.",
+   "sectionId": "s23c-s160702-1-2",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-13",
+   "frontHtml": "Gap acidosis with normal standard lactate after carbohydrate meals in short bowel syndrome?",
+   "backHtml": "D-lactic acidosis from colonic bacterial fermentation; routine assays measure only L-lactate.",
+   "sectionId": "s23c-s160702-1-2",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-14",
+   "frontHtml": "Gap acidosis in a malnourished woman taking acetaminophen daily, with no lactate, ketones or osmolal gap?",
+   "backHtml": "Pyroglutamic (5-oxoproline) acidosis from glutathione depletion.",
+   "sectionId": "s23c-s160702-1-2",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-15",
+   "frontHtml": "Metabolic alkalosis with urine chloride below about 20 mEq/L: category and examples?",
+   "backHtml": "Chloride-responsive (volume depleted): vomiting, nasogastric suction, remote diuretic use.",
+   "sectionId": "s23c-s160702-1-2",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-16",
+   "frontHtml": "Metabolic alkalosis with high urine chloride and hypertension?",
+   "backHtml": "Mineralocorticoid excess (primary aldosteronism, Cushing syndrome, licorice).",
+   "sectionId": "s23c-s160702-1-2",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-17",
+   "frontHtml": "Why does large-volume 0.9% saline cause acidosis?",
+   "backHtml": "It has 154 mEq/L chloride and no bicarbonate: a hyperchloremic, normal-gap acidosis.",
+   "sectionId": "s23c-s160702-1-2",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-18",
+   "frontHtml": "Suspected methanol or ethylene glycol poisoning: first drug, and when?",
+   "backHtml": "Fomepizole at once (blocks alcohol dehydrogenase); do not wait for levels.",
+   "sectionId": "s23c-s160702-2-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-19",
+   "frontHtml": "Indications for hemodialysis in toxic alcohol poisoning?",
+   "backHtml": "Severe acidemia, visual signs (methanol), acute kidney injury (ethylene glycol), very high levels, or worsening despite treatment.",
+   "sectionId": "s23c-s160702-2-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-20",
+   "frontHtml": "Acute hypercapnic COPD exacerbation with pH below 7.35: ventilatory support?",
+   "backHtml": "Noninvasive positive-pressure ventilation if the patient can protect the airway; intubate if it fails.",
+   "sectionId": "s23c-s160702-2-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-21",
+   "frontHtml": "Ventilating a patient with chronic hypercapnia: PaCO₂ goal?",
+   "backHtml": "Return toward the patient's own baseline, not 40 mm Hg, to avoid posthypercapnic metabolic alkalosis.",
+   "sectionId": "s23c-s160702-2-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-22",
+   "frontHtml": "Alcoholic ketoacidosis: key treatment?",
+   "backHtml": "Thiamine first, then dextrose-containing saline (stops ketogenesis); replace potassium; insulin not needed.",
+   "sectionId": "s23c-s160702-2-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160702-23",
+   "frontHtml": "When is IV bicarbonate reasonable in lactic acidosis?",
+   "backHtml": "Not routinely; consider when pH is about 7.20 or lower with moderate-to-severe acute kidney injury.",
+   "sectionId": "s23c-s160702-2-1",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

@@ -1,0 +1,1338 @@
+{
+ "area": "usmle2026.16.07.01",
+ "sections": [
+  {
+   "id": "s23c-s160701-1-1",
+   "exam": "step1",
+   "heading": "Body water, osmolality and the sodium disorders",
+   "html": "<h3>Where the water is</h3><p>Total body water is <span class=\"hy\">roughly 60% of body weight</span> in a young adult man and less (about 50%) in women and older adults, because fat holds little water. About two thirds is intracellular and one third extracellular; of the extracellular fluid, about three quarters is interstitial and one quarter is plasma. Water crosses cell membranes freely, so every compartment has the same osmolality. Sodium is held outside cells by the Na⁺/K⁺-ATPase, so the amount of sodium sets the <strong>size of the extracellular fluid</strong>, while the serum sodium <em>concentration</em> reflects the balance of <strong>water</strong>.</p><table><tr><th>Fluid given</th><th>Where it ends up</th><th>Effect on cells</th></tr><tr><td>Isotonic saline or balanced crystalloid</td><td>Extracellular fluid only (about a quarter stays in plasma)</td><td>No change in cell volume</td></tr><tr><td>5% dextrose in water</td><td>Glucose is metabolised; the free water spreads over all compartments (about two thirds into cells)</td><td>Cells swell slightly</td></tr><tr><td>Hypertonic (3%) saline</td><td>Extracellular fluid, plus water drawn out of cells</td><td>Cells shrink</td></tr></table><h3>Osmolality and tonicity</h3><p>Calculated serum osmolality ≈ 2 × sodium + glucose/18 + BUN/2.8 (glucose and BUN in mg/dL). The <strong>osmolal gap</strong> (measured minus calculated) is normally <span class=\"hy\">below about 10 mOsm/kg</span>; a larger gap means an unmeasured osmole such as ethanol, methanol, ethylene glycol, isopropanol or mannitol. Urea crosses cell membranes, so it raises osmolality without moving water (an <em>ineffective</em> osmole); glucose (without insulin), sodium and mannitol are <em>effective</em> osmoles that set tonicity and shift water.</p><h3>Defending water balance</h3><p>A rise in plasma osmolality of only 1–2% stimulates hypothalamic osmoreceptors, which release ADH (arginine vasopressin) and trigger thirst. ADH inserts aquaporin-2 into collecting-duct cells through V2 receptors and cAMP. A large fall in effective circulating volume (about 10% or more) also releases ADH, and this baroreceptor signal can override low osmolality, which is why hypovolemia, heart failure and cirrhosis cause hyponatremia. <strong>Volume depletion</strong> (loss of salt and water from the extracellular fluid) causes orthostasis and tachycardia; <strong>dehydration</strong> in the strict sense is loss of water, which raises the serum sodium.</p><h3>Hyponatremia</h3><p>Almost all true (hypotonic) hyponatremia means the kidney cannot excrete enough free water, usually because ADH is present.</p><ul><li><strong>Hypovolemic</strong>: vomiting, diarrhea, diuretics. Thiazides are a classic cause because they <span class=\"hy\">block dilution in the distal convoluted tubule</span> while leaving the concentrating mechanism intact; older women with low body weight are most at risk.</li><li><strong>Hypervolemic</strong>: heart failure, cirrhosis, nephrotic syndrome: low effective arterial volume drives ADH and sodium retention.</li><li><strong>Euvolemic</strong>: SIADH (drugs, lung and brain disease, pain, nausea, small cell carcinoma); <strong>glucocorticoid deficiency</strong> (cortisol normally <span class=\"hy\">restrains ADH release</span>, so secondary adrenal insufficiency causes hyponatremia without hyperkalemia); severe hypothyroidism.</li><li><strong>ADH appropriately suppressed</strong> (urine osmolality below about 100 mOsm/kg): <em>primary polydipsia</em> overwhelms a normal capacity of more than 10 L/day, and <em>low solute intake</em> (heavy beer drinking with little food, a tea-and-toast diet) limits free water excretion, because the kidney needs solute to carry water out: at a minimum urine osmolality of about 50 mOsm/kg, 250 mOsm of daily solute allows only about 5 L of urine.</li></ul><p><strong>Not hypotonic</strong>: <em>pseudohyponatremia</em> is a laboratory artifact of indirect ion-selective electrodes when lipids or paraproteins occupy plasma volume; measured osmolality is normal and a direct electrode (blood gas analyser) gives a normal sodium. <em>Hypertonic</em> hyponatremia follows severe hyperglycemia or mannitol, which pull water out of cells; serum sodium falls by about 1.6–2.4 mEq/L for every 100 mg/dL rise in glucose.</p><h3>The brain and the rate of change</h3><p>When serum osmolality falls, water enters brain cells and causes cerebral edema (headache, vomiting, confusion, seizures, coma). Over about 48 hours, brain cells adapt by exporting potassium and organic osmolytes (such as myo-inositol, taurine and glutamine). After this adaptation, rapid correction shrinks cells that cannot re-accumulate osmolytes quickly, damaging oligodendrocytes and myelin: <strong>osmotic demyelination syndrome</strong>, with dysarthria, dysphagia, quadriparesis or a locked-in state appearing 2–6 days after the correction. Alcohol use disorder, malnutrition, hypokalemia, liver disease and a starting sodium of 105 mEq/L or less raise the risk.</p><h3>Hypernatremia</h3><p>Hypernatremia is a water deficit relative to sodium. Because thirst is so powerful, it occurs mainly in people who cannot drink or ask for water: infants, older adults with dementia or delirium, intubated patients. Causes are water loss (insensible losses, osmotic diuresis from glucose or urea, diabetes insipidus, diarrhea) or, rarely, sodium gain (hypertonic saline or bicarbonate, salt ingestion). Brain cells shrink, and the brain then gains osmolytes, so overly fast correction of chronic hypernatremia causes cerebral edema.</p><div class=\"trap\"><p><strong>Exam trap:</strong> the serum sodium concentration says nothing about total body sodium. A patient with heart failure has too much sodium and still more water; a patient with diarrhea has too little of both. Judge volume from the examination, not the sodium.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Sodium tells you about water; volume tells you about sodium.</em>\"</p></div>[[figure:s23c-fig160701-1]]",
+   "figureIds": [
+    "s23c-fig160701-1"
+   ],
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hyponatremia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470386/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypernatremia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441960/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Central Pontine Myelinolysis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK551697/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Fluid and Electrolyte Balance",
+     "url": "https://medlineplus.gov/fluidandelectrolytebalance.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160701-1-2",
+   "exam": "step1",
+   "heading": "Potassium, calcium, phosphate and magnesium: physiology and causes",
+   "html": "<h3>Potassium: shifts and excretion</h3><p>About 98% of body potassium is inside cells, held there by the <span class=\"hy\">Na⁺/K⁺-ATPase</span>, so small shifts change the serum level a lot.</p><table><tr><th>Moves potassium into cells (lowers serum K⁺)</th><th>Moves potassium out of cells (raises serum K⁺)</th></tr><tr><td>Insulin</td><td>Insulin deficiency, hyperglycemia and other hyperosmolality (solvent drag)</td></tr><tr><td>β2-adrenergic agonists (albuterol, epinephrine), theophylline</td><td>β-blockers (small effect)</td></tr><tr><td>Alkalosis</td><td>Metabolic acidosis from mineral acids (normal anion gap)</td></tr><tr><td>Refeeding, vitamin B12 therapy for megaloblastic anemia (new cells)</td><td>Cell breakdown: rhabdomyolysis, tumor lysis, hemolysis, crush injury</td></tr><tr><td>Hypokalemic periodic paralysis (often with thyrotoxicosis)</td><td>Digoxin toxicity (blocks Na⁺/K⁺-ATPase); succinylcholine with denervation, burns or crush injury</td></tr></table><p>The kidney sets long-term balance. Potassium is secreted by principal cells of the collecting duct through ROMK channels, driven by <strong>aldosterone</strong> (more ENaC and Na⁺/K⁺-ATPase) and by <strong>distal sodium delivery and flow</strong>. That is why loop and thiazide diuretics waste potassium, and why ACE inhibitors, ARBs, spironolactone, amiloride, trimethoprim, heparin and calcineurin inhibitors cause hyperkalemia.</p><h3>Sorting out hypokalemia</h3><table><tr><th>Setting</th><th>Urine K⁺</th><th>Acid-base</th></tr><tr><td>Diarrhea, laxative misuse</td><td>Low (kidney conserves)</td><td>Normal anion gap metabolic acidosis</td></tr><tr><td>Vomiting or nasogastric suction</td><td>High while bicarbonate is spilled (aldosterone plus bicarbonaturia)</td><td>Metabolic alkalosis</td></tr><tr><td>Loop or thiazide diuretics; Bartter, Gitelman</td><td>High</td><td>Metabolic alkalosis</td></tr><tr><td>Mineralocorticoid excess (primary aldosteronism, licorice, Liddle)</td><td>High</td><td>Metabolic alkalosis with hypertension</td></tr><tr><td>Distal or proximal RTA, amphotericin B</td><td>High</td><td>Normal anion gap metabolic acidosis</td></tr></table><p>A spot urine potassium below about 15–20 mEq/L (or a urine potassium-to-creatinine ratio below about 13 mEq/g) points to extrarenal loss or a shift; higher values point to renal wasting. Hypokalemia causes weakness, cramps, constipation or ileus, rhabdomyolysis when severe, polyuria (nephrogenic diabetes insipidus) and ECG changes: flattened T waves, ST depression and prominent <strong>U waves</strong>, with a risk of arrhythmia, especially with digoxin.</p><h3>Hyperkalemia</h3><p>Hyperkalemia lowers the resting membrane potential toward threshold, which first speeds repolarisation (<span class=\"hy\">tall peaked T waves</span>) and then inactivates sodium channels and slows conduction: flattened P waves, longer PR, widened QRS, and finally a sine-wave pattern, ventricular fibrillation or asystole. <strong>Pseudohyperkalemia</strong> is potassium released in the tube: hemolysis during a difficult draw, fist clenching, or very high platelet or leukocyte counts.</p>[[figure:s23c-fig160701-2]]<h3>Calcium</h3><p>About 40% of serum calcium is bound to albumin, and only the ionized fraction is active. Correct the total calcium for a low albumin by adding <span class=\"hy\">about 0.8 mg/dL</span> for each 1 g/dL that albumin is below 4 g/dL, or measure ionized calcium. <strong>Alkalosis</strong> (for example from hyperventilation) frees negative binding sites on albumin, which then bind more calcium, so ionized calcium falls and tingling or carpopedal spasm appear with a normal total calcium. Hypocalcemia causes perioral and fingertip paresthesia, Chvostek and Trousseau signs, tetany, seizures and a long QT interval; hypercalcemia shortens QT.</p><h3>Phosphate</h3><p>Phosphate supplies ATP and red-cell 2,3-bisphosphoglycerate. <strong>Refeeding</strong> after starvation releases insulin, which drives glucose, phosphate, potassium and magnesium into cells for glycolysis and protein synthesis; the serum phosphate can fall to dangerous levels within 2–4 days, causing muscle weakness, respiratory failure, rhabdomyolysis, hemolysis and heart failure. Other causes of hypophosphatemia include respiratory alkalosis, DKA treatment, hyperparathyroidism and Fanconi syndrome. Hyperphosphatemia comes from CKD, tumor lysis, rhabdomyolysis and phosphate enemas, and it lowers calcium by precipitation.</p><h3>Magnesium</h3><p>Hypomagnesemia follows poor intake and alcohol use, diarrhea, long-term proton pump inhibitors (reduced intestinal absorption through <span class=\"hy\">TRPM6</span> channels), loop and thiazide diuretics, and tubular toxins (aminoglycosides, amphotericin B, cisplatin). It has two linked effects worth knowing:</p><ul><li><strong>Refractory hypokalemia</strong>: intracellular magnesium normally blocks <span class=\"hy\">outward potassium flow through ROMK</span>; without it, the collecting duct wastes potassium until magnesium is replaced.</li><li><strong>Refractory hypocalcemia</strong>: severe magnesium deficiency impairs PTH secretion and causes end-organ PTH resistance.</li></ul><p>It also causes tremor, tetany, arrhythmias and torsades de pointes.</p><div class=\"trap\"><p><strong>Exam trap:</strong> if potassium or calcium will not stay up despite replacement, check (and replace) magnesium first.</p></div>",
+   "figureIds": [
+    "s23c-fig160701-2"
+   ],
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hypokalemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482465/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hyperkalemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470284/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypocalcemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK430912/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypophosphatemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK493172/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypomagnesemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK500003/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160701-2-1",
+   "exam": "step2ck",
+   "heading": "Sodium and water: approach, fluids and safe correction",
+   "html": "<h3>Hyponatremia: a working sequence</h3><ol><li><strong>How sick is the patient?</strong> Severe symptoms (seizure, coma, vomiting with confusion, respiratory arrest) need hypertonic saline <em>now</em>, whatever the cause.</li><li><strong>Is it hypotonic?</strong> Measure serum osmolality and glucose to exclude pseudohyponatremia and hyperglycemia.</li><li><strong>Urine osmolality</strong>: <span class=\"hy\">below about 100 mOsm/kg</span> means ADH is off (primary polydipsia, low solute intake).</li><li><strong>Volume status and urine sodium</strong>: a urine sodium <span class=\"hy\">below about 30 mEq/L</span> suggests low effective arterial volume (hypovolemia, heart failure, cirrhosis); above 30 with euvolemia suggests SIADH, diuretics, adrenal insufficiency or hypothyroidism. Check TSH and morning cortisol before calling it SIADH.</li></ol><h3>Treatment</h3><table><tr><th>Situation</th><th>Approach</th></tr><tr><td>Severe symptoms</td><td><span class=\"hy\">100–150 mL of 3% saline</span> over about 10 minutes, repeated up to two more times as needed, aiming for a rise of 4–6 mEq/L, which usually stops seizures; then hold further correction within the daily limit</td></tr><tr><td>Hypovolemic</td><td>Isotonic crystalloid; stop the diuretic. Once volume is restored, ADH switches off and a brisk dilute diuresis can raise sodium fast</td></tr><tr><td>Euvolemic (SIADH)</td><td>Fluid restriction; treat the cause; add oral salt with a loop diuretic, or oral urea; vasopressin-receptor antagonists in selected patients by specialists</td></tr><tr><td>Hypervolemic</td><td>Fluid restriction, loop diuretic, treatment of heart failure or cirrhosis</td></tr><tr><td>Primary polydipsia, beer potomania</td><td>Stop the excess water or restore solute (food); watch for rapid self-correction</td></tr></table><p><strong>Correction limits for chronic hyponatremia</strong> (present more than 48 hours or unknown duration): aim for a rise of no more than about <strong>8 mEq/L in any 24 hours</strong> when the risk of osmotic demyelination is high (sodium 105 mEq/L or less, alcohol use disorder, malnutrition, hypokalemia, advanced liver disease), and no more than about 10–12 mEq/L in 24 hours otherwise. Check sodium every 2–4 hours during active correction, and watch urine output. If the limit is exceeded or about to be, stop the saline, give electrolyte-free water (5% dextrose in water), and consider desmopressin to stop the water diuresis; relowering is reasonable after an overcorrection. Potassium replacement also raises the sodium.</p><h3>Hypernatremia</h3><p>First restore circulation with isotonic fluid if the patient is hypotensive. Then replace free water, by mouth or tube if possible, or as 5% dextrose in water. Estimate the free water deficit as total body water × (serum sodium/140 − 1), and add ongoing losses. Lower chronic hypernatremia by no more than about 10–12 mEq/L in 24 hours; hypernatremia that developed over a few hours (for example after a salt load) can be corrected faster. Look for and treat the cause: access to water, diabetes insipidus, osmotic diuresis.</p><h3>Choosing intravenous fluids</h3><ul><li><strong>Resuscitation</strong>: isotonic crystalloid. Balanced solutions (lactated Ringer, other buffered crystalloids) avoid the hyperchloremic metabolic acidosis that large volumes of 0.9% saline cause and are reasonable defaults for most adults; saline is preferred in hypochloremic alkalosis and is often chosen in traumatic brain injury.</li><li><strong>Maintenance</strong> in hospitalised patients, including children: use <strong>isotonic</strong> fluid with dextrose and potassium as needed. Hypotonic maintenance fluid causes <span class=\"hy\">hospital-acquired hyponatremia</span> because illness, pain, nausea, surgery and drugs all raise ADH.</li><li>Reassess weight, intake and output, and electrolytes daily; stop IV fluids once the patient can drink.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> giving 0.9% saline to a patient with SIADH can make the sodium <em>fall</em>: the kidney excretes the salt in concentrated urine and keeps the water.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hyponatremia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470386/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypernatremia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441960/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Central Pontine Myelinolysis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK551697/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Fluid and Electrolyte Balance",
+     "url": "https://medlineplus.gov/fluidandelectrolytebalance.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160701-2-2",
+   "exam": "step2ck",
+   "heading": "Potassium, calcium, phosphate and magnesium: management",
+   "html": "<h3>Hyperkalemia</h3><ol><li><strong>Is it real?</strong> If the result is unexpected, the ECG is normal and the sample was hemolysed or the patient has marked thrombocytosis or leukocytosis, repeat it promptly on a carefully drawn sample (a heparinised whole-blood or plasma sample avoids release from platelets during clotting). Never delay treatment when the ECG is abnormal.</li><li><strong>Get an ECG.</strong></li><li><strong>Stabilise the heart</strong> when there are ECG changes or the level is severe: IV calcium gluconate (calcium chloride through a central line). It works within minutes, lasts about 30–60 minutes, can be repeated, and does not lower potassium.</li><li><strong>Shift potassium into cells</strong>: IV regular insulin (<span class=\"hy\">usually 5–10 units</span>) with dextrose unless the glucose is already high, then glucose checks for hours (hypoglycemia is common, especially in kidney failure); nebulised high-dose albuterol as an add-on; sodium bicarbonate only if there is metabolic acidosis.</li><li><strong>Remove potassium from the body</strong>: loop diuretic if the kidneys respond; oral binders (<span class=\"hy\">sodium zirconium cyclosilicate</span> works within hours; patiromer is slower and suits chronic use; sodium polystyrene sulfonate is less favoured because of bowel injury); <strong>hemodialysis</strong> for kidney failure, refractory or life-threatening cases.</li><li><strong>Find and stop the cause</strong>: potassium supplements and salt substitutes, ACE inhibitors, ARBs, mineralocorticoid antagonists, NSAIDs, trimethoprim, heparin; tissue breakdown; adrenal insufficiency.</li></ol><h3>Hypokalemia</h3><ul><li>Oral potassium chloride is preferred when the patient can swallow and has no severe symptoms; IV for severe deficit, ECG changes or no oral route. Peripheral IV potassium is limited (<span class=\"hy\">commonly 10 mEq per hour</span>) because of vein pain and arrhythmia risk; faster rates need a central line and monitoring.</li><li>Mix IV potassium in <span class=\"hy\">saline rather than dextrose</span>, which raises insulin and drives potassium into cells.</li><li>Replace magnesium at the same time; hypokalemia does not correct otherwise.</li><li>A total body deficit is large: very roughly, each 1 mEq/L fall below 3.5 reflects a deficit of a few hundred milliequivalents.</li></ul><h3>Hypocalcemia</h3><p>Confirm with an ionized calcium or a corrected total. <strong>Acute symptomatic</strong> hypocalcemia (tetany, seizures, laryngospasm, long QT) is treated with IV calcium gluconate, given slowly with cardiac monitoring, followed by an infusion if needed. Correct magnesium first or alongside. Citrate in large-volume transfusion and apheresis chelates calcium and lowers the ionized fraction; other acute causes include pancreatitis, rhabdomyolysis, tumor lysis, post-thyroidectomy and post-parathyroidectomy (hungry bone). Chronic hypocalcemia is treated with oral calcium and, when PTH is lacking, calcitriol.</p><h3>Phosphate and refeeding</h3><p>Identify patients at risk of <strong>refeeding syndrome</strong> (very low BMI, little intake for 5–10 days or more, recent weight loss, alcohol use disorder, low baseline potassium, phosphate or magnesium). Start nutrition at a modest calorie level and increase over several days, give thiamine before and during feeding, and check phosphate, potassium and magnesium daily for the first several days, replacing them as they fall. Severe hypophosphatemia (below about 1 mg/dL) or symptoms need IV phosphate.</p><h3>Magnesium</h3><p>Give IV magnesium sulfate for severe or symptomatic deficiency, arrhythmia or torsades de pointes, and oral magnesium otherwise (diarrhea limits the dose). In long-term proton pump inhibitor users with hypomagnesemia, stopping or switching the drug is part of treatment. Use caution in kidney failure, where magnesium accumulates.</p><div class=\"trap\"><p><strong>Exam trap:</strong> calcium gluconate is the first drug when hyperkalemia changes the ECG, but it does nothing to the potassium level; insulin and dextrose must follow.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hyperkalemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470284/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypokalemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482465/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypocalcemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK430912/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypophosphatemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK493172/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypomagnesemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK500003/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig160701-1",
+   "caption": "Figure. A stepwise approach to hyponatremia: exclude pseudohyponatremia and hypertonic causes, use urine osmolality to see whether ADH is acting, then sort by volume status and urine sodium.",
+   "file": "figures/s23c-fig160701-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  },
+  {
+   "id": "s23c-fig160701-2",
+   "caption": "Figure. Schematic ECG changes as serum potassium rises: peaked T waves, then flattened P waves, a longer PR interval and a wider QRS, then a sine-wave pattern.",
+   "file": "figures/s23c-fig160701-2.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set160701-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Seizure and a sodium of 112",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q160701-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>In a physiology study, a healthy 70-kg man receives 2 L of 0.9% sodium chloride intravenously over 30 minutes. Before the infusion his serum sodium is 140 mEq/L and serum osmolality 288 mOsm/kg. Assuming he passes no urine during the study, which of the following best describes the changes immediately after the infusion?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Extracellular volume up; intracellular volume unchanged; serum osmolality unchanged"
+    },
+    {
+     "label": "B",
+     "html": "Extracellular volume up; intracellular volume down; serum osmolality up"
+    },
+    {
+     "label": "C",
+     "html": "Extracellular volume up; intracellular volume up; serum osmolality down"
+    },
+    {
+     "label": "D",
+     "html": "Extracellular volume unchanged; intracellular volume up; serum osmolality down"
+    },
+    {
+     "label": "E",
+     "html": "Extracellular and intracellular volumes up equally; serum osmolality unchanged"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>0.9% saline (about 308 mOsm/L) is close to isotonic with plasma. The sodium stays outside cells because of the Na⁺/K⁺-ATPase, so the infused volume stays in the extracellular fluid, and with no osmotic gradient there is no water shift: cells keep their volume and plasma osmolality is essentially unchanged.</p><p><strong>Takeaway:</strong> isotonic crystalloid expands only the extracellular fluid; free water (5% dextrose) spreads across all compartments.</p>",
+   "whyNot": {
+    "B": "This pattern follows a hypertonic infusion such as 3% saline, which pulls water out of cells.",
+    "C": "Cell swelling with falling osmolality follows a hypotonic load such as free water.",
+    "D": "Expansion of cells alone would need water entering cells without any change outside, which no infusion produces.",
+    "E": "Equal expansion of both compartments would need water distributing freely, which is what 5% dextrose does after its glucose is metabolised."
+   },
+   "objective": "Predict how an isotonic saline infusion changes extracellular volume, intracellular volume and osmolality.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "body fluid compartments"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-1-02",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 68-year-old man has back pain and fatigue. Laboratory studies show:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>127 mEq/L</td></tr><tr><td>Potassium</td><td>4.3 mEq/L</td></tr><tr><td>Glucose</td><td>92 mg/dL</td></tr><tr><td>Urea nitrogen (BUN)</td><td>20 mg/dL</td></tr><tr><td>Total protein</td><td>12.4 g/dL</td></tr><tr><td>Albumin</td><td>3.2 g/dL</td></tr><tr><td>Calcium, total</td><td>11.1 mg/dL</td></tr><tr><td>Osmolality, serum (measured)</td><td>289 mOsm/kg</td></tr></table><p>Serum protein electrophoresis shows an M spike. A blood gas analyser that measures sodium directly in undiluted whole blood reports 139 mEq/L. Which of the following best explains the low sodium on the routine chemistry panel?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Water moving out of cells into the extracellular fluid"
+    },
+    {
+     "label": "B",
+     "html": "Displacement of plasma water by the excess protein in a diluted sample"
+    },
+    {
+     "label": "C",
+     "html": "Inappropriate secretion of antidiuretic hormone"
+    },
+    {
+     "label": "D",
+     "html": "Sodium lost in the urine because of tubular injury"
+    },
+    {
+     "label": "E",
+     "html": "Binding of sodium ions by the monoclonal protein"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A normal measured osmolality with a low sodium on the main analyser, but a normal sodium on direct measurement, is <strong>pseudohyponatremia</strong>. Routine analysers dilute the sample before measuring (indirect ion-selective electrode) and assume that plasma is about 93% water. Very high protein (here a paraprotein) or lipid occupies more of the plasma volume, so the calculated concentration is falsely low even though the sodium concentration in plasma water is normal.</p><p><strong>Takeaway:</strong> low sodium with normal measured osmolality and very high protein or lipids is a laboratory artifact; confirm with a direct electrode.</p>",
+   "whyNot": {
+    "A": "Water shifts out of cells when an effective osmole such as glucose is high, which raises osmolality; glucose and osmolality are normal here.",
+    "C": "SIADH causes true hypotonic hyponatremia with a low measured osmolality and a low direct sodium.",
+    "D": "Renal sodium loss would lower the sodium on every method and lower osmolality.",
+    "E": "Paraproteins do not bind enough sodium to lower it; the direct measurement is normal."
+   },
+   "objective": "Recognise pseudohyponatremia from a paraprotein by a normal measured osmolality and a normal direct sodium.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "pseudohyponatremia",
+    "multiple myeloma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 24-year-old woman is brought to the emergency department during a panic attack. She has been breathing rapidly for 20 minutes and now has tingling around her mouth and in her fingertips, and her wrists flex involuntarily when a blood pressure cuff is inflated. Total serum calcium is 9.4 mg/dL and serum albumin 4.2 g/dL. Which of the following best explains her symptoms?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "A fall in parathyroid hormone secretion"
+    },
+    {
+     "label": "B",
+     "html": "Increased binding of calcium to albumin"
+    },
+    {
+     "label": "C",
+     "html": "Increased calcium excretion in the urine"
+    },
+    {
+     "label": "D",
+     "html": "Movement of calcium into bone"
+    },
+    {
+     "label": "E",
+     "html": "Precipitation of calcium with phosphate"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Hyperventilation causes acute <strong>respiratory alkalosis</strong>. As hydrogen ions leave albumin, more negatively charged binding sites become available, albumin binds more calcium, and the <strong>ionized</strong> calcium falls even though the total is normal. Low ionized calcium makes nerves excitable: perioral paresthesia, carpopedal spasm and a positive Trousseau sign.</p><p><strong>Takeaway:</strong> alkalosis lowers ionized calcium by increasing its binding to albumin; total calcium can stay normal.</p>",
+   "whyNot": {
+    "A": "PTH would rise, not fall, in response to a lower ionized calcium.",
+    "C": "Twenty minutes of hyperventilation does not cause meaningful urinary calcium loss.",
+    "D": "Bone uptake of calcium happens over days to weeks (for example hungry bone syndrome), not minutes.",
+    "E": "Calcium-phosphate precipitation needs a high phosphate, as in tumor lysis or kidney failure."
+   },
+   "objective": "Explain how alkalosis lowers ionized calcium with a normal total calcium.",
+   "areas": [
+    "usmle2026.16.07.01",
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ionized calcium",
+    "respiratory alkalosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 56-year-old man drinks about 12 cans of beer a day and has eaten very little for 3 weeks. He is brought in because of confusion. He is not orthostatic and has no edema. Serum sodium is 114 mEq/L, potassium 3.2 mEq/L, glucose 82 mg/dL and BUN 4 mg/dL. Serum osmolality is 238 mOsm/kg. Urine osmolality is 64 mOsm/kg. Which of the following best explains his hyponatremia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Increased secretion of antidiuretic hormone from the posterior pituitary"
+    },
+    {
+     "label": "B",
+     "html": "Increased sodium loss from the thick ascending limb"
+    },
+    {
+     "label": "C",
+     "html": "Insufficient solute to carry free water into the urine"
+    },
+    {
+     "label": "D",
+     "html": "Resistance of the collecting duct to aldosterone"
+    },
+    {
+     "label": "E",
+     "html": "Water reabsorption through aquaporin-2 in the collecting duct"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A maximally dilute urine (about 64 mOsm/kg) shows that ADH is suppressed, so the kidney is trying to excrete water. The limit is solute: urine volume equals solute excreted divided by urine osmolality. Beer supplies water and carbohydrate but almost no protein or salt, so daily solute may be only about 200–300 mOsm, allowing perhaps 3–5 L of urine. Drinking more than that dilutes the serum (<strong>beer potomania</strong>, low solute intake). When he eats again, solute rises, urine output surges, and sodium can correct dangerously fast.</p><p><strong>Takeaway:</strong> hyponatremia with urine osmolality below about 100 mOsm/kg means ADH is off: primary polydipsia or low solute intake.</p>",
+   "whyNot": {
+    "A": "ADH action would make the urine concentrated, well above 100 mOsm/kg.",
+    "B": "Loop-type sodium wasting causes volume depletion with a higher urine osmolality.",
+    "D": "Aldosterone resistance causes salt wasting and hyperkalemia; his potassium is low.",
+    "E": "Water reabsorption through aquaporin-2 needs ADH and would concentrate the urine."
+   },
+   "objective": "Explain hyponatremia from low solute intake using urine osmolality.",
+   "areas": [
+    "usmle2026.16.07.01",
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "beer potomania"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old man with asthma receives three back-to-back nebulised albuterol treatments in the emergency department. His wheezing improves. Serum potassium was 4.1 mEq/L on arrival and is 3.1 mEq/L 2 hours later. He has not vomited or passed much urine, and he has taken no diuretics. Which of the following best explains the change in potassium?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activation of the Na⁺/K⁺-ATPase in skeletal muscle"
+    },
+    {
+     "label": "B",
+     "html": "Increased aldosterone secretion by the adrenal cortex"
+    },
+    {
+     "label": "C",
+     "html": "Inhibition of the ROMK channel in the collecting duct"
+    },
+    {
+     "label": "D",
+     "html": "Potassium loss through sweating"
+    },
+    {
+     "label": "E",
+     "html": "Respiratory acidosis moving potassium into cells"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>β2-adrenergic agonists raise cAMP in skeletal muscle and stimulate the <strong>Na⁺/K⁺-ATPase</strong>, moving potassium from the extracellular fluid into cells within minutes. Total body potassium is unchanged; the level returns as the drug wears off. The same mechanism makes nebulised albuterol a treatment for hyperkalemia.</p><p><strong>Takeaway:</strong> β2 agonists and insulin lower serum potassium by shifting it into cells through the Na⁺/K⁺-ATPase.</p>",
+   "whyNot": {
+    "B": "Aldosterone raises renal potassium excretion over hours to days; there is no stimulus for it here and little urine output.",
+    "C": "Blocking ROMK would reduce potassium secretion and raise serum potassium.",
+    "D": "Sweat losses of potassium are small and would not lower the level this quickly.",
+    "E": "Acidosis shifts potassium out of cells, not in."
+   },
+   "objective": "Explain transcellular potassium shift caused by β2-adrenergic agonists.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypokalemia",
+    "albuterol"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-1-06",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 71-year-old woman has taken omeprazole daily for 9 years. For 3 weeks she has had muscle cramps and palpitations. Despite oral potassium chloride for 2 weeks, her potassium remains low. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>138 mEq/L</td></tr><tr><td>Potassium</td><td>2.9 mEq/L</td></tr><tr><td>Bicarbonate</td><td>26 mEq/L</td></tr><tr><td>Calcium, total</td><td>7.6 mg/dL</td></tr><tr><td>Albumin</td><td>4.0 g/dL</td></tr><tr><td>Magnesium</td><td>0.7 mEq/L</td></tr><tr><td>Creatinine</td><td>0.9 mg/dL</td></tr></table><p>Urine potassium is inappropriately high. Which of the following best explains why her potassium has failed to rise?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Increased aldosterone secretion"
+    },
+    {
+     "label": "B",
+     "html": "Increased potassium flow through ROMK channels in the collecting duct"
+    },
+    {
+     "label": "C",
+     "html": "Inhibition of the NKCC2 cotransporter in the thick ascending limb"
+    },
+    {
+     "label": "D",
+     "html": "Loss of potassium in the stool"
+    },
+    {
+     "label": "E",
+     "html": "Movement of potassium into cells by insulin"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Long-term proton pump inhibitors can reduce intestinal magnesium absorption (through TRPM6 channels) and cause severe hypomagnesemia. Intracellular magnesium normally blocks outward potassium movement through <strong>ROMK channels</strong> in principal cells. Without it, potassium leaks into the tubular fluid, so the kidney wastes potassium until magnesium is replaced. Magnesium deficiency also impairs PTH release and action, which explains her low calcium.</p><p><strong>Takeaway:</strong> hypokalemia (and hypocalcemia) that resists replacement suggests hypomagnesemia; replace magnesium first.</p>",
+   "whyNot": {
+    "A": "Nothing here points to mineralocorticoid excess: she is normotensive and bicarbonate is normal.",
+    "C": "NKCC2 inhibition (as with loop diuretics or Bartter syndrome) would cause metabolic alkalosis; it is not a PPI effect.",
+    "D": "A high urine potassium shows renal, not gastrointestinal, loss.",
+    "E": "Insulin shifts are short-lived and would not explain persistent renal potassium wasting."
+   },
+   "objective": "Explain refractory hypokalemia and hypocalcemia caused by PPI-associated hypomagnesemia.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypomagnesemia",
+    "proton pump inhibitor"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 17-year-old girl with anorexia nervosa (BMI 13.6 kg/m²) is admitted and started on nasogastric feeding. On the third day she becomes weak and short of breath, and her creatinine kinase is rising. Serum phosphorus is 0.9 mg/dL (it was 3.4 mg/dL on admission), potassium 3.0 mEq/L and magnesium 1.2 mEq/L. Which of the following best explains the fall in phosphorus?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Increased intestinal binding of dietary phosphate"
+    },
+    {
+     "label": "B",
+     "html": "Increased renal phosphate excretion caused by parathyroid hormone"
+    },
+    {
+     "label": "C",
+     "html": "Insulin-driven uptake of phosphate into cells for carbohydrate metabolism"
+    },
+    {
+     "label": "D",
+     "html": "Loss of phosphate in diarrheal stool"
+    },
+    {
+     "label": "E",
+     "html": "Precipitation of calcium phosphate in soft tissues"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is <strong>refeeding syndrome</strong>. Carbohydrate stimulates insulin, which drives glucose, phosphate, potassium and magnesium into cells; phosphate is consumed in phosphorylated glycolytic intermediates and ATP. Body stores are already depleted after starvation, so the serum level falls sharply, typically within 2–4 days. Low ATP and 2,3-bisphosphoglycerate cause weakness, respiratory muscle failure, rhabdomyolysis, hemolysis and heart failure.</p><p><strong>Takeaway:</strong> refeeding hypophosphatemia comes from insulin-driven cellular uptake of phosphate on depleted stores.</p>",
+   "whyNot": {
+    "A": "Feeding increases phosphate intake; intestinal binding needs a binder drug such as an antacid or sevelamer.",
+    "B": "Nothing suggests hyperparathyroidism; the fall is too rapid and is tied to feeding.",
+    "D": "She has no diarrhea, and stool losses would not explain the timing.",
+    "E": "Precipitation lowers phosphate only when phosphate and calcium are high, as in tumor lysis."
+   },
+   "objective": "Explain the mechanism of hypophosphatemia in refeeding syndrome.",
+   "areas": [
+    "usmle2026.16.07.01",
+    "usmle2026.16.04.05",
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "refeeding syndrome",
+    "hypophosphatemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-2-01",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 78-year-old woman is brought to the emergency department after a generalized seizure at home. Three weeks ago hydrochlorothiazide was started for hypertension. She weighs 48 kg. She is now drowsy but arousable, and she vomits once. Blood pressure is 136/78 mm Hg and pulse 88/min. Serum sodium is 112 mEq/L, potassium 2.9 mEq/L, glucose 104 mg/dL and creatinine 0.7 mg/dL. Serum osmolality is 236 mOsm/kg. Which of the following is the most appropriate immediate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bolus of 3% saline over 10 minutes"
+    },
+    {
+     "label": "B",
+     "html": "Infusion of 0.9% saline at 200 mL per hour"
+    },
+    {
+     "label": "C",
+     "html": "Fluid restriction to 800 mL per day"
+    },
+    {
+     "label": "D",
+     "html": "Oral tolvaptan starting today"
+    },
+    {
+     "label": "E",
+     "html": "Urgent hemodialysis tonight"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A seizure and vomiting with a sodium of 112 mEq/L are <strong>severe symptoms</strong> of hyponatremia, so the first step is a bolus of <strong>hypertonic (3%) saline</strong>, about 100–150 mL over 10 minutes, repeated up to twice more if needed. A rise of 4–6 mEq/L is usually enough to reverse cerebral edema. The thiazide is stopped, and the sodium is then checked every 2–4 hours because her risk of osmotic demyelination is high (sodium below 120, hypokalemia, low body weight).</p><p><strong>Takeaway:</strong> severe neurologic symptoms of hyponatremia need a 3% saline bolus first, whatever the cause.</p>",
+   "whyNot": {
+    "B": "Isotonic saline works too slowly for a seizing patient and is unpredictable; it does not replace the hypertonic bolus.",
+    "C": "Fluid restriction takes days to act and is for mild, chronic, euvolemic hyponatremia.",
+    "D": "Vasopressin antagonists are slow, unpredictable and risk overcorrection; they have no role in acute severe symptoms.",
+    "E": "Dialysis is not needed; she has normal kidney function."
+   },
+   "objective": "Treat severely symptomatic hyponatremia with a hypertonic saline bolus.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hyponatremia",
+    "thiazide"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set160701-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q160701-2-02",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>She received two 100-mL boluses of 3% saline, potassium replacement and no further hydrochlorothiazide. Her seizures stopped. Over the next 8 hours she passes 2.4 L of pale urine. Repeat studies:</p><table><tr><th>Time</th><th>Serum sodium</th><th>Urine osmolality</th></tr><tr><td>Arrival</td><td>112 mEq/L</td><td>310 mOsm/kg</td></tr><tr><td>2 hours</td><td>117 mEq/L</td><td>290 mOsm/kg</td></tr><tr><td>8 hours</td><td>121 mEq/L</td><td>85 mOsm/kg</td></tr></table><p>She is alert and has no new neurologic symptoms. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue the current plan and recheck sodium tomorrow morning"
+    },
+    {
+     "label": "B",
+     "html": "Give 5% dextrose in water and intravenous desmopressin"
+    },
+    {
+     "label": "C",
+     "html": "Give another 100-mL bolus of 3% saline"
+    },
+    {
+     "label": "D",
+     "html": "Start 0.9% saline at a maintenance rate"
+    },
+    {
+     "label": "E",
+     "html": "Start oral salt tablets"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Her sodium has risen 9 mEq/L in 8 hours and the urine is now dilute and plentiful, because stopping the thiazide and replacing potassium (and the volume and solute given) switched ADH off. She is at high risk of osmotic demyelination, so the daily limit of about 8 mEq/L has already been passed. The aquaresis must be stopped and the sodium held or relowered: give <strong>electrolyte-free water (5% dextrose)</strong> and <strong>desmopressin</strong>, with sodium checks every 1–2 hours.</p><p><strong>Takeaway:</strong> when chronic hyponatremia is overcorrecting, give free water and desmopressin to hold or relower the sodium.</p>",
+   "whyNot": {
+    "A": "Waiting overnight with a brisk water diuresis will let the sodium climb further and raise the risk of osmotic demyelination.",
+    "C": "More hypertonic saline is only for persistent severe symptoms; she is alert and already above the daily limit.",
+    "D": "Saline would add sodium and keep the sodium rising.",
+    "E": "Salt tablets raise the sodium further, the opposite of what is needed."
+   },
+   "objective": "Recognise overcorrection of chronic hyponatremia and use free water with desmopressin to prevent osmotic demyelination.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "osmotic demyelination",
+    "overcorrection"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set160701-1",
+   "setOrder": 2
+  },
+  {
+   "id": "s23c-q160701-2-03",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 64-year-old man with essential thrombocythemia comes for a routine visit. He feels well and takes hydroxyurea and low-dose aspirin. He takes no potassium supplements or drugs that raise potassium. Laboratory studies from a clotted (serum) sample:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>140 mEq/L</td></tr><tr><td>Potassium</td><td>6.4 mEq/L</td></tr><tr><td>Bicarbonate</td><td>25 mEq/L</td></tr><tr><td>Creatinine</td><td>0.9 mg/dL</td></tr><tr><td>Platelets</td><td>1,150,000/mm3</td></tr><tr><td>Leukocytes</td><td>8,200/mm3</td></tr></table><p>The laboratory reports no visible hemolysis. A 12-lead ECG is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Give intravenous calcium gluconate"
+    },
+    {
+     "label": "B",
+     "html": "Give intravenous insulin with dextrose"
+    },
+    {
+     "label": "C",
+     "html": "Measure potassium on a heparinised plasma or whole-blood sample"
+    },
+    {
+     "label": "D",
+     "html": "Start sodium zirconium cyclosilicate"
+    },
+    {
+     "label": "E",
+     "html": "Stop the aspirin"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Very high platelet counts release potassium from platelets as blood clots in the tube, so <strong>serum</strong> potassium is falsely high (<strong>pseudohyperkalemia</strong>). With a normal ECG, normal kidney function and no cause of true hyperkalemia, the next step is to repeat the measurement on an unclotted sample: <strong>heparinised plasma</strong> or a blood gas analyser. Treating a spurious value risks hypokalemia and hypoglycemia.</p><p><strong>Takeaway:</strong> suspect pseudohyperkalemia with marked thrombocytosis or leukocytosis, hemolysis or fist clenching; recheck on plasma before treating.</p>",
+   "whyNot": {
+    "A": "Calcium is for ECG changes or severe true hyperkalemia; the ECG is normal and the value is likely spurious.",
+    "B": "Insulin could cause hypoglycemia and hypokalemia if the potassium is in fact normal.",
+    "D": "A binder would treat a level that probably does not exist.",
+    "E": "Low-dose aspirin does not raise potassium."
+   },
+   "objective": "Recognise pseudohyperkalemia from thrombocytosis and confirm with a plasma potassium.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "pseudohyperkalemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man on hemodialysis three times a week missed his last two sessions. He has generalized weakness. Serum potassium is 7.2 mEq/L, glucose 118 mg/dL and bicarbonate 20 mEq/L. ECG shows peaked T waves and a QRS duration of 128 ms. He receives 10 mL of 10% calcium gluconate intravenously, and a repeat ECG shows a narrower QRS. The dialysis unit can start treatment in 2 hours. Which of the following is the most appropriate next step while dialysis is arranged?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous furosemide"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous regular insulin with dextrose"
+    },
+    {
+     "label": "C",
+     "html": "Oral sodium polystyrene sulfonate as the only treatment"
+    },
+    {
+     "label": "D",
+     "html": "Repeat calcium gluconate every 10 minutes until dialysis"
+    },
+    {
+     "label": "E",
+     "html": "Withhold further therapy and monitor the ECG"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Calcium stabilises the myocardium for only 30–60 minutes and does not lower potassium. The next step is to <strong>shift potassium into cells</strong> with intravenous <strong>regular insulin plus dextrose</strong> (insulin acts within 15–30 minutes and lowers potassium by roughly 0.5–1 mEq/L), with glucose checks for several hours because hypoglycemia is common in kidney failure. Nebulised albuterol can be added. Dialysis then removes the potassium.</p><p><strong>Takeaway:</strong> after calcium, give insulin with dextrose to shift potassium while arranging removal (dialysis in kidney failure).</p>",
+   "whyNot": {
+    "A": "A patient dependent on dialysis usually makes little urine, so a loop diuretic removes little potassium.",
+    "C": "Binders act over hours and are not enough alone for hyperkalemia with ECG changes.",
+    "D": "Calcium is repeated if ECG changes return, but it does not lower potassium and cannot replace a shifting agent.",
+    "E": "Potassium of 7.2 mEq/L with QRS widening is life threatening and needs active treatment."
+   },
+   "objective": "Follow membrane stabilisation with insulin and dextrose in hyperkalemia.",
+   "areas": [
+    "usmle2026.16.07.01",
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hyperkalemia",
+    "dialysis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>An 86-year-old woman with advanced dementia is brought from her care home after 4 days of poor oral intake during a viral illness. She is drowsy. Blood pressure is 124/70 mm Hg lying and 118/68 mm Hg sitting, and pulse 90/min. Mucous membranes are dry. She weighs 50 kg. Serum sodium is 162 mEq/L, potassium 4.0 mEq/L, glucose 110 mg/dL, BUN 38 mg/dL and creatinine 1.1 mg/dL. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "0.9% saline infusion until the sodium is normal"
+    },
+    {
+     "label": "B",
+     "html": "3% saline at a low rate"
+    },
+    {
+     "label": "C",
+     "html": "5% dextrose in water, aiming to lower the sodium by about 10 mEq/L over 24 hours"
+    },
+    {
+     "label": "D",
+     "html": "5% dextrose in water, aiming to normalise the sodium within 6 hours"
+    },
+    {
+     "label": "E",
+     "html": "Intranasal desmopressin"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has chronic <strong>hypernatremia</strong> from inadequate water intake and is hemodynamically stable. Her free water deficit is about 0.45 × 50 kg × (162/140 − 1) ≈ 3.5 L, plus ongoing insensible losses. Replace it with <strong>electrolyte-free water</strong> (5% dextrose intravenously, or water by tube if she can take it), lowering the sodium by no more than about 10–12 mEq/L in 24 hours to avoid cerebral edema, with frequent sodium checks.</p><p><strong>Takeaway:</strong> chronic hypernatremia: replace free water and lower sodium by no more than about 10–12 mEq/L a day.</p>",
+   "whyNot": {
+    "A": "Isotonic saline is for shock or marked hypovolemia; she is stable, and saline replaces little free water.",
+    "B": "Hypertonic saline would raise the sodium further.",
+    "D": "Correcting chronic hypernatremia within hours risks cerebral edema, seizures and death.",
+    "E": "Desmopressin treats central diabetes insipidus; she has a water deficit from poor intake, not dilute polyuria."
+   },
+   "objective": "Correct chronic hypernatremia with free water at a safe rate.",
+   "areas": [
+    "usmle2026.16.07.01",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypernatremia",
+    "geriatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 6-year-old boy weighing 20 kg is admitted with community-acquired pneumonia. He is vomiting and cannot drink, so intravenous maintenance fluids are ordered. Serum sodium is 137 mEq/L, potassium 4.1 mEq/L, glucose 96 mg/dL and creatinine 0.4 mg/dL. Which of the following is the most appropriate maintenance fluid?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "5% dextrose in water, without added salt"
+    },
+    {
+     "label": "B",
+     "html": "5% dextrose in 0.2% saline, with potassium"
+    },
+    {
+     "label": "C",
+     "html": "5% dextrose in 0.45% saline, with potassium"
+    },
+    {
+     "label": "D",
+     "html": "5% dextrose in 0.9% saline, with potassium"
+    },
+    {
+     "label": "E",
+     "html": "3% saline, without dextrose or potassium"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Pneumonia, pain, nausea and vomiting all stimulate ADH, so hypotonic maintenance fluids in hospitalised children cause <strong>hospital-acquired hyponatremia</strong>, which can lead to cerebral edema. Current pediatric guidance recommends <strong>isotonic</strong> maintenance fluid with appropriate potassium and dextrose for most hospitalised children; the same principle applies to adults.</p><p><strong>Takeaway:</strong> use isotonic maintenance fluids in hospitalised patients; hypotonic fluids plus ADH cause hyponatremia.</p>",
+   "whyNot": {
+    "A": "Dextrose in water is free water once the glucose is metabolised and quickly causes hyponatremia.",
+    "B": "This very hypotonic fluid was once standard for children and is a recognised cause of iatrogenic hyponatremia.",
+    "C": "Half-normal saline is still hypotonic and carries the same risk when ADH is high.",
+    "E": "Hypertonic saline is for symptomatic hyponatremia or raised intracranial pressure, not maintenance."
+   },
+   "objective": "Choose isotonic maintenance intravenous fluid for a hospitalised child.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "systems_based_practice"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "IV fluids",
+    "pediatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160701-2-07",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 34-year-old man with multiple trauma receives 14 units of packed red blood cells, plasma and platelets over 3 hours. He develops tingling around the mouth, and the ECG shows a corrected QT interval of 510 ms. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>139 mEq/L</td></tr><tr><td>Potassium</td><td>4.6 mEq/L</td></tr><tr><td>Calcium, total</td><td>8.0 mg/dL</td></tr><tr><td>Ionized calcium</td><td>0.78 mmol/L (N = 1.12–1.32)</td></tr><tr><td>Albumin</td><td>3.0 g/dL</td></tr><tr><td>Magnesium</td><td>1.6 mEq/L</td></tr></table><p>Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous calcium gluconate"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous magnesium sulfate alone"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous sodium bicarbonate"
+    },
+    {
+     "label": "D",
+     "html": "Oral calcium carbonate with calcitriol"
+    },
+    {
+     "label": "E",
+     "html": "Stop all further transfusion"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Massive transfusion delivers large amounts of <strong>citrate</strong> (the anticoagulant in stored blood products), which chelates calcium and lowers the <strong>ionized</strong> fraction, especially when hypoperfusion or liver injury slows citrate metabolism. Symptomatic hypocalcemia with a long QT needs <strong>IV calcium</strong> (gluconate peripherally, or chloride through a central line), with repeated ionized calcium checks during ongoing transfusion. Low ionized calcium also worsens coagulopathy and hypotension.</p><p><strong>Takeaway:</strong> massive transfusion causes citrate-induced low ionized calcium; treat symptomatic cases with IV calcium.</p>",
+   "whyNot": {
+    "B": "Magnesium is normal here; magnesium alone will not correct citrate chelation.",
+    "C": "Bicarbonate makes ionized calcium fall further by raising albumin binding.",
+    "D": "Oral calcium and calcitriol are for chronic hypocalcemia, too slow for a symptomatic patient with a long QT.",
+    "E": "Stopping transfusion in a bleeding trauma patient is unsafe; calcium is replaced alongside it."
+   },
+   "objective": "Treat citrate-induced ionized hypocalcemia during massive transfusion with IV calcium.",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypocalcemia",
+    "massive transfusion"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c160701-01",
+   "frontHtml": "Approximate share of body weight that is water, and its split between cells and extracellular fluid?",
+   "backHtml": "About 60% in a young man (less in women and older adults); two thirds inside cells, one third outside (of which a quarter is plasma).",
+   "sectionId": "s23c-s160701-1-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-02",
+   "frontHtml": "Formula for calculated serum osmolality (conventional units)?",
+   "backHtml": "2 × sodium + glucose/18 + BUN/2.8. A measured value more than about 10 mOsm/kg above it is an osmolal gap (alcohols, mannitol).",
+   "sectionId": "s23c-s160701-1-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-03",
+   "frontHtml": "Where does 1 L of isotonic crystalloid end up?",
+   "backHtml": "Entirely in the extracellular fluid, with only about a quarter staying in plasma; cell volume does not change.",
+   "sectionId": "s23c-s160701-1-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-04",
+   "frontHtml": "Why do thiazides cause hyponatremia more often than loop diuretics?",
+   "backHtml": "They block dilution in the distal convoluted tubule but leave the medullary gradient, so ADH can still concentrate urine and retain water.",
+   "sectionId": "s23c-s160701-1-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-05",
+   "frontHtml": "Hyponatremia with urine osmolality below 100 mOsm/kg: what does it mean?",
+   "backHtml": "ADH is suppressed: primary polydipsia or low solute intake (beer potomania, tea-and-toast diet).",
+   "sectionId": "s23c-s160701-1-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-06",
+   "frontHtml": "Low sodium, normal measured osmolality, very high protein or triglycerides?",
+   "backHtml": "Pseudohyponatremia, an artifact of indirect electrodes; a direct electrode (blood gas analyser) gives a normal sodium.",
+   "sectionId": "s23c-s160701-1-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-07",
+   "frontHtml": "Roughly how much does serum sodium fall per 100 mg/dL rise in glucose?",
+   "backHtml": "About 1.6–2.4 mEq/L (water drawn out of cells).",
+   "sectionId": "s23c-s160701-1-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-08",
+   "frontHtml": "Risk factors for osmotic demyelination during correction of hyponatremia?",
+   "backHtml": "Sodium 105 mEq/L or less, alcohol use disorder, malnutrition, hypokalemia, advanced liver disease.",
+   "sectionId": "s23c-s160701-1-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-09",
+   "frontHtml": "Four drugs or states that move potassium into cells?",
+   "backHtml": "Insulin, β2 agonists, alkalosis, rapid cell production (refeeding, B12 therapy).",
+   "sectionId": "s23c-s160701-1-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-10",
+   "frontHtml": "Hypokalemia with a low urine potassium and a normal anion gap acidosis?",
+   "backHtml": "Gastrointestinal loss from diarrhea or laxatives.",
+   "sectionId": "s23c-s160701-1-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-11",
+   "frontHtml": "ECG signs of hypokalemia?",
+   "backHtml": "Flattened T waves, ST depression and prominent U waves; risk of arrhythmia, especially with digoxin.",
+   "sectionId": "s23c-s160701-1-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-12",
+   "frontHtml": "Order of ECG changes as potassium rises?",
+   "backHtml": "Peaked T waves, then flat P waves and a longer PR, then a wide QRS, then a sine wave, ventricular fibrillation or asystole.",
+   "sectionId": "s23c-s160701-1-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-13",
+   "frontHtml": "Why does hyperventilation cause tingling with a normal total calcium?",
+   "backHtml": "Alkalosis increases calcium binding to albumin, lowering ionized calcium.",
+   "sectionId": "s23c-s160701-1-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-14",
+   "frontHtml": "Why does hypomagnesemia make hypokalemia refractory?",
+   "backHtml": "Low intracellular magnesium releases its block on ROMK, so the collecting duct keeps secreting potassium.",
+   "sectionId": "s23c-s160701-1-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-15",
+   "frontHtml": "Electrolytes that fall in refeeding syndrome, and why?",
+   "backHtml": "Phosphate (most dangerous), potassium and magnesium: insulin drives them into cells on top of depleted stores.",
+   "sectionId": "s23c-s160701-1-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-16",
+   "frontHtml": "Severely symptomatic hyponatremia (seizure, coma): first treatment?",
+   "backHtml": "100–150 mL 3% saline over about 10 minutes, repeated up to twice; aim for a rise of 4–6 mEq/L.",
+   "sectionId": "s23c-s160701-2-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-17",
+   "frontHtml": "Daily correction limit for chronic hyponatremia at high risk of osmotic demyelination?",
+   "backHtml": "About 8 mEq/L in any 24 hours (about 10–12 otherwise).",
+   "sectionId": "s23c-s160701-2-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-18",
+   "frontHtml": "Sodium rising too fast with a brisk dilute diuresis: what to give?",
+   "backHtml": "Electrolyte-free water (5% dextrose) plus desmopressin to stop the water diuresis.",
+   "sectionId": "s23c-s160701-2-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-19",
+   "frontHtml": "Free water deficit formula?",
+   "backHtml": "Total body water × (serum sodium/140 − 1); lower chronic hypernatremia by no more than about 10–12 mEq/L a day.",
+   "sectionId": "s23c-s160701-2-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-20",
+   "frontHtml": "Maintenance IV fluid tonicity for hospitalised children and adults?",
+   "backHtml": "Isotonic (with dextrose and potassium as needed); hypotonic fluids plus ADH cause hospital-acquired hyponatremia.",
+   "sectionId": "s23c-s160701-2-1",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-21",
+   "frontHtml": "Hyperkalemia with ECG changes: order of treatment?",
+   "backHtml": "IV calcium (stabilise), insulin plus dextrose and albuterol (shift), then remove: diuretic, binder or dialysis.",
+   "sectionId": "s23c-s160701-2-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-22",
+   "frontHtml": "Unexpected high potassium, normal ECG, platelets above 1 million/mm3: next step?",
+   "backHtml": "Repeat on heparinised plasma or whole blood (pseudohyperkalemia from platelets).",
+   "sectionId": "s23c-s160701-2-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-23",
+   "frontHtml": "Why mix IV potassium in saline rather than dextrose?",
+   "backHtml": "Dextrose raises insulin, which shifts potassium into cells and blunts the rise.",
+   "sectionId": "s23c-s160701-2-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160701-24",
+   "frontHtml": "Perioral tingling and long QT during massive transfusion: cause and treatment?",
+   "backHtml": "Citrate lowers ionized calcium; give IV calcium (gluconate peripherally, chloride centrally).",
+   "sectionId": "s23c-s160701-2-2",
+   "areas": [
+    "usmle2026.16.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

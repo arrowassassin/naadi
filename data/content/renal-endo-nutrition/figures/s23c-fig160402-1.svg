@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-label="Vitamin B12 and folate: the two cobalamin-dependent reactions, why methylmalonic acid and homocysteine separate the deficiencies">
+<title>Vitamin B12 and folate: methylmalonic acid and homocysteine</title>
+<defs><marker id="s23c-f160402-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+<text x="380" y="26" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Two reactions need vitamin B12; only one also needs folate</text>
+<rect x="20" y="48" width="350" height="250" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="195" y="72" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Cytoplasm: methionine synthase</text>
+<rect x="45" y="92" width="130" height="34" rx="6" fill="#ffffff" stroke="#334155"/>
+<text x="110" y="114" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Homocysteine</text>
+<rect x="215" y="92" width="130" height="34" rx="6" fill="#ffffff" stroke="#334155"/>
+<text x="280" y="114" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Methionine</text>
+<line x1="175" y1="109" x2="213" y2="109" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f160402-arrow)"/>
+<rect x="45" y="170" width="130" height="34" rx="6" fill="#fef3c7" stroke="#b45309"/>
+<text x="110" y="192" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">5-methyl-THF</text>
+<rect x="215" y="170" width="130" height="34" rx="6" fill="#fef3c7" stroke="#b45309"/>
+<text x="280" y="192" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">THF → DNA synthesis</text>
+<line x1="175" y1="187" x2="213" y2="187" stroke="#b45309" stroke-width="2" marker-end="url(#s23c-f160402-arrow)"/>
+<text x="195" y="148" font-family="sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle">cofactor: methylcobalamin (B12)</text>
+<text x="195" y="232" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Folate gives the methyl group; B12 carries it.</text>
+<text x="195" y="250" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Low B12 traps folate as 5-methyl-THF,</text>
+<text x="195" y="268" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">so either deficiency raises homocysteine</text>
+<text x="195" y="286" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">and causes megaloblastic anemia.</text>
+<rect x="390" y="48" width="350" height="250" rx="10" fill="#eff6ff" stroke="#334155" stroke-width="1.5"/>
+<text x="565" y="72" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Mitochondrion: methylmalonyl-CoA mutase</text>
+<rect x="405" y="92" width="150" height="34" rx="6" fill="#ffffff" stroke="#334155"/>
+<text x="480" y="114" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Methylmalonyl-CoA</text>
+<rect x="590" y="92" width="135" height="34" rx="6" fill="#ffffff" stroke="#334155"/>
+<text x="657" y="114" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Succinyl-CoA (TCA)</text>
+<line x1="555" y1="109" x2="588" y2="109" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f160402-arrow)"/>
+<text x="565" y="148" font-family="sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle">cofactor: adenosylcobalamin (B12)</text>
+<text x="565" y="178" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Folate plays no part here.</text>
+<text x="565" y="196" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Low B12: methylmalonic acid (MMA) rises,</text>
+<text x="565" y="214" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">and abnormal fatty acids enter myelin,</text>
+<text x="565" y="232" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">which helps explain the neurologic damage</text>
+<text x="565" y="250" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">(dorsal columns, lateral corticospinal tracts).</text>
+<rect x="20" y="318" width="720" height="104" rx="10" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="40" y="342" font-family="sans-serif" font-size="12" font-weight="bold" fill="#475569">PATTERN</text>
+<text x="250" y="342" font-family="sans-serif" font-size="12" font-weight="bold" fill="#475569">HOMOCYSTEINE</text>
+<text x="400" y="342" font-family="sans-serif" font-size="12" font-weight="bold" fill="#475569">MMA</text>
+<text x="520" y="342" font-family="sans-serif" font-size="12" font-weight="bold" fill="#475569">NEUROLOGIC SIGNS</text>
+<text x="40" y="366" font-family="sans-serif" font-size="12.5" fill="#0f172a">Vitamin B12 deficiency</text>
+<text x="250" y="366" font-family="sans-serif" font-size="12.5" fill="#b91c1c">High</text>
+<text x="400" y="366" font-family="sans-serif" font-size="12.5" fill="#b91c1c">High</text>
+<text x="520" y="366" font-family="sans-serif" font-size="12.5" fill="#0f172a">Common; may occur without anemia</text>
+<text x="40" y="392" font-family="sans-serif" font-size="12.5" fill="#0f172a">Folate deficiency</text>
+<text x="250" y="392" font-family="sans-serif" font-size="12.5" fill="#b91c1c">High</text>
+<text x="400" y="392" font-family="sans-serif" font-size="12.5" fill="#0f172a">Normal</text>
+<text x="520" y="392" font-family="sans-serif" font-size="12.5" fill="#0f172a">Absent (no myelin disease)</text>
+<text x="40" y="414" font-family="sans-serif" font-size="11" fill="#475569">Giving folate alone to a B12-deficient patient can correct the anemia while the nerve damage progresses.</text>
+</svg>

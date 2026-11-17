@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-label="Stepwise approach to hyponatremia: confirm hypotonicity, then urine osmolality, then volume status and urine sodium">
+<title>Approach to hyponatremia</title>
+<defs><marker id="s23c-f160701-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="760" height="520" fill="#ffffff"/>
+<rect x="250" y="14" width="260" height="44" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="380" y="34" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Low serum sodium</text>
+<text x="380" y="50" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Severe symptoms? Treat first (3% saline bolus)</text>
+<line x1="380" y1="58" x2="380" y2="80" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f160701-arrow)"/>
+<text x="380" y="96" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Step 1. Measured serum osmolality</text>
+<rect x="20" y="110" width="220" height="62" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+<text x="130" y="130" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Normal (about 275–295)</text>
+<text x="130" y="148" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Pseudohyponatremia: high lipids</text>
+<text x="130" y="164" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">or protein (lab artifact)</text>
+<rect x="520" y="110" width="220" height="62" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+<text x="630" y="130" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">High (above 295)</text>
+<text x="630" y="148" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Glucose or mannitol pulls</text>
+<text x="630" y="164" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">water out of cells</text>
+<rect x="270" y="110" width="220" height="62" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+<text x="380" y="134" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Low (below 275)</text>
+<text x="380" y="154" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">True hypotonic hyponatremia</text>
+<line x1="380" y1="172" x2="380" y2="196" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f160701-arrow)"/>
+<text x="380" y="212" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Step 2. Urine osmolality</text>
+<rect x="60" y="226" width="250" height="58" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="1.2"/>
+<text x="185" y="248" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Below 100 mOsm/kg (ADH off)</text>
+<text x="185" y="268" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Primary polydipsia; low solute intake</text>
+<rect x="450" y="226" width="250" height="58" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+<text x="575" y="248" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Above 100 mOsm/kg (ADH acting)</text>
+<text x="575" y="268" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">Go to step 3</text>
+<line x1="575" y1="284" x2="575" y2="300" stroke="#334155" stroke-width="1.5"/>
+<line x1="130" y1="300" x2="630" y2="300" stroke="#334155" stroke-width="1.5"/>
+<line x1="130" y1="300" x2="130" y2="330" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f160701-arrow)"/>
+<line x1="380" y1="300" x2="380" y2="330" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f160701-arrow)"/>
+<line x1="630" y1="300" x2="630" y2="330" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f160701-arrow)"/>
+<text x="380" y="290" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Step 3. Volume status and urine sodium</text>
+<rect x="20" y="334" width="220" height="150" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.2"/>
+<text x="130" y="356" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#7f1d1d" text-anchor="middle">Hypovolemic</text>
+<text x="32" y="378" font-family="sans-serif" font-size="11.5" fill="#0f172a">Urine Na below 30: vomiting,</text>
+<text x="32" y="394" font-family="sans-serif" font-size="11.5" fill="#0f172a">diarrhea, third spacing</text>
+<text x="32" y="414" font-family="sans-serif" font-size="11.5" fill="#0f172a">Urine Na above 30: diuretics</text>
+<text x="32" y="430" font-family="sans-serif" font-size="11.5" fill="#0f172a">(thiazides), salt wasting,</text>
+<text x="32" y="446" font-family="sans-serif" font-size="11.5" fill="#0f172a">aldosterone deficiency</text>
+<text x="32" y="470" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#0f172a">Treat: isotonic fluid</text>
+<rect x="270" y="334" width="220" height="150" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
+<text x="380" y="356" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Euvolemic</text>
+<text x="282" y="378" font-family="sans-serif" font-size="11.5" fill="#0f172a">SIADH (urine Na above 30)</text>
+<text x="282" y="398" font-family="sans-serif" font-size="11.5" fill="#0f172a">Glucocorticoid deficiency</text>
+<text x="282" y="414" font-family="sans-serif" font-size="11.5" fill="#0f172a">(secondary adrenal)</text>
+<text x="282" y="434" font-family="sans-serif" font-size="11.5" fill="#0f172a">Severe hypothyroidism</text>
+<text x="282" y="470" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#0f172a">Treat: restrict water</text>
+<rect x="520" y="334" width="220" height="150" rx="8" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="630" y="356" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#4c1d95" text-anchor="middle">Hypervolemic</text>
+<text x="532" y="378" font-family="sans-serif" font-size="11.5" fill="#0f172a">Urine Na below 30: heart</text>
+<text x="532" y="394" font-family="sans-serif" font-size="11.5" fill="#0f172a">failure, cirrhosis,</text>
+<text x="532" y="410" font-family="sans-serif" font-size="11.5" fill="#0f172a">nephrotic syndrome</text>
+<text x="532" y="430" font-family="sans-serif" font-size="11.5" fill="#0f172a">Urine Na above 30: advanced</text>
+<text x="532" y="446" font-family="sans-serif" font-size="11.5" fill="#0f172a">kidney disease</text>
+<text x="532" y="470" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#0f172a">Treat: restrict water, diuretic</text>
+<text x="20" y="508" font-family="sans-serif" font-size="11" fill="#475569">Urine sodium in mEq/L; osmolality in mOsm/kg. Correction limit for chronic hyponatremia: about 8 mEq/L in 24 h if high risk. Naadi original.</text>
+</svg>

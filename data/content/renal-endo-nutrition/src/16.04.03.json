@@ -1,0 +1,1270 @@
+{
+ "area": "usmle2026.16.04.03",
+ "sections": [
+  {
+   "id": "s23c-s160403-1-1",
+   "exam": "step1",
+   "heading": "Minerals: absorption, functions, deficiency and toxicity",
+   "html": "<p>Minerals are inorganic elements the body cannot make. Macrominerals (calcium, phosphorus, magnesium, sodium, potassium) are needed in gram amounts; trace elements (iron, zinc, copper, selenium, iodine, fluoride, chromium, manganese, molybdenum) in milligram or microgram amounts. Most deficiencies come from poor intake, malabsorption, losses (bleeding, diarrhea, fistulas) or long-term parenteral nutrition without the element; toxicity usually comes from supplements, occupational exposure or failed excretion.</p>[[figure:s23c-fig160403-1]]<h3>Iron</h3><ul><li><strong>Absorption</strong> happens mainly in the duodenum and proximal jejunum. Dietary ferric iron (Fe³⁺) is reduced to ferrous iron (Fe²⁺) by <span class=\"hy\">duodenal cytochrome b</span> at the brush border and enters the enterocyte through divalent metal transporter 1 (DMT1). Heme iron from meat is absorbed more efficiently by a separate route. Vitamin C and gastric acid help; phytates, tannins (tea), calcium and acid suppression reduce uptake.</li><li><strong>Export</strong> to blood goes through <strong>ferroportin</strong>, with hephaestin reoxidising iron so that transferrin can carry it.</li><li><strong>Hepcidin</strong>, made by the liver, is the master regulator: it <span class=\"hy\">binds ferroportin and causes its internalisation</span> and breakdown, trapping iron in enterocytes and macrophages. Hepcidin rises with iron loading and inflammation (IL-6) and falls with iron deficiency, hypoxia and active erythropoiesis.</li><li>There is no regulated excretion route, so overload builds up whenever absorption or transfusion exceeds small daily losses.</li></ul><table><tr><th>Pattern</th><th>Serum iron</th><th>TIBC (transferrin)</th><th>Ferritin</th><th>Hepcidin</th></tr><tr><td>Iron deficiency</td><td>Low</td><td>High</td><td>Low</td><td>Low</td></tr><tr><td>Anemia of inflammation</td><td>Low</td><td>Low or normal</td><td>Normal or high</td><td>High</td></tr><tr><td>Hereditary hemochromatosis (HFE)</td><td>High</td><td>Low</td><td>High</td><td>Inappropriately low</td></tr></table><p><strong>Acute iron poisoning</strong> (classically a toddler who swallows adult or prenatal tablets) injures the gut mucosa directly, then free iron damages mitochondria and causes anion gap metabolic acidosis, shock and hepatic necrosis; survivors can develop gastric outlet scarring weeks later. <strong>Deferoxamine</strong> chelates ferric iron to form ferrioxamine, which is excreted in urine and can turn it reddish. Activated charcoal does not bind iron.</p><h3>Zinc</h3><p>Zinc is a cofactor for hundreds of enzymes (<span class=\"hy\">alkaline phosphatase, carbonic anhydrase</span>, alcohol dehydrogenase) and for zinc-finger transcription factors; it matters for epithelial turnover, taste, wound healing, immunity and growth. <strong>Deficiency</strong> gives periorificial and acral scaly, crusted dermatitis, alopecia, diarrhea, loss of taste (hypogeusia), poor wound healing, growth failure and hypogonadism. Acquired causes include alcohol use disorder, cirrhosis, malabsorption, chronic diarrhea or high-output fistulas, and parenteral nutrition without zinc. <strong>Acrodermatitis enteropathica</strong> is the autosomal recessive form: a defect in the intestinal zinc transporter ZIP4 (<em>SLC39A4</em>) that typically appears when an infant is weaned from breast milk.</p><h3>Copper</h3><p>Copper is the cofactor of <strong>lysyl oxidase</strong> (collagen and elastin cross-links), cytochrome c oxidase, superoxide dismutase, tyrosinase (melanin), dopamine beta-hydroxylase and ceruloplasmin (a ferroxidase that helps release iron). <strong>Deficiency</strong> causes anemia, neutropenia and a myeloneuropathy that looks like vitamin B12 deficiency (dorsal column sensory ataxia, spastic gait). Common causes are gastric bypass and <strong>excess zinc</strong>: zinc induces enterocyte metallothionein, which binds copper tightly and is shed with the cell, so copper never reaches the blood. <strong>Menkes disease</strong> is an X-linked defect in the copper exporter ATP7A: low serum copper and ceruloplasmin, sparse brittle \"kinky\" hair, hypotonia, seizures, tortuous arteries and lax skin from poor lysyl oxidase activity. <strong>Wilson disease</strong> is the opposite problem: ATP7B fails to put copper into bile and ceruloplasmin, so copper accumulates in liver, brain and cornea.</p><h3>Selenium, iodine, fluoride and others</h3><table><tr><th>Element</th><th>Key role</th><th>Deficiency</th><th>Excess</th></tr><tr><td>Selenium</td><td>Glutathione peroxidase, iodothyronine deiodinases</td><td>Cardiomyopathy (Keshan disease), skeletal myopathy, white nail beds; seen with long-term parenteral nutrition</td><td>Garlic breath, hair and nail loss</td></tr><tr><td>Iodine</td><td>Thyroid hormone synthesis</td><td>Goiter (TSH-driven follicular hyperplasia), hypothyroidism; in pregnancy, congenital hypothyroidism with impaired neurodevelopment</td><td>Transient block of organification (Wolff-Chaikoff); hyperthyroidism in nodular glands (Jod-Basedow)</td></tr><tr><td>Fluoride</td><td>Hardens enamel (fluorapatite)</td><td>Dental caries</td><td>Dental fluorosis (white streaks to brown mottling) if excess during enamel formation; skeletal fluorosis with chronic high intake</td></tr><tr><td>Chromium</td><td>Supports insulin action</td><td>Glucose intolerance with long-term parenteral nutrition</td><td>Occupational (hexavalent chromium is a lung carcinogen)</td></tr><tr><td>Manganese</td><td>Mitochondrial superoxide dismutase, arginase</td><td>Rare</td><td>Parkinsonism with basal ganglia T1 hyperintensity; risk with long-term parenteral nutrition and cholestasis because manganese is <span class=\"hy\">excreted in bile</span></td></tr><tr><td>Molybdenum</td><td>Xanthine oxidase, sulfite oxidase</td><td>Rare (long-term parenteral nutrition)</td><td>Rare</td></tr></table><h3>Calcium and magnesium in the diet</h3><p>Adults need roughly 1,000–1,200 mg of calcium a day depending on age and sex, best from food; active absorption in the duodenum depends on calcitriol. <strong>Magnesium</strong> deficiency (alcohol use, diarrhea, loop or thiazide diuretics, long-term proton pump inhibitors) impairs PTH release and action, so it causes hypocalcemia that will not correct until magnesium is replaced, and it causes renal potassium wasting.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a myeloneuropathy with anemia after gastric bypass and a normal B12 and methylmalonic acid points to copper, especially if the patient takes zinc. Giving more zinc makes it worse.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Zinc locks the copper door</em>\": extra zinc builds metallothionein in the gut cell, copper gets stuck and is shed with the cell.</p></div>",
+   "figureIds": [
+    "s23c-fig160403-1"
+   ],
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Iron Deficiency and Microcytic Hypochromic Anemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560876/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Zinc Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK493231/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Acrodermatitis Enteropathica",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441835/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Menkes Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560917/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Selenium Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482260/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Minerals",
+     "url": "https://medlineplus.gov/minerals.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160403-2-1",
+   "exam": "step2ck",
+   "heading": "Minerals in practice: iron deficiency, iron poisoning, trace elements and fluoride",
+   "html": "<h3>Iron deficiency in practice</h3><ul><li><strong>Confirm</strong> with a low ferritin; a ferritin <span class=\"hy\">below about 30 ng/mL</span> is strong evidence of deficiency. In inflammation, ferritin rises as an acute-phase protein, so a higher cut-off (around 100 ng/mL) or a low transferrin saturation (below about 20%) is used.</li><li><strong>Find the cause.</strong> In menstruating patients, heavy menstrual bleeding and diet are common causes. In men and in postmenopausal women, iron deficiency needs <strong>bidirectional endoscopy</strong> (upper endoscopy and colonoscopy) to look for gastrointestinal blood loss and malignancy, plus testing for celiac disease.</li><li><strong>Oral iron</strong> is first line: one dose daily or on alternate days. A dose <span class=\"hy\">raises hepcidin for about a day</span>, so alternate-day dosing absorbs a larger share and causes fewer gastrointestinal effects. Take it apart from tea, calcium and antacids. Expect a reticulocyte rise within about a week and a hemoglobin rise of about 1–2 g/dL over the next few weeks; continue for about 3 months after hemoglobin normalises to refill stores.</li><li><strong>Intravenous iron</strong> is for intolerance or failure of oral iron, malabsorption (celiac disease, gastric bypass, active inflammatory bowel disease), ongoing losses that outpace oral repletion, chronic kidney disease (especially with ESA therapy) and the later part of pregnancy when time is short.</li></ul><h3>Acute iron poisoning</h3><p>Count elemental iron (ferrous sulfate is about 20% elemental). Ingestions <span class=\"hy\">above about 60 mg/kg</span> are potentially severe. Stages: vomiting and bloody diarrhea within hours, an apparent latent phase, then shock, anion gap metabolic acidosis and hepatic failure, and weeks later gastric outlet obstruction. Abdominal radiographs can show tablets. Give fluids and <strong>intravenous deferoxamine</strong> for systemic toxicity (shock, acidosis, altered mental status) or a very high serum iron (above about 500 µg/dL); whole bowel irrigation may help when tablets are seen. Activated charcoal does not bind iron, and ipecac is not used.</p><h3>Trace elements after bariatric surgery and on parenteral nutrition</h3><ul><li><strong>Roux-en-Y gastric bypass</strong> bypasses the duodenum and proximal jejunum, where iron, calcium and copper are absorbed, and the small pouch makes little acid and intrinsic factor. Lifelong multivitamin-mineral, calcium citrate, vitamin D, B12 and iron supplements are standard, with periodic laboratory checks.</li><li><strong>Copper deficiency</strong>: anemia, neutropenia and sensory ataxia with a normal B12. Check serum copper and ceruloplasmin; replace copper and <span class=\"hy\">stop any extra zinc</span>. Hematologic changes recover; neurologic damage may persist, so act early.</li><li><strong>Zinc deficiency</strong>: dermatitis around the mouth and on the hands and feet, hair loss, loss of taste and poor wound healing in a patient with alcohol use disorder, cirrhosis, chronic diarrhea or a high-output fistula. Replace zinc; avoid long courses of high-dose zinc, which cause copper deficiency.</li><li><strong>Parenteral nutrition</strong> must include trace elements. Selenium deficiency causes cardiomyopathy and myopathy; chromium deficiency causes <span class=\"hy\">hyperglycemia</span>; manganese accumulates with cholestasis.</li></ul><h3>Iodine and fluoride: prevention</h3><ul><li><strong>Iodine</strong>: pregnancy and lactation raise needs. Prenatal supplements containing about 150 µg of iodine a day are recommended in pregnancy and lactation where diets may fall short. Iodised salt prevents endemic goiter.</li><li><strong>Fluoride</strong>: apply fluoride varnish to primary teeth from the time they erupt, and prescribe oral fluoride supplements from 6 months of age when the household water supply is low in fluoride. Community water fluoridation is the population measure.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> iron deficiency in a 65-year-old man is gastrointestinal blood loss, and possibly colon cancer, until proven otherwise. Do not stop at prescribing iron.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.03.02.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Iron Deficiency and Microcytic Hypochromic Anemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560876/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Iron Overload and Toxicity",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK526131/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Bariatric Surgery Malnutrition Complications",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK592383/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Copper Toxicity",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK557456/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Iron",
+     "url": "https://medlineplus.gov/iron.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig160403-1",
+   "caption": "Figure. Where key nutrients are absorbed along the gut, and which segments a Roux-en-Y gastric bypass takes out of the food stream.",
+   "file": "figures/s23c-fig160403-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set160403-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Gait problems after gastric bypass",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q160403-1-01",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 58-year-old woman with long-standing active rheumatoid arthritis has fatigue. She takes no supplements. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Hemoglobin</td><td>10.4 g/dL</td></tr><tr><td>MCV</td><td>82 fL</td></tr><tr><td>Serum iron</td><td>38 µg/dL (N = 50–170)</td></tr><tr><td>Total iron-binding capacity</td><td>210 µg/dL (N = 250–400)</td></tr><tr><td>Ferritin</td><td>310 ng/mL (N = 15–150)</td></tr></table><p>Increased hepatic production of which of the following most directly explains her low serum iron?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Erythropoietin"
+    },
+    {
+     "label": "B",
+     "html": "Hepcidin"
+    },
+    {
+     "label": "C",
+     "html": "Hephaestin"
+    },
+    {
+     "label": "D",
+     "html": "Transferrin"
+    },
+    {
+     "label": "E",
+     "html": "Transferrin receptor 1"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Chronic inflammation raises IL-6, which induces hepatic <strong>hepcidin</strong>. Hepcidin binds ferroportin and causes its internalisation and degradation, so iron stays trapped in enterocytes and macrophages; serum iron falls while ferritin (storage and an acute-phase protein) stays normal or high. This is anemia of inflammation.</p><p><strong>Takeaway:</strong> hepcidin, raised by IL-6 in inflammation, blocks ferroportin and causes low serum iron with high ferritin.</p>",
+   "whyNot": {
+    "A": "Erythropoietin is made by the kidney and is relatively low for the degree of anemia in inflammation; it does not lower serum iron.",
+    "C": "Hephaestin is an enterocyte ferroxidase that helps export iron; it is not a hepatic hormone and is not raised by inflammation.",
+    "D": "Transferrin (measured as TIBC) is low here; a low carrier protein does not cause iron sequestration.",
+    "E": "Transferrin receptor 1 rises in iron deficiency to capture more iron; it is not made by the liver to block iron release."
+   },
+   "objective": "Explain anemia of inflammation through hepcidin-mediated ferroportin degradation.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.03.02.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "iron",
+    "hepcidin"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>An 8-month-old boy has had diarrhea and a red, scaly, crusted rash around his mouth, nose, anus and on his hands and feet for 6 weeks. The rash began shortly after he was weaned from breast milk to a cow's milk formula. He has patchy hair loss and is irritable. Serum alkaline phosphatase is low. A deficiency of which of the following most likely explains these findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Biotin"
+    },
+    {
+     "label": "B",
+     "html": "Copper"
+    },
+    {
+     "label": "C",
+     "html": "Iron"
+    },
+    {
+     "label": "D",
+     "html": "Selenium"
+    },
+    {
+     "label": "E",
+     "html": "Zinc"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Periorificial and acral dermatitis, diarrhea and alopecia beginning after weaning from breast milk is <strong>acrodermatitis enteropathica</strong>, an autosomal recessive defect of the intestinal zinc transporter ZIP4. Breast milk contains a zinc-binding ligand that helps absorption, so symptoms appear at weaning. Alkaline phosphatase is a zinc-dependent enzyme and is often low. Lifelong zinc supplementation corrects it.</p><p><strong>Takeaway:</strong> acral and periorificial dermatitis, diarrhea and alopecia after weaning point to zinc deficiency (ZIP4 defect).</p>",
+   "whyNot": {
+    "A": "Biotin deficiency can cause periorificial dermatitis and alopecia, but it follows raw egg white intake or biotinidase deficiency and does not lower alkaline phosphatase.",
+    "B": "Infant copper deficiency (Menkes disease) causes kinky hair, hypotonia and seizures, not acral dermatitis with diarrhea.",
+    "C": "Iron deficiency causes pallor and microcytic anemia, not a crusted periorificial rash.",
+    "D": "Selenium deficiency causes cardiomyopathy and myopathy, not this rash."
+   },
+   "objective": "Recognise acrodermatitis enteropathica as inherited zinc malabsorption.",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "disciplines": [
+    "nutrition",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "zinc",
+    "acrodermatitis enteropathica"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 66-year-old man has had progressive numbness of both feet and an unsteady gait for 5 months. For 3 years he has used large amounts of a zinc-containing denture adhesive every day. He has decreased vibration and position sense in the legs, brisk knee reflexes and a positive Romberg sign. Hemoglobin is 10.1 g/dL and leukocyte count 2,900/mm³. Serum vitamin B12 and methylmalonic acid levels are normal. Serum zinc is high and serum copper is low. Which of the following best explains his low serum copper?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Competitive inhibition of copper-dependent enzymes by zinc"
+    },
+    {
+     "label": "B",
+     "html": "Impaired biliary excretion of copper"
+    },
+    {
+     "label": "C",
+     "html": "Increased urinary loss of copper bound to zinc"
+    },
+    {
+     "label": "D",
+     "html": "Induction of enterocyte metallothionein that traps copper"
+    },
+    {
+     "label": "E",
+     "html": "Inhibition of ceruloplasmin synthesis in the liver by zinc"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Excess zinc induces <strong>metallothionein</strong> in intestinal epithelial cells. Metallothionein binds copper more avidly than zinc, so dietary copper is held in the enterocyte and lost when the cell is shed into the lumen. The resulting copper deficiency causes anemia, neutropenia and a dorsal column myeloneuropathy that mimics B12 deficiency.</p><p><strong>Takeaway:</strong> excess zinc causes copper deficiency by trapping copper in enterocyte metallothionein.</p>",
+   "whyNot": {
+    "A": "Zinc does not mainly act by blocking copper enzymes; serum copper is low because absorption fails.",
+    "B": "Impaired biliary copper excretion (Wilson disease) raises tissue copper and causes overload, not deficiency.",
+    "C": "Copper is mainly excreted in bile; zinc does not cause urinary copper wasting.",
+    "E": "Low ceruloplasmin here reflects low copper supply; zinc does not directly block hepatic ceruloplasmin synthesis."
+   },
+   "objective": "Explain zinc-induced copper deficiency through metallothionein.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.05.03.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "copper",
+    "zinc"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 3-month-old boy has hypotonia, poor feeding and seizures. His scalp hair is sparse, coarse, lightly pigmented and twisted under the microscope. His skin is lax. Serum copper and ceruloplasmin are low. Magnetic resonance angiography shows elongated, tortuous intracranial arteries. A maternal uncle died in infancy with similar findings. Reduced activity of which of the following enzymes best explains the arterial and skin findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Lysyl hydroxylase"
+    },
+    {
+     "label": "B",
+     "html": "Lysyl oxidase"
+    },
+    {
+     "label": "C",
+     "html": "Procollagen peptidase"
+    },
+    {
+     "label": "D",
+     "html": "Prolyl hydroxylase"
+    },
+    {
+     "label": "E",
+     "html": "Tyrosine hydroxylase"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is <strong>Menkes disease</strong>, an X-linked recessive defect in the copper-transporting ATPase ATP7A, which limits copper export from enterocytes and delivery to enzymes. <strong>Lysyl oxidase</strong> is copper dependent and forms the covalent cross-links of collagen and elastin; without it, arteries become tortuous and fragile and skin is lax. Low tyrosinase activity (also copper dependent) explains the pale hair.</p><p><strong>Takeaway:</strong> Menkes disease (ATP7A) lowers copper-dependent lysyl oxidase activity, weakening collagen and elastin cross-links.</p>",
+   "whyNot": {
+    "A": "Lysyl hydroxylase needs vitamin C and iron, not copper; its deficiency causes a form of Ehlers-Danlos syndrome.",
+    "C": "Procollagen peptidase cleaves procollagen ends outside the cell; its defect causes dermatosparaxis-type Ehlers-Danlos, unrelated to copper.",
+    "D": "Prolyl hydroxylase depends on vitamin C; its failure causes scurvy.",
+    "E": "Tyrosine hydroxylase makes L-dopa in catecholamine synthesis and needs iron and tetrahydrobiopterin, not copper."
+   },
+   "objective": "Link Menkes disease to impaired copper-dependent lysyl oxidase.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.16.11.01"
+   ],
+   "disciplines": [
+    "biochemistry",
+    "genetics",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "copper",
+    "Menkes"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 49-year-old woman with short bowel syndrome has received home parenteral nutrition for 3 years. A recent change in supply removed one trace element from her infusion 10 months ago. She now has exertional dyspnea, proximal muscle weakness and white nail beds. Echocardiography shows a dilated left ventricle with an ejection fraction of 30%. Coronary angiography is normal. Reduced activity of which of the following enzymes is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Catalase"
+    },
+    {
+     "label": "B",
+     "html": "Cytochrome c oxidase"
+    },
+    {
+     "label": "C",
+     "html": "Glutathione peroxidase"
+    },
+    {
+     "label": "D",
+     "html": "Superoxide dismutase"
+    },
+    {
+     "label": "E",
+     "html": "Xanthine oxidase"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Long-term parenteral nutrition without <strong>selenium</strong> causes cardiomyopathy, myopathy and whitened nails. Selenium, as selenocysteine, is part of the active site of <strong>glutathione peroxidase</strong>, which reduces hydrogen peroxide and lipid peroxides; loss of this antioxidant defence damages muscle. The same cardiomyopathy occurs in regions with selenium-poor soil (Keshan disease).</p><p><strong>Takeaway:</strong> selenium deficiency (long-term parenteral nutrition) impairs glutathione peroxidase and causes cardiomyopathy and myopathy.</p>",
+   "whyNot": {
+    "A": "Catalase is a heme (iron) enzyme and does not depend on selenium.",
+    "B": "Cytochrome c oxidase needs copper and iron; copper deficiency causes anemia and myeloneuropathy rather than this picture.",
+    "D": "Superoxide dismutase uses copper and zinc (cytosol) or manganese (mitochondria), not selenium.",
+    "E": "Xanthine oxidase uses molybdenum; its loss does not cause cardiomyopathy."
+   },
+   "objective": "Recognise selenium deficiency on parenteral nutrition and its link to glutathione peroxidase.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.16.04.05",
+    "usmle2026.08.08.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "selenium",
+    "parenteral nutrition"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old woman who grew up in a mountainous inland region where table salt is not fortified has a slowly enlarging, painless, diffusely enlarged thyroid gland. She is clinically euthyroid. Serum TSH is 6.2 µU/mL and free T4 is 0.9 ng/dL. Thyroid peroxidase antibodies are negative. Which of the following mechanisms best explains the enlargement of her gland?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Deposition of amyloid derived from calcitonin"
+    },
+    {
+     "label": "B",
+     "html": "Granulomatous inflammation after a viral infection"
+    },
+    {
+     "label": "C",
+     "html": "Lymphocytic infiltration with germinal centres"
+    },
+    {
+     "label": "D",
+     "html": "Stimulation of the TSH receptor by autoantibodies"
+    },
+    {
+     "label": "E",
+     "html": "TSH-driven hyperplasia of follicular cells"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>With too little <strong>iodine</strong>, the gland makes less hormone; the small fall in thyroid hormone raises TSH, which drives follicular cell hypertrophy and hyperplasia and enlarges the gland. Thyroid function is often kept near normal at the cost of a goiter. Iodised salt prevents endemic goiter.</p><p><strong>Takeaway:</strong> iodine deficiency causes goiter through TSH-driven follicular hyperplasia.</p>",
+   "whyNot": {
+    "B": "Granulomatous (de Quervain) thyroiditis causes a painful, tender gland after a viral illness.",
+    "C": "Lymphocytic infiltration with germinal centres is Hashimoto thyroiditis, which usually has positive TPO antibodies.",
+    "D": "TSH receptor-stimulating antibodies (Graves disease) cause hyperthyroidism with a suppressed TSH.",
+    "A": "Amyloid from calcitonin is found in medullary thyroid carcinoma, a nodule rather than a diffuse goiter."
+   },
+   "objective": "Explain goiter formation in iodine deficiency.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "iodine",
+    "goiter"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 2-year-old girl is brought to the emergency department 5 hours after she swallowed an unknown number of her mother's prenatal iron tablets. She has vomited several times and passed bloody stools. She is lethargic. Blood pressure is 70/40 mm Hg. Arterial pH is 7.18 with an anion gap of 22 mEq/L. Serum iron is 560 µg/dL. An abdominal radiograph shows several radiopaque tablets. Which of the following best describes how the most appropriate antidote works?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "It binds ferric iron to form a water-soluble complex excreted in urine"
+    },
+    {
+     "label": "B",
+     "html": "It blocks intestinal iron uptake by inhibiting DMT1"
+    },
+    {
+     "label": "C",
+     "html": "It increases hepcidin to trap absorbed iron in enterocytes"
+    },
+    {
+     "label": "D",
+     "html": "It oxidises ferrous iron to a form that cannot cross membranes"
+    },
+    {
+     "label": "E",
+     "html": "It raises transferrin synthesis to bind circulating free iron"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Severe iron poisoning with shock, metabolic acidosis and a serum iron above 500 µg/dL needs intravenous <strong>deferoxamine</strong>. Deferoxamine chelates ferric iron to form ferrioxamine, a water-soluble complex excreted by the kidneys (urine may turn reddish). Activated charcoal does not bind iron.</p><p><strong>Takeaway:</strong> deferoxamine chelates free ferric iron into ferrioxamine, which the kidneys excrete.</p>",
+   "whyNot": {
+    "B": "No antidote works by blocking DMT1, and by 5 hours much of the iron has already been absorbed.",
+    "C": "Hepcidin cannot be raised therapeutically in an emergency, and trapping iron in enterocytes would not remove circulating free iron.",
+    "D": "Changing the oxidation state of iron does not detoxify it; ferric iron is the form deferoxamine binds.",
+    "E": "Transferrin is already saturated in severe poisoning, and its synthesis cannot be raised quickly."
+   },
+   "objective": "Explain how deferoxamine treats acute iron poisoning.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.16.05.02"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "iron poisoning",
+    "deferoxamine"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 24-year-old woman has 3 months of fatigue and reduced exercise tolerance. Her periods have been heavy for 2 years, lasting 7 days with frequent pad changes. She follows a vegetarian diet. She is not pregnant. Hemoglobin is 9.8 g/dL, MCV 74 fL and ferritin 6 ng/mL (N = 15–150). Leukocyte and platelet counts are normal. Pelvic examination is normal. She will see a gynecologist about the bleeding. Which of the following is the most appropriate treatment for her anemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intramuscular iron dextran injections"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous ferric carboxymaltose today"
+    },
+    {
+     "label": "C",
+     "html": "Oral ferrous sulfate daily or on alternate days"
+    },
+    {
+     "label": "D",
+     "html": "Packed red blood cell transfusion"
+    },
+    {
+     "label": "E",
+     "html": "Vitamin B12 and folic acid supplements"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has <strong>iron deficiency anemia</strong> from heavy menstrual bleeding with a low dietary intake. She is stable and has no malabsorption or intolerance, so <strong>oral iron</strong> is first line. Daily or alternate-day dosing works; alternate-day dosing absorbs a larger share of each dose because a dose raises hepcidin for about a day. Expect a reticulocyte response in about a week and continue for about 3 months after hemoglobin normalises.</p><p><strong>Takeaway:</strong> stable iron deficiency anemia without malabsorption: oral iron first, and treat the cause.</p>",
+   "whyNot": {
+    "A": "Intramuscular iron dextran is painful, stains the skin and carries more reaction risk; it is no longer used.",
+    "B": "Intravenous iron is for intolerance or failure of oral iron, malabsorption or ongoing losses that outpace oral repletion.",
+    "D": "Transfusion is for hemodynamic instability, symptomatic severe anemia or ongoing major bleeding; she is stable.",
+    "E": "A microcytic anemia with a very low ferritin is iron deficiency, not B12 or folate deficiency."
+   },
+   "objective": "Treat uncomplicated iron deficiency anemia with oral iron.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.03.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "iron deficiency"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 67-year-old man has 2 months of exertional fatigue. He has no abdominal pain, change in bowel habit or visible blood in his stool. He takes no aspirin or NSAIDs and eats a varied diet. Hemoglobin is 10.2 g/dL, MCV 73 fL and ferritin 9 ng/mL (N = 15–150). Tissue transglutaminase IgA is negative. He has had no previous colonoscopy. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Capsule endoscopy"
+    },
+    {
+     "label": "B",
+     "html": "Fecal immunochemical test"
+    },
+    {
+     "label": "C",
+     "html": "Oral iron and repeat blood count in 3 months"
+    },
+    {
+     "label": "D",
+     "html": "Serum hemoglobin electrophoresis"
+    },
+    {
+     "label": "E",
+     "html": "Upper endoscopy and colonoscopy"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Iron deficiency in a man (or a postmenopausal woman) is due to <strong>gastrointestinal blood loss</strong> until proven otherwise, including colorectal and gastric cancer. The appropriate evaluation is <strong>bidirectional endoscopy</strong>, with iron replacement alongside. Capsule endoscopy is reserved for when both are unrevealing.</p><p><strong>Takeaway:</strong> iron deficiency in an older man needs upper endoscopy and colonoscopy, not iron alone.</p>",
+   "whyNot": {
+    "A": "Capsule endoscopy looks at the small bowel and is used after a negative upper endoscopy and colonoscopy.",
+    "B": "A negative stool test would not rule out a bleeding lesion; iron deficiency already justifies direct visualisation.",
+    "C": "Treating with iron alone could delay diagnosis of a colorectal or gastric cancer.",
+    "D": "A very low ferritin establishes iron deficiency; hemoglobinopathy testing is for microcytosis with normal iron studies."
+   },
+   "objective": "Evaluate iron deficiency in an older man with bidirectional endoscopy.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.03.02.01",
+    "usmle2026.10.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "iron deficiency",
+    "GI blood loss"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 41-year-old woman had a Roux-en-Y gastric bypass 4 years ago and has lost 45 kg. She takes a daily multivitamin. For 6 months she has taken ferrous sulfate twice daily with orange juice, as directed, without side effects. Her periods are normal. Hemoglobin is 9.6 g/dL (6 months ago 9.9 g/dL), MCV 75 fL and ferritin 7 ng/mL (N = 15–150). Upper endoscopy and colonoscopy 3 months ago were normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add vitamin C tablets to the ferrous sulfate"
+    },
+    {
+     "label": "B",
+     "html": "Change to a ferrous gluconate tablet"
+    },
+    {
+     "label": "C",
+     "html": "Give intravenous iron"
+    },
+    {
+     "label": "D",
+     "html": "Increase ferrous sulfate to four times daily"
+    },
+    {
+     "label": "E",
+     "html": "Start erythropoietin injections"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Roux-en-Y gastric bypass excludes the duodenum and proximal jejunum, the main sites of iron absorption, and the small pouch makes little acid. Her iron deficiency has persisted despite adherent oral therapy and a negative search for bleeding, which defines failure of oral iron from <strong>malabsorption</strong>. <strong>Intravenous iron</strong> is indicated.</p><p><strong>Takeaway:</strong> iron deficiency that persists on oral iron after gastric bypass (malabsorption) is an indication for IV iron.</p>",
+   "whyNot": {
+    "A": "She already takes iron with an acidic drink; extra vitamin C will not overcome the bypassed absorption site.",
+    "B": "Changing salts gives similar elemental iron to the same bypassed gut and is unlikely to help.",
+    "D": "Higher oral doses mainly add gastrointestinal side effects and raise hepcidin, which further limits absorption.",
+    "E": "Erythropoietin will not work without iron stores and is not indicated for iron deficiency."
+   },
+   "objective": "Choose intravenous iron for iron deficiency due to malabsorption after gastric bypass.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "iron deficiency",
+    "bariatric surgery"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 2-year-old boy is brought to the emergency department 4 hours after he was found with his mother's open bottle of prenatal iron tablets. He has vomited four times, the last with blood, and has had bloody diarrhea. He is drowsy. Temperature is 37.1°C (98.8°F), pulse 168/min and blood pressure 68/38 mm Hg. Capillary refill is 4 seconds. Arterial blood gas shows pH 7.16, PaCO<sub>2</sub> 24 mm Hg and HCO<sub>3</sub><sup>−</sup> 9 mEq/L. Serum iron is 590 µg/dL. Intravenous isotonic fluid boluses are started. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activated charcoal by nasogastric tube"
+    },
+    {
+     "label": "B",
+     "html": "Deferoxamine infusion"
+    },
+    {
+     "label": "C",
+     "html": "Gastric lavage with sodium bicarbonate solution"
+    },
+    {
+     "label": "D",
+     "html": "Hemodialysis"
+    },
+    {
+     "label": "E",
+     "html": "Syrup of ipecac"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has <strong>severe iron poisoning</strong>: gastrointestinal bleeding, shock, metabolic acidosis, lethargy and a serum iron above 500 µg/dL. Along with fluid resuscitation, start a continuous <strong>intravenous deferoxamine</strong> infusion, which chelates free iron for renal excretion. Whole bowel irrigation can be added when radiographs show tablets.</p><p><strong>Takeaway:</strong> iron poisoning with shock, acidosis or very high serum iron: IV fluids and IV deferoxamine.</p>",
+   "whyNot": {
+    "A": "Activated charcoal does not bind iron.",
+    "C": "Lavage with bicarbonate (or phosphate) is ineffective and harmful and has been abandoned.",
+    "D": "Iron is not effectively removed by hemodialysis; it may be needed only to clear the deferoxamine-iron complex in kidney failure.",
+    "E": "Ipecac is no longer used; it delays care and raises aspiration risk in a drowsy child."
+   },
+   "objective": "Treat severe acute iron poisoning with intravenous deferoxamine.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.16.05.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "iron poisoning"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 57-year-old man has a high-output enterocutaneous fistula after surgery for Crohn disease and has received parenteral nutrition for 5 weeks. His abdominal wound is healing slowly. Over 10 days he has developed a red, scaly, crusted rash around his mouth and nostrils and on his hands and feet, hair loss and loss of taste. Serum zinc is 38 µg/dL (N = 60–120). Serum copper is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add selenium to the parenteral nutrition"
+    },
+    {
+     "label": "B",
+     "html": "Increase the zinc content of the parenteral nutrition"
+    },
+    {
+     "label": "C",
+     "html": "Start oral biotin"
+    },
+    {
+     "label": "D",
+     "html": "Start topical high-potency glucocorticoid"
+    },
+    {
+     "label": "E",
+     "html": "Stop parenteral nutrition and start enteral feeding"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Zinc is lost in large amounts through fistula and diarrheal output, so standard parenteral zinc may be too little. Periorificial and acral dermatitis, alopecia, loss of taste and poor wound healing with a low serum zinc indicate <strong>zinc deficiency</strong>. The treatment is to <strong>increase zinc</strong> in the parenteral nutrition; skin changes improve within days to weeks. Avoid prolonged excess zinc, which causes copper deficiency.</p><p><strong>Takeaway:</strong> high-output fistulas and diarrhea drain zinc; give more zinc when dermatitis, alopecia and poor healing appear.</p>",
+   "whyNot": {
+    "A": "Selenium deficiency causes cardiomyopathy and myopathy, not this rash.",
+    "D": "Steroids would not correct a nutritional dermatitis and would further slow wound healing.",
+    "C": "Biotin deficiency can cause periorificial dermatitis, but the serum zinc is low and explains every finding.",
+    "E": "A high-output fistula is a common reason enteral feeding cannot meet needs; the fix is to change the parenteral formula."
+   },
+   "objective": "Recognise and treat acquired zinc deficiency in a patient with high-output losses on parenteral nutrition.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.16.04.05"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "zinc",
+    "parenteral nutrition"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 6-month-old girl is brought for a well-child visit. She is breastfed and has started solid foods. Her family's drinking water comes from a private well that was tested last month and is low in fluoride. Her first lower incisor erupted last week. Growth and development are normal. In addition to counselling on oral hygiene, which of the following is the most appropriate recommendation for preventing dental caries?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin fluoride at her first dental visit at 3 years of age"
+    },
+    {
+     "label": "B",
+     "html": "Give fluoride varnish only once she has all primary teeth"
+    },
+    {
+     "label": "C",
+     "html": "Prescribe oral fluoride supplements and apply fluoride varnish"
+    },
+    {
+     "label": "D",
+     "html": "Switch from breastfeeding to a fluoridated formula"
+    },
+    {
+     "label": "E",
+     "html": "Use a full-strip fluoride toothpaste twice daily"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Primary care clinicians are advised to give <strong>oral fluoride supplements from 6 months of age</strong> to children whose water supply is low in fluoride and to apply <strong>fluoride varnish</strong> to primary teeth from the time they erupt. Brushing with a rice-grain smear of fluoride toothpaste is advised once teeth appear; larger amounts raise the risk of fluorosis.</p><p><strong>Takeaway:</strong> from 6 months, prescribe oral fluoride when water is low in fluoride, and apply fluoride varnish once teeth erupt.</p>",
+   "whyNot": {
+    "A": "Waiting until 3 years misses years of caries prevention for erupted teeth.",
+    "B": "Varnish starts with the first tooth, not when the dentition is complete.",
+    "D": "Breastfeeding should continue; replacing it with formula is not a caries-prevention strategy.",
+    "E": "Infants and toddlers need only a rice-grain smear of fluoride toothpaste; larger amounts are swallowed and cause fluorosis."
+   },
+   "objective": "Apply preventive fluoride recommendations for infants with low-fluoride water.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.01.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "uspstf"
+   ],
+   "figureIds": [],
+   "tags": [
+    "fluoride",
+    "caries prevention"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set160403-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 46-year-old woman had a Roux-en-Y gastric bypass 6 years ago and stopped her supplements 3 years ago. For 4 months she has had tingling in her feet and an unsteady gait that is worse in the dark. She takes an over-the-counter zinc supplement daily for colds. Examination shows reduced vibration and position sense in the feet, brisk knee reflexes and a positive Romberg sign. Hemoglobin is 10.0 g/dL, MCV 96 fL and leukocyte count 3,100/mm³ with neutropenia. Serum vitamin B12, methylmalonic acid and folate are normal. Which of the following is the most appropriate next diagnostic step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bone marrow biopsy"
+    },
+    {
+     "label": "B",
+     "html": "Intrinsic factor antibody testing"
+    },
+    {
+     "label": "C",
+     "html": "MRI of the brain with contrast"
+    },
+    {
+     "label": "D",
+     "html": "Nerve conduction studies"
+    },
+    {
+     "label": "E",
+     "html": "Serum copper and ceruloplasmin"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Anemia, neutropenia and a dorsal column myeloneuropathy with a <em>normal</em> B12 and methylmalonic acid after gastric bypass, in a patient taking zinc, point to <strong>copper deficiency</strong>. Serum copper and ceruloplasmin confirm it. The bypass removes the duodenum, where copper is absorbed, and zinc blocks copper uptake.</p><p><strong>Takeaway:</strong> after gastric bypass, a B12-like myeloneuropathy with cytopenias and normal B12 calls for serum copper and ceruloplasmin.</p>",
+   "whyNot": {
+    "A": "Marrow findings in copper deficiency can mimic myelodysplasia; measuring copper first avoids an unnecessary biopsy and misdiagnosis.",
+    "B": "Pernicious anemia is unlikely with a normal B12 and methylmalonic acid.",
+    "C": "The deficits localise to the spinal cord dorsal columns, not the brain.",
+    "D": "Nerve studies could show a neuropathy but would not identify the cause."
+   },
+   "objective": "Suspect copper deficiency in a post-bypass myeloneuropathy with normal B12.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.16.04.04",
+    "usmle2026.05.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "copper",
+    "bariatric surgery"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160403-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set160403-1",
+   "setOrder": 2,
+   "stemHtml": "<p>Serum copper is 22 µg/dL (N = 70–140) and ceruloplasmin is low. Serum zinc is high. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue zinc and add a daily multivitamin"
+    },
+    {
+     "label": "B",
+     "html": "Give intravenous iron"
+    },
+    {
+     "label": "C",
+     "html": "Start penicillamine"
+    },
+    {
+     "label": "D",
+     "html": "Start vitamin B12 injections"
+    },
+    {
+     "label": "E",
+     "html": "Stop zinc and give copper supplementation"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>The tests confirm <strong>copper deficiency</strong> made worse by zinc. Treatment is to <strong>stop the zinc</strong> and replace copper (oral, or intravenous if severe or absorption is poor). Blood counts usually recover within weeks; neurologic deficits stabilise but often improve only partly, which is why early recognition matters. She should restart lifelong post-bypass supplements and monitoring.</p><p><strong>Takeaway:</strong> treat copper deficiency by stopping zinc and giving copper; neurologic recovery may be incomplete.</p>",
+   "whyNot": {
+    "A": "Continuing zinc keeps blocking copper absorption, and a standard multivitamin has too little copper to correct a deficiency.",
+    "B": "Her anemia is not from iron deficiency, and iron will not treat the myeloneuropathy.",
+    "C": "Penicillamine chelates copper for Wilson disease and would deepen the deficiency.",
+    "D": "Her B12 and methylmalonic acid are normal, so B12 will not help."
+   },
+   "objective": "Manage zinc-associated copper deficiency after gastric bypass.",
+   "areas": [
+    "usmle2026.16.04.03",
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "copper"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c160403-01",
+   "frontHtml": "Where is most dietary iron absorbed, and through which transporter does it enter the enterocyte?",
+   "backHtml": "Duodenum and proximal jejunum; ferrous iron enters through DMT1 after reduction by duodenal cytochrome b.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-02",
+   "frontHtml": "What does hepcidin do, and what raises it?",
+   "backHtml": "It binds ferroportin and causes its breakdown, trapping iron in enterocytes and macrophages. Raised by iron loading and IL-6 (inflammation); lowered by iron deficiency, hypoxia and active erythropoiesis.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-03",
+   "frontHtml": "Iron studies in anemia of inflammation?",
+   "backHtml": "Low serum iron, low or normal TIBC, normal or high ferritin, high hepcidin.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-04",
+   "frontHtml": "Antidote for severe iron poisoning, and how does it work?",
+   "backHtml": "Intravenous deferoxamine: binds ferric iron as ferrioxamine, excreted in urine. Activated charcoal does not bind iron.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-05",
+   "frontHtml": "Inherited zinc malabsorption that starts at weaning from breast milk: name and gene?",
+   "backHtml": "Acrodermatitis enteropathica; ZIP4 transporter (<em>SLC39A4</em>), autosomal recessive.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-06",
+   "frontHtml": "Clinical features of zinc deficiency?",
+   "backHtml": "Periorificial and acral dermatitis, alopecia, diarrhea, loss of taste, poor wound healing, growth failure, hypogonadism.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-07",
+   "frontHtml": "How does excess zinc cause copper deficiency?",
+   "backHtml": "It induces enterocyte metallothionein, which traps copper so it is shed with the cell instead of absorbed.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-08",
+   "frontHtml": "Copper deficiency presentation?",
+   "backHtml": "Anemia, neutropenia and a dorsal column myeloneuropathy that mimics B12 deficiency.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-09",
+   "frontHtml": "Menkes disease: gene, inheritance and the enzyme whose loss weakens vessels?",
+   "backHtml": "ATP7A, X-linked recessive; copper-dependent lysyl oxidase (collagen and elastin cross-links).",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-10",
+   "frontHtml": "Selenium-dependent enzymes and the classic deficiency finding?",
+   "backHtml": "Glutathione peroxidase and iodothyronine deiodinases; cardiomyopathy (Keshan disease), often with long-term parenteral nutrition.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-11",
+   "frontHtml": "Which trace element accumulates in long-term parenteral nutrition with cholestasis, and what does it cause?",
+   "backHtml": "Manganese (excreted in bile): parkinsonism with basal ganglia T1 hyperintensity.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-12",
+   "frontHtml": "Why can hypomagnesemia cause hypocalcemia that resists calcium replacement?",
+   "backHtml": "Low magnesium impairs PTH secretion and PTH action; replace magnesium first.",
+   "sectionId": "s23c-s160403-1-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-13",
+   "frontHtml": "Iron deficiency in a man or postmenopausal woman: next step?",
+   "backHtml": "Bidirectional endoscopy (upper endoscopy and colonoscopy), plus celiac testing.",
+   "sectionId": "s23c-s160403-2-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-14",
+   "frontHtml": "Why can alternate-day oral iron work as well as daily dosing?",
+   "backHtml": "Each dose raises hepcidin for about a day; spacing doses lets a larger share of each dose be absorbed with fewer side effects.",
+   "sectionId": "s23c-s160403-2-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-15",
+   "frontHtml": "Indications for intravenous iron?",
+   "backHtml": "Intolerance or failure of oral iron, malabsorption (gastric bypass, celiac, active IBD), losses outpacing oral therapy, CKD, late pregnancy.",
+   "sectionId": "s23c-s160403-2-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-16",
+   "frontHtml": "Fluoride for infants and young children in primary care?",
+   "backHtml": "Fluoride varnish on primary teeth from eruption; oral fluoride supplements from 6 months if the water supply is low in fluoride.",
+   "sectionId": "s23c-s160403-2-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160403-17",
+   "frontHtml": "Which minerals are at risk after Roux-en-Y gastric bypass, and why?",
+   "backHtml": "Iron, calcium and copper: the duodenum and proximal jejunum are bypassed; low acid also reduces iron uptake.",
+   "sectionId": "s23c-s160403-2-1",
+   "areas": [
+    "usmle2026.16.04.03"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

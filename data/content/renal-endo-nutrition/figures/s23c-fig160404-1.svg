@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 420" width="740" height="420" role="img" aria-label="Hypothalamic appetite circuit: leptin, ghrelin and gut hormones act on POMC and AgRP/NPY neurons in the arcuate nucleus, which act on the melanocortin-4 receptor, with the sites of anti-obesity drugs">
+<title>Appetite circuit and drug targets</title>
+<defs>
+<marker id="s23c-f160404-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+<marker id="s23c-f160404-bar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M5,0 L5,10" stroke="#b91c1c" stroke-width="3"/></marker>
+</defs>
+<rect x="0" y="0" width="740" height="420" fill="#ffffff"/>
+<text x="370" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Signals that set appetite, and where drugs act (red)</text>
+<rect x="20" y="50" width="170" height="54" rx="8" fill="#fef3c7" stroke="#334155" stroke-width="1.5"/>
+<text x="105" y="72" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Adipose tissue</text>
+<text x="105" y="92" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">leptin (fat mass)</text>
+<rect x="20" y="180" width="170" height="54" rx="8" fill="#fde2e2" stroke="#334155" stroke-width="1.5"/>
+<text x="105" y="202" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Gastric fundus</text>
+<text x="105" y="222" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">ghrelin (before meals)</text>
+<rect x="20" y="300" width="170" height="54" rx="8" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="105" y="322" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Gut L cells</text>
+<text x="105" y="342" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">GLP-1, peptide YY</text>
+<rect x="280" y="60" width="170" height="70" rx="8" fill="#e0f2fe" stroke="#334155" stroke-width="1.5"/>
+<text x="365" y="84" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">POMC neurons</text>
+<text x="365" y="102" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">arcuate nucleus</text>
+<text x="365" y="118" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">make alpha-MSH: satiety</text>
+<rect x="280" y="200" width="170" height="70" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="365" y="224" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">AgRP/NPY neurons</text>
+<text x="365" y="242" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">arcuate nucleus</text>
+<text x="365" y="258" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">hunger</text>
+<rect x="540" y="125" width="180" height="80" rx="8" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="630" y="150" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">MC4R</text>
+<text x="630" y="168" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">paraventricular nucleus</text>
+<text x="630" y="186" font-family="sans-serif" font-size="11.5" fill="#0f172a" text-anchor="middle">less intake, more expenditure</text>
+<line x1="190" y1="77" x2="278" y2="92" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f160404-arrow)"/>
+<text x="232" y="74" font-family="sans-serif" font-size="11" fill="#15803d" text-anchor="middle">+</text>
+<line x1="190" y1="90" x2="278" y2="220" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#s23c-f160404-bar)"/>
+<text x="250" y="168" font-family="sans-serif" font-size="11" fill="#b91c1c">− (leptin)</text>
+<line x1="190" y1="207" x2="278" y2="235" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f160404-arrow)"/>
+<text x="232" y="212" font-family="sans-serif" font-size="11" fill="#15803d">+</text>
+<line x1="190" y1="320" x2="278" y2="120" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f160404-arrow)"/>
+<line x1="450" y1="100" x2="538" y2="150" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f160404-arrow)"/>
+<text x="490" y="112" font-family="sans-serif" font-size="11" fill="#15803d">alpha-MSH +</text>
+<line x1="450" y1="235" x2="538" y2="185" stroke="#b91c1c" stroke-width="2" marker-end="url(#s23c-f160404-bar)"/>
+<text x="490" y="236" font-family="sans-serif" font-size="11" fill="#b91c1c">AgRP −</text>
+<rect x="210" y="290" width="520" height="122" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.2"/>
+<text x="222" y="310" font-family="sans-serif" font-size="12" font-weight="bold" fill="#b91c1c">Drug targets</text>
+<text x="222" y="328" font-family="sans-serif" font-size="11.5" fill="#b91c1c">Semaglutide, tirzepatide: GLP-1 (± GIP) receptors in brainstem</text><text x="222" y="344" font-family="sans-serif" font-size="11.5" fill="#b91c1c">   and hypothalamus; slower gastric emptying</text>
+<text x="222" y="362" font-family="sans-serif" font-size="11.5" fill="#b91c1c">Setmelanotide: MC4R agonist. Metreleptin: replaces leptin in congenital deficiency</text>
+<text x="222" y="378" font-family="sans-serif" font-size="11.5" fill="#b91c1c">Bupropion: stimulates POMC neurons (naltrexone removes opioid brake)</text>
+<text x="222" y="398" font-family="sans-serif" font-size="11.5" fill="#b91c1c">Sleeve: removes ghrelin-rich fundus. Orlistat: gut lipase, not brain</text>
+</svg>

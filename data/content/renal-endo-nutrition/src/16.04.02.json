@@ -1,0 +1,1775 @@
+{
+ "area": "usmle2026.16.04.02",
+ "sections": [
+  {
+   "id": "s23c-s160402-1-1",
+   "exam": "step1",
+   "heading": "Fat-soluble vitamins: A, D, E and K",
+   "html": "<p>Vitamins A, D, E and K are absorbed with dietary fat in micelles, carried in chylomicrons and stored in the liver and adipose tissue. Two consequences follow. First, anything that impairs fat absorption (pancreatic insufficiency, cystic fibrosis, cholestasis, short bowel, bariatric surgery, celiac disease, abetalipoproteinemia, orlistat) can cause deficiency of all four together. Second, because they are stored, large supplement doses accumulate and can be toxic, especially A and D.</p><table><tr><th>Vitamin</th><th>Main role</th><th>Deficiency</th><th>Excess</th></tr><tr><td>A (retinol)</td><td>11-cis-retinal forms rhodopsin; retinoic acid regulates epithelial differentiation through nuclear receptors</td><td>Night blindness, dry conjunctiva with <span class=\"hy\">foamy Bitot spots</span>, corneal softening (keratomalacia), squamous metaplasia, more severe measles and diarrhea</td><td>Headache and raised intracranial pressure, dry peeling skin, alopecia, liver injury, bone pain; strongly teratogenic (isotretinoin, high-dose retinol)</td></tr><tr><td>D</td><td>1,25-dihydroxyvitamin D raises intestinal calcium and phosphate absorption</td><td>Rickets in children, osteomalacia in adults; secondary hyperparathyroidism</td><td>Hypercalcemia with suppressed PTH, polyuria, stones</td></tr><tr><td>E (tocopherol)</td><td>Antioxidant that stops lipid peroxidation in membranes</td><td>Hemolysis; spinocerebellar degeneration with loss of vibration and position sense, ataxia, retinopathy</td><td>Very high doses can add to the effect of warfarin</td></tr><tr><td>K</td><td>Vitamin K is the cofactor for <span class=\"hy\">gamma-carboxylation of glutamate</span> on factors II, VII, IX and X and proteins C and S</td><td>Bleeding with a prolonged PT first (<span class=\"hy\">factor VII</span> has the shortest half-life)</td><td>Little toxicity from natural K</td></tr></table><h3>Vitamin A</h3><p>In the retina, light converts 11-cis-retinal in rhodopsin to the all-trans form; rods need a steady supply of retinal, so dim-light vision fails first. Retinoic acid acts through retinoic acid receptors to maintain specialised epithelia, so deficiency lets mucus-secreting epithelium turn into keratinised squamous epithelium in the conjunctiva, airways and urinary tract. Deficiency is a leading preventable cause of childhood blindness worldwide and worsens measles; outside such settings, think of fat malabsorption. Retinoids taken in early pregnancy cause craniofacial, cardiac and central nervous system malformations, so isotretinoin needs reliable contraception and pregnancy testing.</p><h3>Vitamin D</h3><p>Skin makes cholecalciferol from 7-dehydrocholesterol under ultraviolet B; diet supplies D2 and D3. The liver adds a 25-hydroxyl (25-hydroxyvitamin D, the storage form and the best measure of status), and the proximal tubule adds a 1-alpha-hydroxyl under PTH (1,25-dihydroxyvitamin D, the active hormone). Deficiency lowers calcium absorption; PTH rises, which keeps serum calcium nearly normal at the cost of phosphate loss and bone demineralisation. In children, the unmineralised growth plates widen: wide wrists, bowed legs, beading of the costochondral junctions, soft skull, delayed fontanelle closure. In adults, osteoid is not mineralised (osteomalacia), causing bone pain, proximal weakness and pseudofractures. Typical labs: low 25-hydroxyvitamin D, low or normal calcium, low phosphate, high alkaline phosphatase, high PTH.</p><h3>Vitamin E</h3><p>Deficiency is rare except with fat malabsorption (cystic fibrosis, cholestatic liver disease, abetalipoproteinemia) or in preterm infants. Free-radical injury to red cell membranes causes hemolysis; injury to long axons damages the dorsal columns, spinocerebellar tracts and peripheral nerves, which can look like vitamin B12 deficiency without the macrocytic anemia or the raised methylmalonic acid.</p><h3>Vitamin K</h3><p>Newborns are at risk because little vitamin K crosses the placenta, breast milk contains little and the gut is not yet colonised. In adults, deficiency follows poor intake with broad-spectrum antibiotics (which reduce bacterial synthesis), fat malabsorption or cholestasis. Warfarin blocks vitamin K epoxide reductase, so the vitamin cannot be recycled to its active form.</p><div class=\"trap\"><p><strong>Exam trap:</strong> ataxia with loss of vibration sense in a patient with fat malabsorption and a <em>normal</em> MCV and methylmalonic acid points to vitamin E, not B12.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> the four fat-soluble vitamins travel together; if the fat leaves in the stool, so do A, D, E and K.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Vitamin D Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532266/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vitamin E Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK519051/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vitamin K Deficiency in Neonates and Adults",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536983/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Vitamins",
+     "url": "https://medlineplus.gov/vitamins.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160402-1-2",
+   "exam": "step1",
+   "heading": "Water-soluble vitamins: B complex and C",
+   "html": "<p>Water-soluble vitamins are stored poorly (vitamin B12 is the exception: liver stores last years), so deficiency follows weeks to months of poor intake, and excess is mostly excreted. Most B vitamins are coenzymes in energy metabolism; knowing the enzyme explains the disease.</p><table><tr><th>Vitamin</th><th>Coenzyme form and key enzymes</th><th>Deficiency</th></tr><tr><td>B1 thiamine</td><td>Thiamine pyrophosphate: pyruvate dehydrogenase, alpha-ketoglutarate dehydrogenase, branched-chain ketoacid dehydrogenase, transketolase</td><td>Wernicke encephalopathy, Korsakoff syndrome, dry beriberi (neuropathy), wet beriberi (high-output heart failure)</td></tr><tr><td>B2 riboflavin</td><td>FAD and FMN in redox reactions</td><td>Angular cheilitis, sore magenta tongue, corneal vascularisation</td></tr><tr><td>B3 niacin</td><td>NAD and NADP; can be made from tryptophan (needs B2 and B6)</td><td>Pellagra: <span class=\"hy\">photosensitive dermatitis, diarrhea, cognitive change</span>, death if untreated</td></tr><tr><td>B5 pantothenate</td><td>Coenzyme A</td><td>Very rare: paresthesias, dermatitis</td></tr><tr><td>B6 pyridoxine</td><td>Pyridoxal phosphate: transaminases, ALA synthase, decarboxylases (GABA, serotonin, dopamine, histamine)</td><td>Peripheral neuropathy, seizures, sideroblastic anemia, cheilitis</td></tr><tr><td>B7 biotin</td><td>Carboxylases: pyruvate, acetyl-CoA and propionyl-CoA carboxylase</td><td>Dermatitis, alopecia, lethargy; raw egg white <span class=\"hy\">avidin</span> binds biotin</td></tr><tr><td>B9 folate</td><td>Tetrahydrofolate carries one-carbon units for thymidine and purine synthesis</td><td>Megaloblastic anemia, high homocysteine, neural tube defects in pregnancy</td></tr><tr><td>B12 cobalamin</td><td>Methionine synthase and methylmalonyl-CoA mutase</td><td>Megaloblastic anemia, high homocysteine and methylmalonic acid, subacute combined degeneration</td></tr><tr><td>C ascorbate</td><td>Vitamin C is the reducing agent for <span class=\"hy\">prolyl and lysyl hydroxylases</span> (collagen), dopamine beta-hydroxylase; improves nonheme iron absorption</td><td>Scurvy</td></tr></table><h3>Thiamine</h3><p>Without thiamine, the brain cannot run pyruvate into the citric acid cycle, so glucose loading in a deficient person can precipitate or worsen Wernicke encephalopathy (confusion, eye-movement abnormalities such as nystagmus or ophthalmoplegia, gait ataxia). Lesions sit in the mammillary bodies and periaqueductal and medial thalamic regions; persistent damage causes Korsakoff syndrome, with anterograde amnesia and confabulation. Risk: alcohol use disorder, hyperemesis, bariatric surgery, starvation and refeeding, long diuretic use in heart failure. Red cell transketolase activity reflects thiamine status.</p><h3>Niacin</h3><p>Pellagra appears with corn-based diets without traditional alkali treatment, alcohol use, isoniazid (which depletes B6, needed to make niacin from tryptophan), carcinoid syndrome (tryptophan is diverted to serotonin) and Hartnup disease, an autosomal recessive defect of the neutral amino acid transporter in the gut and proximal tubule that wastes tryptophan in urine. Pharmacologic niacin causes flushing (prostaglandin-mediated, blunted by aspirin), hyperuricemia, hyperglycemia and liver injury.</p><h3>Vitamin B6</h3><p>Isoniazid forms an inactive complex with pyridoxal and causes neuropathy unless pyridoxine is given with it in people at risk. Because pyridoxal phosphate is the cofactor for ALA synthase, deficiency can cause a sideroblastic anemia; because it is needed for GABA synthesis, severe deficiency causes seizures in infants. Very high supplement doses cause a sensory neuropathy.</p><h3>Folate and vitamin B12</h3>[[figure:s23c-fig160402-1]]<p>Folate is found in leafy greens and fortified grain; stores last months, so deficiency appears with poor diet, alcohol use, pregnancy, hemolysis, and drugs that block dihydrofolate reductase (methotrexate, trimethoprim, pyrimethamine) or folate absorption and metabolism (phenytoin). Vitamin B12 comes only from animal foods. Absorption needs gastric acid and pepsin to free it from food, intrinsic factor from parietal cells, and receptors in the terminal ileum. Causes of deficiency: autoimmune gastritis with antibodies to intrinsic factor or parietal cells (pernicious anemia), long use of metformin or acid suppressants, gastrectomy or gastric bypass, ileal resection or Crohn disease, a strict vegan diet without supplements, fish tapeworm, bacterial overgrowth, and nitrous oxide, which oxidises the cobalt of cobalamin and can precipitate acute neurologic disease.</p><p>Both deficiencies cause megaloblastic anemia with oval macrocytes and hypersegmented neutrophils. Only B12 deficiency causes neurologic disease: demyelination of the <span class=\"hy\">dorsal columns and lateral corticospinal tracts</span> (subacute combined degeneration), peripheral neuropathy and cognitive change, sometimes with a normal hemoglobin.</p><h3>Vitamin C</h3><p>Without ascorbate, prolyl and lysyl hydroxylases in the endoplasmic reticulum cannot hydroxylate procollagen, so collagen cannot form stable triple helices. Fragile vessels give perifollicular hemorrhages, corkscrew hairs, swollen bleeding gums, easy bruising, poor wound healing and, in children, painful subperiosteal bleeding. Risk: older adults living alone on a limited diet, alcohol use, severe food restriction, and some people on long-term dialysis. Large supplement doses raise urinary oxalate and can worsen iron overload in hemochromatosis.</p><div class=\"trap\"><p><strong>Exam trap:</strong> never treat a macrocytic anemia with folate alone until B12 deficiency is excluded: the blood count improves while the cord lesion progresses.</p></div>",
+   "figureIds": [
+    "s23c-fig160402-1"
+   ],
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Vitamin B1 (Thiamine) Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK537204/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Wernicke-Korsakoff Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470344/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Niacin Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK557728/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vitamin B6 Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470579/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Folic Acid Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK535377/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vitamin B12 Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441923/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vitamin C Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK493187/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160402-2-1",
+   "exam": "step2ck",
+   "heading": "Vitamin deficiency in practice: who is at risk, screening and prevention",
+   "html": "<p>Most vitamin problems on the exam are about recognising a population at risk and acting before harm. Routine screening of healthy adults for vitamin deficiencies is not recommended; test when there is a reason, and prevent where the evidence is strong.</p><table><tr><th>Group</th><th>Vitamins at risk</th><th>What to do</th></tr><tr><td>Newborns</td><td>K</td><td><span class=\"hy\">One intramuscular dose</span> of vitamin K at birth for every newborn; refusal raises the risk of vitamin K deficiency bleeding, including late intracranial bleeding</td></tr><tr><td>Exclusively or partly breastfed infants</td><td>D</td><td>Vitamin D <span class=\"hy\">400 IU daily</span> from the first days of life (formula-fed infants receive it in formula)</td></tr><tr><td>People who could become pregnant</td><td>Folate</td><td>Folic acid 0.4–0.8 mg daily, starting at least 1 month before conception; after a pregnancy affected by a neural tube defect, <span class=\"hy\">4 mg daily</span> under medical advice</td></tr><tr><td>Children with measles</td><td>A</td><td>Vitamin A supplementation reduces complications and death in deficient children; it is recommended for children with severe measles</td></tr><tr><td>Alcohol use disorder</td><td>B1, folate, B6, niacin, C</td><td>Thiamine on any admission; supplement and treat the alcohol use</td></tr><tr><td>After bariatric surgery</td><td>B12, B1, folate, D, A, E, K (plus iron, calcium, copper, zinc)</td><td>Lifelong multivitamin with minerals, B12, calcium with vitamin D; monitor levels regularly</td></tr><tr><td>Long-term metformin or acid suppression</td><td>B12</td><td>Check B12 periodically, and sooner if there is neuropathy or anemia</td></tr><tr><td>Strict vegan diet</td><td>B12</td><td>Fortified foods or a B12 supplement</td></tr><tr><td>Fat malabsorption (cystic fibrosis, cholestasis)</td><td>A, D, E, K</td><td>Water-miscible fat-soluble vitamin supplements and monitoring</td></tr><tr><td>Older adults</td><td>B12, D, C</td><td>Ask about diet, dentition, isolation and finances; test when symptoms suggest it</td></tr></table><h3>Vitamin D</h3><p>Measure <span class=\"hy\">25-hydroxyvitamin D</span>, not 1,25-dihydroxyvitamin D, when deficiency is suspected (bone pain, osteomalacia, malabsorption, osteoporosis work-up). Replace with oral cholecalciferol; correct calcium intake too. In chronic kidney disease the defect in 1-alpha-hydroxylation needs active vitamin D analogues, a different problem. Toxicity (very high 25-hydroxyvitamin D from megadose supplements) presents with hypercalcemia and low PTH; stop the supplements, hydrate, and treat the hypercalcemia.</p><h3>Vitamin K</h3><p>A newborn who did not receive vitamin K at birth and bleeds from the umbilical stump, circumcision site or gut, with a prolonged PT, needs vitamin K at once (with plasma if bleeding is severe). In adults, a prolonged PT from poor intake and antibiotics corrects within about a day of vitamin K; failure to correct points to liver synthetic failure.</p><h3>Vitamin A</h3><p>Night blindness or dry eyes in a patient with fat malabsorption or after bariatric surgery calls for a serum retinol level and replacement. High-dose vitamin A supplements are a cause of raised intracranial pressure and liver injury; retinoids (isotretinoin, acitretin) are contraindicated in pregnancy and need a pregnancy-prevention programme.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a parent who declined the newborn vitamin K injection is the clue in an infant aged a few weeks with sudden intracranial hemorrhage or bleeding; it is not automatically nonaccidental trauma.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Vitamin K Deficiency in Neonates and Adults",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536983/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vitamin D Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532266/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "USPSTF: Folic acid supplementation to prevent neural tube defects",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/folic-acid-for-the-prevention-of-neural-tube-defects-preventive-medication",
+     "sourceId": "uspstf"
+    },
+    {
+     "label": "MedlinePlus: Vitamin D",
+     "url": "https://medlineplus.gov/vitamind.html",
+     "sourceId": "medlineplus-federal"
+    },
+    {
+     "label": "MedlinePlus: Vitamins",
+     "url": "https://medlineplus.gov/vitamins.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160402-2-2",
+   "exam": "step2ck",
+   "heading": "Thiamine emergencies, macrocytic anemia work-up and scurvy",
+   "html": "<h3>Suspected Wernicke encephalopathy</h3><p>The full triad of confusion, eye-movement abnormality and ataxia is present in a minority, so treat on suspicion in anyone at risk (alcohol use, malnutrition, prolonged vomiting, bariatric surgery) with any of its features. Give <strong>high-dose intravenous thiamine before or together with glucose</strong>; never delay glucose in true hypoglycemia, but do not give glucose alone. Continue thiamine for several days, then orally, correct magnesium (a cofactor for thiamine-dependent enzymes), and treat the alcohol use disorder. Eye signs usually improve within days; the memory disorder of Korsakoff syndrome often persists.</p><h3>Macrocytic anemia</h3><ol><li>Confirm macrocytosis and look at the smear: hypersegmented neutrophils and oval macrocytes mean megaloblastic anemia; target cells or round macrocytes suggest liver disease or alcohol; a high reticulocyte count suggests hemolysis or bleeding; also consider hypothyroidism, myelodysplasia and drugs (hydroxyurea, zidovudine, methotrexate).</li><li>Measure serum B12 and folate.</li><li>If B12 is borderline, measure <strong>methylmalonic acid</strong> (and homocysteine): high MMA confirms B12 deficiency; <span class=\"hy\">high homocysteine with normal MMA</span> fits folate deficiency.</li><li>For confirmed B12 deficiency, find the cause: <span class=\"hy\">anti-intrinsic factor antibodies</span> (specific) for pernicious anemia, history of surgery, drugs and diet.</li></ol><table><tr><th></th><th>MCV</th><th>Methylmalonic acid</th><th>Homocysteine</th><th>Neurologic signs</th></tr><tr><td>B12 deficiency</td><td>High (may be normal early or with iron deficiency)</td><td>High</td><td>High</td><td>Common</td></tr><tr><td>Folate deficiency</td><td>High</td><td>Normal</td><td>High</td><td>No</td></tr><tr><td>Vitamin E or copper deficiency</td><td>Normal (copper: anemia, neutropenia)</td><td>Normal</td><td>Normal</td><td>Myeloneuropathy</td></tr></table><h3>Treating B12 and folate deficiency</h3><ul><li><strong>B12</strong>: intramuscular injections when neurologic signs are significant or absorption is uncertain; high-dose oral B12 (<span class=\"hy\">about 1,000–2,000 µg daily</span>) works for most patients, including pernicious anemia, because a small fraction is absorbed by passive diffusion. Pernicious anemia and gastric bypass need lifelong replacement. Watch potassium early in treatment of severe anemia, as new cells take it up.</li><li><strong>Folate</strong>: oral folic acid after B12 deficiency is excluded or treated, plus the cause (diet, alcohol, drugs).</li><li>Reticulocytes rise <span class=\"hy\">within about a week</span>; neurologic recovery is slower and may be incomplete.</li></ul><h3>Scurvy</h3><p>Consider it in an older adult or a person with alcohol use, severe food restriction or social isolation who has gum bleeding, perifollicular hemorrhages, bruising and poor wound healing. Diagnosis is clinical, supported by a low plasma ascorbate. Oral vitamin C produces improvement within days; dietary counselling and attention to the social reasons for the poor diet prevent recurrence.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a young person with sudden numbness and gait ataxia after recreational nitrous oxide has functional B12 deficiency even if the serum B12 level is normal; MMA and homocysteine are high. Stop the gas and give B12.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Wernicke-Korsakoff Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470344/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vitamin B12 Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441923/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Folic Acid Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK535377/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vitamin C Deficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK493187/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Folic Acid",
+     "url": "https://medlineplus.gov/folicacid.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig160402-1",
+   "caption": "Figure. Vitamin B12 is the cofactor for methionine synthase (which also needs folate) and for methylmalonyl-CoA mutase (which does not), so methylmalonic acid separates B12 from folate deficiency.",
+   "file": "figures/s23c-fig160402-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set160402-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Confusion and ataxia in alcohol use disorder",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q160402-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 4-year-old girl in a refugee camp is brought to a clinic because she stumbles and cannot find her way after sunset, although she plays normally in daylight. Her diet is mostly rice and cassava. Examination shows dry, wrinkled conjunctivae with small foamy gray patches lateral to the cornea. A deficiency of a vitamin that normally has which of the following roles is the most likely cause of her visual symptom?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Antioxidant protection of photoreceptor membranes from lipid peroxidation"
+    },
+    {
+     "label": "B",
+     "html": "Cofactor for carboxylation of glutamate residues in retinal proteins"
+    },
+    {
+     "label": "C",
+     "html": "Component of the light-absorbing pigment in rod photoreceptors"
+    },
+    {
+     "label": "D",
+     "html": "Precursor of the coenzyme for pyruvate dehydrogenase in the retina"
+    },
+    {
+     "label": "E",
+     "html": "Reducing agent for hydroxylation of collagen in the cornea"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Night blindness with dry conjunctivae and Bitot spots (foamy keratinised patches) is vitamin A deficiency. 11-cis-retinal combines with opsin to form <strong>rhodopsin</strong>, the light-absorbing pigment of rods; rods serve dim-light vision, so it fails first. Retinoic acid also maintains the conjunctival epithelium, which keratinises without it.</p><p><strong>Takeaway:</strong> vitamin A supplies the retinal of rhodopsin; deficiency gives night blindness first, then xerophthalmia.</p>",
+   "whyNot": {
+    "A": "This describes vitamin E, whose deficiency causes retinopathy and neuropathy, not early night blindness with Bitot spots.",
+    "B": "Gamma-carboxylation of glutamate is the role of vitamin K in clotting factors.",
+    "D": "Thiamine pyrophosphate is the pyruvate dehydrogenase coenzyme; its deficiency affects the brain and heart.",
+    "E": "Vitamin C is the reducing agent for collagen hydroxylation; deficiency gives scurvy, not night blindness."
+   },
+   "objective": "Link vitamin A deficiency and night blindness to the role of retinal in rhodopsin.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin A"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old woman has had worsening headache and transient visual dimming for 2 months. She takes several over-the-counter supplements \"for her skin\". She has dry, peeling skin on her palms, patchy hair loss and an enlarged, tender liver. Funduscopy shows bilateral papilledema. MRI of the brain shows no mass, and lumbar puncture shows a raised opening pressure with normal fluid. Serum ALT is 96 U/L. Excess intake of which of the following is the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Niacin"
+    },
+    {
+     "label": "B",
+     "html": "Pyridoxine"
+    },
+    {
+     "label": "C",
+     "html": "Vitamin A"
+    },
+    {
+     "label": "D",
+     "html": "Vitamin C"
+    },
+    {
+     "label": "E",
+     "html": "Vitamin E"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Raised intracranial pressure without a mass (pseudotumor cerebri), dry desquamating skin, alopecia and liver injury are the pattern of chronic <strong>hypervitaminosis A</strong>. Vitamin A is fat soluble and stored in hepatic stellate cells, so large daily doses accumulate and can cause fibrosis.</p><p><strong>Takeaway:</strong> headache with papilledema, peeling skin and hepatomegaly in someone taking supplements suggests vitamin A toxicity.</p>",
+   "whyNot": {
+    "A": "Niacin excess causes flushing, hyperuricemia, hyperglycemia and liver injury, but not papilledema with peeling skin and alopecia.",
+    "B": "Pyridoxine excess causes a sensory neuropathy, not raised intracranial pressure.",
+    "D": "Vitamin C excess mainly raises urinary oxalate; it does not cause pseudotumor cerebri.",
+    "E": "Vitamin E excess can enhance anticoagulant effects; it does not cause this picture."
+   },
+   "objective": "Recognise chronic vitamin A toxicity from raised intracranial pressure, skin changes and liver injury.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin A",
+    "toxicity"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 16-year-old boy with cystic fibrosis and poorly controlled pancreatic insufficiency has 6 months of unsteady gait. He has truncal ataxia, absent ankle reflexes and loss of vibration and position sense in the feet. Hemoglobin is 11.2 g/dL with a high reticulocyte count; MCV is 88 fL. Serum methylmalonic acid is normal. The deficient vitamin most likely normally protects cells by which of the following mechanisms?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Carrying one-carbon units for thymidine synthesis"
+    },
+    {
+     "label": "B",
+     "html": "Converting methylmalonyl-CoA to succinyl-CoA"
+    },
+    {
+     "label": "C",
+     "html": "Donating electrons to stop chain reactions of lipid peroxidation in membranes"
+    },
+    {
+     "label": "D",
+     "html": "Forming the coenzyme for transketolase in the pentose phosphate pathway"
+    },
+    {
+     "label": "E",
+     "html": "Serving as the cofactor for synthesis of GABA from glutamate"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Fat malabsorption causes <strong>vitamin E</strong> deficiency. Tocopherol is a lipid-soluble antioxidant that interrupts free-radical chain reactions in membranes. Without it, red cells hemolyse and long axons degenerate (dorsal columns, spinocerebellar tracts, peripheral nerves), giving ataxia and loss of vibration and position sense. The normal MCV and methylmalonic acid argue against B12 deficiency.</p><p><strong>Takeaway:</strong> fat malabsorption with hemolysis and a B12-like myeloneuropathy but normal MMA is vitamin E deficiency.</p>",
+   "whyNot": {
+    "A": "This is the role of folate, whose deficiency causes megaloblastic anemia without neurologic disease.",
+    "B": "This is the B12-dependent mutase; B12 deficiency would raise methylmalonic acid.",
+    "D": "Thiamine pyrophosphate is the transketolase coenzyme; deficiency causes Wernicke encephalopathy or beriberi, not hemolysis.",
+    "E": "Pyridoxal phosphate is needed for GABA synthesis; deficiency causes seizures and neuropathy, not hemolysis with posterior column loss."
+   },
+   "objective": "Explain vitamin E deficiency in fat malabsorption from its antioxidant role.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin E",
+    "cystic fibrosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man with long-standing heavy alcohol use is admitted with confusion, horizontal nystagmus and a wide-based gait. Before treatment, a red blood cell assay is sent to confirm the suspected vitamin deficiency. Activity of which of the following enzymes, and its increase when the missing cofactor is added in vitro, would best support the diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Glucose-6-phosphate dehydrogenase"
+    },
+    {
+     "label": "B",
+     "html": "Glutathione reductase"
+    },
+    {
+     "label": "C",
+     "html": "Pyruvate kinase"
+    },
+    {
+     "label": "D",
+     "html": "Transketolase"
+    },
+    {
+     "label": "E",
+     "html": "Aspartate aminotransferase"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Confusion, nystagmus and ataxia in alcohol use disorder are Wernicke encephalopathy from <strong>thiamine</strong> deficiency. Thiamine pyrophosphate is the cofactor for red cell <strong>transketolase</strong> in the nonoxidative pentose phosphate pathway, so low activity that rises when thiamine pyrophosphate is added confirms deficiency. Treatment must not wait for the result.</p><p><strong>Takeaway:</strong> erythrocyte transketolase activity reflects thiamine status.</p>",
+   "whyNot": {
+    "A": "G6PD uses NADP, not thiamine; it is assayed for hemolytic anemia.",
+    "B": "Glutathione reductase depends on FAD, so its activity reflects riboflavin (B2) status.",
+    "C": "Pyruvate kinase needs no vitamin cofactor; its deficiency causes hemolytic anemia.",
+    "E": "Aminotransferases use pyridoxal phosphate, so their stimulation tests reflect vitamin B6 status."
+   },
+   "objective": "Identify transketolase as the thiamine-dependent enzyme used to assess thiamine status.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "thiamine"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 9-year-old boy has had recurrent episodes of a scaly red rash on sun-exposed skin of his face, neck and forearms, with episodes of unsteady gait. His diet is varied. His parents are first cousins. Urinalysis shows large amounts of neutral amino acids, including tryptophan; other amino acids are normal. The rash improves with oral nicotinamide. A defect in which of the following is the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cystine and dibasic amino acid transporter in the proximal tubule"
+    },
+    {
+     "label": "B",
+     "html": "Hepatic phenylalanine hydroxylase"
+    },
+    {
+     "label": "C",
+     "html": "Neutral amino acid transporter in intestinal and renal epithelium"
+    },
+    {
+     "label": "D",
+     "html": "Tryptophan hydroxylase in enterochromaffin cells"
+    },
+    {
+     "label": "E",
+     "html": "Pyridoxal kinase in the liver"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p><strong>Hartnup disease</strong> is an autosomal recessive defect of the neutral amino acid transporter on the brush border of the small intestine and proximal tubule. Tryptophan is poorly absorbed and lost in urine, so less is available to make niacin; the result is a pellagra-like photosensitive rash and intermittent ataxia that respond to nicotinamide and a high-protein diet.</p><p><strong>Takeaway:</strong> pellagra-like rash with neutral aminoaciduria is Hartnup disease, a tryptophan transport defect.</p>",
+   "whyNot": {
+    "A": "This transporter defect is cystinuria, which causes cystine stones, not a pellagra-like rash.",
+    "B": "Phenylalanine hydroxylase deficiency (PKU) causes intellectual disability and musty odour, not neutral aminoaciduria.",
+    "D": "Excess serotonin synthesis (as in carcinoid) can cause niacin deficiency, but there is no aminoaciduria and it is not inherited this way.",
+    "E": "A pyridoxal defect would cause seizures or anemia and would not cause loss of neutral amino acids in urine."
+   },
+   "objective": "Explain how Hartnup disease causes niacin deficiency through loss of tryptophan.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "niacin",
+    "Hartnup"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-06",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 38-year-old man has been taking isoniazid alone for latent tuberculosis for 7 months without any supplement. He has burning feet and fatigue. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Hemoglobin</td><td>9.6 g/dL</td></tr><tr><td>MCV</td><td>72 fL</td></tr><tr><td>Serum iron</td><td>High</td></tr><tr><td>Ferritin</td><td>High</td></tr><tr><td>Bone marrow iron stain</td><td>Ring sideroblasts</td></tr></table><p>Reduced activity of which of the following enzymes most directly explains the anemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Aminolevulinic acid synthase"
+    },
+    {
+     "label": "B",
+     "html": "Ferrochelatase"
+    },
+    {
+     "label": "C",
+     "html": "Heme oxygenase"
+    },
+    {
+     "label": "D",
+     "html": "Porphobilinogen deaminase"
+    },
+    {
+     "label": "E",
+     "html": "Uroporphyrinogen decarboxylase"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Isoniazid binds pyridoxal and causes <strong>vitamin B6 deficiency</strong>. Pyridoxal phosphate is the cofactor for <strong>ALA synthase</strong>, the first and rate-limiting step of heme synthesis in the mitochondrion. With too little protoporphyrin, iron that has entered mitochondria accumulates around the nucleus (ring sideroblasts), giving a microcytic sideroblastic anemia with high iron and ferritin. The burning feet are B6-deficiency neuropathy. Pyridoxine corrects both.</p><p><strong>Takeaway:</strong> isoniazid-induced B6 deficiency causes neuropathy and sideroblastic anemia through loss of ALA synthase activity.</p>",
+   "whyNot": {
+    "B": "Ferrochelatase is inhibited by lead and is not pyridoxal dependent.",
+    "C": "Heme oxygenase breaks down heme to biliverdin; it does not limit heme synthesis.",
+    "D": "Porphobilinogen deaminase deficiency causes acute intermittent porphyria, not sideroblastic anemia.",
+    "E": "Uroporphyrinogen decarboxylase deficiency causes porphyria cutanea tarda with blistering skin."
+   },
+   "objective": "Explain sideroblastic anemia from isoniazid-induced vitamin B6 deficiency.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin B6",
+    "isoniazid"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 30-year-old man has followed a bodybuilding diet for 5 months that includes 8 raw egg whites a day. He has a scaly red rash around his eyes, nose and mouth, thinning hair and fatigue. Which of the following reactions is most likely impaired?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Conversion of homocysteine to methionine"
+    },
+    {
+     "label": "B",
+     "html": "Conversion of pyruvate to acetyl-CoA"
+    },
+    {
+     "label": "C",
+     "html": "Conversion of pyruvate to oxaloacetate"
+    },
+    {
+     "label": "D",
+     "html": "Hydroxylation of proline in procollagen"
+    },
+    {
+     "label": "E",
+     "html": "Transamination of alanine to pyruvate"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Raw egg white contains <strong>avidin</strong>, which binds biotin tightly and prevents its absorption (cooking denatures avidin). Biotin is the cofactor for carboxylases: <strong>pyruvate carboxylase</strong> (pyruvate to oxaloacetate, for gluconeogenesis), acetyl-CoA carboxylase and propionyl-CoA carboxylase. Deficiency gives periorificial dermatitis, alopecia and lethargy.</p><p><strong>Takeaway:</strong> raw egg whites cause biotin deficiency; biotin is the carboxylase cofactor.</p>",
+   "whyNot": {
+    "A": "Methionine synthase needs vitamin B12 and folate, not biotin.",
+    "B": "Pyruvate dehydrogenase needs thiamine, lipoate, CoA, FAD and NAD, but not biotin.",
+    "D": "Prolyl hydroxylase needs vitamin C.",
+    "E": "Transamination needs pyridoxal phosphate (vitamin B6)."
+   },
+   "objective": "Link biotin deficiency from raw egg whites to impaired carboxylase reactions.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "biotin"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-08",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 29-year-old woman who has followed a strict vegan diet for 6 years without supplements has numbness in her feet and fatigue. Vibration sense is reduced at the toes. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th><th>Reference range</th></tr><tr><td>Hemoglobin</td><td>10.4 g/dL</td><td>12.0–16.0 g/dL</td></tr><tr><td>MCV</td><td>112 fL</td><td>80–100 fL</td></tr><tr><td>Serum methylmalonic acid</td><td>1.9 µmol/L</td><td>below 0.4 µmol/L</td></tr><tr><td>Plasma homocysteine</td><td>34 µmol/L</td><td>5–15 µmol/L</td></tr></table><p>The rise in methylmalonic acid results from reduced activity of an enzyme in which of the following locations?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cytosol, converting homocysteine to methionine"
+    },
+    {
+     "label": "B",
+     "html": "Cytosol, reducing dihydrofolate to tetrahydrofolate"
+    },
+    {
+     "label": "C",
+     "html": "Mitochondrion, carboxylating propionyl-CoA"
+    },
+    {
+     "label": "D",
+     "html": "Mitochondrion, converting methylmalonyl-CoA to succinyl-CoA"
+    },
+    {
+     "label": "E",
+     "html": "Nucleus, methylating deoxyuridine monophosphate"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>A vegan diet without supplements leads to <strong>vitamin B12</strong> deficiency (B12 comes only from animal foods). Adenosylcobalamin is the cofactor for <strong>methylmalonyl-CoA mutase</strong> in the mitochondrion, which converts methylmalonyl-CoA (from odd-chain fatty acids and some amino acids) to succinyl-CoA. Without it, methylmalonic acid accumulates. The high homocysteine reflects the second B12 enzyme, cytosolic methionine synthase.</p><p><strong>Takeaway:</strong> a high methylmalonic acid is specific for B12 deficiency, through the mitochondrial methylmalonyl-CoA mutase.</p>",
+   "whyNot": {
+    "A": "Methionine synthase failure explains the high homocysteine, not the high methylmalonic acid.",
+    "B": "Dihydrofolate reductase is inhibited by methotrexate and trimethoprim and does not need B12.",
+    "C": "Propionyl-CoA carboxylase needs biotin; its failure raises propionic acid, upstream of methylmalonyl-CoA.",
+    "E": "Thymidylate synthase uses folate and works in the cytosol; it does not handle methylmalonyl-CoA."
+   },
+   "objective": "Explain raised methylmalonic acid in B12 deficiency through loss of methylmalonyl-CoA mutase activity.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin B12",
+    "vegan"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 74-year-old man who lives alone and eats mostly tea, white bread and canned soup has bleeding, swollen gums, small red-purple spots around hair follicles on his legs with coiled hairs, and a leg wound that has not healed for 6 weeks. Which of the following steps in collagen synthesis is most directly impaired?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cleavage of propeptides by procollagen peptidases outside the cell"
+    },
+    {
+     "label": "B",
+     "html": "Cross-linking of lysine residues by lysyl oxidase"
+    },
+    {
+     "label": "C",
+     "html": "Glycosylation of hydroxylysine residues in the endoplasmic reticulum"
+    },
+    {
+     "label": "D",
+     "html": "Hydroxylation of proline and lysine residues in the endoplasmic reticulum"
+    },
+    {
+     "label": "E",
+     "html": "Translation of preprocollagen alpha chains on ribosomes"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Bleeding gums, perifollicular hemorrhages, corkscrew hairs and poor wound healing in an older man with a limited diet are <strong>scurvy</strong>. Ascorbate keeps the iron of <strong>prolyl and lysyl hydroxylases</strong> reduced; without hydroxyproline, procollagen cannot form a stable triple helix, so vessel walls and healing tissue are weak.</p><p><strong>Takeaway:</strong> vitamin C deficiency impairs hydroxylation of proline and lysine in procollagen.</p>",
+   "whyNot": {
+    "A": "Defective peptidase cleavage causes some Ehlers-Danlos types, not scurvy.",
+    "B": "Lysyl oxidase needs copper; copper deficiency or Menkes disease impairs cross-linking.",
+    "C": "Glycosylation does not depend on vitamin C.",
+    "E": "Translation is normal in scurvy; the defect is in post-translational modification."
+   },
+   "objective": "Explain scurvy through impaired vitamin C-dependent hydroxylation of procollagen.",
+   "areas": [
+    "usmle2026.16.04.02",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin C",
+    "scurvy",
+    "geriatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-1-10",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 23-year-old man has had 3 weeks of tingling in his hands and feet and an unsteady gait. He has used recreational nitrous oxide from whipped-cream canisters heavily for several months. He has reduced vibration and position sense in the legs, brisk knee reflexes and a positive Romberg sign. MRI of the cervical spine shows T2 hyperintensity in the dorsal columns. Serum B12 is low-normal, and methylmalonic acid and homocysteine are high. Which of the following best explains the effect of nitrous oxide?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "It binds intrinsic factor and blocks B12 absorption"
+    },
+    {
+     "label": "B",
+     "html": "It inhibits dihydrofolate reductase"
+    },
+    {
+     "label": "C",
+     "html": "It oxidises the cobalt of cobalamin and inactivates the vitamin"
+    },
+    {
+     "label": "D",
+     "html": "It increases urinary loss of cobalamin"
+    },
+    {
+     "label": "E",
+     "html": "It competitively blocks the cobalamin receptor in the ileum"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Nitrous oxide <strong>oxidises the cobalt atom of cobalamin</strong>, converting it to an inactive form and inactivating methionine synthase. Repeated use causes a functional B12 deficiency, often with a normal or low-normal serum B12 but high methylmalonic acid and homocysteine, and subacute combined degeneration of the dorsal columns and lateral corticospinal tracts.</p><p><strong>Takeaway:</strong> recreational nitrous oxide inactivates B12 and causes subacute combined degeneration.</p>",
+   "whyNot": {
+    "A": "Antibodies to intrinsic factor, not nitrous oxide, block B12 absorption in pernicious anemia.",
+    "B": "Dihydrofolate reductase is blocked by methotrexate and trimethoprim; that would not raise methylmalonic acid.",
+    "D": "Nitrous oxide does not increase urinary B12 excretion.",
+    "E": "Nitrous oxide acts on the vitamin already in the body, not on ileal absorption."
+   },
+   "objective": "Explain how nitrous oxide causes functional vitamin B12 deficiency.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "nutrition",
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "nitrous oxide",
+    "vitamin B12"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-2-01",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 46-year-old man with alcohol use disorder is brought to the emergency department after being found confused at home. He has not eaten for several days. Temperature is 36.4°C (97.5°F), pulse 104/min and blood pressure 118/72 mm Hg. He is disoriented, has horizontal nystagmus and bilateral lateral rectus weakness, and cannot walk without support. Fingerstick glucose is 64 mg/dL. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous dextrose alone, then reassess"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous thiamine with intravenous dextrose"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous folic acid with dextrose"
+    },
+    {
+     "label": "D",
+     "html": "Oral thiamine once he can swallow safely"
+    },
+    {
+     "label": "E",
+     "html": "Intravenous lorazepam"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Confusion, ophthalmoplegia and ataxia in a malnourished person with alcohol use disorder are <strong>Wernicke encephalopathy</strong>. Give <strong>high-dose intravenous thiamine</strong> immediately; because he is hypoglycemic, give dextrose too, but never glucose alone, which increases thiamine-dependent metabolism and can worsen the encephalopathy. Diagnosis is clinical; imaging, if done, must not delay treatment.</p><p><strong>Takeaway:</strong> suspected Wernicke encephalopathy: IV thiamine at once, before or with any glucose.</p>",
+   "whyNot": {
+    "A": "Glucose without thiamine can precipitate or worsen Wernicke encephalopathy.",
+    "C": "Folate does not replace thiamine, and giving dextrose without thiamine risks worsening the encephalopathy.",
+    "D": "Oral absorption is poor and unreliable in alcohol use disorder; Wernicke encephalopathy needs IV thiamine.",
+    "E": "There are no signs of alcohol withdrawal (tremor, agitation, autonomic hyperactivity) to justify a benzodiazepine now."
+   },
+   "objective": "Give intravenous thiamine before or with glucose in suspected Wernicke encephalopathy.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "thiamine",
+    "Wernicke"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set160402-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q160402-2-02",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>The patient receives intravenous thiamine for 5 days and oral thiamine after that. His nystagmus and eye movements recover within days and his gait improves. Two weeks later he is alert and attentive but cannot recall events from a few minutes earlier and fills the gaps with invented stories. Magnesium is 1.6 mEq/L. Which of the following is the most appropriate management now?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue thiamine and treat the alcohol use disorder"
+    },
+    {
+     "label": "B",
+     "html": "Start donepezil to improve recent memory"
+    },
+    {
+     "label": "C",
+     "html": "Start haloperidol for the invented stories"
+    },
+    {
+     "label": "D",
+     "html": "Stop thiamine now that eye movements are normal"
+    },
+    {
+     "label": "E",
+     "html": "Change thiamine to one intramuscular dose weekly"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Persistent anterograde amnesia with confabulation after Wernicke encephalopathy is <strong>Korsakoff syndrome</strong>. Recovery is often partial. Management is continued thiamine, correction of magnesium (a cofactor for thiamine-dependent enzymes), good nutrition, and treatment of alcohol use disorder, with counselling and medication such as naltrexone or acamprosate, plus supported living when memory loss limits independence.</p><p><strong>Takeaway:</strong> Korsakoff syndrome is managed with ongoing thiamine, nutrition and abstinence support; no drug reverses the amnesia.</p>",
+   "whyNot": {
+    "B": "Cholinesterase inhibitors have no established benefit in Korsakoff syndrome.",
+    "C": "Confabulation is not psychosis; antipsychotics do not help and cause harm.",
+    "D": "Stopping thiamine while he remains at risk invites further damage.",
+    "E": "Weekly dosing does not maintain thiamine, which is water soluble and poorly stored."
+   },
+   "objective": "Manage Korsakoff syndrome with continued thiamine, nutrition and treatment of alcohol use disorder.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "psychiatry"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Korsakoff"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set160402-1",
+   "setOrder": 2
+  },
+  {
+   "id": "s23c-q160402-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 2-week-old boy is brought for a well-child visit. He was born at term and is exclusively breastfed, feeding well, and has regained his birth weight. His mother takes a prenatal vitamin. Examination is normal. Which of the following supplements is recommended for him now?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Fluoride drops"
+    },
+    {
+     "label": "B",
+     "html": "Iron drops"
+    },
+    {
+     "label": "C",
+     "html": "Vitamin A drops"
+    },
+    {
+     "label": "D",
+     "html": "Vitamin D 400 IU daily"
+    },
+    {
+     "label": "E",
+     "html": "Vitamin K by mouth weekly"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Breast milk contains little vitamin D, so exclusively and partly breastfed infants should receive <strong>vitamin D 400 IU daily</strong> starting in the first days of life, to prevent rickets. Formula-fed infants get vitamin D from formula.</p><p><strong>Takeaway:</strong> give every breastfed infant vitamin D 400 IU a day.</p>",
+   "whyNot": {
+    "A": "Fluoride supplements are not given before 6 months and then only where water is low in fluoride.",
+    "B": "Iron supplements for term breastfed infants are usually started around 4 months, not at 2 weeks.",
+    "C": "Routine vitamin A supplementation is not recommended for healthy infants in well-resourced settings.",
+    "E": "Vitamin K is given as a single intramuscular dose at birth; weekly oral dosing is not the standard schedule."
+   },
+   "objective": "Recommend vitamin D supplementation for breastfed infants.",
+   "areas": [
+    "usmle2026.16.04.02",
+    "usmle2026.01.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin D",
+    "infant"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 5-week-old girl born at home is brought to the emergency department because of oozing from the umbilical stump and blood in two stools today. Her parents declined all newborn injections. She is exclusively breastfed. She is alert, with stable vital signs. Hemoglobin is 10.8 g/dL and platelets 310,000/mm³. Prothrombin time is 46 s (INR 4.8) and aPTT is 68 s. Fibrinogen is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Administer vitamin K"
+    },
+    {
+     "label": "B",
+     "html": "Begin a skeletal survey for abuse"
+    },
+    {
+     "label": "C",
+     "html": "Measure factor VIII and IX levels"
+    },
+    {
+     "label": "D",
+     "html": "Start intravenous platelet transfusion"
+    },
+    {
+     "label": "E",
+     "html": "Switch her to formula and recheck in 1 week"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>An exclusively breastfed infant who did not receive vitamin K at birth, with bleeding and a markedly prolonged PT (and aPTT), normal platelets and fibrinogen, has <strong>vitamin K deficiency bleeding</strong>. Give vitamin K now (parenterally); add plasma if bleeding is severe or intracranial. Then check for intracranial hemorrhage if there are any neurologic signs.</p><p><strong>Takeaway:</strong> bleeding with a long PT in an infant who missed newborn vitamin K: give vitamin K immediately.</p>",
+   "whyNot": {
+    "B": "Abuse should always be considered, but the coagulation results and missed prophylaxis explain the bleeding; correcting the coagulopathy comes first.",
+    "C": "Hemophilia prolongs the aPTT with a normal PT; this pattern points to a vitamin K-dependent factor deficiency.",
+    "D": "The platelet count is normal; platelets will not correct a factor deficiency.",
+    "E": "Delay risks intracranial bleeding; formula feeding would not correct the deficiency quickly."
+   },
+   "objective": "Treat vitamin K deficiency bleeding in an infant who missed prophylaxis.",
+   "areas": [
+    "usmle2026.16.04.02",
+    "usmle2026.12.05.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin K",
+    "newborn"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-2-05",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 68-year-old woman with type 2 diabetes has taken metformin 1,000 mg twice daily for 9 years and omeprazole for reflux for 5 years. She reports 6 months of numbness and tingling in both feet, worse than her neurologist expected from her diabetes, and she is more forgetful. Her A1c is 6.9%. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Hemoglobin</td><td>11.6 g/dL</td></tr><tr><td>MCV</td><td>104 fL</td></tr><tr><td>Leukocytes</td><td>4,800/mm³</td></tr><tr><td>Platelets</td><td>190,000/mm³</td></tr><tr><td>TSH</td><td>2.1 µU/mL</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Measure serum vitamin B12 level"
+    },
+    {
+     "label": "B",
+     "html": "Order nerve conduction studies and stop all drugs"
+    },
+    {
+     "label": "C",
+     "html": "Start empiric folic acid"
+    },
+    {
+     "label": "D",
+     "html": "Start gabapentin for diabetic neuropathy"
+    },
+    {
+     "label": "E",
+     "html": "Stop metformin and start insulin"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Long-term <strong>metformin</strong> (reduced ileal B12 absorption) and a <strong>proton pump inhibitor</strong> (less acid to free B12 from food) both cause B12 deficiency, which can mimic or worsen diabetic neuropathy and cause cognitive change. With a macrocytic anemia, the next step is a <strong>serum B12 level</strong>, with methylmalonic acid if borderline. Periodic B12 measurement is advised in people on long-term metformin.</p><p><strong>Takeaway:</strong> neuropathy or macrocytosis on long-term metformin or acid suppression: check vitamin B12.</p>",
+   "whyNot": {
+    "B": "Nerve conduction studies would not identify the cause, and stopping effective drugs is premature.",
+    "C": "Folate alone could correct the anemia while B12-related nerve damage progresses.",
+    "D": "Treating symptoms without checking B12 would miss a reversible cause.",
+    "E": "Her diabetes is controlled; metformin can continue with B12 monitoring and replacement if needed."
+   },
+   "objective": "Check vitamin B12 in patients on long-term metformin or acid suppression with neuropathy or macrocytosis.",
+   "areas": [
+    "usmle2026.16.04.02",
+    "usmle2026.15.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin B12",
+    "metformin"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old woman with vitiligo and hypothyroidism has fatigue and tingling of her feet. Hemoglobin is 9.2 g/dL, MCV 118 fL; the smear shows oval macrocytes and hypersegmented neutrophils. Serum B12 is 120 pg/mL (N = 200–900 pg/mL), and methylmalonic acid is high. She eats meat and dairy and takes no medications other than levothyroxine. She has had no surgery. Which of the following is the most appropriate test to establish the cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Anti-intrinsic factor antibodies"
+    },
+    {
+     "label": "B",
+     "html": "Colonoscopy"
+    },
+    {
+     "label": "C",
+     "html": "Schilling test"
+    },
+    {
+     "label": "D",
+     "html": "Serum gastrin level alone"
+    },
+    {
+     "label": "E",
+     "html": "Upper endoscopy with biopsy of the terminal ileum"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>B12 deficiency in a woman with other autoimmune diseases and an adequate diet suggests <strong>pernicious anemia</strong> (autoimmune atrophic gastritis). <strong>Anti-intrinsic factor antibodies</strong> are highly specific; anti-parietal cell antibodies are more sensitive but less specific, and a high gastrin supports the diagnosis. She will need lifelong B12, and many clinicians offer endoscopy to look for gastric neoplasia at diagnosis.</p><p><strong>Takeaway:</strong> confirm pernicious anemia with anti-intrinsic factor antibodies.</p>",
+   "whyNot": {
+    "B": "Colonoscopy does not evaluate B12 absorption; it would be for iron deficiency.",
+    "C": "The Schilling test is no longer available in practice.",
+    "D": "Gastrin rises in atrophic gastritis but is not specific on its own (acid suppressants raise it too).",
+    "E": "Terminal ileal disease is unlikely without diarrhea, surgery or Crohn disease, and endoscopy cannot reach the ileum."
+   },
+   "objective": "Use anti-intrinsic factor antibodies to diagnose pernicious anemia.",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "pernicious anemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-2-07",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 42-year-old woman had a Roux-en-Y gastric bypass 4 years ago and has lost 45 kg. She stopped all supplements after the first year. She has tingling in her feet, fatigue and unsteady walking in the dark. Hemoglobin is 10.1 g/dL with MCV 106 fL. Serum B12 is low and methylmalonic acid is high. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Folic acid alone until the anemia resolves"
+    },
+    {
+     "label": "B",
+     "html": "Lifelong vitamin B12 plus a bariatric multivitamin"
+    },
+    {
+     "label": "C",
+     "html": "Vitamin B12 injections for 1 month, then stop"
+    },
+    {
+     "label": "D",
+     "html": "Surgical revision of the gastric bypass"
+    },
+    {
+     "label": "E",
+     "html": "Diet change first; B12 if symptoms persist"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>After gastric bypass, food bypasses most of the parietal cells, so acid and intrinsic factor are lacking: B12 deficiency is common and permanent. She needs <strong>lifelong B12</strong> (intramuscular initially given her neurologic signs, or high-dose oral or nasal later) plus the routine bariatric supplements (multivitamin with iron, folate, thiamine, calcium and vitamin D), with regular laboratory monitoring.</p><p><strong>Takeaway:</strong> gastric bypass needs lifelong B12 and multivitamin supplementation with monitoring.</p>",
+   "whyNot": {
+    "A": "Folate alone risks worsening the B12-related myelopathy and does not treat the cause.",
+    "C": "The absorption defect is permanent, so treatment must be lifelong.",
+    "D": "Deficiency is managed with supplements; surgical revision is not indicated for this.",
+    "E": "Diet change cannot fix absent intrinsic factor, and waiting allows neurologic damage."
+   },
+   "objective": "Provide lifelong B12 and multivitamin supplementation after gastric bypass.",
+   "areas": [
+    "usmle2026.16.04.02",
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "bariatric surgery",
+    "vitamin B12"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-2-08",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 30-year-old woman plans to become pregnant in the next few months. Her first pregnancy, 2 years ago, was terminated at 20 weeks after an ultrasound showed an open lumbosacral myelomeningocele. She takes no medications and has no seizure disorder. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin folic acid 4 mg daily now and continue through the first trimester"
+    },
+    {
+     "label": "B",
+     "html": "Begin folic acid 0.4 mg daily once pregnancy is confirmed"
+    },
+    {
+     "label": "C",
+     "html": "Begin a prenatal vitamin at the first prenatal visit"
+    },
+    {
+     "label": "D",
+     "html": "Eat more leafy greens; supplements are unnecessary"
+    },
+    {
+     "label": "E",
+     "html": "Have vitamin B12 measured before deciding on supplements"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>After a pregnancy affected by a neural tube defect, the recurrence risk is higher, and a higher dose of folic acid, <strong>4 mg daily</strong>, is recommended, starting at least 1 month before conception and continuing through the first trimester. The neural tube closes by about 4 weeks after conception, often before pregnancy is recognised, so supplementation must start before conception.</p><p><strong>Takeaway:</strong> prior neural tube defect: folic acid 4 mg daily starting before conception.</p>",
+   "whyNot": {
+    "B": "0.4 mg is the dose for people at average risk, and starting after a positive test is too late for neural tube closure.",
+    "C": "The first prenatal visit usually comes after the neural tube has closed.",
+    "D": "Diet alone does not reliably supply the dose needed to reduce recurrence.",
+    "E": "Testing B12 is reasonable in some people but must not delay folic acid."
+   },
+   "objective": "Recommend high-dose preconception folic acid after a pregnancy affected by a neural tube defect.",
+   "areas": [
+    "usmle2026.16.04.02",
+    "usmle2026.12.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "folic acid",
+    "neural tube defect"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160402-2-09",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 3-year-old unvaccinated boy is admitted with 5 days of high fever, cough, conjunctivitis and a red maculopapular rash that started on the face and spread downward. He is dehydrated and has bilateral crackles; chest radiography shows patchy infiltrates. His family recently arrived from a region with food insecurity, and he looks thin. In addition to supportive care and isolation, which of the following is recommended?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous acyclovir"
+    },
+    {
+     "label": "B",
+     "html": "Oral ribavirin"
+    },
+    {
+     "label": "C",
+     "html": "Oral vitamin A"
+    },
+    {
+     "label": "D",
+     "html": "Oral zinc only after discharge"
+    },
+    {
+     "label": "E",
+     "html": "Intravenous immune globulin"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is measles with pneumonia. <strong>Vitamin A</strong> given orally on two consecutive days reduces complications and death in children with severe measles, especially those who are malnourished or deficient; it is recommended for all children hospitalised with measles. Measles itself lowers vitamin A levels.</p><p><strong>Takeaway:</strong> give vitamin A to children with severe measles.</p>",
+   "whyNot": {
+    "A": "Acyclovir treats herpes simplex and varicella, not measles.",
+    "B": "Ribavirin is not standard therapy for measles.",
+    "D": "Zinc is given for diarrhea in children in low-resource settings; it is not the measles-specific treatment.",
+    "E": "Immune globulin is post-exposure prophylaxis for susceptible contacts, not treatment of established measles."
+   },
+   "objective": "Give vitamin A to children with severe measles.",
+   "areas": [
+    "usmle2026.16.04.02",
+    "usmle2026.16.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin A",
+    "measles"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c160402-01",
+   "frontHtml": "Which vitamins are lost together in fat malabsorption?",
+   "backHtml": "A, D, E and K (absorbed in micelles, carried in chylomicrons).",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-02",
+   "frontHtml": "Earliest symptom of vitamin A deficiency and the reason?",
+   "backHtml": "Night blindness: rods need 11-cis-retinal to rebuild rhodopsin.",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-03",
+   "frontHtml": "Foamy gray patches on dry conjunctivae in a malnourished child?",
+   "backHtml": "Bitot spots of vitamin A deficiency (xerophthalmia).",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-04",
+   "frontHtml": "Headache, papilledema, peeling skin and hepatomegaly in a supplement user?",
+   "backHtml": "Chronic vitamin A toxicity (pseudotumor cerebri, stellate cell liver injury).",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-05",
+   "frontHtml": "Why must isotretinoin users avoid pregnancy?",
+   "backHtml": "Retinoids are strongly teratogenic: craniofacial, cardiac and CNS malformations.",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-06",
+   "frontHtml": "Best serum measure of vitamin D stores?",
+   "backHtml": "25-hydroxyvitamin D; 1,25-dihydroxyvitamin D can be normal or high in deficiency.",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-07",
+   "frontHtml": "Typical labs in vitamin D deficiency rickets?",
+   "backHtml": "Low phosphate, low or normal calcium, high alkaline phosphatase, high PTH, low 25-hydroxyvitamin D.",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-08",
+   "frontHtml": "Vitamin D toxicity: calcium and PTH?",
+   "backHtml": "High calcium with suppressed PTH (very high 25-hydroxyvitamin D).",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-09",
+   "frontHtml": "Ataxia, posterior column loss and hemolysis with normal MMA in cystic fibrosis?",
+   "backHtml": "Vitamin E deficiency (loss of membrane antioxidant protection).",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-10",
+   "frontHtml": "What reaction needs vitamin K, and on which proteins?",
+   "backHtml": "Gamma-carboxylation of glutamate on factors II, VII, IX, X and proteins C and S.",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-11",
+   "frontHtml": "Why are newborns prone to vitamin K deficiency?",
+   "backHtml": "Poor placental transfer, little in breast milk, sterile gut.",
+   "sectionId": "s23c-s160402-1-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-12",
+   "frontHtml": "Four enzymes that need thiamine pyrophosphate?",
+   "backHtml": "Pyruvate dehydrogenase, alpha-ketoglutarate dehydrogenase, branched-chain ketoacid dehydrogenase, transketolase.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-13",
+   "frontHtml": "Wet versus dry beriberi?",
+   "backHtml": "Wet: high-output heart failure with edema. Dry: symmetric peripheral neuropathy.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-14",
+   "frontHtml": "Brain region classically damaged in Wernicke-Korsakoff?",
+   "backHtml": "Mammillary bodies (plus medial thalamus and periaqueductal gray).",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-15",
+   "frontHtml": "Four settings that cause pellagra besides poor diet?",
+   "backHtml": "Alcohol use, isoniazid (B6 loss), carcinoid syndrome (tryptophan to serotonin), Hartnup disease.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-16",
+   "frontHtml": "Adverse effects of therapeutic niacin?",
+   "backHtml": "Flushing (prostaglandins; aspirin helps), hyperuricemia, hyperglycemia, liver injury.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-17",
+   "frontHtml": "How does vitamin B6 deficiency cause anemia?",
+   "backHtml": "Pyridoxal phosphate is the ALA synthase cofactor; deficiency gives sideroblastic anemia.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-18",
+   "frontHtml": "Why can B6 deficiency cause infant seizures?",
+   "backHtml": "Pyridoxal phosphate is needed to make GABA from glutamate.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-19",
+   "frontHtml": "Raw egg whites and dermatitis with alopecia: which vitamin and enzyme class?",
+   "backHtml": "Biotin (bound by avidin); carboxylases such as pyruvate carboxylase.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-20",
+   "frontHtml": "Riboflavin deficiency signs?",
+   "backHtml": "Angular cheilitis, glossitis, corneal vascularisation (FAD and FMN loss).",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-21",
+   "frontHtml": "Methylmalonic acid and homocysteine in B12 versus folate deficiency?",
+   "backHtml": "B12: both high. Folate: homocysteine high, MMA normal.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-22",
+   "frontHtml": "Which B12 enzyme is mitochondrial?",
+   "backHtml": "Methylmalonyl-CoA mutase (adenosylcobalamin).",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-23",
+   "frontHtml": "Spinal tracts in subacute combined degeneration?",
+   "backHtml": "Dorsal columns and lateral corticospinal tracts.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-24",
+   "frontHtml": "How does nitrous oxide cause B12 deficiency?",
+   "backHtml": "It oxidises the cobalt of cobalamin, inactivating the vitamin.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-25",
+   "frontHtml": "Drugs that impair folate use?",
+   "backHtml": "Methotrexate, trimethoprim, pyrimethamine (dihydrofolate reductase); phenytoin.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-26",
+   "frontHtml": "Scurvy: which enzymes fail and what is the result?",
+   "backHtml": "Prolyl and lysyl hydroxylases; unstable collagen, fragile vessels and poor healing.",
+   "sectionId": "s23c-s160402-1-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-27",
+   "frontHtml": "Vitamin D dose for exclusively breastfed infants?",
+   "backHtml": "400 IU daily from the first days of life.",
+   "sectionId": "s23c-s160402-2-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-28",
+   "frontHtml": "Folic acid dose for average-risk people planning pregnancy, and after a prior NTD?",
+   "backHtml": "0.4–0.8 mg daily before conception; 4 mg daily after an affected pregnancy.",
+   "sectionId": "s23c-s160402-2-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-29",
+   "frontHtml": "Which vitamin is given to children with severe measles?",
+   "backHtml": "Vitamin A.",
+   "sectionId": "s23c-s160402-2-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-30",
+   "frontHtml": "Vitamins to monitor after gastric bypass?",
+   "backHtml": "B12, thiamine, folate, A, D, E, K (plus iron, calcium, copper, zinc); lifelong supplements.",
+   "sectionId": "s23c-s160402-2-1",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-31",
+   "frontHtml": "Suspected Wernicke encephalopathy with hypoglycemia: order of treatment?",
+   "backHtml": "High-dose IV thiamine before or with glucose; never glucose alone.",
+   "sectionId": "s23c-s160402-2-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-32",
+   "frontHtml": "Most specific test for pernicious anemia?",
+   "backHtml": "Anti-intrinsic factor antibodies.",
+   "sectionId": "s23c-s160402-2-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-33",
+   "frontHtml": "Can oral B12 treat pernicious anemia?",
+   "backHtml": "Yes, high-dose oral (about 1,000–2,000 µg/day) via passive absorption; IM if neurologic signs are significant.",
+   "sectionId": "s23c-s160402-2-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160402-34",
+   "frontHtml": "Next test when serum B12 is borderline?",
+   "backHtml": "Methylmalonic acid (high confirms B12 deficiency).",
+   "sectionId": "s23c-s160402-2-2",
+   "areas": [
+    "usmle2026.16.04.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

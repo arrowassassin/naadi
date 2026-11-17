@@ -1,0 +1,1179 @@
+{
+ "area": "usmle2026.16.04.01",
+ "sections": [
+  {
+   "id": "s23c-s160401-1-1",
+   "exam": "step1",
+   "heading": "Protein-energy malnutrition: physiology and pathology",
+   "html": "<p><strong>Protein-energy malnutrition</strong> results when intake of energy, protein or both falls short of need for long enough to change body composition and function. Worldwide it is mostly a disease of young children with poor food access and repeated infections; in high-income countries it is mostly seen in hospitalised, older, chronically ill or socially isolated adults, and in eating disorders.</p><h3>Adapting to too little food</h3><ul><li><strong>Fuel:</strong> glycogen lasts about a day; then gluconeogenesis from muscle amino acids, glycerol and lactate supplies glucose; with prolonged fasting the brain uses ketone bodies, which slows muscle loss (see the fuel-timeline figure in the enteral and parenteral nutrition chapter).</li><li><strong>Energy saving:</strong> less T4 is converted to active T3 (<span class=\"hy\">a low T3 with a normal TSH</span>), insulin falls, resting energy expenditure falls, and heart rate and blood pressure drop.</li><li><strong>Body composition:</strong> fat and muscle shrink; the heart, gut mucosa and immune tissue atrophy, which explains bradycardia, malabsorption and infections. Intracellular potassium, phosphate and magnesium stores are depleted even when serum levels look normal.</li></ul><h3>Two clinical pictures in children</h3>[[figure:s23c-fig160401-1]]<ul><li><strong>Marasmus</strong> (severe wasting): a chronic overall energy deficit. Very low weight for height, loss of subcutaneous fat and muscle (loose skin folds, \"old man\" face), no edema, <span class=\"hy\">serum albumin normal or mildly low</span>.</li><li><strong>Kwashiorkor</strong> (edematous malnutrition): <span class=\"hy\">bilateral pitting edema</span> starting at the feet, often after weaning onto a starchy, low-protein diet and triggered by infection. Weight may look less abnormal because fluid hides the tissue loss. Findings: low albumin, a large fatty liver, peeling \"flaky paint\" skin, pale sparse hair, apathy.</li></ul><p>Why the edema? Low albumin lowers plasma oncotic pressure, so fluid leaves capillaries; oxidative stress, leaky membranes and altered sodium handling add to it, which is why albumin level alone does not predict who swells. The <strong>fatty liver</strong> reflects poor synthesis of apolipoprotein B-100, so triglyceride cannot be exported as VLDL.</p><h3>Serum proteins are poor nutrition markers</h3><p>Albumin (half-life <span class=\"hy\">about 3 weeks</span>) and prealbumin (transthyretin; about 2 days) are <strong>negative acute-phase reactants</strong>: IL-6 and other cytokines turn down their hepatic synthesis, and capillary leak moves albumin out of the circulation. A septic, well-fed patient can have a very low albumin, and a marasmic child a normal one. They predict illness severity and outcome, not nutritional intake.</p><h3>Refeeding: the biochemistry</h3><p>When carbohydrate returns after starvation, <strong>insulin</strong> surges and drives glucose, phosphate, potassium and magnesium into cells. Phosphate is consumed to phosphorylate glucose and its intermediates and to make ATP and 2,3-bisphosphoglycerate, so serum phosphate can plunge. Low ATP weakens the diaphragm and myocardium, causes rhabdomyolysis and hemolysis, and low red-cell 2,3-BPG shifts the oxygen dissociation curve to the left, so less oxygen is released to tissues. Thiamine, a cofactor for pyruvate dehydrogenase and alpha-ketoglutarate dehydrogenase, is used up quickly when glucose metabolism restarts, which can precipitate Wernicke encephalopathy or wet beriberi.</p><div class=\"trap\"><p><strong>Exam trap:</strong> edema and a near-normal weight do not mean a child is well nourished. Bilateral pitting edema in a thin child is severe acute malnutrition by definition.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Marasmus is missing mass; kwashiorkor keeps water.</em>\"</p></div>",
+   "figureIds": [
+    "s23c-fig160401-1"
+   ],
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Severe Acute Malnutrition: Recognition and Management of Marasmus and Kwashiorkor",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559224/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Refeeding Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK564513/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Malnutrition",
+     "url": "https://medlineplus.gov/malnutrition.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160401-2-1",
+   "exam": "step2ck",
+   "heading": "Malnutrition: assessment, severe acute malnutrition and refeeding",
+   "html": "<h3>Assessing nutritional status</h3><ul><li><strong>History:</strong> recent weight change (<span class=\"hy\">unintentional loss over time</span> is the single most useful item), intake compared with usual, appetite, chewing and swallowing, gastrointestinal symptoms, function, food access, alcohol and drugs.</li><li><strong>Examination:</strong> BMI, temporal and limb muscle wasting, loss of subcutaneous fat, edema, grip strength; in children, weight, length or height and head circumference on growth charts, and mid-upper arm circumference (MUAC).</li><li><strong>Adults in hospital</strong>: screen everyone on admission with a validated tool. One widely used diagnostic framework (GLIM) needs at least one <em>phenotypic</em> criterion (unintentional weight loss, low BMI, or reduced muscle mass) plus at least one <em>etiologic</em> criterion (reduced intake or absorption, or disease-related inflammation).</li><li><strong>Labs</strong> look for consequences and refeeding risk (electrolytes, phosphate, magnesium, glucose, blood count), not for the diagnosis itself. Low albumin reflects inflammation and illness severity.</li></ul><h3>Children: growth and severe acute malnutrition</h3><table><tr><th>Measure</th><th>What it shows</th></tr><tr><td>Weight for length or height</td><td>Wasting (acute); below −3 SD is severe</td></tr><tr><td>Length or height for age</td><td>Stunting (chronic)</td></tr><tr><td>MUAC, children 6–59 months</td><td>Below 115 mm is severe acute malnutrition</td></tr><tr><td>Bilateral pitting edema</td><td>Severe acute malnutrition regardless of weight</td></tr></table><p><strong>Severe acute malnutrition</strong> with complications (poor appetite, edema with illness, lethargy, infection, dehydration) is treated in hospital in phases:</p><ol><li><strong>Stabilise</strong> (first days): prevent and treat hypoglycemia and hypothermia (frequent feeds, warmth); give <span class=\"hy\">broad-spectrum antibiotics routinely</span>, because infection is often silent; correct dehydration cautiously, preferably orally or by nasogastric tube with a low-sodium, higher-potassium rehydration solution, because the wasted heart is easily overloaded (IV fluids only for shock); start a low-protein, low-volume starter formula (F-75) in small, frequent feeds; give micronutrients.</li><li><strong>Rehabilitate</strong>: when appetite returns and edema resolves, move to energy-dense catch-up feeding (F-100 or ready-to-use therapeutic food), aiming for rapid weight gain; add psychosocial stimulation.</li><li>Uncomplicated cases with a good appetite are managed as outpatients with ready-to-use therapeutic food.</li></ol><p><strong>Faltering growth (failure to thrive)</strong> in infants is weight <span class=\"hy\">crossing down two major percentile lines</span> or staying below the 3rd–5th percentile. Most cases are from inadequate intake (feeding technique, formula preparation, family stress, food insecurity). Start with a careful feeding history, an observed feed and a several-day food record; order tests only when the history and examination point to disease. Weight falls first, then length, then head circumference.</p><h3>Refeeding syndrome</h3><p>High risk: minimal intake for more than 5–10 days, BMI below about 16, recent loss of more than 10–15% of weight, low baseline potassium, phosphate or magnesium, alcohol use disorder, anorexia nervosa, chronic malabsorption, or prolonged fasting before surgery.</p><ul><li>Before feeding: check potassium, phosphate, magnesium and glucose and correct severe deficits; give <strong>thiamine before carbohydrate</strong>.</li><li>Start low (<span class=\"hy\">about 10–20 kcal/kg/day</span> in high-risk adults) and increase over several days.</li><li>Monitor electrolytes daily for the first days, plus fluid balance, heart rate and edema. If phosphate, potassium or magnesium falls significantly, replace it (intravenously when severe) and slow the feeding.</li></ul><h3>Older adults</h3><p>Unintentional weight loss, sarcopenia (loss of muscle mass and strength) and frailty travel together. Look for reversible causes (depression, medications, dentition, dysphagia, social isolation, food insecurity, cancer). Treat with protein-energy oral supplements between meals plus <strong>resistance exercise</strong>; liberalise restrictive therapeutic diets. Appetite stimulants such as megestrol have little benefit and real harm (thrombosis, adrenal suppression, death) in older adults.</p><h3>Eating disorders</h3><p>Medical complications of severe restriction include bradycardia, orthostasis, hypothermia, amenorrhea and bone loss, hypoglycemia, and refeeding syndrome on renourishment. Hospital admission criteria include marked bradycardia, hypotension, electrolyte disturbance and very low weight. Psychiatric management is covered under behavioural health.</p><div class=\"trap\"><p><strong>Exam trap:</strong> do not order a feeding plan around the albumin. A low albumin in an acutely ill patient reflects inflammation; base the diagnosis on weight loss, intake and muscle.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Severe Acute Malnutrition: Recognition and Management of Marasmus and Kwashiorkor",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559224/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Refeeding Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK564513/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Sarcopenia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560813/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Malnutrition",
+     "url": "https://medlineplus.gov/malnutrition.html",
+     "sourceId": "medlineplus-federal"
+    },
+    {
+     "label": "MedlinePlus: Eating Disorders",
+     "url": "https://medlineplus.gov/eatingdisorders.html",
+     "sourceId": "medlineplus-federal"
+    },
+    {
+     "label": "MedlinePlus: Infant and Newborn Nutrition",
+     "url": "https://medlineplus.gov/infantandnewbornnutrition.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig160401-1",
+   "caption": "Figure. Marasmus and kwashiorkor compared: energy deficit and wasting versus edematous malnutrition with low albumin and fatty liver.",
+   "file": "figures/s23c-fig160401-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set160401-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Refeeding after starvation",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q160401-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 2-year-old boy in a drought-affected region was weaned 4 months ago onto a diet of mostly cassava porridge. He recently had measles. He is apathetic and irritable. Examination shows bilateral pitting edema of the feet and legs, a protuberant abdomen with an enlarged liver, and patches of peeling, darkened skin on the thighs. His hair is sparse and pale. Serum albumin is 1.9 g/dL. Which of the following best explains his edema?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Decreased plasma oncotic pressure"
+    },
+    {
+     "label": "B",
+     "html": "Increased capillary hydrostatic pressure from heart failure"
+    },
+    {
+     "label": "C",
+     "html": "Increased lymphatic drainage from the legs"
+    },
+    {
+     "label": "D",
+     "html": "Obstruction of lymphatics by filarial worms"
+    },
+    {
+     "label": "E",
+     "html": "Venous obstruction by an enlarged liver"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is <strong>kwashiorkor</strong>: edematous malnutrition after weaning onto a low-protein staple and triggered by infection. Low albumin reduces plasma oncotic pressure, so fluid moves out of capillaries into the interstitium; oxidative stress and leaky membranes contribute.</p><p><strong>Takeaway:</strong> kwashiorkor edema is driven mainly by low plasma oncotic pressure from hypoalbuminemia.</p>",
+   "whyNot": {
+    "B": "Malnourished hearts can fail with fluid overload, but nothing here suggests heart failure, and the edema predates any treatment.",
+    "C": "More lymphatic drainage would remove interstitial fluid, not cause edema.",
+    "D": "Lymphatic filariasis causes asymmetric limb lymphedema in adults, not symmetric edema with skin and hair changes.",
+    "E": "A fatty liver does not compress the inferior vena cava enough to cause leg edema."
+   },
+   "objective": "Explain the edema of kwashiorkor by low plasma oncotic pressure.",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "kwashiorkor"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 3-year-old girl with edematous malnutrition has hepatomegaly. A liver biopsy shows large fat droplets filling most hepatocytes, without inflammation or fibrosis. Reduced synthesis of which of the following most directly explains the fat accumulation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Apolipoprotein B-100"
+    },
+    {
+     "label": "B",
+     "html": "Apolipoprotein C-II"
+    },
+    {
+     "label": "C",
+     "html": "Carnitine palmitoyltransferase I"
+    },
+    {
+     "label": "D",
+     "html": "Hormone-sensitive lipase"
+    },
+    {
+     "label": "E",
+     "html": "Lipoprotein lipase"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Triglyceride made in the liver leaves as VLDL, and every VLDL particle needs <strong>apolipoprotein B-100</strong>. With too little dietary protein, apoB-100 synthesis falls, VLDL cannot be assembled and exported, and triglyceride accumulates as macrovesicular steatosis.</p><p><strong>Takeaway:</strong> fatty liver in kwashiorkor reflects failed VLDL export from too little apoB-100.</p>",
+   "whyNot": {
+    "B": "Apo C-II activates lipoprotein lipase on circulating lipoproteins; its loss raises plasma triglycerides, not liver fat.",
+    "C": "Less CPT-I would reduce fatty acid oxidation, but malnutrition does not selectively impair this enzyme's synthesis, and VLDL export is the key defect.",
+    "D": "Hormone-sensitive lipase releases fatty acids from adipose tissue; less of it would reduce delivery of fat to the liver.",
+    "E": "Lipoprotein lipase acts in capillaries on circulating triglyceride, not on export from hepatocytes."
+   },
+   "objective": "Relate fatty liver in kwashiorkor to impaired apoB-100 synthesis and VLDL export.",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "kwashiorkor",
+    "VLDL"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 19-month-old boy is brought to a clinic during a famine. He has been eating very little for months. He weighs far below the expected weight for his length, has prominent ribs and loose folds of skin over the buttocks and thighs, and an alert but wizened face. There is no edema. Which of the following findings is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Enlarged fatty liver"
+    },
+    {
+     "label": "B",
+     "html": "Generalised peeling of the skin"
+    },
+    {
+     "label": "C",
+     "html": "Serum albumin near the reference range"
+    },
+    {
+     "label": "D",
+     "html": "Severe hypoalbuminemia with ascites"
+    },
+    {
+     "label": "E",
+     "html": "Weight for height near the median"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is <strong>marasmus</strong>: a chronic overall energy deficit with severe loss of fat and muscle but no edema. Because the body adapts by breaking down muscle and fat while preserving hepatic protein synthesis, serum albumin is often normal or only mildly low.</p><p><strong>Takeaway:</strong> marasmus is severe wasting without edema, often with a near-normal albumin.</p>",
+   "whyNot": {
+    "A": "A large fatty liver is typical of kwashiorkor, not of marasmus.",
+    "B": "Peeling \"flaky paint\" skin is a feature of kwashiorkor.",
+    "D": "Severe hypoalbuminemia with fluid accumulation points to kwashiorkor or another protein-losing state.",
+    "E": "Marasmus is defined by very low weight for height (wasting)."
+   },
+   "objective": "Distinguish marasmus from kwashiorkor by absent edema and preserved albumin.",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "marasmus"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 54-year-old man is in the ICU on day 4 of septic shock from pneumonia. Before admission he was well nourished and ate normally. Serum albumin has fallen from 4.1 g/dL at admission to 2.3 g/dL, and prealbumin is 7 mg/dL (N = 15–36 mg/dL). Which of the following best explains these changes?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cytokine-mediated reduction in hepatic synthesis"
+    },
+    {
+     "label": "B",
+     "html": "Loss of albumin in the urine from glomerular injury"
+    },
+    {
+     "label": "C",
+     "html": "Protein malnutrition from 4 days of reduced intake"
+    },
+    {
+     "label": "D",
+     "html": "Reduced intestinal absorption of amino acids"
+    },
+    {
+     "label": "E",
+     "html": "Increased renal clearance of prealbumin"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Albumin and prealbumin are <strong>negative acute-phase reactants</strong>. In sepsis, IL-6, TNF and IL-1 turn down their hepatic synthesis (in favour of CRP, fibrinogen and others), and capillary leak moves albumin into the interstitium. A few days of reduced intake could not lower albumin this much, given its half-life of about 3 weeks.</p><p><strong>Takeaway:</strong> albumin and prealbumin fall with inflammation and are not reliable markers of nutritional status.</p>",
+   "whyNot": {
+    "B": "No proteinuria or nephrotic picture is described; urinary loss is not the main cause of hypoalbuminemia in sepsis.",
+    "C": "He was well nourished, and 4 days of poor intake cannot lower albumin this far given its long half-life.",
+    "D": "Malabsorption takes weeks to lower serum proteins and is not suggested here.",
+    "E": "Prealbumin is not cleared faster in sepsis; its synthesis falls."
+   },
+   "objective": "Recognise albumin and prealbumin as negative acute-phase reactants rather than nutrition markers.",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "albumin",
+    "acute phase"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 22-year-old woman with a BMI of 13.9 kg/m² has lost a large amount of weight over 6 months by severe food restriction. Heart rate is 46/min and temperature 35.8°C (96.4°F). Serum TSH is 2.1 μU/mL, free T4 is 0.9 ng/dL, and total T3 is low. Which of the following is the most likely explanation for the thyroid findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Autoimmune destruction of the thyroid gland"
+    },
+    {
+     "label": "B",
+     "html": "Central hypothyroidism from a pituitary tumour"
+    },
+    {
+     "label": "C",
+     "html": "Increased thyroxine-binding globulin"
+    },
+    {
+     "label": "D",
+     "html": "Reduced peripheral conversion of T4 to T3"
+    },
+    {
+     "label": "E",
+     "html": "Thyroid hormone resistance"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>In starvation, deiodinase activity shifts: less T4 is converted to active T3 and more to inactive reverse T3. TSH stays normal. This <strong>adaptive low-T3 state</strong> lowers energy expenditure and explains part of the bradycardia and hypothermia. It is not treated with thyroid hormone; it reverses with refeeding.</p><p><strong>Takeaway:</strong> starvation lowers T3 through reduced peripheral T4-to-T3 conversion, with a normal TSH; don't treat it.</p>",
+   "whyNot": {
+    "A": "Hashimoto thyroiditis causes a high TSH with low free T4.",
+    "B": "Central hypothyroidism gives a low free T4 with an inappropriately normal or low TSH; free T4 is normal here.",
+    "C": "TBG rises with estrogen and pregnancy; starvation tends to lower binding proteins.",
+    "E": "Hormone resistance gives high thyroid hormone levels with a normal or high TSH."
+   },
+   "objective": "Explain the low-T3 state of starvation as reduced peripheral deiodination.",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "starvation",
+    "thyroid"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-1-06",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 61-year-old man with alcohol use disorder who had eaten almost nothing for 3 weeks is admitted and given intravenous dextrose and, the next day, nasogastric feeding. On day 3 he becomes weak and short of breath. Results:</p><table><tr><th>Serum</th><th>Admission</th><th>Day 3</th></tr><tr><td>Potassium</td><td>3.6 mEq/L</td><td>2.9 mEq/L</td></tr><tr><td>Phosphorus</td><td>2.9 mg/dL</td><td>0.9 mg/dL</td></tr><tr><td>Magnesium</td><td>1.5 mEq/L</td><td>1.1 mEq/L</td></tr><tr><td>Glucose</td><td>74 mg/dL</td><td>168 mg/dL</td></tr></table><p>Which of the following changes in his red blood cells is most likely to accompany these laboratory findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Decreased 2,3-bisphosphoglycerate with increased hemoglobin oxygen affinity"
+    },
+    {
+     "label": "B",
+     "html": "Decreased 2,3-bisphosphoglycerate with decreased hemoglobin oxygen affinity"
+    },
+    {
+     "label": "C",
+     "html": "Increased 2,3-bisphosphoglycerate with increased hemoglobin oxygen affinity"
+    },
+    {
+     "label": "D",
+     "html": "Increased 2,3-bisphosphoglycerate with decreased hemoglobin oxygen affinity"
+    },
+    {
+     "label": "E",
+     "html": "Unchanged 2,3-bisphosphoglycerate with unchanged hemoglobin oxygen affinity"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is <strong>refeeding syndrome</strong>. Insulin released by the carbohydrate load drives phosphate, potassium and magnesium into cells, and phosphate is consumed in phosphorylating glucose and making ATP. Red cells, short of phosphate, make less <strong>2,3-BPG</strong>, so hemoglobin binds oxygen more tightly (curve shifts left) and releases less to tissues. Low ATP also weakens respiratory muscle and can cause hemolysis.</p><p><strong>Takeaway:</strong> severe hypophosphatemia lowers red-cell 2,3-BPG and shifts the oxygen curve to the left.</p>",
+   "whyNot": {
+    "B": "Less 2,3-BPG raises, not lowers, hemoglobin's oxygen affinity.",
+    "C": "Phosphate depletion lowers 2,3-BPG production; it does not raise it.",
+    "D": "This is the high-altitude or chronic anemia adaptation, not the effect of phosphate depletion.",
+    "E": "2,3-BPG synthesis depends on phosphate, so it falls in severe hypophosphatemia."
+   },
+   "objective": "Link refeeding hypophosphatemia to reduced 2,3-BPG and a left-shifted oxygen dissociation curve.",
+   "areas": [
+    "usmle2026.16.04.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "refeeding syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 78-year-old woman living alone has lost 7 kg over a year. Grip strength is low, and her gait speed is slow. Imaging shows reduced cross-sectional area of the thigh muscles. Which of the following changes in skeletal muscle is most characteristic of this age-related condition?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Preferential loss and atrophy of type II (fast-twitch) fibers"
+    },
+    {
+     "label": "B",
+     "html": "Replacement of muscle by inflammatory infiltrates"
+    },
+    {
+     "label": "C",
+     "html": "Ragged red fibers from mitochondrial DNA mutations"
+    },
+    {
+     "label": "D",
+     "html": "Selective hypertrophy of type II fibers"
+    },
+    {
+     "label": "E",
+     "html": "Uniform enlargement of type I fibers with central nuclei"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Age-related <strong>sarcopenia</strong> is loss of muscle mass, strength and function. Type II (fast-twitch) fibers atrophy and are lost preferentially, with loss of motor units, which reduces power and contributes to falls. Resistance training plus adequate protein intake is the main countermeasure.</p><p><strong>Takeaway:</strong> sarcopenia preferentially affects type II fibers; treat with resistance exercise and adequate protein.</p>",
+   "whyNot": {
+    "B": "Inflammatory infiltrates suggest myositis, which presents with proximal weakness and high CK.",
+    "C": "Ragged red fibers mark mitochondrial myopathies, not normal aging.",
+    "D": "Type II fibers atrophy, not hypertrophy, with age.",
+    "E": "Central nuclei with fiber enlargement suggest a myopathy, not age-related loss."
+   },
+   "objective": "Describe the fiber-type changes of sarcopenia.",
+   "areas": [
+    "usmle2026.16.04.01",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [
+    "nutrition",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "sarcopenia",
+    "geriatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 20-month-old girl is brought to a field hospital by her parent. She has had diarrhea for 5 days and has eaten little. She is lethargic and refuses food. Temperature is 35.4°C (95.7°F). She has bilateral pitting edema of the feet and lower legs. Mid-upper arm circumference is 108 mm. Fingerstick glucose is 48 mg/dL. Glucose is given and she is warmed. She has no signs of shock. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Discharge home with ready-to-use therapeutic food"
+    },
+    {
+     "label": "B",
+     "html": "Give a high-energy catch-up formula (F-100) as much as she will take"
+    },
+    {
+     "label": "C",
+     "html": "Give intravenous normal saline 20 mL/kg over 1 hour"
+    },
+    {
+     "label": "D",
+     "html": "Start F-75 starter formula in small frequent feeds plus oral antibiotics"
+    },
+    {
+     "label": "E",
+     "html": "Withhold feeds for 24 hours to rest the gut"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>She has <strong>complicated severe acute malnutrition</strong> (edema, MUAC below 115 mm, poor appetite, hypoglycemia, hypothermia). Stabilisation comes first: frequent small feeds of a low-protein, low-volume starter formula (F-75) to prevent hypoglycemia and refeeding problems, warmth, routine broad-spectrum antibiotics for silent infection, and careful rehydration. Catch-up feeding starts once appetite returns and edema resolves.</p><p><strong>Takeaway:</strong> stabilise complicated severe acute malnutrition with F-75 feeds and routine antibiotics before catch-up feeding.</p>",
+   "whyNot": {
+    "A": "Outpatient therapeutic food is for uncomplicated cases with a good appetite; she is lethargic, hypoglycemic and hypothermic.",
+    "B": "High-energy catch-up feeding during stabilisation risks heart failure and refeeding syndrome.",
+    "C": "Rapid IV saline can overload the atrophic heart; IV fluids are reserved for shock.",
+    "E": "Withholding feeds risks recurrent hypoglycemia, which is a major cause of death in these children."
+   },
+   "objective": "Start stabilisation of complicated severe acute malnutrition with F-75 and antibiotics.",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "severe acute malnutrition"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 15-month-old boy with severe wasting (weight-for-length below −3 SD) and no edema has had watery diarrhea for 2 days. He is thirsty and has sunken eyes, but he is alert, his pulse is strong and capillary refill is 2 seconds. Which of the following is the most appropriate way to rehydrate him?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous normal saline bolus of 20 mL/kg"
+    },
+    {
+     "label": "B",
+     "html": "Slow oral low-sodium, higher-potassium rehydration solution"
+    },
+    {
+     "label": "C",
+     "html": "Plain water by mouth as much as he wants to drink"
+    },
+    {
+     "label": "D",
+     "html": "Standard rehydration solution 100 mL/kg over 1 hour"
+    },
+    {
+     "label": "E",
+     "html": "Withhold all fluids until the diarrhea stops"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Children with severe acute malnutrition have excess body sodium, depleted potassium and a weak heart. Without shock, rehydrate <strong>orally or by nasogastric tube, slowly</strong>, with a rehydration solution that has less sodium and more potassium than standard solution, monitoring pulse, breathing and weight for signs of overload.</p><p><strong>Takeaway:</strong> rehydrate malnourished children slowly by mouth with a low-sodium, higher-potassium solution; IV fluids only for shock.</p>",
+   "whyNot": {
+    "A": "IV boluses risk heart failure and are reserved for shock in severe malnutrition.",
+    "C": "Plain water does not replace electrolytes and can cause hyponatremia.",
+    "D": "Rapid rehydration with full-sodium solution risks sodium and fluid overload in these children.",
+    "E": "Withholding fluids worsens dehydration."
+   },
+   "objective": "Rehydrate a severely malnourished child slowly with a low-sodium, higher-potassium oral solution.",
+   "areas": [
+    "usmle2026.16.04.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "severe acute malnutrition",
+    "rehydration"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-2-03",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 74-year-old man is admitted for elective repair of an abdominal hernia. Over 3 months he has eaten about half his usual meals because of early satiety, and he has lost 6 kg (8% of his body weight). Examination shows temporal wasting. Laboratory results:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Albumin</td><td>3.7 g/dL</td></tr><tr><td>Prealbumin</td><td>19 mg/dL (N = 15–36 mg/dL)</td></tr><tr><td>Hemoglobin</td><td>13.1 g/dL</td></tr><tr><td>Leukocytes</td><td>6,800/mm³</td></tr></table><p>BMI is 22 kg/m². Which of the following best supports a diagnosis of malnutrition in this patient?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "A BMI of 22 kg/m² at admission"
+    },
+    {
+     "label": "B",
+     "html": "Albumin and prealbumin in the reference range"
+    },
+    {
+     "label": "C",
+     "html": "Hemoglobin and leukocyte count in the reference range"
+    },
+    {
+     "label": "D",
+     "html": "8% weight loss, low intake and muscle wasting"
+    },
+    {
+     "label": "E",
+     "html": "Early satiety reported over 3 months"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Malnutrition is diagnosed clinically: a phenotypic feature (here unintentional loss of 8% in 3 months and temporal muscle wasting) plus an etiologic feature (intake about half of usual). Normal serum proteins do not exclude it, because they mainly track inflammation. He should be evaluated for the cause of early satiety and receive nutrition support before surgery.</p><p><strong>Takeaway:</strong> diagnose malnutrition from weight loss, intake and muscle, not from albumin or prealbumin.</p>",
+   "whyNot": {
+    "A": "A normal BMI does not exclude malnutrition after substantial recent weight loss.",
+    "B": "Normal serum proteins do not rule malnutrition in or out; they track inflammation.",
+    "C": "Blood counts are not diagnostic criteria for malnutrition.",
+    "E": "Early satiety is a cause to investigate, not on its own a diagnosis of malnutrition."
+   },
+   "objective": "Use weight loss, reduced intake and muscle loss to diagnose malnutrition in an adult.",
+   "areas": [
+    "usmle2026.16.04.01",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "malnutrition assessment"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 9-month-old boy is seen for a well-child visit. His weight has fallen from the 50th percentile at 4 months to below the 3rd percentile; length is at the 25th percentile and head circumference at the 50th. He is alert and interactive, with no dysmorphic features, organomegaly or abnormal stools. He is fed formula and some cereal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Admission for intravenous nutrition"
+    },
+    {
+     "label": "B",
+     "html": "Feeding history, observed feed and a 3-day food record"
+    },
+    {
+     "label": "C",
+     "html": "Sweat chloride test and stool elastase"
+    },
+    {
+     "label": "D",
+     "html": "Thyroid function tests and celiac serology"
+    },
+    {
+     "label": "E",
+     "html": "Upper endoscopy with small-bowel biopsy"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is <strong>faltering growth</strong> with weight affected first, length less and head circumference spared, the pattern of <strong>inadequate intake</strong>, by far the most common cause. Start with a careful feeding history (amount, formula preparation, technique, family stress and food access), watch a feed and keep a food record. Laboratory tests rarely help unless the history or examination points to disease.</p><p><strong>Takeaway:</strong> evaluate faltering growth with a careful feeding history and observed feeding before broad testing.</p>",
+   "whyNot": {
+    "A": "He is alert and well; there is no indication for hospital or IV feeding.",
+    "C": "Cystic fibrosis is suggested by greasy stools, respiratory symptoms or a positive newborn screen, none of which are present.",
+    "D": "Untargeted endocrine and celiac testing is low-yield without suggestive features, and celiac disease usually appears after gluten exposure is established.",
+    "E": "Endoscopy is invasive and not indicated without signs of malabsorption."
+   },
+   "objective": "Begin the evaluation of faltering growth with dietary assessment.",
+   "areas": [
+    "usmle2026.16.04.01",
+    "usmle2026.01.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_history_pe"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "failure to thrive"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>An 81-year-old woman in a nursing home has lost 6% of her body weight over 6 months. She has no cognitive impairment, and her depression screen is negative. Her dentures fit well, her medications have been reviewed, and evaluation for cancer and other illness is unrevealing. She eats about two thirds of each meal and is on a low-salt, low-fat diet for hypertension. Grip strength is reduced. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Insert a percutaneous gastrostomy tube for overnight feeds"
+    },
+    {
+     "label": "B",
+     "html": "Liberalise the diet, add oral supplements and resistance exercise"
+    },
+    {
+     "label": "C",
+     "html": "Start dronabinol before meals to stimulate appetite"
+    },
+    {
+     "label": "D",
+     "html": "Start megestrol acetate to stimulate appetite"
+    },
+    {
+     "label": "E",
+     "html": "Start mirtazapine at bedtime to stimulate appetite"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>In an older adult with unexplained weight loss and weakness, remove unnecessary dietary restrictions, add <strong>oral nutritional supplements</strong> between meals, and add <strong>resistance exercise</strong> to rebuild muscle. Appetite stimulants have little benefit and important harms in this age group.</p><p><strong>Takeaway:</strong> for weight loss and sarcopenia in older adults, liberalise the diet, add supplements and resistance exercise.</p>",
+   "whyNot": {
+    "A": "Tube feeding is not indicated in a patient who can eat and has no swallowing problem.",
+    "C": "Dronabinol causes dizziness and confusion in older adults and has little effect on weight.",
+    "D": "Megestrol raises thrombosis risk and mortality in older adults and gives mostly fat and fluid gain.",
+    "E": "Mirtazapine is an option when depression coexists; her screen is negative, and it adds sedation and fall risk."
+   },
+   "objective": "Manage involuntary weight loss in an older adult with dietary liberalisation, supplements and exercise.",
+   "areas": [
+    "usmle2026.16.04.01",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "geriatrics",
+    "weight loss"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160401-2-06",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 46-year-old man with alcohol use disorder is admitted after being found at home with minimal food intake for about 2 weeks. BMI is 15.8 kg/m². He is alert. Serum potassium is 3.3 mEq/L, phosphorus 2.4 mg/dL and magnesium 1.3 mEq/L. He cannot eat enough by mouth, and a nasogastric feeding tube is placed. Which of the following is the most appropriate plan for starting nutrition?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin full calculated energy needs today to reverse weight loss quickly"
+    },
+    {
+     "label": "B",
+     "html": "Begin intravenous dextrose 10% alone for the first 3 days"
+    },
+    {
+     "label": "C",
+     "html": "Delay all feeding until electrolytes are normal for 48 hours"
+    },
+    {
+     "label": "D",
+     "html": "Give thiamine, replace electrolytes, and start feeds at about 10–20 kcal/kg/day"
+    },
+    {
+     "label": "E",
+     "html": "Start parenteral nutrition through a central line"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>He is at <strong>high risk of refeeding syndrome</strong> (very low BMI, little intake for 2 weeks, low potassium, phosphate and magnesium, alcohol use). Give thiamine before carbohydrate, correct electrolytes, and start feeding low (about 10–20 kcal/kg/day), increasing over several days with daily electrolyte checks.</p><p><strong>Takeaway:</strong> in high refeeding risk: thiamine first, correct electrolytes, start low and go slow.</p>",
+   "whyNot": {
+    "A": "Full feeding from the start is what triggers severe refeeding syndrome.",
+    "B": "Dextrose alone delivers carbohydrate without protein and can precipitate refeeding and Wernicke encephalopathy.",
+    "C": "Long delays prolong starvation; feeding can start cautiously while electrolytes are replaced.",
+    "E": "His gut works, so enteral feeding is preferred; PN adds infection risk without benefit."
+   },
+   "objective": "Start nutrition safely in a patient at high risk of refeeding syndrome.",
+   "areas": [
+    "usmle2026.16.04.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "refeeding syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set160401-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q160401-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>The patient's feeds are started at 15 kcal/kg/day and increased on day 2. On day 3 he reports leg weakness and mild shortness of breath. Pulse is 104/min. Serum phosphorus is 0.9 mg/dL, potassium 3.0 mEq/L and magnesium 1.2 mEq/L. ECG shows no arrhythmia. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue the current feeding rate and recheck labs next week"
+    },
+    {
+     "label": "B",
+     "html": "Give oral phosphate and increase the feeding rate"
+    },
+    {
+     "label": "C",
+     "html": "Give intravenous phosphate, potassium and magnesium and reduce the feeding rate"
+    },
+    {
+     "label": "D",
+     "html": "Start furosemide for presumed heart failure"
+    },
+    {
+     "label": "E",
+     "html": "Stop feeding permanently and switch to oral intake only"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Severe <strong>hypophosphatemia</strong> below 1 mg/dL with symptoms (weakness, dyspnea, tachycardia) is dangerous: respiratory failure, heart failure, rhabdomyolysis and hemolysis can follow. Replace phosphate intravenously along with potassium and magnesium, and slow the feeding (commonly by about half) until levels recover, then increase again gradually.</p><p><strong>Takeaway:</strong> symptomatic severe refeeding hypophosphatemia: IV phosphate, replace potassium and magnesium, and slow the feeds.</p>",
+   "whyNot": {
+    "A": "Severe symptomatic hypophosphatemia needs treatment and daily monitoring now.",
+    "B": "Oral phosphate is too slow at this level, and speeding up feeds will push phosphate lower.",
+    "D": "Diuretics would worsen hypokalemia and hypomagnesemia, and the cause is electrolyte depletion.",
+    "E": "Nutrition must continue; refeeding is slowed, not abandoned."
+   },
+   "objective": "Treat symptomatic refeeding hypophosphatemia and adjust the feeding rate.",
+   "areas": [
+    "usmle2026.16.04.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "refeeding syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set160401-1",
+   "setOrder": 2
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c160401-01",
+   "frontHtml": "Edema, fatty liver, flaky-paint skin and low albumin in a weaned toddler?",
+   "backHtml": "Kwashiorkor (edematous severe malnutrition).",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-02",
+   "frontHtml": "Severe wasting without edema, loose skin folds and a near-normal albumin?",
+   "backHtml": "Marasmus.",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-03",
+   "frontHtml": "Main mechanism of edema in kwashiorkor?",
+   "backHtml": "Low plasma oncotic pressure from hypoalbuminemia, plus leaky membranes from oxidative stress.",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-04",
+   "frontHtml": "Why does the liver fill with fat in kwashiorkor?",
+   "backHtml": "Too little apolipoprotein B-100, so triglyceride cannot leave the liver as VLDL.",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-05",
+   "frontHtml": "Thyroid tests in starvation?",
+   "backHtml": "Low T3 (less T4-to-T3 conversion, more reverse T3) with a normal TSH; adaptive, not treated.",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-06",
+   "frontHtml": "Why are albumin and prealbumin poor markers of nutrition in sick patients?",
+   "backHtml": "They are negative acute-phase reactants: inflammation lowers their synthesis and moves albumin out of vessels.",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-07",
+   "frontHtml": "Key electrolyte change in refeeding syndrome and why?",
+   "backHtml": "Hypophosphatemia: insulin drives phosphate into cells, where it is used to phosphorylate glucose and make ATP.",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-08",
+   "frontHtml": "Effect of severe hypophosphatemia on oxygen delivery?",
+   "backHtml": "Less red-cell 2,3-BPG, so the oxygen curve shifts left and tissues receive less oxygen.",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-09",
+   "frontHtml": "Which muscle fibers are lost first in sarcopenia?",
+   "backHtml": "Type II (fast-twitch) fibers.",
+   "sectionId": "s23c-s160401-1-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-10",
+   "frontHtml": "Diagnosing malnutrition in an adult (GLIM-style)?",
+   "backHtml": "At least one phenotypic sign (weight loss, low BMI, low muscle) plus one cause (low intake or absorption, or inflammation).",
+   "sectionId": "s23c-s160401-2-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-11",
+   "frontHtml": "MUAC cut-off for severe acute malnutrition in children 6–59 months?",
+   "backHtml": "Below 115 mm (or bilateral pitting edema, or weight-for-height below −3 SD).",
+   "sectionId": "s23c-s160401-2-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-12",
+   "frontHtml": "First phase of care for complicated severe acute malnutrition?",
+   "backHtml": "Stabilise: treat hypoglycemia and hypothermia, give routine antibiotics, rehydrate cautiously, start F-75 in small frequent feeds.",
+   "sectionId": "s23c-s160401-2-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-13",
+   "frontHtml": "How to rehydrate a child with severe acute malnutrition who is not in shock?",
+   "backHtml": "Slowly, by mouth or nasogastric tube, with a low-sodium, higher-potassium solution.",
+   "sectionId": "s23c-s160401-2-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-14",
+   "frontHtml": "Before feeding a patient at high refeeding risk?",
+   "backHtml": "Give thiamine, check and correct potassium, phosphate and magnesium, then start at about 10–20 kcal/kg/day.",
+   "sectionId": "s23c-s160401-2-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-15",
+   "frontHtml": "Severe symptomatic hypophosphatemia during refeeding: management?",
+   "backHtml": "IV phosphate (plus potassium and magnesium) and slow the feeding rate.",
+   "sectionId": "s23c-s160401-2-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-16",
+   "frontHtml": "Most common cause of faltering growth in infancy and first step?",
+   "backHtml": "Inadequate intake; start with a feeding history, an observed feed and a food record.",
+   "sectionId": "s23c-s160401-2-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160401-17",
+   "frontHtml": "Why avoid megestrol for weight loss in older adults?",
+   "backHtml": "Little benefit, and it raises thrombosis risk and mortality; prefer supplements and resistance exercise.",
+   "sectionId": "s23c-s160401-2-1",
+   "areas": [
+    "usmle2026.16.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

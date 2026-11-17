@@ -1,0 +1,1261 @@
+{
+ "area": "usmle2026.16.04.04",
+ "sections": [
+  {
+   "id": "s23c-s160404-1-1",
+   "exam": "step1",
+   "heading": "Obesity: energy balance, appetite signals, adipose biology and drugs by mechanism",
+   "html": "<p>Obesity is a chronic disease of excess or dysfunctional adipose tissue that results from a sustained positive energy balance on a background of strong genetic and environmental influences. Body weight is defended: after weight loss, energy expenditure falls and hunger signals rise, which is why weight is regained without ongoing treatment.</p><h3>Energy balance</h3><ul><li><strong>Expenditure</strong>: resting energy expenditure (about 60–70%, driven mostly by lean mass), the thermic effect of food (about 10%) and physical activity, including non-exercise activity (the most variable part).</li><li><strong>Intake</strong> is set by the hypothalamus, which integrates long-term adiposity signals (leptin, insulin) with short-term gut signals (ghrelin, GLP-1, peptide YY, cholecystokinin) and reward circuits.</li></ul>[[figure:s23c-fig160404-1]]<h3>The appetite circuit</h3><ul><li><strong>Leptin</strong> is made by adipocytes in proportion to fat mass. In the arcuate nucleus it stimulates <strong>POMC</strong> neurons and inhibits <strong>AgRP/NPY</strong> neurons. Most people with obesity have <span class=\"hy\">high leptin</span> and leptin resistance; congenital leptin deficiency (very rare) causes extreme early hyperphagia and responds to recombinant leptin (metreleptin).</li><li>POMC is cleaved (by prohormone convertase 1, <em>PCSK1</em>) to alpha-MSH, which activates the <strong>melanocortin-4 receptor (MC4R)</strong> in the paraventricular nucleus to reduce intake and raise expenditure. AgRP blocks MC4R. Loss-of-function variants in <em>MC4R</em> are the commonest single-gene cause of obesity. <strong>Setmelanotide</strong> is an MC4R agonist used for POMC, PCSK1 and leptin-receptor deficiency and Bardet-Biedl syndrome, where the defect lies upstream of the receptor.</li><li><strong>Ghrelin</strong>, from endocrine cells of the gastric fundus, rises before meals and stimulates AgRP/NPY neurons; it is very high in <span class=\"hy\">Prader-Willi syndrome</span> (hyperphagia, hypotonia, hypogonadism, from loss of paternally expressed genes on 15q11–q13). Sleeve gastrectomy removes most ghrelin-producing fundus.</li><li><strong>GLP-1</strong> from ileal and colonic L cells raises glucose-dependent insulin secretion, slows gastric emptying and acts on the hypothalamus and brainstem to increase satiety.</li></ul><h3>Adipose tissue as an endocrine organ</h3><p>Expanded visceral fat releases free fatty acids and inflammatory cytokines (TNF-alpha, IL-6) and secretes less <strong>adiponectin</strong>, an adipokine that improves insulin sensitivity and fatty-acid oxidation. The result is insulin resistance, atherogenic dyslipidemia (high triglycerides, low HDL, small dense LDL) and fat build-up in the liver: metabolic dysfunction-associated steatotic liver disease (MASLD), which can progress to steatohepatitis, fibrosis and cirrhosis. Obesity also raises the risk of type 2 diabetes, hypertension, obstructive sleep apnea, osteoarthritis, gallstones, venous thromboembolism, polycystic ovary syndrome, and cancers of the endometrium, breast (after menopause), colon, kidney, esophagus (adenocarcinoma) and liver. Peripheral aromatisation of androgens to estrogen in fat explains the endometrial risk.</p><h3>Drugs by mechanism</h3><table><tr><th>Drug</th><th>Mechanism</th><th>Key adverse effects and cautions</th></tr><tr><td>Semaglutide, liraglutide</td><td>GLP-1 receptor agonists: satiety, slower gastric emptying</td><td>Nausea, vomiting, gallstones, pancreatitis; avoid with personal or family history of medullary thyroid carcinoma or MEN2</td></tr><tr><td>Tirzepatide</td><td>Dual GIP and GLP-1 receptor agonist</td><td>As for GLP-1 agonists; largest average weight loss of the approved drugs</td></tr><tr><td>Orlistat</td><td>Orlistat inhibits <span class=\"hy\">gastric and pancreatic lipase</span>, so about a third of dietary fat is not absorbed</td><td>Oily stools, fecal urgency; low fat-soluble vitamins (A, D, E, K); give a multivitamin at a different time of day</td></tr><tr><td>Phentermine-topiramate</td><td>Sympathomimetic amine (norepinephrine release) plus topiramate (GABA enhancement, glutamate block)</td><td>Raised heart rate, insomnia, paresthesias, kidney stones; topiramate is teratogenic (oral clefts), so pregnancy testing and contraception are required</td></tr><tr><td>Naltrexone-bupropion</td><td>Bupropion stimulates POMC neurons; naltrexone blocks the opioid feedback that would limit it</td><td>Raised blood pressure, nausea; avoid with seizure disorders, eating disorders and opioid use; suicidality warning</td></tr><tr><td>Setmelanotide</td><td>MC4R agonist</td><td>Skin hyperpigmentation (melanocortin-1 receptor), injection reactions</td></tr></table><h3>Bariatric surgery physiology</h3><ul><li><strong>Sleeve gastrectomy</strong> removes <span class=\"hy\">about 80% of the stomach</span> along the greater curvature, including most of the fundus: smaller capacity, lower ghrelin, faster gastric emptying. It can worsen gastroesophageal reflux.</li><li><strong>Roux-en-Y gastric bypass</strong> creates a small pouch drained by a Roux limb of jejunum; food bypasses the stomach remnant, duodenum and proximal jejunum, so GLP-1 and peptide YY rise sharply after meals and iron, calcium, copper and B12 absorption falls.</li><li><strong>Dumping syndrome</strong>: early dumping (within about 30 minutes) comes from hyperosmolar food entering the small bowel quickly, which pulls fluid into the lumen and releases vasoactive gut peptides (cramps, diarrhea, flushing, palpitations). Late dumping (1–3 hours) is hypoglycemia from an exaggerated insulin surge after rapid glucose absorption.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> most patients with obesity have <em>high</em> leptin (resistance), not leptin deficiency. Low leptin is the rare monogenic form or the state after major fat loss.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>POMC says stop, AgRP says go, MC4R is the brake pedal</em>\": leptin presses stop; ghrelin presses go; setmelanotide presses the brake pedal directly.</p></div>",
+   "figureIds": [
+    "s23c-fig160404-1"
+   ],
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Obesity Medications: Evidence-Based Management",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK618375/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Prader-Willi Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK553161/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Dumping Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470542/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Obesity",
+     "url": "https://medlineplus.gov/obesity.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s160404-2-1",
+   "exam": "step2ck",
+   "heading": "Obesity: assessment, counselling, medication, surgery and post-bariatric care",
+   "html": "<h3>Assessment</h3><ul><li><strong>Body mass index</strong> (kg/m²): 18.5–24.9 normal; 25.0–29.9 overweight; 30.0–34.9 class 1 obesity; 35.0–39.9 class 2; 40 or more class 3. In people of Asian ancestry, cardiometabolic risk rises at lower BMI, so lower thresholds are used (overweight from about 23, obesity from about 27.5).</li><li>BMI misclassifies muscular people and older adults with low muscle mass. Add <strong>waist circumference</strong> (central adiposity; in the United States, <span class=\"hy\">above about 102 cm in men and 88 cm in women</span>) and look for complications: blood pressure, A1c or fasting glucose, lipids, liver enzymes (MASLD), sleep apnea symptoms, joint pain, mood, and eating patterns including binge eating.</li><li>Ask about weight-promoting medicines (antipsychotics such as olanzapine, mirtazapine, glucocorticoids, insulin and sulfonylureas, some antiepileptics) and secondary causes when the history suggests them (hypothyroidism, Cushing syndrome).</li><li>Use respectful, person-first language and ask permission before discussing weight; weight stigma reduces engagement with care.</li></ul><h3>Treatment, step by step</h3><ul><li><strong>Lifestyle</strong> is the base for everyone: a calorie deficit of about <span class=\"hy\">500–750 kcal/day</span> with a dietary pattern the patient can keep (for example Mediterranean-style), about 150 minutes or more a week of moderate activity plus resistance training, sleep and behavioural strategies (self-monitoring, goal setting). A 5–10% weight loss improves blood pressure, glucose, triglycerides and liver fat; larger losses are needed for remission of type 2 diabetes or to improve steatohepatitis.</li><li><strong>Counselling</strong>: adults with a BMI of 30 or more should be offered or referred to intensive, multicomponent behavioural interventions. Children and adolescents aged 6 years and older with a BMI at or above the 95th percentile should be offered or referred to comprehensive, intensive behavioural interventions (26 or more contact hours, involving the family).</li><li><strong>Medication</strong> is added for a BMI of 30 or more, or <span class=\"hy\">27 or more with a weight-related condition</span> (hypertension, type 2 diabetes, dyslipidemia, sleep apnea, MASLD), alongside lifestyle. GLP-1-based agents (semaglutide, tirzepatide) give the largest losses and have cardiovascular and other benefits in selected patients. Choose around comorbidities: avoid phentermine with cardiovascular disease or uncontrolled hypertension, avoid naltrexone-bupropion with seizures or opioid use, and avoid any of these drugs in pregnancy. Weight usually returns when the drug is stopped.</li><li><strong>Metabolic and bariatric surgery</strong> gives the largest and most durable losses and improves diabetes, hypertension and sleep apnea. Current society guidance recommends it for a BMI of 35 or more regardless of comorbidity, and suggests considering it from a BMI of 30 with metabolic disease (from about 27.5 in Asian ancestry). It is also an option for selected adolescents with severe obesity. Evaluation is multidisciplinary (medical, nutritional, psychological).</li></ul><h3>After bariatric surgery</h3><table><tr><th>Problem</th><th>When</th><th>Clues and action</th></tr><tr><td>Anastomotic or staple-line leak</td><td>First days to weeks</td><td>Tachycardia is often the first sign, then fever and abdominal pain; CT with oral contrast, return to surgery or drainage</td></tr><tr><td>Marginal ulcer (bypass)</td><td>Weeks to years</td><td>Epigastric pain, bleeding; risk raised by smoking, NSAIDs and <em>H. pylori</em>; upper endoscopy, proton pump inhibitor, stop the cause</td></tr><tr><td>Internal hernia (bypass)</td><td>Months to years, during rapid weight loss</td><td>Intermittent colicky periumbilical pain; CT may show a mesenteric swirl, but can be normal; laparoscopic exploration, because the bowel can strangulate</td></tr><tr><td>Gallstones</td><td>First 6–18 months</td><td>Rapid weight loss; <span class=\"hy\">ursodeoxycholic acid</span> for about 6 months lowers stone formation in patients without stones</td></tr><tr><td>Dumping</td><td>Any time after eating</td><td>Small frequent meals, avoid simple sugars, protein and fibre with each meal, drink liquids apart from solids</td></tr><tr><td>Nutrient deficiencies</td><td>Lifelong</td><td>Iron, B12, folate, calcium and vitamin D, copper, zinc, thiamine (especially with vomiting); lifelong supplements and periodic laboratory checks</td></tr><tr><td>Alcohol use disorder</td><td>Years</td><td>Higher and faster peak blood alcohol after bypass; screen and counsel</td></tr></table><h3>Obesity and breathing during sleep</h3><p>Obstructive sleep apnea is common in obesity; ask about snoring, witnessed apneas and daytime sleepiness and confirm with a sleep study. <strong>Obesity hypoventilation syndrome</strong> is daytime hypercapnia (PaCO<sub>2</sub> 45 mm Hg or more) in a person with obesity once other causes are excluded; a raised serum bicarbonate is a useful screen. Treat with <strong>positive airway pressure during sleep</strong> (CPAP when severe obstructive apnea coexists, noninvasive ventilation otherwise) and weight loss. High-flow oxygen alone can worsen hypercapnia.</p><div class=\"trap\"><p><strong>Exam trap:</strong> intermittent abdominal pain after a gastric bypass with a normal CT can still be an internal hernia. Do not reassure; the surgeon explores.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Comprehensive Behavioral Modification and Counseling Strategies for Obesity Management",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK618378/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Bariatric Surgery Complications",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK615299/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Special Populations and Long-Term Management in Obesity Medicine",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK618379/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "USPSTF: Weight loss to prevent obesity-related morbidity in adults, behavioral interventions",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/obesity-in-adults-interventions",
+     "sourceId": "uspstf"
+    },
+    {
+     "label": "USPSTF: High body mass index in children and adolescents, interventions",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/obesity-in-children-and-adolescents-screening",
+     "sourceId": "uspstf"
+    },
+    {
+     "label": "MedlinePlus: Weight Loss Surgery",
+     "url": "https://medlineplus.gov/weightlosssurgery.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig160404-1",
+   "caption": "Figure. The hypothalamic appetite circuit: leptin, ghrelin and gut hormones converge on POMC and AgRP/NPY neurons and the melanocortin-4 receptor, with the sites where anti-obesity drugs act.",
+   "file": "figures/s23c-fig160404-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set160404-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Sleepiness, headaches and hypercapnia",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q160404-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 3-year-old girl has had insatiable hunger since early infancy and weighs 35 kg. Her parents are first cousins. Birth weight was normal. She has frequent respiratory infections. Development is normal. Serum leptin is undetectable. Which of the following best describes how daily injections of the missing hormone would reduce her food intake?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activation of AgRP/NPY neurons in the arcuate nucleus"
+    },
+    {
+     "label": "B",
+     "html": "Activation of POMC neurons in the arcuate nucleus"
+    },
+    {
+     "label": "C",
+     "html": "Blockade of the melanocortin-4 receptor in the paraventricular nucleus"
+    },
+    {
+     "label": "D",
+     "html": "Increased ghrelin secretion from the gastric fundus"
+    },
+    {
+     "label": "E",
+     "html": "Slower gastric emptying through vagal afferents"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Undetectable leptin with severe early hyperphagia and consanguinity is <strong>congenital leptin deficiency</strong>. Leptin acts in the arcuate nucleus to stimulate anorexigenic <strong>POMC</strong> neurons (whose product alpha-MSH activates MC4R) and to inhibit orexigenic AgRP/NPY neurons. Recombinant leptin (metreleptin) restores this signal and markedly reduces intake.</p><p><strong>Takeaway:</strong> leptin reduces intake by stimulating POMC neurons and inhibiting AgRP/NPY neurons in the arcuate nucleus.</p>",
+   "whyNot": {
+    "A": "AgRP/NPY neurons drive hunger; leptin inhibits them.",
+    "C": "Blocking MC4R would increase intake; the melanocortin signal downstream of leptin activates MC4R.",
+    "D": "Ghrelin increases hunger, and leptin does not raise it.",
+    "E": "Slower gastric emptying is a GLP-1 effect, not the main action of leptin."
+   },
+   "objective": "Describe how leptin acts on the arcuate nucleus to reduce food intake.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.15.06"
+   ],
+   "disciplines": [
+    "physiology",
+    "genetics",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "leptin"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 4-year-old boy has severe obesity that began in the first months of life with constant hunger. He has red hair and pale skin, unlike his parents. As a newborn he had hypoglycemia and was found to have adrenal insufficiency, for which he takes hydrocortisone. Genetic testing shows biallelic loss-of-function variants in the gene encoding pro-opiomelanocortin. Which of the following drugs targets the step that is missing in this child?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Metreleptin"
+    },
+    {
+     "label": "B",
+     "html": "Orlistat"
+    },
+    {
+     "label": "C",
+     "html": "Phentermine"
+    },
+    {
+     "label": "D",
+     "html": "Semaglutide"
+    },
+    {
+     "label": "E",
+     "html": "Setmelanotide"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>POMC is the precursor of ACTH (hence adrenal insufficiency) and of alpha-MSH, which drives the melanocortin-4 receptor that limits appetite (and, through MC1R, pigmentation, hence red hair). <strong>Setmelanotide</strong> is an MC4R agonist that replaces the missing alpha-MSH signal downstream of the defect and reduces hunger and weight in POMC, PCSK1 and leptin-receptor deficiency.</p><p><strong>Takeaway:</strong> POMC deficiency (obesity, red hair, ACTH deficiency) is treated with the MC4R agonist setmelanotide.</p>",
+   "whyNot": {
+    "A": "Leptin acts upstream on POMC neurons; without POMC, leptin cannot produce the alpha-MSH signal.",
+    "B": "Orlistat blocks fat absorption and does not address the missing central satiety signal.",
+    "C": "Phentermine is a sympathomimetic for short-term use in adults, not a replacement for the melanocortin pathway.",
+    "D": "Semaglutide acts on GLP-1 receptors; its effect partly relies on the melanocortin pathway that is defective here."
+   },
+   "objective": "Match setmelanotide to monogenic obesity upstream of the MC4R.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.16.11.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MC4R",
+    "setmelanotide"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 44-year-old man with a BMI of 33 kg/m² started a weight-loss medication 2 months ago. He now has oily spotting on his underwear, fecal urgency and frequent fatty stools after high-fat meals. Laboratory studies show a low serum 25-hydroxyvitamin D. Which of the following best describes the mechanism of the drug?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activation of GLP-1 receptors in the hypothalamus"
+    },
+    {
+     "label": "B",
+     "html": "Inhibition of gastric and pancreatic lipases"
+    },
+    {
+     "label": "C",
+     "html": "Inhibition of intestinal bile acid reabsorption"
+    },
+    {
+     "label": "D",
+     "html": "Release of norepinephrine from central neurons"
+    },
+    {
+     "label": "E",
+     "html": "Sequestration of bile acids in the intestinal lumen"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p><strong>Orlistat</strong> inhibits gastric and pancreatic lipases, so dietary triglycerides are not broken down and about a third of fat passes unabsorbed. Steatorrhea, oily spotting and urgency follow, worse with fatty meals, and absorption of fat-soluble vitamins (A, D, E, K) falls. A multivitamin taken at a separate time of day is advised.</p><p><strong>Takeaway:</strong> orlistat blocks gastric and pancreatic lipases: steatorrhea and fat-soluble vitamin loss.</p>",
+   "whyNot": {
+    "A": "GLP-1 receptor agonists cause nausea and early satiety, not steatorrhea.",
+    "C": "Bile acid transporter blockade causes diarrhea through bile acids in the colon; it is not an obesity treatment.",
+    "D": "Norepinephrine release (phentermine) causes insomnia and tachycardia, not oily stools.",
+    "E": "Bile acid sequestrants lower LDL and can cause constipation; they are not used for weight loss."
+   },
+   "objective": "Explain orlistat's mechanism and adverse effects.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "orlistat"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old woman with type 2 diabetes and a BMI of 38 kg/m² begins a once-weekly subcutaneous injection. Over a year she loses 18% of her body weight, and her hemoglobin A1c falls from 8.4% to 6.1%. She had nausea for the first few weeks. The drug is a single peptide engineered to activate two receptors for gut hormones released after meals. Which of the following best describes the drug's action?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Agonist at amylin and calcitonin receptors"
+    },
+    {
+     "label": "B",
+     "html": "Agonist at GIP and GLP-1 receptors"
+    },
+    {
+     "label": "C",
+     "html": "Agonist at the melanocortin-4 receptor"
+    },
+    {
+     "label": "D",
+     "html": "Inhibitor of dipeptidyl peptidase-4"
+    },
+    {
+     "label": "E",
+     "html": "Inhibitor of sodium-glucose cotransporter 2"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p><strong>Tirzepatide</strong> is a single peptide that activates both the glucose-dependent insulinotropic polypeptide (GIP) and GLP-1 receptors. Together these increase glucose-dependent insulin secretion, slow gastric emptying and act centrally to reduce appetite, giving large falls in weight and A1c. Nausea and other gastrointestinal effects are common early.</p><p><strong>Takeaway:</strong> tirzepatide is a dual GIP and GLP-1 receptor agonist.</p>",
+   "whyNot": {
+    "A": "Amylin analogues (pramlintide) slow gastric emptying and reduce glucagon, but they are not dual incretin agonists.",
+    "C": "Setmelanotide activates MC4R and is for rare monogenic obesity.",
+    "D": "DPP-4 inhibitors are oral, raise endogenous incretins modestly and are weight neutral.",
+    "E": "SGLT2 inhibitors are oral and cause glycosuria with modest weight loss."
+   },
+   "objective": "Identify tirzepatide's dual incretin receptor mechanism.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "tirzepatide"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 27-year-old woman with a BMI of 34 kg/m² wants medication to help her lose weight. Her physician considers a once-daily capsule combining a sympathomimetic amine with an antiepileptic drug. Before prescribing, the physician must counsel her about which of the following risks and arrange a pregnancy test and reliable contraception?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Ebstein anomaly of the tricuspid valve"
+    },
+    {
+     "label": "B",
+     "html": "Neural tube defects"
+    },
+    {
+     "label": "C",
+     "html": "Oral clefts in the fetus"
+    },
+    {
+     "label": "D",
+     "html": "Phocomelia of the limbs"
+    },
+    {
+     "label": "E",
+     "html": "Sensorineural hearing loss"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Phentermine-topiramate combines a norepinephrine-releasing amine with <strong>topiramate</strong>, which raises the risk of <strong>cleft lip and palate</strong> when taken in early pregnancy. A negative pregnancy test before starting, effective contraception and monthly pregnancy testing are required.</p><p><strong>Takeaway:</strong> topiramate (in phentermine-topiramate) is teratogenic: oral clefts; ensure contraception.</p>",
+   "whyNot": {
+    "A": "Ebstein anomaly is linked to lithium exposure.",
+    "B": "Neural tube defects are linked to valproate and carbamazepine (and folate deficiency), not mainly topiramate.",
+    "D": "Phocomelia is the classic thalidomide defect.",
+    "E": "Sensorineural hearing loss in the fetus follows aminoglycoside exposure."
+   },
+   "objective": "Counsel on the teratogenic risk of topiramate in phentermine-topiramate.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.12.06.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "phentermine-topiramate",
+    "teratogen"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 39-year-old man has a laparoscopic procedure that removes about 80% of his stomach along the greater curvature, leaving a narrow tubular stomach. At 6 months he reports much less hunger before meals than before surgery. Reduced secretion of which of the following hormones most likely contributes to this change?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cholecystokinin"
+    },
+    {
+     "label": "B",
+     "html": "Gastric inhibitory polypeptide"
+    },
+    {
+     "label": "C",
+     "html": "Ghrelin"
+    },
+    {
+     "label": "D",
+     "html": "Peptide YY"
+    },
+    {
+     "label": "E",
+     "html": "Secretin"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A sleeve gastrectomy removes most of the <strong>gastric fundus</strong>, the main source of <strong>ghrelin</strong>, the orexigenic hormone that rises before meals and stimulates AgRP/NPY neurons in the arcuate nucleus. Lower ghrelin contributes to the reduced hunger after a sleeve.</p><p><strong>Takeaway:</strong> sleeve gastrectomy removes the fundus, lowering ghrelin and premeal hunger.</p>",
+   "whyNot": {
+    "A": "Cholecystokinin comes from duodenal I cells and promotes satiety; less of it would increase hunger.",
+    "B": "GIP comes from duodenal and jejunal K cells; it is an incretin, not a hunger signal.",
+    "D": "Peptide YY from ileal and colonic L cells reduces appetite and typically rises after bariatric surgery.",
+    "E": "Secretin from duodenal S cells drives pancreatic bicarbonate secretion and has little role in hunger."
+   },
+   "objective": "Explain reduced hunger after sleeve gastrectomy through loss of fundic ghrelin.",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ghrelin",
+    "sleeve gastrectomy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 49-year-old man has a waist circumference of 118 cm and a BMI of 34 kg/m². Fasting glucose is 118 mg/dL, triglycerides 260 mg/dL and HDL cholesterol 34 mg/dL. Ultrasonography shows diffuse hepatic steatosis. Compared with a lean adult, a lower circulating concentration of which of the following adipose-derived proteins contributes most to his insulin resistance?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Adiponectin"
+    },
+    {
+     "label": "B",
+     "html": "Interleukin-6"
+    },
+    {
+     "label": "C",
+     "html": "Leptin"
+    },
+    {
+     "label": "D",
+     "html": "Resistin"
+    },
+    {
+     "label": "E",
+     "html": "Tumor necrosis factor-alpha"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p><strong>Adiponectin</strong> improves insulin sensitivity and fatty-acid oxidation in muscle and liver (through AMP-activated kinase). Paradoxically, its level <strong>falls</strong> as visceral fat expands, while leptin, resistin, TNF-alpha and IL-6 rise. Low adiponectin plus free fatty acid flux to the liver drives insulin resistance, atherogenic dyslipidemia and MASLD.</p><p><strong>Takeaway:</strong> adiponectin is the insulin-sensitising adipokine that falls in visceral obesity.</p>",
+   "whyNot": {
+    "B": "IL-6 rises in obesity and promotes inflammation and insulin resistance; it is high, not low.",
+    "C": "Leptin rises with fat mass; obesity is usually a state of high leptin and resistance.",
+    "D": "Resistin rises in obesity and is linked to insulin resistance; it is not low.",
+    "E": "TNF-alpha rises in obese adipose tissue and impairs insulin signalling; it is not low."
+   },
+   "objective": "Recognise low adiponectin as a driver of insulin resistance in visceral obesity.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.15.01.01",
+    "usmle2026.10.07.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "adiponectin",
+    "MASLD"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 48-year-old woman comes to discuss her weight. For 9 months she has followed a reduced-calorie Mediterranean-style diet with a dietitian and walks 180 minutes a week, and she has lost 2% of her body weight. She has hypertension controlled with lisinopril and prediabetes (hemoglobin A1c 6.1%). BMI is 29 kg/m². She has no history of pancreatitis or thyroid cancer, and no family history of thyroid cancer. Blood pressure is 128/80 mm Hg. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add a weekly subcutaneous GLP-1 receptor agonist"
+    },
+    {
+     "label": "B",
+     "html": "Continue lifestyle changes without medication"
+    },
+    {
+     "label": "C",
+     "html": "Prescribe phentermine for continuous use"
+    },
+    {
+     "label": "D",
+     "html": "Refer for Roux-en-Y gastric bypass"
+    },
+    {
+     "label": "E",
+     "html": "Start levothyroxine"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Anti-obesity medication is indicated with a BMI of 30 or more, or 27 or more with a weight-related condition, when lifestyle measures alone have not reached goals. She has a BMI of 29 with hypertension and prediabetes and has lost little despite good adherence. A <strong>GLP-1 receptor agonist</strong> such as semaglutide, with continued lifestyle treatment, gives the largest average loss among options suited to her and has no contraindication here.</p><p><strong>Takeaway:</strong> add pharmacotherapy at a BMI of 27 or more with a weight-related condition when lifestyle alone falls short.</p>",
+   "whyNot": {
+    "B": "She meets criteria for medication; more of the same is unlikely to give a meaningful loss.",
+    "C": "Phentermine alone is approved for short-term use, and long continuous use is not standard.",
+    "D": "A BMI of 29 without diabetes is below the usual thresholds for metabolic surgery in a person who is not of Asian ancestry.",
+    "E": "Thyroid hormone is not a weight-loss treatment and is harmful without hypothyroidism."
+   },
+   "objective": "Choose anti-obesity medication at BMI 27 or more with a comorbidity after inadequate lifestyle response.",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "obesity pharmacotherapy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old man has a BMI of 36 kg/m². He has no hypertension, diabetes, dyslipidemia or sleep apnea. Over 3 years he has worked with a dietitian and an exercise programme and has tried two anti-obesity medications, with no lasting weight loss. He is motivated, does not smoke, does not use alcohol or drugs, and a psychological screen is unremarkable. He asks about surgery. Which of the following is the most appropriate response?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Recommend a 600-kcal/day diet for 1 year before considering surgery"
+    },
+    {
+     "label": "B",
+     "html": "Recommend a third anti-obesity drug before any referral"
+    },
+    {
+     "label": "C",
+     "html": "Refer him for evaluation for metabolic and bariatric surgery"
+    },
+    {
+     "label": "D",
+     "html": "Surgery requires type 2 diabetes or another comorbidity"
+    },
+    {
+     "label": "E",
+     "html": "Surgery should wait until his BMI reaches 40 kg/m²"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Current society guidance recommends <strong>metabolic and bariatric surgery</strong> for a BMI of 35 or more <em>regardless</em> of comorbidities, and suggests considering it from a BMI of 30 in people with metabolic disease. The older threshold of 40 (or 35 with a comorbidity) has been replaced. He should be referred for multidisciplinary evaluation.</p><p><strong>Takeaway:</strong> a BMI of 35 or more is an indication for metabolic and bariatric surgery evaluation even without comorbidities.</p>",
+   "whyNot": {
+    "E": "A BMI threshold of 40 for patients without comorbidities reflects older guidance.",
+    "D": "Diabetes is not required at a BMI of 35 or more.",
+    "A": "A very-low-calorie diet without supervision is unsafe and rarely gives lasting results; it is not a prerequisite.",
+    "B": "Trying a third drug is reasonable to discuss, but it is not required before he can be evaluated for surgery."
+   },
+   "objective": "Apply current BMI thresholds for metabolic and bariatric surgery.",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "bariatric surgery"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 9-year-old boy is seen for a well-child visit. His BMI is above the 97th percentile for age and sex. Blood pressure is at the 85th percentile. He has acanthosis nigricans on his neck. His parents ask what will help most. Fasting glucose and lipids have been ordered. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "A healthy-eating handout and review in 1 year"
+    },
+    {
+     "label": "B",
+     "html": "A supervised diet of 800 kcal per day"
+    },
+    {
+     "label": "C",
+     "html": "An intensive family-based behavioural programme"
+    },
+    {
+     "label": "D",
+     "html": "Metformin started now to reduce his weight"
+    },
+    {
+     "label": "E",
+     "html": "Referral for sleeve gastrectomy this year"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Children and adolescents aged 6 years and older with a BMI at or above the 95th percentile should be offered or referred to <strong>comprehensive, intensive behavioural interventions</strong> of 26 or more contact hours over several months, involving the family and covering nutrition, physical activity and behaviour change. Brief advice is ineffective.</p><p><strong>Takeaway:</strong> for children 6 years and older with a BMI at or above the 95th percentile, refer to intensive family-based behavioural treatment (26 or more hours).</p>",
+   "whyNot": {
+    "A": "Brief advice and a yearly review do not produce meaningful change in children with obesity.",
+    "D": "Metformin has a small effect on weight and is not first-line for weight in children; it treats type 2 diabetes.",
+    "E": "Bariatric surgery is considered for selected adolescents with severe obesity, not a 9-year-old at this stage.",
+    "B": "Very-low-calorie diets are unsafe for a growing child without close specialist supervision."
+   },
+   "objective": "Recommend intensive behavioural treatment for childhood obesity.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.01.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "uspstf"
+   ],
+   "figureIds": [],
+   "tags": [
+    "pediatric obesity"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 42-year-old woman had a laparoscopic Roux-en-Y gastric bypass 20 months ago and has lost 50 kg. For 3 weeks she has had episodes of crampy periumbilical pain, each lasting 1–2 hours and with nausea in some episodes, that resolve on their own. She is now pain-free. Vital signs are normal. The abdomen is soft and nontender. Leukocyte count and lactate are normal. CT of the abdomen with contrast shows swirling of the mesenteric vessels near the jejunojejunal anastomosis without bowel dilation. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Diagnostic laparoscopy"
+    },
+    {
+     "label": "B",
+     "html": "Oral proton pump inhibitor and outpatient review"
+    },
+    {
+     "label": "C",
+     "html": "Repeat CT in 6 weeks"
+    },
+    {
+     "label": "D",
+     "html": "Trial of a low-residue diet"
+    },
+    {
+     "label": "E",
+     "html": "Upper endoscopy"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Intermittent colicky pain after a gastric bypass, especially after large weight loss, with a <strong>mesenteric swirl</strong> on CT suggests an <strong>internal hernia</strong> through a mesenteric defect. Bowel can twist and strangulate without warning, so <strong>diagnostic laparoscopy</strong> with reduction and closure of the defects is indicated, even when the patient is pain-free and the examination is benign.</p><p><strong>Takeaway:</strong> intermittent pain after gastric bypass with a mesenteric swirl means internal hernia: explore surgically.</p>",
+   "whyNot": {
+    "B": "A marginal ulcer gives epigastric pain related to meals, and treating for it would miss a hernia that can strangulate.",
+    "C": "Waiting risks strangulation and bowel loss.",
+    "D": "Diet changes do not treat a hernia through a mesenteric defect.",
+    "E": "Endoscopy evaluates the pouch and anastomosis (ulcer, stricture) but cannot see or fix an internal hernia."
+   },
+   "objective": "Recognise and manage internal hernia after Roux-en-Y gastric bypass.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.10.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "internal hernia",
+    "bariatric surgery"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old woman had a sleeve gastrectomy 2 weeks ago. She has no gallstones on preoperative ultrasonography. She expects to lose a large amount of weight over the next year and asks how to reduce her chance of forming gallstones while losing weight. Which of the following is most appropriate?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cholecystectomy at the next convenient time"
+    },
+    {
+     "label": "B",
+     "html": "Cholestyramine for 6 months"
+    },
+    {
+     "label": "C",
+     "html": "Fenofibrate for 6 months"
+    },
+    {
+     "label": "D",
+     "html": "Low-fat diet without medication"
+    },
+    {
+     "label": "E",
+     "html": "Ursodeoxycholic acid for 6 months"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Rapid weight loss after bariatric surgery supersaturates bile with cholesterol and reduces gallbladder emptying, so gallstones form in many patients in the first year. <strong>Ursodeoxycholic acid</strong> for about 6 months reduces cholesterol saturation of bile and lowers the rate of stone formation and later cholecystectomy in patients without stones.</p><p><strong>Takeaway:</strong> after bariatric surgery, ursodeoxycholic acid for about 6 months reduces gallstone formation.</p>",
+   "whyNot": {
+    "A": "Prophylactic cholecystectomy is not recommended for patients without gallstones.",
+    "B": "Bile acid sequestrants deplete the bile acid pool and could favour cholesterol stones.",
+    "C": "Fibrates increase biliary cholesterol secretion and raise gallstone risk.",
+    "D": "Very low fat intake reduces gallbladder emptying and does not prevent stones during rapid weight loss."
+   },
+   "objective": "Prevent gallstones after bariatric surgery with ursodeoxycholic acid.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.10.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "gallstones",
+    "bariatric surgery"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 31-year-old woman had a Roux-en-Y gastric bypass 5 months ago. About 15–20 minutes after meals she has abdominal cramps, bloating, diarrhea, flushing and palpitations, worst after sweet foods and when she drinks juice with her meal. Symptoms resolve within an hour. Capillary glucose during an episode is 112 mg/dL. Examination is normal. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Acarbose taken with the first bite of each meal"
+    },
+    {
+     "label": "B",
+     "html": "Octreotide injected before each meal"
+    },
+    {
+     "label": "C",
+     "html": "Small, frequent meals low in simple sugars"
+    },
+    {
+     "label": "D",
+     "html": "Surgical reversal of the gastric bypass"
+    },
+    {
+     "label": "E",
+     "html": "Urgent upper endoscopy of the anastomosis"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Symptoms within about 30 minutes of eating, worse with sugar and liquids, are <strong>early dumping</strong>: rapid delivery of hyperosmolar food into the small bowel draws fluid into the lumen and releases vasoactive gut peptides. First-line treatment is <strong>dietary</strong>: small frequent meals, protein and fibre with each meal, avoiding simple sugars, and drinking fluids at least 30 minutes apart from solids.</p><p><strong>Takeaway:</strong> early dumping after gastric surgery is treated first with dietary changes.</p>",
+   "whyNot": {
+    "A": "Acarbose is used for late dumping (reactive hypoglycemia) when diet alone fails.",
+    "B": "Octreotide is reserved for severe symptoms that persist despite diet changes.",
+    "D": "Revisional surgery is a last resort for refractory cases.",
+    "E": "Nothing suggests ulcer, stricture or bleeding; the symptoms are classic dumping."
+   },
+   "objective": "Manage early dumping syndrome with dietary measures.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.10.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "dumping syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set160404-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 54-year-old man has daytime sleepiness, morning headaches and leg swelling. His partner says he snores loudly. BMI is 47 kg/m². Pulse oximetry while awake is 90% on room air. Chest radiograph shows a small lung volume without infiltrates. Spirometry shows a mildly reduced FVC with a normal FEV1/FVC ratio. Thyroid function is normal. Arterial blood gas on room air, awake:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>pH</td><td>7.37</td></tr><tr><td>PaCO<sub>2</sub></td><td>54 mm Hg</td></tr><tr><td>PaO<sub>2</sub></td><td>62 mm Hg</td></tr><tr><td>HCO<sub>3</sub><sup>−</sup></td><td>31 mEq/L</td></tr></table><p>Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Chronic obstructive pulmonary disease"
+    },
+    {
+     "label": "B",
+     "html": "Neuromuscular respiratory weakness"
+    },
+    {
+     "label": "C",
+     "html": "Obesity hypoventilation syndrome"
+    },
+    {
+     "label": "D",
+     "html": "Primary pulmonary hypertension"
+    },
+    {
+     "label": "E",
+     "html": "Simple obstructive sleep apnea"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Daytime hypercapnia (PaCO<sub>2</sub> 45 mm Hg or more) with a compensatory rise in bicarbonate in a person with obesity, after excluding lung, airway, neuromuscular and thyroid causes, is <strong>obesity hypoventilation syndrome</strong>. Most patients also have obstructive sleep apnea. The near-normal pH and raised bicarbonate show the hypercapnia is chronic.</p><p><strong>Takeaway:</strong> obesity plus awake hypercapnia with raised bicarbonate, other causes excluded, is obesity hypoventilation syndrome.</p>",
+   "whyNot": {
+    "A": "COPD would show airflow obstruction (low FEV1/FVC), which is absent.",
+    "D": "Pulmonary hypertension can follow hypoventilation but does not itself cause daytime hypercapnia.",
+    "E": "Obstructive sleep apnea alone does not cause awake hypercapnia.",
+    "B": "Nothing suggests a neuromuscular disease, and obesity explains the restrictive pattern."
+   },
+   "objective": "Diagnose obesity hypoventilation syndrome from awake hypercapnia in obesity.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.09.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "obesity hypoventilation"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q160404-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set160404-1",
+   "setOrder": 2,
+   "stemHtml": "<p>A sleep study confirms severe obstructive sleep apnea with prolonged nocturnal hypoxemia. In addition to a structured weight-loss programme, which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Acetazolamide taken each night at bedtime"
+    },
+    {
+     "label": "B",
+     "html": "Continuous positive airway pressure at night"
+    },
+    {
+     "label": "C",
+     "html": "Daily oral medroxyprogesterone acetate"
+    },
+    {
+     "label": "D",
+     "html": "Nocturnal oxygen by nasal cannula alone"
+    },
+    {
+     "label": "E",
+     "html": "Oral theophylline taken every evening"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>In obesity hypoventilation syndrome, <strong>positive airway pressure during sleep</strong> is first-line. When severe obstructive sleep apnea coexists, <strong>CPAP</strong> is the usual starting choice, with a switch to noninvasive ventilation (bilevel) if hypercapnia persists. Weight loss, including bariatric surgery for suitable patients, treats the cause.</p><p><strong>Takeaway:</strong> obesity hypoventilation with severe sleep apnea: CPAP at night plus weight loss.</p>",
+   "whyNot": {
+    "A": "Acetazolamide causes a metabolic acidosis that stimulates breathing but is not standard therapy and can worsen acidemia in hypercapnic patients.",
+    "D": "Oxygen without airway support can worsen hypercapnia by reducing ventilatory drive and worsening ventilation-perfusion matching.",
+    "C": "Progesterone as a respiratory stimulant has weak evidence and raises thrombosis risk.",
+    "E": "Theophylline has a narrow therapeutic window and no established role."
+   },
+   "objective": "Treat obesity hypoventilation syndrome with positive airway pressure.",
+   "areas": [
+    "usmle2026.16.04.04",
+    "usmle2026.09.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "obesity hypoventilation"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c160404-01",
+   "frontHtml": "Where does leptin act, and what does it do there?",
+   "backHtml": "Arcuate nucleus: stimulates POMC (anorexigenic) neurons and inhibits AgRP/NPY (orexigenic) neurons.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-02",
+   "frontHtml": "Leptin level in common obesity?",
+   "backHtml": "High (proportional to fat mass), with central leptin resistance; congenital deficiency is rare.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-03",
+   "frontHtml": "Commonest single-gene cause of obesity?",
+   "backHtml": "Loss-of-function variants in the melanocortin-4 receptor (<em>MC4R</em>).",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-04",
+   "frontHtml": "Setmelanotide: mechanism and who benefits?",
+   "backHtml": "MC4R agonist; POMC, PCSK1 or leptin-receptor deficiency and Bardet-Biedl syndrome (defects upstream of MC4R).",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-05",
+   "frontHtml": "Source and effect of ghrelin?",
+   "backHtml": "Gastric fundus endocrine cells; rises before meals and stimulates AgRP/NPY neurons (hunger). Very high in Prader-Willi syndrome.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-06",
+   "frontHtml": "Which adipokine falls in visceral obesity and normally improves insulin sensitivity?",
+   "backHtml": "Adiponectin.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-07",
+   "frontHtml": "Orlistat: mechanism and two key adverse effects?",
+   "backHtml": "Inhibits gastric and pancreatic lipases; oily stools/fecal urgency and fat-soluble vitamin (A, D, E, K) deficiency.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-08",
+   "frontHtml": "Tirzepatide mechanism?",
+   "backHtml": "Dual agonist at GIP and GLP-1 receptors.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-09",
+   "frontHtml": "Contraindication shared by GLP-1 receptor agonists and tirzepatide?",
+   "backHtml": "Personal or family history of medullary thyroid carcinoma or MEN2.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-10",
+   "frontHtml": "Phentermine-topiramate: teratogenic risk?",
+   "backHtml": "Oral clefts (topiramate); pregnancy test and contraception required.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-11",
+   "frontHtml": "Early versus late dumping: timing and mechanism?",
+   "backHtml": "Early (within about 30 min): hyperosmolar fluid shift and gut peptides. Late (1–3 h): insulin surge with hypoglycemia.",
+   "sectionId": "s23c-s160404-1-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-12",
+   "frontHtml": "BMI thresholds for anti-obesity medication?",
+   "backHtml": "BMI of 30 or more, or 27 or more with a weight-related condition, alongside lifestyle treatment.",
+   "sectionId": "s23c-s160404-2-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-13",
+   "frontHtml": "Current BMI thresholds for metabolic and bariatric surgery?",
+   "backHtml": "Recommended at 35 or more regardless of comorbidity; consider from 30 with metabolic disease (about 27.5 in Asian ancestry).",
+   "sectionId": "s23c-s160404-2-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-14",
+   "frontHtml": "Behavioural treatment for children with obesity?",
+   "backHtml": "From age 6, BMI at or above the 95th percentile: comprehensive, intensive family-based programme of 26 or more contact hours.",
+   "sectionId": "s23c-s160404-2-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-15",
+   "frontHtml": "Colicky intermittent pain after gastric bypass with a mesenteric swirl on CT: next step?",
+   "backHtml": "Diagnostic laparoscopy for internal hernia.",
+   "sectionId": "s23c-s160404-2-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-16",
+   "frontHtml": "How to lower gallstone risk after bariatric surgery?",
+   "backHtml": "Ursodeoxycholic acid for about 6 months in patients without stones.",
+   "sectionId": "s23c-s160404-2-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-17",
+   "frontHtml": "Obesity hypoventilation syndrome: definition and treatment?",
+   "backHtml": "Awake PaCO<sub>2</sub> 45 mm Hg or more in obesity with other causes excluded; positive airway pressure during sleep plus weight loss.",
+   "sectionId": "s23c-s160404-2-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c160404-18",
+   "frontHtml": "How much weight loss improves blood pressure, glucose and triglycerides?",
+   "backHtml": "About 5–10% of body weight.",
+   "sectionId": "s23c-s160404-2-1",
+   "areas": [
+    "usmle2026.16.04.04"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}
