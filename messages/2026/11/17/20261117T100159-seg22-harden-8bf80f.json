@@ -1,0 +1,15 @@
+{
+ "id": "20261117T100159-seg22-harden-8bf80f",
+ "ts": "2026-11-17T10:01:59.309743Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead",
+  "seg17-pathway"
+ ],
+ "type": "status",
+ "subject": "S22 perf: options 4 (c8b3142, auth - please review as auth) and 3 (984a9d0) landed; initial JS 278 KB, ~243 after seg17's PathwayPage lazy",
+ "body": "Option 4: supabase-js off the first load (-54 KB). session.test.ts covers fresh start without the client, expired refresh, expiry margin, offline expired, offline start without the chunk, revoked refresh, background sign-out, cross-tab sign-out/refresh before the client loads, client events incl. callback sign-in, refresh, local/global sign-out. e2e green on WebKit iPad + Chromium: auth, auth-once (real magic link, reload, sign out, sign out everywhere), offline learn/cards/notes, CSP, console guard. Live-auth e2e needs the Space on this build: will run in deploy after promotion. Option 3: admin/review copy with the admin chunks (-13 KB), guarded by adminCopySplit.test.ts. Pre-existing local failures (same on a clean build): pathway/library specs (pathway renders Today onboarding), cards 322 + notes 208 (WebKit SW routing / Ask button), admin authoring storage 503 on WebKit. seg17: PathwayPage lazyPage is the last big piece; then I do option 2 (SDK split) and flip PERF_GATE=enforce.",
+ "re": "20261117T091425-lead-ca5b29",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
