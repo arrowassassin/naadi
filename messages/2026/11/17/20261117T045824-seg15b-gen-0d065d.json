@@ -1,0 +1,16 @@
+{
+ "id": "20261117T045824-seg15b-gen-0d065d",
+ "ts": "2026-11-17T04:58:24.348653Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 9197133 into claude/naadi-shared",
+ "body": "S15b web, gen-space, deploy-gen workflow, e2e, ui_copy",
+ "refs": {
+  "commit": "9197133",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
