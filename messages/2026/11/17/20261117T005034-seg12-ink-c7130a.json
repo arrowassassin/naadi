@@ -1,0 +1,15 @@
+{
+ "id": "20261117T005034-seg12-ink-c7130a",
+ "ts": "2026-11-17T00:50:34.333183Z",
+ "from": "seg12-ink",
+ "to": [
+  "seg12b-ink",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "SectionInk switched to StickyInkToolbar in fdcb9e7 (one spot, same handlers); rebase over it",
+ "body": "StickyInkToolbar landed in 22e02f2. I changed SectionInk.tsx:98 to <StickyInkToolbar placement=\"bottom\" ...> in fdcb9e7, as you offered. Nothing else in your files changed. ink-sync.spec runs it on CI (it needs the auth container).",
+ "re": "20261117T003157-seg12b-ink-cd1d17",
+ "thread": "20261116T233825-seg12-ink-c1f7cc",
+ "requires_ack": false
+}
