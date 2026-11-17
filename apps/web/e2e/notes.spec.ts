@@ -655,7 +655,11 @@ test.describe("highlights, notes and the selection toolbar", () => {
       const final = (await api<{ body_text: string }>(b, "GET", `/api/notes/${id}`)).json.body_text;
       expect(final).not.toContain("from device A offline");
 
-      await a.locator("[data-sync-phase]").first().click();
+      // On portrait and phone the page notes are a modal sheet: close it to reach the sync indicator.
+      const sheet = a.locator("[data-page-notes-sheet][open]");
+      if (await sheet.count()) await sheet.locator("button[aria-label]").first().click();
+      await expect(a.locator("[data-page-notes-sheet][open]")).toHaveCount(0);
+      await a.locator("[data-sync-phase]:visible").first().click();
       await expect(a.locator("[data-sync-sheet] [data-sync-conflict]").first()).toBeVisible({ timeout: 20_000 });
       expect(errors.filter((e) => !/Failed to load resource|net::ERR|NetworkError|Load failed/.test(e))).toEqual([]);
     } finally {
