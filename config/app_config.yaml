@@ -30,6 +30,9 @@ feature_flags:
   generation: {enabled: true}     # S15b image/video generation; stays off until HF_GEN_TOKEN is set (not configured)
   anki: {enabled: true}           # S20 Anki .apkg import/export (Library tile, Cards import/export)
   ink_lab: {enabled: true, audience: admins, everyone_outside_prod: true}
+  settings: {enabled: true}       # S21 Settings screen (each group inside it shows once its own flag is on)
+  export: {enabled: true}         # S21 "Export everything" (Settings -> Data & export)
+  authoring: {enabled: true, audience: admins}   # S21 question review queue (/admin/review)
 
 # Top-level navigation, in display order. An item shows only while its feature flag is on, so the shell never
 # links to a screen that does not exist yet. Paths are in-app routes; icons are names from the web icon set.
@@ -215,6 +218,31 @@ youtube:
   refresh_days: 25
   quota_units_per_run: 2000
   max_new_per_channel: 50
+# Question authoring (S21, graph `author`, Aegra cron 22:41 UTC) and the review/psychometric thresholds.
+# One human approval publishes (the owner is the only user) once lint, source check and the blind solver pass;
+# required_approvals: 2 asks for two blind admins on every item. Nothing here retires an item below act_min_n.
+authoring:
+  nightly_enabled: true
+  max_items_per_night: 10
+  max_llm_calls_per_night: 40
+  max_pending_review: 30
+  lint_retries: 2
+  solver_retries: 1
+  min_published_per_topic: 15
+  target_exams: [step1]
+  required_approvals: 1
+  excerpts_per_item: 4
+  excerpt_chars: 1200
+  similarity_error: 0.92
+  similarity_warn: 0.85
+  uncited_max_ratio: 0.34
+  psychometrics_min_n: 30
+  act_min_n: 100
+  p_low: 0.20
+  p_high: 0.95
+  pb_min: 0.05
+  time_factor: 2.0
+  report_flags: 2
 
 # Supabase Storage bucket names (created by migration 0002).
 storage:

@@ -269,6 +269,12 @@ USER_TABLES: tuple[UserTable, ...] = (
         ("user_id",),
         ("status", "dismissed"),
     ),
+    UserTable(
+        "export_jobs",
+        lambda u, s: {"user_id": u, "status": "ready"},
+        ("user_id",),
+        ("status", "expired"),
+    ),
 )
 
 USER_TABLE_NAMES = tuple(t.name for t in USER_TABLES)

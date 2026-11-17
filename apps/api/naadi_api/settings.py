@@ -76,6 +76,9 @@ class Settings(BaseSettings):
     )
     supabase_service_role_key: SecretStr | None = None
     supabase_jwt_secret: SecretStr | None = None
+    # A bare storage-api (the local stack and CI) the server-side Storage work (export-all) talks to instead of
+    # `supabase_url`. Unset on the real project.
+    storage_url: str | None = Field(default=None, validation_alias=AliasChoices("NAADI_STORAGE_URL"))
 
     # ── AI ──
     openrouter_api_key: SecretStr | None = None

@@ -61,6 +61,7 @@ def test_revisions_form_one_linear_chain_with_real_downgrades() -> None:
         "0017",
         "0022",
         "0023",
+        "0024",
     ]
     assert len(script.get_heads()) == 1
     for r in revs:

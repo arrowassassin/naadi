@@ -207,6 +207,55 @@ class YoutubeRules(_Strict):
     max_new_per_channel: int = Field(50, ge=1, le=500, description="Newest uploads read per channel per run")
 
 
+# ── authoring pipeline (S21) ──
+
+
+_DEFAULT_EXAMS: list[Literal["step1", "step2ck"]] = ["step1"]
+
+
+class AuthoringRules(_Strict):
+    """The `author` graph (draft -> lint -> blind solve -> human review) and the psychometric screen. Nothing
+    here publishes: a human approval does (config/authoring_rules.md Part C)."""
+
+    nightly_enabled: bool = Field(True, description="The 22:41 UTC cron drafts items (still within the job reserve)")
+    max_items_per_night: int = Field(10, ge=0, le=200, description="Items the nightly cron drafts at most")
+    max_llm_calls_per_night: int = Field(40, ge=0, le=2000, description="Model calls the nightly cron may spend")
+    max_pending_review: int = Field(30, ge=1, le=1000, description="No new drafts while this many await review")
+    lint_retries: int = Field(2, ge=0, le=5, description="Regenerations after an ERROR lint before the item is dropped")
+    solver_retries: int = Field(1, ge=0, le=3, description="Regenerations after the blind solver disagrees")
+    min_published_per_topic: int = Field(15, ge=1, le=500, description="A topic under this is a coverage gap")
+    target_exams: list[Literal["step1", "step2ck"]] = Field(default_factory=lambda: list(_DEFAULT_EXAMS), min_length=1)
+    required_approvals: int = Field(
+        1, ge=1, le=2, description="Human approvals that publish (1: the owner is the only user; 2: two blind admins)"
+    )
+    excerpts_per_item: int = Field(4, ge=1, le=10)
+    excerpt_chars: int = Field(1200, ge=200, le=4000)
+    similarity_error: float = Field(
+        0.92, gt=0, le=1, description="Cosine against the bank above which an item is dropped"
+    )
+    similarity_warn: float = Field(0.85, gt=0, le=1)
+    uncited_max_ratio: float = Field(
+        0.34, ge=0, le=1, description="B04: share of explanation sentences without support"
+    )
+    psychometrics_min_n: int = Field(30, ge=2, le=100_000, description="Responses before an item can be flagged")
+    act_min_n: int = Field(100, ge=2, le=100_000, description="Responses before an item may be retired or revised")
+    p_low: float = Field(0.20, ge=0, le=1)
+    p_high: float = Field(0.95, ge=0, le=1)
+    pb_min: float = Field(0.05, ge=-1, le=1)
+    time_factor: float = Field(2.0, gt=1, le=20)
+    report_flags: int = Field(2, ge=1, le=100)
+
+    @model_validator(mode="after")
+    def _order(self) -> AuthoringRules:
+        if self.act_min_n < self.psychometrics_min_n:
+            raise ValueError("act_min_n must be at least psychometrics_min_n")
+        if self.similarity_warn >= self.similarity_error:
+            raise ValueError("similarity_warn must be below similarity_error")
+        if self.p_low >= self.p_high:
+            raise ValueError("p_low must be below p_high")
+        return self
+
+
 # ── storage, ui_copy, sources_policy ──
 
 
@@ -1954,6 +2003,14 @@ KEY_SPECS: dict[str, KeySpec] = {
             "app_config.yaml",
             "YouTube mapper: score threshold, candidates per section, metadata refresh and quota (S20)",
             _schema_of(YoutubeRules),
+        ),
+        KeySpec(
+            "authoring",
+            _model_validator(AuthoringRules),
+            False,
+            "app_config.yaml",
+            "Question authoring pipeline: caps, retries, coverage target, review and psychometric thresholds (S21)",
+            _schema_of(AuthoringRules),
         ),
         KeySpec(
             "ui_copy", _model_validator(UiCopy), True, "app_config.yaml", "Editable UI strings", _schema_of(UiCopy)

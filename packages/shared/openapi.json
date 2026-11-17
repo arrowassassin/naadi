@@ -712,6 +712,70 @@
         "title": "AttemptState",
         "type": "object"
       },
+      "AuthorInfo": {
+        "properties": {
+          "at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "At"
+          },
+          "excerpt_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Excerpt Ids",
+            "type": "array"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          },
+          "prompt_hash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Hash"
+          },
+          "run_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Run Id"
+          }
+        },
+        "required": [
+          "model",
+          "prompt_hash",
+          "run_id",
+          "excerpt_ids",
+          "at"
+        ],
+        "title": "AuthorInfo",
+        "type": "object"
+      },
       "BlockClock": {
         "description": "The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,\nwhere offset is estimated from `server_now`; it never counts down on its own.",
         "properties": {
@@ -2339,6 +2403,18 @@
         "title": "ChapterProgress",
         "type": "object"
       },
+      "ChecksIn": {
+        "additionalProperties": false,
+        "properties": {
+          "solver": {
+            "default": false,
+            "title": "Solver",
+            "type": "boolean"
+          }
+        },
+        "title": "ChecksIn",
+        "type": "object"
+      },
       "CoachActionOut": {
         "properties": {
           "added_items": {
@@ -3561,6 +3637,139 @@
         "title": "Explanation",
         "type": "object"
       },
+      "ExportDownload": {
+        "properties": {
+          "part": {
+            "title": "Part",
+            "type": "integer"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "part",
+          "url"
+        ],
+        "title": "ExportDownload",
+        "type": "object"
+      },
+      "ExportJob": {
+        "properties": {
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "downloads": {
+            "items": {
+              "$ref": "#/components/schemas/ExportDownload"
+            },
+            "title": "Downloads",
+            "type": "array"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "include_vault": {
+            "title": "Include Vault",
+            "type": "boolean"
+          },
+          "parts": {
+            "title": "Parts",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "ready",
+              "failed",
+              "expired"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "include_vault",
+          "parts",
+          "bytes",
+          "expires_at",
+          "error",
+          "created_at",
+          "downloads"
+        ],
+        "title": "ExportJob",
+        "type": "object"
+      },
+      "ExportList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ExportJob"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "ExportList",
+        "type": "object"
+      },
+      "ExportStart": {
+        "additionalProperties": false,
+        "properties": {
+          "include_vault": {
+            "default": false,
+            "title": "Include Vault",
+            "type": "boolean"
+          }
+        },
+        "title": "ExportStart",
+        "type": "object"
+      },
       "FieldError": {
         "properties": {
           "loc": {
@@ -3592,6 +3801,42 @@
           "type"
         ],
         "title": "FieldError",
+        "type": "object"
+      },
+      "Finding": {
+        "properties": {
+          "params": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Params",
+            "type": "object"
+          },
+          "rule": {
+            "title": "Rule",
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "error",
+              "warn",
+              "info"
+            ],
+            "title": "Severity",
+            "type": "string"
+          },
+          "target": {
+            "title": "Target",
+            "type": "string"
+          }
+        },
+        "required": [
+          "rule",
+          "severity",
+          "target",
+          "params"
+        ],
+        "title": "Finding",
         "type": "object"
       },
       "FlagIn": {
@@ -3697,6 +3942,96 @@
           "enable_fuzz"
         ],
         "title": "FsrsSchedulerConfig",
+        "type": "object"
+      },
+      "GapList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/GapOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "min_published": {
+            "title": "Min Published",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "min_published"
+        ],
+        "title": "GapList",
+        "type": "object"
+      },
+      "GapOut": {
+        "properties": {
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "pending": {
+            "title": "Pending",
+            "type": "integer"
+          },
+          "published": {
+            "title": "Published",
+            "type": "integer"
+          },
+          "topic_id": {
+            "title": "Topic Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "exam",
+          "topic_id",
+          "label",
+          "published",
+          "pending"
+        ],
+        "title": "GapOut",
+        "type": "object"
+      },
+      "GatesOut": {
+        "properties": {
+          "blockers": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Blockers",
+            "type": "array"
+          },
+          "cross_check_ok": {
+            "title": "Cross Check Ok",
+            "type": "boolean"
+          },
+          "independent": {
+            "title": "Independent",
+            "type": "boolean"
+          },
+          "lint_ok": {
+            "title": "Lint Ok",
+            "type": "boolean"
+          },
+          "source_ok": {
+            "title": "Source Ok",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "lint_ok",
+          "source_ok",
+          "cross_check_ok",
+          "independent",
+          "blockers"
+        ],
+        "title": "GatesOut",
         "type": "object"
       },
       "GeneratedApproveBody": {
@@ -4588,6 +4923,221 @@
           "vars"
         ],
         "title": "Insight",
+        "type": "object"
+      },
+      "ItemDetail": {
+        "properties": {
+          "answer": {
+            "title": "Answer",
+            "type": "string"
+          },
+          "answer_html": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answer Html"
+          },
+          "author": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AuthorInfo"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "can_review": {
+            "$ref": "#/components/schemas/Permission"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "difficulty": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficulty"
+          },
+          "educational_objective": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Educational Objective"
+          },
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "explanation_html": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Explanation Html"
+          },
+          "gates": {
+            "$ref": "#/components/schemas/GatesOut"
+          },
+          "hidden_reviews": {
+            "title": "Hidden Reviews",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "lint": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "title": "Lint",
+            "type": "array"
+          },
+          "options": {
+            "items": {
+              "$ref": "#/components/schemas/OptionOut"
+            },
+            "title": "Options",
+            "type": "array"
+          },
+          "origin": {
+            "enum": [
+              "ai",
+              "seed"
+            ],
+            "title": "Origin",
+            "type": "string"
+          },
+          "required_approvals": {
+            "title": "Required Approvals",
+            "type": "integer"
+          },
+          "resolution": {
+            "$ref": "#/components/schemas/ResolutionOut"
+          },
+          "reviews": {
+            "items": {
+              "$ref": "#/components/schemas/naadi_api__authoring__routes__ReviewOut"
+            },
+            "title": "Reviews",
+            "type": "array"
+          },
+          "solver": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SolverOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "solver_findings": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "title": "Solver Findings",
+            "type": "array"
+          },
+          "source_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Id"
+          },
+          "stats": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StatsOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "stem_html": {
+            "title": "Stem Html",
+            "type": "string"
+          },
+          "taxonomy": {
+            "items": {
+              "$ref": "#/components/schemas/TaxonomyRef"
+            },
+            "title": "Taxonomy",
+            "type": "array"
+          },
+          "why_not_html": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Why Not Html"
+          }
+        },
+        "required": [
+          "id",
+          "exam",
+          "status",
+          "origin",
+          "difficulty",
+          "stem_html",
+          "options",
+          "answer",
+          "answer_html",
+          "explanation_html",
+          "why_not_html",
+          "educational_objective",
+          "taxonomy",
+          "source_id",
+          "created_at",
+          "author",
+          "lint",
+          "solver",
+          "solver_findings",
+          "gates",
+          "resolution",
+          "reviews",
+          "hidden_reviews",
+          "can_review",
+          "stats",
+          "required_approvals"
+        ],
+        "title": "ItemDetail",
         "type": "object"
       },
       "ItemStatusIn": {
@@ -6545,6 +7095,24 @@
         "title": "OnboardingValues",
         "type": "object"
       },
+      "OptionOut": {
+        "properties": {
+          "html": {
+            "title": "Html",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "html"
+        ],
+        "title": "OptionOut",
+        "type": "object"
+      },
       "PageCreate": {
         "additionalProperties": false,
         "properties": {
@@ -6712,6 +7280,30 @@
           "total"
         ],
         "title": "PathwayStageOut",
+        "type": "object"
+      },
+      "Permission": {
+        "properties": {
+          "allowed": {
+            "title": "Allowed",
+            "type": "boolean"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "required": [
+          "allowed"
+        ],
+        "title": "Permission",
         "type": "object"
       },
       "PlanDayMeta": {
@@ -7506,6 +8098,48 @@
         "title": "Profile",
         "type": "object"
       },
+      "PsychIn": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "keep",
+              "revise",
+              "retire"
+            ],
+            "title": "Action",
+            "type": "string"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "title": "PsychIn",
+        "type": "object"
+      },
+      "PsychRunOut": {
+        "properties": {
+          "flagged": {
+            "title": "Flagged",
+            "type": "integer"
+          },
+          "items": {
+            "title": "Items",
+            "type": "integer"
+          },
+          "updated": {
+            "title": "Updated",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "flagged",
+          "updated"
+        ],
+        "title": "PsychRunOut",
+        "type": "object"
+      },
       "PublicConfig": {
         "description": "Everything the web app needs before sign-in. Nothing here is secret.",
         "properties": {
@@ -7772,6 +8406,93 @@
         "title": "QuestionView",
         "type": "object"
       },
+      "QueueItem": {
+        "properties": {
+          "difficulty": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficulty"
+          },
+          "errors": {
+            "title": "Errors",
+            "type": "integer"
+          },
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "mine_submitted": {
+            "title": "Mine Submitted",
+            "type": "boolean"
+          },
+          "needed": {
+            "title": "Needed",
+            "type": "integer"
+          },
+          "origin": {
+            "enum": [
+              "ai",
+              "seed"
+            ],
+            "title": "Origin",
+            "type": "string"
+          },
+          "psych_flags": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Psych Flags",
+            "type": "array"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "stem_preview": {
+            "title": "Stem Preview",
+            "type": "string"
+          },
+          "submitted": {
+            "title": "Submitted",
+            "type": "integer"
+          },
+          "warnings": {
+            "title": "Warnings",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "exam",
+          "status",
+          "origin",
+          "difficulty",
+          "stem_preview",
+          "errors",
+          "warnings",
+          "state",
+          "submitted",
+          "needed",
+          "mine_submitted",
+          "psych_flags"
+        ],
+        "title": "QueueItem",
+        "type": "object"
+      },
       "Quota": {
         "properties": {
           "guard": {
@@ -7839,6 +8560,148 @@
           "period"
         ],
         "title": "Quota",
+        "type": "object"
+      },
+      "Ratings": {
+        "additionalProperties": false,
+        "description": "Part C: accuracy, single best answer, cognitive level, flaws, difficulty, taxonomy.",
+        "properties": {
+          "accuracy": {
+            "enum": [
+              "correct",
+              "minor_issue",
+              "incorrect"
+            ],
+            "title": "Accuracy",
+            "type": "string"
+          },
+          "cognitive_level": {
+            "enum": [
+              "recall",
+              "application",
+              "analysis"
+            ],
+            "title": "Cognitive Level",
+            "type": "string"
+          },
+          "difficulty": {
+            "enum": [
+              "easy",
+              "medium",
+              "hard"
+            ],
+            "title": "Difficulty",
+            "type": "string"
+          },
+          "flaws": {
+            "items": {
+              "enum": [
+                "not_homogeneous",
+                "key_too_long",
+                "grammatical_cue",
+                "logical_cue",
+                "word_repeat",
+                "convergence",
+                "absolute_terms",
+                "negative_lead_in",
+                "cannot_cover_options",
+                "irrelevant_difficulty",
+                "hinged",
+                "stereotyped",
+                "other"
+              ],
+              "type": "string"
+            },
+            "maxItems": 13,
+            "title": "Flaws",
+            "type": "array"
+          },
+          "single_best_answer": {
+            "title": "Single Best Answer",
+            "type": "boolean"
+          },
+          "taxonomy_ok": {
+            "title": "Taxonomy Ok",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "accuracy",
+          "single_best_answer",
+          "cognitive_level",
+          "difficulty",
+          "taxonomy_ok"
+        ],
+        "title": "Ratings",
+        "type": "object"
+      },
+      "RatingsOut": {
+        "additionalProperties": true,
+        "properties": {
+          "accuracy": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accuracy"
+          },
+          "cognitive_level": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cognitive Level"
+          },
+          "difficulty": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficulty"
+          },
+          "flaws": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Flaws",
+            "type": "array"
+          },
+          "single_best_answer": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Single Best Answer"
+          },
+          "taxonomy_ok": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Taxonomy Ok"
+          }
+        },
+        "title": "RatingsOut",
         "type": "object"
       },
       "ReadinessOut": {
@@ -8102,6 +8965,34 @@
         "title": "ReportIssueOut",
         "type": "object"
       },
+      "ResolutionOut": {
+        "properties": {
+          "needed": {
+            "title": "Needed",
+            "type": "integer"
+          },
+          "round": {
+            "title": "Round",
+            "type": "integer"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          },
+          "submitted": {
+            "title": "Submitted",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "state",
+          "needed",
+          "submitted",
+          "round"
+        ],
+        "title": "ResolutionOut",
+        "type": "object"
+      },
       "ResultQuestion": {
         "properties": {
           "change": {
@@ -8292,40 +9183,179 @@
         "title": "RetentionOut",
         "type": "object"
       },
-      "ReviewIn": {
+      "ReviewQueue": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/QueueItem"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "ReviewQueue",
+        "type": "object"
+      },
+      "ReviewResult": {
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/ItemDetail"
+          },
+          "outcome": {
+            "enum": [
+              "recorded",
+              "published",
+              "revise",
+              "rejected",
+              "adjudication"
+            ],
+            "title": "Outcome",
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "item"
+        ],
+        "title": "ReviewResult",
+        "type": "object"
+      },
+      "ReviewSummary": {
+        "properties": {
+          "adjudication": {
+            "title": "Adjudication",
+            "type": "integer"
+          },
+          "ai_drafts": {
+            "title": "Ai Drafts",
+            "type": "integer"
+          },
+          "needs_check": {
+            "title": "Needs Check",
+            "type": "integer"
+          },
+          "psychometric_flags": {
+            "title": "Psychometric Flags",
+            "type": "integer"
+          },
+          "required_approvals": {
+            "title": "Required Approvals",
+            "type": "integer"
+          },
+          "seed_spot_check": {
+            "title": "Seed Spot Check",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ai_drafts",
+          "seed_spot_check",
+          "psychometric_flags",
+          "adjudication",
+          "needs_check",
+          "required_approvals"
+        ],
+        "title": "ReviewSummary",
+        "type": "object"
+      },
+      "RunIn": {
         "additionalProperties": false,
         "properties": {
-          "client_review_id": {
-            "description": "Idempotency key: the same id returns the first result",
-            "format": "uuid",
-            "title": "Client Review Id",
-            "type": "string"
-          },
-          "duration_ms": {
+          "competency_id": {
             "anyOf": [
               {
-                "maximum": 3600000.0,
-                "minimum": 0.0,
-                "type": "integer"
+                "maxLength": 120,
+                "type": "string"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Duration Ms"
+            "title": "Competency Id"
           },
-          "rating": {
-            "description": "1 Again, 2 Hard, 3 Good, 4 Easy",
-            "enum": [
-              1,
-              2,
-              3,
-              4
-            ],
-            "title": "Rating",
+          "count": {
+            "default": 1,
+            "maximum": 3.0,
+            "minimum": 1.0,
+            "title": "Count",
             "type": "integer"
           },
-          "reviewed_at": {
+          "difficulty": {
+            "default": "medium",
+            "enum": [
+              "easy",
+              "medium",
+              "hard"
+            ],
+            "title": "Difficulty",
+            "type": "string"
+          },
+          "exam": {
+            "enum": [
+              "step1",
+              "step2ck"
+            ],
+            "title": "Exam",
+            "type": "string"
+          },
+          "objective": {
+            "anyOf": [
+              {
+                "maxLength": 300,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Objective"
+          },
+          "second_id": {
+            "anyOf": [
+              {
+                "maxLength": 120,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Second Id"
+          },
+          "topic_id": {
+            "maxLength": 120,
+            "title": "Topic Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "exam",
+          "topic_id"
+        ],
+        "title": "RunIn",
+        "type": "object"
+      },
+      "RunJobOut": {
+        "properties": {
+          "count": {
+            "title": "Count",
+            "type": "integer"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "finished_at": {
             "anyOf": [
               {
                 "format": "date-time",
@@ -8335,61 +9365,141 @@
                 "type": "null"
               }
             ],
-            "description": "When the student rated (offline reviews); default now, never in the future",
-            "title": "Reviewed At"
+            "title": "Finished At"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "outcomes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Outcomes",
+            "type": "array"
+          },
+          "started_at": {
+            "format": "date-time",
+            "title": "Started At",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "running",
+              "done",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
           }
         },
         "required": [
-          "client_review_id",
-          "rating"
+          "id",
+          "status",
+          "count",
+          "outcomes",
+          "started_at",
+          "finished_at",
+          "error"
         ],
-        "title": "ReviewIn",
+        "title": "RunJobOut",
         "type": "object"
       },
-      "ReviewOut": {
+      "RunList": {
         "properties": {
-          "card_id": {
-            "format": "uuid",
-            "title": "Card Id",
-            "type": "string"
+          "active": {
+            "items": {
+              "$ref": "#/components/schemas/RunJobOut"
+            },
+            "title": "Active",
+            "type": "array"
           },
-          "client_review_id": {
-            "format": "uuid",
-            "title": "Client Review Id",
-            "type": "string"
-          },
-          "rating": {
-            "title": "Rating",
-            "type": "integer"
-          },
-          "replayed": {
-            "description": "true when this client_review_id was already applied",
-            "title": "Replayed",
-            "type": "boolean"
-          },
-          "reviewed_at": {
-            "format": "date-time",
-            "title": "Reviewed At",
-            "type": "string"
-          },
-          "schedule": {
-            "$ref": "#/components/schemas/CardSchedule"
-          },
-          "scheduled_days": {
-            "title": "Scheduled Days",
-            "type": "integer"
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/RunRow"
+            },
+            "title": "Items",
+            "type": "array"
           }
         },
         "required": [
-          "card_id",
-          "client_review_id",
-          "replayed",
-          "rating",
-          "reviewed_at",
-          "scheduled_days",
-          "schedule"
+          "active",
+          "items"
         ],
-        "title": "ReviewOut",
+        "title": "RunList",
+        "type": "object"
+      },
+      "RunRow": {
+        "properties": {
+          "attempts": {
+            "title": "Attempts",
+            "type": "integer"
+          },
+          "cell": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Cell",
+            "type": "object"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "difficulty": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficulty"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "llm_calls": {
+            "title": "Llm Calls",
+            "type": "integer"
+          },
+          "outcome": {
+            "title": "Outcome",
+            "type": "string"
+          },
+          "question_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question Id"
+          },
+          "trigger": {
+            "title": "Trigger",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "trigger",
+          "cell",
+          "difficulty",
+          "outcome",
+          "attempts",
+          "llm_calls",
+          "question_id",
+          "created_at"
+        ],
+        "title": "RunRow",
         "type": "object"
       },
       "SearchHit": {
@@ -8787,6 +9897,99 @@
         "title": "SingleBlockCreate",
         "type": "object"
       },
+      "SolverOut": {
+        "properties": {
+          "agrees": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Agrees"
+          },
+          "choice": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Choice"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          },
+          "cover_matches": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover Matches"
+          },
+          "defensibility": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Defensibility",
+            "type": "object"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "independent": {
+            "title": "Independent",
+            "type": "boolean"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          }
+        },
+        "required": [
+          "agrees",
+          "choice",
+          "confidence",
+          "defensibility",
+          "cover_matches",
+          "model",
+          "independent",
+          "error"
+        ],
+        "title": "SolverOut",
+        "type": "object"
+      },
       "SourceRef": {
         "properties": {
           "id": {
@@ -8820,6 +10023,93 @@
           "url"
         ],
         "title": "SourceRef",
+        "type": "object"
+      },
+      "StatsOut": {
+        "properties": {
+          "can_act": {
+            "title": "Can Act",
+            "type": "boolean"
+          },
+          "computed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Computed At"
+          },
+          "flags": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Flags",
+            "type": "array"
+          },
+          "median_seconds": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Median Seconds"
+          },
+          "n": {
+            "title": "N",
+            "type": "integer"
+          },
+          "option_counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Option Counts",
+            "type": "object"
+          },
+          "p_correct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P Correct"
+          },
+          "point_biserial": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Point Biserial"
+          },
+          "report_count": {
+            "title": "Report Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "n",
+          "p_correct",
+          "point_biserial",
+          "option_counts",
+          "median_seconds",
+          "report_count",
+          "computed_at",
+          "flags",
+          "can_act"
+        ],
+        "title": "StatsOut",
         "type": "object"
       },
       "SystemOut": {
@@ -9074,6 +10364,69 @@
           "type"
         ],
         "title": "Target",
+        "type": "object"
+      },
+      "TaxonomyList": {
+        "properties": {
+          "competencies": {
+            "items": {
+              "$ref": "#/components/schemas/TaxonomyRef"
+            },
+            "title": "Competencies",
+            "type": "array"
+          },
+          "seconds": {
+            "items": {
+              "$ref": "#/components/schemas/TaxonomyRef"
+            },
+            "title": "Seconds",
+            "type": "array"
+          },
+          "systems": {
+            "items": {
+              "$ref": "#/components/schemas/TaxonomyRef"
+            },
+            "title": "Systems",
+            "type": "array"
+          },
+          "topics": {
+            "items": {
+              "$ref": "#/components/schemas/TaxonomyRef"
+            },
+            "title": "Topics",
+            "type": "array"
+          }
+        },
+        "required": [
+          "systems",
+          "seconds",
+          "competencies",
+          "topics"
+        ],
+        "title": "TaxonomyList",
+        "type": "object"
+      },
+      "TaxonomyRef": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "label"
+        ],
+        "title": "TaxonomyRef",
         "type": "object"
       },
       "TimeStats": {
@@ -9763,6 +11116,212 @@
           "percent"
         ],
         "title": "WeightOverlay",
+        "type": "object"
+      },
+      "naadi_api__authoring__models__ReviewIn": {
+        "additionalProperties": false,
+        "description": "A reviewer's submission. `ratings` is required for every decision: a revise or a reject says why in the\nsame fields the approval uses.",
+        "properties": {
+          "decision": {
+            "enum": [
+              "approve",
+              "revise",
+              "reject"
+            ],
+            "title": "Decision",
+            "type": "string"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "maxLength": 2000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          },
+          "ratings": {
+            "$ref": "#/components/schemas/Ratings"
+          },
+          "request_second": {
+            "default": false,
+            "title": "Request Second",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "decision",
+          "ratings"
+        ],
+        "title": "ReviewIn",
+        "type": "object"
+      },
+      "naadi_api__authoring__routes__ReviewOut": {
+        "properties": {
+          "adjudication": {
+            "title": "Adjudication",
+            "type": "boolean"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "approve",
+              "revise",
+              "reject"
+            ],
+            "title": "Decision",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "is_mine": {
+            "title": "Is Mine",
+            "type": "boolean"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          },
+          "ratings": {
+            "$ref": "#/components/schemas/RatingsOut"
+          },
+          "request_second": {
+            "title": "Request Second",
+            "type": "boolean"
+          },
+          "round": {
+            "title": "Round",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "round",
+          "decision",
+          "adjudication",
+          "request_second",
+          "is_mine",
+          "ratings",
+          "note",
+          "created_at"
+        ],
+        "title": "ReviewOut",
+        "type": "object"
+      },
+      "naadi_api__cards__models__ReviewIn": {
+        "additionalProperties": false,
+        "properties": {
+          "client_review_id": {
+            "description": "Idempotency key: the same id returns the first result",
+            "format": "uuid",
+            "title": "Client Review Id",
+            "type": "string"
+          },
+          "duration_ms": {
+            "anyOf": [
+              {
+                "maximum": 3600000.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration Ms"
+          },
+          "rating": {
+            "description": "1 Again, 2 Hard, 3 Good, 4 Easy",
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "title": "Rating",
+            "type": "integer"
+          },
+          "reviewed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the student rated (offline reviews); default now, never in the future",
+            "title": "Reviewed At"
+          }
+        },
+        "required": [
+          "client_review_id",
+          "rating"
+        ],
+        "title": "ReviewIn",
+        "type": "object"
+      },
+      "naadi_api__cards__models__ReviewOut": {
+        "properties": {
+          "card_id": {
+            "format": "uuid",
+            "title": "Card Id",
+            "type": "string"
+          },
+          "client_review_id": {
+            "format": "uuid",
+            "title": "Client Review Id",
+            "type": "string"
+          },
+          "rating": {
+            "title": "Rating",
+            "type": "integer"
+          },
+          "replayed": {
+            "description": "true when this client_review_id was already applied",
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "reviewed_at": {
+            "format": "date-time",
+            "title": "Reviewed At",
+            "type": "string"
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/CardSchedule"
+          },
+          "scheduled_days": {
+            "title": "Scheduled Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "card_id",
+          "client_review_id",
+          "replayed",
+          "rating",
+          "reviewed_at",
+          "scheduled_days",
+          "schedule"
+        ],
+        "title": "ReviewOut",
         "type": "object"
       },
       "naadi_api__courses__ExamOption": {
@@ -10653,6 +12212,1119 @@
           }
         },
         "summary": "Admin only: environment, version, number of admins configured and of profiles",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/gaps": {
+      "get": {
+        "operationId": "listAuthoringGaps",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GapList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Gaps",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/items": {
+      "get": {
+        "operationId": "listReviewItems",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "schema": {
+              "default": "ai_drafts",
+              "enum": [
+                "ai_drafts",
+                "seed_spot_check",
+                "psychometric_flags",
+                "adjudication",
+                "needs_check",
+                "all"
+              ],
+              "title": "Filter",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewQueue"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Items",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/items/{item_id}": {
+      "get": {
+        "operationId": "getReviewItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9._:-]{1,80}$",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Item",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/items/{item_id}/checks": {
+      "post": {
+        "description": "Re-run the linter; with `solver`, the blind solver too (model calls, job reserve). The result is stored on the\nitem so the publish gate reads it.",
+        "operationId": "runReviewChecks",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9._:-]{1,80}$",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChecksIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Checks",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/items/{item_id}/psychometrics": {
+      "post": {
+        "description": "Keep (acknowledge the flags), revise (back to draft) or retire a flagged item. Retiring needs `act_min_n`\nresponses: below that a flag is all the data supports.",
+        "operationId": "actOnPsychometrics",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9._:-]{1,80}$",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PsychIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Psychometric Action",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/items/{item_id}/resubmit": {
+      "post": {
+        "description": "A revised draft goes back to review as a new round (statistics reset). The linter must pass first.",
+        "operationId": "resubmitReviewItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9._:-]{1,80}$",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Resubmit",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/items/{item_id}/reviews": {
+      "post": {
+        "operationId": "submitReview",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9._:-]{1,80}$",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/naadi_api__authoring__models__ReviewIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "publish_blocked, round_closed, already_reviewed, status_not_reviewable"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error or approve_contradicts_ratings"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Submit Review",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/psychometrics/run": {
+      "post": {
+        "operationId": "runPsychometrics",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PsychRunOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Run Psychometrics",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/runs": {
+      "get": {
+        "operationId": "listAuthoringRuns",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Runs",
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "description": "Draft `count` items for one taxonomy cell in the background. They land in the review queue; nothing is\npublished. Model calls go through the gateway's free chains and the job reserve.",
+        "operationId": "startAuthoringRun",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RunIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunJobOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "run_active"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "cell_invalid"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Start Run",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/summary": {
+      "get": {
+        "operationId": "getReviewSummary",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewSummary"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Summary",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/review/taxonomy": {
+      "get": {
+        "operationId": "getAuthoringTaxonomy",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "exam",
+            "required": true,
+            "schema": {
+              "enum": [
+                "step1",
+                "step2ck"
+              ],
+              "title": "Exam",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaxonomyList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "authoring_unavailable"
+          }
+        },
+        "summary": "Taxonomy For",
         "tags": [
           "admin"
         ]
@@ -13282,7 +15954,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReviewIn"
+                "$ref": "#/components/schemas/naadi_api__cards__models__ReviewIn"
               }
             }
           },
@@ -13293,7 +15965,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ReviewOut"
+                  "$ref": "#/components/schemas/naadi_api__cards__models__ReviewOut"
                 }
               }
             },
@@ -13838,6 +16510,293 @@
         "summary": "The caller's timed/exam session that is running, paused or on a break, if any",
         "tags": [
           "qbank"
+        ]
+      }
+    },
+    "/api/export": {
+      "get": {
+        "operationId": "listExports",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "export_unavailable"
+          }
+        },
+        "summary": "List Exports",
+        "tags": [
+          "export"
+        ]
+      },
+      "post": {
+        "operationId": "startExport",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExportStart"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportJob"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "export_active"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "export_unavailable"
+          }
+        },
+        "summary": "Start Export",
+        "tags": [
+          "export"
+        ]
+      }
+    },
+    "/api/export/{job_id}": {
+      "delete": {
+        "operationId": "deleteExport",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "export_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "export_unavailable"
+          }
+        },
+        "summary": "Delete Export",
+        "tags": [
+          "export"
+        ]
+      },
+      "get": {
+        "operationId": "getExport",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportJob"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "export_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "export_unavailable"
+          }
+        },
+        "summary": "Get Export",
+        "tags": [
+          "export"
         ]
       }
     },

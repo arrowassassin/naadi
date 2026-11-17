@@ -75,6 +75,9 @@ SYSTEM_CRONS: tuple[tuple[str, str, str, dict[str, Any], bool], ...] = (
     # Handwriting OCR (S13): idle layers every two minutes; deferred ones after the 00:00 UTC budget reset.
     ("naadi.ink_ocr.sweep", "ink_ocr", "*/2 * * * *", {"mode": "sweep"}, False),
     ("naadi.ink_ocr.nightly", "ink_ocr", "23 0 * * *", {"mode": "nightly"}, False),
+    # Question authoring (S21): drafts into the human review queue within the job reserve, then item statistics.
+    ("naadi.author.nightly", "author", "41 22 * * *", {"mode": "nightly"}, False),
+    ("naadi.author.psychometrics", "author", "11 23 * * *", {"mode": "psychometrics"}, False),
 )
 
 naadi_app: FastAPI = create_app()

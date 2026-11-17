@@ -12,12 +12,14 @@ from . import __version__, api
 from .anki.routes import install_anki_routes
 from .auth import AccountDirectory, TokenVerifier, install_auth
 from .auth_routes import install_auth_routes
+from .authoring.routes import install_authoring_routes
 from .cards.routes import install_cards_routes
 from .config import load_models_config
 from .config_api.routes import install_app_config
 from .courses import install_courses_routes
 from .db import Database
 from .errors import install_error_handlers
+from .export.routes import install_export_routes, start_export_gc, stop_export_gc
 from .generation.health import generation_check
 from .generation.routes import install_generation_routes
 from .health.checks import (
@@ -97,6 +99,7 @@ def create_app(
         await app.state.app_config.start()
         await start_search(app)
         await start_ink_gc(app)
+        await start_export_gc(app)
         log.info(
             "startup",
             environment=settings.app_env,
@@ -109,6 +112,8 @@ def create_app(
         finally:
             await drain_seed_tasks(app)
             await stop_ink_gc(app)
+            await app.state.authoring_jobs.drain()
+            await stop_export_gc(app)
             await stop_search(app)
             await app.state.app_config.stop()
             await db.close()
@@ -140,6 +145,8 @@ def create_app(
     install_search_routes(app)
     install_ink_routes(app)
     install_notes_routes(app)
+    install_authoring_routes(app)
+    install_export_routes(app)
     install_app_config(app, settings)
     install_generation_routes(app)  # needs app.state.app_config
     app.include_router(seed_router)

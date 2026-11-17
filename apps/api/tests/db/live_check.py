@@ -53,9 +53,16 @@ USER_TABLES = (
     "study_plans",
     "study_plan_days",
     "coach_suggestions",
+    "export_jobs",
 )
 # Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017).
-SELECT_ONLY_TABLES = ("public.ink_layers", "public.ink_items", "public.notes", "public.notebooks")
+SELECT_ONLY_TABLES = (
+    "public.ink_layers",
+    "public.ink_items",
+    "public.notes",
+    "public.notebooks",
+    "public.export_jobs",
+)
 # Card scheduling: only the API writes it (the client may only SELECT its own rows).
 API_WRITTEN_TABLES = ("card_reviews", "card_review_logs")
 BUCKETS = ("content-public", "content-private", "user-uploads", "vault", "generated-media")
@@ -78,6 +85,8 @@ CLIENT_CLOSED_TABLES = (
     "search_usage",
     "agent_health",
     "video_candidates",
+    "question_reviews",
+    "authoring_runs",
 )
 
 Rows = Sequence[dict[str, Any]]
@@ -148,8 +157,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "47 Naadi tables present",
-            "select count(*) = 47 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "50 Naadi tables present",
+            "select count(*) = 50 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -201,6 +210,17 @@ def checks(head: str) -> list[Check]:
             " and exists (select 1 from information_schema.columns where table_schema = 'public'"
             " and table_name = 'generated_media' and column_name = 'media_asset_id')"
             " as ok, '' as detail",
+        ),
+        Check(
+            "authoring: question_reviews and authoring_runs are backend-only; one active export job per student",
+            "select not exists (select 1 from unnest(array['question_reviews','authoring_runs']) t"
+            " where not (select relrowsecurity from pg_class where oid = ('public.' || t)::regclass)"
+            " or has_any_column_privilege('anon', ('public.' || t)::regclass, 'select,insert,update')"
+            " or has_any_column_privilege('authenticated', ('public.' || t)::regclass, 'select,insert,update')"
+            " or has_table_privilege('authenticated', ('public.' || t)::regclass, 'delete'))"
+            " and to_regclass('public.export_jobs_one_active_idx') is not null"
+            " and not has_any_column_privilege('authenticated', 'public.export_jobs', 'insert,update') as ok,"
+            " '' as detail",
         ),
         Check(
             "handwriting OCR columns present (ocr_status, ocr_hash, ocr_at) and notes.body_text",

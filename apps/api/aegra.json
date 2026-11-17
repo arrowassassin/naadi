@@ -16,6 +16,10 @@
       "path": "./naadi_api/agent/graphs/youtube_map.py:graph",
       "description": "Weekly YouTube mapper: refresh or drop stored metadata (30-day policy), score new uploads of allow-listed channels offline, queue candidates for approval"
     },
+    "author": {
+      "path": "./naadi_api/agent/graphs/author.py:graph",
+      "description": "Question authoring: coverage gaps -> draft -> NBME lint -> citation check -> blind solve by a different model family -> human review queue; nightly item statistics"
+    },
     "ink_ocr": {
       "path": "./naadi_api/agent/graphs/ink_ocr.py:graph",
       "description": "Handwriting search: idle ink layers -> Pillow tiles -> one vision call per tile -> recognized_text (sweep every 2 min, nightly retry of deferred layers)"

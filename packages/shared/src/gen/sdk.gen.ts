@@ -8,6 +8,9 @@ import type {
   AcceptCoachSuggestionData,
   AcceptCoachSuggestionErrors,
   AcceptCoachSuggestionResponses,
+  ActOnPsychometricsData,
+  ActOnPsychometricsErrors,
+  ActOnPsychometricsResponses,
   AddYoutubeVideoData,
   AddYoutubeVideoErrors,
   AddYoutubeVideoResponses,
@@ -59,6 +62,9 @@ import type {
   DeleteCardData,
   DeleteCardErrors,
   DeleteCardResponses,
+  DeleteExportData,
+  DeleteExportErrors,
+  DeleteExportResponses,
   DeleteGeneratedApiGeneratedMediaIdDeleteData,
   DeleteGeneratedApiGeneratedMediaIdDeleteErrors,
   DeleteGeneratedApiGeneratedMediaIdDeleteResponses,
@@ -104,6 +110,9 @@ import type {
   GetAppConfigHistoryErrors,
   GetAppConfigHistoryResponses,
   GetAppConfigResponses,
+  GetAuthoringTaxonomyData,
+  GetAuthoringTaxonomyErrors,
+  GetAuthoringTaxonomyResponses,
   GetBlockClockData,
   GetBlockClockErrors,
   GetBlockClockResponses,
@@ -134,6 +143,9 @@ import type {
   GetEmbeddingsStatusData,
   GetEmbeddingsStatusErrors,
   GetEmbeddingsStatusResponses,
+  GetExportData,
+  GetExportErrors,
+  GetExportResponses,
   GetGeneratedApiGeneratedMediaIdGetData,
   GetGeneratedApiGeneratedMediaIdGetErrors,
   GetGeneratedApiGeneratedMediaIdGetResponses,
@@ -175,6 +187,12 @@ import type {
   GetReadyData,
   GetReadyErrors,
   GetReadyResponses,
+  GetReviewItemData,
+  GetReviewItemErrors,
+  GetReviewItemResponses,
+  GetReviewSummaryData,
+  GetReviewSummaryErrors,
+  GetReviewSummaryResponses,
   GetSeedRunData,
   GetSeedRunErrors,
   GetSeedRunResponses,
@@ -187,9 +205,18 @@ import type {
   ListAppConfigData,
   ListAppConfigErrors,
   ListAppConfigResponses,
+  ListAuthoringGapsData,
+  ListAuthoringGapsErrors,
+  ListAuthoringGapsResponses,
+  ListAuthoringRunsData,
+  ListAuthoringRunsErrors,
+  ListAuthoringRunsResponses,
   ListBlocksData,
   ListBlocksErrors,
   ListBlocksResponses,
+  ListExportsData,
+  ListExportsErrors,
+  ListExportsResponses,
   ListGeneratedApiGeneratedGetData,
   ListGeneratedApiGeneratedGetErrors,
   ListGeneratedApiGeneratedGetResponses,
@@ -199,6 +226,9 @@ import type {
   ListNotesData,
   ListNotesErrors,
   ListNotesResponses,
+  ListReviewItemsData,
+  ListReviewItemsErrors,
+  ListReviewItemsResponses,
   ListSeedRunsData,
   ListSeedRunsErrors,
   ListSeedRunsResponses,
@@ -229,9 +259,18 @@ import type {
   ReportIssueData,
   ReportIssueErrors,
   ReportIssueResponses,
+  ResubmitReviewItemData,
+  ResubmitReviewItemErrors,
+  ResubmitReviewItemResponses,
   ReviewCardData,
   ReviewCardErrors,
   ReviewCardResponses,
+  RunPsychometricsData,
+  RunPsychometricsErrors,
+  RunPsychometricsResponses,
+  RunReviewChecksData,
+  RunReviewChecksErrors,
+  RunReviewChecksResponses,
   SaveOnboardingData,
   SaveOnboardingErrors,
   SaveOnboardingResponses,
@@ -244,9 +283,18 @@ import type {
   SetPlanItemStatusData,
   SetPlanItemStatusErrors,
   SetPlanItemStatusResponses,
+  StartAuthoringRunData,
+  StartAuthoringRunErrors,
+  StartAuthoringRunResponses,
+  StartExportData,
+  StartExportErrors,
+  StartExportResponses,
   StartSeedData,
   StartSeedErrors,
   StartSeedResponses,
+  SubmitReviewData,
+  SubmitReviewErrors,
+  SubmitReviewResponses,
   UpdateCardData,
   UpdateCardErrors,
   UpdateCardResponses,
@@ -263,6 +311,9 @@ import type {
 import {
   zAcceptCoachSuggestionPath,
   zAcceptCoachSuggestionResponse,
+  zActOnPsychometricsBody,
+  zActOnPsychometricsPath,
+  zActOnPsychometricsResponse,
   zAddYoutubeVideoBody,
   zAddYoutubeVideoResponse,
   zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostBody,
@@ -300,6 +351,8 @@ import {
   zCreateWeakSpotBlockResponse,
   zDeleteCardPath,
   zDeleteCardResponse,
+  zDeleteExportPath,
+  zDeleteExportResponse,
   zDeleteGeneratedApiGeneratedMediaIdDeletePath,
   zDeleteGeneratedApiGeneratedMediaIdDeleteResponse,
   zDeleteImportedAnkiDeckQuery,
@@ -326,6 +379,8 @@ import {
   zGetAppConfigHistoryResponse,
   zGetAppConfigPath,
   zGetAppConfigResponse,
+  zGetAuthoringTaxonomyQuery,
+  zGetAuthoringTaxonomyResponse,
   zGetBlockClockPath,
   zGetBlockClockResponse,
   zGetBlockPath,
@@ -345,6 +400,8 @@ import {
   zGetDueCardsQuery,
   zGetDueCardsResponse,
   zGetEmbeddingsStatusResponse,
+  zGetExportPath,
+  zGetExportResponse,
   zGetGeneratedApiGeneratedMediaIdGetPath,
   zGetGeneratedApiGeneratedMediaIdGetResponse,
   zGetHealthResponse,
@@ -366,19 +423,27 @@ import {
   zGetReadingPositionQuery,
   zGetReadingPositionResponse,
   zGetReadyResponse,
+  zGetReviewItemPath,
+  zGetReviewItemResponse,
+  zGetReviewSummaryResponse,
   zGetSeedRunPath,
   zGetSeedRunResponse,
   zGetTodayResponse,
   zImportAnkiDeckQuery,
   zImportAnkiDeckResponse,
   zListAppConfigResponse,
+  zListAuthoringGapsResponse,
+  zListAuthoringRunsResponse,
   zListBlocksQuery,
   zListBlocksResponse,
+  zListExportsResponse,
   zListGeneratedApiGeneratedGetQuery,
   zListGeneratedApiGeneratedGetResponse,
   zListNotebooksResponse,
   zListNotesQuery,
   zListNotesResponse,
+  zListReviewItemsQuery,
+  zListReviewItemsResponse,
   zListSeedRunsResponse,
   zListYoutubeCandidatesQuery,
   zListYoutubeCandidatesResponse,
@@ -401,9 +466,15 @@ import {
   zReorderNotebookPagesResponse,
   zReportIssueBody,
   zReportIssueResponse,
+  zResubmitReviewItemPath,
+  zResubmitReviewItemResponse,
   zReviewCardBody,
   zReviewCardPath,
   zReviewCardResponse,
+  zRunPsychometricsResponse,
+  zRunReviewChecksBody,
+  zRunReviewChecksPath,
+  zRunReviewChecksResponse,
   zSaveOnboardingBody,
   zSaveOnboardingResponse,
   zSearchLocalQuery,
@@ -413,8 +484,15 @@ import {
   zSetPlanItemStatusBody,
   zSetPlanItemStatusPath,
   zSetPlanItemStatusResponse,
+  zStartAuthoringRunBody,
+  zStartAuthoringRunResponse,
+  zStartExportBody,
+  zStartExportResponse,
   zStartSeedBody,
   zStartSeedResponse,
+  zSubmitReviewBody,
+  zSubmitReviewPath,
+  zSubmitReviewResponse,
   zUpdateCardBody,
   zUpdateCardPath,
   zUpdateCardResponse,
@@ -652,6 +730,273 @@ export const getAdminOverview = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetAdminOverviewResponse.parseAsync(data),
     url: "/api/admin/overview",
+    ...options,
+  });
+
+/**
+ * Gaps
+ */
+export const listAuthoringGaps = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAuthoringGapsData, ThrowOnError>,
+): RequestResult<ListAuthoringGapsResponses, ListAuthoringGapsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAuthoringGapsResponses, ListAuthoringGapsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAuthoringGapsResponse.parseAsync(data),
+    url: "/api/admin/review/gaps",
+    ...options,
+  });
+
+/**
+ * Items
+ */
+export const listReviewItems = <ThrowOnError extends boolean = false>(
+  options?: Options<ListReviewItemsData, ThrowOnError>,
+): RequestResult<ListReviewItemsResponses, ListReviewItemsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListReviewItemsResponses, ListReviewItemsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListReviewItemsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListReviewItemsResponse.parseAsync(data),
+    url: "/api/admin/review/items",
+    ...options,
+  });
+
+/**
+ * Item
+ */
+export const getReviewItem = <ThrowOnError extends boolean = false>(
+  options: Options<GetReviewItemData, ThrowOnError>,
+): RequestResult<GetReviewItemResponses, GetReviewItemErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetReviewItemResponses, GetReviewItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetReviewItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetReviewItemResponse.parseAsync(data),
+    url: "/api/admin/review/items/{item_id}",
+    ...options,
+  });
+
+/**
+ * Checks
+ *
+ * Re-run the linter; with `solver`, the blind solver too (model calls, job reserve). The result is stored on the
+ * item so the publish gate reads it.
+ */
+export const runReviewChecks = <ThrowOnError extends boolean = false>(
+  options: Options<RunReviewChecksData, ThrowOnError>,
+): RequestResult<RunReviewChecksResponses, RunReviewChecksErrors, ThrowOnError> =>
+  (options.client ?? client).post<RunReviewChecksResponses, RunReviewChecksErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zRunReviewChecksBody,
+          path: zRunReviewChecksPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRunReviewChecksResponse.parseAsync(data),
+    url: "/api/admin/review/items/{item_id}/checks",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Psychometric Action
+ *
+ * Keep (acknowledge the flags), revise (back to draft) or retire a flagged item. Retiring needs `act_min_n`
+ * responses: below that a flag is all the data supports.
+ */
+export const actOnPsychometrics = <ThrowOnError extends boolean = false>(
+  options: Options<ActOnPsychometricsData, ThrowOnError>,
+): RequestResult<ActOnPsychometricsResponses, ActOnPsychometricsErrors, ThrowOnError> =>
+  (options.client ?? client).post<ActOnPsychometricsResponses, ActOnPsychometricsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zActOnPsychometricsBody,
+          path: zActOnPsychometricsPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zActOnPsychometricsResponse.parseAsync(data),
+    url: "/api/admin/review/items/{item_id}/psychometrics",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Resubmit
+ *
+ * A revised draft goes back to review as a new round (statistics reset). The linter must pass first.
+ */
+export const resubmitReviewItem = <ThrowOnError extends boolean = false>(
+  options: Options<ResubmitReviewItemData, ThrowOnError>,
+): RequestResult<ResubmitReviewItemResponses, ResubmitReviewItemErrors, ThrowOnError> =>
+  (options.client ?? client).post<ResubmitReviewItemResponses, ResubmitReviewItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zResubmitReviewItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zResubmitReviewItemResponse.parseAsync(data),
+    url: "/api/admin/review/items/{item_id}/resubmit",
+    ...options,
+  });
+
+/**
+ * Submit Review
+ */
+export const submitReview = <ThrowOnError extends boolean = false>(
+  options: Options<SubmitReviewData, ThrowOnError>,
+): RequestResult<SubmitReviewResponses, SubmitReviewErrors, ThrowOnError> =>
+  (options.client ?? client).post<SubmitReviewResponses, SubmitReviewErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zSubmitReviewBody,
+          path: zSubmitReviewPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSubmitReviewResponse.parseAsync(data),
+    url: "/api/admin/review/items/{item_id}/reviews",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Run Psychometrics
+ */
+export const runPsychometrics = <ThrowOnError extends boolean = false>(
+  options?: Options<RunPsychometricsData, ThrowOnError>,
+): RequestResult<RunPsychometricsResponses, RunPsychometricsErrors, ThrowOnError> =>
+  (options?.client ?? client).post<RunPsychometricsResponses, RunPsychometricsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRunPsychometricsResponse.parseAsync(data),
+    url: "/api/admin/review/psychometrics/run",
+    ...options,
+  });
+
+/**
+ * Runs
+ */
+export const listAuthoringRuns = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAuthoringRunsData, ThrowOnError>,
+): RequestResult<ListAuthoringRunsResponses, ListAuthoringRunsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAuthoringRunsResponses, ListAuthoringRunsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAuthoringRunsResponse.parseAsync(data),
+    url: "/api/admin/review/runs",
+    ...options,
+  });
+
+/**
+ * Start Run
+ *
+ * Draft `count` items for one taxonomy cell in the background. They land in the review queue; nothing is
+ * published. Model calls go through the gateway's free chains and the job reserve.
+ */
+export const startAuthoringRun = <ThrowOnError extends boolean = false>(
+  options: Options<StartAuthoringRunData, ThrowOnError>,
+): RequestResult<StartAuthoringRunResponses, StartAuthoringRunErrors, ThrowOnError> =>
+  (options.client ?? client).post<StartAuthoringRunResponses, StartAuthoringRunErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zStartAuthoringRunBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zStartAuthoringRunResponse.parseAsync(data),
+    url: "/api/admin/review/runs",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Summary
+ */
+export const getReviewSummary = <ThrowOnError extends boolean = false>(
+  options?: Options<GetReviewSummaryData, ThrowOnError>,
+): RequestResult<GetReviewSummaryResponses, GetReviewSummaryErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetReviewSummaryResponses, GetReviewSummaryErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetReviewSummaryResponse.parseAsync(data),
+    url: "/api/admin/review/summary",
+    ...options,
+  });
+
+/**
+ * Taxonomy For
+ */
+export const getAuthoringTaxonomy = <ThrowOnError extends boolean = false>(
+  options: Options<GetAuthoringTaxonomyData, ThrowOnError>,
+): RequestResult<GetAuthoringTaxonomyResponses, GetAuthoringTaxonomyErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetAuthoringTaxonomyResponses, GetAuthoringTaxonomyErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetAuthoringTaxonomyQuery,
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAuthoringTaxonomyResponse.parseAsync(data),
+    url: "/api/admin/review/taxonomy",
     ...options,
   });
 
@@ -1440,6 +1785,90 @@ export const getActiveExam = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetActiveExamResponse.parseAsync(data),
     url: "/api/exam/active",
+    ...options,
+  });
+
+/**
+ * List Exports
+ */
+export const listExports = <ThrowOnError extends boolean = false>(
+  options?: Options<ListExportsData, ThrowOnError>,
+): RequestResult<ListExportsResponses, ListExportsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListExportsResponses, ListExportsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListExportsResponse.parseAsync(data),
+    url: "/api/export",
+    ...options,
+  });
+
+/**
+ * Start Export
+ */
+export const startExport = <ThrowOnError extends boolean = false>(
+  options: Options<StartExportData, ThrowOnError>,
+): RequestResult<StartExportResponses, StartExportErrors, ThrowOnError> =>
+  (options.client ?? client).post<StartExportResponses, StartExportErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zStartExportBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zStartExportResponse.parseAsync(data),
+    url: "/api/export",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Delete Export
+ */
+export const deleteExport = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteExportData, ThrowOnError>,
+): RequestResult<DeleteExportResponses, DeleteExportErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteExportResponses, DeleteExportErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteExportPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteExportResponse.parseAsync(data),
+    url: "/api/export/{job_id}",
+    ...options,
+  });
+
+/**
+ * Get Export
+ */
+export const getExport = <ThrowOnError extends boolean = false>(
+  options: Options<GetExportData, ThrowOnError>,
+): RequestResult<GetExportResponses, GetExportErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetExportResponses, GetExportErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetExportPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetExportResponse.parseAsync(data),
+    url: "/api/export/{job_id}",
     ...options,
   });
 

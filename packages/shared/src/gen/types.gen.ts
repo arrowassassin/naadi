@@ -404,6 +404,32 @@ export type AttemptState = {
 };
 
 /**
+ * AuthorInfo
+ */
+export type AuthorInfo = {
+  /**
+   * At
+   */
+  at: string | null;
+  /**
+   * Excerpt Ids
+   */
+  excerpt_ids: Array<string>;
+  /**
+   * Model
+   */
+  model: string | null;
+  /**
+   * Prompt Hash
+   */
+  prompt_hash: string | null;
+  /**
+   * Run Id
+   */
+  run_id: string | null;
+};
+
+/**
  * BlockClock
  *
  * The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,
@@ -1323,6 +1349,16 @@ export type ChapterProgress = {
 };
 
 /**
+ * ChecksIn
+ */
+export type ChecksIn = {
+  /**
+   * Solver
+   */
+  solver?: boolean;
+};
+
+/**
  * CoachActionOut
  */
 export type CoachActionOut = {
@@ -2045,6 +2081,82 @@ export type Explanation = {
 };
 
 /**
+ * ExportDownload
+ */
+export type ExportDownload = {
+  /**
+   * Part
+   */
+  part: number;
+  /**
+   * Url
+   */
+  url: string;
+};
+
+/**
+ * ExportJob
+ */
+export type ExportJob = {
+  /**
+   * Bytes
+   */
+  bytes: number | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Downloads
+   */
+  downloads: Array<ExportDownload>;
+  /**
+   * Error
+   */
+  error: string | null;
+  /**
+   * Expires At
+   */
+  expires_at: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Include Vault
+   */
+  include_vault: boolean;
+  /**
+   * Parts
+   */
+  parts: number;
+  /**
+   * Status
+   */
+  status: "queued" | "running" | "ready" | "failed" | "expired";
+};
+
+/**
+ * ExportList
+ */
+export type ExportList = {
+  /**
+   * Items
+   */
+  items: Array<ExportJob>;
+};
+
+/**
+ * ExportStart
+ */
+export type ExportStart = {
+  /**
+   * Include Vault
+   */
+  include_vault?: boolean;
+};
+
+/**
  * FieldError
  */
 export type FieldError = {
@@ -2060,6 +2172,30 @@ export type FieldError = {
    * Type
    */
   type: string;
+};
+
+/**
+ * Finding
+ */
+export type Finding = {
+  /**
+   * Params
+   */
+  params: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Rule
+   */
+  rule: string;
+  /**
+   * Severity
+   */
+  severity: "error" | "warn" | "info";
+  /**
+   * Target
+   */
+  target: string;
 };
 
 /**
@@ -2156,6 +2292,72 @@ export type FsrsSchedulerConfig = {
     number,
     number,
   ];
+};
+
+/**
+ * GapList
+ */
+export type GapList = {
+  /**
+   * Items
+   */
+  items: Array<GapOut>;
+  /**
+   * Min Published
+   */
+  min_published: number;
+};
+
+/**
+ * GapOut
+ */
+export type GapOut = {
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Pending
+   */
+  pending: number;
+  /**
+   * Published
+   */
+  published: number;
+  /**
+   * Topic Id
+   */
+  topic_id: string;
+};
+
+/**
+ * GatesOut
+ */
+export type GatesOut = {
+  /**
+   * Blockers
+   */
+  blockers: Array<string>;
+  /**
+   * Cross Check Ok
+   */
+  cross_check_ok: boolean;
+  /**
+   * Independent
+   */
+  independent: boolean;
+  /**
+   * Lint Ok
+   */
+  lint_ok: boolean;
+  /**
+   * Source Ok
+   */
+  source_ok: boolean;
 };
 
 /**
@@ -2704,6 +2906,98 @@ export type Insight = {
   vars: {
     [key: string]: string | number | number;
   };
+};
+
+/**
+ * ItemDetail
+ */
+export type ItemDetail = {
+  /**
+   * Answer
+   */
+  answer: string;
+  /**
+   * Answer Html
+   */
+  answer_html: string | null;
+  author: AuthorInfo | null;
+  can_review: Permission;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Difficulty
+   */
+  difficulty: string | null;
+  /**
+   * Educational Objective
+   */
+  educational_objective: string | null;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Explanation Html
+   */
+  explanation_html: string | null;
+  gates: GatesOut;
+  /**
+   * Hidden Reviews
+   */
+  hidden_reviews: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Lint
+   */
+  lint: Array<Finding>;
+  /**
+   * Options
+   */
+  options: Array<OptionOut>;
+  /**
+   * Origin
+   */
+  origin: "ai" | "seed";
+  /**
+   * Required Approvals
+   */
+  required_approvals: number;
+  resolution: ResolutionOut;
+  /**
+   * Reviews
+   */
+  reviews: Array<NaadiApiAuthoringRoutesReviewOut>;
+  solver: SolverOut | null;
+  /**
+   * Solver Findings
+   */
+  solver_findings: Array<Finding>;
+  /**
+   * Source Id
+   */
+  source_id: string | null;
+  stats: StatsOut | null;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * Stem Html
+   */
+  stem_html: string;
+  /**
+   * Taxonomy
+   */
+  taxonomy: Array<TaxonomyRef>;
+  /**
+   * Why Not Html
+   */
+  why_not_html: string | null;
 };
 
 /**
@@ -3693,6 +3987,20 @@ export type OnboardingValues = {
 };
 
 /**
+ * OptionOut
+ */
+export type OptionOut = {
+  /**
+   * Html
+   */
+  html: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
  * PageCreate
  */
 export type PageCreate = {
@@ -3768,6 +4076,20 @@ export type PathwayStageOut = {
    * Total
    */
   total: number;
+};
+
+/**
+ * Permission
+ */
+export type Permission = {
+  /**
+   * Allowed
+   */
+  allowed: boolean;
+  /**
+   * Reason
+   */
+  reason?: string | null;
 };
 
 /**
@@ -4230,6 +4552,34 @@ export type Profile = {
 };
 
 /**
+ * PsychIn
+ */
+export type PsychIn = {
+  /**
+   * Action
+   */
+  action: "keep" | "revise" | "retire";
+};
+
+/**
+ * PsychRunOut
+ */
+export type PsychRunOut = {
+  /**
+   * Flagged
+   */
+  flagged: number;
+  /**
+   * Items
+   */
+  items: number;
+  /**
+   * Updated
+   */
+  updated: number;
+};
+
+/**
  * PublicConfig
  *
  * Everything the web app needs before sign-in. Nothing here is secret.
@@ -4384,6 +4734,64 @@ export type QuestionView = {
 };
 
 /**
+ * QueueItem
+ */
+export type QueueItem = {
+  /**
+   * Difficulty
+   */
+  difficulty: string | null;
+  /**
+   * Errors
+   */
+  errors: number;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Mine Submitted
+   */
+  mine_submitted: boolean;
+  /**
+   * Needed
+   */
+  needed: number;
+  /**
+   * Origin
+   */
+  origin: "ai" | "seed";
+  /**
+   * Psych Flags
+   */
+  psych_flags: Array<string>;
+  /**
+   * State
+   */
+  state: string;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * Stem Preview
+   */
+  stem_preview: string;
+  /**
+   * Submitted
+   */
+  submitted: number;
+  /**
+   * Warnings
+   */
+  warnings: number;
+};
+
+/**
  * Quota
  */
 export type Quota = {
@@ -4415,6 +4823,83 @@ export type Quota = {
    * Used
    */
   used: number;
+};
+
+/**
+ * Ratings
+ *
+ * Part C: accuracy, single best answer, cognitive level, flaws, difficulty, taxonomy.
+ */
+export type Ratings = {
+  /**
+   * Accuracy
+   */
+  accuracy: "correct" | "minor_issue" | "incorrect";
+  /**
+   * Cognitive Level
+   */
+  cognitive_level: "recall" | "application" | "analysis";
+  /**
+   * Difficulty
+   */
+  difficulty: "easy" | "medium" | "hard";
+  /**
+   * Flaws
+   */
+  flaws?: Array<
+    | "not_homogeneous"
+    | "key_too_long"
+    | "grammatical_cue"
+    | "logical_cue"
+    | "word_repeat"
+    | "convergence"
+    | "absolute_terms"
+    | "negative_lead_in"
+    | "cannot_cover_options"
+    | "irrelevant_difficulty"
+    | "hinged"
+    | "stereotyped"
+    | "other"
+  >;
+  /**
+   * Single Best Answer
+   */
+  single_best_answer: boolean;
+  /**
+   * Taxonomy Ok
+   */
+  taxonomy_ok: boolean;
+};
+
+/**
+ * RatingsOut
+ */
+export type RatingsOut = {
+  /**
+   * Accuracy
+   */
+  accuracy?: string | null;
+  /**
+   * Cognitive Level
+   */
+  cognitive_level?: string | null;
+  /**
+   * Difficulty
+   */
+  difficulty?: string | null;
+  /**
+   * Flaws
+   */
+  flaws?: Array<string>;
+  /**
+   * Single Best Answer
+   */
+  single_best_answer?: boolean | null;
+  /**
+   * Taxonomy Ok
+   */
+  taxonomy_ok?: boolean | null;
+  [key: string]: unknown;
 };
 
 /**
@@ -4592,6 +5077,28 @@ export type ReportIssueOut = {
 };
 
 /**
+ * ResolutionOut
+ */
+export type ResolutionOut = {
+  /**
+   * Needed
+   */
+  needed: number;
+  /**
+   * Round
+   */
+  round: number;
+  /**
+   * State
+   */
+  state: string;
+  /**
+   * Submitted
+   */
+  submitted: number;
+};
+
+/**
  * ResultQuestion
  */
 export type ResultQuestion = {
@@ -4716,64 +5223,180 @@ export type RetentionOut = {
 };
 
 /**
- * ReviewIn
+ * ReviewQueue
  */
-export type ReviewIn = {
+export type ReviewQueue = {
   /**
-   * Client Review Id
-   *
-   * Idempotency key: the same id returns the first result
+   * Items
    */
-  client_review_id: string;
-  /**
-   * Duration Ms
-   */
-  duration_ms?: number | null;
-  /**
-   * Rating
-   *
-   * 1 Again, 2 Hard, 3 Good, 4 Easy
-   */
-  rating: 1 | 2 | 3 | 4;
-  /**
-   * Reviewed At
-   *
-   * When the student rated (offline reviews); default now, never in the future
-   */
-  reviewed_at?: string | null;
+  items: Array<QueueItem>;
 };
 
 /**
- * ReviewOut
+ * ReviewResult
  */
-export type ReviewOut = {
+export type ReviewResult = {
+  item: ItemDetail;
   /**
-   * Card Id
+   * Outcome
    */
-  card_id: string;
+  outcome: "recorded" | "published" | "revise" | "rejected" | "adjudication";
+};
+
+/**
+ * ReviewSummary
+ */
+export type ReviewSummary = {
   /**
-   * Client Review Id
+   * Adjudication
    */
-  client_review_id: string;
+  adjudication: number;
   /**
-   * Rating
+   * Ai Drafts
    */
-  rating: number;
+  ai_drafts: number;
   /**
-   * Replayed
-   *
-   * true when this client_review_id was already applied
+   * Needs Check
    */
-  replayed: boolean;
+  needs_check: number;
   /**
-   * Reviewed At
+   * Psychometric Flags
    */
-  reviewed_at: string;
-  schedule: CardSchedule;
+  psychometric_flags: number;
   /**
-   * Scheduled Days
+   * Required Approvals
    */
-  scheduled_days: number;
+  required_approvals: number;
+  /**
+   * Seed Spot Check
+   */
+  seed_spot_check: number;
+};
+
+/**
+ * RunIn
+ */
+export type RunIn = {
+  /**
+   * Competency Id
+   */
+  competency_id?: string | null;
+  /**
+   * Count
+   */
+  count?: number;
+  /**
+   * Difficulty
+   */
+  difficulty?: "easy" | "medium" | "hard";
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck";
+  /**
+   * Objective
+   */
+  objective?: string | null;
+  /**
+   * Second Id
+   */
+  second_id?: string | null;
+  /**
+   * Topic Id
+   */
+  topic_id: string;
+};
+
+/**
+ * RunJobOut
+ */
+export type RunJobOut = {
+  /**
+   * Count
+   */
+  count: number;
+  /**
+   * Error
+   */
+  error: string | null;
+  /**
+   * Finished At
+   */
+  finished_at: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Outcomes
+   */
+  outcomes: Array<string>;
+  /**
+   * Started At
+   */
+  started_at: string;
+  /**
+   * Status
+   */
+  status: "running" | "done" | "failed";
+};
+
+/**
+ * RunList
+ */
+export type RunList = {
+  /**
+   * Active
+   */
+  active: Array<RunJobOut>;
+  /**
+   * Items
+   */
+  items: Array<RunRow>;
+};
+
+/**
+ * RunRow
+ */
+export type RunRow = {
+  /**
+   * Attempts
+   */
+  attempts: number;
+  /**
+   * Cell
+   */
+  cell: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Difficulty
+   */
+  difficulty: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Llm Calls
+   */
+  llm_calls: number;
+  /**
+   * Outcome
+   */
+  outcome: string;
+  /**
+   * Question Id
+   */
+  question_id: string | null;
+  /**
+   * Trigger
+   */
+  trigger: string;
 };
 
 /**
@@ -5006,6 +5629,46 @@ export type SingleBlockCreate = {
 };
 
 /**
+ * SolverOut
+ */
+export type SolverOut = {
+  /**
+   * Agrees
+   */
+  agrees: boolean | null;
+  /**
+   * Choice
+   */
+  choice: string | null;
+  /**
+   * Confidence
+   */
+  confidence: number | null;
+  /**
+   * Cover Matches
+   */
+  cover_matches: boolean | null;
+  /**
+   * Defensibility
+   */
+  defensibility: {
+    [key: string]: number;
+  };
+  /**
+   * Error
+   */
+  error: string | null;
+  /**
+   * Independent
+   */
+  independent: boolean;
+  /**
+   * Model
+   */
+  model: string | null;
+};
+
+/**
  * SourceRef
  */
 export type SourceRef = {
@@ -5025,6 +5688,50 @@ export type SourceRef = {
    * Url
    */
   url: string | null;
+};
+
+/**
+ * StatsOut
+ */
+export type StatsOut = {
+  /**
+   * Can Act
+   */
+  can_act: boolean;
+  /**
+   * Computed At
+   */
+  computed_at: string | null;
+  /**
+   * Flags
+   */
+  flags: Array<string>;
+  /**
+   * Median Seconds
+   */
+  median_seconds: number | null;
+  /**
+   * N
+   */
+  n: number;
+  /**
+   * Option Counts
+   */
+  option_counts: {
+    [key: string]: number;
+  };
+  /**
+   * P Correct
+   */
+  p_correct: number | null;
+  /**
+   * Point Biserial
+   */
+  point_biserial: number | null;
+  /**
+   * Report Count
+   */
+  report_count: number;
 };
 
 /**
@@ -5155,6 +5862,46 @@ export type Target = {
    * Type
    */
   type: "section" | "question" | "note" | "ink" | "pathway";
+};
+
+/**
+ * TaxonomyList
+ */
+export type TaxonomyList = {
+  /**
+   * Competencies
+   */
+  competencies: Array<TaxonomyRef>;
+  /**
+   * Seconds
+   */
+  seconds: Array<TaxonomyRef>;
+  /**
+   * Systems
+   */
+  systems: Array<TaxonomyRef>;
+  /**
+   * Topics
+   */
+  topics: Array<TaxonomyRef>;
+};
+
+/**
+ * TaxonomyRef
+ */
+export type TaxonomyRef = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Label
+   */
+  label: string;
 };
 
 /**
@@ -5553,6 +6300,128 @@ export type WeightOverlay = {
    * Official share of the exam, percent (low end)
    */
   weight_min: number | null;
+};
+
+/**
+ * ReviewIn
+ *
+ * A reviewer's submission. `ratings` is required for every decision: a revise or a reject says why in the
+ * same fields the approval uses.
+ */
+export type NaadiApiAuthoringModelsReviewIn = {
+  /**
+   * Decision
+   */
+  decision: "approve" | "revise" | "reject";
+  /**
+   * Note
+   */
+  note?: string | null;
+  ratings: Ratings;
+  /**
+   * Request Second
+   */
+  request_second?: boolean;
+};
+
+/**
+ * ReviewOut
+ */
+export type NaadiApiAuthoringRoutesReviewOut = {
+  /**
+   * Adjudication
+   */
+  adjudication: boolean;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Decision
+   */
+  decision: "approve" | "revise" | "reject";
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Is Mine
+   */
+  is_mine: boolean;
+  /**
+   * Note
+   */
+  note: string | null;
+  ratings: RatingsOut;
+  /**
+   * Request Second
+   */
+  request_second: boolean;
+  /**
+   * Round
+   */
+  round: number;
+};
+
+/**
+ * ReviewIn
+ */
+export type NaadiApiCardsModelsReviewIn = {
+  /**
+   * Client Review Id
+   *
+   * Idempotency key: the same id returns the first result
+   */
+  client_review_id: string;
+  /**
+   * Duration Ms
+   */
+  duration_ms?: number | null;
+  /**
+   * Rating
+   *
+   * 1 Again, 2 Hard, 3 Good, 4 Easy
+   */
+  rating: 1 | 2 | 3 | 4;
+  /**
+   * Reviewed At
+   *
+   * When the student rated (offline reviews); default now, never in the future
+   */
+  reviewed_at?: string | null;
+};
+
+/**
+ * ReviewOut
+ */
+export type NaadiApiCardsModelsReviewOut = {
+  /**
+   * Card Id
+   */
+  card_id: string;
+  /**
+   * Client Review Id
+   */
+  client_review_id: string;
+  /**
+   * Rating
+   */
+  rating: number;
+  /**
+   * Replayed
+   *
+   * true when this client_review_id was already applied
+   */
+  replayed: boolean;
+  /**
+   * Reviewed At
+   */
+  reviewed_at: string;
+  schedule: CardSchedule;
+  /**
+   * Scheduled Days
+   */
+  scheduled_days: number;
 };
 
 /**
@@ -6036,6 +6905,581 @@ export type GetAdminOverviewResponses = {
 };
 
 export type GetAdminOverviewResponse = GetAdminOverviewResponses[keyof GetAdminOverviewResponses];
+
+export type ListAuthoringGapsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/review/gaps";
+};
+
+export type ListAuthoringGapsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAuthoringGapsError = ListAuthoringGapsErrors[keyof ListAuthoringGapsErrors];
+
+export type ListAuthoringGapsResponses = {
+  /**
+   * Successful Response
+   */
+  200: GapList;
+};
+
+export type ListAuthoringGapsResponse = ListAuthoringGapsResponses[keyof ListAuthoringGapsResponses];
+
+export type ListReviewItemsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Filter
+     */
+    filter?: "ai_drafts" | "seed_spot_check" | "psychometric_flags" | "adjudication" | "needs_check" | "all";
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Offset
+     */
+    offset?: number;
+  };
+  url: "/api/admin/review/items";
+};
+
+export type ListReviewItemsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListReviewItemsError = ListReviewItemsErrors[keyof ListReviewItemsErrors];
+
+export type ListReviewItemsResponses = {
+  /**
+   * Successful Response
+   */
+  200: ReviewQueue;
+};
+
+export type ListReviewItemsResponse = ListReviewItemsResponses[keyof ListReviewItemsResponses];
+
+export type GetReviewItemData = {
+  body?: never;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/admin/review/items/{item_id}";
+};
+
+export type GetReviewItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetReviewItemError = GetReviewItemErrors[keyof GetReviewItemErrors];
+
+export type GetReviewItemResponses = {
+  /**
+   * Successful Response
+   */
+  200: ItemDetail;
+};
+
+export type GetReviewItemResponse = GetReviewItemResponses[keyof GetReviewItemResponses];
+
+export type RunReviewChecksData = {
+  body: ChecksIn;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/admin/review/items/{item_id}/checks";
+};
+
+export type RunReviewChecksErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RunReviewChecksError = RunReviewChecksErrors[keyof RunReviewChecksErrors];
+
+export type RunReviewChecksResponses = {
+  /**
+   * Successful Response
+   */
+  200: ItemDetail;
+};
+
+export type RunReviewChecksResponse = RunReviewChecksResponses[keyof RunReviewChecksResponses];
+
+export type ActOnPsychometricsData = {
+  body: PsychIn;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/admin/review/items/{item_id}/psychometrics";
+};
+
+export type ActOnPsychometricsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ActOnPsychometricsError = ActOnPsychometricsErrors[keyof ActOnPsychometricsErrors];
+
+export type ActOnPsychometricsResponses = {
+  /**
+   * Successful Response
+   */
+  200: ItemDetail;
+};
+
+export type ActOnPsychometricsResponse = ActOnPsychometricsResponses[keyof ActOnPsychometricsResponses];
+
+export type ResubmitReviewItemData = {
+  body?: never;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/admin/review/items/{item_id}/resubmit";
+};
+
+export type ResubmitReviewItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ResubmitReviewItemError = ResubmitReviewItemErrors[keyof ResubmitReviewItemErrors];
+
+export type ResubmitReviewItemResponses = {
+  /**
+   * Successful Response
+   */
+  200: ItemDetail;
+};
+
+export type ResubmitReviewItemResponse = ResubmitReviewItemResponses[keyof ResubmitReviewItemResponses];
+
+export type SubmitReviewData = {
+  body: NaadiApiAuthoringModelsReviewIn;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/admin/review/items/{item_id}/reviews";
+};
+
+export type SubmitReviewErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * publish_blocked, round_closed, already_reviewed, status_not_reviewable
+   */
+  409: ErrorResponse;
+  /**
+   * validation_error or approve_contradicts_ratings
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SubmitReviewError = SubmitReviewErrors[keyof SubmitReviewErrors];
+
+export type SubmitReviewResponses = {
+  /**
+   * Successful Response
+   */
+  200: ReviewResult;
+};
+
+export type SubmitReviewResponse = SubmitReviewResponses[keyof SubmitReviewResponses];
+
+export type RunPsychometricsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/review/psychometrics/run";
+};
+
+export type RunPsychometricsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RunPsychometricsError = RunPsychometricsErrors[keyof RunPsychometricsErrors];
+
+export type RunPsychometricsResponses = {
+  /**
+   * Successful Response
+   */
+  200: PsychRunOut;
+};
+
+export type RunPsychometricsResponse = RunPsychometricsResponses[keyof RunPsychometricsResponses];
+
+export type ListAuthoringRunsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/review/runs";
+};
+
+export type ListAuthoringRunsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAuthoringRunsError = ListAuthoringRunsErrors[keyof ListAuthoringRunsErrors];
+
+export type ListAuthoringRunsResponses = {
+  /**
+   * Successful Response
+   */
+  200: RunList;
+};
+
+export type ListAuthoringRunsResponse = ListAuthoringRunsResponses[keyof ListAuthoringRunsResponses];
+
+export type StartAuthoringRunData = {
+  body: RunIn;
+  path?: never;
+  query?: never;
+  url: "/api/admin/review/runs";
+};
+
+export type StartAuthoringRunErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * run_active
+   */
+  409: ErrorResponse;
+  /**
+   * cell_invalid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type StartAuthoringRunError = StartAuthoringRunErrors[keyof StartAuthoringRunErrors];
+
+export type StartAuthoringRunResponses = {
+  /**
+   * Successful Response
+   */
+  202: RunJobOut;
+};
+
+export type StartAuthoringRunResponse = StartAuthoringRunResponses[keyof StartAuthoringRunResponses];
+
+export type GetReviewSummaryData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/review/summary";
+};
+
+export type GetReviewSummaryErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetReviewSummaryError = GetReviewSummaryErrors[keyof GetReviewSummaryErrors];
+
+export type GetReviewSummaryResponses = {
+  /**
+   * Successful Response
+   */
+  200: ReviewSummary;
+};
+
+export type GetReviewSummaryResponse = GetReviewSummaryResponses[keyof GetReviewSummaryResponses];
+
+export type GetAuthoringTaxonomyData = {
+  body?: never;
+  path?: never;
+  query: {
+    /**
+     * Exam
+     */
+    exam: "step1" | "step2ck";
+  };
+  url: "/api/admin/review/taxonomy";
+};
+
+export type GetAuthoringTaxonomyErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * authoring_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAuthoringTaxonomyError = GetAuthoringTaxonomyErrors[keyof GetAuthoringTaxonomyErrors];
+
+export type GetAuthoringTaxonomyResponses = {
+  /**
+   * Successful Response
+   */
+  200: TaxonomyList;
+};
+
+export type GetAuthoringTaxonomyResponse = GetAuthoringTaxonomyResponses[keyof GetAuthoringTaxonomyResponses];
 
 export type StartSeedData = {
   body: SeedRequest;
@@ -7424,7 +8868,7 @@ export type UpdateCardResponses = {
 export type UpdateCardResponse = UpdateCardResponses[keyof UpdateCardResponses];
 
 export type ReviewCardData = {
-  body: ReviewIn;
+  body: NaadiApiCardsModelsReviewIn;
   path: {
     /**
      * Card Id
@@ -7468,7 +8912,7 @@ export type ReviewCardResponses = {
   /**
    * Successful Response
    */
-  200: ReviewOut;
+  200: NaadiApiCardsModelsReviewOut;
 };
 
 export type ReviewCardResponse = ReviewCardResponses[keyof ReviewCardResponses];
@@ -7734,6 +9178,172 @@ export type GetActiveExamResponses = {
 };
 
 export type GetActiveExamResponse = GetActiveExamResponses[keyof GetActiveExamResponses];
+
+export type ListExportsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/export";
+};
+
+export type ListExportsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * export_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListExportsError = ListExportsErrors[keyof ListExportsErrors];
+
+export type ListExportsResponses = {
+  /**
+   * Successful Response
+   */
+  200: ExportList;
+};
+
+export type ListExportsResponse = ListExportsResponses[keyof ListExportsResponses];
+
+export type StartExportData = {
+  body: ExportStart;
+  path?: never;
+  query?: never;
+  url: "/api/export";
+};
+
+export type StartExportErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * export_active
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * export_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type StartExportError = StartExportErrors[keyof StartExportErrors];
+
+export type StartExportResponses = {
+  /**
+   * Successful Response
+   */
+  202: ExportJob;
+};
+
+export type StartExportResponse = StartExportResponses[keyof StartExportResponses];
+
+export type DeleteExportData = {
+  body?: never;
+  path: {
+    /**
+     * Job Id
+     */
+    job_id: string;
+  };
+  query?: never;
+  url: "/api/export/{job_id}";
+};
+
+export type DeleteExportErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * export_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * export_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteExportError = DeleteExportErrors[keyof DeleteExportErrors];
+
+export type DeleteExportResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteExportResponse = DeleteExportResponses[keyof DeleteExportResponses];
+
+export type GetExportData = {
+  body?: never;
+  path: {
+    /**
+     * Job Id
+     */
+    job_id: string;
+  };
+  query?: never;
+  url: "/api/export/{job_id}";
+};
+
+export type GetExportErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * export_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * export_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetExportError = GetExportErrors[keyof GetExportErrors];
+
+export type GetExportResponses = {
+  /**
+   * Successful Response
+   */
+  200: ExportJob;
+};
+
+export type GetExportResponse = GetExportResponses[keyof GetExportResponses];
 
 export type ListGeneratedApiGeneratedGetData = {
   body?: never;

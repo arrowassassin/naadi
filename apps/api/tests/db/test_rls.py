@@ -179,6 +179,7 @@ API_WRITTEN = ("attempts", "blocks")
 # Exam timing (0011): every timing write is the API's own clock; students may only read their sections.
 # Card scheduling (0012): the API runs the FSRS scheduler and writes every review; students only read their own.
 # Notes (0017): the notes API computes body_text, keeps the index in step and gates anchors; students only read.
+# Export jobs (0024): the export service writes them; students only read their own.
 SELECT_ONLY = (
     "ink_layers",
     "ink_items",
@@ -188,6 +189,7 @@ SELECT_ONLY = (
     "study_plans",
     "notes",
     "notebooks",
+    "export_jobs",
 )
 # Generated media (0022): the API creates and updates rows (it counts the daily caps from them and writes status
 # and approval); students may read and delete their own.

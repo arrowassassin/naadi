@@ -74,10 +74,12 @@ roles:
       - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}    # 1M ctx
       - {provider: openrouter, model: particle-ai/particle-1:free}           # 1M ctx
   author:                         # night-time question authoring (strongest reasoning; latency irrelevant)
+    temperature: 0.7
     chain:
       - {provider: nvidia, model: nvidia/nemotron-3-ultra-550b-a55b}        # tools+json; correct tool use 2.5s
       - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}
   reviewer:                       # blind solver: MUST be a different family from every author model (not NVIDIA, not Baidu)
+    temperature: 0                # Part B: the blind solver runs at temperature 0
     chain:
       - {provider: openrouter, model: particle-ai/particle-1:free}
       - {provider: openrouter, model: dots-studio/dots-3-note-preview:free}
