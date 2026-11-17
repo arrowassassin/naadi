@@ -108,6 +108,20 @@ async function student(browser: Browser, baseURL: string, info: TestInfo, tag: s
   return { open, done };
 }
 
+/**
+ * Navigate only once every font face is loaded: Firefox logs a font download that a navigation cancels as a page
+ * error, and the unicode-range faces start loading as soon as new text paints.
+ */
+async function visit(page: Page, url: string): Promise<void> {
+  await settle(page);
+  await page.goto(url);
+}
+
+async function reload(page: Page): Promise<void> {
+  await settle(page);
+  await page.reload();
+}
+
 async function api<T>(page: Page, method: string, url: string, body?: unknown): Promise<{ status: number; json: T }> {
   return page.evaluate(
     async ({ method, url, body }) => {
@@ -247,7 +261,7 @@ test.describe("notebooks", () => {
 
       // Reload each page: the paper and the ink come back from the server.
       for (const [i, paper] of PAPERS.entries()) {
-        await page.goto(`/notes/notebooks/${id}/${i + 1}`);
+        await visit(page, `/notes/notebooks/${id}/${i + 1}`);
         await expect(page.locator("[data-page-position]")).toHaveText(`page ${i + 1} of 5`);
         await expect(page.locator("[data-page-ink] [data-paper]")).toHaveAttribute("data-paper", paper);
         await expect(page.locator("[data-page-ink]")).toHaveAttribute("data-ink-idle", "", { timeout: 20_000 });
@@ -287,7 +301,7 @@ test.describe("notebooks", () => {
       expect(after.pages.map((p) => p.paper ?? "ruled")).toEqual(["ruled", "dotted", "grid", "cornell"]);
 
       // The shelf counts the pages.
-      await page.goto("/notes/notebooks");
+      await visit(page, "/notes/notebooks");
       await expect(page.locator(`[data-notebook="${id}"]`)).toContainText("4 pages");
       await expect(page.locator(`[data-notebook="${id}"]`)).toContainText("Renal");
       await settle(page);
@@ -310,7 +324,7 @@ test.describe("notebooks", () => {
         paper: "grid",
       });
       expect(created.status).toBe(201);
-      await page.goto(`/notes/notebooks/${created.json.id}/1`);
+      await visit(page, `/notes/notebooks/${created.json.id}/1`);
       await quietNotebook(page);
       await page.locator("[data-add-whiteboard]").click();
       await page.waitForURL(/\/2$/);
@@ -350,7 +364,7 @@ test.describe("notebooks", () => {
       expect(note.json.body.elements.map((e) => e.type).sort()).toEqual(["rectangle", "text"]);
       expect(note.json.body_text).toContain("Loop diuretics");
 
-      await page.reload();
+      await reload(page);
       await expect(page.locator("[data-whiteboard]")).toHaveAttribute("data-elements", "2", { timeout: 30_000 });
       await settle(page);
       await expectNoHorizontalOverflow(page);
@@ -366,7 +380,7 @@ test.describe("notebooks", () => {
     try {
       const { page, guard, errors } = await s.open("/notes/notebooks");
       const created = await api<Detail>(page, "POST", "/api/notebooks", { title: "Renal export", paper: "cornell" });
-      await page.goto(`/notes/notebooks/${created.json.id}/1`);
+      await visit(page, `/notes/notebooks/${created.json.id}/1`);
       await quietNotebook(page);
       await penStroke(page, 0.3);
       await penStroke(page, 0.45);
@@ -419,7 +433,7 @@ test.describe("notebooks", () => {
     try {
       const { page, context, guard, errors, allowOffline } = await s.open("/notes/notebooks");
       const created = await api<Detail>(page, "POST", "/api/notebooks", { title: "Cardio", cover: "lime" });
-      await page.goto(`/notes/notebooks/${created.json.id}/1`);
+      await visit(page, `/notes/notebooks/${created.json.id}/1`);
       await quietNotebook(page);
       allowOffline();
       await context.setOffline(true);
@@ -463,7 +477,7 @@ test.describe("notebooks", () => {
         await held;
         await route.continue();
       });
-      await page.reload();
+      await reload(page);
       await expect(page.locator("[data-notebooks] [aria-busy='true']")).toBeVisible();
       await snap(page, info, guard, "shelf-loading");
       release();
@@ -481,7 +495,7 @@ test.describe("notebooks", () => {
         }),
       );
       const before = errors.length;
-      await page.reload();
+      await reload(page);
       await expect(page.getByRole("alert")).toContainText("Notebooks could not be loaded");
       await settle(page);
       await snap(page, info, guard, "shelf-error");
@@ -491,11 +505,11 @@ test.describe("notebooks", () => {
       await page.unroute("**/api/notebooks");
 
       // Offline: the device copy of the list and of the notebook.
-      await page.reload();
+      await reload(page);
       await expect(page.locator(`[data-notebook="${created.json.id}"]`)).toBeVisible();
-      await page.goto(`/notes/notebooks/${created.json.id}/1`);
+      await visit(page, `/notes/notebooks/${created.json.id}/1`);
       await quietNotebook(page);
-      await page.goto("/notes/notebooks");
+      await visit(page, "/notes/notebooks");
       await expect(page.locator(`[data-notebook="${created.json.id}"]`)).toBeVisible();
       await quietNotebook(page);
       allowOffline();
@@ -551,9 +565,9 @@ test.describe("production server (strict CSP)", () => {
       try {
         const page = await prod.newPage();
         const { errors } = watch(page);
-        await page.goto("/notes/notebooks");
+        await visit(page, "/notes/notebooks");
         const created = await api<Detail>(page, "POST", "/api/notebooks", { title: "CSP", paper: "dotted" });
-        await page.goto(`/notes/notebooks/${created.json.id}/1`);
+        await visit(page, `/notes/notebooks/${created.json.id}/1`);
         await quietNotebook(page);
         await penStroke(page, 0.4);
         await quietNotebook(page);

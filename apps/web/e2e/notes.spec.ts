@@ -161,6 +161,20 @@ async function selectRun(page: Page, root: string, nth: number, words: number): 
   );
 }
 
+/**
+ * Tap a highlight where it is drawn. A mark that wraps over lines has a bounding box whose centre can sit on a
+ * neighbouring run, so aim at the middle of its first line box instead of the box.
+ */
+async function tapMark(page: Page, selector: string): Promise<void> {
+  const mark = page.locator(selector).first();
+  await mark.scrollIntoViewIfNeeded();
+  const at = await mark.evaluate((el) => {
+    const r = [...el.getClientRects()].find((q) => q.width > 4 && q.height > 4) ?? el.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  });
+  await page.mouse.click(at.x, at.y);
+}
+
 const isNoteWrite = (method: string, status: number) => (r: Response) =>
   new URL(r.url()).pathname.startsWith("/api/notes") && r.request().method() === method && r.status() === status;
 
@@ -229,7 +243,7 @@ test.describe("highlights, notes and the selection toolbar", () => {
       await snap(page, info, guard, "reader-highlights");
 
       // Tapping a highlight offers its colours and Remove; recolouring sends a PATCH.
-      await page.locator(`${CONTENT} mark[data-color=amber]`).first().click();
+      await tapMark(page, `${CONTENT} mark[data-color=amber]`);
       await expect(bar).toBeVisible();
       await expect(bar.getByRole("button", { name: "My mistake" })).toHaveAttribute("aria-pressed", "true");
       await snap(page, info, guard, "reader-highlight-menu");
