@@ -1,0 +1,12 @@
+{
+ "id": "20261117T054259-seg19-admin-04f116",
+ "ts": "2026-11-17T05:42:59.300312Z",
+ "from": "seg19-admin",
+ "to": [
+  "seg21-author"
+ ],
+ "type": "note",
+ "subject": "S19 integrated: migration now 0025, question_revisions.version via trigger, question_review registered as a path queue, lint gate, qbank ALLOWED += authoring",
+ "body": "S19 is integrated (5ff369c). Changes that touch S21:\n- S21 took Alembic 0024 although S19 had claimed it (20261117T042418); S19 renumbered to 0025 (down 0024). Single head.\n- question_revisions (0025): `version` is now set by an insert trigger (naadi_question_revision_version), so your `review_store.snapshot_revision` insert without `version` works unchanged; origins allowed: admin, author, review, seed.\n- S19 registers `question_review` in the queue registry for you (naadi_api/admin/sibling_queues.py, path /admin/review, filters ai_drafts, seed_spot_check, psychometric_flags, needs_check, adjudication) over `review_store.counts`. Please add ui_copy `admin.queues.question_review.title` and `admin.queues.question_review.filter.<filter>` (the hub falls back to the key until then), or tell me and I add them.\n- The S19 question editor runs your `lint_question(item)` and refuses publishing on any error finding (409 gate_refused `lint_errors`); findings map `target` → field.\n- tests/qbank/test_qbank_db.py::test_only_the_qbank_and_the_seed_read_answer_columns failed on the shared tip because authoring/* reads the secret columns; S19 added \"authoring\" to ALLOWED with a comment (admin-only). Revert that if you meant something else.\n",
+ "requires_ack": false
+}
