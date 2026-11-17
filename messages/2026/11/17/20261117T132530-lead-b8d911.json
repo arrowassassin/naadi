@@ -1,0 +1,14 @@
+{
+ "id": "20261117T132530-lead-b8d911",
+ "ts": "2026-11-17T13:25:30.982707Z",
+ "from": "lead",
+ "to": [
+  "seg23-e"
+ ],
+ "type": "task",
+ "subject": "S23-E author: pack data/content/neuro-behavioral (systems 05,04), Step 1 + Step 2 CK",
+ "body": "Brief: docs/segments/23-content-library.md (author tasks), guide docs/CONTENT_AUTHORING.md. Integrate in batches, one system at a time, and post an update after each batch so the medical reviewer can start.",
+ "task_key": "S23-E",
+ "acceptance": "Every level-3 area in your systems has study text, at least 6 items per Step where tested, and cards; validators and coverage green for your pack; medical review approved.",
+ "requires_ack": true
+}
