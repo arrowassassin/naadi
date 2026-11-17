@@ -26,10 +26,16 @@ _VAULT_URL = re.compile(r"/storage/v1/object/(?:public/|sign/|authenticated/)?va
 _EMAIL = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 # Phone numbers: an optional +country code, then at least 10 digits in total with common separators. Lab
 # values ("pH 7.21", "120/80", "HCO3 24") never reach 10 digits, so clinical text is left alone.
-_PHONE = re.compile(r"(?<![\w.])(?:\+\d{1,3}[\s\-.]?)?(?:\(?\d{2,5}\)?[\s\-.]?){2,5}\d{2,5}(?![\w.])")
+# With a +country code two groups are enough ("+91 98765 43210"); without one, at least three ("98765 432 10").
+# A full stop ends a sentence ("... +91 98765 43210."); only ".<digit>" (a decimal) stops the match.
+_PHONE = re.compile(
+    r"(?<![\w.])(?:\+\d{1,3}[\s\-.]?(?:\(?\d{2,5}\)?[\s\-.]?){1,5}\d{2,5}"
+    r"|(?:\(?\d{2,5}\)?[\s\-.]?){2,5}\d{2,5})(?!\w|\.\d)"
+)
 _UUID = re.compile(r"\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b")
 # Document-style IDs: passport / licence / registration numbers (letters + 6+ digits) and bare 8+ digit runs.
-_DOC_ID = re.compile(r"\b(?:[A-Z]{1,3}\d{6,12}|\d{8,})\b")
+# ... and the hyphenated USMLE / ECFMG identifier ("5-382-904-1").
+_DOC_ID = re.compile(r"\b(?:[A-Z]{1,3}\d{6,12}|\d{8,}|\d-\d{3}-\d{3}-\d)\b")
 # Public literature / trial identifiers are citations, not personal data: keep them.
 _CITATION_ID = re.compile(r"^(?:NCT|PMC)\d+$")
 _CITATION_PREFIX = re.compile(r"(?:PMID|PubMed|doi|DOI|ISBN|ISSN)[:\s#]*$")

@@ -80,6 +80,7 @@ def test_anon_has_no_privileges_on_user_or_admin_tables(pg: psycopg.Connection) 
                 "video_candidates",
                 "admin_audit",
                 "question_revisions",
+                "ingest_extracts",
             ],
         ),
     ).fetchall()
@@ -237,3 +238,14 @@ def test_graded_attempt_function_answers_only_for_the_caller(
         assert conn.execute(q, (shared.question_id,)).fetchone() == (True,)
     with as_user(pg, user_b) as conn:  # B has only a flag-only row and cannot see A's graded one
         assert conn.execute(q, (shared.question_id,)).fetchone() == (False,)
+
+
+def test_ingest_extracts_are_server_only(pg: psycopg.Connection) -> None:
+    """0028: extracted documents are read by the pipeline only (no client privilege of any kind)."""
+    row = pg.execute(
+        "select relrowsecurity, relforcerowsecurity,"
+        " has_table_privilege('authenticated', oid, 'select,insert,update,delete'),"
+        " has_table_privilege('anon', oid, 'select,insert,update,delete')"
+        " from pg_class where oid = 'public.ingest_extracts'::regclass"
+    ).fetchone()
+    assert row == (True, True, False, False)

@@ -1,8 +1,6 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
--- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0022, 0023, 0024, 0025_admin_console.py;
-
--- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0027;
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0022, 0023, 0024, 0025_admin_console.py, 0027, 0026, 0028_ingest_kb.py;
 -- version table public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
@@ -214,8 +212,11 @@ create table public.media_assets (
   -- 0004: sha256 of the stored (sanitised) object; the seed importer skips unchanged uploads
   content_sha256 text check (content_sha256 is null or content_sha256 ~ '^[0-9a-f]{64}$'),
   -- 0023: private media (pictures of an imported Anki deck); null = shared. RLS shows it to its owner only
-  owner_user_id uuid references auth.users(id) on delete cascade
+  owner_user_id uuid references auth.users(id) on delete cascade,
+  -- S15: owned media always points at a private source row (never publishable)
+  constraint media_assets_owned_private_source check (owner_user_id is null or source_id in ('user-upload','user-provided'))
 );
+create index media_assets_owner_idx on public.media_assets (owner_user_id) where owner_user_id is not null;
 
 create table public.section_media (
   section_id text not null references public.chapter_sections(id) on delete cascade,
@@ -247,8 +248,11 @@ create table public.questions (
     check (status in ('draft','auto_checked','in_review','published','retired')),
   review jsonb not null default '{}',
   stats jsonb not null default '{}',
-  created_at timestamptz not null default now()
+  created_at timestamptz not null default now(),
+  -- 0028: the student's own MCQs (null = shared); visible to the owner only, answer columns hidden as for shared
+  owner_user_id uuid references auth.users(id) on delete cascade
 );
+create index questions_owner_idx on public.questions (owner_user_id) where owner_user_id is not null;
 create index questions_chapter_idx on public.questions (chapter_id);
 create index questions_taxonomy_idx on public.questions using gin (taxonomy_ids);
 
@@ -487,11 +491,15 @@ create table public.uploads (
   original_name text,
   bytes bigint check (bytes is null or bytes >= 0),
   processed_chapter_id text references public.chapters(id) on delete set null,
-  status text not null default 'uploaded' check (status in ('uploaded','processing','ready','failed')),
+  status text not null default 'uploaded' check (status in ('uploaded','processing','ready','failed','vaulted')),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
+  -- 0028: written by the ingest pipeline (clients: select + rename only)
+  sha256 text check (sha256 is null or sha256 ~ '^[0-9a-f]{64}$'),
+  mime text check (mime is null or char_length(mime) <= 120),
   unique (id, user_id)
 );
+create index uploads_user_sha_idx on public.uploads (user_id, sha256) where sha256 is not null;
 create index uploads_user_idx on public.uploads (user_id, created_at desc);
 
 create table public.kb_sources (
@@ -506,8 +514,11 @@ create table public.kb_sources (
   content_hash text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
+  -- 0028: the ingest item that made it (select-only for clients)
+  ingest_item_id uuid,
   unique (id, user_id),
   foreign key (upload_id, user_id) references public.uploads (id, user_id) on delete set null (upload_id),
+  foreign key (ingest_item_id, user_id) references public.ingest_items (id, user_id) on delete set null (ingest_item_id),
   check (kind <> 'url' or url is not null)
 );
 create index kb_sources_user_idx on public.kb_sources (user_id, created_at desc);
@@ -524,16 +535,48 @@ create table public.ingest_items (
   confirmed_placement jsonb,
   status text not null default 'received'
     check (status in ('received','extracting','needs_confirmation','placing','ready','failed','vaulted')),
-  error text,
+  error text check (error is null or error ~ '^[a-z0-9_]{1,64}$'),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
+  -- 0028: pipeline state (service role); clients select their rows and may set confirmed_placement only.
+  -- placements = exactly what a confirmed placement created ({table, id, kind}), deleted by Undo.
+  input_kind text,
+  sha256 text check (sha256 is null or sha256 ~ '^[0-9a-f]{64}$'),
+  bytes bigint check (bytes is null or bytes >= 0),
+  pages int check (pages is null or pages >= 0),
+  progress smallint not null default 0 check (progress between 0 and 100),
+  run_id text,
+  thread_id text,
+  batch_id uuid,
+  duplicate_of uuid,
+  placements jsonb[] not null default '{}',
+  stage_detail jsonb not null default '{}' check (jsonb_typeof(stage_detail) = 'object'),
+  unique (id, user_id),
   foreign key (upload_id, user_id) references public.uploads (id, user_id) on delete cascade,
-  foreign key (kb_source_id, user_id) references public.kb_sources (id, user_id) on delete cascade
+  foreign key (kb_source_id, user_id) references public.kb_sources (id, user_id) on delete cascade,
+  foreign key (duplicate_of, user_id) references public.ingest_items (id, user_id) on delete set null (duplicate_of),
+  check (proposed_placement is null or jsonb_typeof(proposed_placement) = 'object'),
+  check (confirmed_placement is null or jsonb_typeof(confirmed_placement) = 'object')
 );
+create index ingest_items_user_sha_idx on public.ingest_items (user_id, sha256) where sha256 is not null;
+create index ingest_items_batch_idx on public.ingest_items (user_id, batch_id) where batch_id is not null;
+create index ingest_items_user_created_idx on public.ingest_items (user_id, created_at desc);
 create index ingest_items_user_status_idx on public.ingest_items (user_id, status);
 create index ingest_items_upload_idx on public.ingest_items (upload_id) where upload_id is not null;
 create index ingest_items_kb_source_idx on public.ingest_items (kb_source_id) where kb_source_id is not null;
 
+
+-- 0028: an item's extracted document (gzip JSON), server-only (RLS on, no client privileges), kept while the item
+-- waits for confirmation and for the Undo window; never for a vaulted item.
+create table public.ingest_extracts (
+  item_id uuid primary key,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  format smallint not null default 1 check (format >= 1),
+  data bytea not null check (octet_length(data) <= 52428800),
+  created_at timestamptz not null default now(),
+  foreign key (item_id, user_id) references public.ingest_items (id, user_id) on delete cascade
+);
+create index ingest_extracts_user_idx on public.ingest_extracts (user_id, created_at);
 
 -- 0013: generated study plans (one active per student), their dated rows in the template CSV's shape, and the
 -- nightly coach's suggestions. Written by the API; students update only status (+ a plan day's score_notes).

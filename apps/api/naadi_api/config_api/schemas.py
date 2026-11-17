@@ -271,6 +271,36 @@ class AuthoringRules(_Strict):
         return self
 
 
+# ── universal ingest (S15) ──
+
+
+class IngestRules(_Strict):
+    """Universal ingest (`ingest` graph): caps applied before any byte is parsed, the vision budget, the per-student
+    storage allowance and the near-duplicate rule. Every limit is checked on the server; the client only mirrors
+    `max_file_mb` and `user_storage_mb` for its messages."""
+
+    enabled: bool = Field(True, description="Off: no new uploads, links or pastes are accepted (existing items stay)")
+    max_file_mb: int = Field(50, ge=1, le=50, description="Largest single file in MB (the bucket allows 50)")
+    zip_max_entries: int = Field(200, ge=1, le=2000, description="Files a ZIP may contain")
+    zip_max_uncompressed_mb: int = Field(300, ge=1, le=2000, description="Total uncompressed size of a ZIP in MB")
+    zip_max_depth: int = Field(2, ge=1, le=4, description="Nesting depth of ZIPs inside ZIPs")
+    zip_max_ratio: int = Field(100, ge=10, le=1000, description="Compression ratio above which a ZIP is a bomb")
+    max_image_megapixels: int = Field(50, ge=1, le=200, description="Largest image (decompression-bomb guard)")
+    max_pages: int = Field(2000, ge=1, le=10_000, description="PDF pages read at most")
+    max_vision_pages: int = Field(40, ge=0, le=500, description="Scanned pages per file read by the vision role")
+    vision_per_user_daily: int = Field(80, ge=0, le=10_000, description="Vision calls per student per UTC day")
+    local_ocr_pages: int = Field(200, ge=0, le=5000, description="Scanned pages per file read by local OCR")
+    max_audio_minutes: int = Field(120, ge=1, le=600, description="Longest recording transcribed")
+    audio_keep: bool = Field(False, description="Keep audio files after transcription (default: delete them)")
+    user_storage_mb: int = Field(600, ge=10, le=1000, description="Storage allowance per student in MB")
+    items_per_user_daily: int = Field(200, ge=1, le=5000, description="New files, links and pastes per day")
+    max_paste_chars: int = Field(200_000, ge=100, le=2_000_000, description="Longest pasted text")
+    keep_image_original_kb: int = Field(512, ge=0, le=20_480, description="Keep an image's original when smaller")
+    near_dup_cosine: float = Field(0.97, ge=0.8, le=1.0, description="Chunk similarity counted as the same")
+    near_dup_share: float = Field(0.8, ge=0.5, le=1.0, description="Share of chunks that makes a near-duplicate")
+    undo_days: int = Field(7, ge=1, le=90, description="Days an item's extracted text is kept for Undo")
+
+
 # ── storage, ui_copy, sources_policy ──
 
 
@@ -2781,6 +2811,14 @@ KEY_SPECS: dict[str, KeySpec] = {
             "app_config.yaml",
             "Question authoring pipeline: caps, retries, coverage target, review and psychometric thresholds (S21)",
             _schema_of(AuthoringRules),
+        ),
+        KeySpec(
+            "ingest",
+            _model_validator(IngestRules),
+            False,
+            "app_config.yaml",
+            "Universal ingest: file caps, ZIP and image guards, vision budget, storage allowance (S15)",
+            _schema_of(IngestRules),
         ),
         KeySpec(
             "ui_copy", _model_validator(UiCopy), True, "app_config.yaml", "Editable UI strings", _schema_of(UiCopy)

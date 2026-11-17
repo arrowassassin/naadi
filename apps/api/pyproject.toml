@@ -40,6 +40,14 @@ dependencies = [
     "pyrage==1.4.0",
     "icalendar==7.3.0",
     "pywebpush==2.5.0",
+    "pymupdf==2.1",
+    "markitdown[docx,pptx,xlsx]==0.1.9",
+    "filetype==1.2.0",
+    "rapidocr==3.10.0",
+    "onnxruntime==1.32.0",
+    "pillow-heif==1.8.1",
+    "faster-whisper==1.2.1",
+    "av==18.1.0",  # faster-whisper 1.2.1 calls av.open(metadata_errors=...), removed in PyAV 19
 ]
 
 [dependency-groups]

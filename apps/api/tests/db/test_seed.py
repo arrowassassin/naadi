@@ -38,7 +38,7 @@ EXPECTED = {
     "pathway_tasks": 186,
     "pathway_guides": 17,
     "plan_template_days": 60,
-    "sources": 17,
+    "sources": 18,  # 17 catalog/internal sources + user-provided (S15)
     "section_media": 95,
     "app_config": len(KEY_SPECS),  # every registered key (other segments add their own)
 }
@@ -93,7 +93,9 @@ def test_full_import_matches_the_expected_counts(first_run: tuple[SeedReport, Se
     assert real.actual == EXPECTED
     assert real.storage.uploaded == 95
     for name, counts in real.tables.items():
-        assert counts.inserted == counts.total, name
+        # `user-provided` exists from migration 0028 and the seed finds it unchanged
+        migrated = 1 if name == "sources" else 0
+        assert (counts.inserted, counts.unchanged) == (counts.total - migrated, migrated), name
     assert all(c.ok for c in real.checks)
     assert {c.name for c in real.checks} >= {
         "no [[figure: placeholder left",

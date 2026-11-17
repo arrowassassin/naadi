@@ -17,6 +17,7 @@ from naadi_api.llm_privacy import PrivacyContext, PrivacyUnavailable
 from naadi_api.search import (
     SearchResult,
     SearchService,
+    TavilyGuardExhausted,
     classify,
     latest_pmc_version,
     license_is_storable,
@@ -450,3 +451,61 @@ def test_commons_explicit_english_ranks_before_unmarked() -> None:
     body2 = {"query": {"pages": {"1": {**pages[1], "index": 1}, "2": {**marked, "index": 2}}}}
     expected = ["Nephron English.svg", pages[1]["title"].removeprefix("File:")]
     assert [r.title for r in parse_commons(body2, 2)] == expected
+
+
+# ── Tavily extract (S15 URL ingest, S14 web_extract) ──
+
+
+def _extract_service(store: MemStore, calls: list[dict[str, Any]], body: dict[str, Any] | None = None) -> SearchService:
+    async def fake_extract(**kw: Any) -> dict[str, Any]:
+        calls.append(kw)
+        return (
+            body
+            if body is not None
+            else {
+                "results": [
+                    {"url": kw["urls"][0], "title": "Bicarbonate", "raw_content": "# Bicarbonate\n\nBuffer text"}
+                ]
+            }
+        )
+
+    return SearchService(
+        RuntimeConfig(None, CONFIG_DIR),
+        store,
+        tavily_key=SecretStr("tvly-test"),
+        app_version="test",
+        tavily_extract=fake_extract,
+        sleep=no_sleep,
+        privacy=FakePrivacy(),  # type: ignore[arg-type]
+    )
+
+
+async def test_extract_is_cached_and_guarded() -> None:
+    store, calls, uid = MemStore(), [], uuid.uuid4()
+    svc = _extract_service(store, calls)
+    first = await svc.extract("https://www.ncbi.nlm.nih.gov/books/NBK1/", user_id=uid)
+    assert first is not None and first.title == "Bicarbonate" and not first.cached and "Buffer" in first.text
+    assert calls == [
+        {"urls": ["https://www.ncbi.nlm.nih.gov/books/NBK1/"], "extract_depth": "basic", "format": "markdown"}
+    ]
+    again = await svc.extract("https://www.ncbi.nlm.nih.gov/books/NBK1/", user_id=uid)
+    assert again is not None and again.cached and len(calls) == 1 and store.tavily == [(uid, 1)]
+    store.month_offset = 10_000
+    with pytest.raises(TavilyGuardExhausted):
+        await svc.extract("https://www.ncbi.nlm.nih.gov/books/NBK2/", user_id=uid)
+
+
+async def test_extract_refuses_unsafe_or_identifying_urls() -> None:
+    store, calls = MemStore(), []
+    svc = _extract_service(store, calls)
+    for url in (
+        "http://example.org/a",
+        "https://user:pw@example.org/a",
+        "https://example.org/profile?email=meera.k@example.org",
+        "https://example.org/u/Meera Krishnan",
+        "ftp://example.org/a",
+    ):
+        assert await svc.extract(url, user_id=uuid.uuid4()) is None, url
+    assert calls == []
+    empty = _extract_service(MemStore(), calls, body={"results": [], "failed_results": [{"url": "x"}]})
+    assert await empty.extract("https://example.org/a", user_id=uuid.uuid4()) is None

@@ -124,7 +124,8 @@ async def question_docs(
         "select q.id, q.stem_html, q.options from public.questions q"  # noqa: S608 - `where` holds constants only
         " left join public.chapters c on c.id = q.chapter_id"
         " left join public.sources src on src.id = q.source_id"
-        " where q.status = 'published' and coalesce(src.allow_ai_ingest, false)"
+        # A student's own MCQs (owner_user_id, S15) are private: never in the shared index.
+        " where q.status = 'published' and q.owner_user_id is null and coalesce(src.allow_ai_ingest, false)"
         "   and (q.chapter_id is null"
         "        or (c.owner_user_id is null and c.status = 'published' and c.kind <> 'mock_exam'))"
         f"{where} order by q.id",

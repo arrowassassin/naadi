@@ -68,4 +68,8 @@ def remove_seed(url: str, b: SeedBundle) -> None:
         seeded = [k for (k,) in keys if k in KEY_SPECS]
         c.execute("delete from public.app_config where key = any(%s)", (seeded,))
         c.execute("delete from public.app_config_history where key = any(%s)", (list(KEY_SPECS),))
-        c.execute("delete from public.sources where id = any(%s)", ([s.id for s in b.sources.accepted],))
+        # `user-provided` is created by migration 0028 (private chapters reference it); the seed only keeps it equal.
+        c.execute(
+            "delete from public.sources where id = any(%s)",
+            ([s.id for s in b.sources.accepted if s.id != "user-provided"],),
+        )

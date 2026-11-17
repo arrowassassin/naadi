@@ -136,6 +136,30 @@ class SearchAnswer:
         }
 
 
+@dataclass(frozen=True)
+class ExtractResult:
+    """A web page's text from Tavily extract (S15 URL ingest, S14 `web_extract`)."""
+
+    url: str
+    title: str
+    text: str
+    cached: bool
+
+
+MAX_EXTRACT_CHARS = 200_000
+
+
+def parse_tavily_extract(body: Mapping[str, Any], url: str) -> ExtractResult | None:
+    for r in body.get("results") or []:
+        if not isinstance(r, Mapping):
+            continue
+        text = str(r.get("raw_content") or r.get("content") or "").strip()
+        if text:
+            title = str(r.get("title") or "").strip()[:300]
+            return ExtractResult(url=str(r.get("url") or url), title=title, text=text[:MAX_EXTRACT_CHARS], cached=False)
+    return None
+
+
 class TavilyGuardExhausted(RuntimeError):
     def __init__(self, reason: Literal["user_daily_cap", "monthly_credits"], reset_at: datetime) -> None:
         super().__init__(reason)
@@ -621,6 +645,7 @@ class SearchService:
         app_version: str,
         transport: httpx.AsyncBaseTransport | None = None,
         tavily_search: Callable[..., Awaitable[Mapping[str, Any]]] | None = None,
+        tavily_extract: Callable[..., Awaitable[Mapping[str, Any]]] | None = None,
         pubmed_search: Callable[[str, int], Awaitable[list[SearchResult]]] | None = None,
         sleep: Callable[[float], Awaitable[None]] = asyncio.sleep,
         privacy: PrivacyDirectory | None = None,
@@ -632,6 +657,7 @@ class SearchService:
         self._transport = transport
         self._limiter = _Limiter(sleep=sleep)
         self._tavily_search = tavily_search or self._tavily_sdk
+        self._tavily_extract = tavily_extract or self._tavily_extract_sdk
         self._pubmed_search = pubmed_search or self._pubmed_entrez
         self._client: httpx.AsyncClient | None = None
         self._privacy = privacy
@@ -765,6 +791,15 @@ class SearchService:
             raise RuntimeError("TAVILY_API_KEY is not set")
         client = AsyncTavilyClient(api_key=self._tavily_key.get_secret_value())
         body: Mapping[str, Any] = await client.search(**kw)
+        return body
+
+    async def _tavily_extract_sdk(self, **kw: Any) -> Mapping[str, Any]:
+        from tavily import AsyncTavilyClient
+
+        if self._tavily_key is None:
+            raise RuntimeError("TAVILY_API_KEY is not set")
+        client = AsyncTavilyClient(api_key=self._tavily_key.get_secret_value())
+        body: Mapping[str, Any] = await client.extract(**kw)
         return body
 
     async def _cached(
@@ -961,6 +996,64 @@ class SearchService:
 
         return await self._cached("pmc_figures", pmcid, layer, fetch, {})
 
+    async def extract(self, url: str, *, user_id: uuid.UUID | None) -> ExtractResult | None:
+        """One page's text through Tavily extract (official SDK, basic depth, 1 credit), cached in `search_cache`
+        for the `tavily` layer's TTL and under the same guards as search (monthly stop, per-user daily cap).
+        https only; a URL that PII scrubbing would change (it carries an e-mail, phone or ID) is never sent."""
+        u = urlparse(url.strip())
+        if u.scheme != "https" or not u.hostname or u.username or u.password or len(url) > 2048:
+            return None
+        clean = await self._clean(url.strip(), user_id)
+        if clean != url.strip():
+            return None
+        cfg = (await self._runtime.get()).search
+        layer = cfg.layer("tavily")
+        if layer is None or "extract" in cfg.never_call:
+            return None
+        key = f"extract:{normalize_query(clean)}"
+        try:
+            hit = await self._store.get(key, layer.ttl_hours * 3600)
+        except Exception as exc:  # noqa: BLE001 - a cache outage must not stop the request
+            log.warning("search.cache_unavailable", error=type(exc).__name__)
+            hit = None
+        if hit:
+            d = hit[0]
+            return ExtractResult(
+                url=str(d.get("url") or clean),
+                title=str(d.get("title") or ""),
+                text=str(d.get("text") or ""),
+                cached=True,
+            )
+        if self._tavily_key is None and self._tavily_extract == self._tavily_extract_sdk:
+            return None
+        user_today, month = await self._store.tavily_usage(user_id)
+        if month + 1 > cfg.monthly_credit_guard:
+            raise TavilyGuardExhausted("monthly_credits", _month_reset())
+        if user_id is not None and user_today >= cfg.per_user_daily_cap:
+            raise TavilyGuardExhausted("user_daily_cap", _day_reset())
+        await self._store.record_tavily(user_id, 1)
+        await self._limiter.wait("tavily", layer.rps)
+        started = time.monotonic()
+        try:
+            body = await self._tavily_extract(urls=[clean], extract_depth="basic", format="markdown")
+        except Exception as exc:  # noqa: BLE001 - a failed fetch is "no text", never a crash
+            log.warning("search.layer", layer="tavily_extract", ok=False, error=type(exc).__name__)
+            return None
+        res = parse_tavily_extract(body, clean)
+        log.info(
+            "search.layer",
+            layer="tavily_extract",
+            ok=res is not None,
+            latency_ms=int((time.monotonic() - started) * 1000),
+            query_hash=query_hash(clean),
+        )
+        if res is not None:
+            try:
+                await self._store.put(key, [{"url": res.url, "title": res.title, "text": res.text}], 1)
+            except Exception as exc:  # noqa: BLE001
+                log.warning("search.cache_write_failed", error=type(exc).__name__)
+        return res
+
     async def youtube(self, url: str) -> SearchResult | None:
         vid = youtube_id(url)
         if vid is None:
@@ -995,6 +1088,7 @@ def get_search() -> SearchService:
 
 
 __all__ = [
+    "ExtractResult",
     "SearchAnswer",
     "SearchResult",
     "SearchService",

@@ -178,6 +178,7 @@ API_WRITTEN = ("attempts", "blocks")
 # Card scheduling (0012): the API runs the FSRS scheduler and writes every review; students only read their own.
 # Notes (0017): the notes API computes body_text, keeps the index in step and gates anchors; students only read.
 # Export jobs (0024): the export service writes them; students only read their own.
+# Knowledge-base entries (0028): created and updated by the ingest pipeline only.
 SELECT_ONLY = (
     "ink_layers",
     "ink_items",
@@ -190,6 +191,7 @@ SELECT_ONLY = (
     "export_jobs",
     "plan_rebalances",
     "calendar_feeds",
+    "kb_sources",
 )
 # Generated media (0022): the API creates and updates rows (it counts the daily caps from them and writes status
 # and approval); students may read and delete their own. Planner (0027): the same for push subscriptions (students
@@ -197,7 +199,9 @@ SELECT_ONLY = (
 CREATE_BLOCKED = ("generated_media", "push_subscriptions")
 # Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
 # plan day's score notes), never insert, delete or re-point them.
-API_ROWS = ("study_plan_days", "coach_suggestions", "plan_items")
+# Uploads and ingest items (0028): rows come from the ingest API; the student may rename a file (original_name) and
+# set an item's confirmed_placement, nothing else.
+API_ROWS = ("study_plan_days", "coach_suggestions", "plan_items", "uploads", "ingest_items")
 
 
 @pytest.mark.parametrize(
@@ -317,13 +321,6 @@ BACKEND_ONLY: list[tuple[str, dict[str, object], list[str], list[dict[str, objec
         {"ref_type": "other", "body": "b"},
         ["update public.report_issues set status = 'resolved'"],
         [{"status": "resolved"}],
-    ),
-    # ingest pipeline state
-    (
-        "uploads",
-        {"kind": "pdf", "original_name": "a.pdf"},
-        ["update public.uploads set status = 'ready'", "update public.uploads set processed_chapter_id = '{chapter}'"],
-        [{"status": "ready"}, {"processed_chapter_id": "{chapter}"}],
     ),
 ]
 
@@ -712,3 +709,83 @@ def test_question_linked_shared_flashcard_needs_an_attempt(
     insert_row(pg, "attempts", {"user_id": user_a, "question_id": shared.question_id, "chosen": "B", "correct": True})
     with as_user(pg, user_a) as conn:
         assert visible(conn) == {plain, linked}
+
+
+def test_ingest_rows_take_a_rename_and_a_confirmation_only(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared
+) -> None:
+    """0028: the ingest API creates uploads, KB entries and items and owns every status column; the student may
+    rename a file and set an item's confirmed placement, nothing else."""
+    upload, item, kb = uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
+    for conn in (pg,):  # the pipeline writes as a privileged role
+        insert_row(conn, "uploads", {"id": upload, "user_id": user_a, "kind": "pdf", "original_name": "a.pdf"})
+        insert_row(conn, "ingest_items", {"id": item, "user_id": user_a, "upload_id": upload})
+        insert_row(conn, "kb_sources", {"id": kb, "user_id": user_a, "kind": "url", "url": "https://example.org/a"})
+    with as_user(pg, user_a) as conn:
+        assert conn.execute("update public.uploads set original_name = 'b.pdf'").rowcount == 1
+        choice = Jsonb({"option_id": "o1"})
+        assert conn.execute("update public.ingest_items set confirmed_placement = %s", (choice,)).rowcount == 1
+        for stmt in (
+            "update public.uploads set status = 'ready'",
+            "update public.uploads set processed_chapter_id = processed_chapter_id",
+            "update public.uploads set storage_path = 'x'",
+            "update public.ingest_items set status = 'ready'",
+            "update public.ingest_items set placements = '{}'",
+            "update public.ingest_items set progress = 100",
+            "update public.kb_sources set status = 'ready'",
+            "delete from public.ingest_items",
+            "delete from public.uploads",
+            "delete from public.kb_sources",
+        ):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(stmt)
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, "uploads", {"id": uuid.uuid4(), "user_id": user_a, "kind": "pdf"})
+
+
+def test_owned_media_and_questions_are_private(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    media, question = f"fig-{uuid.uuid4()}", f"q-{uuid.uuid4()}"
+    for conn in (pg,):  # the pipeline writes as a privileged role
+        insert_row(
+            conn,
+            "media_assets",
+            {
+                "id": media,
+                "kind": "image",
+                "source_id": "user-provided",
+                "owner_user_id": user_a,
+                "review_status": "approved",
+            },
+        )
+        insert_row(
+            conn,
+            "questions",
+            {
+                "id": question,
+                "exam": "step1",
+                "stem_html": "<p>Own stem</p>",
+                "options": Jsonb([{"label": "A", "html": "x"}, {"label": "B", "html": "y"}]),
+                "answer": "B",
+                "explanation_html": "<p>why</p>",
+                "source_id": shared.source_id,
+                "owner_user_id": user_a,
+            },
+        )
+        with pytest.raises(errors.CheckViolation), conn.transaction():
+            # an owned row can never point at a shared (publishable) source
+            conn.execute("update public.media_assets set source_id = %s where id = %s", (shared.source_id, media))
+    with as_user(pg, user_a) as conn:
+        assert conn.execute("select count(*) from public.media_assets where id = %s", (media,)).fetchone() == (1,)
+        assert conn.execute("select count(*) from public.questions where id = %s", (question,)).fetchone() == (1,)
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("select answer from public.questions where id = %s", (question,))
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("select explanation_html from public.questions where id = %s", (question,))
+    with as_user(pg, user_b) as conn:
+        assert conn.execute("select count(*) from public.media_assets where id = %s", (media,)).fetchone() == (0,)
+        assert conn.execute("select count(*) from public.questions where id = %s", (question,)).fetchone() == (0,)
+    with as_anon(pg) as conn:
+        assert conn.execute("select count(*) from public.media_assets where id = %s", (media,)).fetchone() == (0,)
+        assert conn.execute("select count(*) from public.questions where id = %s", (question,)).fetchone() == (0,)

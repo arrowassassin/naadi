@@ -595,6 +595,12 @@ def test_measurements_are_not_scrubbed(clinical: str) -> None:
         ("12345678/9", "12345678"),
         # A +country code is a phone even after a lab word.
         ("platelets +44 7911 123456", "7911"),
+        # S15 benchmark: +country code and two groups (Indian mobiles), and a number that ends a sentence.
+        ("Lecture notes of a student, phone +91 98765 43210.", "98765"),
+        ("Lecture notes of a student, phone +91 98765 43210.", "43210"),
+        ("whatsapp +91-98765-43210", "98765"),
+        ("office +44 20 7946 0958.", "7946"),
+        ("my USMLE ID is 5-382-904-1, please check", "5-382-904-1"),
     ],
 )
 def test_identifiers_are_still_scrubbed(raw: str, kept_out: str) -> None:

@@ -40,7 +40,7 @@ def test_real_bundle_has_the_expected_counts(bundle) -> None:  # type: ignore[no
     assert len(bundle.plan.days) == 60
     assert len(bundle.guides) == 17
     assert {g.key for g in bundle.guides} == {"overview"} | {s.key for s in bundle.stages}
-    assert len(bundle.sources.accepted) == 17
+    assert len(bundle.sources.accepted) == 18  # 17 catalog/internal sources + user-provided (S15)
     assert bundle.sources.rejected == []
     assert sum(len(bundle.bodies.sections[s.id].figure_ids) for _c, _i, s in bundle.sections) == 95
 

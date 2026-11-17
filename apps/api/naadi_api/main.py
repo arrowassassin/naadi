@@ -35,6 +35,7 @@ from .health.checks import (
     tavily_db_reader,
 )
 from .health.service import Check, HealthService
+from .ingest.routes import install_ingest_routes
 from .ink.routes import install_ink_routes, start_ink_gc, stop_ink_gc
 from .logs import configure_logging, get_logger, register_secrets
 from .middleware import ClientFloorMiddleware, RequestContextMiddleware
@@ -167,6 +168,7 @@ def create_app(
     install_notes_routes(app)
     install_authoring_routes(app)
     install_export_routes(app)
+    install_ingest_routes(app)
     install_app_config(app, settings)
     install_generation_routes(app)  # needs app.state.app_config
     install_admin_routes(app)

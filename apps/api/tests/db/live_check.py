@@ -58,13 +58,15 @@ USER_TABLES = (
     "calendar_feeds",
     "push_subscriptions",
 )
-# Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017).
+# Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017),
+# export jobs (0024), knowledge-base entries (S15).
 SELECT_ONLY_TABLES = (
     "public.ink_layers",
     "public.ink_items",
     "public.notes",
     "public.notebooks",
     "public.export_jobs",
+    "public.kb_sources",
 )
 # Card scheduling: only the API writes it (the client may only SELECT its own rows).
 API_WRITTEN_TABLES = ("card_reviews", "card_review_logs")
@@ -92,6 +94,7 @@ CLIENT_CLOSED_TABLES = (
     "authoring_runs",
     "admin_audit",
     "question_revisions",
+    "ingest_extracts",
 )
 
 Rows = Sequence[dict[str, Any]]
@@ -162,8 +165,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "55 Naadi tables present",
-            "select count(*) = 55 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "56 Naadi tables present",
+            "select count(*) = 56 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -199,10 +202,11 @@ def checks(head: str) -> list[Check]:
             " as detail from information_schema.role_table_grants where table_schema = 'public'"
             f" and grantee = 'anon' and table_name = any({_array(CLIENT_CLOSED_TABLES)})"
             " or table_schema = 'public' and grantee = 'authenticated'"
-            " and table_name = any(array['embeddings','app_config','llm_usage','naadi_alembic_version','seed_runs'])",
+            " and table_name = any(array['embeddings','app_config','llm_usage','naadi_alembic_version','seed_runs',"
+            "'ingest_extracts'])",
         ),
         Check(
-            "ink layers and items, notes and notebooks are select-only for clients",
+            "ink layers and items, notes and notebooks are select-only for clients (and kb_sources)",
             "select bool_and(has_table_privilege('authenticated', t, 'select')"
             " and not has_table_privilege('authenticated', t, 'insert,update,delete,truncate')) as ok, '' as detail"
             f" from unnest({_array(SELECT_ONLY_TABLES)}) t",
@@ -232,6 +236,26 @@ def checks(head: str) -> list[Check]:
             "select count(*) = 4 as ok, count(*)::text as detail from information_schema.columns"
             " where table_schema = 'public' and (table_name, column_name) in (('ink_layers','ocr_status'),"
             " ('ink_layers','ocr_hash'), ('ink_layers','ocr_at'), ('notes','body_text'))",
+        ),
+        Check(
+            "ingest (0028): uploads/ingest_items API-written (rename + confirmed_placement only), owned media and"
+            " questions, user-provided source",
+            "select has_column_privilege('authenticated', 'public.uploads', 'original_name', 'update')"
+            " and not has_column_privilege('authenticated', 'public.uploads', 'status', 'update')"
+            " and not has_any_column_privilege('authenticated', 'public.uploads', 'insert')"
+            " and not has_table_privilege('authenticated', 'public.uploads', 'delete')"
+            " and has_column_privilege('authenticated', 'public.ingest_items', 'confirmed_placement', 'update')"
+            " and not has_column_privilege('authenticated', 'public.ingest_items', 'status', 'update')"
+            " and not has_column_privilege('authenticated', 'public.ingest_items', 'placements', 'update')"
+            " and not has_any_column_privilege('authenticated', 'public.ingest_items', 'insert')"
+            " and not has_table_privilege('authenticated', 'public.ingest_items', 'delete')"
+            " and exists (select 1 from information_schema.columns where table_schema = 'public'"
+            "   and table_name = 'media_assets' and column_name = 'owner_user_id')"
+            " and exists (select 1 from information_schema.columns where table_schema = 'public'"
+            "   and table_name = 'questions' and column_name = 'owner_user_id')"
+            " and exists (select 1 from pg_constraint where conname = 'media_assets_owned_private_source')"
+            " and exists (select 1 from public.sources where id = 'user-provided' and not allow_commercial)"
+            " as ok, '' as detail",
         ),
         Check(
             "study plans are API-written; plan days and coach suggestions take status only",

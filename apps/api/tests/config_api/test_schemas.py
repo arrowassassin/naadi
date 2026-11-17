@@ -43,6 +43,7 @@ def test_config_files_define_every_key(values: dict[str, Any]) -> None:
         "ink_ocr",
         "youtube",
         "authoring",
+        "ingest",
         "ui_copy",
     }
     assert set(PUBLIC_KEYS) == {"feature_flags", "ui.nav", "exam_rules", "ui_copy"}

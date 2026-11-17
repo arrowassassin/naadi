@@ -28,13 +28,6 @@
       "path": "./naadi_api/agent/graphs/planner.py:graph",
       "description": "Planner: rebalance proposals after missed days (pure function, zero LLM calls) -> interrupt to confirm -> plan updated in one transaction; the system cron mode sends the daily Web Push reminders"
     },
-    "backup": {
-      "path": "./naadi_api/agent/graphs/backup.py:graph",
-      "description": "Backups: nightly pg_dump of public + auth users, weekly Storage tarball; age-encrypted to the owner's key, pushed to the private HF dataset with 30-day retention (records not_configured until the owner sets the token and key)"
-    },
-    "prune": {
-      "path": "./naadi_api/agent/graphs/prune.py:graph",
-      "description": "Daily retention: llm_usage 90 d, search_cache past its longest TTL, sync_ops 24 h, sync_tombstones 90 d, agent_health 90 d, search_usage 13 months"
     }
   },
   "auth": {

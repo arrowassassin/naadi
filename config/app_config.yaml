@@ -29,6 +29,7 @@ feature_flags:
   assistant: {enabled: false}     # S14 (also always off in exam mode)
   generation: {enabled: true}     # S15b image/video generation; stays off until HF_GEN_TOKEN is set (not configured)
   anki: {enabled: true}           # S20 Anki .apkg import/export (Library tile, Cards import/export)
+  library: {enabled: true}        # S15 Library (uploads, links, knowledge base), PDF canvas, add_to_knowledge
   ink_lab: {enabled: true, audience: admins, everyone_outside_prod: true}
   settings: {enabled: true}       # S21 Settings screen (each group inside it shows once its own flag is on)
   export: {enabled: true}         # S21 "Export everything" (Settings -> Data & export)
@@ -253,6 +254,32 @@ authoring:
   pb_min: 0.05
   time_factor: 2.0
   report_flags: 2
+
+# Universal ingest (S15, `ingest` graph). Caps are checked before any byte is parsed; vault-looking files stop at the
+# local sensitivity gate before any model call. `max_vision_pages` scanned pages per file go to the vision role, the
+# rest to local OCR. Images become WebP (the original is kept only when <= keep_image_original_kb); audio is deleted
+# after transcription unless audio_keep. Near-duplicates: >= near_dup_share of chunks at cosine >= near_dup_cosine.
+ingest:
+  enabled: true
+  max_file_mb: 50
+  zip_max_entries: 200
+  zip_max_uncompressed_mb: 300
+  zip_max_depth: 2
+  zip_max_ratio: 100
+  max_image_megapixels: 50
+  max_pages: 2000
+  max_vision_pages: 40
+  vision_per_user_daily: 80
+  local_ocr_pages: 200
+  max_audio_minutes: 120
+  audio_keep: false
+  user_storage_mb: 600
+  items_per_user_daily: 200
+  max_paste_chars: 200000
+  keep_image_original_kb: 512
+  near_dup_cosine: 0.97
+  near_dup_share: 0.8
+  undo_days: 7
 
 # Supabase Storage bucket names (created by migration 0002).
 storage:

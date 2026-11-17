@@ -52,6 +52,21 @@ sources:
     verified: true
     verified_url: null   # internal source; the model licence is Apache-2.0 (FLUX.1-schnell)
 
+  - id: user-provided
+    name: Your own material
+    url: null
+    license: user-own-material
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: true
+    attribution_template: null
+    notes: >-
+      Files, links and pasted text a student added. Private to that student (RLS); never published, never in
+      shared content or another student's retrieval.
+    verified: true
+    verified_url: null   # the student's own material; created by migration 0028, kept equal here
+
   - id: youtube
     name: YouTube (official embedded player via YouTube API Services)
     url: https://www.youtube.com
