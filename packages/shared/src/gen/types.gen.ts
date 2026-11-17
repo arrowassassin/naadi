@@ -267,20 +267,6 @@ export type AnchorPos = {
 };
 
 /**
- * ApproveBody
- */
-export type ApproveBody = {
-  /**
-   * Caption
-   */
-  caption: string;
-  /**
-   * Section Id
-   */
-  section_id: string;
-};
-
-/**
  * ApproveIn
  */
 export type ApproveIn = {
@@ -298,6 +284,28 @@ export type ApproveIn = {
    * Start S
    */
   start_s?: number | null;
+};
+
+/**
+ * ApproveOut
+ */
+export type ApproveOut = {
+  /**
+   * End S
+   */
+  end_s: number | null;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
+  /**
+   * Start S
+   */
+  start_s: number | null;
 };
 
 /**
@@ -2148,6 +2156,35 @@ export type FsrsSchedulerConfig = {
     number,
     number,
   ];
+};
+
+/**
+ * GeneratedApproveBody
+ */
+export type GeneratedApproveBody = {
+  /**
+   * Caption
+   */
+  caption: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
+};
+
+/**
+ * GeneratedApproveOut
+ */
+export type GeneratedApproveOut = {
+  item: AdminGeneratedItem;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
 };
 
 /**
@@ -5537,21 +5574,6 @@ export type NaadiApiCoursesExamOption = {
 };
 
 /**
- * ApproveOut
- */
-export type NaadiApiGenerationModelsApproveOut = {
-  item: AdminGeneratedItem;
-  /**
-   * Media Id
-   */
-  media_id: string;
-  /**
-   * Section Id
-   */
-  section_id: string;
-};
-
-/**
  * ExamOption
  */
 export type NaadiApiPlanModelsExamOption = {
@@ -5565,28 +5587,6 @@ export type NaadiApiPlanModelsExamOption = {
    * The exam's short name from exam_rules (a proper noun, not a sentence)
    */
   label: string;
-};
-
-/**
- * ApproveOut
- */
-export type NaadiApiYoutubeModelsApproveOut = {
-  /**
-   * End S
-   */
-  end_s: number | null;
-  /**
-   * Media Id
-   */
-  media_id: string;
-  /**
-   * Section Id
-   */
-  section_id: string;
-  /**
-   * Start S
-   */
-  start_s: number | null;
 };
 
 export type ListAppConfigData = {
@@ -5943,7 +5943,7 @@ export type AdminListGeneratedApiAdminGeneratedGetResponse =
   AdminListGeneratedApiAdminGeneratedGetResponses[keyof AdminListGeneratedApiAdminGeneratedGetResponses];
 
 export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostData = {
-  body: ApproveBody;
+  body: GeneratedApproveBody;
   path: {
     /**
      * Media Id
@@ -5994,7 +5994,7 @@ export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses = 
   /**
    * Successful Response
    */
-  200: NaadiApiGenerationModelsApproveOut;
+  200: GeneratedApproveOut;
 };
 
 export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse =
@@ -6301,7 +6301,7 @@ export type ApproveYoutubeCandidateResponses = {
   /**
    * Successful Response
    */
-  200: NaadiApiYoutubeModelsApproveOut;
+  200: ApproveOut;
 };
 
 export type ApproveYoutubeCandidateResponse = ApproveYoutubeCandidateResponses[keyof ApproveYoutubeCandidateResponses];

@@ -1,11 +1,11 @@
 import {
   type AdminGeneratedItem,
   type AdminGeneratedList,
-  type ApproveBody,
-  type ApproveOut,
   adminApproveGeneratedApiAdminGeneratedMediaIdApprovePost,
   adminListGeneratedApiAdminGeneratedGet,
   deleteGeneratedApiGeneratedMediaIdDelete,
+  type GeneratedApproveBody,
+  type GeneratedApproveOut,
   type GeneratedItem,
   type GeneratedList,
   type GenerationStatusOut,
@@ -18,7 +18,7 @@ import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
 
-export type { AdminGeneratedItem, ApproveOut, GeneratedItem, GenerationStatusOut };
+export type { AdminGeneratedItem, GeneratedApproveOut, GeneratedItem, GenerationStatusOut };
 
 const KNOWN_CODES = new Set([
   "prompt_empty",
@@ -132,8 +132,8 @@ export function useApproveGenerated() {
   const qc = useQueryClient();
   const userId = useUserId();
   return useMutation({
-    mutationFn: ({ id, body }: { id: string; body: ApproveBody }) =>
-      authed<ApproveOut>((headers) =>
+    mutationFn: ({ id, body }: { id: string; body: GeneratedApproveBody }) =>
+      authed<GeneratedApproveOut>((headers) =>
         adminApproveGeneratedApiAdminGeneratedMediaIdApprovePost({ headers, path: { media_id: id }, body }),
       ),
     onSuccess: () => {

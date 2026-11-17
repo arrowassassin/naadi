@@ -18,7 +18,7 @@ import psycopg
 
 from ..logs import get_logger
 from .common import COLUMNS, SOURCE_ID, GenerationError, row_to_admin_item
-from .models import ApproveOut
+from .models import GeneratedApproveOut
 from .store import MediaStore, MediaStoreError
 
 log = get_logger("naadi.generation")
@@ -50,7 +50,7 @@ async def approve_generated(
     store: MediaStore | None = None,
     buckets: tuple[str, str] | None = None,
     label: str | None = None,
-) -> ApproveOut:
+) -> GeneratedApproveOut:
     """Approve one item (see the module docstring). `conn` is a service-role transaction with dict rows.
 
     `store`, `buckets` (generated-media, content-public) and `label` default to the process settings and config, so
@@ -77,7 +77,7 @@ async def approve_generated(
             "select section_id from public.section_media where media_id = %s limit 1", (row["media_asset_id"],)
         )
         existing = await cur.fetchone()
-        return ApproveOut(
+        return GeneratedApproveOut(
             item=row_to_admin_item(row),
             media_id=row["media_asset_id"],
             section_id=existing["section_id"] if existing else section_id,
@@ -154,7 +154,7 @@ async def approve_generated(
             log.warning("generation_cleanup_failed")
         raise
     assert updated is not None
-    return ApproveOut(item=row_to_admin_item(updated), media_id=shared_id, section_id=section_id)
+    return GeneratedApproveOut(item=row_to_admin_item(updated), media_id=shared_id, section_id=section_id)
 
 
 __all__ = ["approve_generated", "default_label"]

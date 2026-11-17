@@ -93,18 +93,6 @@ export const zAnchorPos = z.object({
 });
 
 /**
- * ApproveBody
- */
-export const zApproveBody = z.object({
-  caption: z.string().min(1).max(300),
-  section_id: z
-    .string()
-    .min(1)
-    .max(120)
-    .regex(/^[A-Za-z0-9._-]+$/),
-});
-
-/**
  * ApproveIn
  */
 export const zApproveIn = z.object({
@@ -114,6 +102,16 @@ export const zApproveIn = z.object({
     .regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/)
     .nullish(),
   start_s: z.int().gte(0).lte(172800).nullish(),
+});
+
+/**
+ * ApproveOut
+ */
+export const zApproveOut = z.object({
+  end_s: z.int().nullable(),
+  media_id: z.string(),
+  section_id: z.string(),
+  start_s: z.int().nullable(),
 });
 
 /**
@@ -598,6 +596,27 @@ export const zFsrsSchedulerConfig = z.object({
     z.number(),
     z.number(),
   ]),
+});
+
+/**
+ * GeneratedApproveBody
+ */
+export const zGeneratedApproveBody = z.object({
+  caption: z.string().min(1).max(300),
+  section_id: z
+    .string()
+    .min(1)
+    .max(120)
+    .regex(/^[A-Za-z0-9._-]+$/),
+});
+
+/**
+ * GeneratedApproveOut
+ */
+export const zGeneratedApproveOut = z.object({
+  item: zAdminGeneratedItem,
+  media_id: z.string(),
+  section_id: z.string(),
 });
 
 /**
@@ -2213,15 +2232,6 @@ export const zCoursesResponse = z.object({
 });
 
 /**
- * ApproveOut
- */
-export const zNaadiApiGenerationModelsApproveOut = z.object({
-  item: zAdminGeneratedItem,
-  media_id: z.string(),
-  section_id: z.string(),
-});
-
-/**
  * ExamOption
  */
 export const zNaadiApiPlanModelsExamOption = z.object({
@@ -2242,16 +2252,6 @@ export const zOnboardingState = z.object({
   min_study_days: z.int(),
   today: z.iso.date(),
   values: zOnboardingValues,
-});
-
-/**
- * ApproveOut
- */
-export const zNaadiApiYoutubeModelsApproveOut = z.object({
-  end_s: z.int().nullable(),
-  media_id: z.string(),
-  section_id: z.string(),
-  start_s: z.int().nullable(),
 });
 
 /**
@@ -2316,7 +2316,7 @@ export const zAdminListGeneratedApiAdminGeneratedGetQuery = z.object({
  */
 export const zAdminListGeneratedApiAdminGeneratedGetResponse = zAdminGeneratedList;
 
-export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostBody = zApproveBody;
+export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostBody = zGeneratedApproveBody;
 
 export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostPath = z.object({
   media_id: z.uuid(),
@@ -2325,7 +2325,7 @@ export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostPath = z.o
 /**
  * Successful Response
  */
-export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse = zNaadiApiGenerationModelsApproveOut;
+export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse = zGeneratedApproveOut;
 
 /**
  * Successful Response
@@ -2380,7 +2380,7 @@ export const zApproveYoutubeCandidatePath = z.object({
 /**
  * Successful Response
  */
-export const zApproveYoutubeCandidateResponse = zNaadiApiYoutubeModelsApproveOut;
+export const zApproveYoutubeCandidateResponse = zApproveOut;
 
 export const zRejectYoutubeCandidatePath = z.object({
   media_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),

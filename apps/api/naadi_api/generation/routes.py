@@ -31,8 +31,8 @@ from .models import (
     LIST_LIMIT_DEFAULT,
     LIST_LIMIT_MAX,
     AdminGeneratedList,
-    ApproveBody,
-    ApproveOut,
+    GeneratedApproveBody,
+    GeneratedApproveOut,
     GeneratedItem,
     GeneratedKind,
     GeneratedList,
@@ -160,13 +160,13 @@ async def admin_list_generated(
 
 @router.post(
     "/admin/generated/{media_id}/approve",
-    response_model=ApproveOut,
+    response_model=GeneratedApproveOut,
     summary="Publish a generated image as a shared chapter figure (admin)",
     responses={**_ERRORS, **_ADMIN_ERRORS},
 )
 async def admin_approve_generated(
-    request: Request, media_id: MediaId, body: ApproveBody, admin: AdminUser
-) -> ApproveOut:
+    request: Request, media_id: MediaId, body: GeneratedApproveBody, admin: AdminUser
+) -> GeneratedApproveOut:
     out = await _guard(lambda: _service(request).approve(media_id, admin.user_id, body.section_id, body.caption))
     log.info("generated_media_approved")
     return out

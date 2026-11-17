@@ -65,12 +65,12 @@ class AdminGeneratedList(BaseModel):
     items: list[AdminGeneratedItem]
 
 
-class ApproveBody(BaseModel):
+class GeneratedApproveBody(BaseModel):
     section_id: str = Field(min_length=1, max_length=120, pattern=r"^[A-Za-z0-9._-]+$")
     caption: str = Field(min_length=1, max_length=300)
 
 
-class ApproveOut(BaseModel):
+class GeneratedApproveOut(BaseModel):
     item: AdminGeneratedItem
     media_id: str
     section_id: str

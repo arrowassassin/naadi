@@ -455,29 +455,6 @@
         "title": "AnchorPos",
         "type": "object"
       },
-      "ApproveBody": {
-        "properties": {
-          "caption": {
-            "maxLength": 300,
-            "minLength": 1,
-            "title": "Caption",
-            "type": "string"
-          },
-          "section_id": {
-            "maxLength": 120,
-            "minLength": 1,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "title": "Section Id",
-            "type": "string"
-          }
-        },
-        "required": [
-          "section_id",
-          "caption"
-        ],
-        "title": "ApproveBody",
-        "type": "object"
-      },
       "ApproveIn": {
         "properties": {
           "end_s": {
@@ -521,6 +498,48 @@
           }
         },
         "title": "ApproveIn",
+        "type": "object"
+      },
+      "ApproveOut": {
+        "properties": {
+          "end_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End S"
+          },
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          },
+          "start_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start S"
+          }
+        },
+        "required": [
+          "media_id",
+          "section_id",
+          "start_s",
+          "end_s"
+        ],
+        "title": "ApproveOut",
         "type": "object"
       },
       "AttemptIn": {
@@ -3678,6 +3697,51 @@
           "enable_fuzz"
         ],
         "title": "FsrsSchedulerConfig",
+        "type": "object"
+      },
+      "GeneratedApproveBody": {
+        "properties": {
+          "caption": {
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Caption",
+            "type": "string"
+          },
+          "section_id": {
+            "maxLength": 120,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9._-]+$",
+            "title": "Section Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "section_id",
+          "caption"
+        ],
+        "title": "GeneratedApproveBody",
+        "type": "object"
+      },
+      "GeneratedApproveOut": {
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/AdminGeneratedItem"
+          },
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item",
+          "media_id",
+          "section_id"
+        ],
+        "title": "GeneratedApproveOut",
         "type": "object"
       },
       "GeneratedItem": {
@@ -9724,28 +9788,6 @@
         "title": "ExamOption",
         "type": "object"
       },
-      "naadi_api__generation__models__ApproveOut": {
-        "properties": {
-          "item": {
-            "$ref": "#/components/schemas/AdminGeneratedItem"
-          },
-          "media_id": {
-            "title": "Media Id",
-            "type": "string"
-          },
-          "section_id": {
-            "title": "Section Id",
-            "type": "string"
-          }
-        },
-        "required": [
-          "item",
-          "media_id",
-          "section_id"
-        ],
-        "title": "ApproveOut",
-        "type": "object"
-      },
       "naadi_api__plan__models__ExamOption": {
         "properties": {
           "id": {
@@ -9768,48 +9810,6 @@
           "label"
         ],
         "title": "ExamOption",
-        "type": "object"
-      },
-      "naadi_api__youtube__models__ApproveOut": {
-        "properties": {
-          "end_s": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "End S"
-          },
-          "media_id": {
-            "title": "Media Id",
-            "type": "string"
-          },
-          "section_id": {
-            "title": "Section Id",
-            "type": "string"
-          },
-          "start_s": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Start S"
-          }
-        },
-        "required": [
-          "media_id",
-          "section_id",
-          "start_s",
-          "end_s"
-        ],
-        "title": "ApproveOut",
         "type": "object"
       }
     }
@@ -10503,7 +10503,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ApproveBody"
+                "$ref": "#/components/schemas/GeneratedApproveBody"
               }
             }
           },
@@ -10514,7 +10514,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/naadi_api__generation__models__ApproveOut"
+                  "$ref": "#/components/schemas/GeneratedApproveOut"
                 }
               }
             },
@@ -11107,7 +11107,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/naadi_api__youtube__models__ApproveOut"
+                  "$ref": "#/components/schemas/ApproveOut"
                 }
               }
             },
