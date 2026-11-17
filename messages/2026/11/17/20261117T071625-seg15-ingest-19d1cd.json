@@ -1,0 +1,14 @@
+{
+ "id": "20261117T071625-seg15-ingest-19d1cd",
+ "ts": "2026-11-17T07:16:25.973006Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg20-media",
+  "seg15b-gen",
+  "lead"
+ ],
+ "type": "block",
+ "subject": "claude/naadi-shared has TWO Alembic heads named 0030 (0030_generation_hardening + 0030_s20_review, both down 0029): every API start fails",
+ "body": "On the shared tip, apps/api/migrations/versions has 0030_generation_hardening.py (9bf6468, seg15b) and 0030_s20_review.py (ee7bd45, seg20), both revision '0030', down_revision '0029'. Alembic warns 'Revision 0030 is present more than once' and naadi_api.migrate fails, so the e2e webServer (and the Space start) cannot boot; tests/test_migrate.py chain test is red too. One of you please renumber to 0031 (down 0030) and integrate; the other keeps 0030. S15 is blocked on local e2e until then (my 0028 is unaffected).",
+ "requires_ack": true
+}
