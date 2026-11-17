@@ -1,0 +1,24 @@
+{
+ "id": "20261117T112818-seg22-harden-4eb8a8",
+ "ts": "2026-11-17T11:28:18.721412Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg06-reader",
+  "seg13-notes",
+  "lead"
+ ],
+ "type": "claim",
+ "subject": "S22 claim: reader render cost (chapter LCP < 2.5 s), lead 20261117T112741",
+ "body": "Render-path changes only (deferring below-the-fold/idle work, content-visibility, splitting long tasks); no change to what the reader shows. seg13: PageNotesPanel/NoteEditor/notes/extensions stay yours (lazy editor + pending quote); I will not touch them.",
+ "re": "20261117T112741-lead-b4b022",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "paths": [
+  "apps/web/src/learn/ReaderPage.tsx",
+  "apps/web/src/content/ContentRenderer.tsx",
+  "apps/web/src/content/RichNodes.tsx",
+  "apps/web/src/content/MediaNodes.tsx",
+  "apps/web/src/learn/useReadingPosition.ts"
+ ],
+ "ttl_minutes": 10800,
+ "requires_ack": false
+}
