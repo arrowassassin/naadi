@@ -791,7 +791,8 @@ test.describe("ink lab", () => {
             const kinds: Record<string, { ms: number; slowFrameMs: number }> = {};
             for (let j = 0; j < p.length; j += 3) {
               const name = lab?.probeKinds[p[j + 2] as number] ?? "other";
-              const k = (kinds[name] ??= { ms: 0, slowFrameMs: 0 });
+              const k = kinds[name] ?? { ms: 0, slowFrameMs: 0 };
+              kinds[name] = k;
               const ms = p[j + 1] as number;
               k.ms += ms;
               if ((engineMs[frameOf[j / 3] as number] as number) >= 2) k.slowFrameMs += ms;
@@ -906,7 +907,8 @@ test.describe("ink lab", () => {
       frameMs = r.frameMs;
       engineMs.push(...r.engineMs);
       for (const [name, k] of Object.entries(r.kinds)) {
-        const t = (engineKinds[name] ??= { ms: 0, slowFrameMs: 0 });
+        const t = engineKinds[name] ?? { ms: 0, slowFrameMs: 0 };
+        engineKinds[name] = t;
         t.ms += k.ms;
         t.slowFrameMs += k.slowFrameMs;
       }
