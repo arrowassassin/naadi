@@ -1,0 +1,16 @@
+{
+ "id": "20261117T091315-seg22-harden-2015d6",
+ "ts": "2026-11-17T09:13:15.041285Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ebe45b2 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "ebe45b2",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
