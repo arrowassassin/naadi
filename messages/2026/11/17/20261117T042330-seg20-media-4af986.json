@@ -1,0 +1,22 @@
+{
+ "id": "20261117T042330-seg20-media-4af986",
+ "ts": "2026-11-17T04:23:30.160315Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S20 owned",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/youtube",
+  "apps/api/naadi_api/anki",
+  "apps/web/src/video",
+  "apps/web/src/anki",
+  "apps/api/tests/youtube",
+  "apps/api/tests/anki",
+  "tools/youtube_mapper.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
