@@ -23,29 +23,35 @@ from naadi_api.seed.storage import list_folder
 from naadi_api.settings import get_settings
 
 from .rls import DB_MARKS, as_anon, as_user, create_auth_user, require_local
+from ..seed.pack_totals import LEGACY_CHAPTERS, LEGACY_FIGURES, LEGACY_QUESTIONS, LEGACY_SECTIONS, pack_totals
 from .seed_helpers import BUCKET, CONFIG, DATA, bundle, options, remove_seed, storage
 
 pytestmark = DB_MARKS
 
 BLUEPRINT_ROWS = len(json.loads((DATA / "taxonomy" / "usmle2026.json").read_text(encoding="utf-8"))["blueprint"])
 
+# Legacy rows are pinned; S23 pack rows are counted from data/content/* (tests/seed/pack_totals.py), so the
+# expected totals follow the content without anyone editing this test, and a dropped pack row still fails.
+PACKS = pack_totals()
+FIGURES = LEGACY_FIGURES + PACKS.figures
+
 EXPECTED = {
-    "chapters": 14,
-    "chapter_sections": 259,
-    "questions": 685,
-    "media_assets": 95,
+    "chapters": LEGACY_CHAPTERS + PACKS.chapters,
+    "chapter_sections": LEGACY_SECTIONS + PACKS.sections,
+    "questions": LEGACY_QUESTIONS + PACKS.items,
+    "media_assets": FIGURES,
     "taxonomy_nodes": 688,  # 217 legacy + 471 USMLE-2026 (root, 18 systems, 147 categories, 276 areas, 29 axes)
-    "question_map_entries": 685,
+    "question_map_entries": LEGACY_QUESTIONS + PACKS.items,
     "pathway_stages": 16,
     "pathway_tasks": 186,
     "pathway_guides": 17,
     "plan_template_days": 60,
     "sources": 31,  # + the 2026 outline and 10 S23 research rows
-    "question_sets": 0,
-    "content_packs": 7,  # one empty pack per S23 author task
+    "question_sets": PACKS.sets,
+    "content_packs": PACKS.packs,  # one pack per S23 author task
     "blueprint_targets": BLUEPRINT_ROWS,
-    "pack_flashcards": 0,
-    "section_media": 95,
+    "pack_flashcards": PACKS.cards,
+    "section_media": LEGACY_FIGURES + PACKS.section_figures,
     "app_config": len(KEY_SPECS),  # every registered key (other segments add their own)
 }
 
@@ -82,9 +88,9 @@ def test_dry_run_reports_the_plan_and_writes_nothing(url: str, b: SeedBundle) ->
     dry = run_seed(options(url, dry_run=True), bundle=b)
     assert dry.dry_run and dry.ok
     # the module starts from an empty database (the `url` fixture removed any earlier seed)
-    assert dry.tables["questions"].inserted == 685
-    assert dry.tables["chapter_sections"].inserted == 259
-    assert dry.storage.uploaded == 95
+    assert dry.tables["questions"].inserted == EXPECTED["questions"]
+    assert dry.tables["chapter_sections"].inserted == EXPECTED["chapter_sections"]
+    assert dry.storage.uploaded == FIGURES
     assert dry.actual == EXPECTED  # counted inside the rolled-back transaction
     assert _count(url, "select count(*) from public.questions where id like 'ch01-q%%'") == 0
     assert _count(url, "select count(*) from public.chapters where id = 'ch01'") == 0
@@ -97,7 +103,7 @@ def test_full_import_matches_the_expected_counts(first_run: tuple[SeedReport, Se
     assert real.ok and not real.dry_run
     assert real.expected == EXPECTED
     assert real.actual == EXPECTED
-    assert real.storage.uploaded == 95
+    assert real.storage.uploaded == FIGURES
     for name, counts in real.tables.items():
         # `user-provided` exists from migration 0028 and the seed finds it unchanged
         migrated = 1 if name == "sources" else 0
@@ -117,7 +123,7 @@ def test_second_run_changes_nothing(first_run: object, url: str, b: SeedBundle) 
     again = run_seed(options(url), bundle=b)
     assert again.ok
     assert again.changes == 0, again.summary()
-    assert again.storage.unchanged == 95
+    assert again.storage.unchanged == FIGURES
     assert _count(url, "select count(*) from public.app_config_history") == 0
     assert _count(url, "select count(*) from public.chapter_section_revisions where section_id like 'ch%%'") == 0
 
@@ -370,7 +376,7 @@ def test_a_missing_storage_object_is_restored(first_run: object, url: str, b: Se
     bucket.remove([f"{FIGURE_FOLDER}/ch05-fig02.svg"])
     r = run_seed(options(url, only=("figures",)), bundle=b)
     assert r.storage.uploaded == 1
-    assert r.storage.unchanged == 94
+    assert r.storage.unchanged == FIGURES - 1
     assert r.ok
     assert "ch05-fig02.svg" in list_folder(bucket, FIGURE_FOLDER)
 
@@ -445,7 +451,8 @@ def test_a_count_mismatch_fails_the_seed_and_the_cli(
         run_seed(options(url, dry_run=True, only=("chapters", "sources")), bundle=b)
     assert not e.value.report.ok
     assert [c.name for c in e.value.report.checks if not c.ok] == ["count chapters"]
-    assert "count chapters (14 / 15)" in str(e.value)  # the message carries the failing count and its detail
+    n = EXPECTED["chapters"]
+    assert f"count chapters ({n} / {n + 1})" in str(e.value)  # the message carries the failing count and its detail
 
     monkeypatch.setenv("DATABASE_URL", url)
     for name in ("SUPABASE_URL", "VITE_SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "NAADI_STORAGE_URL"):

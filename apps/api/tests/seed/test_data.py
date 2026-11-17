@@ -18,6 +18,8 @@ from naadi_api.seed.data import (
     topological_taxonomy,
 )
 
+from .pack_totals import LEGACY_CHAPTERS, LEGACY_FIGURES, LEGACY_QUESTIONS, LEGACY_SECTIONS, pack_totals
+
 REPO = Path(__file__).resolve().parents[4]
 DATA, CONFIG = REPO / "data", REPO / "config"
 
@@ -28,13 +30,21 @@ def bundle():  # type: ignore[no-untyped-def]
 
 
 def test_real_bundle_has_the_expected_counts(bundle) -> None:  # type: ignore[no-untyped-def]
-    assert len(bundle.chapters) == 14
+    # legacy bundle pinned on its own rows; S23 pack rows counted from data/content/* (tests/seed/pack_totals.py)
+    packs = pack_totals()
+    assert len([c for c in bundle.chapters if c.pack_id is None]) == LEGACY_CHAPTERS
+    assert len(bundle.chapters) == LEGACY_CHAPTERS + packs.chapters
     assert [c.id for c in bundle.chapters if c.kind == "mock_exam"] == ["mock1", "mock2"]
-    assert len(bundle.sections) == 259
-    assert len(bundle.questions) == 685
-    assert len(bundle.figures) == 95
+    assert len([s for c, _i, s in bundle.sections if c.pack_id is None]) == LEGACY_SECTIONS
+    assert len(bundle.sections) == LEGACY_SECTIONS + packs.sections
+    assert len([q for q in bundle.questions if q.pack_id is None]) == LEGACY_QUESTIONS
+    assert len(bundle.questions) == LEGACY_QUESTIONS + packs.items
+    assert len([f for f in bundle.figures if not f.file.startswith("content/")]) == LEGACY_FIGURES
+    assert len(bundle.figures) == LEGACY_FIGURES + packs.figures
     assert len(bundle.taxonomy) == 688  # 217 legacy + 471 USMLE-2026
-    assert len(bundle.question_map) == 685
+    assert len(bundle.question_map) == LEGACY_QUESTIONS + packs.items
+    assert len(bundle.sets) == packs.sets
+    assert len(bundle.cards) == packs.cards
     assert len(bundle.stages) == 16
     assert len(bundle.tasks) == 186
     assert len(bundle.plan.days) == 60
@@ -42,7 +52,9 @@ def test_real_bundle_has_the_expected_counts(bundle) -> None:  # type: ignore[no
     assert {g.key for g in bundle.guides} == {"overview"} | {s.key for s in bundle.stages}
     assert len(bundle.sources.accepted) == 31  # catalog, internal, user-provided, pathway links, outline, 10 S23 rows
     assert bundle.sources.rejected == []
-    assert sum(len(bundle.bodies.sections[s.id].figure_ids) for _c, _i, s in bundle.sections) == 95
+    assert sum(len(bundle.bodies.sections[s.id].figure_ids) for _c, _i, s in bundle.sections) == (
+        LEGACY_FIGURES + packs.section_figures
+    )
 
 
 def test_mock_questions_keep_blocks_and_reviews_stay_unreviewed(bundle) -> None:  # type: ignore[no-untyped-def]
