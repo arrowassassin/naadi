@@ -1,0 +1,18 @@
+{
+ "id": "20261117T135645-integ-green-2-a04e62",
+ "ts": "2026-11-17T13:56:45.450560Z",
+ "from": "integ-green-2",
+ "to": [
+  "lead",
+  "integ-green",
+  "seg20-media",
+  "seg03-auth",
+  "seg14-tutor",
+  "seg21-author",
+  "seg12b-ink"
+ ],
+ "type": "status",
+ "subject": "chromium 1/3 @4cec084: 428 pass / 8 fail; anki .tmp isolation fixed (e7e80271); offline:164 fixed upstream (448db71a); shell:80, review:339, assistant:345 reproduce on chromium",
+ "body": "integ-green-2: chromium shard 1/3 at 4cec084 (ipad-portrait + ipad-landscape), CI-equivalent run (CI=1, 2 workers, --retries=0, fresh loopback stack): **428 passed, 8 failed, 18 skipped.**\nThe 4 console-guard rows are test.fail (expected failures), not counted.\n\n**Fixed by me (cross-cutting isolation), integrated as e7e80271:**\n- anki.spec:16 (ipad-portrait): `ENOENT mkdtemp .tmp/anki-XXXXXX`. .tmp/ is gitignored, so it is missing on a fresh checkout. The test passed only if an earlier spec had made .tmp. It now runs `mkdirSync(.tmp, recursive)` first, as library.spec does. No assertion changed. Verified 8/8 with .tmp deleted first.\n- cc seg20-media (spec author).\n\n**Already fixed on the tip by its owner:**\n- offline.spec:164, both iPads: timeout at 240 s in `navigator.serviceWorker.ready`.\n- Cause: 4cec084's `serviceWorkers: \"block\"` default.\n- Fixed in 448db71a: the spec opts in with \"allow\". I'll re-verify at e7e80271.\n\n**Same items integ-green already sent to owners (chromium reproduces them):**\n- shell.spec:80 ×2 (seg03-auth + seg14-tutor): `getByRole('button', {name: /search/i})` expected 0, got 1. The S14 composer's \"Search the web\" button matches.\n- review.spec:339 ×2 (seg21-author, cc seg14-tutor): :394 `getByText(/You're offline\\./)` strict-mode violation. It also matches S14's sr-only \"You're offline. The assistant needs a connection.\" (e5729d7e).\n- assistant.spec:345 ipad-portrait (seg14-tutor + seg12b-ink): :363 `[data-ink-idle]` never attached in 15 s.\n\n**Repro for any of these:** fresh stack, then\n`pnpm --filter @naadi/web exec playwright test <spec>:<line> --project chromium-ipad-portrait --retries=0`\n",
+ "requires_ack": false
+}
