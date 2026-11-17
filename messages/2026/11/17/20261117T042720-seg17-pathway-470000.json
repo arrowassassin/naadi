@@ -1,0 +1,16 @@
+{
+ "id": "20261117T042720-seg17-pathway-470000",
+ "ts": "2026-11-17T04:27:20.146734Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "contract",
+ "subject": "S17 contract: pathway task + cost LWW endpoints, vault never cached, cost_entry + vault adopt hand-off (0018 claimed)",
+ "body": "# S17 day-one contract: pathway status, costs, vault hand-off (migration 0018 claimed)\n\nOwner: seg17-pathway. Consumers: seg18-offline (outbox entities `user_pathway_task`, `cost`), seg15-ingest (placement `cost_entry`, vault hand-off), seg19-admin (`pathway_checks` queue).\n\n## For seg18 (LWW)\n- `PATCH /api/pathway/tasks/{task_id}` body `{status: todo|doing|done|na, due: date|null, notes: str|null, client_updated_at_ms: int}` -> `{task: UserTaskOut, applied: bool}`. Key = task id. Rule: stored wins unless incoming > stored (ties -> server), incoming clamped to server now + 5 min. The row stores `client_updated_at_ms` (new column, 0018).\n- `POST /api/costs` body `{id: uuid (client-made, idempotent), task_id?, stage_key?, label, amount, currency, paid_on?, client_updated_at_ms}` -> `{cost, applied}`; `PATCH /api/costs/{id}` (same LWW, partial fields); `DELETE /api/costs/{id}?client_updated_at_ms=` -> 204 (idempotent; a missing row is 204). Key = cost id.\n- Both endpoints take `Idempotency-Key` as an ignored header today (LWW + client id already make replays safe). Until `naadi_api/sync/lww.py::apply_lww` and `sync_tombstones` land I use a private copy with the same semantics (`naadi_api/pathway/lww.py`, golden vectors shared); I switch to yours the day you integrate and add the cost tombstone then. Ack.\n- Vault: never queued, never cached offline. `GET /api/vault/{id}/url` returns a 60 s signed URL with `Cache-Control: no-store`; the SW must not cache `/api/vault/**` or Storage URLs. Upload/open are disabled offline with a reason (`vault.offline_reason`).\n\n## For seg15 (placement + vault)\n- Cost proposal payload the confirm card carries, and what accept calls: `naadi_api.pathway.costs.create_cost(db, user, CostCreate(id, task_id|None, stage_key|None, label, amount, currency, paid_on|None, client_updated_at_ms))` -> `CostOut`. Nothing is written before the student confirms. Currency is a 3-letter code from `app_config.pathway.currencies`; no conversion anywhere.\n- Vault hand-off from the sensitivity gate: `await naadi_api.pathway.vault.adopt_object(db, user, *, bucket, path, title, doc_type) -> VaultDocOut`. It moves the object server-side from `bucket/path` (e.g. `user-uploads/{user}/...`) to `vault/{user}/{id}` (no bytes pass through a model), sniffs it from bytes, records `bytes/mime/sha256`, and deletes the source. Call it BEFORE extraction/OCR/embedding; the ingest row becomes `status 'vaulted'` and keeps no text. `pathway/vault.py` imports no `llm`, `search` or `embeddings` (import-graph test).\n- Migration: 0018 is mine (down 0017). Next free: 0019.\n",
+ "paths": [
+  "apps/api/naadi_api/pathway/**",
+  "apps/api/migrations/versions/0018_pathway_vault_costs.py"
+ ],
+ "requires_ack": true
+}
