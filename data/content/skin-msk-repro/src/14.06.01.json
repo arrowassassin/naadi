@@ -1,0 +1,732 @@
+{
+ "area": "14.06.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Drugs and the male reproductive system: mechanisms of hypogonadism, gynecomastia and sexual dysfunction",
+   "html": "<h2>The male reproductive axis as a drug target</h2>\n<p>Pulsatile GnRH drives pituitary LH and FSH. <strong>LH</strong> acts on Leydig cells to make testosterone; <strong>FSH</strong> acts with high intratesticular testosterone on Sertoli cells to support spermatogenesis, and Sertoli cells secrete inhibin B (feedback on FSH) and androgen-binding protein. Testosterone circulates bound to SHBG and albumin. In target tissues it acts directly or after conversion by <strong>5-alpha-reductase</strong> (type 2 in prostate, genital skin and hair follicles; type 1 in skin and liver) to dihydrotestosterone (DHT), and <strong>aromatase</strong> (in fat, liver and testis) converts it to estradiol. Testosterone and estradiol feed back on the hypothalamus and pituitary. Breast glandular tissue grows when the ratio of estrogen action to androgen action rises, which is the unifying mechanism of <strong>gynecomastia</strong>.</p>\n[[figure:s23f-fig140601-1]]\n<table class=\"hy\"><thead><tr><th>Drug or exposure</th><th>Mechanism</th><th>Main reproductive effects</th></tr></thead><tbody>\n<tr><td>Exogenous testosterone and anabolic-androgenic steroids</td><td>Negative feedback suppresses LH and FSH; intratesticular testosterone falls; excess is aromatised</td><td>Testicular atrophy, oligospermia or azoospermia, gynecomastia, acne, erythrocytosis, low HDL; hypogonadism after stopping</td></tr>\n<tr><td>Alcohol (chronic heavy use)</td><td>Direct Leydig cell toxicity; with cirrhosis, more aromatisation, higher SHBG, less hepatic estrogen clearance</td><td>Low testosterone, testicular atrophy, gynecomastia, erectile dysfunction, spider angiomas</td></tr>\n<tr><td>Spironolactone</td><td>Androgen receptor antagonism; reduced testosterone synthesis</td><td>Gynecomastia (eplerenone much less), lower libido</td></tr>\n<tr><td>Ketoconazole (systemic)</td><td>Inhibits steroidogenic CYP enzymes, including 17,20-lyase</td><td>Low testosterone, gynecomastia</td></tr>\n<tr><td>Cimetidine</td><td>Weak androgen receptor antagonism</td><td>Gynecomastia</td></tr>\n<tr><td>Finasteride (type 2) and dutasteride (types 1 and 2)</td><td>5-alpha-reductase inhibition lowers DHT</td><td>Lower libido, erectile and ejaculatory dysfunction, gynecomastia; prostate shrinks and PSA halves</td></tr>\n<tr><td>D2-blocking antipsychotics, metoclopramide</td><td>Raised prolactin suppresses GnRH</td><td>Low testosterone, low libido, erectile dysfunction, gynecomastia, galactorrhea</td></tr>\n<tr><td>Opioids (chronic)</td><td>Suppress hypothalamic GnRH</td><td>Hypogonadotropic hypogonadism</td></tr>\n<tr><td>GnRH agonists or antagonists, antiandrogens (prostate cancer)</td><td>Castrate testosterone or androgen receptor blockade</td><td>Hot flashes, loss of libido, erectile dysfunction, gynecomastia, bone loss</td></tr>\n<tr><td>Feminizing gender-affirming therapy</td><td>Estradiol feedback suppresses LH; antiandrogens block action</td><td>Breast growth (intended), smaller testes, reduced spermatogenesis, fewer erections, lower PSA</td></tr>\n<tr><td>Marijuana</td><td>Cannabinoid effects on the hypothalamic-pituitary axis and testis</td><td>Associated with lower sperm counts and gynecomastia</td></tr>\n<tr><td>Alkylating chemotherapy, pelvic radiation</td><td>Germ cell toxicity</td><td>Azoospermia, sometimes permanent</td></tr>\n</tbody></table>\n<p>Anabolic steroids given as <strong>17-alpha-alkylated oral agents</strong> (such as oxandrolone or methyltestosterone) resist hepatic first-pass metabolism and cause cholestasis, peliosis hepatis and hepatic adenomas. All androgens can cause mood changes, aggression and dependence, and they suppress spermatogenesis so reliably that testosterone has been studied as male contraception, although it is not reliable enough for that purpose alone.</p>\n<h2>Erection and the drugs that affect it</h2>\n<p>Sexual stimulation activates nonadrenergic noncholinergic parasympathetic nerves (pelvic splanchnic nerves, S2&ndash;S4) and the endothelium to release <strong>nitric oxide</strong>. NO activates soluble guanylyl cyclase in corpus cavernosum smooth muscle, raising <strong>cGMP</strong>, which activates protein kinase G, lowers intracellular calcium and relaxes the muscle; arterial inflow increases and venous outflow is compressed against the tunica albuginea. <strong>Phosphodiesterase-5</strong> breaks down cGMP and ends the erection. Emission and ejaculation are sympathetic (alpha-1 contraction of the vas, seminal vesicles and bladder neck).</p>\n[[figure:s23f-fig140601-2]]\n<ul>\n<li><strong>PDE5 inhibitors</strong> (sildenafil, vardenafil, tadalafil, avanafil) need sexual stimulation to work because they only prolong cGMP that NO has generated. Adverse effects: headache, flushing, nasal congestion, dyspepsia, hypotension; sildenafil and vardenafil also inhibit retinal <strong>PDE6</strong>, causing a blue tinge to vision; tadalafil also inhibits PDE11 and causes back pain and myalgia; rare sudden hearing loss and nonarteritic anterior ischaemic optic neuropathy; priapism. Tadalafil's long half-life allows daily dosing and treatment of benign prostatic hyperplasia.</li>\n<li><strong>Nitrates</strong> and NO donors raise cGMP by providing NO; combined with PDE5 inhibition, cGMP accumulates in vascular smooth muscle and causes profound hypotension. The soluble guanylyl cyclase stimulator riociguat interacts the same way.</li>\n<li><strong>Alpha-1 blockers</strong> add to PDE5-inhibitor hypotension (start low, separate dosing). Uroselective alpha-1A blockers (tamsulosin, silodosin) cause ejaculatory dysfunction, including reduced or absent ejaculate.</li>\n<li><strong>Trazodone</strong> blocks alpha-1 receptors in penile vasculature and can cause ischaemic priapism; antipsychotics with strong alpha-1 blockade can too.</li>\n<li><strong>SSRIs and SNRIs</strong>: increased serotonergic tone (especially at 5-HT2 receptors), with reduced dopaminergic transmission, causes low libido, delayed ejaculation and anorgasmia; their delay of ejaculation is used off-label for premature ejaculation. Bupropion (norepinephrine-dopamine reuptake inhibitor) and mirtazapine have much lower rates of sexual dysfunction.</li>\n<li><strong>Beta-blockers</strong> (older nonselective agents especially) and <strong>thiazide diuretics</strong> are associated with erectile dysfunction in older trials, by mechanisms that are not well established; vasodilating nebivolol and ACE inhibitors, ARBs and calcium channel blockers have less effect.</li>\n</ul>\n<div class=\"pearl\"><p>Every route to gynecomastia raises estrogen action relative to androgen action: more estrogen (aromatisation, cirrhosis, hCG-secreting tumours, feminizing hormones), less testosterone (primary or secondary hypogonadism), or blocked androgen receptors (spironolactone, antiandrogens).</p></div>\n<div class=\"trap\"><p>Exogenous testosterone causes <strong>small</strong> testes and low sperm counts despite high blood testosterone, because spermatogenesis depends on intratesticular testosterone driven by LH. The labs show low LH and FSH, which separates it from primary testicular failure.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Gynecomastia"
+    },
+    {
+     "statpearls": "Phosphodiesterase-5 Inhibitors"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Drug-related erectile dysfunction, priapism, gynecomastia and androgen misuse: management",
+   "html": "<h2>A drug history comes first</h2>\n<p>For any man or person with testes presenting with erectile dysfunction, low libido, ejaculatory problems, infertility or breast enlargement, take a complete medication history, including over-the-counter products, supplements sold for bodybuilding or \"testosterone boosting\", anabolic steroids, alcohol, cannabis and opioids. Ask when symptoms began relative to any new drug or dose change. Older adults are at particular risk because of polypharmacy, and asking directly matters because many patients will not raise sexual concerns themselves.</p>\n<h2>Erectile dysfunction</h2>\n<ul>\n<li>Erectile dysfunction is a <strong>marker of cardiovascular disease</strong>; assess blood pressure, lipids, glucose and A1c, and ask about exertional symptoms. Measure morning total testosterone when there is low libido or other signs of hypogonadism.</li>\n<li><strong>PDE5 inhibitors</strong> are first-line. They are <strong>contraindicated with any nitrate</strong> (scheduled or as-needed nitroglycerin, isosorbide, amyl nitrite \"poppers\") and with riociguat. If chest pain occurs after a PDE5 inhibitor, nitrates must not be given for 24 hours after sildenafil or vardenafil and 48 hours after tadalafil; treat ischaemia by other means. Use caution with alpha-blockers, severe aortic stenosis and recent cardiovascular events.</li>\n<li>For patients who cannot take PDE5 inhibitors: <strong>vacuum erection devices</strong>, intracavernosal alprostadil (or combinations) and intraurethral alprostadil; penile prosthesis for refractory cases. Testosterone helps only when hypogonadism is confirmed.</li>\n<li>Drug-induced ED: lower the dose or switch when possible. For antihypertensives, ACE inhibitors, ARBs, calcium channel blockers or nebivolol are alternatives to older beta-blockers and thiazides. For SSRI-related ED in someone whose depression is controlled, adding an as-needed PDE5 inhibitor is effective; switching to bupropion or mirtazapine helps low libido and delayed orgasm.</li>\n</ul>\n<h3>Ischaemic priapism</h3>\n<p>A rigid, painful erection lasting more than 4 hours without stimulation, with soft glans, is a urologic emergency, most often caused by drugs (intracavernosal agents, trazodone, antipsychotics, PDE5 inhibitors combined with other agents, cocaine) or sickle cell disease. Treatment is <strong>corporal aspiration</strong> with irrigation and intracavernosal <strong>phenylephrine</strong> (an alpha-1 agonist), with blood pressure and heart rate monitoring, escalating to surgical shunting. Delay leads to fibrosis and permanent erectile dysfunction. Nonischaemic (high-flow) priapism after perineal trauma is painless and not an emergency.</p>\n<h2>Gynecomastia</h2>\n<p>Gynecomastia is a rubbery or firm disc of glandular tissue concentric with the areola; pseudogynecomastia is fat without a disc. Physiologic peaks occur in newborns, at mid-puberty (usually resolving within 2 years) and in older age. The evaluation:</p>\n<ol>\n<li>History: duration, tenderness, drugs (spironolactone, antiandrogens, 5-alpha-reductase inhibitors, ketoconazole, cimetidine, anabolic steroids, estrogens, antipsychotics, some antiretrovirals, alcohol and cannabis), liver, kidney and thyroid disease.</li>\n<li>Examination of both breasts and both testes; hard, eccentric, fixed or unilateral masses with skin or nipple changes or axillary nodes suggest breast cancer and need diagnostic mammography and biopsy.</li>\n<li>If the cause is not evident and the gynecomastia is not pubertal: morning testosterone, LH, FSH, estradiol, hCG, TSH, liver and kidney tests. Raised hCG or a testicular abnormality calls for <strong>testicular ultrasound</strong>.</li>\n</ol>\n<p>Stop or replace the causative drug (for example eplerenone instead of spironolactone). Recent, tender gynecomastia may respond to tamoxifen; long-standing fibrotic tissue usually needs surgery. In men on antiandrogen therapy for prostate cancer, prophylactic tamoxifen or breast irradiation can prevent it.</p>\n<h2>Androgen misuse and testosterone prescribing</h2>\n<p>Suspect anabolic steroid use in an athlete or bodybuilder with acne, gynecomastia, small testes, erythrocytosis, low HDL, raised liver enzymes or a low sperm count. Labs show <strong>suppressed LH and FSH</strong> with high testosterone (if testosterone is being used) or low testosterone (if synthetic agents not measured in the assay, or after stopping). Counsel nonjudgmentally about cardiovascular, hepatic, psychiatric and fertility risks; recovery of the axis after stopping can take months, and specialists sometimes use hCG or selective estrogen receptor modulators to restore it. In adolescents, androgens can also close growth plates early.</p>\n<p>Testosterone therapy is for men with symptoms and <strong>confirmed hypogonadism</strong> (two low early-morning total testosterone measurements). Do not start it in men planning conception in the near future, because it suppresses spermatogenesis; for hypogonadotropic men who want fertility, hCG (with FSH if needed) or clomiphene off-label maintain intratesticular testosterone. Other cautions include breast or prostate cancer, untreated severe sleep apnoea, uncontrolled heart failure and a high hematocrit. Monitor hematocrit, and reduce or hold therapy when it rises above about 54%; in older men, follow PSA and prostate symptoms.</p>\n<h2>5-alpha-reductase inhibitors and PSA</h2>\n<p>Finasteride and dutasteride shrink the prostate and reduce the risk of urinary retention and surgery in BPH, and low-dose finasteride treats androgenic alopecia. After about 6&ndash;12 months they lower PSA by about half, so <strong>doubling the measured PSA</strong> estimates the true value; more importantly, any confirmed rise from the lowest PSA on therapy needs evaluation for prostate cancer, because a cancer may be producing it. Adverse effects include reduced libido, erectile and ejaculatory dysfunction, gynecomastia and depressed mood. Because DHT is required for male external genital development, people who are or may become pregnant should not handle crushed or broken tablets.</p>\n<h2>Transfeminine patients</h2>\n<p>Estradiol with antiandrogens reduces erections, libido and ejaculate volume, shrinks the testes and prostate, and impairs spermatogenesis, which may not fully recover; offer sperm cryopreservation before starting. PSA is lower on therapy and should be interpreted with a lower threshold; prostate cancer remains possible, including after vaginoplasty, which leaves the prostate in place. Spironolactone can cause <strong>hyperkalemia</strong>, particularly with kidney impairment or ACE inhibitors and ARBs; if potassium rises, stop it and consider a GnRH agonist or reliance on adequate estradiol dosing. PDE5 inhibitors can be used if the person wants erections.</p>\n<div class=\"trap\"><p>A man with angina who uses as-needed nitroglycerin should not be prescribed a PDE5 inhibitor. A vacuum device or intracavernosal therapy is the safer option, after cardiology input on whether sexual activity is safe.</p></div>\n<div class=\"pearl\"><p>On finasteride or dutasteride, a PSA that rises at all from its nadir is suspicious, even if the doubled value still looks \"normal\".</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Erectile Dysfunction"
+    },
+    {
+     "statpearls": "Priapism"
+    },
+    {
+     "statpearls": "Anabolic Steroid Use and Abuse"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. The male hypothalamic-pituitary-testicular axis and where common drugs disturb it (schematic)."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. The nitric oxide-cGMP pathway of erection, showing where PDE5 inhibitors and nitrates act and why together they cause hypotension (schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old man who competes in bodybuilding is evaluated because he and his partner have not conceived after 1 year. He has used injectable steroids obtained online for 3 years. He has acne on his back and bilateral tender subareolar discs of tissue. Each testis is 10 mL (normal 15&ndash;25 mL). Semen analysis shows a severely low sperm count. Serum LH and FSH are below the reference range, and total testosterone is above the reference range. Which of the following best explains his low sperm count?</p>",
+   "options": [
+    "Androgen receptor resistance in Sertoli cells",
+    "Antisperm antibodies induced by injected steroids",
+    "Low intratesticular testosterone from suppressed LH",
+    "Obstruction of the vas deferens by fibrosis",
+    "Primary Leydig cell failure from direct steroid toxicity"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Exogenous androgens suppress hypothalamic GnRH and pituitary LH and FSH by negative feedback. Without LH, Leydig cells stop producing testosterone, and intratesticular testosterone, which is normally many times higher than serum levels and essential for spermatogenesis, falls sharply. Serum testosterone is high from the injected drug, but the testes atrophy and sperm production fails. Aromatisation of the excess androgen explains his gynecomastia.</p><p><strong>Takeaway:</strong> Exogenous androgens cause infertility by suppressing LH and FSH and lowering intratesticular testosterone.</p>",
+   "whyNot": {
+    "A": "Androgen receptor resistance would cause undervirilisation with high LH, not his pattern.",
+    "B": "Antisperm antibodies follow vasectomy or testicular injury, not anabolic steroid use.",
+    "D": "Obstruction would leave testicular size and gonadotropins normal.",
+    "E": "Primary Leydig failure would produce high, not low, LH and FSH."
+   },
+   "objective": "Explain infertility caused by exogenous androgens through gonadotropin suppression.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "male infertility",
+    "androgen use"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 66-year-old man with benign prostatic hyperplasia is started on a drug that shrinks the prostate over several months. His PSA falls from 3.2 ng/mL to 1.5 ng/mL after 1 year. He notes reduced libido and ejaculate volume. The drug inhibits which of the following conversions?</p>",
+   "options": [
+    "Androstenedione to estrone",
+    "Cholesterol to pregnenolone",
+    "Progesterone to 17-hydroxyprogesterone",
+    "Testosterone to dihydrotestosterone",
+    "Testosterone to estradiol"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Finasteride (type 2) and dutasteride (types 1 and 2) inhibit 5-alpha-reductase, blocking conversion of testosterone to the more potent dihydrotestosterone. DHT drives prostate growth, so the gland shrinks by roughly a quarter and PSA falls by about half after 6&ndash;12 months. Sexual adverse effects and gynecomastia can occur.</p><p><strong>Takeaway:</strong> 5-alpha-reductase inhibitors block testosterone to DHT, shrinking the prostate and halving PSA.</p>",
+   "whyNot": {
+    "A": "Androstenedione to estrone is catalysed by aromatase, blocked by aromatase inhibitors.",
+    "B": "Cholesterol side-chain cleavage is the first steroidogenic step and is inhibited by high-dose ketoconazole, not by BPH drugs.",
+    "C": "17-alpha-hydroxylation is inhibited by abiraterone and ketoconazole.",
+    "E": "Testosterone to estradiol is aromatisation."
+   },
+   "objective": "Identify 5-alpha-reductase as the target of finasteride and dutasteride.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "benign prostatic hyperplasia"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old man with erectile dysfunction starts an as-needed oral drug taken about 1 hour before sexual activity. He reports that afterwards he sometimes sees a bluish tint to objects for a few hours. The visual effect is due to inhibition of an enzyme in which of the following cells?</p>",
+   "options": [
+    "Corneal epithelial cells",
+    "Lens epithelial cells",
+    "Retinal ganglion cells",
+    "Retinal photoreceptors",
+    "Trabecular meshwork cells"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Sildenafil (and vardenafil) inhibit PDE5 in cavernosal smooth muscle but also partly inhibit PDE6, the phosphodiesterase of rod and cone photoreceptors that hydrolyses cGMP in the phototransduction cascade. This causes transient blue tinting of vision and light sensitivity. Tadalafil inhibits PDE6 less but inhibits PDE11, causing back pain and myalgia.</p><p><strong>Takeaway:</strong> Blue-tinged vision with sildenafil reflects PDE6 inhibition in retinal photoreceptors.</p>",
+   "whyNot": {
+    "A": "Corneal cells are not affected by PDE inhibition in a way that changes colour vision.",
+    "B": "Lens changes cause cataracts, not transient colour tinting.",
+    "C": "Ganglion cells transmit signals but do not use PDE6 for phototransduction; nonarteritic ischaemic optic neuropathy is a separate, rare effect.",
+    "E": "The trabecular meshwork regulates aqueous outflow; PDE5 inhibitors do not cause colour changes through it."
+   },
+   "objective": "Attribute visual adverse effects of sildenafil to PDE6 inhibition in photoreceptors.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "erectile dysfunction",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 70-year-old man with heart failure with reduced ejection fraction has been taking lisinopril, carvedilol, furosemide and a mineralocorticoid receptor antagonist for 8 months. He now has bilateral tender enlargement of breast tissue. Testes are normal in size. Liver tests and TSH are normal. Which of the following best explains his breast findings?</p>",
+   "options": [
+    "Blockade of androgen receptors by his mineralocorticoid antagonist",
+    "Direct stimulation of breast estrogen receptors by carvedilol",
+    "Hyperprolactinemia from furosemide",
+    "Increased aromatase activity caused by lisinopril",
+    "Leydig cell failure from reduced cardiac output"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Spironolactone is a nonselective steroid receptor antagonist: besides blocking mineralocorticoid receptors, it antagonises androgen receptors and modestly lowers testosterone synthesis. The shift toward estrogen action causes gynecomastia, often tender, in a substantial minority of men. Eplerenone is far more selective and rarely causes gynecomastia, so switching to it is the usual solution.</p><p><strong>Takeaway:</strong> Spironolactone causes gynecomastia through androgen receptor antagonism; eplerenone avoids it.</p>",
+   "whyNot": {
+    "B": "Beta-blockers do not stimulate estrogen receptors.",
+    "C": "Furosemide does not raise prolactin.",
+    "D": "ACE inhibitors are not associated with increased aromatase activity or gynecomastia in this way.",
+    "E": "Heart failure does not cause Leydig cell failure, and his testes are normal."
+   },
+   "objective": "Explain spironolactone-induced gynecomastia by androgen receptor antagonism.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gynecomastia",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 35-year-old man whose depression has been in remission for 6 months on sertraline reports delayed ejaculation and reduced libido that bother him and his partner. He wants to switch to another antidepressant that is much less likely to cause sexual dysfunction. A drug with which of the following mechanisms is most appropriate?</p>",
+   "options": [
+    "Inhibition of monoamine oxidase B only",
+    "Inhibition of norepinephrine and dopamine reuptake",
+    "Inhibition of serotonin and norepinephrine reuptake",
+    "Inhibition of serotonin reuptake with 5-HT1A partial agonism",
+    "Selective inhibition of serotonin reuptake"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Serotonergic antidepressants commonly cause low libido, delayed ejaculation and anorgasmia through increased serotonin signalling (particularly at 5-HT2 receptors) and reduced dopaminergic transmission. Bupropion inhibits norepinephrine and dopamine reuptake, has no serotonergic action and has a low rate of sexual adverse effects; it is a standard choice when sexual dysfunction limits SSRI therapy (mirtazapine is another).</p><p><strong>Takeaway:</strong> Bupropion (norepinephrine-dopamine reuptake inhibitor) has the lowest risk of antidepressant sexual dysfunction.</p>",
+   "whyNot": {
+    "A": "Selective MAO-B inhibitors are used in Parkinson disease and are not standard antidepressants at usual doses.",
+    "C": "SNRIs such as venlafaxine cause sexual dysfunction at rates similar to SSRIs.",
+    "D": "Vilazodone has somewhat lower reported rates in some studies but is still serotonergic and less reliable than bupropion for avoiding sexual effects.",
+    "E": "Another SSRI would likely cause the same problem."
+   },
+   "objective": "Choose bupropion's mechanism to avoid antidepressant-related sexual dysfunction.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "behavioral_sciences"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual dysfunction",
+    "antidepressants"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 54-year-old man with alcohol-associated cirrhosis has bilateral gynecomastia, loss of body hair, small soft testes and spider angiomas on the chest. Which of the following mechanisms contributes most to his gynecomastia?</p>",
+   "options": [
+    "Decreased hepatic synthesis of sex hormone-binding globulin",
+    "Decreased peripheral aromatase activity",
+    "Increased conversion of androgens to estrogens with reduced hepatic estrogen clearance",
+    "Increased hepatic synthesis of testosterone",
+    "Increased pituitary LH secretion stimulating Leydig cells"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>In cirrhosis, more adrenal androstenedione bypasses the liver and is aromatised to estrogens in peripheral tissues, hepatic clearance of estrogens falls, and SHBG rises (binding testosterone more avidly than estradiol), so free estrogen effect increases relative to free testosterone. Alcohol is also directly toxic to Leydig cells. The combined result is gynecomastia, testicular atrophy, loss of body hair and spider angiomas.</p><p><strong>Takeaway:</strong> Cirrhosis causes gynecomastia through more aromatisation, less estrogen clearance and higher SHBG, plus alcohol's Leydig toxicity.</p>",
+   "whyNot": {
+    "A": "SHBG is increased, not decreased, in cirrhosis.",
+    "B": "Aromatisation is increased, not decreased.",
+    "D": "The liver does not synthesise testosterone; testosterone falls in cirrhosis.",
+    "E": "LH is not appropriately increased in a way that stimulates Leydig cells; testicular function is impaired and testosterone falls."
+   },
+   "objective": "Explain gynecomastia in alcohol-associated cirrhosis.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gynecomastia",
+    "liver disease"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 41-year-old man taking trazodone at bedtime for insomnia comes to the emergency department with a painful, rigid erection that has lasted 6 hours. He has not used other drugs and has no history of sickle cell disease. Cavernosal blood gas is dark and hypoxic. Blockade of which of the following receptors by his medication most likely caused this condition?</p>",
+   "options": [
+    "Alpha-1 adrenergic receptors",
+    "Beta-2 adrenergic receptors",
+    "Dopamine D2 receptors",
+    "Histamine H1 receptors",
+    "Muscarinic M3 receptors"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Detumescence depends on sympathetic, alpha-1-mediated contraction of cavernosal smooth muscle and penile arterioles. Trazodone is a strong alpha-1 antagonist, so it can prevent detumescence and cause ischaemic (low-flow) priapism, with hypoxic, acidotic cavernosal blood. Treatment is aspiration and intracavernosal phenylephrine, an alpha-1 agonist, which reverses the mechanism.</p><p><strong>Takeaway:</strong> Trazodone causes ischaemic priapism through alpha-1 blockade; phenylephrine reverses it.</p>",
+   "whyNot": {
+    "B": "Beta-2 blockade would oppose smooth muscle relaxation and would not cause priapism.",
+    "C": "D2 blockade causes hyperprolactinemia and erectile dysfunction rather than priapism.",
+    "D": "H1 blockade explains trazodone's sedation, not priapism.",
+    "E": "Muscarinic blockade is not the mechanism of drug-induced priapism."
+   },
+   "objective": "Link trazodone-induced priapism to alpha-1 receptor blockade.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "priapism",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 63-year-old man has had difficulty maintaining erections for 1 year. He has stable angina and reports occasional chest pain on climbing two flights of stairs, relieved by rest or sublingual nitroglycerin. His cardiologist has advised that moderate sexual activity is reasonable. Morning testosterone is normal. His medications are listed.</p><table><thead><tr><th>Medication</th><th>Use</th></tr></thead><tbody><tr><td>Metoprolol succinate daily</td><td>Angina, hypertension</td></tr><tr><td>Atorvastatin daily</td><td>Hyperlipidemia</td></tr><tr><td>Aspirin daily</td><td>Secondary prevention</td></tr><tr><td>Nitroglycerin 0.4 mg sublingual as needed</td><td>Chest pain, used about twice a month</td></tr></tbody></table><p>Which of the following is the most appropriate treatment for his erectile dysfunction?</p>",
+   "options": [
+    "Daily low-dose tadalafil",
+    "Sildenafil as needed",
+    "Testosterone gel",
+    "Vacuum erection device",
+    "Vardenafil as needed"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>PDE5 inhibitors are contraindicated in anyone who uses nitrates, including as-needed sublingual nitroglycerin, because the combination causes profound hypotension. A vacuum erection device is safe and effective, and intracavernosal or intraurethral alprostadil is another option. Testosterone is not indicated with a normal level.</p><p><strong>Takeaway:</strong> Patients who use any nitrate cannot take PDE5 inhibitors; use a vacuum device or alprostadil.</p>",
+   "whyNot": {
+    "A": "Daily tadalafil keeps PDE5 inhibited continuously, so nitroglycerin could never be used safely.",
+    "B": "Sildenafil with nitroglycerin can cause life-threatening hypotension.",
+    "C": "Testosterone treats confirmed hypogonadism; his testosterone is normal.",
+    "E": "Vardenafil carries the same nitrate contraindication as other PDE5 inhibitors."
+   },
+   "objective": "Choose a non-PDE5 treatment for erectile dysfunction in a patient who uses nitrates.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "erectile dysfunction",
+    "drug interactions"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old man is seen for a college sports physical. He has gained 12 kg of muscle mass over 8 months. Examination shows severe acne on the back and shoulders, bilateral 3-cm subareolar discs of firm tissue and testes of 10 mL each. Blood pressure is 142/88 mm Hg. Hematocrit is 54%, HDL cholesterol is 24 mg/dL and ALT is 68 U/L. LH and FSH are suppressed. Which of the following is the most likely cause of his findings?</p>",
+   "options": [
+    "Anabolic-androgenic steroid use",
+    "Klinefelter syndrome",
+    "Leydig cell tumour of the testis",
+    "Persistent pubertal gynecomastia",
+    "Prolactin-secreting pituitary adenoma"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Rapid muscle gain, acne, gynecomastia, small testes, hypertension, erythrocytosis, very low HDL, raised transaminases and suppressed gonadotropins together indicate anabolic-androgenic steroid use. The exogenous androgens suppress LH and FSH (shrinking the testes), are aromatised to estrogens (gynecomastia) and stimulate erythropoiesis. A nonjudgmental conversation about the risks is the next step.</p><p><strong>Takeaway:</strong> Acne, gynecomastia, small testes, erythrocytosis, low HDL and suppressed LH and FSH suggest anabolic steroid use.</p>",
+   "whyNot": {
+    "B": "Klinefelter syndrome causes small, firm testes with high LH and FSH and low testosterone, not suppressed gonadotropins and muscle gain.",
+    "C": "A Leydig cell tumour would usually be a palpable testicular mass and would not explain bilateral small testes.",
+    "D": "Pubertal gynecomastia is common but does not cause erythrocytosis, low HDL or suppressed gonadotropins, and he is past mid-puberty.",
+    "E": "Prolactinoma causes low testosterone with low libido and loss of muscle, not muscle gain and acne."
+   },
+   "objective": "Recognise anabolic-androgenic steroid use from clinical and laboratory findings.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gynecomastia",
+    "androgen use"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 42-year-old man has had erectile dysfunction for 3 months, starting after sertraline was begun for major depressive disorder. His mood is much improved, and he and his psychiatrist want to continue sertraline. He has normal libido and ejaculation. He has no cardiovascular disease and takes no other medications. Morning testosterone is normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Add as-needed sildenafil",
+    "Add testosterone gel",
+    "Change to paroxetine",
+    "Stop sertraline",
+    "Switch to a tricyclic antidepressant"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>SSRI-associated erectile dysfunction in someone whose depression is responding is best managed without disrupting the antidepressant. Adding an as-needed PDE5 inhibitor such as sildenafil is effective for SSRI-associated erectile dysfunction. If low libido or delayed orgasm were the main problem, switching to or adding bupropion would be considered.</p><p><strong>Takeaway:</strong> For SSRI-related erectile dysfunction with good antidepressant response, add a PDE5 inhibitor.</p>",
+   "whyNot": {
+    "B": "His testosterone is normal, so testosterone therapy would not help and has risks.",
+    "C": "Paroxetine has one of the highest rates of sexual dysfunction among SSRIs.",
+    "D": "Stopping an effective antidepressant risks relapse and discontinuation symptoms.",
+    "E": "Tricyclics also cause sexual dysfunction and have more serious adverse effects."
+   },
+   "objective": "Add a PDE5 inhibitor for SSRI-associated erectile dysfunction when the antidepressant must continue.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "psychiatry",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sexual dysfunction",
+    "antidepressants"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old man has taken finasteride for benign prostatic hyperplasia for 3 years with good symptom control. His PSA before starting was 2.8 ng/mL; it fell to 1.3 ng/mL after 1 year and was 1.4 ng/mL last year. Today it is 2.6 ng/mL, confirmed on repeat testing. He has no urinary infection symptoms, and digital rectal examination shows a smooth, mildly enlarged prostate. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Double the PSA, note it is under 4 ng/mL and repeat in 2 years",
+    "Refer for further evaluation for prostate cancer, such as prostate MRI",
+    "Reassure him because the value is below his pretreatment level",
+    "Start an alpha-1 blocker and recheck PSA in 1 year",
+    "Stop finasteride and repeat PSA in 3 months"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Finasteride lowers PSA by about half after 6&ndash;12 months, and on stable therapy PSA should stay near its nadir. His PSA has nearly doubled from the nadir of 1.3 ng/mL to 2.6 ng/mL, which is a significant rise that may indicate a cancer producing PSA despite treatment. A confirmed rise from nadir on a 5-alpha-reductase inhibitor warrants further evaluation, typically prostate MRI and urologic referral for possible biopsy.</p><p><strong>Takeaway:</strong> On a 5-alpha-reductase inhibitor, any confirmed PSA rise from nadir needs evaluation for prostate cancer.</p>",
+   "whyNot": {
+    "A": "Doubling gives an adjusted value of about 5.2 ng/mL, and the rise from nadir is the more important signal; waiting 2 years is inappropriate.",
+    "C": "Comparing with the pretreatment value ignores the expected 50% suppression on finasteride.",
+    "D": "An alpha-blocker does not explain or address the PSA rise.",
+    "E": "Stopping finasteride delays evaluation of a worrying trend."
+   },
+   "objective": "Investigate a PSA rise from nadir in a patient taking finasteride.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "prostate cancer screening",
+    "drug effects on labs"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old man and his partner want to conceive within the next year. He has fatigue and low libido. Two early-morning total testosterone measurements are 210 and 225 ng/dL (reference 300&ndash;1,000 ng/dL); LH and FSH are low-normal; prolactin, iron studies and pituitary MRI are normal. His primary care clinician is considering testosterone gel. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    "Clomiphene citrate",
+    "Finasteride",
+    "Intramuscular testosterone",
+    "Testosterone gel",
+    "Transdermal estradiol"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Exogenous testosterone suppresses LH and FSH and lowers intratesticular testosterone, often causing severe oligospermia or azoospermia, so it should not be used in a man who wants to conceive soon. In secondary hypogonadism with fertility goals, therapies that raise endogenous gonadotropins are used: hCG (with FSH if needed) or a selective estrogen receptor modulator such as clomiphene (off-label), which blocks hypothalamic estrogen feedback and increases LH and FSH.</p><p><strong>Takeaway:</strong> For hypogonadal men who want fertility, avoid testosterone; use hCG or clomiphene to raise gonadotropins.</p>",
+   "whyNot": {
+    "B": "Finasteride lowers DHT and can reduce semen volume; it does not treat hypogonadism.",
+    "C": "Injected testosterone suppresses spermatogenesis just as gel does.",
+    "D": "Testosterone gel would impair his fertility by suppressing gonadotropins.",
+    "E": "Estradiol would further suppress gonadotropins and testosterone."
+   },
+   "objective": "Avoid exogenous testosterone in hypogonadal men seeking fertility.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "male infertility",
+    "hypogonadism"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 36-year-old man comes to the emergency department with a painful, rigid erection that began 5 hours ago, 30 minutes after he self-injected a combination of vasoactive drugs prescribed for erectile dysfunction. The glans is soft and the corpora are rigid and tender. Cavernosal blood is dark; blood gas shows pH 7.18, PO<sub>2</sub> 25 mm Hg and PCO<sub>2</sub> 70 mm Hg. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Application of ice packs and observation for 4 hours",
+    "Arteriography with selective embolisation",
+    "Corporal aspiration and intracavernosal phenylephrine",
+    "Oral terbutaline and discharge home",
+    "Surgical penile prosthesis placement"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is ischaemic (low-flow) priapism caused by intracavernosal therapy: a painful rigid erection for more than 4 hours with hypoxic, hypercapnic, acidotic cavernosal blood. It is a compartment-syndrome-like emergency. First-line treatment is aspiration of cavernosal blood (with or without irrigation) and intracavernosal injection of phenylephrine, a selective alpha-1 agonist, repeated as needed with blood pressure and heart rate monitoring. Surgical shunting follows if this fails.</p><p><strong>Takeaway:</strong> Ischaemic priapism over 4 hours: aspirate and inject intracavernosal phenylephrine.</p>",
+   "whyNot": {
+    "A": "Delay worsens ischaemia and increases the risk of fibrosis and permanent erectile dysfunction.",
+    "B": "Embolisation is used for nonischaemic (high-flow) priapism from arterial injury, which has bright red, well-oxygenated blood.",
+    "D": "Oral terbutaline has limited evidence and may be tried only very early; it is not adequate at 5 hours with ischaemic blood gases.",
+    "E": "Immediate prosthesis placement is reserved for prolonged, refractory cases with established damage."
+   },
+   "objective": "Treat ischaemic priapism with aspiration and intracavernosal phenylephrine.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "priapism"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old transgender woman has taken oral estradiol and spironolactone for 10 years. She was recently started on lisinopril for diabetic kidney disease. She reports fatigue. Serum potassium is 6.0 mEq/L (6.0 mmol/L), creatinine is 1.6 mg/dL (141 &micro;mol/L), estradiol is 140 pg/mL and total testosterone is 30 ng/dL. ECG shows peaked T waves without other changes. In addition to acute treatment of hyperkalemia, which of the following is the most appropriate change to her gender-affirming regimen?</p>",
+   "options": [
+    "Add a potassium-sparing diuretic to replace spironolactone",
+    "Increase the spironolactone dose",
+    "Stop estradiol",
+    "Stop spironolactone and consider a GnRH agonist if testosterone rises",
+    "Switch estradiol to ethinyl estradiol"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Spironolactone blocks mineralocorticoid receptors and causes potassium retention, especially when combined with an ACE inhibitor in someone with reduced kidney function. With hyperkalemia and ECG changes, spironolactone should be stopped. Her estradiol is in the target range and testosterone is suppressed, so estradiol may be enough on its own; if testosterone rises, a GnRH agonist provides antiandrogen effect without affecting potassium.</p><p><strong>Takeaway:</strong> Spironolactone-associated hyperkalemia in feminizing therapy: stop it and use estradiol alone or a GnRH agonist.</p>",
+   "whyNot": {
+    "A": "Other potassium-sparing diuretics (amiloride, triamterene) would worsen hyperkalemia and do not block androgens.",
+    "B": "A higher spironolactone dose would worsen hyperkalemia.",
+    "C": "Estradiol is not the cause of hyperkalemia and stopping it would undo her gender-affirming care.",
+    "E": "Ethinyl estradiol increases thrombotic risk and does not address hyperkalemia."
+   },
+   "objective": "Stop spironolactone for hyperkalemia in a transgender woman and choose an alternative antiandrogen strategy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gender-affirming care",
+    "electrolytes"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Why do anabolic steroids cause small testes and low sperm counts?",
+   "back": "They suppress LH and FSH, lowering intratesticular testosterone.",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Enzyme blocked by finasteride and dutasteride?",
+   "back": "5-alpha-reductase (testosterone to DHT).",
+   "question": 2
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Why does sildenafil cause blue-tinged vision?",
+   "back": "PDE6 inhibition in retinal photoreceptors.",
+   "question": 3
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Why does spironolactone cause gynecomastia?",
+   "back": "Androgen receptor antagonism and reduced testosterone synthesis.",
+   "question": 4
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Antidepressant with the lowest risk of sexual dysfunction?",
+   "back": "Bupropion (norepinephrine-dopamine reuptake inhibitor).",
+   "question": 5
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Mechanisms of gynecomastia in cirrhosis?",
+   "back": "More aromatisation, less estrogen clearance, higher SHBG, alcohol Leydig toxicity.",
+   "question": 6
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Why does trazodone cause priapism?",
+   "back": "Alpha-1 blockade prevents detumescence.",
+   "question": 7
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why do nitrates and PDE5 inhibitors cause hypotension together?",
+   "back": "More cGMP made plus less broken down in vascular smooth muscle.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "Liver complications of 17-alpha-alkylated oral androgens?",
+   "back": "Cholestasis, peliosis hepatis, hepatic adenoma.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Erectile dysfunction in a patient using nitroglycerin?",
+   "back": "No PDE5 inhibitor; vacuum device or alprostadil.",
+   "question": 8
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Time to avoid nitrates after a PDE5 inhibitor?",
+   "back": "24 hours after sildenafil or vardenafil; 48 hours after tadalafil.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Clues to anabolic steroid use?",
+   "back": "Acne, gynecomastia, small testes, erythrocytosis, low HDL, suppressed LH and FSH.",
+   "question": 9
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "SSRI-related ED, antidepressant must continue?",
+   "back": "Add an as-needed PDE5 inhibitor.",
+   "question": 10
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "PSA on finasteride?",
+   "back": "Halved after 6 to 12 months; any confirmed rise from nadir needs evaluation.",
+   "question": 11
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Hypogonadal man wanting to conceive?",
+   "back": "Avoid testosterone; use hCG or clomiphene.",
+   "question": 12
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "First-line treatment of ischaemic priapism?",
+   "back": "Corporal aspiration and intracavernosal phenylephrine.",
+   "question": 13
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Hyperkalemia on spironolactone in feminizing therapy?",
+   "back": "Stop spironolactone; rely on estradiol or add a GnRH agonist.",
+   "question": 14
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "When does gynecomastia need mammography and biopsy?",
+   "back": "Hard, eccentric, fixed or unilateral mass, skin or nipple changes, or axillary nodes.",
+   "question": null
+  }
+ ]
+}

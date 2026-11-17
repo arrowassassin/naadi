@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" role="img" aria-label="Pathway: sexual stimulation causes nerves and endothelium to release nitric oxide; nitrates also supply nitric oxide. Nitric oxide activates guanylyl cyclase, converting GTP to cGMP. cGMP relaxes smooth muscle, causing erection and vasodilation. PDE5 breaks cGMP down to inactive GMP; PDE5 inhibitors such as sildenafil and tadalafil block this step. Nitrates increase cGMP production while PDE5 inhibitors block its breakdown, so together they cause severe hypotension." font-family="sans-serif">
+<title>Nitric oxide and cGMP pathway</title>
+<desc>Pathway: sexual stimulation causes nerves and endothelium to release nitric oxide; nitrates also supply nitric oxide. Nitric oxide activates guanylyl cyclase, converting GTP to cGMP. cGMP relaxes smooth muscle, causing erection and vasodilation. PDE5 breaks cGMP down to inactive GMP; PDE5 inhibitors such as sildenafil and tadalafil block this step. Nitrates increase cGMP production while PDE5 inhibitors block its breakdown, so together they cause severe hypotension.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+<text x="380" y="28" font-size="18" text-anchor="middle" font-weight="bold" fill="#0f172a">Erection: nitric oxide and cGMP</text>
+<rect x="20" y="60" width="200" height="56" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="120.0" y="77.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="120.0" dy="0">Sexual stimulation:</tspan><tspan x="120.0" dy="15">nerves and endothelium</tspan><tspan x="120.0" dy="15">release nitric oxide</tspan></text>
+<rect x="20" y="150" width="200" height="46" rx="8" fill="#fef9c3" stroke="#334155" stroke-width="1.5"/>
+<text x="120.0" y="169.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="120.0" dy="0">Nitrates, NO donors:</tspan><tspan x="120.0" dy="15">supply nitric oxide</tspan></text>
+<rect x="280" y="95" width="200" height="56" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="380.0" y="112.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="380.0" dy="0">Soluble guanylyl cyclase</tspan><tspan x="380.0" dy="15">GTP to cGMP</tspan><tspan x="380.0" dy="15">(riociguat stimulates)</tspan></text>
+<line x1="220" y1="88" x2="278" y2="115" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="220" y1="172" x2="278" y2="135" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="540" y="95" width="200" height="56" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="640.0" y="112.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="640.0" dy="0">cGMP: smooth muscle</tspan><tspan x="640.0" dy="15">relaxes; erection and</tspan><tspan x="640.0" dy="15">vasodilation</tspan></text>
+<line x1="480" y1="123" x2="538" y2="123" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="540" y="220" width="200" height="46" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="640.0" y="239.7" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="640.0" dy="0">PDE5 breaks cGMP</tspan><tspan x="640.0" dy="15">down to inactive GMP</tspan></text>
+<line x1="640" y1="151" x2="640" y2="218" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="280" y="215" width="200" height="56" rx="8" fill="#fef9c3" stroke="#334155" stroke-width="1.5"/>
+<text x="380.0" y="232.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="380.0" dy="0">PDE5 INHIBITORS</tspan><tspan x="380.0" dy="15">(sildenafil, tadalafil)</tspan><tspan x="380.0" dy="15">block breakdown</tspan></text>
+<line x1="480" y1="243" x2="538" y2="243" stroke="#0f172a" stroke-width="3"/>
+<text x="509" y="236" font-size="16" text-anchor="middle" font-weight="bold" fill="#0f172a">X</text>
+<rect x="60" y="300" width="640" height="70" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="380.0" y="331.6" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="380.0" dy="0">Nitrate + PDE5 inhibitor: more cGMP made and less broken down in vascular smooth muscle</tspan><tspan x="380.0" dy="16">result = profound hypotension (contraindicated). Retinal PDE6 inhibition = blue-tinged vision.</tspan></text>
+</svg>

@@ -124,6 +124,10 @@
   "nbk": "NBK551692",
   "title": "Hand Amputation"
  },
+ "Anabolic Steroid Use and Abuse": {
+  "nbk": null,
+  "title": "Anabolic Steroid Use and Abuse"
+ },
  "Anatomy, Abdomen and Pelvis, Prostate": {
   "exact": true,
   "nbk": "NBK540987",
@@ -1783,6 +1787,11 @@
   "exact": true,
   "nbk": "NBK525972",
   "title": "Phimosis"
+ },
+ "Phosphodiesterase-5 Inhibitors": {
+  "exact": false,
+  "nbk": "NBK559276",
+  "title": "Phosphodiesterase Inhibitors"
  },
  "Phyllodes Tumor": {
   "exact": false,
