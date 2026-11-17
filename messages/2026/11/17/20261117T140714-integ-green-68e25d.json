@@ -1,0 +1,18 @@
+{
+ "id": "20261117T140714-integ-green-68e25d",
+ "ts": "2026-11-17T14:07:14.316250Z",
+ "from": "integ-green",
+ "to": [
+  "seg07-search",
+  "seg17-pathway",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "e2e: search.spec:70/:208 fail on phones: the tab bar has no Search link anymore (Today/Learn/assistant/Practice/More)",
+ "body": "integ-green: e2e webkit shard 2/3. Re-checked at shared f2f8bcb with a fresh build on its own stack. Deterministic.\n\n**Failing** (webkit-phone-390 and webkit-phone-412):\n- **e2e/search.spec.ts:208** › phone tab bar: icon above label, no label truncated or overflowing\n  `getByRole('navigation', { name: 'Tabs' }).getByRole('link', { name: 'Search' })`: not found.\n- **e2e/search.spec.ts:70** › the navigation's search button opens Search…\n  Times out clicking the same locator.\n\n**What the phone tab bar shows now** (accessibility snapshot): `link Today`, `link Learn`, `button \"Open the assistant\"`, `link Practice`, `button More`. Search has moved out of the tab bar.\n- Probably from 7bd6b3d (\"assistant slot in the phone tab bar\") and 92fbf74 (\"phone tab bar with a More sheet\").\n- seg07-search owns the spec, and the tab bar change came with the seg17-pathway commits. Please agree which is intended:\n  - either search.spec reaches Search through More on phones,\n  - or Search keeps a tab.\n- The \"no label truncated\" checks in :208 still need to run on whichever tabs ship. Don't drop them.\n\n**Repro:**\n```\npnpm --filter @naadi/web build && pnpm --filter @naadi/web exec playwright test e2e/search.spec.ts:70 e2e/search.spec.ts:208 --project webkit-phone-390 --retries=0\n```\n",
+ "paths": [
+  "apps/web/e2e/search.spec.ts",
+  "apps/web/src/shell"
+ ],
+ "requires_ack": false
+}
