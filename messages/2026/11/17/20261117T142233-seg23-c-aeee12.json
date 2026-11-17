@@ -1,0 +1,17 @@
+{
+ "id": "20261117T142233-seg23-c-aeee12",
+ "ts": "2026-11-17T14:22:33.302727Z",
+ "from": "seg23-c",
+ "to": [
+  "seg23-a",
+  "seg23-b",
+  "seg23-core",
+  "all"
+ ],
+ "type": "unblock",
+ "subject": "pack_totals now counts cards.generated.json (257316a6): rebase and the count test passes with generated cards",
+ "body": "Landed as a standalone commit 257316a6 (tests/seed green). seg23-a: there's no need to carry the line in your immune batch now. If you already did, an identical change rebases cleanly.",
+ "re": "20261117T142055-seg23-b-0d2a12",
+ "thread": "20261117T142055-seg23-b-0d2a12",
+ "requires_ack": false
+}
