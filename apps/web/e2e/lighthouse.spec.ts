@@ -74,6 +74,8 @@ test.describe("lighthouse and installability (iPad, Slow 4G, 4x CPU)", () => {
     const port = 9300 + info.workerIndex;
     const ctx = await chromium.launchPersistentContext(mkdtempSync(path.join(tmpdir(), "naadi-lh-")), {
       args: [`--remote-debugging-port=${port}`],
+      // The worker is under test here (installability, offline reload): the config blocks it everywhere else.
+      serviceWorkers: "allow",
     });
     try {
       const page = ctx.pages()[0] ?? (await ctx.newPage());
@@ -84,9 +86,13 @@ test.describe("lighthouse and installability (iPad, Slow 4G, 4x CPU)", () => {
       await expect(page.locator("[data-state=populated]")).toBeVisible();
       // The worker precaches the shell and every lazy chunk before it activates (segment 18) and does not claim open
       // pages: wait until it is active, then reload so it controls the page (a returning visit).
-      await page.evaluate(async () => {
-        await navigator.serviceWorker.ready;
-      });
+      const active = await page.evaluate(() =>
+        Promise.race([
+          navigator.serviceWorker.ready.then(() => true),
+          new Promise<boolean>((r) => setTimeout(() => r(false), 60_000)),
+        ]),
+      );
+      expect(active, "the service worker installed and activated within 60 s").toBe(true);
       await page.reload();
       await expect.poll(() => page.evaluate(() => navigator.serviceWorker?.controller !== null)).toBe(true);
 
