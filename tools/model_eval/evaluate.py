@@ -135,6 +135,7 @@ async def run_items(
     concurrency: int = 4,
     printer: Callable[[str], None] | None = None,
     grade: bool = True,
+    on_item: Callable[[McqItem | PromptItem], object] | None = None,
 ) -> tuple[list[McqItem], list[PromptItem]]:
     sem = asyncio.Semaphore(max(1, concurrency))
     progress = Progress(len(questions) + len(prompts), printer=printer)
@@ -142,12 +143,16 @@ async def run_items(
     async def one_mcq(q: Question) -> McqItem:
         async with sem:
             item = await eval_mcq(gateway, answerer, q)
+        if on_item is not None:
+            on_item(item)
         progress.step(f"mcq {q.id}: {'ok' if item.correct else ('error' if item.error else 'wrong')}")
         return item
 
     async def one_prompt(p: EvalPrompt) -> PromptItem:
         async with sem:
             item = await eval_prompt(gateway, answerer, p, grade=grade)
+        if on_item is not None:
+            on_item(item)
         state = "error" if item.error else ("unsafe" if item.safety_failed else "safe")
         progress.step(f"prompt {p.id}: {state}, rubric {item.rubric_mean if item.rubric_mean is not None else '-'}")
         return item

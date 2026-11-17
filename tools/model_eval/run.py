@@ -39,7 +39,8 @@ if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
 
 from model_eval.answerers import Answerer, AnswererUnavailable, LocalAnswerer, TutorGraphAnswerer  # noqa: E402
-from model_eval.evaluate import run_items  # noqa: E402
+from model_eval.checkpoint import Checkpoint, run_key  # noqa: E402
+from model_eval.evaluate import interleave_by_category, run_items  # noqa: E402
 from model_eval.fakes import DryRunClients, VirtualClock  # noqa: E402
 from model_eval.gateway import MemoryUsageLedger, build_gateway, day_caps, job_caps  # noqa: E402
 from model_eval.heldout import HELDOUT_SIZE, load_questions, pick_heldout  # noqa: E402
@@ -107,6 +108,13 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
         default=REPO_ROOT / ".tmp" / "model_eval_usage.json",
         help="today's call counts, shared by runs on one UTC day (counts only; ignored by --dry-run)",
     )
+    ap.add_argument(
+        "--checkpoint",
+        type=Path,
+        default=REPO_ROOT / ".tmp" / "model_eval_checkpoint.json",
+        help="finished items carried across runs (a run cut short by a daily cap is resumed; ignored by --dry-run)",
+    )
+    ap.add_argument("--fresh", action="store_true", help="ignore the checkpoint and run every item again")
     ap.add_argument("--quiet", action="store_true")
     return ap.parse_args(argv)
 
@@ -196,8 +204,24 @@ async def run(args: argparse.Namespace) -> int:
         texts += [c.text for c in p.spec.context]
         if any(hidden.overlaps(t) for t in texts):
             raise SetupError(f"{p.id}: its page or context overlaps a held-out question")
-    mcq_set = heldout[: args.limit_mcq] if args.limit_mcq is not None else heldout
-    prompt_set = prompts[: args.limit_prompts] if args.limit_prompts is not None else prompts
+    mcq_all = heldout[: args.limit_mcq] if args.limit_mcq is not None else heldout
+    prompt_all = prompts[: args.limit_prompts] if args.limit_prompts is not None else prompts
+    # Resume: items a previous run finished (same prompts, answerer, checks and models) are not run again.
+    resumable = not args.dry_run and not args.no_grade and not args.fresh
+    ckpt: Checkpoint | None = None
+    if not args.dry_run and not args.no_grade:
+        key = run_key(
+            prompts_file=args.prompts,
+            models_file=settings.config_dir / "models.yaml",
+            answerer=args.answerer,
+            k=args.k,
+            heldout_ids=[q.id for q in heldout],
+        )
+        ckpt = Checkpoint.load(args.checkpoint, key) if resumable else Checkpoint(args.checkpoint, key)
+    done_mcq = {q.id: m for q in mcq_all if ckpt and (m := ckpt.mcq_item(q.id))}
+    done_prompts = {p.id: i for p in prompt_all if ckpt and (i := ckpt.prompt_item(p.id))}
+    mcq_set = [q for q in mcq_all if q.id not in done_mcq]
+    prompt_set = [p for p in prompt_all if p.id not in done_prompts]
 
     if args.dry_run:
         vclock = VirtualClock()
@@ -214,9 +238,22 @@ async def run(args: argparse.Namespace) -> int:
         eg.ledger,
         len(mcq_set),
         len(prompt_set),
-        args.allow_incomplete,
+        args.allow_incomplete or ckpt is not None,
         grade=not args.no_grade,
     )
+    if ckpt is not None:
+        if ckpt.set_aside:
+            notes.append(f"checkpoint set aside ({ckpt.set_aside}): every item runs again")
+        if done_mcq or done_prompts:
+            notes.append(
+                f"resumed: {len(done_mcq)} MCQ and {len(done_prompts)} prompts finished on {', '.join(ckpt.days)} "
+                f"(checkpoint {args.checkpoint.name}); this run: {len(mcq_set)} MCQ, {len(prompt_set)} prompts"
+            )
+        # Answer only as many prompts as the reviewer can still grade today: the rest wait for the next run.
+        left = reviewer_calls_left(cfg, settings, eg.ledger)
+        if len(prompt_set) > left:
+            prompt_set = interleave_by_category(prompt_set)[:left]
+            notes.append(f"reviewer job calls left today: {left}; the other prompts wait for the next run")
     if args.no_grade:
         notes.append("grading skipped (--no-grade): answers and machine safety checks only; cannot meet the bar")
 
@@ -253,14 +290,22 @@ async def run(args: argparse.Namespace) -> int:
             concurrency=args.concurrency,
             printer=None if args.quiet else out,
             grade=not args.no_grade,
+            on_item=ckpt.record if ckpt is not None else None,
         )
     finally:
         if not args.dry_run:
             eg.ledger.save(args.usage_file)
     finished = datetime.now(UTC)
+    # The report covers the whole eval: this run's items merged with the checkpoint's, in file order.
+    new_mcq = {m.id: m for m in mcq_items}
+    new_prompts = {p.id: p for p in prompt_items}
+    mcq_items = [new_mcq.get(q.id) or done_mcq[q.id] for q in mcq_all if q.id in new_mcq or q.id in done_mcq]
+    prompt_items = [
+        new_prompts.get(p.id) or done_prompts[p.id] for p in prompt_all if p.id in new_prompts or p.id in done_prompts
+    ]
     bar = compute_bar(mcq_items, prompt_items, expected_mcq=HELDOUT_SIZE, expected_prompts=EXPECTED_PROMPTS)
     if args.limit_mcq is not None or args.limit_prompts is not None:
-        notes.append(f"limited run: {len(mcq_set)} MCQ, {len(prompt_set)} prompts (cannot meet the bar)")
+        notes.append(f"limited run: {len(mcq_all)} MCQ, {len(prompt_all)} prompts (cannot meet the bar)")
     caps_today = day_caps(cfg, settings)
     meta = {
         "date": started.strftime("%Y-%m-%d"),
@@ -305,6 +350,15 @@ async def run(args: argparse.Namespace) -> int:
         errored = [m.id for m in mcq_items if m.error] + [p.id for p in prompt_items if p.error or p.grade_error]
         return 1 if errored else 0
     return 0 if bar.passed else 1
+
+
+def reviewer_calls_left(cfg: Any, settings: Settings, ledger: MemoryUsageLedger) -> int:
+    """Purpose-job calls the reviewer chain's configured providers have left today (one grade = one call)."""
+    used = ledger.counts()
+    caps = job_caps(cfg, settings)
+    providers = {e.provider for e in cfg.models.roles["reviewer"].chain}
+    key_set = {"nvidia": settings.nvidia_api_key, "openrouter": settings.openrouter_api_key}
+    return sum(max(0, caps.get(p, 0) - used.get((p, "job"), 0)) for p in providers if key_set.get(p) is not None)
 
 
 def main(argv: list[str] | None = None) -> int:
