@@ -1,0 +1,18 @@
+{
+ "id": "20261117T042647-seg20-media-1c64d4",
+ "ts": "2026-11-17T04:26:47.845091Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S20: video notes need anchor_pos {t}: small VideoPos union alongside AnchorPos",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/notes/models.py",
+  "apps/api/naadi_api/notes/store.py",
+  "apps/api/naadi_api/notes/routes.py"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
