@@ -12,7 +12,7 @@ import {
   uuidv7,
 } from "@naadi/shared";
 import type { InkAnchorResolver } from "./anchors";
-import { type CanvasLease, canvasBudget } from "./budget";
+import { type CanvasLease, canvasBudget, MAX_SLABS_PIXELS, parkedPictureBudget, slabBudget } from "./budget";
 import { clientToSurface, type SurfaceFrame } from "./coords";
 import { InkDocument } from "./document";
 import { encodePng } from "./encode";
@@ -42,6 +42,7 @@ import {
 } from "./input";
 import type { LatencyRecorder } from "./latency";
 import { markPenPresent, onPenPresence, penPresent } from "./presence";
+import { inkProbe } from "./probe";
 import {
   drawItem,
   type InkTheme,
@@ -189,16 +190,8 @@ export interface InkEngineOptions {
 
 /** Device pixels per slab canvas: bounds memory on tall surfaces at high device pixel ratios. */
 const MAX_SLAB_PIXELS = 8_000_000;
-/** Slabs (canvas elements + settled images) kept per surface, in device px: most pages fit whole. */
-const MAX_SLABS_PIXELS = 16_000_000;
 /** Quiet time after the last change before canvases are swapped for images. */
 const SETTLE_MS = 700;
-/**
- * Settled pictures of slabs that scrolled out of the keep window stay as compressed PNGs (no canvas, no
- * decoded element), so a slab coming back shows its picture again instead of being repainted tile by
- * tile while the student scrolls. Bounded by their encoded size.
- */
-const MAX_PARKED_BYTES = 48 * 1024 * 1024;
 /** Room the live canvas keeps around its content, so a stroke rarely outgrows it. */
 const LIVE_MARGIN_PX = 48;
 /** Side of the (square) tail canvas around the stroke tip, CSS px; grows only for a very fast stroke. */
@@ -305,11 +298,12 @@ export class InkEngine {
     /** Slabs released without parking: still painting or settling, or their picture was not ready. */
     parkSkipped: 0,
   };
-  /** Main-thread time of each engine callback (scroll, frame, resize, settle) while a probe runs. */
-  private probe: number[] | null = null;
-  /** Parked pictures of released slabs, by slab index (see MAX_PARKED_BYTES). */
+  /**
+   * Settled pictures of slabs that left the keep window, by slab index: compressed PNGs (no canvas, no
+   * decoded element), so a slab coming back shows its picture instead of being repainted tile by tile
+   * while the student scrolls. Bounded page-wide by parkedPictureBudget.
+   */
   private parked = new Map<number, ParkedSlab>();
-  private parkedBytes = 0;
   /** Dirty tiles of off-screen slabs that found no canvas memory last frame (they wait for a settle). */
   private memoryWait = new Set<string>();
   private readonly liveStroke = new LiveStroke();
@@ -623,32 +617,9 @@ export class InkEngine {
     return true;
   }
 
-  /**
-   * Main-thread probe: from now on, every engine callback (scroll, animation frame, resize, settle) records
-   * when it started and how long it ran. stopProbe() returns [start, ms, start, ms, ...] (performance.now()
-   * time base) and ends recording. Costs one array push per callback while on, nothing while off.
-   */
-  startProbe(): void {
-    this.probe = [];
-  }
-
-  stopProbe(): number[] {
-    const p = this.probe ?? [];
-    this.probe = null;
-    return p;
-  }
-
+  /** Every engine callback runs through the page-wide main-thread probe (see probe.ts). */
   private timed(fn: () => void): void {
-    if (!this.probe) {
-      fn();
-      return;
-    }
-    const t0 = performance.now();
-    try {
-      fn();
-    } finally {
-      if (this.probe && this.probe.length < 200_000) this.probe.push(t0, performance.now() - t0);
-    }
+    inkProbe.time(fn);
   }
 
   destroy(): void {
@@ -886,9 +857,10 @@ export class InkEngine {
 
   /**
    * Keep slab objects (a canvas element and a settled image per kind) for the slabs nearest the visible
-   * part, as many as MAX_SLABS_PIXELS allows; release the rest, farthest first. Backing stores are
-   * allocated only while a slab is being painted and released once it has settled into images, all under
-   * the page-wide canvas budget.
+   * part: at most MAX_SLABS_PIXELS of them for this surface, and within the page-wide slabBudget shared
+   * with every other surface. The rest are released, farthest first, their pictures parked. Backing
+   * stores are allocated only while a slab is being painted and released once it has settled into
+   * images, all under the page-wide canvas budget.
    */
   private updateSlabs(): void {
     const w = this.widthPx;
@@ -904,17 +876,23 @@ export class InkEngine {
       const y1 = y0 + this.slabH;
       return y1 < top ? top - y1 : y0 > bottom ? y0 - bottom : 0;
     };
-    const keep = new Set(
-      Array.from({ length: count }, (_, i) => i)
-        .sort((x, y) => dist(x) - dist(y))
-        .slice(0, max),
-    );
+    const order = Array.from({ length: count }, (_, i) => i)
+      .sort((x, y) => dist(x) - dist(y))
+      .slice(0, max);
+    const keep = new Set(order);
     for (const [i, slab] of this.slabs) {
       if (keep.has(i)) continue;
       this.releaseSlab(slab, true);
       this.slabs.delete(i);
     }
-    for (const i of keep) if (!this.slabs.has(i)) this.createSlab(i);
+    // Farthest first, so the nearest slabs are the most recently used in the page-wide budget.
+    for (const i of [...order].reverse()) this.slabs.get(i)?.lease?.touch();
+    for (const i of order) {
+      if (this.slabs.has(i)) continue;
+      // A slab that is on screen may evict another surface's least recently used off-screen slab; one
+      // off screen is created only if it fits (it is tried again on the next scroll).
+      if (!this.createSlab(i, dist(i) === 0)) break;
+    }
   }
 
   /** A slab on screen (or being drawn on) is never evicted from the canvas budget. */
@@ -925,10 +903,27 @@ export class InkEngine {
     return slab.y0 < this.vis.bottom + margin && slab.y0 + slab.h > this.vis.top - margin;
   }
 
-  private createSlab(i: number): void {
+  private createSlab(i: number, visible: boolean): boolean {
     const y0 = i * this.slabH;
     const h = Math.min(this.slabH, this.heightPx - y0);
-    if (h <= 0) return;
+    if (h <= 0) return true;
+    const px = Math.max(1, Math.round(this.widthPx * this.dpr) * Math.round(h * this.dpr));
+    const pinned = () => {
+      const s = this.slabs.get(i);
+      return s !== undefined && this.slabPinned(s);
+    };
+    const evict = () => {
+      const s = this.slabs.get(i);
+      if (!s) return;
+      s.lease = null; // already out of the budget
+      this.releaseSlab(s, true);
+      this.slabs.delete(i);
+    };
+    const label = `ink:slab:${i}`;
+    const lease = visible
+      ? slabBudget.acquire(label, px, pinned, evict)
+      : slabBudget.tryAcquire(label, px, pinned, evict);
+    if (!lease) return false;
     const layer = (kind: SlabKind): SlabLayer => ({
       kind,
       canvas: null,
@@ -948,10 +943,12 @@ export class InkEngine {
       ink: layer("ink"),
       has: { m: false, k: false },
       clean: new Set(),
+      lease,
     };
     this.slabs.set(i, slab);
-    if (this.restoreParked(slab)) return;
+    if (this.restoreParked(slab)) return true;
     this.markDirtyPx({ x0: 0, y0, x1: this.widthPx, y1: y0 + h });
+    return true;
   }
 
   /** Show a slab from its parked pictures (same geometry, content unchanged since): no tile is painted. */
@@ -959,7 +956,7 @@ export class InkEngine {
     const p = this.parked.get(slab.i);
     if (!p) return false;
     this.parked.delete(slab.i);
-    this.parkedBytes -= p.bytes;
+    p.lease?.release();
     if (p.widthPx !== this.widthPx || p.dpr !== this.dpr || p.h !== slab.h) {
       for (const pic of [p.m, p.k]) if (pic) URL.revokeObjectURL(pic.url);
       return false;
@@ -983,10 +980,12 @@ export class InkEngine {
       img
         .decode()
         .catch(() => undefined)
-        .then(() => {
-          if (this.slabs.get(slab.i) === slab && layer.settledVersion === layer.version && !this.destroyed)
-            img.style.display = "";
-        });
+        .then(() =>
+          this.timed(() => {
+            if (this.slabs.get(slab.i) === slab && layer.settledVersion === layer.version && !this.destroyed)
+              img.style.display = "";
+          }),
+        );
     }
     this.renderStats.slabsRestored++;
     return true;
@@ -997,7 +996,7 @@ export class InkEngine {
     for (const [i, p] of this.parked) {
       if (!match(i, p)) continue;
       for (const pic of [p.m, p.k]) if (pic) URL.revokeObjectURL(pic.url);
-      this.parkedBytes -= p.bytes;
+      p.lease?.release();
       this.parked.delete(i);
     }
   }
@@ -1135,6 +1134,8 @@ export class InkEngine {
     const k = picture(slab.ink, slab.has.k);
     const keep = park && !pending && m !== undefined && k !== undefined && (m !== null || k !== null);
     if (park && !keep && (slab.has.m || slab.has.k)) this.renderStats.parkSkipped++;
+    slab.lease?.release();
+    slab.lease = null;
     for (const layer of [slab.marker, slab.ink]) {
       this.dropBacking(layer);
       layer.canvas?.remove();
@@ -1145,9 +1146,27 @@ export class InkEngine {
       }
     }
     if (!keep) return;
-    const bytes = (m?.bytes ?? 0) + (k?.bytes ?? 0);
+    const bytes = Math.max(1, (m?.bytes ?? 0) + (k?.bytes ?? 0));
     this.dropParked((i) => i === slab.i);
-    this.parked.set(slab.i, {
+    const urls = [m?.url, k?.url];
+    if (bytes > parkedPictureBudget.limit) {
+      for (const url of urls) if (url) URL.revokeObjectURL(url);
+      return;
+    }
+    // Page-wide: over the bound, the least recently parked picture of any surface is forgotten.
+    const i = slab.i;
+    const lease = parkedPictureBudget.acquire(
+      `ink:parked:${i}`,
+      bytes,
+      () => false,
+      () => {
+        const q = this.parked.get(i);
+        if (!q || q.lease !== lease) return;
+        q.lease = null; // already out of the budget
+        this.dropParked((j) => j === i);
+      },
+    );
+    this.parked.set(i, {
       widthPx: this.widthPx,
       dpr: this.dpr,
       h: slab.h,
@@ -1155,13 +1174,8 @@ export class InkEngine {
       k: k ?? null,
       kinds,
       bytes,
+      lease,
     });
-    this.parkedBytes += bytes;
-    // Over the bound: forget the oldest parked pictures first (Map order is insertion order).
-    for (const [i] of this.parked) {
-      if (this.parkedBytes <= MAX_PARKED_BYTES) break;
-      this.dropParked((j) => j === i);
-    }
   }
 
   /**
@@ -1437,31 +1451,36 @@ export class InkEngine {
       const t0 = performance.now();
       const encoding = encodePng(canvas);
       this.renderStats.settleMainMs += performance.now() - t0;
-      void encoding.then((blob) => {
-        const done = () => {
-          this.settling--;
-        };
-        if (!blob || this.destroyed || this.slabs.get(slab.i) !== slab || layer.version !== v) return done();
-        const url = URL.createObjectURL(blob);
-        const target = this.slabImage(slab, layer);
-        const previous = target.dataset.url;
-        target.src = url;
-        target
-          .decode()
-          .catch(() => undefined)
-          .then(() => {
-            if (previous) URL.revokeObjectURL(previous);
-            target.dataset.url = url;
-            target.dataset.bytes = String(blob.size);
-            if (this.slabs.get(slab.i) === slab && layer.version === v && !this.destroyed) {
-              target.style.display = "";
-              canvas.style.display = "none";
-              layer.settledVersion = v;
-              this.dropBacking(layer);
-            }
-            done();
-          });
-      });
+      const done = () => {
+        this.settling--;
+      };
+      // The continuations run later, outside any timed callback: each is timed on its own.
+      void encoding.then((blob) =>
+        this.timed(() => {
+          if (!blob || this.destroyed || this.slabs.get(slab.i) !== slab || layer.version !== v) return done();
+          const url = URL.createObjectURL(blob);
+          const target = this.slabImage(slab, layer);
+          const previous = target.dataset.url;
+          target.src = url;
+          target
+            .decode()
+            .catch(() => undefined)
+            .then(() =>
+              this.timed(() => {
+                if (previous) URL.revokeObjectURL(previous);
+                target.dataset.url = url;
+                target.dataset.bytes = String(blob.size);
+                if (this.slabs.get(slab.i) === slab && layer.version === v && !this.destroyed) {
+                  target.style.display = "";
+                  canvas.style.display = "none";
+                  layer.settledVersion = v;
+                  this.dropBacking(layer);
+                }
+                done();
+              }),
+            );
+        }),
+      );
     }
   }
 
@@ -2349,6 +2368,8 @@ interface Slab {
   has: { m: boolean; k: boolean };
   /** Tiles painted since their content last changed: painting one again is a wasted repaint. */
   clean: Set<string>;
+  /** Its share of the page-wide slabBudget (null once released). */
+  lease: CanvasLease | null;
 }
 
 /** A released slab's settled pictures (blob URLs) and tile kinds, for the same geometry only. */
@@ -2360,6 +2381,8 @@ interface ParkedSlab {
   k: { url: string; bytes: number } | null;
   kinds: [string, { m: boolean; k: boolean }][];
   bytes: number;
+  /** Its share of the page-wide parkedPictureBudget. */
+  lease: CanvasLease | null;
 }
 
 /** How far a tile ("tx,ty") is from the visible range, in CSS px (0 = visible). */

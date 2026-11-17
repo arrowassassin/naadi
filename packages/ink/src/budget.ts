@@ -127,3 +127,21 @@ export class CanvasBudget {
 
 /** The page-wide budget every InkEngine uses. */
 export const canvasBudget = new CanvasBudget();
+
+/**
+ * Slab objects (a canvas element and a settled picture per kind) kept across all ink surfaces of the page,
+ * in device px. Each surface keeps the slabs nearest its visible part; when the page as a whole is over,
+ * the least recently used off-screen slab of any surface is released (its picture is parked). Visible
+ * slabs are pinned. Off-screen slabs are only created if they fit, so two surfaces never take turns
+ * evicting each other.
+ */
+export const MAX_SLABS_PIXELS = 16_000_000;
+export const slabBudget = new CanvasBudget(MAX_SLABS_PIXELS);
+
+/**
+ * Parked pictures (the compressed PNGs of slabs that left a keep window), across all surfaces of the
+ * page, in bytes. Over the bound, the least recently parked picture of any surface is forgotten (that
+ * slab is painted again when it returns).
+ */
+export const MAX_PARKED_BYTES = 48 * 1024 * 1024;
+export const parkedPictureBudget = new CanvasBudget(MAX_PARKED_BYTES);

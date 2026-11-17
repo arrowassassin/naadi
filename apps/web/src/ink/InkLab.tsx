@@ -8,10 +8,13 @@ import {
   type InkSelectionPayload,
   type InkTheme,
   type InkToolName,
+  inkProbe,
   inputCapabilities,
   LatencyRecorder,
+  parkedPictureBudget,
   type SampleStats,
   type SelectionInfo,
+  slabBudget,
 } from "@naadi/ink";
 
 import type { InkColor, InkDiff, InkItem } from "@naadi/shared";
@@ -40,6 +43,9 @@ declare global {
       pages: () => (InkEngine | null)[];
       latency: LatencyRecorder;
       budget: typeof canvasBudget;
+      slabs: typeof slabBudget;
+      parked: typeof parkedPictureBudget;
+      probe: typeof inkProbe;
     };
   }
 }
@@ -245,6 +251,9 @@ export function InkLab() {
       pages: () => pageEngines.current,
       latency,
       budget: canvasBudget,
+      slabs: slabBudget,
+      parked: parkedPictureBudget,
+      probe: inkProbe,
     };
     return () => {
       window.naadiInkLab = undefined;

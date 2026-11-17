@@ -604,6 +604,17 @@ test.describe("ink lab", () => {
     // The budget's own high-water mark covers moments between our samples (e.g. while a page paints).
     const peak = await page.evaluate(() => window.naadiInkLab?.budget.stats().peak ?? Number.POSITIVE_INFINITY);
     expect(peak, "canvas memory high-water mark").toBeLessThanOrEqual(limit);
+    // Slab objects and parked pictures are page-wide budgets too: 12 surfaces together stay within them.
+    const pageWide = await page.evaluate(() => ({
+      slabs: window.naadiInkLab?.slabs.stats(),
+      parked: window.naadiInkLab?.parked.stats(),
+    }));
+    expect(pageWide.slabs?.peak ?? Number.POSITIVE_INFINITY, "slab objects, page-wide").toBeLessThanOrEqual(
+      pageWide.slabs?.limit ?? 0,
+    );
+    expect(pageWide.parked?.peak ?? Number.POSITIVE_INFINITY, "parked pictures, page-wide").toBeLessThanOrEqual(
+      pageWide.parked?.limit ?? 0,
+    );
   });
 
   test("latency harness records input-to-paint percentiles", async ({ page, consoleErrors }, info) => {
@@ -710,7 +721,8 @@ test.describe("ink lab", () => {
       ({ sliceMs, durationMs }) =>
         new Promise<Round>((resolve) => {
           const lab = window.naadiInkLab;
-          const engines = [lab?.page(), lab?.stress(), ...(lab?.pages() ?? [])].filter((e) => e != null);
+          const probe = lab?.probe;
+          if (!probe) throw new Error("lab probe missing");
           const surface = document.querySelector<HTMLElement>('[data-testid="stress"] [data-ink-surface]');
           const layers = [...document.querySelectorAll<HTMLElement>("[data-ink-layer]")];
           if (!surface) throw new Error("stress surface missing");
@@ -730,7 +742,7 @@ test.describe("ink lab", () => {
           };
           window.scrollTo(0, from);
           show(true);
-          for (const e of engines) e.startProbe();
+          probe.start();
           const step = (ts: number) => {
             stamps.push(ts);
             if (start < 0) {
@@ -762,14 +774,12 @@ test.describe("ink lab", () => {
             show(true);
             // Engine callbacks belong to the frame they started in: [stamp i, stamp i+1).
             const engineMs = new Array<number>(stamps.length).fill(0);
-            for (const e of engines) {
-              const p = e.stopProbe();
-              for (let j = 0; j < p.length; j += 2) {
-                const t0 = p[j] as number;
-                let f = stamps.length - 1;
-                while (f > 0 && (stamps[f] as number) > t0) f--;
-                engineMs[f] = (engineMs[f] as number) + (p[j + 1] as number);
-              }
+            const p = probe.stop();
+            for (let j = 0; j < p.length; j += 2) {
+              const t0 = p[j] as number;
+              let f = stamps.length - 1;
+              while (f > 0 && (stamps[f] as number) > t0) f--;
+              engineMs[f] = (engineMs[f] as number) + (p[j + 1] as number);
             }
             const fps = (k2: "ink" | "base") => Math.round((frames[k2] / Math.max(1, time[k2])) * 10000) / 10;
             const n = stamps.length - 1;
@@ -821,11 +831,16 @@ test.describe("ink lab", () => {
     //    judged by their median, and a round with fewer than 12 counted frames in either state is repeated
     //    (at most five extra rounds). Hiding the layers removes their compositing cost only.
     // 2. Engine time: the engine's scroll and frame work runs whether the layers are shown or not, so the
-    //    ratio cannot see it. Every engine's main-thread time is probed during the rounds and summed per
-    //    animation frame; its p95 must stay under 2 ms. Proof that this sees what the ratio cannot: the test
-    //    below adds 12 ms of work to the stress engine's scroll handler and requires this measure to exceed
-    //    2 ms. (Reviewer's manual check of the old gate: the same 12 ms cost 25-29 % of the frame rate and
-    //    the ratio still passed.)
+    //    ratio cannot see it. The page-wide probe (packages/ink/src/probe.ts) times every engine callback:
+    //    scroll, frames, resize, settle timers, the encode worker's replies, and the promise continuations
+    //    of encoding, decoding and restoring a parked slab, each including the microtasks it queued. The
+    //    probe is summed per animation frame during the rounds; its p95 must stay under 2 ms. WebKit
+    //    reports performance.now() in whole milliseconds (Chromium in 0.1 ms steps), so on WebKit a frame
+    //    reads 0, 1, 2 ... ms and "under 2" means at most 1 ms; real per-frame work up to just under 2 ms
+    //    can read 1 or 2. Proof that the gate sees what the ratio cannot: the tests below add 12 ms of work
+    //    to the stress engine's scroll handler, directly or in a microtask, and require the probe to
+    //    reach 2 ms. (Reviewer checks of the old gate: 12 ms in the handler cost 25-29 % of the frame rate,
+    //    and a 12 ms microtask held the ratio at 0.79, and both still passed.)
     // 3. Paint: after the first pass, the rounds paint no tile (tilesPainted unchanged, no wasted repaint);
     //    on the tall dpr 2 page, slabs that come back show their parked pictures (slabsRestored > 0).
     const ink: number[] = [];
@@ -901,27 +916,40 @@ test.describe("ink lab", () => {
     await snap(page, info, consoleErrors, "stress-page");
   });
 
-  test("the engine-time gate sees main-thread work that the frame ratio cancels out", async ({ page }, info) => {
-    // A negative check of gate 2 above, on one WebKit and one Chromium profile: 12 ms of work added to the
-    // stress engine's scroll handler (the engine itself is unchanged; the handler is wrapped at runtime).
-    test.skip(!info.project.name.includes("laptop-1440"), "runs on the laptop profiles");
-    test.setTimeout(240_000);
-    await buildStress(page);
-    await page.evaluate(() => {
-      const e = window.naadiInkLab?.stress() as unknown as { onScroll: () => void } | null;
-      if (!e) throw new Error("stress engine missing");
-      const original = e.onScroll.bind(e);
-      e.onScroll = () => {
-        const t = performance.now();
-        while (performance.now() - t < 12) {
-          // busy-wait: the regression the gate must catch
-        }
-        original();
-      };
+  for (const regression of ["scroll handler", "microtask"] as const)
+    test(`the engine-time gate sees 12 ms of ${regression} work that the frame ratio cancels out`, async ({
+      page,
+    }, info) => {
+      // A negative check of gate 2 above, on one WebKit and one Chromium profile. The stress engine's scroll
+      // handler is wrapped at runtime (the engine itself is unchanged) to add 12 ms of work, either in the
+      // handler itself or in a microtask it queues. The probe must see it: its p95 must reach 2 ms.
+      test.skip(!info.project.name.includes("laptop-1440"), "runs on the laptop profiles");
+      test.setTimeout(240_000);
+      await buildStress(page);
+      await page.evaluate((regression) => {
+        const e = window.naadiInkLab?.stress() as unknown as { onScroll: () => void } | null;
+        if (!e) throw new Error("stress engine missing");
+        const original = e.onScroll.bind(e);
+        const busy = () => {
+          const t = performance.now();
+          while (performance.now() - t < 12) {
+            // busy-wait: the regression the gate must catch
+          }
+        };
+        e.onScroll = () => {
+          if (regression === "microtask") queueMicrotask(busy);
+          else busy();
+          original();
+        };
+      }, regression);
+      const r = await scrollRound(page, 250);
+      const p95 = percentile(r.engineMs, 0.95);
+      record(info, `scroll-engine-negative-${regression.replace(" ", "-")}`, {
+        engineP95Ms: p95,
+        frames: r.engineMs.length,
+        ink: r.ink,
+        base: r.base,
+      });
+      expect(p95, `12 ms of ${regression} work shows in the engine-time gate`).toBeGreaterThanOrEqual(2);
     });
-    const r = await scrollRound(page, 250);
-    const p95 = percentile(r.engineMs, 0.95);
-    record(info, "scroll-engine-negative", { engineP95Ms: p95, frames: r.engineMs.length, ink: r.ink, base: r.base });
-    expect(p95, "12 ms of scroll-handler work shows in the engine-time gate").toBeGreaterThanOrEqual(2);
-  });
 });

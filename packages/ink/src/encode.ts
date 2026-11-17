@@ -3,6 +3,8 @@
  * into an ImageBitmap (a fast GPU/memory copy) and a worker encodes it with OffscreenCanvas. Browsers
  * without module workers, OffscreenCanvas or createImageBitmap fall back to canvas.toBlob.
  */
+import { inkProbe } from "./probe";
+
 type Pending = (blob: Blob | null) => void;
 
 let worker: Worker | null | undefined;
@@ -20,11 +22,12 @@ function getWorker(): Worker | null {
     return worker;
   try {
     const w = new Worker(new URL("./encode.worker.ts", import.meta.url), { type: "module", name: "naadi-ink-encode" });
-    w.onmessage = (e: MessageEvent<{ id: number; blob: Blob | null }>) => {
-      const done = pending.get(e.data.id);
-      pending.delete(e.data.id);
-      done?.(e.data.blob);
-    };
+    w.onmessage = (e: MessageEvent<{ id: number; blob: Blob | null }>) =>
+      inkProbe.time(() => {
+        const done = pending.get(e.data.id);
+        pending.delete(e.data.id);
+        done?.(e.data.blob);
+      });
     w.onerror = () => {
       // The worker could not start (e.g. blocked): fail what is pending and use toBlob from now on.
       for (const done of pending.values()) done(null);
@@ -39,7 +42,7 @@ function getWorker(): Worker | null {
 }
 
 function toBlob(canvas: HTMLCanvasElement): Promise<Blob | null> {
-  return new Promise((resolve) => canvas.toBlob((b) => resolve(b), "image/png"));
+  return new Promise((resolve) => canvas.toBlob((b) => inkProbe.time(() => resolve(b)), "image/png"));
 }
 
 export async function encodePng(canvas: HTMLCanvasElement): Promise<Blob | null> {

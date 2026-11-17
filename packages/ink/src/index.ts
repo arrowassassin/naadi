@@ -3,7 +3,16 @@
  * PDF page, notebook page, exam scratch). No network calls. React binding: `@naadi/ink/react`.
  */
 export * from "./anchors";
-export { CanvasBudget, type CanvasLease, canvasBudget, DEFAULT_CANVAS_BUDGET } from "./budget";
+export {
+  CanvasBudget,
+  type CanvasLease,
+  canvasBudget,
+  DEFAULT_CANVAS_BUDGET,
+  MAX_PARKED_BYTES,
+  MAX_SLABS_PIXELS,
+  parkedPictureBudget,
+  slabBudget,
+} from "./budget";
 export * from "./coords";
 export * from "./document";
 export {
@@ -26,6 +35,7 @@ export * from "./geometry";
 export * from "./input";
 export * from "./latency";
 export { forgetPen, markPenPresent, onPenPresence, penPresent } from "./presence";
+export { inkProbe, MainThreadProbe } from "./probe";
 export * from "./render";
 export * from "./shapes";
 export { registerShortcutTarget, type ShortcutAction, shortcutFor } from "./shortcuts";
