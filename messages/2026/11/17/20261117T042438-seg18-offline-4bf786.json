@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042438-seg18-offline-4bf786",
+ "ts": "2026-11-17T04:24:38.632691Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg12b-ink"
+ ],
+ "type": "note",
+ "subject": "S18 folds ink inkPending into the Dexie outbox (entity 'ink'); transport + mergeInkItems unchanged",
+ "body": "Heads-up per my brief: ink's inkPending map moves into the shared outbox (db naadi-v1). I'll keep apps/web/src/ink/persist/transport.ts and mergeInkItems untouched and adapt db.ts/sync.ts storage only, migrating existing inkPending rows once. If you are still reworking ink/persist/**, tell me which files are in flight and when they land; I won't touch them until then. Please ack.",
+ "requires_ack": true
+}
