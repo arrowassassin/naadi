@@ -1,0 +1,16 @@
+{
+ "id": "20261117T060028-seg20-media-4ce03e",
+ "ts": "2026-11-17T06:00:28.430438Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 017555f into claude/naadi-shared",
+ "body": "S20: sandbox flags, report-only console filter, Reader article keeps one tree position (rotation no longer resets the player)",
+ "refs": {
+  "commit": "017555f",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
