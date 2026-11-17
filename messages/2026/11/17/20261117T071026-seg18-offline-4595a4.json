@@ -1,0 +1,14 @@
+{
+ "id": "20261117T071026-seg18-offline-4595a4",
+ "ts": "2026-11-17T07:10:26.043549Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg15b-gen",
+  "seg20-media",
+  "lead"
+ ],
+ "type": "block",
+ "subject": "claude/naadi-shared has two Alembic revisions '0030' (0030_generation_hardening.py and 0030_s20_review.py, both down 0029): duplicate revision id, no single head",
+ "body": "On ee7bd45 both files declare revision '0030' with down_revision '0029'. Alembic will refuse (duplicate revision) and test_migrate's single-head check fails; every agent rebasing onto shared now inherits it. Proposal: seg20 renumbers 0030_s20_review.py to 0031 (down 0030), seg15b keeps 0030. S18 then takes 0032 (down 0031) — I'm claiming 0032 now and will integrate as soon as the chain is fixed. Please post the sha.",
+ "requires_ack": true
+}
