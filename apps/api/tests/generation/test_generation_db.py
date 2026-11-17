@@ -112,8 +112,8 @@ async def test_daily_caps_count_from_the_table_and_failed_runs_do_not_count(
     rig: Rig, world: World, pg: psycopg.Connection[Any]
 ) -> None:
     rig.caps["image"] = 2  # type: ignore[attr-defined]
-    rig.client.fail_with = "generation_failed"
-    assert (await refused(rig, world.user_a)).code == "generation_failed"
+    rig.client.fail_with = "generation_unavailable"  # never reached the Space: costs nothing, does not count
+    assert (await refused(rig, world.user_a)).code == "generation_unavailable"
     rig.client.fail_with = None
     await rig.service.run(world.user_a, "image", "one")
     await rig.service.run(world.user_a, "image", "two")
@@ -156,7 +156,7 @@ async def test_quota_exceeded_pauses_with_the_reset_time_and_is_not_retried(
     # a paused row does not use up anyone's cap
     assert (await rig.service.status(world.user_a)).image.used == 0
     # once the reset time passes, generation works again
-    pg.execute("update public.generated_media set paused_until = now() - interval '1 minute'")
+    pg.execute("update public.generation_state set paused_until = now() - interval '1 minute'")
     rig.client.quota_reset = None
     assert (await rig.service.run(world.user_b, "image", "after the pause")).status == "ready"
 
@@ -231,13 +231,15 @@ async def test_user_b_cannot_see_or_touch_user_a_media_and_clients_cannot_write(
     item = await rig.service.run(world.user_a, "image", "private heart")
     with as_user(pg, world.user_b) as conn:
         assert conn.execute("select count(*) from public.generated_media where id = %s", (item.id,)).fetchone() == (0,)
-        assert conn.execute("delete from public.generated_media where id = %s", (item.id,)).rowcount == 0
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("delete from public.generated_media where id = %s", (item.id,))
     with as_user(pg, world.user_a) as conn:
         assert conn.execute("select count(*) from public.generated_media where id = %s", (item.id,)).fetchone() == (1,)
         for stmt in (
             "update public.generated_media set approved_for_publish = true",
             "update public.generated_media set status = 'ready'",
             "update public.generated_media set title = 'x'",
+            "delete from public.generated_media",  # the client cannot erase its own rows (they count toward the cap)
         ):
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 conn.execute(stmt)
@@ -280,7 +282,14 @@ async def test_list_get_delete_are_own_only_and_delete_removes_the_file(
     assert (PRIVATE, path) in rig.store.objects  # A's attempt did not touch B's file
     assert client.delete(f"/api/generated/{b.id}", headers=hb).status_code == 204
     assert (PRIVATE, path) not in rig.store.objects
-    assert rows(pg, world.user_b) == []
+    # the item is hidden, not erased: the row stays (so it still counts toward the cap) without its file or prompt
+    (hidden,) = pg.execute(
+        "select hidden_at is not null, storage_path, prompt from public.generated_media where user_id = %s",
+        (world.user_b,),
+    ).fetchall()
+    assert hidden == (True, None, "[removed]")
+    assert client.get(f"/api/generated/{b.id}", headers=hb).status_code == 404
+    assert client.get("/api/generated", headers=hb).json()["items"] == []
 
 
 def test_routes_need_a_signed_in_user(client: TestClient) -> None:
@@ -471,3 +480,47 @@ async def test_tool_core_returns_blocks_canvas_and_code_only_results(rig: Rig, w
     rig.client.quota_reset = datetime.now(UTC) + timedelta(minutes=5)
     paused = await run_tool(rig.service, world.user_a, "image", "another heart")
     assert paused.status == "error" and paused.content.startswith("generation_paused until=")
+
+
+async def test_deleting_items_never_frees_the_daily_cap(rig: Rig, world: World) -> None:
+    rig.caps["image"] = 2  # type: ignore[attr-defined]
+    a = await rig.service.run(world.user_a, "image", "one")
+    b = await rig.service.run(world.user_a, "image", "two")
+    assert await rig.service.delete(world.user_a, a.id) and await rig.service.delete(world.user_a, b.id)
+    assert (await rig.service.list_items(world.user_a, kind=None, before=None, limit=10))[0] == []
+    err = await refused(rig, world.user_a, prompt="three")
+    assert (err.status, err.code) == (429, "generation_cap_reached")
+    st = await rig.service.status(world.user_a)
+    assert (st.image.used, st.image.remaining) == (2, 0)
+
+
+async def test_failed_runs_that_reached_the_space_count_but_unreachable_ones_do_not(
+    rig: Rig, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    rig.caps["image"] = 2  # type: ignore[attr-defined]
+    rig.client.fail_with = "generation_timeout"  # it ran on the Space and spent GPU
+    assert (await refused(rig, world.user_a)).code == "generation_timeout"
+    assert (await rig.service.status(world.user_a)).image.used == 1
+    rig.client.fail_with = "generation_unavailable"  # the Space never took the job
+    assert (await refused(rig, world.user_a)).code == "generation_unavailable"
+    assert (await rig.service.status(world.user_a)).image.used == 1
+    assert [r["status"] for r in rows(pg, world.user_a)] == ["failed", "failed"]
+
+
+async def test_the_pause_survives_the_owner_deleting_everything(
+    rig: Rig, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    rig.client.quota_reset = datetime.now(UTC) + timedelta(hours=5)
+    await refused(rig, world.user_a)
+    rig.client.quota_reset = None
+    with as_user(pg, world.user_a) as conn:  # what supabase-js .delete() sends, in one transaction
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("delete from public.generated_media")
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("select * from public.generation_state")
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("update public.generation_state set paused_until = null")
+    pg.execute("delete from public.generated_media where user_id = %s", (world.user_a,))  # even an erased row
+    err = await refused(rig, world.user_b)
+    assert err.code == "generation_paused"
+    assert (await rig.service.status(world.user_b)).state == "paused"

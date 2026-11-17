@@ -72,6 +72,7 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
     from tests.db.fixtures import insert_row
     from tests.db.rls import create_auth_user
 
+    pg.execute("delete from public.generation_state")  # the global pause is shared state: start every test clear
     tag = uuid.uuid4().hex[:8]
     a, b, admin = create_auth_user(pg), create_auth_user(pg), create_auth_user(pg)
     w = World(tag, a, b, admin, f"t{tag}-gch", f"t{tag}-gch-s1", f"t{tag}-gpriv", f"t{tag}-gpriv-s1")
@@ -114,6 +115,7 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
         pg, "chapter_sections", {"id": w.private_section, "chapter_id": w.private_chapter, "heading": "P", "sort": 1}
     )
     yield w
+    pg.execute("delete from public.generation_state")
     pg.execute("delete from public.generated_media where user_id = any(%s)", ([a, b, admin],))
     pg.execute(
         "delete from public.media_assets where id in (select media_id from public.section_media where section_id = %s)",

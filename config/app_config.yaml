@@ -1617,6 +1617,7 @@ ui_copy:
   generation.error_prompt_too_long: "That description is too long. Keep it under 500 characters."
   generation.error_prompt_real_person: "I can't draw real people. Describe the structure or mechanism instead."
   generation.error_prompt_patient_photo: "I can't make patient photographs. Ask for a labelled illustration or diagram."
+  generation.error_prompt_patient_info: "Leave patient details out. Describe the condition in general terms."
   generation.error_prompt_gore: "I can't make graphic injury or gore. Ask for a schematic illustration."
   generation.error_prompt_explicit: "I can't make explicit imagery. Ask for a labelled anatomy diagram."
   generation.error_generation_paused: "Generation is paused until the free GPU quota resets."

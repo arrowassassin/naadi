@@ -63,8 +63,9 @@ function watchConsole(page: Page) {
 async function user(browser: Browser, baseURL: string, info: TestInfo, email: string) {
   runUsers(["delete", "--email", email]);
   const contexts: BrowserContext[] = [];
-  const open = async (to: string) => {
-    const context = await browser.newContext({ ...info.project.use, baseURL });
+  const open = async (to: string, serviceWorkers: "allow" | "block" = "block") => {
+    // serviceWorkers: "block": the stubbed /api route of the paused test must reach the page, not a worker
+    const context = await browser.newContext({ ...info.project.use, baseURL, serviceWorkers });
     contexts.push(context);
     const page = await context.newPage();
     trackApi(page);
@@ -122,7 +123,8 @@ test.describe("generated media", () => {
   }, info) => {
     const s = await user(browser, baseURL as string, info, who(info, "gen"));
     try {
-      const { page, errors, guard } = await s.open("/");
+      // the worker is allowed here: its registration must raise no Trusted Types report (policy in trustedTypes.ts)
+      const { page, errors, guard } = await s.open("/", "allow");
       const prompt = `Nephron cross-section ${info.project.name}`;
       const made = await api<Item>(page, "POST", "/api/generated/stub", { prompt });
       expect(made.status).toBe(200);
@@ -304,6 +306,7 @@ test.describe("on a server without the generation token", () => {
     const ctx = await browser.newContext({
       baseURL: PROD,
       ignoreHTTPSErrors: true,
+      serviceWorkers: "block",
       storageState: { cookies: [], origins: state.origins.map((o) => ({ ...o, origin })) },
     });
     try {

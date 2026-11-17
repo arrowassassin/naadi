@@ -196,11 +196,12 @@ SELECT_ONLY = (
     "user_pathway_tasks",
     "costs",
     "vault_documents",
+    "generated_media",  # 0030: the API creates, hides and counts rows; the client can only read them
 )
-# Generated media (0022): the API creates and updates rows (it counts the daily caps from them and writes status
+# Generated media (0022, hardened in generation_hardening): the API creates and updates rows (it counts the daily caps and writes status
 # and approval); students may read and delete their own. Planner (0027): the same for push subscriptions (students
 # turn reminders off on a device; the API registers and updates them).
-CREATE_BLOCKED = ("generated_media", "push_subscriptions")
+CREATE_BLOCKED = ("push_subscriptions",)
 # Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
 # plan day's score notes), never insert, delete or re-point them.
 # Uploads and ingest items (0028): rows come from the ingest API; the student may rename a file (original_name) and

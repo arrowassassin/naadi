@@ -823,7 +823,10 @@ create table public.generated_media (
   approved_at timestamptz,
   media_asset_id text references public.media_assets(id) on delete set null,
   paused_until timestamptz,
-  constraint generated_media_ready_has_file check (status <> 'ready' or storage_path is not null),
+  -- 0030: soft hide (DELETE /api/generated/{id}; the row keeps counting toward the daily cap) and "reached the Space"
+  hidden_at timestamptz,
+  reached_space boolean not null default false,
+  constraint generated_media_ready_has_file check (status <> 'ready' or storage_path is not null or hidden_at is not null),
   constraint generated_media_prompt_len check (char_length(prompt) between 1 and 500),
   constraint generated_media_pause_shape check (status <> 'paused' or paused_until is not null),
   constraint generated_media_approval_shape check (
@@ -832,9 +835,16 @@ create table public.generated_media (
 );
 create index generated_media_user_idx on public.generated_media (user_id, created_at desc);
 create index generated_media_user_day_idx on public.generated_media (user_id, kind, created_at desc)
-  where status in ('queued','generating','ready');
+  where status in ('queued','generating','ready') or reached_space;
 create index generated_media_pending_idx on public.generated_media (created_at desc)
   where status = 'ready' and not approved_for_publish;
+
+-- 0030: the global ZeroGPU pause, server-only (RLS forced, no client privileges).
+create table public.generation_state (
+  id smallint primary key default 1 check (id = 1),
+  paused_until timestamptz,
+  updated_at timestamptz not null default now()
+);
 
 create table public.report_issues (
   id uuid primary key default gen_random_uuid(),

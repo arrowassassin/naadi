@@ -101,6 +101,7 @@ CLIENT_CLOSED_TABLES = (
     "question_revisions",
     "ingest_extracts",
     "pathway_task_checks",
+    "generation_state",
 )
 
 Rows = Sequence[dict[str, Any]]
@@ -209,7 +210,7 @@ def checks(head: str) -> list[Check]:
             f" and grantee = 'anon' and table_name = any({_array(CLIENT_CLOSED_TABLES)})"
             " or table_schema = 'public' and grantee = 'authenticated'"
             " and table_name = any(array['embeddings','app_config','llm_usage','naadi_alembic_version','seed_runs',"
-            "'ingest_extracts'])",
+            "'ingest_extracts','generation_state'])",
         ),
         Check(
             "ink layers and items, notes and notebooks are select-only for clients (and kb_sources)",
@@ -218,24 +219,14 @@ def checks(head: str) -> list[Check]:
             f" from unnest({_array(SELECT_ONLY_TABLES)}) t",
         ),
         Check(
-            "generated media: clients may only select and delete their own rows",
-            "select has_table_privilege('authenticated', 'public.generated_media', 'select,delete')"
-            " and not has_any_column_privilege('authenticated', 'public.generated_media', 'insert,update')"
-            " and not has_table_privilege('anon', 'public.generated_media', 'select')"
-            " and exists (select 1 from information_schema.columns where table_schema = 'public'"
-            " and table_name = 'generated_media' and column_name = 'media_asset_id')"
+            "generation: soft-hide and cap columns present; the global pause table is server-only with RLS forced",
+            "select (select count(*) from information_schema.columns where table_schema = 'public'"
+            " and table_name = 'generated_media' and column_name in ('hidden_at','reached_space','media_asset_id')) = 3"
+            " and exists (select 1 from pg_class where oid = 'public.generation_state'::regclass"
+            " and relrowsecurity and relforcerowsecurity)"
+            " and not has_table_privilege('authenticated', 'public.generation_state', 'select,insert,update,delete')"
+            " and not has_table_privilege('anon', 'public.generation_state', 'select,insert,update,delete')"
             " as ok, '' as detail",
-        ),
-        Check(
-            "authoring: question_reviews and authoring_runs are backend-only; one active export job per student",
-            "select not exists (select 1 from unnest(array['question_reviews','authoring_runs']) t"
-            " where not (select relrowsecurity from pg_class where oid = ('public.' || t)::regclass)"
-            " or has_any_column_privilege('anon', ('public.' || t)::regclass, 'select,insert,update')"
-            " or has_any_column_privilege('authenticated', ('public.' || t)::regclass, 'select,insert,update')"
-            " or has_table_privilege('authenticated', ('public.' || t)::regclass, 'delete'))"
-            " and to_regclass('public.export_jobs_one_active_idx') is not null"
-            " and not has_any_column_privilege('authenticated', 'public.export_jobs', 'insert,update') as ok,"
-            " '' as detail",
         ),
         Check(
             "handwriting OCR columns present (ocr_status, ocr_hash, ocr_at) and notes.body_text",

@@ -11,7 +11,7 @@ SOURCE_ID = "naadi-ai-generated"
 
 COLUMNS = (
     "id, user_id, kind, status, title, prompt, model, storage_path, width, height, duration_s, error, paused_until, "
-    "approved_for_publish, media_asset_id, created_at"
+    "approved_for_publish, media_asset_id, created_at, hidden_at"
 )
 
 

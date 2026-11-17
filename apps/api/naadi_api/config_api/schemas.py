@@ -401,6 +401,7 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "generation.error_prompt_too_long",
         "generation.error_prompt_real_person",
         "generation.error_prompt_patient_photo",
+        "generation.error_prompt_patient_info",
         "generation.error_prompt_gore",
         "generation.error_prompt_explicit",
         "generation.error_generation_paused",

@@ -132,8 +132,7 @@ class GenerationService:
 
     async def _paused_until(self, conn: psycopg.AsyncConnection[Any]) -> datetime | None:
         cur = await conn.execute(
-            "select max(paused_until) as until from public.generated_media"
-            " where status = 'paused' and paused_until > now()"
+            "select paused_until as until from public.generation_state where id = 1 and paused_until > now()"
         )
         row = await cur.fetchone()
         return row["until"] if row else None
@@ -141,8 +140,8 @@ class GenerationService:
     async def _used(self, conn: psycopg.AsyncConnection[Any], user_id: uuid.UUID) -> dict[str, int]:
         cur = await conn.execute(
             "select kind, count(*)::int as n from public.generated_media"
-            " where user_id = %(u)s and status in ('queued','generating','ready') and created_at >= %(since)s"
-            " group by kind",
+            " where user_id = %(u)s and (status in ('queued','generating','ready') or reached_space)"
+            " and created_at >= %(since)s group by kind",
             {"u": user_id, "since": utc_day_start(self._clock())},
         )
         out = {"image": 0, "video": 0}
@@ -239,13 +238,17 @@ class GenerationService:
             seconds=preview.seconds or MAX_VIDEO_SECONDS,
         )
         await emit("queued")
+        await self._set_reached(media_id, True)  # from here on the run counts toward the cap, failed or not
         try:
             result = await self._client.generate(req, progress)
         except QuotaExceeded as exc:
+            await self._set_reached(media_id, False)  # the quota refused it: no GPU spent
             await self._mark_paused(media_id, exc.resets_at)
             log.warning("generation_paused", kind=kind, resets_at=exc.resets_at.isoformat())
             raise GenerationError(429, "generation_paused", resets_at=exc.resets_at) from exc
         except GenerationClientError as exc:
+            if exc.code == "generation_unavailable":
+                await self._set_reached(media_id, False)  # the Space never took the job: no GPU spent
             await self._mark_failed(media_id, exc.code)
             raise GenerationError(502, exc.code) from exc
         except Exception as exc:
@@ -337,8 +340,21 @@ class GenerationService:
                 (code[:120], media_id),
             )
 
+    async def _set_reached(self, media_id: uuid.UUID, reached: bool) -> None:
+        async with service_tx(self._db) as conn:
+            await conn.execute(
+                "update public.generated_media set reached_space = %s where id = %s", (reached, media_id)
+            )
+
     async def _mark_paused(self, media_id: uuid.UUID, until: datetime) -> None:
         async with service_tx(self._db) as conn:
+            # The shared pause lives in its own server-only row; no student can delete it.
+            await conn.execute(
+                "insert into public.generation_state (id, paused_until) values (1, %(u)s)"
+                " on conflict (id) do update set paused_until = greatest(public.generation_state.paused_until, %(u)s),"
+                " updated_at = now()",
+                {"u": until},
+            )
             await conn.execute(
                 "update public.generated_media set status = 'paused', error = 'generation_paused', paused_until = %s"
                 " where id = %s",
@@ -359,7 +375,7 @@ class GenerationService:
     async def get(self, user_id: uuid.UUID, media_id: uuid.UUID) -> GeneratedItem | None:
         async with service_tx(self._db) as conn:
             cur = await conn.execute(
-                f"select {COLUMNS} from public.generated_media where id = %s and user_id = %s",  # noqa: S608
+                f"select {COLUMNS} from public.generated_media where id = %s and user_id = %s and hidden_at is null",  # noqa: S608
                 (media_id, user_id),
             )
             row = await cur.fetchone()
@@ -376,7 +392,7 @@ class GenerationService:
         async with service_tx(self._db) as conn:
             cur = await conn.execute(
                 f"select {COLUMNS} from public.generated_media"  # noqa: S608
-                " where user_id = %(u)s and (%(k)s::text is null or kind = %(k)s)"
+                " where user_id = %(u)s and hidden_at is null and (%(k)s::text is null or kind = %(k)s)"
                 " and (%(b)s::timestamptz is null or created_at < %(b)s)"
                 " order by created_at desc limit %(n)s",
                 {"u": user_id, "k": kind, "b": before, "n": limit + 1},
@@ -388,15 +404,23 @@ class GenerationService:
         return items, (rows[-1]["created_at"] if more and rows else None)
 
     async def delete(self, user_id: uuid.UUID, media_id: uuid.UUID) -> bool:
-        """Remove the row and its private file. A copy an admin published stays: it is a shared figure now."""
+        """Hide the item: its file and prompt are removed, the row stays so it still counts toward the daily cap.
+
+        A copy an admin published stays: it is a shared figure now."""
         async with service_tx(self._db) as conn:
             cur = await conn.execute(
-                "delete from public.generated_media where id = %s and user_id = %s returning storage_path",
+                "select storage_path from public.generated_media"
+                " where id = %s and user_id = %s and hidden_at is null for update",
                 (media_id, user_id),
             )
             row = await cur.fetchone()
-        if row is None:
-            return False
+            if row is None:
+                return False
+            await conn.execute(
+                "update public.generated_media set hidden_at = now(), storage_path = null, prompt = '[removed]',"
+                " title = null where id = %s",
+                (media_id,),
+            )
         if row["storage_path"]:
             try:
                 await self._store.delete(self._private_bucket, [row["storage_path"]])
@@ -410,7 +434,7 @@ class GenerationService:
         async with service_tx(self._db) as conn:
             cur = await conn.execute(
                 f"select {COLUMNS} from public.generated_media"  # noqa: S608
-                " where status = 'ready' and kind = 'image' and not approved_for_publish"
+                " where status = 'ready' and kind = 'image' and not approved_for_publish and hidden_at is null"
                 " order by created_at desc limit %s",
                 (limit,),
             )

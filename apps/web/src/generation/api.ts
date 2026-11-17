@@ -25,6 +25,7 @@ const KNOWN_CODES = new Set([
   "prompt_too_long",
   "prompt_real_person",
   "prompt_patient_photo",
+  "prompt_patient_info",
   "prompt_gore",
   "prompt_explicit",
   "generation_paused",

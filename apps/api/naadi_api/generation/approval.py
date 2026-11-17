@@ -70,7 +70,7 @@ async def approve_generated(
 
     cur = await conn.execute(_SELECT_FOR_UPDATE, (item_id,))
     row = await cur.fetchone()
-    if row is None:
+    if row is None or row["hidden_at"] is not None:
         raise GenerationError(404, "generated_not_found")
     if row["approved_for_publish"]:
         cur = await conn.execute(

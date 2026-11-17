@@ -17,8 +17,7 @@ def generation_check(settings: Settings, db: Database, *, flag_on: bool = True) 
             raise NotConfigured("HF_GEN_TOKEN", status="ok")
         async with service_tx(db) as conn:
             cur = await conn.execute(
-                "select max(paused_until) as until from public.generated_media"
-                " where status = 'paused' and paused_until > now()"
+                "select paused_until as until from public.generation_state where id = 1 and paused_until > now()"
             )
             paused = (await cur.fetchone() or {}).get("until")
         state = "paused" if paused is not None else ("ready" if flag_on else "disabled")

@@ -50,6 +50,13 @@ _ANATOMY_WORDS = frozenset(
     w.lower()
     for w in [
         "Circle",
+        "Fracture",
+        "Palsy",
+        "Lymphoma",
+        "Tumor",
+        "Tumour",
+        "Ulcer",
+        "Hernia",
         "Loop",
         "Bundle",
         "Islets",
@@ -352,6 +359,13 @@ _EPONYMS = frozenset(
 )
 _STRUCTURE_WORDS = frozenset({"of", "the", "and", "in", "to", "for", "with", "a", "an"})
 
+# "a woman named Anita Desai", "patient Priya Sharma", "my patient Rahul": a capitalised name after a naming cue.
+_NAMED = re.compile(
+    r"\b(?:named|called|name\s+is|patient|patients|pt\.?)\s+(?:named\s+|called\s+)?[A-Z][a-z'\u2019-]{1,}"
+)
+# Identifiers that only appear when a real patient's record is being described.
+_PATIENT_RECORD = re.compile(r"\b(?:MRN|medical\s+record\s+(?:number|no)|date\s+of\s+birth|DOB|SSN)\b", re.IGNORECASE)
+
 _PATIENT_PHOTO = re.compile(
     r"\b(?:patient|patients|real\s+patient|someone|my\s+\w+|a\s+person)\b.{0,40}\b(?:photo|photograph|picture|selfie|"
     r"x-?ray|radiograph|scan|mri|ct|ultrasound|image)\b|"
@@ -398,9 +412,16 @@ def normalise(prompt: str) -> str:
     return _WS.sub(" ", text).strip()
 
 
-def _is_anatomical(run: str) -> bool:
-    words = [w.lower().strip("'’") for w in run.split()]
-    return any(w in _ANATOMY_WORDS or w in _EPONYMS or w.rstrip("s") in _EPONYMS for w in words)
+def _is_anatomical(run: str, following: str = "") -> bool:
+    """A capitalised run is a medical term when it holds an anatomy word ("Circle of Willis") or is an eponym that is
+    followed by one ("Smith fracture"). An eponym standing alone ("portrait of John Smith") is a person."""
+    words = [w.lower().strip("'\u2019") for w in run.split()]
+    if any(w in _ANATOMY_WORDS for w in words):
+        return True
+    nxt = re.match(r"\s+([A-Za-z]+)", following)
+    follows_term = bool(nxt) and nxt.group(1).lower() in _ANATOMY_WORDS  # type: ignore[union-attr]
+    # Possessives and plurals ("Bell's palsy", "Hunters") are the same eponym.
+    return follows_term and all(w.removesuffix("s").removesuffix("'") in _EPONYMS or w in _EPONYMS for w in words)
 
 
 def _names_a_person(text: str) -> bool:
@@ -412,7 +433,7 @@ def _names_a_person(text: str) -> bool:
         if name is None:
             continue
         run = name.group(0)
-        if not _is_anatomical(run):
+        if not _is_anatomical(run, rest[name.end() :]):
             return True
     return False
 
@@ -426,8 +447,10 @@ def check_prompt(prompt: str, *, max_chars: int = MAX_PROMPT_CHARS) -> PromptVer
         return PromptVerdict(False, "prompt_too_long", "")
     scrubbed = scrub_generic(text)
     # Judge the scrubbed text: an email or phone number in a prompt is a privacy problem, not a request to refuse.
-    if _names_a_person(scrubbed):
+    if _names_a_person(scrubbed) or _NAMED.search(scrubbed):
         return PromptVerdict(False, "prompt_real_person", "")
+    if _PATIENT_RECORD.search(scrubbed) or ("[id]" in scrubbed and re.search(r"\bpatient", scrubbed, re.IGNORECASE)):
+        return PromptVerdict(False, "prompt_patient_info", "")
     if _PATIENT_PHOTO.search(scrubbed) or (_PHOTOREAL.search(scrubbed) and _HUMAN_SUBJECT.search(scrubbed)):
         return PromptVerdict(False, "prompt_patient_photo", "")
     if _GORE.search(scrubbed):

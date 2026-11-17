@@ -208,7 +208,15 @@ class GradioSpaceClient:
             }
         else:
             kwargs = {"prompt": req.prompt, "seconds": req.seconds, "seed": req.seed, "api_name": "/video"}
-        job = await asyncio.to_thread(lambda: client.submit(**kwargs))
+        try:
+            job = await asyncio.to_thread(lambda: client.submit(**kwargs))
+        except Exception as exc:
+            message = str(exc)
+            if is_quota_error(message):
+                raise QuotaExceeded(parse_quota_reset(message, self._clock())) from exc
+            self._client = None  # reconnect next time
+            log.warning("generation_submit_failed", error=type(exc).__name__)
+            raise GenerationClientError("generation_unavailable") from exc
         timeout = JOB_TIMEOUT_S[req.kind]
         loop = asyncio.get_running_loop()
         deadline = loop.time() + timeout
