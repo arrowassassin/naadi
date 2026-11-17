@@ -1,0 +1,16 @@
+{
+ "id": "20261117T085455-seg14-tutor-a4dccd",
+ "ts": "2026-11-17T08:54:55.951327Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 20241a8 into claude/naadi-shared",
+ "body": "S14 perf: markdown renderer loads on demand (AssistantSurface 338 -> 121 KB gzip)",
+ "refs": {
+  "commit": "20241a8",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
