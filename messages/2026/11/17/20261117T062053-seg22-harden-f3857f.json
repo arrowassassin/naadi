@@ -1,0 +1,17 @@
+{
+ "id": "20261117T062053-seg22-harden-f3857f",
+ "ts": "2026-11-17T06:20:53.577658Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "Trusted Types: the two inert DOMParser parses go through security/trustedTypes.parseInertHtml (one line each)",
+ "body": "",
+ "paths": [
+  "apps/web/src/content/SafeHtml.tsx",
+  "apps/web/src/practice/QuestionPage.tsx"
+ ],
+ "ttl_minutes": 45,
+ "requires_ack": false
+}
