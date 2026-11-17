@@ -1,7 +1,8 @@
 import type { MediaOut } from "@naadi/shared";
 import { cx } from "@naadi/ui";
-import { Component, lazy, type ReactNode, Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { Component, type ReactNode, Suspense, useCallback, useEffect, useRef, useState } from "react";
 import type { ContentEnv } from "../content/types";
+import { lazyWithFallback } from "../shell/lazyPage";
 import { playerUrl, SANDBOX_ATTR } from "./bridge";
 import { type BridgePlayer, connectPlayer, STATE_PLAYING } from "./bridgePlayer";
 import { Facade } from "./Facade";
@@ -10,7 +11,10 @@ import { clearVideoPosition, publishVideoPosition } from "./playback";
 import { playerOrigin } from "./playerConfig";
 
 /** The timestamped notes (the notes API and its offline queue) load beside the player, never with the chapter. */
-const VideoNotes = lazy(() => import("./VideoNotes").then((m) => ({ default: m.VideoNotes })));
+const VideoNotes = lazyWithFallback(() => import("./VideoNotes").then((m) => m.VideoNotes), {
+  fallback: null,
+  unavailable: "inline",
+});
 
 const DEFAULT_RATES = [0.5, 0.75, 1, 1.25, 1.5, 2];
 

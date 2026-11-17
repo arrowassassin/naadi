@@ -1,10 +1,11 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate, Outlet } from "@tanstack/react-router";
-import { lazy, type ReactNode, Suspense } from "react";
+import { type ReactNode, Suspense } from "react";
 import { useMe } from "../auth/api";
+import { lazyWithFallback } from "../shell/lazyPage";
 
-const LibraryPage = lazy(() => import("./LibraryPage").then((m) => ({ default: m.LibraryPage })));
-const PdfPage = lazy(() => import("./pdf/PdfPage").then((m) => ({ default: m.PdfPage })));
+const LibraryPage = lazyWithFallback(() => import("./LibraryPage").then((m) => m.LibraryPage));
+const PdfPage = lazyWithFallback(() => import("./pdf/PdfPage").then((m) => m.PdfPage));
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 

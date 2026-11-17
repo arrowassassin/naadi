@@ -1,12 +1,13 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, useNavigate } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { useMe } from "../auth/api";
+import { lazyWithFallback } from "../shell/lazyPage";
 import { FILTERS, type QueueFilter } from "./api";
 import { useReviewCopy } from "./copy";
 
-const ReviewHub = lazy(() => import("./ReviewHub").then((m) => ({ default: m.ReviewHub })));
-const ReviewItemPage = lazy(() => import("./ReviewItemPage").then((m) => ({ default: m.ReviewItemPage })));
+const ReviewHub = lazyWithFallback(() => import("./ReviewHub").then((m) => m.ReviewHub));
+const ReviewItemPage = lazyWithFallback(() => import("./ReviewItemPage").then((m) => m.ReviewItemPage));
 
 const ITEM_ID = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 

@@ -1,9 +1,10 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { useMe } from "../auth/api";
+import { lazyWithFallback } from "../shell/lazyPage";
 
-const GeneratedLibrary = lazy(() => import("./GeneratedLibrary").then((m) => ({ default: m.GeneratedLibrary })));
+const GeneratedLibrary = lazyWithFallback(() => import("./GeneratedLibrary").then((m) => m.GeneratedLibrary));
 
 /** `/generated`: the student's generated media, only while `features.generation` is on (it stays off until the
  * generation token is set). S15 also mounts `GeneratedLibrary` as the Library's "Generated" filter. */

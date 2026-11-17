@@ -1,6 +1,7 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Outlet } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
+import { lazyWithFallback } from "../shell/lazyPage";
 import type * as Pages from "./pages";
 
 /*
@@ -13,7 +14,7 @@ import type * as Pages from "./pages";
 type PageName = keyof typeof Pages;
 const load = () => import("./pages");
 function page<N extends PageName>(name: N) {
-  return lazy(() => load().then((m) => ({ default: m[name] })));
+  return lazyWithFallback(() => load().then((m) => m[name]));
 }
 
 const AdminLayout = page("AdminLayout");

@@ -1,8 +1,9 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
+import { lazyWithFallback } from "../shell/lazyPage";
 
-const AgentDiagnostics = lazy(() => import("./AgentDiagnostics").then((m) => ({ default: m.AgentDiagnostics })));
+const AgentDiagnostics = lazyWithFallback(() => import("./AgentDiagnostics").then((m) => m.AgentDiagnostics));
 
 function Page() {
   return (

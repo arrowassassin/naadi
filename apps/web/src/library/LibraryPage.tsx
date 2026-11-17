@@ -2,10 +2,11 @@ import type { LibraryChapter } from "@naadi/shared";
 import { cx, ErrorState, Skeleton, Tile, TileLabel } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
 import { FileText, Inbox } from "lucide-react";
-import { lazy, Suspense, useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { AnkiTile } from "../anki/AnkiTile";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
+import { lazyWithFallback } from "../shell/lazyPage";
 import { requestErrorKey, uploads, useLibrary, useUploadsVersion } from "./api";
 import { ConfirmCard, VaultCard } from "./ConfirmCard";
 import { cardGridClass, FileCard } from "./FileCard";
@@ -13,8 +14,9 @@ import { Intake } from "./Intake";
 import { confirmGroups, FILTERS, type Filter, matchesFilter, statusOf, vaultPrompts } from "./model";
 import { StorageMeter } from "./StorageMeter";
 
-const GeneratedLibrary = lazy(() =>
-  import("../generation/GeneratedLibrary").then((m) => ({ default: m.GeneratedLibrary })),
+const GeneratedLibrary = lazyWithFallback(
+  () => import("../generation/GeneratedLibrary").then((m) => m.GeneratedLibrary),
+  { fallback: null, unavailable: "inline" },
 );
 
 function Headline() {

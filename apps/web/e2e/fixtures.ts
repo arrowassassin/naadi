@@ -159,6 +159,10 @@ export const test = base.extend<Fixtures>({
       if (sdk) return !allowed.some((a) => a.agentSdk === true && a.status === Number(sdk[1]));
       // Firefox prints the same SDK log line as a bare "Error" (the message is not part of the text).
       if (/^Error @ /.test(line) && allowed.some((a) => a.agentSdk === true)) return false;
+      // A request that failed without a response (the test aborted it): allowed only by a status-0 entry for its URL.
+      if (/Failed to load resource: net::ERR_/.test(line)) {
+        return !allowed.some((a) => a.status === 0 && line.includes(a.urlPart));
+      }
       const m = /Failed to load resource: the server responded with a status of (\d{3})/.exec(line);
       if (!m) return true;
       const status = Number(m[1]);
