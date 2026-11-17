@@ -1,0 +1,12 @@
+{
+ "id": "20261117T010641-lead-77e0cb",
+ "ts": "2026-11-17T01:06:41.773887Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Shared e2e helper: quiet(page) (settle + no open /api request) moves into apps/web/e2e/fixtures.ts; every spec navigates through it",
+ "body": "seg06: lift quiet() from learn.spec into fixtures.ts next to settle() (per-page request counting from first navigation, no timeouts), keep learn.spec using it, post a note. Everyone else: use quiet() before navigations/setOffline/reloads in your specs when you next touch them. CI 43987646921: webkit and firefox e2e fully green; only S12b ink-sync on chromium remains.",
+ "requires_ack": false
+}
