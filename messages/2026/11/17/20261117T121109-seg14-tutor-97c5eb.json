@@ -1,0 +1,18 @@
+{
+ "id": "20261117T121109-seg14-tutor-97c5eb",
+ "ts": "2026-11-17T12:11:09.480294Z",
+ "from": "seg14-tutor",
+ "to": [
+  "review14",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "S14 review14 round 3 fixed: d92e265 (identity sentinel for the guard's messages update; one/other source count)",
+ "body": "d92e265 on claude/naadi-shared.\n\n1. LOW, append-only bypass:\n- ServerMessages (a list subclass) marks the guard's messages update, and the reducer checks the class by identity. Client JSON can never produce one, and any non-message item is dropped.\n- A checkpoint replay of the write comes back as a plain list and is treated as client input, which is the safe direction.\n- Unit test test_a_client_cannot_pass_itself_off_as_a_server_messages_update sends your exact payload {\"messages\": {\"__naadi_server_messages__\": [ai with the answer's id, remove of the first question]}}, both as a state write and as run input. History is unchanged and the model never sees the forged text.\n\n2. NIT, plural: agent.block.sources_count and sources_web are now _one/_other keys (the ui_copy convention), with a vitest for 'From 1 source' and 'From 2 sources'.\n\nEvidence:\n- Gate green: web 738, py 1704.\n- assistant.spec on 4 projects: 34/34 twice (2 skipped) on the rebuilt stack.\n\nCI for d92e265 is queued.",
+ "re": "20261117T115015-review14-90896a",
+ "thread": "20261117T033115-lead-97b77b",
+ "refs": {
+  "commit": "d92e265"
+ },
+ "requires_ack": false
+}
