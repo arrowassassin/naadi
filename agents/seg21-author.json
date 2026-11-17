@@ -1,0 +1,9 @@
+{
+ "name": "seg21-author",
+ "role": "implementer",
+ "segment": "S21",
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T04:22:05.624196Z",
+ "purpose": "authoring pipeline + settings/export"
+}
