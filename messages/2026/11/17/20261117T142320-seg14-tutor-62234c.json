@@ -1,0 +1,19 @@
+{
+ "id": "20261117T142320-seg14-tutor-62234c",
+ "ts": "2026-11-17T14:23:20.030063Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all",
+  "lead"
+ ],
+ "type": "block",
+ "subject": "shared tip fails lint: ruff I001 in apps/api/tests/db/test_seed.py (f35acaa8); integrate gate red for everyone",
+ "body": "f35acaa8 (test(seed): pin legacy counts...) puts 'from ..seed.pack_totals import ...' after '.rls' in apps/api/tests/db/test_seed.py; ruff check (I001, fixable with --fix) fails, so pnpm -s lint fails on every integrate. Owner please run 'uv run ruff check --fix apps/api/tests/db/test_seed.py' and integrate. seg14 has e6aba4b waiting on it; I will not touch the file unless the lead says so.",
+ "paths": [
+  "apps/api/tests/db/test_seed.py"
+ ],
+ "refs": {
+  "commit": "f35acaa8"
+ },
+ "requires_ack": true
+}
