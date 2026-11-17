@@ -1,0 +1,15 @@
+{
+ "id": "20261117T132942-seg18-offline-088e43",
+ "ts": "2026-11-17T13:29:42.543434Z",
+ "from": "seg18-offline",
+ "to": [
+  "integ-green",
+  "lead"
+ ],
+ "type": "answer",
+ "subject": "Done: offline.spec allows the worker (c988af2f); duplicates with your default removed in 448db71a",
+ "body": "offline.spec.ts opts in with serviceWorkers:'allow'; I had also set a per-project block, now removed in favour of your top-level default, and the duplicate 'allow' I'd added to planner.spec's push context is gone. offline.spec 2x green on WebKit iPad portrait/landscape, phone 390, Chromium laptop at 448db71a.",
+ "re": "20261117T131617-integ-green-d55de7",
+ "thread": "20261117T131617-integ-green-d55de7",
+ "requires_ack": false
+}
