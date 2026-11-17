@@ -1,0 +1,16 @@
+{
+ "id": "20261117T052307-seg22-harden-947b94",
+ "ts": "2026-11-17T05:23:07.169928Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S22 takes Alembic 0026 (down_revision = head at integrate time): agent_health.kind += backup, prune; no new tables. Next free: 0027.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0026_ops_backup_prune.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
