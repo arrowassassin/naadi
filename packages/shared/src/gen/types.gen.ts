@@ -378,7 +378,7 @@ export type AdminQuestion = {
   /**
    * Options
    */
-  options: Array<NaadiApiAdminQuestionsOptionOut>;
+  options: Array<OptionOut>;
   /**
    * Review
    */
@@ -2174,7 +2174,7 @@ export type CardsOut = {
  * Cell
  */
 export type Cell = {
-  counts: NaadiApiAdminCoverageCounts;
+  counts: Counts;
   /**
    * Discipline Id
    */
@@ -3031,6 +3031,28 @@ export type CostSummary = {
 };
 
 /**
+ * Counts
+ */
+export type Counts = {
+  /**
+   * Cards
+   */
+  cards?: number;
+  /**
+   * Questions
+   */
+  questions?: number;
+  /**
+   * Sections
+   */
+  sections?: number;
+  /**
+   * Videos
+   */
+  videos?: number;
+};
+
+/**
  * CourseChapter
  */
 export type CourseChapter = {
@@ -3693,59 +3715,6 @@ export type FieldError = {
 };
 
 /**
- * FileOut
- */
-export type FileOut = {
-  /**
-   * Expires In
-   */
-  expires_in: number;
-  /**
-   * Kind
-   */
-  kind:
-    | "pdf"
-    | "docx"
-    | "pptx"
-    | "xlsx"
-    | "csv"
-    | "txt"
-    | "md"
-    | "html"
-    | "epub"
-    | "rtf"
-    | "image"
-    | "audio"
-    | "video"
-    | "link"
-    | "anki"
-    | "zip"
-    | "paste";
-  /**
-   * Mime
-   */
-  mime: string | null;
-  /**
-   * Name
-   */
-  name: string | null;
-  /**
-   * Pages
-   */
-  pages: number | null;
-  /**
-   * Upload Id
-   */
-  upload_id: string;
-  /**
-   * Url
-   *
-   * Signed URL, valid for expires_in seconds
-   */
-  url: string;
-};
-
-/**
  * FlagIn
  */
 export type FlagIn = {
@@ -3839,22 +3808,6 @@ export type FsrsSchedulerConfig = {
     number,
     number,
   ];
-};
-
-/**
- * GateOut
- */
-export type GateOut = {
-  /**
-   * Doc Type
-   */
-  doc_type: string | null;
-  /**
-   * Signals
-   *
-   * Sensitivity signal codes (ingest.signal.<code>)
-   */
-  signals: Array<string>;
 };
 
 /**
@@ -4294,6 +4247,113 @@ export type IndexStatus = {
 };
 
 /**
+ * IngestCounts
+ */
+export type IngestCounts = {
+  /**
+   * Duration S
+   */
+  duration_s?: number | null;
+  /**
+   * Figures
+   */
+  figures?: number | null;
+  /**
+   * Mcqs
+   */
+  mcqs?: number | null;
+  /**
+   * Pages
+   */
+  pages?: number | null;
+  /**
+   * Qa Pairs
+   */
+  qa_pairs?: number | null;
+  /**
+   * Scanned
+   */
+  scanned?: number | null;
+  /**
+   * Sections
+   */
+  sections?: number | null;
+  /**
+   * Words
+   */
+  words?: number | null;
+};
+
+/**
+ * IngestFileOut
+ */
+export type IngestFileOut = {
+  /**
+   * Expires In
+   */
+  expires_in: number;
+  /**
+   * Kind
+   */
+  kind:
+    | "pdf"
+    | "docx"
+    | "pptx"
+    | "xlsx"
+    | "csv"
+    | "txt"
+    | "md"
+    | "html"
+    | "epub"
+    | "rtf"
+    | "image"
+    | "audio"
+    | "video"
+    | "link"
+    | "anki"
+    | "zip"
+    | "paste";
+  /**
+   * Mime
+   */
+  mime: string | null;
+  /**
+   * Name
+   */
+  name: string | null;
+  /**
+   * Pages
+   */
+  pages: number | null;
+  /**
+   * Upload Id
+   */
+  upload_id: string;
+  /**
+   * Url
+   *
+   * Signed URL, valid for expires_in seconds
+   */
+  url: string;
+};
+
+/**
+ * IngestGateOut
+ */
+export type IngestGateOut = {
+  /**
+   * Doc Type
+   */
+  doc_type: string | null;
+  /**
+   * Signals
+   *
+   * Sensitivity signal codes (ingest.signal.<code>)
+   */
+  signals: Array<string>;
+};
+
+/**
  * IngestItemList
  */
 export type IngestItemList = {
@@ -4329,7 +4389,7 @@ export type IngestItemOut = {
    * The private chapter this item became (or duplicates)
    */
   chapter_id: string | null;
-  counts: NaadiApiIngestModelsCounts | null;
+  counts: IngestCounts | null;
   /**
    * Created At
    */
@@ -4351,7 +4411,7 @@ export type IngestItemOut = {
   /**
    * Set while the Vault prompt waits
    */
-  gate: GateOut | null;
+  gate: IngestGateOut | null;
   /**
    * Id
    */
@@ -4389,12 +4449,12 @@ export type IngestItemOut = {
    *
    * The confirm card's placements, best first
    */
-  options: Array<NaadiApiIngestModelsOptionOut>;
+  options: Array<IngestOptionOut>;
   /**
    * Pages
    */
   pages: number | null;
-  placed: PlacedOut | null;
+  placed: IngestPlacedOut | null;
   /**
    * Progress
    */
@@ -4433,6 +4493,96 @@ export type IngestItemOut = {
    * Url
    */
   url: string | null;
+};
+
+/**
+ * IngestOptionOut
+ */
+export type IngestOptionOut = {
+  /**
+   * Kind
+   *
+   * Placement kind (ui_copy ingest.placement.<kind>)
+   */
+  kind: string;
+  /**
+   * Option Id
+   */
+  option_id: string;
+  /**
+   * Preview
+   *
+   * IngestCounts, titles and target ids; never an answer
+   */
+  preview: {
+    [key: string]: unknown;
+  };
+  /**
+   * Recommended
+   */
+  recommended: boolean;
+};
+
+/**
+ * IngestPageTextOut
+ */
+export type IngestPageTextOut = {
+  /**
+   * Page
+   */
+  page: number;
+  /**
+   * Pages
+   */
+  pages: number;
+  /**
+   * Text
+   */
+  text: string;
+  /**
+   * Upload Id
+   */
+  upload_id: string;
+};
+
+/**
+ * IngestPlacedOut
+ */
+export type IngestPlacedOut = {
+  /**
+   * Can Undo
+   */
+  can_undo: boolean;
+  /**
+   * Chapter Id
+   */
+  chapter_id?: string | null;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Rows
+   */
+  rows: number;
+};
+
+/**
+ * IngestStorageOut
+ */
+export type IngestStorageOut = {
+  /**
+   * Limit Bytes
+   */
+  limit_bytes: number;
+  /**
+   * Remaining Bytes
+   */
+  remaining_bytes: number;
+  /**
+   * Used Bytes
+   */
+  used_bytes: number;
 };
 
 /**
@@ -4891,7 +5041,7 @@ export type LibraryOut = {
    */
   kb: Array<LibraryKb>;
   limits: LibraryLimits;
-  storage: StorageOut;
+  storage: IngestStorageOut;
 };
 
 /**
@@ -6009,6 +6159,20 @@ export type OptionIn = {
 };
 
 /**
+ * OptionOut
+ */
+export type OptionOut = {
+  /**
+   * Html
+   */
+  html: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
  * PageCreate
  */
 export type PageCreate = {
@@ -6062,28 +6226,6 @@ export type PageOrder = {
    * Every page of the notebook exactly once, in the new order
    */
   page_ids: Array<string>;
-};
-
-/**
- * PageTextOut
- */
-export type PageTextOut = {
-  /**
-   * Page
-   */
-  page: number;
-  /**
-   * Pages
-   */
-  pages: number;
-  /**
-   * Text
-   */
-  text: string;
-  /**
-   * Upload Id
-   */
-  upload_id: string;
 };
 
 /**
@@ -6147,28 +6289,6 @@ export type PathwayStageOut = {
    * Total
    */
   total: number;
-};
-
-/**
- * PlacedOut
- */
-export type PlacedOut = {
-  /**
-   * Can Undo
-   */
-  can_undo: boolean;
-  /**
-   * Chapter Id
-   */
-  chapter_id?: string | null;
-  /**
-   * Kind
-   */
-  kind: string;
-  /**
-   * Rows
-   */
-  rows: number;
 };
 
 /**
@@ -9104,24 +9224,6 @@ export type StagePut = {
 };
 
 /**
- * StorageOut
- */
-export type StorageOut = {
-  /**
-   * Limit Bytes
-   */
-  limit_bytes: number;
-  /**
-   * Remaining Bytes
-   */
-  remaining_bytes: number;
-  /**
-   * Used Bytes
-   */
-  used_bytes: number;
-};
-
-/**
  * StudentItemIn
  */
 export type StudentItemIn = {
@@ -9179,7 +9281,7 @@ export type StudentItemsOut = {
  * SystemCoverage
  */
 export type SystemCoverage = {
-  counts: NaadiApiAdminCoverageCounts;
+  counts: Counts;
   /**
    * Id
    */
@@ -9655,7 +9757,7 @@ export type TodayRebalance = {
  * TopicCoverage
  */
 export type TopicCoverage = {
-  counts: NaadiApiAdminCoverageCounts;
+  counts: Counts;
   /**
    * Id
    */
@@ -10612,42 +10714,6 @@ export type WeightOverlay = {
 };
 
 /**
- * Counts
- */
-export type NaadiApiAdminCoverageCounts = {
-  /**
-   * Cards
-   */
-  cards?: number;
-  /**
-   * Questions
-   */
-  questions?: number;
-  /**
-   * Sections
-   */
-  sections?: number;
-  /**
-   * Videos
-   */
-  videos?: number;
-};
-
-/**
- * OptionOut
- */
-export type NaadiApiAdminQuestionsOptionOut = {
-  /**
-   * Html
-   */
-  html: string;
-  /**
-   * Label
-   */
-  label: string;
-};
-
-/**
  * ExamOption
  */
 export type NaadiApiCoursesExamOption = {
@@ -10663,72 +10729,6 @@ export type NaadiApiCoursesExamOption = {
    * Label
    */
   label: string;
-};
-
-/**
- * Counts
- */
-export type NaadiApiIngestModelsCounts = {
-  /**
-   * Duration S
-   */
-  duration_s?: number | null;
-  /**
-   * Figures
-   */
-  figures?: number | null;
-  /**
-   * Mcqs
-   */
-  mcqs?: number | null;
-  /**
-   * Pages
-   */
-  pages?: number | null;
-  /**
-   * Qa Pairs
-   */
-  qa_pairs?: number | null;
-  /**
-   * Scanned
-   */
-  scanned?: number | null;
-  /**
-   * Sections
-   */
-  sections?: number | null;
-  /**
-   * Words
-   */
-  words?: number | null;
-};
-
-/**
- * OptionOut
- */
-export type NaadiApiIngestModelsOptionOut = {
-  /**
-   * Kind
-   *
-   * Placement kind (ui_copy ingest.placement.<kind>)
-   */
-  kind: string;
-  /**
-   * Option Id
-   */
-  option_id: string;
-  /**
-   * Preview
-   *
-   * Counts, titles and target ids; never an answer
-   */
-  preview: {
-    [key: string]: unknown;
-  };
-  /**
-   * Recommended
-   */
-  recommended: boolean;
 };
 
 /**
@@ -17360,7 +17360,7 @@ export type GetIngestFileResponses = {
   /**
    * Successful Response
    */
-  200: FileOut;
+  200: IngestFileOut;
 };
 
 export type GetIngestFileResponse = GetIngestFileResponses[keyof GetIngestFileResponses];
@@ -17414,7 +17414,7 @@ export type GetIngestPageTextResponses = {
   /**
    * Successful Response
    */
-  200: PageTextOut;
+  200: IngestPageTextOut;
 };
 
 export type GetIngestPageTextResponse = GetIngestPageTextResponses[keyof GetIngestPageTextResponses];

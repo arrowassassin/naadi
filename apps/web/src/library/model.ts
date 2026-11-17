@@ -1,4 +1,4 @@
-import type { IngestItemOut, OptionOut } from "@naadi/shared";
+import type { IngestItemOut, IngestOptionOut } from "@naadi/shared";
 import type { TextLookup } from "../content/types";
 import { count } from "../learn/format";
 
@@ -139,7 +139,7 @@ export function vaultPrompts(items: readonly Item[], up: UploadState): Item[] {
 }
 
 /** The option preselected on a confirm card: the recommended one, else the first. */
-export function defaultOption(item: Item): OptionOut | undefined {
+export function defaultOption(item: Item): IngestOptionOut | undefined {
   return item.options.find((o) => o.recommended) ?? item.options[0];
 }
 
@@ -176,7 +176,7 @@ export interface OptionWording {
 }
 
 /** Word one placement option from its structured preview (`ingest.placement.<kind>` and `ingest.preview.*`). */
-export function optionWording(t: TextLookup, option: OptionOut, itemName: string | null): OptionWording {
+export function optionWording(t: TextLookup, option: IngestOptionOut, itemName: string | null): OptionWording {
   const p = option.preview ?? {};
   const kind = placementKindKey(option.kind);
   const title = str(p.title) || str(p.deck) || itemName || t("library.untitled");

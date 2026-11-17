@@ -1,10 +1,10 @@
-import type { StorageOut } from "@naadi/shared";
+import type { IngestStorageOut } from "@naadi/shared";
 import { cx } from "@naadi/ui";
 import { useUiText } from "../copy/useUiText";
 import { sizeLabel } from "./model";
 
 /** Storage used against the student's limit: a meter with the numbers in words (never the bar alone). */
-export function StorageMeter({ storage, className }: { storage: StorageOut; className?: string }) {
+export function StorageMeter({ storage, className }: { storage: IngestStorageOut; className?: string }) {
   const t = useUiText();
   const limit = Math.max(1, storage.limit_bytes);
   const pct = Math.min(100, Math.round((storage.used_bytes / limit) * 100));

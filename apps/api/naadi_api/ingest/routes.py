@@ -49,21 +49,21 @@ from .models import (
     LIST_LIMIT_MAX,
     BatchConfirm,
     ConfirmBody,
-    Counts,
-    FileOut,
-    GateOut,
+    IngestCounts,
+    IngestFileOut,
+    IngestGateOut,
     IngestItemList,
     IngestItemOut,
     LibraryChapter,
     LibraryKb,
     LibraryLimits,
     LibraryOut,
-    OptionOut,
-    PageTextOut,
+    IngestOptionOut,
+    IngestPageTextOut,
     PasteCreate,
-    PlacedOut,
+    IngestPlacedOut,
     PlacementChoice,
-    StorageOut,
+    IngestStorageOut,
     UploadBatchCreate,
     UploadBatchOut,
     UploadCreate,
@@ -176,12 +176,12 @@ def item_out(row: dict[str, Any]) -> IngestItemOut:
     gate = None
     if stage == "vault":
         g = detail.get("gate") or {}
-        gate = GateOut(signals=[str(s) for s in g.get("signals") or []], doc_type=g.get("doc_type"))
-    options: list[OptionOut] = []
+        gate = IngestGateOut(signals=[str(s) for s in g.get("signals") or []], doc_type=g.get("doc_type"))
+    options: list[IngestOptionOut] = []
     if stage == "confirm":
         for o in (row.get("proposed_placement") or {}).get("options") or []:
             options.append(
-                OptionOut(
+                IngestOptionOut(
                     option_id=o["option_id"],
                     kind=o["kind"],
                     recommended=bool(o.get("recommended")),
@@ -193,7 +193,7 @@ def item_out(row: dict[str, Any]) -> IngestItemOut:
     if records:
         kind = (row.get("confirmed_placement") or {}).get("kind") or records[0].get("kind")
         chapter = next((r["id"] for r in records if r.get("table") == "chapters"), None)
-        placed = PlacedOut(kind=str(kind), chapter_id=chapter, rows=len(records), can_undo=True)
+        placed = IngestPlacedOut(kind=str(kind), chapter_id=chapter, rows=len(records), can_undo=True)
     name = row.get("original_name") or row.get("kb_title")
     if not name and row.get("kb_url"):
         from urllib.parse import urlparse
@@ -222,7 +222,7 @@ def item_out(row: dict[str, Any]) -> IngestItemOut:
         gate=gate,
         options=options,
         placed=placed,
-        counts=Counts.model_validate(counts) if isinstance(counts, dict) else None,
+        counts=IngestCounts.model_validate(counts) if isinstance(counts, dict) else None,
         bundle_files=bundle.get("files") if bundle else None,
         retryable=status == "failed" and row.get("error") not in (codes.DISCARDED, *_FINAL),
         created_at=row["created_at"],
@@ -822,12 +822,12 @@ async def _upload_row(db: Database, user: CurrentUser, upload_id: uuid.UUID) -> 
     "/ingest/uploads/{upload_id}/file",
     operation_id="getIngestFile",
     summary="A short-lived signed URL of the student's original file",
-    response_model=FileOut,
+    response_model=IngestFileOut,
     responses={**_ERRORS, **_404},
 )
 async def get_file(
     request: Request, upload_id: uuid.UUID, user: Annotated[CurrentUser, limited("ingest_read")]
-) -> FileOut:
+) -> IngestFileOut:
     row = await _upload_row(_db(request), user, upload_id)
     settings = request.app.state.settings
     bucket = configured_buckets(settings).user_uploads
@@ -835,7 +835,7 @@ async def get_file(
         url = await get_storage(settings).signed_url(bucket, row["storage_path"], SIGNED_READ_TTL_S)
     except Exception as exc:
         raise IngestError(503, "ingest_unavailable") from exc
-    return FileOut(
+    return IngestFileOut(
         upload_id=upload_id,
         kind=row["kind"],
         name=row["original_name"],
@@ -848,7 +848,7 @@ async def get_file(
 
 async def read_page_text(
     db: Database, settings: Any, user_id: uuid.UUID, upload_id: uuid.UUID, page: int
-) -> PageTextOut | None:
+) -> IngestPageTextOut | None:
     """One PDF page's text (sandboxed), for the Library API and the tutor's `get_page` (pdf_page)."""
     async with st.service_tx(db) as conn:
         row = await st.one(
@@ -864,20 +864,22 @@ async def read_page_text(
     if doc is not None and doc.pages:
         hit = next((p for p in doc.pages if p.number == page), None)
         if hit is not None:
-            return PageTextOut(upload_id=upload_id, page=page, pages=doc.page_count or len(doc.pages), text=hit.text)
+            return IngestPageTextOut(
+                upload_id=upload_id, page=page, pages=doc.page_count or len(doc.pages), text=hit.text
+            )
     bucket = configured_buckets(settings).user_uploads
     data = await get_storage(settings).download(bucket, row["storage_path"], 50 * MB)
     text, pages = await page_text(data, page)
     if not 1 <= page <= pages:
         return None
-    return PageTextOut(upload_id=upload_id, page=page, pages=pages, text=text)
+    return IngestPageTextOut(upload_id=upload_id, page=page, pages=pages, text=text)
 
 
 @router.get(
     "/ingest/uploads/{upload_id}/pages/{page}",
     operation_id="getIngestPageText",
     summary="One page's text of the student's PDF",
-    response_model=PageTextOut,
+    response_model=IngestPageTextOut,
     responses={**_ERRORS, **_404},
 )
 async def get_page_text(
@@ -885,7 +887,7 @@ async def get_page_text(
     upload_id: uuid.UUID,
     page: Annotated[int, Path(ge=1, le=10_000)],
     user: Annotated[CurrentUser, limited("ingest_read")],
-) -> PageTextOut:
+) -> IngestPageTextOut:
     out = await _guard(lambda: read_page_text(_db(request), request.app.state.settings, user.user_id, upload_id, page))
     if out is None:
         raise IngestError(404, "ingest_item_not_found")
@@ -975,7 +977,7 @@ async def get_library(request: Request, user: Annotated[CurrentUser, limited("in
             )
             for k in kb
         ],
-        storage=StorageOut(used_bytes=used, limit_bytes=limit, remaining_bytes=max(0, limit - used)),
+        storage=IngestStorageOut(used_bytes=used, limit_bytes=limit, remaining_bytes=max(0, limit - used)),
         accepts=accepted_inputs(on),
         limits=LibraryLimits(
             max_file_mb=rules.max_file_mb,

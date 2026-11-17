@@ -1,4 +1,4 @@
-import type { IngestItemOut, OptionOut } from "@naadi/shared";
+import type { IngestItemOut, IngestOptionOut } from "@naadi/shared";
 import { uiText } from "@naadi/shared";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { act, render, screen } from "@testing-library/react";
@@ -42,7 +42,7 @@ vi.mock("../copy/useUiText", () => ({
 const NOW = Date.parse("2026-11-17T10:00:00Z");
 let seq = 0;
 
-function option(kind: string, preview: Record<string, unknown>, recommended = false, n = 0): OptionOut {
+function option(kind: string, preview: Record<string, unknown>, recommended = false, n = 0): IngestOptionOut {
   return { option_id: `${kind}:${n}`, kind, recommended, preview };
 }
 
@@ -82,7 +82,7 @@ const local = (over: Partial<UploadState> = {}): UploadState => ({
   ...over,
 });
 
-function waiting(batch: string | null, kinds: OptionOut[]): IngestItemOut {
+function waiting(batch: string | null, kinds: IngestOptionOut[]): IngestItemOut {
   return item({ status: "needs_confirmation", stage: "confirm", batch_id: batch, options: kinds, progress: 90 });
 }
 

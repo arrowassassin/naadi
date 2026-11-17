@@ -737,7 +737,7 @@
           },
           "options": {
             "items": {
-              "$ref": "#/components/schemas/naadi_api__admin__questions__OptionOut"
+              "$ref": "#/components/schemas/OptionOut"
             },
             "title": "Options",
             "type": "array"
@@ -3920,7 +3920,7 @@
       "Cell": {
         "properties": {
           "counts": {
-            "$ref": "#/components/schemas/naadi_api__admin__coverage__Counts"
+            "$ref": "#/components/schemas/Counts"
           },
           "discipline_id": {
             "title": "Discipline Id",
@@ -5538,6 +5538,32 @@
         "title": "CostSummary",
         "type": "object"
       },
+      "Counts": {
+        "properties": {
+          "cards": {
+            "default": 0,
+            "title": "Cards",
+            "type": "integer"
+          },
+          "questions": {
+            "default": 0,
+            "title": "Questions",
+            "type": "integer"
+          },
+          "sections": {
+            "default": 0,
+            "title": "Sections",
+            "type": "integer"
+          },
+          "videos": {
+            "default": 0,
+            "title": "Videos",
+            "type": "integer"
+          }
+        },
+        "title": "Counts",
+        "type": "object"
+      },
       "CourseChapter": {
         "properties": {
           "coverage": {
@@ -6647,91 +6673,6 @@
         "title": "FieldError",
         "type": "object"
       },
-      "FileOut": {
-        "properties": {
-          "expires_in": {
-            "title": "Expires In",
-            "type": "integer"
-          },
-          "kind": {
-            "enum": [
-              "pdf",
-              "docx",
-              "pptx",
-              "xlsx",
-              "csv",
-              "txt",
-              "md",
-              "html",
-              "epub",
-              "rtf",
-              "image",
-              "audio",
-              "video",
-              "link",
-              "anki",
-              "zip",
-              "paste"
-            ],
-            "title": "Kind",
-            "type": "string"
-          },
-          "mime": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Mime"
-          },
-          "name": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Name"
-          },
-          "pages": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Pages"
-          },
-          "upload_id": {
-            "format": "uuid",
-            "title": "Upload Id",
-            "type": "string"
-          },
-          "url": {
-            "description": "Signed URL, valid for expires_in seconds",
-            "title": "Url",
-            "type": "string"
-          }
-        },
-        "required": [
-          "upload_id",
-          "kind",
-          "name",
-          "url",
-          "expires_in",
-          "pages",
-          "mime"
-        ],
-        "title": "FileOut",
-        "type": "object"
-      },
       "FlagIn": {
         "additionalProperties": false,
         "properties": {
@@ -6835,35 +6776,6 @@
           "enable_fuzz"
         ],
         "title": "FsrsSchedulerConfig",
-        "type": "object"
-      },
-      "GateOut": {
-        "properties": {
-          "doc_type": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Doc Type"
-          },
-          "signals": {
-            "description": "Sensitivity signal codes (ingest.signal.<code>)",
-            "items": {
-              "type": "string"
-            },
-            "title": "Signals",
-            "type": "array"
-          }
-        },
-        "required": [
-          "signals",
-          "doc_type"
-        ],
-        "title": "GateOut",
         "type": "object"
       },
       "GeneratedApproveBody": {
@@ -7600,6 +7512,214 @@
         "title": "IndexStatus",
         "type": "object"
       },
+      "IngestCounts": {
+        "properties": {
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "figures": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Figures"
+          },
+          "mcqs": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mcqs"
+          },
+          "pages": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pages"
+          },
+          "qa_pairs": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Qa Pairs"
+          },
+          "scanned": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scanned"
+          },
+          "sections": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sections"
+          },
+          "words": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Words"
+          }
+        },
+        "title": "IngestCounts",
+        "type": "object"
+      },
+      "IngestFileOut": {
+        "properties": {
+          "expires_in": {
+            "title": "Expires In",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "pdf",
+              "docx",
+              "pptx",
+              "xlsx",
+              "csv",
+              "txt",
+              "md",
+              "html",
+              "epub",
+              "rtf",
+              "image",
+              "audio",
+              "video",
+              "link",
+              "anki",
+              "zip",
+              "paste"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "mime": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mime"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "pages": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pages"
+          },
+          "upload_id": {
+            "format": "uuid",
+            "title": "Upload Id",
+            "type": "string"
+          },
+          "url": {
+            "description": "Signed URL, valid for expires_in seconds",
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "upload_id",
+          "kind",
+          "name",
+          "url",
+          "expires_in",
+          "pages",
+          "mime"
+        ],
+        "title": "IngestFileOut",
+        "type": "object"
+      },
+      "IngestGateOut": {
+        "properties": {
+          "doc_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doc Type"
+          },
+          "signals": {
+            "description": "Sensitivity signal codes (ingest.signal.<code>)",
+            "items": {
+              "type": "string"
+            },
+            "title": "Signals",
+            "type": "array"
+          }
+        },
+        "required": [
+          "signals",
+          "doc_type"
+        ],
+        "title": "IngestGateOut",
+        "type": "object"
+      },
       "IngestItemList": {
         "properties": {
           "items": {
@@ -7680,7 +7800,7 @@
           "counts": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/naadi_api__ingest__models__Counts"
+                "$ref": "#/components/schemas/IngestCounts"
               },
               {
                 "type": "null"
@@ -7734,7 +7854,7 @@
           "gate": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/GateOut"
+                "$ref": "#/components/schemas/IngestGateOut"
               },
               {
                 "type": "null"
@@ -7792,7 +7912,7 @@
           "options": {
             "description": "The confirm card's placements, best first",
             "items": {
-              "$ref": "#/components/schemas/naadi_api__ingest__models__OptionOut"
+              "$ref": "#/components/schemas/IngestOptionOut"
             },
             "title": "Options",
             "type": "array"
@@ -7811,7 +7931,7 @@
           "placed": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/PlacedOut"
+                "$ref": "#/components/schemas/IngestPlacedOut"
               },
               {
                 "type": "null"
@@ -7911,6 +8031,124 @@
           "updated_at"
         ],
         "title": "IngestItemOut",
+        "type": "object"
+      },
+      "IngestOptionOut": {
+        "properties": {
+          "kind": {
+            "description": "Placement kind (ui_copy ingest.placement.<kind>)",
+            "title": "Kind",
+            "type": "string"
+          },
+          "option_id": {
+            "title": "Option Id",
+            "type": "string"
+          },
+          "preview": {
+            "additionalProperties": true,
+            "description": "IngestCounts, titles and target ids; never an answer",
+            "title": "Preview",
+            "type": "object"
+          },
+          "recommended": {
+            "title": "Recommended",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "option_id",
+          "kind",
+          "recommended",
+          "preview"
+        ],
+        "title": "IngestOptionOut",
+        "type": "object"
+      },
+      "IngestPageTextOut": {
+        "properties": {
+          "page": {
+            "minimum": 1.0,
+            "title": "Page",
+            "type": "integer"
+          },
+          "pages": {
+            "title": "Pages",
+            "type": "integer"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "upload_id": {
+            "format": "uuid",
+            "title": "Upload Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "upload_id",
+          "page",
+          "pages",
+          "text"
+        ],
+        "title": "IngestPageTextOut",
+        "type": "object"
+      },
+      "IngestPlacedOut": {
+        "properties": {
+          "can_undo": {
+            "title": "Can Undo",
+            "type": "boolean"
+          },
+          "chapter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Id"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "rows": {
+            "title": "Rows",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "rows",
+          "can_undo"
+        ],
+        "title": "IngestPlacedOut",
+        "type": "object"
+      },
+      "IngestStorageOut": {
+        "properties": {
+          "limit_bytes": {
+            "title": "Limit Bytes",
+            "type": "integer"
+          },
+          "remaining_bytes": {
+            "title": "Remaining Bytes",
+            "type": "integer"
+          },
+          "used_bytes": {
+            "title": "Used Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "used_bytes",
+          "limit_bytes",
+          "remaining_bytes"
+        ],
+        "title": "IngestStorageOut",
         "type": "object"
       },
       "InkChangesIn": {
@@ -8643,7 +8881,7 @@
             "$ref": "#/components/schemas/LibraryLimits"
           },
           "storage": {
-            "$ref": "#/components/schemas/StorageOut"
+            "$ref": "#/components/schemas/IngestStorageOut"
           }
         },
         "required": [
@@ -10863,6 +11101,24 @@
         "title": "OptionIn",
         "type": "object"
       },
+      "OptionOut": {
+        "properties": {
+          "html": {
+            "title": "Html",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "html"
+        ],
+        "title": "OptionOut",
+        "type": "object"
+      },
       "PageCreate": {
         "additionalProperties": false,
         "properties": {
@@ -10997,36 +11253,6 @@
         "title": "PageOrder",
         "type": "object"
       },
-      "PageTextOut": {
-        "properties": {
-          "page": {
-            "minimum": 1.0,
-            "title": "Page",
-            "type": "integer"
-          },
-          "pages": {
-            "title": "Pages",
-            "type": "integer"
-          },
-          "text": {
-            "title": "Text",
-            "type": "string"
-          },
-          "upload_id": {
-            "format": "uuid",
-            "title": "Upload Id",
-            "type": "string"
-          }
-        },
-        "required": [
-          "upload_id",
-          "page",
-          "pages",
-          "text"
-        ],
-        "title": "PageTextOut",
-        "type": "object"
-      },
       "PasteCreate": {
         "additionalProperties": false,
         "properties": {
@@ -11154,40 +11380,6 @@
           "total"
         ],
         "title": "PathwayStageOut",
-        "type": "object"
-      },
-      "PlacedOut": {
-        "properties": {
-          "can_undo": {
-            "title": "Can Undo",
-            "type": "boolean"
-          },
-          "chapter_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Chapter Id"
-          },
-          "kind": {
-            "title": "Kind",
-            "type": "string"
-          },
-          "rows": {
-            "title": "Rows",
-            "type": "integer"
-          }
-        },
-        "required": [
-          "kind",
-          "rows",
-          "can_undo"
-        ],
-        "title": "PlacedOut",
         "type": "object"
       },
       "PlacementChoice": {
@@ -16413,29 +16605,6 @@
         "title": "StagePut",
         "type": "object"
       },
-      "StorageOut": {
-        "properties": {
-          "limit_bytes": {
-            "title": "Limit Bytes",
-            "type": "integer"
-          },
-          "remaining_bytes": {
-            "title": "Remaining Bytes",
-            "type": "integer"
-          },
-          "used_bytes": {
-            "title": "Used Bytes",
-            "type": "integer"
-          }
-        },
-        "required": [
-          "used_bytes",
-          "limit_bytes",
-          "remaining_bytes"
-        ],
-        "title": "StorageOut",
-        "type": "object"
-      },
       "StudentItemIn": {
         "additionalProperties": false,
         "properties": {
@@ -16565,7 +16734,7 @@
       "SystemCoverage": {
         "properties": {
           "counts": {
-            "$ref": "#/components/schemas/naadi_api__admin__coverage__Counts"
+            "$ref": "#/components/schemas/Counts"
           },
           "id": {
             "title": "Id",
@@ -17519,7 +17688,7 @@
       "TopicCoverage": {
         "properties": {
           "counts": {
-            "$ref": "#/components/schemas/naadi_api__admin__coverage__Counts"
+            "$ref": "#/components/schemas/Counts"
           },
           "id": {
             "title": "Id",
@@ -19190,50 +19359,6 @@
         "title": "WeightOverlay",
         "type": "object"
       },
-      "naadi_api__admin__coverage__Counts": {
-        "properties": {
-          "cards": {
-            "default": 0,
-            "title": "Cards",
-            "type": "integer"
-          },
-          "questions": {
-            "default": 0,
-            "title": "Questions",
-            "type": "integer"
-          },
-          "sections": {
-            "default": 0,
-            "title": "Sections",
-            "type": "integer"
-          },
-          "videos": {
-            "default": 0,
-            "title": "Videos",
-            "type": "integer"
-          }
-        },
-        "title": "Counts",
-        "type": "object"
-      },
-      "naadi_api__admin__questions__OptionOut": {
-        "properties": {
-          "html": {
-            "title": "Html",
-            "type": "string"
-          },
-          "label": {
-            "title": "Label",
-            "type": "string"
-          }
-        },
-        "required": [
-          "label",
-          "html"
-        ],
-        "title": "OptionOut",
-        "type": "object"
-      },
       "naadi_api__courses__ExamOption": {
         "properties": {
           "chapter_count": {
@@ -19255,131 +19380,6 @@
           "chapter_count"
         ],
         "title": "ExamOption",
-        "type": "object"
-      },
-      "naadi_api__ingest__models__Counts": {
-        "properties": {
-          "duration_s": {
-            "anyOf": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Duration S"
-          },
-          "figures": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Figures"
-          },
-          "mcqs": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Mcqs"
-          },
-          "pages": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Pages"
-          },
-          "qa_pairs": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Qa Pairs"
-          },
-          "scanned": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Scanned"
-          },
-          "sections": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Sections"
-          },
-          "words": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Words"
-          }
-        },
-        "title": "Counts",
-        "type": "object"
-      },
-      "naadi_api__ingest__models__OptionOut": {
-        "properties": {
-          "kind": {
-            "description": "Placement kind (ui_copy ingest.placement.<kind>)",
-            "title": "Kind",
-            "type": "string"
-          },
-          "option_id": {
-            "title": "Option Id",
-            "type": "string"
-          },
-          "preview": {
-            "additionalProperties": true,
-            "description": "Counts, titles and target ids; never an answer",
-            "title": "Preview",
-            "type": "object"
-          },
-          "recommended": {
-            "title": "Recommended",
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "option_id",
-          "kind",
-          "recommended",
-          "preview"
-        ],
-        "title": "OptionOut",
         "type": "object"
       },
       "naadi_api__plan__models__ExamOption": {
@@ -32254,7 +32254,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FileOut"
+                  "$ref": "#/components/schemas/IngestFileOut"
                 }
               }
             },
@@ -32358,7 +32358,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PageTextOut"
+                  "$ref": "#/components/schemas/IngestPageTextOut"
                 }
               }
             },

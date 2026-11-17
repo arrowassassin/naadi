@@ -6,9 +6,9 @@ import {
   createIngestUploadBatch,
   createIngestUrl,
   deleteIngestItem,
-  type FileOut,
   getIngestFile,
   getLibrary,
+  type IngestFileOut,
   type IngestItemList,
   type IngestItemOut,
   type LibraryOut,
@@ -26,7 +26,7 @@ import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
 import { needsPolling } from "./model";
 
-export type { FileOut, IngestItemOut, LibraryOut };
+export type { IngestFileOut, IngestItemOut, LibraryOut };
 
 /** The Library is polled every 2 s while something is moving (uploading, reading, placing), never otherwise. */
 export const POLL_MS = 2000;
@@ -179,7 +179,7 @@ export function useLibrary(enabled = true) {
 /** A signed URL of the student's original file, renewed a minute before it expires. */
 export function useIngestFile(uploadId: string | null) {
   const userId = useUserId();
-  return useQuery<FileOut>({
+  return useQuery<IngestFileOut>({
     queryKey: ["ingest-file", userId, uploadId],
     enabled: userId !== null && uploadId !== null,
     staleTime: (q) => Math.max(30, (q.state.data?.expires_in ?? 600) - 60) * 1000,
@@ -187,7 +187,7 @@ export function useIngestFile(uploadId: string | null) {
     refetchOnWindowFocus: false,
     retry: (n, e) => n < 2 && !(e instanceof ApiError && e.status !== null && e.status < 500),
     queryFn: ({ signal }) =>
-      authed<FileOut>((headers) => getIngestFile({ signal, headers, path: { upload_id: uploadId as string } })),
+      authed<IngestFileOut>((headers) => getIngestFile({ signal, headers, path: { upload_id: uploadId as string } })),
   });
 }
 

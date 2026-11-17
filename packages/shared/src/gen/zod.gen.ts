@@ -888,6 +888,26 @@ export const zCostResult = z.object({
 });
 
 /**
+ * Counts
+ */
+export const zCounts = z.object({
+  cards: z.int().optional().default(0),
+  questions: z.int().optional().default(0),
+  sections: z.int().optional().default(0),
+  videos: z.int().optional().default(0),
+});
+
+/**
+ * Cell
+ */
+export const zCell = z.object({
+  counts: zCounts,
+  discipline_id: z.string(),
+  status: z.enum(["gap", "thin", "covered"]),
+  system_id: z.string(),
+});
+
+/**
  * Coverage
  *
  * What exists today for a chapter or a system (counts of items visible to the caller).
@@ -1117,37 +1137,6 @@ export const zErrorResponse = z.object({
 });
 
 /**
- * FileOut
- */
-export const zFileOut = z.object({
-  expires_in: z.int(),
-  kind: z.enum([
-    "pdf",
-    "docx",
-    "pptx",
-    "xlsx",
-    "csv",
-    "txt",
-    "md",
-    "html",
-    "epub",
-    "rtf",
-    "image",
-    "audio",
-    "video",
-    "link",
-    "anki",
-    "zip",
-    "paste",
-  ]),
-  mime: z.string().nullable(),
-  name: z.string().nullable(),
-  pages: z.int().nullable(),
-  upload_id: z.uuid(),
-  url: z.string(),
-});
-
-/**
  * FlagIn
  */
 export const zFlagIn = z.object({
@@ -1205,14 +1194,6 @@ export const zFsrsSchedulerConfig = z.object({
     z.number(),
     z.number(),
   ]),
-});
-
-/**
- * GateOut
- */
-export const zGateOut = z.object({
-  doc_type: z.string().nullable(),
-  signals: z.array(z.string()),
 });
 
 /**
@@ -1361,6 +1342,166 @@ export const zIndexStatus = z.object({
   job: zIndexJob,
   models_ready: z.boolean(),
   rows: z.record(z.string(), z.int()),
+});
+
+/**
+ * IngestCounts
+ */
+export const zIngestCounts = z.object({
+  duration_s: z.number().nullish(),
+  figures: z.int().nullish(),
+  mcqs: z.int().nullish(),
+  pages: z.int().nullish(),
+  qa_pairs: z.int().nullish(),
+  scanned: z.int().nullish(),
+  sections: z.int().nullish(),
+  words: z.int().nullish(),
+});
+
+/**
+ * IngestFileOut
+ */
+export const zIngestFileOut = z.object({
+  expires_in: z.int(),
+  kind: z.enum([
+    "pdf",
+    "docx",
+    "pptx",
+    "xlsx",
+    "csv",
+    "txt",
+    "md",
+    "html",
+    "epub",
+    "rtf",
+    "image",
+    "audio",
+    "video",
+    "link",
+    "anki",
+    "zip",
+    "paste",
+  ]),
+  mime: z.string().nullable(),
+  name: z.string().nullable(),
+  pages: z.int().nullable(),
+  upload_id: z.uuid(),
+  url: z.string(),
+});
+
+/**
+ * IngestGateOut
+ */
+export const zIngestGateOut = z.object({
+  doc_type: z.string().nullable(),
+  signals: z.array(z.string()),
+});
+
+/**
+ * IngestOptionOut
+ */
+export const zIngestOptionOut = z.object({
+  kind: z.string(),
+  option_id: z.string(),
+  preview: z.record(z.string(), z.unknown()),
+  recommended: z.boolean(),
+});
+
+/**
+ * IngestPageTextOut
+ */
+export const zIngestPageTextOut = z.object({
+  page: z.int().gte(1),
+  pages: z.int(),
+  text: z.string(),
+  upload_id: z.uuid(),
+});
+
+/**
+ * IngestPlacedOut
+ */
+export const zIngestPlacedOut = z.object({
+  can_undo: z.boolean(),
+  chapter_id: z.string().nullish(),
+  kind: z.string(),
+  rows: z.int(),
+});
+
+/**
+ * IngestItemOut
+ */
+export const zIngestItemOut = z.object({
+  batch_id: z.uuid().nullable(),
+  bundle_files: z.int().nullish(),
+  bytes: z.int().nullable(),
+  chapter_id: z.string().nullable(),
+  counts: zIngestCounts.nullable(),
+  created_at: z.iso.datetime(),
+  duplicate: z.enum(["exact", "near"]).nullable(),
+  duplicate_of: z.uuid().nullable(),
+  error: z.string().nullable(),
+  gate: zIngestGateOut.nullable(),
+  id: z.uuid(),
+  input_kind: z
+    .enum([
+      "pdf",
+      "docx",
+      "pptx",
+      "xlsx",
+      "csv",
+      "txt",
+      "md",
+      "html",
+      "epub",
+      "rtf",
+      "image",
+      "audio",
+      "video",
+      "link",
+      "anki",
+      "zip",
+      "paste",
+    ])
+    .nullable(),
+  name: z.string().nullable(),
+  options: z.array(zIngestOptionOut),
+  pages: z.int().nullable(),
+  placed: zIngestPlacedOut.nullable(),
+  progress: z.int().gte(0).lte(100),
+  retryable: z.boolean(),
+  stage: z.enum([
+    "upload",
+    "receive",
+    "vault",
+    "extract",
+    "understand",
+    "propose",
+    "confirm",
+    "place",
+    "done",
+    "vaulted",
+  ]),
+  status: z.enum(["received", "extracting", "needs_confirmation", "placing", "ready", "failed", "vaulted"]),
+  updated_at: z.iso.datetime(),
+  upload_id: z.uuid().nullable(),
+  url: z.string().nullable(),
+});
+
+/**
+ * IngestItemList
+ */
+export const zIngestItemList = z.object({
+  items: z.array(zIngestItemOut),
+  next_before: z.iso.datetime().nullable(),
+});
+
+/**
+ * IngestStorageOut
+ */
+export const zIngestStorageOut = z.object({
+  limit_bytes: z.int(),
+  remaining_bytes: z.int(),
+  used_bytes: z.int(),
 });
 
 /**
@@ -1605,6 +1746,18 @@ export const zLibraryLimits = z.object({
   enabled: z.boolean(),
   max_file_mb: z.int(),
   max_paste_chars: z.int(),
+});
+
+/**
+ * LibraryOut
+ */
+export const zLibraryOut = z.object({
+  accepts: z.array(z.string()),
+  chapters: z.array(zLibraryChapter),
+  items: z.array(zIngestItemOut),
+  kb: z.array(zLibraryKb),
+  limits: zLibraryLimits,
+  storage: zIngestStorageOut,
 });
 
 /**
@@ -1991,6 +2144,39 @@ export const zOptionIn = z.object({
 });
 
 /**
+ * OptionOut
+ */
+export const zOptionOut = z.object({
+  html: z.string(),
+  label: z.string(),
+});
+
+/**
+ * AdminQuestion
+ */
+export const zAdminQuestion = z.object({
+  answer: z.string(),
+  answer_html: z.string().nullable(),
+  block: z.int().nullable(),
+  chapter_id: z.string().nullable(),
+  created_at: z.iso.datetime(),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
+  educational_objective: z.string().nullable(),
+  exam: z.string(),
+  explanation_html: z.string().nullable(),
+  id: z.string(),
+  options: z.array(zOptionOut),
+  review: z.record(z.string(), zJsonValue),
+  source_id: z.string().nullable(),
+  status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]),
+  stem_html: z.string(),
+  tags: z.array(z.string()),
+  taxonomy_ids: z.array(z.string()),
+  version: z.string(),
+  why_not_html: z.string().nullable(),
+});
+
+/**
  * PageCreate
  */
 export const zPageCreate = z.object({
@@ -2015,16 +2201,6 @@ export const zPageOrder = z.object({
 });
 
 /**
- * PageTextOut
- */
-export const zPageTextOut = z.object({
-  page: z.int().gte(1),
-  pages: z.int(),
-  text: z.string(),
-  upload_id: z.uuid(),
-});
-
-/**
  * PasteCreate
  */
 export const zPasteCreate = z.object({
@@ -2040,16 +2216,6 @@ export const zPathwayStageOut = z.object({
   key: z.string(),
   title: z.string().nullable(),
   total: z.int(),
-});
-
-/**
- * PlacedOut
- */
-export const zPlacedOut = z.object({
-  can_undo: z.boolean(),
-  chapter_id: z.string().nullish(),
-  kind: z.string(),
-  rows: z.int(),
 });
 
 /**
@@ -3481,15 +3647,6 @@ export const zStagePut = z.object({
 });
 
 /**
- * StorageOut
- */
-export const zStorageOut = z.object({
-  limit_bytes: z.int(),
-  remaining_bytes: z.int(),
-  used_bytes: z.int(),
-});
-
-/**
  * StudentItemIn
  */
 export const zStudentItemIn = z.object({
@@ -3514,6 +3671,17 @@ export const zStudentItemsIn = z.object({
  */
 export const zStudentItemsOut = z.object({
   items: z.array(zPlanItemOut),
+});
+
+/**
+ * SystemCoverage
+ */
+export const zSystemCoverage = z.object({
+  counts: zCounts,
+  id: z.string(),
+  label: z.string(),
+  topics: z.int(),
+  topics_covered: z.int(),
 });
 
 /**
@@ -3768,6 +3936,31 @@ export const zTodayOut = z.object({
   resume: z.discriminatedUnion("kind", [zResumeReading, zResumeBlock]).nullable(),
   systems: zSystemsOut,
   today: z.iso.date(),
+});
+
+/**
+ * TopicCoverage
+ */
+export const zTopicCoverage = z.object({
+  counts: zCounts,
+  id: z.string(),
+  label: z.string(),
+  missing: z.array(z.enum(["sections", "videos", "questions", "cards"])),
+  status: z.enum(["gap", "thin", "covered"]),
+  system_id: z.string().nullable(),
+});
+
+/**
+ * CoverageReport
+ */
+export const zCoverageReport = z.object({
+  cells: z.array(zCell),
+  disciplines: z.array(zNode),
+  exam: z.string(),
+  goals: zGoals,
+  system_totals: z.array(zSystemCoverage),
+  systems: z.array(zNode),
+  topics: z.array(zTopicCoverage),
 });
 
 /**
@@ -4311,95 +4504,6 @@ export const zBlockResults = z.object({
 });
 
 /**
- * Counts
- */
-export const zNaadiApiAdminCoverageCounts = z.object({
-  cards: z.int().optional().default(0),
-  questions: z.int().optional().default(0),
-  sections: z.int().optional().default(0),
-  videos: z.int().optional().default(0),
-});
-
-/**
- * Cell
- */
-export const zCell = z.object({
-  counts: zNaadiApiAdminCoverageCounts,
-  discipline_id: z.string(),
-  status: z.enum(["gap", "thin", "covered"]),
-  system_id: z.string(),
-});
-
-/**
- * SystemCoverage
- */
-export const zSystemCoverage = z.object({
-  counts: zNaadiApiAdminCoverageCounts,
-  id: z.string(),
-  label: z.string(),
-  topics: z.int(),
-  topics_covered: z.int(),
-});
-
-/**
- * TopicCoverage
- */
-export const zTopicCoverage = z.object({
-  counts: zNaadiApiAdminCoverageCounts,
-  id: z.string(),
-  label: z.string(),
-  missing: z.array(z.enum(["sections", "videos", "questions", "cards"])),
-  status: z.enum(["gap", "thin", "covered"]),
-  system_id: z.string().nullable(),
-});
-
-/**
- * CoverageReport
- */
-export const zCoverageReport = z.object({
-  cells: z.array(zCell),
-  disciplines: z.array(zNode),
-  exam: z.string(),
-  goals: zGoals,
-  system_totals: z.array(zSystemCoverage),
-  systems: z.array(zNode),
-  topics: z.array(zTopicCoverage),
-});
-
-/**
- * OptionOut
- */
-export const zNaadiApiAdminQuestionsOptionOut = z.object({
-  html: z.string(),
-  label: z.string(),
-});
-
-/**
- * AdminQuestion
- */
-export const zAdminQuestion = z.object({
-  answer: z.string(),
-  answer_html: z.string().nullable(),
-  block: z.int().nullable(),
-  chapter_id: z.string().nullable(),
-  created_at: z.iso.datetime(),
-  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
-  educational_objective: z.string().nullable(),
-  exam: z.string(),
-  explanation_html: z.string().nullable(),
-  id: z.string(),
-  options: z.array(zNaadiApiAdminQuestionsOptionOut),
-  review: z.record(z.string(), zJsonValue),
-  source_id: z.string().nullable(),
-  status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]),
-  stem_html: z.string(),
-  tags: z.array(z.string()),
-  taxonomy_ids: z.array(z.string()),
-  version: z.string(),
-  why_not_html: z.string().nullable(),
-});
-
-/**
  * ExamOption
  */
 export const zNaadiApiCoursesExamOption = z.object({
@@ -4418,110 +4522,6 @@ export const zCoursesResponse = z.object({
   next_up: zNextUp.nullable(),
   system: z.string().nullable(),
   systems: z.array(zCourseSystem),
-});
-
-/**
- * Counts
- */
-export const zNaadiApiIngestModelsCounts = z.object({
-  duration_s: z.number().nullish(),
-  figures: z.int().nullish(),
-  mcqs: z.int().nullish(),
-  pages: z.int().nullish(),
-  qa_pairs: z.int().nullish(),
-  scanned: z.int().nullish(),
-  sections: z.int().nullish(),
-  words: z.int().nullish(),
-});
-
-/**
- * OptionOut
- */
-export const zNaadiApiIngestModelsOptionOut = z.object({
-  kind: z.string(),
-  option_id: z.string(),
-  preview: z.record(z.string(), z.unknown()),
-  recommended: z.boolean(),
-});
-
-/**
- * IngestItemOut
- */
-export const zIngestItemOut = z.object({
-  batch_id: z.uuid().nullable(),
-  bundle_files: z.int().nullish(),
-  bytes: z.int().nullable(),
-  chapter_id: z.string().nullable(),
-  counts: zNaadiApiIngestModelsCounts.nullable(),
-  created_at: z.iso.datetime(),
-  duplicate: z.enum(["exact", "near"]).nullable(),
-  duplicate_of: z.uuid().nullable(),
-  error: z.string().nullable(),
-  gate: zGateOut.nullable(),
-  id: z.uuid(),
-  input_kind: z
-    .enum([
-      "pdf",
-      "docx",
-      "pptx",
-      "xlsx",
-      "csv",
-      "txt",
-      "md",
-      "html",
-      "epub",
-      "rtf",
-      "image",
-      "audio",
-      "video",
-      "link",
-      "anki",
-      "zip",
-      "paste",
-    ])
-    .nullable(),
-  name: z.string().nullable(),
-  options: z.array(zNaadiApiIngestModelsOptionOut),
-  pages: z.int().nullable(),
-  placed: zPlacedOut.nullable(),
-  progress: z.int().gte(0).lte(100),
-  retryable: z.boolean(),
-  stage: z.enum([
-    "upload",
-    "receive",
-    "vault",
-    "extract",
-    "understand",
-    "propose",
-    "confirm",
-    "place",
-    "done",
-    "vaulted",
-  ]),
-  status: z.enum(["received", "extracting", "needs_confirmation", "placing", "ready", "failed", "vaulted"]),
-  updated_at: z.iso.datetime(),
-  upload_id: z.uuid().nullable(),
-  url: z.string().nullable(),
-});
-
-/**
- * IngestItemList
- */
-export const zIngestItemList = z.object({
-  items: z.array(zIngestItemOut),
-  next_before: z.iso.datetime().nullable(),
-});
-
-/**
- * LibraryOut
- */
-export const zLibraryOut = z.object({
-  accepts: z.array(z.string()),
-  chapters: z.array(zLibraryChapter),
-  items: z.array(zIngestItemOut),
-  kb: z.array(zLibraryKb),
-  limits: zLibraryLimits,
-  storage: zStorageOut,
 });
 
 /**
@@ -5819,7 +5819,7 @@ export const zGetIngestFilePath = z.object({
 /**
  * Successful Response
  */
-export const zGetIngestFileResponse = zFileOut;
+export const zGetIngestFileResponse = zIngestFileOut;
 
 export const zGetIngestPageTextPath = z.object({
   upload_id: z.uuid(),
@@ -5829,7 +5829,7 @@ export const zGetIngestPageTextPath = z.object({
 /**
  * Successful Response
  */
-export const zGetIngestPageTextResponse = zPageTextOut;
+export const zGetIngestPageTextResponse = zIngestPageTextOut;
 
 export const zCreateIngestUrlBody = zUrlCreate;
 

@@ -97,26 +97,26 @@ class BatchConfirm(_In):
     items: list[BatchConfirmItem] = Field(min_length=1, max_length=200)
 
 
-class OptionOut(BaseModel):
+class IngestOptionOut(BaseModel):
     option_id: str
     kind: str = Field(description="Placement kind (ui_copy ingest.placement.<kind>)")
     recommended: bool
-    preview: dict[str, Any] = Field(description="Counts, titles and target ids; never an answer")
+    preview: dict[str, Any] = Field(description="IngestCounts, titles and target ids; never an answer")
 
 
-class GateOut(BaseModel):
+class IngestGateOut(BaseModel):
     signals: list[str] = Field(description="Sensitivity signal codes (ingest.signal.<code>)")
     doc_type: str | None
 
 
-class PlacedOut(BaseModel):
+class IngestPlacedOut(BaseModel):
     kind: str
     chapter_id: str | None = None
     rows: int
     can_undo: bool
 
 
-class Counts(BaseModel):
+class IngestCounts(BaseModel):
     model_config = ConfigDict(extra="ignore")
     pages: int | None = None
     words: int | None = None
@@ -144,10 +144,10 @@ class IngestItemOut(BaseModel):
     duplicate_of: uuid.UUID | None
     duplicate: Literal["exact", "near"] | None
     chapter_id: str | None = Field(description="The private chapter this item became (or duplicates)")
-    gate: GateOut | None = Field(description="Set while the Vault prompt waits")
-    options: list[OptionOut] = Field(description="The confirm card's placements, best first")
-    placed: PlacedOut | None
-    counts: Counts | None
+    gate: IngestGateOut | None = Field(description="Set while the Vault prompt waits")
+    options: list[IngestOptionOut] = Field(description="The confirm card's placements, best first")
+    placed: IngestPlacedOut | None
+    counts: IngestCounts | None
     bundle_files: int | None = None
     retryable: bool
     created_at: datetime
@@ -159,7 +159,7 @@ class IngestItemList(BaseModel):
     next_before: datetime | None
 
 
-class StorageOut(BaseModel):
+class IngestStorageOut(BaseModel):
     used_bytes: int
     limit_bytes: int
     remaining_bytes: int
@@ -198,12 +198,12 @@ class LibraryOut(BaseModel):
     items: list[IngestItemOut] = Field(description="Files, links and pastes, newest first (bundles' members included)")
     chapters: list[LibraryChapter]
     kb: list[LibraryKb]
-    storage: StorageOut
+    storage: IngestStorageOut
     accepts: list[str] = Field(description="Extra input kinds a registered placement takes (e.g. anki once S20 lands)")
     limits: LibraryLimits
 
 
-class FileOut(BaseModel):
+class IngestFileOut(BaseModel):
     upload_id: uuid.UUID
     kind: InputKind
     name: str | None
@@ -213,7 +213,7 @@ class FileOut(BaseModel):
     mime: str | None
 
 
-class PageTextOut(BaseModel):
+class IngestPageTextOut(BaseModel):
     upload_id: uuid.UUID
     page: Annotated[int, Field(ge=1)]
     pages: int
@@ -223,11 +223,11 @@ class PageTextOut(BaseModel):
 __all__ = [
     "BatchConfirm",
     "ConfirmBody",
-    "FileOut",
+    "IngestFileOut",
     "IngestItemList",
     "IngestItemOut",
     "LibraryOut",
-    "PageTextOut",
+    "IngestPageTextOut",
     "PasteCreate",
     "UploadCreate",
     "UploadTicket",
