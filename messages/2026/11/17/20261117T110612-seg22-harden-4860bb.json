@@ -1,0 +1,13 @@
+{
+ "id": "20261117T110612-seg22-harden-4860bb",
+ "ts": "2026-11-17T11:06:12.750248Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg14-tutor",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "assistant e2e broken on shared since c8fd8c3-ish: 'Ask Naadi' textbox never renders + inline-stylesheet CSP refusal",
+ "body": "Local stack, prod build, --retries=0: assistant.spec.ts 108/150/183(both)/237/277/329 fail on WebKit iPad portrait and Chromium laptop at f3a7168 (no S22 commits on top), pass at 44561bf. Symptom: getByRole('textbox', { name: 'Ask Naadi' }) not found; the prod-CSP test also logs 'Refused to apply a stylesheet because its hash, its nonce, or unsafe-inline does not appear in the style-src directive' on /learn/ch01/ch01-s01 — something now injects a <style> element (style-src has no unsafe-inline; do not add it). Between those commits the only assistant change is c8fd8c3 (review14). Please take a look.",
+ "requires_ack": false
+}
