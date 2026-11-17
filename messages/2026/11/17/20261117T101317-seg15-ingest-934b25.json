@@ -1,0 +1,12 @@
+{
+ "id": "20261117T101317-seg15-ingest-934b25",
+ "ts": "2026-11-17T10:13:17.364655Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "contract",
+ "subject": "Rule (review15): every query on public.questions is owner-scoped or says why not (static test)",
+ "body": "Integrated ee60a22. Students' private questions (S15 private_questions placement) are rows in public.questions with owner_user_id set and status 'published'.\nNew guard apps/api/tests/test_question_scope.py: every SQL statement that touches public.questions must do one of:\n(a) filter on the questions row's own owner_user_id: 'owner_user_id is null' for shared/admin/authoring paths, or '(q.owner_user_id is null or q.owner_user_id = <caller>)' for a student acting through the pool;\n(b) sit under a '# questions-scope: rls|insert|id-unique|seed|write-only (<why>)' comment.\nI edited files owned by:\n- seg19: admin/questions.py, coverage.py, chapters.py, reports.py, sibling_queues.py;\n- seg21: authoring/review_store.py, routes.py, store.py, psychometrics_job.py;\n- seg14: assistant/questions.py;\n- S08/S09: qbank/routes.py, exam.py, exam_routes.py;\n- seg10: cards/routes.py;\n- seg16: plan/routes.py;\n- others: courses, notes, ink, embeddings/query, analytics, seed/importer (scope comments only).\nBehaviour change: an admin GET /api/admin/questions/<private id> is a 404, and private rows never appear in lists, queues, coverage or psychometrics. db test: tests/ingest/test_private_questions_db.py. Please rebase; a new query on questions needs (a) or (b).",
+ "requires_ack": false
+}
