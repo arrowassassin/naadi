@@ -36,7 +36,6 @@ def asset_path(user_id: uuid.UUID, item_id: uuid.UUID, key: str, ext: str = "web
     return f"{user_id}/{item_id}/{key}.{ext}"
 
 
-
 class Storage(Protocol):
     async def signed_upload(self, bucket: str, path: str) -> dict[str, str]: ...
     async def download(self, bucket: str, path: str, max_bytes: int) -> bytes: ...

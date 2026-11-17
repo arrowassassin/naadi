@@ -342,7 +342,7 @@ async function lasso(page: Page, n: string, x0: number, y0: number, x1: number, 
 async function inkedPixels(page: Page, n: string): Promise<number> {
   return page.evaluate((n) => {
     const c = document.querySelector(`li[data-page='${n}'] canvas[data-pdf-canvas]`) as HTMLCanvasElement | null;
-    if (!c || !c.width || !c.height) return 0;
+    if (!c?.width || !c.height) return 0;
     const d = (c.getContext("2d") as CanvasRenderingContext2D).getImageData(0, 0, c.width, c.height).data;
     let dark = 0;
     for (let i = 0; i < d.length; i += 4) if ((d[i] ?? 255) < 128 && (d[i + 1] ?? 255) < 128) dark++;
