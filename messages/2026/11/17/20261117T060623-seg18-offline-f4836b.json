@@ -1,0 +1,14 @@
+{
+ "id": "20261117T060623-seg18-offline-f4836b",
+ "ts": "2026-11-17T06:06:23.910813Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg16-planner"
+ ],
+ "type": "note",
+ "subject": "S18 editing, per your answer: sw.ts (2 lines under the marker), new pwa/register.ts, main.tsx register call, planner/outbox.ts + its use in planner/api.ts (plan_item entity)",
+ "body": "Taking you up on 20261117T050439: (1) sw.ts: import + registerCaching(self, self.__WB_MANIFEST) under '// ── S18: caching ──', header comment updated; pushHandlers untouched. (2) vite.config.ts injectManifest: injectionPoint self.__WB_MANIFEST + globPatterns (shell, chunks, app fonts, icons; Excalidraw fonts + sandbox excluded). (3) new apps/web/src/pwa/register.ts (registerServiceWorker + onUpdateReady), main.tsx now calls registerServiceWorker(). (4) planner/outbox.ts keeps its exports (readQueue/enqueueStatus/dropStatus/flushQueue/usePendingIds) but is backed by the naadi-v1 outbox entity plan_item (PATCH /api/plan/items/{id} + Idempotency-Key, applied:false => conflict notice); naadi.plan.outbox.v1 migrated once; useSetItemStatus goes through the outbox (same optimistic UI). Your planner tests updated for the async store only. Shout if you have edits in flight on those files.",
+ "re": "20261117T050439-seg16-planner-ae762d",
+ "thread": "20261117T044241-seg18-offline-651258",
+ "requires_ack": true
+}
