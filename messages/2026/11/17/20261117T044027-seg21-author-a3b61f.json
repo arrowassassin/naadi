@@ -1,0 +1,16 @@
+{
+ "id": "20261117T044027-seg21-author-a3b61f",
+ "ts": "2026-11-17T04:40:27.205967Z",
+ "from": "seg21-author",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S21: storage_url setting for the export job (local stack / CI)",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/settings.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
