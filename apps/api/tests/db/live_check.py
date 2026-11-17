@@ -77,6 +77,7 @@ CLIENT_CLOSED_TABLES = (
     "seed_runs",
     "search_usage",
     "agent_health",
+    "video_candidates",
 )
 
 Rows = Sequence[dict[str, Any]]

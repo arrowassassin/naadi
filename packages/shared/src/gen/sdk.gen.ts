@@ -8,12 +8,18 @@ import type {
   AcceptCoachSuggestionData,
   AcceptCoachSuggestionErrors,
   AcceptCoachSuggestionResponses,
+  AddYoutubeVideoData,
+  AddYoutubeVideoErrors,
+  AddYoutubeVideoResponses,
   AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostData,
   AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostErrors,
   AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses,
   AdminListGeneratedApiAdminGeneratedGetData,
   AdminListGeneratedApiAdminGeneratedGetErrors,
   AdminListGeneratedApiAdminGeneratedGetResponses,
+  ApproveYoutubeCandidateData,
+  ApproveYoutubeCandidateErrors,
+  ApproveYoutubeCandidateResponses,
   ChangeBlockSectionData,
   ChangeBlockSectionErrors,
   ChangeBlockSectionResponses,
@@ -56,6 +62,9 @@ import type {
   DeleteGeneratedApiGeneratedMediaIdDeleteData,
   DeleteGeneratedApiGeneratedMediaIdDeleteErrors,
   DeleteGeneratedApiGeneratedMediaIdDeleteResponses,
+  DeleteImportedAnkiDeckData,
+  DeleteImportedAnkiDeckErrors,
+  DeleteImportedAnkiDeckResponses,
   DeleteNotebookData,
   DeleteNotebookErrors,
   DeleteNotebookResponses,
@@ -65,6 +74,9 @@ import type {
   DismissCoachSuggestionData,
   DismissCoachSuggestionErrors,
   DismissCoachSuggestionResponses,
+  ExportAnkiDeckData,
+  ExportAnkiDeckErrors,
+  ExportAnkiDeckResponses,
   ExportPlanCsvData,
   ExportPlanCsvErrors,
   ExportPlanCsvResponses,
@@ -83,6 +95,9 @@ import type {
   GetAdminOverviewData,
   GetAdminOverviewErrors,
   GetAdminOverviewResponses,
+  GetAnkiDecksData,
+  GetAnkiDecksErrors,
+  GetAnkiDecksResponses,
   GetAppConfigData,
   GetAppConfigErrors,
   GetAppConfigHistoryData,
@@ -166,6 +181,9 @@ import type {
   GetTodayData,
   GetTodayErrors,
   GetTodayResponses,
+  ImportAnkiDeckData,
+  ImportAnkiDeckErrors,
+  ImportAnkiDeckResponses,
   ListAppConfigData,
   ListAppConfigErrors,
   ListAppConfigResponses,
@@ -184,6 +202,9 @@ import type {
   ListSeedRunsData,
   ListSeedRunsErrors,
   ListSeedRunsResponses,
+  ListYoutubeCandidatesData,
+  ListYoutubeCandidatesErrors,
+  ListYoutubeCandidatesResponses,
   PostInkChangesData,
   PostInkChangesErrors,
   PostInkChangesResponses,
@@ -199,6 +220,9 @@ import type {
   ReindexEmbeddingsData,
   ReindexEmbeddingsErrors,
   ReindexEmbeddingsResponses,
+  RejectYoutubeCandidateData,
+  RejectYoutubeCandidateErrors,
+  RejectYoutubeCandidateResponses,
   ReorderNotebookPagesData,
   ReorderNotebookPagesErrors,
   ReorderNotebookPagesResponses,
@@ -239,11 +263,16 @@ import type {
 import {
   zAcceptCoachSuggestionPath,
   zAcceptCoachSuggestionResponse,
+  zAddYoutubeVideoBody,
+  zAddYoutubeVideoResponse,
   zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostBody,
   zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostPath,
   zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse,
   zAdminListGeneratedApiAdminGeneratedGetQuery,
   zAdminListGeneratedApiAdminGeneratedGetResponse,
+  zApproveYoutubeCandidateBody,
+  zApproveYoutubeCandidatePath,
+  zApproveYoutubeCandidateResponse,
   zChangeBlockSectionPath,
   zChangeBlockSectionResponse,
   zConvertInkToTextBody,
@@ -273,12 +302,16 @@ import {
   zDeleteCardResponse,
   zDeleteGeneratedApiGeneratedMediaIdDeletePath,
   zDeleteGeneratedApiGeneratedMediaIdDeleteResponse,
+  zDeleteImportedAnkiDeckQuery,
+  zDeleteImportedAnkiDeckResponse,
   zDeleteNotebookPath,
   zDeleteNotebookResponse,
   zDeleteNotePath,
   zDeleteNoteResponse,
   zDismissCoachSuggestionPath,
   zDismissCoachSuggestionResponse,
+  zExportAnkiDeckQuery,
+  zExportAnkiDeckResponse,
   zFinishBlockPath,
   zFinishBlockResponse,
   zFlagAttemptBody,
@@ -287,6 +320,7 @@ import {
   zGenerationStatusApiGenerationStatusGetResponse,
   zGetActiveExamResponse,
   zGetAdminOverviewResponse,
+  zGetAnkiDecksResponse,
   zGetAppConfigHistoryPath,
   zGetAppConfigHistoryQuery,
   zGetAppConfigHistoryResponse,
@@ -335,6 +369,8 @@ import {
   zGetSeedRunPath,
   zGetSeedRunResponse,
   zGetTodayResponse,
+  zImportAnkiDeckQuery,
+  zImportAnkiDeckResponse,
   zListAppConfigResponse,
   zListBlocksQuery,
   zListBlocksResponse,
@@ -344,6 +380,8 @@ import {
   zListNotesQuery,
   zListNotesResponse,
   zListSeedRunsResponse,
+  zListYoutubeCandidatesQuery,
+  zListYoutubeCandidatesResponse,
   zPostInkChangesBody,
   zPostInkChangesPath,
   zPostInkChangesResponse,
@@ -356,6 +394,8 @@ import {
   zPutReadingPositionResponse,
   zReindexEmbeddingsBody,
   zReindexEmbeddingsResponse,
+  zRejectYoutubeCandidatePath,
+  zRejectYoutubeCandidateResponse,
   zReorderNotebookPagesBody,
   zReorderNotebookPagesPath,
   zReorderNotebookPagesResponse,
@@ -676,6 +716,174 @@ export const getSeedRun = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetSeedRunResponse.parseAsync(data),
     url: "/api/admin/seed/runs/{run_id}",
+    ...options,
+  });
+
+/**
+ * Add a video by link (checked with the YouTube API: public and embeddable)
+ */
+export const addYoutubeVideo = <ThrowOnError extends boolean = false>(
+  options: Options<AddYoutubeVideoData, ThrowOnError>,
+): RequestResult<AddYoutubeVideoResponses, AddYoutubeVideoErrors, ThrowOnError> =>
+  (options.client ?? client).post<AddYoutubeVideoResponses, AddYoutubeVideoErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zAddYoutubeVideoBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zAddYoutubeVideoResponse.parseAsync(data),
+    url: "/api/admin/youtube/add",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Video candidates by status (pending first for review)
+ */
+export const listYoutubeCandidates = <ThrowOnError extends boolean = false>(
+  options?: Options<ListYoutubeCandidatesData, ThrowOnError>,
+): RequestResult<ListYoutubeCandidatesResponses, ListYoutubeCandidatesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListYoutubeCandidatesResponses, ListYoutubeCandidatesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListYoutubeCandidatesQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListYoutubeCandidatesResponse.parseAsync(data),
+    url: "/api/admin/youtube/candidates",
+    ...options,
+  });
+
+/**
+ * Approve: students see the video in the section, optionally from start_s to end_s
+ */
+export const approveYoutubeCandidate = <ThrowOnError extends boolean = false>(
+  options: Options<ApproveYoutubeCandidateData, ThrowOnError>,
+): RequestResult<ApproveYoutubeCandidateResponses, ApproveYoutubeCandidateErrors, ThrowOnError> =>
+  (options.client ?? client).post<ApproveYoutubeCandidateResponses, ApproveYoutubeCandidateErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zApproveYoutubeCandidateBody,
+          path: zApproveYoutubeCandidatePath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zApproveYoutubeCandidateResponse.parseAsync(data),
+    url: "/api/admin/youtube/candidates/{media_id}/approve",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Reject: never proposed again; the stored title is dropped
+ */
+export const rejectYoutubeCandidate = <ThrowOnError extends boolean = false>(
+  options: Options<RejectYoutubeCandidateData, ThrowOnError>,
+): RequestResult<RejectYoutubeCandidateResponses, RejectYoutubeCandidateErrors, ThrowOnError> =>
+  (options.client ?? client).post<RejectYoutubeCandidateResponses, RejectYoutubeCandidateErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zRejectYoutubeCandidatePath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRejectYoutubeCandidateResponse.parseAsync(data),
+    url: "/api/admin/youtube/candidates/{media_id}/reject",
+    ...options,
+  });
+
+/**
+ * Delete the cards you imported into a deck (your own typed cards stay)
+ */
+export const deleteImportedAnkiDeck = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteImportedAnkiDeckData, ThrowOnError>,
+): RequestResult<DeleteImportedAnkiDeckResponses, DeleteImportedAnkiDeckErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteImportedAnkiDeckResponses, DeleteImportedAnkiDeckErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zDeleteImportedAnkiDeckQuery,
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteImportedAnkiDeckResponse.parseAsync(data),
+    url: "/api/anki/decks",
+    ...options,
+  });
+
+/**
+ * Your decks with card counts (the picker for Export deck)
+ */
+export const getAnkiDecks = <ThrowOnError extends boolean = false>(
+  options?: Options<GetAnkiDecksData, ThrowOnError>,
+): RequestResult<GetAnkiDecksResponses, GetAnkiDecksErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetAnkiDecksResponses, GetAnkiDecksErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAnkiDecksResponse.parseAsync(data),
+    url: "/api/anki/decks",
+    ...options,
+  });
+
+/**
+ * Download your own cards as an .apkg (one deck with its sub-decks, or all)
+ */
+export const exportAnkiDeck = <ThrowOnError extends boolean = false>(
+  options?: Options<ExportAnkiDeckData, ThrowOnError>,
+): RequestResult<ExportAnkiDeckResponses, ExportAnkiDeckErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ExportAnkiDeckResponses, ExportAnkiDeckErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zExportAnkiDeckQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zExportAnkiDeckResponse.parseAsync(data),
+    url: "/api/anki/export",
+    ...options,
+  });
+
+/**
+ * Import an .apkg (the raw request body) into your own flashcards; cards start new, a repeat is a no-op
+ */
+export const importAnkiDeck = <ThrowOnError extends boolean = false>(
+  options?: Options<ImportAnkiDeckData, ThrowOnError>,
+): RequestResult<ImportAnkiDeckResponses, ImportAnkiDeckErrors, ThrowOnError> =>
+  (options?.client ?? client).post<ImportAnkiDeckResponses, ImportAnkiDeckErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zImportAnkiDeckQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zImportAnkiDeckResponse.parseAsync(data),
+    url: "/api/anki/import",
     ...options,
   });
 

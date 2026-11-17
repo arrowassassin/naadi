@@ -40,6 +40,7 @@ from .seed.jobs import drain_seed_tasks
 from .seed.jobs import router as seed_router
 from .settings import Settings, get_settings
 from .spa import install_spa
+from .youtube.routes import install_youtube_routes
 
 log = get_logger("naadi.app")
 NVIDIA_PROBE_TTL_S = 3600.0
@@ -134,6 +135,7 @@ def create_app(
     install_qbank_routes(app)
     install_cards_routes(app)
     install_anki_routes(app)
+    install_youtube_routes(app)
     install_plan_routes(app)
     install_search_routes(app)
     install_ink_routes(app)

@@ -96,12 +96,15 @@ def _rows(c: sqlite3.Connection, notes: list[NoteSpec]) -> None:
 
 def _v18_db(path: Path, models: list[Model], decks: dict[int, str], notes: list[NoteSpec]) -> None:
     c = sqlite3.connect(path)
+    c.create_collation("unicase", lambda a, b: (a.casefold() > b.casefold()) - (a.casefold() < b.casefold()))
     c.executescript(
         """
         create table col (id integer primary key, crt integer, mod integer, scm integer, ver integer, dty integer,
           usn integer, ls integer, conf text, models text, decks text, dconf text, tags text);
         create table notetypes (id integer primary key, name text, mtime_secs integer, usn integer, config blob);
         create table fields (ntid integer, ord integer, name text, config blob, primary key (ntid, ord));
+        create unique index idx_fields_name_ntid on fields (ntid, name collate unicase);
+        create index idx_notetypes_name on notetypes (name collate unicase);
         create table templates (ntid integer, ord integer, name text, mtime_secs integer, usn integer, config blob,
           primary key (ntid, ord));
         create table decks (id integer primary key, name text, mtime_secs integer, usn integer, common blob, kind blob);

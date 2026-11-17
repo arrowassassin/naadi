@@ -24,7 +24,7 @@ def _directives(csp: str) -> dict[str, list[str]]:
 def test_csp_is_strict() -> None:
     d = _directives(content_security_policy(make_settings(supabase_url=SUPA)))
     assert d["default-src"] == ["'self'"]
-    assert d["script-src"] == ["'self'"]
+    assert d["script-src"] == ["'self'", "https://www.youtube.com"]
     assert d["style-src"] == ["'self'"]
     assert d["font-src"] == ["'self'"]
     assert d["connect-src"] == ["'self'", SUPA, "wss://abcdefghijklmnopqrst.supabase.co"]
@@ -60,3 +60,9 @@ def test_api_responses_are_not_cached(client_factory: Callable[..., TestClient])
     c = client_factory()
     assert c.get("/api/health").headers["cache-control"] == "no-store"
     assert c.get("/api/nope").headers["cache-control"] == "no-store"
+
+
+def test_only_the_youtube_player_script_and_nocookie_frames_are_allowed() -> None:
+    d = _directives(content_security_policy(make_settings(supabase_url=SUPA)))
+    assert d["frame-src"] == ["'self'", "https://www.youtube-nocookie.com"]
+    assert [s for s in d["script-src"] if s.startswith("https://")] == ["https://www.youtube.com"]

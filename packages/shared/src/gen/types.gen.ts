@@ -29,6 +29,34 @@ export type ActiveExamOut = {
 };
 
 /**
+ * AddIn
+ */
+export type AddIn = {
+  /**
+   * Approve
+   */
+  approve?: boolean;
+  /**
+   * End S
+   */
+  end_s?: number | null;
+  /**
+   * Section Id
+   */
+  section_id: string;
+  /**
+   * Start S
+   */
+  start_s?: number | null;
+  /**
+   * Url
+   *
+   * A YouTube link or the 11-character video id
+   */
+  url: string;
+};
+
+/**
  * AdminGeneratedItem
  */
 export type AdminGeneratedItem = {
@@ -253,18 +281,23 @@ export type ApproveBody = {
 };
 
 /**
- * ApproveOut
+ * ApproveIn
  */
-export type ApproveOut = {
-  item: AdminGeneratedItem;
+export type ApproveIn = {
   /**
-   * Media Id
+   * End S
    */
-  media_id: string;
+  end_s?: number | null;
   /**
    * Section Id
+   *
+   * Default: the candidate's section
    */
-  section_id: string;
+  section_id?: string | null;
+  /**
+   * Start S
+   */
+  start_s?: number | null;
 };
 
 /**
@@ -807,6 +840,84 @@ export type BlockSummary = {
 };
 
 /**
+ * CandidateOut
+ */
+export type CandidateOut = {
+  /**
+   * Candidate Id
+   */
+  candidate_id: string;
+  /**
+   * Channel Id
+   */
+  channel_id: string | null;
+  /**
+   * Chapter Id
+   */
+  chapter_id: string | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Duration S
+   */
+  duration_s: number | null;
+  /**
+   * Matched Terms
+   */
+  matched_terms: Array<string>;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Score
+   */
+  score: number;
+  /**
+   * Section Heading
+   */
+  section_heading: string | null;
+  /**
+   * Section Id
+   */
+  section_id: string | null;
+  /**
+   * Status
+   */
+  status: "pending" | "approved" | "rejected" | "stale";
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids: Array<string>;
+  /**
+   * Title
+   *
+   * null once the metadata was dropped (stale or rejected)
+   */
+  title: string | null;
+  /**
+   * Youtube Id
+   */
+  youtube_id: string;
+};
+
+/**
+ * CandidatesOut
+ */
+export type CandidatesOut = {
+  /**
+   * Items
+   */
+  items: Array<CandidateOut>;
+  /**
+   * Pending
+   */
+  pending: number;
+};
+
+/**
  * CardCreate
  */
 export type CardCreate = {
@@ -886,6 +997,14 @@ export type CardOut = {
    * Id
    */
   id: string;
+  /**
+   * Media
+   *
+   * Pictures in the faces (`figure` nodes' mediaId -> media): the student's own imported images
+   */
+  media?: {
+    [key: string]: MediaOut;
+  };
   /**
    * Origin
    */
@@ -5418,6 +5537,21 @@ export type NaadiApiCoursesExamOption = {
 };
 
 /**
+ * ApproveOut
+ */
+export type NaadiApiGenerationModelsApproveOut = {
+  item: AdminGeneratedItem;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
+};
+
+/**
  * ExamOption
  */
 export type NaadiApiPlanModelsExamOption = {
@@ -5431,6 +5565,28 @@ export type NaadiApiPlanModelsExamOption = {
    * The exam's short name from exam_rules (a proper noun, not a sentence)
    */
   label: string;
+};
+
+/**
+ * ApproveOut
+ */
+export type NaadiApiYoutubeModelsApproveOut = {
+  /**
+   * End S
+   */
+  end_s: number | null;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
+  /**
+   * Start S
+   */
+  start_s: number | null;
 };
 
 export type ListAppConfigData = {
@@ -5838,7 +5994,7 @@ export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses = 
   /**
    * Successful Response
    */
-  200: ApproveOut;
+  200: NaadiApiGenerationModelsApproveOut;
 };
 
 export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse =
@@ -6000,6 +6156,201 @@ export type GetSeedRunResponses = {
 };
 
 export type GetSeedRunResponse = GetSeedRunResponses[keyof GetSeedRunResponses];
+
+export type AddYoutubeVideoData = {
+  body: AddIn;
+  path?: never;
+  query?: never;
+  url: "/api/admin/youtube/add";
+};
+
+export type AddYoutubeVideoErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Candidate or section not found (video_* code)
+   */
+  404: ErrorResponse;
+  /**
+   * Rejected earlier
+   */
+  409: ErrorResponse;
+  /**
+   * Not valid (video_* code)
+   */
+  422: ErrorResponse;
+  /**
+   * Database or YouTube unavailable (video_unavailable_service)
+   */
+  503: ErrorResponse;
+};
+
+export type AddYoutubeVideoError = AddYoutubeVideoErrors[keyof AddYoutubeVideoErrors];
+
+export type AddYoutubeVideoResponses = {
+  /**
+   * Successful Response
+   */
+  201: CandidateOut;
+};
+
+export type AddYoutubeVideoResponse = AddYoutubeVideoResponses[keyof AddYoutubeVideoResponses];
+
+export type ListYoutubeCandidatesData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Status
+     */
+    status?: "pending" | "approved" | "rejected" | "stale";
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Offset
+     */
+    offset?: number;
+  };
+  url: "/api/admin/youtube/candidates";
+};
+
+export type ListYoutubeCandidatesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Candidate or section not found (video_* code)
+   */
+  404: ErrorResponse;
+  /**
+   * Not valid (video_* code)
+   */
+  422: ErrorResponse;
+  /**
+   * Database or YouTube unavailable (video_unavailable_service)
+   */
+  503: ErrorResponse;
+};
+
+export type ListYoutubeCandidatesError = ListYoutubeCandidatesErrors[keyof ListYoutubeCandidatesErrors];
+
+export type ListYoutubeCandidatesResponses = {
+  /**
+   * Successful Response
+   */
+  200: CandidatesOut;
+};
+
+export type ListYoutubeCandidatesResponse = ListYoutubeCandidatesResponses[keyof ListYoutubeCandidatesResponses];
+
+export type ApproveYoutubeCandidateData = {
+  body: ApproveIn;
+  path: {
+    /**
+     * Media Id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/admin/youtube/candidates/{media_id}/approve";
+};
+
+export type ApproveYoutubeCandidateErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Candidate or section not found (video_* code)
+   */
+  404: ErrorResponse;
+  /**
+   * Video unavailable or rejected
+   */
+  409: ErrorResponse;
+  /**
+   * Not valid (video_* code)
+   */
+  422: ErrorResponse;
+  /**
+   * Database or YouTube unavailable (video_unavailable_service)
+   */
+  503: ErrorResponse;
+};
+
+export type ApproveYoutubeCandidateError = ApproveYoutubeCandidateErrors[keyof ApproveYoutubeCandidateErrors];
+
+export type ApproveYoutubeCandidateResponses = {
+  /**
+   * Successful Response
+   */
+  200: NaadiApiYoutubeModelsApproveOut;
+};
+
+export type ApproveYoutubeCandidateResponse = ApproveYoutubeCandidateResponses[keyof ApproveYoutubeCandidateResponses];
+
+export type RejectYoutubeCandidateData = {
+  body?: never;
+  path: {
+    /**
+     * Media Id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/admin/youtube/candidates/{media_id}/reject";
+};
+
+export type RejectYoutubeCandidateErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Candidate or section not found (video_* code)
+   */
+  404: ErrorResponse;
+  /**
+   * Not valid (video_* code)
+   */
+  422: ErrorResponse;
+  /**
+   * Database or YouTube unavailable (video_unavailable_service)
+   */
+  503: ErrorResponse;
+};
+
+export type RejectYoutubeCandidateError = RejectYoutubeCandidateErrors[keyof RejectYoutubeCandidateErrors];
+
+export type RejectYoutubeCandidateResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type RejectYoutubeCandidateResponse = RejectYoutubeCandidateResponses[keyof RejectYoutubeCandidateResponses];
 
 export type DeleteImportedAnkiDeckData = {
   body?: never;

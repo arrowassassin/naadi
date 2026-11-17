@@ -41,7 +41,8 @@ ImageResolver = Callable[[str], str | None]
 class Stats:
     def __init__(self) -> None:
         self.audio = 0
-        self.images_missing = 0
+        self.images_missing = 0  # a local name that no picture resolved to
+        self.images_remote = 0  # http(s), protocol-relative and data: sources: never fetched or kept
         self.images: list[str] = []
 
 
@@ -95,6 +96,10 @@ class _Builder(HTMLParser):
     def _text(self, text: str) -> None:
         if not text:
             return
+        if self.inline and self.inline[-1]["type"] == "text" and self.inline[-1]["text"].endswith(" "):
+            text = text.lstrip(" ")
+            if not text:
+                return
         node: Node = {"type": "text", "text": text}
         if self.marks:
             ordered = [m for m in ("bold", "italic", "sub", "sup") if m in self.marks]
@@ -221,7 +226,7 @@ class _Builder(HTMLParser):
         src = a.get("src", "")
         if not src or src.startswith(("data:", "http:", "https:", "//")):
             # Remote and inline images are never fetched or kept: no tracking pixels, no mixed content.
-            self.stats.images_missing += 1
+            self.stats.images_remote += 1
             return
         media_id = self.resolve(src) if self.resolve else None
         if media_id is None:

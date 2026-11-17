@@ -348,6 +348,27 @@ function minHeadingLevel(doc: ContentNode): number {
   return min;
 }
 
+/** Start/end of every video node of the document, by media id: the chapter markers of a video used in parts. */
+function videoRanges(doc: ContentNode): Record<string, { startS: number; endS: number | null }[]> {
+  const out: Record<string, { startS: number; endS: number | null }[]> = {};
+  const stack: ContentNode[] = [doc];
+  while (stack.length) {
+    const n = stack.pop();
+    if (!n) continue;
+    if (n.type === "video") {
+      const id = str(n.attrs?.mediaId);
+      const start = int(n.attrs?.startS, 0, 86400);
+      if (id && start !== null) {
+        const list = out[id] ?? [];
+        if (!list.some((r) => r.startS === start)) list.push({ startS: start, endS: int(n.attrs?.endS, 1, 86400) });
+        out[id] = list;
+      }
+    }
+    for (const c of n.content ?? []) if (isNode(c)) stack.push(c);
+  }
+  return out;
+}
+
 /** Shipped ui_copy defaults: used when no lookup is passed (tests, previews). */
 const defaultText: TextLookup = (key, vars) => uiText(null, key, vars);
 
@@ -383,6 +404,7 @@ export function ContentRenderer({
       minHeading: minHeadingLevel(doc),
       onUnknown: (u) => unknown.push(u),
       embedOrigin: typeof window === "undefined" ? "" : window.location.origin,
+      videoRanges: videoRanges(doc),
       text: (key, vars) => textRef.current(key, vars),
       decorate: decorateText,
       textPos: decorateText ? sectionTextPositions(doc) : undefined,

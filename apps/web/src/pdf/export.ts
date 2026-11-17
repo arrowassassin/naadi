@@ -221,7 +221,7 @@ export function sourceText(note: Pick<NoteOut, "source" | "anchor_pos">, t: PdfT
         : t("pdf.source.question_plain"),
     );
   } else if (s?.title) parts.push(s.title);
-  if (note.anchor_pos?.detached) parts.push(t("pdf.detached"));
+  if (note.anchor_pos && "detached" in note.anchor_pos && note.anchor_pos.detached) parts.push(t("pdf.detached"));
   return parts.filter(Boolean).join(" · ");
 }
 
@@ -243,7 +243,7 @@ export async function exportHighlightsToPdf(
   for (const h of highlights) {
     const color = (h.highlight_color ?? "lime") as HighlightColor;
     used.add(color);
-    const quote = h.anchor_pos?.quote ?? h.excerpt ?? h.body_text;
+    const quote = (h.anchor_pos && "quote" in h.anchor_pos ? h.anchor_pos.quote : null) ?? h.excerpt ?? h.body_text;
     blocks.push({ type: "paragraph", runs: [{ text: quote, highlight: color }] });
     const meta = [words[color], sourceText(h, t)].filter(Boolean).join(" · ");
     blocks.push({ type: "paragraph", runs: [{ text: meta }], tone: "muted", small: true });

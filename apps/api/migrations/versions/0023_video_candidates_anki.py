@@ -17,6 +17,7 @@ Create Date: 2026-11-17
 - `flashcards` gains `tags`, `anki_guid` and `anki_note_type`. `(owner_user_id, anki_guid)` is unique, which makes a
   re-import of the same deck idempotent. These are written by the import API (privileged role); a student's own
   `origin 'user'` card can carry none of them.
+- `agent_health.kind` gains `youtube_map` (one row per weekly run: counts and quota units only).
 - `sources` gains the `user-upload` row private media points at (seeded here, not from config/sources.yaml, so the
   public license catalog stays a list of third-party sources).
 """
@@ -76,9 +77,15 @@ alter table public.flashcards
 create unique index flashcards_owner_anki_guid_idx on public.flashcards (owner_user_id, anki_guid)
   where anki_guid is not null;
 create index flashcards_owner_deck_idx on public.flashcards (owner_user_id, deck) where owner_user_id is not null;
+
+alter table public.agent_health drop constraint agent_health_kind_check,
+  add constraint agent_health_kind_check check (kind in ('ping','tavily_usage','coach','ink_ocr','youtube_map'));
 """
 
 DOWNGRADE_FLASHCARDS = """
+delete from public.agent_health where kind = 'youtube_map';
+alter table public.agent_health drop constraint agent_health_kind_check,
+  add constraint agent_health_kind_check check (kind in ('ping','tavily_usage','coach','ink_ocr'));
 drop index if exists public.flashcards_owner_deck_idx;
 drop index if exists public.flashcards_owner_anki_guid_idx;
 alter table public.flashcards drop column if exists anki_note_type, drop column if exists anki_guid,

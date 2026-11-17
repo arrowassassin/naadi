@@ -4,6 +4,7 @@ import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
 import { Eraser, PenLine, Plus } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { AnkiActions } from "../anki/AnkiActions";
 import { askAssistant, useAssistantAvailable } from "../assistant/ask";
 import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
@@ -470,6 +471,12 @@ export function ReviewPage() {
           ) : null}
           <div className="flex flex-wrap gap-3">
             {newCardButton("primary")}
+            <AnkiActions
+              onReview={() => {
+                setSession(null);
+                void due.refetch();
+              }}
+            />
             {reviewedSome && online ? (
               <Button
                 variant="secondary"
@@ -517,6 +524,12 @@ export function ReviewPage() {
           </Button>
         ) : null}
         {newCardButton("secondary")}
+        <AnkiActions
+          onReview={() => {
+            setSession(null);
+            void due.refetch();
+          }}
+        />
       </header>
       {offlineNote}
       {pendingNote}
@@ -537,6 +550,7 @@ export function ReviewPage() {
         <ContentRenderer
           key={`${current.id}-${flipped ? "back" : "front"}`}
           doc={face}
+          media={current.media}
           sectionId={`card-${current.id}-${flipped ? "back" : "front"}`}
           text={t}
           headingBase={3}

@@ -1604,6 +1604,7 @@ ui_copy:
   privacy.youtube_google: "Google Privacy Policy"
   privacy.youtube_google_url: "https://policies.google.com/privacy"
   privacy.youtube_revoke: "You can revoke access to data YouTube holds about you in Google's security settings."
+  privacy.youtube_revoke_link: "Google security settings"
   privacy.youtube_revoke_url: "https://myaccount.google.com/permissions"
   anki.import_title: "Import an Anki deck"
   anki.import_hint: "Choose an .apkg file. The cards stay private to you and start as new cards; Anki's own schedule and any audio are not imported."

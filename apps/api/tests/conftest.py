@@ -95,6 +95,7 @@ _SECRET_SETTINGS = (
     "nvidia_api_key",
     "tavily_api_key",
     "hf_gen_token",
+    "youtube_api_key",
     "admin_emails",
 )
 

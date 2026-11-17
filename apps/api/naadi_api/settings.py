@@ -90,6 +90,8 @@ class Settings(BaseSettings):
     # Non-production stub (tests, e2e): generation runs against an in-process fake and an in-memory store, with no
     # Space call. Ignored when APP_ENV=prod.
     generation_fake: bool = False
+    # YouTube Data API v3 (segment 20): read only by the weekly `youtube_map` graph; unset = the graph does nothing.
+    youtube_api_key: SecretStr | None = None
     # Local search (segment 07): bring the embeddings index in line with the content when the API starts
     # (a background task; a no-op when nothing changed or the models are not cached).
     embeddings_autostart: bool = True
@@ -114,6 +116,7 @@ class Settings(BaseSettings):
         "nvidia_api_key",
         "tavily_api_key",
         "hf_gen_token",
+        "youtube_api_key",
         "admin_emails",
         "app_base_url",
         mode="before",
@@ -162,6 +165,7 @@ class Settings(BaseSettings):
             self.nvidia_api_key,
             self.tavily_api_key,
             self.hf_gen_token,
+            self.youtube_api_key,
             self.admin_emails,
         ):
             if s is not None:

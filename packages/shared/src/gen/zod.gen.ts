@@ -3,6 +3,17 @@
 import * as z from "zod";
 
 /**
+ * AddIn
+ */
+export const zAddIn = z.object({
+  approve: z.boolean().optional().default(false),
+  end_s: z.int().gte(1).lte(172800).nullish(),
+  section_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+  start_s: z.int().gte(0).lte(172800).nullish(),
+  url: z.string().min(11).max(300),
+});
+
+/**
  * AdminGeneratedItem
  */
 export const zAdminGeneratedItem = z.object({
@@ -94,12 +105,15 @@ export const zApproveBody = z.object({
 });
 
 /**
- * ApproveOut
+ * ApproveIn
  */
-export const zApproveOut = z.object({
-  item: zAdminGeneratedItem,
-  media_id: z.string(),
-  section_id: z.string(),
+export const zApproveIn = z.object({
+  end_s: z.int().gte(1).lte(172800).nullish(),
+  section_id: z
+    .string()
+    .regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/)
+    .nullish(),
+  start_s: z.int().gte(0).lte(172800).nullish(),
 });
 
 /**
@@ -205,6 +219,34 @@ export const zBlockRules = z.object({
 });
 
 /**
+ * CandidateOut
+ */
+export const zCandidateOut = z.object({
+  candidate_id: z.string(),
+  channel_id: z.string().nullable(),
+  chapter_id: z.string().nullable(),
+  created_at: z.iso.datetime(),
+  duration_s: z.int().nullable(),
+  matched_terms: z.array(z.string()),
+  media_id: z.string(),
+  score: z.number(),
+  section_heading: z.string().nullable(),
+  section_id: z.string().nullable(),
+  status: z.enum(["pending", "approved", "rejected", "stale"]),
+  taxonomy_ids: z.array(z.string()),
+  title: z.string().nullable(),
+  youtube_id: z.string(),
+});
+
+/**
+ * CandidatesOut
+ */
+export const zCandidatesOut = z.object({
+  items: z.array(zCandidateOut),
+  pending: z.int(),
+});
+
+/**
  * CardCreate
  */
 export const zCardCreate = z.object({
@@ -255,25 +297,6 @@ export const zCardSource = z.object({
   chapter_id: z.string().nullable(),
   id: z.string(),
   kind: z.enum(["section", "question"]),
-});
-
-/**
- * CardOut
- */
-export const zCardOut = z.object({
-  back: z.record(z.string(), z.unknown()),
-  back_text: z.string(),
-  created_at: z.iso.datetime(),
-  deck: z.string(),
-  editable: z.boolean(),
-  front: z.record(z.string(), z.unknown()),
-  front_text: z.string(),
-  id: z.uuid(),
-  origin: z.enum(["seed", "user", "assistant", "anki_import"]),
-  schedule: zCardSchedule,
-  source: zCardSource.nullable(),
-  taxonomy_ids: z.array(z.string()),
-  updated_at: z.iso.datetime(),
 });
 
 /**
@@ -578,17 +601,6 @@ export const zFsrsSchedulerConfig = z.object({
 });
 
 /**
- * DueResponse
- */
-export const zDueResponse = z.object({
-  cards: z.array(zCardOut),
-  due_count: z.int(),
-  next_due: z.iso.datetime().nullable(),
-  now: z.iso.datetime(),
-  scheduler: zFsrsSchedulerConfig,
-});
-
-/**
  * GeneratedItem
  *
  * One generated image or clip. Always AI-generated: the client shows the label chip, alt text and caption.
@@ -874,6 +886,37 @@ export const zMediaOut = z.object({
   url: z.string().nullable(),
   width: z.int().nullable(),
   youtube_id: z.string().nullable(),
+});
+
+/**
+ * CardOut
+ */
+export const zCardOut = z.object({
+  back: z.record(z.string(), z.unknown()),
+  back_text: z.string(),
+  created_at: z.iso.datetime(),
+  deck: z.string(),
+  editable: z.boolean(),
+  front: z.record(z.string(), z.unknown()),
+  front_text: z.string(),
+  id: z.uuid(),
+  media: z.record(z.string(), zMediaOut).optional(),
+  origin: z.enum(["seed", "user", "assistant", "anki_import"]),
+  schedule: zCardSchedule,
+  source: zCardSource.nullable(),
+  taxonomy_ids: z.array(z.string()),
+  updated_at: z.iso.datetime(),
+});
+
+/**
+ * DueResponse
+ */
+export const zDueResponse = z.object({
+  cards: z.array(zCardOut),
+  due_count: z.int(),
+  next_due: z.iso.datetime().nullable(),
+  now: z.iso.datetime(),
+  scheduler: zFsrsSchedulerConfig,
 });
 
 /**
@@ -2170,6 +2213,15 @@ export const zCoursesResponse = z.object({
 });
 
 /**
+ * ApproveOut
+ */
+export const zNaadiApiGenerationModelsApproveOut = z.object({
+  item: zAdminGeneratedItem,
+  media_id: z.string(),
+  section_id: z.string(),
+});
+
+/**
  * ExamOption
  */
 export const zNaadiApiPlanModelsExamOption = z.object({
@@ -2190,6 +2242,16 @@ export const zOnboardingState = z.object({
   min_study_days: z.int(),
   today: z.iso.date(),
   values: zOnboardingValues,
+});
+
+/**
+ * ApproveOut
+ */
+export const zNaadiApiYoutubeModelsApproveOut = z.object({
+  end_s: z.int().nullable(),
+  media_id: z.string(),
+  section_id: z.string(),
+  start_s: z.int().nullable(),
 });
 
 /**
@@ -2263,7 +2325,7 @@ export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostPath = z.o
 /**
  * Successful Response
  */
-export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse = zApproveOut;
+export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse = zNaadiApiGenerationModelsApproveOut;
 
 /**
  * Successful Response
@@ -2290,6 +2352,44 @@ export const zGetSeedRunPath = z.object({
  * Successful Response
  */
 export const zGetSeedRunResponse = zSeedRun;
+
+export const zAddYoutubeVideoBody = zAddIn;
+
+/**
+ * Successful Response
+ */
+export const zAddYoutubeVideoResponse = zCandidateOut;
+
+export const zListYoutubeCandidatesQuery = z.object({
+  status: z.enum(["pending", "approved", "rejected", "stale"]).optional().default("pending"),
+  limit: z.int().gte(1).lte(200).optional().default(50),
+  offset: z.int().gte(0).lte(100000).optional().default(0),
+});
+
+/**
+ * Successful Response
+ */
+export const zListYoutubeCandidatesResponse = zCandidatesOut;
+
+export const zApproveYoutubeCandidateBody = zApproveIn;
+
+export const zApproveYoutubeCandidatePath = z.object({
+  media_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zApproveYoutubeCandidateResponse = zNaadiApiYoutubeModelsApproveOut;
+
+export const zRejectYoutubeCandidatePath = z.object({
+  media_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zRejectYoutubeCandidateResponse = z.void();
 
 export const zDeleteImportedAnkiDeckQuery = z.object({
   deck: z.string().max(60),

@@ -255,6 +255,7 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "privacy.youtube_google",
         "privacy.youtube_google_url",
         "privacy.youtube_revoke",
+        "privacy.youtube_revoke_link",
         "privacy.youtube_revoke_url",
         "anki.import_title",
         "anki.import_hint",

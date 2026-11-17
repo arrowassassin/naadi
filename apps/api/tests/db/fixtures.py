@@ -384,3 +384,8 @@ def seed_admin_rows(conn: psycopg.Connection, user_id: uuid.UUID, shared: Shared
     )
     insert_row(conn, "search_cache", {"query_norm": f"q {tag}", "results": Jsonb([])})
     insert_row(conn, "llm_usage", {"user_id": user_id, "provider": "nvidia", "role": "tutor", "ok": True})
+    insert_row(
+        conn,
+        "video_candidates",
+        {"media_id": shared.unapproved_media_id, "section_id": shared.section_id, "score": 0.5},
+    )

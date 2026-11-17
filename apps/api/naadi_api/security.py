@@ -23,7 +23,9 @@ def content_security_policy(settings: Settings) -> str:
         img.append(supa)  # Supabase Storage serves from the project origin (/storage/v1/...)
     directives = [
         "default-src 'self'",
-        "script-src 'self'",
+        # The IFrame Player API script (and the widget it loads) come from www.youtube.com, only after a student
+        # presses play on a video (segment 20); nothing else is allowed.
+        "script-src 'self' https://www.youtube.com",
         "style-src 'self'",
         "font-src 'self'",
         f"img-src {' '.join(img)}",

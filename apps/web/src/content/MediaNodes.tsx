@@ -1,7 +1,8 @@
 import type { MediaOut } from "@naadi/shared";
 import { cx } from "@naadi/ui";
-import { FileText, ImageOff, Maximize2, Play, X } from "lucide-react";
+import { FileText, ImageOff, Maximize2, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { YouTubeVideo } from "../video/YouTubeVideo";
 import type { ContentEnv } from "./types";
 
 /** Shown when a node points at media the caller cannot see or the server cannot serve. Never silent. */
@@ -126,21 +127,6 @@ export function Figure({ mediaId, env }: { mediaId: string | null; env: ContentE
   );
 }
 
-function youtubeSrc(id: string, origin: string, start: number | null, end: number | null): string {
-  const q = new URLSearchParams({ autoplay: "1", rel: "0", playsinline: "1", enablejsapi: "1", origin });
-  if (start !== null) q.set("start", String(start));
-  if (end !== null) q.set("end", String(end));
-  return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?${q.toString()}`;
-}
-
-function duration(s: number | null, env: ContentEnv): string | null {
-  if (s === null || s <= 0) return null;
-  const m = String(Math.floor(s / 60));
-  const r = String(s % 60);
-  if (m === "0") return env.text("content.duration_s", { s: r });
-  return env.text(r === "0" ? "content.duration_min" : "content.duration_min_s", { m, s: r });
-}
-
 export function Video({
   mediaId,
   startS,
@@ -153,42 +139,22 @@ export function Video({
   env: ContentEnv;
 }) {
   const m = mediaId ? env.media[mediaId] : undefined;
-  const [loaded, setLoaded] = useState(false);
   if (!m) return <MediaUnavailable message={env.text("content.video_missing")} mediaId={mediaId} env={env} />;
   const title = m.title ?? m.caption ?? env.text("content.video_fallback_title");
-  const len = duration(m.duration_s, env);
 
   if (m.kind === "video_youtube" && m.youtube_id && m.embeddable !== false) {
+    const own = startS !== null ? [{ startS, endS }] : [];
+    const chapters = [...own, ...(env.videoRanges?.[m.id] ?? []).filter((r) => r.startS !== startS)];
     return (
       <figure data-node="video" data-media-id={m.id} className="m-0 flex flex-col gap-3">
-        <div className="relative aspect-video w-full overflow-hidden rounded-block border border-line bg-surface-2">
-          {loaded ? (
-            <iframe
-              title={title}
-              src={youtubeSrc(m.youtube_id, env.embedOrigin, startS, endS)}
-              // YouTube refuses to play without a referrer (error 153); this policy sends only the origin.
-              referrerPolicy="strict-origin-when-cross-origin"
-              allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-              allowFullScreen
-              className="absolute inset-0 size-full border-0"
-            />
-          ) : (
-            // Click-to-load facade: nothing is requested from YouTube until the student asks for the video.
-            <button
-              type="button"
-              onClick={() => setLoaded(true)}
-              className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-text"
-            >
-              <span className="flex size-16 items-center justify-center rounded-pill bg-paper text-ground">
-                <Play aria-hidden="true" size={26} />
-              </span>
-              <span className="px-6 text-center font-semibold">{env.text("content.video_play", { title })}</span>
-              <span className="text-ui-sm text-text-2">
-                {env.text(len ? "content.video_loads_with_length" : "content.video_loads", { length: len ?? "" })}
-              </span>
-            </button>
-          )}
-        </div>
+        <YouTubeVideo
+          media={{ ...m, youtube_id: m.youtube_id }}
+          startS={startS}
+          endS={endS}
+          chapters={chapters}
+          env={env}
+          title={title}
+        />
         <Caption m={m} env={env} />
       </figure>
     );

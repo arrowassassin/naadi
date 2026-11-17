@@ -22,6 +22,7 @@ ADMIN_TABLES = (
     "search_cache",
     "llm_usage",
     "embeddings",
+    "video_candidates",
 )
 SHARED_TABLES = (
     "chapters",

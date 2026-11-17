@@ -31,7 +31,9 @@ from psycopg.types.json import Jsonb
 from ..auth import CurrentUser, get_account_user
 from ..auth_db import user_tx
 from ..auth_limits import RateLimiter
+from ..chapters_media import MediaUrlResolver
 from ..config_api.service import AppConfigService
+from ..courses import MediaOut, MediaSource
 from ..db import Database, DatabaseNotConfigured
 from ..errors import ErrorResponse, error_response
 from ..logs import get_logger
@@ -252,6 +254,65 @@ def _card(row: Row, uid: uuid.UUID) -> CardOut:
     )
 
 
+def _figure_ids(doc: object) -> set[str]:
+    found: set[str] = set()
+    stack: list[object] = [doc]
+    while stack:
+        n = stack.pop()
+        if isinstance(n, dict):
+            if n.get("type") == "figure" and isinstance(n.get("attrs"), dict):
+                mid = n["attrs"].get("mediaId")
+                if isinstance(mid, str):
+                    found.add(mid)
+            stack.extend(n.get("content") or [])
+    return found
+
+
+async def _attach_media(
+    request: Request, conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, cards: list[CardOut]
+) -> None:
+    """Fill `CardOut.media` for the pictures the faces use. Only the caller's own private pictures and approved
+    shared ones resolve (the same row filter as `media_assets` RLS); anything else is left out."""
+    ids = sorted({m for c in cards for d in (c.front, c.back) for m in _figure_ids(d)})
+    if not ids:
+        return
+    rows = await _rows(
+        conn,
+        "select m.id, m.kind, m.url, m.title, m.caption, m.attribution, m.width, m.height, m.youtube_id,"
+        " m.duration_s, m.embeddable, src.id as source_id, src.name as source_name, src.license as source_license,"
+        " src.url as source_url from public.media_assets m left join public.sources src on src.id = m.source_id"
+        " where m.id = any(%(ids)s) and m.review_status = 'approved'"
+        " and (m.owner_user_id is null or m.owner_user_id = %(uid)s)",
+        {"ids": ids, "uid": uid},
+    )
+    resolver: MediaUrlResolver = request.app.state.media_resolver
+    urls = await resolver.resolve(((r["id"], r["url"]) for r in rows), uid)
+    media = {
+        r["id"]: MediaOut(
+            id=r["id"],
+            kind=r["kind"],
+            url=urls.get(r["id"]),
+            title=r["title"],
+            caption=r["caption"],
+            attribution=r["attribution"],
+            width=r["width"],
+            height=r["height"],
+            youtube_id=r["youtube_id"],
+            duration_s=r["duration_s"],
+            embeddable=r["embeddable"],
+            source=MediaSource(
+                id=r["source_id"], name=r["source_name"], license=r["source_license"], url=r["source_url"]
+            )
+            if r["source_id"]
+            else None,
+        )
+        for r in rows
+    }
+    for c in cards:
+        wanted = {m for d in (c.front, c.back) for m in _figure_ids(d)}
+        c.media = {m: media[m] for m in wanted if m in media}
+
+
 async def _visible_card(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, card_id: uuid.UUID) -> Row | None:
     return await _first(
         conn,
@@ -296,9 +357,11 @@ async def get_due(
             p,
         )
         assert counts is not None
+        cards = [_card(r, user.user_id) for r in rows]
+        await _attach_media(request, conn, user.user_id, cards)
         return DueResponse(
             now=now,
-            cards=[_card(r, user.user_id) for r in rows],
+            cards=cards,
             due_count=int(counts["due"]),
             next_due=counts["next_due"],
             scheduler=FsrsSchedulerConfig(**cfg),
@@ -747,7 +810,9 @@ async def get_card(
         row = await _visible_card(conn, user.user_id, card_id)
         if row is None:
             raise CardsError(404, "card_not_found")
-        return _card(row, user.user_id)
+        card = _card(row, user.user_id)
+        await _attach_media(request, conn, user.user_id, [card])
+        return card
 
     return await as_service(_db(request), run)
 

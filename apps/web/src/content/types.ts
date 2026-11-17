@@ -67,6 +67,8 @@ export interface ContentEnv {
   onUnknown?: (u: UnknownContent) => void;
   /** The origin YouTube embeds must declare (window.location.origin in the browser). */
   embedOrigin: string;
+  /** Segment 20: the start/end ranges of every `video` node of the document, by media id (the chapter list). */
+  videoRanges?: Record<string, { startS: number; endS: number | null }[]>;
   /** UI wording from app_config.ui_copy (shipped defaults until the config is loaded). */
   text: TextLookup;
   /** Segment 13: renders a text node at its ProseMirror position (highlights, selection anchors). */

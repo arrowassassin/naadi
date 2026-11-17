@@ -48,6 +48,59 @@
         "title": "ActiveExamOut",
         "type": "object"
       },
+      "AddIn": {
+        "properties": {
+          "approve": {
+            "default": false,
+            "title": "Approve",
+            "type": "boolean"
+          },
+          "end_s": {
+            "anyOf": [
+              {
+                "maximum": 172800.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End S"
+          },
+          "section_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+            "title": "Section Id",
+            "type": "string"
+          },
+          "start_s": {
+            "anyOf": [
+              {
+                "maximum": 172800.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start S"
+          },
+          "url": {
+            "description": "A YouTube link or the 11-character video id",
+            "maxLength": 300,
+            "minLength": 11,
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "section_id"
+        ],
+        "title": "AddIn",
+        "type": "object"
+      },
       "AdminGeneratedItem": {
         "properties": {
           "ai_generated": {
@@ -425,26 +478,49 @@
         "title": "ApproveBody",
         "type": "object"
       },
-      "ApproveOut": {
+      "ApproveIn": {
         "properties": {
-          "item": {
-            "$ref": "#/components/schemas/AdminGeneratedItem"
-          },
-          "media_id": {
-            "title": "Media Id",
-            "type": "string"
+          "end_s": {
+            "anyOf": [
+              {
+                "maximum": 172800.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End S"
           },
           "section_id": {
-            "title": "Section Id",
-            "type": "string"
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Default: the candidate's section",
+            "title": "Section Id"
+          },
+          "start_s": {
+            "anyOf": [
+              {
+                "maximum": 172800.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start S"
           }
         },
-        "required": [
-          "item",
-          "media_id",
-          "section_id"
-        ],
-        "title": "ApproveOut",
+        "title": "ApproveIn",
         "type": "object"
       },
       "AttemptIn": {
@@ -1424,6 +1500,161 @@
         "title": "BlockSummary",
         "type": "object"
       },
+      "CandidateOut": {
+        "properties": {
+          "candidate_id": {
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "channel_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Id"
+          },
+          "chapter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Id"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "matched_terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Matched Terms",
+            "type": "array"
+          },
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          },
+          "section_heading": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Section Heading"
+          },
+          "section_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Section Id"
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "approved",
+              "rejected",
+              "stale"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "taxonomy_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Taxonomy Ids",
+            "type": "array"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "null once the metadata was dropped (stale or rejected)",
+            "title": "Title"
+          },
+          "youtube_id": {
+            "title": "Youtube Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "media_id",
+          "youtube_id",
+          "title",
+          "channel_id",
+          "duration_s",
+          "score",
+          "matched_terms",
+          "section_id",
+          "section_heading",
+          "chapter_id",
+          "taxonomy_ids",
+          "status",
+          "created_at"
+        ],
+        "title": "CandidateOut",
+        "type": "object"
+      },
+      "CandidatesOut": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CandidateOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "pending": {
+            "title": "Pending",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "pending"
+        ],
+        "title": "CandidatesOut",
+        "type": "object"
+      },
       "CardCreate": {
         "additionalProperties": false,
         "properties": {
@@ -1525,6 +1756,14 @@
             "format": "uuid",
             "title": "Id",
             "type": "string"
+          },
+          "media": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MediaOut"
+            },
+            "description": "Pictures in the faces (`figure` nodes' mediaId -> media): the student's own imported images",
+            "title": "Media",
+            "type": "object"
           },
           "origin": {
             "enum": [
@@ -9485,6 +9724,28 @@
         "title": "ExamOption",
         "type": "object"
       },
+      "naadi_api__generation__models__ApproveOut": {
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/AdminGeneratedItem"
+          },
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item",
+          "media_id",
+          "section_id"
+        ],
+        "title": "ApproveOut",
+        "type": "object"
+      },
       "naadi_api__plan__models__ExamOption": {
         "properties": {
           "id": {
@@ -9507,6 +9768,48 @@
           "label"
         ],
         "title": "ExamOption",
+        "type": "object"
+      },
+      "naadi_api__youtube__models__ApproveOut": {
+        "properties": {
+          "end_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End S"
+          },
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          },
+          "start_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start S"
+          }
+        },
+        "required": [
+          "media_id",
+          "section_id",
+          "start_s",
+          "end_s"
+        ],
+        "title": "ApproveOut",
         "type": "object"
       }
     }
@@ -10211,7 +10514,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApproveOut"
+                  "$ref": "#/components/schemas/naadi_api__generation__models__ApproveOut"
                 }
               }
             },
@@ -10565,6 +10868,389 @@
           }
         },
         "summary": "Admin only: one seed job with its report",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/youtube/add": {
+      "post": {
+        "operationId": "addYoutubeVideo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Candidate or section not found (video_* code)"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rejected earlier"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not valid (video_* code)"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database or YouTube unavailable (video_unavailable_service)"
+          }
+        },
+        "summary": "Add a video by link (checked with the YouTube API: public and embeddable)",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/youtube/candidates": {
+      "get": {
+        "operationId": "listYoutubeCandidates",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "default": "pending",
+              "enum": [
+                "pending",
+                "approved",
+                "rejected",
+                "stale"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidatesOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Candidate or section not found (video_* code)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not valid (video_* code)"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database or YouTube unavailable (video_unavailable_service)"
+          }
+        },
+        "summary": "Video candidates by status (pending first for review)",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/youtube/candidates/{media_id}/approve": {
+      "post": {
+        "operationId": "approveYoutubeCandidate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "media_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+              "title": "Media Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApproveIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/naadi_api__youtube__models__ApproveOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Candidate or section not found (video_* code)"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Video unavailable or rejected"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not valid (video_* code)"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database or YouTube unavailable (video_unavailable_service)"
+          }
+        },
+        "summary": "Approve: students see the video in the section, optionally from start_s to end_s",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/youtube/candidates/{media_id}/reject": {
+      "post": {
+        "operationId": "rejectYoutubeCandidate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "media_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+              "title": "Media Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Candidate or section not found (video_* code)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not valid (video_* code)"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database or YouTube unavailable (video_unavailable_service)"
+          }
+        },
+        "summary": "Reject: never proposed again; the stored title is dropped",
         "tags": [
           "admin"
         ]

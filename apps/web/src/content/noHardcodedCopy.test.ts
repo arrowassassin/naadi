@@ -9,6 +9,7 @@ import { describe, expect, it } from "vitest";
  */
 const ROOTS = [
   "agent",
+  "anki",
   "cards",
   "content",
   "exam",
@@ -21,6 +22,7 @@ const ROOTS = [
   "routes",
   "search",
   "shell",
+  "video",
   "today",
 ];
 const SRC = path.resolve(__dirname, "..");

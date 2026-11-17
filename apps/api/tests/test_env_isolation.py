@@ -16,6 +16,7 @@ _SECRET_FIELDS = (
     "openrouter_api_key",
     "nvidia_api_key",
     "tavily_api_key",
+    "youtube_api_key",
     "admin_emails",
 )
 

@@ -8,6 +8,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from ..courses import MediaOut
 from .docs import MAX_FACE_CHARS, normalize_text
 
 ID_PATTERN = r"^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$"
@@ -61,6 +62,10 @@ class CardOut(BaseModel):
     created_at: dt.datetime
     updated_at: dt.datetime
     schedule: CardSchedule
+    media: dict[str, MediaOut] = Field(
+        default_factory=dict,
+        description="Pictures in the faces (`figure` nodes' mediaId -> media): the student's own imported images",
+    )
 
 
 class DueResponse(BaseModel):

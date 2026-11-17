@@ -77,6 +77,7 @@ def test_anon_has_no_privileges_on_user_or_admin_tables(pg: psycopg.Connection) 
                 "seed_runs",
                 "search_usage",
                 "agent_health",
+                "video_candidates",
             ],
         ),
     ).fetchall()

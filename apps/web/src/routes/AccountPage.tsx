@@ -8,6 +8,7 @@ import { ApiError } from "../auth/apiError";
 import { type SignOutScope, signOut } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { YouTubePrivacyNotice } from "../video/PrivacyNotice";
 import { SettingsNav } from "./SettingsNav";
 
 function timeZones(current: string): string[] {
@@ -241,6 +242,7 @@ export function AccountPage() {
               </h2>
               <SignOutPanel />
             </Tile>
+            <YouTubePrivacyNotice />
           </div>
         </div>
       )}

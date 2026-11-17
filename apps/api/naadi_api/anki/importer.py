@@ -146,7 +146,7 @@ def _prepare(path: Path, user_id: uuid.UUID, deck_prefix: str | None, limits: An
             pictures=pictures,
             notes=parsed.notes,
             skipped_cards=dropped,
-            images_skipped=skipped + stats.images_missing,
+            images_skipped=skipped + stats.images_remote,
             audio_skipped=stats.audio,
             manifest=parsed.media_state,
         )

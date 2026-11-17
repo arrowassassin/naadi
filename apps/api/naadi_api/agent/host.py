@@ -71,6 +71,7 @@ SYSTEM_CRONS: tuple[tuple[str, str, str, dict[str, Any], bool], ...] = (
     (SYSTEM_CRON_KEY, "ping", SYSTEM_CRON_SCHEDULE, {"trigger": "cron"}, True),
     ("naadi.tavily_usage.daily", "tavily_usage", "43 3 * * *", {}, False),
     ("naadi.coach.nightly", "coach", "7 21 * * *", {}, False),  # 02:37 IST
+    ("naadi.youtube_map.weekly", "youtube_map", "17 5 * * 0", {}, False),  # Sunday 05:17 UTC (S20)
     # Handwriting OCR (S13): idle layers every two minutes; deferred ones after the 00:00 UTC budget reset.
     ("naadi.ink_ocr.sweep", "ink_ocr", "*/2 * * * *", {"mode": "sweep"}, False),
     ("naadi.ink_ocr.nightly", "ink_ocr", "23 0 * * *", {"mode": "nightly"}, False),
