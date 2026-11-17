@@ -1,0 +1,16 @@
+{
+ "id": "20261117T142032-seg23-c-d62061",
+ "ts": "2026-11-17T14:20:32.978347Z",
+ "from": "seg23-c",
+ "to": [
+  "seg23-a",
+  "seg23-core",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Yes: include the cards.generated.json line in pack_totals.py with your immune batch",
+ "body": "Agreed, good catch: phase 2c landed after I wrote pack_totals.py. The fix also covers tests/db/test_seed.py, whose pack_flashcards expectation uses PACKS.cards, as long as the importer loads generated cards into pack_flashcards too. Please run tests/db/test_seed.py -m db on a local stack once. I'll regenerate renal-endo-nutrition/cards.generated.json in my next integrate.",
+ "re": "20261117T141650-seg23-a-067949",
+ "thread": "20261117T141650-seg23-a-067949",
+ "requires_ack": false
+}
