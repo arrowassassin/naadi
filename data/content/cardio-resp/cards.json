@@ -354,7 +354,7 @@
   {
     "id": "s23b-c-080102-08",
     "frontHtml": "Nonbacterial thrombotic endocarditis: classic setting?",
-    "backHtml": "Hypercoagulable state, especially mucin-producing adenocarcinoma (pancreas, lung); sterile vegetations that embolise.",
+    "backHtml": "Hypercoagulable state, especially mucin-producing adenocarcinoma (pancreas, lung); sterile vegetations that embolize.",
     "sectionId": "s23b-s-080102-s1-02",
     "areas": [
       "usmle2026.08.01.02"
@@ -816,7 +816,7 @@
   {
     "id": "s23b-c-080301-05",
     "frontHtml": "Rank conduction velocity through cardiac tissues.",
-    "backHtml": "Purkinje fibres (fastest) &gt; atrial and ventricular muscle &gt; AV node (slowest).",
+    "backHtml": "Purkinje fibers (fastest) &gt; atrial and ventricular muscle &gt; AV node (slowest).",
     "sectionId": "s23b-s-080301-s1-01",
     "areas": [
       "usmle2026.08.03.01"
@@ -915,7 +915,7 @@
   {
     "id": "s23b-c-080301-14",
     "frontHtml": "Name six toxicities of amiodarone.",
-    "backHtml": "Pulmonary fibrosis, thyroid dysfunction (hypo or hyper), hepatotoxicity, corneal deposits/optic neuropathy, photosensitivity/blue-grey skin, bradycardia; also raises warfarin and digoxin levels.",
+    "backHtml": "Pulmonary fibrosis, thyroid dysfunction (hypo or hyper), hepatotoxicity, corneal deposits/optic neuropathy, photosensitivity/blue-gray skin, bradycardia; also raises warfarin and digoxin levels.",
     "sectionId": "s23b-s-080301-s1-02",
     "areas": [
       "usmle2026.08.03.01"
@@ -1486,7 +1486,7 @@
   },
   {
     "id": "s23b-c-080401-14",
-    "frontHtml": "Cardiac resynchronisation therapy: who benefits most?",
+    "frontHtml": "Cardiac resynchronization therapy: who benefits most?",
     "backHtml": "EF ≤ 35%, sinus rhythm, left bundle branch block with QRS ≥ 150 ms, symptomatic despite guideline therapy.",
     "sectionId": "s23b-s-080401-ck-01",
     "areas": [
@@ -1508,7 +1508,7 @@
   },
   {
     "id": "s23b-c-080401-16",
-    "frontHtml": "Which drug class reduces HF hospitalisation in HFpEF?",
+    "frontHtml": "Which drug class reduces HF hospitalization in HFpEF?",
     "backHtml": "SGLT2 inhibitors (empagliflozin, dapagliflozin); diuretics treat congestion.",
     "sectionId": "s23b-s-080401-ck-01",
     "areas": [
@@ -1542,7 +1542,7 @@
   {
     "id": "s23b-c-080401-19",
     "frontHtml": "Cardiogenic shock after acute MI: what treatment improves survival?",
-    "backHtml": "Emergency revascularisation of the culprit artery (usually PCI).",
+    "backHtml": "Emergency revascularization of the culprit artery (usually PCI).",
     "sectionId": "s23b-s-080401-ck-02",
     "areas": [
       "usmle2026.08.04.01"
@@ -1761,7 +1761,7 @@
   },
   {
     "id": "s23b-c-080501-19",
-    "frontHtml": "When is coronary bypass surgery favoured over PCI in stable disease?",
+    "frontHtml": "When is coronary bypass surgery favored over PCI in stable disease?",
     "backHtml": "Significant left main disease, or multivessel disease with diabetes or reduced EF.",
     "sectionId": "s23b-s-080501-ck-01",
     "areas": [
@@ -2048,7 +2048,7 @@
   {
     "id": "s23b-c-080601-19",
     "frontHtml": "Disease-modifying therapy for ATTR cardiomyopathy?",
-    "backHtml": "A transthyretin stabiliser such as tafamidis.",
+    "backHtml": "A transthyretin stabilizer such as tafamidis.",
     "sectionId": "s23b-s-080601-ck-01",
     "areas": [
       "usmle2026.08.06.01"
@@ -2488,7 +2488,7 @@
   {
     "id": "s23b-c-080801-15",
     "frontHtml": "TAVR or SAVR?",
-    "backHtml": "Heart team decision: TAVR favoured in older or higher-risk patients with suitable access; SAVR in younger, lower-risk patients.",
+    "backHtml": "Heart team decision: TAVR favored in older or higher-risk patients with suitable access; SAVR in younger, lower-risk patients.",
     "sectionId": "s23b-s-080801-ck-01",
     "areas": [
       "usmle2026.08.08.01"
@@ -3818,8 +3818,8 @@
   },
   {
     "id": "s23b-c-081301-04",
-    "frontHtml": "Hemodynamic hallmark of tamponade on right heart catheterisation?",
-    "backHtml": "Raised, equalised diastolic pressures (RA ≈ RV diastolic ≈ PA diastolic ≈ wedge).",
+    "frontHtml": "Hemodynamic hallmark of tamponade on right heart catheterization?",
+    "backHtml": "Raised, equalized diastolic pressures (RA ≈ RV diastolic ≈ PA diastolic ≈ wedge).",
     "sectionId": "s23b-s-081301-s1-01",
     "areas": [
       "usmle2026.08.13.01"
@@ -3885,7 +3885,7 @@
   {
     "id": "s23b-c-081301-10",
     "frontHtml": "Penetrating cardiac injury with tamponade and an available surgeon: treatment?",
-    "backHtml": "Immediate operation (sternotomy or thoracotomy); pericardiocentesis only as a temporising bridge.",
+    "backHtml": "Immediate operation (sternotomy or thoracotomy); pericardiocentesis only as a temporizing bridge.",
     "sectionId": "s23b-s-081301-ck-01",
     "areas": [
       "usmle2026.08.13.01"
@@ -5534,7 +5534,7 @@
   },
   {
     "id": "s23b-c-090202-02",
-    "frontHtml": "Central lung tumour with cavitation and hypercalcemia: type and mediator?",
+    "frontHtml": "Central lung tumor with cavitation and hypercalcemia: type and mediator?",
     "backHtml": "Squamous cell carcinoma secreting PTH-related peptide (PTH suppressed).",
     "sectionId": "s23b-s-090202-s1-01",
     "areas": [
@@ -5567,7 +5567,7 @@
   },
   {
     "id": "s23b-c-090202-05",
-    "frontHtml": "Superior sulcus tumour: structures invaded and signs?",
+    "frontHtml": "Superior sulcus tumor: structures invaded and signs?",
     "backHtml": "Lower brachial plexus (C8–T1 pain, hand wasting) and cervical sympathetic chain (ipsilateral ptosis, miosis, anhidrosis).",
     "sectionId": "s23b-s-090202-s1-01",
     "areas": [
@@ -5611,7 +5611,7 @@
   },
   {
     "id": "s23b-c-090202-09",
-    "frontHtml": "Typical patient and behaviour of bronchial carcinoid?",
+    "frontHtml": "Typical patient and behavior of bronchial carcinoid?",
     "backHtml": "Younger nonsmoker, central endobronchial polyp with obstruction or hemoptysis; usually cured by resection.",
     "sectionId": "s23b-s-090202-s1-01",
     "areas": [
@@ -5644,7 +5644,7 @@
   },
   {
     "id": "s23b-c-090202-12",
-    "frontHtml": "Why do glottic cancers metastasise to nodes late?",
+    "frontHtml": "Why do glottic cancers metastasize to nodes late?",
     "backHtml": "The true vocal cords have sparse lymphatics.",
     "sectionId": "s23b-s-090202-s1-02",
     "areas": [
@@ -6326,7 +6326,7 @@
   },
   {
     "id": "s23b-c-090401-03",
-    "frontHtml": "Which pneumoconioses favour the upper lobes, and which the lower lobes?",
+    "frontHtml": "Which pneumoconioses favor the upper lobes, and which the lower lobes?",
     "backHtml": "Upper: silicosis and coal workers' pneumoconiosis. Lower: asbestosis (with pleural plaques).",
     "sectionId": "s23b-s-090401-s1-01",
     "areas": [
@@ -6338,7 +6338,7 @@
   {
     "id": "s23b-c-090401-04",
     "frontHtml": "Ferruginous bodies: what are they?",
-    "backHtml": "Asbestos fibres coated with iron and protein; golden-brown, beaded rods that stain with Prussian blue.",
+    "backHtml": "Asbestos fibers coated with iron and protein; golden-brown, beaded rods that stain with Prussian blue.",
     "sectionId": "s23b-s-090401-s1-01",
     "areas": [
       "usmle2026.09.04.01"
@@ -8196,7 +8196,7 @@
   },
   {
     "id": "s23b-c-090901-15",
-    "frontHtml": "Inspiratory vs expiratory stridor localisation?",
+    "frontHtml": "Inspiratory vs expiratory stridor localization?",
     "backHtml": "Inspiratory = extrathoracic (laryngomalacia, croup); expiratory = intrathoracic (tracheomalacia).",
     "sectionId": "s23b-s-090901-s1-02",
     "areas": [

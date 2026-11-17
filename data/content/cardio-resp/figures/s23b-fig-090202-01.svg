@@ -16,7 +16,7 @@
 <text x="32" y="120" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">SIADH, ectopic ACTH,</text>
 <text x="32" y="136" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">Lambert-Eaton, anti-Hu;</text>
 <text x="32" y="152" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">SVC syndrome</text>
-<text x="20" y="174" font-family="sans-serif" font-size="13" text-anchor="start" fill="#0f172a" font-weight="normal">Carcinoid tumour</text>
+<text x="20" y="174" font-family="sans-serif" font-size="13" text-anchor="start" fill="#0f172a" font-weight="normal">Carcinoid tumor</text>
 <text x="32" y="192" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">endobronchial polyp;</text>
 <text x="32" y="208" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">obstruction</text>
 <text x="20" y="234" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">Cough, hemoptysis, collapse,</text>
@@ -29,7 +29,7 @@
 <text x="32" y="402" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">osteoarthropathy</text>
 <text x="20" y="424" font-family="sans-serif" font-size="13" text-anchor="start" fill="#0f172a" font-weight="normal">Large cell carcinoma</text>
 <text x="32" y="442" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">undifferentiated, poor prognosis</text>
-<text x="250" y="470" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">Peripheral tumours are often silent: found as a nodule or by pleural spread</text>
+<text x="250" y="470" font-family="sans-serif" font-size="12" text-anchor="start" fill="#334155" font-weight="normal">Peripheral tumors are often silent: found as a nodule or by pleural spread</text>
 <line x1="150" y1="352" x2="249" y2="294" stroke="#b45309" stroke-width="1.5"/>
 <text x="560" y="60" font-family="sans-serif" font-size="14" text-anchor="start" fill="#7c3aed" font-weight="bold">APEX (superior sulcus)</text>
 <text x="560" y="82" font-family="sans-serif" font-size="13" text-anchor="start" fill="#0f172a" font-weight="normal">Lower brachial plexus:</text>
