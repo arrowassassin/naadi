@@ -144,7 +144,8 @@ async def list_queue(
 ) -> list[QueueRow]:
     if flt == "seed_spot_check":
         where = (
-            "status = 'published' and (review->>'humanExpertReviewed') = 'false' and (review->'authorModel') is null"
+            "status in ('published', 'in_review', 'auto_checked', 'draft')"
+            " and (review->>'humanExpertReviewed') = 'false' and (review->'authorModel') is null"
         )
     elif flt == "psychometric_flags":
         where = "status = 'published' and jsonb_array_length(coalesce(stats->'flags', '[]'::jsonb)) > 0"
@@ -208,7 +209,8 @@ async def counts(conn: psycopg.AsyncConnection[Any], required: int) -> dict[str,
         select
           count(*) filter (where status in ('in_review','auto_checked','draft')
                              and (review->'authorModel') is not null)::int as ai_drafts,
-          count(*) filter (where status = 'published' and (review->>'humanExpertReviewed') = 'false'
+          count(*) filter (where status in ('published','in_review','auto_checked','draft')
+                             and (review->>'humanExpertReviewed') = 'false'
                              and (review->'authorModel') is null)::int as seed_spot_check,
           count(*) filter (where status = 'published'
                              and jsonb_array_length(coalesce(stats->'flags','[]'::jsonb)) > 0)::int

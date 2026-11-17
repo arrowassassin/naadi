@@ -360,6 +360,23 @@ def test_seed_items_enter_the_same_queue_and_need_the_cross_check(
     )
 
 
+def test_a_seed_item_sent_back_for_revision_stays_in_the_spot_check_queue(
+    client: TestClient, key: SigningKey, world: World, make_item: Make, pg: psycopg.Connection[Any]
+) -> None:
+    qid = make_item("seed4", status="published", ai=False)
+    r = post_review(client, key, world, "a", qid, decision="revise", ratings={"flaws": ["logical_cue"]})
+    assert r.json()["outcome"] == "revise" and status_of(pg, qid) == "draft"  # out of the pool until fixed
+    queue = client.get(f"{P}/items?filter=seed_spot_check&limit=200", headers=head(key, world, "a")).json()["items"]
+    assert qid in {i["id"] for i in queue}
+    resub = client.post(f"{P}/items/{qid}/resubmit", headers=head(key, world, "a"))
+    assert resub.status_code == 200 and resub.json()["origin"] == "seed" and resub.json()["status"] == "auto_checked"
+    world.gateway.queue_agreeing("A")  # the seed has no cross-check yet: the status says so, the solver clears it
+    checked = client.post(f"{P}/items/{qid}/checks", json={"solver": True}, headers=head(key, world, "a"))
+    assert checked.json()["status"] == "in_review"
+    assert post_review(client, key, world, "a", qid).json()["outcome"] == "published"
+    assert status_of(pg, qid) == "published"
+
+
 def test_rejecting_a_seed_item_retires_it_from_the_pool(
     client: TestClient, key: SigningKey, world: World, make_item: Make, pg: psycopg.Connection[Any]
 ) -> None:
