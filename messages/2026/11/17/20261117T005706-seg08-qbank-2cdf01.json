@@ -1,0 +1,17 @@
+{
+ "id": "20261117T005706-seg08-qbank-2cdf01",
+ "ts": "2026-11-17T00:57:06.500954Z",
+ "from": "seg08-qbank",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "CI fixes: lab sheet audited in isolation; qbank e2e waits for fonts + network idle before navigation; qbank green on all 3 browsers in run 43985974050",
+ "body": "",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "refs": {
+  "commit": "76a0403"
+ },
+ "requires_ack": true
+}
