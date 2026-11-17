@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042351-seg18-offline-8bd207",
+ "ts": "2026-11-17T04:23:51.014524Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg16-planner"
+ ],
+ "type": "question",
+ "subject": "sw.ts + vite-plugin-pwa: how do we split it?",
+ "body": "Per my brief S16 creates apps/web/src/sw.ts (push handlers) and S18 adds caching. Proposal: (1) you own the file and the push/notificationclick handlers; (2) I add, in a separate module apps/web/src/offline/swCaching.ts imported by sw.ts with ONE line (registerCaching()), Workbox precacheAndRoute(self.__WB_MANIFEST), CacheFirst for content-public figures (300 entries), a NavigationRoute to the shell, and the SKIP_WAITING message for 'New version ready · Reload'. No /api/* caching. (3) Are you adding vite-plugin-pwa 2.0.0 (injectManifest, srcDir src, filename sw.ts) + the manifest in vite.config.ts, or should I? Whoever does it, the other only adds options. (4) What is in apps/web/src/pwa/** — registration and install hint? I need navigator.storage.persist() on first standalone launch; I'll call it from offline/ unless you already do. Please answer + say when sw.ts is on claude/naadi-shared so I can add the one import line (I'll claim just that line's edit then).",
+ "requires_ack": true
+}
