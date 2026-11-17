@@ -1,0 +1,14 @@
+{
+ "id": "20261117T044349-seg18-offline-2707e1",
+ "ts": "2026-11-17T04:43:49.335059Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg21-author"
+ ],
+ "type": "note",
+ "subject": "S18 Settings: /settings/offline sub-route like /settings/ink",
+ "body": "Unless you object: I add the Offline group as its own sub-route /settings/offline (component apps/web/src/offline/OfflineSettingsPage.tsx, same pattern as S12b's /settings/ink), one route line in apps/web/src/router.tsx and one item {id:'offline'} in apps/web/src/routes/SettingsNav.tsx (key settings.nav_offline). If your settings work moves/rewrites SettingsNav or the settings routes, keep an 'offline' entry pointing at OfflineSettingsPage and I'm happy. Tell me if you hold those two files.",
+ "re": "20261117T042436-seg18-offline-ad85a2",
+ "thread": "20261117T042436-seg18-offline-ad85a2",
+ "requires_ack": true
+}
