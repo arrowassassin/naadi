@@ -36,6 +36,7 @@ function today(over: Partial<TodayOut> = {}, items: PlanItemOut[] = []): TodayOu
     onboarding_complete: true,
     plan: { plan_id: crypto.randomUUID(), day: null, items, next_day: null, now_item: items[0]?.id ?? null },
     resume: null,
+    rebalance: null,
     readiness: { score: null, coverage: 0, answered: 0, needed_answered: 40, needed_coverage: 50, days: 60 },
     systems: { window_days: 14, min_attempts: 5, weak_below: 55, items: [] },
     cards: { due: 0, reviewable: false },

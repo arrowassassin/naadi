@@ -1,7 +1,7 @@
 """Serve the built SPA from `static_dir` with an SPA fallback.
 
 - `/assets/*` (content-hashed by Vite): long immutable cache; a missing asset is a 404, never HTML.
-- other existing files (favicon, robots.txt, manifest): short cache.
+- other existing files (favicon, robots.txt, manifest): short cache; `sw.js` (the service worker): `no-cache`.
 - anything else that is not `/api/*`: `index.html` with `no-cache`, so a deploy is picked up at once.
 - unknown `/api/*`: JSON 404 (any method); a known `/api` path with the wrong method: JSON 405 + `Allow`.
 - `/sandbox/mermaid.html`: the diagram renderer, only ever loaded in `<iframe sandbox="allow-scripts">`. It gets
@@ -85,6 +85,9 @@ def install_spa(app: FastAPI, static_dir: Path) -> None:
                 headers = {"cache-control": FILE_CACHE}
                 if full_path.startswith("assets/"):
                     headers = {"cache-control": ASSET_CACHE, "access-control-allow-origin": "*"}
+                elif full_path == "sw.js":
+                    # The service worker script must always be revalidated, or a deploy would not reach devices.
+                    headers = {"cache-control": INDEX_CACHE, "service-worker-allowed": "/"}
                 elif full_path in SANDBOX_DOCUMENTS:
                     headers["content-security-policy"] = (
                         youtube_sandbox_content_security_policy()

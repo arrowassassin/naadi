@@ -3100,6 +3100,52 @@
         "title": "BlockSummary",
         "type": "object"
       },
+      "CalendarFeedCreatedOut": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "url": {
+            "description": "Shown once: the token is stored only as a hash and cannot be shown again",
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "created_at"
+        ],
+        "title": "CalendarFeedCreatedOut",
+        "type": "object"
+      },
+      "CalendarFeedOut": {
+        "properties": {
+          "active": {
+            "title": "Active",
+            "type": "boolean"
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          }
+        },
+        "required": [
+          "active",
+          "created_at"
+        ],
+        "title": "CalendarFeedOut",
+        "type": "object"
+      },
       "CancelOut": {
         "properties": {
           "run_id": {
@@ -6833,6 +6879,51 @@
         "title": "Insight",
         "type": "object"
       },
+      "ItemPatchIn": {
+        "additionalProperties": false,
+        "properties": {
+          "client_updated_at_ms": {
+            "description": "When the student made the change (device clock, ms since the epoch)",
+            "maximum": 9999999999999.0,
+            "minimum": 0.0,
+            "title": "Client Updated At Ms",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "done",
+              "skipped"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "client_updated_at_ms"
+        ],
+        "title": "ItemPatchIn",
+        "type": "object"
+      },
+      "ItemPatchOut": {
+        "properties": {
+          "applied": {
+            "description": "false: a newer (or equal) change was already stored; `item` is that row",
+            "title": "Applied",
+            "type": "boolean"
+          },
+          "item": {
+            "$ref": "#/components/schemas/PlanItemOut"
+          }
+        },
+        "required": [
+          "applied",
+          "item"
+        ],
+        "title": "ItemPatchOut",
+        "type": "object"
+      },
       "ItemStatsOut": {
         "properties": {
           "can_act": {
@@ -7506,6 +7597,62 @@
           "url"
         ],
         "title": "MediaSource",
+        "type": "object"
+      },
+      "MilestoneOut": {
+        "properties": {
+          "date": {
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "day_no": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Day No"
+          },
+          "days_away": {
+            "description": "From today (negative: already passed)",
+            "title": "Days Away",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "assessment",
+              "phase",
+              "rest",
+              "exam"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The plan template's own text for the assessment or phase",
+            "title": "Title"
+          }
+        },
+        "required": [
+          "kind",
+          "date",
+          "day_no",
+          "title",
+          "days_away"
+        ],
+        "title": "MilestoneOut",
         "type": "object"
       },
       "MockBlockCreate": {
@@ -9818,6 +9965,26 @@
         "title": "PlanSummaryOut",
         "type": "object"
       },
+      "PlanWeekOut": {
+        "description": "`week` is null for a student who has no plan yet (a normal state, so not an error response).",
+        "properties": {
+          "week": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WeekOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "week"
+        ],
+        "title": "PlanWeekOut",
+        "type": "object"
+      },
       "PoolFacet": {
         "properties": {
           "count": {
@@ -10246,6 +10413,165 @@
           "expected_updated_at"
         ],
         "title": "PublishRequest",
+        "type": "object"
+      },
+      "PushKeyOut": {
+        "properties": {
+          "configured": {
+            "description": "false until the owner provides VAPID keys (needs a public address)",
+            "title": "Configured",
+            "type": "boolean"
+          },
+          "public_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Public Key"
+          }
+        },
+        "required": [
+          "configured",
+          "public_key"
+        ],
+        "title": "PushKeyOut",
+        "type": "object"
+      },
+      "PushSubscriptionIn": {
+        "description": "What `PushSubscription.toJSON()` gives (the browser's own object).",
+        "properties": {
+          "endpoint": {
+            "maxLength": 1024,
+            "minLength": 12,
+            "pattern": "^https://",
+            "title": "Endpoint",
+            "type": "string"
+          },
+          "keys": {
+            "$ref": "#/components/schemas/PushSubscriptionKeys"
+          }
+        },
+        "required": [
+          "endpoint",
+          "keys"
+        ],
+        "title": "PushSubscriptionIn",
+        "type": "object"
+      },
+      "PushSubscriptionKeys": {
+        "additionalProperties": false,
+        "properties": {
+          "auth": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Auth",
+            "type": "string"
+          },
+          "p256dh": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "P256Dh",
+            "type": "string"
+          }
+        },
+        "required": [
+          "p256dh",
+          "auth"
+        ],
+        "title": "PushSubscriptionKeys",
+        "type": "object"
+      },
+      "PushSubscriptionOut": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "last_ok_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Ok At"
+          },
+          "ua_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ua Label"
+          }
+        },
+        "required": [
+          "id",
+          "ua_label",
+          "created_at",
+          "last_ok_at"
+        ],
+        "title": "PushSubscriptionOut",
+        "type": "object"
+      },
+      "PushSubscriptionsOut": {
+        "properties": {
+          "configured": {
+            "title": "Configured",
+            "type": "boolean"
+          },
+          "subscriptions": {
+            "items": {
+              "$ref": "#/components/schemas/PushSubscriptionOut"
+            },
+            "title": "Subscriptions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "configured",
+          "subscriptions"
+        ],
+        "title": "PushSubscriptionsOut",
+        "type": "object"
+      },
+      "PushTestOut": {
+        "properties": {
+          "failed": {
+            "title": "Failed",
+            "type": "integer"
+          },
+          "removed": {
+            "title": "Removed",
+            "type": "integer"
+          },
+          "sent": {
+            "title": "Sent",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "sent",
+          "removed",
+          "failed"
+        ],
+        "title": "PushTestOut",
         "type": "object"
       },
       "QuestionBody": {
@@ -11403,6 +11729,280 @@
           "checks"
         ],
         "title": "ReadyResponse",
+        "type": "object"
+      },
+      "RebalanceDrop": {
+        "properties": {
+          "day": {
+            "format": "date",
+            "title": "Day",
+            "type": "string"
+          },
+          "item_id": {
+            "format": "uuid",
+            "title": "Item Id",
+            "type": "string"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "reason": {
+            "const": "review",
+            "title": "Reason",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item_id",
+          "day",
+          "reason",
+          "kind",
+          "title"
+        ],
+        "title": "RebalanceDrop",
+        "type": "object"
+      },
+      "RebalanceMove": {
+        "properties": {
+          "from_day": {
+            "format": "date",
+            "title": "From Day",
+            "type": "string"
+          },
+          "item_id": {
+            "format": "uuid",
+            "title": "Item Id",
+            "type": "string"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "minutes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minutes"
+          },
+          "sort": {
+            "title": "Sort",
+            "type": "integer"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "to_day": {
+            "format": "date",
+            "title": "To Day",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item_id",
+          "from_day",
+          "to_day",
+          "sort",
+          "kind",
+          "title",
+          "minutes"
+        ],
+        "title": "RebalanceMove",
+        "type": "object"
+      },
+      "RebalanceOut": {
+        "properties": {
+          "applied_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Applied At"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "proposal": {
+            "$ref": "#/components/schemas/RebalanceProposalOut"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "accepted",
+              "declined",
+              "expired"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "thread_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The planner run waiting for the confirm, when there is one",
+            "title": "Thread Id"
+          },
+          "trigger": {
+            "enum": [
+              "missed",
+              "student",
+              "coach"
+            ],
+            "title": "Trigger",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "created_at",
+          "trigger",
+          "status",
+          "applied_at",
+          "thread_id",
+          "proposal"
+        ],
+        "title": "RebalanceOut",
+        "type": "object"
+      },
+      "RebalanceProposalOut": {
+        "properties": {
+          "drops": {
+            "items": {
+              "$ref": "#/components/schemas/RebalanceDrop"
+            },
+            "title": "Drops",
+            "type": "array"
+          },
+          "fingerprint": {
+            "title": "Fingerprint",
+            "type": "string"
+          },
+          "missed": {
+            "title": "Missed",
+            "type": "integer"
+          },
+          "moves": {
+            "items": {
+              "$ref": "#/components/schemas/RebalanceMove"
+            },
+            "title": "Moves",
+            "type": "array"
+          },
+          "spilled": {
+            "title": "Spilled",
+            "type": "integer"
+          },
+          "warnings": {
+            "items": {
+              "$ref": "#/components/schemas/RebalanceWarning"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "moves",
+          "drops",
+          "warnings",
+          "missed",
+          "spilled",
+          "fingerprint"
+        ],
+        "title": "RebalanceProposalOut",
+        "type": "object"
+      },
+      "RebalanceStartOut": {
+        "properties": {
+          "run_id": {
+            "title": "Run Id",
+            "type": "string"
+          },
+          "thread_id": {
+            "description": "The planner run proposes, then waits on this thread for the student's confirm",
+            "title": "Thread Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "thread_id",
+          "run_id"
+        ],
+        "title": "RebalanceStartOut",
+        "type": "object"
+      },
+      "RebalanceWarning": {
+        "properties": {
+          "code": {
+            "enum": [
+              "unplaced",
+              "assessment_missed",
+              "no_study_days"
+            ],
+            "title": "Code",
+            "type": "string"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer"
+          },
+          "item_ids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "title": "Item Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "code",
+          "count",
+          "item_ids"
+        ],
+        "title": "RebalanceWarning",
+        "type": "object"
+      },
+      "RebalancesOut": {
+        "properties": {
+          "rebalances": {
+            "items": {
+              "$ref": "#/components/schemas/RebalanceOut"
+            },
+            "title": "Rebalances",
+            "type": "array"
+          }
+        },
+        "required": [
+          "rebalances"
+        ],
+        "title": "RebalancesOut",
         "type": "object"
       },
       "ReindexRequest": {
@@ -13763,6 +14363,132 @@
         "title": "SourceRef",
         "type": "object"
       },
+      "StudentItemIn": {
+        "additionalProperties": false,
+        "properties": {
+          "day": {
+            "format": "date",
+            "title": "Day",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "read",
+              "questions",
+              "cards",
+              "video",
+              "admin"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "ref_id": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ref Id"
+          },
+          "ref_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "chapter",
+                  "qbank",
+                  "cards",
+                  "section",
+                  "block",
+                  "external"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ref Type"
+          },
+          "target_count": {
+            "anyOf": [
+              {
+                "maximum": 400.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Count"
+          },
+          "target_minutes": {
+            "anyOf": [
+              {
+                "maximum": 720.0,
+                "minimum": 5.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Minutes"
+          },
+          "title": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "day",
+          "kind",
+          "title"
+        ],
+        "title": "StudentItemIn",
+        "type": "object"
+      },
+      "StudentItemsIn": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/StudentItemIn"
+            },
+            "maxItems": 50,
+            "minItems": 1,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "StudentItemsIn",
+        "type": "object"
+      },
+      "StudentItemsOut": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/PlanItemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "StudentItemsOut",
+        "type": "object"
+      },
       "SystemCoverage": {
         "properties": {
           "counts": {
@@ -14257,6 +14983,17 @@
           "readiness": {
             "$ref": "#/components/schemas/ReadinessOut"
           },
+          "rebalance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TodayRebalance"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Only while the planner flag is on and a proposal waits"
+          },
           "resume": {
             "anyOf": [
               {
@@ -14303,7 +15040,8 @@
           "systems",
           "cards",
           "coach",
-          "pathway"
+          "pathway",
+          "rebalance"
         ],
         "title": "TodayOut",
         "type": "object"
@@ -14368,6 +15106,41 @@
           "now_item"
         ],
         "title": "TodayPlan",
+        "type": "object"
+      },
+      "TodayRebalance": {
+        "description": "A rebalance proposal waiting for the student (the planner screen shows its changes).",
+        "properties": {
+          "drops": {
+            "title": "Drops",
+            "type": "integer"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "missed": {
+            "title": "Missed",
+            "type": "integer"
+          },
+          "moves": {
+            "title": "Moves",
+            "type": "integer"
+          },
+          "unplaced": {
+            "title": "Unplaced",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "missed",
+          "moves",
+          "drops",
+          "unplaced"
+        ],
+        "title": "TodayRebalance",
         "type": "object"
       },
       "TopicCoverage": {
@@ -15014,6 +15787,452 @@
           "license"
         ],
         "title": "WebResult",
+        "type": "object"
+      },
+      "WeekDayOut": {
+        "properties": {
+          "assessment": {
+            "title": "Assessment",
+            "type": "boolean"
+          },
+          "chapter_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Ref"
+          },
+          "date": {
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "day_no": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "null for a date outside the plan",
+            "title": "Day No"
+          },
+          "extra": {
+            "title": "Extra",
+            "type": "boolean"
+          },
+          "in_plan": {
+            "title": "In Plan",
+            "type": "boolean"
+          },
+          "is_today": {
+            "title": "Is Today",
+            "type": "boolean"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/WeekItemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "past": {
+            "title": "Past",
+            "type": "boolean"
+          },
+          "phase": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase"
+          },
+          "planned_hours": {
+            "description": "Sum of the items' minutes (skipped items excluded), in hours",
+            "title": "Planned Hours",
+            "type": "number"
+          },
+          "rest": {
+            "title": "Rest",
+            "type": "boolean"
+          },
+          "target_hours": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Hours"
+          },
+          "topic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Topic"
+          },
+          "weekday": {
+            "title": "Weekday",
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "weekday",
+          "day_no",
+          "phase",
+          "chapter_ref",
+          "topic",
+          "target_hours",
+          "planned_hours",
+          "assessment",
+          "rest",
+          "extra",
+          "in_plan",
+          "is_today",
+          "past",
+          "items"
+        ],
+        "title": "WeekDayOut",
+        "type": "object"
+      },
+      "WeekItemOut": {
+        "properties": {
+          "behind": {
+            "description": "Planned or in progress on a day that has passed (word + amber on screen)",
+            "title": "Behind",
+            "type": "boolean"
+          },
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
+          },
+          "day": {
+            "format": "date",
+            "title": "Day",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "read",
+              "questions",
+              "assessment",
+              "cards",
+              "video",
+              "admin",
+              "rest"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "moved_from": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Where a rebalance moved the item from",
+            "title": "Moved From"
+          },
+          "origin": {
+            "enum": [
+              "generator",
+              "user",
+              "assistant",
+              "seed"
+            ],
+            "title": "Origin",
+            "type": "string"
+          },
+          "plan_day": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plan Day"
+          },
+          "ref_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ref Id"
+          },
+          "ref_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ref Type"
+          },
+          "sort": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sort"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "now",
+              "done",
+              "skipped",
+              "behind"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "target_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Count"
+          },
+          "target_minutes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Minutes"
+          },
+          "title": {
+            "description": "The plan template's own text, verbatim",
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "day",
+          "kind",
+          "title",
+          "ref_type",
+          "ref_id",
+          "target_minutes",
+          "target_count",
+          "status",
+          "origin",
+          "sort",
+          "plan_day",
+          "behind",
+          "moved_from",
+          "client_updated_at_ms"
+        ],
+        "title": "WeekItemOut",
+        "type": "object"
+      },
+      "WeekOut": {
+        "properties": {
+          "behind": {
+            "description": "Items planned or in progress on days that have passed",
+            "title": "Behind",
+            "type": "integer"
+          },
+          "days": {
+            "items": {
+              "$ref": "#/components/schemas/WeekDayOut"
+            },
+            "title": "Days",
+            "type": "array"
+          },
+          "days_to_exam": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Days To Exam"
+          },
+          "end": {
+            "format": "date",
+            "title": "End",
+            "type": "string"
+          },
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "exam_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exam Date"
+          },
+          "hours_planned": {
+            "title": "Hours Planned",
+            "type": "number"
+          },
+          "hours_target": {
+            "title": "Hours Target",
+            "type": "number"
+          },
+          "milestones": {
+            "items": {
+              "$ref": "#/components/schemas/MilestoneOut"
+            },
+            "title": "Milestones",
+            "type": "array"
+          },
+          "next_item": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WeekItemOut"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Today's first open item: the screen's one lime action"
+          },
+          "next_start": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Start"
+          },
+          "plan_id": {
+            "format": "uuid",
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "prev_start": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prev Start"
+          },
+          "rebalance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RebalanceOut"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The proposal waiting for the student, if any"
+          },
+          "start": {
+            "format": "date",
+            "title": "Start",
+            "type": "string"
+          },
+          "today": {
+            "format": "date",
+            "title": "Today",
+            "type": "string"
+          },
+          "week": {
+            "description": "Plan week of `start` (1-based)",
+            "title": "Week",
+            "type": "integer"
+          },
+          "weeks": {
+            "title": "Weeks",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "plan_id",
+          "start",
+          "end",
+          "week",
+          "weeks",
+          "today",
+          "exam",
+          "exam_date",
+          "days_to_exam",
+          "prev_start",
+          "next_start",
+          "hours_planned",
+          "hours_target",
+          "behind",
+          "days",
+          "milestones",
+          "next_item",
+          "rebalance"
+        ],
+        "title": "WeekOut",
         "type": "object"
       },
       "WeightOverlay": {
@@ -28007,6 +29226,148 @@
         ]
       }
     },
+    "/api/plan/calendar-feed": {
+      "delete": {
+        "operationId": "revokeCalendarFeed",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Stop the calendar feed: its URL answers 404 from now on",
+        "tags": [
+          "planner"
+        ]
+      },
+      "get": {
+        "operationId": "getCalendarFeed",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalendarFeedOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Whether the student has a live calendar feed (the URL itself is shown only when it is made)",
+        "tags": [
+          "planner"
+        ]
+      },
+      "post": {
+        "operationId": "rotateCalendarFeed",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalendarFeedCreatedOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Make a new calendar feed URL (the old one stops working); the URL is shown once",
+        "tags": [
+          "planner"
+        ]
+      }
+    },
     "/api/plan/export.csv": {
       "get": {
         "operationId": "exportPlanCsv",
@@ -28061,6 +29422,240 @@
         "summary": "The active plan in the template CSV's shape (CRLF, UTF-8)",
         "tags": [
           "plan"
+        ]
+      }
+    },
+    "/api/plan/ics/{token}": {
+      "get": {
+        "operationId": "getPlanIcs",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "required": true,
+            "schema": {
+              "maxLength": 128,
+              "minLength": 20,
+              "title": "Token",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "text/calendar": {}
+            },
+            "description": "The plan as an iCalendar feed"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          }
+        },
+        "summary": "The calendar feed (no sign-in: the token in the URL is the credential)",
+        "tags": [
+          "planner"
+        ]
+      }
+    },
+    "/api/plan/items": {
+      "post": {
+        "operationId": "createPlanItems",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentItemsIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentItemsOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid inputs"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Add the student's own items to days of the plan",
+        "tags": [
+          "planner"
+        ]
+      }
+    },
+    "/api/plan/items/{item_id}": {
+      "patch": {
+        "operationId": "patchPlanItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemPatchIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemPatchOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid inputs"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Change an item's status; the newest change wins (last-writer-wins per item)",
+        "tags": [
+          "planner"
         ]
       }
     },
@@ -28282,6 +29877,235 @@
         ]
       }
     },
+    "/api/plan/rebalance": {
+      "post": {
+        "operationId": "startPlanRebalance",
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RebalanceStartOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The agent runtime is unavailable"
+          }
+        },
+        "summary": "Start a rebalance: the planner run proposes, then waits on the returned thread for the student's confirm",
+        "tags": [
+          "planner"
+        ]
+      }
+    },
+    "/api/plan/rebalances": {
+      "get": {
+        "operationId": "listPlanRebalances",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "proposed",
+                    "accepted",
+                    "declined",
+                    "expired"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": "proposed",
+              "title": "Status"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RebalancesOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid inputs"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The student's rebalance proposals (default: the one waiting for a decision)",
+        "tags": [
+          "planner"
+        ]
+      }
+    },
+    "/api/plan/week": {
+      "get": {
+        "operationId": "getPlanWeek",
+        "parameters": [
+          {
+            "description": "First day of the week; default: the plan week of today",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "First day of the week; default: the plan week of today",
+              "title": "Start"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanWeekOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Seven days of the plan: items, hours, assessment days, milestones and any rebalance proposal",
+        "tags": [
+          "planner"
+        ]
+      }
+    },
     "/api/public-config": {
       "get": {
         "operationId": "getPublicConfig",
@@ -28300,6 +30124,324 @@
         "summary": "Public client configuration (no auth): Supabase URL + anon key, sign-in options, version",
         "tags": [
           "auth"
+        ]
+      }
+    },
+    "/api/push/key": {
+      "get": {
+        "operationId": "getPushKey",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushKeyOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The application server key the browser subscribes with (and whether push is set up at all)",
+        "tags": [
+          "push"
+        ]
+      }
+    },
+    "/api/push/subscriptions": {
+      "get": {
+        "operationId": "listPushSubscriptions",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushSubscriptionsOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The devices that receive reminders",
+        "tags": [
+          "push"
+        ]
+      },
+      "post": {
+        "operationId": "createPushSubscription",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PushSubscriptionIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushSubscriptionOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Push is not set up on this server (no VAPID keys)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid inputs"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Register this browser for reminders (the same endpoint again updates it)",
+        "tags": [
+          "push"
+        ]
+      }
+    },
+    "/api/push/subscriptions/{subscription_id}": {
+      "delete": {
+        "operationId": "deletePushSubscription",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subscription_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Subscription Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Stop reminders on one device",
+        "tags": [
+          "push"
+        ]
+      }
+    },
+    "/api/push/test": {
+      "post": {
+        "operationId": "sendTestPush",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushTestOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Push is not set up on this server (no VAPID keys)"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Send a test notification to the student's devices",
+        "tags": [
+          "push"
         ]
       }
     },

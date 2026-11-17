@@ -92,20 +92,18 @@ def test_user_b_cannot_touch_user_a_rows(
             insert_row(conn, table.name, table.row(user_a, shared))
     if table.name in API_WRITTEN or table.name in SELECT_ONLY or table.name in API_ROWS or table.name in CREATE_BLOCKED:
         # an item needs its own user's layer, a section its own user's block, a plan day its own user's plan
-        parent = {"ink_items": "ink_layers", "block_sections": "blocks", "study_plan_days": "study_plans"}.get(
-            table.name
-        )
+        parent = {
+            "ink_items": "ink_layers",
+            "block_sections": "blocks",
+            "study_plan_days": "study_plans",
+            "plan_rebalances": "study_plans",
+        }.get(table.name)
         if parent:
             insert_row(pg, parent, next(t for t in USER_TABLES if t.name == parent).row(user_b, shared))
         insert_row(pg, table.name, table.row(user_b, shared))  # written by the API, never by the client
     with as_user(pg, user_b) as conn:
         # B also cannot move one of its own rows over to A.
-        if (
-            table.name not in API_WRITTEN
-            and table.name not in SELECT_ONLY
-            and table.name not in API_ROWS
-            and table.name not in CREATE_BLOCKED
-        ):
+        if not {table.name} & {*API_WRITTEN, *SELECT_ONLY, *API_ROWS, *CREATE_BLOCKED}:
             insert_row(conn, table.name, table.row(user_b, shared))
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             conn.execute(
@@ -190,13 +188,16 @@ SELECT_ONLY = (
     "notes",
     "notebooks",
     "export_jobs",
+    "plan_rebalances",
+    "calendar_feeds",
 )
 # Generated media (0022): the API creates and updates rows (it counts the daily caps from them and writes status
-# and approval); students may read and delete their own.
-CREATE_BLOCKED = ("generated_media",)
+# and approval); students may read and delete their own. Planner (0027): the same for push subscriptions (students
+# turn reminders off on a device; the API registers and updates them).
+CREATE_BLOCKED = ("generated_media", "push_subscriptions")
 # Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
 # plan day's score notes), never insert, delete or re-point them.
-API_ROWS = ("study_plan_days", "coach_suggestions")
+API_ROWS = ("study_plan_days", "coach_suggestions", "plan_items")
 
 
 @pytest.mark.parametrize(
@@ -208,6 +209,11 @@ API_ROWS = ("study_plan_days", "coach_suggestions")
         ("coach_suggestions", "facts", Jsonb({"misses": 99})),
         ("coach_suggestions", "action", Jsonb({"kind": "add_plan_items"})),
         ("coach_suggestions", "source", "llm"),
+        ("plan_items", "title", "Something else"),
+        ("plan_items", "day", "2027-01-01"),
+        ("plan_items", "origin", "user"),
+        ("plan_items", "rebalance_id", uuid.uuid4()),
+        ("plan_items", "moved_from", "2026-11-01"),
     ],
 )
 def test_plan_and_coach_rows_take_status_only(

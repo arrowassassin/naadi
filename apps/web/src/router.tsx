@@ -11,6 +11,7 @@ import { inkLabRoute } from "./ink/route";
 import { learnRoutes } from "./learn/routes";
 import { notebooksRoutes } from "./notebooks/routes";
 import { notesRoutes } from "./notes/routes";
+import { plannerRoute } from "./planner/routes";
 import { practiceRoutes } from "./practice/routes";
 import { AccountPage } from "./routes/AccountPage";
 import { CallbackPage } from "./routes/CallbackPage";
@@ -144,6 +145,7 @@ export const routeTree = rootRoute.addChildren([
     learnRoutes(appRoute),
     practiceRoutes(appRoute),
     cardsRoute(appRoute),
+    plannerRoute(appRoute),
     searchRoute(appRoute),
     notebooksRoutes(appRoute),
     ...notesRoutes(appRoute),

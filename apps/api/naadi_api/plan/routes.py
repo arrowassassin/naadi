@@ -36,6 +36,7 @@ from ..errors import ErrorResponse, FieldError, error_response
 from ..logs import get_logger
 from ..qbank.routes import as_service, as_user
 from . import diagnostic as diag
+from . import planner_store as ps
 from .generator import PlanDay, PlanError, PlanInputs, available_dates, generate, summarize, to_csv
 from .items import ItemMinutes
 from .models import (
@@ -66,6 +67,7 @@ from .models import (
     SystemsOut,
     TodayOut,
     TodayPlan,
+    TodayRebalance,
 )
 from .store import DAY_COLS, ITEM_COLS, day_out, item_row_out, load_template, rows, save_profile, write_plan
 
@@ -521,8 +523,9 @@ async def set_item_status(
     async def run(conn: psycopg.AsyncConnection[Any]) -> list[Row]:
         return await rows(
             conn,
-            f"update public.plan_items set status = %s where id = %s and user_id = (select auth.uid())"  # noqa: S608
-            f" returning {ITEM_COLS}",
+            "update public.plan_items set status = %s,"  # noqa: S608
+            " client_updated_at_ms = (extract(epoch from clock_timestamp()) * 1000)::bigint"
+            f" where id = %s and user_id = (select auth.uid()) returning {ITEM_COLS}",
             (body.status, item_id),
         )
 
@@ -745,6 +748,18 @@ async def get_today(request: Request, user: Annotated[CurrentUser, limited("plan
         pathway = None
         if features.get("pathway", False):
             pathway = [PathwayStageOut.model_validate(r) for r in await rows(conn, _PATHWAY)]
+        rebalance: TodayRebalance | None = None
+        if features.get("planner", False):
+            waiting = await ps.current_proposal(conn, user.user_id)
+            if waiting is not None:
+                p = waiting["proposal"]
+                rebalance = TodayRebalance(
+                    id=waiting["id"],
+                    missed=p["missed"],
+                    moves=len(p["moves"]),
+                    drops=len(p["drops"]),
+                    unplaced=sum(w["count"] for w in p["warnings"] if w["code"] == "unplaced"),
+                )
         return TodayOut(
             today=today,
             exam=exam,
@@ -775,6 +790,7 @@ async def get_today(request: Request, user: Annotated[CurrentUser, limited("plan
             cards=CardsOut(due=due, reviewable=features.get("cards", False)),
             coach=suggestions,
             pathway=pathway,
+            rebalance=rebalance,
         )
 
     out: TodayOut = await as_user(_db(request), user, run)

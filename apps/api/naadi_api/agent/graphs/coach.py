@@ -18,7 +18,7 @@ from naadi_api.agent.health import record_health
 from naadi_api.agent.identity import RunIdentityError, run_identity
 from naadi_api.agent.runtime import agent_db, get_runtime
 from naadi_api.coach.run import coach_pass
-from naadi_api.config_api.schemas import CoachRules, FeatureFlags
+from naadi_api.config_api.schemas import CoachRules, FeatureFlags, PlannerRules
 from naadi_api.config_api.service import AppConfigService
 from naadi_api.llm import get_gateway
 
@@ -39,7 +39,12 @@ async def run(state: CoachState, config: RunnableConfig) -> dict[str, Any]:
     flags = FeatureFlags.model_validate(await cfg.get("feature_flags")).root
     if not flags.get("coach") or not flags["coach"].enabled:
         return {"ok": True, "detail": {"outcome": "flag_off"}}
-    stats = await coach_pass(agent_db(), get_gateway(), rules, run_id=who.run_id)
+    planner_rules = (
+        PlannerRules.model_validate(await cfg.get("planner"))
+        if flags.get("planner") and flags["planner"].enabled
+        else None
+    )
+    stats = await coach_pass(agent_db(), get_gateway(), rules, run_id=who.run_id, planner_rules=planner_rules)
     return {"ok": stats.errors == 0, "detail": {"outcome": "ok", **stats.as_dict()}}
 
 

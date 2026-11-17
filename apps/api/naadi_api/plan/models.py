@@ -261,6 +261,16 @@ class TodayPlan(BaseModel):
     now_item: uuid.UUID | None = Field(description="The first item of today not done or skipped")
 
 
+class TodayRebalance(BaseModel):
+    """A rebalance proposal waiting for the student (the planner screen shows its changes)."""
+
+    id: uuid.UUID
+    missed: int
+    moves: int
+    drops: int
+    unplaced: int
+
+
 class TodayOut(BaseModel):
     today: dt.date
     exam: ExamId
@@ -274,6 +284,7 @@ class TodayOut(BaseModel):
     cards: CardsOut
     coach: list[CoachSuggestionOut]
     pathway: list[PathwayStageOut] | None = Field(description="Only while the pathway flag is on")
+    rebalance: TodayRebalance | None = Field(description="Only while the planner flag is on and a proposal waits")
 
 
 class CoachActionOut(BaseModel):

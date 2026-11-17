@@ -31,6 +31,19 @@ def test_other_root_files(client_factory: Callable[..., TestClient]) -> None:
     assert r.headers["cache-control"] == "public, max-age=3600"
 
 
+def test_service_worker_and_manifest(client_factory: Callable[..., TestClient], static_dir: Path) -> None:
+    (static_dir / "sw.js").write_text("self.addEventListener('push', () => {})")
+    (static_dir / "manifest.webmanifest").write_text('{"name":"Naadi"}')
+    c = client_factory()
+    sw = c.get("/sw.js")
+    assert sw.status_code == 200 and "javascript" in sw.headers["content-type"]
+    assert sw.headers["cache-control"] == "no-cache"  # a deploy must reach installed apps
+    assert sw.headers["service-worker-allowed"] == "/"
+    assert "push" in sw.text  # the script itself, never index.html
+    m = c.get("/manifest.webmanifest")
+    assert m.status_code == 200 and "manifest" in m.headers["content-type"] and m.json()["name"] == "Naadi"
+
+
 def test_missing_asset_is_404_not_html(client_factory: Callable[..., TestClient]) -> None:
     c = client_factory()
     for path in ("/assets/gone-123.js", "/favicon-missing.ico"):

@@ -73,6 +73,9 @@ KEYS: list[Key] = [
     Key("ADMIN_EMAILS", False, True),
     Key("GOOGLE_OAUTH_CONFIGURED", False, True),
     Key("YOUTUBE_API_KEY", True, False),
+    Key("VAPID_PUBLIC_KEY", False, False),  # Web Push (S16): owner-provided, see docs/SECRETS.md
+    Key("VAPID_PRIVATE_KEY", True, False),
+    Key("VAPID_SUBJECT", False, False),
     Key("R2_ACCOUNT_ID", False, False),
     Key("R2_ACCESS_KEY_ID", True, False),
     Key("R2_SECRET_ACCESS_KEY", True, False),
@@ -226,6 +229,25 @@ def check_formats() -> None:
     g = get("GOOGLE_OAUTH_CONFIGURED")
     if g:
         report("PASS" if g.lower() in ("true", "false") else "FAIL", "GOOGLE_OAUTH_CONFIGURED", f"= {g.lower()}" if g.lower() in ("true", "false") else "must be true|false")
+    vapid_pub, vapid_priv, vapid_sub = get("VAPID_PUBLIC_KEY"), get("VAPID_PRIVATE_KEY"), get("VAPID_SUBJECT")
+    if vapid_pub or vapid_priv or vapid_sub:
+        # Public key: an uncompressed P-256 point (65 bytes), private key: 32 bytes, both base64url without padding.
+        def b64len(v: str) -> int | None:
+            try:
+                return len(b64url_decode(v))
+            except Exception:  # noqa: BLE001
+                return None
+
+        problems = []
+        if not (vapid_pub and vapid_priv and vapid_sub):
+            problems.append("set all three of VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUBJECT")
+        if vapid_pub and b64len(vapid_pub) != 65:
+            problems.append("VAPID_PUBLIC_KEY is not a base64url P-256 point")
+        if vapid_priv and b64len(vapid_priv) != 32:
+            problems.append("VAPID_PRIVATE_KEY is not 32 base64url bytes")
+        if vapid_sub and not vapid_sub.startswith(("mailto:", "https://")):
+            problems.append("VAPID_SUBJECT must start with mailto: or https://")
+        report("WARN" if problems else "PASS", "VAPID (Web Push) format", "; ".join(problems) or "set", False)
     env = get("APP_ENV")
     if env:
         report("PASS" if env in ("local", "staging", "prod") else "FAIL", "APP_ENV", f"= {env}" if env in ("local", "staging", "prod") else "must be local|staging|prod")

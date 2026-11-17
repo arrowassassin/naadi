@@ -26,12 +26,13 @@ from psycopg.types.json import Jsonb
 
 from ..analytics.student import coach_facts
 from ..auth_db import STATEMENT_TIMEOUT_MS, claims_json
-from ..config_api.schemas import CoachRules
+from ..config_api.schemas import CoachRules, PlannerRules
 from ..db import Database
 from ..llm import CallContext, LLMUnavailable
 from ..llm_budget import BudgetExhausted
 from ..llm_privacy import PrivacyUnavailable
 from ..logs import get_logger
+from ..plan import planner_store
 from .suggest import (
     SYSTEM_PROMPT,
     Candidate,
@@ -136,6 +137,7 @@ class PassStats:
     dropped: int = 0
     budget_spent: bool = False
     errors: int = 0
+    rebalances: int = 0
     reasons: dict[str, int] = field(default_factory=dict)
 
     def note(self, reason: str) -> None:
@@ -151,6 +153,7 @@ class PassStats:
             "dropped": self.dropped,
             "budget_spent": self.budget_spent,
             "errors": self.errors,
+            "rebalances": self.rebalances,
             "reasons": dict(sorted(self.reasons.items())),
         }
 
@@ -305,6 +308,21 @@ async def coach_student(
         return await store(conn, uid, today, written, limit=rules_cfg.max_suggestions)
 
 
+async def propose_rebalance(
+    db: Database, user_id: uuid.UUID, rules: PlannerRules, *, now: dt.datetime, stats: PassStats
+) -> None:
+    """Missed items tonight: store a rebalance proposal (deterministic, no model call) for the planner screen and
+    Today to show. Nothing is applied: the student confirms through the `planner` graph."""
+    try:
+        async with service_conn(db) as conn:
+            row, _ = await planner_store.propose(conn, user_id, rules, trigger="coach", now=now)
+        if row is not None:
+            stats.rebalances += 1
+    except (psycopg.Error, TimeoutError) as exc:
+        stats.errors += 1
+        log.warning("coach.rebalance_failed", error=type(exc).__name__)
+
+
 async def coach_pass(
     db: Database,
     gateway: Gateway | None,
@@ -313,6 +331,7 @@ async def coach_pass(
     now: dt.datetime | None = None,
     run_id: str | None = None,
     sleep: Callable[[float], Awaitable[Any]] = asyncio.sleep,
+    planner_rules: PlannerRules | None = None,
 ) -> PassStats:
     stats = PassStats()
     log.info("coach.pass_start", run_id=run_id)
@@ -330,6 +349,8 @@ async def coach_pass(
         except (psycopg.Error, TimeoutError) as exc:
             stats.errors += 1
             log.warning("coach.student_failed", error=type(exc).__name__)
+        if planner_rules is not None:
+            await propose_rebalance(db, s["user_id"], planner_rules, now=now, stats=stats)
         await sleep(0)
     log.info("coach.pass", **{k: v for k, v in stats.as_dict().items() if k != "reasons"})
     return stats

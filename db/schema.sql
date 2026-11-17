@@ -1,6 +1,8 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
 -- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0022, 0023, 0024, 0025_admin_console.py;
+
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0027;
 -- version table public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
@@ -594,12 +596,63 @@ create table public.plan_items (
   -- 0013: generator items point at their plan and day (composite FK: only the student's own plan)
   plan_id uuid,
   plan_day smallint check (plan_day is null or plan_day >= 1),
+  -- 0027: last-writer-wins stamp of the latest status change; where a rebalance moved the item from and which one
+  client_updated_at_ms bigint check (client_updated_at_ms is null or client_updated_at_ms >= 0),
+  moved_from date,
+  rebalance_id uuid,
   constraint plan_items_plan_fkey foreign key (plan_id, user_id)
     references public.study_plans (id, user_id) on delete cascade,
-  constraint plan_items_plan_link_check check ((plan_id is null) = (plan_day is null))
+  constraint plan_items_plan_link_check check ((plan_id is null) = (plan_day is null)),
+  constraint plan_items_rebalance_fkey foreign key (rebalance_id, user_id)
+    references public.plan_rebalances (id, user_id) on delete set null (rebalance_id)
 );
 create index plan_items_user_day_idx on public.plan_items (user_id, day, sort);
 create index plan_items_plan_idx on public.plan_items (plan_id, plan_day) where plan_id is not null;
+create index plan_items_rebalance_idx on public.plan_items (rebalance_id) where rebalance_id is not null;
+
+-- 0027: what the `planner` graph proposes after missed days; the thread waits on the student's confirm.
+create table public.plan_rebalances (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  plan_id uuid,
+  created_at timestamptz not null default now(),
+  trigger text not null check (trigger in ('missed','student','coach')),
+  proposal jsonb not null check (jsonb_typeof(proposal) = 'object'),
+  status text not null default 'proposed' check (status in ('proposed','accepted','declined','expired')),
+  applied_at timestamptz,
+  thread_id text check (thread_id is null or char_length(thread_id) <= 100),
+  unique (id, user_id),
+  foreign key (plan_id, user_id) references public.study_plans (id, user_id) on delete cascade,
+  check ((status = 'accepted') = (applied_at is not null))
+);
+create unique index plan_rebalances_one_proposed_idx on public.plan_rebalances (user_id) where status = 'proposed';
+create index plan_rebalances_user_created_idx on public.plan_rebalances (user_id, created_at desc);
+
+-- 0027: the ICS feed token, kept only as its SHA-256; one active row per student.
+create table public.calendar_feeds (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  token_hash text not null unique check (token_hash ~ '^[0-9a-f]{64}$'),
+  created_at timestamptz not null default now(),
+  revoked_at timestamptz
+);
+create unique index calendar_feeds_one_active_idx on public.calendar_feeds (user_id) where revoked_at is null;
+
+-- 0027: Web Push subscriptions (one per browser endpoint, https only) and the sender's bookkeeping.
+create table public.push_subscriptions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  endpoint text not null unique check (endpoint ~ '^https://' and char_length(endpoint) <= 1024),
+  p256dh text not null check (char_length(p256dh) between 1 and 200),
+  auth text not null check (char_length(auth) between 1 and 100),
+  ua_label text check (ua_label is null or char_length(ua_label) <= 80),
+  created_at timestamptz not null default now(),
+  last_ok_at timestamptz,
+  failures smallint not null default 0 check (failures >= 0),
+  last_sent_on date,
+  sent_today smallint not null default 0 check (sent_today >= 0)
+);
+create index push_subscriptions_user_idx on public.push_subscriptions (user_id);
 
 create table public.coach_suggestions (
   id uuid primary key default gen_random_uuid(),
@@ -1078,6 +1131,9 @@ create trigger export_jobs_touch_updated_at before update on public.export_jobs 
 --
 -- 0024: export_jobs: select only (the API writes them); RLS forced with the four _own policies. question_reviews and
 --   authoring_runs are backend-only: the API (which knows the admins, ADMIN_EMAILS) reads and writes them.
+
+-- 0027: plan_items: select + update (status, client_updated_at_ms); no client insert or delete. plan_rebalances and
+--   calendar_feeds: select only. push_subscriptions: select + delete. RLS forced with the four _own policies.
 --
 -- Functions naadi_touch_updated_at(), naadi_app_config_history(), naadi_app_config_notify(),
 -- naadi_mark_section_edited(), naadi_secure_aegra_tables() and naadi_coach_status_guard() (0014) pin search_path = '' and are not executable

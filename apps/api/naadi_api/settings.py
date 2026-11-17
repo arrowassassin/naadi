@@ -108,6 +108,11 @@ class Settings(BaseSettings):
     # (a background task; a no-op when nothing changed or the models are not cached).
     embeddings_autostart: bool = True
 
+    # ── Web Push (S16): owner-provided VAPID pair; reminders stay off until all three are set ──
+    vapid_public_key: str | None = None
+    vapid_private_key: SecretStr | None = None
+    vapid_subject: str | None = None
+
     # ── Auth / admin (PII, so a secret) ──
     admin_emails: SecretStr | None = None
     google_oauth_configured: bool = False
@@ -129,6 +134,9 @@ class Settings(BaseSettings):
         "tavily_api_key",
         "hf_gen_token",
         "youtube_api_key",
+        "vapid_public_key",
+        "vapid_private_key",
+        "vapid_subject",
         "admin_emails",
         "app_base_url",
         mode="before",
@@ -161,6 +169,11 @@ class Settings(BaseSettings):
     def generation_configured(self) -> bool:
         """The Space is reachable only with the token; the stub stands in outside production."""
         return self.hf_gen_token is not None or (self.generation_fake and self.app_env != "prod")
+
+    @property
+    def push_configured(self) -> bool:
+        """True when the owner has provided the whole VAPID triple (public key, private key, contact)."""
+        return bool(self.vapid_public_key and self.vapid_private_key and self.vapid_subject)
 
     @property
     def is_local(self) -> bool:

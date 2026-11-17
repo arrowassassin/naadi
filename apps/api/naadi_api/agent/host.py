@@ -78,6 +78,8 @@ SYSTEM_CRONS: tuple[tuple[str, str, str, dict[str, Any], bool], ...] = (
     # Question authoring (S21): drafts into the human review queue within the job reserve, then item statistics.
     ("naadi.author.nightly", "author", "41 22 * * *", {"mode": "nightly"}, False),
     ("naadi.author.psychometrics", "author", "11 23 * * *", {"mode": "psychometrics"}, False),
+    # Planner (S16): the daily Web Push reminders, per student's local time (a 15-minute tick; once per device per day).
+    ("naadi.planner.reminders", "planner", "*/15 * * * *", {"mode": "reminders"}, False),
 )
 
 naadi_app: FastAPI = create_app()

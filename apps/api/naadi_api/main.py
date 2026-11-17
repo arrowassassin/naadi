@@ -38,7 +38,9 @@ from .ink.routes import install_ink_routes, start_ink_gc, stop_ink_gc
 from .logs import configure_logging, get_logger, register_secrets
 from .middleware import ClientFloorMiddleware, RequestContextMiddleware
 from .notes.routes import install_notes_routes
+from .plan.planner_routes import install_planner_routes
 from .plan.routes import install_plan_routes
+from .push.routes import install_push_routes
 from .qbank.routes import install_qbank_routes
 from .search_routes import install_search_routes, start_search, stop_search
 from .seed.jobs import drain_seed_tasks
@@ -156,6 +158,8 @@ def create_app(
     install_anki_routes(app)
     install_youtube_routes(app)
     install_plan_routes(app)
+    install_planner_routes(app)
+    install_push_routes(app)
     install_search_routes(app)
     install_ink_routes(app)
     install_notes_routes(app)

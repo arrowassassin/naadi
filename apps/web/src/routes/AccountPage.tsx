@@ -8,6 +8,7 @@ import { ApiError } from "../auth/apiError";
 import { type SignOutScope, signOut } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { StudyPlanSettings } from "../planner/StudyPlanSettings";
 import { YouTubePrivacyNotice } from "../video/PrivacyNotice";
 import { SettingsNav } from "./SettingsNav";
 
@@ -216,46 +217,49 @@ export function AccountPage() {
           retrying={me.isFetching}
         />
       ) : (
-        <div className="grid items-start gap-5 laptop:grid-cols-[2fr_1fr]">
-          <Tile as="section" aria-labelledby="profile-h" className="flex flex-col gap-6">
-            <h2 id="profile-h" className="m-0 font-display font-bold text-[1.5rem]">
-              {t("account.profile_heading")}
-            </h2>
-            <ProfileForm key={me.data.profile.user_id} me={me.data} />
-          </Tile>
-          <div className="flex flex-col gap-5">
-            <Tile as="section" aria-labelledby="signin-h" className="flex flex-col gap-4">
-              <TileLabel>{t("account.signed_in_as")}</TileLabel>
-              <h2 id="signin-h" className="m-0 break-all font-semibold text-[1.0625rem]">
-                {me.data.email ?? t("account.no_email")}
+        <>
+          <div className="grid items-start gap-5 laptop:grid-cols-[2fr_1fr]">
+            <Tile as="section" aria-labelledby="profile-h" className="flex flex-col gap-6">
+              <h2 id="profile-h" className="m-0 font-display font-bold text-[1.5rem]">
+                {t("account.profile_heading")}
               </h2>
-              <div className="flex flex-wrap gap-2">
-                <Chip tone={me.data.email_verified ? "done" : "warning"}>
-                  {t(me.data.email_verified ? "account.email_verified" : "account.email_unverified")}
-                </Chip>
-                {me.data.is_admin ? <Chip tone="meta">{t("account.admin_chip")}</Chip> : null}
-              </div>
-              {/* The one place the admin console is linked from; non-admins never see it (the API also 403s). */}
-              {me.data.is_admin ? (
-                <Link
-                  to="/admin"
-                  data-testid="admin-link"
-                  className="inline-flex min-h-11 items-center gap-2 self-start text-text"
-                >
-                  <Shield aria-hidden="true" size={16} />
-                  {t("admin.account_link")}
-                </Link>
-              ) : null}
+              <ProfileForm key={me.data.profile.user_id} me={me.data} />
             </Tile>
-            <Tile as="section" aria-labelledby="signout-h" className="flex flex-col gap-4">
-              <h2 id="signout-h" className="m-0 font-display font-bold text-[1.5rem]">
-                {t("account.sign_out_heading")}
-              </h2>
-              <SignOutPanel />
-            </Tile>
-            <YouTubePrivacyNotice />
+            <div className="flex flex-col gap-5">
+              <Tile as="section" aria-labelledby="signin-h" className="flex flex-col gap-4">
+                <TileLabel>{t("account.signed_in_as")}</TileLabel>
+                <h2 id="signin-h" className="m-0 break-all font-semibold text-[1.0625rem]">
+                  {me.data.email ?? t("account.no_email")}
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  <Chip tone={me.data.email_verified ? "done" : "warning"}>
+                    {t(me.data.email_verified ? "account.email_verified" : "account.email_unverified")}
+                  </Chip>
+                  {me.data.is_admin ? <Chip tone="meta">{t("account.admin_chip")}</Chip> : null}
+                </div>
+                {/* The one place the admin console is linked from; non-admins never see it (the API also 403s). */}
+                {me.data.is_admin ? (
+                  <Link
+                    to="/admin"
+                    data-testid="admin-link"
+                    className="inline-flex min-h-11 items-center gap-2 self-start text-text"
+                  >
+                    <Shield aria-hidden="true" size={16} />
+                    {t("admin.account_link")}
+                  </Link>
+                ) : null}
+              </Tile>
+              <Tile as="section" aria-labelledby="signout-h" className="flex flex-col gap-4">
+                <h2 id="signout-h" className="m-0 font-display font-bold text-[1.5rem]">
+                  {t("account.sign_out_heading")}
+                </h2>
+                <SignOutPanel />
+              </Tile>
+              <YouTubePrivacyNotice />
+            </div>
           </div>
-        </div>
+          <StudyPlanSettings />
+        </>
       )}
     </section>
   );

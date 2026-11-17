@@ -74,6 +74,12 @@ import type {
   CreateNoteData,
   CreateNoteErrors,
   CreateNoteResponses,
+  CreatePlanItemsData,
+  CreatePlanItemsErrors,
+  CreatePlanItemsResponses,
+  CreatePushSubscriptionData,
+  CreatePushSubscriptionErrors,
+  CreatePushSubscriptionResponses,
   CreateSingleQuestionBlockData,
   CreateSingleQuestionBlockErrors,
   CreateSingleQuestionBlockResponses,
@@ -98,6 +104,9 @@ import type {
   DeleteNoteData,
   DeleteNoteErrors,
   DeleteNoteResponses,
+  DeletePushSubscriptionData,
+  DeletePushSubscriptionErrors,
+  DeletePushSubscriptionResponses,
   DetachAdminSectionMediaData,
   DetachAdminSectionMediaErrors,
   DetachAdminSectionMediaResponses,
@@ -176,6 +185,9 @@ import type {
   GetBlockResultsData,
   GetBlockResultsErrors,
   GetBlockResultsResponses,
+  GetCalendarFeedData,
+  GetCalendarFeedErrors,
+  GetCalendarFeedResponses,
   GetCardData,
   GetCardErrors,
   GetCardResponses,
@@ -226,9 +238,18 @@ import type {
   GetOnboardingResponses,
   GetPlanData,
   GetPlanErrors,
+  GetPlanIcsData,
+  GetPlanIcsErrors,
+  GetPlanIcsResponses,
   GetPlanResponses,
+  GetPlanWeekData,
+  GetPlanWeekErrors,
+  GetPlanWeekResponses,
   GetPublicConfigData,
   GetPublicConfigResponses,
+  GetPushKeyData,
+  GetPushKeyErrors,
+  GetPushKeyResponses,
   GetQbankPoolData,
   GetQbankPoolErrors,
   GetQbankPoolResponses,
@@ -316,6 +337,12 @@ import type {
   ListNotesData,
   ListNotesErrors,
   ListNotesResponses,
+  ListPlanRebalancesData,
+  ListPlanRebalancesErrors,
+  ListPlanRebalancesResponses,
+  ListPushSubscriptionsData,
+  ListPushSubscriptionsErrors,
+  ListPushSubscriptionsResponses,
   ListReviewItemsData,
   ListReviewItemsErrors,
   ListReviewItemsResponses,
@@ -337,6 +364,9 @@ import type {
   PatchAdminSectionData,
   PatchAdminSectionErrors,
   PatchAdminSectionResponses,
+  PatchPlanItemData,
+  PatchPlanItemErrors,
+  PatchPlanItemResponses,
   PostInkChangesData,
   PostInkChangesErrors,
   PostInkChangesResponses,
@@ -385,9 +415,15 @@ import type {
   ReviewCardData,
   ReviewCardErrors,
   ReviewCardResponses,
+  RevokeCalendarFeedData,
+  RevokeCalendarFeedErrors,
+  RevokeCalendarFeedResponses,
   RollbackAdminRevisionData,
   RollbackAdminRevisionErrors,
   RollbackAdminRevisionResponses,
+  RotateCalendarFeedData,
+  RotateCalendarFeedErrors,
+  RotateCalendarFeedResponses,
   RunPsychometricsData,
   RunPsychometricsErrors,
   RunPsychometricsResponses,
@@ -406,6 +442,9 @@ import type {
   SearchWebData,
   SearchWebErrors,
   SearchWebResponses,
+  SendTestPushData,
+  SendTestPushErrors,
+  SendTestPushResponses,
   SetAdminChapterStatusData,
   SetAdminChapterStatusErrors,
   SetAdminChapterStatusResponses,
@@ -424,6 +463,9 @@ import type {
   StartExportData,
   StartExportErrors,
   StartExportResponses,
+  StartPlanRebalanceData,
+  StartPlanRebalanceErrors,
+  StartPlanRebalanceResponses,
   StartSeedData,
   StartSeedErrors,
   StartSeedResponses,
@@ -503,6 +545,10 @@ import {
   zCreateNotebookPageResponse,
   zCreateNotebookResponse,
   zCreateNoteResponse,
+  zCreatePlanItemsBody,
+  zCreatePlanItemsResponse,
+  zCreatePushSubscriptionBody,
+  zCreatePushSubscriptionResponse,
   zCreateSingleQuestionBlockBody,
   zCreateSingleQuestionBlockResponse,
   zCreateWeakSpotBlockBody,
@@ -519,6 +565,8 @@ import {
   zDeleteNotebookResponse,
   zDeleteNotePath,
   zDeleteNoteResponse,
+  zDeletePushSubscriptionPath,
+  zDeletePushSubscriptionResponse,
   zDetachAdminSectionMediaPath,
   zDetachAdminSectionMediaResponse,
   zDiffAdminRevisionPath,
@@ -569,6 +617,7 @@ import {
   zGetBlockResponse,
   zGetBlockResultsPath,
   zGetBlockResultsResponse,
+  zGetCalendarFeedResponse,
   zGetCardPath,
   zGetCardResponse,
   zGetCardStatsQuery,
@@ -596,8 +645,12 @@ import {
   zGetNotePath,
   zGetNoteResponse,
   zGetOnboardingResponse,
+  zGetPlanIcsPath,
   zGetPlanResponse,
+  zGetPlanWeekQuery,
+  zGetPlanWeekResponse,
   zGetPublicConfigResponse,
+  zGetPushKeyResponse,
   zGetQbankPoolQuery,
   zGetQbankPoolResponse,
   zGetReadingPositionQuery,
@@ -646,6 +699,9 @@ import {
   zListNotebooksResponse,
   zListNotesQuery,
   zListNotesResponse,
+  zListPlanRebalancesQuery,
+  zListPlanRebalancesResponse,
+  zListPushSubscriptionsResponse,
   zListReviewItemsQuery,
   zListReviewItemsResponse,
   zListSeedRunsResponse,
@@ -662,6 +718,9 @@ import {
   zPatchAdminSectionBody,
   zPatchAdminSectionPath,
   zPatchAdminSectionResponse,
+  zPatchPlanItemBody,
+  zPatchPlanItemPath,
+  zPatchPlanItemResponse,
   zPostInkChangesBody,
   zPostInkChangesPath,
   zPostInkChangesResponse,
@@ -703,9 +762,11 @@ import {
   zReviewCardBody,
   zReviewCardPath,
   zReviewCardResponse,
+  zRevokeCalendarFeedResponse,
   zRollbackAdminRevisionBody,
   zRollbackAdminRevisionPath,
   zRollbackAdminRevisionResponse,
+  zRotateCalendarFeedResponse,
   zRunPsychometricsResponse,
   zRunReviewChecksBody,
   zRunReviewChecksPath,
@@ -719,6 +780,7 @@ import {
   zSearchLocalResponse,
   zSearchWebQuery,
   zSearchWebResponse,
+  zSendTestPushResponse,
   zSetAdminChapterStatusBody,
   zSetAdminChapterStatusPath,
   zSetAdminChapterStatusResponse,
@@ -735,6 +797,7 @@ import {
   zStartAuthoringRunResponse,
   zStartExportBody,
   zStartExportResponse,
+  zStartPlanRebalanceResponse,
   zStartSeedBody,
   zStartSeedResponse,
   zSubmitReviewBody,
@@ -3764,6 +3827,66 @@ export const getPlan = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * Stop the calendar feed: its URL answers 404 from now on
+ */
+export const revokeCalendarFeed = <ThrowOnError extends boolean = false>(
+  options?: Options<RevokeCalendarFeedData, ThrowOnError>,
+): RequestResult<RevokeCalendarFeedResponses, RevokeCalendarFeedErrors, ThrowOnError> =>
+  (options?.client ?? client).delete<RevokeCalendarFeedResponses, RevokeCalendarFeedErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRevokeCalendarFeedResponse.parseAsync(data),
+    url: "/api/plan/calendar-feed",
+    ...options,
+  });
+
+/**
+ * Whether the student has a live calendar feed (the URL itself is shown only when it is made)
+ */
+export const getCalendarFeed = <ThrowOnError extends boolean = false>(
+  options?: Options<GetCalendarFeedData, ThrowOnError>,
+): RequestResult<GetCalendarFeedResponses, GetCalendarFeedErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetCalendarFeedResponses, GetCalendarFeedErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetCalendarFeedResponse.parseAsync(data),
+    url: "/api/plan/calendar-feed",
+    ...options,
+  });
+
+/**
+ * Make a new calendar feed URL (the old one stops working); the URL is shown once
+ */
+export const rotateCalendarFeed = <ThrowOnError extends boolean = false>(
+  options?: Options<RotateCalendarFeedData, ThrowOnError>,
+): RequestResult<RotateCalendarFeedResponses, RotateCalendarFeedErrors, ThrowOnError> =>
+  (options?.client ?? client).post<RotateCalendarFeedResponses, RotateCalendarFeedErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRotateCalendarFeedResponse.parseAsync(data),
+    url: "/api/plan/calendar-feed",
+    ...options,
+  });
+
+/**
  * The active plan in the template CSV's shape (CRLF, UTF-8)
  */
 export const exportPlanCsv = <ThrowOnError extends boolean = false>(
@@ -3780,6 +3903,73 @@ export const exportPlanCsv = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     url: "/api/plan/export.csv",
     ...options,
+  });
+
+/**
+ * The calendar feed (no sign-in: the token in the URL is the credential)
+ */
+export const getPlanIcs = <ThrowOnError extends boolean = false>(
+  options: Options<GetPlanIcsData, ThrowOnError>,
+): RequestResult<GetPlanIcsResponses, GetPlanIcsErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetPlanIcsResponses, GetPlanIcsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetPlanIcsPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    url: "/api/plan/ics/{token}",
+    ...options,
+  });
+
+/**
+ * Add the student's own items to days of the plan
+ */
+export const createPlanItems = <ThrowOnError extends boolean = false>(
+  options: Options<CreatePlanItemsData, ThrowOnError>,
+): RequestResult<CreatePlanItemsResponses, CreatePlanItemsErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreatePlanItemsResponses, CreatePlanItemsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreatePlanItemsBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreatePlanItemsResponse.parseAsync(data),
+    url: "/api/plan/items",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Change an item's status; the newest change wins (last-writer-wins per item)
+ */
+export const patchPlanItem = <ThrowOnError extends boolean = false>(
+  options: Options<PatchPlanItemData, ThrowOnError>,
+): RequestResult<PatchPlanItemResponses, PatchPlanItemErrors, ThrowOnError> =>
+  (options.client ?? client).patch<PatchPlanItemResponses, PatchPlanItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPatchPlanItemBody,
+          path: zPatchPlanItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPatchPlanItemResponse.parseAsync(data),
+    url: "/api/plan/items/{item_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
   });
 
 /**
@@ -3827,6 +4017,66 @@ export const previewPlan = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * Start a rebalance: the planner run proposes, then waits on the returned thread for the student's confirm
+ */
+export const startPlanRebalance = <ThrowOnError extends boolean = false>(
+  options?: Options<StartPlanRebalanceData, ThrowOnError>,
+): RequestResult<StartPlanRebalanceResponses, StartPlanRebalanceErrors, ThrowOnError> =>
+  (options?.client ?? client).post<StartPlanRebalanceResponses, StartPlanRebalanceErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zStartPlanRebalanceResponse.parseAsync(data),
+    url: "/api/plan/rebalance",
+    ...options,
+  });
+
+/**
+ * The student's rebalance proposals (default: the one waiting for a decision)
+ */
+export const listPlanRebalances = <ThrowOnError extends boolean = false>(
+  options?: Options<ListPlanRebalancesData, ThrowOnError>,
+): RequestResult<ListPlanRebalancesResponses, ListPlanRebalancesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListPlanRebalancesResponses, ListPlanRebalancesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListPlanRebalancesQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListPlanRebalancesResponse.parseAsync(data),
+    url: "/api/plan/rebalances",
+    ...options,
+  });
+
+/**
+ * Seven days of the plan: items, hours, assessment days, milestones and any rebalance proposal
+ */
+export const getPlanWeek = <ThrowOnError extends boolean = false>(
+  options?: Options<GetPlanWeekData, ThrowOnError>,
+): RequestResult<GetPlanWeekResponses, GetPlanWeekErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetPlanWeekResponses, GetPlanWeekErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetPlanWeekQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetPlanWeekResponse.parseAsync(data),
+    url: "/api/plan/week",
+    ...options,
+  });
+
+/**
  * Public client configuration (no auth): Supabase URL + anon key, sign-in options, version
  */
 export const getPublicConfig = <ThrowOnError extends boolean = false>(
@@ -3843,6 +4093,110 @@ export const getPublicConfig = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetPublicConfigResponse.parseAsync(data),
     url: "/api/public-config",
+    ...options,
+  });
+
+/**
+ * The application server key the browser subscribes with (and whether push is set up at all)
+ */
+export const getPushKey = <ThrowOnError extends boolean = false>(
+  options?: Options<GetPushKeyData, ThrowOnError>,
+): RequestResult<GetPushKeyResponses, GetPushKeyErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetPushKeyResponses, GetPushKeyErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetPushKeyResponse.parseAsync(data),
+    url: "/api/push/key",
+    ...options,
+  });
+
+/**
+ * The devices that receive reminders
+ */
+export const listPushSubscriptions = <ThrowOnError extends boolean = false>(
+  options?: Options<ListPushSubscriptionsData, ThrowOnError>,
+): RequestResult<ListPushSubscriptionsResponses, ListPushSubscriptionsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListPushSubscriptionsResponses, ListPushSubscriptionsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListPushSubscriptionsResponse.parseAsync(data),
+    url: "/api/push/subscriptions",
+    ...options,
+  });
+
+/**
+ * Register this browser for reminders (the same endpoint again updates it)
+ */
+export const createPushSubscription = <ThrowOnError extends boolean = false>(
+  options: Options<CreatePushSubscriptionData, ThrowOnError>,
+): RequestResult<CreatePushSubscriptionResponses, CreatePushSubscriptionErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreatePushSubscriptionResponses, CreatePushSubscriptionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreatePushSubscriptionBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreatePushSubscriptionResponse.parseAsync(data),
+    url: "/api/push/subscriptions",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Stop reminders on one device
+ */
+export const deletePushSubscription = <ThrowOnError extends boolean = false>(
+  options: Options<DeletePushSubscriptionData, ThrowOnError>,
+): RequestResult<DeletePushSubscriptionResponses, DeletePushSubscriptionErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeletePushSubscriptionResponses, DeletePushSubscriptionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeletePushSubscriptionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeletePushSubscriptionResponse.parseAsync(data),
+    url: "/api/push/subscriptions/{subscription_id}",
+    ...options,
+  });
+
+/**
+ * Send a test notification to the student's devices
+ */
+export const sendTestPush = <ThrowOnError extends boolean = false>(
+  options?: Options<SendTestPushData, ThrowOnError>,
+): RequestResult<SendTestPushResponses, SendTestPushErrors, ThrowOnError> =>
+  (options?.client ?? client).post<SendTestPushResponses, SendTestPushErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSendTestPushResponse.parseAsync(data),
+    url: "/api/push/test",
     ...options,
   });
 

@@ -38,6 +38,8 @@ dependencies = [
     "genanki==0.13.1",
     "zstandard==0.25.0",
     "pyrage==1.4.0",
+    "icalendar==7.3.0",
+    "pywebpush==2.5.0",
 ]
 
 [dependency-groups]
@@ -81,7 +83,7 @@ plugins = ["pydantic.mypy"]
 packages = ["naadi_api"]
 
 [[tool.mypy.overrides]]
-module = ["supabase.*", "openrouter.*", "psycopg_pool.*", "aegra_api.*", "gradio_client.*"]
+module = ["supabase.*", "openrouter.*", "psycopg_pool.*", "aegra_api.*", "gradio_client.*", "pywebpush.*"]
 follow_untyped_imports = true
 
 [[tool.mypy.overrides]]

@@ -54,6 +54,9 @@ USER_TABLES = (
     "study_plan_days",
     "coach_suggestions",
     "export_jobs",
+    "plan_rebalances",
+    "calendar_feeds",
+    "push_subscriptions",
 )
 # Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017).
 SELECT_ONLY_TABLES = (
@@ -159,8 +162,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "52 Naadi tables present",
-            "select count(*) = 52 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "55 Naadi tables present",
+            "select count(*) = 55 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -244,6 +247,21 @@ def checks(head: str) -> list[Check]:
             " and not has_column_privilege('authenticated', 'public.coach_suggestions', 'facts', 'update')"
             " and has_column_privilege('authenticated', 'public.coach_suggestions', 'status', 'update')"
             " as ok, '' as detail",
+        ),
+        Check(
+            "planner: items take status only; rebalances and feeds are select-only; subscriptions select + delete",
+            "select not has_any_column_privilege('authenticated', 'public.plan_items', 'insert')"
+            " and not has_table_privilege('authenticated', 'public.plan_items', 'delete')"
+            " and not has_column_privilege('authenticated', 'public.plan_items', 'title', 'update')"
+            " and has_column_privilege('authenticated', 'public.plan_items', 'status', 'update')"
+            " and not has_column_privilege('authenticated', 'public.plan_items', 'rebalance_id', 'update')"
+            " and has_table_privilege('authenticated', 'public.plan_rebalances', 'select')"
+            " and not has_any_column_privilege('authenticated', 'public.plan_rebalances', 'insert,update')"
+            " and not has_table_privilege('authenticated', 'public.plan_rebalances', 'delete')"
+            " and not has_any_column_privilege('authenticated', 'public.calendar_feeds', 'insert,update')"
+            " and not has_table_privilege('authenticated', 'public.calendar_feeds', 'delete')"
+            " and not has_any_column_privilege('authenticated', 'public.push_subscriptions', 'insert,update')"
+            " and has_table_privilege('authenticated', 'public.push_subscriptions', 'delete') as ok, '' as detail",
         ),
         Check(
             "attempts and blocks are written by the API only; attempts.correct is not client-readable",

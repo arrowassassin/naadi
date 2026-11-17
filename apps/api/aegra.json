@@ -23,6 +23,10 @@
     "ink_ocr": {
       "path": "./naadi_api/agent/graphs/ink_ocr.py:graph",
       "description": "Handwriting search: idle ink layers -> Pillow tiles -> one vision call per tile -> recognized_text (sweep every 2 min, nightly retry of deferred layers)"
+    },
+    "planner": {
+      "path": "./naadi_api/agent/graphs/planner.py:graph",
+      "description": "Planner: rebalance proposals after missed days (pure function, zero LLM calls) -> interrupt to confirm -> plan updated in one transaction; the system cron mode sends the daily Web Push reminders"
     }
   },
   "auth": {

@@ -7,16 +7,14 @@ import type {
   TodayOut,
 } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton, Tile, TileLabel } from "@naadi/ui";
-import { Link, Navigate, useNavigate } from "@tanstack/react-router";
+import { Link, Navigate } from "@tanstack/react-router";
 import { ArrowRight, Check, Circle, ExternalLink } from "lucide-react";
 import { useId, useState } from "react";
 import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
-import { useCreateBlock, useCreateWeakSpotBlock } from "../practice/api";
 import { type CachedToday, useAcceptSuggestion, useDismissSuggestion, useItemStatus, useToday } from "../today/api";
 import {
-  type Action,
   actionLabel,
   duration,
   FACT_KEYS,
@@ -27,6 +25,7 @@ import {
   suggestionText,
   type T,
 } from "../today/format";
+import { useRunAction } from "../today/useRunAction";
 import { dayLabel, dayPart, formatDate, safeZone } from "./time";
 
 export const CTA_LINK =
@@ -81,57 +80,6 @@ function Loading() {
       </div>
     </section>
   );
-}
-
-/** Runs an action: links navigate, block actions build the block on the server first. */
-function useRunAction() {
-  const nav = useNavigate();
-  const block = useCreateBlock();
-  const weak = useCreateWeakSpotBlock();
-  const [failed, setFailed] = useState(false);
-  const pending = block.isPending || weak.isPending;
-  const open = (id: string, n: number) => void nav({ to: "/practice/blocks/$blockId/$n", params: { blockId: id, n } });
-  const run = (a: Action) => {
-    setFailed(false);
-    switch (a.kind) {
-      case "resume_block":
-        open(a.blockId, a.n);
-        return;
-      case "resume_reading":
-        void nav({ to: "/learn/$chapterId/$sectionId", params: { chapterId: a.chapterId, sectionId: a.sectionId } });
-        return;
-      case "start_reading":
-        void nav({ to: "/learn/$chapterId", params: { chapterId: a.chapterId } });
-        return;
-      case "practice":
-        void nav({ to: "/practice" });
-        return;
-      case "cards":
-        void nav({ to: "/cards" });
-        return;
-      case "weak_spot":
-        weak.mutate(
-          { exam: a.exam, count: a.count, mode: "tutor" },
-          { onSuccess: (r) => open(r.block.id, r.block.next_n), onError: () => setFailed(true) },
-        );
-        return;
-      case "block": {
-        const make = (status: "unused" | "incorrect" | "all") =>
-          block.mutate(
-            { exam: a.exam, count: a.count, mode: "tutor", status },
-            {
-              onSuccess: (r) => open(r.id, r.next_n),
-              // Fewer unused questions than the plan asks for: fall back to the whole pool.
-              onError: (e) =>
-                e instanceof ApiError && e.status === 422 && status === "unused" ? make("all") : setFailed(true),
-            },
-          );
-        make(a.status);
-        return;
-      }
-    }
-  };
-  return { run, pending, failed };
 }
 
 function PrimaryCta({ today }: { today: TodayOut }) {
@@ -263,7 +211,7 @@ function FlowItem({ item, today, isNow }: { item: PlanItemOut; today: TodayOut; 
   );
 }
 
-function Flow({ today }: { today: TodayOut }) {
+function Flow({ today, planLink }: { today: TodayOut; planLink: boolean }) {
   const t = useUiText();
   const plan = today.plan;
   if (!plan) return null;
@@ -274,11 +222,19 @@ function Flow({ today }: { today: TodayOut }) {
         <h2 id="today-flow" className="m-0 font-display font-bold text-[1.5rem]">
           {t("today.flow_label")}
         </h2>
-        {plan.day?.target_hours ? (
-          <span className="font-mono text-label text-text-3 uppercase">
-            {duration(t, Math.round(plan.day.target_hours * 60))}
-          </span>
-        ) : null}
+        <div className="flex flex-wrap items-center gap-4">
+          {plan.day?.target_hours ? (
+            <span className="font-mono text-label text-text-3 uppercase">
+              {duration(t, Math.round(plan.day.target_hours * 60))}
+            </span>
+          ) : null}
+          {planLink ? (
+            <Link to="/plan" className="inline-flex min-h-11 items-center gap-1 text-ui">
+              {t("planner.today_link")}
+              <ArrowRight aria-hidden="true" size={14} />
+            </Link>
+          ) : null}
+        </div>
       </div>
       {items.length === 0 ? (
         <p className="m-0 text-text-2">
@@ -535,6 +491,7 @@ function Populated({ cached }: { cached: CachedToday }) {
   const hello = name ? t(`today.greeting_${part}_name`, { name }) : t(`today.greeting_${part}`);
   const focus = focusLine(t, today);
   const assistant = me.data?.features.assistant === true;
+  const planner = me.data?.features.planner === true;
   return (
     <section
       aria-labelledby="today-h"
@@ -562,11 +519,29 @@ function Populated({ cached }: { cached: CachedToday }) {
       <div className="grid gap-4 laptop:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <div className="flex min-w-0 flex-col gap-4">
           <ResumeTile today={today} />
-          <Flow today={today} />
+          <Flow today={today} planLink={planner} />
         </div>
         <div className="flex min-w-0 flex-col gap-4">
           <Readiness r={today.readiness} />
           <Cards today={today} />
+          {today.rebalance ? (
+            <Tile variant="assistant" as="section" aria-labelledby="today-rebalance" className="flex flex-col gap-4">
+              <TileLabel variant="assistant">{t("planner.today_suggest_label")}</TileLabel>
+              <h2 id="today-rebalance" className="m-0 font-display font-bold text-[1.375rem]">
+                {t("planner.today_suggest_title")}
+              </h2>
+              <p className="m-0 text-ui text-violet-text">
+                {t("planner.today_suggest_body", { missed: String(today.rebalance.missed) })}
+              </p>
+              <Link
+                to="/plan"
+                className="inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-pill bg-violet px-5 text-[0.9375rem] font-semibold text-violet-ink no-underline hover:text-violet-ink"
+              >
+                {t("planner.today_suggest_cta")}
+                <ArrowRight aria-hidden="true" size={16} />
+              </Link>
+            </Tile>
+          ) : null}
           {today.coach.length > 0 ? (
             <section aria-labelledby="today-coach" className="flex flex-col gap-4">
               <h2 id="today-coach" className="sr-only">

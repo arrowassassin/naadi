@@ -1698,6 +1698,36 @@ export type BlockSummary = {
 };
 
 /**
+ * CalendarFeedCreatedOut
+ */
+export type CalendarFeedCreatedOut = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Url
+   *
+   * Shown once: the token is stored only as a hash and cannot be shown again
+   */
+  url: string;
+};
+
+/**
+ * CalendarFeedOut
+ */
+export type CalendarFeedOut = {
+  /**
+   * Active
+   */
+  active: boolean;
+  /**
+   * Created At
+   */
+  created_at: string | null;
+};
+
+/**
  * CancelOut
  */
 export type CancelOut = {
@@ -3941,6 +3971,35 @@ export type Insight = {
 };
 
 /**
+ * ItemPatchIn
+ */
+export type ItemPatchIn = {
+  /**
+   * Client Updated At Ms
+   *
+   * When the student made the change (device clock, ms since the epoch)
+   */
+  client_updated_at_ms: number;
+  /**
+   * Status
+   */
+  status: "planned" | "done" | "skipped";
+};
+
+/**
+ * ItemPatchOut
+ */
+export type ItemPatchOut = {
+  /**
+   * Applied
+   *
+   * false: a newer (or equal) change was already stored; `item` is that row
+   */
+  applied: boolean;
+  item: PlanItemOut;
+};
+
+/**
  * ItemStatsOut
  */
 export type ItemStatsOut = {
@@ -4284,6 +4343,36 @@ export type MediaSource = {
    * Url
    */
   url: string | null;
+};
+
+/**
+ * MilestoneOut
+ */
+export type MilestoneOut = {
+  /**
+   * Date
+   */
+  date: string;
+  /**
+   * Day No
+   */
+  day_no: number | null;
+  /**
+   * Days Away
+   *
+   * From today (negative: already passed)
+   */
+  days_away: number;
+  /**
+   * Kind
+   */
+  kind: "assessment" | "phase" | "rest" | "exam";
+  /**
+   * Title
+   *
+   * The plan template's own text for the assessment or phase
+   */
+  title: string | null;
 };
 
 /**
@@ -5467,6 +5556,15 @@ export type PlanSummaryOut = {
 };
 
 /**
+ * PlanWeekOut
+ *
+ * `week` is null for a student who has no plan yet (a normal state, so not an error response).
+ */
+export type PlanWeekOut = {
+  week: WeekOut | null;
+};
+
+/**
  * PoolFacet
  */
 export type PoolFacet = {
@@ -5746,6 +5844,103 @@ export type PublishRequest = {
    * Revision Id
    */
   revision_id: number;
+};
+
+/**
+ * PushKeyOut
+ */
+export type PushKeyOut = {
+  /**
+   * Configured
+   *
+   * false until the owner provides VAPID keys (needs a public address)
+   */
+  configured: boolean;
+  /**
+   * Public Key
+   */
+  public_key: string | null;
+};
+
+/**
+ * PushSubscriptionIn
+ *
+ * What `PushSubscription.toJSON()` gives (the browser's own object).
+ */
+export type PushSubscriptionIn = {
+  /**
+   * Endpoint
+   */
+  endpoint: string;
+  keys: PushSubscriptionKeys;
+};
+
+/**
+ * PushSubscriptionKeys
+ */
+export type PushSubscriptionKeys = {
+  /**
+   * Auth
+   */
+  auth: string;
+  /**
+   * P256Dh
+   */
+  p256dh: string;
+};
+
+/**
+ * PushSubscriptionOut
+ */
+export type PushSubscriptionOut = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Last Ok At
+   */
+  last_ok_at: string | null;
+  /**
+   * Ua Label
+   */
+  ua_label: string | null;
+};
+
+/**
+ * PushSubscriptionsOut
+ */
+export type PushSubscriptionsOut = {
+  /**
+   * Configured
+   */
+  configured: boolean;
+  /**
+   * Subscriptions
+   */
+  subscriptions: Array<PushSubscriptionOut>;
+};
+
+/**
+ * PushTestOut
+ */
+export type PushTestOut = {
+  /**
+   * Failed
+   */
+  failed: number;
+  /**
+   * Removed
+   */
+  removed: number;
+  /**
+   * Sent
+   */
+  sent: number;
 };
 
 /**
@@ -6373,6 +6568,173 @@ export type ReadyResponse = {
    * Ready
    */
   ready: boolean;
+};
+
+/**
+ * RebalanceDrop
+ */
+export type RebalanceDrop = {
+  /**
+   * Day
+   */
+  day: string;
+  /**
+   * Item Id
+   */
+  item_id: string;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Reason
+   */
+  reason: "review";
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * RebalanceMove
+ */
+export type RebalanceMove = {
+  /**
+   * From Day
+   */
+  from_day: string;
+  /**
+   * Item Id
+   */
+  item_id: string;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Minutes
+   */
+  minutes: number | null;
+  /**
+   * Sort
+   */
+  sort: number;
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * To Day
+   */
+  to_day: string;
+};
+
+/**
+ * RebalanceOut
+ */
+export type RebalanceOut = {
+  /**
+   * Applied At
+   */
+  applied_at: string | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: string;
+  proposal: RebalanceProposalOut;
+  /**
+   * Status
+   */
+  status: "proposed" | "accepted" | "declined" | "expired";
+  /**
+   * Thread Id
+   *
+   * The planner run waiting for the confirm, when there is one
+   */
+  thread_id: string | null;
+  /**
+   * Trigger
+   */
+  trigger: "missed" | "student" | "coach";
+};
+
+/**
+ * RebalanceProposalOut
+ */
+export type RebalanceProposalOut = {
+  /**
+   * Drops
+   */
+  drops: Array<RebalanceDrop>;
+  /**
+   * Fingerprint
+   */
+  fingerprint: string;
+  /**
+   * Missed
+   */
+  missed: number;
+  /**
+   * Moves
+   */
+  moves: Array<RebalanceMove>;
+  /**
+   * Spilled
+   */
+  spilled: number;
+  /**
+   * Warnings
+   */
+  warnings: Array<RebalanceWarning>;
+};
+
+/**
+ * RebalanceStartOut
+ */
+export type RebalanceStartOut = {
+  /**
+   * Run Id
+   */
+  run_id: string;
+  /**
+   * Thread Id
+   *
+   * The planner run proposes, then waits on this thread for the student's confirm
+   */
+  thread_id: string;
+};
+
+/**
+ * RebalanceWarning
+ */
+export type RebalanceWarning = {
+  /**
+   * Code
+   */
+  code: "unplaced" | "assessment_missed" | "no_study_days";
+  /**
+   * Count
+   */
+  count: number;
+  /**
+   * Item Ids
+   */
+  item_ids: Array<string>;
+};
+
+/**
+ * RebalancesOut
+ */
+export type RebalancesOut = {
+  /**
+   * Rebalances
+   */
+  rebalances: Array<RebalanceOut>;
 };
 
 /**
@@ -7665,6 +8027,60 @@ export type SourceRef = {
 };
 
 /**
+ * StudentItemIn
+ */
+export type StudentItemIn = {
+  /**
+   * Day
+   */
+  day: string;
+  /**
+   * Kind
+   */
+  kind: "read" | "questions" | "cards" | "video" | "admin";
+  /**
+   * Ref Id
+   */
+  ref_id?: string | null;
+  /**
+   * Ref Type
+   */
+  ref_type?: "chapter" | "qbank" | "cards" | "section" | "block" | "external" | null;
+  /**
+   * Target Count
+   */
+  target_count?: number | null;
+  /**
+   * Target Minutes
+   */
+  target_minutes?: number | null;
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * StudentItemsIn
+ */
+export type StudentItemsIn = {
+  /**
+   * Items
+   */
+  items: Array<StudentItemIn>;
+};
+
+/**
+ * StudentItemsOut
+ */
+export type StudentItemsOut = {
+  /**
+   * Items
+   */
+  items: Array<PlanItemOut>;
+};
+
+/**
  * SystemCoverage
  */
 export type SystemCoverage = {
@@ -7929,6 +8345,10 @@ export type TodayOut = {
   plan: TodayPlan | null;
   readiness: ReadinessOut;
   /**
+   * Only while the planner flag is on and a proposal waits
+   */
+  rebalance: TodayRebalance | null;
+  /**
    * Resume
    */
   resume:
@@ -7974,6 +8394,34 @@ export type TodayPlan = {
    * Plan Id
    */
   plan_id: string;
+};
+
+/**
+ * TodayRebalance
+ *
+ * A rebalance proposal waiting for the student (the planner screen shows its changes).
+ */
+export type TodayRebalance = {
+  /**
+   * Drops
+   */
+  drops: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Missed
+   */
+  missed: number;
+  /**
+   * Moves
+   */
+  moves: number;
+  /**
+   * Unplaced
+   */
+  unplaced: number;
 };
 
 /**
@@ -8372,6 +8820,230 @@ export type WebResult = {
    * Url
    */
   url: string;
+};
+
+/**
+ * WeekDayOut
+ */
+export type WeekDayOut = {
+  /**
+   * Assessment
+   */
+  assessment: boolean;
+  /**
+   * Chapter Ref
+   */
+  chapter_ref: string | null;
+  /**
+   * Date
+   */
+  date: string;
+  /**
+   * Day No
+   *
+   * null for a date outside the plan
+   */
+  day_no: number | null;
+  /**
+   * Extra
+   */
+  extra: boolean;
+  /**
+   * In Plan
+   */
+  in_plan: boolean;
+  /**
+   * Is Today
+   */
+  is_today: boolean;
+  /**
+   * Items
+   */
+  items: Array<WeekItemOut>;
+  /**
+   * Past
+   */
+  past: boolean;
+  /**
+   * Phase
+   */
+  phase: string | null;
+  /**
+   * Planned Hours
+   *
+   * Sum of the items' minutes (skipped items excluded), in hours
+   */
+  planned_hours: number;
+  /**
+   * Rest
+   */
+  rest: boolean;
+  /**
+   * Target Hours
+   */
+  target_hours: number | null;
+  /**
+   * Topic
+   */
+  topic: string | null;
+  /**
+   * Weekday
+   */
+  weekday: string;
+};
+
+/**
+ * WeekItemOut
+ */
+export type WeekItemOut = {
+  /**
+   * Behind
+   *
+   * Planned or in progress on a day that has passed (word + amber on screen)
+   */
+  behind: boolean;
+  /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms: number | null;
+  /**
+   * Day
+   */
+  day: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "read" | "questions" | "assessment" | "cards" | "video" | "admin" | "rest";
+  /**
+   * Moved From
+   *
+   * Where a rebalance moved the item from
+   */
+  moved_from: string | null;
+  /**
+   * Origin
+   */
+  origin: "generator" | "user" | "assistant" | "seed";
+  /**
+   * Plan Day
+   */
+  plan_day: number | null;
+  /**
+   * Ref Id
+   */
+  ref_id: string | null;
+  /**
+   * Ref Type
+   */
+  ref_type: string | null;
+  /**
+   * Sort
+   */
+  sort: number | null;
+  /**
+   * Status
+   */
+  status: "planned" | "now" | "done" | "skipped" | "behind";
+  /**
+   * Target Count
+   */
+  target_count: number | null;
+  /**
+   * Target Minutes
+   */
+  target_minutes: number | null;
+  /**
+   * Title
+   *
+   * The plan template's own text, verbatim
+   */
+  title: string;
+};
+
+/**
+ * WeekOut
+ */
+export type WeekOut = {
+  /**
+   * Behind
+   *
+   * Items planned or in progress on days that have passed
+   */
+  behind: number;
+  /**
+   * Days
+   */
+  days: Array<WeekDayOut>;
+  /**
+   * Days To Exam
+   */
+  days_to_exam: number | null;
+  /**
+   * End
+   */
+  end: string;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Exam Date
+   */
+  exam_date: string | null;
+  /**
+   * Hours Planned
+   */
+  hours_planned: number;
+  /**
+   * Hours Target
+   */
+  hours_target: number;
+  /**
+   * Milestones
+   */
+  milestones: Array<MilestoneOut>;
+  /**
+   * Today's first open item: the screen's one lime action
+   */
+  next_item: WeekItemOut | null;
+  /**
+   * Next Start
+   */
+  next_start: string | null;
+  /**
+   * Plan Id
+   */
+  plan_id: string;
+  /**
+   * Prev Start
+   */
+  prev_start: string | null;
+  /**
+   * The proposal waiting for the student, if any
+   */
+  rebalance: RebalanceOut | null;
+  /**
+   * Start
+   */
+  start: string;
+  /**
+   * Today
+   */
+  today: string;
+  /**
+   * Week
+   *
+   * Plan week of `start` (1-based)
+   */
+  week: number;
+  /**
+   * Weeks
+   */
+  weeks: number;
 };
 
 /**
@@ -15041,6 +15713,105 @@ export type GetPlanResponses = {
 
 export type GetPlanResponse = GetPlanResponses[keyof GetPlanResponses];
 
+export type RevokeCalendarFeedData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/plan/calendar-feed";
+};
+
+export type RevokeCalendarFeedErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RevokeCalendarFeedError = RevokeCalendarFeedErrors[keyof RevokeCalendarFeedErrors];
+
+export type RevokeCalendarFeedResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type RevokeCalendarFeedResponse = RevokeCalendarFeedResponses[keyof RevokeCalendarFeedResponses];
+
+export type GetCalendarFeedData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/plan/calendar-feed";
+};
+
+export type GetCalendarFeedErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetCalendarFeedError = GetCalendarFeedErrors[keyof GetCalendarFeedErrors];
+
+export type GetCalendarFeedResponses = {
+  /**
+   * Successful Response
+   */
+  200: CalendarFeedOut;
+};
+
+export type GetCalendarFeedResponse = GetCalendarFeedResponses[keyof GetCalendarFeedResponses];
+
+export type RotateCalendarFeedData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/plan/calendar-feed";
+};
+
+export type RotateCalendarFeedErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RotateCalendarFeedError = RotateCalendarFeedErrors[keyof RotateCalendarFeedErrors];
+
+export type RotateCalendarFeedResponses = {
+  /**
+   * Successful Response
+   */
+  201: CalendarFeedCreatedOut;
+};
+
+export type RotateCalendarFeedResponse = RotateCalendarFeedResponses[keyof RotateCalendarFeedResponses];
+
 export type ExportPlanCsvData = {
   body?: never;
   path?: never;
@@ -15075,6 +15846,129 @@ export type ExportPlanCsvResponses = {
    */
   200: unknown;
 };
+
+export type GetPlanIcsData = {
+  body?: never;
+  path: {
+    /**
+     * Token
+     */
+    token: string;
+  };
+  query?: never;
+  url: "/api/plan/ics/{token}";
+};
+
+export type GetPlanIcsErrors = {
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+};
+
+export type GetPlanIcsError = GetPlanIcsErrors[keyof GetPlanIcsErrors];
+
+export type GetPlanIcsResponses = {
+  /**
+   * The plan as an iCalendar feed
+   */
+  200: unknown;
+};
+
+export type CreatePlanItemsData = {
+  body: StudentItemsIn;
+  path?: never;
+  query?: never;
+  url: "/api/plan/items";
+};
+
+export type CreatePlanItemsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid inputs
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreatePlanItemsError = CreatePlanItemsErrors[keyof CreatePlanItemsErrors];
+
+export type CreatePlanItemsResponses = {
+  /**
+   * Successful Response
+   */
+  201: StudentItemsOut;
+};
+
+export type CreatePlanItemsResponse = CreatePlanItemsResponses[keyof CreatePlanItemsResponses];
+
+export type PatchPlanItemData = {
+  body: ItemPatchIn;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/plan/items/{item_id}";
+};
+
+export type PatchPlanItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid inputs
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PatchPlanItemError = PatchPlanItemErrors[keyof PatchPlanItemErrors];
+
+export type PatchPlanItemResponses = {
+  /**
+   * Successful Response
+   */
+  200: ItemPatchOut;
+};
+
+export type PatchPlanItemResponse = PatchPlanItemResponses[keyof PatchPlanItemResponses];
 
 export type SetPlanItemStatusData = {
   body: ItemStatusIn;
@@ -15180,6 +16074,129 @@ export type PreviewPlanResponses = {
 
 export type PreviewPlanResponse = PreviewPlanResponses[keyof PreviewPlanResponses];
 
+export type StartPlanRebalanceData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/plan/rebalance";
+};
+
+export type StartPlanRebalanceErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * The agent runtime is unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type StartPlanRebalanceError = StartPlanRebalanceErrors[keyof StartPlanRebalanceErrors];
+
+export type StartPlanRebalanceResponses = {
+  /**
+   * Successful Response
+   */
+  202: RebalanceStartOut;
+};
+
+export type StartPlanRebalanceResponse = StartPlanRebalanceResponses[keyof StartPlanRebalanceResponses];
+
+export type ListPlanRebalancesData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Status
+     */
+    status?: "proposed" | "accepted" | "declined" | "expired" | null;
+  };
+  url: "/api/plan/rebalances";
+};
+
+export type ListPlanRebalancesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid inputs
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListPlanRebalancesError = ListPlanRebalancesErrors[keyof ListPlanRebalancesErrors];
+
+export type ListPlanRebalancesResponses = {
+  /**
+   * Successful Response
+   */
+  200: RebalancesOut;
+};
+
+export type ListPlanRebalancesResponse = ListPlanRebalancesResponses[keyof ListPlanRebalancesResponses];
+
+export type GetPlanWeekData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Start
+     *
+     * First day of the week; default: the plan week of today
+     */
+    start?: string | null;
+  };
+  url: "/api/plan/week";
+};
+
+export type GetPlanWeekErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetPlanWeekError = GetPlanWeekErrors[keyof GetPlanWeekErrors];
+
+export type GetPlanWeekResponses = {
+  /**
+   * Successful Response
+   */
+  200: PlanWeekOut;
+};
+
+export type GetPlanWeekResponse = GetPlanWeekResponses[keyof GetPlanWeekResponses];
+
 export type GetPublicConfigData = {
   body?: never;
   path?: never;
@@ -15195,6 +16212,196 @@ export type GetPublicConfigResponses = {
 };
 
 export type GetPublicConfigResponse = GetPublicConfigResponses[keyof GetPublicConfigResponses];
+
+export type GetPushKeyData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/push/key";
+};
+
+export type GetPushKeyErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetPushKeyError = GetPushKeyErrors[keyof GetPushKeyErrors];
+
+export type GetPushKeyResponses = {
+  /**
+   * Successful Response
+   */
+  200: PushKeyOut;
+};
+
+export type GetPushKeyResponse = GetPushKeyResponses[keyof GetPushKeyResponses];
+
+export type ListPushSubscriptionsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/push/subscriptions";
+};
+
+export type ListPushSubscriptionsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListPushSubscriptionsError = ListPushSubscriptionsErrors[keyof ListPushSubscriptionsErrors];
+
+export type ListPushSubscriptionsResponses = {
+  /**
+   * Successful Response
+   */
+  200: PushSubscriptionsOut;
+};
+
+export type ListPushSubscriptionsResponse = ListPushSubscriptionsResponses[keyof ListPushSubscriptionsResponses];
+
+export type CreatePushSubscriptionData = {
+  body: PushSubscriptionIn;
+  path?: never;
+  query?: never;
+  url: "/api/push/subscriptions";
+};
+
+export type CreatePushSubscriptionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Push is not set up on this server (no VAPID keys)
+   */
+  409: ErrorResponse;
+  /**
+   * Invalid inputs
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreatePushSubscriptionError = CreatePushSubscriptionErrors[keyof CreatePushSubscriptionErrors];
+
+export type CreatePushSubscriptionResponses = {
+  /**
+   * Successful Response
+   */
+  201: PushSubscriptionOut;
+};
+
+export type CreatePushSubscriptionResponse = CreatePushSubscriptionResponses[keyof CreatePushSubscriptionResponses];
+
+export type DeletePushSubscriptionData = {
+  body?: never;
+  path: {
+    /**
+     * Subscription Id
+     */
+    subscription_id: string;
+  };
+  query?: never;
+  url: "/api/push/subscriptions/{subscription_id}";
+};
+
+export type DeletePushSubscriptionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DeletePushSubscriptionError = DeletePushSubscriptionErrors[keyof DeletePushSubscriptionErrors];
+
+export type DeletePushSubscriptionResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeletePushSubscriptionResponse = DeletePushSubscriptionResponses[keyof DeletePushSubscriptionResponses];
+
+export type SendTestPushData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/push/test";
+};
+
+export type SendTestPushErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Push is not set up on this server (no VAPID keys)
+   */
+  409: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SendTestPushError = SendTestPushErrors[keyof SendTestPushErrors];
+
+export type SendTestPushResponses = {
+  /**
+   * Successful Response
+   */
+  200: PushTestOut;
+};
+
+export type SendTestPushResponse = SendTestPushResponses[keyof SendTestPushResponses];
 
 export type GetQbankPoolData = {
   body?: never;

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import type { Plugin } from "vite";
+import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vitest/config";
 
 const API_TARGET = process.env.NAADI_API_ORIGIN ?? "http://localhost:7860";
@@ -89,7 +90,37 @@ function excalidrawFonts(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), excalidrawFonts()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    excalidrawFonts(),
+    // The service worker is src/sw.ts, compiled to /sw.js. Segment 16: push handlers only, so no precache
+    // manifest is injected (`injectionPoint: undefined`). Segment 18 adds caching: set an `injectionPoint`
+    // and `globPatterns` here and the runtime caching in sw.ts. The app registers it itself (main.tsx), in
+    // production only.
+    VitePWA({
+      strategies: "injectManifest",
+      srcDir: "src",
+      filename: "sw.ts",
+      injectRegister: false,
+      injectManifest: { injectionPoint: undefined },
+      manifest: {
+        name: "Naadi",
+        short_name: "Naadi",
+        description: "USMLE preparation for international medical graduates.",
+        display: "standalone",
+        start_url: "/",
+        scope: "/",
+        theme_color: "#050506", // --color-ground (packages/ui tokens.css)
+        background_color: "#050506",
+        icons: [
+          { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+          { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+          { src: "/icons/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+        ],
+      },
+    }),
+  ],
   server: {
     port: 5173,
     strictPort: true,

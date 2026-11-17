@@ -20,6 +20,13 @@ onAuthChange((event, prev, next) => {
 });
 void startAuth();
 
+// The service worker (Web Push now, offline caching later) is registered only in production builds.
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(() => undefined);
+  });
+}
+
 const rootEl = document.getElementById("root");
 if (!rootEl) throw new Error("#root element missing from index.html");
 

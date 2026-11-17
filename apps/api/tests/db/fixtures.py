@@ -7,6 +7,7 @@ migration without adding it here fails `test_rls_coverage.py`.
 
 from __future__ import annotations
 
+import hashlib
 import uuid
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -262,6 +263,36 @@ USER_TABLES: tuple[UserTable, ...] = (
         },
         ("user_id", "plan_id", "day_no"),
         ("status", "Done"),
+    ),
+    UserTable(
+        "plan_rebalances",
+        lambda u, s: {
+            "id": _id(),
+            "user_id": u,
+            "plan_id": study_plan_id(u),
+            "trigger": "student",
+            "proposal": Jsonb({"moves": [], "drops": [], "warnings": []}),
+        },
+        ("user_id",),
+        ("status", "declined"),
+    ),
+    UserTable(
+        "calendar_feeds",
+        lambda u, s: {"id": _id(), "user_id": u, "token_hash": hashlib.sha256(uuid.uuid4().bytes).hexdigest()},
+        ("user_id",),
+        ("revoked_at", "2026-11-17T00:00:00Z"),
+    ),
+    UserTable(
+        "push_subscriptions",
+        lambda u, s: {
+            "id": _id(),
+            "user_id": u,
+            "endpoint": f"https://push.example.org/send/{uuid.uuid4().hex}",
+            "p256dh": "BNcRdreALRFXTkOOUHK1EtK2wtaz5Ry4YfYCA_0QTpQtUbVlUls0VJXg7A8u-Ts1XbjhazAkj7I99e8QcYP7DkM",
+            "auth": "tBHItJI5svbpez7KI4CCXg",
+        },
+        ("user_id",),
+        ("ua_label", "iPad"),
     ),
     UserTable(
         "coach_suggestions",

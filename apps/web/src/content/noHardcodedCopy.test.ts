@@ -21,6 +21,7 @@ const ROOTS = [
   "notebooks",
   "notes",
   "pdf",
+  "planner",
   "routes",
   "search",
   "shell",

@@ -478,6 +478,22 @@ export const zBlockRules = z.object({
 });
 
 /**
+ * CalendarFeedCreatedOut
+ */
+export const zCalendarFeedCreatedOut = z.object({
+  created_at: z.iso.datetime(),
+  url: z.string(),
+});
+
+/**
+ * CalendarFeedOut
+ */
+export const zCalendarFeedOut = z.object({
+  active: z.boolean(),
+  created_at: z.iso.datetime().nullable(),
+});
+
+/**
  * CancelOut
  */
 export const zCancelOut = z.object({
@@ -1213,6 +1229,14 @@ export const zInsight = z.object({
 });
 
 /**
+ * ItemPatchIn
+ */
+export const zItemPatchIn = z.object({
+  client_updated_at_ms: z.int().gte(0).lte(9999999999999),
+  status: z.enum(["planned", "done", "skipped"]),
+});
+
+/**
  * ItemStatsOut
  */
 export const zItemStatsOut = z.object({
@@ -1454,6 +1478,17 @@ export const zDueResponse = z.object({
   next_due: z.iso.datetime().nullable(),
   now: z.iso.datetime(),
   scheduler: zFsrsSchedulerConfig,
+});
+
+/**
+ * MilestoneOut
+ */
+export const zMilestoneOut = z.object({
+  date: z.iso.date(),
+  day_no: z.int().nullable(),
+  days_away: z.int(),
+  kind: z.enum(["assessment", "phase", "rest", "exam"]),
+  title: z.string().nullable(),
 });
 
 /**
@@ -1797,6 +1832,14 @@ export const zCoachActionOut = z.object({
 });
 
 /**
+ * ItemPatchOut
+ */
+export const zItemPatchOut = z.object({
+  applied: z.boolean(),
+  item: zPlanItemOut,
+});
+
+/**
  * PlanDayOut
  */
 export const zPlanDayOut = z.object({
@@ -1975,6 +2018,63 @@ export const zPublishRequest = z.object({
   expected_updated_at: z.iso.datetime(),
   note: z.string().max(500).nullish(),
   revision_id: z.int(),
+});
+
+/**
+ * PushKeyOut
+ */
+export const zPushKeyOut = z.object({
+  configured: z.boolean(),
+  public_key: z.string().nullable(),
+});
+
+/**
+ * PushSubscriptionKeys
+ */
+export const zPushSubscriptionKeys = z.object({
+  auth: z.string().min(1).max(100),
+  p256dh: z.string().min(1).max(200),
+});
+
+/**
+ * PushSubscriptionIn
+ *
+ * What `PushSubscription.toJSON()` gives (the browser's own object).
+ */
+export const zPushSubscriptionIn = z.object({
+  endpoint: z
+    .string()
+    .min(12)
+    .max(1024)
+    .regex(/^https:\/\//),
+  keys: zPushSubscriptionKeys,
+});
+
+/**
+ * PushSubscriptionOut
+ */
+export const zPushSubscriptionOut = z.object({
+  created_at: z.iso.datetime(),
+  id: z.uuid(),
+  last_ok_at: z.iso.datetime().nullable(),
+  ua_label: z.string().nullable(),
+});
+
+/**
+ * PushSubscriptionsOut
+ */
+export const zPushSubscriptionsOut = z.object({
+  configured: z.boolean(),
+  subscriptions: z.array(zPushSubscriptionOut),
+});
+
+/**
+ * PushTestOut
+ */
+export const zPushTestOut = z.object({
+  failed: z.int(),
+  removed: z.int(),
+  sent: z.int(),
 });
 
 /**
@@ -2296,6 +2396,79 @@ export const zReadingPositionWrite = z.object({
 export const zReadyResponse = z.object({
   checks: z.record(z.string(), z.boolean()),
   ready: z.boolean(),
+});
+
+/**
+ * RebalanceDrop
+ */
+export const zRebalanceDrop = z.object({
+  day: z.iso.date(),
+  item_id: z.uuid(),
+  kind: z.string(),
+  reason: z.literal("review"),
+  title: z.string(),
+});
+
+/**
+ * RebalanceMove
+ */
+export const zRebalanceMove = z.object({
+  from_day: z.iso.date(),
+  item_id: z.uuid(),
+  kind: z.string(),
+  minutes: z.int().nullable(),
+  sort: z.int(),
+  title: z.string(),
+  to_day: z.iso.date(),
+});
+
+/**
+ * RebalanceStartOut
+ */
+export const zRebalanceStartOut = z.object({
+  run_id: z.string(),
+  thread_id: z.string(),
+});
+
+/**
+ * RebalanceWarning
+ */
+export const zRebalanceWarning = z.object({
+  code: z.enum(["unplaced", "assessment_missed", "no_study_days"]),
+  count: z.int(),
+  item_ids: z.array(z.uuid()),
+});
+
+/**
+ * RebalanceProposalOut
+ */
+export const zRebalanceProposalOut = z.object({
+  drops: z.array(zRebalanceDrop),
+  fingerprint: z.string(),
+  missed: z.int(),
+  moves: z.array(zRebalanceMove),
+  spilled: z.int(),
+  warnings: z.array(zRebalanceWarning),
+});
+
+/**
+ * RebalanceOut
+ */
+export const zRebalanceOut = z.object({
+  applied_at: z.iso.datetime().nullable(),
+  created_at: z.iso.datetime(),
+  id: z.uuid(),
+  proposal: zRebalanceProposalOut,
+  status: z.enum(["proposed", "accepted", "declined", "expired"]),
+  thread_id: z.string().nullable(),
+  trigger: z.enum(["missed", "student", "coach"]),
+});
+
+/**
+ * RebalancesOut
+ */
+export const zRebalancesOut = z.object({
+  rebalances: z.array(zRebalanceOut),
 });
 
 /**
@@ -2961,6 +3134,33 @@ export const zLabValuesOut = z.object({
 });
 
 /**
+ * StudentItemIn
+ */
+export const zStudentItemIn = z.object({
+  day: z.iso.date(),
+  kind: z.enum(["read", "questions", "cards", "video", "admin"]),
+  ref_id: z.string().max(100).nullish(),
+  ref_type: z.enum(["chapter", "qbank", "cards", "section", "block", "external"]).nullish(),
+  target_count: z.int().gte(1).lte(400).nullish(),
+  target_minutes: z.int().gte(5).lte(720).nullish(),
+  title: z.string().min(1).max(200),
+});
+
+/**
+ * StudentItemsIn
+ */
+export const zStudentItemsIn = z.object({
+  items: z.array(zStudentItemIn).min(1).max(50),
+});
+
+/**
+ * StudentItemsOut
+ */
+export const zStudentItemsOut = z.object({
+  items: z.array(zPlanItemOut),
+});
+
+/**
  * SystemCoverage
  */
 export const zSystemCoverage = z.object({
@@ -3115,6 +3315,19 @@ export const zTodayPlan = z.object({
 });
 
 /**
+ * TodayRebalance
+ *
+ * A rebalance proposal waiting for the student (the planner screen shows its changes).
+ */
+export const zTodayRebalance = z.object({
+  drops: z.int(),
+  id: z.uuid(),
+  missed: z.int(),
+  moves: z.int(),
+  unplaced: z.int(),
+});
+
+/**
  * TodayOut
  */
 export const zTodayOut = z.object({
@@ -3127,6 +3340,7 @@ export const zTodayOut = z.object({
   pathway: z.array(zPathwayStageOut).nullable(),
   plan: zTodayPlan.nullable(),
   readiness: zReadinessOut,
+  rebalance: zTodayRebalance.nullable(),
   resume: z.discriminatedUnion("kind", [zResumeReading, zResumeBlock]).nullable(),
   systems: zSystemsOut,
   today: z.iso.date(),
@@ -3435,6 +3649,81 @@ export const zWebResponse = z.object({
   message: z.string().nullish(),
   results: z.array(zWebResult),
   status: z.enum(["ok", "empty", "unavailable", "limit"]),
+});
+
+/**
+ * WeekItemOut
+ */
+export const zWeekItemOut = z.object({
+  behind: z.boolean(),
+  client_updated_at_ms: z.int().nullable(),
+  day: z.iso.date(),
+  id: z.uuid(),
+  kind: z.enum(["read", "questions", "assessment", "cards", "video", "admin", "rest"]),
+  moved_from: z.iso.date().nullable(),
+  origin: z.enum(["generator", "user", "assistant", "seed"]),
+  plan_day: z.int().nullable(),
+  ref_id: z.string().nullable(),
+  ref_type: z.string().nullable(),
+  sort: z.int().nullable(),
+  status: z.enum(["planned", "now", "done", "skipped", "behind"]),
+  target_count: z.int().nullable(),
+  target_minutes: z.int().nullable(),
+  title: z.string(),
+});
+
+/**
+ * WeekDayOut
+ */
+export const zWeekDayOut = z.object({
+  assessment: z.boolean(),
+  chapter_ref: z.string().nullable(),
+  date: z.iso.date(),
+  day_no: z.int().nullable(),
+  extra: z.boolean(),
+  in_plan: z.boolean(),
+  is_today: z.boolean(),
+  items: z.array(zWeekItemOut),
+  past: z.boolean(),
+  phase: z.string().nullable(),
+  planned_hours: z.number(),
+  rest: z.boolean(),
+  target_hours: z.number().nullable(),
+  topic: z.string().nullable(),
+  weekday: z.string(),
+});
+
+/**
+ * WeekOut
+ */
+export const zWeekOut = z.object({
+  behind: z.int(),
+  days: z.array(zWeekDayOut),
+  days_to_exam: z.int().nullable(),
+  end: z.iso.date(),
+  exam: z.string(),
+  exam_date: z.iso.date().nullable(),
+  hours_planned: z.number(),
+  hours_target: z.number(),
+  milestones: z.array(zMilestoneOut),
+  next_item: zWeekItemOut.nullable(),
+  next_start: z.iso.date().nullable(),
+  plan_id: z.uuid(),
+  prev_start: z.iso.date().nullable(),
+  rebalance: zRebalanceOut.nullable(),
+  start: z.iso.date(),
+  today: z.iso.date(),
+  week: z.int(),
+  weeks: z.int(),
+});
+
+/**
+ * PlanWeekOut
+ *
+ * `week` is null for a student who has no plan yet (a normal state, so not an error response).
+ */
+export const zPlanWeekOut = z.object({
+  week: zWeekOut.nullable(),
 });
 
 /**
@@ -4777,6 +5066,43 @@ export const zSaveOnboardingResponse = zOnboardingOut;
  */
 export const zGetPlanResponse = zPlanOut;
 
+/**
+ * Successful Response
+ */
+export const zRevokeCalendarFeedResponse = z.void();
+
+/**
+ * Successful Response
+ */
+export const zGetCalendarFeedResponse = zCalendarFeedOut;
+
+/**
+ * Successful Response
+ */
+export const zRotateCalendarFeedResponse = zCalendarFeedCreatedOut;
+
+export const zGetPlanIcsPath = z.object({
+  token: z.string().min(20).max(128),
+});
+
+export const zCreatePlanItemsBody = zStudentItemsIn;
+
+/**
+ * Successful Response
+ */
+export const zCreatePlanItemsResponse = zStudentItemsOut;
+
+export const zPatchPlanItemBody = zItemPatchIn;
+
+export const zPatchPlanItemPath = z.object({
+  item_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zPatchPlanItemResponse = zItemPatchOut;
+
 export const zSetPlanItemStatusBody = zItemStatusIn;
 
 export const zSetPlanItemStatusPath = z.object({
@@ -4804,7 +5130,61 @@ export const zPreviewPlanResponse = zPlanPreview;
 /**
  * Successful Response
  */
+export const zStartPlanRebalanceResponse = zRebalanceStartOut;
+
+export const zListPlanRebalancesQuery = z.object({
+  status: z.enum(["proposed", "accepted", "declined", "expired"]).nullish().default("proposed"),
+});
+
+/**
+ * Successful Response
+ */
+export const zListPlanRebalancesResponse = zRebalancesOut;
+
+export const zGetPlanWeekQuery = z.object({
+  start: z.iso.date().nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetPlanWeekResponse = zPlanWeekOut;
+
+/**
+ * Successful Response
+ */
 export const zGetPublicConfigResponse = zPublicConfig;
+
+/**
+ * Successful Response
+ */
+export const zGetPushKeyResponse = zPushKeyOut;
+
+/**
+ * Successful Response
+ */
+export const zListPushSubscriptionsResponse = zPushSubscriptionsOut;
+
+export const zCreatePushSubscriptionBody = zPushSubscriptionIn;
+
+/**
+ * Successful Response
+ */
+export const zCreatePushSubscriptionResponse = zPushSubscriptionOut;
+
+export const zDeletePushSubscriptionPath = z.object({
+  subscription_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zDeletePushSubscriptionResponse = z.void();
+
+/**
+ * Successful Response
+ */
+export const zSendTestPushResponse = zPushTestOut;
 
 export const zGetQbankPoolQuery = z.object({
   exam: z
