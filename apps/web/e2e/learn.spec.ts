@@ -337,6 +337,37 @@ test.describe("reader", () => {
     // contrast is measured on the settled sheet, not mid fade-in
     await sheet.evaluate((el) => Promise.all(el.getAnimations().map((a) => a.finished)).then(() => undefined));
     await expectNoAxeViolations(page);
+    // One scroll container: the modal <dialog> itself never scrolls (its UA overflow:auto showed a second bar
+    // outside the rounded corner on iPad Safari); the list scroller is the only one and sits inside its box.
+    const scroll = await sheet.evaluate((dlg) => {
+      const box = dlg.getBoundingClientRect();
+      const scrollers = [dlg, ...dlg.querySelectorAll<HTMLElement>("*")].filter((el) => {
+        const oy = getComputedStyle(el).overflowY;
+        return (oy === "auto" || oy === "scroll") && el.scrollHeight > el.clientHeight;
+      });
+      const bars = [dlg, ...dlg.querySelectorAll<HTMLElement>("*")].filter((el) => {
+        const oy = getComputedStyle(el).overflowY;
+        return oy === "auto" || oy === "scroll";
+      });
+      const list = bars.find((el) => el !== dlg);
+      const r = list?.getBoundingClientRect();
+      return {
+        dialogOverflowY: getComputedStyle(dlg).overflowY,
+        dialogScrollable: dlg.scrollHeight > dlg.clientHeight,
+        dialogScrollHeight: dlg.scrollHeight,
+        dialogClientHeight: dlg.clientHeight,
+        scrollersOver: scrollers.filter((el) => el !== dlg).length,
+        barCount: bars.length,
+        inside: r ? r.left >= box.left && r.right <= box.right && r.top >= box.top && r.bottom <= box.bottom : false,
+      };
+    });
+    expect(scroll.dialogScrollHeight, "the dialog does not overflow itself").toBeLessThanOrEqual(
+      scroll.dialogClientHeight,
+    );
+    expect(scroll.dialogScrollable).toBe(false);
+    expect(scroll.dialogOverflowY, "the dialog clips instead of scrolling").toBe("hidden");
+    expect(scroll.barCount, "exactly one scroll container (the list) inside the dialog").toBe(1);
+    expect(scroll.inside, "the list scroller stays inside the dialog's box").toBe(true);
     await snap(page, info, consoleErrors, "reader-contents");
     await sheet.getByRole("button", { name: /^03/ }).click();
     await expect(page).toHaveURL(/ch01-s03$/);

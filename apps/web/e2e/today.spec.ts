@@ -155,6 +155,35 @@ test.describe("onboarding", () => {
       await settle(page);
       await expectNoHorizontalOverflow(page);
       await expectNoAxeViolations(page);
+      // iOS Safari sizes input[type=date] from its content, ignoring w-full: the exam date and school fields must
+      // never overlap, and neither may spill out of its card.
+      const dateBox = await date.boundingBox();
+      const schoolBox = await page.getByLabel("Medical school").boundingBox();
+      const card = await date.evaluate((el) => {
+        const r = (el.closest("form") ?? document.body).getBoundingClientRect();
+        return { left: r.left, right: r.right, top: r.top, bottom: r.bottom };
+      });
+      expect(dateBox && schoolBox, "both fields are laid out").toBeTruthy();
+      const a = dateBox as NonNullable<typeof dateBox>;
+      const b = schoolBox as NonNullable<typeof schoolBox>;
+      const overlaps = a.x < b.x + b.width && b.x < a.x + a.width && a.y < b.y + b.height && b.y < a.y + a.height;
+      expect(overlaps, "date and school fields do not intersect").toBe(false);
+      for (const f of [a, b]) {
+        expect(f.x, "inside the card, left").toBeGreaterThanOrEqual(card.left - 0.5);
+        expect(f.x + f.width, "inside the card, right").toBeLessThanOrEqual(card.right + 0.5);
+      }
+      // Stress: a date input whose intrinsic width is larger than its column must not stretch the tracks.
+      const tracks = () =>
+        date.evaluate((el) => getComputedStyle(el.closest("label")?.parentElement as HTMLElement).gridTemplateColumns);
+      const before = await tracks();
+      await date.evaluate((el) => {
+        const wide = document.createElement("span");
+        wide.dataset.stress = "1";
+        wide.style.cssText = "display:block;width:900px;height:1px";
+        el.closest("label")?.append(wide);
+      });
+      expect(await tracks(), "grid tracks keep their share however wide a field wants to be").toBe(before);
+      await page.locator("[data-stress]").evaluate((el) => el.remove());
       await snap(page, info, guard, "welcome-filled", true);
 
       await expect(page.getByText("Next: a 40-question diagnostic")).toBeVisible();

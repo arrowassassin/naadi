@@ -52,14 +52,14 @@ export function Sheet({
         if (e.target === e.currentTarget) onClose(); // backdrop tap
       }}
       className={cx(
-        "mx-auto mt-auto mb-0 max-h-[85dvh] w-full max-w-none rounded-t-sheet-sm border border-line bg-surface-1 p-0 text-text",
+        "mx-auto mt-auto mb-0 max-h-[85dvh] w-full max-w-none overflow-hidden open:flex open:flex-col rounded-t-sheet-sm border border-line bg-surface-1 p-0 text-text",
         "tablet:m-auto tablet:max-h-[80dvh] tablet:w-[min(36rem,92vw)] tablet:rounded-sheet",
         "backdrop:bg-ground/80 open:animate-[naadi-sheet-in_var(--duration-sheet)_var(--ease-out)]",
         className,
       )}
     >
       {open ? (
-        <div className="flex max-h-[inherit] flex-col">
+        <div className="flex min-h-0 flex-1 flex-col">
           <div className="flex items-center gap-3 border-line-soft border-b px-5 py-4">
             <h2 id={titleId} className="m-0 flex-1 font-bold font-display text-[1.375rem] tracking-[-0.02em]">
               {title}
@@ -73,7 +73,9 @@ export function Sheet({
               <X aria-hidden="true" size={18} />
             </button>
           </div>
-          <div className="min-h-0 flex-1 overflow-y-auto px-5 pt-4 pb-[max(20px,env(safe-area-inset-bottom))]">
+          {/* `relative`: the sr-only status text is absolutely positioned; with the fixed <dialog> as its containing
+              block it escaped this scroller's clipping and made the dialog itself scrollable (a second scrollbar). */}
+          <div className="relative min-h-0 flex-1 overscroll-contain overflow-y-auto px-5 pt-4 pb-[max(20px,env(safe-area-inset-bottom))]">
             {children}
           </div>
         </div>

@@ -17,6 +17,9 @@ const PILL =
   "inline-flex min-h-11 items-center gap-2 rounded-pill px-4 text-ui transition-colors duration-(--duration-control) ease-out";
 const PILL_ON = "border border-transparent bg-paper text-ground font-semibold";
 const PILL_OFF = "border border-line-control bg-transparent text-text hover:border-text-3";
+// iOS Safari gives a date input an intrinsic width that ignores w-full; without these it spills into the next column.
+const DATE_FIELD = "block min-w-0 appearance-none text-left [&::-webkit-date-and-time-value]:text-left";
+
 const FIELD =
   "min-h-14 w-full rounded-swatch border border-line-control bg-ground px-4 text-[1.0625rem] text-text placeholder:text-text-3";
 
@@ -247,8 +250,8 @@ function Form({ state }: { state: OnboardingState }) {
               ))}
             </div>
           </fieldset>
-          <div className="grid gap-5 tablet:grid-cols-2">
-            <label className="flex flex-col gap-2 text-ui text-text-2">
+          <div className="grid gap-5 tablet:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+            <label className="flex min-w-0 flex-col gap-2 text-ui text-text-2">
               {t("onboarding.date_label")}
               <input
                 type="date"
@@ -257,11 +260,11 @@ function Form({ state }: { state: OnboardingState }) {
                 max={maxDate}
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className={FIELD}
+                className={cx(FIELD, DATE_FIELD)}
                 aria-invalid={date !== "" && (!dateOk || date > maxDate) ? true : undefined}
               />
             </label>
-            <label className="flex flex-col gap-2 text-ui text-text-2">
+            <label className="flex min-w-0 flex-col gap-2 text-ui text-text-2">
               <span>
                 {t("onboarding.school_label")} <span className="text-text-3">{t("onboarding.optional")}</span>
               </span>
