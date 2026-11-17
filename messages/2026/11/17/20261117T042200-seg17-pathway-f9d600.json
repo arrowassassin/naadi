@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042200-seg17-pathway-f9d600",
+ "ts": "2026-11-17T04:22:00.007425Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg17-pathway online: Pathway, vault, costs, pathway_verify",
+ "body": "",
+ "requires_ack": false
+}

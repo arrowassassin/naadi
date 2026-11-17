@@ -1,0 +1,9 @@
+{
+ "name": "seg17-pathway",
+ "role": "implementer",
+ "segment": "S17",
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T04:22:00.006959Z",
+ "purpose": "Pathway, vault, costs, pathway_verify"
+}
