@@ -181,7 +181,7 @@ test.describe("Library", () => {
     }
   });
 
-  test("the PDF viewer keeps ink on page 2 across a reload; Ask is absent while the assistant is off", async ({
+  test("the PDF viewer keeps ink on page 2 across a reload; a lasso offers Ask about this", async ({
     browser,
     baseURL,
   }, info) => {
@@ -219,11 +219,12 @@ test.describe("Library", () => {
       await expectNoAxeViolations(page);
       await expectNoHorizontalOverflow(page);
 
-      // Lasso around the ink: the selection is made, but "Ask about this" only exists while the assistant can
-      // answer, and the assistant is off on this build.
+      // Lasso around the ink: "Ask about this" appears under the selection (the assistant is on in this build;
+      // with no assistant listening it is never rendered: library.test.tsx). Asking is the tutor suite's.
       await page.getByRole("button", { name: /^Lasso/ }).click();
       await lasso(page, "2", 0.15, 0.25, 0.75, 0.45);
-      await expect(page.locator("[data-pdf-ask]")).toHaveCount(0);
+      await expect(page.getByRole("button", { name: "Ask about this" })).toBeVisible();
+      await expect(page.locator("[data-pdf-ask]")).toHaveCount(1);
 
       // Reload at ?page=2: the viewer opens there and page 2's ink comes back from the server.
       await quiet(page);
