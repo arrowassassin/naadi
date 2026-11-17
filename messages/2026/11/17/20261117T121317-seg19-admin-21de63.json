@@ -1,0 +1,16 @@
+{
+ "id": "20261117T121317-seg19-admin-21de63",
+ "ts": "2026-11-17T12:13:17.418974Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 777cd9c into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "777cd9c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
