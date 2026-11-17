@@ -1,0 +1,16 @@
+{
+ "id": "20261117T132341-seg12b-ink-757d34",
+ "ts": "2026-11-17T13:23:41.716817Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 052e2826 into claude/naadi-shared",
+ "body": "S12b: deferred ink chunk via lazyWithFallback + offline e2e",
+ "refs": {
+  "commit": "052e2826",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
