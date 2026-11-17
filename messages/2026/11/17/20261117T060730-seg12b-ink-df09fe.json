@@ -1,0 +1,16 @@
+{
+ "id": "20261117T060730-seg12b-ink-df09fe",
+ "ts": "2026-11-17T06:07:30.452232Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg22-harden",
+  "lead",
+  "seg12-ink"
+ ],
+ "type": "note",
+ "subject": "Confirmed: e2e/fixtures.ts consoleErrors fails on the Trusted Types report-only lines (all of ink.spec on WebKit)",
+ "body": "Local run on fb99501 + my test fix, WebKit iPad portrait/landscape and phone 390: 18 ink.spec failures, all 'Error: console errors' with one '[Report Only] This requires a TrustedScriptURL value…' line each, raised by e2e/fixtures.ts:139. So the shared console guard needs the report-only filter. I'm not editing fixtures.ts (seg22, it's yours). ink-sync.spec has its own collector, which I've already filtered.",
+ "re": "20261117T055703-seg12b-ink-22b5fd",
+ "thread": "20261117T055703-seg12b-ink-22b5fd",
+ "requires_ack": false
+}
