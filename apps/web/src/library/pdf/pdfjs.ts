@@ -41,6 +41,40 @@ export function loadPdfJs(): Promise<PdfJs> {
   return loading;
 }
 
+/**
+ * pdf.js's standard fonts (for PDFs that do not embed Helvetica, Times …) and CMaps (CJK text), bundled as
+ * hashed same-origin assets: the CSP allows fonts and fetches from 'self' only.
+ */
+const BINARY_DATA: Record<string, string> = Object.fromEntries(
+  Object.entries({
+    ...import.meta.glob<string>("/node_modules/pdfjs-dist/standard_fonts/*.{pfb,ttf}", {
+      query: "?url",
+      import: "default",
+      eager: true,
+    }),
+    ...import.meta.glob<string>("/node_modules/pdfjs-dist/cmaps/*.bcmap", {
+      query: "?url",
+      import: "default",
+      eager: true,
+    }),
+  }).map(([file, url]) => [file.slice(file.lastIndexOf("/") + 1), url]),
+);
+
+/** pdf.js asks for these by name; each name maps to its bundled asset (never a CDN). */
+class BundledBinaryData {
+  async fetch({ filename }: { kind: string; filename: string }): Promise<Uint8Array> {
+    const url = BINARY_DATA[filename];
+    if (!url) throw new Error("pdf.js data file not bundled");
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`pdf.js data file: HTTP ${res.status}`);
+    return new Uint8Array(await res.arrayBuffer());
+  }
+}
+
+export function bundledDataFile(name: string): string | undefined {
+  return BINARY_DATA[name];
+}
+
 export interface OpenedPdf {
   task: PDFDocumentLoadingTask;
   /** Destroy the document and terminate its worker. */
@@ -63,6 +97,16 @@ export async function openPdf(url: string): Promise<OpenedPdf> {
     useWasm: false,
     disableWorkerRendering: true,
     enableXfa: false,
+    // Glyphs are drawn as paths: no @font-face stylesheet (refused by style-src 'self') and no system-font guess.
+    disableFontFace: true,
+    useSystemFonts: false,
+    // Standard fonts and CMaps come through BundledBinaryData on the main thread; the base URLs only tell pdf.js
+    // that they exist (the factory maps each file name to its bundled asset).
+    useWorkerFetch: false,
+    BinaryDataFactory: BundledBinaryData,
+    standardFontDataUrl: "/assets/",
+    cMapUrl: "/assets/",
+    cMapPacked: true,
     // The signed URL carries its token; no cookies are sent to Storage.
     withCredentials: false,
   });

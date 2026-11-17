@@ -138,6 +138,8 @@ export async function uploadFiles(
   );
   const jobs = reserved.tickets.map((ticket, i) => ({ ticket, checked: accepted[i] as Checked }));
   uploads.begin(jobs.map((j) => j.ticket.item_id));
+  // Show the reserved files at once, each with its "Uploading" status.
+  void refresh();
   const done: string[] = [];
   let failed = 0;
   let next = 0;

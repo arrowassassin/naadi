@@ -173,7 +173,11 @@ export function FileCard({
   const name = item.name ?? t("library.untitled");
   const failure =
     code === "failed" ? item.error : code === "upload_failed" || code === "upload_incomplete" ? code : null;
-  const pdf = item.input_kind === "pdf" && item.upload_id && code !== "vaulted" && code !== "personal";
+  // Only a file that was read (or is being placed) opens in the viewer: not a refused, failed or vaulted one.
+  const pdf =
+    item.input_kind === "pdf" &&
+    item.upload_id &&
+    (code === "ready" || code === "needs_you" || code === "placing" || code === "reading");
   const actionError = retry.error ?? undo.error;
   const KindIcon = KIND_ICON[item.input_kind ?? ""] ?? FileText;
   return (

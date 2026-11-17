@@ -206,6 +206,10 @@ test.describe("Library", () => {
       const page2 = page.locator("li[data-page='2']");
       await expect(page2.locator("canvas[data-pdf-canvas=rendered]")).toBeAttached({ timeout: 30_000 });
       await expect(page.getByLabel("Page number")).toHaveValue("2");
+      // The page really shows its text (glyphs drawn from the bundled standard fonts), and stays rendered.
+      await expect.poll(() => inkedPixels(page, "2"), { timeout: 15_000 }).toBeGreaterThan(1000);
+      await page.waitForTimeout(500);
+      await expect(page2.locator("canvas[data-pdf-canvas=rendered]")).toBeAttached();
       await page.getByRole("button", { name: "Write" }).click();
       await penStroke(page, "2", 0.2, 0.7, 0.3);
       await penStroke(page, "2", 0.25, 0.65, 0.4);
@@ -332,6 +336,18 @@ async function lasso(page: Page, n: string, x0: number, y0: number, x1: number, 
     },
     { n, x0, y0, x1, y1 },
   );
+}
+
+/** Dark pixels on page `n`'s rendered canvas (0 for a blank or cleared page). */
+async function inkedPixels(page: Page, n: string): Promise<number> {
+  return page.evaluate((n) => {
+    const c = document.querySelector(`li[data-page='${n}'] canvas[data-pdf-canvas]`) as HTMLCanvasElement | null;
+    if (!c || !c.width || !c.height) return 0;
+    const d = (c.getContext("2d") as CanvasRenderingContext2D).getImageData(0, 0, c.width, c.height).data;
+    let dark = 0;
+    for (let i = 0; i < d.length; i += 4) if ((d[i] ?? 255) < 128 && (d[i + 1] ?? 255) < 128) dark++;
+    return dark;
+  }, n);
 }
 
 /** Strokes the server holds for page `n`'s ink surface (read through the ink API as the student). */

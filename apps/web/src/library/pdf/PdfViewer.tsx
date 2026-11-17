@@ -1,10 +1,10 @@
 import type { InkEngine, InkEngineState, InkSelectionPayload, InkToolName } from "@naadi/ink";
 import type { InkColor } from "@naadi/shared";
 import { Button, cx, ErrorState, Skeleton } from "@naadi/ui";
-import { ChevronLeft, ChevronRight, MessageCircleQuestion, PenLine } from "lucide-react";
+import { ChevronLeft, ChevronRight, PenLine } from "lucide-react";
 import type { PDFDocumentProxy, PDFPageProxy, RenderTask } from "pdfjs-dist";
 import { memo, useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { askAssistant, useAssistantAvailable } from "../../assistant/ask";
+
 import { ApiError } from "../../auth/apiError";
 import { useUiText } from "../../copy/useUiText";
 import { InkCanvas } from "../../ink/InkCanvas";
@@ -13,7 +13,7 @@ import { InkSaveStatus } from "../../ink/persist/InkSaveStatus";
 import { useInkSettings } from "../../ink/persist/settings";
 import { useInkLayer } from "../../ink/persist/useInkLayer";
 import { requestErrorKey, useIngestFile } from "../api";
-import { cropRegion } from "./crop";
+import { AskAboutRegion, askAboutPdfRegion } from "./AskAboutRegion";
 import { isFetchFailure, type OpenedPdf, openPdf } from "./pdfjs";
 
 /** Canvases above this many device pixels are rendered at a lower density (iOS caps a canvas at ~16.7 MP). */
@@ -103,6 +103,7 @@ function PageCanvas({
     let task: RenderTask | null = null;
     let alive = true;
     setFailed(false);
+    setRendered(false);
     void (async () => {
       try {
         const page: PDFPageProxy = await doc.getPage(n);
@@ -154,7 +155,6 @@ function PageInk(props: PageProps & { canvasRef: React.RefObject<HTMLCanvasEleme
   const { n, uploadId, inkOn, onEngine, onState } = props;
   const t = useUiText();
   const engine = useRef<InkEngine | null>(null);
-  const ask = useAssistantAvailable();
   const [selection, setSelection] = useState<InkEngineState["selection"]>(null);
   const [asking, setAsking] = useState(false);
   const surfaceId = `${uploadId}:${n}`;
@@ -170,9 +170,7 @@ function PageInk(props: PageProps & { canvasRef: React.RefObject<HTMLCanvasEleme
       if (!canvas) return;
       setAsking(true);
       try {
-        const image = await cropRegion(canvas, payload.rect, payload.png);
-        askAssistant({ kind: "explain", context: { type: "pdf_page", id: surfaceId, image } });
-        engine.current?.clearSelection();
+        if (await askAboutPdfRegion(surfaceId, canvas, payload.rect, payload.png)) engine.current?.clearSelection();
       } finally {
         setAsking(false);
       }
@@ -202,19 +200,11 @@ function PageInk(props: PageProps & { canvasRef: React.RefObject<HTMLCanvasEleme
       >
         <PageCanvas {...props} canvasRef={props.canvasRef} />
       </InkCanvas>
-      {ask && selection && inkOn ? (
-        <div className="flex justify-end">
-          <Button
-            variant="assistant"
-            icon={<MessageCircleQuestion size={16} />}
-            disabled={asking}
-            onClick={() => void engine.current?.askAboutSelection()}
-            data-pdf-ask=""
-          >
-            {t("library.pdf.ask")}
-          </Button>
-        </div>
-      ) : null}
+      <AskAboutRegion
+        visible={Boolean(selection) && inkOn}
+        busy={asking}
+        onAsk={() => void engine.current?.askAboutSelection()}
+      />
       <div className="flex min-h-11 items-center justify-between gap-3 px-1">
         <span className="font-mono text-label-sm text-text-3">
           {t("library.pdf.page_of", { n: String(n), total: String(props.total) })}
@@ -330,6 +320,9 @@ export function PdfViewer({ uploadId, page, onPageChange }: PdfViewerProps) {
   const t = useUiText();
   const id = useId();
   const file = useIngestFile(uploadId);
+  // Read through a ref: the query object changes every render, and the page renderers must not restart with it.
+  const refetchFile = useRef(file.refetch);
+  refetchFile.current = file.refetch;
   const url = file.data?.url ?? null;
   const urlRef = useRef(url);
   urlRef.current = url;
@@ -517,16 +510,13 @@ export function PdfViewer({ uploadId, page, onPageChange }: PdfViewerProps) {
     states.current.set(n, s);
     if (n === currentRef.current) setToolbar(s);
   }, []);
-  const onRenderFailed = useCallback(
-    (e: unknown) => {
-      // A range request after the signed URL expired: renew the URL and reopen (at most every 30 s). Any other
-      // failure stays on its page, which offers a retry.
-      if (!isFetchFailure(e) || Date.now() - lastReopen.current < 30_000) return;
-      lastReopen.current = Date.now();
-      void file.refetch().then(() => setGen((g) => g + 1));
-    },
-    [file],
-  );
+  const onRenderFailed = useCallback((e: unknown) => {
+    // A range request after the signed URL expired: renew the URL and reopen (at most every 30 s). Any other
+    // failure stays on its page, which offers a retry.
+    if (!isFetchFailure(e) || Date.now() - lastReopen.current < 30_000) return;
+    lastReopen.current = Date.now();
+    void refetchFile.current().then(() => setGen((g) => g + 1));
+  }, []);
 
   const pages = useMemo(() => Array.from({ length: total }, (_, i) => i + 1), [total]);
   const engine = () => engines.current.get(currentRef.current) ?? null;

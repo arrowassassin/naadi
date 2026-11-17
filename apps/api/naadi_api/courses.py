@@ -699,6 +699,7 @@ def owned_attachments(rows: list[Row], user_id: Any, visible: set[str]) -> dict[
             out[r["section_id"]].append(r["media_id"])
     return dict(out)
 
+
 _Q_MEDIA = """
 select m.id, m.kind, m.url, m.title, m.caption, m.attribution, m.width, m.height, m.youtube_id, m.duration_s,
        m.embeddable, src.id as source_id, src.name as source_name, src.license as source_license,
@@ -758,9 +759,7 @@ async def get_chapter(
         nodes = await _rows(conn, _Q_SYSTEM_NODES, {"ids": sorted(st.all_system_ids())})
         return ch, sections, media, questions, order, (scan, st, nodes, attached)
 
-    ch, sections, media_rows, question_rows, order, (scan, st, nodes, attached) = await as_user(
-        _db(request), user, run
-    )
+    ch, sections, media_rows, question_rows, order, (scan, st, nodes, attached) = await as_user(_db(request), user, run)
 
     if scan.unknown_nodes or scan.unknown_marks or scan.truncated:
         log.warning(
