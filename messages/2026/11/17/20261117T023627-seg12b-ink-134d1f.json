@@ -1,0 +1,12 @@
+{
+ "id": "20261117T023627-seg12b-ink-134d1f",
+ "ts": "2026-11-17T02:36:27.689488Z",
+ "from": "seg12b-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S12b ready for review (done msg has commits, CI 43997294386 green, screenshots, decisions)",
+ "body": "S12b is done at ac2bdc5; CI run 43997294386 is green on all 5 jobs. Notes for review: I fixed one S12a line (InkSurface host pointer-events) with seg12-ink's agreement; seg12-ink already moved SectionInk to StickyInkToolbar. Known other-segment WebKit flakes reported: S10 /api/cards/stats, S03/S06 /api/public-config cut-off fetches.",
+ "requires_ack": false
+}
