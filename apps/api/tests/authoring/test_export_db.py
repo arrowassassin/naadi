@@ -30,7 +30,7 @@ from tests.auth.jwt_helpers import SUPABASE_URL, JwksServer, SigningKey
 from tests.conftest import fake_service, make_settings
 from tests.db.fixtures import insert_row
 from tests.db.rls import DB_MARKS, create_auth_user, require_local
-from tests.db.storage import local_service_key, require_local_storage
+from tests.db.storage import local_service_key, remove_prefix, require_local_storage
 
 pytestmark = DB_MARKS
 
@@ -139,12 +139,11 @@ def me(pg: psycopg.Connection[Any], key: SigningKey, bucket: Any) -> Iterator[St
     bucket("generated-media").upload(f"{s.id}/pic.png", b"\x89PNG-mine", {"content-type": "image/png"})
     bucket("vault").upload(f"{s.id}/passport.pdf", b"%PDF-SECRET", {"content-type": "application/pdf"})
     yield s
-    for b, paths in (
-        ("user-uploads", [f"{s.id}/notes/a.txt", f"{other.id}/theirs.txt"]),
-        ("generated-media", [f"{s.id}/pic.png"]),
-        ("vault", [f"{s.id}/passport.pdf"]),
-    ):
-        bucket(b).remove(paths)
+    # Everything both students own, including the export ZIPs the service wrote under {user}/exports/: a leftover
+    # object keeps its bucket from being dropped by the migration round trip that runs later in the db suite.
+    for b in ("user-uploads", "generated-media", "vault"):
+        for who in (s, other):
+            remove_prefix(bucket(b), str(who.id))
     pg.execute("delete from public.export_jobs where user_id = any(%s)", ([s.id, other.id],))
     pg.execute("delete from auth.users where id = any(%s)", ([s.id, other.id],))
 

@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import os
 import time
+from collections.abc import Iterable
+from typing import Any
 
 import httpx
 import jwt
@@ -46,3 +48,41 @@ def require_local_storage() -> str:
     except httpx.HTTPError as exc:
         pytest.fail(f"storage-api at {url} is not reachable: {type(exc).__name__}")
     return url
+
+
+def storage_client(url: str) -> Any:
+    """The official storage client for the local storage-api, with a minted local service key."""
+    from storage3 import SyncStorageClient
+
+    key = local_service_key()
+    return SyncStorageClient(url.rstrip("/") + "/", {"apikey": key, "Authorization": f"Bearer {key}"})
+
+
+def remove_prefix(bucket: Any, prefix: str = "") -> int:
+    """Remove every object under `prefix` (recursively) through the Storage API. Returns how many."""
+    paths: list[str] = []
+    pending = [prefix.strip("/")]
+    while pending:
+        folder = pending.pop()
+        offset = 0
+        while True:
+            page = bucket.list(folder or None, {"limit": 1000, "offset": offset})
+            for entry in page:
+                path = f"{folder}/{entry['name']}" if folder else entry["name"]
+                # storage-api lists a folder as an entry without an id
+                (paths if entry.get("id") else pending).append(path)
+            if len(page) < 1000:
+                break
+            offset += 1000
+    for i in range(0, len(paths), 500):
+        bucket.remove(paths[i : i + 500])
+    return len(paths)
+
+
+def empty_buckets(url: str, bucket_ids: Iterable[str]) -> int:
+    """Empty the given buckets through the Storage API (deleting storage rows in SQL would orphan the files).
+
+    Buckets that don't exist yet are skipped. Returns how many objects were removed."""
+    client = storage_client(url)
+    existing = {b.id for b in client.list_buckets()}
+    return sum(remove_prefix(client.from_(b)) for b in bucket_ids if b in existing)

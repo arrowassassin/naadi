@@ -125,10 +125,17 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
         {"id": w.source, "name": "t", "license": "proprietary-naadi", "allow_ai_ingest": True},
     )
     # Authored items are Naadi originals: the shared source row every run points at (the seed creates it too).
+    # Other suites insert a bare row with that id (default flags: not AI-ingestible) and leave it, so the row is
+    # set to the seed's flags here, and whatever was there before is put back afterwards.
+    before = pg.execute(
+        "select allow_copy, allow_modify, allow_commercial, allow_ai_ingest from public.sources"
+        " where id = 'naadi-original-v1'"
+    ).fetchone()
     pg.execute(
         "insert into public.sources (id, name, license, allow_copy, allow_modify, allow_commercial, allow_ai_ingest)"
         " values ('naadi-original-v1', 'Naadi original content (v1)', 'proprietary-naadi', true, true, true, true)"
-        " on conflict (id) do nothing"
+        " on conflict (id) do update set allow_copy = true, allow_modify = true, allow_commercial = true,"
+        " allow_ai_ingest = true"
     )
     for nid, kind, parent in (
         (w.system, "system", None),
@@ -146,6 +153,12 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
     pg.execute("delete from public.authoring_runs where cell->>'topic' = %s", (w.topic,))
     pg.execute("delete from public.taxonomy_nodes where id like %s or id like %s", (f"t{tag}.%", f"topic.t{tag}.%"))
     pg.execute("delete from public.sources where id = %s", (w.source,))
+    if before is not None:
+        pg.execute(
+            "update public.sources set allow_copy = %s, allow_modify = %s, allow_commercial = %s,"
+            " allow_ai_ingest = %s where id = 'naadi-original-v1'",
+            before,
+        )
     pg.execute("delete from auth.users where id = any(%s)", ([*w.users.values(), w.student],))
 
 

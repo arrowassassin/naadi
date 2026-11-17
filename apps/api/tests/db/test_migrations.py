@@ -21,6 +21,7 @@ from naadi_api.agent.migrate_all import AEGRA_TABLES
 
 from .fixtures import USER_TABLE_NAMES, seed_admin_rows, seed_shared, seed_user_rows
 from .rls import DB_MARKS, create_auth_user, require_local
+from .storage import empty_buckets, local_storage_url
 
 pytestmark = DB_MARKS
 
@@ -55,9 +56,19 @@ def _naadi_storage_policies(conn: psycopg.Connection) -> set[str]:
     return {r[0] for r in rows}
 
 
+def _empty_naadi_buckets() -> None:
+    """Earlier db tests (exports, uploads, the seed's figures) leave objects in the buckets, and a downgrade past
+    0002 drops the buckets, which the migration refuses while they hold files. Empty them first through the
+    Storage API, as an operator would (deleting storage rows in SQL would orphan the stored files)."""
+    url = local_storage_url()
+    if url is not None:  # without a published storage-api a leftover object fails with the migration's own message
+        empty_buckets(url, NAADI_BUCKETS)
+
+
 @pytest.fixture
 def local_url(migrated_url: str) -> Iterator[str]:
     require_local(migrated_url)
+    _empty_naadi_buckets()
     yield migrated_url
     # Whatever happened, leave the shared test database at head for the other tests.
     migrate.upgrade(migrated_url)
