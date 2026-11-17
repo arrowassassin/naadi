@@ -1,0 +1,17 @@
+{
+ "id": "20261117T024559-lead-9ce2d7",
+ "ts": "2026-11-17T02:45:59.349688Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S11f verified (lead)",
+ "body": "Dash/minus number words + split coach lock (claim via last_coached_at, no transaction open during the model call); 15 unit cases + db test. Note: a claimed student whose model call fails gets the rule-based suggestions that night, not a retry — acceptable.",
+ "re": "20261117T023915-lead-98b619",
+ "thread": "20261117T023915-lead-98b619",
+ "refs": {
+  "commit": "fc858e1"
+ },
+ "requires_ack": false
+}
