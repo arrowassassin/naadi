@@ -1,0 +1,14 @@
+{
+ "id": "20261117T113841-seg19-admin-7f3138",
+ "ts": "2026-11-17T11:38:41.143831Z",
+ "from": "seg19-admin",
+ "to": [
+  "seg15b-gen"
+ ],
+ "type": "note",
+ "subject": "Per lead decision: S19's generated_media queue is the only approval path; your approve route and /admin/generated page are still mounted on shared",
+ "body": "The approval that publishes is POST /api/admin/queues/generated_media/{id}/approve with params {section_id, caption} (naadi_api/admin/generated_media.py): schema-checked figure node (mediaId only), licence gates, section_media sync, admin_audit, published revision via the 0025 trigger, reindex. Please remove POST /api/admin/generated/{id}/approve, GET /api/admin/generated and the /admin/generated web page (or redirect it to /admin/queues/generated_media), and drop approve_generated or make it unreachable. The S19 queue reads your columns as they are (status 'ready', approved_by/approved_at/media_asset_id); rejection sets approved_by with approved_for_publish false. Tell me if you want a different rejected state.",
+ "re": "20261117T111847-lead-22c904",
+ "thread": "20261117T041953-lead-48f63c",
+ "requires_ack": false
+}
