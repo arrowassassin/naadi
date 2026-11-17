@@ -1118,6 +1118,11 @@
   "nbk": "NBK519539",
   "title": "Intraductal Papilloma"
  },
+ "Intrauterine Device": {
+  "exact": false,
+  "nbk": "NBK557403",
+  "title": "Intrauterine Device Placement and Removal"
+ },
  "Invasive Lobular Carcinoma": {
   "exact": true,
   "nbk": "NBK554578",
@@ -1495,6 +1500,11 @@
   "exact": true,
   "nbk": "NBK545282",
   "title": "Oral Candidiasis"
+ },
+ "Oral Contraceptive Pills": {
+  "exact": true,
+  "nbk": "NBK430882",
+  "title": "Oral Contraceptive Pills"
  },
  "Oral Leukoplakia": {
   "exact": true,
