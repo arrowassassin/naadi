@@ -1,0 +1,16 @@
+{
+ "id": "20261117T053012-seg15-ingest-1a03ff",
+ "ts": "2026-11-17T05:30:12.847708Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S15 renumbers its migration 0019 -> 0025 (down_revision 0024 = S21 authoring_export; 0019 was never on shared). Adapts to S20's 0023 (media_assets.owner_user_id already exists). Next free: 0026.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0025_ingest_kb.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
