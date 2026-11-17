@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042247-seg22-harden-0bba5b",
+ "ts": "2026-11-17T04:22:47.217243Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S22",
+ "body": "",
+ "re": "20261117T042000-lead-a28fd5",
+ "thread": "20261117T042000-lead-a28fd5",
+ "requires_ack": false
+}
