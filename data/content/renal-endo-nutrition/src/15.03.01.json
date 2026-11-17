@@ -558,9 +558,9 @@
     }
    ],
    "answer": "C",
-   "explanationHtml": "<p>She has <strong>primary hyperparathyroidism</strong> (high calcium, high PTH, normal vitamin D, urine calcium not low). Although asymptomatic, she meets criteria for surgery: calcium more than 1 mg/dL above the upper limit, and osteoporosis at the distal radius (a site PTH particularly affects). <strong>Parathyroidectomy</strong> is curative; localisation imaging (sestamibi, ultrasonography or 4D-CT) is done once surgery is planned.</p><p><strong>Takeaway:</strong> Primary hyperparathyroidism with calcium >1 mg/dL above normal, osteoporosis, eGFR <60, stones or hypercalciuria, or age <50: refer for parathyroidectomy.</p>",
+   "explanationHtml": "<p>She has <strong>primary hyperparathyroidism</strong> (high calcium, high PTH, normal vitamin D, urine calcium not low). Although asymptomatic, she meets several criteria for surgery from the 2022 international workshop: calcium more than 1 mg/dL above the upper limit, osteoporosis at the distal radius (a site PTH particularly affects) and urine calcium above 250 mg/day. <strong>Parathyroidectomy</strong> is curative; localisation imaging (sestamibi, ultrasonography or 4D-CT) is done once surgery is planned.</p><p><strong>Takeaway:</strong> refer for parathyroidectomy when primary hyperparathyroidism meets any surgical criterion: calcium more than 1 mg/dL above normal, osteoporosis or vertebral fracture, eGFR below 60, stones or hypercalciuria, or age below 50.</p>",
    "whyNot": {
-    "A": "Observation is for patients who meet no surgical criteria; she meets two.",
+    "A": "Observation is for patients who meet no surgical criteria; she meets three (calcium level, distal radius osteoporosis and urine calcium).",
     "B": "Thiazides raise serum calcium and are avoided in primary hyperparathyroidism.",
     "D": "Cinacalcet lowers calcium but does not improve bone density or cure the disease; it is for patients who cannot have surgery.",
     "E": "A bisphosphonate protects bone but leaves the hyperparathyroidism, and its calcium elevation, untreated."
@@ -621,7 +621,7 @@
     }
    ],
    "answer": "B",
-   "explanationHtml": "<p>Severe, symptomatic <strong>hypercalcemia of malignancy</strong> with volume depletion and prerenal AKI is treated with <strong>intravenous isotonic saline</strong> to restore volume and calcium excretion, <strong>calcitonin</strong> for a rapid fall over hours, and an <strong>intravenous bisphosphonate</strong> (zoledronic acid, with the dose adjusted to kidney function) for a sustained effect over days. Suppressed PTH confirms a PTH-independent cause, here osteolytic metastases (with or without PTHrP).</p><p><strong>Takeaway:</strong> Severe hypercalcemia: saline first, calcitonin for speed, a bisphosphonate (or denosumab) for durability.</p>",
+   "explanationHtml": "<p>Severe, symptomatic <strong>hypercalcemia of malignancy</strong> with volume depletion and prerenal AKI is treated with <strong>intravenous isotonic saline</strong> to restore volume and calcium excretion, <strong>calcitonin</strong> for a rapid fall over hours, and an <strong>intravenous bisphosphonate</strong> (zoledronic acid, infused over at least 15 minutes with kidney function watched closely) for a sustained effect over days. Suppressed PTH confirms a PTH-independent cause, here osteolytic metastases (with or without PTHrP).</p><p><strong>Takeaway:</strong> Severe hypercalcemia: saline first, calcitonin for speed, a bisphosphonate (or denosumab) for durability.</p>",
    "whyNot": {
     "A": "Furosemide before volume repletion worsens dehydration and kidney injury, and oral bisphosphonates act too slowly and absorb poorly.",
     "C": "Glucocorticoids treat calcitriol-mediated hypercalcemia (lymphoma, granulomas), not bone metastases from breast cancer.",
@@ -944,7 +944,7 @@
     "A": "Calcium and vitamin D alone do not adequately reduce fracture risk at this T-score.",
     "C": "Weekly alendronate is contraindicated with an esophageal stricture.",
     "D": "Risedronate is also an oral bisphosphonate with the same esophageal risk.",
-    "E": "Anabolic therapy is limited to about 2 years and is reserved for very high risk; it is not lifelong."
+    "E": "Anabolic therapy is given for a limited course and reserved for very high fracture risk, then followed by an antiresorptive; it is not a lifelong treatment."
    },
    "objective": "Choose intravenous zoledronic acid when oral bisphosphonates are contraindicated.",
    "areas": [
@@ -1004,7 +1004,7 @@
     }
    ],
    "answer": "C",
-   "explanationHtml": "<p>She has <strong>vitamin D deficiency with secondary hyperparathyroidism</strong> and low-normal calcium. A potent antiresorptive given now can cause symptomatic <strong>hypocalcemia</strong>, because bone can no longer release calcium to buffer the deficit. Replete vitamin D (cholecalciferol) and ensure adequate calcium first, then infuse. Untreated vitamin D deficiency also blunts the drug's benefit and may hide osteomalacia.</p><p><strong>Takeaway:</strong> Correct vitamin D deficiency and hypocalcemia before zoledronic acid or denosumab.</p>",
+   "explanationHtml": "<p>She has <strong>vitamin D deficiency with secondary hyperparathyroidism</strong> and mildly low calcium. A potent antiresorptive given now can cause symptomatic <strong>hypocalcemia</strong>, because bone can no longer release calcium to buffer the deficit. Replete vitamin D (cholecalciferol) and ensure adequate calcium first, then infuse. Untreated vitamin D deficiency also blunts the drug's benefit and may hide osteomalacia.</p><p><strong>Takeaway:</strong> Correct vitamin D deficiency and hypocalcemia before zoledronic acid or denosumab.</p>",
    "whyNot": {
     "A": "Infusing now risks hypocalcemia.",
     "B": "One dose of calcitriol does not correct the deficiency and can cause hypercalciuria; the store of 25-hydroxyvitamin D needs replacing.",

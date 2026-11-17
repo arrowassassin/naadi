@@ -157,7 +157,7 @@
     },
     {
      "label": "D",
-     "html": "Muscle use of glucose instead of fatty acids"
+     "html": "Muscle use of glucose instead of fatty acids for fuel"
     },
     {
      "label": "E",
@@ -540,11 +540,11 @@
     },
     {
      "label": "C",
-     "html": "Start enteral feeding by nasogastric tube now and increase over several days"
+     "html": "Start enteral feeding by nasogastric tube now, increasing over days"
     },
     {
      "label": "D",
-     "html": "Start feeding only after a small-bowel follow-through study"
+     "html": "Start feeding only after a small-bowel follow-through study is normal"
     },
     {
      "label": "E",
@@ -722,7 +722,7 @@
    "options": [
     {
      "label": "A",
-     "html": "Begin parenteral nutrition through a peripherally inserted central catheter"
+     "html": "Parenteral nutrition through a PICC"
     },
     {
      "label": "B",
@@ -802,7 +802,7 @@
     },
     {
      "label": "E",
-     "html": "Urine culture and acetaminophen, then reassess in the morning"
+     "html": "Urine culture and oral acetaminophen, then reassess her early in the morning"
     }
    ],
    "answer": "A",

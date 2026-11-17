@@ -1,0 +1,70 @@
+{
+ "area": "usmle2026.11.05.01",
+ "items": [
+  {
+   "id": "s23c-q110501-1-t01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 47-year-old man with nephrotic syndrome from membranous nephropathy (PLA2R antibody positive; serum albumin 1.9 g/dL) has sudden left flank pain and gross hematuria. Two days later he notices a new soft, painless swelling in the left side of his scrotum that feels like a bag of worms when he stands and becomes smaller when he lies down. The right side is normal. Which of the following best explains the scrotal finding?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "The left gonadal vein drains into the left renal vein"
+    },
+    {
+     "label": "B",
+     "html": "The left gonadal vein drains directly into the inferior vena cava"
+    },
+    {
+     "label": "C",
+     "html": "The left renal artery compresses the left gonadal vein"
+    },
+    {
+     "label": "D",
+     "html": "The left renal vein passes behind the abdominal aorta"
+    },
+    {
+     "label": "E",
+     "html": "The left testicular artery arises from the left renal artery"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Membranous nephropathy with heavy proteinuria and low albumin is the classic setting for <strong>renal vein thrombosis</strong>, which presents with flank pain and hematuria. The <strong>left testicular (gonadal) vein drains into the left renal vein</strong>, so a clot in the left renal vein raises pressure in the pampiniform plexus and produces a new left varicocele. The right gonadal vein enters the inferior vena cava directly, so the right side is spared.</p><p><strong>Takeaway:</strong> a new left varicocele with flank pain points to left renal vein obstruction, because the left gonadal vein drains into the left renal vein.</p>",
+   "whyNot": {
+    "B": "It is the right gonadal vein that drains directly into the inferior vena cava.",
+    "C": "Arterial compression of the gonadal vein is not a recognised mechanism; nutcracker compression involves the renal vein between the aorta and the superior mesenteric artery.",
+    "D": "The left renal vein normally passes in front of the aorta; a retroaortic course is an uncommon variant and would not explain an acute change.",
+    "E": "The testicular arteries arise from the aorta, and arterial anatomy does not explain venous congestion."
+   },
+   "objective": "Link renal vein thrombosis in nephrotic syndrome to a new left varicocele through gonadal venous drainage.",
+   "areas": [
+    "usmle2026.11.05.01",
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal vein thrombosis",
+    "varicocele"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

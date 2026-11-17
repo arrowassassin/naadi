@@ -1,0 +1,68 @@
+{
+ "area": "usmle2026.11.03.01",
+ "items": [
+  {
+   "id": "s23c-q110301-1-t01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 26-year-old woman has had 2 days of severe, poorly localised abdominal pain, constipation, vomiting and weakness in both arms. She started an oral contraceptive 3 weeks ago. Temperature is 37.1°C (98.8°F), pulse 118/min and blood pressure 158/96 mmHg. The abdomen is soft and nontender. Her urine is reddish brown and darkens further after standing in a window. Urine dipstick is negative for blood, and microscopy shows no red blood cells. Serum sodium is 128 mEq/L. Deficiency of which of the following enzymes is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Aminolevulinic acid dehydratase"
+    },
+    {
+     "label": "B",
+     "html": "Ferrochelatase"
+    },
+    {
+     "label": "C",
+     "html": "Homogentisate oxidase"
+    },
+    {
+     "label": "D",
+     "html": "Porphobilinogen deaminase"
+    },
+    {
+     "label": "E",
+     "html": "Uroporphyrinogen decarboxylase"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Attacks of abdominal pain with a benign abdomen, tachycardia, hypertension, hyponatremia and motor neuropathy, triggered by a drug that induces hepatic ALA synthase, are <strong>acute intermittent porphyria</strong>. Porphobilinogen deaminase (hydroxymethylbilane synthase) is deficient, so porphobilinogen and aminolevulinic acid accumulate; porphobilinogen oxidises to coloured porphyrins, so urine darkens on standing in light while the heme dipstick stays negative. Treat with hemin and glucose and stop the trigger.</p><p><strong>Takeaway:</strong> dark urine without heme on dipstick plus neurovisceral attacks after a new drug: think acute intermittent porphyria (porphobilinogen deaminase).</p>",
+   "whyNot": {
+    "A": "ALA dehydratase deficiency (or lead inhibition) gives a similar picture but is very rare; lead poisoning would add basophilic stippling and anemia, and porphobilinogen would not be raised.",
+    "B": "Ferrochelatase deficiency causes erythropoietic protoporphyria with painful photosensitivity, not abdominal attacks or dark urine.",
+    "C": "Homogentisate oxidase deficiency (alkaptonuria) darkens urine on standing but causes ochronosis and arthritis, not acute neurovisceral attacks.",
+    "E": "Uroporphyrinogen decarboxylase deficiency causes porphyria cutanea tarda: blistering on sun-exposed skin without abdominal attacks."
+   },
+   "objective": "Recognise acute intermittent porphyria as a cause of dark, heme-negative urine with neurovisceral attacks.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "porphyria",
+    "urine colour"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

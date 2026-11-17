@@ -8,13 +8,13 @@
 <path d="M60,280 C110,280 130,240 150,200" fill="none" stroke="#1d4ed8" stroke-width="5"/>
 <path d="M150,200 L130,165 M150,200 L175,170 M150,200 L185,210" fill="none" stroke="#1d4ed8" stroke-width="3"/>
 <ellipse cx="160" cy="190" rx="60" ry="55" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="5,4"/>
-<rect x="240" y="70" width="200" height="110" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+<rect x="236" y="70" width="228" height="110" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
 <text x="250" y="92" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a">Ureteric bud gives</text>
 <text x="250" y="112" font-family="sans-serif" font-size="12" fill="#0f172a">ureter, renal pelvis,</text>
 <text x="250" y="130" font-family="sans-serif" font-size="12" fill="#0f172a">major and minor calyces,</text>
 <text x="250" y="148" font-family="sans-serif" font-size="12" fill="#0f172a">collecting ducts</text>
 <text x="250" y="168" font-family="sans-serif" font-size="11" fill="#334155">(bud grows in on GDNF–RET signalling)</text>
-<rect x="240" y="200" width="200" height="110" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+<rect x="236" y="200" width="228" height="110" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
 <text x="250" y="222" font-family="sans-serif" font-size="13" font-weight="bold" fill="#78350f">Metanephric mesenchyme</text>
 <text x="250" y="242" font-family="sans-serif" font-size="12" fill="#0f172a">gives the nephron: Bowman</text>
 <text x="250" y="260" font-family="sans-serif" font-size="12" fill="#0f172a">capsule, proximal tubule,</text>
@@ -23,11 +23,11 @@
 <text x="590" y="28" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Ascent and horseshoe kidney</text>
 <line x1="590" y1="45" x2="590" y2="370" stroke="#b91c1c" stroke-width="8"/>
 <text x="604" y="60" font-family="sans-serif" font-size="11" fill="#7f1d1d">Aorta</text>
-<line x1="590" y1="150" x2="650" y2="185" stroke="#b91c1c" stroke-width="4"/>
-<text x="655" y="190" font-family="sans-serif" font-size="11" fill="#7f1d1d">IMA</text>
 <path d="M520,120 C495,150 500,200 525,225 Q590,250 655,225 C680,200 685,150 660,120 C645,110 630,150 630,195 Q590,215 550,195 C550,150 535,110 520,120 z" fill="#fde2e2" stroke="#334155" stroke-width="2"/>
-<text x="590" y="270" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Fused lower poles (isthmus)</text>
-<text x="590" y="286" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">catch under the IMA</text>
-<line x1="500" y1="360" x2="500" y2="300" stroke="#334155" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#s23c-f110701-arrow)"/>
-<text x="590" y="372" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">Normal kidneys rise from the pelvis</text><text x="590" y="388" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">to the lumbar region</text>
+<line x1="594" y1="168" x2="620" y2="190" stroke="#b91c1c" stroke-width="4"/>
+<text x="602" y="156" font-family="sans-serif" font-size="11" fill="#7f1d1d">IMA</text>
+<text x="578" y="268" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="end">Fused lower poles</text>
+<text x="578" y="284" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="end">(isthmus) catch under</text><text x="578" y="300" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="end">the IMA root</text>
+<line x1="470" y1="352" x2="470" y2="312" stroke="#334155" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#s23c-f110701-arrow)"/>
+<text x="578" y="372" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="end">Normal kidneys rise from the</text><text x="578" y="388" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="end">pelvis to the lumbar region</text>
 </svg>

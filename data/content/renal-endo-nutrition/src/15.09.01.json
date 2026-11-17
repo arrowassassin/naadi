@@ -438,7 +438,7 @@
     "A": "Metformin does reduce gluconeogenesis, but it does not drive ketogenesis.",
     "C": "Metformin-associated lactic acidosis would show a high lactate, not high beta-hydroxybutyrate.",
     "D": "Ketogenesis needs more hepatic fatty acid delivery and oxidation, not less.",
-    "E": "The acidosis comes from increased ketone production driven by a low insulin-to-glucagon ratio, not from failure to excrete ketones."
+    "E": "SGLT2 inhibitors do modestly reduce urinary ketone excretion, which contributes, but the main driver is increased ketone production from the low insulin-to-glucagon ratio."
    },
    "objective": "Explain the mechanism of SGLT2 inhibitor-associated euglycemic DKA.",
    "areas": [

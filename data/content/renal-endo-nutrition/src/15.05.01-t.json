@@ -1,0 +1,69 @@
+{
+ "area": "usmle2026.15.05.01",
+ "items": [
+  {
+   "id": "s23c-q150501-2-t01",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 46-year-old woman has 2 months of fatigue, nausea and loss of appetite. She had a severe sudden headache 4 months ago that resolved without evaluation. She takes no medications. Pulse is 92/min and blood pressure 104/66 mmHg without orthostatic change; she is clinically euvolemic. Skin colour is normal. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Serum sodium</td><td>125 mEq/L</td></tr><tr><td>Serum potassium</td><td>4.1 mEq/L</td></tr><tr><td>Glucose</td><td>74 mg/dL</td></tr><tr><td>Serum osmolality</td><td>262 mOsm/kg</td></tr><tr><td>Urine osmolality</td><td>460 mOsm/kg</td></tr><tr><td>Urine sodium</td><td>52 mEq/L</td></tr><tr><td>TSH</td><td>1.2 µU/mL</td></tr><tr><td>Free thyroxine (T4)</td><td>0.6 ng/dL</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin fluid restriction for SIADH"
+    },
+    {
+     "label": "B",
+     "html": "Measure 8 AM serum cortisol"
+    },
+    {
+     "label": "C",
+     "html": "Start levothyroxine"
+    },
+    {
+     "label": "D",
+     "html": "Start oral tolvaptan"
+    },
+    {
+     "label": "E",
+     "html": "Start sodium chloride tablets"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Euvolemic hyponatremia with concentrated urine and a high urine sodium looks like SIADH, but SIADH can be diagnosed only after <strong>adrenal and thyroid insufficiency are excluded</strong>. A low free T4 with an inappropriately normal TSH means central hypothyroidism, and the earlier thunderclap headache suggests pituitary apoplexy, so she may also have <strong>secondary adrenal insufficiency</strong>. Cortisol deficiency raises ADH and causes this exact picture; potassium stays normal because aldosterone is preserved. Measure morning cortisol (and treat with hydrocortisone if she is unwell or it is low) <strong>before</strong> levothyroxine, which could otherwise precipitate adrenal crisis.</p><p><strong>Takeaway:</strong> never label euvolemic hyponatremia as SIADH until cortisol (and thyroid) deficiency is excluded; in central hypothyroidism, check and replace cortisol before thyroxine.</p>",
+   "whyNot": {
+    "A": "Fluid restriction treats SIADH, but secondary adrenal insufficiency has not been excluded and would be missed.",
+    "C": "Starting thyroxine before assessing cortisol can unmask adrenal crisis by speeding cortisol metabolism.",
+    "D": "Tolvaptan is not used before a cause is found and could correct sodium too fast.",
+    "E": "Salt tablets treat SIADH-type hyponatremia and would leave the hormonal cause undiagnosed."
+   },
+   "objective": "Exclude secondary adrenal insufficiency before diagnosing SIADH, especially with central hypothyroidism.",
+   "areas": [
+    "usmle2026.15.05.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypopituitarism",
+    "hyponatremia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

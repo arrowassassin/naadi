@@ -514,7 +514,7 @@
     },
     {
      "label": "D",
-     "html": "It oxidises ferrous iron to a form that cannot cross membranes"
+     "html": "It oxidises ferrous iron to a ferric form that cannot cross cell membranes"
     },
     {
      "label": "E",
@@ -571,7 +571,7 @@
     },
     {
      "label": "B",
-     "html": "Intravenous ferric carboxymaltose today"
+     "html": "Intravenous ferric carboxymaltose infusion today"
     },
     {
      "label": "C",
@@ -840,7 +840,7 @@
     },
     {
      "label": "E",
-     "html": "Stop parenteral nutrition and start enteral feeding"
+     "html": "Stop parenteral nutrition and start full enteral feeding"
     }
    ],
    "answer": "B",
@@ -889,7 +889,7 @@
    "options": [
     {
      "label": "A",
-     "html": "Begin fluoride at her first dental visit at 3 years of age"
+     "html": "Begin fluoride only at her first dental visit at 3 years of age"
     },
     {
      "label": "B",

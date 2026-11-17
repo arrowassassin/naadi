@@ -762,7 +762,7 @@
     }
    ],
    "answer": "C",
-   "explanationHtml": "<p>Nearly all <em>RET</em> carriers develop MTC. For high-risk variants such as codon 634, <strong>prophylactic total thyroidectomy</strong> is recommended at or before about 5 years of age, with the exact timing guided by serum calcitonin, so that the thyroid is removed while disease is at most microscopic. He will also be screened for pheochromocytoma and hyperparathyroidism later in childhood.</p><p><strong>Takeaway:</strong> a child with a high-risk RET variant (codon 634) has prophylactic thyroidectomy by about age 5.</p>",
+   "explanationHtml": "<p>Carriers of high-risk <em>RET</em> variants such as codon 634 almost always develop MTC (penetrance is lower with moderate-risk variants). For high-risk variants such as codon 634, <strong>prophylactic total thyroidectomy</strong> is recommended at or before about 5 years of age, with the exact timing guided by serum calcitonin, so that the thyroid is removed while disease is at most microscopic. He will also be screened for pheochromocytoma and hyperparathyroidism later in childhood.</p><p><strong>Takeaway:</strong> a child with a high-risk RET variant (codon 634) has prophylactic thyroidectomy by about age 5.</p>",
    "whyNot": {
     "A": "By the time a nodule appears, MTC may already have spread to lymph nodes.",
     "B": "C cells do not take up iodine, so ablation would not prevent MTC.",

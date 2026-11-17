@@ -5,7 +5,7 @@
    "id": "s23c-s160701-1-1",
    "exam": "step1",
    "heading": "Body water, osmolality and the sodium disorders",
-   "html": "<h3>Where the water is</h3><p>Total body water is <span class=\"hy\">roughly 60% of body weight</span> in a young adult man and less (about 50%) in women and older adults, because fat holds little water. About two thirds is intracellular and one third extracellular; of the extracellular fluid, about three quarters is interstitial and one quarter is plasma. Water crosses cell membranes freely, so every compartment has the same osmolality. Sodium is held outside cells by the Na⁺/K⁺-ATPase, so the amount of sodium sets the <strong>size of the extracellular fluid</strong>, while the serum sodium <em>concentration</em> reflects the balance of <strong>water</strong>.</p><table><tr><th>Fluid given</th><th>Where it ends up</th><th>Effect on cells</th></tr><tr><td>Isotonic saline or balanced crystalloid</td><td>Extracellular fluid only (about a quarter stays in plasma)</td><td>No change in cell volume</td></tr><tr><td>5% dextrose in water</td><td>Glucose is metabolised; the free water spreads over all compartments (about two thirds into cells)</td><td>Cells swell slightly</td></tr><tr><td>Hypertonic (3%) saline</td><td>Extracellular fluid, plus water drawn out of cells</td><td>Cells shrink</td></tr></table><h3>Osmolality and tonicity</h3><p>Calculated serum osmolality ≈ 2 × sodium + glucose/18 + BUN/2.8 (glucose and BUN in mg/dL). The <strong>osmolal gap</strong> (measured minus calculated) is normally <span class=\"hy\">below about 10 mOsm/kg</span>; a larger gap means an unmeasured osmole such as ethanol, methanol, ethylene glycol, isopropanol or mannitol. Urea crosses cell membranes, so it raises osmolality without moving water (an <em>ineffective</em> osmole); glucose (without insulin), sodium and mannitol are <em>effective</em> osmoles that set tonicity and shift water.</p><h3>Defending water balance</h3><p>A rise in plasma osmolality of only 1–2% stimulates hypothalamic osmoreceptors, which release ADH (arginine vasopressin) and trigger thirst. ADH inserts aquaporin-2 into collecting-duct cells through V2 receptors and cAMP. A large fall in effective circulating volume (about 10% or more) also releases ADH, and this baroreceptor signal can override low osmolality, which is why hypovolemia, heart failure and cirrhosis cause hyponatremia. <strong>Volume depletion</strong> (loss of salt and water from the extracellular fluid) causes orthostasis and tachycardia; <strong>dehydration</strong> in the strict sense is loss of water, which raises the serum sodium.</p><h3>Hyponatremia</h3><p>Almost all true (hypotonic) hyponatremia means the kidney cannot excrete enough free water, usually because ADH is present.</p><ul><li><strong>Hypovolemic</strong>: vomiting, diarrhea, diuretics. Thiazides are a classic cause because they <span class=\"hy\">block dilution in the distal convoluted tubule</span> while leaving the concentrating mechanism intact; older women with low body weight are most at risk.</li><li><strong>Hypervolemic</strong>: heart failure, cirrhosis, nephrotic syndrome: low effective arterial volume drives ADH and sodium retention.</li><li><strong>Euvolemic</strong>: SIADH (drugs, lung and brain disease, pain, nausea, small cell carcinoma); <strong>glucocorticoid deficiency</strong> (cortisol normally <span class=\"hy\">restrains ADH release</span>, so secondary adrenal insufficiency causes hyponatremia without hyperkalemia); severe hypothyroidism.</li><li><strong>ADH appropriately suppressed</strong> (urine osmolality below about 100 mOsm/kg): <em>primary polydipsia</em> overwhelms a normal capacity of more than 10 L/day, and <em>low solute intake</em> (heavy beer drinking with little food, a tea-and-toast diet) limits free water excretion, because the kidney needs solute to carry water out: at a minimum urine osmolality of about 50 mOsm/kg, 250 mOsm of daily solute allows only about 5 L of urine.</li></ul><p><strong>Not hypotonic</strong>: <em>pseudohyponatremia</em> is a laboratory artifact of indirect ion-selective electrodes when lipids or paraproteins occupy plasma volume; measured osmolality is normal and a direct electrode (blood gas analyser) gives a normal sodium. <em>Hypertonic</em> hyponatremia follows severe hyperglycemia or mannitol, which pull water out of cells; serum sodium falls by about 1.6–2.4 mEq/L for every 100 mg/dL rise in glucose.</p><h3>The brain and the rate of change</h3><p>When serum osmolality falls, water enters brain cells and causes cerebral edema (headache, vomiting, confusion, seizures, coma). Over about 48 hours, brain cells adapt by exporting potassium and organic osmolytes (such as myo-inositol, taurine and glutamine). After this adaptation, rapid correction shrinks cells that cannot re-accumulate osmolytes quickly, damaging oligodendrocytes and myelin: <strong>osmotic demyelination syndrome</strong>, with dysarthria, dysphagia, quadriparesis or a locked-in state appearing 2–6 days after the correction. Alcohol use disorder, malnutrition, hypokalemia, liver disease and a starting sodium of 105 mEq/L or less raise the risk.</p><h3>Hypernatremia</h3><p>Hypernatremia is a water deficit relative to sodium. Because thirst is so powerful, it occurs mainly in people who cannot drink or ask for water: infants, older adults with dementia or delirium, intubated patients. Causes are water loss (insensible losses, osmotic diuresis from glucose or urea, diabetes insipidus, diarrhea) or, rarely, sodium gain (hypertonic saline or bicarbonate, salt ingestion). Brain cells shrink, and the brain then gains osmolytes, so overly fast correction of chronic hypernatremia causes cerebral edema.</p><div class=\"trap\"><p><strong>Exam trap:</strong> the serum sodium concentration says nothing about total body sodium. A patient with heart failure has too much sodium and still more water; a patient with diarrhea has too little of both. Judge volume from the examination, not the sodium.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Sodium tells you about water; volume tells you about sodium.</em>\"</p></div>[[figure:s23c-fig160701-1]]",
+   "html": "<h3>Where the water is</h3><p>Total body water is <span class=\"hy\">roughly 60% of body weight</span> in a young adult man and less (about 50%) in women and older adults, because fat holds little water. About two thirds is intracellular and one third extracellular; of the extracellular fluid, about three quarters is interstitial and one quarter is plasma. Water crosses cell membranes freely, so every compartment has the same osmolality. Sodium is held outside cells by the Na⁺/K⁺-ATPase, so the amount of sodium sets the <strong>size of the extracellular fluid</strong>, while the serum sodium <em>concentration</em> reflects the balance of <strong>water</strong>.</p><table><tr><th>Fluid given</th><th>Where it ends up</th><th>Effect on cells</th></tr><tr><td>Isotonic saline or balanced crystalloid</td><td>Extracellular fluid only (about a quarter stays in plasma)</td><td>No change in cell volume</td></tr><tr><td>5% dextrose in water</td><td>Glucose is metabolised; the free water spreads over all compartments (about two thirds into cells)</td><td>Cells swell slightly</td></tr><tr><td>Hypertonic (3%) saline</td><td>Extracellular fluid, plus water drawn out of cells</td><td>Cells shrink</td></tr></table><h3>Osmolality and tonicity</h3><p>Calculated serum osmolality ≈ 2 × sodium + glucose/18 + BUN/2.8 (glucose and BUN in mg/dL). The <strong>osmolal gap</strong> (measured minus calculated) is normally <span class=\"hy\">below about 10 mOsm/kg</span>; a larger gap means an unmeasured osmole such as ethanol, methanol, ethylene glycol, isopropanol or mannitol. Urea crosses cell membranes, so it raises osmolality without moving water (an <em>ineffective</em> osmole); glucose (without insulin), sodium and mannitol are <em>effective</em> osmoles that set tonicity and shift water.</p><h3>Defending water balance</h3><p>A rise in plasma osmolality of only 1–2% stimulates hypothalamic osmoreceptors, which release ADH (arginine vasopressin) and trigger thirst. ADH inserts aquaporin-2 into collecting-duct cells through V2 receptors and cAMP. A large fall in effective circulating volume (about 10% or more) also releases ADH, and this baroreceptor signal can override low osmolality, which is why hypovolemia, heart failure and cirrhosis cause hyponatremia. <strong>Volume depletion</strong> (loss of salt and water from the extracellular fluid) causes orthostasis and tachycardia; <strong>dehydration</strong> in the strict sense is loss of water, which raises the serum sodium.</p><h3>Hyponatremia</h3><p>Almost all true (hypotonic) hyponatremia means the kidney cannot excrete enough free water, usually because ADH is present.</p><ul><li><strong>Hypovolemic</strong>: vomiting, diarrhea, diuretics. Thiazides are a classic cause because they <span class=\"hy\">block dilution in the distal convoluted tubule</span> while leaving the concentrating mechanism intact; older women with low body weight are most at risk.</li><li><strong>Hypervolemic</strong>: heart failure, cirrhosis, nephrotic syndrome: low effective arterial volume drives ADH and sodium retention.</li><li><strong>Euvolemic</strong>: SIADH (drugs, lung and brain disease, pain, nausea, small cell carcinoma); <strong>glucocorticoid deficiency</strong> (cortisol normally <span class=\"hy\">restrains ADH release</span>, so secondary adrenal insufficiency causes hyponatremia without hyperkalemia); severe hypothyroidism.</li><li><strong>ADH appropriately suppressed</strong> (urine osmolality below about 100 mOsm/kg): <em>primary polydipsia</em> overwhelms a normal capacity of more than 10 L/day, and <em>low solute intake</em> (heavy beer drinking with little food, a tea-and-toast diet) limits free water excretion, because the kidney needs solute to carry water out: at a minimum urine osmolality of about 50 mOsm/kg, 250 mOsm of daily solute allows only about 5 L of urine.</li></ul><p><strong>Not hypotonic</strong>: <em>pseudohyponatremia</em> is a laboratory artifact of indirect ion-selective electrodes when lipids or paraproteins occupy plasma volume; measured osmolality is normal and a direct electrode (blood gas analyser) gives a normal sodium. <em>Hypertonic</em> hyponatremia follows severe hyperglycemia or mannitol, which pull water out of cells; serum sodium falls by about 1.6–2.4 mEq/L for every 100 mg/dL rise in glucose.</p><h3>The brain and the rate of change</h3><p>When serum osmolality falls, water enters brain cells and causes cerebral edema (headache, vomiting, confusion, seizures, coma). Over about 48 hours, brain cells adapt by exporting potassium and organic osmolytes (such as myo-inositol, taurine and glutamine). After this adaptation, rapid correction shrinks cells that cannot re-accumulate osmolytes quickly, damaging oligodendrocytes and myelin: <strong>osmotic demyelination syndrome</strong>, with dysarthria, dysphagia, quadriparesis or a locked-in state appearing 2–6 days after the correction. Alcohol use disorder, malnutrition, hypokalemia, liver disease and a starting sodium of 105 mEq/L or less raise the risk.</p><h3>Hypernatremia</h3><p>Hypernatremia is a water deficit relative to sodium. Because thirst is so powerful, it occurs mainly in people who cannot drink or ask for water: infants, older adults with dementia or delirium, intubated patients. Causes are water loss (insensible losses, osmotic diuresis from glucose or urea, diabetes insipidus, diarrhea) or, rarely, sodium gain (hypertonic saline or bicarbonate, salt ingestion). Brain cells shrink, and the brain then gains osmolytes, so overly fast correction of chronic hypernatremia causes cerebral edema.</p><div class=\"trap\"><p><strong>Exam trap:</strong> the serum sodium concentration says nothing about total body sodium. A patient with heart failure has too much sodium and still more water; a patient with diarrhea has too little of both. Judge volume from the examination, not the sodium.</p></div><div class=\"pearl\"><p><strong>Key principle:</strong> the serum sodium concentration tracks water balance, while extracellular volume, judged at the bedside, tracks total body sodium. Read them separately.</p></div>[[figure:s23c-fig160701-1]]",
    "figureIds": [
     "s23c-fig160701-1"
    ],
@@ -178,23 +178,23 @@
    "options": [
     {
      "label": "A",
-     "html": "Extracellular volume up; intracellular volume unchanged; serum osmolality unchanged"
+     "html": "Extracellular volume up; intracellular volume unchanged; osmolality unchanged"
     },
     {
      "label": "B",
-     "html": "Extracellular volume up; intracellular volume down; serum osmolality up"
+     "html": "Extracellular volume up; intracellular volume down; osmolality up"
     },
     {
      "label": "C",
-     "html": "Extracellular volume up; intracellular volume up; serum osmolality down"
+     "html": "Extracellular volume up; intracellular volume up; osmolality down"
     },
     {
      "label": "D",
-     "html": "Extracellular volume unchanged; intracellular volume up; serum osmolality down"
+     "html": "Extracellular volume unchanged; intracellular volume up; osmolality down"
     },
     {
      "label": "E",
-     "html": "Extracellular and intracellular volumes up equally; serum osmolality unchanged"
+     "html": "Extracellular and intracellular volumes both up equally; osmolality unchanged"
     }
    ],
    "answer": "A",
@@ -240,11 +240,11 @@
    "options": [
     {
      "label": "A",
-     "html": "Water moving out of cells into the extracellular fluid"
+     "html": "Water moving out of cells into the extracellular fluid space"
     },
     {
      "label": "B",
-     "html": "Displacement of plasma water by the excess protein in a diluted sample"
+     "html": "Excess protein displacing plasma water in a diluted sample"
     },
     {
      "label": "C",
@@ -504,7 +504,7 @@
     },
     {
      "label": "C",
-     "html": "Inhibition of the NKCC2 cotransporter in the thick ascending limb"
+     "html": "Inhibition of the NKCC2 cotransporter in the medullary thick ascending limb"
     },
     {
      "label": "D",
@@ -564,7 +564,7 @@
     },
     {
      "label": "B",
-     "html": "Increased renal phosphate excretion caused by parathyroid hormone"
+     "html": "Increased renal phosphate excretion driven by a rise in parathyroid hormone secretion"
     },
     {
      "label": "C",
@@ -758,7 +758,7 @@
    "options": [
     {
      "label": "A",
-     "html": "Give intravenous calcium gluconate"
+     "html": "Give intravenous calcium gluconate over 10 minutes"
     },
     {
      "label": "B",
@@ -766,7 +766,7 @@
     },
     {
      "label": "C",
-     "html": "Measure potassium on a heparinised plasma or whole-blood sample"
+     "html": "Recheck potassium on a heparinised sample"
     },
     {
      "label": "D",
@@ -892,11 +892,11 @@
     },
     {
      "label": "C",
-     "html": "5% dextrose in water, aiming to lower the sodium by about 10 mEq/L over 24 hours"
+     "html": "5% dextrose in water, lowering the sodium by about 10 mEq/L a day"
     },
     {
      "label": "D",
-     "html": "5% dextrose in water, aiming to normalise the sodium within 6 hours"
+     "html": "5% dextrose in water, aiming to bring the sodium to normal within 6 hours"
     },
     {
      "label": "E",

@@ -1,0 +1,133 @@
+{
+ "area": "usmle2026.15.01.01",
+ "items": [
+  {
+   "id": "s23c-q150101-1-t01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old man with hereditary spherocytosis and an intact spleen has type 2 diabetes diagnosed from fasting plasma glucose of 168 mg/dL and, on another day, 181 mg/dL. Home fingerstick glucose readings over the past 3 months have averaged about 190 mg/dL. His hemoglobin A1c is 5.4%. Hemoglobin is 11.8 g/dL, reticulocytes 9% and MCV 86 fL. Which of the following best explains the hemoglobin A1c result?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Glycation is blocked by spectrin deficiency in the red cell membrane"
+    },
+    {
+     "label": "B",
+     "html": "Red cells are exposed to glucose for a shorter time before removal"
+    },
+    {
+     "label": "C",
+     "html": "Red cells contain mostly fetal hemoglobin, which is not measured"
+    },
+    {
+     "label": "D",
+     "html": "Splenic macrophages preferentially remove glycated red cells"
+    },
+    {
+     "label": "E",
+     "html": "The assay detects a hemoglobin variant as nonglycated hemoglobin"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Hemoglobin A1c reflects nonenzymatic glycation that accumulates over the red cell's life (normally about 120 days). With ongoing hemolysis (high reticulocyte count), red cells are much younger on average, so they have had <strong>less time to be glycated</strong>, and A1c is falsely low for the true glucose. In such patients glycemia is followed with fructosamine, home glucose readings or continuous glucose monitoring.</p><p><strong>Takeaway:</strong> anything that shortens red cell survival (hemolysis, recent bleeding, transfusion) makes hemoglobin A1c falsely low.</p>",
+   "whyNot": {
+    "A": "Spectrin deficiency changes membrane shape, not the glycation of hemoglobin inside the cell.",
+    "C": "Hereditary spherocytosis does not raise fetal hemoglobin.",
+    "D": "The spleen removes spherocytes because of their shape and rigidity, not because they are glycated.",
+    "E": "Hemoglobin variants can interfere with some assays, but spherocytosis is a membrane disorder with normal hemoglobin A."
+   },
+   "objective": "Explain falsely low hemoglobin A1c from shortened red cell survival in hemolysis.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "biochemistry",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hemoglobin A1c",
+    "hemolysis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-t01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 31-year-old woman with type 1 diabetes for 15 years and Hashimoto thyroiditis on a stable levothyroxine dose has had four episodes of hypoglycemia below 55 mg/dL in the past month despite lowering her insulin doses by about 25%. She has lost 3 kg and feels tired and lightheaded on standing. She has not changed her diet or activity. Blood pressure is 98/60 mmHg supine and 84/54 mmHg standing. Her skin is darker than usual, including the palmar creases. Serum sodium is 131 mEq/L, potassium 5.4 mEq/L, glucose 82 mg/dL and creatinine 0.8 mg/dL. TSH is 2.1 µU/mL. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Check tissue transglutaminase IgA antibodies"
+    },
+    {
+     "label": "B",
+     "html": "Lower the basal insulin dose by a further 25%"
+    },
+    {
+     "label": "C",
+     "html": "Measure 8 AM cortisol and plasma ACTH"
+    },
+    {
+     "label": "D",
+     "html": "Raise the levothyroxine dose"
+    },
+    {
+     "label": "E",
+     "html": "Start a continuous glucose monitor and review in 3 months"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Falling insulin needs with recurrent hypoglycemia can come from several causes in type 1 diabetes, but this patient also has orthostatic hypotension, hyponatremia, hyperkalemia and new hyperpigmentation. Together these point to <strong>primary adrenal insufficiency</strong>, which clusters with type 1 diabetes and autoimmune thyroid disease (autoimmune polyglandular syndrome type 2). Cortisol deficiency lowers gluconeogenesis and raises insulin sensitivity. The next step is <strong>morning cortisol and ACTH</strong> (with a cosyntropin test as needed), and glucocorticoid should not be delayed if she becomes unstable.</p><p><strong>Takeaway:</strong> type 1 diabetes with unexplained hypoglycemia plus hyperkalemia, hyponatremia and pigmentation: test for Addison disease.</p>",
+   "whyNot": {
+    "A": "Celiac disease also lowers insulin needs and is worth testing, but it does not explain hyperkalemia, hyponatremia, postural hypotension and pigmentation.",
+    "B": "Cutting insulin further treats the symptom while missing a dangerous cause and risks DKA.",
+    "D": "Her TSH is normal, so the thyroid dose is right; giving more thyroid hormone could precipitate adrenal crisis.",
+    "E": "Better monitoring is useful, but delaying diagnosis of adrenal insufficiency risks a crisis."
+   },
+   "objective": "Recognise primary adrenal insufficiency as a cause of falling insulin needs in type 1 diabetes.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "autoimmune polyglandular syndrome",
+    "hypoglycemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

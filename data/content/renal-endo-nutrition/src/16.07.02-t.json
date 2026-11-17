@@ -1,0 +1,68 @@
+{
+ "area": "usmle2026.16.07.02",
+ "items": [
+  {
+   "id": "s23c-q160702-1-t01",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 38-year-old woman has vomited repeatedly for 6 days from gastric outlet obstruction. She is lightheaded on standing. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>133 mEq/L</td></tr><tr><td>Potassium</td><td>2.7 mEq/L</td></tr><tr><td>Chloride</td><td>80 mEq/L</td></tr><tr><td>Bicarbonate</td><td>38 mEq/L</td></tr><tr><td>pH</td><td>7.52</td></tr><tr><td>PaCO2</td><td>48 mmHg</td></tr><tr><td>Urine pH</td><td>5.5</td></tr><tr><td>Urine chloride</td><td>8 mEq/L</td></tr></table><p>Which of the following best explains why her urine is acidic despite systemic alkalemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bicarbonate loss in the stool"
+    },
+    {
+     "label": "B",
+     "html": "Chloride depletion stimulating proximal bicarbonate secretion"
+    },
+    {
+     "label": "C",
+     "html": "Hypokalemia suppressing distal hydrogen ion secretion"
+    },
+    {
+     "label": "D",
+     "html": "Respiratory compensation acidifying the tubular fluid"
+    },
+    {
+     "label": "E",
+     "html": "Volume and chloride depletion driving distal H⁺ secretion"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Vomiting removes HCl and generates the alkalosis; the kidney maintains it. Volume depletion activates renin-angiotensin-aldosterone, and <strong>chloride depletion</strong> means sodium cannot be reabsorbed with chloride. The kidney therefore <strong>reabsorbs sodium distally in exchange for hydrogen and potassium ions</strong> (aldosterone stimulates the α-intercalated H⁺-ATPase and principal-cell ENaC). Hypokalemia adds to H⁺ secretion and ammoniagenesis. The result is <strong>paradoxical aciduria</strong>, which persists until saline and potassium chloride are given.</p><p><strong>Takeaway:</strong> in chloride-responsive metabolic alkalosis, volume and chloride depletion make the distal nephron secrete H⁺, so urine is paradoxically acidic until saline and KCl are given.</p>",
+   "whyNot": {
+    "A": "Stool bicarbonate loss causes a normal anion gap metabolic acidosis, the opposite disorder.",
+    "B": "Chloride depletion impairs bicarbonate secretion by β-intercalated cells (pendrin), which is part of why the alkalosis is maintained; it does not acidify urine.",
+    "C": "Volume depletion raises aldosterone; hypokalemia slightly lowers aldosterone but increases H⁺ secretion and ammonium production.",
+    "D": "Respiratory compensation raises PaCO₂ but the blood remains alkalemic; it does not explain an acidic urine."
+   },
+   "objective": "Explain paradoxical aciduria in vomiting-induced metabolic alkalosis.",
+   "areas": [
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "metabolic alkalosis",
+    "paradoxical aciduria"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

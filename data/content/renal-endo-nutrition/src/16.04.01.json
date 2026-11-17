@@ -231,7 +231,7 @@
     },
     {
      "label": "B",
-     "html": "Generalised peeling of the skin"
+     "html": "Generalised peeling of the skin of the legs"
     },
     {
      "label": "C",
@@ -482,7 +482,7 @@
    "options": [
     {
      "label": "A",
-     "html": "Preferential loss and atrophy of type II (fast-twitch) fibers"
+     "html": "Selective atrophy of type II (fast-twitch) fibers"
     },
     {
      "label": "B",
@@ -559,7 +559,7 @@
     },
     {
      "label": "D",
-     "html": "Start F-75 starter formula in small frequent feeds plus oral antibiotics"
+     "html": "F-75 starter formula in small, frequent feeds plus antibiotics"
     },
     {
      "label": "E",
@@ -613,7 +613,7 @@
     },
     {
      "label": "B",
-     "html": "Slow oral low-sodium, higher-potassium rehydration solution"
+     "html": "Slow oral low-sodium, high-potassium rehydration solution"
     },
     {
      "label": "C",
@@ -621,7 +621,7 @@
     },
     {
      "label": "D",
-     "html": "Standard rehydration solution 100 mL/kg over 1 hour"
+     "html": "Standard rehydration solution, 100 mL/kg over the first hour"
     },
     {
      "label": "E",
@@ -741,7 +741,7 @@
     },
     {
      "label": "B",
-     "html": "Feeding history, observed feed and a 3-day food record"
+     "html": "Detailed feeding history and an observed feed"
     },
     {
      "label": "C",
@@ -749,7 +749,7 @@
     },
     {
      "label": "D",
-     "html": "Thyroid function tests and celiac serology"
+     "html": "Thyroid function tests and celiac antibody serology"
     },
     {
      "label": "E",
@@ -800,11 +800,11 @@
    "options": [
     {
      "label": "A",
-     "html": "Insert a percutaneous gastrostomy tube for overnight feeds"
+     "html": "Insert a percutaneous gastrostomy tube for overnight tube feeds"
     },
     {
      "label": "B",
-     "html": "Liberalise the diet, add oral supplements and resistance exercise"
+     "html": "Liberalise the diet, add supplements and resistance exercise"
     },
     {
      "label": "C",
@@ -876,7 +876,7 @@
     },
     {
      "label": "D",
-     "html": "Give thiamine, replace electrolytes, and start feeds at about 10–20 kcal/kg/day"
+     "html": "Thiamine, replace electrolytes, then feed at about 10–20 kcal/kg/day"
     },
     {
      "label": "E",
@@ -929,7 +929,7 @@
    "options": [
     {
      "label": "A",
-     "html": "Continue the current feeding rate and recheck labs next week"
+     "html": "Continue the current feeding rate and recheck the laboratory tests next week"
     },
     {
      "label": "B",
@@ -937,7 +937,7 @@
     },
     {
      "label": "C",
-     "html": "Give intravenous phosphate, potassium and magnesium and reduce the feeding rate"
+     "html": "IV phosphate, potassium and magnesium, and slow the feed rate"
     },
     {
      "label": "D",

@@ -559,7 +559,7 @@
     },
     {
      "label": "B",
-     "html": "Continue lifestyle changes without medication"
+     "html": "Continue lifestyle changes alone for another 6 months"
     },
     {
      "label": "C",
@@ -680,7 +680,7 @@
    "options": [
     {
      "label": "A",
-     "html": "A healthy-eating handout and review in 1 year"
+     "html": "A healthy-eating handout and a review visit in 1 year"
     },
     {
      "label": "B",

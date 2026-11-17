@@ -1,0 +1,132 @@
+{
+ "area": "usmle2026.11.04.01",
+ "items": [
+  {
+   "id": "s23c-q110401-1-t01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 68-year-old man with small cell lung cancer has a serum sodium of 124 mEq/L. During a 2-hour timed collection, urine flow is 0.5 mL/min and urine osmolality is 600 mOsm/kg H<sub>2</sub>O. Serum osmolality is 250 mOsm/kg H<sub>2</sub>O. Which of the following is his free-water clearance?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "−1.2 mL/min"
+    },
+    {
+     "label": "B",
+     "html": "−0.7 mL/min"
+    },
+    {
+     "label": "C",
+     "html": "+0.5 mL/min"
+    },
+    {
+     "label": "D",
+     "html": "+0.7 mL/min"
+    },
+    {
+     "label": "E",
+     "html": "+1.2 mL/min"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Osmolar clearance is (urine osmolality × urine flow) / plasma osmolality = (600 × 0.5) / 250 = <strong>1.2 mL/min</strong>. Free-water clearance is urine flow minus osmolar clearance = 0.5 − 1.2 = <strong>−0.7 mL/min</strong>. A negative value means the kidney is returning solute-free water to the body, as expected with ADH excess (SIADH from small cell carcinoma), which keeps lowering the sodium.</p><p><strong>Takeaway:</strong> free-water clearance = V − (Uosm × V / Posm); a negative value means the kidney is retaining free water, as in SIADH.</p>",
+   "whyNot": {
+    "A": "−1.2 mL/min subtracts the osmolar clearance from zero instead of from the urine flow.",
+    "C": "+0.5 mL/min is simply the urine flow, not free-water clearance.",
+    "D": "+0.7 mL/min has the right size but the wrong sign; concentrated urine (above plasma osmolality) always gives a negative value.",
+    "E": "+1.2 mL/min is the osmolar clearance, not free-water clearance."
+   },
+   "objective": "Calculate free-water clearance and interpret its sign in SIADH.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "free-water clearance",
+    "SIADH"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-t01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man with alcohol-associated cirrhosis and tense ascites is admitted for worsening confusion. Five days ago his serum creatinine was 1.0 mg/dL; today it is 2.6 mg/dL. Spontaneous bacterial peritonitis was excluded, and he has had no bleeding, nephrotoxins or contrast. Diuretics and lactulose-induced diarrhea were stopped, and he received intravenous albumin 1 g/kg/day for 2 days; creatinine is now 2.8 mg/dL. Blood pressure is 96/58 mmHg and oxygen saturation 97% on room air. Lungs are clear. Urine sodium is under 10 mEq/L, urinalysis is bland with no protein, and renal ultrasonography is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue albumin alone for 5 more days"
+    },
+    {
+     "label": "B",
+     "html": "Hemodialysis"
+    },
+    {
+     "label": "C",
+     "html": "Kidney biopsy"
+    },
+    {
+     "label": "D",
+     "html": "Terlipressin with albumin"
+    },
+    {
+     "label": "E",
+     "html": "Transjugular intrahepatic portosystemic shunt"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>AKI in cirrhosis with ascites that does not improve after 48 hours of diuretic withdrawal and albumin, with no shock, nephrotoxins or structural kidney disease (bland urine, normal ultrasound, low urine sodium), meets the criteria for <strong>hepatorenal syndrome-AKI</strong>. First-line therapy is a vasoconstrictor, <strong>terlipressin with albumin</strong> (norepinephrine in an ICU, or midodrine plus octreotide where neither is available). He has no hypoxia or volume overload, which would argue against terlipressin. Liver transplant evaluation should follow.</p><p><strong>Takeaway:</strong> HRS-AKI that persists after 48 hours of albumin and diuretic withdrawal: give terlipressin (or norepinephrine) with albumin.</p>",
+   "whyNot": {
+    "A": "Albumin alone has already failed the 48-hour challenge; continuing it without a vasoconstrictor rarely reverses HRS.",
+    "B": "Dialysis is a bridge for refractory HRS or standard indications (severe acidosis, hyperkalemia, overload), none of which he has yet.",
+    "C": "Biopsy is not needed when the sediment is bland and protein is absent, and coagulopathy makes it risky.",
+    "E": "TIPS is not first-line for HRS-AKI and can worsen encephalopathy, which he already has."
+   },
+   "objective": "Treat hepatorenal syndrome-AKI with terlipressin and albumin after a failed albumin challenge.",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hepatorenal syndrome",
+    "AKI"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

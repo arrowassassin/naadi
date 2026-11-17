@@ -1,0 +1,69 @@
+{
+ "area": "usmle2026.11.08.01",
+ "items": [
+  {
+   "id": "s23c-q110801-2-t01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old man with osteosarcoma received high-dose intravenous methotrexate 42 hours ago with hydration, urine alkalinisation and scheduled leucovorin. His serum creatinine has risen from 0.8 to 2.4 mg/dL, urine output has fallen, and the 42-hour methotrexate level is far above the expected value for that time. He is alert, with mild mucositis. Which of the following is the most appropriate next step, in addition to continuing leucovorin and supportive care?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add intravenous acetazolamide to raise urine pH further"
+    },
+    {
+     "label": "B",
+     "html": "Give glucarpidase"
+    },
+    {
+     "label": "C",
+     "html": "Give the next methotrexate cycle at a reduced dose"
+    },
+    {
+     "label": "D",
+     "html": "Start trimethoprim-sulfamethoxazole prophylaxis"
+    },
+    {
+     "label": "E",
+     "html": "Stop leucovorin to avoid interference with methotrexate clearance"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>High-dose methotrexate can precipitate in acidic tubular fluid and cause AKI; the AKI then delays methotrexate excretion, so levels stay toxic and marrow, mucosal and liver injury follow. With markedly raised levels and kidney dysfunction, <strong>glucarpidase</strong>, a recombinant enzyme that cleaves circulating methotrexate into inactive metabolites, rapidly lowers the level. Leucovorin is continued, but not within 2 hours before or after the glucarpidase dose, because glucarpidase also cleaves leucovorin.</p><p><strong>Takeaway:</strong> toxic methotrexate levels with AKI after high-dose therapy: give glucarpidase and keep giving leucovorin.</p>",
+   "whyNot": {
+    "A": "Acetazolamide alkalinises urine but can raise methotrexate toxicity and does not remove drug that is already circulating.",
+    "C": "Planning the next cycle ignores the current life-threatening toxicity.",
+    "D": "Trimethoprim-sulfamethoxazole is an antifolate that reduces methotrexate clearance and worsens toxicity.",
+    "E": "Leucovorin rescues normal cells and must continue; stopping it would increase toxicity."
+   },
+   "objective": "Use glucarpidase for delayed methotrexate clearance with acute kidney injury.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "methotrexate",
+    "glucarpidase"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

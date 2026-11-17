@@ -1,0 +1,70 @@
+{
+ "area": "usmle2026.16.04.02",
+ "items": [
+  {
+   "id": "s23c-q160402-1-t01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old man has 1 year of episodic facial flushing and watery diarrhea. Over the past 2 months he has developed a rough, scaly, darkly pigmented rash on the backs of his hands, forearms and the front of his neck, and his family notes forgetfulness. CT shows multiple liver masses and a small ileal mass. Urinary 5-hydroxyindoleacetic acid excretion is markedly raised. A deficiency of which of the following best explains the skin and mental changes?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cobalamin, from ileal involvement by the tumour"
+    },
+    {
+     "label": "B",
+     "html": "Niacin, from diversion of tryptophan to serotonin"
+    },
+    {
+     "label": "C",
+     "html": "Pyridoxine, from increased use in serotonin synthesis"
+    },
+    {
+     "label": "D",
+     "html": "Riboflavin, from malabsorption in chronic diarrhea"
+    },
+    {
+     "label": "E",
+     "html": "Thiamine, from tumour consumption of glucose"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Metastatic carcinoid tumour makes large amounts of <strong>serotonin from tryptophan</strong>. Normally a small fraction of dietary tryptophan is used to make niacin (as NAD); when the tumour diverts tryptophan to serotonin, <strong>niacin deficiency (pellagra)</strong> follows: photosensitive dermatitis, diarrhea and dementia. The raised 5-HIAA confirms the serotonin output; nicotinamide supplementation treats the pellagra.</p><p><strong>Takeaway:</strong> carcinoid syndrome can cause pellagra because tumour serotonin synthesis consumes tryptophan, a niacin precursor.</p>",
+   "whyNot": {
+    "A": "B12 deficiency causes megaloblastic anemia and posterior column disease, not a photosensitive pigmented dermatitis.",
+    "C": "Pyridoxine is a cofactor for decarboxylases, but deficiency gives cheilosis, neuropathy and sideroblastic anemia, and carcinoid does not classically deplete it.",
+    "D": "Riboflavin deficiency causes angular cheilitis, glossitis and corneal changes, not sun-exposed scaly pigmentation with dementia.",
+    "E": "Thiamine deficiency causes beriberi or Wernicke encephalopathy, not dermatitis."
+   },
+   "objective": "Explain pellagra in carcinoid syndrome through diversion of tryptophan to serotonin.",
+   "areas": [
+    "usmle2026.16.04.02",
+    "usmle2026.16.02.01"
+   ],
+   "disciplines": [
+    "nutrition",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "pellagra",
+    "carcinoid"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

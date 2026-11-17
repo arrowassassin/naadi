@@ -319,11 +319,11 @@
     },
     {
      "label": "C",
-     "html": "Donating electrons to stop chain reactions of lipid peroxidation in membranes"
+     "html": "Donating electrons to end chain reactions of membrane lipid peroxidation"
     },
     {
      "label": "D",
-     "html": "Forming the coenzyme for transketolase in the pentose phosphate pathway"
+     "html": "Forming the coenzyme for transketolase in the pentose phosphate pathway of red cells"
     },
     {
      "label": "E",
@@ -639,7 +639,7 @@
     },
     {
      "label": "C",
-     "html": "Mitochondrion, carboxylating propionyl-CoA"
+     "html": "Mitochondrion, carboxylating propionyl-CoA to methylmalonyl-CoA"
     },
     {
      "label": "D",
@@ -695,7 +695,7 @@
    "options": [
     {
      "label": "A",
-     "html": "Cleavage of propeptides by procollagen peptidases outside the cell"
+     "html": "Cleavage of N- and C-terminal propeptides by procollagen peptidases outside the cell"
     },
     {
      "label": "B",
@@ -777,7 +777,7 @@
     },
     {
      "label": "E",
-     "html": "It competitively blocks the cobalamin receptor in the ileum"
+     "html": "It competitively blocks the cubilin receptor for cobalamin in the ileum"
     }
    ],
    "answer": "C",
@@ -1275,11 +1275,11 @@
    "options": [
     {
      "label": "A",
-     "html": "Begin folic acid 4 mg daily now and continue through the first trimester"
+     "html": "Folic acid 4 mg daily from now through the first trimester"
     },
     {
      "label": "B",
-     "html": "Begin folic acid 0.4 mg daily once pregnancy is confirmed"
+     "html": "Folic acid 0.4 mg daily, starting once pregnancy is confirmed"
     },
     {
      "label": "C",

@@ -1,0 +1,69 @@
+{
+ "area": "usmle2026.15.06",
+ "items": [
+  {
+   "id": "s23c-q1506-2-t01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 16-year-old boy is evaluated because he has not started puberty. He has never been able to smell. Height is at the 25th percentile and his growth velocity has slowed; arm span exceeds height by 5 cm. Testes are 2 mL bilaterally, and there is no pubic hair. Serum LH and FSH are low, testosterone is in the prepubertal range, and prolactin, TSH, free T4 and morning cortisol are normal. MRI shows absent olfactory bulbs and a normal pituitary. He is distressed about looking younger than his peers. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Clomiphene citrate to raise gonadotropin release"
+    },
+    {
+     "label": "B",
+     "html": "Gradually increasing doses of testosterone"
+    },
+    {
+     "label": "C",
+     "html": "Observation and reassessment in 1 year"
+    },
+    {
+     "label": "D",
+     "html": "Recombinant growth hormone therapy"
+    },
+    {
+     "label": "E",
+     "html": "Transsphenoidal exploration of the pituitary"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Anosmia with hypogonadotropic hypogonadism, absent olfactory bulbs and an otherwise normal pituitary axis is <strong>Kallmann syndrome</strong>, a permanent GnRH deficiency. Waiting will not bring puberty. In an adolescent, puberty is induced with <strong>low-dose testosterone increased gradually</strong> over 2–3 years to reach adult levels while protecting final height; when fertility is wanted later, gonadotropins (hCG with FSH) or pulsatile GnRH are used instead.</p><p><strong>Takeaway:</strong> in a teenager with Kallmann syndrome, induce puberty with gradually increasing testosterone; save gonadotropins for fertility.</p>",
+   "whyNot": {
+    "A": "Clomiphene raises gonadotropins only when the hypothalamus can make GnRH; it fails when GnRH neurons never migrated.",
+    "C": "Observation suits constitutional delay, but anosmia and absent olfactory bulbs make this a permanent deficiency, and delay harms bone and psychosocial health.",
+    "D": "His growth slowdown reflects missing sex steroids, not growth hormone deficiency; growth hormone would not start puberty.",
+    "E": "The pituitary is normal on MRI, and the defect is hypothalamic."
+   },
+   "objective": "Induce puberty with escalating testosterone in an adolescent with Kallmann syndrome.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.14.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Kallmann syndrome",
+    "delayed puberty"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

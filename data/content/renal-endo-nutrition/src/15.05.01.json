@@ -966,7 +966,7 @@
    "id": "s23c-q150501-2-09",
    "exam": "step2ck",
    "format": "sequential",
-   "stemHtml": "<p>A 33-year-old woman has 3 months of intense thirst and urinating about 7 L/day, including several times at night. She takes no medications. She has no history of psychiatric illness. Laboratory studies show serum sodium 146 mEq/L, serum osmolality 298 mOsm/kg, glucose 88 mg/dL, calcium 9.3 mg/dL, potassium 4.1 mEq/L and urine osmolality 110 mOsm/kg. Which of the following is the most appropriate next step?</p>",
+   "stemHtml": "<p>A 33-year-old woman has 3 months of intense thirst and urinating about 7 L/day, including several times at night. She takes no medications. She has no history of psychiatric illness. Laboratory studies show serum sodium 141 mEq/L, serum osmolality 290 mOsm/kg, glucose 88 mg/dL, calcium 9.3 mg/dL, potassium 4.1 mEq/L and urine osmolality 110 mOsm/kg. Which of the following is the most appropriate next step?</p>",
    "options": [
     {
      "label": "A",
@@ -990,7 +990,7 @@
     }
    ],
    "answer": "E",
-   "explanationHtml": "<p>Dilute polyuria with a <strong>high-normal serum sodium</strong> and no osmotic or electrolyte cause suggests diabetes insipidus rather than primary polydipsia. The next step is a <strong>supervised water deprivation test</strong> (with desmopressin at the end), or stimulated copeptin where available, to separate central from nephrogenic DI and confirm the diagnosis before treatment.</p><p><strong>Takeaway:</strong> confirm and classify diabetes insipidus with a supervised water deprivation test (or stimulated copeptin) before treating.</p>",
+   "explanationHtml": "<p>Dilute polyuria (urine osmolality well below plasma) with a normal serum sodium and no osmotic or electrolyte cause could be diabetes insipidus or primary polydipsia; the history alone cannot separate them. Her plasma values do not yet meet the stopping criteria of a deprivation test, so the next step is a <strong>supervised water deprivation test</strong> (with desmopressin at the end), or stimulated copeptin where available, to confirm and classify the problem before any treatment.</p><p><strong>Takeaway:</strong> confirm and classify dilute polyuria with a supervised water deprivation test (or stimulated copeptin) before treating.</p>",
    "whyNot": {
     "A": "Thiazides are a treatment for nephrogenic DI; giving one before a diagnosis is premature.",
     "B": "Empiric desmopressin in someone who may have primary polydipsia risks dangerous hyponatremia.",

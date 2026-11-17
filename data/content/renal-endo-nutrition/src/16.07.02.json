@@ -447,7 +447,7 @@
     },
     {
      "label": "B",
-     "html": "Increased chloride delivery to the cortical collecting duct"
+     "html": "Increased chloride delivery to the cortical collecting duct cells"
     },
     {
      "label": "C",
@@ -509,11 +509,11 @@
     },
     {
      "label": "B",
-     "html": "Increasing erythropoietin release within hours"
+     "html": "Increasing renal erythropoietin release within a few hours"
     },
     {
      "label": "C",
-     "html": "Inhibiting carbonic anhydrase, causing bicarbonate loss in urine"
+     "html": "Carbonic anhydrase inhibition causing urinary bicarbonate loss"
     },
     {
      "label": "D",
@@ -521,7 +521,7 @@
     },
     {
      "label": "E",
-     "html": "Stimulating peripheral chemoreceptors directly"
+     "html": "Stimulating the carotid body peripheral chemoreceptors directly"
     }
    ],
    "answer": "C",

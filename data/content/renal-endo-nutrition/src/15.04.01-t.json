@@ -1,0 +1,69 @@
+{
+ "area": "usmle2026.15.04.01",
+ "items": [
+  {
+   "id": "s23c-q150401-1-t01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old man has blood pressure of 164/102 mmHg. His mother developed hypertension at 20 years of age, and his maternal uncle died of a hemorrhagic stroke at 31 years of age. Serum potassium is 3.9 mEq/L. Plasma aldosterone is high and plasma renin activity suppressed. After 2 days of low-dose dexamethasone, his aldosterone falls to undetectable levels and his blood pressure falls. Genetic testing confirms the expected abnormality. Which of the following best explains why dexamethasone works?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Aldosterone synthase is expressed in the zona fasciculata under ACTH control"
+    },
+    {
+     "label": "B",
+     "html": "Dexamethasone blocks the mineralocorticoid receptor in the collecting duct"
+    },
+    {
+     "label": "C",
+     "html": "Dexamethasone inhibits 11β-hydroxysteroid dehydrogenase type 2"
+    },
+    {
+     "label": "D",
+     "html": "Dexamethasone inhibits renin release from the juxtaglomerular cells"
+    },
+    {
+     "label": "E",
+     "html": "The zona glomerulosa becomes newly responsive to angiotensin II"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Early hypertension with suppressed renin and high aldosterone, a dominant family history of early hemorrhagic stroke and suppression by dexamethasone define <strong>glucocorticoid-remediable aldosteronism</strong> (familial hyperaldosteronism type I). Unequal crossing over fuses the ACTH-responsive regulatory region of 11β-hydroxylase (CYP11B1) to the coding region of aldosterone synthase (CYP11B2). <strong>Aldosterone synthase is then expressed in the zona fasciculata and driven by ACTH</strong>; suppressing ACTH with a glucocorticoid switches it off. Potassium is often normal in this disorder.</p><p><strong>Takeaway:</strong> glucocorticoid-remediable aldosteronism: a CYP11B1/CYP11B2 chimera puts aldosterone synthesis under ACTH, so glucocorticoids suppress it.</p>",
+   "whyNot": {
+    "B": "Dexamethasone has almost no mineralocorticoid-receptor activity and does not block it; that is how spironolactone works.",
+    "C": "Inhibiting 11β-HSD2 (as licorice does) would worsen mineralocorticoid excess, not reverse it.",
+    "D": "Renin is already suppressed, and dexamethasone does not act through renin.",
+    "E": "Angiotensin II responsiveness of the glomerulosa is not the driver; the abnormal enzyme is regulated by ACTH."
+   },
+   "objective": "Explain glucocorticoid-remediable aldosteronism through a chimeric aldosterone synthase gene under ACTH control.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [
+    "genetics",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "familial hyperaldosteronism",
+    "glucocorticoid-remediable aldosteronism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

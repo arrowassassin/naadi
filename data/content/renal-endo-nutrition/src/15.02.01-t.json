@@ -1,0 +1,70 @@
+{
+ "area": "usmle2026.15.02.01",
+ "items": [
+  {
+   "id": "s23c-q150201-2-t01",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 27-year-old woman at 9 weeks' gestation has had 3 weeks of persistent nausea and vomiting; she has lost 4% of her body weight. She has no history of thyroid disease and no neck pain. Pulse is 104/min and blood pressure 108/66 mmHg. There is no goiter, eye change or tremor. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>TSH</td><td>0.05 µU/mL</td></tr><tr><td>Free thyroxine (T4)</td><td>2.1 ng/dL</td></tr><tr><td>Total T3</td><td>Upper limit of normal for pregnancy</td></tr><tr><td>TSH-receptor antibodies</td><td>Negative</td></tr><tr><td>Urine ketones</td><td>2+</td></tr></table><p>Which of the following is the most appropriate management of her thyroid findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Methimazole now, then propylthiouracil later"
+    },
+    {
+     "label": "B",
+     "html": "Propylthiouracil until the time of delivery"
+    },
+    {
+     "label": "C",
+     "html": "Radioactive iodine uptake scan to find the cause"
+    },
+    {
+     "label": "D",
+     "html": "Supportive care and repeat thyroid tests later"
+    },
+    {
+     "label": "E",
+     "html": "Thyroidectomy during the second trimester"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>In the first trimester hCG stimulates the TSH receptor. With hyperemesis, very high hCG can cause <strong>gestational transient thyrotoxicosis</strong>: low TSH and modestly raised free T4, with T3 rising less, no goiter or eye signs and negative TSH-receptor antibodies. It resolves as hCG falls after about 14–18 weeks. Antithyroid drugs are not indicated; treat the vomiting and dehydration and recheck thyroid tests, using a beta blocker only briefly for troublesome symptoms.</p><p><strong>Takeaway:</strong> first-trimester hyperthyroxinemia with hyperemesis and negative TSH-receptor antibodies is hCG-driven and needs supportive care, not antithyroid drugs.</p>",
+   "whyNot": {
+    "A": "Methimazole is teratogenic in early pregnancy and is not needed for an hCG-mediated, self-limited process.",
+    "B": "Propylthiouracil is the first-trimester choice only for true Graves hyperthyroidism, which negative antibodies and no goiter make unlikely; it also carries a risk of liver injury.",
+    "C": "Radioiodine studies are contraindicated in pregnancy.",
+    "E": "Surgery is reserved for Graves disease that cannot be controlled with drugs."
+   },
+   "objective": "Recognise gestational transient thyrotoxicosis and avoid antithyroid drugs.",
+   "areas": [
+    "usmle2026.15.02.01",
+    "usmle2026.12.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "gestational thyrotoxicosis",
+    "hyperemesis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

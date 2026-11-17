@@ -1,0 +1,69 @@
+{
+ "area": "usmle2026.15.03.01",
+ "items": [
+  {
+   "id": "s23c-q150301-1-t01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old woman had a parathyroid adenoma removed 3 days ago after years of primary hyperparathyroidism with osteitis fibrosa cystica (preoperative calcium 13.1 mg/dL, alkaline phosphatase 640 U/L). She now has perioral tingling and carpopedal spasm. Serum calcium is 6.9 mg/dL, phosphorus 1.8 mg/dL, magnesium 1.2 mEq/L and alkaline phosphatase 590 U/L. Intact PTH is 70 pg/mL (N = 10–65). Which of the following best explains her hypocalcemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Accidental removal of all four parathyroid glands"
+    },
+    {
+     "label": "B",
+     "html": "Calcium-sensing receptor activation by low magnesium"
+    },
+    {
+     "label": "C",
+     "html": "Increased renal calcium loss from postoperative volume expansion"
+    },
+    {
+     "label": "D",
+     "html": "Rapid uptake of calcium and phosphate into demineralised bone"
+    },
+    {
+     "label": "E",
+     "html": "Resistance of the kidney to parathyroid hormone"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>This is <strong>hungry bone syndrome</strong>. After long-standing, high-turnover hyperparathyroid bone disease (high alkaline phosphatase, osteitis fibrosa cystica), removing the PTH stimulus lets osteoblast activity continue while resorption stops, so bone <strong>rapidly takes up calcium, phosphate and magnesium</strong>. The clue that separates it from postoperative hypoparathyroidism is the <strong>low phosphate</strong> with a PTH that is not low; in hypoparathyroidism phosphate rises. Treatment is large doses of calcium, often with calcitriol and magnesium.</p><p><strong>Takeaway:</strong> hypocalcemia after parathyroidectomy with LOW phosphate and non-suppressed PTH is hungry bone syndrome; high phosphate suggests hypoparathyroidism.</p>",
+   "whyNot": {
+    "A": "Loss of all parathyroid tissue would give a low PTH and a high phosphate.",
+    "B": "Low magnesium impairs PTH secretion and action, but here PTH is not low, and magnesium is falling for the same reason calcium is: uptake into bone.",
+    "C": "Volume expansion causes only small changes and would not lower phosphate and magnesium this much.",
+    "E": "PTH resistance (pseudohypoparathyroidism) gives a high phosphate and a very high PTH, and it is congenital."
+   },
+   "objective": "Distinguish hungry bone syndrome from hypoparathyroidism after parathyroidectomy.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hungry bone syndrome",
+    "hypocalcemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

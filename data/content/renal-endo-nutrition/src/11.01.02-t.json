@@ -1,0 +1,69 @@
+{
+ "area": "usmle2026.11.01.02",
+ "items": [
+  {
+   "id": "s23c-q110102-2-t01",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 54-year-old man has had 3 months of a painless purplish rash on both lower legs, joint aches and fatigue. Blood pressure is 148/90 mmHg. There is palpable purpura on the shins. Laboratory studies:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Serum creatinine</td><td>1.4 mg/dL (baseline 1.0 mg/dL a year ago)</td></tr><tr><td>Urine protein-to-creatinine ratio</td><td>1.2 g/g</td></tr><tr><td>Urine microscopy</td><td>Dysmorphic red cells, occasional red cell casts</td></tr><tr><td>C3</td><td>Mildly low</td></tr><tr><td>C4</td><td>Very low</td></tr><tr><td>Rheumatoid factor</td><td>Strongly positive</td></tr><tr><td>Hepatitis C virus RNA</td><td>Detectable</td></tr><tr><td>HBsAg, HIV antibody, ANCA, anti-dsDNA</td><td>Negative</td></tr></table><p>Kidney function has been stable over the past 2 weeks. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Direct-acting antiviral therapy against hepatitis C"
+    },
+    {
+     "label": "B",
+     "html": "High-dose glucocorticoids and cyclophosphamide"
+    },
+    {
+     "label": "C",
+     "html": "Pegylated interferon with ribavirin"
+    },
+    {
+     "label": "D",
+     "html": "Plasma exchange with glucocorticoids"
+    },
+    {
+     "label": "E",
+     "html": "Rituximab with plasma exchange"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Purpura, arthralgia, very low C4 with a lesser fall in C3, a strongly positive rheumatoid factor (the IgM component of type II cryoglobulins) and HCV viremia point to <strong>mixed cryoglobulinemia with membranoproliferative GN from hepatitis C</strong>. When kidney function is stable and the disease is not rapidly progressive or organ-threatening, the first step is to treat the driver with <strong>direct-acting antivirals</strong>, which often lead to remission. Rituximab (with or without plasma exchange) is added for severe or rapidly progressive disease.</p><p><strong>Takeaway:</strong> HCV cryoglobulinemic GN that is not rapidly progressive: start direct-acting antivirals first; add rituximab only for severe disease.</p>",
+   "whyNot": {
+    "B": "Cyclophosphamide and high-dose steroids increase HCV replication and are reserved, if used at all, for severe vasculitis not controlled otherwise.",
+    "C": "Interferon-based therapy is outdated; it is less effective, poorly tolerated and can worsen vasculitis.",
+    "D": "Plasma exchange removes cryoglobulins in life-threatening disease (rapidly progressive GN, hyperviscosity) but does not treat the cause.",
+    "E": "Rituximab with or without plasma exchange is for severe, organ-threatening disease; his kidney function is stable, so antiviral therapy comes first."
+   },
+   "objective": "Treat HCV-associated cryoglobulinemic glomerulonephritis with direct-acting antivirals when it is not rapidly progressive.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.16.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "cryoglobulinemia",
+    "hepatitis C"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}

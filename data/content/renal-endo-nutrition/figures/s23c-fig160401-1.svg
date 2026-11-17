@@ -10,7 +10,7 @@
 <text x="570" y="67" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Kwashiorkor (edematous)</text>
 <g font-family="sans-serif" font-size="12" fill="#0f172a">
 <line x1="20" y1="118" x2="700" y2="118" stroke="#cbd5e1"/>
-<text x="30" y="104">Deficit</text><text x="190" y="104">Too little energy overall</text><text x="450" y="104">Poor protein quality with illness, oxidative stress</text>
+<text x="30" y="104">Deficit</text><text x="190" y="104">Too little energy overall</text><text x="450" y="104">Poor diet plus illness, oxidative stress</text>
 <line x1="20" y1="156" x2="700" y2="156" stroke="#cbd5e1"/>
 <text x="30" y="142">Weight for height</text><text x="190" y="142">Very low; "skin and bones"</text><text x="450" y="142">Can look near normal (fluid hides loss)</text>
 <line x1="20" y1="194" x2="700" y2="194" stroke="#cbd5e1"/>

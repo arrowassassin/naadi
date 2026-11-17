@@ -1,0 +1,132 @@
+{
+ "area": "usmle2026.11.01.01",
+ "items": [
+  {
+   "id": "s23c-q110101-1-t01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>An 8-year-old boy has had 2 days of painful urination, urinary frequency and grossly bloody urine. A week ago he had fever, sore throat and red eyes, and two classmates had the same illness. He is afebrile now, and blood pressure is 102/64 mmHg. Urinalysis shows many red blood cells with normal shapes, a few white blood cells and no casts. Bacterial urine culture is negative, and serum creatinine is 0.4 mg/dL. Which of the following best describes the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Enveloped virus with a segmented negative-sense RNA genome"
+    },
+    {
+     "label": "B",
+     "html": "Enveloped virus with a single-stranded positive-sense RNA genome"
+    },
+    {
+     "label": "C",
+     "html": "Gram-negative rod that ferments lactose"
+    },
+    {
+     "label": "D",
+     "html": "Nonenveloped virus with a double-stranded linear DNA genome"
+    },
+    {
+     "label": "E",
+     "html": "Nonenveloped virus with a single-stranded DNA genome"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Hemorrhagic cystitis after pharyngoconjunctival fever in a child is typical of <strong>adenovirus</strong>, a nonenveloped virus with linear double-stranded DNA. Normally shaped red cells, no casts, a normal creatinine and a sterile bacterial culture place the bleeding in the bladder rather than the glomerulus. The illness resolves on its own in about 1–2 weeks; in transplant recipients adenovirus and BK virus cause more severe hemorrhagic cystitis.</p><p><strong>Takeaway:</strong> gross hematuria with dysuria and a negative bacterial culture after pharyngoconjunctivitis in a child is adenoviral hemorrhagic cystitis.</p>",
+   "whyNot": {
+    "A": "Segmented negative-sense RNA viruses (influenza, bunyaviruses) do not cause hemorrhagic cystitis; hantaviruses affect the kidney through interstitial nephritis with fever and shock.",
+    "B": "Positive-sense RNA viruses such as enteroviruses cause conjunctivitis and pharyngitis but not hemorrhagic cystitis.",
+    "C": "<em>E. coli</em> cystitis would grow on routine bacterial culture.",
+    "E": "Parvovirus B19, the single-stranded DNA virus, causes erythema infectiosum and aplastic crisis, not cystitis."
+   },
+   "objective": "Recognise adenovirus as a cause of hemorrhagic cystitis in children and describe its structure.",
+   "areas": [
+    "usmle2026.11.01.01"
+   ],
+   "disciplines": [
+    "microbiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "adenovirus",
+    "hemorrhagic cystitis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110101-1-t02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 74-year-old man with an indwelling urinary catheter is treated with intravenous ceftriaxone for fever and suprapubic pain. After 3 days he is still febrile. Urine and blood cultures grow gram-positive cocci in pairs and short chains that are catalase negative, grow in 6.5% sodium chloride and hydrolyse esculin in the presence of bile. Which of the following best explains the treatment failure?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Efflux pumps that remove fluoroquinolones from the cell"
+    },
+    {
+     "label": "B",
+     "html": "Low-affinity penicillin-binding proteins in the cell wall"
+    },
+    {
+     "label": "C",
+     "html": "Methylation of the 23S ribosomal RNA target"
+    },
+    {
+     "label": "D",
+     "html": "Production of an extended-spectrum beta-lactamase"
+    },
+    {
+     "label": "E",
+     "html": "Replacement of D-alanyl-D-alanine with D-alanyl-D-lactate"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The organism is <strong><em>Enterococcus</em></strong> (catalase-negative cocci in chains that grow in high salt and bile esculin), a common cause of catheter-associated and post-instrumentation UTI. Enterococci are <strong>intrinsically resistant to cephalosporins</strong> because their penicillin-binding proteins (notably PBP5) bind cephalosporins poorly. Ampicillin is the usual drug for susceptible strains.</p><p><strong>Takeaway:</strong> cephalosporins never cover enterococci, because their penicillin-binding proteins bind cephalosporins poorly.</p>",
+   "whyNot": {
+    "A": "Efflux pumps cause fluoroquinolone and tetracycline resistance, not failure of ceftriaxone.",
+    "C": "Ribosomal methylation (erm genes) causes macrolide and clindamycin resistance.",
+    "D": "Extended-spectrum beta-lactamases are made by gram-negative rods such as <em>E. coli</em> and <em>Klebsiella</em>, not by enterococci.",
+    "E": "The D-Ala-D-Lac change is the mechanism of vancomycin resistance (VRE), which is not the drug used here."
+   },
+   "objective": "Explain the intrinsic cephalosporin resistance of Enterococcus in urinary tract infection.",
+   "areas": [
+    "usmle2026.11.01.01"
+   ],
+   "disciplines": [
+    "microbiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Enterococcus",
+    "antibiotic resistance"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ]
+}
