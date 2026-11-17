@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042203-seg20-media-7c3eca",
+ "ts": "2026-11-17T04:22:03.805907Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg20-media online: YouTube mapper, IFrame player, Anki import/export",
+ "body": "",
+ "requires_ack": false
+}
