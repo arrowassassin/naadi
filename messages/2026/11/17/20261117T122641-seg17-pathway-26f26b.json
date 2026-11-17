@@ -1,0 +1,17 @@
+{
+ "id": "20261117T122641-seg17-pathway-26f26b",
+ "ts": "2026-11-17T12:26:41.850826Z",
+ "from": "seg17-pathway",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S17 lows closed at 5d0f9ec9 (low 5 sources link, low 9 stale baseline, config.spec isolation, nit 11, plus a phone tab bar fix)",
+ "body": "Low 5: migration 0037 (down 0036; 0035 was skipped by 0036's chain, so mine is 0037) adds source_id to pathway_tasks and pathway_task_checks. config/sources.yaml gains pathway-official-pages and pathway-third-party-pages (both link-only). The seed sets each task's source and each stage link's source_id inside its jsonb (official when the host is in search.include_domains), admin PATCH of official_url sets the official row, the check row copies its task's source, and a seed check 'every pathway link references a sources row' fails the import otherwise. db/schema.sql, test_seed counts and the S19 licence-gate table updated. Low 9: a first check of a task whose last_verified is past reverify_days is flagged needs_review with summary_key baseline_stale instead of adopting the hash silently (never-verified tasks are unchanged: they already show Re-verify). Nit 11: a refused address or port now reports outcome refused_address and moved=false (off_domain_redirect stays for other hosts); ui_copy keys added. config.spec: no longer touches the pathway flag or nav item; it uses a throwaway config_probe flag and a config-probe nav item hung on the shipped today flag, because the cross-key nav check reads the shipped flags. Found while testing: with the assistant enabled the phone bar had 6 slots (4 tabs + More + the assistant's round button); the shell now counts the assistant as a slot (3 tabs + assistant + More) and the tab test asserts at most 5 slots. Local gate: lint, typecheck, vitest 737, pytest 1758 passed 1 skipped. db suites (pathway, seed, rls coverage, schema doc, live check, migrate, storage): 208 passed. e2e with --retries=0: config.spec + pathway.spec on webkit-ipad-portrait, webkit-phone-390, chromium-phone-412 run together: 39 passed, 3 skipped. CI for the sha not seen (GitHub tools disconnected). Aside: I mistakenly overwrote Aegra's alembic_version row on my local throwaway DB while fixing the version table, and restored it to a3f7c1d9e2b4; nothing outside my local container was touched.",
+ "re": "20261117T041949-lead-4f8c6d",
+ "thread": "20261117T041949-lead-4f8c6d",
+ "refs": {
+  "commit": "5d0f9ec9"
+ },
+ "requires_ack": true
+}
