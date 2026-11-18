@@ -113,10 +113,18 @@ def test_local_search_p95_on_the_seeded_corpus(
             assert res.status_code == 200, res.text
             found += bool(res.json()["hits"])
         jobs = http.app.state.embedding_jobs
-        for q in queries[:20]:  # stage split from the service itself
-            r = asyncio.run(search_local(Database(SecretStr(url), max_size=2), jobs.engine, checked_user(uid[0]), q))
-            for k, v in r.timings_ms.items():
-                stages.setdefault(k, []).append(v)
+
+        async def sample_stages() -> None:
+            db = Database(SecretStr(url), max_size=2)
+            try:
+                for q in queries[:20]:  # stage split from the service itself
+                    r = await search_local(db, jobs.engine, checked_user(uid[0]), q)
+                    for k, v in r.timings_ms.items():
+                        stages.setdefault(k, []).append(v)
+            finally:
+                await db.close()
+
+        asyncio.run(sample_stages())
     finally:
         with psycopg.connect(url, autocommit=True) as pg:
             pg.execute("delete from auth.users where id = %s", (uid[0],))

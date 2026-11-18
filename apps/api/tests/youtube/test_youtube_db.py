@@ -4,6 +4,7 @@ embedder: no network, no key). Students must never see an unapproved video or a 
 from __future__ import annotations
 
 import datetime as dt
+from collections.abc import AsyncIterator
 from typing import Any
 
 import psycopg
@@ -48,8 +49,12 @@ def api_for(world: World, **extra: Any) -> FakeYouTube:
 
 
 @pytest.fixture
-def db(url: str) -> Database:
-    return Database(SecretStr(url))
+async def db(url: str) -> AsyncIterator[Database]:
+    database = Database(SecretStr(url))
+    try:
+        yield database
+    finally:
+        await database.close()
 
 
 def rows(pg: psycopg.Connection[Any], world: World, status: str | None = None) -> list[tuple[Any, ...]]:

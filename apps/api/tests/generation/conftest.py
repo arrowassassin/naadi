@@ -4,7 +4,7 @@ real HTTP path (token → JWKS → account check → service role with the calle
 from __future__ import annotations
 
 import uuid
-from collections.abc import Iterator
+from collections.abc import AsyncIterator, Iterator
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -135,7 +135,7 @@ class Rig:
 
 
 @pytest.fixture
-def rig(url: str) -> Rig:
+async def rig(url: str) -> AsyncIterator[Rig]:
     from datetime import UTC, datetime
 
     now = [datetime.now(UTC)]
@@ -145,8 +145,9 @@ def rig(url: str) -> Rig:
     async def config() -> GenerationSection:
         return generation_config(**caps)
 
+    db = Database(SecretStr(url))
     svc = GenerationService(
-        db=Database(SecretStr(url)),
+        db=db,
         config=config,
         client=client,
         store=store,
@@ -155,7 +156,10 @@ def rig(url: str) -> Rig:
     )
     r = Rig(svc, client, store, now)
     r.caps = caps  # type: ignore[attr-defined]
-    return r
+    try:
+        yield r
+    finally:
+        await db.close()
 
 
 @pytest.fixture
@@ -175,14 +179,23 @@ def build_client(url: str, key: SigningKey, static_dir: Path, rig: Rig | None, *
         **({"hf_gen_token": SecretStr("hf_test_token_value")} if rig is not None else {}),
         **settings,
     )
+    db = Database(s.database_url)
     app = create_app(
         s,
         health=fake_service(),
-        db=Database(s.database_url),
+        db=db,
         verifier=TokenVerifier(SUPABASE_URL, transport=JwksServer(key).transport()),
     )
     if rig is not None:
-        app.state.generation = rig.service  # the same fake-backed service the test drives directly
+        # Share the fake backend and store, and keep each pool on its own event loop.
+        app.state.generation = GenerationService(
+            db=db,
+            config=rig.service._config,
+            client=rig.client,
+            store=rig.store,
+            buckets=(PRIVATE, PUBLIC),
+            clock=lambda: rig.now[0],
+        )
     return TestClient(app, raise_server_exceptions=False)
 
 

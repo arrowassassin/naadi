@@ -7,7 +7,7 @@ from __future__ import annotations
 import json
 import time
 import uuid
-from collections.abc import Iterator
+from collections.abc import AsyncIterator, Iterator
 from typing import Any
 
 import psycopg
@@ -31,8 +31,12 @@ pytestmark = DB_MARKS
 
 
 @pytest.fixture
-def store(url: str) -> PgAuthoringStore:
-    return PgAuthoringStore(Database(SecretStr(url)))
+async def store(url: str) -> AsyncIterator[PgAuthoringStore]:
+    db = Database(SecretStr(url))
+    try:
+        yield PgAuthoringStore(db)
+    finally:
+        await db.close()
 
 
 async def test_gaps_list_topics_under_the_target_fewest_first(
