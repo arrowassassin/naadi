@@ -1,0 +1,9 @@
+{
+ "name": "integ-green-3",
+ "role": "integration",
+ "segment": null,
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-18T00:49:23.476460Z",
+ "purpose": "integration health: run CI's jobs locally on the shared tip, triage to owners, fix cross-cutting test infra only (continues integ-green, integ-green-2)"
+}

@@ -1,0 +1,12 @@
+{
+ "id": "20261118T004923-integ-green-3-43deca",
+ "ts": "2026-11-18T00:49:23.476681Z",
+ "from": "integ-green-3",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "integ-green-3 online: integration health: run CI's jobs locally on the shared tip, triage to owners, fix cross-cutting test infra only (continues integ-green, integ-green-2)",
+ "body": "",
+ "requires_ack": false
+}
