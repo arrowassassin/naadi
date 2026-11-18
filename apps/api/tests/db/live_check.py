@@ -383,7 +383,7 @@ def seed_checks(expected: dict[str, int], app_config_keys: Sequence[str]) -> lis
             "questions (published or admin-edited, original)",
             "from public.questions where source_id = 'naadi-original-v1'"
             " and (status = 'published' or admin_edited_at is not null)",
-            e["questions"],
+            e["published_original_questions"],
         ),
         count(
             "approved SVG figures",
@@ -450,7 +450,11 @@ def bundle_expectations() -> tuple[dict[str, int], list[str]]:
     from naadi_api.settings import REPO_ROOT
 
     b = load_bundle(REPO_ROOT / "data", REPO_ROOT / "config")
-    return expected_counts(b), sorted(file_values(REPO_ROOT / "config"))
+    expected = expected_counts(b)
+    expected["published_original_questions"] = sum(
+        q.status == "published" and q.source == "naadi-original-v1" for q in b.questions
+    )
+    return expected, sorted(file_values(REPO_ROOT / "config"))
 
 
 def run_sql(client: httpx.Client, ref: str, token: str, query: str) -> list[dict[str, Any]]:

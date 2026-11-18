@@ -68,7 +68,11 @@ def test_pack_rows_land_with_their_shape(url: str) -> None:
     assert _one(url, "select why_not_html from public.questions where id = 'smp-q05'")[0].startswith(
         "<p><strong>A.</strong>"
     )
-    sets = _one(url, "select count(*), count(*) filter (where kind = 'abstract') from public.question_sets")
+    sets = _one(
+        url,
+        "select count(*), count(*) filter (where kind = 'abstract') from public.question_sets where pack_id = %s",
+        "sample-pack",
+    )
     assert sets == (2, 1)
     card = _one(
         url,

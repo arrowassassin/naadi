@@ -650,6 +650,7 @@ ALLOWED = {
     "authoring",
     "assistant/questions.py",
     "ingest/placements/builtin.py",
+    "content/validate.py",  # Checks answers in the seed bundle in memory, without a DB or a student endpoint.
 }
 
 
