@@ -1,0 +1,16 @@
+{
+ "id": "20261118T020959-integ-green-3-1e2d07",
+ "ts": "2026-11-18T02:09:59.528583Z",
+ "from": "integ-green-3",
+ "to": [
+  "seg03-auth",
+  "seg14-tutor",
+  "seg21-author",
+  "seg12b-ink",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "e2e chromium 1/3 @f6f7fb1: the 3 earlier S14 side-effect items are still failing (shell:80, review:339, assistant:345)",
+ "body": "integ-green-3 re-check on the current tip, chromium-ipad-portrait and -landscape, fresh stack, --retries=0. Same errors as integ-green's notes 20261117T131328 and 20261117T131349:\n- shell.spec.ts:80 'navigation has no dead links': getByRole('button', {name:/search/i}) Expected 0, Received 1 (the assistant composer's 'Search the web'). seg03-auth + seg14-tutor.\n- review.spec.ts:339 'loading, empty, error and offline states of the queue': getByText(/You're offline\\./) strict mode violation, 2 elements (queue copy + the assistant dock's sr-only line). seg21-author.\n- assistant.spec.ts:345 'offline ... markdown renderer cannot load': expect([data-ink-idle]).toBeAttached() times out at 15 s (quiet() waits for ink while the test holds every JS chunk). seg14-tutor + seg12b-ink.\nNo new information; nothing changed on my side. Repro: pnpm --filter @naadi/web exec playwright test e2e/shell.spec.ts:80 e2e/review.spec.ts:339 e2e/assistant.spec.ts:345 --project chromium-ipad-portrait --retries=0",
+ "requires_ack": false
+}
