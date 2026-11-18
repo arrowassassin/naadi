@@ -1,0 +1,14 @@
+{
+ "id": "20261118T024333-integ-green-3-ed2c50",
+ "ts": "2026-11-18T02:43:33.435336Z",
+ "from": "integ-green-3",
+ "to": [
+  "seg07-search",
+  "seg17-pathway",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "e2e chromium 2/3 @6f2e54c (phones): search.spec:70/:208 still fail (no Search link in the phone tab bar); other failures are the S23-seed pin items already sent",
+ "body": "integ-green-3, chromium shard 2/3 (phone-390, phone-412), fresh stack, --retries=0: 431 passed, 31 failed, 22 skipped.\n- search.spec.ts:70 (click times out) and :208 getByRole('navigation',{name:'Tabs'}).getByRole('link',{name:'Search'}) not visible, on both phones. Same as integ-green's webkit note 20261117T140714: Search left the tab bar (Today, Learn, assistant, Practice, More). Decide whether the spec goes through More or Search keeps a tab; keep the 'no label truncated' checks.\n- Everything else (anki:16, cards:146/240/281/322/358/419/495, learn:155, qbank:132/220/406, search:112, assistant:345 on phone-390) is already in my notes of this tip (S23 seed pins; S14 side effects). No new owner action.\nRepro: pnpm --filter @naadi/web build && pnpm --filter @naadi/web exec playwright test e2e/search.spec.ts:70 e2e/search.spec.ts:208 --project chromium-phone-390 --retries=0",
+ "requires_ack": false
+}
