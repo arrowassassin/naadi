@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" aria-label="Timeline of transplant rejection types from minutes to years, with the main effector of each">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#444"/></marker></defs>
+<rect x="0" y="0" width="720" height="250" fill="#ffffff"/>
+<line x1="30" y1="70" x2="700" y2="70" stroke="#444" stroke-width="2" marker-end="url(#a)"/>
+<g font-family="sans-serif" font-size="12" fill="#222" text-anchor="middle">
+<line x1="70" y1="62" x2="70" y2="78" stroke="#444"/><text x="70" y="50">Minutes–hours</text>
+<line x1="260" y1="62" x2="260" y2="78" stroke="#444"/><text x="260" y="50">Days–weeks</text>
+<line x1="450" y1="62" x2="450" y2="78" stroke="#444"/><text x="450" y="50">Weeks–months</text>
+<line x1="640" y1="62" x2="640" y2="78" stroke="#444"/><text x="640" y="50">Months–years</text>
+<text x="360" y="22" font-size="13">Time after transplantation (not to scale)</text>
+<rect x="10" y="95" width="125" height="135" rx="6" fill="#f4f4f4" stroke="#666"/>
+<text x="72" y="117" font-weight="bold">Hyperacute</text><text x="72" y="137">Preformed antibody</text><text x="72" y="153">(ABO, anti-HLA)</text><text x="72" y="173">Complement,</text><text x="72" y="189">thrombosis</text><text x="72" y="213">Irreversible</text>
+<rect x="150" y="95" width="210" height="135" rx="6" fill="#f4f4f4" stroke="#666"/>
+<text x="255" y="117" font-weight="bold">Acute T cell–mediated</text><text x="255" y="137">Recipient T cells vs donor MHC</text><text x="255" y="157">Tubulitis, endothelialitis</text><text x="255" y="177">C4d negative</text><text x="255" y="213">Often steroid-responsive</text>
+<rect x="375" y="95" width="160" height="135" rx="6" fill="#f4f4f4" stroke="#666"/>
+<text x="455" y="117" font-weight="bold">Antibody-mediated</text><text x="455" y="137">Donor-specific</text><text x="455" y="153">antibodies</text><text x="455" y="173">Capillaritis, C4d+</text><text x="455" y="213">Antibody-directed therapy</text>
+<rect x="550" y="95" width="160" height="135" rx="6" fill="#f4f4f4" stroke="#666"/>
+<text x="630" y="117" font-weight="bold">Chronic</text><text x="630" y="137">Mixed alloimmune</text><text x="630" y="153">and nonimmune injury</text><text x="630" y="173">Fibrosis, vessel</text><text x="630" y="189">and airway narrowing</text><text x="630" y="213">Largely irreversible</text>
+</g>
+</svg>

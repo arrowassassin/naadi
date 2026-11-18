@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" aria-label="Lymph node compartments and the reactive pattern each one produces: follicle, paracortex, sinuses and medullary cords" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+  <text x="16" y="28" font-size="17" fill="#111111">Lymph node compartments and their reactive patterns</text>
+
+  <ellipse cx="190" cy="196" rx="160" ry="124" fill="#f7f7f7" stroke="#555555" stroke-width="2"/>
+  <text x="24" y="78" font-size="11" fill="#333333">capsule</text>
+  <line x1="50" y1="83" x2="64" y2="118" stroke="#555555"/>
+
+  <circle cx="130" cy="150" r="30" fill="#eaf3ff" stroke="#1f4e79"/>
+  <circle cx="130" cy="150" r="17" fill="#ffffff" stroke="#1f4e79" stroke-dasharray="4 3"/>
+  <text x="108" y="114" font-size="11" fill="#111111">follicle</text>
+  <text x="80" y="196" font-size="10" fill="#333333">germinal centre (B cells)</text>
+
+  <ellipse cx="240" cy="168" rx="62" ry="44" fill="#fff2e8" stroke="#8a4b10"/>
+  <text x="210" y="172" font-size="11" fill="#111111">paracortex</text>
+  <text x="206" y="190" font-size="10" fill="#333333">(T cells)</text>
+
+  <path d="M70 250 q120 34 240 -6" fill="none" stroke="#555555" stroke-width="3"/>
+  <text x="84" y="238" font-size="11" fill="#111111">sinuses (macrophages)</text>
+
+  <ellipse cx="208" cy="294" rx="54" ry="20" fill="#f2f2f2" stroke="#555555"/>
+  <text x="166" y="298" font-size="11" fill="#111111">medullary cords</text>
+  <text x="232" y="362" font-size="10" fill="#333333">efferent lymphatic</text>
+  <line x1="222" y1="319" x2="236" y2="350" stroke="#555555" stroke-width="2"/>
+
+  <rect x="372" y="60" width="312" height="292" rx="8" fill="#ffffff" stroke="#555555"/>
+  <text x="384" y="84" font-size="13" fill="#111111">Pattern &#8594; typical cause</text>
+  <text x="384" y="110" font-size="12" fill="#333333">Follicular hyperplasia (B zone):</text>
+  <text x="396" y="128" font-size="12" fill="#333333">chronic immune stimulation, early HIV,</text>
+  <text x="396" y="146" font-size="12" fill="#333333">rheumatoid arthritis, toxoplasmosis</text>
+  <text x="384" y="174" font-size="12" fill="#333333">Paracortical hyperplasia (T zone):</text>
+  <text x="396" y="192" font-size="12" fill="#333333">viral infections, notably EBV; drug reactions</text>
+  <text x="384" y="220" font-size="12" fill="#333333">Sinus histiocytosis:</text>
+  <text x="396" y="238" font-size="12" fill="#333333">node draining a tumour or particulate material</text>
+  <text x="384" y="266" font-size="12" fill="#333333">Granulomas:</text>
+  <text x="396" y="284" font-size="12" fill="#333333">necrotizing with microabscess &#8594; cat-scratch;</text>
+  <text x="396" y="302" font-size="12" fill="#333333">caseating &#8594; tuberculosis; non-necrotizing &#8594; sarcoid</text>
+  <text x="384" y="330" font-size="12" fill="#333333">Architecture effaced by monotonous cells &#8594; lymphoma</text>
+</svg>

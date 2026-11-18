@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" aria-label="HIV life cycle in a CD4 T cell, with the drug class that blocks each step">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#444"/></marker></defs>
+<rect x="0" y="0" width="720" height="300" fill="#ffffff"/>
+<rect x="10" y="40" width="700" height="170" rx="14" fill="#f4f4f4" stroke="#888"/>
+<text x="20" y="30" font-family="sans-serif" font-size="13" fill="#222">CD4+ T cell (also macrophages, dendritic cells)</text>
+<g font-family="sans-serif" font-size="12" fill="#222" text-anchor="middle">
+<rect x="20" y="70" width="110" height="60" rx="6" fill="#fff" stroke="#555"/><text x="75" y="93">1. Attachment</text><text x="75" y="110">gp120–CD4</text>
+<rect x="150" y="70" width="110" height="60" rx="6" fill="#fff" stroke="#555"/><text x="205" y="93">2. Coreceptor</text><text x="205" y="110">CCR5 or CXCR4</text>
+<rect x="280" y="70" width="110" height="60" rx="6" fill="#fff" stroke="#555"/><text x="335" y="93">3. Fusion</text><text x="335" y="110">gp41</text>
+<rect x="410" y="70" width="140" height="60" rx="6" fill="#fff" stroke="#555"/><text x="480" y="93">4. Reverse</text><text x="480" y="110">transcription</text>
+<rect x="570" y="70" width="130" height="60" rx="6" fill="#fff" stroke="#555"/><text x="635" y="93">5. Integration</text><text x="635" y="110">into host DNA</text>
+<rect x="410" y="145" width="140" height="55" rx="6" fill="#fff" stroke="#555"/><text x="480" y="167">6. Transcription</text><text x="480" y="183">and translation</text>
+<rect x="150" y="145" width="240" height="55" rx="6" fill="#fff" stroke="#555"/><text x="270" y="167">7. Assembly, budding and</text><text x="270" y="183">maturation (polyprotein cleavage)</text>
+</g>
+<g stroke="#444" stroke-width="1.6" fill="none" marker-end="url(#a)">
+<path d="M130,100 L148,100"/><path d="M260,100 L278,100"/><path d="M390,100 L408,100"/><path d="M550,100 L568,100"/>
+<path d="M635,130 L635,172 L552,172"/><path d="M410,172 L392,172"/>
+</g>
+<g font-family="sans-serif" font-size="12" fill="#222">
+<text x="20" y="235" font-weight="bold">Drug class that blocks each step</text>
+<text x="20" y="255">2: CCR5 antagonist (maraviroc) · 3: fusion inhibitor (enfuvirtide) · 1: attachment / post-attachment inhibitors</text>
+<text x="20" y="273">4: NRTIs and NNRTIs · 5: integrase strand-transfer inhibitors · 7: protease inhibitors; capsid inhibitor (lenacapavir)</text>
+<text x="20" y="291">acts at several steps (capsid transport, assembly).</text>
+</g>
+</svg>
