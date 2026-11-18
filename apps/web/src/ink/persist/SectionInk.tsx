@@ -113,7 +113,7 @@ export function SectionInk(props: SectionInkProps) {
 
   return (
     <div className={cx("flex flex-col gap-4", className)} data-section-ink="" data-ink-idle={idle ? "" : undefined}>
-      <div className="relative mx-auto w-full max-w-[52rem] flex min-h-11 flex-wrap items-center justify-between gap-x-3 gap-y-1">
+      <div className="reader-ink-column relative flex min-h-11 flex-wrap items-center justify-between gap-x-3 gap-y-1">
         <Button
           variant="secondary"
           aria-pressed={on}

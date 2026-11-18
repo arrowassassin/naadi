@@ -145,7 +145,7 @@
   --target-cta-lg: 60px;
 
   /* Layout */
-  --content-max: 1320px;
+  --content-max: min(100%, calc(90% + 2 * var(--gutter)));
   --gutter: clamp(16px, 4vw, 64px);
 
   /* Motion: 200 ms controls, 400 ms sheets, ease-out. */

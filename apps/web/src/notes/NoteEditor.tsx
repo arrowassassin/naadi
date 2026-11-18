@@ -312,7 +312,11 @@ export function NoteEditor({
           {uploadError}
         </p>
       ) : null}
-      <EditorContent editor={editor} id={`${ids}-ed`} />
+      <EditorContent
+        className={compact ? "flex flex-1 flex-col [&>.note-prose]:flex-1" : undefined}
+        editor={editor}
+        id={`${ids}-ed`}
+      />
     </div>
   );
 }

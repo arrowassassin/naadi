@@ -533,10 +533,7 @@ function Reader({
                       : undefined
                   }
                 >
-                  <div
-                    data-ink-column=""
-                    className="mx-auto w-full max-w-[min(52rem,calc(100%-5.5rem))] max-tablet:max-w-[calc(100%-2*var(--gutter))]"
-                  >
+                  <div data-ink-column="" className="reader-ink-column">
                     <div ref={rootRef} className="contents">
                       {/* Segment 13: highlights and the selection toolbar (Highlight / Note / Card; Ask with S14). */}
                       <HighlightableText

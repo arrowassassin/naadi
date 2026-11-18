@@ -206,9 +206,9 @@ export function PageNotesPanel({
     <section
       aria-labelledby={`${ids}-h`}
       data-page-notes=""
-      className={cx("flex flex-col gap-4 bg-paper text-ground", className)}
+      className={cx("flex flex-1 flex-col gap-2 bg-paper text-ground", className)}
     >
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2 pr-12">
         <div className="mr-auto flex min-w-0 flex-col">
           <h2 id={`${ids}-h`} className="m-0 font-display font-extrabold text-[1.5rem] tracking-[-0.02em]">
             {t("notes.panel_title")}
@@ -262,13 +262,13 @@ export function PageNotesPanel({
             </p>
           ) : null}
           {showType ? (
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-1 flex-col gap-2">
               {mode === "both" ? (
                 <span className="font-mono text-label-sm text-paper-text-2 uppercase tracking-[0.12em]">
                   {t("notes.panel_typed")}
                 </span>
               ) : null}
-              <div className={PAPER_NOTICE}>
+              <div className={cx("flex flex-1 flex-col", PAPER_NOTICE)}>
                 <NoteEditor
                   // One editor per note; a note made here keeps the editor it was typed in.
                   key={madeId ? "local" : (note?.id ?? "local")}
@@ -279,6 +279,7 @@ export function PageNotesPanel({
                   placeholder={t("notes.panel_placeholder")}
                   quote={quote}
                   onQuoteInserted={quoteInserted}
+                  className="flex-1"
                   compact
                 />
               </div>

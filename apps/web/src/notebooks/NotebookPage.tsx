@@ -21,7 +21,6 @@ import { useOnlineStatus } from "../health/useOnlineStatus";
 import { deliverPdf, exportNotebookToPdf } from "../pdf";
 import { errorKey, useNotebook, useNotebookSync } from "./api";
 import { ConfirmDialog } from "./dialogs";
-import { NotebooksShelf } from "./NotebooksShelf";
 import { PageInk } from "./PageInk";
 import { clampPageNumber, movePageBy, pageAfterDelete, pagePaper } from "./pageOps";
 import { PAPERS } from "./paper";
@@ -85,7 +84,7 @@ function LinkedChip({ page }: { page: NoteOut }) {
 /**
  * `/notes/notebooks/$id/$page` (design/Notebook.dc.html): the notebook's page N of M on US Letter paper with
  * persisted ink, or a whiteboard; paper choice per page, add / reorder / delete pages, export the notebook as a PDF.
- * The shelf sits beside the page on wide screens, as on the board.
+ * The back control returns to the shelf from every viewport.
  */
 export function NotebookPage({ id, page: rawPage }: { id: string; page: string }) {
   const t = useUiText();
@@ -97,11 +96,6 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [exporting, setExporting] = useState<"idle" | "busy" | "error">("idle");
 
-  const shelf = (
-    <aside className="hidden w-[380px] shrink-0 min-[1120px]:block" aria-label={t("notebooks.shelf_label")}>
-      <NotebooksShelf />
-    </aside>
-  );
   const back = (
     <Link
       to="/notes/notebooks"
@@ -134,11 +128,10 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
     }
     return (
       <div className="flex gap-5" aria-busy="true" data-notebook-page="loading">
-        {shelf}
         <div className="flex min-w-0 flex-1 flex-col gap-3">
           <span className="sr-only">{t("notebooks.page.loading")}</span>
           <Skeleton className="h-11 w-64 rounded-pill" />
-          <Skeleton className="aspect-[612/792] w-full max-w-[880px] rounded-[18px]" />
+          <Skeleton className="aspect-[612/792] w-full rounded-[18px]" />
         </div>
       </div>
     );
@@ -161,7 +154,7 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
       return (
         <div className="flex flex-col gap-3" aria-busy="true" data-notebook-page="loading">
           <span className="sr-only">{t("notebooks.page.loading")}</span>
-          <Skeleton className="aspect-[612/792] w-full max-w-[880px] rounded-[18px]" />
+          <Skeleton className="aspect-[612/792] w-full rounded-[18px]" />
         </div>
       );
     return <Navigate to="/notes/notebooks/$id/$page" params={{ id, page: String(number) }} replace />;
@@ -223,14 +216,13 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
 
   return (
     <div className="flex gap-5" data-notebook-page="ready" data-notebook-id={id}>
-      {shelf}
       <section className="flex min-w-0 flex-1 flex-col gap-3" aria-labelledby="notebook-page-h">
         <div className="flex flex-wrap items-center gap-2">
           <Link
             to="/notes/notebooks"
             aria-label={t("notebooks.back")}
             title={t("notebooks.back")}
-            className="inline-flex size-11 items-center justify-center rounded-full border border-line-control text-text hover:bg-surface-2 min-[1120px]:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-full border border-line-control text-text hover:bg-surface-2"
           >
             <ArrowLeft aria-hidden="true" size={18} />
           </Link>
@@ -248,23 +240,7 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
               </>
             ) : null}
           </h1>
-          {sync ? (
-            <NotebookSaveStatus sync={sync} notebookId={id} quietWhenSaved={current?.canvas !== "whiteboard"} />
-          ) : null}
-        </div>
-
-        {fromDevice || !online ? <OfflineBanner message={t("notebooks.page.offline")} /> : null}
-
-        {current === null ? (
-          <div className="flex flex-col items-start gap-3 rounded-block border border-line p-6" data-notebook-empty="">
-            <p className="m-0 font-semibold text-text">{t("notebooks.page.empty_title")}</p>
-            <p className="m-0 text-text-2">{t("notebooks.page.empty_body")}</p>
-            <Button variant="primary" icon={<FilePlus2 size={16} />} onClick={() => void addPage("paper")}>
-              {t("notebooks.page.add")}
-            </Button>
-          </div>
-        ) : (
-          <>
+          {current && (
             <div className="flex flex-wrap items-center gap-2">
               {current.canvas === "paper" ? (
                 <fieldset className="m-0 flex flex-wrap items-center gap-1.5 border-0 p-0" data-paper-choice="">
@@ -294,7 +270,6 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
                   {t("whiteboard.label")}
                 </span>
               )}
-              <span className="flex-1" />
               {current.canvas === "paper" && !ink ? (
                 <Button
                   variant="secondary"
@@ -307,7 +282,24 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
               ) : null}
               <LinkedChip page={current} />
             </div>
+          )}
+          {sync ? (
+            <NotebookSaveStatus sync={sync} notebookId={id} quietWhenSaved={current?.canvas !== "whiteboard"} />
+          ) : null}
+        </div>
 
+        {fromDevice || !online ? <OfflineBanner message={t("notebooks.page.offline")} /> : null}
+
+        {current === null ? (
+          <div className="flex flex-col items-start gap-3 rounded-block border border-line p-6" data-notebook-empty="">
+            <p className="m-0 font-semibold text-text">{t("notebooks.page.empty_title")}</p>
+            <p className="m-0 text-text-2">{t("notebooks.page.empty_body")}</p>
+            <Button variant="primary" icon={<FilePlus2 size={16} />} onClick={() => void addPage("paper")}>
+              {t("notebooks.page.add")}
+            </Button>
+          </div>
+        ) : (
+          <>
             {current.canvas === "whiteboard" && sync ? (
               <WhiteboardPage key={current.id} page={current} notebookId={id} sync={sync} label={pageLabel} />
             ) : (
@@ -326,7 +318,7 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
                       (q.op.kind === "createNotebook" && q.op.body.first_page_id === current.id),
                   ) ?? false
                 }
-                className="w-full max-w-[880px]"
+                className="w-full"
               />
             )}
 

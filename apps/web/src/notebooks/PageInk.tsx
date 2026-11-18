@@ -111,32 +111,34 @@ export function PageInk({
 
   return (
     <div
-      className={cx("flex flex-col gap-3", className)}
+      className={cx("flex flex-col", className)}
       data-page-ink={noteId}
       data-ink-idle={layer.idle ? "" : undefined}
       data-ink-ready={layer.ready ? "" : undefined}
     >
-      <div className="flex min-h-11 flex-wrap items-center justify-between gap-x-3 gap-y-1">
-        <InkSaveStatus layer={layer} />
-        {aside}
-      </div>
       {toolbar === "top" ? bar : null}
-      <InkCanvas
-        key={noteId}
-        {...layer.canvasProps}
-        enabled={on}
-        surfaceType="notebook_page"
-        theme="paper"
-        penOnly={settings.pen_only}
-        predict={settings.predict}
-        tool={settings.tool}
-        color={settings.color}
-        onStateChange={onState}
-        label={label}
-        className="overflow-hidden rounded-[18px] bg-paper text-ground shadow-[0_0_0_1px_var(--color-line-strong)]"
-      >
-        <PaperBackground paper={paper} />
-      </InkCanvas>
+      <div className="relative">
+        <div className="pointer-events-none absolute top-2 right-2 z-[1] max-w-[calc(100%-1rem)] rounded-block-sm bg-paper/95 px-2 text-ground [&_button]:pointer-events-auto [&_[data-ink-save]]:text-paper-text-2">
+          <InkSaveStatus layer={layer} />
+          {aside}
+        </div>
+        <InkCanvas
+          key={noteId}
+          {...layer.canvasProps}
+          enabled={on}
+          surfaceType="notebook_page"
+          theme="paper"
+          penOnly={settings.pen_only}
+          predict={settings.predict}
+          tool={settings.tool}
+          color={settings.color}
+          onStateChange={onState}
+          label={label}
+          className="overflow-hidden rounded-[18px] bg-paper text-ground shadow-[0_0_0_1px_var(--color-line-strong)]"
+        >
+          <PaperBackground paper={paper} />
+        </InkCanvas>
+      </div>
       {toolbar === "bottom" ? bar : null}
     </div>
   );

@@ -394,7 +394,7 @@ export function AppShell() {
       </div>
 
       {/* The window scrolls; nothing here sets touch-action, transform or filter on main or its ancestors
-          (pen surfaces depend on it). Children are centred at 1320 px unless they opt out with data-bleed. */}
+          (pen surfaces depend on it). Children use the shared content width unless they opt out with data-bleed. */}
       <main
         id="main"
         tabIndex={-1}

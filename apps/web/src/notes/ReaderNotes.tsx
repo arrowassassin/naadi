@@ -77,20 +77,20 @@ function PaperSheet({ open, onClose, children }: { open: boolean; onClose: () =>
         if (e.target === e.currentTarget) onClose();
       }}
       className={cx(
-        "mx-auto mt-auto mb-0 max-h-[88dvh] w-full max-w-none rounded-t-sheet-sm border-0 bg-paper p-0 text-ground",
+        "mx-auto mt-auto mb-0 h-[calc(100dvh-env(safe-area-inset-top)-0.5rem)] max-h-none w-full max-w-none rounded-t-sheet-sm border-0 bg-paper p-0 text-ground",
         "tablet:w-[min(44rem,100%)] backdrop:bg-ground/80 open:animate-[naadi-sheet-in_var(--duration-sheet)_var(--ease-out)]",
       )}
     >
       {open ? (
-        <div className="flex max-h-[inherit] flex-col">
+        <div className="flex h-full flex-col">
           <div className="flex items-center justify-between px-5 pt-3">
             <span aria-hidden="true" className="mx-auto h-1.5 w-12 rounded-pill bg-ground/20" />
           </div>
           <span id={labelId} className="sr-only">
             {t("notes.panel_title")}
           </span>
-          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 pt-2 pb-[max(20px,env(safe-area-inset-bottom))]">
-            <div className="flex justify-end">
+          <div className="relative flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-5 pt-2 pb-[max(20px,env(safe-area-inset-bottom))]">
+            <div className="absolute top-2 right-5 z-10">
               <button
                 type="button"
                 onClick={onClose}
@@ -138,7 +138,7 @@ export function ReaderNotesLayout({
   // can go offline.
   useEffect(() => prefetchChunks(loadPanel, loadEditor), []);
   const panel = (
-    <div className={PAPER_NOTICE}>
+    <div className={cx("flex flex-1 flex-col", PAPER_NOTICE)}>
       <PageNotesPanel
         key={sectionId}
         ref={panelRef}
@@ -160,14 +160,14 @@ export function ReaderNotesLayout({
           <aside
             aria-label={t("notes.panel_region")}
             // Below the shell's top bar and above the Reader's page bar (both publish their height).
-            className="sticky top-[calc(var(--shell-top,0px)+16px)] flex max-h-[calc(100dvh-var(--shell-top,0px)-var(--reader-bar,0px)-var(--shell-bottom,0px)-32px)] w-[min(34rem,42%)] shrink-0 flex-col overflow-y-auto overscroll-contain rounded-tile bg-paper p-5 text-ground"
+            className="sticky top-[calc(var(--shell-top,0px)+16px)] flex h-[calc(100dvh-var(--shell-top,0px)-var(--reader-bar,0px)-var(--shell-bottom,0px)-32px)] w-[42%] shrink-0 flex-col overflow-y-auto overscroll-contain rounded-tile bg-paper p-4 text-ground"
           >
-            <div className="flex justify-end">
+            <div className="absolute top-3 right-4 z-10">
               <button
                 type="button"
                 onClick={onClose}
                 aria-label={t("notes.panel_close")}
-                className="-mb-2 flex size-11 items-center justify-center rounded-pill border border-ground/30 bg-transparent text-ground"
+                className="flex size-11 items-center justify-center rounded-pill border border-ground/30 bg-transparent text-ground"
               >
                 <X aria-hidden="true" size={18} />
               </button>

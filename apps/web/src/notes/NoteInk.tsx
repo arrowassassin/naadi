@@ -35,7 +35,7 @@ export function NoteInk({
       offline={offline}
       toolbar="top"
       // The panel is all paper: the save state reads in paper's secondary text colour (contrast on paper).
-      className={cx("[&_[data-ink-save]]:text-paper-text-2!", className)}
+      className={cx("[&_[data-sticky-ink-toolbar]]:top-0 [&_[data-ink-save]]:text-paper-text-2!", className)}
     />
   );
 }

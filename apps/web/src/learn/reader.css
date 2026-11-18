@@ -23,3 +23,14 @@
 [data-learn-page] ul[aria-label] {
   align-items: center;
 }
+
+.reader-ink-column {
+  margin-inline: auto;
+  width: min(52rem, calc(100% - 2 * var(--gutter)));
+}
+
+@media (min-width: 40rem) {
+  .reader-ink-column {
+    width: min(52rem, calc(100% - 5.5rem));
+  }
+}
