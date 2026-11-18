@@ -299,8 +299,10 @@ jobs:
         run: |
           uv run --frozen python -m naadi_api.migrate
           # Throwaway service key for the local storage-api container (fixed local-only secret in stack.sh).
+          # Card and Anki specs create their own cards and exercise an empty queue. The DB suite verifies the full seed.
           SUPABASE_SERVICE_ROLE_KEY="$(uv run --frozen python -c 'from tests.db.storage import local_service_key; print(local_service_key())')" \
-            uv run --frozen python scripts/seed.py --data ../../data --config ../../config
+            uv run --frozen python scripts/seed.py --data ../../data --config ../../config \
+              --only sources,taxonomy,figures,chapters,questions,pathway,plan,app_config
       - name: Build the local search index over the seeded content (fastembed, every core for this one-off run)
         working-directory: apps/api
         run: uv run --frozen python -m naadi_api.embeddings reindex --threads 4

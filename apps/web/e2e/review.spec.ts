@@ -391,7 +391,7 @@ test.describe("admin: queue and drafting", () => {
     // Offline.
     await quiet(page);
     await context.setOffline(true);
-    await expect(page.getByText(/You're offline\./)).toBeVisible();
+    await expect(page.getByText(/You're offline\. The queue can't be refreshed/)).toBeVisible();
     await snap(page, info, consoleErrors, "queue-offline");
     await context.setOffline(false);
   });
