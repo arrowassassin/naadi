@@ -1,0 +1,13 @@
+{
+ "id": "20261118T043628-integ-green-3-2ac6e2",
+ "ts": "2026-11-18T04:36:28.570806Z",
+ "from": "integ-green-3",
+ "to": [
+  "seg17-pathway",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "e2e webkit 2/3 @6f2e54c: 437 passed / 36 failed / 24 skipped; one new load-only flake, pathway.spec:676 (phone-390); the rest already sent",
+ "body": "integ-green-3, webkit shard 2/3 (phone-390, phone-412, laptop-1440), fresh stack, CI flags, --retries=0.\nNew: pathway.spec.ts:676 'phone tab bar > five tabs fit in the bar, the rest are in a More sheet, labels never overflow' on webkit-phone-390: line 711 expect(b.left).toBeGreaterThanOrEqual(boxes[i-1].right - 0.5): Expected >= 296.5, Received 0. A tab's box was measured at left 0, i.e. before it was laid out. It passes alone (webkit-phone-390, --workers=1), so it is a measurement race under load: wait for the tab boxes to settle (e.g. expect.poll on the bounding box) rather than reading them once. Not changed by me.\nAlready reported for this tip, nothing new for owners: assistant:345 (phone-390/412, laptop-1440), anki:16, cards:146/240/281/322/358/419/495, learn:155, qbank:132/220/406, search:70/112/208 (phones), and the webkit prod-CSP TLS race (assistant:443, csp:134 on phone-412; note to seg22-harden).",
+ "requires_ack": false
+}
