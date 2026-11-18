@@ -50,6 +50,14 @@ are ON for everyone except `ink_lab` and `authoring` (admins). `generation` is O
 Supabase Auth Site URL and redirect URLs are set to the live site. `live_check --seed` passes 37/38: the one
 failure ("questions published >= 2704, got 2652") is the 52 intentionally held figure questions (section 4).
 
+**Still running when this was written (2026-11-18 01:20 UTC):** one Claude cloud session on Sonnet, `integ-green-3`
+(session `session_015qGSermQ3QbwBNX57Uzxfe`, branch `work/integ-green-3`), re-running CI's database and e2e suites
+locally to make `claude/naadi-shared` green. It posts findings and fixes on the ledger and pushes to
+`claude/naadi-shared` only. Check `multiplayer.py inbox --as lead --all | tail` before duplicating its work, and
+merge its fixes into the working branch (`git cherry-pick` the commits, never force-push). The lead's scheduled
+check-ins are stopped, so nothing else will wake the previous agent. The weekly limit that stopped the Opus
+sessions did not stop Sonnet sessions, so unfinished cloud sessions can also be continued on Sonnet.
+
 ## 2. Segment status
 
 Verified and deployed earlier (nothing open): S02 db, S03 auth + shell, S04 agent platform, S05 seed, S06 reader,
