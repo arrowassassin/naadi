@@ -1,0 +1,13 @@
+{
+ "id": "20261118T035750-integ-green-3-a8dd40",
+ "ts": "2026-11-18T03:57:50.375371Z",
+ "from": "integ-green-3",
+ "to": [
+  "seg22-harden",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "e2e webkit 1/3 @6f2e54c: 38 failed / 440 passed; 3 load-only WebKit races (csp:134, assistant:443, ink-sync:485), the rest already sent",
+ "body": "integ-green-3, webkit shard 1/3 (ipad portrait + landscape), fresh stack, CI flags, --retries=0: 440 passed, 38 failed, 19 skipped. 35 are the S23-seed pin items and S14 side effects already on the ledger for this tip (anki:16, cards:*, learn:155/:285, qbank:132/:220/:406, review:339, search:112, shell:80, assistant:345).\n\nThree new, all webkit-ipad-landscape, all PASS when run alone (csp.spec:134, assistant.spec:443 and ink-sync.spec:485 together, --workers=1: 17 passed), so they only fail under the shard's load:\n- csp.spec.ts:134 'learn chapter' (prod CSP): console errors: 'request failed: Error performing TLS handshake: An unexpected TLS packet was received. https://localhost:54329/storage/v1/object/public/content-public/figures/s2...' and 'Failed to load resource: Error performing TLS handshake...'.\n- assistant.spec.ts:443 (prod CSP): 'Failed to load resource: Error performing TLS handshake: An unexpected TLS packet was received.' The page is served over https and the Supabase/Storage gateway is plain http on localhost, so a request that WebKit upgrades fails the handshake under load. New signature; could not tell if CI sees it too.\n- ink-sync.spec.ts:485 'an edited section': pageerror '.../assets/encode.worker-*.js due to access control checks' and '/api/ink/section/ch05-s02/changes due to access control checks'. Same WebKit 'access control checks' signature as integ-green's note 20261117T140729 (request cut off mid-flight surfaces as an uncaught pageerror).\nNo infra change from me. Repro (needs load): pnpm --filter @naadi/web exec playwright test --project webkit-ipad-landscape --workers=2 --retries=0 e2e/csp.spec.ts e2e/assistant.spec.ts e2e/ink-sync.spec.ts --repeat-each=3",
+ "requires_ack": false
+}
