@@ -111,16 +111,37 @@ In the deployed build (`data/content/<pack>/`, ids prefixed `s23x-`, all items `
 | Pack | Items | State |
 |---|---|---|
 | `cardio-resp` (S23-B, systems 08, 09) | 625 | live. No independent review yet |
-| `gi-multisystem` (S23-D, system 10 only) | 280 | live. `review23-d`: minor defects (2 near-duplicate pairs, HCC figure should say ultrasound **plus** AFP per AASLD 2023, 11 length-cued items, UK spellings in 73 items). System 16 (multisystem) not written |
-| `neuro-behavioral` (S23-E, system 05 only) | 790 | live. 35 figure items held `in_review`. Not reviewed. System 04 (psychiatry) not integrated |
+| `gi-multisystem` (S23-D, system 10 only) | 280 | live. `review23-d`: minor defects (2 near-duplicate pairs, HCC figure should say ultrasound **plus** AFP per AASLD 2023, 11 length-cued items, UK spellings in 73 items). System 16 (multisystem) is mostly unwritten |
+| `neuro-behavioral` (S23-E, system 05 only) | 790 | live. 35 figure items held `in_review`. Not reviewed. Systems 04 (psychiatry) and 05 are both complete |
 | `renal-endo-nutrition` (S23-C) | 324 | live. `review23-c` CHANGES REQUESTED on both batches. **Fixed by the lead on 2026-11-18:** DKA/HHS potassium threshold 3.3 to 3.5 mEq/L (commit afab687). **Still open** (owner said ship anyway): two copied commercial mnemonics ("Salt, Sugar, Sex" in `src/15.04.01.json`, "Anterior cools" in figure `s23c-fig1506-1`), GLP-1 RA in T2D+CKD framed as glucose-only (section `s150101-2-1`), the 2024 dextrose and resolution criteria, 4 major + 15 minor defects (ledger `20261117T142213-review23-c-5e524b`, `...142216-review23-c-07c7ca`), key is the longest option in 37% (renal) and 51% (endocrine) of items (target <=25%), 0 key-fact spans, 3 figures with overlaps, `cards.generated.json` stale. Batch 3 (nutrition 16.04, fluids/acid-base 16.07) unwritten |
+
+**Coverage today** (`cd apps/api && uv run python ../../tools/coverage.py`, measured 2026-11-18; "at min" = areas with at
+least the minimum 6 items per Step, of all level-3 areas in that system):
+
+- Complete on both Steps: 04 Behavioral Health, 05 Nervous System, 08 Cardiovascular, 09 Respiratory, 10 GI,
+  11 Renal, 15 Endocrine (7 of 18 systems).
+- Missing or nearly empty (0-3 areas at minimum): 01 Human Development, 02 Immune, 03 Blood, 06 Skin,
+  07 Musculoskeletal, 12 Pregnancy, 13 Female reproductive, 14 Male reproductive, 17 Biostatistics/Epi,
+  18 Social Sciences. 16 Multisystem has 5 of 28 areas at minimum (Step 1) and 3 of 28 (Step 2 CK).
+- Overall: 311 of 556 area-and-Step combinations are below the minimum; item volume is about two thirds of the
+  blueprint target (Step 1: 1,420 of 2,151; Step 2 CK: 1,485 of 2,242 item-tags). The coverage gate is report-only
+  until `config/content_coverage.yaml` has `s23_complete: true`; set it only when the gaps are closed.
+- Not built at all: the 4 full-length practice exams per Step, the official-practice links page, and stem-figure
+  rendering (which keeps the 52 held questions offline).
+
+**What you do on your own for content (in this order):** (1) rebase `work/seg23-a`, `-g`, `-f`, `-e` onto the working
+branch one at a time, run the validators and `generate_cards.py`, fix problems, load locally; (2) fix the known
+review defects above; (3) build stem-figure rendering and publish the 52 held questions; (4) write the missing areas
+(systems 16, 01-03, 06-07, 12-14, 17-18) until `coverage.py --enforce` passes; (5) build the practice-form assembler
+and the links page; (6) get an independent review of a stratified 15% sample of each batch; (7) deploy and seed
+(section 6) after each reviewed batch. Everything except the owner steps in section 8 is yours to do without asking.
 
 Not in the build, **drafts only on branches** (fetch them: `git fetch origin 'refs/heads/work/*:refs/remotes/origin/work/*'`):
 
 - `work/seg23-a`: immune, blood, human development, general principles, about 455 items drafted (111 immune items validated).
 - `work/seg23-f`: skin, MSK, pregnancy, reproductive; partial (06.01, 06.02, 06.04, 06.06 complete).
 - `work/seg23-g`: biostatistics/epi and social sciences, 772 items planned; systems 17 and 18 merged on the branch.
-- `work/seg23-e`, `-c`, `-b`: later checkpoints of the packs above (e: psychiatry; c: batch-3 review sweep; b: key-fact spans).
+- `work/seg23-e`, `-c`, `-b`: later checkpoints of the packs above (e: later fixes; c: batch-3 review sweep; b: key-fact spans).
 These need rebasing onto the current branch, the validators run, and independent medical review before they go live.
 
 Why 52 questions are held: qbank/tutor/exam never rendered `questions.figure_ids`, so image questions cannot be
