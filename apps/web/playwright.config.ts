@@ -37,7 +37,8 @@ const repoRoot = path.resolve(here, "../..");
 
 /**
  * Local / CI: builds are served by uvicorn from apps/web/dist on :7860 (same as production).
- * Live: E2E_BASE_URL=https://<ns>-naadi.hf.space; a private Space needs HF_TOKEN, sent as a Bearer header.
+ * Live: E2E_BASE_URL=https://<ns>-naadi.hf.space targets the public smoke. Private Space
+ * authentication is handled by the dedicated playwright.live-auth.config.ts.
  */
 const liveBaseUrl = process.env.E2E_BASE_URL?.replace(/\/$/, "");
 
@@ -48,15 +49,6 @@ process.env.E2E_RUN_ID ??= process.env.GITHUB_RUN_ID
   : "local";
 const port = Number(process.env.E2E_PORT ?? 7860);
 const baseURL = liveBaseUrl ?? `http://127.0.0.1:${port}`;
-
-function authHeaders(): Record<string, string> | undefined {
-  if (!liveBaseUrl) return undefined;
-  const host = new URL(liveBaseUrl).hostname;
-  if (!host.endsWith(".hf.space")) return undefined;
-  const token = process.env.HF_TOKEN;
-  if (!token) throw new Error("E2E_BASE_URL points at a Hugging Face Space but HF_TOKEN is not set");
-  return { Authorization: `Bearer ${token}` };
-}
 
 /**
  * Local / CI: list + HTML report (with traces). Live: list + a JUnit summary only; the HTML report
@@ -324,9 +316,7 @@ export default defineConfig({
   reporter: reporters(),
   use: {
     baseURL,
-    extraHTTPHeaders: authHeaders(),
-    // Live runs carry the HF token in a request header. Traces, videos and HAR files record request
-    // headers, so a live run captures none of them (screenshots of the page cannot contain a header).
+    // Keep public live artifacts limited to screenshots and the JUnit summary.
     trace: liveBaseUrl ? "off" : "retain-on-failure",
     video: "off",
     screenshot: "only-on-failure",

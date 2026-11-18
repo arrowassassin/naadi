@@ -50,14 +50,22 @@ def test_deploy_runs_after_green_ci_on_main_and_is_never_cancelled() -> None:
 
 
 def test_live_playwright_run_records_no_headers() -> None:
-    """Traces/videos/HTML reports record request headers (the HF token); the live run writes none."""
+    """The public smoke receives no HF token and writes only screenshots and JUnit."""
     cfg = (REPO_ROOT / "apps" / "web" / "playwright.config.ts").read_text()
+    assert "HF_TOKEN" not in cfg and "extraHTTPHeaders" not in cfg
     assert 'trace: liveBaseUrl ? "off" : "retain-on-failure"' in cfg
     assert 'video: "off"' in cfg
     live = cfg[cfg.index("if (liveBaseUrl) {") :]
     live = live[: live.index("}")]
     assert '"junit"' in live and '"html"' not in live
     assert "retries: 0," in cfg
+    job = _load("deploy.yml")["jobs"]["deploy"]
+    assert "HF_TOKEN" not in job.get("env", {})
+    token_steps = {s["name"] for s in job["steps"] if "HF_TOKEN" in s.get("env", {})}
+    assert len(token_steps) == 3
+    assert "Require HF_TOKEN" in token_steps
+    assert any(name.startswith("Deploy (upload") for name in token_steps)
+    assert "Guard - the HF token is in no file about to be uploaded" in token_steps
 
 
 def _steps() -> list[tuple[str, str, dict[str, Any]]]:

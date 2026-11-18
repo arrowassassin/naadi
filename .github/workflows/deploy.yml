@@ -40,10 +40,11 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
-      HF_TOKEN: ${{ secrets.HF_TOKEN }}
       HF_SPACE_ID: arrowassassin/naadi
     steps:
       - name: Require HF_TOKEN
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           if [ -z "${HF_TOKEN}" ]; then
             echo "::error::Missing GitHub Actions secret HF_TOKEN (Settings -> Secrets and variables -> Actions). See docs/SECRETS.md."
@@ -69,12 +70,13 @@ jobs:
           pnpm install --frozen-lockfile
           uv --directory apps/api sync --frozen
       - name: Deploy (upload, wait for RUNNING on cpu-basic, smoke /api/health + / + /api/ready)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: scripts/deploy_space.sh --space "$HF_SPACE_ID" --hardware cpu-basic
       - name: Install WebKit
         run: pnpm --filter @naadi/web exec playwright install --with-deps webkit
-      - name: Live WebKit smoke (HF token header; database must be ok)
-        # The live config records no trace, video or HTML report (they would hold the token header):
-        # screenshots under test-results/screens/01-live and a JUnit summary under test-results/live-smoke.
+      - name: Public live WebKit smoke
+        # The public Space needs no bearer token. Keep only screenshots and a JUnit summary.
         env:
           E2E_BASE_URL: ${{ env.SPACE_URL }}
           E2E_EXPECT_DB_OK: "1"
@@ -83,6 +85,8 @@ jobs:
       - name: Guard - the HF token is in no file about to be uploaded
         id: scan
         if: ${{ !cancelled() }}
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python3 scripts/scan_artifacts.py --env HF_TOKEN test-results/screens/01-live test-results/live-smoke
       - if: ${{ !cancelled() && steps.scan.outcome == 'success' }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
