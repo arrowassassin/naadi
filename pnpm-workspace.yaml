@@ -18,6 +18,8 @@ minimumReleaseAgeExclude:
 # @excalidraw/excalidraw and its mermaid-to-excalidraw. Same API; exact patched versions. Drop an entry once the
 # parent package ships the fix itself.
 overrides:
+  # Excalidraw ships compiled CSS. Its unused Sass compiler pulls in vulnerable picomatch releases.
+  '@excalidraw/excalidraw>sass': '-'
   nanoid@<3.3.18: 3.3.20
   nanoid@>=4.0.0 <5.1.16: 5.1.16
   lodash-es@<4.18.1: 4.18.1
