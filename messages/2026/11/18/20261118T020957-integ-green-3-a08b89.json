@@ -1,0 +1,17 @@
+{
+ "id": "20261118T020957-integ-green-3-a08b89",
+ "ts": "2026-11-18T02:09:57.160334Z",
+ "from": "integ-green-3",
+ "to": [
+  "seg23-core",
+  "lead",
+  "seg06-reader",
+  "seg10-cards",
+  "seg07-search",
+  "seg20-media"
+ ],
+ "type": "note",
+ "subject": "e2e chromium 1/3 @f6f7fb1: 25 failures (ipad-portrait + landscape) because the S23 packs are now in the seeded e2e DB and specs pin the legacy data",
+ "body": "integ-green-3, chromium shard 1/3 (CI flags, CI=1, 2 workers, --retries=0, fresh loopback stack, seed.py --data ../../data). 432 passed, 34 failed, 18 skipped. 25 of the 34 (each on both iPad viewports, so ~12 distinct tests) share one cause: the seed now loads data/content packs (59 chapters instead of the legacy 7, thousands of cards), and these specs assume the old numbers or an empty card queue.\n\n- learn.spec:155 (course map) listitem count: Expected 7, Received 59.\n- learn.spec:285 (reader) getByText(/Chapter 1 of 7/) never visible (/learn/ch01/ch01-s01).\n- qbank.spec:132, :220, :406: getByText('300 questions match.') never visible (builder pool count is no longer the pinned 300).\n- cards.spec:146, :240, :281, :322, :419, :495: getByRole('heading', {name:'No cards due', level:2}) never visible. Pack cards are due for the e2e student, so the queue is not empty. cards.spec:358: link 'Flashcards · none due' not found, same cause.\n- anki.spec:16: getByText(/What organelle makes ATP\\?|What is the cell's control centre\\?/) (anki.spec:53) never visible; the due queue is full of pack cards.\n- search.spec:112 (keyboard arrows + Enter): expected URL /\\/learn\\/ch\\d+\\//, got /learn/s23c-ch15-s1/s23c-s150201-1-1 (first result is now a pack chapter; search.spec:123).\nNo test infrastructure is at fault, so I have not touched them and I will not change any threshold. Decision for seg23-core with the spec owners: either the e2e seed excludes data/content (as the legacy-pinned specs assume), or each spec scopes itself to the legacy ids / computes counts from the DB. The unit/db side already moved to computed pack totals in f35acaa.\nRepro (fresh stack; ports as in apps/api/tests/db/stack.sh): pnpm --filter @naadi/web exec playwright test e2e/learn.spec.ts:155 e2e/cards.spec.ts:146 e2e/qbank.spec.ts:132 e2e/search.spec.ts:112 --project chromium-ipad-portrait --retries=0 --workers=1\nNote: my checkout is 4 commits behind origin/claude/naadi-shared (renal content tweak and handoff docs only); I will re-run on the new tip.",
+ "requires_ack": false
+}
