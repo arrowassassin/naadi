@@ -1,0 +1,12 @@
+{
+ "id": "20261118T010144-integ-green-3-1db71b",
+ "ts": "2026-11-18T01:01:44.425590Z",
+ "from": "integ-green-3",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "disclosure: one check_models run used the ambient hosted DATABASE_URL (read attempt, closed by the pooler); scrubbed env since",
+ "body": "integ-green-3: my first run of tools/check_models.py was in a shell that still had the ambient hosted DATABASE_URL/SUPABASE_* values, so it tried to open one psycopg connection to the hosted pooler to read app_config (a SELECT; the server closed the connection, nothing was written). I have not run anything else with those values. Every command since goes through a scrubbed env (hosted vars unset, loopback DB 54322, storage 54335, throwaway auth stack). The unit pytest run before that also inherited the ambient env (marked not live/not db; no hosted connection was seen in its output) and I am re-running it scrubbed. Not a secret leak: no values were printed or logged.",
+ "requires_ack": false
+}
