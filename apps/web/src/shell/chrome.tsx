@@ -1,4 +1,4 @@
-import { useEffect, useSyncExternalStore } from "react";
+import { createContext, useContext, useEffect, useSyncExternalStore } from "react";
 
 /**
  * Pen-surface registration (contract S03 <-> S12a). An ink surface calls `usePenSurface(active)` while its
@@ -27,16 +27,20 @@ export function usePenActive(): boolean {
   return useSyncExternalStore(subscribe, snapshot, () => false);
 }
 
+/** A split reader keeps navigation in the lesson column while the student writes. */
+export const KeepDockVisible = createContext(false);
+
 export function usePenSurface(active: boolean): void {
+  const keepDock = useContext(KeepDockVisible);
   useEffect(() => {
-    if (!active) return;
+    if (!active || keepDock) return;
     activeCount += 1;
     publish();
     return () => {
       activeCount = Math.max(0, activeCount - 1);
       publish();
     };
-  }, [active]);
+  }, [active, keepDock]);
 }
 
 /**

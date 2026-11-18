@@ -69,3 +69,28 @@ test("whole tour launches once, visits enabled screens, and replays from Help", 
   await page.keyboard.press("Escape");
   await expect(page).toHaveURL(/\/settings\/account$/);
 });
+
+test("writing in split page notes keeps lesson navigation and chat on the left", async ({ page }) => {
+  test.skip((page.viewportSize()?.width ?? 0) < 1100, "Side-by-side reader");
+  await page.goto("/learn/ch01/ch01-s01");
+  await page.locator("[data-page-notes-toggle]:visible").click();
+  const notes = page.locator("[data-reader-notes-side]");
+  await expect(notes.locator("[data-note-editor]")).toBeVisible();
+  const mode = notes.getByRole("combobox");
+  if (await mode.isVisible()) await mode.selectOption("write");
+  else await notes.getByRole("button", { name: "Write", exact: true }).click();
+  await expect(notes.getByRole("toolbar", { name: "Ink tools" })).toBeVisible();
+  const dock = page.locator("[data-shell-bottom]");
+  const next = dock.locator("[data-reader-slot] a").last();
+  const chat = dock.getByRole("button", { name: "Open the assistant" });
+  for (const control of [next, chat]) {
+    await expect(control).toBeInViewport();
+    const rect = (await control.boundingBox())!;
+    expect(rect.x + rect.width).toBeLessThanOrEqual((await notes.boundingBox())!.x);
+  }
+  await chat.click();
+  await expect(page.locator('[data-assistant="panel"]')).toBeVisible();
+  await next.click();
+  await expect(page).not.toHaveURL(/ch01-s01$/);
+  await expect(notes).toBeVisible();
+});

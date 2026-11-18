@@ -3,6 +3,7 @@ import { MessageCircle, X } from "lucide-react";
 import { type ReactNode, type RefObject, useEffect, useId, useLayoutEffect, useRef, useSyncExternalStore } from "react";
 import { useAssistantAvailable } from "../assistant/ask";
 import { openAssistant } from "../assistant/store";
+import { KeepDockVisible } from "../shell/chrome";
 import { useUiText } from "../copy/useUiText";
 import { lazyWithFallback } from "../shell/lazyPage";
 import type { PageNotesHandle } from "./PageNotesPanel";
@@ -129,6 +130,7 @@ function PaperSheet({ open, onClose, children }: { open: boolean; onClose: () =>
  * sheet on phone and iPad portrait. `article` is the reading page.
  */
 export function ReaderNotesLayout({
+  side,
   open,
   onClose,
   sectionId,
@@ -138,6 +140,7 @@ export function ReaderNotesLayout({
   onPanelMounted,
   article,
 }: {
+  side: boolean;
   open: boolean;
   onClose: () => void;
   sectionId: string;
@@ -148,7 +151,6 @@ export function ReaderNotesLayout({
   onPanelMounted?: () => void;
   article: ReactNode;
 }) {
-  const side = useSidePanel();
   const lesson = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     const column = lesson.current;
@@ -190,7 +192,7 @@ export function ReaderNotesLayout({
   // the side-panel breakpoint is crossed (an iPad turned, a window resized) would remount it and reset everything
   // stateful inside the page, such as a playing video.
   return (
-    <>
+    <KeepDockVisible.Provider value={side && open}>
       <div className={cx("flex flex-col gap-5", side && open && "laptop:flex-row laptop:items-start")}>
         <div ref={lesson} className="min-w-0 flex-1">
           {article}
@@ -221,6 +223,6 @@ export function ReaderNotesLayout({
           {panel}
         </PaperSheet>
       )}
-    </>
+    </KeepDockVisible.Provider>
   );
 }

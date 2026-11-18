@@ -24,7 +24,7 @@ import { sectionRuns } from "../highlights/anchor";
 import { HighlightableText } from "../highlights/HighlightableText";
 import { SectionInk } from "../ink/persist/SectionInk";
 import type { PageNotesHandle } from "../notes/PageNotesPanel";
-import { ReaderNotesLayout, readNotesOpen, writeNotesOpen } from "../notes/ReaderNotes";
+import { ReaderNotesLayout, readNotesOpen, useSidePanel, writeNotesOpen } from "../notes/ReaderNotes";
 import { useShellBottomSlot } from "../shell/chrome";
 import { useChapter, usePositions } from "./api";
 import { ContentsSheet } from "./ContentsSheet";
@@ -202,6 +202,7 @@ function Reader({
   );
   // Page notes (segment 13): the panel beside the page (laptop) or a sheet; its ink also takes the page bar's place.
   const [notesOpen, setNotesOpen] = useState(readNotesOpen);
+  const sideNotes = useSidePanel();
   const [panelInk, setPanelInk] = useState(false);
   const [cardDraft, setCardDraft] = useState<CardDraft | null>(null);
   const panelRef = useRef<PageNotesHandle | null>(null);
@@ -471,6 +472,7 @@ function Reader({
       {/* Reading page: full-bleed text on phone, a card from tablet up. The selection toolbar (Highlight / Note /
           Card / Ask, segments 13/14) anchors to this article; ink (12b) mounts per section inside it. */}
       <ReaderNotesLayout
+        side={sideNotes}
         open={notesOpen}
         onClose={() => toggleNotes(false)}
         sectionId={section.id}
@@ -612,8 +614,8 @@ function Reader({
       />
 
       {/* Page bar: previous · where · next (the one lime action). On phone it joins the shell's bottom bar.
-          While ink is on, the ink toolbar takes its place, so the view keeps one lime action. */}
-      {inkOn || panelInk ? null : slot ? (
+          In split view, navigation stays in the lesson column while the student writes. */}
+      {(inkOn || panelInk) && !(sideNotes && notesOpen) ? null : slot ? (
         createPortal(<nav aria-label={t("learn.sections_nav")}>{barRow}</nav>, slot)
       ) : (
         <nav
