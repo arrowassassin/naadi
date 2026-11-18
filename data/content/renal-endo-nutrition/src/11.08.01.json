@@ -1,0 +1,1481 @@
+{
+ "area": "usmle2026.11.08.01",
+ "sections": [
+  {
+   "id": "s23c-s110801-1-1",
+   "exam": "step1",
+   "heading": "Drug toxicity to the kidney and urinary tract, nephron site by site",
+   "html": "<p>The kidney receives about a fifth of the cardiac output, concentrates drugs in its tubules and depends on finely balanced arteriolar tone, so it is one of the commonest targets of drug toxicity. The quickest way to organise nephrotoxins is by <strong>where in the nephron they act</strong>.</p>[[figure:s23c-fig110801-1]]<h3>1. Glomerular hemodynamics (prerenal pattern)</h3><p>Glomerular filtration pressure is set by the balance of afferent and efferent arteriolar tone. When renal perfusion falls (volume depletion, heart failure, cirrhosis, renal artery stenosis), two compensations keep GFR up: <strong>prostaglandins</strong> (PGE<sub>2</sub>, PGI<sub>2</sub>) dilate the afferent arteriole, and <strong>angiotensin II</strong> constricts the efferent arteriole.</p><ul><li><strong>NSAIDs</strong> (including selective COX-2 inhibitors) remove prostaglandin-mediated afferent dilation. In a well-hydrated young person this barely matters; in someone whose GFR depends on prostaglandins it causes acute kidney injury. NSAIDs also cause sodium retention, hyperkalemia (low renin and aldosterone), acute interstitial nephritis, minimal change disease (sometimes together with interstitial nephritis), and, with long-term heavy use of combination analgesics, <strong>papillary necrosis</strong> and chronic interstitial nephritis.</li><li><strong>ACE inhibitors and ARBs</strong> remove angiotensin II tone on the efferent arteriole, so glomerular capillary pressure and GFR fall. A small creatinine rise after starting them is expected and reflects lower intraglomerular pressure, which is the same effect that protects the kidney long term. A large rise suggests bilateral renal artery stenosis (or stenosis to a single kidney) or volume depletion. They also raise potassium by lowering aldosterone.</li><li><strong>Calcineurin inhibitors</strong> (cyclosporine, tacrolimus) constrict the afferent arteriole (endothelin, thromboxane, less nitric oxide). Acute toxicity is dose-related and reversible; chronic use gives striped interstitial fibrosis and arteriolar hyalinosis. They also cause hyperkalemia, hypomagnesemia, hypertension and, rarely, thrombotic microangiopathy.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> the \"triple whammy\" is an ACE inhibitor or ARB, a diuretic and an NSAID together: volume loss, no efferent constriction and no afferent dilation. Expect a prerenal picture (BUN:creatinine above 20, urine sodium low) in an older patient.</p></div><h3>2. Proximal tubule cell injury</h3><p>Proximal tubule cells reabsorb most filtered solute and take up drugs from both the lumen and the blood, which makes them the main site of direct toxic injury.</p><table><tr><th>Drug</th><th>How it injures</th><th>Pattern</th></tr><tr><td>Aminoglycosides (gentamicin, tobramycin, amikacin)</td><td>Cationic drug binds megalin on the brush border, is taken up by endocytosis and accumulates in lysosomes until they rupture</td><td>Nonoliguric acute tubular necrosis after 5–10 days; muddy brown granular casts; magnesium and potassium wasting. Risk rises with trough levels, duration, volume depletion, older age and other nephrotoxins; once-daily dosing lowers risk. Also ototoxic (worse with loop diuretics)</td></tr><tr><td>Cisplatin</td><td>Taken up by basolateral organic cation transporters; DNA damage and oxidative injury</td><td>Acute tubular necrosis and persistent <strong>magnesium wasting</strong>; prevented with vigorous isotonic hydration (amifostine is a cytoprotectant option)</td></tr><tr><td>Tenofovir disoproxil fumarate</td><td>Taken up by basolateral organic anion transporters; mitochondrial toxicity</td><td>Proximal tubulopathy: <strong>Fanconi syndrome</strong> (normoglycemic glycosuria, phosphaturia with hypophosphatemia and osteomalacia, aminoaciduria, proximal RTA). Tenofovir alafenamide gives much lower plasma tenofovir and less kidney toxicity</td></tr><tr><td>Ifosfamide</td><td>Metabolite chloroacetaldehyde</td><td>Fanconi syndrome, especially in children; also hemorrhagic cystitis</td></tr><tr><td>Iodinated contrast</td><td>Renal vasoconstriction, medullary hypoxia and direct tubular toxicity</td><td>Creatinine rise within 24–72 hours, usually transient. The main risk is an eGFR below about 30 mL/min/1.73 m², especially with diabetes or volume depletion. Prevent with isotonic IV fluids in high-risk patients and the lowest needed dose; N-acetylcysteine has no proven benefit</td></tr></table><h3>3. Tubular lumen: crystals</h3><p>Drugs that are poorly soluble in urine precipitate in the distal tubule and collecting duct when urine flow is low or the dose is high, causing obstruction and inflammation. Examples are high-dose IV <strong>acyclovir</strong> (needle-shaped birefringent crystals), <strong>methotrexate</strong> (precipitates in acidic urine; prevent with hydration and urine alkalinisation, rescue with leucovorin and, in severe toxicity, glucarpidase), <strong>sulfadiazine</strong> and other sulfonamides, and <strong>indinavir</strong> (stones and crystals). Prevention is hydration and slower infusion.</p><h3>4. Distal nephron and collecting duct</h3><ul><li><strong>Amphotericin B</strong> binds cholesterol in tubular cell membranes as well as fungal ergosterol and forms pores. In the collecting duct, H<sup>+</sup> leaks back and K<sup>+</sup> and Mg<sup>2+</sup> leak out: <strong>distal (type 1) RTA</strong> with a urine pH above 5.5, hypokalemia and hypomagnesemia. It also constricts afferent arterioles. Lipid formulations and saline loading reduce toxicity.</li><li><strong>Lithium</strong> enters principal cells through the epithelial sodium channel (ENaC), accumulates and inhibits signalling (glycogen synthase kinase-3) that maintains <strong>aquaporin-2</strong> expression, causing <strong>nephrogenic diabetes insipidus</strong>. <strong>Amiloride</strong> blocks ENaC and so reduces lithium entry. Years of use can cause chronic tubulointerstitial nephritis with microcysts and CKD; lithium also causes hypercalcemia through hyperparathyroidism.</li><li><strong>Trimethoprim</strong> (and the potassium-sparing diuretics amiloride and triamterene) blocks ENaC, causing hyperkalemia. Trimethoprim and cimetidine also block tubular <em>secretion</em> of creatinine, which raises serum creatinine without any fall in true GFR.</li></ul><h3>5. Interstitium: acute interstitial nephritis (AIN)</h3><p>A delayed (type IV, T-cell mediated) hypersensitivity reaction to a drug acting as a hapten. Classic causes are <strong>beta-lactams</strong> (methicillin historically, nafcillin, penicillins, cephalosporins), <strong>proton pump inhibitors</strong>, NSAIDs, sulfonamides, rifampin, allopurinol and <strong>immune checkpoint inhibitors</strong>. It begins days to weeks after exposure (sooner on re-exposure). Fever, rash and eosinophilia occur together in only a minority. Urine shows sterile pyuria, white blood cell casts and mild proteinuria; biopsy shows interstitial edema with lymphocytes, plasma cells and eosinophils, and tubulitis, with normal glomeruli. Stop the drug; corticosteroids are often given when the kidney does not recover promptly.</p><h3>6. Glomerular disease and other sites</h3><ul><li><strong>Heroin</strong> use is linked to focal segmental glomerulosclerosis (nephrotic syndrome); NSAIDs to minimal change disease; gold, penicillamine and NSAIDs to membranous nephropathy.</li><li><strong>Gadolinium-based contrast</strong> in patients with advanced CKD or on dialysis can cause <strong>nephrogenic systemic fibrosis</strong>: thickening and hardening of skin and connective tissue of the limbs and trunk with joint contractures. Risk is highest with older linear agents; newer macrocyclic agents carry very low risk. It is a toxicity of the skin and connective tissue, not of the kidney itself.</li><li><strong>Cyclophosphamide and ifosfamide</strong> are metabolised to <strong>acrolein</strong>, which is excreted in urine and injures bladder urothelium: <strong>hemorrhagic cystitis</strong> (and, long term, bladder cancer with cyclophosphamide). <strong>Mesna</strong> is a thiol that binds acrolein in the urine; hydration and frequent voiding help.</li><li><strong>Drug-induced urinary retention</strong>: anticholinergics (antihistamines such as diphenhydramine, tricyclic antidepressants, antimuscarinics for overactive bladder) reduce detrusor contraction; alpha-1 agonists (pseudoephedrine, phenylephrine) tighten the bladder neck; opioids reduce bladder sensation and detrusor tone. Men with prostatic enlargement are most at risk.</li></ul><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> walk the drug down the nephron. <em>Arterioles</em> (NSAIDs, ACE inhibitors, calcineurin inhibitors) → <em>proximal cells</em> (aminoglycosides, cisplatin, tenofovir) → <em>lumen</em> (crystals) → <em>collecting duct</em> (amphotericin, lithium) → <em>interstitium</em> (allergic AIN) → <em>bladder</em> (acrolein).</p></div>",
+   "figureIds": [
+    "s23c-fig110801-1"
+   ],
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Aminoglycosides",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK541105/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Allergic and Drug-Induced Interstitial Nephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482323/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Analgesic Nephropathy",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK541101/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Nephrogenic Systemic Fibrosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK567754/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Cisplatin",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK547695/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110801-2-1",
+   "exam": "step2ck",
+   "heading": "Drug-induced kidney and urinary problems: recognition and management",
+   "html": "<h3>Recognising drug-related kidney injury</h3><p>Review every drug, including over-the-counter NSAIDs, proton pump inhibitors, supplements and recent contrast, whenever creatinine rises. The urine sediment and the time course usually point to the mechanism.</p><table><tr><th>Pattern</th><th>Typical drugs</th><th>Clues</th><th>Management</th></tr><tr><td>Hemodynamic (prerenal)</td><td>NSAIDs, ACE inhibitors or ARBs, diuretics, calcineurin inhibitors</td><td>Bland sediment, BUN:creatinine above 20, low urine sodium; often a volume-depleted older patient</td><td>Hold the offending drugs, restore volume, recheck</td></tr><tr><td>Acute tubular necrosis</td><td>Aminoglycosides, cisplatin, amphotericin B, contrast</td><td>Muddy brown granular casts, urine sodium above 40 mEq/L, FENa above 2%; aminoglycoside injury is nonoliguric and appears after 5–10 days</td><td>Stop or dose-adjust, monitor levels, replace magnesium and potassium, avoid other nephrotoxins</td></tr><tr><td>Acute interstitial nephritis</td><td>Beta-lactams, PPIs, NSAIDs, sulfonamides, immune checkpoint inhibitors</td><td>Sterile pyuria, white cell casts, sometimes rash, fever or eosinophilia</td><td>Stop the drug; corticosteroids if no prompt recovery. For checkpoint inhibitors: hold the drug and start prednisone for moderate or worse injury</td></tr><tr><td>Crystal nephropathy</td><td>IV acyclovir, methotrexate, sulfadiazine, indinavir</td><td>Crystals in urine, AKI within days of a high dose</td><td>Hydrate, stop or reduce the drug; for methotrexate, leucovorin, alkalinisation and glucarpidase if severe</td></tr><tr><td>Pseudo-AKI (creatinine secretion blocked)</td><td>Trimethoprim, cimetidine; some kinase inhibitors</td><td>Creatinine up about 10–30% within days, BUN unchanged, bland urine; cystatin C unchanged</td><td>No change needed if this is the only finding; watch potassium with trimethoprim</td></tr></table><h3>ACE inhibitors and ARBs: when a creatinine rise is acceptable</h3><p>Check creatinine and potassium within about 2–4 weeks of starting or increasing the dose. A rise of up to about 30% that then stabilises is expected and the drug should be <strong>continued</strong>, because it reflects the intended fall in intraglomerular pressure. A larger rise calls for a search for volume depletion, NSAIDs or renal artery stenosis and dose reduction or a pause. Manage mild hyperkalemia with dietary advice, stopping potassium supplements, a diuretic or a potassium binder before abandoning the drug.</p><h3>Iodinated contrast</h3><ul><li>Do not withhold a clinically necessary contrast study because of kidney function; the risk is small and mostly confined to eGFR below about 30 mL/min/1.73 m² (or AKI).</li><li>For high-risk patients who are not volume overloaded: IV isotonic crystalloid before and after, the lowest needed dose of a low- or iso-osmolar agent, and pausing NSAIDs and diuretics where safe.</li><li>N-acetylcysteine and prophylactic dialysis do not help. Metformin is held after contrast in patients with eGFR below 30 or AKI.</li></ul><h3>Gadolinium</h3><p>In eGFR below 30 or dialysis, use a lower-risk (macrocyclic, group II) agent at the lowest dose only when the information is needed; for patients already on hemodialysis, dialysis soon after the scan is commonly arranged.</p><h3>Specific drugs</h3><ul><li><strong>Aminoglycosides</strong>: once-daily dosing, trough monitoring, shortest course; avoid with loop diuretics, vancomycin, contrast and NSAIDs where possible.</li><li><strong>Cisplatin</strong>: prehydrate with saline and give magnesium. <strong>Hypomagnesemia</strong> makes hypokalemia refractory (magnesium normally restrains potassium secretion through ROMK), so replace magnesium first or together with potassium.</li><li><strong>Lithium</strong>: monitor levels, creatinine, calcium and TSH. For nephrogenic DI when lithium must continue, add <strong>amiloride</strong>; thiazides also reduce polyuria but raise lithium levels.</li><li><strong>Tenofovir</strong>: monitor creatinine, urine glucose and protein and phosphate on TDF; switch to tenofovir alafenamide or another regimen if tubulopathy appears.</li><li><strong>Immune checkpoint inhibitors</strong> (pembrolizumab, nivolumab, ipilimumab): AIN is the usual kidney lesion, often weeks to months in and often with a PPI or NSAID as co-trigger. Exclude other causes, hold the inhibitor and give prednisone for moderate or worse injury; rechallenge may be possible once recovered, after discussion with oncology.</li><li><strong>Cyclophosphamide/ifosfamide</strong>: hydration and mesna to prevent hemorrhagic cystitis; evaluate later hematuria for bladder cancer.</li></ul><h3>Drug-induced urinary retention</h3><p>Suspect it in an older man with prostatic enlargement who has just started an antihistamine, antimuscarinic, tricyclic, decongestant or opioid, or after anesthesia. Confirm with a bladder scan (post-void residual). <strong>Decompress the bladder with a urethral catheter</strong> (suprapubic catheter if urethral placement fails or is contraindicated), stop the drug, and in men start an alpha-1 blocker such as tamsulosin before a trial without catheter.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a creatinine rise of about 0.2–0.3 mg/dL a few days after starting trimethoprim-sulfamethoxazole with an unchanged BUN and bland urine is blocked creatinine secretion, not kidney injury. Stopping the antibiotic is not needed for that reason alone.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Contrast-Induced Nephropathy",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448066/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Nonsteroidal Anti-Inflammatory Drugs Toxicity",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK526006/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Allergic and Drug-Induced Interstitial Nephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482323/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Male Urinary Retention: Acute and Chronic",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK538499/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Kidney Diseases",
+     "url": "https://medlineplus.gov/kidneydiseases.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110801-1",
+   "caption": "Figure. Where common nephrotoxic drugs act along the nephron, from the glomerular arterioles to the bladder.",
+   "file": "figures/s23c-fig110801-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110801-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Polyuria on lithium",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110801-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 71-year-old man with hypertension and peripheral artery disease starts lisinopril. Two weeks later his serum creatinine has risen from 1.1 to 2.4 mg/dL and potassium from 4.4 to 5.6 mEq/L. Urinalysis is bland. Doppler ultrasonography later shows high-grade stenosis of both renal arteries. Which of the following best explains the fall in glomerular filtration rate?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Constriction of the afferent arteriole"
+    },
+    {
+     "label": "B",
+     "html": "Dilation of the efferent arteriole"
+    },
+    {
+     "label": "C",
+     "html": "Immune complex deposition in the glomerular basement membrane"
+    },
+    {
+     "label": "D",
+     "html": "Injury to proximal tubule epithelial cells"
+    },
+    {
+     "label": "E",
+     "html": "Obstruction of tubules by drug crystals"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>With bilateral renal artery stenosis, glomerular pressure depends on <strong>angiotensin II constricting the efferent arteriole</strong>. An ACE inhibitor removes that tone, the efferent arteriole dilates, glomerular capillary pressure falls and GFR drops sharply. Lower aldosterone explains the rising potassium.</p><p><strong>Takeaway:</strong> ACE inhibitors and ARBs lower GFR by dilating the efferent arteriole; a large creatinine rise suggests renal artery stenosis.</p>",
+   "whyNot": {
+    "A": "Afferent constriction is how NSAIDs and calcineurin inhibitors lower GFR, not ACE inhibitors.",
+    "C": "Immune complex glomerulonephritis gives an active sediment with hematuria and casts; this urine is bland.",
+    "D": "Direct proximal tubule injury is the mechanism of aminoglycosides and cisplatin and would give granular casts.",
+    "E": "Crystal nephropathy occurs with drugs such as acyclovir or methotrexate, not ACE inhibitors."
+   },
+   "objective": "Explain how ACE inhibitors reduce GFR by removing angiotensin II-mediated efferent arteriolar constriction.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "ACE inhibitor",
+    "renal artery stenosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 79-year-old woman with heart failure with reduced ejection fraction takes furosemide and carvedilol. She takes ibuprofen 600 mg three times daily for 1 week for knee pain. Her serum creatinine rises from 1.0 to 2.1 mg/dL. BUN is 48 mg/dL, urine sodium 12 mEq/L, and urine sediment is bland. Loss of which of the following normal effects most directly explains her acute kidney injury?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Aldosterone-driven sodium reabsorption in the collecting duct"
+    },
+    {
+     "label": "B",
+     "html": "Angiotensin II constriction of the efferent arteriole"
+    },
+    {
+     "label": "C",
+     "html": "Antidiuretic hormone action on aquaporin-2"
+    },
+    {
+     "label": "D",
+     "html": "Nitric oxide release from the macula densa"
+    },
+    {
+     "label": "E",
+     "html": "Prostaglandin dilation of the afferent arteriole"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>In heart failure, renal perfusion is low and GFR depends on <strong>prostaglandin E<sub>2</sub> and prostacyclin dilating the afferent arteriole</strong>. NSAIDs block cyclooxygenase, so the afferent arteriole constricts and GFR falls. The prerenal picture (BUN:creatinine above 20, low urine sodium, bland urine) fits.</p><p><strong>Takeaway:</strong> NSAIDs cause hemodynamic AKI in prostaglandin-dependent states such as heart failure, cirrhosis and volume depletion.</p>",
+   "whyNot": {
+    "A": "NSAIDs reduce aldosterone and renin slightly, which raises potassium, but loss of sodium reabsorption would not lower GFR.",
+    "B": "Efferent constriction is lost with ACE inhibitors and ARBs, which she does not take.",
+    "C": "Antidiuretic hormone controls water reabsorption, not GFR.",
+    "D": "Macula densa signalling adjusts afferent tone through tubuloglomerular feedback, but the key NSAID effect is loss of prostaglandins."
+   },
+   "objective": "Explain NSAID-induced acute kidney injury through loss of prostaglandin-mediated afferent arteriolar dilation.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "NSAID",
+    "prerenal AKI"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 66-year-old man is treated with intravenous gentamicin and piperacillin-tazobactam for <em>Pseudomonas</em> pneumonia. On day 8, his serum creatinine has risen from 0.9 to 2.3 mg/dL. Urine output is 1.8 L/day. Serum magnesium is 1.2 mEq/L. Urine microscopy shows many muddy brown granular casts. Which of the following steps in gentamicin handling most directly leads to this injury?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Binding to megalin and endocytosis into proximal tubule cells"
+    },
+    {
+     "label": "B",
+     "html": "Deposition of drug-antibody complexes in the glomerulus"
+    },
+    {
+     "label": "C",
+     "html": "Inhibition of cyclooxygenase in the renal medulla"
+    },
+    {
+     "label": "D",
+     "html": "Precipitation of the drug in acidic urine of the collecting duct"
+    },
+    {
+     "label": "E",
+     "html": "T-cell recognition of the drug bound to interstitial proteins"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Aminoglycosides are filtered freely, then the positively charged molecules bind <strong>megalin</strong> on the proximal tubule brush border and are taken in by endocytosis. They accumulate in lysosomes, which eventually rupture and kill the cell, giving <strong>nonoliguric acute tubular necrosis</strong> after about a week, with granular casts and magnesium and potassium wasting.</p><p><strong>Takeaway:</strong> aminoglycoside nephrotoxicity is proximal tubule necrosis from megalin-mediated uptake; it is usually nonoliguric and delayed.</p>",
+   "whyNot": {
+    "B": "Immune complex disease would produce glomerulonephritis with hematuria, not granular casts and tubular magnesium loss.",
+    "C": "Cyclooxygenase inhibition is the NSAID mechanism of hemodynamic AKI.",
+    "D": "Intratubular crystal precipitation is typical of acyclovir, methotrexate and sulfonamides.",
+    "E": "T-cell hypersensitivity causes interstitial nephritis with white cell casts, the pattern of beta-lactams and PPIs."
+   },
+   "objective": "Describe the proximal tubular uptake mechanism of aminoglycoside nephrotoxicity.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "aminoglycoside",
+    "ATN"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-04",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 40-year-old woman with acute myeloid leukemia receives intravenous amphotericin B deoxycholate for invasive aspergillosis. After 10 days her laboratory results are:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>139 mEq/L</td></tr><tr><td>Potassium</td><td>2.8 mEq/L</td></tr><tr><td>Chloride</td><td>114 mEq/L</td></tr><tr><td>Bicarbonate</td><td>15 mEq/L</td></tr><tr><td>Magnesium</td><td>1.1 mEq/L</td></tr><tr><td>Arterial pH</td><td>7.30</td></tr><tr><td>Urine pH</td><td>6.4</td></tr></table><p>Which of the following best explains her acid-base disorder?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Back-leak of secreted hydrogen ions across the collecting duct epithelium"
+    },
+    {
+     "label": "B",
+     "html": "Excess production of ketoacids from fatty acid oxidation"
+    },
+    {
+     "label": "C",
+     "html": "Failure of proximal tubular bicarbonate reabsorption"
+    },
+    {
+     "label": "D",
+     "html": "Gastrointestinal loss of bicarbonate-rich fluid"
+    },
+    {
+     "label": "E",
+     "html": "Low aldosterone effect on the collecting duct"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has a <strong>normal anion gap</strong> (139 − 114 − 15 = 10) metabolic acidosis with an inappropriately high urine pH, hypokalemia and hypomagnesemia: <strong>distal (type 1) renal tubular acidosis</strong>. Amphotericin B binds membrane cholesterol and forms pores in collecting duct cells, so secreted H<sup>+</sup> leaks back and K<sup>+</sup> leaks out.</p><p><strong>Takeaway:</strong> amphotericin B causes distal RTA with hypokalemia and hypomagnesemia by making collecting duct membranes leaky.</p>",
+   "whyNot": {
+    "B": "Ketoacidosis gives a high anion gap; her gap is normal.",
+    "C": "Proximal (type 2) RTA lets urine acidify below 5.5 once bicarbonate falls; her urine pH stays high. Tenofovir and ifosfamide cause proximal RTA.",
+    "D": "Diarrhea also gives normal-gap acidosis, but the kidney responds by acidifying urine well below 5.5.",
+    "E": "Hypoaldosteronism (type 4 RTA) causes hyperkalemia, not hypokalemia."
+   },
+   "objective": "Recognise amphotericin B-induced distal renal tubular acidosis from laboratory values.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "amphotericin B",
+    "distal RTA"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 45-year-old woman with bipolar I disorder has taken lithium for 12 years with levels in the therapeutic range. She now passes about 6 L of dilute urine a day and drinks large amounts of water. Serum sodium is 145 mEq/L. After water deprivation, urine osmolality is 170 mOsm/kg, and it rises to only 185 mOsm/kg after desmopressin. Which of the following best explains her polyuria?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Destruction of vasopressin-producing hypothalamic neurons"
+    },
+    {
+     "label": "B",
+     "html": "Increased filtered load of glucose"
+    },
+    {
+     "label": "C",
+     "html": "Increased thirst from a hypothalamic effect of lithium"
+    },
+    {
+     "label": "D",
+     "html": "Reduced expression of aquaporin-2 in collecting duct principal cells"
+    },
+    {
+     "label": "E",
+     "html": "Reduced sodium chloride reabsorption in the thick ascending limb"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Failure to concentrate urine despite desmopressin is <strong>nephrogenic diabetes insipidus</strong>. Lithium enters principal cells through the epithelial sodium channel, accumulates and inhibits glycogen synthase kinase-3 signalling, which lowers <strong>aquaporin-2</strong> production and insertion, so the collecting duct cannot respond to antidiuretic hormone.</p><p><strong>Takeaway:</strong> lithium causes nephrogenic DI by reducing aquaporin-2 in principal cells; it enters them through ENaC.</p>",
+   "whyNot": {
+    "A": "Central DI would respond to desmopressin with a large rise in urine osmolality.",
+    "B": "Glycosuria causes osmotic diuresis with urine that is not maximally dilute; she has no hyperglycemia.",
+    "C": "Primary polydipsia gives low or low-normal serum sodium and concentrates urine after water deprivation.",
+    "E": "Loop diuretics impair concentration by blocking the thick ascending limb; lithium acts mainly on principal cells."
+   },
+   "objective": "Explain the mechanism of lithium-induced nephrogenic diabetes insipidus.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "lithium",
+    "nephrogenic DI"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man has taken a regimen containing tenofovir disoproxil fumarate for HIV for 6 years. He has new bone pain. Serum glucose is 92 mg/dL, phosphorus 1.8 mg/dL, bicarbonate 18 mEq/L with a normal anion gap, and uric acid 1.9 mg/dL. Urinalysis shows 2+ glucose and low-grade proteinuria. Which part of the nephron is primarily affected?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Collecting duct"
+    },
+    {
+     "label": "B",
+     "html": "Distal convoluted tubule"
+    },
+    {
+     "label": "C",
+     "html": "Glomerulus"
+    },
+    {
+     "label": "D",
+     "html": "Proximal convoluted tubule"
+    },
+    {
+     "label": "E",
+     "html": "Thick ascending limb of the loop of Henle"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Glycosuria with normal blood glucose, phosphate wasting (with osteomalacia causing bone pain), low uric acid and a normal-gap acidosis is <strong>Fanconi syndrome</strong>, a generalised failure of the <strong>proximal convoluted tubule</strong>, which reabsorbs glucose, phosphate, amino acids, urate and most bicarbonate. Tenofovir enters these cells through basolateral organic anion transporters and injures their mitochondria.</p><p><strong>Takeaway:</strong> tenofovir disoproxil causes proximal tubulopathy (Fanconi syndrome); tenofovir alafenamide is much less toxic to the kidney.</p>",
+   "whyNot": {
+    "A": "Collecting duct disease causes distal RTA or nephrogenic DI, not glycosuria and phosphate wasting.",
+    "B": "The distal convoluted tubule handles sodium chloride and calcium; it does not reabsorb glucose.",
+    "C": "Glomerular disease causes proteinuria and hematuria but not this pattern of tubular solute wasting.",
+    "E": "Thick ascending limb defects (as in Bartter syndrome) cause hypokalemic alkalosis, not acidosis with glycosuria."
+   },
+   "objective": "Localise tenofovir-induced Fanconi syndrome to the proximal tubule.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "tenofovir",
+    "Fanconi syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 30-year-old woman with herpes simplex encephalitis receives high-dose intravenous acyclovir given as rapid infusions. She has been drinking little. On day 3, her serum creatinine rises from 0.7 to 2.0 mg/dL. Polarised microscopy of the urine shows many needle-shaped birefringent crystals within white blood cells and free in the urine. Which of the following best describes the mechanism of her kidney injury?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Immune-mediated injury to tubular basement membrane"
+    },
+    {
+     "label": "B",
+     "html": "Inhibition of tubular creatinine secretion"
+    },
+    {
+     "label": "C",
+     "html": "Intratubular precipitation of the drug"
+    },
+    {
+     "label": "D",
+     "html": "Loss of prostaglandin-dependent renal blood flow"
+    },
+    {
+     "label": "E",
+     "html": "Thrombotic microangiopathy of glomerular capillaries"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Acyclovir is poorly soluble in urine. With a high dose, rapid infusion and low urine flow it precipitates as <strong>needle-shaped crystals</strong> in the distal tubules and collecting ducts, obstructing them and causing inflammation. Prevention is adequate hydration and slower infusion; treatment is fluids and dose adjustment.</p><p><strong>Takeaway:</strong> IV acyclovir, methotrexate, sulfonamides and indinavir cause crystal nephropathy; hydration prevents it.</p>",
+   "whyNot": {
+    "A": "Anti-tubular basement membrane disease is rare and not linked to crystals.",
+    "B": "Blocked creatinine secretion (trimethoprim, cimetidine) raises creatinine slightly without crystals or true injury.",
+    "D": "Hemodynamic AKI from lost prostaglandins is the NSAID mechanism and gives a bland sediment.",
+    "E": "Thrombotic microangiopathy occurs with calcineurin inhibitors, gemcitabine or VEGF inhibitors, with hemolysis and low platelets."
+   },
+   "objective": "Recognise acyclovir crystal nephropathy and its mechanism.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "acyclovir",
+    "crystal nephropathy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old woman with lupus nephritis is about to start intravenous cyclophosphamide. To prevent a urinary bladder complication, she is given vigorous hydration and a second drug that contains a free sulfhydryl group and is concentrated in the urine. Which of the following is the action of this second drug?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "It alkalinises urine to keep the parent drug in solution"
+    },
+    {
+     "label": "B",
+     "html": "It binds and inactivates acrolein in the bladder"
+    },
+    {
+     "label": "C",
+     "html": "It blocks muscarinic receptors on the detrusor"
+    },
+    {
+     "label": "D",
+     "html": "It inhibits hepatic conversion of cyclophosphamide to active metabolites"
+    },
+    {
+     "label": "E",
+     "html": "It supplies reduced folate to urothelial cells"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Cyclophosphamide and ifosfamide are metabolised to <strong>acrolein</strong>, which is excreted in urine and damages the urothelium, causing <strong>hemorrhagic cystitis</strong>. <strong>Mesna</strong> is a thiol that is concentrated in urine, where it binds acrolein and makes it harmless, without affecting the drug's anticancer or immunosuppressive effect.</p><p><strong>Takeaway:</strong> mesna (with hydration) prevents acrolein-induced hemorrhagic cystitis from cyclophosphamide and ifosfamide.</p>",
+   "whyNot": {
+    "A": "Urine alkalinisation is used with methotrexate to prevent crystal nephropathy, not with cyclophosphamide.",
+    "C": "Antimuscarinics treat overactive bladder; they do not protect the urothelium.",
+    "D": "Blocking activation would remove the drug's therapeutic effect; mesna acts only on the toxic metabolite in urine.",
+    "E": "Reduced folate (leucovorin) rescues normal cells from methotrexate, not from cyclophosphamide."
+   },
+   "objective": "Explain how mesna prevents cyclophosphamide-induced hemorrhagic cystitis.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "cyclophosphamide",
+    "mesna",
+    "hemorrhagic cystitis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man who has received hemodialysis for 4 years has progressive tightening and woody induration of the skin of both legs and forearms over 3 months, with new flexion contractures of the knees. His face is spared. He had several contrast-enhanced imaging studies over the past year. Skin biopsy shows thickened collagen bundles in the dermis and subcutaneous septa with many CD34-positive spindle cells and no inflammation. Which agent is the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Erythropoiesis-stimulating agent"
+    },
+    {
+     "label": "B",
+     "html": "Gadolinium-based contrast"
+    },
+    {
+     "label": "C",
+     "html": "Heparin"
+    },
+    {
+     "label": "D",
+     "html": "Iodinated contrast"
+    },
+    {
+     "label": "E",
+     "html": "Sevelamer"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Symmetric hardening of the skin of the limbs with contractures, sparing the face, in a patient on dialysis is <strong>nephrogenic systemic fibrosis</strong>. It follows exposure to <strong>gadolinium-based contrast</strong> when kidney clearance is severely reduced; free gadolinium deposits in tissue and recruits circulating fibrocytes (CD34-positive), which lay down collagen. Risk is highest with older linear agents.</p><p><strong>Takeaway:</strong> gadolinium in advanced CKD or dialysis can cause nephrogenic systemic fibrosis.</p>",
+   "whyNot": {
+    "A": "Erythropoiesis-stimulating agents cause hypertension and thrombosis, not dermal fibrosis.",
+    "C": "Heparin can cause skin necrosis or thrombocytopenia but not this fibrosing disease.",
+    "D": "Iodinated contrast can cause acute kidney injury in patients not yet on dialysis, but not nephrogenic systemic fibrosis.",
+    "E": "Sevelamer is a phosphate binder with mainly gastrointestinal side effects."
+   },
+   "objective": "Link nephrogenic systemic fibrosis to gadolinium exposure in advanced kidney disease.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "gadolinium",
+    "nephrogenic systemic fibrosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-1-10",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 67-year-old woman has taken omeprazole for 4 months for reflux. Her serum creatinine has risen from 0.8 to 2.6 mg/dL. She has no fever or rash. Urinalysis shows 1+ protein, 15–20 white blood cells/hpf, white blood cell casts and a negative culture. Ultrasonography shows normal-sized kidneys without hydronephrosis. Which of the following is most likely to be seen on kidney biopsy?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Crescents in most glomeruli"
+    },
+    {
+     "label": "B",
+     "html": "Interstitial edema with lymphocytes, plasma cells and eosinophils"
+    },
+    {
+     "label": "C",
+     "html": "Necrotic proximal tubular cells sloughed into the lumen with no inflammation"
+    },
+    {
+     "label": "D",
+     "html": "Nodular mesangial sclerosis"
+    },
+    {
+     "label": "E",
+     "html": "Subepithelial immune deposits along the basement membrane"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Sterile pyuria with white cell casts and a rising creatinine in someone taking a proton pump inhibitor is <strong>drug-induced acute interstitial nephritis</strong>, a T-cell-mediated hypersensitivity reaction. The biopsy shows <strong>interstitial edema and an infiltrate of lymphocytes, plasma cells and eosinophils</strong>, with tubulitis and normal glomeruli. PPI-associated AIN often lacks fever, rash and eosinophilia and begins months after the drug is started.</p><p><strong>Takeaway:</strong> PPIs, beta-lactams and NSAIDs cause AIN: sterile pyuria, white cell casts, and an eosinophil-rich interstitial infiltrate.</p>",
+   "whyNot": {
+    "A": "Crescents mark rapidly progressive glomerulonephritis, with red cell casts and dysmorphic red cells.",
+    "C": "Acute tubular necrosis without inflammation fits aminoglycosides or ischemia, with granular rather than white cell casts.",
+    "D": "Nodular mesangial sclerosis is diabetic nephropathy, which develops over years.",
+    "E": "Subepithelial deposits are membranous nephropathy, which presents with nephrotic-range proteinuria."
+   },
+   "objective": "Recognise the histology of PPI-induced acute interstitial nephritis.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "acute interstitial nephritis",
+    "proton pump inhibitor"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 69-year-old man with type 2 diabetes and stage G4 chronic kidney disease (eGFR 26 mL/min/1.73 m²) has a new 3-cm colon mass on colonoscopy. A contrast-enhanced CT of the chest, abdomen and pelvis is planned for staging. He takes insulin glargine, amlodipine and naproxen as needed. He is euvolemic, with blood pressure 138/80 mm Hg and no edema. Which of the following is the most appropriate measure to reduce his risk of contrast-associated kidney injury?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cancel the CT and stage the cancer with ultrasonography"
+    },
+    {
+     "label": "B",
+     "html": "Give high-dose oral N-acetylcysteine the day before and the day of the scan"
+    },
+    {
+     "label": "C",
+     "html": "Give intravenous isotonic saline before and after the scan and stop naproxen"
+    },
+    {
+     "label": "D",
+     "html": "Perform hemodialysis immediately after the scan"
+    },
+    {
+     "label": "E",
+     "html": "Substitute an MRI with a linear gadolinium agent"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>His eGFR below 30 puts him at higher risk of contrast-associated kidney injury, but the study is needed. In a euvolemic patient, <strong>intravenous isotonic crystalloid before and after</strong> contrast, the lowest needed dose of a low- or iso-osmolar agent, and pausing nephrotoxins such as <strong>NSAIDs</strong> are the evidence-based measures.</p><p><strong>Takeaway:</strong> prevent contrast-associated AKI with isotonic IV fluids and by stopping nephrotoxins; N-acetylcysteine and prophylactic dialysis do not help.</p>",
+   "whyNot": {
+    "A": "Withholding a needed staging study harms cancer care; ultrasonography cannot stage the chest and nodes adequately.",
+    "B": "Trials have shown no benefit of N-acetylcysteine for preventing contrast-associated kidney injury.",
+    "D": "Prophylactic dialysis does not prevent kidney injury in patients not already on dialysis.",
+    "E": "Linear gadolinium agents carry the highest risk of nephrogenic systemic fibrosis when eGFR is below 30."
+   },
+   "objective": "Use isotonic IV fluids and stop nephrotoxins to reduce contrast-associated AKI in a high-risk patient.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "contrast nephropathy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old woman with type 2 diabetes and albuminuria (urine albumin-to-creatinine ratio 420 mg/g) was started on lisinopril 10 mg daily 2 weeks ago. She feels well. Blood pressure has fallen from 148/90 to 132/80 mm Hg. Serum creatinine has risen from 1.30 to 1.55 mg/dL, and potassium from 4.6 to 4.9 mEq/L. She takes no NSAIDs and is not volume depleted. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue lisinopril and recheck laboratory values in a few weeks"
+    },
+    {
+     "label": "B",
+     "html": "Order renal artery duplex ultrasonography this week"
+    },
+    {
+     "label": "C",
+     "html": "Start sodium polystyrene sulfonate for the potassium"
+    },
+    {
+     "label": "D",
+     "html": "Stop lisinopril and start amlodipine instead"
+    },
+    {
+     "label": "E",
+     "html": "Switch lisinopril to losartan at an equivalent dose"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The creatinine has risen by about 19% and potassium remains acceptable. A rise of up to about 30% after starting an ACE inhibitor reflects the intended fall in intraglomerular pressure, which slows CKD progression in albuminuric diabetes. The drug should be <strong>continued</strong> with repeat monitoring.</p><p><strong>Takeaway:</strong> after starting an ACE inhibitor or ARB, accept a creatinine rise of up to about 30% and keep the drug.</p>",
+   "whyNot": {
+    "B": "Renovascular evaluation is for a larger rise (above about 30%) or other clues to renal artery stenosis.",
+    "C": "Potassium 4.9 mEq/L needs no binder.",
+    "D": "Stopping would lose the kidney-protective benefit; amlodipine does not lower albuminuria.",
+    "E": "An ARB acts on the same efferent arteriole and would give the same expected creatinine rise."
+   },
+   "objective": "Continue an ACE inhibitor when creatinine rises by less than about 30% after starting it.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ACE inhibitor",
+    "CKD"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old man with HIV (CD4 count 140/mm³) starts trimethoprim-sulfamethoxazole prophylaxis. Six days later, routine laboratory studies show serum creatinine 1.25 mg/dL (baseline 0.95 mg/dL), BUN 13 mg/dL (baseline 12 mg/dL) and potassium 5.1 mEq/L. He feels well and urine output is normal. Urinalysis shows no blood, protein, white cells, casts or crystals. Serum cystatin C is unchanged from baseline. Which of the following best explains the creatinine rise?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Acute interstitial nephritis"
+    },
+    {
+     "label": "B",
+     "html": "Acute tubular necrosis"
+    },
+    {
+     "label": "C",
+     "html": "Inhibition of tubular creatinine secretion"
+    },
+    {
+     "label": "D",
+     "html": "Prerenal azotemia from volume depletion"
+    },
+    {
+     "label": "E",
+     "html": "Sulfonamide crystal nephropathy"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Trimethoprim competes with creatinine for tubular secretion through organic cation transporters, so serum creatinine rises by about 10–30% <strong>without a true fall in GFR</strong>. The clues are an unchanged BUN, unchanged cystatin C and a bland urine. Trimethoprim also blocks ENaC in the collecting duct, which explains the slight rise in potassium.</p><p><strong>Takeaway:</strong> trimethoprim (and cimetidine) can raise creatinine by blocking its secretion; check BUN, urine and cystatin C before calling it AKI.</p>",
+   "whyNot": {
+    "A": "Interstitial nephritis would produce pyuria, white cell casts and a falling true GFR (rising cystatin C).",
+    "B": "Tubular necrosis would show granular casts and a falling GFR with rising BUN.",
+    "D": "Prerenal azotemia raises BUN more than creatinine; his BUN is unchanged and he is not volume depleted.",
+    "E": "Sulfonamide crystals would be seen in the urine, and injury would raise cystatin C."
+   },
+   "objective": "Distinguish trimethoprim's inhibition of creatinine secretion from true acute kidney injury.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "trimethoprim",
+    "creatinine secretion"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old man with metastatic melanoma has received pembrolizumab every 3 weeks for 5 months. His serum creatinine has risen from 0.9 to 2.4 mg/dL over 3 weeks. He takes no NSAIDs or proton pump inhibitors and has not received contrast. He is euvolemic. Urinalysis shows 1+ protein, white blood cells and white blood cell casts, with a negative culture. Ultrasonography shows normal kidneys without hydronephrosis. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue pembrolizumab and give intravenous fluids"
+    },
+    {
+     "label": "B",
+     "html": "Hold pembrolizumab and start oral prednisone"
+    },
+    {
+     "label": "C",
+     "html": "Start hemodialysis"
+    },
+    {
+     "label": "D",
+     "html": "Start plasma exchange"
+    },
+    {
+     "label": "E",
+     "html": "Switch pembrolizumab to ipilimumab"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Sterile pyuria with white cell casts and a creatinine 2–3 times baseline in a patient on an immune checkpoint inhibitor, with other causes excluded, is <strong>immune-related acute interstitial nephritis</strong>. For this moderate injury, guidelines advise <strong>holding the checkpoint inhibitor</strong> and giving <strong>corticosteroids</strong> (prednisone about 0.5–1 mg/kg/day, then a slow taper). Kidney biopsy is considered when the diagnosis is uncertain.</p><p><strong>Takeaway:</strong> checkpoint inhibitor AIN: hold the drug and give prednisone.</p>",
+   "whyNot": {
+    "A": "Continuing the drug lets the immune injury progress; he is not volume depleted.",
+    "C": "He has no indication for dialysis (no refractory hyperkalemia, acidosis, overload or uremia).",
+    "D": "Plasma exchange is for antibody-mediated disease such as anti-GBM disease, not T-cell AIN.",
+    "E": "Ipilimumab is another checkpoint inhibitor with a higher rate of immune-related adverse effects."
+   },
+   "objective": "Manage immune checkpoint inhibitor-associated interstitial nephritis by holding the drug and giving corticosteroids.",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "immune checkpoint inhibitor",
+    "acute interstitial nephritis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-2-05",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 57-year-old woman is receiving cisplatin-based chemotherapy for cervical cancer. She reports muscle cramps and fatigue. She has had no vomiting or diarrhea. Over the past week she has received oral potassium supplements, 80 mEq a day in two doses, but her potassium has not improved. Laboratory results:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Sodium</td><td>138 mEq/L</td></tr><tr><td>Potassium</td><td>2.9 mEq/L</td></tr><tr><td>Bicarbonate</td><td>27 mEq/L</td></tr><tr><td>Creatinine</td><td>1.1 mg/dL</td></tr><tr><td>Calcium, total</td><td>8.0 mg/dL</td></tr><tr><td>Magnesium</td><td>0.9 mEq/L</td></tr></table><p>ECG shows prominent U waves. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add spironolactone"
+    },
+    {
+     "label": "B",
+     "html": "Double the oral potassium dose"
+    },
+    {
+     "label": "C",
+     "html": "Give intravenous calcium gluconate"
+    },
+    {
+     "label": "D",
+     "html": "Give intravenous magnesium sulfate along with potassium"
+    },
+    {
+     "label": "E",
+     "html": "Stop potassium and recheck in 1 week"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Cisplatin injures the tubule and causes persistent <strong>renal magnesium wasting</strong>. Low intracellular magnesium removes its normal block on ROMK potassium channels, so the kidney keeps losing potassium and <strong>hypokalemia does not correct until magnesium is replaced</strong>. Low magnesium also impairs PTH release, contributing to her low calcium.</p><p><strong>Takeaway:</strong> refractory hypokalemia (often with hypocalcemia) on cisplatin, aminoglycosides or amphotericin: replace magnesium.</p>",
+   "whyNot": {
+    "A": "Spironolactone reduces potassium loss somewhat but does not fix the underlying magnesium deficit and adds hyperkalemia risk once corrected.",
+    "B": "More potassium alone will keep being lost in the urine while magnesium stays low.",
+    "C": "Calcium does not treat hypokalemia; her calcium will improve once magnesium is replaced.",
+    "E": "Stopping replacement with potassium 2.9 mEq/L and U waves is unsafe."
+   },
+   "objective": "Replace magnesium to correct refractory hypokalemia in cisplatin-induced magnesium wasting.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "cisplatin",
+    "hypomagnesemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 79-year-old man with benign prostatic hyperplasia began taking diphenhydramine nightly for insomnia 4 days ago. He now has lower abdominal pain and has passed only small dribbles of urine for 12 hours. Temperature is 37.0°C (98.6°F). The lower abdomen is distended and tender to the umbilicus. Bladder ultrasonography shows 950 mL of urine. Serum creatinine is 1.4 mg/dL (baseline 1.0 mg/dL). Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT of the abdomen and pelvis"
+    },
+    {
+     "label": "B",
+     "html": "Oral bethanechol and a repeat bladder scan in 6 hours"
+    },
+    {
+     "label": "C",
+     "html": "Placement of a urethral catheter"
+    },
+    {
+     "label": "D",
+     "html": "Start tamsulosin and discharge home"
+    },
+    {
+     "label": "E",
+     "html": "Suprapubic cystostomy in the operating room"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>He has <strong>acute urinary retention</strong> triggered by an anticholinergic antihistamine on a background of prostatic enlargement. The first step is <strong>bladder decompression with a urethral catheter</strong>. Then stop the diphenhydramine, start an alpha-1 blocker such as tamsulosin, and plan a trial without catheter after a few days.</p><p><strong>Takeaway:</strong> drug-induced acute urinary retention: catheterise first, then stop the drug and add an alpha blocker.</p>",
+   "whyNot": {
+    "A": "Imaging is not needed before relieving an obvious distended bladder.",
+    "B": "Bethanechol is not effective for acute retention and delaying drainage prolongs pain and kidney injury.",
+    "D": "Tamsulosin helps a later trial without catheter, but the full bladder must be drained now.",
+    "E": "Suprapubic drainage is reserved for failed or contraindicated urethral catheterisation."
+   },
+   "objective": "Decompress the bladder first in drug-induced acute urinary retention.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "urinary retention",
+    "anticholinergic",
+    "geriatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110801-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 41-year-old man with bipolar I disorder, stable on lithium for 9 years, has had increasing thirst and nocturia for 6 months. He drinks about 7 L of water a day. Lithium level is 0.8 mEq/L (therapeutic). Serum sodium is 146 mEq/L, glucose 94 mg/dL and calcium 9.6 mg/dL. Urine osmolality is 110 mOsm/kg. During a supervised water deprivation test, urine osmolality reaches 160 mOsm/kg; 1 hour after desmopressin it is 170 mOsm/kg. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Central diabetes insipidus"
+    },
+    {
+     "label": "B",
+     "html": "Nephrogenic diabetes insipidus"
+    },
+    {
+     "label": "C",
+     "html": "Osmotic diuresis"
+    },
+    {
+     "label": "D",
+     "html": "Primary polydipsia"
+    },
+    {
+     "label": "E",
+     "html": "Syndrome of inappropriate antidiuretic hormone secretion"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Dilute urine that stays dilute after water deprivation and rises by less than 10% after desmopressin, with high-normal sodium, means the kidney cannot respond to antidiuretic hormone: <strong>nephrogenic diabetes insipidus</strong>, here from long-term lithium.</p><p><strong>Takeaway:</strong> no concentration after desmopressin means nephrogenic DI; lithium is the commonest drug cause.</p>",
+   "whyNot": {
+    "A": "Central DI concentrates urine substantially (often by more than 50%) after desmopressin.",
+    "C": "Osmotic diuresis (for example glycosuria) gives urine osmolality near or above plasma; his glucose is normal.",
+    "D": "Primary polydipsia gives low-normal sodium and concentrates urine during water deprivation.",
+    "E": "SIADH causes hyponatremia with concentrated urine, the opposite pattern."
+   },
+   "objective": "Diagnose lithium-induced nephrogenic diabetes insipidus from a water deprivation test.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "psychiatry"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "lithium",
+    "nephrogenic DI"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110801-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q110801-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>His psychiatrist advises that lithium has kept him well after several failed alternatives, and he wishes to continue it. His lithium level remains 0.8 mEq/L. Which of the following is the most appropriate addition to reduce his polyuria?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Amiloride"
+    },
+    {
+     "label": "B",
+     "html": "Demeclocycline"
+    },
+    {
+     "label": "C",
+     "html": "Desmopressin"
+    },
+    {
+     "label": "D",
+     "html": "Furosemide"
+    },
+    {
+     "label": "E",
+     "html": "Tolvaptan"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Lithium reaches principal cells through the <strong>epithelial sodium channel</strong>. <strong>Amiloride</strong> blocks this channel, lowering intracellular lithium and partly restoring the response to antidiuretic hormone, with little effect on lithium levels. Thiazides also lessen polyuria but raise lithium levels, so they need close monitoring. Lithium levels, kidney function, calcium and TSH should still be checked regularly.</p><p><strong>Takeaway:</strong> amiloride treats lithium-induced nephrogenic DI when lithium must continue.</p>",
+   "whyNot": {
+    "B": "Demeclocycline itself causes nephrogenic DI and is used to treat SIADH.",
+    "C": "Desmopressin does not work because the collecting duct cannot respond to it.",
+    "D": "Furosemide increases urine output and can deplete volume, raising lithium levels.",
+    "E": "Tolvaptan blocks vasopressin V2 receptors and would worsen water loss."
+   },
+   "objective": "Treat lithium-induced nephrogenic diabetes insipidus with amiloride.",
+   "areas": [
+    "usmle2026.11.08.01",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "psychiatry"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "lithium",
+    "amiloride"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110801-1",
+   "setOrder": 2
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110801-01",
+   "frontHtml": "ACE inhibitors and ARBs lower GFR by which arteriolar change?",
+   "backHtml": "Dilating the efferent arteriole (removing angiotensin II tone), so glomerular pressure falls.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-02",
+   "frontHtml": "NSAIDs lower GFR by which arteriolar change, and in whom does it matter?",
+   "backHtml": "Afferent constriction from lost prostaglandins; matters in heart failure, cirrhosis, volume depletion, CKD and older age.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-03",
+   "frontHtml": "Calcineurin inhibitors: renal hemodynamic effect and electrolyte effects?",
+   "backHtml": "Afferent arteriolar constriction; hyperkalemia, hypomagnesemia, hypertension; chronic striped interstitial fibrosis.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-04",
+   "frontHtml": "How do aminoglycosides reach and injure proximal tubule cells?",
+   "backHtml": "Bind megalin on the brush border, are endocytosed and accumulate in lysosomes; nonoliguric ATN after 5–10 days.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-05",
+   "frontHtml": "Cisplatin's signature electrolyte problem?",
+   "backHtml": "Renal magnesium wasting (with ATN); prevent injury with vigorous saline hydration.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-06",
+   "frontHtml": "Tenofovir disoproxil kidney toxicity?",
+   "backHtml": "Proximal tubulopathy: Fanconi syndrome (normoglycemic glycosuria, phosphaturia, proximal RTA); less with tenofovir alafenamide.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-07",
+   "frontHtml": "Amphotericin B: which RTA and which electrolytes fall?",
+   "backHtml": "Distal (type 1) RTA with urine pH above 5.5; hypokalemia and hypomagnesemia.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-08",
+   "frontHtml": "How does lithium cause nephrogenic DI?",
+   "backHtml": "Enters principal cells via ENaC and lowers aquaporin-2 expression.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-09",
+   "frontHtml": "Drugs that cause crystal nephropathy?",
+   "backHtml": "IV acyclovir, methotrexate, sulfonamides (sulfadiazine), indinavir; prevent with hydration.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-10",
+   "frontHtml": "Classic drug causes of acute interstitial nephritis?",
+   "backHtml": "Beta-lactams, PPIs, NSAIDs, sulfonamides, rifampin, allopurinol, immune checkpoint inhibitors.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-11",
+   "frontHtml": "Biopsy of drug-induced AIN?",
+   "backHtml": "Interstitial edema with lymphocytes, plasma cells and eosinophils; tubulitis; normal glomeruli.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-12",
+   "frontHtml": "Heroin use is linked to which glomerular lesion?",
+   "backHtml": "Focal segmental glomerulosclerosis.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-13",
+   "frontHtml": "Gadolinium in eGFR below 30 or dialysis can cause what?",
+   "backHtml": "Nephrogenic systemic fibrosis: hardened skin of limbs and trunk with contractures; highest risk with linear agents.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-14",
+   "frontHtml": "Toxic metabolite and antidote for cyclophosphamide hemorrhagic cystitis?",
+   "backHtml": "Acrolein; mesna (a thiol that binds it in urine) plus hydration.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-15",
+   "frontHtml": "Drug classes that cause urinary retention?",
+   "backHtml": "Anticholinergics (antihistamines, tricyclics, antimuscarinics), alpha-1 agonists (decongestants) and opioids.",
+   "sectionId": "s23c-s110801-1-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-16",
+   "frontHtml": "Proven ways to reduce contrast-associated AKI in a high-risk patient?",
+   "backHtml": "Isotonic IV fluids before and after, lowest dose of low/iso-osmolar contrast, pause NSAIDs; N-acetylcysteine does not help.",
+   "sectionId": "s23c-s110801-2-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-17",
+   "frontHtml": "Creatinine rise after starting an ACE inhibitor that is acceptable?",
+   "backHtml": "Up to about 30%; continue the drug and recheck.",
+   "sectionId": "s23c-s110801-2-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-18",
+   "frontHtml": "Creatinine up slightly on trimethoprim with unchanged BUN and bland urine?",
+   "backHtml": "Blocked tubular creatinine secretion, not true AKI; cystatin C is unchanged.",
+   "sectionId": "s23c-s110801-2-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-19",
+   "frontHtml": "Immune checkpoint inhibitor AIN: management?",
+   "backHtml": "Hold the inhibitor and give prednisone (about 0.5–1 mg/kg/day) for moderate or worse injury.",
+   "sectionId": "s23c-s110801-2-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-20",
+   "frontHtml": "Why does hypokalemia fail to correct on cisplatin?",
+   "backHtml": "Hypomagnesemia keeps ROMK open and potassium is lost; replace magnesium.",
+   "sectionId": "s23c-s110801-2-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-21",
+   "frontHtml": "Lithium nephrogenic DI when lithium must continue: drug?",
+   "backHtml": "Amiloride (blocks ENaC lithium entry).",
+   "sectionId": "s23c-s110801-2-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110801-22",
+   "frontHtml": "Acute urinary retention after starting diphenhydramine in a man with BPH: first step?",
+   "backHtml": "Urethral catheter; then stop the drug and start an alpha-1 blocker.",
+   "sectionId": "s23c-s110801-2-1",
+   "areas": [
+    "usmle2026.11.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

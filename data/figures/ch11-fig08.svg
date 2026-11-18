@@ -1,0 +1,41 @@
+<svg aria-label="Cervical cancer screening by age and ASCCP management of abnormal results" font-family="sans-serif" role="img" viewbox="0 0 640 410" xmlns="http://www.w3.org/2000/svg">
+<text fill="#0f172a" font-size="13" font-weight="bold" text-anchor="middle" x="320" y="18">Average-risk, immunocompetent: screening by age</text>
+<g fill="#0f172a" font-size="12">
+<text x="10" y="46">USPSTF</text><text x="10" y="60">2018</text>
+<rect fill="#fee2e2" height="34" stroke="#334155" width="48" x="70" y="32"></rect><text text-anchor="middle" x="94" y="53">None</text>
+<rect fill="#e0f2fe" height="34" stroke="#334155" width="86" x="118" y="32"></rect><text text-anchor="middle" x="161" y="47">Cytology</text><text text-anchor="middle" x="161" y="61">every 3 y</text>
+<rect fill="#dcfce7" height="34" stroke="#334155" width="338" x="204" y="32"></rect><text text-anchor="middle" x="373" y="47">hrHPV alone q5y · cotest q5y · cytology q3y</text><text text-anchor="middle" x="373" y="61">(2024 draft: HPV alone preferred, self-collect OK)</text>
+<rect fill="#fef3c7" height="34" stroke="#334155" width="90" x="542" y="32"></rect><text text-anchor="middle" x="587" y="47">Stop if</text><text text-anchor="middle" x="587" y="61">adequate*</text>
+<text x="10" y="92">ACS</text><text x="10" y="106">2020</text>
+<rect fill="#fee2e2" height="34" stroke="#334155" width="77" x="70" y="78"></rect><text text-anchor="middle" x="108" y="99">None</text>
+<rect fill="#dcfce7" height="34" stroke="#334155" width="395" x="147" y="78"></rect><text text-anchor="middle" x="344" y="93">Primary HPV every 5 y from age 25</text><text text-anchor="middle" x="344" y="107">(cotest q5y or cytology q3y acceptable)</text>
+<rect fill="#fef3c7" height="34" stroke="#334155" width="90" x="542" y="78"></rect><text text-anchor="middle" x="587" y="99">Stop*</text>
+<g text-anchor="middle"><text x="118" y="128">21</text><text x="147" y="128">25</text><text x="204" y="128">30</text><text x="542" y="128">65</text><text x="70" y="128">age</text></g>
+</g>
+<text fill="#0f172a" font-size="13" font-weight="bold" text-anchor="middle" x="320" y="152">Abnormal results (ASCCP 2019 risk-based; simplified)</text>
+<g fill="#0f172a" font-size="12">
+<rect fill="#e0f2fe" height="46" rx="6" stroke="#334155" width="305" x="10" y="162"></rect>
+<text x="18" y="180">ASC-US, age ≥25 → reflex HPV test:</text>
+<text x="18" y="198">HPV+ → colposcopy; HPV− → repeat in 3 y</text>
+<rect fill="#fef3c7" height="46" rx="6" stroke="#334155" width="305" x="325" y="162"></rect>
+<text x="333" y="180">Age 21–24: ASC-US or LSIL → repeat</text>
+<text x="333" y="198">cytology in 1 y (HPV testing not used)</text>
+<rect fill="#e0f2fe" height="46" rx="6" stroke="#334155" width="305" x="10" y="216"></rect>
+<text x="18" y="234">LSIL ≥25 (HPV+ or untested), HPV16/18+ NILM</text>
+<text x="18" y="252">→ colposcopy; other hrHPV+ NILM → 1-y retest</text>
+<rect fill="#fee2e2" height="46" rx="6" stroke="#334155" width="305" x="325" y="216"></rect>
+<text x="333" y="234">ASC-H or HSIL → colposcopy; HSIL ≥25 y,</text>
+<text x="333" y="252">not pregnant: expedited LEEP acceptable</text>
+<rect fill="#fee2e2" height="46" rx="6" stroke="#334155" width="305" x="10" y="270"></rect>
+<text x="18" y="288">AGC → colposcopy + endocervical sampling;</text>
+<text x="18" y="306">+ endometrial biopsy if ≥35 or at risk</text>
+<rect fill="#dcfce7" height="46" rx="6" stroke="#334155" width="305" x="325" y="270"></rect>
+<text x="333" y="288">Pregnancy: colposcopy OK; NO ECC; no</text>
+<text x="333" y="306">excision unless invasion is suspected</text>
+<rect fill="none" height="76" rx="6" stroke="#334155" width="620" x="10" y="326"></rect>
+<text x="18" y="344">*Stop after 65 if adequate negative screening in the prior 10 y (latest within 5 y)</text>
+<text x="18" y="360"> and no CIN2+ in the past 25 y. Stop after total hysterectomy for benign disease.</text>
+<text x="18" y="378">Exceptions: HIV (start within 1 y of sexual debut; continue lifelong), DES exposure,</text>
+<text x="18" y="394"> other immunosuppression, prior CIN2+ (keep screening ≥25 y after treatment).</text>
+</g>
+</svg>

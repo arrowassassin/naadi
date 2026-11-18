@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" width="720" height="540" role="img" aria-label="Decision chart: confidentiality is the default; disclosure without consent only when an exception applies, sharing the minimum needed.">
+<title>Confidentiality decision chart</title>
+<defs>
+<marker id="s23g-fig71-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+</defs>
+<rect x="0" y="0" width="720" height="540" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<rect x="210" y="16" width="300" height="50" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+<text x="360" y="38" font-size="15" font-weight="bold" text-anchor="middle">DEFAULT: keep it confidential</text>
+<text x="360" y="56" font-size="12" text-anchor="middle">Information belongs to the capacitated patient</text>
+<line x1="360" y1="66" x2="360" y2="94" stroke="#334155" stroke-width="2" marker-end="url(#s23g-fig71-arrow)"/>
+<polygon points="360,96 470,136 360,176 250,136" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="360" y="133" font-size="13" font-weight="bold" text-anchor="middle">Does an exception</text>
+<text x="360" y="150" font-size="13" font-weight="bold" text-anchor="middle">apply?</text>
+<line x1="250" y1="136" x2="120" y2="136" stroke="#334155" stroke-width="2" marker-end="url(#s23g-fig71-arrow)"/>
+<text x="185" y="128" font-size="12" text-anchor="middle">No</text>
+<rect x="16" y="112" width="102" height="50" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="67" y="133" font-size="12" text-anchor="middle">Do not</text>
+<text x="67" y="150" font-size="12" text-anchor="middle">disclose</text>
+<line x1="360" y1="176" x2="360" y2="204" stroke="#334155" stroke-width="2"/>
+<text x="374" y="196" font-size="12">Yes</text>
+<line x1="78" y1="204" x2="642" y2="204" stroke="#334155" stroke-width="2"/>
+<g stroke="#334155" stroke-width="2">
+<line x1="78" y1="204" x2="78" y2="226" marker-end="url(#s23g-fig71-arrow)"/>
+<line x1="219" y1="204" x2="219" y2="226" marker-end="url(#s23g-fig71-arrow)"/>
+<line x1="360" y1="204" x2="360" y2="226" marker-end="url(#s23g-fig71-arrow)"/>
+<line x1="501" y1="204" x2="501" y2="226" marker-end="url(#s23g-fig71-arrow)"/>
+<line x1="642" y1="204" x2="642" y2="226" marker-end="url(#s23g-fig71-arrow)"/>
+</g>
+<g font-size="12" text-anchor="middle">
+<rect x="12" y="228" width="132" height="76" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+<text x="78" y="248" font-weight="bold">1. Serious risk to</text>
+<text x="78" y="264" font-weight="bold">an identifiable</text>
+<text x="78" y="280" font-weight="bold">person (or self)</text>
+<rect x="153" y="228" width="132" height="76" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+<text x="219" y="256" font-weight="bold">2. Reportable</text>
+<text x="219" y="272" font-weight="bold">disease</text>
+<rect x="294" y="228" width="132" height="76" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+<text x="360" y="256" font-weight="bold">3. Suspected child</text>
+<text x="360" y="272" font-weight="bold">or elder abuse</text>
+<rect x="435" y="228" width="132" height="76" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+<text x="501" y="256" font-weight="bold">4. Patient</text>
+<text x="501" y="272" font-weight="bold">consents</text>
+<rect x="576" y="228" width="132" height="76" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+<text x="642" y="256" font-weight="bold">5. Patient</text>
+<text x="642" y="272" font-weight="bold">incapacitated</text>
+</g>
+<g stroke="#334155" stroke-width="2">
+<line x1="78" y1="304" x2="78" y2="326" marker-end="url(#s23g-fig71-arrow)"/>
+<line x1="219" y1="304" x2="219" y2="326" marker-end="url(#s23g-fig71-arrow)"/>
+<line x1="360" y1="304" x2="360" y2="326" marker-end="url(#s23g-fig71-arrow)"/>
+<line x1="501" y1="304" x2="501" y2="326" marker-end="url(#s23g-fig71-arrow)"/>
+<line x1="642" y1="304" x2="642" y2="326" marker-end="url(#s23g-fig71-arrow)"/>
+</g>
+<g font-size="12" text-anchor="middle">
+<rect x="12" y="328" width="132" height="96" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="78" y="348">Take steps to</text>
+<text x="78" y="364">protect: warn,</text>
+<text x="78" y="380">notify police or</text>
+<text x="78" y="396">hospitalise</text>
+<rect x="153" y="328" width="132" height="96" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="219" y="348">Report to the</text>
+<text x="219" y="364">health department;</text>
+<text x="219" y="380">it notifies</text>
+<text x="219" y="396">partners</text>
+<rect x="294" y="328" width="132" height="96" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="360" y="348">Report to child</text>
+<text x="360" y="364">or adult</text>
+<text x="360" y="380">protective</text>
+<text x="360" y="396">services</text>
+<rect x="435" y="328" width="132" height="96" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="501" y="348">Share what the</text>
+<text x="501" y="364">patient agrees</text>
+<text x="501" y="380">to, with whom</text>
+<text x="501" y="396">she chooses</text>
+<rect x="576" y="328" width="132" height="96" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="642" y="348">Share what family</text>
+<text x="642" y="364">involved in care</text>
+<text x="642" y="380">need, if in the</text>
+<text x="642" y="396">patient's interest</text>
+</g>
+<text x="20" y="446" font-size="12" fill="#b45309">Amber border (1–3): disclosure without consent</text>
+<text x="700" y="446" font-size="12" text-anchor="end" fill="#2563eb">Blue border (4–5): disclosure on the patient's behalf</text>
+<rect x="60" y="462" width="600" height="58" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="360" y="486" font-size="13" font-weight="bold" text-anchor="middle">In every branch: share the minimum necessary,</text>
+<text x="360" y="506" font-size="13" font-weight="bold" text-anchor="middle">only with those who need it, and tell the patient.</text>
+</g>
+</svg>

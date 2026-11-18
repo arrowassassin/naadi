@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Schematic of the groin from inside showing Hesselbach triangle, deep inguinal ring and femoral ring" font-family="sans-serif">
+<rect x="0" y="0" width="640" height="420" fill="#f1f5f9"/>
+<polygon points="200,294 345,232 200,90" fill="#fef3c7" stroke="#334155" stroke-width="1.5"/>
+<line x1="60" y1="50" x2="60" y2="380" stroke="#334155" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="60" y="38" font-size="13" fill="#0f172a" text-anchor="middle">Midline</text>
+<line x1="200" y1="50" x2="200" y2="300" stroke="#334155" stroke-width="2"/>
+<text x="200" y="38" font-size="13" fill="#0f172a" text-anchor="middle">Rectus border</text>
+<line x1="560" y1="140" x2="140" y2="320" stroke="#334155" stroke-width="3"/>
+<text x="440" y="214" font-size="13" fill="#0f172a">Inguinal ligament</text>
+<text x="566" y="134" font-size="13" fill="#0f172a">ASIS</text>
+<text x="130" y="345" font-size="13" fill="#0f172a" text-anchor="middle">Pubic tubercle</text>
+<line x1="345" y1="232" x2="200" y2="90" stroke="#334155" stroke-width="3"/>
+<text x="275" y="95" font-size="13" fill="#0f172a">Inferior epigastric</text>
+<text x="275" y="111" font-size="13" fill="#0f172a">vessels</text>
+<text x="208" y="205" font-size="13" fill="#0f172a">Hesselbach</text>
+<text x="208" y="222" font-size="13" fill="#0f172a">triangle</text>
+<circle cx="400" cy="185" r="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="440" y="120" font-size="13" fill="#0f172a">Deep ring</text>
+<text x="440" y="136" font-size="13" fill="#0f172a">(indirect)</text>
+<line x1="408" y1="172" x2="440" y2="142" stroke="#334155" stroke-width="1"/>
+<line x1="345" y1="252" x2="345" y2="370" stroke="#334155" stroke-width="2"/>
+<text x="355" y="370" font-size="13" fill="#0f172a">Femoral vein</text>
+<circle cx="290" cy="300" r="12" fill="#fce7f3" stroke="#334155" stroke-width="1.5"/>
+<text x="270" y="333" font-size="13" fill="#0f172a" text-anchor="middle">Femoral ring</text>
+<text x="270" y="349" font-size="13" fill="#0f172a" text-anchor="middle">(femoral hernia)</text>
+<text x="20" y="405" font-size="13" fill="#0f172a">Direct: medial to vessels, in triangle. Indirect: lateral, via deep ring.</text>
+</svg>

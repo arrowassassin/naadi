@@ -1,0 +1,5042 @@
+[
+ {
+  "id": "s23c-g-0b93bf7f803e",
+  "frontHtml": "<p>Identify Staphylococcus saprophyticus from its setting and laboratory features (coagulase negative, novobiocin resistant).</p>",
+  "backHtml": "<p>coagulase-negative staphylococcal cystitis in a young sexually active woman with novobiocin resistance is S. saprophyticus .</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-1-01",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-20c1d28fa3e1",
+  "frontHtml": "<p>Link P fimbriae of uropathogenic E. coli to ascending pyelonephritis.</p>",
+  "backHtml": "<p>P fimbriae are the E. coli adhesin most linked to ascending pyelonephritis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-1-02",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a2e81b0aa6f8",
+  "frontHtml": "<p>Explain how urease-producing organisms such as Proteus cause struvite staghorn calculi.</p>",
+  "backHtml": "<p>alkaline urine plus a staghorn calculus means a urease-producing organism and struvite.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-1-03",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-04f50f8978be",
+  "frontHtml": "<p>Use white blood cell casts to localise urinary infection to the kidney.</p>",
+  "backHtml": "<p>white blood cell casts localise a UTI to the kidney.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-1-04",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ad58ceb0e53a",
+  "frontHtml": "<p>Recognise genitourinary tuberculosis as a cause of sterile pyuria and choose mycobacterial urine testing.</p>",
+  "backHtml": "<p>sterile pyuria plus hematuria and a deformed collecting system points to renal tuberculosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-1-05",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-dd03b59fae3c",
+  "frontHtml": "<p>Associate Schistosoma haematobium infection with squamous cell carcinoma of the bladder.</p>",
+  "backHtml": "<p>chronic bladder irritation, classically schistosomiasis, leads to squamous metaplasia and squamous cell carcinoma.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-1-06",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3dc8d4b69eb3",
+  "frontHtml": "<p>Recognise xanthogranulomatous pyelonephritis from its setting and histology.</p>",
+  "backHtml": "<p>staghorn stone, chronic infection and foamy macrophages replacing the kidney is xanthogranulomatous pyelonephritis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-1-07",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1a21a9cbaffd",
+  "frontHtml": "<p>Recognise BK polyomavirus nephropathy in a kidney transplant recipient and reduce immunosuppression.</p>",
+  "backHtml": "<p>BK virus nephropathy in a kidney graft is treated by reducing immunosuppression.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-1-08",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-676ed1d63eed",
+  "frontHtml": "<p>Treat acute uncomplicated cystitis empirically with a first-line agent.</p>",
+  "backHtml": "<p>treat typical uncomplicated cystitis empirically with a first-line agent; culture is for complicated, recurrent or atypical cases.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-01",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-162ff2af7874",
+  "frontHtml": "<p>Treat asymptomatic bacteriuria in pregnancy with a pregnancy-safe antibiotic.</p>",
+  "backHtml": "<p>screen once early in pregnancy and treat asymptomatic bacteriuria with a pregnancy-safe antibiotic.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-02",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.12.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f82f261343d7",
+  "frontHtml": "<p>Avoid treating asymptomatic bacteriuria in older adults.</p>",
+  "backHtml": "<p>outside pregnancy and planned urologic procedures, do not treat asymptomatic bacteriuria.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-03",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.01.01.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-bc74285ec657",
+  "frontHtml": "<p>Manage stable acute pyelonephritis with a urine culture and an oral agent that reaches renal tissue.</p>",
+  "backHtml": "<p>stable pyelonephritis: culture, then an oral fluoroquinolone (or susceptible trimethoprim-sulfamethoxazole); admit only for sepsis, vomiting, pregnancy or obstruction.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-04",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1e06fd22521e",
+  "frontHtml": "<p>Decompress an obstructed, infected kidney urgently before definitive stone treatment.</p>",
+  "backHtml": "<p>stone plus obstruction plus infection means drain first, treat the stone later.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-05",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-851f12b5ff69",
+  "frontHtml": "<p>Recognise emphysematous pyelonephritis and arrange source control.</p>",
+  "backHtml": "<p>emphysematous pyelonephritis needs source control (percutaneous drainage, or nephrectomy) plus antibiotics.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-06",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3246ed9872bb",
+  "frontHtml": "<p>Prevent recurrent UTI in a postmenopausal woman with vaginal estrogen.</p>",
+  "backHtml": "<p>for recurrent UTI after menopause with atrophy, start vaginal estrogen.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-07",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.13.02.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-7a20e71b35a3",
+  "frontHtml": "<p>Manage catheter-associated UTI by replacing the catheter and culturing from the new one.</p>",
+  "backHtml": "<p>in catheter-associated UTI, replace a long-dwelling catheter and culture from the new one before antibiotics.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-08",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-700a4a5fc055",
+  "frontHtml": "<p>Admit and treat pyelonephritis in pregnancy with an intravenous beta-lactam.</p>",
+  "backHtml": "<p>pyelonephritis in pregnancy means admission and IV beta-lactam therapy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-09",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.12.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2496ea6937c9",
+  "frontHtml": "<p>Prevent recurrent pyelonephritis in pregnancy with suppression or culture surveillance.</p>",
+  "backHtml": "<p>after pyelonephritis in pregnancy, prevent recurrence with suppression or close culture surveillance until delivery.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110101-2-10",
+  "areas": [
+   "usmle2026.11.01.01",
+   "usmle2026.12.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3c30bc941c92",
+  "frontHtml": "<p>Recognise IgA nephropathy from synpharyngitic hematuria with normal complement and predict mesangial IgA deposits.</p>",
+  "backHtml": "<p>hematuria during a mucosal infection with normal C3 means mesangial IgA deposits.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-01",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2254d05afc53",
+  "frontHtml": "<p>Recognise Alport syndrome as an inherited defect of type IV collagen.</p>",
+  "backHtml": "<p>hematuria, deafness and eye lesions with a split GBM point to an inherited type IV collagen defect (Alport syndrome).</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-02",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b7eb26c55924",
+  "frontHtml": "<p>Use anti-dsDNA titres and complement levels to follow activity of class IV lupus nephritis.</p>",
+  "backHtml": "<p>in lupus nephritis, anti-dsDNA and complement levels follow disease activity.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-03",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.16.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-106ae32ed464",
+  "frontHtml": "<p>Explain how C3 nephritic factor causes C3 glomerulopathy by stabilising the alternative-pathway convertase.</p>",
+  "backHtml": "<p>C3 nephritic factor stabilises C3bBb, giving persistent alternative-pathway activation, low C3 and C3-dominant GN.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-04",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-40dee73faba9",
+  "frontHtml": "<p>Recognise HIV-associated nephropathy as collapsing FSGS linked to APOL1 risk variants.</p>",
+  "backHtml": "<p>HIV, Black ancestry, nephrotic-range proteinuria and big echogenic kidneys mean collapsing FSGS.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-05",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.02.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-73f19e12ca4e",
+  "frontHtml": "<p>Explain the hypercoagulable state of nephrotic syndrome and its link to renal vein thrombosis.</p>",
+  "backHtml": "<p>nephrotic hypercoagulability comes from urinary antithrombin loss plus increased hepatic procoagulant synthesis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-06",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b77d113a022b",
+  "frontHtml": "<p>Link chronic inflammation to AA amyloidosis of the kidney.</p>",
+  "backHtml": "<p>chronic inflammatory disease plus nephrotic syndrome and Congo red-positive deposits means AA amyloidosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-07",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-8d65146815cf",
+  "frontHtml": "<p>Explain how ACE inhibitors protect the diabetic kidney through efferent arteriolar dilation.</p>",
+  "backHtml": "<p>RAS blockade protects the diabetic kidney by lowering intraglomerular pressure through efferent dilation.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-08",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f1ade3f151c8",
+  "frontHtml": "<p>Identify drug-induced acute interstitial nephritis as a type IV hypersensitivity reaction.</p>",
+  "backHtml": "<p>drug-induced AIN is mainly a type IV hypersensitivity reaction in the interstitium.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-1-09",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e9cc738436ca",
+  "frontHtml": "<p>Start immediate induction therapy for ANCA-associated rapidly progressive glomerulonephritis.</p>",
+  "backHtml": "<p>ANCA-positive rapidly progressive GN is treated at once with glucocorticoids plus rituximab or cyclophosphamide; do not wait for the biopsy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-01",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-211a81646eab",
+  "frontHtml": "<p>Manage post-streptococcal glomerulonephritis supportively with salt and fluid restriction and a loop diuretic.</p>",
+  "backHtml": "<p>post-streptococcal GN is managed supportively; immunosuppression and biopsy are not routine.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-02",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c68afcbe9dd8",
+  "frontHtml": "<p>Start maximal RAS blockade as first-line therapy for IgA nephropathy with proteinuria.</p>",
+  "backHtml": "<p>first-line treatment for IgA nephropathy with proteinuria is maximal RAS blockade with blood pressure control (plus an SGLT2 inhibitor).</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-03",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-83ffbe2b7076",
+  "frontHtml": "<p>Evaluate for malignancy in PLA2R-negative membranous nephropathy with red flags.</p>",
+  "backHtml": "<p>PLA2R-negative membranous nephropathy in an older adult should prompt a search for a secondary cause, especially cancer.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-04",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b8778bf28c50",
+  "frontHtml": "<p>Diagnose renal vein thrombosis in nephrotic syndrome with venous imaging.</p>",
+  "backHtml": "<p>acute flank pain and hematuria in a nephrotic patient means renal vein thrombosis until venous imaging says otherwise.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-05",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-768b851d49dc",
+  "frontHtml": "<p>Biopsy the kidney when a patient with lupus develops proteinuria with an active sediment.</p>",
+  "backHtml": "<p>in lupus, proteinuria of 0.5 g/day or more, an active sediment or a rising creatinine is an indication for kidney biopsy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-06",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.16.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0e2da2a50cd0",
+  "frontHtml": "<p>Choose glucocorticoids plus mycophenolate for induction of class IV lupus nephritis.</p>",
+  "backHtml": "<p>induct class III or IV lupus nephritis with glucocorticoids plus mycophenolate (or low-dose cyclophosphamide).</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-07",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.16.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-5f6dfabf33b7",
+  "frontHtml": "<p>Switch mycophenolate to azathioprine and continue hydroxychloroquine before pregnancy in lupus nephritis.</p>",
+  "backHtml": "<p>before pregnancy in lupus nephritis, switch mycophenolate to azathioprine and keep hydroxychloroquine.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-08",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.12.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-03c2e381d04f",
+  "frontHtml": "<p>Stop the culprit drug as the first step in proton pump inhibitor-induced interstitial nephritis.</p>",
+  "backHtml": "<p>suspected drug-induced AIN: stop the culprit drug first.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110102-2-09",
+  "areas": [
+   "usmle2026.11.01.02",
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-30bced00ae67",
+  "frontHtml": "<p>Recognise subarachnoid hemorrhage from a ruptured berry aneurysm as an extrarenal complication of ADPKD.</p>",
+  "backHtml": "<p>ADPKD plus subarachnoid hemorrhage means a ruptured berry aneurysm.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-01",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b4e2fc605aeb",
+  "frontHtml": "<p>Explain how vasopressin V2 antagonism slows cyst growth in ADPKD.</p>",
+  "backHtml": "<p>tolvaptan slows ADPKD by cutting vasopressin-driven cAMP in cyst epithelium.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-02",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e00b7ec2dee5",
+  "frontHtml": "<p>Associate autosomal recessive polycystic kidney disease with congenital hepatic fibrosis and the Potter sequence.</p>",
+  "backHtml": "<p>ARPKD pairs collecting duct cysts with congenital hepatic fibrosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-03",
+  "areas": [
+   "usmle2026.11.02.01",
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e0f202fb8bba",
+  "frontHtml": "<p>Link renal angiomyolipomas in tuberous sclerosis complex to loss of TSC1/TSC2 control of mTORC1.</p>",
+  "backHtml": "<p>tuberous sclerosis = loss of the hamartin-tuberin brake on mTORC1.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-04",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9c6a9955a225",
+  "frontHtml": "<p>Use macroscopic fat on CT to identify a renal angiomyolipoma.</p>",
+  "backHtml": "<p>fat in a renal mass on CT means angiomyolipoma.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-05",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0d080ec032f0",
+  "frontHtml": "<p>Identify renal oncocytoma and its mitochondria-rich cells.</p>",
+  "backHtml": "<p>oncocytes are pink because they are full of mitochondria.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-06",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-5840349ebf3f",
+  "frontHtml": "<p>Recognise medullary sponge kidney as a cause of recurrent stones with preserved kidney function.</p>",
+  "backHtml": "<p>normal-sized kidneys, medullary contrast streaks and recurrent stones point to medullary sponge kidney.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-07",
+  "areas": [
+   "usmle2026.11.02.01",
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b41de6918ead",
+  "frontHtml": "<p>Associate acquired cystic kidney disease on dialysis with renal cell carcinoma.</p>",
+  "backHtml": "<p>acquired cystic disease of dialysis raises the risk of renal cell carcinoma.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-08",
+  "areas": [
+   "usmle2026.11.02.01",
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-eb73a47eb3f6",
+  "frontHtml": "<p>Explain renin-angiotensin-driven hypertension early in ADPKD.</p>",
+  "backHtml": "<p>early ADPKD hypertension is renin driven, from cyst compression of intrarenal vessels.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-1-09",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-dca4af671186",
+  "frontHtml": "<p>Manage an incidental Bosniak I simple renal cyst with no follow-up.</p>",
+  "backHtml": "<p>Bosniak I and II cysts are benign and need no follow-up.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-2-01",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3d1f906afce3",
+  "frontHtml": "<p>Screen for intracranial aneurysm with MR angiography in ADPKD with a family history of aneurysm or subarachnoid hemorrhage.</p>",
+  "backHtml": "<p>screen ADPKD patients with a family history of aneurysm or SAH using MR angiography.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-2-02",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ea358895248c",
+  "frontHtml": "<p>Choose an ACE inhibitor or ARB as first-line treatment for hypertension in ADPKD.</p>",
+  "backHtml": "<p>ACE inhibitor or ARB first for hypertension in ADPKD.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-2-03",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-46942b3f7254",
+  "frontHtml": "<p>Identify rapidly progressive ADPKD and add tolvaptan.</p>",
+  "backHtml": "<p>add tolvaptan for adults with ADPKD at risk of rapid progression.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-2-04",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d974174bd62e",
+  "frontHtml": "<p>Monitor liver tests during tolvaptan therapy.</p>",
+  "backHtml": "<p>monitor liver tests on tolvaptan.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-2-05",
+  "areas": [
+   "usmle2026.11.02.01",
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-8817b49314f7",
+  "frontHtml": "<p>Treat infected renal cysts in ADPKD with a lipid-soluble, cyst-penetrating antibiotic.</p>",
+  "backHtml": "<p>treat ADPKD cyst infection with a cyst-penetrating antibiotic such as a fluoroquinolone.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-2-06",
+  "areas": [
+   "usmle2026.11.02.01",
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b94c748a8d90",
+  "frontHtml": "<p>Treat acute hemorrhage from a renal angiomyolipoma with selective arterial embolisation.</p>",
+  "backHtml": "<p>bleeding angiomyolipoma: resuscitate, then selective arterial embolisation.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-2-07",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-90bc9fcd9889",
+  "frontHtml": "<p>Treat a Bosniak IV renal cyst with partial nephrectomy in a fit patient.</p>",
+  "backHtml": "<p>Bosniak IV (and most III) cysts are treated as cancer; prefer partial nephrectomy for small lesions.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110201-2-08",
+  "areas": [
+   "usmle2026.11.02.01",
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-8695f8c7390b",
+  "frontHtml": "<p>Explain how VHL loss causes clear cell renal cell carcinoma through HIF accumulation.</p>",
+  "backHtml": "<p>VHL loss stabilises HIF, causing angiogenesis and clear cell RCC.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-01",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6f014636a12e",
+  "frontHtml": "<p>Recognise PTH-related peptide secretion by renal cell carcinoma as a cause of hypercalcemia with suppressed PTH.</p>",
+  "backHtml": "<p>hypercalcemia with low PTH and a renal mass means PTHrP from renal cell carcinoma.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-02",
+  "areas": [
+   "usmle2026.11.02.02",
+   "usmle2026.16.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-cbfe0af54d60",
+  "frontHtml": "<p>Link a nondecompressing left varicocele to obstruction of the left renal vein by renal cell carcinoma.</p>",
+  "backHtml": "<p>a new left varicocele that persists supine in an older man means look for a left renal mass.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-03",
+  "areas": [
+   "usmle2026.11.02.02",
+   "usmle2026.14.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-59eb60ee2eeb",
+  "frontHtml": "<p>Identify WAGR syndrome and its 11p13 deletion as a cause of Wilms tumour.</p>",
+  "backHtml": "<p>WAGR = 11p13 deletion of WT1 and PAX6 .</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-04",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f370cde57a7b",
+  "frontHtml": "<p>Recognise Beckwith-Wiedemann syndrome as an imprinting disorder at 11p15.5 that predisposes to Wilms tumour.</p>",
+  "backHtml": "<p>Beckwith-Wiedemann is an 11p15.5 imprinting disorder that predisposes to Wilms tumour.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-05",
+  "areas": [
+   "usmle2026.11.02.02",
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-eb76008aa213",
+  "frontHtml": "<p>Identify acrolein as the cyclophosphamide metabolite causing hemorrhagic cystitis and bladder cancer.</p>",
+  "backHtml": "<p>cyclophosphamide&#x27;s metabolite acrolein causes hemorrhagic cystitis and bladder cancer; mesna protects.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-06",
+  "areas": [
+   "usmle2026.11.02.02",
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-97737a0ec55d",
+  "frontHtml": "<p>Associate phenacetin analgesic use with papillary necrosis and urothelial carcinoma of the renal pelvis.</p>",
+  "backHtml": "<p>phenacetin causes papillary necrosis and upper-tract urothelial carcinoma.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-07",
+  "areas": [
+   "usmle2026.11.02.02",
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-8dc6e444a25d",
+  "frontHtml": "<p>Describe intravesical BCG as live attenuated M. bovis immunotherapy for non-muscle-invasive bladder cancer.</p>",
+  "backHtml": "<p>intravesical BCG is live M. bovis immunotherapy for high-risk non-muscle-invasive bladder cancer.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-08",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-687176ecbca1",
+  "frontHtml": "<p>Link the adverse-effect profile of VEGF receptor tyrosine kinase inhibitors to their use in renal cell carcinoma.</p>",
+  "backHtml": "<p>hypertension, proteinuria, hand-foot reaction and hypothyroidism on an oral RCC drug point to a VEGF receptor TKI.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-1-09",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d506f928551e",
+  "frontHtml": "<p>Evaluate gross hematuria in a high-risk patient with CT urography and cystoscopy.</p>",
+  "backHtml": "<p>gross hematuria, even on anticoagulants, needs CT urography plus cystoscopy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-2-01",
+  "areas": [
+   "usmle2026.11.02.02",
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-7d633813bdec",
+  "frontHtml": "<p>Treat high-risk non-muscle-invasive bladder cancer with intravesical BCG after TURBT.</p>",
+  "backHtml": "<p>high-grade non-muscle-invasive bladder cancer or carcinoma in situ: TURBT then intravesical BCG.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-2-02",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-4095e044160a",
+  "frontHtml": "<p>Confirm dipstick hematuria with urine microscopy.</p>",
+  "backHtml": "<p>confirm a positive dipstick with urine microscopy before working up hematuria.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-2-03",
+  "areas": [
+   "usmle2026.11.02.02",
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-50d10fbd47fc",
+  "frontHtml": "<p>Treat a small localised renal mass in a fit patient with partial nephrectomy.</p>",
+  "backHtml": "<p>small localised renal masses in fit patients: partial nephrectomy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-2-04",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9f58674d9e6b",
+  "frontHtml": "<p>Choose immune checkpoint inhibitor-based combination therapy for metastatic clear cell renal cell carcinoma.</p>",
+  "backHtml": "<p>metastatic clear cell RCC is treated first with checkpoint inhibitor-based combinations, not chemotherapy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-2-05",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-4de3b6b7382f",
+  "frontHtml": "<p>Choose abdominal ultrasonography as the initial study for a suspected Wilms tumour.</p>",
+  "backHtml": "<p>abdominal mass in a young child: ultrasound first.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-2-06",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-262cd86a540f",
+  "frontHtml": "<p>Arrange abdominal ultrasound and AFP surveillance in Beckwith-Wiedemann syndrome.</p>",
+  "backHtml": "<p>Beckwith-Wiedemann: ultrasound every 3 months until about 7, plus AFP in early childhood.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-2-07",
+  "areas": [
+   "usmle2026.11.02.02",
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1772a397746e",
+  "frontHtml": "<p>Treat localised muscle-invasive bladder cancer with neoadjuvant cisplatin-based chemotherapy and radical cystectomy.</p>",
+  "backHtml": "<p>muscle-invasive bladder cancer: neoadjuvant cisplatin-based chemotherapy, then radical cystectomy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110202-2-08",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d45a189c98f2",
+  "frontHtml": "<p>Explain why glomerular hematuria produces dysmorphic red cells.</p>",
+  "backHtml": "<p>dysmorphic red cells and red cell casts place hematuria in the glomerulus.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-01",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-139585e3bc24",
+  "frontHtml": "<p>Distinguish myoglobinuria from hematuria and hemoglobinuria using the dipstick, microscopy and plasma colour.</p>",
+  "backHtml": "<p>heme-positive urine without red cells plus clear plasma means myoglobinuria; check creatine kinase.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-02",
+  "areas": [
+   "usmle2026.11.03.01",
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-149843ca2a0c",
+  "frontHtml": "<p>Recognise overflow proteinuria from light chains as a cause of dipstick-negative proteinuria.</p>",
+  "backHtml": "<p>trace dipstick protein with a high total protein ratio means non-albumin protein, classically light chains.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-03",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b01806713469",
+  "frontHtml": "<p>Explain how sickle cell trait causes hematuria and impaired urine concentration.</p>",
+  "backHtml": "<p>sickle cell trait can cause painless hematuria and a concentrating defect through medullary sickling.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-04",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3016a685a396",
+  "frontHtml": "<p>Recognise tubular proteinuria from proximal tubule injury.</p>",
+  "backHtml": "<p>low-molecular-weight proteinuria (beta-2 microglobulin) plus normoglycemic glucosuria points to proximal tubule injury.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-05",
+  "areas": [
+   "usmle2026.11.03.01",
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-97a0aa133b87",
+  "frontHtml": "<p>Identify oval fat bodies with a Maltese cross as a sign of nephrotic syndrome.</p>",
+  "backHtml": "<p>Maltese-cross lipid bodies in urine mean lipiduria of nephrotic syndrome.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-06",
+  "areas": [
+   "usmle2026.11.03.01",
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-969a73071c46",
+  "frontHtml": "<p>Link urine that darkens on standing to alkaptonuria and its enzyme defect.</p>",
+  "backHtml": "<p>urine that blackens on standing plus dark cartilage and early arthritis is alkaptonuria.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-07",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ea7bc8e8fde9",
+  "frontHtml": "<p>Match muddy brown granular casts to acute tubular necrosis.</p>",
+  "backHtml": "<p>muddy brown granular casts mean acute tubular necrosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-08",
+  "areas": [
+   "usmle2026.11.03.01",
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-25d3f1e3a1aa",
+  "frontHtml": "<p>Use urine osmolality to separate a solute diuresis from a water diuresis.</p>",
+  "backHtml": "<p>polyuria with urine osmolality at or above plasma is a solute diuresis; with very dilute urine it is a water diuresis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-1-09",
+  "areas": [
+   "usmle2026.11.03.01",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-72d1e3d258d9",
+  "frontHtml": "<p>Evaluate high-risk microscopic hematuria with cystoscopy and CT urography.</p>",
+  "backHtml": "<p>high-risk microscopic hematuria (older, heavy smoker, many red cells) needs cystoscopy and CT urography.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-2-01",
+  "areas": [
+   "usmle2026.11.03.01",
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-948ebb5cc106",
+  "frontHtml": "<p>Confirm dipstick-positive blood with microscopy before evaluating hematuria.</p>",
+  "backHtml": "<p>confirm a heme-positive dipstick with urine microscopy before any hematuria work-up.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-2-02",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9b999075f53a",
+  "frontHtml": "<p>Exclude and relieve bladder outlet obstruction first in acute oliguria.</p>",
+  "backHtml": "<p>in sudden oliguria, check the bladder first.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-2-03",
+  "areas": [
+   "usmle2026.11.03.01",
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b81571a54641",
+  "frontHtml": "<p>Identify hemoglobinuria from intravascular hemolysis using a chart of hemolysis markers and urine findings.</p>",
+  "backHtml": "<p>heme-positive urine without red cells plus pink plasma and low haptoglobin is hemoglobinuria.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-2-04",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-24b606403628",
+  "frontHtml": "<p>Test for orthostatic proteinuria with a first-morning sample in a healthy adolescent.</p>",
+  "backHtml": "<p>in a healthy teenager with isolated proteinuria, check a first-morning urine before any work-up.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-2-05",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-65d1633718f2",
+  "frontHtml": "<p>Reassure a patient with confirmed orthostatic proteinuria.</p>",
+  "backHtml": "<p>orthostatic proteinuria is benign: reassure and recheck periodically.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110301-2-06",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-65efab7da23e",
+  "frontHtml": "<p>Predict the effects of efferent arteriolar constriction on renal plasma flow, GFR and filtration fraction.</p>",
+  "backHtml": "<p>efferent constriction lowers RPF, raises GFR and raises the filtration fraction.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-01",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a893d2819bf7",
+  "frontHtml": "<p>Calculate creatinine clearance from a timed urine collection.</p>",
+  "backHtml": "<p>clearance = UV/P; convert urine volume to mL/min first.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-02",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-212753e4444a",
+  "frontHtml": "<p>Identify hyperplastic arteriolosclerosis as the renal lesion of malignant hypertension.</p>",
+  "backHtml": "<p>onion-skin hyperplastic arteriolosclerosis and fibrinoid necrosis mark malignant hypertension; hyaline arteriolosclerosis marks long-standing benign hypertension and diabetes.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-03",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.08.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-81682fd76c95",
+  "frontHtml": "<p>Recognise Liddle syndrome as ENaC gain of function with suppressed renin and aldosterone.</p>",
+  "backHtml": "<p>hypertension, hypokalemia and suppressed renin and aldosterone that respond to amiloride is Liddle syndrome.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-04",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c9b985a30924",
+  "frontHtml": "<p>Diagnose type 4 RTA from a hyperkalemic normal anion gap acidosis in diabetic kidney disease.</p>",
+  "backHtml": "<p>hyperkalemic normal anion gap acidosis with urine pH below 5.5 in diabetes is type 4 RTA.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-05",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.16.07.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f105f937218f",
+  "frontHtml": "<p>Localise Fanconi syndrome to the proximal tubule and recognise tenofovir as a cause.</p>",
+  "backHtml": "<p>glycosuria with normal blood glucose plus phosphate and bicarbonate wasting points to the proximal tubule (Fanconi syndrome).</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-06",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b7e14228e9ff",
+  "frontHtml": "<p>Identify cystinuria from hexagonal crystals and explain its transporter defect.</p>",
+  "backHtml": "<p>hexagonal crystals = cystine = defective proximal reabsorption of dibasic amino acids.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-07",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-5012c6e95f4d",
+  "frontHtml": "<p>Explain enteric hyperoxaluria as the cause of calcium oxalate stones after ileal resection.</p>",
+  "backHtml": "<p>fat malabsorption causes enteric hyperoxaluria and calcium oxalate stones.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-08",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c9b96607e9c3",
+  "frontHtml": "<p>Identify the nephron segments most vulnerable to ischemic acute tubular necrosis.</p>",
+  "backHtml": "<p>ischemic ATN hits the proximal straight tubule and the medullary thick ascending limb first.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-09",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c7249201eb78",
+  "frontHtml": "<p>Predict the mineral and hormone pattern of secondary hyperparathyroidism in CKD.</p>",
+  "backHtml": "<p>CKD-MBD: low calcium, high phosphate, low calcitriol, high PTH and high FGF23.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-1-10",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c6dbf84de693",
+  "frontHtml": "<p>Recognise prerenal AKI from urine indices and treat it with isotonic fluid.</p>",
+  "backHtml": "<p>FENa below 1%, BUN:creatinine above 20 and bland sediment in a volume-depleted patient: give isotonic fluids.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-01",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.16.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-358017eebeed",
+  "frontHtml": "<p>Treat rhabdomyolysis with early, aggressive isotonic fluids.</p>",
+  "backHtml": "<p>rhabdomyolysis is treated with early, aggressive isotonic fluids.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-02",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2e35c54a4c85",
+  "frontHtml": "<p>Recognise uremic pericarditis as an indication for dialysis.</p>",
+  "backHtml": "<p>uremic pericarditis is an urgent indication for dialysis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-03",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.08.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-cad556796bc0",
+  "frontHtml": "<p>Add finerenone for persistent albuminuria in type 2 diabetic CKD already on an ACE inhibitor and SGLT2 inhibitor.</p>",
+  "backHtml": "<p>type 2 diabetes with residual albuminuria on RAS blockade plus SGLT2 inhibitor, eGFR at least 25 and normal potassium: add finerenone.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-04",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-61658730293d",
+  "frontHtml": "<p>Correct iron deficiency before starting an erythropoiesis-stimulating agent in anemia of CKD.</p>",
+  "backHtml": "<p>in anemia of CKD, replete iron before starting an ESA, and never target a normal hemoglobin.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-05",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.03.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c124f3b18052",
+  "frontHtml": "<p>Manage an uncomplicated 5–10 mm distal ureteral stone with medical expulsive therapy.</p>",
+  "backHtml": "<p>uncomplicated distal ureteral stone 5–10 mm: medical expulsive therapy with tamsulosin.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-06",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-24269b291534",
+  "frontHtml": "<p>Prevent recurrent calcium oxalate stones from hypercalciuria with sodium restriction, normal calcium and a thiazide.</p>",
+  "backHtml": "<p>recurrent calcium stones with hypercalciuria: fluids, low sodium, normal calcium and a thiazide.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-07",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f3575268744f",
+  "frontHtml": "<p>Prevent tumor lysis syndrome in a high-risk patient with IV fluids and rasburicase.</p>",
+  "backHtml": "<p>high-risk tumor lysis: IV fluids plus rasburicase (if G6PD is normal).</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-08",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.03.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-16516d19a064",
+  "frontHtml": "<p>Start dialysis for established tumor lysis syndrome with oliguric AKI and refractory electrolyte disorders.</p>",
+  "backHtml": "<p>tumor lysis with oliguria, refractory hyperkalemia, severe hyperphosphatemia or overload needs dialysis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110401-2-09",
+  "areas": [
+   "usmle2026.11.04.01",
+   "usmle2026.16.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-49a74001fc2d",
+  "frontHtml": "<p>Predict renin and aldosterone findings in unilateral renal artery stenosis.</p>",
+  "backHtml": "<p>unilateral renal artery stenosis gives high renin, high aldosterone, and lateralised renin from the stenotic side.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-01",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-8298f30a05fd",
+  "frontHtml": "<p>Recognise fibromuscular dysplasia and its usual histologic type.</p>",
+  "backHtml": "<p>young woman, mid-distal renal artery beading: fibromuscular dysplasia with medial fibroplasia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-02",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e520e04bc8dc",
+  "frontHtml": "<p>Explain the creatinine rise after ACE inhibition in bilateral renal artery stenosis.</p>",
+  "backHtml": "<p>ACE inhibitors and ARBs lower GFR by dilating the efferent arteriole; a large creatinine rise suggests bilateral renal artery stenosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-03",
+  "areas": [
+   "usmle2026.11.05.01",
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0e002abfa4c3",
+  "frontHtml": "<p>Identify hyaline arteriolosclerosis as the lesion of benign nephrosclerosis.</p>",
+  "backHtml": "<p>benign nephrosclerosis equals hyaline arteriolosclerosis and small granular kidneys.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-04",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-565645dc7ed3",
+  "frontHtml": "<p>Recognise the gross and microscopic kidney changes of malignant hypertension.</p>",
+  "backHtml": "<p>malignant hypertension: onion-skin arterioles, fibrinoid necrosis and a flea-bitten kidney surface.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-05",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-94755747953c",
+  "frontHtml": "<p>Explain the hypercoagulable state of nephrotic syndrome and renal vein thrombosis.</p>",
+  "backHtml": "<p>nephrotic syndrome (especially membranous) promotes renal vein thrombosis partly by urinary antithrombin loss; a left renal vein clot can cause a left varicocele.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-06",
+  "areas": [
+   "usmle2026.11.05.01",
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-77fd6548777e",
+  "frontHtml": "<p>Recognise atheroembolic kidney disease and its biopsy finding.</p>",
+  "backHtml": "<p>after catheterisation, livedo plus eosinophilia plus slowly rising creatinine means cholesterol emboli with needle-shaped clefts.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-07",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e854048f4d2a",
+  "frontHtml": "<p>Treat scleroderma renal crisis with an ACE inhibitor because it is renin driven.</p>",
+  "backHtml": "<p>scleroderma renal crisis is renin driven; treat with an ACE inhibitor.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-08",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-cdb58c4211ad",
+  "frontHtml": "<p>Describe the pattern and type of necrosis in an embolic renal infarct.</p>",
+  "backHtml": "<p>embolic renal infarcts are pale, wedge-shaped areas of coagulative necrosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-09",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a7bdfdca86c1",
+  "frontHtml": "<p>Identify the receptor that mediates sympathetic renin release.</p>",
+  "backHtml": "<p>beta-1 stimulation of juxtaglomerular cells releases renin; beta-blockers suppress it.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-1-10",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-7e484f4eeed3",
+  "frontHtml": "<p>Manage incidental atherosclerotic renal artery stenosis with optimal medical therapy.</p>",
+  "backHtml": "<p>most atherosclerotic renal artery stenosis is treated medically; revascularise only for specific triggers.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-2-01",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9a667931b011",
+  "frontHtml": "<p>Treat hypertension from renal fibromuscular dysplasia with angioplasty without a stent.</p>",
+  "backHtml": "<p>renovascular hypertension from fibromuscular dysplasia is treated with balloon angioplasty without stenting.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-2-02",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-314aa8c7b4c8",
+  "frontHtml": "<p>Treat scleroderma renal crisis with a titrated ACE inhibitor.</p>",
+  "backHtml": "<p>scleroderma renal crisis is treated with a rapidly titrated ACE inhibitor, continued even on dialysis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-2-03",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f697281c9671",
+  "frontHtml": "<p>Manage atheroembolic kidney disease supportively.</p>",
+  "backHtml": "<p>atheroembolic kidney disease is treated supportively; avoid anticoagulation and further procedures when possible.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-2-04",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-133ce8299563",
+  "frontHtml": "<p>Confirm suspected renal infarction with contrast-enhanced CT.</p>",
+  "backHtml": "<p>suspect renal infarction when flank pain with hematuria and high LDH has no stone; confirm with contrast CT.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-2-05",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b7112a6ce74f",
+  "frontHtml": "<p>Treat embolic renal infarction with anticoagulation.</p>",
+  "backHtml": "<p>embolic renal infarction is treated with anticoagulation and secondary prevention of emboli.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110501-2-06",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-859f7bd9c11f",
+  "frontHtml": "<p>Localise urethral injury after pelvic fracture to the membranous urethra.</p>",
+  "backHtml": "<p>pelvic fracture with blood at the meatus and a high-riding prostate means posterior (membranous) urethral injury.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-01",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-023520aa8b9e",
+  "frontHtml": "<p>Explain the fascial limits of urine extravasation after bulbar urethral injury.</p>",
+  "backHtml": "<p>extravasation from a bulbar urethral tear spreads to the scrotum, penis and abdominal wall but not the thighs, because Colles and Scarpa fascia attach to the fascia lata.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-02",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-fd847a7b4ad4",
+  "frontHtml": "<p>Explain the pseudo-renal failure of intraperitoneal bladder rupture.</p>",
+  "backHtml": "<p>intraperitoneal bladder rupture can raise serum urea nitrogen and creatinine by peritoneal reabsorption of urine.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-03",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ccfe8beeaa75",
+  "frontHtml": "<p>Predict detrusor-sphincter dyssynergia after suprasacral spinal cord injury.</p>",
+  "backHtml": "<p>suprasacral spinal cord injury gives detrusor overactivity with detrusor-sphincter dyssynergia, which threatens the upper tracts.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-04",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-75ec99eedf8e",
+  "frontHtml": "<p>Explain overflow incontinence from diabetic autonomic neuropathy.</p>",
+  "backHtml": "<p>diabetic autonomic neuropathy causes an underactive detrusor with retention and overflow incontinence.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-05",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-43683e808a49",
+  "frontHtml": "<p>Identify the mechanism of beta-3 agonists for overactive bladder.</p>",
+  "backHtml": "<p>beta-3 agonists (mirabegron, vibegron) relax the detrusor through G s and cAMP and treat overactive bladder without anticholinergic effects.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-06",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0216e077ace4",
+  "frontHtml": "<p>Recognise posterior urethral valves from prenatal and neonatal findings.</p>",
+  "backHtml": "<p>a boy with a distended bladder, dilated posterior urethra, bilateral hydronephrosis and oligohydramnios has posterior urethral valves.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-07",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-5585757d7e18",
+  "frontHtml": "<p>Explain the mechanisms of post-obstructive diuresis.</p>",
+  "backHtml": "<p>post-obstructive diuresis reflects solute (urea) excretion plus a temporary concentrating defect; monitor volume and electrolytes.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-08",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a51baefea83e",
+  "frontHtml": "<p>Link pudendal nerve injury in childbirth to stress urinary incontinence.</p>",
+  "backHtml": "<p>the pudendal nerve (S2–S4) supplies the external urethral sphincter; its injury in childbirth contributes to stress incontinence.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-1-09",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.12.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-10150dfae091",
+  "frontHtml": "<p>Order a retrograde urethrogram before catheterisation when urethral injury is suspected.</p>",
+  "backHtml": "<p>suspected urethral injury: retrograde urethrogram before a Foley catheter.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-2-01",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.16.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-960c005f268e",
+  "frontHtml": "<p>Manage complete posterior urethral disruption with suprapubic cystostomy.</p>",
+  "backHtml": "<p>complete urethral disruption: drain with a suprapubic catheter and repair the urethra later.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-2-02",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3ddf938e3444",
+  "frontHtml": "<p>Treat intraperitoneal bladder rupture surgically.</p>",
+  "backHtml": "<p>intraperitoneal bladder rupture needs surgical repair; most extraperitoneal ruptures heal with catheter drainage.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-2-03",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.16.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-75204d601b33",
+  "frontHtml": "<p>Manage a stable high-grade renal laceration nonoperatively.</p>",
+  "backHtml": "<p>stable renal trauma, even high grade, is managed nonoperatively; embolise active bleeding and operate for instability.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-2-04",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.16.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b65faaa35647",
+  "frontHtml": "<p>Choose a beta-3 agonist for overactive bladder in an older adult with cognitive impairment.</p>",
+  "backHtml": "<p>for overactive bladder in an older adult with cognitive concerns, choose a beta-3 agonist over an antimuscarinic.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-2-05",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.01.01.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-62db94918ebf",
+  "frontHtml": "<p>Start pelvic floor muscle training for stress urinary incontinence.</p>",
+  "backHtml": "<p>first-line treatment for stress incontinence is pelvic floor muscle training (plus weight loss); surgery comes after conservative treatment.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-2-06",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.13.02.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b323681003ae",
+  "frontHtml": "<p>Use clean intermittent catheterisation for an areflexic neurogenic bladder.</p>",
+  "backHtml": "<p>for an underactive neurogenic bladder with a large residual, use clean intermittent catheterisation.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-2-07",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-51b0312998e4",
+  "frontHtml": "<p>Order voiding cystourethrography when ultrasound is abnormal after a first febrile UTI in a young child.</p>",
+  "backHtml": "<p>abnormal ultrasound after a first febrile UTI in a toddler calls for voiding cystourethrography.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110601-2-08",
+  "areas": [
+   "usmle2026.11.06.01",
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a924e8477107",
+  "frontHtml": "<p>Explain the low position of a horseshoe kidney and its association with Turner syndrome.</p>",
+  "backHtml": "<p>horseshoe kidneys are trapped under the inferior mesenteric artery; think Turner syndrome.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-01",
+  "areas": [
+   "usmle2026.11.07.01",
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-42ba50f6c575",
+  "frontHtml": "<p>Identify pulmonary hypoplasia as the lethal consequence of bilateral renal agenesis.</p>",
+  "backHtml": "<p>oligohydramnios from absent fetal urine causes Potter sequence; death is from pulmonary hypoplasia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-02",
+  "areas": [
+   "usmle2026.11.07.01",
+   "usmle2026.12.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-85ff95a9ca02",
+  "frontHtml": "<p>Distinguish ureteric bud from metanephric mesenchyme derivatives.</p>",
+  "backHtml": "<p>ureteric bud gives the collecting system (collecting ducts to ureter); metanephric mesenchyme gives the nephron up to the distal tubule.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-03",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a970d4de807d",
+  "frontHtml": "<p>Name the GDNF–RET signal that induces ureteric bud outgrowth.</p>",
+  "backHtml": "<p>GDNF from the metanephric mesenchyme acting on RET in the ureteric bud starts kidney development.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-04",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e90116814339",
+  "frontHtml": "<p>Localise congenital obstruction to the ureteropelvic junction.</p>",
+  "backHtml": "<p>hydronephrosis with a normal-calibre ureter means ureteropelvic junction obstruction; pain after fluid loads is typical in older children.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-05",
+  "areas": [
+   "usmle2026.11.07.01",
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-4fa1b8c94639",
+  "frontHtml": "<p>Apply the Weigert-Meyer pattern to explain continuous incontinence in a girl with a duplex system.</p>",
+  "backHtml": "<p>a girl with continuous wetness despite normal voiding has an ectopic upper-pole ureter opening below the sphincter.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-06",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-50ed02865a65",
+  "frontHtml": "<p>Recognise the histology and course of multicystic dysplastic kidney.</p>",
+  "backHtml": "<p>dysplasia shows primitive ducts and cartilage; unilateral multicystic dysplastic kidney leaves amniotic fluid normal.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-07",
+  "areas": [
+   "usmle2026.11.07.01",
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-52a0e8ecc569",
+  "frontHtml": "<p>Identify a patent urachus as a persistent allantoic remnant.</p>",
+  "backHtml": "<p>urine draining from the umbilicus means a patent urachus, a remnant of the allantois.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-08",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d3e7ef0b634e",
+  "frontHtml": "<p>Explain the embryologic basis of bladder exstrophy.</p>",
+  "backHtml": "<p>bladder exstrophy is a failure of infraumbilical mesoderm to reinforce the cloacal membrane, with epispadias and pubic diastasis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-1-09",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b925bb4ad3bc",
+  "frontHtml": "<p>Time the postnatal ultrasound after mild unilateral prenatal hydronephrosis.</p>",
+  "backHtml": "<p>for mild unilateral prenatal hydronephrosis, scan after 48 hours of life; scan early only for bilateral disease or suspected valves.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-2-01",
+  "areas": [
+   "usmle2026.11.07.01",
+   "usmle2026.12.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-7137e74daef3",
+  "frontHtml": "<p>Counsel about the lethal prognosis of bilateral renal agenesis found prenatally.</p>",
+  "backHtml": "<p>bilateral renal agenesis is lethal; counsel about prognosis and options rather than offering interventions that cannot change it.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-2-02",
+  "areas": [
+   "usmle2026.11.07.01",
+   "usmle2026.12.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f74766ee70cb",
+  "frontHtml": "<p>Manage an uncomplicated multicystic dysplastic kidney with serial ultrasonography.</p>",
+  "backHtml": "<p>multicystic dysplastic kidney is managed with serial ultrasound; surgery is for complications only.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-2-03",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9c5848ad81d4",
+  "frontHtml": "<p>Investigate continuous incontinence in a girl with renal and bladder ultrasonography.</p>",
+  "backHtml": "<p>a girl who is always damp but voids normally needs renal and bladder ultrasonography to look for a duplex kidney with an ectopic ureter.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-2-04",
+  "areas": [
+   "usmle2026.11.07.01",
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b5833d3af1fd",
+  "frontHtml": "<p>Screen for renal anomalies in Turner syndrome with ultrasonography.</p>",
+  "backHtml": "<p>screen every girl with Turner syndrome with renal ultrasonography at diagnosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-2-05",
+  "areas": [
+   "usmle2026.11.07.01",
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-622048602b4e",
+  "frontHtml": "<p>Evaluate a suspected patent urachus with ultrasonography.</p>",
+  "backHtml": "<p>suspected patent urachus: ultrasonography first, then surgical excision of the remnant.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-2-06",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d8f7cf20f9ee",
+  "frontHtml": "<p>Assess suspected ureteropelvic junction obstruction with diuretic renography.</p>",
+  "backHtml": "<p>for suspected ureteropelvic junction obstruction, diuretic renography shows drainage and split function.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-2-07",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b39c25741ec2",
+  "frontHtml": "<p>Choose pyeloplasty for symptomatic ureteropelvic junction obstruction with reduced split function.</p>",
+  "backHtml": "<p>symptomatic ureteropelvic junction obstruction with reduced split function needs pyeloplasty.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110701-2-08",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-08abab481e5b",
+  "frontHtml": "<p>Explain how ACE inhibitors reduce GFR by removing angiotensin II-mediated efferent arteriolar constriction.</p>",
+  "backHtml": "<p>ACE inhibitors and ARBs lower GFR by dilating the efferent arteriole; a large creatinine rise suggests renal artery stenosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-01",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0dbcb00d30f4",
+  "frontHtml": "<p>Explain NSAID-induced acute kidney injury through loss of prostaglandin-mediated afferent arteriolar dilation.</p>",
+  "backHtml": "<p>NSAIDs cause hemodynamic AKI in prostaglandin-dependent states such as heart failure, cirrhosis and volume depletion.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-02",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d6cadc73ec13",
+  "frontHtml": "<p>Describe the proximal tubular uptake mechanism of aminoglycoside nephrotoxicity.</p>",
+  "backHtml": "<p>aminoglycoside nephrotoxicity is proximal tubule necrosis from megalin-mediated uptake; it is usually nonoliguric and delayed.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-03",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-82ec3342ed83",
+  "frontHtml": "<p>Recognise amphotericin B-induced distal renal tubular acidosis from laboratory values.</p>",
+  "backHtml": "<p>amphotericin B causes distal RTA with hypokalemia and hypomagnesemia by making collecting duct membranes leaky.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-04",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.16.07.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9369634c1500",
+  "frontHtml": "<p>Explain the mechanism of lithium-induced nephrogenic diabetes insipidus.</p>",
+  "backHtml": "<p>lithium causes nephrogenic DI by reducing aquaporin-2 in principal cells; it enters them through ENaC.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-05",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f75e45cbbb90",
+  "frontHtml": "<p>Localise tenofovir-induced Fanconi syndrome to the proximal tubule.</p>",
+  "backHtml": "<p>tenofovir disoproxil causes proximal tubulopathy (Fanconi syndrome); tenofovir alafenamide is much less toxic to the kidney.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-06",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-51962b6c8b2b",
+  "frontHtml": "<p>Recognise acyclovir crystal nephropathy and its mechanism.</p>",
+  "backHtml": "<p>IV acyclovir, methotrexate, sulfonamides and indinavir cause crystal nephropathy; hydration prevents it.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-07",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-564975c86124",
+  "frontHtml": "<p>Explain how mesna prevents cyclophosphamide-induced hemorrhagic cystitis.</p>",
+  "backHtml": "<p>mesna (with hydration) prevents acrolein-induced hemorrhagic cystitis from cyclophosphamide and ifosfamide.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-08",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-825df9599ea4",
+  "frontHtml": "<p>Link nephrogenic systemic fibrosis to gadolinium exposure in advanced kidney disease.</p>",
+  "backHtml": "<p>gadolinium in advanced CKD or dialysis can cause nephrogenic systemic fibrosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-09",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2d3fb58ab1a3",
+  "frontHtml": "<p>Recognise the histology of PPI-induced acute interstitial nephritis.</p>",
+  "backHtml": "<p>PPIs, beta-lactams and NSAIDs cause AIN: sterile pyuria, white cell casts, and an eosinophil-rich interstitial infiltrate.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-1-10",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-22052f5c8998",
+  "frontHtml": "<p>Use isotonic IV fluids and stop nephrotoxins to reduce contrast-associated AKI in a high-risk patient.</p>",
+  "backHtml": "<p>prevent contrast-associated AKI with isotonic IV fluids and by stopping nephrotoxins; N-acetylcysteine and prophylactic dialysis do not help.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-2-01",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d629d3d992fd",
+  "frontHtml": "<p>Continue an ACE inhibitor when creatinine rises by less than about 30% after starting it.</p>",
+  "backHtml": "<p>after starting an ACE inhibitor or ARB, accept a creatinine rise of up to about 30% and keep the drug.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-2-02",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-12c5f16d308d",
+  "frontHtml": "<p>Distinguish trimethoprim&#x27;s inhibition of creatinine secretion from true acute kidney injury.</p>",
+  "backHtml": "<p>trimethoprim (and cimetidine) can raise creatinine by blocking its secretion; check BUN, urine and cystatin C before calling it AKI.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-2-03",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-47e01901a7cf",
+  "frontHtml": "<p>Manage immune checkpoint inhibitor-associated interstitial nephritis by holding the drug and giving corticosteroids.</p>",
+  "backHtml": "<p>checkpoint inhibitor AIN: hold the drug and give prednisone.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-2-04",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-778fe5b2587a",
+  "frontHtml": "<p>Replace magnesium to correct refractory hypokalemia in cisplatin-induced magnesium wasting.</p>",
+  "backHtml": "<p>refractory hypokalemia (often with hypocalcemia) on cisplatin, aminoglycosides or amphotericin: replace magnesium.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-2-05",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.16.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-5b7005c40907",
+  "frontHtml": "<p>Decompress the bladder first in drug-induced acute urinary retention.</p>",
+  "backHtml": "<p>drug-induced acute urinary retention: catheterise first, then stop the drug and add an alpha blocker.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-2-06",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6210e2d4a24d",
+  "frontHtml": "<p>Diagnose lithium-induced nephrogenic diabetes insipidus from a water deprivation test.</p>",
+  "backHtml": "<p>no concentration after desmopressin means nephrogenic DI; lithium is the commonest drug cause.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-2-07",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c73769fe3fa5",
+  "frontHtml": "<p>Treat lithium-induced nephrogenic diabetes insipidus with amiloride.</p>",
+  "backHtml": "<p>amiloride treats lithium-induced nephrogenic DI when lithium must continue.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q110801-2-08",
+  "areas": [
+   "usmle2026.11.08.01",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ceca8767af53",
+  "frontHtml": "<p>Identify insulitis as the islet lesion of type 1 diabetes.</p>",
+  "backHtml": "<p>insulitis with beta-cell loss is the lesion of type 1 diabetes; islet amyloid belongs to type 2.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-1-01",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0492bc4991b8",
+  "frontHtml": "<p>Recognise glucokinase MODY from its mild, stable, familial phenotype.</p>",
+  "backHtml": "<p>glucokinase variants reset the beta-cell glucose set point and cause mild, stable, familial fasting hyperglycemia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-1-02",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-fc648472f6bb",
+  "frontHtml": "<p>Explain how sulfonylureas close beta-cell K-ATP channels and cause hypoglycemia.</p>",
+  "backHtml": "<p>sulfonylureas close K-ATP channels and cause glucose-independent insulin release, so they cause hypoglycemia; metformin alone does not.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-1-03",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d6f66d2b149b",
+  "frontHtml": "<p>Recognise euglycemic DKA as an adverse effect of SGLT2 inhibitors.</p>",
+  "backHtml": "<p>an anion gap ketoacidosis with near-normal glucose in someone on an SGLT2 inhibitor is euglycemic DKA.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-1-04",
+  "areas": [
+   "usmle2026.15.01.01",
+   "usmle2026.16.07.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-23e417b41d59",
+  "frontHtml": "<p>Link aldose reductase and sorbitol accumulation to diabetic neuropathy and cataracts.</p>",
+  "backHtml": "<p>aldose reductase converts glucose to sorbitol, which accumulates in lens, nerve and retina in poorly controlled diabetes.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-1-05",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d3f083541889",
+  "frontHtml": "<p>Attribute the lesions of diabetic nephropathy to nonenzymatic glycation.</p>",
+  "backHtml": "<p>nonenzymatic glycation drives the basement membrane thickening, mesangial nodules and hyaline arteriolosclerosis of diabetic nephropathy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-1-06",
+  "areas": [
+   "usmle2026.15.01.01",
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1db71cbe677f",
+  "frontHtml": "<p>Explain the absence of significant ketosis in the hyperosmolar hyperglycemic state.</p>",
+  "backHtml": "<p>in HHS, residual insulin prevents ketosis but not extreme hyperglycemia and hyperosmolality.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-1-07",
+  "areas": [
+   "usmle2026.15.01.01",
+   "usmle2026.16.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1784187cfff8",
+  "frontHtml": "<p>Recognise PPAR-gamma agonism and fluid retention with thiazolidinediones.</p>",
+  "backHtml": "<p>thiazolidinediones are PPAR-gamma agonists that cause fluid retention, weight gain and heart failure exacerbation.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-1-08",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0c641b5c7beb",
+  "frontHtml": "<p>Confirm a diagnosis of diabetes by repeating the abnormal test when results are discordant.</p>",
+  "backHtml": "<p>discordant screening tests: repeat the abnormal one before labelling diabetes.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-01",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-edfd25831ca4",
+  "frontHtml": "<p>Arrange a retinal examination at the diagnosis of type 2 diabetes.</p>",
+  "backHtml": "<p>in type 2 diabetes, screen for retinopathy at diagnosis; in type 1, start within 5 years of onset.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-02",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2f427e2f8e33",
+  "frontHtml": "<p>Choose a GLP-1 receptor agonist for type 2 diabetes when weight loss is a priority.</p>",
+  "backHtml": "<p>for type 2 diabetes with obesity, add a GLP-1 receptor agonist or tirzepatide.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-03",
+  "areas": [
+   "usmle2026.15.01.01",
+   "usmle2026.16.04.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-24ef80312b3c",
+  "frontHtml": "<p>Deintensify glucose-lowering therapy and stop glyburide in a frail older adult with hypoglycemia.</p>",
+  "backHtml": "<p>in frail older adults with hypoglycemia, deintensify and stop sulfonylureas, especially glyburide.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-04",
+  "areas": [
+   "usmle2026.15.01.01",
+   "usmle2026.01.01.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0a1e9a80cd3c",
+  "frontHtml": "<p>Titrate basal insulin to the fasting glucose.</p>",
+  "backHtml": "<p>high fasting glucose on basal insulin without hypoglycemia: titrate the basal dose up.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-05",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-50b9f3be3833",
+  "frontHtml": "<p>Start isotonic fluid resuscitation first in the hyperosmolar hyperglycemic state.</p>",
+  "backHtml": "<p>HHS: isotonic fluids first, then insulin, with close electrolyte monitoring.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-06",
+  "areas": [
+   "usmle2026.15.01.01",
+   "usmle2026.16.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9b497ab0360b",
+  "frontHtml": "<p>Replace potassium before starting insulin when it is below 3.5 mEq/L.</p>",
+  "backHtml": "<p>in DKA and HHS, potassium below 3.5 mEq/L means potassium first, insulin second.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-07",
+  "areas": [
+   "usmle2026.15.01.01",
+   "usmle2026.16.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e89e5cd21d69",
+  "frontHtml": "<p>Add dextrose and lower the insulin rate when glucose reaches about 300 mg/dL in HHS.</p>",
+  "backHtml": "<p>add dextrose when glucose reaches about 300 mg/dL in HHS (about 250 mg/dL in DKA) and keep insulin going at a lower rate.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-08",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-95abc3ed8c3f",
+  "frontHtml": "<p>Treat a neuropathic diabetic foot ulcer with offloading and debridement.</p>",
+  "backHtml": "<p>a noninfected neuropathic plantar ulcer with good perfusion heals with offloading and debridement.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-09",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b6e780a2e8ae",
+  "frontHtml": "<p>Give sick-day advice for type 1 diabetes: continue basal insulin and monitor ketones.</p>",
+  "backHtml": "<p>on sick days in type 1 diabetes, continue basal insulin and monitor glucose and ketones closely.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-10",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-805236d76d11",
+  "frontHtml": "<p>Plan pregnancy in type 1 diabetes: optimise glucose and stop teratogenic drugs before conception.</p>",
+  "backHtml": "<p>type 1 diabetes and planned pregnancy: optimise A1c first, stop ACE inhibitors and statins, add folic acid, check the eyes.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150101-2-11",
+  "areas": [
+   "usmle2026.15.01.01",
+   "usmle2026.12.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-4f6285e9d207",
+  "frontHtml": "<p>Diagnose insulinoma from the insulin, C-peptide, proinsulin and drug-screen pattern during fasting hypoglycemia.</p>",
+  "backHtml": "<p>endogenous insulin (high C-peptide and proinsulin) with a negative drug screen during fasting hypoglycemia means insulinoma.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-1-01",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ab696608fc6e",
+  "frontHtml": "<p>Explain alcohol-related fasting hypoglycemia through the NADH/NAD+ ratio and gluconeogenesis.</p>",
+  "backHtml": "<p>alcohol causes fasting hypoglycemia by blocking gluconeogenesis through a high NADH/NAD + ratio once glycogen is depleted.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-1-02",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.16.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a54b91ab7522",
+  "frontHtml": "<p>Recognise glucagonoma as an alpha-cell tumour from its clinical features.</p>",
+  "backHtml": "<p>necrolytic migratory erythema plus diabetes and thrombosis means an alpha-cell glucagonoma.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-1-03",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c9353070a08b",
+  "frontHtml": "<p>Explain the cAMP-mediated secretory diarrhea of VIPoma.</p>",
+  "backHtml": "<p>VIPoma causes secretory diarrhea, hypokalemia and achlorhydria through cAMP-driven chloride secretion.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-1-04",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ba707e4c78fb",
+  "frontHtml": "<p>Recognise IGF-2-mediated non-islet cell tumour hypoglycemia from its laboratory pattern.</p>",
+  "backHtml": "<p>low insulin, low C-peptide and low ketones with a large tumour points to IGF-2-mediated hypoglycemia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-1-05",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.16.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ff9b07ea6cda",
+  "frontHtml": "<p>Explain neonatal hypoglycemia in the infant of a mother with diabetes.</p>",
+  "backHtml": "<p>infants of mothers with diabetes become hypoglycemic after birth because their own hyperplastic beta cells keep secreting insulin.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-1-06",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.12.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-03f2aa864da4",
+  "frontHtml": "<p>Treat mild symptomatic hypoglycemia with oral glucose and recheck after 15 minutes.</p>",
+  "backHtml": "<p>conscious hypoglycemia: 15–20 g of glucose, recheck in 15 minutes.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-01",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c908430a31a2",
+  "frontHtml": "<p>Treat severe hypoglycemia in an unconscious patient outside hospital with glucagon.</p>",
+  "backHtml": "<p>unconscious hypoglycemia outside hospital: glucagon, recovery position, nothing by mouth.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-02",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-fce19dd0debe",
+  "frontHtml": "<p>Use octreotide for recurrent sulfonylurea-induced hypoglycemia.</p>",
+  "backHtml": "<p>recurrent hypoglycemia from a sulfonylurea: dextrose plus octreotide, and admit.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-03",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-86df2c284b2e",
+  "frontHtml": "<p>Manage hypoglycemia unawareness in type 1 diabetes with CGM and relaxed targets.</p>",
+  "backHtml": "<p>hypoglycemia unawareness: CGM with alerts and relaxed targets for weeks.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-04",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0ebc783d5f5c",
+  "frontHtml": "<p>Treat post-bariatric hypoglycemia with dietary changes first.</p>",
+  "backHtml": "<p>post-meal hypoglycemia after gastric bypass is treated with diet first.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-05",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-7774a0687138",
+  "frontHtml": "<p>Investigate documented fasting hypoglycemia with a supervised fast and full biochemistry.</p>",
+  "backHtml": "<p>prove insulin-mediated hypoglycemia biochemically before imaging the pancreas.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-06",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d3798c77d4ab",
+  "frontHtml": "<p>Localise a biochemically confirmed insulinoma with cross-sectional imaging first.</p>",
+  "backHtml": "<p>after biochemical confirmation, localise an insulinoma with pancreatic CT or MRI, then EUS, and remove it.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-07",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9d5b74ed00d4",
+  "frontHtml": "<p>Screen for insulin secretagogues when insulin and C-peptide are both high.</p>",
+  "backHtml": "<p>high insulin plus high C-peptide needs a secretagogue screen before pancreatic imaging.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-08",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-86e58a63bbdf",
+  "frontHtml": "<p>Disclose evidence of factitious hypoglycemia honestly and supportively.</p>",
+  "backHtml": "<p>disclose a positive secretagogue screen to the patient privately and supportively, and offer psychiatric care.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150102-2-09",
+  "areas": [
+   "usmle2026.15.01.02",
+   "usmle2026.18.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ef67a4d36939",
+  "frontHtml": "<p>Recognise a thyroglossal duct cyst and its embryologic origin.</p>",
+  "backHtml": "<p>a midline neck mass that moves with tongue protrusion is a thyroglossal duct cyst.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-1-01",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a213baea65dd",
+  "frontHtml": "<p>Interpret thyroid tests when thyroxine-binding globulin is raised by estrogen.</p>",
+  "backHtml": "<p>high total T4 with normal free T4 and TSH means more binding protein, not thyroid disease.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-1-02",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0b5933ba4d20",
+  "frontHtml": "<p>Associate Hashimoto thyroiditis with primary thyroid B-cell lymphoma.</p>",
+  "backHtml": "<p>rapid thyroid enlargement in long-standing Hashimoto suggests primary thyroid B-cell lymphoma.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-1-03",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-8ab6e92ca201",
+  "frontHtml": "<p>Explain the mechanism of Graves orbitopathy.</p>",
+  "backHtml": "<p>Graves orbitopathy is autoimmune activation of orbital fibroblasts: glycosaminoglycans plus new fat.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-1-04",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c06d097f8eb7",
+  "frontHtml": "<p>Recognise subacute granulomatous thyroiditis and its histology.</p>",
+  "backHtml": "<p>painful thyroid, high ESR and low uptake: subacute granulomatous thyroiditis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-1-05",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f169ffa1a732",
+  "frontHtml": "<p>Link papillary thyroid carcinoma histology to BRAF and RET/PTC alterations.</p>",
+  "backHtml": "<p>papillary carcinoma nuclei plus psammoma bodies; BRAF V600E or RET/PTC .</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-1-06",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-57884ab96061",
+  "frontHtml": "<p>Explain why propylthiouracil is preferred in thyroid storm (it blocks peripheral deiodination).</p>",
+  "backHtml": "<p>PTU blocks both thyroid peroxidase and peripheral T4-to-T3 conversion.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-1-07",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6fe53a5a3085",
+  "frontHtml": "<p>Explain amiodarone-induced hypothyroidism as failure to escape the Wolff-Chaikoff effect.</p>",
+  "backHtml": "<p>amiodarone-induced hypothyroidism is failure to escape Wolff-Chaikoff, most likely in underlying autoimmune thyroiditis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-1-08",
+  "areas": [
+   "usmle2026.15.02.01",
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-025e1a1703ab",
+  "frontHtml": "<p>Titrate levothyroxine by free T4 in central hypothyroidism.</p>",
+  "backHtml": "<p>in pituitary disease, dose levothyroxine by free T4, not TSH.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-01",
+  "areas": [
+   "usmle2026.15.02.01",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9038c6642e78",
+  "frontHtml": "<p>Confirm subclinical hypothyroidism with repeat TSH and free T4 before treatment.</p>",
+  "backHtml": "<p>confirm subclinical hypothyroidism with repeat testing before treating; treat persistent TSH of 10 or more.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-02",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1d550113547c",
+  "frontHtml": "<p>Distinguish factitious thyrotoxicosis from thyroiditis using thyroglobulin when uptake is low.</p>",
+  "backHtml": "<p>low uptake plus low thyroglobulin points to exogenous thyroid hormone.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-03",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-7abc4ac5b0b3",
+  "frontHtml": "<p>Treat myxedema coma with IV levothyroxine plus stress-dose hydrocortisone.</p>",
+  "backHtml": "<p>myxedema coma: IV hydrocortisone with IV levothyroxine, plus ventilatory and circulatory support.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-04",
+  "areas": [
+   "usmle2026.15.02.01",
+   "usmle2026.01.01.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-7871b8847701",
+  "frontHtml": "<p>Recognise and manage suspected thionamide-induced agranulocytosis.</p>",
+  "backHtml": "<p>fever or sore throat on a thionamide: stop the drug and check the neutrophil count.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-05",
+  "areas": [
+   "usmle2026.15.02.01",
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2899ab3f71e0",
+  "frontHtml": "<p>Follow a cytologically benign thyroid nodule with ultrasonography.</p>",
+  "backHtml": "<p>benign FNA in a low- or intermediate-suspicion nodule: ultrasound surveillance.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-06",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-4251dc3485e3",
+  "frontHtml": "<p>Recognise nonthyroidal illness syndrome and avoid treating it.</p>",
+  "backHtml": "<p>in critical illness, low T3 with high reverse T3 needs no treatment; retest after recovery.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-07",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a9716a5ad2d8",
+  "frontHtml": "<p>Confirm Graves disease with TSH-receptor antibodies.</p>",
+  "backHtml": "<p>confirm Graves disease with TSH-receptor antibodies (or radioiodine uptake when the picture is unclear).</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-08",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-215c932fb028",
+  "frontHtml": "<p>Avoid radioiodine and choose methimazole or surgery when Graves orbitopathy is moderate to severe and active.</p>",
+  "backHtml": "<p>with moderate-to-severe active Graves orbitopathy, treat hyperthyroidism with methimazole or surgery, not radioiodine.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150201-2-09",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-68312c61d42a",
+  "frontHtml": "<p>Explain pseudohypoparathyroidism type 1A as Gs-alpha (GNAS) loss with maternal imprinting.</p>",
+  "backHtml": "<p>PTH resistance with Albright hereditary osteodystrophy is pseudohypoparathyroidism type 1A, a maternally inherited GNAS (Gs-alpha) defect.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-1-01",
+  "areas": [
+   "usmle2026.15.03.01",
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-79319bd038aa",
+  "frontHtml": "<p>Explain the hypocalciuria of familial hypocalciuric hypercalcemia through CaSR loss of function.</p>",
+  "backHtml": "<p>Hypercalcemia with normal PTH and a calcium-to-creatinine clearance ratio below 0.01 in a family is FHH, a CaSR loss-of-function disorder.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-1-02",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-415cb1aadb52",
+  "frontHtml": "<p>Recognise the histology and laboratory pattern of Paget disease of bone.</p>",
+  "backHtml": "<p>Isolated high alkaline phosphatase with enlarging bones and mosaic lamellar bone is Paget disease.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-1-03",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-309d48557c1d",
+  "frontHtml": "<p>Explain how hypomagnesemia causes functional hypoparathyroidism.</p>",
+  "backHtml": "<p>Refractory hypocalcemia with low or normal PTH: check and replace magnesium.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-1-04",
+  "areas": [
+   "usmle2026.15.03.01",
+   "usmle2026.16.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2141a6d5b539",
+  "frontHtml": "<p>Recognise osteomalacia from vitamin D deficiency after bariatric surgery.</p>",
+  "backHtml": "<p>Low calcium and phosphate, high alkaline phosphatase and PTH, and pseudofractures mean osteomalacia: unmineralised osteoid.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-1-05",
+  "areas": [
+   "usmle2026.15.03.01",
+   "usmle2026.16.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ea36c9389c78",
+  "frontHtml": "<p>Describe the mechanism of nitrogen-containing bisphosphonates.</p>",
+  "backHtml": "<p>Nitrogen-containing bisphosphonates inhibit farnesyl pyrophosphate synthase and kill osteoclasts.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-1-06",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-fc18ffc0238a",
+  "frontHtml": "<p>Apply surgical criteria in asymptomatic primary hyperparathyroidism.</p>",
+  "backHtml": "<p>Primary hyperparathyroidism with calcium &gt;1 mg/dL above normal, osteoporosis, eGFR &lt;60, stones or hypercalciuria, or age &lt;50: refer for parathyroidectomy.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-2-01",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f4a3dd050d46",
+  "frontHtml": "<p>Manage severe hypercalcemia of malignancy with saline, calcitonin and a bisphosphonate.</p>",
+  "backHtml": "<p>Severe hypercalcemia: saline first, calcitonin for speed, a bisphosphonate (or denosumab) for durability.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-2-02",
+  "areas": [
+   "usmle2026.15.03.01",
+   "usmle2026.16.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1eb3edbb0fbe",
+  "frontHtml": "<p>Recognise calcitriol-mediated hypercalcemia and treat it with glucocorticoids.</p>",
+  "backHtml": "<p>Calcitriol-mediated hypercalcemia (lymphoma, granulomas) responds to glucocorticoids.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-2-03",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e439aa9756c8",
+  "frontHtml": "<p>Use calcitriol in chronic hypoparathyroidism.</p>",
+  "backHtml": "<p>Hypoparathyroidism needs calcium plus active vitamin D (calcitriol); target low-normal calcium.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-2-04",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e2d42a426a68",
+  "frontHtml": "<p>Screen women 65 and older for osteoporosis with DXA.</p>",
+  "backHtml": "<p>Screen all women 65 and older for osteoporosis with DXA.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-2-05",
+  "areas": [
+   "usmle2026.15.03.01",
+   "usmle2026.01.01.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6d0bfaaadf21",
+  "frontHtml": "<p>Prevent rebound vertebral fractures when stopping denosumab.</p>",
+  "backHtml": "<p>Never stop denosumab without starting a bisphosphonate.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-2-06",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b1c9b8b204e6",
+  "frontHtml": "<p>Choose intravenous zoledronic acid when oral bisphosphonates are contraindicated.</p>",
+  "backHtml": "<p>Use intravenous zoledronic acid (or denosumab) when oral bisphosphonates are contraindicated by esophageal disease.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-2-07",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e86a92f3548e",
+  "frontHtml": "<p>Correct vitamin D deficiency before giving a potent antiresorptive.</p>",
+  "backHtml": "<p>Correct vitamin D deficiency and hypocalcemia before zoledronic acid or denosumab.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150301-2-08",
+  "areas": [
+   "usmle2026.15.03.01",
+   "usmle2026.16.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0862c81fbd5b",
+  "frontHtml": "<p>Explain hyperpigmentation in primary adrenal insufficiency through increased POMC cleavage.</p>",
+  "backHtml": "<p>hyperpigmentation in adrenal insufficiency comes from high POMC-derived peptides, so it occurs only in primary disease.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-1-01",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d31e6de0f030",
+  "frontHtml": "<p>Identify neuroblastoma and its main adverse prognostic marker (MYCN amplification).</p>",
+  "backHtml": "<p>in neuroblastoma, MYCN amplification predicts aggressive disease.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-1-02",
+  "areas": [
+   "usmle2026.15.04.01",
+   "usmle2026.16.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3d3735ad3c3b",
+  "frontHtml": "<p>Explain why beta blockade without prior alpha blockade causes a hypertensive crisis in pheochromocytoma.</p>",
+  "backHtml": "<p>in pheochromocytoma, give alpha blockade before any beta blocker.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-1-03",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0258596dadf3",
+  "frontHtml": "<p>Recognise licorice-induced apparent mineralocorticoid excess from a low-renin, low-aldosterone pattern.</p>",
+  "backHtml": "<p>low renin, low aldosterone hypertension with hypokalemia and a history of licorice is apparent mineralocorticoid excess.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-1-04",
+  "areas": [
+   "usmle2026.15.04.01",
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c66636638671",
+  "frontHtml": "<p>Localise ACTH-dependent Cushing syndrome with nonsuppressible ACTH to an ectopic small cell lung carcinoma.</p>",
+  "backHtml": "<p>very high, nonsuppressible ACTH with rapid Cushing features and hypokalemia in a smoker suggests ectopic ACTH from small cell lung cancer.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-1-05",
+  "areas": [
+   "usmle2026.15.04.01",
+   "usmle2026.16.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6f0479824c7b",
+  "frontHtml": "<p>Treat adrenal crisis with immediate IV hydrocortisone and saline.</p>",
+  "backHtml": "<p>suspected adrenal crisis: IV hydrocortisone and saline immediately, never delayed for tests.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-01",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-8b109c0c7b2a",
+  "frontHtml": "<p>Choose morning cortisol, ACTH and cosyntropin stimulation to diagnose primary adrenal insufficiency.</p>",
+  "backHtml": "<p>suspected adrenal insufficiency in a stable patient: morning cortisol and ACTH, then cosyntropin stimulation.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-02",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-08f033bc6578",
+  "frontHtml": "<p>Replace glucocorticoid and mineralocorticoid in primary adrenal insufficiency.</p>",
+  "backHtml": "<p>primary adrenal insufficiency needs glucocorticoid plus mineralocorticoid replacement and sick-day education.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-03",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-34507af3345a",
+  "frontHtml": "<p>Recognise iatrogenic Cushing syndrome from a ritonavir–inhaled fluticasone interaction.</p>",
+  "backHtml": "<p>cushingoid features with low cortisol and low ACTH mean exogenous glucocorticoid, including inhaled steroid boosted by ritonavir.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-04",
+  "areas": [
+   "usmle2026.15.04.01",
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f3460ab2a559",
+  "frontHtml": "<p>Use inferior petrosal sinus sampling for ACTH-dependent Cushing syndrome with a negative pituitary MRI.</p>",
+  "backHtml": "<p>ACTH-dependent Cushing syndrome with a negative or equivocal pituitary MRI: petrosal sinus sampling.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-05",
+  "areas": [
+   "usmle2026.15.04.01",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3b2e18403036",
+  "frontHtml": "<p>Use adrenal vein sampling to lateralise primary aldosteronism before surgery.</p>",
+  "backHtml": "<p>in primary aldosteronism, confirm the side with adrenal vein sampling before adrenalectomy in most patients who want surgery.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-06",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-4af02b93a8ab",
+  "frontHtml": "<p>Prepare a patient with pheochromocytoma for surgery with alpha blockade before beta blockade.</p>",
+  "backHtml": "<p>prepare for pheochromocytoma surgery with alpha blockade and volume expansion.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-07",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2a75d6d1b3ee",
+  "frontHtml": "<p>Manage a benign-appearing, nonfunctioning adrenal incidentaloma without further follow-up.</p>",
+  "backHtml": "<p>a small, homogeneous, low-attenuation, nonfunctioning adrenal adenoma needs no follow-up imaging.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-08",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b6810896ee06",
+  "frontHtml": "<p>Evaluate central precocious puberty in a boy with brain MRI.</p>",
+  "backHtml": "<p>central precocious puberty in a boy requires brain MRI.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150401-2-09",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-080fff332290",
+  "frontHtml": "<p>Relate craniopharyngioma to its Rathke pouch origin and typical imaging.</p>",
+  "backHtml": "<p>craniopharyngioma comes from Rathke pouch remnants and is typically calcified and cystic.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-1-01",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a5a3c603cad6",
+  "frontHtml": "<p>Explain why IGF-1, not GH, is used to monitor GH receptor antagonist therapy.</p>",
+  "backHtml": "<p>on pegvisomant, monitor IGF-1; GH levels are uninterpretable.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-1-02",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-fdf7e19f265f",
+  "frontHtml": "<p>Explain the stalk effect on prolactin through loss of dopamine inhibition.</p>",
+  "backHtml": "<p>mild hyperprolactinemia with a large nonsecreting mass is the stalk effect.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-1-03",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-cddaed3c51c2",
+  "frontHtml": "<p>Link SIADH to V2-receptor-mediated aquaporin-2 insertion.</p>",
+  "backHtml": "<p>SIADH retains free water through V2-mediated aquaporin-2 insertion in the collecting duct.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-1-04",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.16.07.01",
+   "usmle2026.16.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6fa18b42511d",
+  "frontHtml": "<p>Recognise failure of lactation as the earliest sign of Sheehan syndrome.</p>",
+  "backHtml": "<p>postpartum hemorrhage followed by inability to breastfeed suggests Sheehan syndrome.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-1-05",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.12.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d0775062b0a4",
+  "frontHtml": "<p>Start a dopamine agonist for a macroprolactinoma even with visual field loss.</p>",
+  "backHtml": "<p>prolactinomas, including macroadenomas with field loss, are treated first with a dopamine agonist.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-01",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.14.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b2879144007b",
+  "frontHtml": "<p>Manage antipsychotic-induced hyperprolactinemia by switching to a prolactin-sparing drug.</p>",
+  "backHtml": "<p>suspected drug-induced hyperprolactinemia: change the drug safely and recheck before imaging.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-02",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.04.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3db7ba863706",
+  "frontHtml": "<p>Treat pituitary hyperplasia and hyperprolactinemia caused by primary hypothyroidism with levothyroxine.</p>",
+  "backHtml": "<p>check TSH in every patient with hyperprolactinemia; hypothyroidism can mimic a pituitary tumour.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-03",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d0cfc1248bd4",
+  "frontHtml": "<p>Confirm acromegaly with failure of GH suppression after an oral glucose load.</p>",
+  "backHtml": "<p>screen acromegaly with IGF-1, confirm with GH non-suppression after oral glucose, then MRI.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-04",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f9287b65bf45",
+  "frontHtml": "<p>Treat persistent acromegaly after surgery with a somatostatin receptor ligand.</p>",
+  "backHtml": "<p>persistent acromegaly after surgery: start a somatostatin receptor ligand.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-05",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ad222466719e",
+  "frontHtml": "<p>Give stress-dose hydrocortisone first in pituitary apoplexy.</p>",
+  "backHtml": "<p>in pituitary apoplexy, give IV hydrocortisone first.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-06",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d427cabea517",
+  "frontHtml": "<p>Replace glucocorticoid before thyroid hormone in central hypothyroidism with ACTH deficiency.</p>",
+  "backHtml": "<p>in hypopituitarism, replace cortisol before thyroid hormone.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-07",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a0c303beedb1",
+  "frontHtml": "<p>Recognise constitutional delay of growth and puberty and reassure.</p>",
+  "backHtml": "<p>normal growth velocity with delayed bone age and a family history of late puberty is constitutional delay.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-08",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.01.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3dacf30d6d92",
+  "frontHtml": "<p>Choose a supervised water deprivation test to evaluate dilute polyuria.</p>",
+  "backHtml": "<p>confirm and classify diabetes insipidus with a supervised water deprivation test (or stimulated copeptin) before treating.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-09",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-719cce495071",
+  "frontHtml": "<p>Interpret a water deprivation test showing central diabetes insipidus.</p>",
+  "backHtml": "<p>no concentration with dehydration plus a large rise after desmopressin means central DI.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-10",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-8c3ae9c2fddb",
+  "frontHtml": "<p>Image the hypothalamus and pituitary after diagnosing central diabetes insipidus.</p>",
+  "backHtml": "<p>new central DI needs sellar and hypothalamic MRI to find the cause.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150501-2-11",
+  "areas": [
+   "usmle2026.15.05.01",
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-be29efbfa26e",
+  "frontHtml": "<p>Relate ventromedial hypothalamic damage to hyperphagia and obesity.</p>",
+  "backHtml": "<p>ventromedial hypothalamic damage causes hyperphagia and obesity; lateral damage causes anorexia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-1-01",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.16.04.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c8d898538a01",
+  "frontHtml": "<p>Explain Kallmann syndrome as failed migration of GnRH neurons from the olfactory placode.</p>",
+  "backHtml": "<p>hypogonadotropic hypogonadism plus anosmia means failed GnRH neuron migration (Kallmann syndrome).</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-1-02",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.14.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-144ef4994923",
+  "frontHtml": "<p>Relate anterior hypothalamic injury to central hyperthermia.</p>",
+  "backHtml": "<p>anterior hypothalamic damage causes hyperthermia; posterior damage causes poikilothermia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-1-03",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-462484dcaa06",
+  "frontHtml": "<p>Trace the leptin-POMC-alpha-MSH-MC4R satiety pathway.</p>",
+  "backHtml": "<p>leptin → POMC → alpha-MSH → MC4R is the satiety pathway; its defects cause monogenic obesity.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-1-04",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.16.04.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-fbeb3413156d",
+  "frontHtml": "<p>Describe the hormonal pattern of functional hypothalamic amenorrhea.</p>",
+  "backHtml": "<p>functional hypothalamic amenorrhea is low GnRH pulsatility with low or normal gonadotropins and low estradiol.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-1-05",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.13.02.05",
+   "usmle2026.16.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-942999d2052b",
+  "frontHtml": "<p>Recognise Langerhans cell histiocytosis as a cause of central diabetes insipidus.</p>",
+  "backHtml": "<p>lytic bone lesions plus central DI in a child suggests Langerhans cell histiocytosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-1-06",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.03.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6c693b4f7427",
+  "frontHtml": "<p>Explain central precocious puberty from a hypothalamic hamartoma.</p>",
+  "backHtml": "<p>hypothalamic hamartoma causes central precocious puberty through its own GnRH release, often with gelastic seizures.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-1-07",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-636270848644",
+  "frontHtml": "<p>Treat functional hypothalamic amenorrhea by correcting energy deficit.</p>",
+  "backHtml": "<p>treat functional hypothalamic amenorrhea by restoring energy balance.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-2-01",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.13.02.05",
+   "usmle2026.16.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-495f4076e955",
+  "frontHtml": "<p>Choose transdermal estradiol with cyclic progestin for bone protection in persistent functional hypothalamic amenorrhea.</p>",
+  "backHtml": "<p>for persistent functional hypothalamic amenorrhea with low bone density, use transdermal estradiol plus cyclic progestin, not the combined pill or bisphosphonates.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-2-02",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.13.02.05",
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-424e3b764e57",
+  "frontHtml": "<p>Use gonadotropins to induce spermatogenesis in hypogonadotropic hypogonadism.</p>",
+  "backHtml": "<p>hypogonadotropic hypogonadism with a wish for fertility needs gonadotropins, not testosterone.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-2-03",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.14.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-5adde616dbe1",
+  "frontHtml": "<p>Identify opioid-induced suppression of GnRH as a cause of secondary hypogonadism.</p>",
+  "backHtml": "<p>chronic opioid use is a common reversible cause of secondary hypogonadism.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-2-04",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.14.03.01",
+   "usmle2026.16.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2b91d2ecebdc",
+  "frontHtml": "<p>Recognise neurosarcoidosis as a cause of central diabetes insipidus.</p>",
+  "backHtml": "<p>central DI plus a thickened stalk and systemic granulomatous disease suggests neurosarcoidosis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-2-05",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.15.05.01",
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-71a9258cea86",
+  "frontHtml": "<p>Treat postoperative central diabetes insipidus with desmopressin and monitor for a triphasic response.</p>",
+  "backHtml": "<p>postoperative central DI: desmopressin with close sodium monitoring, watching for a triphasic course.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-2-06",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.15.05.01",
+   "usmle2026.16.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3fd80c260186",
+  "frontHtml": "<p>Order brain MRI for central precocious puberty in a young girl.</p>",
+  "backHtml": "<p>central precocious puberty in a young girl or any boy needs brain MRI.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-2-07",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.01.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-31b76b815ade",
+  "frontHtml": "<p>Treat central precocious puberty with a long-acting GnRH agonist.</p>",
+  "backHtml": "<p>central precocious puberty, including from a hamartoma, is treated with a depot GnRH agonist; surgery is for refractory seizures.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1506-2-08",
+  "areas": [
+   "usmle2026.15.06",
+   "usmle2026.01.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6e715f753608",
+  "frontHtml": "<p>Identify menin as the tumour suppressor lost in MEN1.</p>",
+  "backHtml": "<p>MEN1 is caused by loss of the menin tumour suppressor, following the two-hit model.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-1-01",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1f12f02de119",
+  "frontHtml": "<p>Recognise MEN2B and its association with pheochromocytoma.</p>",
+  "backHtml": "<p>MEN2B = MTC, pheochromocytoma, mucosal neuromas and marfanoid habitus, without hyperparathyroidism.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-1-02",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-a09b96a6caa8",
+  "frontHtml": "<p>Trace medullary thyroid carcinoma to neural crest-derived parafollicular C cells.</p>",
+  "backHtml": "<p>C cells, and therefore medullary thyroid carcinoma, are of neural crest origin, like the adrenal medulla.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-1-03",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-3ec3d4de6bf1",
+  "frontHtml": "<p>Link RET variants to both MEN2A and Hirschsprung disease.</p>",
+  "backHtml": "<p>RET gain of function causes MEN2; reduced RET function causes Hirschsprung disease, and some MEN2A families have both.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-1-04",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1c44aff77fc9",
+  "frontHtml": "<p>Choose subtotal parathyroidectomy with thymectomy for MEN1 hyperparathyroidism.</p>",
+  "backHtml": "<p>MEN1 hyperparathyroidism needs subtotal or total parathyroidectomy with thymectomy, not single-gland surgery.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-01",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-235c17058c3f",
+  "frontHtml": "<p>Offer cascade genetic testing to relatives in a family with a known MEN1 variant.</p>",
+  "backHtml": "<p>offer first-degree relatives targeted testing for a known MEN1 variant; only carriers need surveillance.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-02",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-94275d1b655f",
+  "frontHtml": "<p>Treat a prolactinoma in MEN1 with cabergoline.</p>",
+  "backHtml": "<p>symptomatic prolactinoma, including in MEN1: cabergoline first.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-03",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e3764c2e21ab",
+  "frontHtml": "<p>Offer germline RET testing to every patient with medullary thyroid carcinoma.</p>",
+  "backHtml": "<p>all patients with MTC get germline RET testing, whatever the family history.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-04",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-52e8e9c34d2e",
+  "frontHtml": "<p>Exclude pheochromocytoma before thyroidectomy in MEN2.</p>",
+  "backHtml": "<p>in MTC or a RET carrier, check metanephrines before any operation.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-05",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-7e55c75e9127",
+  "frontHtml": "<p>Sequence alpha-blockade, adrenalectomy and then thyroidectomy in MEN2.</p>",
+  "backHtml": "<p>in MEN2 with pheochromocytoma and MTC: alpha-block, remove the pheochromocytoma, then the thyroid.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-06",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-344c69158007",
+  "frontHtml": "<p>Time prophylactic thyroidectomy by RET risk class in a child carrier.</p>",
+  "backHtml": "<p>a child with a high-risk RET variant (codon 634) has prophylactic thyroidectomy by about age 5.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-07",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-11f5cb870cfe",
+  "frontHtml": "<p>Use calcitonin and CEA to monitor medullary thyroid carcinoma.</p>",
+  "backHtml": "<p>follow medullary thyroid carcinoma with calcitonin and CEA, not thyroglobulin.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-08",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-5b14efa3772e",
+  "frontHtml": "<p>Replace levothyroxine to a normal TSH after thyroidectomy for MTC.</p>",
+  "backHtml": "<p>after thyroidectomy for MTC, replace thyroid hormone to a normal TSH; do not suppress.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q1507-2-09",
+  "areas": [
+   "usmle2026.15.07",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-57501a9694fe",
+  "frontHtml": "<p>Identify 5α-reductase deficiency from its genital phenotype and high testosterone-to-DHT ratio.</p>",
+  "backHtml": "<p>46,XY with female or ambiguous genitalia at birth, virilisation at puberty and a high testosterone-to-DHT ratio is 5α-reductase deficiency.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-1-01",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2a24bee6f095",
+  "frontHtml": "<p>Explain hypertension in 11β-hydroxylase deficiency by 11-deoxycorticosterone excess.</p>",
+  "backHtml": "<p>in 11β-hydroxylase deficiency, excess 11-deoxycorticosterone causes hypertension and hypokalemia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-1-02",
+  "areas": [
+   "usmle2026.15.08.01",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d74dab2dabaa",
+  "frontHtml": "<p>Recognise 17α-hydroxylase deficiency from absent puberty, hypertension and hypokalemia.</p>",
+  "backHtml": "<p>absent puberty plus hypertension and hypokalemia points to 17α-hydroxylase deficiency.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-1-03",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-d366b4bf6032",
+  "frontHtml": "<p>Attribute Müllerian duct regression to AMH from Sertoli cells.</p>",
+  "backHtml": "<p>AMH from Sertoli cells removes the Müllerian ducts regardless of androgen action.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-1-04",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e863d38996af",
+  "frontHtml": "<p>Explain an ectopic lingual thyroid as failed descent from the foramen cecum.</p>",
+  "backHtml": "<p>an ectopic lingual thyroid is failed descent from the foramen cecum and a common cause of congenital hypothyroidism.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-1-05",
+  "areas": [
+   "usmle2026.15.08.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f2c8c2e186d8",
+  "frontHtml": "<p>Treat salt-wasting CAH crisis in a male neonate with saline, dextrose and hydrocortisone.</p>",
+  "backHtml": "<p>a vomiting 2-week-old with low sodium and high potassium needs saline, dextrose and hydrocortisone for salt-wasting CAH, even with normal genitalia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-2-01",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b5ba1108a7e6",
+  "frontHtml": "<p>Approach a newborn with atypical genitalia with urgent testing and deferred sex assignment.</p>",
+  "backHtml": "<p>atypical genitalia: explain honestly, evaluate urgently (electrolytes, 17-OHP, karyotype, ultrasound) and assign sex only after the work-up.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-2-02",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f13ba61e454a",
+  "frontHtml": "<p>Teach sick-day glucocorticoid stress dosing in congenital adrenal hyperplasia.</p>",
+  "backHtml": "<p>CAH sick-day rules: double or triple oral hydrocortisone for fever; injection and emergency care if vomiting.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-2-03",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-ddda45c841f8",
+  "frontHtml": "<p>Interpret a raised 17-hydroxyprogesterone screen in a preterm infant using adjusted cut-offs.</p>",
+  "backHtml": "<p>interpret newborn 17-hydroxyprogesterone against gestational age or birth-weight cut-offs; preterm infants often have false-positive results.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-2-04",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-056b1faf8873",
+  "frontHtml": "<p>Start levothyroxine promptly for congenital hypothyroidism with a markedly raised screening TSH.</p>",
+  "backHtml": "<p>very high newborn screening TSH: confirm with serum tests and start levothyroxine the same day.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-2-05",
+  "areas": [
+   "usmle2026.15.08.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-c2645fe98464",
+  "frontHtml": "<p>Correct levothyroxine administration in infants before changing the dose.</p>",
+  "backHtml": "<p>before increasing levothyroxine in an infant, fix how it is given: small volume, away from soy, iron and calcium.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-2-06",
+  "areas": [
+   "usmle2026.15.08.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-00be87d76ef1",
+  "frontHtml": "<p>Prioritise cardiac and aortic imaging at diagnosis of Turner syndrome.</p>",
+  "backHtml": "<p>at a Turner syndrome diagnosis, image the heart and aorta.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-2-07",
+  "areas": [
+   "usmle2026.15.08.01",
+   "usmle2026.13.02.08"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6d72bc6fb415",
+  "frontHtml": "<p>Evaluate hypospadias with an undescended testis for a difference of sex development and defer circumcision.</p>",
+  "backHtml": "<p>hypospadias plus a nonpalpable or undescended testis calls for a DSD evaluation and no circumcision.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150801-2-08",
+  "areas": [
+   "usmle2026.15.08.01",
+   "usmle2026.14.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0fc20aadaab9",
+  "frontHtml": "<p>Explain testicular atrophy from exogenous androgens via gonadotropin suppression.</p>",
+  "backHtml": "<p>Anabolic steroids cause testicular atrophy and infertility through suppressed LH and FSH.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-1-01",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.14.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-51d42f60a032",
+  "frontHtml": "<p>Explain amiodarone-induced hypothyroidism by the Wolff-Chaikoff effect.</p>",
+  "backHtml": "<p>Amiodarone hypothyroidism is failure to escape the Wolff-Chaikoff effect, most often in glands with underlying autoimmune thyroiditis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-1-02",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e3b275c731a0",
+  "frontHtml": "<p>Explain lithium-associated hypercalcemia through the calcium-sensing receptor.</p>",
+  "backHtml": "<p>Lithium causes PTH-dependent hypercalcemia by raising the CaSR set point.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-1-03",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-99e94094a6ca",
+  "frontHtml": "<p>Link antipsychotic D2 blockade in the tuberoinfundibular pathway to hyperprolactinemia.</p>",
+  "backHtml": "<p>D2 blockade in the tuberoinfundibular pathway causes hyperprolactinemia.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-1-04",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-6c6851dcd15a",
+  "frontHtml": "<p>Associate anti-CTLA-4 immunotherapy with hypophysitis.</p>",
+  "backHtml": "<p>Ipilimumab (anti-CTLA-4) most often causes hypophysitis.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-1-05",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-34342daa5152",
+  "frontHtml": "<p>Explain the mechanism of SGLT2 inhibitor-associated euglycemic DKA.</p>",
+  "backHtml": "<p>SGLT2 inhibitors can cause ketoacidosis with near-normal glucose; hold them around surgery and acute illness.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-1-06",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0aceefe20afe",
+  "frontHtml": "<p>Identify the adrenal enzyme inhibited by etomidate.</p>",
+  "backHtml": "<p>Etomidate (and metyrapone) inhibit 11-beta-hydroxylase: low cortisol with high 11-deoxycortisol.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-1-07",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-b46133884338",
+  "frontHtml": "<p>Treat adrenal crisis from glucocorticoid withdrawal with immediate IV hydrocortisone.</p>",
+  "backHtml": "<p>Suspected adrenal crisis: give IV hydrocortisone and fluids immediately; test later.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-01",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-40ebe511feb3",
+  "frontHtml": "<p>Plan glucocorticoid tapering and sick-day rules after adrenal crisis.</p>",
+  "backHtml": "<p>After glucocorticoid-withdrawal adrenal crisis, taper slowly with sick-day rules and an emergency plan.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-02",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-2ce5a0e9134f",
+  "frontHtml": "<p>Differentiate type 2 amiodarone-induced thyrotoxicosis and treat with glucocorticoids.</p>",
+  "backHtml": "<p>Type 2 amiodarone thyrotoxicosis (destructive, low vascularity) is treated with glucocorticoids.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-03",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-1c3c10d22bce",
+  "frontHtml": "<p>Recognise biotin interference with thyroid immunoassays.</p>",
+  "backHtml": "<p>Discordant thyroid tests in a patient taking biotin: stop biotin and repeat before further testing.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-04",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0dfa3aec0089",
+  "frontHtml": "<p>Manage immune checkpoint inhibitor thyroiditis.</p>",
+  "backHtml": "<p>PD-1 inhibitor thyroiditis: beta-blocker, continue immunotherapy, monitor for later hypothyroidism.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-05",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-9c73e2cd097d",
+  "frontHtml": "<p>Treat immune checkpoint inhibitor diabetes with insulin.</p>",
+  "backHtml": "<p>Checkpoint-inhibitor diabetes is insulin-deficient and permanent: treat with insulin, not steroids.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-06",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-0607c2e988f7",
+  "frontHtml": "<p>Treat SGLT2 inhibitor-associated euglycemic DKA with insulin plus dextrose.</p>",
+  "backHtml": "<p>Euglycemic DKA: stop the SGLT2 inhibitor; fluids plus insulin infusion with dextrose.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-07",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.16.07.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-f7a63a4d262b",
+  "frontHtml": "<p>Manage antipsychotic-induced hyperprolactinemia.</p>",
+  "backHtml": "<p>Antipsychotic hyperprolactinemia: switch to or add aripiprazole if the psychiatric condition permits.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-08",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23c-g-e00a3b4d30a0",
+  "frontHtml": "<p>Treat iodine-induced hyperthyroidism after contrast with a beta-blocker and methimazole.</p>",
+  "backHtml": "<p>Jod-Basedow thyrotoxicosis: beta-blocker plus methimazole; radioiodine is ineffective while iodine-loaded.</p>",
+  "sectionId": null,
+  "questionId": "s23c-q150901-2-09",
+  "areas": [
+   "usmle2026.15.09.01",
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ }
+]

@@ -1,0 +1,47 @@
+<svg aria-label="Left ventricular pressure-volume loop with valve events and effects of preload, afterload and contractility" role="img" viewbox="0 0 720 380" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch05-arrow-f2" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#ffffff" height="380" width="720" x="0" y="0"></rect>
+<line marker-end="url(#ch05-arrow-f2)" stroke="#334155" stroke-width="2" x1="80" x2="430" y1="330" y2="330"></line>
+<line marker-end="url(#ch05-arrow-f2)" stroke="#334155" stroke-width="2" x1="80" x2="80" y1="330" y2="30"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" text-anchor="middle" x="255" y="362">LV volume (mL)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" text-anchor="middle" transform="rotate(-90 35 180)" x="35" y="180">LV pressure (mmHg)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="120" y="346">50</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="400" y="346">120</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="72" y="160">80</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="72" y="72">120</text>
+<line stroke="#334155" x1="80" x2="88" y1="68" y2="68"></line>
+<line stroke="#334155" x1="80" x2="88" y1="156" y2="156"></line>
+<path d="M120,316 Q260,322 400,306 L400,156 C385,80 220,46 120,104 Z" fill="#e0f2fe" stroke="#334155" stroke-width="3"></path>
+<line stroke="#334155" stroke-dasharray="6,4" stroke-width="1.5" x1="90" x2="128" y1="330" y2="44"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="134" y="40">ESPVR (contractility)</text>
+<circle cx="400" cy="306" fill="#334155" r="5"></circle><circle cx="400" cy="156" fill="#334155" r="5"></circle>
+<circle cx="120" cy="104" fill="#334155" r="5"></circle><circle cx="120" cy="316" fill="#334155" r="5"></circle>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="408" y="300">Mitral closes (S1)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="408" y="150">Aortic opens</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="126" y="122">Aortic closes (S2)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="126" y="308">Mitral opens</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="250" y="300">1 Filling</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="368" y="240">2 Isovol.</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="368" y="255">contraction</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="270" y="130">3 Ejection</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="128" y="215">4 Isovol.</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="128" y="230">relaxation</text>
+<line marker-end="url(#ch05-arrow-f2)" marker-start="url(#ch05-arrow-f2)" stroke="#334155" stroke-width="1" x1="120" x2="400" y1="200" y2="200"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="270" y="194">Stroke volume (EDV − ESV)</text>
+<rect fill="#fef3c7" height="300" rx="6" stroke="#334155" width="190" x="525" y="40"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="535" y="60">Effect on the loop</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="82">↑ Preload: loop widens to</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="97">right; ↑ EDV, ↑ SV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="120">↑ Afterload: taller, narrower;</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="135">↑ ESV, ↓ SV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="158">↑ Contractility: ESPVR</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="173">steeper; ↓ ESV, ↑ SV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="196">AS: very high LV systolic</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="211">pressure, ↓ SV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="234">MR: no true isovolumetric</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="249">contraction; ↑ EDV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="272">AR: no isovolumetric</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="287">relaxation; ↑↑ EDV, ↑ SV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="310">MS: ↓ EDV, ↓ SV (LA</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="535" y="325">pressure high, LV underfilled)</text>
+</svg>

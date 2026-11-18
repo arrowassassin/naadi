@@ -1,0 +1,18 @@
+/*
+ * Whiteboard pages (segment 13): Excalidraw fills its frame; its library browser (external site), help dialog
+ * (project links) and sidebar trigger are not offered. Loaded with the lazy whiteboard chunk only.
+ */
+.naadi-whiteboard .excalidraw .default-sidebar-trigger,
+.naadi-whiteboard .excalidraw .library-menu-browse-button,
+.naadi-whiteboard .excalidraw .help-icon,
+.naadi-whiteboard .excalidraw .HelpDialog__header {
+  display: none;
+}
+
+.naadi-whiteboard .excalidraw {
+  --ui-font: var(--font-sans);
+}
+
+[data-board-tools-hidden] .excalidraw .layer-ui__wrapper {
+  display: none;
+}

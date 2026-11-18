@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="Colonic arterial territories with the two watershed segments" font-family="sans-serif">
+<text x="360" y="24" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Arterial territories of the colon and rectum</text>
+<line x1="12" y1="78" x2="303" y2="78" stroke="#334155" stroke-width="2"/>
+<line x1="12" y1="70" x2="12" y2="86" stroke="#334155" stroke-width="2"/>
+<line x1="303" y1="70" x2="303" y2="86" stroke="#334155" stroke-width="2"/>
+<text x="157" y="64" text-anchor="middle" font-size="14" fill="#0f172a">Superior mesenteric artery</text>
+<line x1="307" y1="78" x2="583" y2="78" stroke="#334155" stroke-width="2"/>
+<line x1="307" y1="70" x2="307" y2="86" stroke="#334155" stroke-width="2"/>
+<line x1="583" y1="70" x2="583" y2="86" stroke="#334155" stroke-width="2"/>
+<text x="445" y="64" text-anchor="middle" font-size="14" fill="#0f172a">Inferior mesenteric artery</text>
+<line x1="587" y1="78" x2="708" y2="78" stroke="#334155" stroke-width="2"/>
+<line x1="587" y1="70" x2="587" y2="86" stroke="#334155" stroke-width="2"/>
+<line x1="708" y1="70" x2="708" y2="86" stroke="#334155" stroke-width="2"/>
+<text x="648" y="64" text-anchor="middle" font-size="13" fill="#0f172a">Internal iliac</text>
+<rect x="10" y="110" width="130" height="56" fill="#e0f2fe" stroke="#334155"/>
+<text x="75" y="134" text-anchor="middle" font-size="13" fill="#0f172a">Cecum,</text>
+<text x="75" y="152" text-anchor="middle" font-size="13" fill="#0f172a">ascending</text>
+<rect x="140" y="110" width="120" height="56" fill="#e0f2fe" stroke="#334155"/>
+<text x="200" y="134" text-anchor="middle" font-size="13" fill="#0f172a">Proximal</text>
+<text x="200" y="152" text-anchor="middle" font-size="13" fill="#0f172a">transverse</text>
+<rect x="260" y="110" width="90" height="56" fill="#fef3c7" stroke="#334155" stroke-width="2"/>
+<text x="305" y="134" text-anchor="middle" font-size="13" fill="#0f172a">Splenic</text>
+<text x="305" y="152" text-anchor="middle" font-size="13" fill="#0f172a">flexure</text>
+<rect x="350" y="110" width="110" height="56" fill="#dcfce7" stroke="#334155"/>
+<text x="405" y="134" text-anchor="middle" font-size="13" fill="#0f172a">Distal transv.</text>
+<text x="405" y="152" text-anchor="middle" font-size="13" fill="#0f172a">descending</text>
+<rect x="460" y="110" width="80" height="56" fill="#dcfce7" stroke="#334155"/>
+<text x="500" y="143" text-anchor="middle" font-size="13" fill="#0f172a">Sigmoid</text>
+<rect x="540" y="110" width="90" height="56" fill="#fef3c7" stroke="#334155" stroke-width="2"/>
+<text x="585" y="143" text-anchor="middle" font-size="12" fill="#0f172a">Rectosigmoid</text>
+<rect x="630" y="110" width="80" height="56" fill="#ede9fe" stroke="#334155"/>
+<text x="670" y="134" text-anchor="middle" font-size="13" fill="#0f172a">Rectum</text>
+<text x="670" y="152" text-anchor="middle" font-size="12" fill="#0f172a">(dual supply)</text>
+<line x1="305" y1="166" x2="305" y2="200" stroke="#334155" stroke-width="2"/>
+<text x="305" y="218" text-anchor="middle" font-size="13" fill="#0f172a">Watershed 1: SMA / IMA boundary</text>
+<line x1="585" y1="166" x2="585" y2="236" stroke="#334155" stroke-width="2"/>
+<text x="585" y="254" text-anchor="middle" font-size="13" fill="#0f172a">Watershed 2: IMA / internal iliac</text>
+<text x="12" y="296" font-size="13" fill="#0f172a">Low-flow ischemic colitis favours the two watershed segments; the rectum is usually spared.</text>
+</svg>

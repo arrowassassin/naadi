@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Three panels of systolic blood pressure and heart rate before and after standing: normal, volume depletion and autonomic failure">
+<rect x="0" y="0" width="720" height="330" fill="#ffffff"/>
+<text x="125.0" y="30" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Normal</text>
+<rect x="20" y="60" width="210" height="210" fill="none" stroke="#94a3b8"/>
+<line x1="125.0" y1="60" x2="125.0" y2="270" stroke="#64748b" stroke-dasharray="4,4"/>
+<text x="72.5" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">Supine</text>
+<text x="177.5" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">Standing</text>
+<polyline points="20.0,148.0 125.0,148.0 129.2,167.2 146.0,151.2 230.0,148.0" fill="none" stroke="#b91c1c" stroke-width="3"/>
+<polyline points="20.0,228.0 125.0,228.0 135.5,199.2 156.5,208.8 230.0,208.8" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-dasharray="8,5"/>
+<text x="26" y="142" font-family="sans-serif" font-size="12" fill="#b91c1c">SBP 120</text>
+<text x="224" y="142" text-anchor="end" font-family="sans-serif" font-size="12" fill="#b91c1c">120</text>
+<text x="26" y="244" font-family="sans-serif" font-size="12" fill="#1d4ed8">HR 70</text>
+<text x="224" y="225" text-anchor="end" font-family="sans-serif" font-size="12" fill="#1d4ed8">82</text>
+<text x="360.0" y="30" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Volume depletion</text>
+<rect x="255" y="60" width="210" height="210" fill="none" stroke="#94a3b8"/>
+<line x1="360.0" y1="60" x2="360.0" y2="270" stroke="#64748b" stroke-dasharray="4,4"/>
+<text x="307.5" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">Supine</text>
+<text x="412.5" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">Standing</text>
+<polyline points="255.0,151.2 360.0,151.2 366.3,186.4 385.2,186.4 465.0,189.6" fill="none" stroke="#b91c1c" stroke-width="3"/>
+<polyline points="255.0,205.6 360.0,205.6 370.5,167.2 391.5,160.8 465.0,157.6" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-dasharray="8,5"/>
+<text x="261" y="145" font-family="sans-serif" font-size="12" fill="#b91c1c">SBP 118</text>
+<text x="459" y="184" text-anchor="end" font-family="sans-serif" font-size="12" fill="#b91c1c">94</text>
+<text x="261" y="222" font-family="sans-serif" font-size="12" fill="#1d4ed8">HR 84</text>
+<text x="459" y="174" text-anchor="end" font-family="sans-serif" font-size="12" fill="#1d4ed8">114</text>
+<text x="595.0" y="30" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Autonomic failure</text>
+<rect x="490" y="60" width="210" height="210" fill="none" stroke="#94a3b8"/>
+<line x1="595.0" y1="60" x2="595.0" y2="270" stroke="#64748b" stroke-dasharray="4,4"/>
+<text x="542.5" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">Supine</text>
+<text x="647.5" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">Standing</text>
+<polyline points="490.0,100.0 595.0,100.0 605.5,164.0 637.0,183.2 700.0,192.8" fill="none" stroke="#b91c1c" stroke-width="3"/>
+<polyline points="490.0,228.0 595.0,228.0 605.5,224.8 637.0,224.8 700.0,224.8" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-dasharray="8,5"/>
+<text x="496" y="94" font-family="sans-serif" font-size="12" fill="#b91c1c">SBP 150</text>
+<text x="694" y="187" text-anchor="end" font-family="sans-serif" font-size="12" fill="#b91c1c">92</text>
+<text x="496" y="244" font-family="sans-serif" font-size="12" fill="#1d4ed8">HR 70</text>
+<text x="694" y="241" text-anchor="end" font-family="sans-serif" font-size="12" fill="#1d4ed8">72</text>
+<line x1="200" y1="315" x2="235" y2="315" stroke="#b91c1c" stroke-width="3"/><text x="242" y="319" font-family="sans-serif" font-size="12" fill="#0f172a">Systolic pressure (mm Hg)</text>
+<line x1="420" y1="315" x2="455" y2="315" stroke="#1d4ed8" stroke-width="3" stroke-dasharray="8,5"/><text x="462" y="319" font-family="sans-serif" font-size="12" fill="#0f172a">Heart rate (/min)</text>
+</svg>

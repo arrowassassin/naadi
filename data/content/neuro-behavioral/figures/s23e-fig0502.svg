@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" role="img" aria-label="Basal ganglia motor circuit with five labelled structures. A: striatum. B: external globus pallidus. C: subthalamic nucleus. D: internal globus pallidus and substantia nigra pars reticulata. E: motor thalamus. The direct pathway runs from striatum to D and releases the thalamus. The indirect pathway runs from striatum to B, then C, then D, and brakes the thalamus. Dopamine from the substantia nigra pars compacta excites direct-pathway neurons through D1 receptors and inhibits indirect-pathway neurons through D2 receptors.">
+<defs>
+<marker id="s23e-fig0502-ex" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker>
+<marker id="s23e-fig0502-in" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M4,0 L6,0 L6,10 L4,10 z" fill="#0f172a"/></marker>
+</defs>
+<rect x="0" y="0" width="760" height="470" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="26" font-size="16" font-weight="bold" text-anchor="middle">Basal ganglia motor circuit: direct and indirect pathways</text>
+<rect x="280" y="50" width="200" height="45" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/><text x="380" y="78" font-size="13" text-anchor="middle">Motor cortex</text>
+<rect x="560" y="50" width="180" height="45" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/><text x="650" y="78" font-size="13" text-anchor="middle">E  Thalamus (VA/VL)</text>
+<rect x="40" y="160" width="180" height="45" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/><text x="130" y="188" font-size="13" text-anchor="middle">A  Striatum</text>
+<rect x="300" y="160" width="160" height="45" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/><text x="380" y="188" font-size="13" text-anchor="middle">B  GP external</text>
+<rect x="300" y="290" width="160" height="45" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/><text x="380" y="318" font-size="13" text-anchor="middle">C  Subthalamic n.</text>
+<rect x="560" y="260" width="180" height="45" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/><text x="650" y="288" font-size="13" text-anchor="middle">D  GP internal / SNr</text>
+<rect x="40" y="350" width="180" height="45" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/><text x="130" y="370" font-size="12" text-anchor="middle">Substantia nigra</text><text x="130" y="386" font-size="12" text-anchor="middle">pars compacta</text>
+<path d="M300,95 L190,158" fill="none" stroke="#0f172a" stroke-width="2" marker-end="url(#s23e-fig0502-ex)"/>
+<path d="M560,72 L482,72" fill="none" stroke="#0f172a" stroke-width="2" marker-end="url(#s23e-fig0502-ex)"/>
+<path d="M220,182 L297,182" fill="none" stroke="#0f172a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#s23e-fig0502-in)"/>
+<path d="M80,205 L80,240 L600,240 L600,257" fill="none" stroke="#0f172a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#s23e-fig0502-in)"/>
+<path d="M380,205 L380,287" fill="none" stroke="#0f172a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#s23e-fig0502-in)"/>
+<path d="M460,312 L557,292" fill="none" stroke="#0f172a" stroke-width="2" marker-end="url(#s23e-fig0502-ex)"/>
+<path d="M700,260 L700,98" fill="none" stroke="#0f172a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#s23e-fig0502-in)"/>
+<path d="M170,350 L170,208" fill="none" stroke="#0f172a" stroke-width="2.5" marker-end="url(#s23e-fig0502-ex)"/>
+<text x="268" y="138" font-size="11">glutamate</text>
+<text x="230" y="174" font-size="11">D2</text>
+<text x="470" y="234" font-size="11">direct (D1)</text>
+<text x="388" y="250" font-size="11">indirect</text>
+<text x="490" y="322" font-size="11">glutamate</text>
+<text x="708" y="180" font-size="11">GABA</text>
+<text x="180" y="296" font-size="11">dopamine:</text>
+<text x="180" y="311" font-size="11">D1 excites,</text>
+<text x="180" y="326" font-size="11">D2 inhibits</text>
+<path d="M40,425 L80,425" stroke="#0f172a" stroke-width="2" marker-end="url(#s23e-fig0502-ex)"/><text x="90" y="429" font-size="11">excitatory</text>
+<path d="M170,425 L210,425" stroke="#0f172a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#s23e-fig0502-in)"/><text x="220" y="429" font-size="11">inhibitory (GABA)</text>
+<text x="40" y="452" font-size="11" fill="#334155">Direct pathway releases the thalamus (more movement); indirect pathway brakes it. Naadi original diagram.</text>
+</g>
+</svg>

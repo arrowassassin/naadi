@@ -1,0 +1,1594 @@
+{
+ "area": "usmle2026.15.02.01",
+ "sections": [
+  {
+   "id": "s23c-s150201-1-1",
+   "exam": "step1",
+   "heading": "Thyroid development, hormone synthesis and drugs",
+   "html": "<p>The thyroid makes thyroxine (T4) and, in smaller amounts, the active hormone triiodothyronine (T3). Almost every Step 1 thyroid question rests on four ideas: where the gland comes from, how iodide becomes hormone, how the axis is regulated, and where drugs act.</p><h3>Development</h3><ul><li>The thyroid begins as an endodermal outgrowth at the <strong>foramen cecum</strong>, at the junction of the anterior two thirds and posterior third of the tongue. It descends in front of the hyoid and larynx, attached by the <strong>thyroglossal duct</strong>, which normally disappears.</li><li><strong>Thyroglossal duct cyst</strong>: a midline neck mass, usually at or just below the hyoid, that <em>rises when the tongue is protruded or with swallowing</em>. Surgical excision removes the central part of the hyoid with the tract to prevent recurrence. A lateral neck mass at the anterior border of the sternocleidomastoid is a branchial cleft cyst instead.</li><li><strong>Lingual thyroid</strong>: failure of descent leaves thyroid tissue at the tongue base; it may be the only thyroid tissue the patient has, so it is imaged before any removal.</li><li>Parafollicular <strong>C cells</strong> (calcitonin) come from the ultimobranchial body of the fourth pharyngeal pouch, with neural crest contribution.</li></ul>[[figure:s23c-fig150201-1]]<h3>Hormone synthesis</h3><ol><li><strong>Trapping</strong>: the sodium-iodide symporter (NIS) on the basolateral membrane concentrates iodide. Perchlorate and pertechnetate compete for it.</li><li><strong>Oxidation and organification</strong>: at the apical membrane, thyroid peroxidase (TPO) oxidises iodide and attaches it to tyrosine residues on thyroglobulin, forming monoiodotyrosine (MIT) and diiodotyrosine (DIT).</li><li><strong>Coupling</strong>: TPO joins DIT + DIT to make T4, and MIT + DIT to make T3.</li><li><strong>Release</strong>: TSH drives endocytosis of colloid; lysosomal proteases free T4 and T3. Large iodide doses and lithium inhibit release.</li></ol><p>The gland secretes mostly T4. Peripheral <strong>5′-deiodinase</strong> (types 1 and 2) converts T4 to T3, the form that binds nuclear receptors; type 3 deiodinase makes inactive reverse T3. Over 99% of circulating hormone is protein-bound, mostly to <strong>thyroxine-binding globulin (TBG)</strong>, and only the free fraction acts.</p><table><tr><th>TBG change</th><th>Causes</th><th>Total T4</th><th>Free T4 and TSH</th></tr><tr><td>Increased</td><td>Pregnancy, estrogen (oral contraceptives, hormone therapy), acute hepatitis, tamoxifen</td><td>High</td><td>Normal</td></tr><tr><td>Decreased</td><td>Androgens, glucocorticoids, nephrotic syndrome, cirrhosis</td><td>Low</td><td>Normal</td></tr></table><h3>Regulation</h3><p>Hypothalamic TRH stimulates pituitary TSH, which acts through a G<sub>s</sub>-coupled receptor (cAMP) to drive every step of synthesis and to cause follicular hypertrophy. T3 inside thyrotrophs and the hypothalamus feeds back negatively. Because TSH responds steeply to small changes in free T4, <strong>TSH is the most sensitive screening test</strong> in primary thyroid disease, but it is unreliable when the pituitary itself is diseased.</p><h3>Actions of thyroid hormone</h3><ul><li>Raises basal metabolic rate through more Na<sup>+</sup>/K<sup>+</sup>-ATPase activity and heat production.</li><li>Increases cardiac β<sub>1</sub>-receptor expression: tachycardia, raised contractility and cardiac output.</li><li>Essential for brain maturation and bone growth in infancy (untreated congenital deficiency causes permanent intellectual disability).</li><li>Increases glycogenolysis, gluconeogenesis and lipolysis; lowers LDL by raising hepatic LDL receptors.</li></ul><h3>Pharmacology by mechanism</h3><table><tr><th>Drug</th><th>Mechanism</th><th>Key adverse effects</th></tr><tr><td>Methimazole</td><td>Blocks TPO (organification and coupling)</td><td>Agranulocytosis (rare, early), rash, cholestatic hepatitis; first-trimester embryopathy (aplasia cutis, choanal or esophageal atresia)</td></tr><tr><td>Propylthiouracil (PTU)</td><td>Blocks TPO <em>and</em> peripheral 5′-deiodinase</td><td>Agranulocytosis; severe hepatocellular injury (boxed warning); ANCA-associated vasculitis</td></tr><tr><td>Levothyroxine (T4)</td><td>Replacement; converted to T3 in tissues</td><td>Over-replacement: atrial fibrillation, bone loss</td></tr><tr><td>Propranolol and other β-blockers</td><td>Control adrenergic symptoms; propranolol at high dose slightly reduces T4 to T3 conversion</td><td>Bronchospasm, bradycardia</td></tr><tr><td>Radioactive iodine (<sup>131</sup>I)</td><td>Taken up by NIS; β-emission destroys follicular cells</td><td>Permanent hypothyroidism (expected); can worsen active Graves orbitopathy; contraindicated in pregnancy and breastfeeding</td></tr><tr><td>Potassium iodide (iodine solution)</td><td>Large doses acutely block organification (Wolff-Chaikoff) and hormone release</td><td>Given only after a thionamide in hyperthyroidism, or it fuels new hormone synthesis</td></tr></table><p><strong>Drugs that disturb thyroid function</strong>: <em>amiodarone</em> (about a third iodine by weight) can cause hypothyroidism (failure to escape Wolff-Chaikoff, especially with underlying Hashimoto) or thyrotoxicosis (type 1: iodine-driven synthesis in a nodular or Graves gland; type 2: destructive thyroiditis); <em>lithium</em> blocks hormone release and causes goiter and hypothyroidism; immune checkpoint inhibitors cause thyroiditis.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a woman on oral contraceptives with a high <em>total</em> T4 and a normal TSH is euthyroid. The extra hormone is bound to the extra TBG; free T4 is normal.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"PTU works <em>Peripherally Too</em>\": it is the thionamide that also blocks T4-to-T3 conversion.</p></div>",
+   "figureIds": [
+    "s23c-fig150201-1"
+   ],
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Thyroglossal Duct Cyst",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK519057/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypothyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK519536/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Thyroid Diseases",
+     "url": "https://medlineplus.gov/thyroiddiseases.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150201-1-2",
+   "exam": "step1",
+   "heading": "Thyroid pathology: thyroiditis, Graves disease and neoplasms",
+   "html": "<h3>Hypothyroidism: Hashimoto thyroiditis</h3><p>Chronic autoimmune (lymphocytic) thyroiditis is the commonest cause of hypothyroidism where iodine intake is adequate. It is much more common in women and associated with HLA-DR3 and DR5 and with other autoimmune diseases. <strong>Anti-TPO</strong> (and anti-thyroglobulin) antibodies are present; destruction is mostly cell-mediated (cytotoxic T cells, apoptosis). Early follicular destruction may release stored hormone and cause brief thyrotoxicosis (\"hashitoxicosis\").</p><ul><li><strong>Gross</strong>: diffusely enlarged, firm, painless goiter; late in the disease the gland may shrink.</li><li><strong>Microscopy</strong>: dense lymphocytic infiltrate with <strong>germinal centres</strong>; atrophic follicles; <strong>Hürthle (oncocytic) cells</strong>, large follicular cells with granular pink cytoplasm full of mitochondria.</li><li><strong>Risk</strong>: primary <strong>thyroid B-cell lymphoma</strong> (diffuse large B-cell or MALT type), which presents as a rapidly enlarging thyroid in a patient with long-standing Hashimoto.</li></ul><p>Other causes of hypothyroidism: iodine deficiency (endemic goiter, worldwide the leading cause), prior radioiodine or thyroidectomy, drugs (amiodarone, lithium, checkpoint inhibitors), central (pituitary or hypothalamic) disease, and congenital dysgenesis. Clinical effects of deficiency include cold intolerance, weight gain, constipation, bradycardia, delayed relaxation of tendon reflexes, dry skin, menorrhagia, hyperlipidemia, hyponatremia, raised creatine kinase and nonpitting myxedema from glycosaminoglycan accumulation.</p><h3>Hyperthyroidism: Graves disease</h3><ul><li><strong>Thyroid-stimulating immunoglobulin</strong> (IgG against the TSH receptor) mimics TSH: diffuse hyperplasia, a smooth goiter with a bruit, high radioiodine uptake, suppressed TSH. It is a type II (antibody-mediated, receptor-stimulating) hypersensitivity. The antibody crosses the placenta and can cause transient neonatal thyrotoxicosis.</li><li><strong>Microscopy</strong>: tall, crowded follicular cells with papillary infoldings; pale colloid with \"scalloped\" edges where it is being resorbed.</li><li><strong>Orbitopathy</strong>: orbital fibroblasts and preadipocytes express TSH receptors (and IGF-1 receptors). Autoantibodies and T-cell cytokines drive fibroblasts to secrete hydrophilic glycosaminoglycans (hyaluronan) and to become fat cells, expanding extraocular muscles and orbital fat: proptosis, lid retraction, diplopia, and in severe cases optic nerve compression. Smoking and radioiodine worsen it.</li><li><strong>Dermopathy</strong>: pretibial myxedema, the same glycosaminoglycan deposition in the shin dermis.</li></ul><p>Other causes of thyrotoxicosis: toxic multinodular goiter and toxic adenoma (autonomous nodules, often activating TSH-receptor mutations, no orbitopathy), thyroiditis (leakage of stored hormone, low uptake), exogenous hormone, iodine load (Jod-Basedow), hCG-mediated (hyperemesis, molar pregnancy), struma ovarii and, rarely, a TSH-secreting adenoma.</p><h3>Thyroiditis compared</h3><table><tr><th>Type</th><th>Setting and clues</th><th>Pathology</th><th>Course</th></tr><tr><td>Subacute granulomatous (de Quervain)</td><td>After a viral upper respiratory illness; <strong>painful, tender gland</strong>, fever, very high ESR</td><td>Granulomatous inflammation with multinucleated giant cells around damaged follicles</td><td>Thyrotoxic, then hypothyroid, then usually normal over months; low radioiodine uptake while thyrotoxic</td></tr><tr><td>Painless (silent) and postpartum</td><td>Painless; postpartum form within a year of delivery; anti-TPO often positive</td><td>Lymphocytic infiltrate without the germinal centres and fibrosis of Hashimoto</td><td>Same three-phase course; recurs after later pregnancies; some develop permanent hypothyroidism</td></tr><tr><td>Hashimoto</td><td>Painless goiter, hypothyroidism</td><td>Lymphoid follicles, Hürthle cells</td><td>Permanent hypothyroidism common</td></tr><tr><td>Riedel (fibrous)</td><td><strong>Rock-hard, fixed</strong> gland that can compress the trachea; mimics cancer</td><td>Dense fibrosis extending beyond the capsule; IgG4-positive plasma cells (part of IgG4-related disease)</td><td>Variable; may need steroids or surgery</td></tr></table><h3>Nonthyroidal illness (euthyroid sick syndrome)</h3><p>Severe illness, starvation and high-dose glucocorticoids reduce 5′-deiodinase activity, so <strong>T3 falls and reverse T3 rises</strong>; with longer, more severe illness T4 and TSH can also fall. Thyroid hormone is not given; values recover as the illness resolves, sometimes with a transient TSH overshoot.</p><h3>Thyroid neoplasms</h3><table><tr><th>Tumour</th><th>Cell and genetics</th><th>Histology</th><th>Behaviour</th></tr><tr><td>Follicular adenoma</td><td>Follicular cell</td><td>Encapsulated, no capsular or vascular invasion</td><td>Benign; FNA cannot tell it from carcinoma</td></tr><tr><td>Papillary carcinoma (about 80–85%)</td><td>Follicular cell; <em>BRAF</em> V600E, <em>RET/PTC</em> rearrangements; childhood radiation exposure</td><td>Papillae; nuclei with clear \"ground glass\" chromatin, grooves and pseudoinclusions; <strong>psammoma bodies</strong></td><td>Spreads to cervical lymph nodes; excellent prognosis</td></tr><tr><td>Follicular carcinoma</td><td>Follicular cell; <em>RAS</em> mutations, <em>PAX8-PPARG</em></td><td>Diagnosis needs <strong>capsular or vascular invasion</strong></td><td>Hematogenous spread (bone, lung)</td></tr><tr><td>Medullary carcinoma</td><td>Parafollicular C cell; <em>RET</em> (sporadic or MEN2)</td><td>Nests of cells in <strong>amyloid stroma derived from calcitonin</strong> (Congo red)</td><td>Calcitonin and CEA are tumour markers; does not take up iodine</td></tr><tr><td>Anaplastic carcinoma</td><td>Follicular cell, dedifferentiated; <em>TP53</em></td><td>Pleomorphic, spindle and giant cells</td><td>Older adults; rapidly growing, invasive; very poor prognosis</td></tr><tr><td>Primary lymphoma</td><td>B cell; arises in Hashimoto</td><td>Sheets of lymphoid cells</td><td>Rapidly enlarging gland; treated with chemotherapy and radiation</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a painful thyroid with thyrotoxicosis and low radioiodine uptake is subacute thyroiditis, not Graves. Thionamides do nothing, because no new hormone is being made.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hashimoto Thyroiditis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK459262/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Graves Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448195/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: De Quervain Thyroiditis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK526066/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Papillary Thyroid Carcinoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536943/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Euthyroid Sick Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482219/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150201-2-1",
+   "exam": "step2ck",
+   "heading": "Thyroid function tests, hypothyroidism and hyperthyroidism: management",
+   "html": "<h3>Testing strategy</h3><ul><li>Start with <strong>TSH</strong>. If abnormal, add <strong>free T4</strong> (and total or free T3 when TSH is suppressed but free T4 is normal, to find T3 toxicosis).</li><li>When pituitary or hypothalamic disease is known or suspected, TSH is misleading: measure free T4 and follow free T4 on treatment.</li><li>Antibodies: anti-TPO supports Hashimoto (and predicts progression of subclinical hypothyroidism); TSH-receptor antibodies (TRAb or TSI) confirm Graves.</li><li><strong>Radioactive iodine uptake and scan</strong> sorts thyrotoxicosis once TSH is suppressed: diffuse high uptake (Graves), patchy uptake (toxic multinodular goiter), one hot nodule with the rest suppressed (toxic adenoma), and low uptake (thyroiditis, exogenous hormone, recent iodine load). Serum <strong>thyroglobulin</strong> is low with exogenous hormone and high with thyroiditis.</li></ul>[[figure:s23c-fig150201-2]]<h3>Hypothyroidism</h3><ul><li><strong>Treatment</strong>: levothyroxine, about 1.6 µg/kg/day in a healthy adult; start low (25–50 µg) in older adults or with coronary disease. Recheck TSH 6–8 weeks after each change.</li><li><strong>Absorption</strong>: take on an empty stomach, 30–60 minutes before breakfast. Calcium, iron, proton pump inhibitors, bile acid sequestrants, sucralfate and some fibres reduce absorption; separate them by about 4 hours. Estrogen raises TBG and dose needs; enzyme inducers raise clearance.</li><li><strong>Pregnancy</strong>: requirements rise early. A woman already on levothyroxine increases her dose by roughly 25–30% (for example two extra doses a week) as soon as pregnancy is confirmed, with TSH checked about every 4 weeks in the first half of pregnancy.</li><li><strong>Subclinical hypothyroidism</strong> (high TSH, normal free T4): repeat TSH with free T4 in about 2–3 months, because many values normalise. Treat persistent TSH of 10 mU/L or more; for lower values, treatment is individualised (symptoms, positive anti-TPO, pregnancy or plans for pregnancy). The normal TSH range shifts upward with age, so older adults with mild elevation are usually observed.</li><li><strong>Myxedema coma</strong>: decompensated hypothyroidism, often triggered by infection, cold or sedatives, with hypothermia, depressed consciousness, bradycardia, hypotension, hypoventilation (hypercapnia), hyponatremia and hypoglycemia. Give <strong>IV glucocorticoid (hydrocortisone) first or together with IV levothyroxine</strong> until adrenal insufficiency is excluded (thyroid hormone raises cortisol clearance and can precipitate adrenal crisis), plus ventilatory support, passive rewarming and correction of sodium and glucose in an ICU.</li></ul><h3>Hyperthyroidism and thyrotoxicosis</h3><ul><li><strong>Symptom control</strong>: a β-blocker (propranolol, atenolol) for palpitations, tremor and anxiety, unless contraindicated.</li><li><strong>Graves</strong>: three options. <em>Methimazole</em> for 12–18 months (lasting remission in roughly a third to a half); <em>radioactive iodine</em> (definitive, then lifelong levothyroxine); <em>thyroidectomy</em> (large goiter with compression, suspicious nodule, moderate-to-severe active orbitopathy, pregnancy planned soon, or patient preference). Avoid radioiodine in pregnancy, breastfeeding and moderate-to-severe active orbitopathy; if radioiodine is chosen with mild active orbitopathy, give glucocorticoid cover. Stop smoking.</li><li><strong>Pregnancy</strong>: PTU in the first trimester (methimazole embryopathy); switch to methimazole afterwards (PTU hepatotoxicity). Aim for free T4 at the upper end of normal with the lowest dose.</li><li><strong>Thionamide toxicity</strong>: fever, sore throat or mouth ulcers mean agranulocytosis until proven otherwise: stop the drug and check a CBC with differential. Do not switch to the other thionamide (cross-reactivity). Check liver tests for jaundice or right upper quadrant pain.</li><li><strong>Toxic adenoma or toxic multinodular goiter</strong>: radioiodine or surgery; thionamides control but do not cure.</li><li><strong>Thyroiditis</strong>: β-blocker only; NSAIDs (or prednisone if severe) for painful subacute thyroiditis; no thionamides; watch for the hypothyroid phase.</li><li><strong>Subclinical hyperthyroidism</strong> (low TSH, normal free T4 and T3): treat when TSH is below about 0.1 mU/L in patients 65 or older, or with heart disease, osteoporosis or symptoms; otherwise monitor.</li><li><strong>Thyroid storm</strong>: life-threatening thyrotoxicosis with fever, tachyarrhythmia, heart failure, delirium and GI or hepatic dysfunction, often triggered by infection, surgery or iodine. In order: <strong>β-blocker</strong> (propranolol); <strong>thionamide</strong> (PTU preferred, as it also blocks conversion); <strong>iodine solution at least 1 hour after</strong> the thionamide; <strong>hydrocortisone</strong>; cooling with acetaminophen (avoid aspirin, which frees hormone from TBG); treat the trigger in an ICU.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> in hypopituitarism, a \"normal\" TSH on levothyroxine says nothing. Titrate to free T4 in the upper half of normal.</p></div>",
+   "figureIds": [
+    "s23c-fig150201-2"
+   ],
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hypothyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK519536/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Subclinical Hypothyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536970/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Graves Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448195/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Thyroid Storm",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448095/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Myxedema Coma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK545193/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Thyroid Diseases",
+     "url": "https://medlineplus.gov/thyroiddiseases.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150201-2-2",
+   "exam": "step2ck",
+   "heading": "Thyroid nodules, thyroid cancer, illness and drug effects",
+   "html": "<h3>Thyroid nodules</h3><p>Nodules are very common, especially in older women, and most are benign. The approach:</p><ol><li><strong>TSH first</strong>. If TSH is low, do a radionuclide scan: a <em>hyperfunctioning (hot)</em> nodule is almost never malignant and needs no biopsy; treat the hyperthyroidism.</li><li>Otherwise, <strong>neck ultrasonography</strong> of the thyroid and cervical nodes. High-risk features: solid hypoechoic nodule, irregular or infiltrative margins, microcalcifications, taller-than-wide shape, extrathyroidal extension, suspicious nodes.</li><li><strong>Fine-needle aspiration</strong> by sonographic pattern and size: high or intermediate suspicion at 1 cm or more; low suspicion at about 1.5 cm or more; very low suspicion (spongiform) at about 2 cm or more, or observation. Purely cystic nodules are not biopsied. Abnormal lymph nodes are sampled directly.</li></ol><table><tr><th>Bethesda category</th><th>Meaning</th><th>Usual next step</th></tr><tr><td>I</td><td>Nondiagnostic</td><td>Repeat ultrasound-guided FNA</td></tr><tr><td>II</td><td>Benign</td><td>Ultrasound follow-up (interval set by the sonographic pattern); repeat FNA if it grows significantly or the pattern is high suspicion</td></tr><tr><td>III and IV</td><td>Atypia of undetermined significance; follicular neoplasm</td><td>Repeat FNA or molecular testing; diagnostic lobectomy when risk stays high</td></tr><tr><td>V and VI</td><td>Suspicious for malignancy; malignant</td><td>Surgery</td></tr></table><h3>Differentiated thyroid cancer, in outline</h3><ul><li>Papillary and follicular cancers are treated with surgery (lobectomy for many small low-risk tumours; total thyroidectomy for larger, multifocal or node-positive disease), selective radioiodine ablation after total thyroidectomy for higher-risk disease, and TSH suppression tailored to risk. <strong>Thyroglobulin</strong> is the tumour marker after total thyroidectomy.</li><li>Very small, low-risk papillary microcarcinomas may be managed by active surveillance in selected patients.</li><li><strong>Medullary</strong> cancer: test for <em>RET</em> germline variants and exclude pheochromocytoma before surgery (MEN2); total thyroidectomy; follow calcitonin and CEA. Radioiodine is useless.</li><li><strong>Anaplastic</strong> cancer and <strong>lymphoma</strong> both present as a rapidly enlarging neck mass with compressive symptoms; core biopsy distinguishes them because treatment differs completely.</li></ul><h3>Nonthyroidal illness in hospital</h3><p>Critically ill patients often have low T3, low or normal T4 and low or normal TSH. Do not order thyroid tests in the ICU without strong suspicion of thyroid disease, and do not treat these values; repeat after recovery. Dopamine and high-dose glucocorticoids also suppress TSH.</p><h3>Drug effects to recognise</h3><ul><li><strong>Amiodarone</strong>: check TSH before starting and every few months. Hypothyroidism is treated with levothyroxine and the amiodarone often continued. Thyrotoxicosis: type 1 (iodine-driven synthesis) responds to thionamides; type 2 (destructive) responds to glucocorticoids; mixed forms get both.</li><li><strong>Lithium</strong>: goiter and hypothyroidism; treat with levothyroxine and usually continue lithium.</li><li><strong>Immune checkpoint inhibitors</strong>: painless thyroiditis (transient thyrotoxicosis then hypothyroidism) and hypophysitis (central hypothyroidism with central adrenal insufficiency).</li><li><strong>Iodinated contrast</strong> in a patient with nodular goiter can trigger thyrotoxicosis (Jod-Basedow).</li><li><strong>Biotin</strong> supplements interfere with many immunoassays and can mimic Graves (low TSH, high free T4); stop biotin for a few days and repeat.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a benign FNA does not end follow-up, and a hot nodule on scan does not need FNA. Order of thinking: TSH, then scan or ultrasound, then FNA by pattern.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Thyroid Nodule",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK535422/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Thyroid Nodule Biopsy",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK557883/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Papillary Thyroid Carcinoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536943/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Euthyroid Sick Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482219/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig150201-1",
+   "caption": "Figure. Thyroid hormone synthesis in the follicular cell (trapping, organification, coupling, release) and the step each drug blocks.",
+   "file": "figures/s23c-fig150201-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  },
+  {
+   "id": "s23c-fig150201-2",
+   "caption": "Figure. Reading TSH together with free T4. Primary disease moves TSH opposite to free T4; pituitary disease does not.",
+   "file": "figures/s23c-fig150201-2.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set150201-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Thyrotoxicosis with eye disease",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q150201-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 7-year-old boy has a painless, 2-cm, round, midline neck mass just below the hyoid bone that has been present for months and swelled during a recent cold. The mass moves upward when he sticks out his tongue. Thyroid function is normal, and ultrasonography shows a normal thyroid gland in its usual position. From which embryologic structure does this mass most likely arise?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Remnant of the second pharyngeal cleft"
+    },
+    {
+     "label": "B",
+     "html": "Remnant of the third pharyngeal pouch"
+    },
+    {
+     "label": "C",
+     "html": "Remnant of the tract between the foramen cecum and the thyroid"
+    },
+    {
+     "label": "D",
+     "html": "Ultimobranchial body of the fourth pharyngeal pouch"
+    },
+    {
+     "label": "E",
+     "html": "Persistent jugular lymph sac"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A midline mass near the hyoid that rises with tongue protrusion is a <strong>thyroglossal duct cyst</strong>, a persistent part of the duct along which the thyroid descended from the foramen cecum. It may enlarge or become infected with upper respiratory infections. Excision includes the central hyoid and the tract (Sistrunk procedure) to prevent recurrence; imaging first confirms normal thyroid tissue elsewhere.</p><p><strong>Takeaway:</strong> a midline neck mass that moves with tongue protrusion is a thyroglossal duct cyst.</p>",
+   "whyNot": {
+    "A": "Branchial cleft cysts lie laterally, along the anterior border of the sternocleidomastoid, and do not move with the tongue.",
+    "B": "Third pouch derivatives are the thymus and inferior parathyroids; their cysts are lateral or mediastinal.",
+    "D": "The ultimobranchial body gives the parafollicular C cells; it does not form midline cysts.",
+    "E": "Lymphatic malformations (cystic hygroma) are soft, lateral or posterior, transilluminate and do not rise with the tongue."
+   },
+   "objective": "Recognise a thyroglossal duct cyst and its embryologic origin.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "thyroglossal duct cyst"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-1-02",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 31-year-old woman has thyroid tests drawn as part of a fatigue work-up. She has no goiter, and her pulse is 72/min. She has taken a combined estrogen-progestin oral contraceptive for 4 years.</p><table><tr><th>Test</th><th>Result</th><th>Reference range</th></tr><tr><td>TSH</td><td>2.1 µU/mL</td><td>0.5–5.0</td></tr><tr><td>Total T4</td><td>14.8 µg/dL</td><td>5–12</td></tr><tr><td>Free T4</td><td>1.3 ng/dL</td><td>0.8–1.8</td></tr></table><p>Which of the following best explains these results?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Autonomous hormone production by a thyroid nodule"
+    },
+    {
+     "label": "B",
+     "html": "Increased hepatic synthesis of thyroxine-binding globulin"
+    },
+    {
+     "label": "C",
+     "html": "Reduced peripheral conversion of T4 to T3"
+    },
+    {
+     "label": "D",
+     "html": "Stimulation of the TSH receptor by an autoantibody"
+    },
+    {
+     "label": "E",
+     "html": "Thyroid hormone resistance from a receptor mutation"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Estrogen raises hepatic production (and slows clearance) of <strong>thyroxine-binding globulin</strong>. More hormone is bound, so total T4 rises, but the gland adjusts until <strong>free T4 and TSH are normal</strong>: she is euthyroid. Pregnancy does the same.</p><p><strong>Takeaway:</strong> high total T4 with normal free T4 and TSH means more binding protein, not thyroid disease.</p>",
+   "whyNot": {
+    "A": "An autonomous nodule raises free T4 and suppresses TSH.",
+    "C": "Impaired conversion lowers T3 and is seen in illness; it does not raise total T4 with normal free T4.",
+    "D": "TSH-receptor antibodies (Graves) raise free T4 and suppress TSH.",
+    "E": "Hormone resistance raises free T4 with a normal or high TSH, and the free hormone would be elevated."
+   },
+   "objective": "Interpret thyroid tests when thyroxine-binding globulin is raised by estrogen.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "TBG",
+    "oral contraceptives"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 67-year-old woman has had hypothyroidism from Hashimoto thyroiditis for 20 years, controlled with levothyroxine. Over 6 weeks her neck has enlarged rapidly, and she now has hoarseness and a sense of pressure on swallowing. The thyroid is diffusely enlarged and firm. Core biopsy shows sheets of large atypical lymphoid cells that express CD20 and efface the follicles. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Anaplastic thyroid carcinoma"
+    },
+    {
+     "label": "B",
+     "html": "Diffuse large B-cell lymphoma of the thyroid"
+    },
+    {
+     "label": "C",
+     "html": "Follicular thyroid carcinoma"
+    },
+    {
+     "label": "D",
+     "html": "Medullary thyroid carcinoma"
+    },
+    {
+     "label": "E",
+     "html": "Riedel thyroiditis"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Long-standing Hashimoto thyroiditis supplies chronically stimulated intrathyroidal B cells, and it is the main risk factor for <strong>primary thyroid lymphoma</strong>, most often diffuse large B-cell or MALT lymphoma. It presents as a rapidly enlarging gland with compressive symptoms. Sheets of large CD20-positive cells confirm it. Treatment is chemoimmunotherapy with or without radiation, not thyroidectomy.</p><p><strong>Takeaway:</strong> rapid thyroid enlargement in long-standing Hashimoto suggests primary thyroid B-cell lymphoma.</p>",
+   "whyNot": {
+    "A": "Anaplastic carcinoma also grows fast in older adults, but its cells are pleomorphic epithelial and spindle cells, not CD20-positive lymphoid cells.",
+    "C": "Follicular carcinoma is a slowly growing epithelial tumour defined by capsular or vascular invasion.",
+    "D": "Medullary carcinoma is made of C cells in amyloid stroma and expresses calcitonin.",
+    "E": "Riedel thyroiditis is dense fibrosis with IgG4-positive plasma cells, not sheets of atypical B cells."
+   },
+   "objective": "Associate Hashimoto thyroiditis with primary thyroid B-cell lymphoma.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Hashimoto",
+    "thyroid lymphoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old woman with Graves disease, who smokes, has gritty eyes, double vision on upward gaze and bilateral proptosis. MRI of the orbits shows enlarged extraocular muscle bellies with sparing of the tendons and increased orbital fat. Which of the following best explains the orbital changes?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Amyloid deposition derived from immunoglobulin light chains"
+    },
+    {
+     "label": "B",
+     "html": "Antibodies blocking acetylcholine receptors at the neuromuscular junction"
+    },
+    {
+     "label": "C",
+     "html": "Increased sympathetic tone to the levator palpebrae superioris"
+    },
+    {
+     "label": "D",
+     "html": "Orbital fibroblast activation with glycosaminoglycan deposition and adipogenesis"
+    },
+    {
+     "label": "E",
+     "html": "Venous congestion from a carotid-cavernous fistula"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Orbital fibroblasts and preadipocytes express the <strong>TSH receptor</strong> (with the IGF-1 receptor). TSH-receptor antibodies and infiltrating T cells activate them to secrete hydrophilic <strong>glycosaminoglycans</strong> (hyaluronan), which draw in water, and to differentiate into fat cells. Muscles swell (tendons spared) and orbital fat expands, pushing the globe forward. Smoking makes it worse.</p><p><strong>Takeaway:</strong> Graves orbitopathy is autoimmune activation of orbital fibroblasts: glycosaminoglycans plus new fat.</p>",
+   "whyNot": {
+    "A": "Light-chain amyloid can infiltrate orbital tissue, but it is unrelated to Graves disease and does not spare tendons in this pattern.",
+    "B": "Acetylcholine receptor antibodies cause myasthenia gravis: fatigable ptosis and diplopia without proptosis or enlarged muscles.",
+    "C": "Sympathetic overactivity causes lid retraction and lid lag in any thyrotoxicosis, but not proptosis or muscle enlargement.",
+    "E": "A carotid-cavernous fistula causes pulsatile proptosis, a bruit and dilated superior ophthalmic vein, usually after trauma."
+   },
+   "objective": "Explain the mechanism of Graves orbitopathy.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "immunology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Graves",
+    "orbitopathy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 42-year-old woman has had fever, fatigue and a painful neck for 10 days, beginning 2 weeks after a sore throat and cough. The pain radiates to her jaw. The thyroid is exquisitely tender. Pulse is 108/min. TSH is suppressed, free T4 is high, and ESR is 88 mm/h. Radioactive iodine uptake at 24 hours is 2% (normal 10–30%). If a biopsy were done, which of the following would it most likely show?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Dense fibrosis with IgG4-positive plasma cells extending into neck muscles"
+    },
+    {
+     "label": "B",
+     "html": "Diffuse hyperplasia of tall follicular cells with scalloped colloid"
+    },
+    {
+     "label": "C",
+     "html": "Granulomatous inflammation with multinucleated giant cells around disrupted follicles"
+    },
+    {
+     "label": "D",
+     "html": "Lymphoid follicles with germinal centres and Hürthle cells"
+    },
+    {
+     "label": "E",
+     "html": "Papillae with psammoma bodies and grooved, clear nuclei"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A tender thyroid after a viral illness, high ESR and thyrotoxicosis with <strong>very low uptake</strong> is <strong>subacute granulomatous (de Quervain) thyroiditis</strong>. Follicles rupture and leak stored hormone; colloid provokes granulomatous inflammation with multinucleated giant cells. Treatment is NSAIDs (glucocorticoids if severe) and a β-blocker; thionamides do not help.</p><p><strong>Takeaway:</strong> painful thyroid, high ESR and low uptake: subacute granulomatous thyroiditis.</p>",
+   "whyNot": {
+    "A": "This is Riedel thyroiditis, a painless, rock-hard gland that is not usually thyrotoxic.",
+    "B": "Hyperplasia with scalloped colloid is Graves disease, which has a painless gland and high uptake.",
+    "D": "Lymphoid follicles and Hürthle cells describe Hashimoto thyroiditis, which is painless.",
+    "E": "These are features of papillary carcinoma, which does not cause painful thyrotoxicosis."
+   },
+   "objective": "Recognise subacute granulomatous thyroiditis and its histology.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "de Quervain thyroiditis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old woman, who received neck irradiation as a child for lymphoma, has a 2-cm firm thyroid nodule and an enlarged ipsilateral cervical lymph node. Fine-needle aspiration shows cells with enlarged, overlapping nuclei that have finely dispersed pale chromatin, longitudinal grooves and intranuclear cytoplasmic pseudoinclusions, along with laminated calcified bodies. Which of the following genetic alterations is most likely in this tumour?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "<em>BRAF</em> V600E point mutation"
+    },
+    {
+     "label": "B",
+     "html": "Germline <em>MEN1</em> loss-of-function variant"
+    },
+    {
+     "label": "C",
+     "html": "Germline <em>RET</em> activating variant"
+    },
+    {
+     "label": "D",
+     "html": "<em>PAX8-PPARG</em> fusion"
+    },
+    {
+     "label": "E",
+     "html": "<em>TP53</em> loss with dedifferentiation"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Clear, grooved nuclei with pseudoinclusions and psammoma bodies are <strong>papillary thyroid carcinoma</strong>, the most common thyroid cancer and the one linked to childhood radiation. It spreads to cervical nodes and has an excellent prognosis. The most common driver is <strong><em>BRAF</em> V600E</strong>; <em>RET/PTC</em> rearrangements are typical after radiation exposure.</p><p><strong>Takeaway:</strong> papillary carcinoma nuclei plus psammoma bodies; <em>BRAF</em> V600E or <em>RET/PTC</em>.</p>",
+   "whyNot": {
+    "B": "<em>MEN1</em> causes parathyroid, pituitary and pancreatic tumours, not thyroid carcinoma.",
+    "C": "Germline activating <em>RET</em> variants cause medullary carcinoma (MEN2), a C-cell tumour without these nuclear features. (<em>RET</em> rearrangements in papillary cancer are somatic fusions, not germline activating variants.)",
+    "D": "<em>PAX8-PPARG</em> fusion is typical of follicular carcinoma, which lacks papillary nuclear features.",
+    "E": "<em>TP53</em> loss marks anaplastic carcinoma, a pleomorphic, rapidly growing tumour of older adults."
+   },
+   "objective": "Link papillary thyroid carcinoma histology to BRAF and RET/PTC alterations.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "papillary thyroid carcinoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 46-year-old woman with known Graves disease is admitted after a urinary tract infection with temperature 39.8°C (103.6°F), pulse 154/min in atrial fibrillation, agitation and vomiting. The team chooses one thionamide over the other because it lowers circulating T3 faster. Which of the following additional actions explains this choice?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Blocking the sodium-iodide symporter"
+    },
+    {
+     "label": "B",
+     "html": "Inhibiting peripheral conversion of T4 to T3"
+    },
+    {
+     "label": "C",
+     "html": "Inhibiting proteolysis of thyroglobulin"
+    },
+    {
+     "label": "D",
+     "html": "Preventing thyroid hormone binding to nuclear receptors"
+    },
+    {
+     "label": "E",
+     "html": "Suppressing pituitary TSH secretion"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Both methimazole and <strong>propylthiouracil</strong> block thyroid peroxidase, stopping new hormone synthesis. PTU also inhibits <strong>peripheral 5′-deiodinase</strong>, so less T4 becomes active T3; this is why it is preferred in thyroid storm. Glucocorticoids and high-dose propranolol add to this effect. Iodine is given at least an hour after the thionamide to block release.</p><p><strong>Takeaway:</strong> PTU blocks both thyroid peroxidase and peripheral T4-to-T3 conversion.</p>",
+   "whyNot": {
+    "A": "Perchlorate and pertechnetate compete at the symporter; thionamides do not act there.",
+    "C": "Large iodide doses (and lithium) inhibit release of hormone from thyroglobulin; thionamides do not.",
+    "D": "No drug used in storm blocks nuclear thyroid hormone receptors.",
+    "E": "TSH is already suppressed in Graves; lowering it further would not help."
+   },
+   "objective": "Explain why propylthiouracil is preferred in thyroid storm (it blocks peripheral deiodination).",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "PTU",
+    "thyroid storm"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 71-year-old man with Hashimoto thyroiditis that has never needed treatment (positive anti-TPO antibodies, normal TSH a year ago) is started on amiodarone for ventricular tachycardia. Four months later he has fatigue, weight gain and constipation. TSH is 24 µU/mL (N = 0.5–5.0) and free T4 is low. Which of the following best explains his hypothyroidism?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Amiodarone-induced destructive thyroiditis with release of stored hormone"
+    },
+    {
+     "label": "B",
+     "html": "Failure of his thyroid to escape the inhibition of organification caused by excess iodide"
+    },
+    {
+     "label": "C",
+     "html": "Increased thyroxine-binding globulin synthesis lowering free hormone"
+    },
+    {
+     "label": "D",
+     "html": "Pituitary suppression of TSH by amiodarone metabolites"
+    },
+    {
+     "label": "E",
+     "html": "Stimulation of hormone synthesis by excess iodide substrate"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Amiodarone is about one third iodine by weight. A large iodide load acutely inhibits organification (the <strong>Wolff-Chaikoff effect</strong>); a normal gland escapes within days by down-regulating the symporter. A gland already damaged by <strong>Hashimoto thyroiditis</strong> cannot escape, so hypothyroidism develops. Treatment is levothyroxine; amiodarone can usually continue.</p><p><strong>Takeaway:</strong> amiodarone-induced hypothyroidism is failure to escape Wolff-Chaikoff, most likely in underlying autoimmune thyroiditis.</p>",
+   "whyNot": {
+    "A": "Destructive thyroiditis (type 2 amiodarone-induced thyrotoxicosis) causes thyrotoxicosis, not primary hypothyroidism with a high TSH.",
+    "C": "TBG changes alter total, not free, hormone; free T4 here is truly low.",
+    "D": "A high TSH shows the pituitary is responding normally; the defect is in the thyroid.",
+    "E": "Extra iodide fuelling synthesis is the type 1 mechanism of thyrotoxicosis in nodular or Graves glands."
+   },
+   "objective": "Explain amiodarone-induced hypothyroidism as failure to escape the Wolff-Chaikoff effect.",
+   "areas": [
+    "usmle2026.15.02.01",
+    "usmle2026.15.09.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "amiodarone",
+    "Wolff-Chaikoff"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-01",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 47-year-old man had transsphenoidal resection of a nonfunctioning pituitary macroadenoma 6 months ago. He takes hydrocortisone 15 mg daily and testosterone. Levothyroxine 75 µg daily was started for central hypothyroidism 8 weeks ago. He still feels tired and cold.</p><table><tr><th>Test</th><th>Before levothyroxine</th><th>Today</th><th>Reference range</th></tr><tr><td>TSH</td><td>1.1 µU/mL</td><td>0.3 µU/mL</td><td>0.5–5.0</td></tr><tr><td>Free T4</td><td>0.5 ng/dL</td><td>0.8 ng/dL</td><td>0.8–1.8</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add liothyronine (T3) to the current dose"
+    },
+    {
+     "label": "B",
+     "html": "Continue the same dose, because TSH is now suppressed"
+    },
+    {
+     "label": "C",
+     "html": "Increase the levothyroxine dose and recheck free T4 in 6 weeks"
+    },
+    {
+     "label": "D",
+     "html": "Reduce the levothyroxine dose because TSH is below normal"
+    },
+    {
+     "label": "E",
+     "html": "Stop levothyroxine and measure TSH-receptor antibodies"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>In <strong>central hypothyroidism</strong> the pituitary cannot produce a meaningful TSH, so TSH is useless for dosing and any value (low, normal or low on treatment) is uninterpretable. Titrate levothyroxine to bring <strong>free T4 into the upper half of the normal range</strong>. His free T4 is at the bottom of the range with persistent symptoms, so the dose should go up. Glucocorticoid replacement was correctly started first.</p><p><strong>Takeaway:</strong> in pituitary disease, dose levothyroxine by free T4, not TSH.</p>",
+   "whyNot": {
+    "A": "Combination T3 therapy is not standard and does not fix an inadequate T4 dose.",
+    "B": "The low TSH reflects pituitary disease plus treatment, not over-replacement; free T4 is still low.",
+    "D": "Reducing the dose would worsen his hypothyroidism.",
+    "E": "There is no sign of Graves disease; the low TSH is expected in central hypothyroidism."
+   },
+   "objective": "Titrate levothyroxine by free T4 in central hypothyroidism.",
+   "areas": [
+    "usmle2026.15.02.01",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "central hypothyroidism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old woman has a routine checkup. She feels well and does not plan pregnancy. Her mother has hypothyroidism. Examination shows no goiter. TSH is 7.2 µU/mL (N = 0.5–5.0) and free T4 is 1.1 ng/dL (N = 0.8–1.8). She has no previous thyroid tests. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin levothyroxine 1.6 µg/kg daily"
+    },
+    {
+     "label": "B",
+     "html": "Begin levothyroxine 25 µg daily"
+    },
+    {
+     "label": "C",
+     "html": "Order radioactive iodine uptake and scan"
+    },
+    {
+     "label": "D",
+     "html": "Order thyroid ultrasonography"
+    },
+    {
+     "label": "E",
+     "html": "Repeat TSH and free T4 in 2–3 months"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A single mildly raised TSH with normal free T4 is <strong>subclinical hypothyroidism</strong>, but many such values return to normal (recovering thyroiditis, assay variation, illness). The first step is to <strong>repeat TSH with free T4 in about 2–3 months</strong>; anti-TPO antibodies help predict progression. Treatment is clearly indicated if TSH stays at 10 µU/mL or more, and is individualised below that (symptoms, pregnancy plans).</p><p><strong>Takeaway:</strong> confirm subclinical hypothyroidism with repeat testing before treating; treat persistent TSH of 10 or more.</p>",
+   "whyNot": {
+    "A": "Full replacement is not indicated for an unconfirmed, mild TSH elevation without symptoms.",
+    "B": "Low-dose treatment may be reasonable later for persistent elevation with symptoms or pregnancy plans, but not on one value.",
+    "C": "Uptake scans evaluate thyrotoxicosis, not a high TSH.",
+    "D": "Ultrasonography is for palpable nodules or goiter, not for an isolated TSH rise."
+   },
+   "objective": "Confirm subclinical hypothyroidism with repeat TSH and free T4 before treatment.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "subclinical hypothyroidism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old nurse has 2 months of palpitations, heat intolerance and a 5-kg weight loss. Pulse is 112/min. The thyroid is not enlarged or tender, and there is no eye disease. TSH is below 0.01 µU/mL (N = 0.5–5.0), and free T4 is 3.1 ng/dL (N = 0.8–1.8). ESR is normal. Radioactive iodine uptake at 24 hours is 1% (normal 10–30%). Which of the following findings would most strongly support the most likely diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "High serum TSH-receptor antibody titre"
+    },
+    {
+     "label": "B",
+     "html": "High serum thyroglobulin"
+    },
+    {
+     "label": "C",
+     "html": "Low serum thyroglobulin"
+    },
+    {
+     "label": "D",
+     "html": "Positive anti-TPO antibodies"
+    },
+    {
+     "label": "E",
+     "html": "Single hot nodule on the radionuclide scan"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Thyrotoxicosis with a small, nontender gland and <strong>near-zero uptake</strong> means hormone is not being made by the thyroid: thyroiditis, iodine load or <strong>exogenous hormone</strong>. In a health worker with no goiter, surreptitious levothyroxine is likely. Exogenous hormone suppresses TSH and the gland, so <strong>thyroglobulin is low</strong>; in thyroiditis, follicle destruction releases thyroglobulin and it is high.</p><p><strong>Takeaway:</strong> low uptake plus low thyroglobulin points to exogenous thyroid hormone.</p>",
+   "whyNot": {
+    "A": "TSH-receptor antibodies mean Graves disease, which has high, diffuse uptake.",
+    "B": "High thyroglobulin points to thyroiditis, which leaks stored hormone; it argues against exogenous hormone.",
+    "D": "Anti-TPO antibodies are common and nonspecific; they would support painless thyroiditis, not the likely diagnosis here.",
+    "E": "A hot nodule would show high focal uptake, not 1% overall uptake."
+   },
+   "objective": "Distinguish factitious thyrotoxicosis from thyroiditis using thyroglobulin when uptake is low.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "psychiatry"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "factitious thyrotoxicosis",
+    "thyroglobulin"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>An 81-year-old woman is brought from home in January after her neighbour found her drowsy. She stopped taking her medications several months ago. Rectal temperature is 33.6°C (92.5°F), pulse 48/min, respirations 8/min and blood pressure 88/56 mm Hg. She has periorbital puffiness, coarse dry skin and delayed relaxation of ankle reflexes. Sodium is 122 mEq/L, glucose 61 mg/dL and arterial PaCO<sub>2</sub> 64 mm Hg. TSH is 86 µU/mL (N = 0.5–5.0) and free T4 is undetectable. A random cortisol has been drawn. She is intubated. Which of the following is the most appropriate next step in pharmacotherapy?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous hydrocortisone and intravenous levothyroxine"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous levothyroxine alone"
+    },
+    {
+     "label": "C",
+     "html": "Oral levothyroxine 25 µg daily"
+    },
+    {
+     "label": "D",
+     "html": "Oral liothyronine (T3) alone"
+    },
+    {
+     "label": "E",
+     "html": "3% saline to raise the sodium to normal over 6 hours"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is <strong>myxedema coma</strong>: hypothermia, depressed consciousness, bradycardia, hypotension, hypoventilation, hyponatremia and hypoglycemia with profound hypothyroidism. Give <strong>IV levothyroxine</strong> (a loading dose) because gut absorption is unreliable, together with <strong>IV hydrocortisone</strong> until adrenal insufficiency is excluded, since restoring metabolism raises cortisol clearance and could precipitate adrenal crisis. Add supportive care in an ICU.</p><p><strong>Takeaway:</strong> myxedema coma: IV hydrocortisone with IV levothyroxine, plus ventilatory and circulatory support.</p>",
+   "whyNot": {
+    "B": "Thyroid hormone without glucocorticoid cover risks adrenal crisis if coexisting adrenal insufficiency is present.",
+    "C": "Small oral doses are for stable older outpatients; absorption is poor and the response far too slow in myxedema coma.",
+    "D": "T3 alone carries cardiac risk, is still given with T4 when used, and oral absorption is unreliable here.",
+    "E": "Hyponatremia improves with treatment of hypothyroidism; correcting it fully within hours risks osmotic demyelination."
+   },
+   "objective": "Treat myxedema coma with IV levothyroxine plus stress-dose hydrocortisone.",
+   "areas": [
+    "usmle2026.15.02.01",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "myxedema coma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 28-year-old woman started methimazole 20 mg daily for Graves disease 5 weeks ago. Since yesterday she has had a sore throat, mouth ulcers and a temperature of 38.9°C (102°F). Pulse is 100/min and blood pressure 118/70 mm Hg. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue methimazole and start amoxicillin"
+    },
+    {
+     "label": "B",
+     "html": "Continue methimazole and test for group A streptococcus"
+    },
+    {
+     "label": "C",
+     "html": "Stop methimazole and obtain a complete blood count with differential"
+    },
+    {
+     "label": "D",
+     "html": "Stop methimazole and start propylthiouracil"
+    },
+    {
+     "label": "E",
+     "html": "Switch to radioactive iodine therapy this week"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Fever and sore throat in a patient on a thionamide suggest <strong>agranulocytosis</strong>, which usually occurs in the first months. The drug must be <strong>stopped immediately</strong> and a CBC with differential obtained; if the neutrophil count is very low, she needs admission and broad-spectrum antibiotics for febrile neutropenia. The other thionamide must not be used because of cross-reactivity; definitive therapy is planned once she recovers.</p><p><strong>Takeaway:</strong> fever or sore throat on a thionamide: stop the drug and check the neutrophil count.</p>",
+   "whyNot": {
+    "A": "Continuing methimazole could allow agranulocytosis to progress to life-threatening sepsis.",
+    "B": "Testing for streptococci without stopping the drug misses the dangerous cause.",
+    "D": "PTU cross-reacts with methimazole and can cause the same agranulocytosis.",
+    "E": "Radioiodine may later be the right definitive therapy, but the immediate priority is the neutrophil count and stopping the drug."
+   },
+   "objective": "Recognise and manage suspected thionamide-induced agranulocytosis.",
+   "areas": [
+    "usmle2026.15.02.01",
+    "usmle2026.15.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "methimazole",
+    "agranulocytosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old woman had a 1.9-cm right thyroid nodule found on examination. TSH was 1.8 µU/mL (N = 0.5–5.0). Ultrasonography showed a solid, isoechoic nodule with smooth margins and no calcifications, which was classified as intermediate suspicion (not high suspicion); no abnormal lymph nodes were seen. Ultrasound-guided fine-needle aspiration is reported as benign (Bethesda category II). She is asymptomatic. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Levothyroxine to suppress TSH and shrink the nodule"
+    },
+    {
+     "label": "B",
+     "html": "Radionuclide thyroid scan"
+    },
+    {
+     "label": "C",
+     "html": "Repeat fine-needle aspiration in 3 months"
+    },
+    {
+     "label": "D",
+     "html": "Right thyroid lobectomy"
+    },
+    {
+     "label": "E",
+     "html": "Ultrasonography in about 12–24 months"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A <strong>benign (Bethesda II) cytology</strong> result carries a low risk of malignancy. For a nodule with a low- or intermediate-suspicion sonographic pattern, follow-up is <strong>repeat ultrasonography in about 12–24 months</strong>; repeat FNA is reserved for significant growth or new suspicious features. (High-suspicion nodules with benign cytology are re-sampled sooner.)</p><p><strong>Takeaway:</strong> benign FNA in a low- or intermediate-suspicion nodule: ultrasound surveillance.</p>",
+   "whyNot": {
+    "A": "TSH suppression is not recommended for benign nodules; it risks atrial fibrillation and bone loss with little benefit.",
+    "B": "A scan is useful only when TSH is low, to look for a hot nodule.",
+    "C": "Early routine repeat FNA is not needed for benign cytology in a nodule without high-suspicion features.",
+    "D": "Surgery is for malignant, suspicious or symptomatic compressive nodules, not an asymptomatic benign one."
+   },
+   "objective": "Follow a cytologically benign thyroid nodule with ultrasonography.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "thyroid nodule",
+    "Bethesda"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-07",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 63-year-old man has been in the ICU for 9 days with septic shock from pneumonia. He has been off vasopressors for 2 days and is improving. Thyroid tests were sent by a consulting team. He has no history of thyroid disease, no goiter and takes no thyroid-affecting drugs.</p><table><tr><th>Test</th><th>Result</th><th>Reference range</th></tr><tr><td>TSH</td><td>0.6 µU/mL</td><td>0.5–5.0</td></tr><tr><td>Free T4</td><td>0.9 ng/dL</td><td>0.8–1.8</td></tr><tr><td>Total T3</td><td>48 ng/dL</td><td>80–180</td></tr><tr><td>Reverse T3</td><td>High</td><td>—</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous levothyroxine"
+    },
+    {
+     "label": "B",
+     "html": "Oral liothyronine (T3)"
+    },
+    {
+     "label": "C",
+     "html": "MRI of the pituitary gland"
+    },
+    {
+     "label": "D",
+     "html": "No thyroid treatment; repeat tests some weeks after recovery"
+    },
+    {
+     "label": "E",
+     "html": "Measure TSH-receptor antibodies"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Low T3 with high reverse T3 and normal-range TSH and free T4 during critical illness is <strong>nonthyroidal illness (euthyroid sick) syndrome</strong>: cytokines and stress reduce 5′-deiodinase activity, shifting T4 metabolism toward reverse T3. Thyroid hormone treatment has not shown benefit. Repeat tests after recovery, when values usually normalise; a brief TSH rise during recovery is expected.</p><p><strong>Takeaway:</strong> in critical illness, low T3 with high reverse T3 needs no treatment; retest after recovery.</p>",
+   "whyNot": {
+    "A": "Levothyroxine does not improve outcomes in nonthyroidal illness and he is not hypothyroid.",
+    "B": "T3 replacement in critical illness has not shown benefit and risks arrhythmia.",
+    "C": "Central hypothyroidism is unlikely with normal free T4; pituitary imaging is not indicated.",
+    "E": "There is no thyrotoxicosis to explain; TSH-receptor antibodies would not help."
+   },
+   "objective": "Recognise nonthyroidal illness syndrome and avoid treating it.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "euthyroid sick syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150201-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 44-year-old man who smokes 20 cigarettes a day has 3 months of tremor, weight loss and palpitations, and 6 weeks of eye irritation and double vision. Pulse is 110/min. He has a diffuse goiter with a bruit, bilateral proptosis, lid retraction, conjunctival redness and swelling of the eyelids. TSH is below 0.01 µU/mL (N = 0.5–5.0) and free T4 is 3.6 ng/dL (N = 0.8–1.8). Propranolol is started. Which of the following tests would best confirm the cause of his thyrotoxicosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Fine-needle aspiration of the thyroid"
+    },
+    {
+     "label": "B",
+     "html": "Serum TSH-receptor antibodies"
+    },
+    {
+     "label": "C",
+     "html": "Serum calcitonin"
+    },
+    {
+     "label": "D",
+     "html": "Serum thyroglobulin"
+    },
+    {
+     "label": "E",
+     "html": "Thyroid ultrasonography"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Thyrotoxicosis with a diffuse goiter and orbitopathy is Graves disease clinically; <strong>TSH-receptor antibodies</strong> (TRAb or TSI) confirm it, and are an accepted alternative to an uptake scan. They also help predict relapse after medical therapy.</p><p><strong>Takeaway:</strong> confirm Graves disease with TSH-receptor antibodies (or radioiodine uptake when the picture is unclear).</p>",
+   "whyNot": {
+    "A": "FNA evaluates nodules for cancer; it does not establish the cause of diffuse thyrotoxicosis.",
+    "C": "Calcitonin is a marker of medullary carcinoma.",
+    "D": "Thyroglobulin is high in most thyrotoxic states and does not identify Graves disease.",
+    "E": "Ultrasonography may show increased vascularity but is less specific than antibodies."
+   },
+   "objective": "Confirm Graves disease with TSH-receptor antibodies.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Graves"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150201-2-09",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150201-1",
+   "setOrder": 2,
+   "stemHtml": "<p>His TSH-receptor antibody titre is markedly raised. An ophthalmologist confirms active, moderate-to-severe orbitopathy without optic neuropathy. He wants to discuss treatment of his hyperthyroidism. Along with smoking cessation and treatment of the eye disease, which of the following is the most appropriate treatment for his hyperthyroidism?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Methimazole"
+    },
+    {
+     "label": "B",
+     "html": "Potassium iodide drops alone"
+    },
+    {
+     "label": "C",
+     "html": "Propylthiouracil"
+    },
+    {
+     "label": "D",
+     "html": "Radioactive iodine without glucocorticoid cover"
+    },
+    {
+     "label": "E",
+     "html": "Radioactive iodine with glucocorticoid cover"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Radioactive iodine can worsen active Graves orbitopathy, and it is avoided when orbitopathy is <strong>moderate to severe and active</strong> (glucocorticoid cover is used only for mild active disease). Appropriate choices are <strong>methimazole</strong> (or thyroidectomy). Methimazole is preferred over PTU outside the first trimester of pregnancy because PTU can cause severe liver injury. Stopping smoking improves the eye outcome.</p><p><strong>Takeaway:</strong> with moderate-to-severe active Graves orbitopathy, treat hyperthyroidism with methimazole or surgery, not radioiodine.</p>",
+   "whyNot": {
+    "B": "Iodine alone gives only temporary control and is used briefly before surgery or in storm.",
+    "C": "PTU is reserved for the first trimester of pregnancy and thyroid storm because of hepatotoxicity.",
+    "D": "Radioiodine can worsen active orbitopathy, especially in smokers.",
+    "E": "Glucocorticoid cover makes radioiodine acceptable for mild active orbitopathy, not moderate-to-severe active disease."
+   },
+   "objective": "Avoid radioiodine and choose methimazole or surgery when Graves orbitopathy is moderate to severe and active.",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Graves",
+    "orbitopathy",
+    "radioiodine"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c150201-01",
+   "frontHtml": "Embryologic origin of the thyroid and the clue to a thyroglossal duct cyst?",
+   "backHtml": "Foramen cecum of the tongue; a midline neck mass that rises with tongue protrusion or swallowing.",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-02",
+   "frontHtml": "Which enzyme performs both organification and coupling?",
+   "backHtml": "Thyroid peroxidase (TPO), the target of methimazole and PTU.",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-03",
+   "frontHtml": "What does the sodium-iodide symporter do, and what blocks it?",
+   "backHtml": "Concentrates iodide into follicular cells; perchlorate and pertechnetate compete with it.",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-04",
+   "frontHtml": "Wolff-Chaikoff effect?",
+   "backHtml": "A large iodide load transiently inhibits organification; normal glands escape within days.",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-05",
+   "frontHtml": "Estrogen or pregnancy: effect on total T4, free T4 and TSH?",
+   "backHtml": "TBG rises: total T4 high, free T4 and TSH normal.",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-06",
+   "frontHtml": "Extra action of PTU compared with methimazole?",
+   "backHtml": "Inhibits peripheral 5′-deiodinase (T4 to T3).",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-07",
+   "frontHtml": "Two serious PTU-specific adverse effects?",
+   "backHtml": "Severe hepatocellular injury and ANCA-associated vasculitis (plus agranulocytosis, shared with methimazole).",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-08",
+   "frontHtml": "Methimazole embryopathy?",
+   "backHtml": "First-trimester exposure: aplasia cutis, choanal or esophageal atresia; so use PTU in the first trimester.",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-09",
+   "frontHtml": "How does lithium cause hypothyroidism?",
+   "backHtml": "It inhibits thyroid hormone release (and causes goiter).",
+   "sectionId": "s23c-s150201-1-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-10",
+   "frontHtml": "Hashimoto histology?",
+   "backHtml": "Lymphoid follicles with germinal centres, atrophic follicles and Hürthle (oncocytic) cells.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-11",
+   "frontHtml": "Which malignancy is more likely after years of Hashimoto thyroiditis?",
+   "backHtml": "Primary lymphoma of the thyroid, a B-cell tumour (diffuse large B-cell or marginal-zone/MALT type); suspect it when the gland enlarges quickly.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-12",
+   "frontHtml": "Mechanism of Graves orbitopathy?",
+   "backHtml": "TSH-receptor-bearing orbital fibroblasts make glycosaminoglycans and fat, swelling muscles (tendons spared) and orbital fat.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-13",
+   "frontHtml": "Painful thyroid after a viral illness, high ESR, low uptake?",
+   "backHtml": "Subacute granulomatous (de Quervain) thyroiditis: granulomas with giant cells; NSAIDs and β-blocker.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-14",
+   "frontHtml": "Rock-hard, fixed thyroid with fibrosis into neck tissues?",
+   "backHtml": "Riedel thyroiditis, part of IgG4-related disease.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-15",
+   "frontHtml": "Papillary carcinoma features?",
+   "backHtml": "Clear grooved nuclei with pseudoinclusions, psammoma bodies; BRAF V600E or RET/PTC; lymphatic spread; good prognosis.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-16",
+   "frontHtml": "What defines follicular carcinoma versus adenoma?",
+   "backHtml": "Capsular or vascular invasion (so FNA cannot tell them apart); spreads hematogenously.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-17",
+   "frontHtml": "Medullary carcinoma: cell, stroma, markers?",
+   "backHtml": "Parafollicular C cells; amyloid from calcitonin; calcitonin and CEA; RET.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-18",
+   "frontHtml": "Thyroid hormone pattern in euthyroid sick syndrome?",
+   "backHtml": "Low T3, high reverse T3, normal or low TSH and T4; don't treat.",
+   "sectionId": "s23c-s150201-1-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-19",
+   "frontHtml": "Best single screening test for primary thyroid disease, and when it fails?",
+   "backHtml": "TSH; it fails in pituitary or hypothalamic disease, where free T4 is followed.",
+   "sectionId": "s23c-s150201-2-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-20",
+   "frontHtml": "Thyrotoxicosis with low radioiodine uptake: causes and the test that splits them?",
+   "backHtml": "Thyroiditis, exogenous hormone, iodine load; thyroglobulin is high in thyroiditis and low with exogenous hormone.",
+   "sectionId": "s23c-s150201-2-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-21",
+   "frontHtml": "Levothyroxine on confirmed pregnancy?",
+   "backHtml": "Increase the dose by about 25–30% straight away; check TSH about every 4 weeks in the first half.",
+   "sectionId": "s23c-s150201-2-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-22",
+   "frontHtml": "When is subclinical hypothyroidism treated?",
+   "backHtml": "Persistent TSH of 10 or more; individualise below that (symptoms, anti-TPO, pregnancy plans). Repeat testing first.",
+   "sectionId": "s23c-s150201-2-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-23",
+   "frontHtml": "Myxedema coma treatment?",
+   "backHtml": "IV levothyroxine with IV hydrocortisone, ventilatory support, passive rewarming, ICU.",
+   "sectionId": "s23c-s150201-2-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-24",
+   "frontHtml": "Thyroid storm drug order?",
+   "backHtml": "β-blocker, then PTU, then iodine at least 1 hour later, plus hydrocortisone; avoid aspirin.",
+   "sectionId": "s23c-s150201-2-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-25",
+   "frontHtml": "Fever and sore throat on methimazole?",
+   "backHtml": "Stop it and check a CBC with differential; do not switch to PTU.",
+   "sectionId": "s23c-s150201-2-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-26",
+   "frontHtml": "When is radioiodine avoided in Graves disease?",
+   "backHtml": "Pregnancy, breastfeeding and moderate-to-severe active orbitopathy.",
+   "sectionId": "s23c-s150201-2-1",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-27",
+   "frontHtml": "First test for a thyroid nodule, and what if it is low?",
+   "backHtml": "TSH; if low, radionuclide scan (a hot nodule needs no FNA).",
+   "sectionId": "s23c-s150201-2-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-28",
+   "frontHtml": "Benign (Bethesda II) FNA in a low- or intermediate-suspicion nodule?",
+   "backHtml": "Ultrasound surveillance at about 12–24 months; repeat FNA only for growth or new suspicious features.",
+   "sectionId": "s23c-s150201-2-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-29",
+   "frontHtml": "Tumour marker after total thyroidectomy for differentiated cancer?",
+   "backHtml": "Thyroglobulin.",
+   "sectionId": "s23c-s150201-2-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-30",
+   "frontHtml": "Amiodarone-induced thyrotoxicosis types and treatment?",
+   "backHtml": "Type 1 (iodine-driven synthesis): thionamide; type 2 (destructive): glucocorticoids.",
+   "sectionId": "s23c-s150201-2-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150201-31",
+   "frontHtml": "Supplement that falsely mimics Graves on immunoassays?",
+   "backHtml": "Biotin; stop it for a few days and retest.",
+   "sectionId": "s23c-s150201-2-2",
+   "areas": [
+    "usmle2026.15.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

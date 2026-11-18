@@ -1,0 +1,354 @@
+[
+  {
+    "id": "s23b-fig-080101-01",
+    "caption": "Figure. Infective endocarditis: embolic, local and immune-complex consequences of an infected vegetation.",
+    "file": "figures/s23b-fig-080101-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0801-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080102-01",
+    "caption": "Figure. Time course of group A streptococcal pharyngitis, acute rheumatic fever and chronic rheumatic heart disease.",
+    "file": "figures/s23b-fig-080102-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0801-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080201-01",
+    "caption": "Figure. Left atrial myxoma: a pedunculated mass on the interatrial septum prolapses through the mitral orifice in diastole, obstructing filling and shedding emboli.",
+    "file": "figures/s23b-fig-080201-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0802-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-01",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-02",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-03",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-03.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-04",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-04.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-05",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-05.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-06",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-06.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-07",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-07.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080401-01",
+    "caption": "Figure. Left ventricular pressure–volume loops. Systolic dysfunction flattens the end-systolic line and shifts the loop right; diastolic dysfunction steepens the end-diastolic curve, raising filling pressure at a normal volume.",
+    "file": "figures/s23b-fig-080401-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0804-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080501-01",
+    "caption": "Figure. Twelve-lead ECG with a lead II rhythm strip (25 mm/s, 10 mm/mV).",
+    "file": "figures/s23b-fig-080501-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0805-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080501-02",
+    "caption": "Figure. Timeline of microscopic changes after myocardial infarction, with the complications typical of each window.",
+    "file": "figures/s23b-fig-080501-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0805-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080601-01",
+    "caption": "Figure. Schematic comparison of the normal heart with dilated, hypertrophic and restrictive cardiomyopathy.",
+    "file": "figures/s23b-fig-080601-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0806-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080601-02",
+    "caption": "Figure. Healing of a myocardial infarct and the typical timing of its complications.",
+    "file": "figures/s23b-fig-080601-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0806-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080701-01",
+    "caption": "Figure. ECG leads II, V5 and aVR in a patient with chest pain (25 mm/s, 10 mm/mV).",
+    "file": "figures/s23b-fig-080701-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0807-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080701-02",
+    "caption": "Figure. ECG rhythm strip, lead II (25 mm/s, 10 mm/mV).",
+    "file": "figures/s23b-fig-080701-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0807-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080801-01",
+    "caption": "Figure. Timing and shape of common murmurs and extra sounds within one cardiac cycle.",
+    "file": "figures/s23b-fig-080801-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0808-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080901-01",
+    "caption": "Figure. Schematic blood pressure and heart rate responses during an active stand: normal response, non-neurogenic orthostatic hypotension (volume depletion) and neurogenic orthostatic hypotension (autonomic failure).",
+    "file": "figures/s23b-fig-080901-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0809-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081001-01",
+    "caption": "Figure. The renin–angiotensin–aldosterone system and where the main antihypertensive classes act.",
+    "file": "figures/s23b-fig-081001-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0810-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081101-01",
+    "caption": "Figure. Lipoprotein transport: the exogenous (dietary) pathway, the endogenous (hepatic) pathway and reverse cholesterol transport, with the main apolipoproteins and enzymes.",
+    "file": "figures/s23b-fig-081101-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0811-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081201-01",
+    "caption": "Figure. Stanford classification of aortic dissection: type A involves the ascending aorta; type B starts beyond the left subclavian artery.",
+    "file": "figures/s23b-fig-081201-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0812-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081202-01",
+    "caption": "Figure. Interpreting the resting ankle-brachial index.",
+    "file": "figures/s23b-fig-081202-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0812-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081203-01",
+    "caption": "Figure. Where anticoagulants act on the common pathway of coagulation.",
+    "file": "figures/s23b-fig-081203-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0812-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081301-01",
+    "caption": "Figure. The thoracic aorta and its isthmus, just distal to the left subclavian artery at the ligamentum arteriosum: the usual site of a blunt deceleration tear.",
+    "file": "figures/s23b-fig-081301-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0813-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081401-01",
+    "caption": "Figure. Tetralogy of Fallot: anterosuperior deviation of the outlet septum produces outflow obstruction, a malaligned VSD and an overriding aorta, with right ventricular hypertrophy; desaturated blood crosses into the aorta.",
+    "file": "figures/s23b-fig-081401-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0814-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081401-02",
+    "caption": "Figure. Juxtaductal coarctation of the aorta: narrowing beyond the left subclavian artery, intercostal collaterals and the arm–leg pressure difference.",
+    "file": "figures/s23b-fig-081401-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0814-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090101-01",
+    "caption": "Figure. Schematic neck radiographs: a swollen epiglottis on the lateral view (thumb sign, epiglottitis) and a tapered subglottic air column on the frontal view (steeple sign, croup).",
+    "file": "figures/s23b-fig-090101-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0901-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090102-01",
+    "caption": "Figure. Three radiographic patterns of lower-airway infection: lobar consolidation (typical of pneumococcus), a diffuse interstitial pattern (atypical organisms, viruses, Pneumocystis) and an upper-lobe cavity (reactivation tuberculosis, abscess, necrotizing pneumonia). Schematic, not to scale.",
+    "file": "figures/s23b-fig-090102-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0901-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090201-01",
+    "caption": "Figure. CT appearance of solitary pulmonary nodules: four benign calcification patterns (top) and two features that raise concern for cancer (bottom).",
+    "file": "figures/s23b-fig-090201-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0902-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090202-01",
+    "caption": "Figure. Central versus peripheral lung tumors and the syndromes each location produces.",
+    "file": "figures/s23b-fig-090202-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0902-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090203-01",
+    "caption": "Figure. Four routes of metastatic spread to the chest: hematogenous nodules, lymphangitic spread along septa and bronchovascular bundles, endobronchial tumor, and pleural disease with effusion.",
+    "file": "figures/s23b-fig-090203-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0902-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090301-01",
+    "caption": "Figure. Flow–volume loops: normal, obstructive, restrictive and fixed upper airway obstruction (original diagram).",
+    "file": "figures/s23b-fig-090301-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0903-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090301-02",
+    "caption": "Flow–volume loop.",
+    "file": "figures/s23b-fig-090301-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0903-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090401-01",
+    "caption": "Figure. Where the main pneumoconioses and fibrosing diseases cluster in the lung: upper-zone (silica, coal, sarcoidosis) versus lower-zone and pleural (asbestos, IPF).",
+    "file": "figures/s23b-fig-090401-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0904-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090501-01",
+    "caption": "Figure. Hydrostatic (cardiogenic) versus permeability (ARDS) pulmonary edema at the alveolar–capillary unit.",
+    "file": "figures/s23b-fig-090501-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0905-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090601-01",
+    "caption": "Figure. Oxygen–hemoglobin dissociation curve with right and left shifts (original diagram).",
+    "file": "figures/s23b-fig-090601-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0906-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090601-02",
+    "caption": "Figure. The ventilation–perfusion spectrum from shunt to dead space (original diagram).",
+    "file": "figures/s23b-fig-090601-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0906-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090701-01",
+    "caption": "Figure. Schematic chest radiographs: simple right pneumothorax (left) versus right tension pneumothorax with mediastinal shift (right).",
+    "file": "figures/s23b-fig-090701-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0907-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090801-01",
+    "caption": "Figure. Anterior view of the larynx and upper trachea, showing the landmarks for an emergency surgical airway.",
+    "file": "figures/s23b-fig-090801-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0908-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090802-01",
+    "caption": "Figure. Schematic chest x-ray of a right tension pneumothorax: no lung markings on the right, a collapsed lung at the hilum, a depressed hemidiaphragm and the mediastinum pushed to the left.",
+    "file": "figures/s23b-fig-090802-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0908-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090802-02",
+    "caption": "Figure. Flail segment: during inspiration the free segment moves inward while the rest of the chest wall expands; during expiration it moves outward.",
+    "file": "figures/s23b-fig-090802-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0908-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090901-01",
+    "caption": "Figure. Five configurations of esophageal atresia and tracheoesophageal fistula.",
+    "file": "figures/s23b-fig-090901-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0909-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-090901-02",
+    "caption": "Figure. Stages of fetal lung development, with the approximate limit of viability and surfactant adequacy.",
+    "file": "figures/s23b-fig-090901-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0909-s1",
+    "attribution": null
+  }
+]

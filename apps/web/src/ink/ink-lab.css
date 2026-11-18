@@ -1,0 +1,17 @@
+/* Paper styles for ink surfaces (Notebook board: dotted). Colours come from the tokens. */
+.ink-paper-dotted {
+  background-color: var(--color-paper);
+  background-image: radial-gradient(var(--color-line-dashed) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+.ink-dark-dotted {
+  background-color: var(--color-surface-1);
+  background-image: radial-gradient(var(--color-line-strong) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+.ink-paper-ruled {
+  background-color: var(--color-paper);
+  background-image: repeating-linear-gradient(var(--color-paper) 0 37px, var(--color-line-dashed) 37px 38px);
+}

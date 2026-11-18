@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -26 420 326" aria-label="Peripheral blood smear field showing red cells with two aggregates of small cells and one small cell ringed by a neutrophil"><title>Peripheral blood smear</title><desc>A Wright-stained field drawn as a schematic: evenly sized red cells with central pallor, two clusters of small anucleate cells, and a segmented neutrophil with several small cells adherent to its surface.</desc>
+<rect x="0" y="-26" width="420" height="326" fill="#ffffff"/>
+<g fill="#e4b5b0" stroke="#c98d86" stroke-width="1.2">
+<circle cx="46" cy="40" r="17"/><circle cx="118" cy="30" r="17"/><circle cx="196" cy="46" r="17"/><circle cx="286" cy="32" r="17"/><circle cx="368" cy="52" r="17"/>
+<circle cx="30" cy="112" r="17"/><circle cx="104" cy="126" r="17"/><circle cx="256" cy="118" r="17"/><circle cx="336" cy="130" r="17"/>
+<circle cx="60" cy="198" r="17"/><circle cx="148" cy="210" r="17"/><circle cx="228" cy="196" r="17"/><circle cx="312" cy="212" r="17"/><circle cx="388" cy="188" r="17"/>
+<circle cx="96" cy="272" r="17"/><circle cx="188" cy="264" r="17"/><circle cx="276" cy="276" r="17"/><circle cx="356" cy="262" r="17"/>
+</g>
+<g fill="#f2d3cf" stroke="none">
+<circle cx="46" cy="40" r="7"/><circle cx="118" cy="30" r="7"/><circle cx="196" cy="46" r="7"/><circle cx="286" cy="32" r="7"/><circle cx="368" cy="52" r="7"/>
+<circle cx="30" cy="112" r="7"/><circle cx="104" cy="126" r="7"/><circle cx="256" cy="118" r="7"/><circle cx="336" cy="130" r="7"/>
+<circle cx="60" cy="198" r="7"/><circle cx="148" cy="210" r="7"/><circle cx="228" cy="196" r="7"/><circle cx="312" cy="212" r="7"/><circle cx="388" cy="188" r="7"/>
+<circle cx="96" cy="272" r="7"/><circle cx="188" cy="264" r="7"/><circle cx="276" cy="276" r="7"/><circle cx="356" cy="262" r="7"/>
+</g>
+<g fill="#6f5f9e" stroke="#4b3f74" stroke-width="0.8">
+<circle cx="168" cy="96" r="4.5"/><circle cx="176" cy="104" r="4"/><circle cx="162" cy="106" r="4.2"/><circle cx="172" cy="88" r="3.6"/><circle cx="158" cy="95" r="3.4"/><circle cx="182" cy="96" r="3.2"/><circle cx="167" cy="114" r="3.6"/>
+<circle cx="302" cy="162" r="4.4"/><circle cx="310" cy="170" r="4"/><circle cx="296" cy="172" r="3.8"/><circle cx="308" cy="154" r="3.4"/><circle cx="292" cy="160" r="3.2"/><circle cx="316" cy="162" r="3.4"/>
+<circle cx="78" cy="138" r="3.4"/><circle cx="64" cy="152" r="3.6"/>
+</g>
+<g>
+<circle cx="90" cy="60" r="0" fill="none"/>
+<path d="M 86 86 a 15 15 0 1 0 28 10 a 15 15 0 1 0 -28 -10 z" fill="#f0eaf6" stroke="#8d7fb5" stroke-width="1.2"/>
+<path d="M 92 80 a 8 8 0 1 1 10 6 a 7 7 0 1 1 -2 12 a 8 8 0 1 1 -12 -8 z" fill="#5b4a8c" stroke="#3e3266" stroke-width="0.8"/>
+<g fill="#6f5f9e" stroke="#4b3f74" stroke-width="0.8">
+<circle cx="80" cy="76" r="3.4"/><circle cx="112" cy="78" r="3.2"/><circle cx="114" cy="100" r="3.4"/><circle cx="84" cy="104" r="3.2"/><circle cx="98" cy="70" r="3"/>
+</g>
+</g>
+<text x="210" y="-9" font-family="sans-serif" font-size="12" fill="#333333" text-anchor="middle">Wright stain, oil immersion (schematic)</text>
+</svg>

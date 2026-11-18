@@ -1,0 +1,13 @@
+{
+  "id": "neuro-behavioral",
+  "title": "Nervous system, special senses and behavioral health",
+  "owner": "seg23-e",
+  "idPrefix": "s23e",
+  "outlineVersion": "USMLE-2026",
+  "systems": [
+    "05",
+    "04"
+  ],
+  "retire": [],
+  "retag": {}
+}

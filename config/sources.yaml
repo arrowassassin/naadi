@@ -1,0 +1,555 @@
+# Naadi content-source catalog -> seeds the `sources` table (db/schema.sql).
+#
+# Generated 2026-11-15 from research_notes/Naadi website build handoff/content_sources.md
+# and usmle_taxonomy_pipeline.md. NOT legal advice; counsel must review before launch.
+#
+# Field semantics
+#   allow_copy / allow_modify / allow_commercial / allow_ai_ingest describe what the
+#   *license itself* permits. Publishing gates (from content_sources.md Q6):
+#     - block publish when license is missing
+#     - block allow_commercial: false assets from paid pages
+#     - block share-alike assets from proprietary composites
+#     - block allow_ai_ingest: false assets from LLM prompts / RAG / embeddings
+#   verified: true only where the research notes cite a URL that states the license
+#   or terms; verified_url is that URL. Everything else is verified: false and must be
+#   checked before any flag other than "link-only" is relied on.
+#   tier (in notes): 1 = embed/link only, 2 = copy with attribution, 3 = public domain.
+#   Per-channel YouTube rows are created at runtime as id "youtube:<channelId>",
+#   inheriting the policy of the `youtube` row below.
+
+sources:
+  - id: naadi-original-v1
+    name: Naadi original content (v1)
+    url: null
+    license: proprietary-naadi
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: true
+    attribution_template: "© {year} Naadi"
+    notes: >-
+      Internal authored chapters, figures and AI-drafted/physician-reviewed questions.
+      Allowed in RAG only if the material it was written from was itself AI-ingestible
+      (no OpenStax, NC/ND or link-only sources as generation inputs).
+    verified: true
+    verified_url: null   # internal source; no external license to verify
+
+  - id: naadi-ai-generated
+    name: Naadi AI-generated illustrations
+    url: null
+    license: proprietary-naadi
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: false
+    attribution_template: "AI-generated illustration — not clinical reference"
+    notes: >-
+      Images and clips produced on the private naadi-gen Space (FLUX.1-schnell, Apache-2.0,
+      and LTX-Video). Naadi-owned output; never a clinical reference. Every item carries the AI
+      label (chip, alt text, caption). A generated item becomes a shared chapter figure only
+      after admin approval. allow_ai_ingest is false so generated media never enter RAG,
+      embeddings or prompts.
+    verified: true
+    verified_url: null   # internal source; the model licence is Apache-2.0 (FLUX.1-schnell)
+
+  - id: user-provided
+    name: Your own material
+    url: null
+    license: user-own-material
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: true
+    attribution_template: null
+    notes: >-
+      Files, links and pasted text a student added. Private to that student (RLS); never published, never in
+      shared content or another student's retrieval.
+    verified: true
+    verified_url: null   # the student's own material; created by migration 0028, kept equal here
+
+  - id: youtube
+    name: YouTube (official embedded player via YouTube API Services)
+    url: https://www.youtube.com
+    license: youtube-embed-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Video: \"{title}\" by {channel_name} on YouTube ({watch_url})"
+    notes: >-
+      Tier 1, embed only via the official player (prefer youtube-nocookie.com, click-to-load
+      facade, autoplay off). Developer Policies: no download/cache/re-host of audiovisual
+      content (III.E.1.a), no offline playback (III.E.1.b); do not modify/block ads (III.I.5)
+      or player functionality (III.I.6), do not separate audio/video (III.I.7), no background
+      playback (III.I.9), do not obscure player links (III.I.4), no hidden iframe nesting
+      (III.I.21); ads/sponsorships in player need approval (III.G.1.c). PAYWALL CAUTION:
+      clients must not charge users to watch content in an embedded player (III.F.3.a) -
+      keep embeds on free/ungated pages or link out until counsel reviews. Do not require
+      or reward actions beyond pressing play (III.F.3.b, III.F.3.c) - no XP/streaks for views.
+      Non-authorized metadata (titles, thumbnails, descriptions) may be stored at most
+      30 calendar days (III.E.4.d); statistics at most 30 days (III.E.4.b); keep reasonably
+      current (III.E.4.e); never substitute own figures for API data (III.E.4.h); user
+      deletion requests honored within 7 days (III.E.4.g). Store video IDs indefinitely;
+      refresh metadata via tools/youtube_mapper.py --refresh at least every 30 days and drop
+      what cannot be refreshed. Check Made-for-Kids status per video (III.E.4.j). Show
+      YouTube as source with brand features (III.F.2.a) and never obscure it (III.F.2.c).
+      Privacy policy must disclose YouTube API Services and link Google Privacy Policy
+      (III.A.2); display link to YouTube ToS (III.A.1). Embeddability is per video
+      (videos.list status.embeddable). Quota: 10,000 units/day default; channels.list,
+      playlistItems.list, videos.list = 1 unit each; search.list capped at 100 calls/day ->
+      do not use for bulk mapping. Required Minimum Functionality / API ToS / Branding
+      Guidelines text not yet retrieved (gap).
+    verified: true
+    verified_url: https://developers.google.com/youtube/terms/developer-policies
+    quota_reference: https://developers.google.com/youtube/v3/determine_quota_cost
+
+  - id: statpearls
+    name: StatPearls (NCBI Bookshelf)
+    url: https://www.ncbi.nlm.nih.gov/books/NBK430685/
+    license: CC-BY-NC-ND-4.0
+    allow_copy: true          # verbatim redistribution with credit, noncommercial only
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "\"{title}\" by {authors}, StatPearls Publishing ({url}), CC BY-NC-ND 4.0"
+    notes: >-
+      LINK-ONLY (ND; S23: further-reading links only, 252/252 sampled chapters CC BY-NC-ND 4.0, research A B.3).
+      Tier 1 for commercial Naadi: link-only. "Copyright © 2026, StatPearls Publishing LLC",
+      CC BY-NC-ND 4.0 - no commercial use, no derivatives (so no excerpt-and-edit even if
+      noncommercial). Do not ingest into AI pipelines.
+    verified: true
+    verified_url: https://www.ncbi.nlm.nih.gov/books/NBK430685/
+
+  - id: openstax
+    name: OpenStax textbooks (post-licensing-change editions)
+    url: https://openstax.org
+    license: CC-BY-NC-SA-4.0
+    allow_copy: true          # noncommercial only
+    allow_modify: true        # share-alike
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "\"{title}\" from {book} by OpenStax (Rice University), {url}, CC BY-NC-SA 4.0. {modifications}"
+    notes: >-
+      LINK-ONLY (S23 owner decision 2026-11-17: commercial-safe licensing). The current 2e editions are
+      CC BY-NC-SA 4.0 since the 2026-03-19 relicensing commits (A&P 2e, Microbiology, Biology 2e, Chemistry 2e,
+      Psychology 2e; research A B.1), with an AI clause. The 1e editions stay CC BY 4.0: see openstax-1e.
+      Tier 1 for commercial Naadi: link-only. OpenStax moved its library to CC BY-NC-SA for
+      newly released/updated versions (no version number, date or exception list given).
+      Anatomy & Physiology 2e: CC BY-NC-SA 4.0; attribution required on every page with
+      OpenStax content; names/logos excluded; "may not be used to train large language models
+      or ingested into generative AI systems without OpenStax's prior written permission".
+      Older CC BY 4.0 releases stay CC BY for those copies (irrevocable) but must be pinned to
+      archived versions with license evidence - not verified. Microbiology / Biology 2e current
+      license not checked (gap).
+    verified: true
+    verified_url: https://openstax.org/books/anatomy-and-physiology-2e/pages/preface
+    also_see: [https://openstax.org/blog/openstax-licensing, https://openstax.org/license]
+
+  - id: radiopaedia
+    name: Radiopaedia.org
+    url: https://radiopaedia.org
+    license: CC-BY-NC-SA-3.0
+    allow_copy: true          # noncommercial only
+    allow_modify: true        # share-alike
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Case courtesy of {contributor}, Radiopaedia.org, rID: {rid} ({case_url}). CC BY-NC-SA 3.0 (https://radiopaedia.org/licence)"
+    notes: >-
+      Tier 1 for commercial Naadi: link-only. CC BY-NC-SA 3.0 Unported "except where stated
+      otherwise"; no commercial use "either directly or indirectly". Online image use credits
+      the contributor and links case, home page and licence page; text use cites and links the
+      article. Extra permission can be requested via Radiopaedia (forwarded to contributor).
+      allow_ai_ingest false by Naadi policy for NC sources.
+    verified: true
+    verified_url: https://radiopaedia.org/licence
+
+  - id: medlineplus-federal
+    name: MedlinePlus - US federal (public-domain) content
+    url: https://medlineplus.gov
+    license: public-domain-us-gov
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: true
+    attribution_template: "Source: MedlinePlus, U.S. National Library of Medicine ({url})"
+    notes: >-
+      Tier 3. Public domain: health topic summaries, medical test information, Genetics
+      summaries, NLM-watermarked illustrations, MedlinePlus videos/tutorials. Credit MedlinePlus
+      as source. Check each page's bottom label - copyrighted pages are marked. No framing under
+      another domain; RSS for personal use only.
+    verified: true
+    verified_url: https://medlineplus.gov/copyright.html
+
+  - id: medlineplus-licensed
+    name: MedlinePlus - licensed third-party content (A.D.A.M. Encyclopedia, ASHP drug monographs, unmarked images)
+    url: https://medlineplus.gov
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "See: \"{title}\" on MedlinePlus ({url})"
+    notes: >-
+      Tier 1: single direct links only. A.D.A.M. articles/videos, ASHP monographs and any image
+      not marked public domain are copyrighted; written permission needed beyond fair use.
+    verified: true
+    verified_url: https://medlineplus.gov/copyright.html
+
+  - id: cdc-phil
+    name: CDC Public Health Image Library (PHIL)
+    url: https://wwwn.cdc.gov/phil/
+    license: per-item
+    allow_copy: false         # set per media_asset from the image record's copyright field
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Image: CDC Public Health Image Library, ID {phil_id}, {photographer_or_provider} ({url})"
+    notes: >-
+      CDC welcomes use for "reference, teaching, presentation, and public health messages", but
+      the About page does not state public-domain/copyright status; each record has its own
+      copyright field and some images are copyrighted. Read the field per image and only then
+      set flags on the media_asset (Tier 3 if marked public domain). phil.cdc.gov redirects to
+      wwwn.cdc.gov/phil.
+    verified: false
+    verified_url: null
+    reference_url: https://wwwn.cdc.gov/phil/about.aspx
+
+  - id: uspstf
+    name: USPSTF recommendation statements
+    url: https://www.uspreventiveservicestaskforce.org
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Source: U.S. Preventive Services Task Force, \"{title}\" ({year}), {url}"
+    notes: >-
+      LINK-ONLY. AHRQ copyright notice: reproduce "without any changes", adaptations need a disclaimer, and the work
+      "may not be ... incorporated into a profit-making venture without the express written permission of AHRQ"
+      (effectively ND + NC; research A B.9). Teach the screening facts in Naadi's own words and cite this row as a
+      reference link; never store the statement text.
+    verified: true
+    verified_url: https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics/copyright-notice
+
+  - id: cdc-guidelines
+    name: CDC clinical guidelines (e.g., STI Treatment Guidelines, ACIP schedules)
+    url: https://www.cdc.gov
+    license: public-domain-us-gov (presumed, unverified)
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Source: Centers for Disease Control and Prevention, \"{title}\" ({year}), {url}"
+    notes: >-
+      Generally US government works; not fetched in research; may contain copyrighted
+      third-party figures. Link and paraphrase until verified.
+    verified: false
+    verified_url: null
+
+  - id: ahrq
+    name: AHRQ guidance and patient-safety tools
+    url: https://www.ahrq.gov
+    license: public-domain-us-gov (presumed, unverified)
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Source: Agency for Healthcare Research and Quality, \"{title}\", {url}"
+    notes: >-
+      Generally US government works; not fetched in research; some third-party content.
+      Link and paraphrase until verified.
+    verified: false
+    verified_url: null
+
+  - id: wikimedia-commons
+    name: Wikimedia Commons
+    url: https://commons.wikimedia.org
+    license: per-file
+    allow_copy: false         # set per media_asset from imageinfo extmetadata
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "\"{title}\" by {artist}, via Wikimedia Commons ({file_url}), {license_short_name} ({license_url}). {modifications}"
+    notes: >-
+      Tier 2 candidate. License is per file (CC BY, CC BY-SA, PD, others). Read LicenseShortName,
+      Artist, AttributionRequired from the Commons API imageinfo extmetadata for every file and
+      store a license snapshot. CC BY-SA files make derivatives share-alike. Not verified in research.
+      S23: per-file licence; store only PD / CC0 / CC BY (CC BY-SA in its own partition) after checking each
+      file's licence, with full attribution; never hotlink.
+    verified: false
+    verified_url: null
+
+  # ── S23 additions (docs/research/*: commercial-safe tiers) ──
+  - id: openstax-1e
+    name: OpenStax first editions (CC BY 4.0, pre-relicensing)
+    url: https://openstax.org/books/anatomy-and-physiology/pages/preface
+    license: CC-BY-4.0
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: false
+    attribution_template: "\"{title}\" from {book} by OpenStax (Rice University), {url}, CC BY 4.0. {modifications}"
+    notes: >-
+      Anatomy and Physiology (1e), Chemistry (1e), Psychology (1e), Introductory Statistics (1e) and Statistics are
+      CC BY 4.0 ("you can distribute, remix, and build upon the content"). Storable with attribution on every page
+      that uses it; pin the edition URL or a pre-2026-03-19 commit SHA per asset. OpenStax names, logos and covers
+      are excluded. allow_ai_ingest false by Naadi policy until counsel reviews.
+    verified: true
+    verified_url: https://openstax.org/books/anatomy-and-physiology/pages/preface
+
+  - id: genereviews
+    name: GeneReviews (NCBI Bookshelf NBK1116)
+    url: https://www.ncbi.nlm.nih.gov/books/NBK1116/
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "GeneReviews®, University of Washington, Seattle: {url}"
+    notes: >-
+      LINK-ONLY. "noncommercial research purposes only ... No further modifications are allowed" (UW copyright,
+      20/20 sampled chapters; research A B.12).
+    verified: true
+    verified_url: https://www.ncbi.nlm.nih.gov/books/NBK1116/
+
+  - id: openfda-labels
+    name: openFDA drug labels (SPL)
+    url: https://open.fda.gov/apis/drug/label/
+    license: CC0-1.0
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: true
+    attribution_template: "Drug label data: openFDA, U.S. Food and Drug Administration ({url})"
+    notes: >-
+      Storable. "public domain and made available with a Creative Commons CC0 1.0 Universal dedication ... even for
+      commercial purposes" (open.fda.gov/license). Do not imply FDA endorsement. Residual copyright in
+      manufacturer-authored label text is unknown (research A B.10): restate, do not paste whole labels.
+    verified: true
+    verified_url: https://open.fda.gov/license/
+
+  - id: dailymed
+    name: DailyMed (NLM) structured product labels
+    url: https://dailymed.nlm.nih.gov
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Courtesy of the U.S. National Library of Medicine: DailyMed ({url})"
+    notes: >-
+      CHECK before storing anything: data.gov lists ODbL (share-alike on a public derived database) and NLM's
+      download terms apply (credit, no endorsement, currency); DailyMed itself states no licence (research A
+      B.10). Link-only until checked; for stored label facts use openfda-labels (CC0).
+    verified: false
+    verified_url: https://catalog.data.gov/dataset/dailymed
+
+  - id: nci-pdq-text
+    name: National Cancer Institute text, including PDQ summaries (text only)
+    url: https://www.cancer.gov/policies/copyright-reuse
+    license: public-domain-us-gov
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: true
+    attribution_template: "Source: National Cancer Institute ({url})"
+    notes: >-
+      Text "is free of copyright and may be reused without our permission. Credit the National Cancer Institute".
+      EXCLUDED: images and graphics (private-sector or "for use within the PDQ summaries only"), the NCI logo and
+      the PDQ trademark: adapted text must never be called "PDQ" (research A B.9). Text only.
+    verified: true
+    verified_url: https://www.cancer.gov/policies/copyright-reuse
+
+  - id: wikipedia
+    name: Wikipedia (text)
+    url: https://en.wikipedia.org
+    license: CC-BY-SA-4.0
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: false
+    attribution_template: "Adapted from \"{title}\", Wikipedia ({url}), CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). {modifications}"
+    notes: >-
+      CC BY-SA 4.0: OWN PARTITION only. Adaptations must be released under CC BY-SA 4.0 and never mixed into
+      proprietary Naadi chapters, questions or NC material (the publishing gate refuses share-alike text there).
+      Link back to the article for attribution (research A B.5).
+    verified: true
+    verified_url: https://en.wikipedia.org/wiki/Wikipedia:Copyrights
+
+  - id: wikidoc
+    name: WikiDoc
+    url: https://www.wikidoc.org
+    license: CC-BY-SA-3.0
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: false
+    attribution_template: "Adapted from \"{title}\", WikiDoc ({url}), CC BY-SA 3.0. {modifications}"
+    notes: >-
+      CC BY-SA 3.0 (footer link; research A B.6): OWN PARTITION, same rules as wikipedia.
+    verified: true
+    verified_url: https://www.wikidoc.org/index.php/Main_Page
+
+  - id: servier-medical-art
+    name: Servier Medical Art
+    url: https://smart.servier.com
+    license: CC-BY-4.0
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: false
+    attribution_template: "Images provided by Servier Medical Art (https://smart.servier.com/), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). {modifications}"
+    notes: >-
+      Storable with attribution ("including for commercial purposes"); indicate changes. The site content,
+      trademarks and logos are not CC BY (research B B4). Download and host; never hotlink.
+    verified: true
+    verified_url: https://smart.servier.com/terms-of-use
+
+  - id: pmc-oa
+    name: PubMed Central open-access articles (per-article licence)
+    url: https://pmc.ncbi.nlm.nih.gov/tools/openftlist/
+    license: per-article
+    allow_copy: false         # set per asset from the article's licence; only CC0 / CC BY / CC BY-SA are storable
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "{authors}. {title}. {journal}. {year}. PMCID: {pmcid}. {license_short_name} ({license_url})"
+    notes: >-
+      "License terms vary ... refer to the license statement in each article". Store only the commercial subset
+      CC0 / CC BY / CC BY-SA (BY-SA in its own partition); CC BY-ND is link-only; NC is link-only. Retrieve only via
+      the PMC Cloud Service, OAI-PMH, E-utilities or BioC API. Acknowledge NLM; no endorsement (research A B.8).
+    verified: true
+    verified_url: https://pmc.ncbi.nlm.nih.gov/tools/textmining/
+
+  - id: who
+    name: World Health Organization publications
+    url: https://www.who.int
+    license: CC-BY-NC-SA-3.0-IGO
+    allow_copy: true          # noncommercial only
+    allow_modify: true        # share-alike
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "[{title}]. Geneva: World Health Organization; {year}. Licence: CC BY-NC-SA 3.0 IGO ({url})"
+    notes: >-
+      LINK-ONLY for commercial-safe Naadi (NC-SA; research A B.11). WHO logo excluded.
+    verified: true
+    verified_url: https://www.who.int/about/policies/publishing/copyright
+
+  - id: pathway-official-pages
+    name: Official exam, licensing and immigration pages linked from the Pathway
+    url: null
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Official page: {url}"
+    notes: >-
+      Pathway tasks and stage links point at the owner's own page (ECFMG, USMLE, NRMP, AAMC, travel.state.gov,
+      USCIS and the other hosts in search.include_domains). Naadi links out and stores only its own summary. The
+      weekly pathway_verify check keeps at most a 300-character verbatim quote with its URL as evidence for an admin;
+      it never re-hosts a page and never changes last_verified.
+    verified: false
+    verified_url: null
+
+  - id: pathway-third-party-pages
+    name: Third-party pages linked from the Pathway
+    url: null
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Source: {url}"
+    notes: >-
+      Links to pages that are not on an official domain (programme sites, vendors, explainers). Shown as "Source",
+      never "Official". Link-only: nothing is copied, and the weekly check does not fetch them.
+    verified: false
+    verified_url: null
+
+  - id: usmle-official-samples
+    name: USMLE official sample questions and content outlines
+    url: https://www.usmle.org
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Official USMLE practice materials: {url}"
+    notes: >-
+      Treat as copyrighted by FSMB/NBME until counsel reviews: link out ("Take the official
+      USMLE sample test"), never re-host (Scribd copies are not evidence of authorization).
+      Outlines used only as a taxonomy reference (mapping topics is low risk; copying the
+      documents is not). usmle.org terms-of-use page failed to load; Permission to Use page
+      (usmle.org/privacy-policy) and 2027 Bulletin not read.
+    verified: false
+    verified_url: null
+    reference_url: https://www.usmle.org/privacy-policy
+
+  - id: usmle-content-outline-2026
+    name: USMLE Content Outline (2026)
+    url: https://www.usmle.org/sites/default/files/2022-01/USMLE_Content_Outline_0.pdf
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Topic areas follow the USMLE Content Outline (2026), © FSMB and NBME: {url}"
+    notes: >-
+      "Copyright © 2026 by the Federation of State Medical Boards of the United States, Inc. (FSMB), and NBME.
+      All rights reserved." Cited by the USMLE-2026 taxonomy (taxonomy_nodes.source_id): Naadi stores only short
+      functional area names (levels 1-3) as internal labels, never the PDF text or the level-4 example lists,
+      and links out for the full outline (docs/research/usmle_outline_and_text_licences.md A.6). No USMLE/NBME
+      mark implies endorsement. Permission from FSMB/NBME would strengthen this; not requested yet.
+    verified: true
+    verified_url: https://www.usmle.org/sites/default/files/2022-01/USMLE_Content_Outline_0.pdf
+
+  - id: nbme-lab-values
+    name: NBME Laboratory Values (reference ranges)
+    url: https://www.nbme.org/?p=217124
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Reference ranges: NBME Laboratory Values ({url})"
+    notes: >-
+      Footer "©2026 NBME. All Rights Reserved" (published 2026-04-14, modified 2026-06-17).
+      Link to it or build an independent table mirroring exam units; do not republish. Internal
+      validation of vignette lab values against it is low-risk (inference) - do not place its
+      text in prompts that produce published output. NBME Terms of Use not read.
+    verified: true
+    verified_url: https://www.nbme.org/?p=217124
+
+  - id: mesh
+    name: Medical Subject Headings (MeSH), NLM
+    url: https://www.nlm.nih.gov/mesh/
+    license: NLM-MeSH-terms (no cost, attribution)
+    allow_copy: true
+    allow_modify: false       # terms not reviewed for modification; use descriptors as-is
+    allow_commercial: true    # no cost, no royalties
+    allow_ai_ingest: true     # vocabulary for tagging; terms do not mention AI - confirm
+    attribution_template: "Includes MeSH® data from the U.S. National Library of Medicine ({version}). NLM does not endorse Naadi."
+    notes: >-
+      No cost, no royalties; must visibly credit NLM and not imply endorsement; redistributors
+      must keep data current or state the version.
+    verified: true
+    verified_url: https://www.nlm.nih.gov/databases/download/terms_and_conditions_mesh.html
+
+  - id: rxnorm
+    name: RxNorm (NLM-created names and RXCUI codes)
+    url: https://www.nlm.nih.gov/research/umls/rxnorm/
+    license: public-domain-us-gov (NLM-created content only)
+    allow_copy: true
+    allow_modify: true
+    allow_commercial: true
+    allow_ai_ingest: true
+    attribution_template: "This product uses publicly available data from the U.S. National Library of Medicine (NLM), National Institutes of Health; NLM is not responsible for the product and does not endorse it."
+    notes: >-
+      NLM-created names and RXCUI codes are public domain and freely distributable in and outside
+      the US; full releases require a free UMLS license; attribution statement required; no use
+      of NLM name/logo. Third-party source vocabularies inside full releases are NOT covered by
+      these flags. Exact attribution wording above is a placeholder - copy the official statement
+      from the terms page.
+    verified: true
+    verified_url: https://www.nlm.nih.gov/research/umls/rxnorm/docs/termsofservice.html

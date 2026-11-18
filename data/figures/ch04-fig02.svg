@@ -1,0 +1,58 @@
+<svg aria-label="Anemia classification algorithm by mean corpuscular volume and reticulocyte count" role="img" viewbox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="13">
+<rect fill="#e0f2fe" height="46" rx="8" stroke="#334155" width="300" x="190" y="12"></rect>
+<text font-weight="bold" text-anchor="middle" x="340" y="31">Anemia (↓ Hb / Hct)</text>
+<text font-size="12" text-anchor="middle" x="340" y="49">Check MCV + reticulocyte index + smear</text>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="260" x2="120" y1="58" y2="96"></line>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="340" x2="340" y1="58" y2="96"></line>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="420" x2="560" y1="58" y2="96"></line>
+<rect fill="#fef3c7" height="40" rx="8" stroke="#334155" width="200" x="20" y="98"></rect>
+<text font-weight="bold" text-anchor="middle" x="120" y="116">Microcytic</text>
+<text font-size="12" text-anchor="middle" x="120" y="132">MCV &lt; 80 fL</text>
+<rect fill="#dcfce7" height="40" rx="8" stroke="#334155" width="200" x="240" y="98"></rect>
+<text font-weight="bold" text-anchor="middle" x="340" y="116">Normocytic</text>
+<text font-size="12" text-anchor="middle" x="340" y="132">MCV 80–100 fL</text>
+<rect fill="#fee2e2" height="40" rx="8" stroke="#334155" width="200" x="460" y="98"></rect>
+<text font-weight="bold" text-anchor="middle" x="560" y="116">Macrocytic</text>
+<text font-size="12" text-anchor="middle" x="560" y="132">MCV &gt; 100 fL</text>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="120" x2="120" y1="138" y2="158"></line>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="340" x2="340" y1="138" y2="158"></line>
+<path d="M440,128 L450,128 L450,312 L442,312" fill="none" marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2"></path>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="560" x2="560" y1="138" y2="158"></line>
+<path d="M660,128 L670,128 L670,312 L662,312" fill="none" marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2"></path>
+<rect fill="#ffffff" height="200" rx="8" stroke="#334155" width="200" x="20" y="160"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="120" y="180">↓ heme or ↓ globin</text>
+<text font-size="12" x="32" y="202">• Iron deficiency</text>
+<text font-size="12" x="32" y="222">• Anemia of chronic disease</text>
+<text font-size="12" x="44" y="238">(usually normocytic)</text>
+<text font-size="12" x="32" y="258">• α- and β-thalassemia</text>
+<text font-size="12" x="32" y="278">• Sideroblastic anemia</text>
+<text font-size="12" x="32" y="298">• Lead poisoning</text>
+<text font-size="12" font-weight="bold" x="32" y="324">First test: ferritin</text>
+<text font-size="12" x="32" y="342">Mentzer (MCV/RBC) &lt; 13 → thal</text>
+<rect fill="#ffffff" height="92" rx="8" stroke="#334155" width="200" x="240" y="160"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="340" y="178">RPI &lt; 2 (underproduction)</text>
+<text font-size="12" x="252" y="198">• ACD, CKD (↓ EPO)</text>
+<text font-size="12" x="252" y="216">• Aplastic anemia, myelophthisis</text>
+<text font-size="12" x="252" y="234">• Early iron deficiency</text>
+<rect fill="#ffffff" height="96" rx="8" stroke="#334155" width="200" x="240" y="264"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="340" y="282">RPI &gt; 2 (destruction / loss)</text>
+<text font-size="12" x="252" y="302">• Acute blood loss</text>
+<text font-size="12" x="252" y="320">• Hemolysis: ↑ LDH, ↑ indirect</text>
+<text font-size="12" x="264" y="336">bilirubin, ↓ haptoglobin</text>
+<text font-size="12" x="252" y="352">→ intra vs extra (Fig. 4)</text>
+<rect fill="#ffffff" height="92" rx="8" stroke="#334155" width="200" x="460" y="160"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="560" y="178">Megaloblastic (↓ DNA synth)</text>
+<text font-size="12" x="472" y="198">• B12 or folate deficiency</text>
+<text font-size="12" x="472" y="216">• MTX, hydroxyurea, AZT, 5-FU</text>
+<text font-size="12" x="472" y="234">• Orotic aciduria</text>
+<rect fill="#ffffff" height="96" rx="8" stroke="#334155" width="200" x="460" y="264"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="560" y="282">Nonmegaloblastic</text>
+<text font-size="12" x="472" y="302">• Alcohol, liver disease</text>
+<text font-size="12" x="472" y="320">• Hypothyroidism, MDS</text>
+<text font-size="12" x="472" y="338">• Reticulocytosis</text>
+<text font-size="12" x="472" y="354">• Diamond–Blackfan, Fanconi</text>
+<text font-size="12" text-anchor="middle" x="340" y="390">Megaloblastic: macro-ovalocytes, hypersegmented PMNs, nuclear–cytoplasmic asynchrony</text>
+<text font-size="12" text-anchor="middle" x="340" y="410">Corrected retic % = retic % × (Hct ÷ 45); RPI = corrected retic % ÷ maturation time</text>
+</g>
+</svg>

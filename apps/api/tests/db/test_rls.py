@@ -1,0 +1,814 @@
+"""Row-level security: cross-user denial on every user-owned table, anon denial, shared-content visibility,
+answer-column privileges, admin-only tables."""
+
+from __future__ import annotations
+
+import uuid
+
+import psycopg
+import pytest
+from psycopg import errors, sql
+from psycopg.types.json import Jsonb
+
+from .fixtures import USER_TABLES, Shared, UserTable, insert_row, seed_admin_rows, seed_user_rows
+from .rls import DB_MARKS, as_anon, as_service_role, as_user, create_auth_user
+
+pytestmark = DB_MARKS
+
+ADMIN_TABLES = (
+    "app_config",
+    "app_config_history",
+    "chapter_section_revisions",
+    "search_cache",
+    "llm_usage",
+    "embeddings",
+    "video_candidates",
+)
+SHARED_TABLES = (
+    "chapters",
+    "chapter_sections",
+    "questions",
+    "media_assets",
+    "section_media",
+    "taxonomy_nodes",
+    "sources",
+    "pathway_stages",
+    "pathway_tasks",
+    "flashcards",
+    "blueprint_targets",
+    "question_sets",
+)
+SECRET_QUESTION_COLUMNS = (
+    "answer",
+    "answer_html",
+    "explanation_html",
+    "why_not_html",
+    "educational_objective",
+    "review",
+    "stats",
+)
+
+
+def _count(conn: psycopg.Connection, table: str, user_id: uuid.UUID) -> int:
+    row = conn.execute(
+        sql.SQL("select count(*) from public.{} where user_id = %s").format(sql.Identifier(table)), (user_id,)
+    ).fetchone()
+    assert row is not None
+    return int(row[0])
+
+
+def _update(conn: psycopg.Connection, t: UserTable, user_id: uuid.UUID) -> int:
+    col, value = t.update
+    cur = conn.execute(
+        sql.SQL("update public.{} set {} = %s where user_id = %s").format(sql.Identifier(t.name), sql.Identifier(col)),
+        (value, user_id),
+    )
+    return cur.rowcount
+
+
+def _delete(conn: psycopg.Connection, t: UserTable, user_id: uuid.UUID) -> int:
+    cur = conn.execute(sql.SQL("delete from public.{} where user_id = %s").format(sql.Identifier(t.name)), (user_id,))
+    return cur.rowcount
+
+
+@pytest.mark.parametrize("table", USER_TABLES, ids=lambda t: t.name)
+def test_user_b_cannot_touch_user_a_rows(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared, table: UserTable
+) -> None:
+    seed_user_rows(pg, user_a, shared)
+    assert _count(pg, table.name, user_a) == 1
+
+    with as_user(pg, user_b) as conn:
+        assert _count(conn, table.name, user_a) == 0, "B can see A's rows"
+        if table.name == "blocks" or table.name in SELECT_ONLY or table.name in CREATE_BLOCKED:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                _update(conn, table, user_a)
+        else:
+            assert _update(conn, table, user_a) == 0, "B updated A's rows"
+        if table.name in SELECT_ONLY or table.name in API_WRITTEN or table.name in API_ROWS:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                _delete(conn, table, user_a)
+        else:
+            assert _delete(conn, table, user_a) == 0, "B deleted A's rows"
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, table.name, table.row(user_a, shared))
+    if table.name in API_WRITTEN or table.name in SELECT_ONLY or table.name in API_ROWS or table.name in CREATE_BLOCKED:
+        # an item needs its own user's layer, a section its own user's block, a plan day its own user's plan
+        parent = {
+            "ink_items": "ink_layers",
+            "block_sections": "blocks",
+            "study_plan_days": "study_plans",
+            "plan_rebalances": "study_plans",
+        }.get(table.name)
+        if parent:
+            insert_row(pg, parent, next(t for t in USER_TABLES if t.name == parent).row(user_b, shared))
+        insert_row(pg, table.name, table.row(user_b, shared))  # written by the API, never by the client
+    with as_user(pg, user_b) as conn:
+        # B also cannot move one of its own rows over to A.
+        if not {table.name} & {*API_WRITTEN, *SELECT_ONLY, *API_ROWS, *CREATE_BLOCKED}:
+            insert_row(conn, table.name, table.row(user_b, shared))
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(
+                sql.SQL("update public.{} set user_id = %s where user_id = %s").format(sql.Identifier(table.name)),
+                (user_a, user_b),
+            )
+
+    # Nothing of A's changed.
+    assert _count(pg, table.name, user_a) == 1
+    col, value = table.update
+    row = pg.execute(
+        sql.SQL("select {} is distinct from %s from public.{} where user_id = %s").format(
+            sql.Identifier(col), sql.Identifier(table.name)
+        ),
+        (value, user_a),
+    ).fetchone()
+    assert row is not None and row[0] is True
+
+
+@pytest.mark.parametrize("table", USER_TABLES, ids=lambda t: t.name)
+def test_user_a_can_select_update_delete_insert_own_rows(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: UserTable
+) -> None:
+    seed_user_rows(pg, user_a, shared)
+    if table.name in SELECT_ONLY:
+        with as_user(pg, user_a) as conn:
+            assert _count(conn, table.name, user_a) == 1  # reading their own rows works
+            for write in (_update, _delete):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    write(conn, table, user_a)
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table.name, table.row(user_a, shared))
+            assert _count(conn, table.name, user_a) == 1
+        return
+    if table.name in CREATE_BLOCKED:
+        with as_user(pg, user_a) as conn:
+            assert _count(conn, table.name, user_a) == 1
+            for write in (_update,):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    write(conn, table, user_a)
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table.name, table.row(user_a, shared))
+            assert _delete(conn, table, user_a) == 1  # the student may delete their own row
+            assert _count(conn, table.name, user_a) == 0
+        return
+    with as_user(pg, user_a) as conn:
+        assert _count(conn, table.name, user_a) == 1
+        if table.name == "blocks":
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                _update(conn, table, user_a)  # the API owns blocks
+        else:
+            assert _update(conn, table, user_a) == 1
+        if table.name in API_WRITTEN or table.name in API_ROWS:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                _delete(conn, table, user_a)  # no client delete: a student cannot erase an answer and redo it
+            assert _count(conn, table.name, user_a) == 1
+        else:
+            assert _delete(conn, table, user_a) == 1
+            assert _count(conn, table.name, user_a) == 0
+        if table.name in API_WRITTEN or table.name in API_ROWS:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table.name, table.row(user_a, shared))
+        else:
+            insert_row(conn, table.name, table.row(user_a, shared))
+            assert _count(conn, table.name, user_a) == 1
+
+
+# Written by the API (it grades and owns block state); students may only read them (and delete their own rows).
+API_WRITTEN = ("attempts", "blocks")
+# Ink (0009): every item is validated and merged by the API; students may only read their own layers and items.
+# Exam timing (0011): every timing write is the API's own clock; students may only read their sections.
+# Card scheduling (0012): the API runs the FSRS scheduler and writes every review; students only read their own.
+# Notes (0017): the notes API computes body_text, keeps the index in step and gates anchors; students only read.
+# Export jobs (0024): the export service writes them; students only read their own.
+# Knowledge-base entries (0028): created and updated by the ingest pipeline only.
+# Sync tombstones (0038): the API records deletes for last-writer-wins; students only read their own.
+SELECT_ONLY = (
+    "ink_layers",
+    "ink_items",
+    "block_sections",
+    "card_reviews",
+    "card_review_logs",
+    "study_plans",
+    "notes",
+    "notebooks",
+    "export_jobs",
+    "plan_rebalances",
+    "calendar_feeds",
+    "plan_items",  # 0030: every status change goes through the API (last-writer-wins, clock bound)
+    "kb_sources",
+    # Pathway progress, costs and the vault (0029): last-writer-wins and the object path are the API's to check.
+    "user_pathway_tasks",
+    "costs",
+    "vault_documents",
+    "generated_media",  # 0030: the API creates, hides and counts rows; the client can only read them
+    "sync_tombstones",
+)
+# Planner (0027): push subscriptions. The API registers and updates them; students may read and delete their own
+# (turning reminders off on a device).
+CREATE_BLOCKED = ("push_subscriptions",)
+# Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
+# plan day's score notes), never insert, delete or re-point them.
+# Uploads and ingest items (0028): rows come from the ingest API; the student may rename a file (original_name) and
+# set an item's confirmed_placement, nothing else. Assistant threads (0033): the tutor graph writes the row and the
+# API deletes it with its Aegra thread; the student may only rename (title).
+API_ROWS = ("study_plan_days", "coach_suggestions", "uploads", "ingest_items", "assistant_threads")
+
+
+@pytest.mark.parametrize(
+    ("table", "column", "value"),
+    [
+        ("study_plan_days", "topic", "Something else"),
+        ("study_plan_days", "date", "2027-01-01"),
+        ("study_plan_days", "plan_id", uuid.uuid4()),
+        ("coach_suggestions", "facts", Jsonb({"misses": 99})),
+        ("coach_suggestions", "action", Jsonb({"kind": "add_plan_items"})),
+        ("coach_suggestions", "source", "llm"),
+    ],
+)
+def test_plan_and_coach_rows_take_status_only(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: str, column: str, value: object
+) -> None:
+    seed_user_rows(pg, user_a, shared)
+    with as_user(pg, user_a) as conn:
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(
+                sql.SQL("update public.{} set {} = %s").format(sql.Identifier(table), sql.Identifier(column)), (value,)
+            )
+        ok = conn.execute(sql.SQL("update public.{} set status = status").format(sql.Identifier(table)))
+        assert ok.rowcount == 1
+
+
+def test_one_active_plan_per_student(pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared) -> None:
+    seed_user_rows(pg, user_a, shared)
+    row = {"user_id": user_a, "template_id": shared.plan_template_id, "inputs": Jsonb({}), "generator_version": 1}
+    with pytest.raises(errors.UniqueViolation), pg.transaction():
+        insert_row(pg, "study_plans", row)
+    insert_row(pg, "study_plans", {**row, "active": False})
+
+
+@pytest.mark.parametrize("table", [*API_WRITTEN, "block_sections"])
+def test_a_student_cannot_insert_attempts_or_write_blocks(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: str
+) -> None:
+    ut = next(t for t in USER_TABLES if t.name == table)
+    seed_user_rows(pg, user_a, shared)
+    with as_user(pg, user_a) as conn:
+        for row in (
+            ut.row(user_a, shared),
+            {**ut.row(user_a, shared), "id": uuid.uuid4()} if table == "blocks" else {},
+        ):
+            if not row:
+                continue
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table, row)
+        if table == "block_sections":
+            for stmt in (
+                "update public.block_sections set started_at = now(), deadline_at = now()",
+                "update public.block_sections set ended_at = null, ended_reason = null",
+                "update public.block_sections set paused_total_ms = 0",
+                "update public.block_sections set time_limit_s = 99999",
+                "delete from public.block_sections",
+            ):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    conn.execute(stmt)
+        elif table == "blocks":
+            for stmt in (
+                "update public.blocks set break_used_ms = 0",
+                "update public.blocks set started_at = now()",
+                "update public.blocks set config = '{}'::jsonb",
+                "update public.blocks set question_ids = '{}'",
+                "update public.blocks set score = 100",
+                "update public.blocks set finished_at = now()",
+            ):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    conn.execute(stmt)
+        elif table == "attempts":
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("update public.attempts set correct = true")
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("update public.attempts set chosen = 'B'")
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(sql.SQL("delete from public.{}").format(sql.Identifier(table)))
+        assert _count(conn, table, user_a) == 1  # reading their own row still works
+        if table == "attempts":
+            # the grade is the API's to show: `correct` is not selectable by clients, every other column is
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("select correct from public.attempts")
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("select * from public.attempts")
+            row = conn.execute("select chosen, flagged, question_id, block_id from public.attempts").fetchone()
+            assert row is not None
+    with as_service_role(pg) as conn:  # the API can write both
+        extra: dict[str, object] = {"blocks": {"id": uuid.uuid4()}, "block_sections": {"n": 2}}.get(table, {})
+        insert_row(conn, table, {**ut.row(user_a, shared), **extra})
+
+
+@pytest.mark.parametrize("table", USER_TABLES, ids=lambda t: t.name)
+def test_anon_has_no_access_to_user_tables(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: UserTable
+) -> None:
+    seed_user_rows(pg, user_a, shared)
+    with as_anon(pg) as conn:
+        for stmt in (
+            sql.SQL("select count(*) from public.{}").format(sql.Identifier(table.name)),
+            sql.SQL("delete from public.{}").format(sql.Identifier(table.name)),
+        ):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(stmt)
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, table.name, table.row(user_a, shared))
+
+
+# (table, row the student may insert, statements that must be refused) for every backend-only column.
+BACKEND_ONLY: list[tuple[str, dict[str, object], list[str], list[dict[str, object]]]] = [
+    (
+        "report_issues",
+        {"ref_type": "other", "body": "b"},
+        ["update public.report_issues set status = 'resolved'"],
+        [{"status": "resolved"}],
+    ),
+]
+
+
+def _fill(value: object, shared: Shared) -> object:
+    if isinstance(value, str):
+        return value.replace("{question}", shared.question_id).replace("{chapter}", shared.chapter_id)
+    if isinstance(value, list):
+        return [_fill(v, shared) for v in value]
+    return value
+
+
+@pytest.mark.parametrize(("table", "row", "updates", "inserts"), BACKEND_ONLY, ids=[b[0] for b in BACKEND_ONLY])
+def test_backend_only_columns(
+    pg: psycopg.Connection,
+    user_a: uuid.UUID,
+    shared: Shared,
+    table: str,
+    row: dict[str, object],
+    updates: list[str],
+    inserts: list[dict[str, object]],
+) -> None:
+    base = {"user_id": user_a, **{k: _fill(v, shared) for k, v in row.items()}}
+    with as_user(pg, user_a) as conn:
+        insert_row(conn, table, base)  # the allowed columns work
+        for stmt in updates:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(str(_fill(stmt, shared)))
+        for extra in inserts:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table, {**base, **{k: _fill(v, shared) for k, v in extra.items()}})
+    with as_service_role(pg) as conn:  # the backend can set them
+        for stmt in updates:
+            conn.execute(str(_fill(stmt, shared)))
+
+
+@pytest.mark.parametrize("table", ["card_reviews", "card_review_logs"])
+def test_a_student_cannot_forge_a_card_schedule(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: str
+) -> None:
+    """FSRS state and review logs are the API's: no due date pushed out, no stability raised, no rating rewritten."""
+    seed_user_rows(pg, user_a, shared)
+    stmts = {
+        "card_reviews": (
+            "update public.card_reviews set due = now() + interval '10 years'",
+            "update public.card_reviews set stability = 36500, state = 2",
+            "delete from public.card_reviews",
+        ),
+        "card_review_logs": (
+            "update public.card_review_logs set rating = 4",
+            "update public.card_review_logs set next_due = now() + interval '10 years'",
+            "delete from public.card_review_logs",
+        ),
+    }[table]
+    with as_user(pg, user_a) as conn:
+        for stmt in stmts:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(stmt)
+        assert _count(conn, table, user_a) == 1  # the student still reads their own
+
+
+def test_references_must_be_visible_to_the_caller(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    """A foreign key to hidden content (draft question, someone's private card) is refused, not an oracle."""
+    a_card = uuid.uuid4()
+    insert_row(pg, "flashcards", {"id": a_card, "owner_user_id": user_a, "front_html": "f", "back_html": "secret"})
+    other_task = f"{shared.task_id}-x"
+    insert_row(pg, "pathway_tasks", {"id": other_task, "stage_key": shared.stage_key, "title": "T"})
+    refused = [
+        ("attempts", {"user_id": user_b, "question_id": shared.draft_question_id, "chosen": "A"}),
+        ("card_reviews", {"user_id": user_b, "card_id": a_card, "due": "2026-12-01T00:00:00Z"}),
+        (
+            "flashcards",
+            {"owner_user_id": user_b, "front_html": "f", "back_html": "b", "question_id": shared.draft_question_id},
+        ),
+    ]
+    with as_user(pg, user_b) as conn:
+        for table, row in refused:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table, row)
+        # visible parents are fine
+        # (card_reviews: only the API writes them since 0012; its visibility check is in tests/cards)
+        # (user_pathway_tasks and costs: only the API writes them since 0029; the API's own insert is checked below)
+        insert_row(conn, "profiles", {"user_id": user_b, "pathway_stage": shared.stage_key})
+        # re-pointing an existing row at hidden content is refused too
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("update public.card_reviews set card_id = %s where user_id = %s", (a_card, user_b))
+
+
+def test_pathway_progress_and_costs_are_written_by_the_api_only(
+    pg: psycopg.Connection, user_b: uuid.UUID, shared: Shared
+) -> None:
+    """0029: a student reads their own progress, costs and vault rows but cannot write them."""
+    other_task = f"{shared.task_id}-y"
+    insert_row(pg, "pathway_tasks", {"id": other_task, "stage_key": shared.stage_key, "title": "T"})
+    insert_row(pg, "user_pathway_tasks", {"user_id": user_b, "task_id": other_task})
+    insert_row(pg, "costs", {"user_id": user_b, "task_id": other_task, "amount": 1})
+    with as_user(pg, user_b) as conn:
+        for table in ("user_pathway_tasks", "costs", "vault_documents"):
+            assert _count(conn, table, user_b) >= 0
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(f"update public.{table} set user_id = user_id")  # noqa: S608
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(f"delete from public.{table}")  # noqa: S608
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, "costs", {"user_id": user_b, "amount": 1})
+
+
+def test_composite_foreign_keys_keep_parents_per_user(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    notebook = uuid.uuid4()
+    insert_row(pg, "notebooks", {"id": notebook, "user_id": user_a, "title": "A's"})
+    # Notes are API-written (0017); the foreign key still holds for the API's own writes.
+    with pytest.raises(errors.ForeignKeyViolation), pg.transaction():
+        insert_row(pg, "notes", {"user_id": user_b, "notebook_id": notebook, "anchor_type": "free"})
+    with as_user(pg, user_b) as conn, pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+        insert_row(conn, "notes", {"user_id": user_b, "anchor_type": "free"})
+
+
+def test_anon_reads_only_published_shared_content(pg: psycopg.Connection, shared: Shared) -> None:
+    with as_anon(pg) as conn:
+        ids = {r[0] for r in conn.execute("select id from public.chapters where id like 'test-ch-%'").fetchall()}
+        assert shared.chapter_id in ids
+        assert shared.draft_chapter_id not in ids
+        qs = {r[0] for r in conn.execute("select id from public.questions where id like 'test-ch-%'").fetchall()}
+        assert shared.question_id in qs and shared.draft_question_id not in qs
+        media = {
+            r[0]
+            for r in conn.execute(
+                "select id from public.media_assets where id = any(%s)",
+                ([shared.media_id, shared.unapproved_media_id],),
+            ).fetchall()
+        }
+        assert media == {shared.media_id}
+        placed = conn.execute(
+            "select media_id from public.section_media where section_id = %s", (shared.section_id,)
+        ).fetchall()
+        assert [r[0] for r in placed] == [shared.media_id]
+        for table in SHARED_TABLES:
+            conn.execute(sql.SQL("select 1 from public.{} limit 1").format(sql.Identifier(table)))
+        # read-only for clients
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("update public.chapters set title = 'x'")
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, "sources", {"id": "evil", "name": "x", "license": "x"})
+
+
+def test_shared_content_is_read_only_for_authenticated(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared
+) -> None:
+    with as_user(pg, user_a) as conn:
+        for stmt in (
+            "update public.chapters set title = 'x'",
+            "delete from public.chapter_sections",
+            "update public.taxonomy_nodes set label = 'x'",
+            "delete from public.pathway_tasks",
+            "update public.media_assets set review_status = 'approved'",
+        ):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(stmt)
+        # Shared (seed) flashcards are not editable by students even though they can read them.
+        assert (
+            conn.execute("update public.flashcards set front_html = 'x' where id = %s", (shared.flashcard_id,)).rowcount
+            == 0
+        )
+
+
+def test_private_chapter_is_visible_only_to_its_owner(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    ch = f"test-ch-private-{uuid.uuid4().hex[:8]}"
+    insert_row(
+        pg,
+        "chapters",
+        {
+            "id": ch,
+            "exam": "step1",
+            "kind": "user_kb",
+            "title": "Mine",
+            "owner_user_id": user_a,
+            "source_id": shared.source_id,
+        },
+    )
+    insert_row(pg, "chapter_sections", {"id": f"{ch}-s1", "chapter_id": ch, "sort": 1, "heading": "h"})
+    with as_user(pg, user_a) as conn:
+        assert conn.execute("select count(*) from public.chapters where id = %s", (ch,)).fetchone() == (1,)
+        assert conn.execute("select count(*) from public.chapter_sections where chapter_id = %s", (ch,)).fetchone() == (
+            1,
+        )
+    with as_user(pg, user_b) as conn:
+        assert conn.execute("select count(*) from public.chapters where id = %s", (ch,)).fetchone() == (0,)
+        assert conn.execute("select count(*) from public.chapter_sections where chapter_id = %s", (ch,)).fetchone() == (
+            0,
+        )
+    with as_anon(pg) as conn:
+        assert conn.execute("select count(*) from public.chapters where id = %s", (ch,)).fetchone() == (0,)
+
+
+def test_private_chapter_requires_an_owner(pg: psycopg.Connection, shared: Shared) -> None:
+    with pytest.raises(errors.CheckViolation), pg.transaction():
+        insert_row(pg, "chapters", {"id": "test-ch-orphan", "exam": "step1", "kind": "user_upload", "title": "x"})
+
+
+def test_user_flashcards_are_private_and_owner_writable(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    with as_user(pg, user_a) as conn:
+        card = uuid.uuid4()
+        insert_row(conn, "flashcards", {"id": card, "owner_user_id": user_a, "front_html": "f", "back_html": "b"})
+        assert conn.execute("update public.flashcards set back_html = 'b2' where id = %s", (card,)).rowcount == 1
+        # a student cannot relabel their card as assistant / Anki / seed content
+        for origin in ("assistant", "anki_import", "seed"):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("update public.flashcards set origin = %s where id = %s", (origin, card))
+        assert conn.execute("delete from public.flashcards where id = %s", (card,)).rowcount == 1
+        for row in (
+            {"owner_user_id": user_b},
+            {"owner_user_id": None},
+            {"owner_user_id": user_a, "origin": "seed"},
+            {"owner_user_id": user_a, "origin": "assistant"},
+            {"owner_user_id": user_a, "origin": "anki_import"},
+        ):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, "flashcards", {"front_html": "f", "back_html": "b", **row})
+
+    # Backend-written cards in A's deck (assistant / Anki import) are readable but not editable by A.
+    a_card, assistant_card = uuid.uuid4(), uuid.uuid4()
+    insert_row(pg, "flashcards", {"id": a_card, "owner_user_id": user_a, "front_html": "f", "back_html": "b"})
+    insert_row(
+        pg,
+        "flashcards",
+        {"id": assistant_card, "owner_user_id": user_a, "front_html": "f", "back_html": "b", "origin": "assistant"},
+    )
+    with as_user(pg, user_a) as conn:
+        assert conn.execute("select count(*) from public.flashcards where id = %s", (assistant_card,)).fetchone() == (
+            1,
+        )
+        assert (
+            conn.execute("update public.flashcards set back_html = 'x' where id = %s", (assistant_card,)).rowcount == 0
+        )
+        assert conn.execute("delete from public.flashcards where id = %s", (assistant_card,)).rowcount == 0
+    with as_user(pg, user_b) as conn:
+        assert conn.execute("select count(*) from public.flashcards where id = %s", (a_card,)).fetchone() == (0,)
+        assert conn.execute(
+            "select count(*) from public.flashcards where id = %s", (shared.flashcard_id,)
+        ).fetchone() == (1,)
+        assert conn.execute("update public.flashcards set back_html = 'x' where id = %s", (a_card,)).rowcount == 0
+        assert conn.execute("delete from public.flashcards where id = %s", (a_card,)).rowcount == 0
+    with as_anon(pg) as conn:
+        assert conn.execute("select count(*) from public.flashcards where id = %s", (a_card,)).fetchone() == (0,)
+
+
+@pytest.mark.parametrize("role", ["anon", "authenticated"])
+@pytest.mark.parametrize("column", SECRET_QUESTION_COLUMNS)
+def test_question_answer_columns_are_not_selectable(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, role: str, column: str
+) -> None:
+    ctx = as_anon(pg) if role == "anon" else as_user(pg, user_a)
+    with ctx as conn:
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(sql.SQL("select {} from public.questions").format(sql.Identifier(column)))
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("select * from public.questions")
+        # Filtering or sorting by a hidden column would leak it too.
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(sql.SQL("select id from public.questions where {} is not null").format(sql.Identifier(column)))
+        # The client-visible columns work.
+        row = conn.execute("select id, stem_html, options from public.questions where id = %s", (shared.question_id,))
+        assert row.fetchone() is not None
+
+
+def test_question_answers_readable_by_service_role(pg: psycopg.Connection, shared: Shared) -> None:
+    with as_service_role(pg) as conn:
+        row = conn.execute("select answer, explanation_html from public.questions where id = %s", (shared.question_id,))
+        assert row.fetchone() == ("B", "<p>because</p>")
+
+
+def test_embeddings_are_server_side_only(pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared) -> None:
+    """Chunks of questions and drafts carry answers, so no client role reads embeddings at all."""
+    insert_row(pg, "embeddings", {"ref_type": "question", "ref_id": shared.question_id, "content": "Answer: B"})
+    insert_row(pg, "embeddings", {"owner_user_id": user_a, "ref_type": "note", "ref_id": "n1", "content": "A's note"})
+    for ctx in (as_anon(pg), as_user(pg, user_a)):
+        with ctx as conn:
+            for stmt in (
+                "select content from public.embeddings",
+                "select count(*) from public.embeddings",
+                "select id from public.embeddings where tsv @@ to_tsquery('english', 'answer')",
+            ):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    conn.execute(stmt)
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(
+                    conn, "embeddings", {"owner_user_id": user_a, "ref_type": "note", "ref_id": "n2", "content": "x"}
+                )
+    with as_service_role(pg) as conn:
+        got = conn.execute(
+            "select count(*) from public.embeddings where ref_id = any(%s)", ([shared.question_id, "n1"],)
+        ).fetchone()
+        assert got == (2,)
+
+
+@pytest.mark.parametrize("table", ADMIN_TABLES)
+def test_admin_tables_have_no_client_access(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: str
+) -> None:
+    seed_admin_rows(pg, user_a, shared)
+    for ctx in (as_anon(pg), as_user(pg, user_a)):
+        with ctx as conn:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(sql.SQL("select 1 from public.{} limit 1").format(sql.Identifier(table)))
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(sql.SQL("delete from public.{}").format(sql.Identifier(table)))
+    with as_service_role(pg) as conn:
+        assert conn.execute(sql.SQL("select count(*) from public.{}").format(sql.Identifier(table))).fetchone() != (0,)
+
+
+def test_alembic_version_table_is_not_exposed(pg: psycopg.Connection, user_a: uuid.UUID) -> None:
+    for ctx in (as_anon(pg), as_user(pg, user_a)):
+        with ctx as conn, pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("select * from public.naadi_alembic_version")
+
+
+def test_app_config_history_trigger(pg: psycopg.Connection, user_a: uuid.UUID) -> None:
+    key = f"test_{uuid.uuid4().hex[:8]}"
+    insert_row(pg, "app_config", {"key": key, "value": Jsonb({"v": 1}), "updated_by": user_a})
+    pg.execute("update public.app_config set value = '{\"v\": 2}' where key = %s", (key,))
+    pg.execute("update public.app_config set value = '{\"v\": 2}' where key = %s", (key,))  # no-op: no history row
+    pg.execute("delete from public.app_config where key = %s", (key,))
+    rows = pg.execute(
+        "select value, op, updated_by from public.app_config_history where key = %s order by id", (key,)
+    ).fetchall()
+    assert rows == [({"v": 1}, "update", user_a), ({"v": 2}, "delete", user_a)]
+
+
+def test_updated_at_is_maintained(pg: psycopg.Connection, user_a: uuid.UUID) -> None:
+    insert_row(pg, "profiles", {"user_id": user_a})
+    pg.execute("update public.profiles set updated_at = now() - interval '1 day' where user_id = %s", (user_a,))
+    pg.execute("update public.profiles set display_name = 'Later' where user_id = %s", (user_a,))
+    row = pg.execute(
+        "select updated_at > now() - interval '1 minute' from public.profiles where user_id = %s", (user_a,)
+    ).fetchone()
+    assert row == (True,)
+
+
+def test_deleting_an_auth_user_cascades(pg: psycopg.Connection, shared: Shared) -> None:
+    uid = create_auth_user(pg)
+    seed_user_rows(pg, uid, shared)
+    pg.execute("delete from auth.users where id = %s", (uid,))
+    for t in USER_TABLES:
+        assert _count(pg, t.name, uid) == 0, t.name
+
+
+def test_profile_first_sign_in_is_idempotent_as_the_user(pg: psycopg.Connection, user_a: uuid.UUID) -> None:
+    # The S03 `/api/me` path: create-if-missing as the user, under RLS.
+    with as_user(pg, user_a) as conn:
+        for _ in range(2):
+            conn.execute(
+                "insert into public.profiles (user_id) values ((select auth.uid())) on conflict (user_id) do nothing"
+            )
+        row = conn.execute("select count(*), min(exam_target), min(timezone) from public.profiles").fetchone()
+        assert row == (1, "step1", "Asia/Kolkata")
+
+
+def test_question_linked_shared_flashcard_needs_an_attempt(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    """A shared card linked to a question restates the answer: hidden from anon always, and from a student
+    until they have attempted that question. Unlinked shared cards stay visible to everyone."""
+    linked, plain = shared.linked_flashcard_id, shared.flashcard_id
+
+    def visible(conn: psycopg.Connection) -> set[uuid.UUID]:
+        rows = conn.execute("select id from public.flashcards where id = any(%s)", ([linked, plain],)).fetchall()
+        return {r[0] for r in rows}
+
+    with as_anon(pg) as conn:
+        assert visible(conn) == {plain}
+        hits = conn.execute("select count(*) from public.flashcards where question_id = %s", (shared.question_id,))
+        assert hits.fetchone() == (0,)
+    with as_user(pg, user_a) as conn:
+        assert visible(conn) == {plain}, "linked card visible before any attempt"
+        # reviewing the hidden card (an oracle for its existence) is refused too
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, "card_reviews", {"user_id": user_a, "card_id": linked, "due": "2026-12-01"})
+
+    # B attempts the question; that does not unlock the card for A.
+    insert_row(pg, "attempts", {"user_id": user_b, "question_id": shared.question_id, "chosen": "A", "correct": False})
+    with as_user(pg, user_a) as conn:
+        assert visible(conn) == {plain}, "another user's attempt unlocked the card"
+    with as_user(pg, user_b) as conn:
+        assert visible(conn) == {plain, linked}
+        row = conn.execute("select back_html from public.flashcards where id = %s", (linked,)).fetchone()
+        assert row == ("The answer is B",)
+    with as_anon(pg) as conn:
+        assert visible(conn) == {plain}
+
+    # A attempts it through the normal client path, and then sees it.
+    # a flag-only row (no choice, not graded) does not open the gate; a graded attempt, written by the API, does
+    insert_row(pg, "attempts", {"user_id": user_a, "question_id": shared.question_id, "flagged": True})
+    with as_user(pg, user_a) as conn:
+        assert visible(conn) == {plain}, "a flag opened the card gate"
+    pg.execute("delete from public.attempts where user_id = %s", (user_a,))
+    insert_row(pg, "attempts", {"user_id": user_a, "question_id": shared.question_id, "chosen": "B", "correct": True})
+    with as_user(pg, user_a) as conn:
+        assert visible(conn) == {plain, linked}
+
+
+def test_ingest_rows_take_a_rename_and_a_confirmation_only(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared
+) -> None:
+    """0028: the ingest API creates uploads, KB entries and items and owns every status column; the student may
+    rename a file and set an item's confirmed placement, nothing else."""
+    upload, item, kb = uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
+    for conn in (pg,):  # the pipeline writes as a privileged role
+        insert_row(conn, "uploads", {"id": upload, "user_id": user_a, "kind": "pdf", "original_name": "a.pdf"})
+        insert_row(conn, "ingest_items", {"id": item, "user_id": user_a, "upload_id": upload})
+        insert_row(conn, "kb_sources", {"id": kb, "user_id": user_a, "kind": "url", "url": "https://example.org/a"})
+    with as_user(pg, user_a) as conn:
+        assert conn.execute("update public.uploads set original_name = 'b.pdf'").rowcount == 1
+        choice = Jsonb({"option_id": "o1"})
+        assert conn.execute("update public.ingest_items set confirmed_placement = %s", (choice,)).rowcount == 1
+        for stmt in (
+            "update public.uploads set status = 'ready'",
+            "update public.uploads set processed_chapter_id = processed_chapter_id",
+            "update public.uploads set storage_path = 'x'",
+            "update public.ingest_items set status = 'ready'",
+            "update public.ingest_items set placements = '{}'",
+            "update public.ingest_items set progress = 100",
+            "update public.kb_sources set status = 'ready'",
+            "delete from public.ingest_items",
+            "delete from public.uploads",
+            "delete from public.kb_sources",
+        ):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(stmt)
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, "uploads", {"id": uuid.uuid4(), "user_id": user_a, "kind": "pdf"})
+
+
+def test_owned_media_and_questions_are_private(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    media, question = f"fig-{uuid.uuid4()}", f"q-{uuid.uuid4()}"
+    for conn in (pg,):  # the pipeline writes as a privileged role
+        insert_row(
+            conn,
+            "media_assets",
+            {
+                "id": media,
+                "kind": "image",
+                "source_id": "user-provided",
+                "owner_user_id": user_a,
+                "review_status": "approved",
+            },
+        )
+        insert_row(
+            conn,
+            "questions",
+            {
+                "id": question,
+                "exam": "step1",
+                "stem_html": "<p>Own stem</p>",
+                "options": Jsonb([{"label": "A", "html": "x"}, {"label": "B", "html": "y"}]),
+                "answer": "B",
+                "explanation_html": "<p>why</p>",
+                "source_id": shared.source_id,
+                "owner_user_id": user_a,
+            },
+        )
+        with pytest.raises(errors.CheckViolation), conn.transaction():
+            # an owned row can never point at a shared (publishable) source
+            conn.execute("update public.media_assets set source_id = %s where id = %s", (shared.source_id, media))
+    with as_user(pg, user_a) as conn:
+        assert conn.execute("select count(*) from public.media_assets where id = %s", (media,)).fetchone() == (1,)
+        assert conn.execute("select count(*) from public.questions where id = %s", (question,)).fetchone() == (1,)
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("select answer from public.questions where id = %s", (question,))
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute("select explanation_html from public.questions where id = %s", (question,))
+    with as_user(pg, user_b) as conn:
+        assert conn.execute("select count(*) from public.media_assets where id = %s", (media,)).fetchone() == (0,)
+        assert conn.execute("select count(*) from public.questions where id = %s", (question,)).fetchone() == (0,)
+    with as_anon(pg) as conn:
+        assert conn.execute("select count(*) from public.media_assets where id = %s", (media,)).fetchone() == (0,)
+        assert conn.execute("select count(*) from public.questions where id = %s", (question,)).fetchone() == (0,)

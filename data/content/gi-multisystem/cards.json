@@ -1,0 +1,3710 @@
+[
+ {
+  "id": "s23d-c100101-s1-01",
+  "frontHtml": "Which HBV marker is the only positive marker during the window period?",
+  "backHtml": "IgM anti-HBc.",
+  "sectionId": "s23d-s100101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s1-02",
+  "frontHtml": "Which HBV protein does hepatitis D virus require for its envelope?",
+  "backHtml": "HBsAg.",
+  "sectionId": "s23d-s100101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s1-03",
+  "frontHtml": "Which hepatitis virus causes fulminant hepatitis in pregnant women after waterborne exposure?",
+  "backHtml": "Hepatitis E virus.",
+  "sectionId": "s23d-s100101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s1-04",
+  "frontHtml": "What molecular target do C. difficile toxins A and B glucosylate?",
+  "backHtml": "Rho-family GTPases (actin cytoskeleton collapse).",
+  "sectionId": "s23d-s100101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s1-05",
+  "frontHtml": "Which enzyme lets H. pylori survive in gastric acid?",
+  "backHtml": "Urease (urea to ammonia).",
+  "sectionId": "s23d-s100101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s1-06",
+  "frontHtml": "What stain distinguishes MAC from Whipple disease when both show PAS-positive macrophages?",
+  "backHtml": "Acid-fast stain (positive in MAC, negative in Whipple).",
+  "sectionId": "s23d-s100101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s1-07",
+  "frontHtml": "Which food is classically linked to the emetic toxin of Bacillus cereus?",
+  "backHtml": "Reheated rice.",
+  "sectionId": "s23d-s100101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s1-08",
+  "frontHtml": "What are the definitive and usual intermediate hosts of Echinococcus granulosus?",
+  "backHtml": "Dogs (definitive) and sheep (intermediate).",
+  "sectionId": "s23d-s100101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s2-01",
+  "frontHtml": "Preferred therapy for an initial episode of C. difficile infection?",
+  "backHtml": "Oral fidaxomicin; oral vancomycin is the alternative.",
+  "sectionId": "s23d-s100101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s2-02",
+  "frontHtml": "Fulminant C. difficile infection: drug regimen?",
+  "backHtml": "Oral vancomycin 500 mg four times daily plus IV metronidazole (rectal vancomycin if ileus); surgical consult.",
+  "sectionId": "s23d-s100101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s2-03",
+  "frontHtml": "Preferred first-line H. pylori regimen when susceptibility is unknown?",
+  "backHtml": "Bismuth quadruple therapy for 14 days.",
+  "sectionId": "s23d-s100101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s2-04",
+  "frontHtml": "Why should antibiotics be avoided in suspected STEC diarrhea?",
+  "backHtml": "They may increase the risk of hemolytic uremic syndrome.",
+  "sectionId": "s23d-s100101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s2-05",
+  "frontHtml": "What must be tested before starting HCV direct-acting antivirals because of reactivation risk?",
+  "backHtml": "Hepatitis B status (HBsAg, anti-HBc, anti-HBs).",
+  "sectionId": "s23d-s100101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s2-06",
+  "frontHtml": "Newborn of an HBsAg-positive mother: what and when?",
+  "backHtml": "Hepatitis B vaccine plus HBIG within 12 hours of birth.",
+  "sectionId": "s23d-s100101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s2-07",
+  "frontHtml": "Treatment of amebic liver abscess?",
+  "backHtml": "Metronidazole followed by a luminal agent (paromomycin).",
+  "sectionId": "s23d-s100101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100101-s2-08",
+  "frontHtml": "Which drug interaction with sofosbuvir causes severe bradycardia?",
+  "backHtml": "Amiodarone.",
+  "sectionId": "s23d-s100101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-01",
+  "frontHtml": "Which Crohn susceptibility gene encodes an intracellular sensor of bacterial muramyl dipeptide?",
+  "backHtml": "NOD2.",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-02",
+  "frontHtml": "Does smoking raise or lower the risk of ulcerative colitis?",
+  "backHtml": "Lowers it (it raises Crohn disease risk).",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-03",
+  "frontHtml": "Ileal Crohn disease raises the risk of which kidney stone, and by what mechanism?",
+  "backHtml": "Calcium oxalate (enteric hyperoxaluria): malabsorbed fatty acids bind luminal calcium, so more oxalate stays soluble and the colon absorbs it.",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-04",
+  "frontHtml": "Vedolizumab target?",
+  "backHtml": "Alpha4beta7 integrin (blocks binding to MAdCAM-1).",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-05",
+  "frontHtml": "Ustekinumab binds which cytokine subunit?",
+  "backHtml": "p40, shared by IL-12 and IL-23.",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-06",
+  "frontHtml": "What enzyme deficiency causes severe myelosuppression with azathioprine?",
+  "backHtml": "TPMT (or NUDT15).",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-07",
+  "frontHtml": "Which HLA types are required for celiac disease to be likely?",
+  "backHtml": "HLA-DQ2 or HLA-DQ8.",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-08",
+  "frontHtml": "Immunofluorescence pattern of dermatitis herpetiformis?",
+  "backHtml": "Granular IgA in dermal papillae.",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s1-09",
+  "frontHtml": "Serum gastrin in autoimmune gastritis: high or low?",
+  "backHtml": "High (achlorhydria removes feedback on spared antral G cells).",
+  "sectionId": "s23d-s100102-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-01",
+  "frontHtml": "Celiac screening test in a patient eating gluten?",
+  "backHtml": "IgA anti-tTG plus total IgA.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-02",
+  "frontHtml": "Celiac testing when total IgA is deficient?",
+  "backHtml": "IgG-based tests: deamidated gliadin peptide IgG or tTG IgG.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-03",
+  "frontHtml": "First-line treatment of acute severe ulcerative colitis?",
+  "backHtml": "IV corticosteroids in hospital.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-04",
+  "frontHtml": "Rescue options after about 3 days of failed IV steroids in acute severe UC?",
+  "backHtml": "Infliximab or cyclosporine, or colectomy.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-05",
+  "frontHtml": "When does colorectal cancer surveillance start in IBD with PSC?",
+  "backHtml": "At PSC diagnosis, then annually.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-06",
+  "frontHtml": "Screening required before anti-TNF therapy?",
+  "backHtml": "Latent tuberculosis (IGRA) and hepatitis B.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-07",
+  "frontHtml": "First-line treatment of microscopic colitis after stopping culprit drugs?",
+  "backHtml": "Oral budesonide.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-08",
+  "frontHtml": "Is mesalamine effective in Crohn disease?",
+  "backHtml": "No; it is used for ulcerative colitis.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100102-s2-09",
+  "frontHtml": "Induction therapy for autoimmune hepatitis?",
+  "backHtml": "Corticosteroid (prednisone or budesonide if no cirrhosis) plus azathioprine.",
+  "sectionId": "s23d-s100102-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-01",
+  "frontHtml": "Which adenoma architecture carries the highest malignant potential?",
+  "backHtml": "Villous.",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-02",
+  "frontHtml": "Initiating mutation in the conventional adenoma-carcinoma sequence?",
+  "backHtml": "APC loss (beta-catenin accumulates).",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-03",
+  "frontHtml": "Initiating mutation in the serrated pathway?",
+  "backHtml": "BRAF V600E.",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-04",
+  "frontHtml": "Gene and inheritance of Peutz-Jeghers syndrome?",
+  "backHtml": "STK11 (LKB1), autosomal dominant.",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-05",
+  "frontHtml": "Juvenile polyposis gene that overlaps with hereditary hemorrhagic telangiectasia?",
+  "backHtml": "SMAD4.",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-06",
+  "frontHtml": "Is focal nodular hyperplasia monoclonal or polyclonal?",
+  "backHtml": "Polyclonal (hyperplastic reaction).",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-07",
+  "frontHtml": "Which hepatocellular adenoma subtype has the highest risk of malignant change?",
+  "backHtml": "Beta-catenin-activated.",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-08",
+  "frontHtml": "Pancreatic cyst with ovarian-type stroma?",
+  "backHtml": "Mucinous cystic neoplasm.",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s1-09",
+  "frontHtml": "Immunoprofile separating esophageal leiomyoma from GIST?",
+  "backHtml": "Leiomyoma: desmin positive, KIT and DOG1 negative.",
+  "sectionId": "s23d-s100201-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s2-01",
+  "frontHtml": "Next colonoscopy after 1-2 tubular adenomas smaller than 10 mm?",
+  "backHtml": "7-10 years.",
+  "sectionId": "s23d-s100201-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s2-02",
+  "frontHtml": "Next colonoscopy after an adenoma 10 mm or larger?",
+  "backHtml": "3 years.",
+  "sectionId": "s23d-s100201-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s2-03",
+  "frontHtml": "Next colonoscopy after piecemeal resection of a lesion 20 mm or larger?",
+  "backHtml": "6 months.",
+  "sectionId": "s23d-s100201-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s2-04",
+  "frontHtml": "Next colonoscopy when the only findings are small hyperplastic polyps?",
+  "backHtml": "10 years.",
+  "sectionId": "s23d-s100201-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s2-05",
+  "frontHtml": "Best test to characterise an incidental solid liver lesion?",
+  "backHtml": "Multiphase contrast-enhanced MRI (or CT).",
+  "sectionId": "s23d-s100201-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s2-06",
+  "frontHtml": "A hepatic adenoma is still at least 5 cm after estrogen has been stopped. Next step?",
+  "backHtml": "Resect it, because large adenomas carry a risk of bleeding and malignant change.",
+  "sectionId": "s23d-s100201-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s2-07",
+  "frontHtml": "Pancreatic cyst of 3 cm or more or main duct 5-9 mm: next step?",
+  "backHtml": "Endoscopic ultrasound with FNA.",
+  "sectionId": "s23d-s100201-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100201-s2-08",
+  "frontHtml": "Why is biopsy of a typical hepatic hemangioma avoided?",
+  "backHtml": "Bleeding risk, and imaging is diagnostic.",
+  "sectionId": "s23d-s100201-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-01",
+  "frontHtml": "Which esophageal cancer type arises in the upper and middle thirds and is linked to smoking and alcohol?",
+  "backHtml": "Squamous cell carcinoma.",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-02",
+  "frontHtml": "What epithelium defines Barrett esophagus?",
+  "backHtml": "Columnar epithelium with intestinal metaplasia (goblet cells).",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-03",
+  "frontHtml": "Which protein is lost in hereditary diffuse gastric cancer?",
+  "backHtml": "E-cadherin (CDH1).",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-04",
+  "frontHtml": "What cell gives rise to GIST, and which kinase is usually mutated?",
+  "backHtml": "Interstitial cells of Cajal; KIT (CD117).",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-05",
+  "frontHtml": "Colorectal adenoma-carcinoma sequence: first gene lost?",
+  "backHtml": "APC.",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-06",
+  "frontHtml": "Which gene mutation and methylation phenotype drive the serrated pathway?",
+  "backHtml": "BRAF V600E with CpG island methylation (CIMP).",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-07",
+  "frontHtml": "Why does carcinoid syndrome from a midgut tumour usually require liver metastases?",
+  "backHtml": "The liver inactivates serotonin from portal blood.",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-08",
+  "frontHtml": "Which valves does carcinoid heart disease involve?",
+  "backHtml": "Right-sided: tricuspid and pulmonic.",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-09",
+  "frontHtml": "Which HPV proteins inactivate p53 and Rb in anal squamous cell carcinoma?",
+  "backHtml": "E6 (p53) and E7 (Rb).",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s1-10",
+  "frontHtml": "Name the sign: painless jaundice with a palpable nontender gallbladder.",
+  "backHtml": "Courvoisier sign.",
+  "sectionId": "s23d-s100202-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s2-01",
+  "frontHtml": "Age to start average-risk colorectal cancer screening (USPSTF 2021)?",
+  "backHtml": "45 years.",
+  "sectionId": "s23d-s100202-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s2-02",
+  "frontHtml": "Screening start for a first-degree relative with colorectal cancer?",
+  "backHtml": "Age 40, or 10 years before the relative's diagnosis, whichever is earlier.",
+  "sectionId": "s23d-s100202-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s2-03",
+  "frontHtml": "HCC surveillance in cirrhosis?",
+  "backHtml": "Ultrasound every 6 months, with or without AFP.",
+  "sectionId": "s23d-s100202-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s2-04",
+  "frontHtml": "Which imaging features in cirrhosis make biopsy unnecessary for HCC?",
+  "backHtml": "Arterial phase hyperenhancement with washout (LI-RADS 5).",
+  "sectionId": "s23d-s100202-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s2-05",
+  "frontHtml": "Milan criteria for liver transplant in HCC?",
+  "backHtml": "One tumour up to 5 cm, or up to 3 tumours each up to 3 cm, with no vascular invasion or spread.",
+  "sectionId": "s23d-s100202-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s2-06",
+  "frontHtml": "Anal squamous cell carcinoma persists or recurs after chemoradiation. Treatment?",
+  "backHtml": "Salvage abdominoperineal resection.",
+  "sectionId": "s23d-s100202-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s2-07",
+  "frontHtml": "Barrett esophagus with confirmed high-grade dysplasia: treatment?",
+  "backHtml": "Endoscopic eradication therapy (resection of visible lesions plus ablation).",
+  "sectionId": "s23d-s100202-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100202-s2-08",
+  "frontHtml": "Best local staging test for rectal cancer?",
+  "backHtml": "Pelvic MRI.",
+  "sectionId": "s23d-s100202-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s1-01",
+  "frontHtml": "Why is the liver the commonest site of GI metastasis?",
+  "backHtml": "Portal venous drainage delivers tumour cells to hepatic sinusoids first.",
+  "sectionId": "s23d-s100203-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s1-02",
+  "frontHtml": "Where does the thoracic duct empty?",
+  "backHtml": "Junction of the left internal jugular and left subclavian veins.",
+  "sectionId": "s23d-s100203-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s1-03",
+  "frontHtml": "Bilateral ovarian metastases of signet-ring cells are called?",
+  "backHtml": "Krukenberg tumours (usually gastric primary).",
+  "sectionId": "s23d-s100203-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s1-04",
+  "frontHtml": "Which vessel mainly supplies liver metastases?",
+  "backHtml": "The hepatic artery.",
+  "sectionId": "s23d-s100203-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s1-05",
+  "frontHtml": "Low rectal cancer may skip the liver and spread to which organ?",
+  "backHtml": "Lung (via middle and inferior rectal veins to the IVC).",
+  "sectionId": "s23d-s100203-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s1-06",
+  "frontHtml": "Which tumour most often metastasises to the small bowel?",
+  "backHtml": "Melanoma.",
+  "sectionId": "s23d-s100203-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s1-07",
+  "frontHtml": "Which EGFR antibodies fail in RAS-mutant colorectal cancer?",
+  "backHtml": "Cetuximab and panitumumab.",
+  "sectionId": "s23d-s100203-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s1-08",
+  "frontHtml": "Mechanism of leucovorin with 5-fluorouracil?",
+  "backHtml": "Stabilises FdUMP binding to thymidylate synthase, potentiating inhibition.",
+  "sectionId": "s23d-s100203-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s2-01",
+  "frontHtml": "Staging study for distant spread of colorectal cancer?",
+  "backHtml": "Contrast CT of chest, abdomen and pelvis (plus baseline CEA).",
+  "sectionId": "s23d-s100203-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s2-02",
+  "frontHtml": "Rising CEA after colorectal cancer resection: next step?",
+  "backHtml": "CT of the chest, abdomen and pelvis.",
+  "sectionId": "s23d-s100203-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s2-03",
+  "frontHtml": "Ascites from peritoneal carcinomatosis: SAAG?",
+  "backHtml": "Below 1.1 g/dL, with high protein and positive cytology.",
+  "sectionId": "s23d-s100203-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s2-04",
+  "frontHtml": "Recurrent malignant ascites despite paracentesis: best palliation?",
+  "backHtml": "Tunnelled indwelling peritoneal catheter.",
+  "sectionId": "s23d-s100203-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s2-05",
+  "frontHtml": "Drug to reduce secretions in inoperable malignant bowel obstruction?",
+  "backHtml": "Octreotide.",
+  "sectionId": "s23d-s100203-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s2-06",
+  "frontHtml": "Can isolated colorectal liver metastases be cured?",
+  "backHtml": "Yes, by resection when all disease can be removed with an adequate liver remnant.",
+  "sectionId": "s23d-s100203-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100203-s2-07",
+  "frontHtml": "Role of CEA in asymptomatic people?",
+  "backHtml": "None; it is not a screening test.",
+  "sectionId": "s23d-s100203-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-01",
+  "frontHtml": "Where is the chemoreceptor trigger zone?",
+  "backHtml": "Area postrema, floor of the fourth ventricle, outside the blood-brain barrier.",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-02",
+  "frontHtml": "Midgut visceral pain is felt where?",
+  "backHtml": "Periumbilical region.",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-03",
+  "frontHtml": "Diaphragmatic irritation refers pain to the shoulder through which nerve?",
+  "backHtml": "Phrenic nerve (C3 to C5).",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-04",
+  "frontHtml": "Stool osmotic gap formula?",
+  "backHtml": "290 minus 2 x (stool Na + stool K).",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-05",
+  "frontHtml": "Stool osmotic gap above about 125 mOsm/kg suggests?",
+  "backHtml": "Osmotic diarrhoea.",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-06",
+  "frontHtml": "Receptor blocked by aprepitant?",
+  "backHtml": "Neurokinin-1 (substance P).",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-07",
+  "frontHtml": "Metoclopramide's two receptor actions?",
+  "backHtml": "D2 antagonist and 5-HT4 agonist.",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-08",
+  "frontHtml": "Mechanism of linaclotide?",
+  "backHtml": "Guanylate cyclase-C agonist raising cGMP and intestinal secretion.",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s1-09",
+  "frontHtml": "Acid-base disorder from prolonged vomiting?",
+  "backHtml": "Hypochloraemic, hypokalaemic metabolic alkalosis.",
+  "sectionId": "s23d-s100301-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s2-01",
+  "frontHtml": "Rome IV IBS: pain frequency and duration?",
+  "backHtml": "At least 1 day per week over the last 3 months, onset at least 6 months earlier.",
+  "sectionId": "s23d-s100301-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s2-02",
+  "frontHtml": "Dyspepsia at age 60 or older: first test?",
+  "backHtml": "Upper endoscopy.",
+  "sectionId": "s23d-s100301-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s2-03",
+  "frontHtml": "Dyspepsia under 60 without concerning features: first step?",
+  "backHtml": "Test and treat H. pylori.",
+  "sectionId": "s23d-s100301-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s2-04",
+  "frontHtml": "Red-cell transfusion threshold in GI bleeding without cardiac disease?",
+  "backHtml": "Hemoglobin below 7 g/dL.",
+  "sectionId": "s23d-s100301-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s2-05",
+  "frontHtml": "Fluid for vomiting-induced metabolic alkalosis?",
+  "backHtml": "0.9% saline with potassium chloride.",
+  "sectionId": "s23d-s100301-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s2-06",
+  "frontHtml": "Refractory opioid-induced constipation: drug class?",
+  "backHtml": "Peripherally acting mu-opioid receptor antagonist (naloxegol, methylnaltrexone).",
+  "sectionId": "s23d-s100301-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s2-07",
+  "frontHtml": "First-line antiemetic for nausea in pregnancy?",
+  "backHtml": "Doxylamine-pyridoxine.",
+  "sectionId": "s23d-s100301-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100301-s2-08",
+  "frontHtml": "Which antiemetic class is avoided in Parkinson disease?",
+  "backHtml": "Dopamine D2 antagonists (metoclopramide, prochlorperazine).",
+  "sectionId": "s23d-s100301-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-01",
+  "frontHtml": "Which receptor on salivary acinar cells drives watery saliva secretion?",
+  "backHtml": "Muscarinic M3 (Gq, IP3, calcium).",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-02",
+  "frontHtml": "Is final saliva hypotonic, isotonic or hypertonic to plasma at low flow rates?",
+  "backHtml": "Hypotonic, because ducts reabsorb sodium and chloride with little water.",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-03",
+  "frontHtml": "Which virus causes oral hairy leukoplakia?",
+  "backHtml": "Epstein-Barr virus.",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-04",
+  "frontHtml": "Which oral lesion has the highest malignant potential: leukoplakia or erythroplakia?",
+  "backHtml": "Erythroplakia.",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-05",
+  "frontHtml": "Which HLA type is most associated with Behcet disease?",
+  "backHtml": "HLA-B51.",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-06",
+  "frontHtml": "Why do HPV-driven oropharyngeal cancers stain strongly for p16?",
+  "backHtml": "E7 inactivates Rb, removing Rb repression of p16.",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-07",
+  "frontHtml": "Most common malignant salivary gland tumor?",
+  "backHtml": "Mucoepidermoid carcinoma.",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-08",
+  "frontHtml": "Salivary tumor with marked perineural invasion and a cribriform pattern?",
+  "backHtml": "Adenoid cystic carcinoma.",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s1-09",
+  "frontHtml": "Gustatory sweating of the cheek after parotidectomy is called what?",
+  "backHtml": "Frey syndrome (aberrant auriculotemporal parasympathetic regrowth).",
+  "sectionId": "s23d-s100401-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s2-01",
+  "frontHtml": "Next step for a persistent red oral patch in a smoker?",
+  "backHtml": "Biopsy.",
+  "sectionId": "s23d-s100401-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s2-02",
+  "frontHtml": "First-line treatment for mild oral thrush?",
+  "backHtml": "Clotrimazole troches or nystatin suspension.",
+  "sectionId": "s23d-s100401-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s2-03",
+  "frontHtml": "Most common organism in acute suppurative parotitis?",
+  "backHtml": "Staphylococcus aureus.",
+  "sectionId": "s23d-s100401-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s2-04",
+  "frontHtml": "First-line management of a submandibular salivary stone?",
+  "backHtml": "Hydration, warm compresses, massage and sialogogues.",
+  "sectionId": "s23d-s100401-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s2-05",
+  "frontHtml": "First priority in Ludwig angina with drooling and a muffled voice?",
+  "backHtml": "Secure the airway in a controlled setting.",
+  "sectionId": "s23d-s100401-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s2-06",
+  "frontHtml": "Preferred tissue test for a persistent neck mass in an adult?",
+  "backHtml": "Fine-needle aspiration.",
+  "sectionId": "s23d-s100401-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s2-07",
+  "frontHtml": "Why not enucleate a pleomorphic adenoma?",
+  "backHtml": "Tumor projections through its incomplete capsule cause recurrence.",
+  "sectionId": "s23d-s100401-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100401-s2-08",
+  "frontHtml": "USPSTF: when should fluoride varnish start in children?",
+  "backHtml": "At eruption of the primary teeth.",
+  "sectionId": "s23d-s100401-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-01",
+  "frontHtml": "Which neurotransmitters relax the LES during swallowing?",
+  "backHtml": "Nitric oxide and VIP from inhibitory myenteric neurons.",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-02",
+  "frontHtml": "Main mechanism of reflux in most GERD patients?",
+  "backHtml": "Transient LES relaxations not triggered by swallowing.",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-03",
+  "frontHtml": "Barium sign of achalasia?",
+  "backHtml": "Dilated esophagus with a smooth bird-beak taper.",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-04",
+  "frontHtml": "LES pressure in scleroderma esophagus: high or low?",
+  "backHtml": "Low, with weak or absent distal peristalsis.",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-05",
+  "frontHtml": "Defining histology of Barrett esophagus?",
+  "backHtml": "Columnar epithelium with goblet cells (intestinal metaplasia).",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-06",
+  "frontHtml": "Esophageal ulcer type in CMV versus HSV?",
+  "backHtml": "CMV: large shallow linear ulcers; HSV: small punched-out ulcers.",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-07",
+  "frontHtml": "Zenker diverticulum herniates through which weak area?",
+  "backHtml": "Killian triangle, above the cricopharyngeus.",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-08",
+  "frontHtml": "Triad of Plummer-Vinson syndrome?",
+  "backHtml": "Iron deficiency anemia, postcricoid web, dysphagia.",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s1-09",
+  "frontHtml": "Most common esophageal cancer in the United States?",
+  "backHtml": "Adenocarcinoma of the distal esophagus.",
+  "sectionId": "s23d-s100402-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s2-01",
+  "frontHtml": "Empiric therapy for typical GERD without alarm features?",
+  "backHtml": "Once-daily PPI before breakfast for 8 weeks.",
+  "sectionId": "s23d-s100402-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s2-02",
+  "frontHtml": "Best test to confirm achalasia?",
+  "backHtml": "High-resolution esophageal manometry.",
+  "sectionId": "s23d-s100402-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s2-03",
+  "frontHtml": "Achalasia therapy for a poor surgical candidate?",
+  "backHtml": "Botulinum toxin injection into the LES.",
+  "sectionId": "s23d-s100402-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s2-04",
+  "frontHtml": "Management of Barrett with confirmed high-grade dysplasia?",
+  "backHtml": "Endoscopic eradication therapy (resection, then ablation).",
+  "sectionId": "s23d-s100402-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s2-05",
+  "frontHtml": "First test for suspected Zenker diverticulum?",
+  "backHtml": "Barium swallow.",
+  "sectionId": "s23d-s100402-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s2-06",
+  "frontHtml": "Thrush plus odynophagia in advanced HIV: first step?",
+  "backHtml": "Empiric oral fluconazole.",
+  "sectionId": "s23d-s100402-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s2-07",
+  "frontHtml": "Preferred beta blocker for variceal primary prophylaxis?",
+  "backHtml": "Carvedilol (nonselective).",
+  "sectionId": "s23d-s100402-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100402-s2-08",
+  "frontHtml": "Transfusion threshold in acute variceal bleeding?",
+  "backHtml": "Hemoglobin below 7 g/dL.",
+  "sectionId": "s23d-s100402-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-01",
+  "frontHtml": "Receptor and second messenger for histamine on parietal cells?",
+  "backHtml": "H2 receptor, Gs, rising cAMP.",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-02",
+  "frontHtml": "Receptor for gastrin on parietal and ECL cells?",
+  "backHtml": "CCK-B (Gq, rising calcium).",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-03",
+  "frontHtml": "Which cell secretes intrinsic factor?",
+  "backHtml": "Parietal cell.",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-04",
+  "frontHtml": "Serum gastrin in autoimmune atrophic gastritis: high or low?",
+  "backHtml": "High.",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-05",
+  "frontHtml": "Cushing versus Curling ulcer mechanism?",
+  "backHtml": "Cushing: vagal acid hypersecretion after brain injury; Curling: hypovolemic ischemia after burns.",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-06",
+  "frontHtml": "Artery eroded by a posterior duodenal bulb ulcer?",
+  "backHtml": "Gastroduodenal artery.",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-07",
+  "frontHtml": "Effect of secretin on gastrin release from a gastrinoma?",
+  "backHtml": "Paradoxical increase.",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-08",
+  "frontHtml": "Histology of Menetrier disease?",
+  "backHtml": "Foveolar hyperplasia with oxyntic gland atrophy.",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s1-09",
+  "frontHtml": "Why do PPIs work best before meals?",
+  "backHtml": "They bind only actively secreting pumps, which meals activate.",
+  "sectionId": "s23d-s100501-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s2-01",
+  "frontHtml": "Preferred first-line H. pylori therapy when susceptibility is unknown (ACG 2024)?",
+  "backHtml": "Bismuth quadruple therapy for 14 days.",
+  "sectionId": "s23d-s100501-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s2-02",
+  "frontHtml": "When to test for H. pylori cure?",
+  "backHtml": "At least 4 weeks after therapy, off PPI for 2 weeks.",
+  "sectionId": "s23d-s100501-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s2-03",
+  "frontHtml": "Why is H. pylori serology a poor test?",
+  "backHtml": "It stays positive after cure.",
+  "sectionId": "s23d-s100501-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s2-04",
+  "frontHtml": "Transfusion threshold in stable upper GI bleeding without heart disease?",
+  "backHtml": "Hemoglobin below 7 g/dL.",
+  "sectionId": "s23d-s100501-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s2-05",
+  "frontHtml": "Timing of endoscopy in acute upper GI bleeding?",
+  "backHtml": "Within 24 hours, after resuscitation.",
+  "sectionId": "s23d-s100501-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s2-06",
+  "frontHtml": "Ulcer stigmata that need endoscopic hemostasis?",
+  "backHtml": "Active bleeding and nonbleeding visible vessel.",
+  "sectionId": "s23d-s100501-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s2-07",
+  "frontHtml": "Diagnostic test for gastroparesis after endoscopy?",
+  "backHtml": "4-hour solid-meal gastric emptying scintigraphy.",
+  "sectionId": "s23d-s100501-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100501-s2-08",
+  "frontHtml": "Metoclopramide duration limit and reason?",
+  "backHtml": "Generally 12 weeks or less, because of tardive dyskinesia.",
+  "sectionId": "s23d-s100501-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s1-01",
+  "frontHtml": "Which apical transporter absorbs fructose?",
+  "backHtml": "GLUT5 (facilitated diffusion).",
+  "sectionId": "s23d-s100502-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s1-02",
+  "frontHtml": "Which transporter carries glucose and galactose into enterocytes?",
+  "backHtml": "SGLT1, coupled to sodium.",
+  "sectionId": "s23d-s100502-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s1-03",
+  "frontHtml": "Where is the cobalamin-intrinsic factor complex absorbed?",
+  "backHtml": "Terminal ileum, via cubilin.",
+  "sectionId": "s23d-s100502-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s1-04",
+  "frontHtml": "Which hormone degrades ferroportin to limit iron absorption?",
+  "backHtml": "Hepcidin.",
+  "sectionId": "s23d-s100502-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s1-05",
+  "frontHtml": "Vitamin pattern in small intestinal bacterial overgrowth?",
+  "backHtml": "Low B12 with normal or high folate.",
+  "sectionId": "s23d-s100502-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s1-06",
+  "frontHtml": "Which wall layers form a colonic (false) diverticulum?",
+  "backHtml": "Mucosa and submucosa herniating through the muscularis propria.",
+  "sectionId": "s23d-s100502-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s1-07",
+  "frontHtml": "The two colonic watershed segments are the splenic flexure and the ____.",
+  "backHtml": "Rectosigmoid junction.",
+  "sectionId": "s23d-s100502-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s1-08",
+  "frontHtml": "Mechanism of bleeding tendency in Heyde syndrome?",
+  "backHtml": "Shear stress lets ADAMTS13 cleave large vWF multimers (acquired type 2A).",
+  "sectionId": "s23d-s100502-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s2-01",
+  "frontHtml": "Best initial test for suspected acute mesenteric ischemia?",
+  "backHtml": "CT angiography.",
+  "sectionId": "s23d-s100502-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s2-02",
+  "frontHtml": "Are antibiotics mandatory for mild uncomplicated diverticulitis in a healthy outpatient?",
+  "backHtml": "No; current guidance uses them selectively.",
+  "sectionId": "s23d-s100502-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s2-03",
+  "frontHtml": "Treatment of a large diverticular abscess in a stable patient?",
+  "backHtml": "IV antibiotics plus CT-guided percutaneous drainage.",
+  "sectionId": "s23d-s100502-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s2-04",
+  "frontHtml": "Test after recovery from complicated diverticulitis if none recent?",
+  "backHtml": "Colonoscopy.",
+  "sectionId": "s23d-s100502-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s2-05",
+  "frontHtml": "First treatment of sigmoid volvulus without peritonitis?",
+  "backHtml": "Endoscopic detorsion, then elective sigmoid resection in the same admission.",
+  "sectionId": "s23d-s100502-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s2-06",
+  "frontHtml": "Treatment of cecal volvulus?",
+  "backHtml": "Surgery (right colectomy).",
+  "sectionId": "s23d-s100502-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s2-07",
+  "frontHtml": "Drug for Ogilvie syndrome after failed conservative care?",
+  "backHtml": "IV neostigmine with cardiac monitoring.",
+  "sectionId": "s23d-s100502-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100502-s2-08",
+  "frontHtml": "First imaging for suspected appendicitis in pregnancy?",
+  "backHtml": "Ultrasonography, then MRI without gadolinium if inconclusive.",
+  "sectionId": "s23d-s100502-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-01",
+  "frontHtml": "Epithelium above versus below the pectinate line?",
+  "backHtml": "Columnar above; stratified squamous below.",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-02",
+  "frontHtml": "Lymph drainage of the anal canal below the pectinate line?",
+  "backHtml": "Superficial inguinal nodes.",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-03",
+  "frontHtml": "Why are internal hemorrhoids painless?",
+  "backHtml": "Visceral (autonomic) innervation above the pectinate line.",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-04",
+  "frontHtml": "Most common location of an idiopathic anal fissure?",
+  "backHtml": "Posterior midline.",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-05",
+  "frontHtml": "Mechanism of topical nitroglycerin for anal fissure?",
+  "backHtml": "NO raises cGMP and relaxes the internal sphincter.",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-06",
+  "frontHtml": "Which sphincter provides most resting anal tone?",
+  "backHtml": "Internal anal sphincter (smooth muscle).",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-07",
+  "frontHtml": "Chlamydia serovars that cause lymphogranuloma venereum?",
+  "backHtml": "L1 to L3.",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-08",
+  "frontHtml": "HPV oncoprotein that degrades p53?",
+  "backHtml": "E6.",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s1-09",
+  "frontHtml": "Nerve supplying the external anal sphincter?",
+  "backHtml": "Pudendal nerve (S2 to S4).",
+  "sectionId": "s23d-s100503-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-01",
+  "frontHtml": "Thrombosed external hemorrhoid within about 72 h: treatment?",
+  "backHtml": "Excision under local anesthesia.",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-02",
+  "frontHtml": "Most effective office treatment for grade I to III internal hemorrhoids?",
+  "backHtml": "Rubber band ligation.",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-03",
+  "frontHtml": "First-line therapy for a chronic anal fissure?",
+  "backHtml": "Topical calcium channel blocker or nitrate, with fibre and sitz baths.",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-04",
+  "frontHtml": "Fissure therapy with the highest healing rate?",
+  "backHtml": "Lateral internal sphincterotomy.",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-05",
+  "frontHtml": "Treatment of a perianal abscess?",
+  "backHtml": "Incision and drainage.",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-06",
+  "frontHtml": "Suspected gonococcal or chlamydial proctitis: which empiric regimen?",
+  "backHtml": "A single 500 mg IM ceftriaxone dose plus a 7-day oral doxycycline course (100 mg twice daily).",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-07",
+  "frontHtml": "Duration of doxycycline for LGV?",
+  "backHtml": "21 days.",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-08",
+  "frontHtml": "First-line treatment of anal squamous cell carcinoma?",
+  "backHtml": "Chemoradiation with 5-FU or capecitabine plus mitomycin (Nigro).",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100503-s2-09",
+  "frontHtml": "Local staging test for rectal adenocarcinoma?",
+  "backHtml": "High-resolution pelvic MRI.",
+  "sectionId": "s23d-s100503-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-01",
+  "frontHtml": "Which hyperbilirubinemia responds to phenobarbital?",
+  "backHtml": "Crigler-Najjar type II (and Gilbert).",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-02",
+  "frontHtml": "Transporter defective in Dubin-Johnson syndrome?",
+  "backHtml": "MRP2 (ABCC2); dark liver.",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-03",
+  "frontHtml": "Defect in Rotor syndrome?",
+  "backHtml": "Deficient OATP1B1 and OATP1B3; no liver pigment.",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-04",
+  "frontHtml": "Wilson disease gene and chromosome?",
+  "backHtml": "ATP7B on chromosome 13.",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-05",
+  "frontHtml": "Why is ceruloplasmin low in Wilson disease?",
+  "backHtml": "Copper-free apoceruloplasmin is rapidly degraded.",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-06",
+  "frontHtml": "Biopsy finding in alpha-1 antitrypsin deficiency liver?",
+  "backHtml": "PAS-positive, diastase-resistant globules in periportal hepatocytes.",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-07",
+  "frontHtml": "AST:ALT ratio typical of alcohol-associated liver disease?",
+  "backHtml": "Above 2.",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-08",
+  "frontHtml": "How does zinc treat Wilson disease?",
+  "backHtml": "Induces enterocyte metallothionein, blocking copper absorption.",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s1-09",
+  "frontHtml": "Most common hemochromatosis genotype?",
+  "backHtml": "HFE C282Y homozygosity.",
+  "sectionId": "s23d-s100601-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-01",
+  "frontHtml": "Maddrey discriminant function threshold for steroids?",
+  "backHtml": "32 or more.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-02",
+  "frontHtml": "Score used on day 7 to decide whether to continue prednisolone?",
+  "backHtml": "Lille score.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-03",
+  "frontHtml": "MASLD stands for?",
+  "backHtml": "Metabolic dysfunction-associated steatotic liver disease.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-04",
+  "frontHtml": "First test to stage fibrosis risk in MASLD?",
+  "backHtml": "FIB-4 index.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-05",
+  "frontHtml": "Definition of acute liver failure?",
+  "backHtml": "INR 1.5 or more plus encephalopathy within 26 weeks, without preexisting cirrhosis.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-06",
+  "frontHtml": "Treatment of HFE hemochromatosis?",
+  "backHtml": "Phlebotomy to ferritin about 50 to 100 ng/mL, then maintenance.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-07",
+  "frontHtml": "Best initial test for suspected Budd-Chiari syndrome?",
+  "backHtml": "Doppler ultrasonography of the hepatic veins.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-08",
+  "frontHtml": "Components of MELD-Na?",
+  "backHtml": "Bilirubin, INR, creatinine and sodium.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100601-s2-09",
+  "frontHtml": "First-line drug for overt hepatic encephalopathy?",
+  "backHtml": "Lactulose, titrated to 2 to 3 soft stools daily.",
+  "sectionId": "s23d-s100601-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s1-01",
+  "frontHtml": "Rate-limiting enzyme of bile acid synthesis?",
+  "backHtml": "Cholesterol 7&alpha;-hydroxylase.",
+  "sectionId": "s23d-s100602-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s1-02",
+  "frontHtml": "Where are most bile acids reabsorbed?",
+  "backHtml": "Terminal ileum, by active sodium-dependent transport.",
+  "sectionId": "s23d-s100602-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s1-03",
+  "frontHtml": "Which cells release cholecystokinin?",
+  "backHtml": "I cells of the duodenum and jejunum.",
+  "sectionId": "s23d-s100602-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s1-04",
+  "frontHtml": "Gallstone type caused by chronic hemolysis?",
+  "backHtml": "Black pigment (calcium bilirubinate) stones, often radiopaque.",
+  "sectionId": "s23d-s100602-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s1-05",
+  "frontHtml": "Enzyme that makes brown pigment stones in infected ducts?",
+  "backHtml": "Bacterial &beta;-glucuronidase, which deconjugates bilirubin.",
+  "sectionId": "s23d-s100602-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s1-06",
+  "frontHtml": "Antigen targeted by antimitochondrial antibody in PBC?",
+  "backHtml": "E2 subunit of the pyruvate dehydrogenase complex.",
+  "sectionId": "s23d-s100602-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s1-07",
+  "frontHtml": "Classic histology of primary sclerosing cholangitis?",
+  "backHtml": "Concentric onion-skin periductal fibrosis.",
+  "sectionId": "s23d-s100602-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s1-08",
+  "frontHtml": "Usual site of impaction in gallstone ileus?",
+  "backHtml": "Terminal ileum near the ileocecal valve.",
+  "sectionId": "s23d-s100602-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s2-01",
+  "frontHtml": "Best initial test for suspected acute cholecystitis?",
+  "backHtml": "Right upper quadrant ultrasound.",
+  "sectionId": "s23d-s100602-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s2-02",
+  "frontHtml": "Test when ultrasound for cholecystitis is equivocal?",
+  "backHtml": "HIDA scan (gallbladder fails to fill).",
+  "sectionId": "s23d-s100602-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s2-03",
+  "frontHtml": "Timing of cholecystectomy for acute calculous cholecystitis?",
+  "backHtml": "Early, during the same admission.",
+  "sectionId": "s23d-s100602-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s2-04",
+  "frontHtml": "Common bile duct stone seen on ultrasound: next step?",
+  "backHtml": "ERCP with stone extraction, then cholecystectomy.",
+  "sectionId": "s23d-s100602-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s2-05",
+  "frontHtml": "Treatment of acute cholangitis?",
+  "backHtml": "Antibiotics plus biliary drainage, usually by ERCP.",
+  "sectionId": "s23d-s100602-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s2-06",
+  "frontHtml": "Unstable ICU patient with acalculous cholecystitis: procedure?",
+  "backHtml": "Percutaneous cholecystostomy.",
+  "sectionId": "s23d-s100602-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s2-07",
+  "frontHtml": "Best initial test for suspected PSC?",
+  "backHtml": "MRCP.",
+  "sectionId": "s23d-s100602-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100602-s2-08",
+  "frontHtml": "First-line therapy for primary biliary cholangitis?",
+  "backHtml": "Ursodeoxycholic acid, lifelong.",
+  "sectionId": "s23d-s100602-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s1-01",
+  "frontHtml": "Brush-border enzyme that activates trypsinogen?",
+  "backHtml": "Enteropeptidase (enterokinase).",
+  "sectionId": "s23d-s100701-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s1-02",
+  "frontHtml": "Hormone that drives pancreatic ductal bicarbonate secretion?",
+  "backHtml": "Secretin, from duodenal S cells.",
+  "sectionId": "s23d-s100701-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s1-03",
+  "frontHtml": "Inheritance and gene of classic hereditary pancreatitis?",
+  "backHtml": "Autosomal dominant, PRSS1 (cationic trypsinogen).",
+  "sectionId": "s23d-s100701-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s1-04",
+  "frontHtml": "Role of SPINK1 in the acinar cell?",
+  "backHtml": "Inhibits prematurely activated trypsin.",
+  "sectionId": "s23d-s100701-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s1-05",
+  "frontHtml": "Why can acute pancreatitis lower serum calcium?",
+  "backHtml": "Calcium is consumed by saponification in fat necrosis.",
+  "sectionId": "s23d-s100701-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s1-06",
+  "frontHtml": "Histology of IgG4-related pancreatitis?",
+  "backHtml": "IgG4-rich lymphoplasmacytic infiltrate, storiform fibrosis, obliterative phlebitis.",
+  "sectionId": "s23d-s100701-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s1-07",
+  "frontHtml": "What lines a pancreatic pseudocyst?",
+  "backHtml": "Fibrous and granulation tissue, no epithelium.",
+  "sectionId": "s23d-s100701-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s1-08",
+  "frontHtml": "Triad of advanced chronic pancreatitis?",
+  "backHtml": "Calcifications, steatorrhea and diabetes.",
+  "sectionId": "s23d-s100701-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s2-01",
+  "frontHtml": "Criteria for acute pancreatitis?",
+  "backHtml": "Two of three: typical pain, lipase at least 3 times normal, imaging findings.",
+  "sectionId": "s23d-s100701-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s2-02",
+  "frontHtml": "Fluid of choice in acute pancreatitis?",
+  "backHtml": "Moderate goal-directed lactated Ringer solution.",
+  "sectionId": "s23d-s100701-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s2-03",
+  "frontHtml": "Are prophylactic antibiotics given for necrotizing pancreatitis?",
+  "backHtml": "No; only for suspected or proven infection.",
+  "sectionId": "s23d-s100701-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s2-04",
+  "frontHtml": "Timing of cholecystectomy after mild gallstone pancreatitis?",
+  "backHtml": "Same admission.",
+  "sectionId": "s23d-s100701-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s2-05",
+  "frontHtml": "Asymptomatic 6-cm pseudocyst: management?",
+  "backHtml": "Observe; drain only if symptomatic or complicated.",
+  "sectionId": "s23d-s100701-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s2-06",
+  "frontHtml": "Drug that reduces post-ERCP pancreatitis?",
+  "backHtml": "Rectal indomethacin (or diclofenac).",
+  "sectionId": "s23d-s100701-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s2-07",
+  "frontHtml": "Treatment of autoimmune (IgG4) pancreatitis?",
+  "backHtml": "Glucocorticoids, after excluding cancer.",
+  "sectionId": "s23d-s100701-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100701-s2-08",
+  "frontHtml": "Drug class for long-term prevention of hypertriglyceridemic pancreatitis?",
+  "backHtml": "Fibrate, with strict fat restriction.",
+  "sectionId": "s23d-s100701-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s1-01",
+  "frontHtml": "SAAG value that indicates portal hypertension?",
+  "backHtml": "1.1 g/dL or more.",
+  "sectionId": "s23d-s100801-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s1-02",
+  "frontHtml": "High SAAG with high ascitic protein suggests?",
+  "backHtml": "Heart failure, constrictive pericarditis or Budd-Chiari syndrome.",
+  "sectionId": "s23d-s100801-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s1-03",
+  "frontHtml": "Main mediator of splanchnic vasodilation in cirrhosis?",
+  "backHtml": "Nitric oxide.",
+  "sectionId": "s23d-s100801-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s1-04",
+  "frontHtml": "Why is urine sodium very low in hepatorenal syndrome?",
+  "backHtml": "Tubules are intact and avidly retain sodium under intense renal vasoconstriction.",
+  "sectionId": "s23d-s100801-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s1-05",
+  "frontHtml": "Most common organisms in SBP?",
+  "backHtml": "Enteric gram-negative rods, mainly <em>E. coli</em> and <em>Klebsiella</em>.",
+  "sectionId": "s23d-s100801-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s1-06",
+  "frontHtml": "Ascitic triglyceride level that defines chylous ascites?",
+  "backHtml": "Above 200 mg/dL.",
+  "sectionId": "s23d-s100801-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s1-07",
+  "frontHtml": "Exposure linked to peritoneal mesothelioma?",
+  "backHtml": "Asbestos.",
+  "sectionId": "s23d-s100801-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s1-08",
+  "frontHtml": "Why does spironolactone cause gynecomastia?",
+  "backHtml": "Androgen receptor antagonism.",
+  "sectionId": "s23d-s100801-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-01",
+  "frontHtml": "Ascitic neutrophil count that diagnoses SBP?",
+  "backHtml": "250/mm3 or more.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-02",
+  "frontHtml": "Spontaneous bacterial peritonitis: how is IV albumin dosed?",
+  "backHtml": "1.5 g/kg on the first day, then 1 g/kg on the third day, alongside the antibiotic.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-03",
+  "frontHtml": "Who needs diagnostic paracentesis?",
+  "backHtml": "New ascites, any admitted cirrhotic with ascites, and any clinical deterioration.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-04",
+  "frontHtml": "Albumin after large-volume paracentesis over 5 L?",
+  "backHtml": "About 6 to 8 g per liter removed.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-05",
+  "frontHtml": "Starting diuretic ratio for cirrhotic ascites?",
+  "backHtml": "Spironolactone 100 mg to furosemide 40 mg.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-06",
+  "frontHtml": "Dietary sodium target in cirrhotic ascites?",
+  "backHtml": "About 2 g (88 mmol) per day.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-07",
+  "frontHtml": "Fluid findings that suggest secondary peritonitis?",
+  "backHtml": "Multiple organisms, or two of: protein above 1 g/dL, glucose below 50 mg/dL, LDH above serum normal.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-08",
+  "frontHtml": "Treatment of hepatorenal syndrome?",
+  "backHtml": "Terlipressin (or norepinephrine) plus albumin; transplant evaluation.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100801-s2-09",
+  "frontHtml": "Why avoid a chest tube in hepatic hydrothorax?",
+  "backHtml": "It causes massive fluid and protein loss, infection and kidney injury.",
+  "sectionId": "s23d-s100801-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-01",
+  "frontHtml": "Which landmark separates direct from indirect inguinal hernias?",
+  "backHtml": "The inferior epigastric vessels: direct is medial, indirect is lateral.",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-02",
+  "frontHtml": "What are the three borders of Hesselbach triangle?",
+  "backHtml": "Lateral border of rectus abdominis, inferior epigastric vessels, inguinal ligament.",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-03",
+  "frontHtml": "Which embryologic remnant forms the sac of an indirect inguinal hernia?",
+  "backHtml": "A patent processus vaginalis.",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-04",
+  "frontHtml": "Which groin hernia has the highest risk of strangulation?",
+  "backHtml": "Femoral hernia, because of its narrow rigid ring.",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-05",
+  "frontHtml": "What lies immediately lateral to the femoral canal?",
+  "backHtml": "The femoral vein.",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-06",
+  "frontHtml": "What causes the hypoglycemia of late dumping?",
+  "backHtml": "An exaggerated insulin surge after rapid glucose absorption.",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-07",
+  "frontHtml": "In blind loop syndrome, what happens to serum B12 and folate?",
+  "backHtml": "B12 falls (bacterial uptake); folate is normal or high (bacterial synthesis).",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-08",
+  "frontHtml": "Where does the esophagus usually rupture in Boerhaave syndrome?",
+  "backHtml": "Left posterolateral wall of the distal esophagus.",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s1-09",
+  "frontHtml": "Why is the duodenum injured in handlebar trauma?",
+  "backHtml": "It is retroperitoneal and fixed across the vertebral column.",
+  "sectionId": "s23d-s100901-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s2-01",
+  "frontHtml": "Blunt trauma, hypotensive, FAST positive: next step?",
+  "backHtml": "Exploratory laparotomy.",
+  "sectionId": "s23d-s100901-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s2-02",
+  "frontHtml": "Blunt trauma, hemodynamically stable: imaging of choice?",
+  "backHtml": "CT abdomen and pelvis with IV contrast.",
+  "sectionId": "s23d-s100901-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s2-03",
+  "frontHtml": "Name four indications for laparotomy after an abdominal stab wound.",
+  "backHtml": "Instability, peritonitis, evisceration, impaled object (also GI bleeding).",
+  "sectionId": "s23d-s100901-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s2-04",
+  "frontHtml": "First study to confirm suspected esophageal perforation?",
+  "backHtml": "Water-soluble contrast esophagram or CT with oral contrast.",
+  "sectionId": "s23d-s100901-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s2-05",
+  "frontHtml": "Button battery in the esophagus: management?",
+  "backHtml": "Emergent endoscopic removal.",
+  "sectionId": "s23d-s100901-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s2-06",
+  "frontHtml": "First-line treatment for dumping syndrome?",
+  "backHtml": "Diet: small frequent meals, less simple sugar, fluids apart from meals.",
+  "sectionId": "s23d-s100901-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s2-07",
+  "frontHtml": "Strangulated hernia: should you reduce it at the bedside?",
+  "backHtml": "No; resuscitate, give antibiotics and operate.",
+  "sectionId": "s23d-s100901-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c100901-s2-08",
+  "frontHtml": "Which vaccines are needed after splenectomy?",
+  "backHtml": "Pneumococcal, meningococcal and Haemophilus influenzae type b.",
+  "sectionId": "s23d-s100901-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-01",
+  "frontHtml": "Which artery supplies the midgut?",
+  "backHtml": "Superior mesenteric artery.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-02",
+  "frontHtml": "Around which vessel does the midgut rotate, and by how much?",
+  "backHtml": "The superior mesenteric artery, 270 degrees counterclockwise.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-03",
+  "frontHtml": "Most common type of esophageal atresia?",
+  "backHtml": "Blind proximal pouch with distal tracheesophageal fistula.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-04",
+  "frontHtml": "Duodenal atresia results from failure of which process?",
+  "backHtml": "Recanalization of the duodenal lumen.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-05",
+  "frontHtml": "Jejunal and ileal atresias result from what?",
+  "backHtml": "In utero vascular accidents.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-06",
+  "frontHtml": "Annular pancreas comes from abnormal migration of which bud?",
+  "backHtml": "The ventral pancreatic bud.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-07",
+  "frontHtml": "Why is urine acidic in severe pyloric stenosis?",
+  "backHtml": "Volume depletion drives aldosterone, which exchanges Na for H+ and K+ distally.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-08",
+  "frontHtml": "Meckel diverticulum is a remnant of which structure?",
+  "backHtml": "The vitelline (omphalomesenteric) duct.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-09",
+  "frontHtml": "Cleft lip: failed fusion of which structures?",
+  "backHtml": "Maxillary prominence and merged medial nasal prominences.",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s1-10",
+  "frontHtml": "Hirschsprung disease: which plexuses lack ganglion cells?",
+  "backHtml": "Myenteric (Auerbach) and submucosal (Meissner).",
+  "sectionId": "s23d-s101001-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-01",
+  "frontHtml": "Bilious vomiting in a newborn: what must be excluded urgently?",
+  "backHtml": "Malrotation with midgut volvulus.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-02",
+  "frontHtml": "Best initial imaging for pyloric stenosis?",
+  "backHtml": "Abdominal ultrasound.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-03",
+  "frontHtml": "What must be done before pyloromyotomy?",
+  "backHtml": "Correct dehydration, hypokalemia and alkalosis.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-04",
+  "frontHtml": "Test of choice for a stable infant with suspected malrotation?",
+  "backHtml": "Upper GI contrast series.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-05",
+  "frontHtml": "Diagnostic test for Meckel diverticulum?",
+  "backHtml": "Technetium-99m pertechnetate scan.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-06",
+  "frontHtml": "Confirmatory test for Hirschsprung disease?",
+  "backHtml": "Rectal suction biopsy showing absent ganglion cells.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-07",
+  "frontHtml": "Biliary atresia: treatment and ideal timing?",
+  "backHtml": "Kasai hepatoportoenterostomy, ideally before about 2 months.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-08",
+  "frontHtml": "Omphalocele: which evaluation comes first after stabilization?",
+  "backHtml": "Echocardiography and genetic evaluation.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101001-s2-09",
+  "frontHtml": "How are infants with cleft palate fed?",
+  "backHtml": "Upright, with special squeeze bottles or valved nipples.",
+  "sectionId": "s23d-s101001-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-01",
+  "frontHtml": "Which COX isoform protects the gastric mucosa?",
+  "backHtml": "COX-1 (constitutive).",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-02",
+  "frontHtml": "What is misoprostol and its main adverse effect?",
+  "backHtml": "A PGE1 analog; diarrhea (also contraindicated in pregnancy).",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-03",
+  "frontHtml": "Why does methylnaltrexone not reverse analgesia?",
+  "backHtml": "It is a quaternary amine that does not cross the blood-brain barrier.",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-04",
+  "frontHtml": "Toxic metabolite of acetaminophen?",
+  "backHtml": "NAPQI, formed by CYP2E1.",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-05",
+  "frontHtml": "Which liver zone is injured in acetaminophen toxicity?",
+  "backHtml": "Zone 3 (centrilobular).",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-06",
+  "frontHtml": "How does N-acetylcysteine work?",
+  "backHtml": "Restores glutathione to detoxify NAPQI.",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-07",
+  "frontHtml": "Melanosis coli is caused by which laxative class?",
+  "backHtml": "Anthraquinone stimulant laxatives such as senna.",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-08",
+  "frontHtml": "Which checkpoint target causes colitis most often?",
+  "backHtml": "CTLA-4 (ipilimumab).",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-09",
+  "frontHtml": "Liver pattern of valproate toxicity?",
+  "backHtml": "Microvesicular steatosis and hepatic failure.",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s1-10",
+  "frontHtml": "Mechanism of C. difficile toxins A and B?",
+  "backHtml": "Glucosylation of Rho GTPases, disrupting the actin cytoskeleton.",
+  "sectionId": "s23d-s101101-s1",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-01",
+  "frontHtml": "Acetaminophen level above the treatment line at 4 h: next step?",
+  "backHtml": "Start N-acetylcysteine.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-02",
+  "frontHtml": "When is NAC most effective after acetaminophen overdose?",
+  "backHtml": "Within 8 hours of ingestion.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-03",
+  "frontHtml": "First-line treatment for an initial C. difficile episode?",
+  "backHtml": "Oral fidaxomicin (oral vancomycin alternative).",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-04",
+  "frontHtml": "Why is IV vancomycin useless for C. difficile?",
+  "backHtml": "It does not reach the colonic lumen.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-05",
+  "frontHtml": "Best prophylaxis for NSAID ulcers in a high-risk patient?",
+  "backHtml": "A proton pump inhibitor.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-06",
+  "frontHtml": "Laxative-refractory opioid constipation: next drug class?",
+  "backHtml": "Peripherally acting mu-opioid receptor antagonist.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-07",
+  "frontHtml": "Isoniazid stopping rule?",
+  "backHtml": "ALT above 3 times normal with symptoms, or above 5 times without.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-08",
+  "frontHtml": "How should alendronate be taken?",
+  "backHtml": "Fasting, with a full glass of water, staying upright at least 30 minutes.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-09",
+  "frontHtml": "Moderate to severe checkpoint-inhibitor colitis: treatment?",
+  "backHtml": "Hold the drug and give systemic glucocorticoids.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23d-c101101-s2-10",
+  "frontHtml": "Which vitamin should be monitored in long-term metformin users?",
+  "backHtml": "Vitamin B12.",
+  "sectionId": "s23d-s101101-s2",
+  "questionId": null,
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ }
+]

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-label="Two pupil pathways. Left: the light reflex, from retina through the optic nerve to the pretectal nucleus, both Edinger-Westphal nuclei, the oculomotor nerve, the ciliary ganglion and short ciliary nerves to the sphincter pupillae. Right: the three-neuron oculosympathetic pathway, from hypothalamus down to the ciliospinal centre at C8 to T2, over the lung apex to the superior cervical ganglion, then along the internal carotid artery to the dilator pupillae and the superior tarsal muscle, with typical lesions at each neuron.">
+<defs><marker id="s23e-fig0702-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="760" height="520" fill="#ffffff"/><g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="26" font-size="16" font-weight="bold" text-anchor="middle">Pupil pathways: light reflex and oculosympathetic chain</text>
+<text x="155.0" y="48" font-size="13" font-weight="bold" text-anchor="middle">Light reflex (constricts the pupil)</text>
+<rect x="30" y="60" width="250" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="155.0" y="81" font-size="12" text-anchor="middle">Retina (both eyes)</text>
+<line x1="155.0" y1="92" x2="155.0" y2="110" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="30" y="112" width="250" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="155.0" y="133" font-size="12" text-anchor="middle">Optic nerve and tract</text>
+<line x1="155.0" y1="144" x2="155.0" y2="162" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="30" y="164" width="250" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="155.0" y="185" font-size="12" text-anchor="middle">Pretectal nucleus, midbrain</text>
+<line x1="155.0" y1="196" x2="155.0" y2="214" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="30" y="216" width="250" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="155.0" y="237" font-size="12" text-anchor="middle">Edinger-Westphal nuclei (both sides)</text>
+<line x1="155.0" y1="248" x2="155.0" y2="266" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="30" y="268" width="250" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="155.0" y="289" font-size="12" text-anchor="middle">Oculomotor nerve (CN III)</text>
+<line x1="155.0" y1="300" x2="155.0" y2="318" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="30" y="320" width="250" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="155.0" y="341" font-size="12" text-anchor="middle">Ciliary ganglion</text>
+<line x1="155.0" y1="352" x2="155.0" y2="370" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="30" y="372" width="250" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="155.0" y="393" font-size="12" text-anchor="middle">Short ciliary nerves</text>
+<line x1="155.0" y1="404" x2="155.0" y2="422" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="30" y="424" width="250" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="155.0" y="445" font-size="12" text-anchor="middle">Sphincter pupillae</text>
+<text x="445.0" y="48" font-size="13" font-weight="bold" text-anchor="middle">Oculosympathetic chain (dilates)</text>
+<rect x="330" y="60" width="230" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="445.0" y="81" font-size="12" text-anchor="middle">Hypothalamus</text>
+<line x1="445.0" y1="92" x2="445.0" y2="110" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="330" y="112" width="230" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="445.0" y="133" font-size="12" text-anchor="middle">Ciliospinal centre, C8-T2</text>
+<line x1="445.0" y1="144" x2="445.0" y2="162" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="330" y="164" width="230" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="445.0" y="185" font-size="12" text-anchor="middle">Superior cervical ganglion</text>
+<line x1="445.0" y1="196" x2="445.0" y2="214" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="330" y="216" width="230" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="445.0" y="237" font-size="12" text-anchor="middle">Along internal carotid artery</text>
+<line x1="445.0" y1="248" x2="445.0" y2="266" stroke="#334155" stroke-width="2" marker-end="url(#s23e-fig0702-arr)"/>
+<rect x="330" y="268" width="230" height="32" rx="7" fill="#f1f5f9" stroke="#334155" stroke-width="1.4"/>
+<text x="445.0" y="289" font-size="12" text-anchor="middle">Dilator pupillae and Muller muscle</text>
+<path d="M572,72 L582,72 L582,124 L572,124" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="590" y="86" font-size="12" font-weight="bold">1st-order neuron</text>
+<text x="590" y="102" font-size="11">Lateral medullary stroke,</text><text x="590" y="116" font-size="11">cervical cord lesion</text>
+<path d="M572,134 L582,134 L582,184 L572,184" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="590" y="154" font-size="12" font-weight="bold">2nd-order neuron</text>
+<text x="590" y="170" font-size="11">Pancoast tumour, neck or</text><text x="590" y="184" font-size="11">thyroid surgery</text>
+<path d="M572,192 L582,192 L582,284 L572,284" fill="none" stroke="#334155" stroke-width="1.6"/>
+<text x="590" y="224.0" font-size="12" font-weight="bold">3rd-order neuron</text>
+<text x="590" y="240.0" font-size="11">Carotid dissection,</text><text x="590" y="254.0" font-size="11">cavernous sinus lesion</text>
+<text x="330" y="360" font-size="11" fill="#334155">Interruption anywhere: ptosis (Muller muscle),</text>
+<text x="330" y="376" font-size="11" fill="#334155">miosis, anisocoria greater in dim light.</text>
+<text x="330" y="398" font-size="11" fill="#334155">Sweating fibres to most of the face follow the</text>
+<text x="330" y="414" font-size="11" fill="#334155">external carotid, so 3rd-order lesions usually</text>
+<text x="330" y="430" font-size="11" fill="#334155">spare facial sweating.</text>
+<text x="30" y="500" font-size="11" fill="#334155">Pretectal fibres reach both Edinger-Westphal nuclei, so light in one eye constricts both pupils (direct and consensual).</text>
+</g></svg>

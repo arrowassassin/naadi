@@ -1,0 +1,572 @@
+[
+ {
+  "id": "ch01-fig01",
+  "chapterId": "ch01",
+  "caption": "Figure 1. Classic pedigree patterns. AD: every generation, male-to-male transmission. AR: carrier parents (dots), consanguinity (double line), skipped generations. XLR: affected males through carrier females; no male-to-male transmission. Mitochondrial: all children of an affected mother can be affected, with variable severity; affected fathers never transmit.",
+  "file": "figures/ch01-fig01.svg"
+ },
+ {
+  "id": "ch01-fig02",
+  "chapterId": "ch01",
+  "caption": "Figure 2. Integrated metabolism map. Solid arrows: main fed-state flow; dashed arrows: gluconeogenic bypass enzymes (glucose-6-phosphatase, fructose-1,6-bisphosphatase; pyruvate carboxylase [PC, biotin] and PEPCK convert pyruvate → oxaloacetate → PEP). Acetyl-CoA is the hub: it enters the TCA cycle, forms ketone bodies (liver mitochondria) or leaves as citrate for fatty acid and cholesterol synthesis in the cytosol. HK/GK = hexokinase/glucokinase; PDH = pyruvate dehydrogenase.",
+  "file": "figures/ch01-fig02.svg"
+ },
+ {
+  "id": "ch01-fig03",
+  "chapterId": "ch01",
+  "caption": "Figure 3. The urea cycle spans mitochondrion and cytosol. One nitrogen enters as NH₃ (CPS I) and the other as aspartate (ASS). Blocks at OTC divert carbamoyl phosphate to orotic acid; blocks at CPS I or N-acetylglutamate synthase do not. Fumarate links the cycle to the TCA cycle.",
+  "file": "figures/ch01-fig03.svg"
+ },
+ {
+  "id": "ch01-fig04",
+  "chapterId": "ch01",
+  "caption": "Figure 4. Nucleotide synthesis and drug targets. Pyrimidines: the ring is made first, then attached to PRPP. Purines: the ring is assembled on PRPP to form IMP. HGPRT salvage (dashed) is lost in Lesch-Nyhan syndrome; adenosine deaminase (ADA) deficiency causes SCID; UMP synthase deficiency causes orotic aciduria.",
+  "file": "figures/ch01-fig04.svg"
+ },
+ {
+  "id": "ch01-fig05",
+  "chapterId": "ch01",
+  "caption": "Figure 5. T-cell activation needs signal 1 (TCR + peptide–MHC II, stabilized by CD4) and signal 2 (B7–CD28). CTLA-4 is the inhibitory receptor for B7. Downstream, calcineurin → NFAT → IL-2 → CD25 → mTOR drives proliferation; red boxes show where immunosuppressants act. Bottom: cytokines that direct CD4⁺ subset differentiation.",
+  "file": "figures/ch01-fig05.svg"
+ },
+ {
+  "id": "ch01-fig06",
+  "chapterId": "ch01",
+  "caption": "Figure 6. The four hypersensitivity types: I — IgE on mast cells (minutes); II — antibody against fixed cell/matrix antigens; III — circulating immune complexes deposit and activate complement (↓ C3); IV — T-cell mediated, delayed 48–72 h, no antibody.",
+  "file": "figures/ch01-fig06.svg"
+ },
+ {
+  "id": "ch01-fig07",
+  "chapterId": "ch01",
+  "caption": "Figure 7. Immunodeficiency map. Each red box marks the developmental or functional step blocked by a primary immunodeficiency: SCID (lymphoid progenitor), DiGeorge (thymus), XLA (pre-B → B), CVID (B → plasma cell), hyper-IgM (CD40L-dependent class switching), and the three neutrophil defects (adhesion, phagolysosome fusion, respiratory burst).",
+  "file": "figures/ch01-fig07.svg"
+ },
+ {
+  "id": "ch02-fig01",
+  "chapterId": "ch02",
+  "caption": "Figure 1. Gram-positive vs gram-negative cell envelopes. Crystal violet is retained by the thick peptidoglycan of gram-positives; the alcohol wash strips the thin layer of gram-negatives, which are then counterstained pink by safranin. The outer membrane (LPS + porins) explains intrinsic resistance of gram-negatives to vancomycin.",
+  "file": "figures/ch02-fig01.svg"
+ },
+ {
+  "id": "ch02-fig02",
+  "chapterId": "ch02",
+  "caption": "Figure 2. Gram-positive identification algorithm. Catalase separates Staphylococcus (bubbles) from Streptococcus/Enterococcus; hemolysis, optochin, bacitracin and growth in 6.5% NaCl subdivide the streptococci. Rods divide by spore formation and branching.",
+  "file": "figures/ch02-fig02.svg"
+ },
+ {
+  "id": "ch02-fig03",
+  "chapterId": "ch02",
+  "caption": "Figure 3. Gram-negative identification algorithm. Morphology first; for rods, lactose fermentation on MacConkey, then oxidase, then H 2 S production on triple sugar iron (TSI) agar.",
+  "file": "figures/ch02-fig03.svg"
+ },
+ {
+  "id": "ch02-fig04",
+  "chapterId": "ch02",
+  "caption": "Figure 4. Where USMLE places regional infections in the US (schematic). Use geography as a diagnostic clue: a spelunker in Kentucky (Histoplasma), a construction worker in Arizona (Coccidioides), a hiker in Connecticut (Lyme ± Babesia/Anaplasma co-infection), a camper in North Carolina (RMSF).",
+  "file": "figures/ch02-fig04.svg"
+ },
+ {
+  "id": "ch02-fig05",
+  "chapterId": "ch02",
+  "caption": "Figure 5. Viral classification chart. Learn the family, genome type and envelope status, then the exceptions. Enveloped viruses (lipid membrane acquired by budding) are sensitive to detergents, drying and acid; naked viruses survive the GI tract and surfaces (fecal–oral spread).",
+  "file": "figures/ch02-fig05.svg"
+ },
+ {
+  "id": "ch02-fig06",
+  "chapterId": "ch02",
+  "caption": "Figure 6. HIV life cycle with drug targets. Each step from attachment to maturation has a corresponding class; no approved drug targets host transcription/translation of viral genes. Lenacapavir binds the capsid and interferes with several steps (nuclear import, assembly).",
+  "file": "figures/ch02-fig06.svg"
+ },
+ {
+  "id": "ch02-fig07",
+  "chapterId": "ch02",
+  "caption": "Figure 7. Hepatitis B serology in a resolving acute infection. HBsAg appears first; HBeAg marks active replication and high infectivity; IgM anti-HBc is the only marker positive during the window period; anti-HBs signals recovery and immunity. Vaccination produces anti-HBs alone (anti-HBc negative).",
+  "file": "figures/ch02-fig07.svg"
+ },
+ {
+  "id": "ch02-fig08",
+  "chapterId": "ch02",
+  "caption": "Figure 8. Antibiotic mechanism-site map on a bacterial cell. Cell wall agents act on peptidoglycan synthesis; daptomycin and polymyxins disrupt membranes; fluoroquinolones and metronidazole target DNA; rifampin blocks RNA polymerase; protein synthesis inhibitors act on the 30S or 50S subunit; sulfonamides and trimethoprim block sequential steps of folate synthesis (synergistic).",
+  "file": "figures/ch02-fig08.svg"
+ },
+ {
+  "id": "ch03-fig01",
+  "chapterId": "ch03",
+  "caption": "Figure 1. Elimination kinetics and accumulation. A: first-order elimination removes a constant fraction per unit time (constant t½). Zero-order elimination removes a constant amount (phenytoin, ethanol, high-dose aspirin). B: with repeated dosing or a constant infusion, the percentage of steady state reached depends only on the number of half-lives. A loading dose gets to the target immediately.",
+  "file": "figures/ch03-fig01.svg"
+ },
+ {
+  "id": "ch03-fig02",
+  "chapterId": "ch03",
+  "caption": "Figure 2. Enzyme kinetics. A competitive inhibitor (dashed) raises K m and leaves V max unchanged: the lines cross on the y-axis. A noncompetitive inhibitor (dotted) lowers V max and leaves K m unchanged: the lines share the x-intercept.",
+  "file": "figures/ch03-fig02.svg"
+ },
+ {
+  "id": "ch03-fig03",
+  "chapterId": "ch03",
+  "caption": "Figure 3. Log dose–response curves. A: a competitive antagonist (for example, naloxone at μ or prazosin at α1) moves the curve to the right; enough agonist still produces the full response. B: a noncompetitive or irreversible antagonist lowers E max . A partial agonist alone produces a curve that plateaus below 100%, like B, and in the presence of a full agonist it pulls the response down toward its own maximum.",
+  "file": "figures/ch03-fig03.svg"
+ },
+ {
+  "id": "ch03-fig04",
+  "chapterId": "ch03",
+  "caption": "Figure 4. Autonomic and somatic receptor map. Every preganglionic neuron releases ACh onto nicotinic N N receptors. Ganglionic blockers (hexamethonium) therefore block both divisions; the net effect on each organ depends on which tone dominates there. Sympathetic fibers to sweat glands are cholinergic (M3), so anticholinergic drugs cause anhidrosis and hyperthermia.",
+  "file": "figures/ch03-fig04.svg"
+ },
+ {
+  "id": "ch03-fig05",
+  "chapterId": "ch03",
+  "caption": "Figure 5. The 2×2 table. Sensitivity and specificity read down the columns (fixed properties of the test). Predictive values read across the rows (they change with prevalence). For risk calculations, put exposure or treatment in the rows and outcome in the columns.",
+  "file": "figures/ch03-fig05.svg"
+ },
+ {
+  "id": "ch03-fig06",
+  "chapterId": "ch03",
+  "caption": "Figure 6. Cutoff shifts and the ROC curve. A: the distributions in healthy and diseased people overlap, so any cutoff trades sensitivity against specificity. Lowering the cutoff (for example, diagnosing diabetes at a lower glucose value) catches more true cases (↑Sn, ↓FN) but labels more healthy people positive (↓Sp, ↑FP). B: each point on an ROC curve is one cutoff. The closer the curve is to the upper-left corner (the larger the AUC), the better the test discriminates overall.",
+  "file": "figures/ch03-fig06.svg"
+ },
+ {
+  "id": "ch03-fig07",
+  "chapterId": "ch03",
+  "caption": "Figure 7. Classifying a study. First ask who assigned the exposure. In observational studies, ask what the investigators started from: exposure (cohort, which can be prospective or retrospective), outcome (case–control), or a single moment in time (cross-sectional). Note that \"retrospective cohort\" still starts from exposure status, using records from the past.",
+  "file": "figures/ch03-fig07.svg"
+ },
+ {
+  "id": "ch04-fig01",
+  "chapterId": "ch04",
+  "caption": "Figure 1. Leukocyte extravasation: molecules at each step and the immunodeficiency that blocks it.",
+  "file": "figures/ch04-fig01.svg"
+ },
+ {
+  "id": "ch04-fig02",
+  "chapterId": "ch04",
+  "caption": "Figure 2. Anemia classification by MCV, with reticulocyte production index splitting normocytic anemias into underproduction vs destruction.",
+  "file": "figures/ch04-fig02.svg"
+ },
+ {
+  "id": "ch04-fig03",
+  "chapterId": "ch04",
+  "caption": "Figure 3. Iron studies comparison. Ferritin is the storage form and an acute-phase reactant; transferrin (TIBC) is a negative acute-phase reactant that rises when iron stores are low or estrogen is high.",
+  "file": "figures/ch04-fig03.svg"
+ },
+ {
+  "id": "ch04-fig04",
+  "chapterId": "ch04",
+  "caption": "Figure 4. Intravascular vs extravascular hemolysis. Hemoglobinuria and hemosiderinuria point to intravascular destruction; splenomegaly and spherocytes point to extravascular destruction.",
+  "file": "figures/ch04-fig04.svg"
+ },
+ {
+  "id": "ch04-fig05",
+  "chapterId": "ch04",
+  "caption": "Figure 5. Coagulation cascade and drug targets (red boxes; dashed lines show the step affected). Thrombin positively feeds back on factors V, VIII, XI, XIII and platelets. Natural anticoagulants: antithrombin (inactivates IIa, Xa, IXa, XIa), protein C/S (activated by thrombin–thrombomodulin; inactivate Va and VIIIa), tissue factor pathway inhibitor (TFPI).",
+  "file": "figures/ch04-fig05.svg"
+ },
+ {
+  "id": "ch04-fig06",
+  "chapterId": "ch04",
+  "caption": "Figure 6. High-yield translocations in hematologic malignancies. Leukemias in yellow, lymphomas in blue.",
+  "file": "figures/ch04-fig06.svg"
+ },
+ {
+  "id": "ch04-fig07",
+  "chapterId": "ch04",
+  "caption": "Figure 7. Cell cycle phases (colored wedges) matched by color to the chemotherapy drugs that act there. Phase-specific drugs are most effective against rapidly dividing tumors; nonspecific drugs also kill slowly dividing tumors.",
+  "file": "figures/ch04-fig07.svg"
+ },
+ {
+  "id": "ch05-fig01",
+  "chapterId": "ch05",
+  "caption": "Figure 1. Frank–Starling curves. Changing preload moves the ventricle along a curve; changing contractility shifts it to a different curve. In HFrEF the curve is flat, so diuretics relieve congestion with little loss of stroke volume.",
+  "file": "figures/ch05-fig01.svg"
+ },
+ {
+  "id": "ch05-fig02",
+  "chapterId": "ch05",
+  "caption": "Figure 2. LV pressure–volume loop (counter-clockwise). Valve events are the corners; width is stroke volume; ESPVR slope tracks contractility. Valve lesions distort the loop in predictable ways (right panel).",
+  "file": "figures/ch05-fig02.svg"
+ },
+ {
+  "id": "ch05-fig03",
+  "chapterId": "ch05",
+  "caption": "Figure 3. Simplified Wiggers diagram. S1 coincides with mitral closure just after the QRS; S2 with aortic closure (dicrotic notch) near the end of the T wave. Ventricular volume is flat during both isovolumetric phases.",
+  "file": "figures/ch05-fig03.svg"
+ },
+ {
+  "id": "ch05-fig04",
+  "chapterId": "ch05",
+  "caption": "Figure 4. Murmur timing relative to S1 and S2. Systolic: AS (crescendo–decrescendo), MR/TR/VSD (holosystolic), MVP (mid-systolic click + late systolic murmur). Diastolic: AR (early decrescendo), MS (opening snap + mid-diastolic rumble). PDA is continuous.",
+  "file": "figures/ch05-fig04.svg"
+ },
+ {
+  "id": "ch05-fig05",
+  "chapterId": "ch05",
+  "caption": "Figure 5. Ventricular myocyte (fast-response) vs SA nodal (slow-response) action potentials. Class I drugs act on phase 0 of myocytes; class II and IV drugs and ivabradine act on nodal tissue; class III drugs prolong phase 3.",
+  "file": "figures/ch05-fig05.svg"
+ },
+ {
+  "id": "ch05-fig06",
+  "chapterId": "ch05",
+  "caption": "Figure 6. Lung volumes and capacities. A capacity is the sum of ≥2 volumes. FRC is the resting volume where inward lung recoil balances outward chest-wall recoil (intrapleural pressure ≈ −5 cmH 2 O). Obstruction ↑ RV, FRC, TLC; restriction ↓ all.",
+  "file": "figures/ch05-fig06.svg"
+ },
+ {
+  "id": "ch05-fig07",
+  "chapterId": "ch05",
+  "caption": "Figure 7. Oxygen–hemoglobin dissociation curve. Right shifts favor O 2 unloading in metabolically active tissue; left shifts hold O 2 more tightly. CO both left-shifts the curve and lowers the plateau (O 2 -carrying capacity).",
+  "file": "figures/ch05-fig07.svg"
+ },
+ {
+  "id": "ch05-fig08",
+  "chapterId": "ch05",
+  "caption": "Figure 8. Nephron transport and diuretic sites. Red boxes mark drug targets. Na + delivered past the site of a diuretic to the collecting duct is exchanged for K + and H + — hence hypokalemic metabolic alkalosis with loops and thiazides, and hyperkalemic acidosis with K + -sparing agents.",
+  "file": "figures/ch05-fig08.svg"
+ },
+ {
+  "id": "ch05-fig09",
+  "chapterId": "ch05",
+  "caption": "Figure 9. Renin–angiotensin–aldosterone system and drug targets. Aldosterone escape (↑ ANP, pressure natriuresis) explains why primary hyperaldosteronism causes hypertension and hypokalemia but not edema.",
+  "file": "figures/ch05-fig09.svg"
+ },
+ {
+  "id": "ch05-fig10",
+  "chapterId": "ch05",
+  "caption": "Figure 10. Acid–base interpretation algorithm. Step 1: acidemia vs alkalemia. Step 2: primary process (CO 2 vs HCO 3 − ). Step 3: check expected compensation — a measured PaCO 2 outside the predicted range signals a second respiratory disorder. Steps 4–5: anion gap/delta–delta for metabolic acidosis, urine chloride for metabolic alkalosis.",
+  "file": "figures/ch05-fig10.svg"
+ },
+ {
+  "id": "ch05-fig11",
+  "chapterId": "ch05",
+  "caption": "Figure 11. Nephritic vs nephrotic syndromes. Nephritic = inflammatory damage to glomerular capillaries (blood leaks); nephrotic = podocyte/filtration barrier damage (protein leaks). DPGN and MPGN can show both.",
+  "file": "figures/ch05-fig11.svg"
+ },
+ {
+  "id": "ch06-fig01",
+  "chapterId": "ch06",
+  "caption": "Figure 1. GI blood supply map: embryologic gut divisions, aortic branches with vertebral levels, territories and watershed zones.",
+  "file": "figures/ch06-fig01.svg"
+ },
+ {
+  "id": "ch06-fig02",
+  "chapterId": "ch06",
+  "caption": "Figure 2. Bilirubin metabolism and the three jaundice patterns. Only conjugated bilirubin can appear in urine; urobilinogen reaches urine only if bilirubin reaches the gut.",
+  "file": "figures/ch06-fig02.svg"
+ },
+ {
+  "id": "ch06-fig03",
+  "chapterId": "ch06",
+  "caption": "Figure 3. Hepatitis B serology in acute resolving infection. In the window period HBsAg has cleared but anti-HBs is not yet detectable — IgM anti-HBc is the only positive marker.",
+  "file": "figures/ch06-fig03.svg"
+ },
+ {
+  "id": "ch06-fig04",
+  "chapterId": "ch06",
+  "caption": "Figure 4. HPA axis with negative feedback (dashed) and the diagnostic algorithm for hypercortisolism. Exogenous glucocorticoids suppress CRH and ACTH, causing atrophy of fasciculata/reticularis (glomerulosa spared, so aldosterone is preserved).",
+  "file": "figures/ch06-fig04.svg"
+ },
+ {
+  "id": "ch06-fig05",
+  "chapterId": "ch06",
+  "caption": "Figure 5. Adrenal steroidogenesis. Red boxes mark the three CAH enzymes tested most often. Every CAH form lowers cortisol → ↑ ACTH → bilateral adrenal hyperplasia; the \"trapped\" precursors are shunted to whichever pathway remains open.",
+  "file": "figures/ch06-fig05.svg"
+ },
+ {
+  "id": "ch06-fig06",
+  "chapterId": "ch06",
+  "caption": "Figure 6. Thyroid function test algorithm. TSH is the best single screening test when the hypothalamic–pituitary axis is intact; free T4 then localizes the problem and RAIU separates overproduction from leakage.",
+  "file": "figures/ch06-fig06.svg"
+ },
+ {
+  "id": "ch06-fig07",
+  "chapterId": "ch06",
+  "caption": "Figure 7. Calcium–phosphate homeostasis: PTH acts directly on bone and kidney and indirectly on gut through calcitriol; FGF23 is the main phosphaturic counter-regulator.",
+  "file": "figures/ch06-fig07.svg"
+ },
+ {
+  "id": "ch06-fig08",
+  "chapterId": "ch06",
+  "caption": "Figure 8. Hormone curves of an idealized 28-day cycle. Sustained high estradiol switches feedback from negative to positive, triggering the LH surge; ovulation follows ~24–36 h after surge onset. Progesterone from the corpus luteum peaks ~day 21 (the day-21 progesterone level confirms ovulation).",
+  "file": "figures/ch06-fig08.svg"
+ },
+ {
+  "id": "ch07-fig01",
+  "chapterId": "ch07",
+  "caption": "Figure 1. Cervical spinal cord cross-section. The dorsal columns and corticospinal tract carry ipsilateral information within the cord; the spinothalamic tract has already crossed.",
+  "file": "figures/ch07-fig01.svg"
+ },
+ {
+  "id": "ch07-fig02",
+  "chapterId": "ch07",
+  "caption": "Figure 2. Ventral brainstem layout. Medial structures (CST, III, VI, XII, medial lemniscus) are supplied by paramedian branches (basilar, anterior spinal); lateral structures (spinothalamic, V nucleus, VIII, IX, X, sympathetics) by circumferential branches (AICA, PICA).",
+  "file": "figures/ch07-fig02.svg"
+ },
+ {
+  "id": "ch07-fig03",
+  "chapterId": "ch07",
+  "caption": "Figure 3. Circle of Willis (ventral view) and the cortical deficit pattern of each major territory.",
+  "file": "figures/ch07-fig03.svg"
+ },
+ {
+  "id": "ch07-fig04",
+  "chapterId": "ch07",
+  "caption": "Figure 4. Epidural vs subdural vs subarachnoid hemorrhage: vessel, CT shape, boundaries and course.",
+  "file": "figures/ch07-fig04.svg"
+ },
+ {
+  "id": "ch07-fig05",
+  "chapterId": "ch07",
+  "caption": "Figure 5. Basal ganglia loops. Solid arrows: direct pathway; dashed: indirect pathway. Loss of SNc dopamine (Parkinson) weakens direct and releases indirect → excess GPi inhibition of thalamus → bradykinesia. STN lesion removes indirect drive → hemiballismus.",
+  "file": "figures/ch07-fig05.svg"
+ },
+ {
+  "id": "ch07-fig06",
+  "chapterId": "ch07",
+  "caption": "Figure 6. Sleep stages, their EEG signatures (\"At night, BATS Drink Blood\": beta-alpha-theta-spindles-delta-beta), and a normal hypnogram.",
+  "file": "figures/ch07-fig06.svg"
+ },
+ {
+  "id": "ch07-fig07",
+  "chapterId": "ch07",
+  "caption": "Figure 7. The four dopamine pathways and what D2-receptor blockade does in each.",
+  "file": "figures/ch07-fig07.svg"
+ },
+ {
+  "id": "ch07-fig08",
+  "chapterId": "ch07",
+  "caption": "Figure 8. Brachial plexus. The median nerve receives contributions from both lateral and medial cords; the posterior cord gives axillary and radial nerves.",
+  "file": "figures/ch07-fig08.svg"
+ },
+ {
+  "id": "ch08-fig01",
+  "chapterId": "ch08",
+  "caption": "Figure 1. ACS management algorithm. FMC = first medical contact. Fibrinolysis is used only for STEMI. It is contraindicated in NSTE-ACS.",
+  "file": "figures/ch08-fig01.svg"
+ },
+ {
+  "id": "ch08-fig02",
+  "chapterId": "ch08",
+  "caption": "Figure 2. Atrial fibrillation: unstable patients go straight to synchronized cardioversion. All others are managed on three parallel tracks.",
+  "file": "figures/ch08-fig02.svg"
+ },
+ {
+  "id": "ch08-fig03",
+  "chapterId": "ch08",
+  "caption": "Figure 3. Simplified adult pulseless arrest algorithm. Minimise pauses. Check the rhythm and pulse only at the 2-minute cycle boundaries.",
+  "file": "figures/ch08-fig03.svg"
+ },
+ {
+  "id": "ch08-fig04",
+  "chapterId": "ch08",
+  "caption": "Figure 4. PFT interpretation. Neuromuscular restriction also shows low maximal inspiratory/expiratory pressures. Extrathoracic airway obstruction flattens the inspiratory limb of the flow-volume loop.",
+  "file": "figures/ch08-fig04.svg"
+ },
+ {
+  "id": "ch08-fig05",
+  "chapterId": "ch08",
+  "caption": "Figure 5. PE diagnostic algorithm. A D-dimer is useless when probability is high, because a negative result cannot rule PE out. Go straight to CTPA.",
+  "file": "figures/ch08-fig05.svg"
+ },
+ {
+  "id": "ch08-fig06",
+  "chapterId": "ch08",
+  "caption": "Figure 6. Hemodynamic profiles of shock, as on a pulmonary artery catheter. CO = cardiac output; PCWP = pulmonary capillary wedge pressure; SVR = systemic vascular resistance; SvO₂ = mixed venous O₂ saturation; NE = norepinephrine; MCS = mechanical circulatory support.",
+  "file": "figures/ch08-fig06.svg"
+ },
+ {
+  "id": "ch08-fig07",
+  "chapterId": "ch08",
+  "caption": "Figure 7. Hyponatremia algorithm. ODS = osmotic demyelination syndrome. High-risk features: Na ≤105, alcohol use disorder, malnutrition, hypokalemia, liver disease.",
+  "file": "figures/ch08-fig07.svg"
+ },
+ {
+  "id": "ch09-fig01",
+  "chapterId": "ch09",
+  "caption": "Figure 1. Upper GI bleed algorithm. Variceal bleeding gets vasoactive therapy and antibiotic prophylaxis before endoscopy; non-variceal bleeding is triaged by the Glasgow-Blatchford score and managed by endoscopic stigmata.",
+  "file": "figures/ch09-fig01.svg"
+ },
+ {
+  "id": "ch09-fig02",
+  "chapterId": "ch09",
+  "caption": "Figure 2. Liver enzyme pattern chart. Classify by R ratio, then follow the hepatocellular (serologies, drugs, metabolic) or cholestatic (GGT → ultrasound → ducts dilated vs not) arm.",
+  "file": "figures/ch09-fig02.svg"
+ },
+ {
+  "id": "ch09-fig03",
+  "chapterId": "ch09",
+  "caption": "Figure 3. DKA management flow. Potassium is checked before insulin; dextrose is added when glucose falls below 250 mg/dL so insulin can continue until the ketoacidosis (not the glucose) resolves.",
+  "file": "figures/ch09-fig03.svg"
+ },
+ {
+  "id": "ch09-fig04",
+  "chapterId": "ch09",
+  "caption": "Figure 4. Thyroid nodule workup algorithm. TSH decides the branch: a low TSH sends you to a radionuclide scan (a hot nodule needs no biopsy); a normal or high TSH sends you to ultrasound-pattern-based FNA.",
+  "file": "figures/ch09-fig04.svg"
+ },
+ {
+  "id": "ch09-fig05",
+  "chapterId": "ch09",
+  "caption": "Figure 5. Hypercalcemia algorithm. PTH divides PTH-mediated (primary HPT vs FHH by urinary calcium) from PTH-independent causes (PTHrP, vitamin D metabolites, myeloma). Acute severe hypercalcemia: saline + calcitonin + bisphosphonate.",
+  "file": "figures/ch09-fig05.svg"
+ },
+ {
+  "id": "ch09-fig06",
+  "chapterId": "ch09",
+  "caption": "Figure 6. Anemia workup by MCV and reticulocyte index. In any man or postmenopausal woman with iron deficiency, the next step is bidirectional endoscopy to find a GI source (colon cancer).",
+  "file": "figures/ch09-fig06.svg"
+ },
+ {
+  "id": "ch09-fig07",
+  "chapterId": "ch09",
+  "caption": "Figure 7. Screening timeline by age (USPSTF, average risk). Solid bars = recommended; dashed = individualize; red = recommend against. High-risk patients (family history, genetic syndromes, HIV, prior abnormal results) follow different schedules.",
+  "file": "figures/ch09-fig07.svg"
+ },
+ {
+  "id": "ch09-fig08",
+  "chapterId": "ch09",
+  "caption": "Figure 8. HIV management timeline. Rapid ART start regardless of CD4, prophylaxis triggered by CD4 thresholds, and ART timing modified only for CNS infections (cryptococcal meningitis — delay 4–6 weeks).",
+  "file": "figures/ch09-fig08.svg"
+ },
+ {
+  "id": "ch10-fig01",
+  "chapterId": "ch10",
+  "caption": "Figure 1. ATLS primary survey. Each letter is assessed and its problem fixed before moving down; reassess from A after any change.",
+  "file": "figures/ch10-fig01.svg"
+ },
+ {
+  "id": "ch10-fig02",
+  "chapterId": "ch10",
+  "caption": "Figure 2. Obstructive vs hemorrhagic causes of shock after chest trauma: distinguish by neck veins, breath sounds and percussion.",
+  "file": "figures/ch10-fig02.svg"
+ },
+ {
+  "id": "ch10-fig03",
+  "chapterId": "ch10",
+  "caption": "Figure 3. Blunt abdominal trauma. Stability decides between the OR and the CT scanner; FAST decides whether the abdomen is the source.",
+  "file": "figures/ch10-fig03.svg"
+ },
+ {
+  "id": "ch10-fig04",
+  "chapterId": "ch10",
+  "caption": "Figure 4. Rule of nines. Count only partial- and full-thickness burns; use a Lund–Browder chart for children when available.",
+  "file": "figures/ch10-fig04.svg"
+ },
+ {
+  "id": "ch10-fig05",
+  "chapterId": "ch10",
+  "caption": "Figure 5. Pain location map (viewer's left = patient's right). Always test β-hCG in women of reproductive age and get an ECG for epigastric pain in at-risk adults.",
+  "file": "figures/ch10-fig05.svg"
+ },
+ {
+  "id": "ch10-fig06",
+  "chapterId": "ch10",
+  "caption": "Figure 6. Postoperative fever timeline (\"5 Ws\"). Timing is a guide, not a rule — necrotizing infection and anastomotic leak can appear early.",
+  "file": "figures/ch10-fig06.svg"
+ },
+ {
+  "id": "ch10-fig07",
+  "chapterId": "ch10",
+  "caption": "Figure 7. Breast mass workup. Age determines the first imaging study; BI-RADS category and clinical-imaging concordance determine the next step.",
+  "file": "figures/ch10-fig07.svg"
+ },
+ {
+  "id": "ch10-fig08",
+  "chapterId": "ch10",
+  "caption": "Figure 8. Acetaminophen toxicity management. Never wait on a level past 8 h post-ingestion — start NAC empirically.",
+  "file": "figures/ch10-fig08.svg"
+ },
+ {
+  "id": "ch11-fig01",
+  "chapterId": "ch11",
+  "caption": "Figure 1. Approach to neonatal jaundice. Left: a schematic Bhutani nomogram (approximate 95th [solid], 75th [dashed], and 40th [dotted] percentile curves) that predicts risk. Right: the AAP 2022 escalation ladder, where treatment depends on GA-specific thresholds and neurotoxicity risk factors. The curves are teaching schematics and are not for clinical dosing.",
+  "file": "figures/ch11-fig01.svg"
+ },
+ {
+  "id": "ch11-fig02",
+  "chapterId": "ch11",
+  "caption": "Figure 2. Developmental milestones by domain, using classic teaching ages (the CDC 2022 checklists place some items later because they use the 75th percentile). Handedness before 12–18 months is a red flag for a contralateral motor deficit (e.g., hemiplegic CP).",
+  "file": "figures/ch11-fig02.svg"
+ },
+ {
+  "id": "ch11-fig03",
+  "chapterId": "ch11",
+  "caption": "Figure 3. Fever without a source in young infants (simplified from the AAP 2021 febrile-infant guideline). The younger the infant, the more invasive and inpatient the evaluation.",
+  "file": "figures/ch11-fig03.svg"
+ },
+ {
+  "id": "ch11-fig04",
+  "chapterId": "ch11",
+  "caption": "Figure 4. Prenatal care timeline (x-axis = gestational weeks). Screening tests (cfDNA, combined first-trimester screen, quad screen) are offered to all patients regardless of age. Diagnostic tests (CVS, amniocentesis) confirm abnormal screens. Postpartum: 75-g OGTT at 4–12 wk after GDM, and a postpartum visit within 3 wk.",
+  "file": "figures/ch11-fig04.svg"
+ },
+ {
+  "id": "ch11-fig05",
+  "chapterId": "ch11",
+  "caption": "Figure 5. FHR decelerations relative to uterine contractions (UC, dashed lines) and the three-tier NICHD categories. \"Recurrent\" means the deceleration occurs with ≥50% of contractions in a 20-min window.",
+  "file": "figures/ch11-fig05.svg"
+ },
+ {
+  "id": "ch11-fig06",
+  "chapterId": "ch11",
+  "caption": "Figure 6. The 4 T's of postpartum hemorrhage. Resuscitation, massage, oxytocin, and TXA happen in parallel with finding the cause. The uterotonic chosen after oxytocin depends on contraindications.",
+  "file": "figures/ch11-fig06.svg"
+ },
+ {
+  "id": "ch11-fig07",
+  "chapterId": "ch11",
+  "caption": "Figure 7. Amenorrhea algorithm. In primary amenorrhea, breast development (estrogen) and the presence of a uterus organize the differential. In secondary amenorrhea, hCG → TSH/prolactin/FSH, then an anatomic evaluation if hormones are normal. A progestin challenge is now rarely needed.",
+  "file": "figures/ch11-fig07.svg"
+ },
+ {
+  "id": "ch11-fig08",
+  "chapterId": "ch11",
+  "caption": "Figure 8. Cervical cancer screening by age (top: USPSTF 2018 and ACS 2020; screening is never started before 21) and simplified ASCCP 2019 management (bottom). ASCCP decisions are formally based on the immediate CIN3+ risk: ≥4% → colposcopy; ≥60% → expedited treatment is acceptable.",
+  "file": "figures/ch11-fig08.svg"
+ },
+ {
+  "id": "ch12-fig01",
+  "chapterId": "ch12",
+  "caption": "Figure 1. Antidepressant selection and escalation for MDD. Every step also includes psychotherapy and a suicide-risk check.",
+  "file": "figures/ch12-fig01.svg"
+ },
+ {
+  "id": "ch12-fig02",
+  "chapterId": "ch12",
+  "caption": "Figure 2. NMS vs serotonin syndrome. Antipyretics do not help either one, because the heat comes from muscles, not from a reset hypothalamus.",
+  "file": "figures/ch12-fig02.svg"
+ },
+ {
+  "id": "ch12-fig03",
+  "chapterId": "ch12",
+  "caption": "Figure 3. Alcohol withdrawal timeline, measured from the last drink, not from admission. The windows overlap and vary between patients.",
+  "file": "figures/ch12-fig03.svg"
+ },
+ {
+  "id": "ch12-fig04",
+  "chapterId": "ch12",
+  "caption": "Figure 4. Acute ischemic stroke timeline. Thrombolysis and thrombectomy are complementary. An eligible LVO patient gets the lytic and goes to thrombectomy; do not wait to see whether the lytic works.",
+  "file": "figures/ch12-fig04.svg"
+ },
+ {
+  "id": "ch12-fig05",
+  "chapterId": "ch12",
+  "caption": "Figure 5. Status epilepticus algorithm (adapted from the time-based structure of the American Epilepsy Society approach). After two adequate benzodiazepine doses, go to a second-line IV ASM. A third benzodiazepine dose is not the next step.",
+  "file": "figures/ch12-fig05.svg"
+ },
+ {
+  "id": "ch12-fig06",
+  "chapterId": "ch12",
+  "caption": "Figure 6. Typical surrogate hierarchy. The exact order is set by state statute; some states rank a guardian above an agent, and several now give close friends standing. The DPOA-HC agent outranks every family member.",
+  "file": "figures/ch12-fig06.svg"
+ },
+ {
+  "id": "ch12-fig07",
+  "chapterId": "ch12",
+  "caption": "Figure 7. 2×2 table and core formulas. For treatment trials, put exposure (drug vs placebo) in the rows and outcome (event vs none) in the columns.",
+  "file": "figures/ch12-fig07.svg"
+ },
+ {
+  "id": "ch12-fig08",
+  "chapterId": "ch12",
+  "caption": "Figure 8. PDSA cycle. On CK, \"start with a small-scale pilot and measure\" beats \"roll out hospital-wide immediately.\"",
+  "file": "figures/ch12-fig08.svg"
+ }
+]

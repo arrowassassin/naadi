@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-label="Fishbone diagram: the problem, late first antibiotic doses on the wards, at the head; six category bones (people, methods, equipment, supplies, environment, communication) each with two example causes">
+<title>Cause-and-effect (fishbone) diagram</title>
+<rect x="0" y="0" width="760" height="420" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a" font-size="12">
+<line x1="30" y1="210" x2="590" y2="210" stroke="#334155" stroke-width="4"/>
+<rect x="592" y="170" width="160" height="80" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="672" y="200" text-anchor="middle" font-size="13" font-weight="bold">EFFECT:</text>
+<text x="672" y="218" text-anchor="middle" font-size="13">First antibiotic dose</text>
+<text x="672" y="234" text-anchor="middle" font-size="13">given late on wards</text>
+<line x1="170" y1="60" x2="230" y2="210" stroke="#334155" stroke-width="2"/>
+<text x="170" y="48" text-anchor="middle" font-size="13" font-weight="bold">PEOPLE</text>
+<text x="180" y="100" text-anchor="end">• 1 nurse : 8 patients</text>
+<text x="200" y="150" text-anchor="end">• new float staff</text>
+<line x1="340" y1="60" x2="400" y2="210" stroke="#334155" stroke-width="2"/>
+<text x="340" y="48" text-anchor="middle" font-size="13" font-weight="bold">METHODS</text>
+<text x="350" y="100" text-anchor="end">• no first-dose flag</text>
+<text x="370" y="150" text-anchor="end">• waits for next round</text>
+<line x1="510" y1="60" x2="570" y2="210" stroke="#334155" stroke-width="2"/>
+<text x="510" y="48" text-anchor="middle" font-size="13" font-weight="bold">EQUIPMENT</text>
+<text x="520" y="100" text-anchor="end">• cabinet locked</text>
+<text x="540" y="150" text-anchor="end">• pump library old</text>
+<line x1="170" y1="360" x2="230" y2="210" stroke="#334155" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="170" y="382" text-anchor="middle" font-size="13" font-weight="bold">SUPPLIES</text>
+<text x="196" y="280" text-anchor="end">• stocked in pharmacy</text>
+<text x="176" y="330" text-anchor="end">• runner every 2 hours</text>
+<line x1="340" y1="360" x2="400" y2="210" stroke="#334155" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="340" y="382" text-anchor="middle" font-size="13" font-weight="bold">ENVIRONMENT</text>
+<text x="366" y="280" text-anchor="end">• night pharmacy queue</text>
+<text x="346" y="330" text-anchor="end">• noisy, crowded desk</text>
+<line x1="510" y1="360" x2="570" y2="210" stroke="#334155" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="510" y="382" text-anchor="middle" font-size="13" font-weight="bold">COMMUNICATION</text>
+<text x="536" y="280" text-anchor="end">• order not called in</text>
+<text x="516" y="330" text-anchor="end">• handoff omits doses</text>
+<text x="30" y="408">Each bone groups possible contributing causes; the team then asks "why?" along each bone to reach root causes.</text>
+</g></svg>

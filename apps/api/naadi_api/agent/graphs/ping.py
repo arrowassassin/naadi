@@ -1,0 +1,216 @@
+"""`ping`: the agent runtime's self-test (admin diagnostics + hourly system cron).
+
+One run exercises the whole platform path:
+1. `ask` streams tokens from the `router` role through `llm.py` (budget guards, usage ledger);
+2. `report` emits a custom `block` event (a table of what served the call);
+3. `confirm` raises `interrupt()` and resumes on the admin's answer (interactive runs only);
+4. `record` writes the result to `agent_health`.
+
+`trigger` in the input: `interactive` (diagnostics panel: streams + interrupt), `background` (a background
+run, no interrupt) or `cron` (the hourly system cron). Only admins and the system identity may run it:
+it spends model quota. When the budget is exhausted the run still completes and records
+`budget_exhausted` with the reset time, which is the degradation path the UI shows.
+"""
+
+from __future__ import annotations
+
+import time
+from typing import Annotated, Any, Literal, NotRequired, TypedDict
+
+from langchain_core.messages import AnyMessage, HumanMessage, SystemMessage
+from langchain_core.runnables import RunnableConfig
+from langgraph.config import get_stream_writer
+from langgraph.graph import END, START, StateGraph
+from langgraph.graph.message import add_messages
+from langgraph.types import interrupt
+
+from naadi_api.agent.health import record_ping
+from naadi_api.agent.identity import RunIdentityError, run_identity
+from naadi_api.agent.runtime import agent_db
+from naadi_api.llm import LLMUnavailable, get_gateway
+from naadi_api.llm_budget import BudgetExhausted
+from naadi_api.logs import get_logger
+from naadi_api.search import SearchResult, get_search
+
+log = get_logger("naadi.agent.ping")
+
+Trigger = Literal["interactive", "background", "cron"]
+PING_SYSTEM = "You are the health probe of a study app. Answer in one short sentence."
+PING_PROMPT = "Confirm you are online and name one organ of the urinary system."
+
+
+class PingState(TypedDict):
+    # The probe's answer, as a message, so streaming clients (useStream) render its tokens.
+    messages: NotRequired[Annotated[list[AnyMessage], add_messages]]
+    trigger: NotRequired[Trigger]
+    reply: NotRequired[str]
+    outcome: NotRequired[Literal["ok", "budget_exhausted", "unavailable"]]
+    provider: NotRequired[str | None]
+    model: NotRequired[str | None]
+    latency_ms: NotRequired[int | None]
+    reset_at: NotRequired[str | None]
+    confirmed: NotRequired[bool | None]
+    recorded_id: NotRequired[int | None]
+
+
+def _trigger(state: PingState) -> Trigger:
+    t = state.get("trigger") or "interactive"
+    return t if t in ("interactive", "background", "cron") else "interactive"
+
+
+async def ask(state: PingState, config: RunnableConfig) -> dict[str, Any]:
+    who = run_identity(config)
+    if not (who.is_admin or who.is_system):
+        raise RunIdentityError("the ping graph is admin-only")
+    trigger = _trigger(state)
+    if trigger == "cron" and not who.is_system:
+        trigger = "background"  # only the system cron records cron pings
+    gateway = get_gateway()
+    ctx = gateway.context_for_run("job", who.run_id, user_id=who.user_id)
+    model = gateway.chat_model("router", ctx)
+    started = time.monotonic()
+    try:
+        msg = await model.ainvoke([SystemMessage(PING_SYSTEM), HumanMessage(PING_PROMPT)], config)
+    except BudgetExhausted as exc:
+        return {"trigger": trigger, "outcome": "budget_exhausted", "reset_at": exc.reset_at.isoformat(), "reply": ""}
+    except LLMUnavailable:
+        return {"trigger": trigger, "outcome": "unavailable", "reply": ""}
+    meta = msg.response_metadata
+    return {
+        "messages": [msg],
+        "trigger": trigger,
+        "outcome": "ok",
+        "reply": str(msg.content)[:500],
+        "provider": meta.get("naadi_provider"),
+        "model": meta.get("naadi_model"),
+        "latency_ms": int((time.monotonic() - started) * 1000),
+        "reset_at": None,
+    }
+
+
+async def _media_items() -> list[dict[str, Any]]:
+    """The answer-block media of the self-test: a Wikimedia Commons image, a PMC open-access figure and a
+    YouTube video, from `search.probe` in app_config (served from search_cache when cached). Each item keeps
+    its title, author/citation, licence and source link. Lookups that fail are left out (never fail the ping)."""
+    search = get_search()
+    probe = (await get_gateway().config()).search.model_extra or {}
+    spec = probe.get("probe") or {}
+    items: list[dict[str, Any]] = []
+
+    def image(r: SearchResult) -> dict[str, Any]:
+        return {
+            "kind": "image",
+            "source": r.source,
+            "title": r.title,
+            "image_url": r.meta.get("image_url"),
+            "link": r.url,
+            "license": r.license,
+            "credit": r.citation,
+            "width": r.meta.get("width"),
+            "height": r.meta.get("height"),
+        }
+
+    try:
+        if spec.get("images_query"):
+            items += [image(r) for r in (await search.commons_images(str(spec["images_query"])))[:1]]
+        if spec.get("pmcid"):
+            items += [image(r) for r in (await search.pmc_figures(str(spec["pmcid"]), limit=1))[:1]]
+        if spec.get("video_url"):
+            v = await search.youtube(str(spec["video_url"]))
+            if v is not None:
+                items.append(
+                    {
+                        "kind": "video",
+                        "source": v.source,
+                        "title": v.title,
+                        "video_id": v.meta.get("video_id"),
+                        "link": v.url,
+                        "license": v.license,
+                        "credit": v.citation,
+                    }
+                )
+    except Exception as exc:  # noqa: BLE001 - media is decoration for the self-test; the ping still completes
+        log.warning("ping.media_failed", error=type(exc).__name__)
+    return items
+
+
+async def report(state: PingState) -> dict[str, Any]:
+    writer = get_stream_writer()
+    if state.get("outcome") == "budget_exhausted":
+        writer(
+            {
+                "type": "block",
+                "block": {"type": "notice", "data": {"kind": "budget_exhausted", "reset_at": state.get("reset_at")}},
+            }
+        )
+    else:
+        writer(
+            {
+                "type": "block",
+                "block": {
+                    "type": "ping_result",
+                    "data": {
+                        "outcome": state.get("outcome") or "unavailable",
+                        "provider": state.get("provider"),
+                        "model": state.get("model"),
+                        "latency_ms": state.get("latency_ms"),
+                    },
+                },
+            }
+        )
+    if _trigger(state) == "interactive":
+        items = await _media_items()
+        if items:
+            writer({"type": "block", "block": {"type": "media", "data": {"items": items}}})
+    return {}
+
+
+def route_after_report(state: PingState) -> str:
+    if _trigger(state) != "interactive":
+        return "record"
+    # A spent budget ends the run with nothing pending (the panel shows when the quota resets); an answer or
+    # an unavailable provider is a health reading the admin may record.
+    return "end" if state.get("outcome") == "budget_exhausted" else "confirm"
+
+
+async def confirm(state: PingState) -> dict[str, Any]:
+    answer = interrupt(
+        {"type": "confirm", "action": "record_ping", "question": "Record this ping result in the health log?"}
+    )
+    confirmed = bool(answer.get("confirmed")) if isinstance(answer, dict) else bool(answer)
+    return {"confirmed": confirmed}
+
+
+async def record(state: PingState, config: RunnableConfig) -> dict[str, Any]:
+    if _trigger(state) == "interactive" and not state.get("confirmed"):
+        return {"recorded_id": None}
+    who = run_identity(config)
+    rid = await record_ping(
+        agent_db(),
+        trigger=_trigger(state),
+        ok=state.get("outcome") == "ok",
+        run_id=who.run_id,
+        provider=state.get("provider"),
+        model=state.get("model"),
+        latency_ms=state.get("latency_ms"),
+        detail={"outcome": state.get("outcome"), "reset_at": state.get("reset_at")},
+    )
+    return {"recorded_id": rid}
+
+
+def build() -> StateGraph[PingState]:
+    g: StateGraph[PingState] = StateGraph(PingState)
+    g.add_node("ask", ask)
+    g.add_node("report", report)
+    g.add_node("confirm", confirm)
+    g.add_node("record", record)
+    g.add_edge(START, "ask")
+    g.add_edge("ask", "report")
+    g.add_conditional_edges("report", route_after_report, {"confirm": "confirm", "record": "record", "end": END})
+    g.add_edge("confirm", "record")
+    g.add_edge("record", END)
+    return g
+
+
+# Aegra compiles it with its Postgres checkpointer and store.
+graph = build()

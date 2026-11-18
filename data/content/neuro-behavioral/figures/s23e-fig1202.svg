@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" role="img" aria-label="Personality disorder clusters. Cluster A, odd or eccentric: paranoid (distrust), schizoid (detached, no wish for relationships), schizotypal (odd beliefs and perceptions). Cluster B, dramatic or erratic: antisocial (violates others rights), borderline (unstable relationships, self-harm, fear of abandonment), histrionic (attention-seeking), narcissistic (grandiose, needs admiration). Cluster C, anxious or fearful: avoidant (wants relationships, fears rejection), dependent (needs others to decide), obsessive-compulsive (perfectionism and control).">
+<rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380.0" y="28" font-size="16" font-weight="bold" text-anchor="middle">Personality disorder clusters: the core of each</text>
+<rect x="14" y="48" width="236" height="326" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="132.0" y="74" font-size="15" font-weight="bold" text-anchor="middle">Cluster A</text>
+<text x="132.0" y="93" font-size="12" font-style="italic" text-anchor="middle">odd or eccentric</text>
+<rect x="26" y="108" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="132.0" y="130" font-size="13" font-weight="bold" text-anchor="middle">Paranoid</text>
+<text x="132.0" y="148" font-size="11.5" text-anchor="middle">distrust; projection</text>
+<rect x="26" y="172" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="132.0" y="194" font-size="13" font-weight="bold" text-anchor="middle">Schizoid</text>
+<text x="132.0" y="212" font-size="11.5" text-anchor="middle">detached by choice</text>
+<rect x="26" y="236" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="132.0" y="258" font-size="13" font-weight="bold" text-anchor="middle">Schizotypal</text>
+<text x="132.0" y="276" font-size="11.5" text-anchor="middle">odd beliefs, perceptions</text>
+<rect x="260" y="48" width="236" height="326" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="378.0" y="74" font-size="15" font-weight="bold" text-anchor="middle">Cluster B</text>
+<text x="378.0" y="93" font-size="12" font-style="italic" text-anchor="middle">dramatic or erratic</text>
+<rect x="272" y="108" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="378.0" y="130" font-size="13" font-weight="bold" text-anchor="middle">Antisocial</text>
+<text x="378.0" y="148" font-size="11.5" text-anchor="middle">violates others' rights</text>
+<rect x="272" y="172" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="378.0" y="194" font-size="13" font-weight="bold" text-anchor="middle">Borderline</text>
+<text x="378.0" y="212" font-size="11.5" text-anchor="middle">unstable; self-harm; splitting</text>
+<rect x="272" y="236" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="378.0" y="258" font-size="13" font-weight="bold" text-anchor="middle">Histrionic</text>
+<text x="378.0" y="276" font-size="11.5" text-anchor="middle">attention-seeking</text>
+<rect x="272" y="300" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="378.0" y="322" font-size="13" font-weight="bold" text-anchor="middle">Narcissistic</text>
+<text x="378.0" y="340" font-size="11.5" text-anchor="middle">grandiose; needs admiration</text>
+<rect x="506" y="48" width="236" height="326" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="624.0" y="74" font-size="15" font-weight="bold" text-anchor="middle">Cluster C</text>
+<text x="624.0" y="93" font-size="12" font-style="italic" text-anchor="middle">anxious or fearful</text>
+<rect x="518" y="108" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="624.0" y="130" font-size="13" font-weight="bold" text-anchor="middle">Avoidant</text>
+<text x="624.0" y="148" font-size="11.5" text-anchor="middle">wants contact, fears rejection</text>
+<rect x="518" y="172" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="624.0" y="194" font-size="13" font-weight="bold" text-anchor="middle">Dependent</text>
+<text x="624.0" y="212" font-size="11.5" text-anchor="middle">needs others to decide</text>
+<rect x="518" y="236" width="212" height="52" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<text x="624.0" y="258" font-size="13" font-weight="bold" text-anchor="middle">Obsessive-compulsive</text>
+<text x="624.0" y="276" font-size="11.5" text-anchor="middle">perfection and control</text>
+<text x="380.0" y="392" font-size="11" fill="#334155" text-anchor="middle">All begin by adolescence or early adulthood and are pervasive and stable. Naadi original diagram.</text>
+</g></svg>

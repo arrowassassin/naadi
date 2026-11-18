@@ -1,0 +1,56 @@
+<svg aria-label="Atrial fibrillation management flow" role="img" viewbox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch08-arrow2" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="240" x="200" y="10"></rect>
+<text font-weight="bold" x="320" y="35">AF on ECG (irregularly irregular, no P)</text>
+<line marker-end="url(#ch08-arrow2)" stroke="#334155" x1="320" x2="320" y1="50" y2="72"></line>
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="240" x="200" y="74"></rect>
+<text x="320" y="99">Hemodynamically unstable?</text>
+<line marker-end="url(#ch08-arrow2)" stroke="#334155" x1="440" x2="468" y1="94" y2="94"></line>
+<text x="454" y="86">Yes</text>
+<rect fill="#fee2e2" height="50" rx="6" stroke="#334155" width="160" x="470" y="70"></rect>
+<text font-weight="bold" x="550" y="91">Synchronized</text>
+<text x="550" y="108">cardioversion now</text>
+<line stroke="#334155" x1="320" x2="320" y1="114" y2="138"></line>
+<text x="333" y="130">No</text>
+<line stroke="#334155" x1="110" x2="530" y1="138" y2="138"></line>
+<line marker-end="url(#ch08-arrow2)" stroke="#334155" x1="110" x2="110" y1="138" y2="160"></line>
+<line marker-end="url(#ch08-arrow2)" stroke="#334155" x1="320" x2="320" y1="138" y2="160"></line>
+<line marker-end="url(#ch08-arrow2)" stroke="#334155" x1="530" x2="530" y1="138" y2="160"></line>
+<rect fill="#e0f2fe" height="248" rx="6" stroke="#334155" width="200" x="10" y="162"></rect>
+<text font-weight="bold" x="110" y="182">1. Stroke prevention</text>
+<text x="110" y="204">CHA2DS2-VASc</text>
+<text x="110" y="224">≥2 men / ≥3 women:</text>
+<text x="110" y="241">anticoagulate</text>
+<text x="110" y="261">1 men / 2 women: reasonable</text>
+<text x="110" y="281">DOAC preferred</text>
+<text x="110" y="301">Warfarin if mechanical</text>
+<text x="110" y="318">valve or mod–severe MS</text>
+<text x="110" y="338">Aspirin is NOT enough</text>
+<text x="110" y="358">LAA occlusion if long-term</text>
+<text x="110" y="375">anticoagulation impossible</text>
+<rect fill="#dcfce7" height="248" rx="6" stroke="#334155" width="200" x="220" y="162"></rect>
+<text font-weight="bold" x="320" y="182">2. Rate control</text>
+<text x="320" y="204">β-blocker or diltiazem/</text>
+<text x="320" y="221">verapamil (HR &lt;100–110)</text>
+<text x="320" y="241">EF ≤40%: β-blocker;</text>
+<text x="320" y="258">avoid non-DHP CCB</text>
+<text x="320" y="278">Add digoxin if needed</text>
+<text x="320" y="298">Amiodarone if HF/shock</text>
+<text x="320" y="318">Refractory: AV node</text>
+<text x="320" y="335">ablation + pacemaker</text>
+<rect fill="#fef3c7" height="248" rx="6" stroke="#334155" width="200" x="430" y="162"></rect>
+<text font-weight="bold" x="530" y="182">3. Rhythm control</text>
+<text x="530" y="204">Onset ≥48 h or unknown:</text>
+<text x="530" y="221">3 wk anticoag OR TEE,</text>
+<text x="530" y="238">then cardiovert;</text>
+<text x="530" y="255">anticoagulate ≥4 wk after</text>
+<text x="530" y="275">Early rhythm control</text>
+<text x="530" y="292">if symptomatic or recent dx</text>
+<text x="530" y="312">Catheter ablation: first-</text>
+<text x="530" y="329">line option; HFrEF benefit</text>
+<text x="530" y="349">WPW + AF: procainamide</text>
+<text x="530" y="366">or ibutilide; NO adenosine,</text>
+<text x="530" y="383">β-blocker, CCB, digoxin</text>
+</g>
+</svg>

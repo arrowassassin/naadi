@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi — Notebooks</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1366px; height: 1024px; box-sizing: border-box; overflow: hidden; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.5; padding: 20px; display: flex; gap: 20px">
+
+<!-- Shelf -->
+<aside aria-label="Notebook shelf" style="width: 380px; flex: none; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 48px; letter-spacing: -0.04em; line-height: 1">Notebooks</h1>
+<a href="Notes.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #3A3D45; color: #F4F4F0; text-decoration: none; font-size: 14px">All notes</a>
+</div>
+<input type="search" aria-label="Search handwriting" placeholder="Search your handwriting…" style="min-height: 52px; padding: 0 20px; border-radius: 999px; border: 1px solid #26282E; background: #0E0F12; color: #F4F4F0; font-size: 16px">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{books}}" as="b" hint-placeholder-count="6">
+<a href="Notebook.dc.html" style="{{b.style}}">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75">{{b.pages}}</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; line-height: 0.98; letter-spacing: -0.03em">{{b.name}}</span>
+</a>
+</sc-for>
+</div>
+</aside>
+
+<!-- Open notebook -->
+<section aria-label="Open notebook page" style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; margin-right: auto">Renal · page 4 of 23</span>
+<sc-for list="{{papers}}" as="p" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{p.on}}" style="{{p.style}}">{{p.label}}</button>
+</sc-for>
+</div>
+
+<div style="position: relative; flex: 1; min-height: 0; border-radius: 28px; background-color: #F4F4F0; background-image: repeating-linear-gradient(#F4F4F0 0 37px, #C9C9C2 37px 38px); color: #050506; overflow: hidden">
+<span style="position: absolute; left: 44px; top: 30px; font-family: Caveat, cursive; font-weight: 700; font-size: 52px; line-height: 1">Diuretics — where they act</span>
+<span style="position: absolute; right: 28px; top: 28px; display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #050506; color: #F4F4F0; font-size: 13px">Linked: Chapter 8 · page 2</span>
+<svg viewBox="0 0 880 420" role="img" aria-label="Hand-drawn nephron with the site of action of each diuretic class" style="position: absolute; left: 30px; top: 110px; width: 880px; height: 420px"><g fill="none" stroke="#050506" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="90" cy="110" r="38"></circle><path d="M128 110c36-40 52 40 88 0s52 40 88 0"></path><path d="M304 110c30 0 36 30 36 100s24 130 56 130 44-60 44-130 10-100 44-100"></path><path d="M484 110c40-36 60 36 100 0"></path><path d="M584 110c60 0 90 20 90 80v200"></path></g><g fill="none" stroke="#5B45D6" stroke-width="3" stroke-linecap="round"><path d="M216 60v24M206 76l10 10 10-10"></path><path d="M470 250h-24M454 240l-10 10 10 10"></path><path d="M534 56v26M524 74l10 10 10-10"></path><path d="M726 300h-30M704 290l-10 10 10 10"></path></g><g font-family="Caveat, cursive" font-size="30" fill="#5B45D6"><text x="140" y="46">acetazolamide (PCT)</text><text x="478" y="260">loops — thick asc. limb</text><text x="470" y="42">thiazides (DCT)</text><text x="734" y="296">K⁺-sparing</text><text x="734" y="326">(collecting duct)</text></g></svg>
+<div style="position: absolute; left: 44px; bottom: 96px; width: 420px; padding: 16px 18px; border-radius: 16px; background: #FFFFFF; border: 1.5px solid #050506; font-size: 16px; line-height: 1.5"><span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #55575E">Typed</span>Loop diuretics block the Na⁺-K⁺-2Cl⁻ cotransporter. Thiazides block the Na⁺-Cl⁻ cotransporter.</div>
+<div style="position: absolute; right: 36px; bottom: 96px; width: 300px; height: 150px; border-radius: 16px; border: 1.5px dashed #8A8C92; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; box-sizing: border-box; font-size: 13px; color: #55575E">[Pasted figure or snapshot from a chapter]</div>
+
+<div role="toolbar" aria-label="Ink tools" style="position: absolute; left: 24px; right: 24px; bottom: 20px; display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 999px; background: #050506">
+<sc-for list="{{tools}}" as="t" hint-placeholder-count="7">
+<button type="button" aria-pressed="{{t.on}}" style="{{t.style}}">{{t.label}}</button>
+</sc-for>
+<span style="flex: 1"></span>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #5A5D66; background: transparent; color: #F4F4F0; font-size: 13px">Convert to text</button>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: #9D8CFF; color: #0D0828; font-weight: 600; font-size: 13px">Quiz me on this page</button>
+</div>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1366,"height":1024}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const cover = 'display:flex;flex-direction:column;justify-content:space-between;height:226px;padding:18px;border-radius:10px 24px 24px 10px;text-decoration:none;box-sizing:border-box;';
+    const books = [
+      ['Renal', '23 pages', 'background:#C6FF3D;color:#0B1400;border-left:10px solid #0B1400'],
+      ['Cardio', '41 pages', 'background:#9D8CFF;color:#0D0828;border-left:10px solid #0D0828'],
+      ['Pharm', '36 pages', 'background:#F4F4F0;color:#050506;border-left:10px solid #050506'],
+      ['My mistakes', '58 pages', 'background:#FFB454;color:#201200;border-left:10px solid #201200'],
+      ['Biostats', '12 pages', 'background:#1B1D22;color:#F4F4F0;border-left:10px solid #C6FF3D'],
+      ['New notebook', 'Blank · ruled · grid · Cornell', 'border:2px dashed #5A5D66;color:#C9CBD1']
+    ].map(([name, pages, s]) => ({ name, pages, style: cover + s }));
+    const chip = (on) => 'min-height:44px;padding:0 14px;border-radius:999px;font-size:13px;' + (on ? 'border:0;background:#F4F4F0;color:#050506;font-weight:600' : 'border:1px solid #3A3D45;background:transparent;color:#F4F4F0');
+    const papers = ['Ruled', 'Dotted', 'Grid', 'Cornell', 'Blank'].map((label, i) => ({ label, on: i === 0 ? 'true' : 'false', style: chip(i === 0) }));
+    const tb = 'min-height:44px;padding:0 14px;border-radius:999px;border:0;font-size:13px;';
+    const tools = ['Pen', 'Marker', 'Eraser', 'Lasso', 'Shapes', 'Text', 'Image'].map((label, i) => ({ label, on: i === 0 ? 'true' : 'false', style: tb + (i === 0 ? 'background:#F4F4F0;color:#050506;font-weight:600' : 'background:transparent;color:#F4F4F0') }));
+    return { books, papers, tools };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1257 @@
+{
+ "area": "usmle2026.15.06",
+ "sections": [
+  {
+   "id": "s23c-s1506-1-1",
+   "exam": "step1",
+   "heading": "Hypothalamus: nuclei, appetite, GnRH and hypothalamic disease",
+   "html": "<p>The hypothalamus links the nervous and endocrine systems. It makes the releasing and inhibiting hormones that reach the anterior pituitary through the portal veins, makes ADH and oxytocin for the posterior pituitary, and controls appetite, temperature, thirst and circadian rhythm.</p>[[figure:s23c-fig1506-1]]<h3>Nuclei worth knowing</h3><table><tr><th>Region</th><th>Main role</th><th>Damage causes</th></tr><tr><td>Supraoptic and paraventricular nuclei</td><td>ADH (mainly supraoptic) and oxytocin (mainly paraventricular); paraventricular also makes CRH and TRH</td><td>Central diabetes insipidus</td></tr><tr><td>Arcuate nucleus</td><td>Dopamine (prolactin inhibition), GnRH, GHRH; senses leptin and insulin</td><td>Hyperprolactinemia, hypogonadism, appetite dysregulation</td></tr><tr><td>Ventromedial nucleus</td><td>Satiety</td><td>Hyperphagia and obesity</td></tr><tr><td>Lateral hypothalamic area</td><td>Hunger, arousal (orexin neurons)</td><td>Anorexia and weight loss; loss of orexin neurons causes narcolepsy with cataplexy</td></tr><tr><td>Anterior hypothalamus (preoptic)</td><td>Heat loss (sweating, vasodilation); sets the febrile set point under prostaglandin E2</td><td>Hyperthermia</td></tr><tr><td>Posterior hypothalamus</td><td>Heat conservation (shivering, vasoconstriction)</td><td>Poikilothermia (body temperature drifts with the environment)</td></tr><tr><td>Suprachiasmatic nucleus</td><td>Circadian clock, driven by light through the retinohypothalamic tract; controls pineal melatonin</td><td>Disrupted sleep-wake rhythm</td></tr></table><h3>Appetite signalling</h3><p><strong>Leptin</strong> from fat cells and insulin act on the arcuate nucleus. They stimulate <strong>POMC neurons</strong>, which release <strong>alpha-MSH</strong> onto <strong>MC4 receptors</strong> in the paraventricular nucleus to signal satiety, and they inhibit neuropeptide Y/AgRP neurons, which drive hunger. <strong>Ghrelin</strong> from the stomach does the opposite. Loss-of-function variants in <em>MC4R</em> are the commonest single-gene cause of severe early-onset obesity; congenital leptin deficiency (treated with leptin) is rare. In ordinary obesity leptin is high, reflecting leptin resistance.</p><h3>GnRH and reproduction</h3><p>GnRH must be released in <strong>pulses</strong>. Pulsatile GnRH stimulates LH and FSH; continuous GnRH (or a long-acting GnRH agonist) desensitises gonadotrophs and <em>suppresses</em> them, which is the basis of agonist therapy for precocious puberty and prostate cancer.</p><ul><li><strong>Kallmann syndrome</strong>: GnRH neurons start in the olfactory placode and migrate along olfactory axons into the forebrain. Variants such as <em>ANOS1</em> (X-linked) or <em>FGFR1</em> disrupt this migration, giving <strong>hypogonadotropic hypogonadism with anosmia or hyposmia</strong> (low GnRH, low LH and FSH, low sex steroids). Other features: cleft lip or palate, renal agenesis, mirror movements. The same deficiency with a normal sense of smell is normosmic idiopathic hypogonadotropic hypogonadism.</li><li><strong>Functional hypothalamic amenorrhea</strong>: energy deficit (restricted eating, heavy exercise) and psychological stress slow GnRH pulses through low leptin, high cortisol and other signals. LH and FSH are low or normal and estradiol is low, so there is no withdrawal bleed after progestin. Long-term risk: loss of bone density and stress fractures.</li><li><strong>Hypothalamic hamartoma</strong>: a benign malformation containing GnRH-producing neurons (and glial cells that stimulate GnRH release) that drives <strong>central precocious puberty</strong>, sometimes with <strong>gelastic (laughing) seizures</strong>.</li><li>Opioids, high-dose glucocorticoids, hyperprolactinemia and critical illness all suppress GnRH.</li></ul><h3>Structural and infiltrative disease</h3><p>Masses (craniopharyngioma, germinoma, glioma), radiation, trauma and infiltration damage the hypothalamus. <strong>Langerhans cell histiocytosis</strong> (CD1a- and langerin-positive cells with Birbeck granules, often with <em>BRAF</em> V600E) and <strong>sarcoidosis</strong> (noncaseating granulomas) classically thicken the stalk and cause <strong>central diabetes insipidus</strong>, often with anterior pituitary deficiencies. Damage to the osmoreceptors can cause <strong>adipsic diabetes insipidus</strong>: no thirst, so hypernatremia is severe. <strong>Prader-Willi syndrome</strong> (loss of paternally expressed genes at 15q11-q13) shows hypothalamic dysfunction: infant hypotonia and poor feeding, then hyperphagia, obesity, short stature and hypogonadism.</p><div class=\"trap\"><p><strong>Exam trap:</strong> hypogonadism with low LH and FSH is a hypothalamic or pituitary problem; with high LH and FSH it is a gonadal problem. Ask about smell before ordering anything else.</p></div>",
+   "figureIds": [
+    "s23c-fig1506-1"
+   ],
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hypothalamic Dysfunction",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560743/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Kallmann Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK538210/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypothalamic Hamartoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560663/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Hormones",
+     "url": "https://medlineplus.gov/hormones.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s1506-2-1",
+   "exam": "step2ck",
+   "heading": "Hypothalamic disorders: amenorrhea, hypogonadism, precocious puberty and central DI",
+   "html": "<h3>Functional hypothalamic amenorrhea</h3><ul><li>A diagnosis of exclusion in a woman with amenorrhea of 3 months or more: exclude <strong>pregnancy</strong> first, then measure prolactin, TSH, FSH, LH and estradiol; check androgens if there are signs of hyperandrogenism (polycystic ovary syndrome). Image the pituitary if headache, visual change or unexplained low gonadotropins point to a lesion.</li><li>Typical pattern: low or low-normal LH and FSH, low estradiol, normal prolactin and TSH, in someone with energy deficit, weight loss, intense training or stress. Screen for an eating disorder.</li><li><strong>Treatment</strong> is to correct the energy balance: increase calories, reduce training load, and give psychological support. Menses usually return with weight and energy restoration.</li><li>Measure bone density (DXA) if amenorrhea has lasted 6 months or more. Give adequate calcium and vitamin D. If menses do not return after an adequate trial of nutritional and behavioural treatment, short-term <strong>transdermal estradiol with cyclic oral progestin</strong> is suggested for bone protection. Combined oral contraceptives do not protect bone well in this setting and mask whether menses have returned, and bisphosphonates are avoided in young women who may become pregnant.</li></ul><h3>Hypogonadotropic hypogonadism</h3><ul><li><strong>Work-up</strong>: confirm low sex steroid with low or inappropriately normal LH and FSH (testosterone measured fasting in the morning, twice). Check prolactin, iron studies (hemochromatosis), other pituitary axes, and ask about opioids, glucocorticoids, anabolic steroids and weight. Image the hypothalamus and pituitary when no functional cause explains it.</li><li><strong>Opioid-induced</strong>: long-term opioids suppress GnRH; LH and testosterone are low. Options are tapering the opioid where possible, or testosterone replacement.</li><li><strong>Treatment depends on fertility goals</strong>: testosterone (men) or estrogen with progestin (women) for puberty and bone; <strong>gonadotropins</strong> (hCG, adding FSH) or pulsatile GnRH when fertility is wanted. Exogenous testosterone suppresses spermatogenesis and must not be used for fertility.</li></ul><h3>Central precocious puberty</h3><ul><li>Pubertal signs before age 8 in girls or 9 in boys with accelerated growth and <strong>advanced bone age</strong>.</li><li>Central (gonadotropin-dependent): raised basal LH on a sensitive assay or an LH rise after GnRH-agonist stimulation. Peripheral (gonadotropin-independent) causes have suppressed LH: congenital adrenal hyperplasia, ovarian or testicular tumours, McCune-Albright syndrome, exogenous steroids.</li><li><strong>MRI of the brain</strong> for every boy with central precocious puberty and for girls who are very young (especially under 6) or have neurologic signs; boys more often have a lesion.</li><li><strong>Treatment</strong>: a long-acting <strong>GnRH agonist</strong> (depot leuprolide, triptorelin, or a histrelin implant) to halt progression and preserve adult height, plus treatment of any underlying lesion. A hypothalamic hamartoma is usually managed medically unless seizures are refractory.</li></ul><h3>Central diabetes insipidus after sellar surgery</h3><p>Polyuria with dilute urine and a rising sodium in the first days after transsphenoidal or hypothalamic surgery is <strong>central diabetes insipidus</strong>; treat with <strong>desmopressin</strong> while the patient drinks to thirst, and monitor sodium closely. A <em>triphasic</em> course can follow: DI, then a SIADH-like phase about a week later as damaged neurons release stored ADH, then permanent DI if most neurons are lost. Patients with impaired thirst need fixed fluid plans.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a man who wants children and has low testosterone from hypogonadotropic hypogonadism should get hCG, not testosterone. Testosterone shuts down LH and FSH and stops sperm production.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Secondary Amenorrhea",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK431055/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Precocious Puberty",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK544313/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Kallmann Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK538210/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Arginine Vasopressin Disorder (Diabetes Insipidus)",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470458/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig1506-1",
+   "caption": "Figure. Hypothalamic nuclei, their normal roles and the effect of a lesion in each.",
+   "file": "figures/s23c-fig1506-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set1506-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Early puberty in a 5-year-old",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q1506-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 12-year-old girl had subtotal resection of a craniopharyngioma 8 months ago. She now eats constantly, takes food from classmates and has gained 18 kg. She takes hydrocortisone, levothyroxine and desmopressin, and her doses are adequate on laboratory testing. Damage to which of the following hypothalamic regions most likely explains her weight gain?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Lateral hypothalamic area"
+    },
+    {
+     "label": "B",
+     "html": "Posterior hypothalamus"
+    },
+    {
+     "label": "C",
+     "html": "Supraoptic nucleus"
+    },
+    {
+     "label": "D",
+     "html": "Suprachiasmatic nucleus"
+    },
+    {
+     "label": "E",
+     "html": "Ventromedial nucleus"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>The <strong>ventromedial nucleus</strong> (with the arcuate and paraventricular circuits) mediates <strong>satiety</strong>. Destruction, as with craniopharyngioma or its surgery, removes satiety signalling, giving relentless hyperphagia and <strong>hypothalamic obesity</strong> that responds poorly to diet.</p><p><strong>Takeaway:</strong> ventromedial hypothalamic damage causes hyperphagia and obesity; lateral damage causes anorexia.</p>",
+   "whyNot": {
+    "A": "Lateral hypothalamic damage removes the hunger drive and causes weight loss.",
+    "B": "Posterior hypothalamic damage impairs heat conservation, causing poikilothermia.",
+    "C": "Supraoptic damage causes central diabetes insipidus, which she has, but not hyperphagia.",
+    "D": "Suprachiasmatic damage disturbs the circadian rhythm."
+   },
+   "objective": "Relate ventromedial hypothalamic damage to hyperphagia and obesity.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [
+    "physiology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypothalamic obesity"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 17-year-old boy has not started puberty. He has never been able to smell coffee or smoke. He is 168 cm tall with eunuchoid proportions, sparse pubic hair and testicular volumes of 2 mL. Serum LH, FSH and testosterone are all low. Karyotype is 46,XY. Which of the following best explains his condition?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Absent androgen receptor function"
+    },
+    {
+     "label": "B",
+     "html": "Autoimmune destruction of Leydig cells"
+    },
+    {
+     "label": "C",
+     "html": "Failure of neuronal migration from the olfactory placode"
+    },
+    {
+     "label": "D",
+     "html": "Nondisjunction producing an extra X chromosome"
+    },
+    {
+     "label": "E",
+     "html": "Pituitary gonadotroph adenoma"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Delayed puberty with <strong>low LH and FSH</strong> and <strong>anosmia</strong> is <strong>Kallmann syndrome</strong>. GnRH neurons arise in the olfactory placode and migrate with olfactory axons into the hypothalamus; defects in this migration (for example <em>ANOS1</em> or <em>FGFR1</em> variants) leave both the olfactory bulbs and GnRH secretion deficient.</p><p><strong>Takeaway:</strong> hypogonadotropic hypogonadism plus anosmia means failed GnRH neuron migration (Kallmann syndrome).</p>",
+   "whyNot": {
+    "A": "Androgen insensitivity gives a female phenotype with high testosterone and high LH.",
+    "B": "Primary testicular failure raises LH and FSH.",
+    "D": "Klinefelter syndrome (47,XXY) causes primary hypogonadism with high gonadotropins, and his karyotype is normal.",
+    "E": "Gonadotroph adenomas are usually nonfunctioning macroadenomas in older adults and do not cause anosmia."
+   },
+   "objective": "Explain Kallmann syndrome as failed migration of GnRH neurons from the olfactory placode.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.14.05.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Kallmann syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 54-year-old man is in the intensive care unit 5 days after a subarachnoid hemorrhage from a ruptured anterior communicating artery aneurysm, with ischemia in the region just above the optic chiasm. His temperature has been 40.2°C (104.4°F) for 2 days without shivering. Blood, urine and sputum cultures, chest radiography and cerebrospinal fluid analysis show no infection. Acetaminophen has little effect. Injury to which of the following regions best explains his fever?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Anterior hypothalamus"
+    },
+    {
+     "label": "B",
+     "html": "Lateral hypothalamic area"
+    },
+    {
+     "label": "C",
+     "html": "Posterior hypothalamus"
+    },
+    {
+     "label": "D",
+     "html": "Suprachiasmatic nucleus"
+    },
+    {
+     "label": "E",
+     "html": "Ventromedial nucleus"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The <strong>anterior (preoptic) hypothalamus</strong> drives <strong>heat loss</strong> through sweating and cutaneous vasodilation. Damage there leaves heat production unopposed and causes <strong>central hyperthermia</strong>, which is typically high, sustained, without sweating, and poorly responsive to antipyretics because it does not run through prostaglandin E2.</p><p><strong>Takeaway:</strong> anterior hypothalamic damage causes hyperthermia; posterior damage causes poikilothermia.</p>",
+   "whyNot": {
+    "B": "Lateral damage causes loss of appetite, not fever.",
+    "C": "Posterior damage removes heat conservation, so the patient cools with the environment.",
+    "D": "The suprachiasmatic nucleus is the circadian clock, not the thermoregulatory centre.",
+    "E": "Ventromedial damage causes hyperphagia and obesity."
+   },
+   "objective": "Relate anterior hypothalamic injury to central hyperthermia.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.05.03.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "thermoregulation",
+    "central fever"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 4-year-old boy has been extremely hungry since infancy and is above the 99th percentile for weight. He is tall for his age, developmentally normal and has no dysmorphic features. Serum leptin is high, in proportion to his fat mass. Genetic testing finds a heterozygous loss-of-function variant in a G protein-coupled receptor expressed on paraventricular hypothalamic neurons that signals satiety. The normal ligand of this receptor is derived from which of the following precursors?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Agouti-related peptide"
+    },
+    {
+     "label": "B",
+     "html": "Ghrelin"
+    },
+    {
+     "label": "C",
+     "html": "Neuropeptide Y"
+    },
+    {
+     "label": "D",
+     "html": "Orexin precursor (prepro-orexin)"
+    },
+    {
+     "label": "E",
+     "html": "Pro-opiomelanocortin"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>The receptor is the <strong>melanocortin 4 receptor (MC4R)</strong>. Leptin stimulates arcuate POMC neurons, which cleave <strong>pro-opiomelanocortin</strong> into <strong>alpha-MSH</strong>; alpha-MSH activates MC4R in the paraventricular nucleus to produce satiety. <em>MC4R</em> variants are the commonest monogenic cause of severe early-onset obesity, often with increased linear growth.</p><p><strong>Takeaway:</strong> leptin → POMC → alpha-MSH → MC4R is the satiety pathway; its defects cause monogenic obesity.</p>",
+   "whyNot": {
+    "A": "AgRP is an MC4R <em>antagonist</em> released by hunger-promoting neurons, not the activating ligand.",
+    "B": "Ghrelin acts on the growth hormone secretagogue receptor to stimulate hunger.",
+    "C": "Neuropeptide Y promotes feeding through Y receptors, not MC4R.",
+    "D": "Orexins act on orexin receptors to promote wakefulness and feeding."
+   },
+   "objective": "Trace the leptin-POMC-alpha-MSH-MC4R satiety pathway.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [
+    "physiology",
+    "genetics",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MC4R",
+    "obesity",
+    "leptin"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-1-05",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 20-year-old woman who runs about 110 km per week has had no menstrual period for 7 months. Her BMI is 17.8 kg/m². She has had a metatarsal stress fracture. Pregnancy test is negative. Prolactin and TSH are normal.</p><table><tr><th>Option</th><th>GnRH pulse frequency</th><th>LH</th><th>Estradiol</th></tr><tr><td>A</td><td>Increased</td><td>High</td><td>High</td></tr><tr><td>B</td><td>Increased</td><td>High</td><td>Low</td></tr><tr><td>C</td><td>Normal</td><td>High</td><td>Low</td></tr><tr><td>D</td><td>Reduced</td><td>Low or normal</td><td>Low</td></tr><tr><td>E</td><td>Reduced</td><td>Low</td><td>High</td></tr></table><p>Which of the following sets of findings is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Option A"
+    },
+    {
+     "label": "B",
+     "html": "Option B"
+    },
+    {
+     "label": "C",
+     "html": "Option C"
+    },
+    {
+     "label": "D",
+     "html": "Option D"
+    },
+    {
+     "label": "E",
+     "html": "Option E"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Energy deficit from intense training and low intake lowers leptin and raises cortisol, which <strong>slows GnRH pulses</strong>. LH and FSH fall to low or low-normal levels, and estradiol is low (<strong>functional hypothalamic amenorrhea</strong>). Low estrogen and low energy availability reduce bone formation, explaining the stress fracture.</p><p><strong>Takeaway:</strong> functional hypothalamic amenorrhea is low GnRH pulsatility with low or normal gonadotropins and low estradiol.</p>",
+   "whyNot": {
+    "A": "High gonadotropins and estradiol would suggest a gonadotropin-secreting tumour, not energy deficiency.",
+    "B": "Fast GnRH pulses favour LH, as in polycystic ovary syndrome, where estrogen is not low.",
+    "C": "High LH with low estradiol is primary ovarian insufficiency, in which gonadotropins rise because feedback is lost.",
+    "E": "Low gonadotropins cannot sustain a high estradiol without an autonomous estrogen source."
+   },
+   "objective": "Describe the hormonal pattern of functional hypothalamic amenorrhea.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.13.02.05",
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "functional hypothalamic amenorrhea",
+    "female athlete"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 3-year-old boy has drunk large amounts of water and has wet his bed every night for 2 months. He has a scaly, greasy rash on his scalp and a tender swelling of his skull. Radiographs show several punched-out lytic skull lesions. Serum sodium is 147 mEq/L and urine osmolality is 90 mOsm/kg. A biopsy of a skull lesion is most likely to show which of the following?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cells positive for CD1a and langerin, with rod-shaped cytoplasmic granules on electron microscopy"
+    },
+    {
+     "label": "B",
+     "html": "Noncaseating granulomas with asteroid bodies"
+    },
+    {
+     "label": "C",
+     "html": "Plasma cells producing a monoclonal light chain"
+    },
+    {
+     "label": "D",
+     "html": "Sheets of small round blue cells with Homer Wright rosettes"
+    },
+    {
+     "label": "E",
+     "html": "Spindle cells arranged in a storiform pattern"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Lytic skull lesions, seborrheic-like scalp rash and <strong>central diabetes insipidus</strong> in a young child point to <strong>Langerhans cell histiocytosis</strong>. The lesional cells are dendritic cells that express <strong>CD1a and langerin (CD207)</strong> and contain <strong>Birbeck granules</strong> (rod- or tennis-racket-shaped); many carry <em>BRAF</em> V600E. Infiltration of the stalk and hypothalamus causes the DI.</p><p><strong>Takeaway:</strong> lytic bone lesions plus central DI in a child suggests Langerhans cell histiocytosis.</p>",
+   "whyNot": {
+    "B": "Sarcoidosis can cause central DI but is rare at this age and does not cause punched-out skull lesions with this rash.",
+    "C": "Myeloma causes lytic lesions in older adults, not toddlers with central DI.",
+    "D": "Small round blue cells with rosettes fit neuroblastoma, which can metastasise to the skull but does not cause this rash or DI pattern.",
+    "E": "A storiform spindle-cell pattern describes fibrous histiocytic tumours, not this disease."
+   },
+   "objective": "Recognise Langerhans cell histiocytosis as a cause of central diabetes insipidus.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.03.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Langerhans cell histiocytosis",
+    "diabetes insipidus"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 5-year-old girl has had breast development and pubic hair for 6 months and has grown 9 cm in the past year. She has brief episodes of unprovoked laughter that her parents call \"giggling spells\". Bone age is 8 years. After a GnRH agonist is injected, serum LH rises into the pubertal range. MRI shows a small, nonenhancing mass attached to the floor of the third ventricle. The mass most likely causes her puberty by which of the following mechanisms?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activating mutation of the LH receptor in the ovary"
+    },
+    {
+     "label": "B",
+     "html": "Autonomous estrogen secretion by the mass"
+    },
+    {
+     "label": "C",
+     "html": "Ectopic hCG secretion"
+    },
+    {
+     "label": "D",
+     "html": "Loss of tonic dopamine inhibition"
+    },
+    {
+     "label": "E",
+     "html": "Pulsatile GnRH release from neurons within the mass"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Gelastic (laughing) seizures and <strong>central precocious puberty</strong> with a nonenhancing mass on the tuber cinereum is a <strong>hypothalamic hamartoma</strong>. It contains GnRH-producing neurons (and glia that stimulate GnRH release), so <strong>pulsatile GnRH</strong> activates the pituitary-gonadal axis early; the LH rise after stimulation confirms a central process.</p><p><strong>Takeaway:</strong> hypothalamic hamartoma causes central precocious puberty through its own GnRH release, often with gelastic seizures.</p>",
+   "whyNot": {
+    "A": "Activating LH receptor variants cause gonadotropin-independent puberty in boys (familial male-limited precocious puberty), with suppressed LH.",
+    "B": "An estrogen-secreting source would suppress LH, not give a pubertal LH response.",
+    "C": "hCG-secreting germ cell tumours cause precocious puberty mainly in boys, and they enhance on MRI.",
+    "D": "Loss of dopamine inhibition raises prolactin, which suppresses, rather than starts, puberty."
+   },
+   "objective": "Explain central precocious puberty from a hypothalamic hamartoma.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "precocious puberty",
+    "hypothalamic hamartoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old college student has had no menstrual period for 5 months. Over the past year she has trained for a triathlon and lost 6 kg. Her BMI is 18.1 kg/m². She has no galactorrhea, hirsutism or acne. Urine hCG is negative. Prolactin and TSH are normal; FSH is 3.1 mIU/mL, LH 1.8 mIU/mL and estradiol 18 pg/mL (all low). Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Clomiphene citrate for 5 days each month"
+    },
+    {
+     "label": "B",
+     "html": "A combined oral contraceptive pill"
+    },
+    {
+     "label": "C",
+     "html": "More calories and less training"
+    },
+    {
+     "label": "D",
+     "html": "MRI of the pituitary with contrast"
+    },
+    {
+     "label": "E",
+     "html": "Oral alendronate once weekly"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Amenorrhea with low gonadotropins and estradiol in a young woman with weight loss and heavy training, and normal prolactin and TSH, is <strong>functional hypothalamic amenorrhea</strong>. First-line treatment corrects the <strong>energy deficit</strong>: more calories, less training, nutrition (and psychological) support, plus screening for an eating disorder. Menses usually return as energy availability improves.</p><p><strong>Takeaway:</strong> treat functional hypothalamic amenorrhea by restoring energy balance.</p>",
+   "whyNot": {
+    "A": "Ovulation induction is for women seeking pregnancy and does not fix the cause.",
+    "B": "Oral contraceptives give withdrawal bleeds but do not restore the axis, protect bone poorly here and mask recovery.",
+    "D": "MRI is not needed when the history explains low gonadotropins and there are no headaches or visual symptoms.",
+    "E": "Bisphosphonates are avoided in young women who may become pregnant and do not address the cause."
+   },
+   "objective": "Treat functional hypothalamic amenorrhea by correcting energy deficit.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.13.02.05",
+    "usmle2026.16.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "functional hypothalamic amenorrhea",
+    "nutrition"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 23-year-old woman has had functional hypothalamic amenorrhea for 2 years. Over the past 9 months she has worked with a dietitian and therapist, reduced her running and regained 3 kg, but her BMI is still 18.4 kg/m² and menses have not returned. Estradiol remains low. DXA shows a lumbar spine Z-score of −2.3. She takes calcium and vitamin D and does not want pregnancy now. Which of the following is the most appropriate addition to her treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Combined oral contraceptive pill"
+    },
+    {
+     "label": "B",
+     "html": "Denosumab"
+    },
+    {
+     "label": "C",
+     "html": "Oral alendronate"
+    },
+    {
+     "label": "D",
+     "html": "Teriparatide"
+    },
+    {
+     "label": "E",
+     "html": "Transdermal estradiol with cyclic oral progestin"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>When menses do not return after an adequate trial of nutritional and behavioural treatment and bone density is low, short-term <strong>transdermal estradiol with cyclic oral progestin</strong> is suggested to protect bone, while energy restoration continues. Transdermal estradiol avoids the hepatic first-pass reduction of IGF-1 seen with oral estrogen, and the progestin protects the endometrium.</p><p><strong>Takeaway:</strong> for persistent functional hypothalamic amenorrhea with low bone density, use transdermal estradiol plus cyclic progestin, not the combined pill or bisphosphonates.</p>",
+   "whyNot": {
+    "A": "The combined pill has not been shown to improve bone density in this condition and masks the return of menses.",
+    "B": "Denosumab is not studied for this use in young women and has rebound bone loss when stopped.",
+    "C": "Bisphosphonates persist in bone for years and are avoided in women of reproductive age.",
+    "D": "Teriparatide is not indicated for young women with this cause of low bone mass."
+   },
+   "objective": "Choose transdermal estradiol with cyclic progestin for bone protection in persistent functional hypothalamic amenorrhea.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.13.02.05",
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "functional hypothalamic amenorrhea",
+    "bone density"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old man with Kallmann syndrome has been treated with intramuscular testosterone since age 16. He and his partner now want to have a child. Semen analysis shows no sperm. Which of the following is the most appropriate change in therapy?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add anastrozole to testosterone"
+    },
+    {
+     "label": "B",
+     "html": "Increase the testosterone dose"
+    },
+    {
+     "label": "C",
+     "html": "Start clomiphene citrate and stop testosterone"
+    },
+    {
+     "label": "D",
+     "html": "Stop testosterone and start hCG injections, adding FSH if needed"
+    },
+    {
+     "label": "E",
+     "html": "Switch to transdermal testosterone"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>His problem is <strong>GnRH deficiency</strong>, so the testes are normal but unstimulated. Exogenous testosterone does not raise intratesticular testosterone enough and further suppresses LH and FSH. To induce spermatogenesis, stop testosterone and give <strong>hCG</strong> (an LH analogue that stimulates Leydig cells), adding <strong>FSH</strong> (recombinant FSH or menotropins) if sperm do not appear; pulsatile GnRH is an alternative in specialist centres.</p><p><strong>Takeaway:</strong> hypogonadotropic hypogonadism with a wish for fertility needs gonadotropins, not testosterone.</p>",
+   "whyNot": {
+    "A": "Aromatase inhibition cannot restore gonadotropins when the hypothalamus makes no GnRH.",
+    "B": "More testosterone suppresses the axis further and does not produce sperm.",
+    "C": "Clomiphene works by raising endogenous GnRH and gonadotropin release, which he cannot do.",
+    "E": "Any testosterone preparation suppresses spermatogenesis."
+   },
+   "objective": "Use gonadotropins to induce spermatogenesis in hypogonadotropic hypogonadism.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.14.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Kallmann syndrome",
+    "male infertility"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 48-year-old man has had reduced libido, erectile dysfunction and fatigue for a year. He has taken oxycodone, now about 120 mg daily, for chronic back pain since a spinal fusion 4 years ago. BMI is 27 kg/m². Two fasting morning total testosterone levels are 190 and 205 ng/dL (N = 300–1,000). LH is 2.0 mIU/mL (N = 2–12), prolactin and ferritin are normal, and he has no headaches or visual symptoms. Which of the following is the most likely cause of his hypogonadism?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Hemochromatosis"
+    },
+    {
+     "label": "B",
+     "html": "Klinefelter syndrome"
+    },
+    {
+     "label": "C",
+     "html": "Nonfunctioning pituitary macroadenoma"
+    },
+    {
+     "label": "D",
+     "html": "Opioid suppression of hypothalamic GnRH release"
+    },
+    {
+     "label": "E",
+     "html": "Primary testicular failure from age"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Low testosterone with a <strong>low-normal LH</strong> is hypogonadotropic hypogonadism. Long-term high-dose opioids act on hypothalamic opioid receptors to <strong>suppress GnRH pulses</strong>; this is common and often unrecognised. Management is to discuss tapering the opioid, with testosterone replacement as an option if that is not possible and there are no contraindications.</p><p><strong>Takeaway:</strong> chronic opioid use is a common reversible cause of secondary hypogonadism.</p>",
+   "whyNot": {
+    "A": "Hemochromatosis can cause secondary hypogonadism, but his ferritin is normal.",
+    "B": "Klinefelter syndrome causes primary hypogonadism with high LH and small firm testes from adolescence.",
+    "C": "A macroadenoma is possible, but with a clear functional cause, normal prolactin and no mass symptoms, the opioid is the most likely explanation.",
+    "E": "Testicular failure would raise LH."
+   },
+   "objective": "Identify opioid-induced suppression of GnRH as a cause of secondary hypogonadism.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.14.03.01",
+    "usmle2026.16.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "opioids",
+    "hypogonadism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old woman has 2 months of excessive thirst and urinating about 6 L/day. For a year she has had a dry cough, and she had tender red nodules on her shins last spring. Serum sodium is 147 mEq/L and urine osmolality 120 mOsm/kg, rising to 430 mOsm/kg after desmopressin. Chest radiography shows bilateral hilar lymphadenopathy. MRI shows a thickened, enhancing pituitary stalk and hypothalamic enhancement. Serum calcium is 10.8 mg/dL. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Germinoma"
+    },
+    {
+     "label": "B",
+     "html": "Langerhans cell histiocytosis"
+    },
+    {
+     "label": "C",
+     "html": "Lymphocytic hypophysitis"
+    },
+    {
+     "label": "D",
+     "html": "Metastatic breast cancer"
+    },
+    {
+     "label": "E",
+     "html": "Neurosarcoidosis"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Central diabetes insipidus from a thickened stalk and hypothalamic enhancement, with <strong>hilar lymphadenopathy</strong>, prior <strong>erythema nodosum</strong>, cough and mild hypercalcemia, is <strong>neurosarcoidosis</strong> involving the hypothalamus. Confirm with tissue (usually from a more accessible site such as a lymph node) showing noncaseating granulomas, and test anterior pituitary function.</p><p><strong>Takeaway:</strong> central DI plus a thickened stalk and systemic granulomatous disease suggests neurosarcoidosis.</p>",
+   "whyNot": {
+    "A": "Germinomas thicken the stalk in children and young adults but do not explain hilar nodes, erythema nodosum or hypercalcemia.",
+    "B": "Langerhans cell histiocytosis causes stalk thickening and DI, but with lytic bone or lung cystic disease rather than hilar adenopathy and erythema nodosum.",
+    "C": "Lymphocytic hypophysitis is often peripartum and lacks systemic features.",
+    "D": "Metastases can cause DI but there is no known primary and the systemic picture fits sarcoidosis."
+   },
+   "objective": "Recognise neurosarcoidosis as a cause of central diabetes insipidus.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.15.05.01",
+    "usmle2026.05.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "sarcoidosis",
+    "diabetes insipidus"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-2-06",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 45-year-old man had transsphenoidal resection of a large craniopharyngioma 30 hours ago. Over the past 8 hours his urine output has been 350–450 mL/hour. He is alert and thirsty. He receives hydrocortisone per protocol.</p><table><tr><th>Test</th><th>Before surgery</th><th>Now</th></tr><tr><td>Serum sodium</td><td>140 mEq/L</td><td>151 mEq/L</td></tr><tr><td>Serum osmolality</td><td>288 mOsm/kg</td><td>310 mOsm/kg</td></tr><tr><td>Urine osmolality</td><td>—</td><td>95 mOsm/kg</td></tr><tr><td>Glucose</td><td>96 mg/dL</td><td>124 mg/dL</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Desmopressin, with fluids to thirst"
+    },
+    {
+     "label": "B",
+     "html": "Fluid restriction to 1 L/day"
+    },
+    {
+     "label": "C",
+     "html": "Oral hydrochlorothiazide daily"
+    },
+    {
+     "label": "D",
+     "html": "Intravenous 3% saline infusion"
+    },
+    {
+     "label": "E",
+     "html": "Oral tolvaptan once daily"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Large volumes of dilute urine with a rising sodium after surgery near the stalk are <strong>central diabetes insipidus</strong> from injury to ADH-producing axons. Give <strong>desmopressin</strong>, let him drink to thirst, and check sodium often, because a SIADH-like phase may follow about a week later (the triphasic response) and continued desmopressin can then cause hyponatremia.</p><p><strong>Takeaway:</strong> postoperative central DI: desmopressin with close sodium monitoring, watching for a triphasic course.</p>",
+   "whyNot": {
+    "B": "Restricting fluids in DI worsens hypernatremia.",
+    "C": "Thiazides are a long-term option for nephrogenic DI, not acute central DI.",
+    "D": "Hypertonic saline treats hyponatremia and would raise his sodium further.",
+    "E": "Tolvaptan blocks V2 receptors and would increase water loss."
+   },
+   "objective": "Treat postoperative central diabetes insipidus with desmopressin and monitor for a triphasic response.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.15.05.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "diabetes insipidus",
+    "postoperative"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1506-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 5-year-old girl is brought because of breast development over the past 5 months. She has grown 8 cm in the past year (previously 5–6 cm/year). She has Tanner stage 3 breasts and sparse pubic hair. There are no café-au-lait macules, and she has no headaches. Bone age is 7.5 years. A basal LH on a sensitive assay is in the pubertal range, and pelvic ultrasonography shows an enlarged uterus without an ovarian mass. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "17-Hydroxyprogesterone level"
+    },
+    {
+     "label": "B",
+     "html": "Measure hCG and alpha-fetoprotein"
+    },
+    {
+     "label": "C",
+     "html": "MRI of the brain"
+    },
+    {
+     "label": "D",
+     "html": "Reassurance and recheck in 6 months"
+    },
+    {
+     "label": "E",
+     "html": "Start medroxyprogesterone"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Rapid progression, accelerated growth, advanced bone age and a pubertal LH mean <strong>central precocious puberty</strong>. In a girl this young (under 6), the chance of an intracranial lesion such as a hypothalamic hamartoma or tumour is high enough that <strong>MRI of the brain</strong> is indicated before treatment.</p><p><strong>Takeaway:</strong> central precocious puberty in a young girl or any boy needs brain MRI.</p>",
+   "whyNot": {
+    "A": "17-hydroxyprogesterone screens for congenital adrenal hyperplasia, a peripheral cause with suppressed LH.",
+    "B": "hCG-secreting tumours cause peripheral precocious puberty, mostly in boys, with suppressed LH.",
+    "D": "Progressive puberty with advanced bone age at age 5 needs evaluation and treatment, not watchful waiting.",
+    "E": "Medroxyprogesterone is an outdated treatment that does not preserve adult height and does not address the cause."
+   },
+   "objective": "Order brain MRI for central precocious puberty in a young girl.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.01.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "precocious puberty"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set1506-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q1506-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>MRI shows a 9-mm hypothalamic hamartoma. She has had no seizures. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Aromatase inhibitor"
+    },
+    {
+     "label": "B",
+     "html": "Depot GnRH agonist (for example leuprolide)"
+    },
+    {
+     "label": "C",
+     "html": "Ketoconazole"
+    },
+    {
+     "label": "D",
+     "html": "Stereotactic radiosurgery to the hamartoma"
+    },
+    {
+     "label": "E",
+     "html": "Surgical resection of the hamartoma"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Central precocious puberty from a hypothalamic hamartoma without refractory seizures is treated medically with a <strong>long-acting GnRH agonist</strong>. Continuous receptor stimulation desensitises gonadotrophs, LH and FSH fall, puberty stops progressing and adult height is preserved. Treatment usually continues until a normal age for puberty.</p><p><strong>Takeaway:</strong> central precocious puberty, including from a hamartoma, is treated with a depot GnRH agonist; surgery is for refractory seizures.</p>",
+   "whyNot": {
+    "A": "Aromatase inhibitors are used for some peripheral causes; they do not stop the central axis.",
+    "C": "Ketoconazole blocks steroid synthesis and is used for some peripheral causes in boys, not central puberty.",
+    "D": "Radiosurgery is a seizure treatment for hamartomas, not first-line for precocious puberty.",
+    "E": "Resection carries significant risk and is reserved for drug-resistant gelastic epilepsy."
+   },
+   "objective": "Treat central precocious puberty with a long-acting GnRH agonist.",
+   "areas": [
+    "usmle2026.15.06",
+    "usmle2026.01.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "precocious puberty",
+    "GnRH agonist"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set1506-1",
+   "setOrder": 2
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c1506-01",
+   "frontHtml": "Which hypothalamic nucleus mainly makes ADH, and which mainly makes oxytocin?",
+   "backHtml": "ADH: supraoptic. Oxytocin: paraventricular. Both are released from the posterior pituitary.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-02",
+   "frontHtml": "Lesion of the ventromedial vs lateral hypothalamus?",
+   "backHtml": "Ventromedial: hyperphagia and obesity. Lateral: anorexia and weight loss.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-03",
+   "frontHtml": "Lesion of the anterior vs posterior hypothalamus (temperature)?",
+   "backHtml": "Anterior: hyperthermia (no heat loss). Posterior: poikilothermia.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-04",
+   "frontHtml": "Suprachiasmatic nucleus function?",
+   "backHtml": "Circadian clock, driven by light via the retinohypothalamic tract; controls melatonin rhythm.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-05",
+   "frontHtml": "Satiety pathway from leptin?",
+   "backHtml": "Leptin → arcuate POMC neurons → alpha-MSH → MC4R (paraventricular) → satiety.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-06",
+   "frontHtml": "Commonest single-gene cause of severe early-onset obesity?",
+   "backHtml": "Loss-of-function MC4R variants.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-07",
+   "frontHtml": "Kallmann syndrome: cause and key findings?",
+   "backHtml": "Failed GnRH neuron migration from the olfactory placode: anosmia, low LH/FSH and sex steroids.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-08",
+   "frontHtml": "Pulsatile vs continuous GnRH?",
+   "backHtml": "Pulsatile stimulates LH/FSH; continuous (depot agonist) suppresses them.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-09",
+   "frontHtml": "Functional hypothalamic amenorrhea hormone pattern?",
+   "backHtml": "Low or normal LH and FSH, low estradiol, normal prolactin and TSH.",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-10",
+   "frontHtml": "Gelastic seizures plus central precocious puberty?",
+   "backHtml": "Hypothalamic hamartoma (contains GnRH neurons).",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-11",
+   "frontHtml": "Child with lytic skull lesions, scalp rash and central DI?",
+   "backHtml": "Langerhans cell histiocytosis (CD1a, langerin, Birbeck granules).",
+   "sectionId": "s23c-s1506-1-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-12",
+   "frontHtml": "First-line treatment of functional hypothalamic amenorrhea?",
+   "backHtml": "Restore energy balance: more calories, less training, nutrition and psychological support.",
+   "sectionId": "s23c-s1506-2-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-13",
+   "frontHtml": "Bone protection if menses do not return in functional hypothalamic amenorrhea?",
+   "backHtml": "Short-term transdermal estradiol with cyclic oral progestin; not the combined pill or bisphosphonates.",
+   "sectionId": "s23c-s1506-2-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-14",
+   "frontHtml": "Man with hypogonadotropic hypogonadism wants fertility: treatment?",
+   "backHtml": "Stop testosterone; give hCG, adding FSH if needed (or pulsatile GnRH).",
+   "sectionId": "s23c-s1506-2-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-15",
+   "frontHtml": "Common drug cause of secondary hypogonadism in men?",
+   "backHtml": "Long-term opioids (GnRH suppression); also glucocorticoids and anabolic steroids.",
+   "sectionId": "s23c-s1506-2-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-16",
+   "frontHtml": "Central precocious puberty: who needs brain MRI?",
+   "backHtml": "All boys, and girls who are very young (especially under 6) or have neurologic signs.",
+   "sectionId": "s23c-s1506-2-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1506-17",
+   "frontHtml": "Triphasic response after pituitary or hypothalamic surgery?",
+   "backHtml": "Diabetes insipidus, then SIADH-like phase (about a week later), then permanent DI.",
+   "sectionId": "s23c-s1506-2-1",
+   "areas": [
+    "usmle2026.15.06"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

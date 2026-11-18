@@ -1,0 +1,78 @@
+<svg aria-label="Integrated map of carbohydrate, lipid and mitochondrial metabolism with rate-limiting enzymes" role="img" viewbox="0 0 740 560" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch01-arr-metabolism" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif">
+<rect fill="#e0f2fe" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="60" y="20"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="130.0" y="40.55">Glucose</text>
+<rect fill="#e0f2fe" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="60" y="95"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="130.0" y="115.55">Glucose-6-P</text>
+<rect fill="#e0f2fe" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="60" y="165"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="130.0" y="185.55">Fructose-6-P</text>
+<rect fill="#e0f2fe" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="60" y="235"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="130.0" y="255.55">Fructose-1,6-BP</text>
+<rect fill="#e0f2fe" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="60" y="305"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="130.0" y="325.55">PEP</text>
+<rect fill="#e0f2fe" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="60" y="395"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="130.0" y="415.55">Pyruvate</text>
+<rect fill="#e0f2fe" height="42" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="60" y="475"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="130.0" y="492.7">Lactate (LDH)</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="130.0" y="507.7">Alanine (ALT, B6)</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="130.0" x2="130.0" y1="52" y2="94"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="138.0" y="77.5">HK / GK</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="130.0" x2="130.0" y1="127" y2="164"></line>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="130.0" x2="130.0" y1="197" y2="234"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="138.0" y="220.0">PFK-1 (rate-limiting)</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="130.0" x2="130.0" y1="267" y2="304"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="138.0" y="290.0">several steps</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="130.0" x2="130.0" y1="337" y2="394"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="138.0" y="370.0">pyruvate kinase</text>
+<line marker-end="url(#ch01-arr-metabolism)" marker-start="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="130.0" x2="130.0" y1="427" y2="474"></line>
+<text font-size="12" font-style="italic" font-weight="normal" text-anchor="start" x="138.0" y="455">reversible</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-dasharray="6 4" stroke-width="1.6" x1="75" x2="75" y1="95" y2="53"></line>
+<text font-size="12" font-weight="normal" text-anchor="end" x="70" y="80">G6Pase</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-dasharray="6 4" stroke-width="1.6" x1="75" x2="75" y1="235" y2="198"></line>
+<text font-size="12" font-weight="normal" text-anchor="end" x="70" y="222">FBPase-1</text>
+<rect fill="#fef3c7" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="340" y="95"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="410.0" y="115.55">Glycogen</text>
+<line marker-end="url(#ch01-arr-metabolism)" marker-start="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="200" x2="339" y1="111" y2="111"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="212" y="104">glycogen synthase</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="212" y="127">phosphorylase</text>
+<rect fill="#dcfce7" height="34" rx="6" stroke="#334155" stroke-width="1.5" width="220" x="340" y="18"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="450.0" y="39.55">HMP shunt: NADPH + ribose-5-P</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="200" x2="339" y1="100" y2="42"></line>
+<text font-size="12" font-weight="bold" text-anchor="start" x="232" y="64">G6PD</text>
+<text font-size="13" font-weight="bold" text-anchor="start" x="590" y="40">CYTOSOL</text>
+<rect fill="#dcfce7" height="215" rx="22" stroke="#334155" stroke-dasharray="6 4" stroke-width="1.5" width="490" x="240" y="330"></rect>
+<text font-size="13" font-weight="bold" text-anchor="end" x="718" y="535">MITOCHONDRION</text>
+<rect fill="#fef3c7" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="130" x="260" y="395"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="325.0" y="415.55">Acetyl-CoA</text>
+<rect fill="#e0f2fe" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="130" x="260" y="480"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="325.0" y="500.55">Oxaloacetate</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="200" x2="259" y1="411" y2="411"></line>
+<text font-size="12" font-weight="bold" text-anchor="start" x="206" y="404">PDH</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="200" x2="259" y1="422" y2="486"></line>
+<text font-size="12" font-weight="bold" text-anchor="start" x="214" y="480">PC</text>
+<circle cx="510" cy="455" fill="#ffffff" r="48" stroke="#334155" stroke-width="1.5"></circle>
+<text font-size="14" font-weight="bold" text-anchor="middle" x="510" y="452">TCA</text>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="510" y="468">cycle</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="390" x2="465" y1="413" y2="437"></line>
+<line marker-end="url(#ch01-arr-metabolism)" marker-start="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="390" x2="465" y1="494" y2="472"></line>
+<rect fill="#fef3c7" height="42" rx="6" stroke="#334155" stroke-width="1.5" width="105" x="610" y="434"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="662.5" y="451.55">ETC</text>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="662.5" y="467.55">→ ATP</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="558" x2="609" y1="455" y2="455"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="562" y="494">NADH, FADH₂</text>
+<rect fill="#fee2e2" height="34" rx="6" stroke="#334155" stroke-width="1.5" width="125" x="590" y="350"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="652.5" y="371.55">Ketone bodies</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="390" x2="589" y1="403" y2="372"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="450" y="370">HMG-CoA synthase</text>
+<rect fill="#fef3c7" height="34" rx="6" stroke="#334155" stroke-width="1.5" width="160" x="560" y="240"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="640.0" y="261.55">Fatty acids / TG</text>
+<line marker-end="url(#ch01-arr-metabolism)" marker-start="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="362" x2="600" y1="394" y2="275"></line>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="645" y="296">synthesis: ACC ↑</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="645" y="312">β-oxidation: CPT I ↓</text>
+<rect fill="#fef3c7" height="34" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="330" y="240"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="405.0" y="261.55">Cholesterol</text>
+<line marker-end="url(#ch01-arr-metabolism)" stroke="#334155" stroke-width="1.6" x1="300" x2="380" y1="394" y2="275"></line>
+<text font-size="12" font-weight="normal" text-anchor="end" x="342" y="322">HMG-CoA reductase</text>
+</g>
+</svg>

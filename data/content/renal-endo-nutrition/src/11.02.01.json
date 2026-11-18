@@ -1,0 +1,1343 @@
+{
+ "area": "usmle2026.11.02.01",
+ "sections": [
+  {
+   "id": "s23c-s110201-1-1",
+   "exam": "step1",
+   "heading": "Renal cysts and benign renal tumours: genetics and pathology",
+   "html": "<p>Renal cysts range from the trivial (a simple cyst found on a scan for something else) to inherited diseases that end in kidney failure. Benign solid tumours of the kidney matter mostly because they can look like cancer. Sort them by <strong>pattern</strong> (one cyst or many, cortex or medulla), <strong>kidney size</strong> and <strong>inheritance</strong>.</p>[[figure:s23c-fig110201-1]]<h3>Simple cysts</h3><p>Fluid-filled, thin-walled cysts lined by a single layer of flattened epithelium. They become more common with age and are present in a large share of adults over 50. They are usually silent; rarely they bleed, become infected or are large enough to cause pain. A cyst with thick walls, septa, calcification or enhancing tissue is <em>complex</em> and needs a different approach (see Step 2 CK).</p><h3>Autosomal dominant polycystic kidney disease (ADPKD)</h3><ul><li><strong>Genetics</strong>: <em>PKD1</em> on chromosome 16 (about 80% of families; more severe, earlier kidney failure) or <em>PKD2</em> on chromosome 4 (milder). The proteins, polycystin-1 and polycystin-2, sit in the <strong>primary cilium</strong> of tubular cells and regulate calcium entry. A second, somatic hit in the normal allele of a single tubular cell starts each cyst, so cysts appear over decades rather than at birth.</li><li><strong>Cyst growth</strong>: low intracellular calcium raises <strong>cAMP</strong>, which drives epithelial proliferation and chloride-driven fluid secretion into the cyst (through CFTR). Vasopressin acting on V2 receptors in the collecting duct is a major source of that cAMP, which is why the V2 antagonist <strong>tolvaptan</strong> slows kidney growth.</li><li><strong>Kidneys</strong>: both enlarge massively, replaced by cysts from every part of the nephron. Expanding cysts compress intrarenal vessels, causing local ischemia, <strong>renin-angiotensin activation</strong> and early hypertension, often before the GFR falls.</li><li><strong>Renal features</strong>: flank pain, gross hematuria from cyst rupture, cyst infection, calcium oxalate and uric acid stones, a urinary concentrating defect, and progressive CKD that usually reaches kidney failure in middle age with <em>PKD1</em>.</li><li><strong>Extrarenal features</strong>: <strong>liver cysts</strong> (the commonest; larger and more common in women with estrogen exposure), <strong>saccular (berry) aneurysms</strong> of the circle of Willis (risk clusters in families), mitral valve prolapse, colonic diverticula, abdominal and inguinal hernias, pancreatic and seminal vesicle cysts.</li></ul><h3>Autosomal recessive polycystic kidney disease (ARPKD)</h3><p>Mutations in <em>PKHD1</em> (fibrocystin, also a ciliary protein). The collecting ducts dilate into cysts arranged <strong>radially</strong> from medulla to cortex, so both kidneys are large and echogenic from fetal life. Poor fetal urine output causes <strong>oligohydramnios and the Potter sequence</strong> (pulmonary hypoplasia, flattened facies, limb deformities); pulmonary hypoplasia is the main cause of neonatal death. Every child also has <strong>congenital hepatic fibrosis</strong> (ductal plate malformation), which causes portal hypertension and cholangitis in survivors.</p><h3>Other cystic kidneys</h3><table><tr><th>Condition</th><th>Kidney size</th><th>Key points</th></tr><tr><td>Acquired cystic kidney disease</td><td>Small, scarred</td><td>Develops with long-standing kidney failure, especially on dialysis; cysts can bleed; <strong>renal cell carcinoma risk</strong> is raised</td></tr><tr><td>Medullary sponge kidney</td><td>Normal</td><td>Dilated medullary (inner) collecting ducts, usually sporadic; calcium stones, nephrocalcinosis, UTIs and hematuria in young adults; urography shows linear streaks of contrast in the papillae; kidney function is usually preserved</td></tr><tr><td>Nephronophthisis (autosomal recessive)</td><td>Small or normal</td><td>Corticomedullary cysts with tubulointerstitial fibrosis; polyuria and salt wasting in childhood, kidney failure in the teens</td></tr><tr><td>Autosomal dominant tubulointerstitial kidney disease</td><td>Small or normal</td><td>Adult-onset CKD with bland urine; <em>UMOD</em> variants cause early gout</td></tr></table><h3>Benign solid tumours</h3><ul><li><strong>Angiomyolipoma</strong>: a benign tumour of perivascular epithelioid cells made of three tissues: <strong>mature fat, smooth muscle and thick-walled blood vessels</strong>. Most are sporadic and solitary; multiple, bilateral tumours suggest <strong>tuberous sclerosis complex</strong> (<em>TSC1</em> hamartin or <em>TSC2</em> tuberin, which normally restrain mTORC1). The abnormal vessels lack normal elastic tissue and form aneurysms, so large tumours can bleed into the retroperitoneum. Macroscopic fat on CT is the imaging signature. mTOR inhibitors (everolimus) shrink TSC-related tumours. Pulmonary lymphangioleiomyomatosis belongs to the same tumour family.</li><li><strong>Oncocytoma</strong>: a benign tumour from the <strong>intercalated cells</strong> of the collecting duct. Large cells with granular pink cytoplasm, packed with <strong>mitochondria</strong>; grossly mahogany-brown with a <strong>central stellate scar</strong>. It cannot be reliably told apart from carcinoma on imaging, so it is often removed.</li><li><strong>Papillary adenoma</strong>: tiny (15 mm or less) low-grade papillary tumours of the cortex found incidentally; common in scarred kidneys.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> large kidneys with many cysts and hypertension in an adult is ADPKD; small kidneys with many cysts in someone on dialysis is acquired cystic disease. Size tells them apart, and the second carries a cancer risk.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> the angiomyolipoma name lists its own recipe: <em>angio</em> (vessels), <em>myo</em> (smooth muscle), <em>lipoma</em> (fat).</p></div>",
+   "figureIds": [
+    "s23c-fig110201-1"
+   ],
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Autosomal Dominant Polycystic Kidney Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532934/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Autosomal Recessive Polycystic Kidney Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK537137/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Medullary Sponge Kidney",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470220/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Renal Angiomyolipoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK585104/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Renal Oncocytoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK537263/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus Genetics: Polycystic kidney disease",
+     "url": "https://medlineplus.gov/genetics/condition/polycystic-kidney-disease/",
+     "sourceId": "medlineplus-federal"
+    },
+    {
+     "label": "MedlinePlus Genetics: Tuberous sclerosis complex",
+     "url": "https://medlineplus.gov/genetics/condition/tuberous-sclerosis-complex/",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110201-2-1",
+   "exam": "step2ck",
+   "heading": "Renal cysts and benign masses: evaluation and management",
+   "html": "<h3>The incidental renal cyst</h3><p>Cysts found on CT or ultrasound done for another reason are classified by their CT (or MRI) features, using the <strong>Bosniak classification</strong>, which estimates the chance of malignancy.</p><table><tr><th>Class</th><th>Features</th><th>Action</th></tr><tr><td>I</td><td>Thin smooth wall, no septa, calcification or solid parts, water density, no enhancement</td><td>Benign: no follow-up</td></tr><tr><td>II</td><td>A few thin septa, fine calcification, or a small uniformly high-density nonenhancing cyst</td><td>Benign: no follow-up</td></tr><tr><td>IIF</td><td>More numerous or minimally thickened septa or wall; no measurable enhancing nodule</td><td>Imaging surveillance (\"F\" for follow-up) over several years</td></tr><tr><td>III</td><td>Thickened, irregular, <strong>enhancing</strong> walls or septa</td><td>Surgical excision (often partial nephrectomy) or, for small cysts or frail patients, active surveillance</td></tr><tr><td>IV</td><td>Enhancing <strong>soft-tissue nodule</strong> within the cyst</td><td>Treat as cancer: partial or radical nephrectomy (surveillance only if surgery is a poor option)</td></tr></table><p>Ultrasound alone can confirm a simple cyst. An indeterminate lesion on ultrasound needs renal-protocol CT or MRI with contrast. Biopsy is rarely needed for cysts.</p><h3>ADPKD: diagnosis</h3><ul><li>With a family history, <strong>ultrasound</strong> is the usual test. In families of unknown genotype, the number of cysts that confirms the diagnosis rises with age (for example, at least 3 cysts in total between 15 and 39 years; at least 2 in each kidney between 40 and 59 years). A normal ultrasound after 40 essentially excludes the disease. MRI is more sensitive in younger relatives being considered as kidney donors, and genetic testing settles unclear cases.</li><li><strong>Total kidney volume</strong> (from MRI or CT) predicts the rate of decline and identifies rapid progressors.</li></ul><h3>ADPKD: management</h3><ul><li><strong>Blood pressure</strong>: an ACE inhibitor or angiotensin receptor blocker first line (the RAAS is the driver). In younger patients with preserved GFR, a lower target (around 110/75 mm Hg) slows kidney growth if tolerated.</li><li><strong>Fluids and salt</strong>: generous water intake (to suppress vasopressin) and dietary sodium restriction; avoid nephrotoxins such as NSAIDs.</li><li><strong>Tolvaptan</strong> (vasopressin V2 receptor antagonist) for adults at risk of <strong>rapidly progressive</strong> disease (for example, large total kidney volume for age, or a fast fall in eGFR). It causes polyuria, thirst and nocturia, and it can cause <strong>serious liver injury</strong>, so liver tests are checked regularly, most closely in the first 18 months.</li><li><strong>Pain and bleeding</strong>: most cyst hemorrhage settles with rest, fluids and analgesia (avoid NSAIDs when GFR is reduced).</li><li><strong>Cyst infection</strong>: fever and focal pain, sometimes with negative urine cultures. Diagnose with imaging (MRI, or PET-CT when unclear) and treat for several weeks with a <strong>lipid-soluble antibiotic that enters cysts</strong>, such as a fluoroquinolone or trimethoprim-sulfamethoxazole; drain large infected cysts that do not respond.</li><li><strong>Intracranial aneurysm screening</strong>: offer MR angiography to patients with a <strong>family history of aneurysm or subarachnoid hemorrhage</strong>, a prior rupture, a high-risk job (for example, pilots) or before major elective surgery. Routine screening of everyone is not recommended.</li><li><strong>Kidney failure</strong>: dialysis or transplant; native nephrectomy if kidneys are so large they leave no room for the graft or cause recurrent bleeding or infection.</li></ul><h3>Benign solid masses</h3><ul><li><strong>Angiomyolipoma</strong>: macroscopic fat on CT is diagnostic. Small asymptomatic tumours are watched with imaging. Treatment (selective arterial embolisation, nephron-sparing surgery or an mTOR inhibitor in tuberous sclerosis) is considered for symptoms, growth, large size or in women planning pregnancy. <strong>Acute retroperitoneal hemorrhage</strong> with shock is treated with resuscitation and emergency <strong>selective arterial embolisation</strong>, which stops bleeding while sparing kidney tissue.</li><li><strong>Oncocytoma</strong>: a central scar on imaging is suggestive but not reliable; biopsy can suggest it, but because it can resemble chromophobe carcinoma, most enhancing solid masses are managed as possible cancer.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a sudden severe headache in a young adult with ADPKD is a ruptured berry aneurysm until proved otherwise: noncontrast CT head first.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Simple Renal Cyst",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK499900/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Autosomal Dominant Polycystic Kidney Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532934/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Renal Angiomyolipoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK585104/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Kidney Cysts",
+     "url": "https://medlineplus.gov/kidneycysts.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110201-1",
+   "caption": "Figure. Renal cystic disease at a glance: cyst pattern and kidney size separate simple and complex cysts, ADPKD, ARPKD, acquired cystic disease and medullary sponge kidney.",
+   "file": "figures/s23c-fig110201-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110201-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Rapidly progressive polycystic kidney disease",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110201-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old man is brought to the emergency department 1 hour after the sudden onset of the worst headache of his life, followed by vomiting and neck stiffness. He has had hypertension since age 25. His father required dialysis from age 52. Examination shows bilateral, nontender, irregular abdominal masses extending from the flanks toward the pelvis. Noncontrast CT of the head shows blood in the basal cisterns. Which of the following vascular lesions most likely caused the bleeding?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Arteriovenous malformation of the cerebral cortex"
+    },
+    {
+     "label": "B",
+     "html": "Charcot-Bouchard microaneurysm of a lenticulostriate artery"
+    },
+    {
+     "label": "C",
+     "html": "Dissection of the vertebral artery"
+    },
+    {
+     "label": "D",
+     "html": "Mycotic aneurysm of a distal cerebral artery"
+    },
+    {
+     "label": "E",
+     "html": "Saccular aneurysm at a circle of Willis branch point"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Enlarging bilateral flank masses, early hypertension and a parent on dialysis point to <strong>autosomal dominant polycystic kidney disease</strong>. ADPKD weakens the arterial wall (polycystins are expressed in vascular smooth muscle), and <strong>saccular (berry) aneurysms</strong> form at branch points of the circle of Willis. Rupture causes subarachnoid hemorrhage, shown here by blood in the basal cisterns.</p><p><strong>Takeaway:</strong> ADPKD plus subarachnoid hemorrhage means a ruptured berry aneurysm.</p>",
+   "whyNot": {
+    "A": "Arteriovenous malformations are developmental lesions not linked to ADPKD, and they usually bleed into the brain parenchyma.",
+    "B": "Charcot-Bouchard microaneurysms cause deep intraparenchymal (for example basal ganglia) hemorrhage from chronic hypertension, not blood in the basal cisterns.",
+    "C": "Vertebral dissection presents with neck pain and posterior circulation stroke after trauma or neck manipulation.",
+    "D": "Mycotic aneurysms come from septic emboli, usually in infective endocarditis, and sit at distal branches."
+   },
+   "objective": "Recognise subarachnoid hemorrhage from a ruptured berry aneurysm as an extrarenal complication of ADPKD.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "ADPKD",
+    "berry aneurysm"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 41-year-old woman with autosomal dominant polycystic kidney disease has an eGFR that has fallen from 78 to 61 mL/min/1.73 m² over 3 years, and MRI shows total kidney volume far above the expected value for her age. She is started on a drug that slows the growth of her kidneys. She reports marked thirst, polyuria and nocturia after starting it. Which of the following best describes how this drug slows cyst growth?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "It activates the calcium-sensing receptor on tubular cells"
+    },
+    {
+     "label": "B",
+     "html": "It blocks aldosterone binding to its nuclear receptor"
+    },
+    {
+     "label": "C",
+     "html": "It blocks vasopressin V2 receptors and lowers cAMP in tubular cells"
+    },
+    {
+     "label": "D",
+     "html": "It inhibits mTOR signalling in cyst epithelial cells"
+    },
+    {
+     "label": "E",
+     "html": "It inhibits the sodium-glucose cotransporter in the proximal tubule"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p><strong>Tolvaptan</strong> is a vasopressin <strong>V2 receptor antagonist</strong>. In ADPKD, loss of polycystin function lowers intracellular calcium, and the resulting rise in <strong>cAMP</strong> drives cyst cell proliferation and fluid secretion. Vasopressin acting on V2 receptors in the collecting duct is a major stimulus for cAMP, so blocking it slows cyst growth and loss of GFR. Blocking V2 also prevents water reabsorption, causing aquaresis: thirst, polyuria and nocturia.</p><p><strong>Takeaway:</strong> tolvaptan slows ADPKD by cutting vasopressin-driven cAMP in cyst epithelium.</p>",
+   "whyNot": {
+    "A": "Calcium-sensing receptor agonists (calcimimetics) lower PTH in hyperparathyroidism and are not ADPKD therapy.",
+    "B": "Mineralocorticoid receptor antagonists treat hyperaldosteronism and heart failure; they do not cause aquaresis or slow cyst growth.",
+    "D": "mTOR inhibitors shrink angiomyolipomas in tuberous sclerosis but did not slow kidney decline in ADPKD trials.",
+    "E": "SGLT2 inhibitors cause glycosuria and natriuresis; they are not the drug that targets ADPKD cyst growth."
+   },
+   "objective": "Explain how vasopressin V2 antagonism slows cyst growth in ADPKD.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "ADPKD",
+    "tolvaptan"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A male newborn is delivered at 36 weeks' gestation after a pregnancy complicated by severe oligohydramnios. He has respiratory distress, a flattened nose, a recessed chin and bilateral clubfoot. Both flanks contain large, smooth masses. Ultrasonography shows symmetrically enlarged, diffusely echogenic kidneys. His parents are healthy, and their renal ultrasounds are normal. If he survives the neonatal period, which of the following liver abnormalities is he most likely to have?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Congenital hepatic fibrosis with portal hypertension"
+    },
+    {
+     "label": "B",
+     "html": "Hepatic adenomas"
+    },
+    {
+     "label": "C",
+     "html": "Hepatic hemangiomas"
+    },
+    {
+     "label": "D",
+     "html": "Hepatoblastoma"
+    },
+    {
+     "label": "E",
+     "html": "Multiple large hepatic cysts with normal liver function"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Large echogenic kidneys from fetal life, oligohydramnios and the Potter sequence (pulmonary hypoplasia, facial flattening, limb deformities) with unaffected parents fit <strong>autosomal recessive polycystic kidney disease</strong> (<em>PKHD1</em>, fibrocystin). The same ciliary defect causes a ductal plate malformation in the liver, so every patient has <strong>congenital hepatic fibrosis</strong>, which leads to portal hypertension, varices and cholangitis in childhood.</p><p><strong>Takeaway:</strong> ARPKD pairs collecting duct cysts with congenital hepatic fibrosis.</p>",
+   "whyNot": {
+    "B": "Hepatic adenomas are linked to oral contraceptives, anabolic steroids and glycogen storage disease, not ARPKD.",
+    "C": "Hemangiomas are common benign vascular liver tumours unrelated to cystic kidney disease.",
+    "D": "Hepatoblastoma is linked to Beckwith-Wiedemann syndrome and familial adenomatous polyposis, not ARPKD.",
+    "E": "Multiple large liver cysts with preserved function are the typical liver finding in the dominant (adult) form, ADPKD."
+   },
+   "objective": "Associate autosomal recessive polycystic kidney disease with congenital hepatic fibrosis and the Potter sequence.",
+   "areas": [
+    "usmle2026.11.02.01",
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "ARPKD",
+    "Potter sequence"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old woman has had seizures since childhood. Examination shows reddish papules over the nose and cheeks, several hypopigmented oval macules on the trunk and a raised, rough plaque over the lower back. CT of the abdomen shows several masses in both kidneys that contain areas of fat density. Biopsy of one mass shows mature adipose tissue, smooth muscle bundles and thick-walled blood vessels. Loss of function of the protein encoded by the mutated gene most directly causes which of the following?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Constitutive activation of mTORC1 signalling"
+    },
+    {
+     "label": "B",
+     "html": "Failure to degrade hypoxia-inducible factor"
+    },
+    {
+     "label": "C",
+     "html": "Increased Ras activity from loss of a GTPase-activating protein"
+    },
+    {
+     "label": "D",
+     "html": "Loss of a ciliary calcium channel in tubular cells"
+    },
+    {
+     "label": "E",
+     "html": "Unrestrained activity of the MET receptor tyrosine kinase"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Facial angiofibromas, ash-leaf macules, a shagreen patch, seizures and bilateral <strong>angiomyolipomas</strong> define <strong>tuberous sclerosis complex</strong>. Hamartin (<em>TSC1</em>) and tuberin (<em>TSC2</em>) form a complex that inactivates Rheb and so keeps <strong>mTORC1</strong> in check. Loss of either protein leaves mTORC1 constitutively active, driving cell growth in hamartomas throughout the body; this is why the mTOR inhibitor everolimus shrinks these tumours.</p><p><strong>Takeaway:</strong> tuberous sclerosis = loss of the hamartin-tuberin brake on mTORC1.</p>",
+   "whyNot": {
+    "B": "Failure to degrade HIF is the mechanism of von Hippel-Lindau disease, which causes clear cell renal carcinoma and hemangioblastomas.",
+    "C": "Loss of the Ras GTPase-activating protein neurofibromin causes neurofibromatosis type 1.",
+    "D": "Loss of ciliary polycystin calcium channels causes ADPKD, which produces cysts rather than fat-containing tumours.",
+    "E": "Activating MET mutations cause hereditary papillary renal cell carcinoma."
+   },
+   "objective": "Link renal angiomyolipomas in tuberous sclerosis complex to loss of TSC1/TSC2 control of mTORC1.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "tuberous sclerosis",
+    "angiomyolipoma",
+    "mTOR"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 47-year-old woman has a 3-cm right renal mass found on CT done for abdominal pain. She has no other medical problems. Which of the following features on the CT would most strongly indicate that the mass is a benign tumour rather than a renal cell carcinoma?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "A central area of lower density"
+    },
+    {
+     "label": "B",
+     "html": "Areas with attenuation below that of water, matching fat"
+    },
+    {
+     "label": "C",
+     "html": "Bright enhancement in the arterial phase"
+    },
+    {
+     "label": "D",
+     "html": "Extension into the renal vein"
+    },
+    {
+     "label": "E",
+     "html": "Peripheral rim calcification"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p><strong>Macroscopic fat</strong> (negative attenuation values, below that of water) within a renal mass is the imaging signature of <strong>angiomyolipoma</strong>, a benign tumour of fat, smooth muscle and thick-walled vessels. Renal cell carcinomas very rarely contain visible fat, so this finding usually ends the work-up for cancer.</p><p><strong>Takeaway:</strong> fat in a renal mass on CT means angiomyolipoma.</p>",
+   "whyNot": {
+    "A": "A central low-density area can be the stellate scar of an oncocytoma, but carcinomas also have central necrosis, so it does not separate benign from malignant.",
+    "C": "Avid arterial enhancement is typical of clear cell renal cell carcinoma.",
+    "D": "Tumour thrombus in the renal vein is a feature of renal cell carcinoma.",
+    "E": "Calcification is seen in cystic carcinomas and other lesions; it does not prove the mass is benign."
+   },
+   "objective": "Use macroscopic fat on CT to identify a renal angiomyolipoma.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "angiomyolipoma",
+    "renal mass"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 68-year-old man has a 5-cm left renal mass found incidentally on CT. Partial nephrectomy is performed. The tumour is well circumscribed, mahogany brown and has a central stellate scar. Microscopy shows nests of large cells with abundant, finely granular eosinophilic cytoplasm and round, uniform nuclei. Electron microscopy of these cells would most likely show an abundance of which of the following?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Glycogen granules"
+    },
+    {
+     "label": "B",
+     "html": "Lipid droplets"
+    },
+    {
+     "label": "C",
+     "html": "Mitochondria"
+    },
+    {
+     "label": "D",
+     "html": "Rough endoplasmic reticulum"
+    },
+    {
+     "label": "E",
+     "html": "Secretory granules with dense cores"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A brown, well-circumscribed renal tumour with a central scar and large eosinophilic granular cells is an <strong>oncocytoma</strong>, a benign tumour of collecting duct intercalated cells. The granular pink cytoplasm is due to cells packed with <strong>mitochondria</strong>. Surgical removal is curative.</p><p><strong>Takeaway:</strong> oncocytes are pink because they are full of mitochondria.</p>",
+   "whyNot": {
+    "A": "Glycogen and lipid give clear cell renal carcinoma its clear cytoplasm, not granular eosinophilic cytoplasm.",
+    "B": "Lipid droplets also characterise clear cell carcinoma (and foamy macrophages), not oncocytes.",
+    "D": "Abundant rough endoplasmic reticulum marks protein-secreting cells such as plasma cells.",
+    "E": "Dense-core neurosecretory granules mark neuroendocrine tumours such as carcinoid or pheochromocytoma."
+   },
+   "objective": "Identify renal oncocytoma and its mitochondria-rich cells.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "histology_cell_biology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "oncocytoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 26-year-old woman has had three episodes of calcium oxalate kidney stones in 4 years and one episode of pyelonephritis. Serum creatinine is 0.8 mg/dL. Excretory urography shows normal-sized kidneys with linear and rounded collections of contrast in the renal papillae of both kidneys, giving a brush-like appearance, and scattered medullary calcifications. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Acquired cystic kidney disease"
+    },
+    {
+     "label": "B",
+     "html": "Autosomal dominant polycystic kidney disease"
+    },
+    {
+     "label": "C",
+     "html": "Chronic pyelonephritis"
+    },
+    {
+     "label": "D",
+     "html": "Medullary sponge kidney"
+    },
+    {
+     "label": "E",
+     "html": "Nephronophthisis"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Contrast pooling in <strong>dilated medullary collecting ducts</strong> (a brush-like pattern in the papillae) with nephrocalcinosis, recurrent calcium stones and UTIs in a young adult with normal kidney function is <strong>medullary sponge kidney</strong>. Stasis in the ectatic ducts promotes stones and infection. The prognosis for kidney function is usually good.</p><p><strong>Takeaway:</strong> normal-sized kidneys, medullary contrast streaks and recurrent stones point to medullary sponge kidney.</p>",
+   "whyNot": {
+    "A": "Acquired cystic disease occurs in small, scarred kidneys of patients with long-standing kidney failure.",
+    "B": "ADPKD produces large kidneys with cortical and medullary cysts and declining function, not papillary streaks with normal size.",
+    "C": "Chronic pyelonephritis gives coarse cortical scars over blunted calyces, not dilated papillary ducts.",
+    "E": "Nephronophthisis causes salt wasting, polyuria and kidney failure in childhood or adolescence."
+   },
+   "objective": "Recognise medullary sponge kidney as a cause of recurrent stones with preserved kidney function.",
+   "areas": [
+    "usmle2026.11.02.01",
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "medullary sponge kidney",
+    "nephrolithiasis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 63-year-old man has received hemodialysis for 11 years for kidney failure due to hypertensive nephrosclerosis. Ultrasonography done for an episode of gross hematuria shows two small kidneys, each containing many cysts up to 2 cm. This condition most increases his risk of which of the following?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Angiomyolipoma"
+    },
+    {
+     "label": "B",
+     "html": "Nephroblastoma"
+    },
+    {
+     "label": "C",
+     "html": "Oncocytoma"
+    },
+    {
+     "label": "D",
+     "html": "Renal cell carcinoma"
+    },
+    {
+     "label": "E",
+     "html": "Squamous cell carcinoma of the renal pelvis"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Many cysts in <strong>small, scarred kidneys</strong> after years of dialysis is <strong>acquired cystic kidney disease</strong>. The cyst lining can become hyperplastic, and the risk of <strong>renal cell carcinoma</strong> is several times that of the general population. Cyst bleeding explains his hematuria, but a new solid component would need evaluation for cancer.</p><p><strong>Takeaway:</strong> acquired cystic disease of dialysis raises the risk of renal cell carcinoma.</p>",
+   "whyNot": {
+    "A": "Angiomyolipoma is linked to tuberous sclerosis, not to dialysis.",
+    "B": "Nephroblastoma (Wilms tumour) is a childhood tumour of metanephric blastema.",
+    "C": "Oncocytoma is a sporadic benign tumour without a recognised link to dialysis.",
+    "E": "Squamous carcinoma of the renal pelvis follows chronic irritation such as staghorn calculi, not acquired cysts."
+   },
+   "objective": "Associate acquired cystic kidney disease on dialysis with renal cell carcinoma.",
+   "areas": [
+    "usmle2026.11.02.01",
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "acquired cystic kidney disease",
+    "dialysis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old man with autosomal dominant polycystic kidney disease has a blood pressure of 152/96 mm Hg on three visits. His serum creatinine is 0.9 mg/dL and eGFR 108 mL/min/1.73 m². MRI shows both kidneys enlarged by innumerable cysts. Which of the following best explains his hypertension at this stage?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Autonomous aldosterone secretion from adrenal hyperplasia"
+    },
+    {
+     "label": "B",
+     "html": "Cyst expansion compressing intrarenal vessels and activating the renin-angiotensin system"
+    },
+    {
+     "label": "C",
+     "html": "Primary sympathetic overactivity from a pheochromocytoma"
+    },
+    {
+     "label": "D",
+     "html": "Sodium retention caused by a reduced glomerular filtration rate"
+    },
+    {
+     "label": "E",
+     "html": "Volume expansion from excess vasopressin release"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Hypertension in ADPKD often appears <strong>before the GFR falls</strong>. Enlarging cysts stretch and compress intrarenal arteries, producing patchy ischemia that stimulates <strong>renin</strong> release; angiotensin II then raises blood pressure and promotes further kidney injury. This is why ACE inhibitors or angiotensin receptor blockers are first-line antihypertensives in ADPKD.</p><p><strong>Takeaway:</strong> early ADPKD hypertension is renin driven, from cyst compression of intrarenal vessels.</p>",
+   "whyNot": {
+    "A": "Primary aldosteronism is not part of ADPKD and would cause hypokalemia with suppressed renin.",
+    "C": "Pheochromocytoma is linked to von Hippel-Lindau disease and MEN2, not ADPKD.",
+    "D": "His GFR is normal, so reduced filtration with sodium retention cannot explain the hypertension now.",
+    "E": "Vasopressin promotes cyst growth through cAMP but does not cause hypertension by volume expansion."
+   },
+   "objective": "Explain renin-angiotensin-driven hypertension early in ADPKD.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "ADPKD",
+    "hypertension"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man has CT of the abdomen with contrast for right lower quadrant pain, which shows acute appendicitis. The scan also shows a 3.5-cm round lesion in the upper pole of the left kidney with a thin, smooth wall, no septa or calcification, homogeneous water attenuation and no enhancement. He has no urinary symptoms, and his serum creatinine is normal. After appendectomy, which of the following is the most appropriate management of the renal lesion?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT-guided biopsy of the lesion"
+    },
+    {
+     "label": "B",
+     "html": "MRI of the kidneys in 3 months"
+    },
+    {
+     "label": "C",
+     "html": "No further evaluation"
+    },
+    {
+     "label": "D",
+     "html": "Partial nephrectomy"
+    },
+    {
+     "label": "E",
+     "html": "Ultrasonography every 6 months for 5 years"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A thin, smooth-walled, nonenhancing cyst of water density with no septa, calcification or solid component is a <strong>Bosniak I simple cyst</strong>. Its risk of malignancy is essentially nil, so <strong>no follow-up imaging or treatment</strong> is needed.</p><p><strong>Takeaway:</strong> Bosniak I and II cysts are benign and need no follow-up.</p>",
+   "whyNot": {
+    "A": "Biopsy is not needed for a simple cyst and adds risk without benefit.",
+    "B": "Repeat imaging is for Bosniak IIF or indeterminate lesions, not a clearly simple cyst.",
+    "D": "Surgery is reserved for Bosniak III or IV lesions (enhancing walls, septa or nodules).",
+    "E": "Surveillance imaging is used for Bosniak IIF cysts; a simple cyst does not need it."
+   },
+   "objective": "Manage an incidental Bosniak I simple renal cyst with no follow-up.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal cyst",
+    "Bosniak"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 30-year-old woman was diagnosed with autosomal dominant polycystic kidney disease at age 24. Her mother, who also had the disease, died of a subarachnoid hemorrhage at age 49. She has no headaches or neurologic symptoms. Blood pressure is 124/78 mm Hg on lisinopril. Neurologic examination is normal. eGFR is 92 mL/min/1.73 m². She asks whether anything else should be done. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Conventional cerebral angiography"
+    },
+    {
+     "label": "B",
+     "html": "Lumbar puncture"
+    },
+    {
+     "label": "C",
+     "html": "Magnetic resonance angiography of the brain"
+    },
+    {
+     "label": "D",
+     "html": "Noncontrast CT of the head"
+    },
+    {
+     "label": "E",
+     "html": "No screening unless she develops headaches"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Intracranial aneurysms cluster in families with ADPKD. Screening is recommended for patients with a <strong>family history of aneurysm or subarachnoid hemorrhage</strong>, a previous rupture, a high-risk occupation or upcoming major surgery. <strong>MR angiography</strong> (without gadolinium if needed) is the screening test of choice because it is noninvasive and needs no radiation or iodinated contrast.</p><p><strong>Takeaway:</strong> screen ADPKD patients with a family history of aneurysm or SAH using MR angiography.</p>",
+   "whyNot": {
+    "A": "Catheter angiography is invasive and reserved for treatment planning or when noninvasive imaging is unclear.",
+    "B": "Lumbar puncture looks for blood after a suspected bleed; it does not detect unruptured aneurysms.",
+    "D": "Noncontrast CT detects acute hemorrhage but cannot reliably show unruptured aneurysms.",
+    "E": "Waiting for symptoms misses the chance to treat a high-risk unruptured aneurysm; her family history makes screening appropriate."
+   },
+   "objective": "Screen for intracranial aneurysm with MR angiography in ADPKD with a family history of aneurysm or subarachnoid hemorrhage.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ADPKD",
+    "aneurysm screening"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 33-year-old man with autosomal dominant polycystic kidney disease diagnosed by ultrasonography has blood pressure of 146/94 mm Hg, 148/92 mm Hg and 150/96 mm Hg at three visits over 2 months despite reducing his salt intake. He takes no medications. Serum potassium is 4.3 mEq/L and creatinine 1.0 mg/dL; urine albumin-to-creatinine ratio is 40 mg/g. Which of the following is the most appropriate pharmacotherapy?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Amlodipine"
+    },
+    {
+     "label": "B",
+     "html": "Hydrochlorothiazide"
+    },
+    {
+     "label": "C",
+     "html": "Lisinopril"
+    },
+    {
+     "label": "D",
+     "html": "Metoprolol"
+    },
+    {
+     "label": "E",
+     "html": "Tolvaptan"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Hypertension in ADPKD is driven by activation of the renin-angiotensin system, and an <strong>ACE inhibitor</strong> (or an angiotensin receptor blocker if not tolerated) is first line. It lowers blood pressure, reduces albuminuria and, with tight control in young patients with preserved GFR, slows the growth in kidney volume. Potassium and creatinine should be checked after starting.</p><p><strong>Takeaway:</strong> ACE inhibitor or ARB first for hypertension in ADPKD.</p>",
+   "whyNot": {
+    "A": "Calcium channel blockers lower pressure but do not target the RAAS-driven mechanism or albuminuria and are second line.",
+    "B": "Thiazides are add-on agents; they can cause hypokalemia, which may promote cyst growth.",
+    "D": "Beta-blockers are not first line for uncomplicated hypertension in ADPKD.",
+    "E": "Tolvaptan slows cyst growth in rapidly progressive disease but is not an antihypertensive."
+   },
+   "objective": "Choose an ACE inhibitor or ARB as first-line treatment for hypertension in ADPKD.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ADPKD",
+    "hypertension"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-2-04",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set110201-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 37-year-old woman with autosomal dominant polycystic kidney disease (<em>PKD1</em> variant) has the following results over 3 years:</p><table><tr><th>Year</th><th>eGFR (mL/min/1.73 m²)</th><th>Total kidney volume on MRI (mL)</th></tr><tr><td>1</td><td>84</td><td>1,450</td></tr><tr><td>2</td><td>77</td><td>1,640</td></tr><tr><td>3</td><td>69</td><td>1,860</td></tr></table><p>Her kidney volume places her in the highest-risk class for her age. Blood pressure is 116/74 mm Hg on losartan. She drinks about 3 L of water daily and follows a low-sodium diet. Which of the following is the most appropriate addition to her treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Everolimus"
+    },
+    {
+     "label": "B",
+     "html": "Furosemide"
+    },
+    {
+     "label": "C",
+     "html": "Octreotide"
+    },
+    {
+     "label": "D",
+     "html": "Spironolactone"
+    },
+    {
+     "label": "E",
+     "html": "Tolvaptan"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>She has <strong>rapidly progressive ADPKD</strong>: a large and growing total kidney volume for her age and a loss of about 7–8 mL/min/1.73 m² per year. The vasopressin V2 receptor antagonist <strong>tolvaptan</strong> slows the growth in kidney volume and the decline in eGFR in such patients, and is indicated in addition to blood pressure control, water intake and sodium restriction.</p><p><strong>Takeaway:</strong> add tolvaptan for adults with ADPKD at risk of rapid progression.</p>",
+   "whyNot": {
+    "A": "mTOR inhibitors did not slow kidney function loss in ADPKD trials and cause significant adverse effects.",
+    "B": "Loop diuretics do not slow cyst growth and could cause volume depletion and a fall in GFR.",
+    "C": "Somatostatin analogues can reduce liver cyst volume but are not the standard agent for slowing kidney decline.",
+    "D": "Adding a mineralocorticoid antagonist to an ARB raises the risk of hyperkalemia and is not a disease-modifying ADPKD therapy."
+   },
+   "objective": "Identify rapidly progressive ADPKD and add tolvaptan.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ADPKD",
+    "tolvaptan"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-2-05",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set110201-1",
+   "setOrder": 2,
+   "stemHtml": "<p>The patient starts tolvaptan. She is told to expect increased thirst and urination. Which of the following tests must be monitored regularly because of a serious adverse effect of this drug?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Complete blood count"
+    },
+    {
+     "label": "B",
+     "html": "Serum aminotransferases and bilirubin"
+    },
+    {
+     "label": "C",
+     "html": "Serum creatine kinase"
+    },
+    {
+     "label": "D",
+     "html": "Serum lipase"
+    },
+    {
+     "label": "E",
+     "html": "Thyroid-stimulating hormone"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Tolvaptan can cause <strong>idiosyncratic hepatocellular injury</strong>, sometimes severe. <strong>Liver tests (ALT, AST and bilirubin)</strong> are checked before starting and then regularly, most often monthly for the first 18 months and less often afterwards, and the drug is stopped if they rise. Sodium also deserves attention because aquaresis can cause hypernatremia if she cannot drink enough.</p><p><strong>Takeaway:</strong> monitor liver tests on tolvaptan.</p>",
+   "whyNot": {
+    "A": "Tolvaptan does not cause marrow suppression.",
+    "C": "Myopathy with raised creatine kinase is a statin adverse effect, not a tolvaptan one.",
+    "D": "Pancreatitis is not a recognised tolvaptan toxicity requiring monitoring.",
+    "E": "Thyroid dysfunction is caused by drugs such as lithium and amiodarone, not tolvaptan."
+   },
+   "objective": "Monitor liver tests during tolvaptan therapy.",
+   "areas": [
+    "usmle2026.11.02.01",
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "tolvaptan",
+    "hepatotoxicity"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man with autosomal dominant polycystic kidney disease and an eGFR of 48 mL/min/1.73 m² has had fever to 38.9°C (102°F) and constant left flank pain for 4 days. Urinalysis shows 3–5 white blood cells per high-power field; urine culture from 2 days ago is negative. Blood cultures grow <em>E. coli</em>. MRI shows a 4-cm left renal cyst with a thickened wall and layering debris, consistent with an infected cyst. He has received intravenous ceftriaxone for 72 hours and remains febrile. Which of the following is the most appropriate change in antibiotic therapy?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add intravenous vancomycin"
+    },
+    {
+     "label": "B",
+     "html": "Change to intravenous cefazolin"
+    },
+    {
+     "label": "C",
+     "html": "Change to oral ciprofloxacin"
+    },
+    {
+     "label": "D",
+     "html": "Change to oral nitrofurantoin"
+    },
+    {
+     "label": "E",
+     "html": "Continue ceftriaxone for another 7 days"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Infected cysts in ADPKD often have negative urine cultures because they do not communicate with the collecting system. <strong>Lipid-soluble antibiotics</strong> that penetrate the cyst wall, such as <strong>fluoroquinolones</strong> (or trimethoprim-sulfamethoxazole), are preferred; beta-lactams penetrate cysts poorly, which explains his persistent fever. Treatment usually lasts several weeks, and a large cyst that still does not respond is drained percutaneously.</p><p><strong>Takeaway:</strong> treat ADPKD cyst infection with a cyst-penetrating antibiotic such as a fluoroquinolone.</p>",
+   "whyNot": {
+    "A": "Vancomycin covers gram-positive organisms and adds nothing against <em>E. coli</em>.",
+    "B": "Cefazolin is another beta-lactam with poor cyst penetration and narrower gram-negative activity.",
+    "D": "Nitrofurantoin reaches only the urine; it has no useful blood or tissue levels and cannot treat bacteremia or cyst infection.",
+    "E": "Continuing a drug that penetrates the cyst poorly while he stays febrile risks treatment failure."
+   },
+   "objective": "Treat infected renal cysts in ADPKD with a lipid-soluble, cyst-penetrating antibiotic.",
+   "areas": [
+    "usmle2026.11.02.01",
+    "usmle2026.11.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ADPKD",
+    "cyst infection"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-2-07",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old woman with tuberous sclerosis complex is brought to the emergency department 1 hour after the sudden onset of severe right flank pain while lifting a box. She is pale and diaphoretic. Pulse is 128/min and blood pressure 84/50 mm Hg; after 2 L of crystalloid and 2 units of packed red cells, blood pressure is 100/62 mm Hg. Hemoglobin is 8.1 g/dL. CT angiography shows a 9-cm fat-containing right renal mass with a large perirenal hematoma and active contrast extravasation from a branch of the renal artery. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Emergency radical nephrectomy"
+    },
+    {
+     "label": "B",
+     "html": "Observation with serial hemoglobin measurement"
+    },
+    {
+     "label": "C",
+     "html": "Percutaneous biopsy of the mass"
+    },
+    {
+     "label": "D",
+     "html": "Selective renal arterial embolisation"
+    },
+    {
+     "label": "E",
+     "html": "Start oral everolimus"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Spontaneous retroperitoneal hemorrhage from a large <strong>angiomyolipoma</strong> (Wunderlich syndrome) is the tumour's main danger. In a patient who responds to resuscitation, <strong>selective arterial embolisation</strong> stops the bleeding and preserves kidney tissue, which matters in tuberous sclerosis because tumours are often bilateral and recur. Surgery is kept for failure of embolisation or uncontrollable instability.</p><p><strong>Takeaway:</strong> bleeding angiomyolipoma: resuscitate, then selective arterial embolisation.</p>",
+   "whyNot": {
+    "A": "Radical nephrectomy removes the whole kidney, which is unnecessary when embolisation can control bleeding and harmful in a patient prone to bilateral tumours.",
+    "B": "Active extravasation with hypotension needs intervention, not observation.",
+    "C": "Fat on CT already makes the diagnosis; biopsy would add bleeding risk and delay treatment.",
+    "E": "Everolimus shrinks angiomyolipomas over months and has no role in acute hemorrhage."
+   },
+   "objective": "Treat acute hemorrhage from a renal angiomyolipoma with selective arterial embolisation.",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "angiomyolipoma",
+    "tuberous sclerosis",
+    "hemorrhage"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110201-2-08",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 55-year-old woman in good health has renal ultrasonography for microscopic hematuria, which shows a complex cystic lesion in the left kidney. Renal-protocol CT shows a 3-cm cyst in the lower pole with a thick, irregular wall and a 9-mm soft-tissue nodule along the wall that enhances after contrast. There is no lymphadenopathy, and the chest radiograph is normal. Her serum creatinine is 0.7 mg/dL. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Aspiration of the cyst fluid for cytology"
+    },
+    {
+     "label": "B",
+     "html": "CT surveillance in 6 months"
+    },
+    {
+     "label": "C",
+     "html": "No further evaluation"
+    },
+    {
+     "label": "D",
+     "html": "Partial nephrectomy"
+    },
+    {
+     "label": "E",
+     "html": "Radical nephrectomy with regional lymph node dissection"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>An enhancing soft-tissue nodule within a cyst makes it <strong>Bosniak IV</strong>, which carries a high probability of cystic renal cell carcinoma. In a healthy patient with a small lesion, <strong>partial (nephron-sparing) nephrectomy</strong> removes the tumour with clear margins while preserving kidney function.</p><p><strong>Takeaway:</strong> Bosniak IV (and most III) cysts are treated as cancer; prefer partial nephrectomy for small lesions.</p>",
+   "whyNot": {
+    "A": "Cyst aspiration has poor sensitivity for carcinoma and risks spilling tumour cells.",
+    "B": "Surveillance suits Bosniak IIF cysts, or small III/IV lesions in patients who cannot tolerate surgery; she is healthy.",
+    "C": "Ignoring an enhancing nodule would leave a probable cancer untreated.",
+    "E": "Radical nephrectomy removes more kidney than needed for a 3-cm lesion, and node dissection is not routine without nodal disease."
+   },
+   "objective": "Treat a Bosniak IV renal cyst with partial nephrectomy in a fit patient.",
+   "areas": [
+    "usmle2026.11.02.01",
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Bosniak",
+    "renal cyst"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110201-01",
+   "frontHtml": "ADPKD genes, chromosomes and which is more severe?",
+   "backHtml": "<em>PKD1</em> (chromosome 16, polycystin-1; about 80%, earlier kidney failure) and <em>PKD2</em> (chromosome 4, polycystin-2; milder).",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-02",
+   "frontHtml": "Where do polycystins act, and what second messenger drives ADPKD cyst growth?",
+   "backHtml": "Primary cilium of tubular cells; low intracellular calcium raises cAMP, which drives proliferation and fluid secretion.",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-03",
+   "frontHtml": "Most common extrarenal manifestation of ADPKD?",
+   "backHtml": "Liver cysts. Others: berry aneurysms, mitral valve prolapse, colonic diverticula, hernias.",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-04",
+   "frontHtml": "ARPKD: gene, renal pattern and obligatory liver lesion?",
+   "backHtml": "<em>PKHD1</em> (fibrocystin); radially dilated collecting ducts with large echogenic kidneys; congenital hepatic fibrosis.",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-05",
+   "frontHtml": "Many cysts in small, scarred kidneys after years of dialysis: name and risk?",
+   "backHtml": "Acquired cystic kidney disease; raised risk of renal cell carcinoma.",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-06",
+   "frontHtml": "Normal-sized kidneys, recurrent calcium stones, brush-like contrast streaks in the papillae?",
+   "backHtml": "Medullary sponge kidney (dilated medullary collecting ducts); function usually preserved.",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-07",
+   "frontHtml": "Three tissues of an angiomyolipoma, and the syndrome when tumours are multiple and bilateral?",
+   "backHtml": "Mature fat, smooth muscle, thick-walled vessels; tuberous sclerosis complex (<em>TSC1</em>/<em>TSC2</em>, mTORC1 overactivity).",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-08",
+   "frontHtml": "Renal oncocytoma: cell of origin, gross look and ultrastructure?",
+   "backHtml": "Collecting duct intercalated cells; mahogany brown with a central stellate scar; cells packed with mitochondria.",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-09",
+   "frontHtml": "Why does early ADPKD cause hypertension before GFR falls?",
+   "backHtml": "Cysts compress intrarenal vessels, causing ischemia and renin-angiotensin activation.",
+   "sectionId": "s23c-s110201-1-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-10",
+   "frontHtml": "Bosniak I/II, IIF, III, IV: what to do?",
+   "backHtml": "I/II: nothing. IIF: imaging surveillance. III/IV: surgical excision (often partial nephrectomy), or surveillance if a poor surgical candidate.",
+   "sectionId": "s23c-s110201-2-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-11",
+   "frontHtml": "First-line antihypertensive in ADPKD?",
+   "backHtml": "ACE inhibitor or angiotensin receptor blocker (plus sodium restriction and good water intake).",
+   "sectionId": "s23c-s110201-2-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-12",
+   "frontHtml": "Tolvaptan in ADPKD: who gets it and what must be monitored?",
+   "backHtml": "Adults at risk of rapid progression (large kidney volume for age, fast eGFR fall); monitor liver tests (hepatotoxicity).",
+   "sectionId": "s23c-s110201-2-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-13",
+   "frontHtml": "Antibiotic choice for an infected renal cyst in ADPKD?",
+   "backHtml": "A lipid-soluble, cyst-penetrating agent: fluoroquinolone or trimethoprim-sulfamethoxazole, for several weeks; drain if no response.",
+   "sectionId": "s23c-s110201-2-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-14",
+   "frontHtml": "Which ADPKD patients get screening for intracranial aneurysm, and with what?",
+   "backHtml": "Family history of aneurysm or SAH, prior rupture, high-risk job, major elective surgery; MR angiography.",
+   "sectionId": "s23c-s110201-2-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110201-15",
+   "frontHtml": "Hemodynamically responsive patient with active bleeding from a renal angiomyolipoma: treatment?",
+   "backHtml": "Selective arterial embolisation (kidney-sparing).",
+   "sectionId": "s23c-s110201-2-1",
+   "areas": [
+    "usmle2026.11.02.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

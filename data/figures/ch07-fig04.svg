@@ -1,0 +1,41 @@
+<svg aria-label="Comparison of epidural, subdural and subarachnoid hemorrhage" role="img" viewbox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+<!-- three panels -->
+<g fill="#0f172a" font-family="sans-serif">
+<rect fill="#ffffff" height="340" stroke="#334155" width="200" x="10" y="10"></rect>
+<rect fill="#ffffff" height="340" stroke="#334155" width="200" x="220" y="10"></rect>
+<rect fill="#ffffff" height="340" stroke="#334155" width="200" x="430" y="10"></rect>
+<text font-size="14" font-weight="bold" text-anchor="middle" x="110" y="32">Epidural</text>
+<text font-size="14" font-weight="bold" text-anchor="middle" x="320" y="32">Subdural</text>
+<text font-size="14" font-weight="bold" text-anchor="middle" x="530" y="32">Subarachnoid</text>
+<!-- skull circles -->
+<circle cx="110" cy="120" fill="#e0f2fe" r="70" stroke="#334155" stroke-width="4"></circle>
+<path d="M60,72 Q45,120 60,165 Q85,120 60,72 Z" fill="#fee2e2" stroke="#334155"></path>
+<circle cx="320" cy="120" fill="#e0f2fe" r="70" stroke="#334155" stroke-width="4"></circle>
+<path d="M268,75 Q245,120 268,168 Q262,120 268,75 Z" fill="#fee2e2" stroke="#334155"></path>
+<path d="M268,75 A66,66 0 0,0 268,168" fill="none" stroke="#334155" stroke-opacity="0.35" stroke-width="10"></path>
+<circle cx="530" cy="120" fill="#e0f2fe" r="70" stroke="#334155" stroke-width="4"></circle>
+<path d="M530,120 L500,95 M530,120 L560,95 M530,120 L530,85 M530,120 L505,150 M530,120 L555,150" stroke="#fee2e2" stroke-width="7"></path>
+<path d="M530,120 L500,95 M530,120 L560,95 M530,120 L530,85 M530,120 L505,150 M530,120 L555,150" stroke="#334155" stroke-width="1"></path>
+<text font-size="12" text-anchor="middle" x="110" y="210">Biconvex (lens)</text>
+<text font-size="12" text-anchor="middle" x="320" y="210">Crescent</text>
+<text font-size="12" text-anchor="middle" x="530" y="210">Blood in sulci/cisterns</text>
+<text font-size="12" x="20" y="235">Middle meningeal a.</text>
+<text font-size="12" x="20" y="252">(pterion fracture)</text>
+<text font-size="12" x="20" y="270">Does NOT cross sutures</text>
+<text font-size="12" x="20" y="288">Lucid interval</text>
+<text font-size="12" x="20" y="306">Arterial: rapid</text>
+<text font-size="12" x="20" y="324">→ uncal herniation</text>
+<text font-size="12" x="230" y="235">Bridging veins</text>
+<text font-size="12" x="230" y="252">Elderly, alcohol use,</text>
+<text font-size="12" x="230" y="270">shaken baby, falls</text>
+<text font-size="12" x="230" y="288">CROSSES sutures,</text>
+<text font-size="12" x="230" y="306">not falx/tentorium</text>
+<text font-size="12" x="230" y="324">Venous: slow, chronic</text>
+<text font-size="12" x="440" y="235">Berry aneurysm, AVM,</text>
+<text font-size="12" x="440" y="252">trauma</text>
+<text font-size="12" x="440" y="270">"Worst headache of life"</text>
+<text font-size="12" x="440" y="288">CT neg → LP: xanthochromia</text>
+<text font-size="12" x="440" y="306">Vasospasm days 3–14</text>
+<text font-size="12" x="440" y="324">→ nimodipine</text>
+</g>
+</svg>

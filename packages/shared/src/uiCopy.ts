@@ -1,0 +1,56 @@
+/**
+ * UI copy from `app_config.ui_copy` (served with GET /api/public-config) with a non-empty last resort.
+ *
+ * The server refuses an admin edit that drops any key the app shows (REQUIRED_UI_COPY_KEYS in
+ * apps/api/naadi_api/config_api/schemas.py), so the fallback is only reached when the config could not be
+ * loaded at all or the server is older than the bundle. The fallback text is ui-copy.defaults.json, generated
+ * from config/app_config.yaml (the values the seed writes), so the bundle carries no copy of its own.
+ *
+ * Segment 22 budget (initial JS <= 250 KB gzip): the admin console's and review queue's strings are in
+ * ui-copy.admin.defaults.json, which `@naadi/shared/ui-copy-admin` adds here when the admin chunks load.
+ */
+// Named imports, so a bundle keeps `values` only: `required` is for the server and tests.
+import { required, values } from "../ui-copy.defaults.json";
+
+export type UiCopy = Readonly<Record<string, string>>;
+
+const defaults: Record<string, string> = { ...values };
+
+/** The shipped fallback text: the core strings, plus the admin strings once an admin chunk has loaded. */
+export const UI_COPY_DEFAULTS: UiCopy = defaults;
+export const REQUIRED_UI_COPY_KEYS: readonly string[] = required;
+
+/** Add shipped defaults that load with a lazy chunk (`@naadi/shared/ui-copy-admin`). */
+export function registerUiCopyDefaults(more: UiCopy): void {
+  Object.assign(defaults, more);
+}
+
+const warned = new Set<string>();
+
+function fill(template: string, vars: Readonly<Record<string, string>>): string {
+  return template.replace(/\{(\w+)\}/g, (m, name: string) => vars[name] ?? m);
+}
+
+/**
+ * The text for `key`: the configured string, else the shipped default, else the key itself, so a label or
+ * accessible name is never empty. A key missing from a loaded config is logged once. `{name}` placeholders are filled from `vars`.
+ */
+export function uiText(
+  copy: UiCopy | null | undefined,
+  key: string,
+  vars: Readonly<Record<string, string>> = {},
+): string {
+  const configured = copy?.[key];
+  if (configured?.trim()) return fill(configured, vars);
+  // Missing from a loaded config is worth a log line; no config yet (still loading, offline) is not.
+  if (copy && !warned.has(key)) {
+    warned.add(key);
+    console.warn(`ui_copy: "${key}" is not configured; using the shipped default`);
+  }
+  return fill(UI_COPY_DEFAULTS[key] || key, vars);
+}
+
+/** Test hook: forget which keys were already reported. */
+export function resetUiCopyWarnings(): void {
+  warned.clear();
+}

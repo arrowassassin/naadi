@@ -1,0 +1,76 @@
+<svg aria-label="Map of leukocyte development showing where each primary immunodeficiency blocks the pathway" role="img" viewbox="0 0 760 500" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch01-arr-immunodef" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif">
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="90" x="20" y="200"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="65.0" y="216.7">Stem cell</text>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="65.0" y="231.7">CD34⁺</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="150" y="110"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="205.0" y="126.7">Lymphoid</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="205.0" y="141.7">progenitor</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="150" y="340"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="205.0" y="356.7">Myeloid</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="205.0" y="371.7">progenitor</text>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="110" x2="149" y1="212" y2="140"></line>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="110" x2="149" y1="228" y2="352"></line>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="310" y="40"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="365.0" y="56.7">Thymus</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="365.0" y="71.7">(pre-T)</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="130" x="470" y="40"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="535.0" y="56.7">Mature T</text>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="535.0" y="71.7">CD4 / CD8</text>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="260" x2="309" y1="122" y2="70"></line>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="420" x2="469" y1="60" y2="60"></line>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="310" y="150"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="365.0" y="174.2">Pre-B cell</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="470" y="150"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="525.0" y="166.7">Mature B</text>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="525.0" y="181.7">(IgM, IgD)</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="120" x="625" y="150"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="685.0" y="166.7">Plasma cell</text>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="685.0" y="181.7">IgG, IgA, IgE</text>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="260" x2="309" y1="138" y2="165"></line>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="420" x2="469" y1="170" y2="170"></line>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="580" x2="624" y1="170" y2="170"></line>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-dasharray="6 4" stroke-width="1.6" x1="600" x2="640" y1="80" y2="149"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="650" y="112">CD40L–CD40</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="650" y="127">help</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="310" y="340"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="365.0" y="364.2">Neutrophil</text>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="260" x2="309" y1="360" y2="360"></line>
+<rect fill="#ffffff" height="30" rx="6" stroke="#334155" stroke-width="1.5" width="130" x="470" y="300"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="535.0" y="319.2">Adhesion (CD18)</text>
+<rect fill="#ffffff" height="30" rx="6" stroke="#334155" stroke-width="1.5" width="130" x="470" y="345"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="535.0" y="364.2">Phagolysosome</text>
+<rect fill="#ffffff" height="30" rx="6" stroke="#334155" stroke-width="1.5" width="130" x="470" y="390"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="535.0" y="409.2">Respiratory burst</text>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="420" x2="469" y1="360" y2="315"></line>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="420" x2="469" y1="360" y2="360"></line>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-width="1.6" x1="420" x2="469" y1="360" y2="405"></line>
+<rect fill="#fee2e2" height="42" rx="6" stroke="#334155" stroke-width="1.5" width="190" x="20" y="40"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="115.0" y="57.7">SCID: IL2RG, ADA, RAG,</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="115.0" y="72.7">JAK3 (no T ± B, NK)</text>
+<line marker-end="url(#ch01-arr-immunodef)" stroke="#334155" stroke-dasharray="6 4" stroke-width="1.6" x1="115" x2="175" y1="82" y2="109"></line>
+<rect fill="#fee2e2" height="26" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="300" y="92"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="375.0" y="109.2">DiGeorge (22q11)</text>
+<rect fill="#fee2e2" height="26" rx="6" stroke="#334155" stroke-width="1.5" width="130" x="300" y="205"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="365.0" y="222.2">XLA: BTK</text>
+<rect fill="#fee2e2" height="26" rx="6" stroke="#334155" stroke-width="1.5" width="130" x="465" y="205"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="530.0" y="222.2">CVID</text>
+<rect fill="#fee2e2" height="42" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="615" y="205"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="685.0" y="222.7">Hyper-IgM: CD40L</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="685.0" y="237.7">IgA deficiency</text>
+<rect fill="#fee2e2" height="26" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="615" y="300"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="685.0" y="317.2">LAD-1</text>
+<rect fill="#fee2e2" height="26" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="615" y="345"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="685.0" y="362.2">Chédiak-Higashi</text>
+<rect fill="#fee2e2" height="26" rx="6" stroke="#334155" stroke-width="1.5" width="140" x="615" y="390"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="685.0" y="407.2">CGD (NADPH oxid.)</text>
+<line stroke="#334155" stroke-width="1.6" x1="600" x2="614" y1="313" y2="313"></line>
+<line stroke="#334155" stroke-width="1.6" x1="600" x2="614" y1="358" y2="358"></line>
+<line stroke="#334155" stroke-width="1.6" x1="600" x2="614" y1="403" y2="403"></line>
+<rect fill="#fee2e2" height="42" rx="6" stroke="#334155" stroke-width="1.5" width="260" x="20" y="420"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="150.0" y="437.7">Wiskott-Aldrich (WAS): T + platelets</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="150.0" y="452.7">Ataxia-telangiectasia (ATM): DNA repair</text>
+<text font-size="12" font-style="italic" font-weight="normal" text-anchor="middle" x="520" y="485">Red boxes mark the step each disorder blocks</text>
+</g>
+</svg>

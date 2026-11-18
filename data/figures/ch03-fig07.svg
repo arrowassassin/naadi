@@ -1,0 +1,35 @@
+<svg aria-label="Flowchart for classifying study designs into experimental and observational types." role="img" viewbox="0 0 640 370" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch03-arrow6" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#fef3c7" height="38" rx="6" stroke="#334155" width="240" x="200" y="8"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="32">Did the investigator assign exposure?</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="270" x2="135" y1="46" y2="78"></line><text x="190" y="58">Yes</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="370" x2="505" y1="46" y2="78"></line><text x="440" y="58">No</text>
+<rect fill="#e0f2fe" height="34" rx="6" stroke="#334155" width="180" x="40" y="80"></rect><text font-weight="bold" text-anchor="middle" x="130" y="102">EXPERIMENTAL</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="130" x2="130" y1="114" y2="138"></line>
+<rect fill="#fef3c7" height="34" rx="6" stroke="#334155" width="180" x="40" y="140"></rect><text text-anchor="middle" x="130" y="162">Random allocation?</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="95" x2="70" y1="174" y2="208"></line><text x="62" y="192">Yes</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="165" x2="192" y1="174" y2="208"></line><text x="186" y="192">No</text>
+<rect fill="#dcfce7" height="46" rx="6" stroke="#334155" width="125" x="8" y="210"></rect><text font-weight="bold" text-anchor="middle" x="70" y="229">RCT</text><text text-anchor="middle" x="70" y="246">best for causation</text>
+<rect fill="#dcfce7" height="46" rx="6" stroke="#334155" width="110" x="140" y="210"></rect><text text-anchor="middle" x="195" y="229">Non-randomized</text><text text-anchor="middle" x="195" y="246">trial</text>
+<rect fill="#e0f2fe" height="34" rx="6" stroke="#334155" width="180" x="420" y="80"></rect><text font-weight="bold" text-anchor="middle" x="510" y="102">OBSERVATIONAL</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="510" x2="510" y1="114" y2="138"></line>
+<rect fill="#fef3c7" height="34" rx="6" stroke="#334155" width="170" x="440" y="140"></rect><text text-anchor="middle" x="525" y="162">Comparison group?</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="440" x2="412" y1="157" y2="157"></line><text x="418" y="150">No</text>
+<rect fill="#dcfce7" height="34" rx="6" stroke="#334155" width="140" x="270" y="140"></rect><text text-anchor="middle" x="340" y="155">Descriptive: case</text><text text-anchor="middle" x="340" y="169">report / case series</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="525" x2="525" y1="174" y2="198"></line><text x="532" y="192">Yes</text>
+<rect fill="#fef3c7" height="32" rx="6" stroke="#334155" width="250" x="380" y="200"></rect><text text-anchor="middle" x="505" y="221">ANALYTIC: what is the starting point?</text>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="505" x2="82" y1="232" y2="288"></line>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="505" x2="240" y1="232" y2="288"></line>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="505" x2="398" y1="232" y2="288"></line>
+<line marker-end="url(#ch03-arrow6)" stroke="#334155" stroke-width="1.5" x1="505" x2="556" y1="232" y2="288"></line>
+<rect fill="#dcfce7" height="72" rx="6" stroke="#334155" width="148" x="8" y="290"></rect>
+<text font-weight="bold" text-anchor="middle" x="82" y="307">COHORT</text><text text-anchor="middle" x="82" y="323">start with exposure,</text><text text-anchor="middle" x="82" y="338">follow for outcome</text><text text-anchor="middle" x="82" y="354">→ incidence, RR</text>
+<rect fill="#dcfce7" height="72" rx="6" stroke="#334155" width="148" x="166" y="290"></rect>
+<text font-weight="bold" text-anchor="middle" x="240" y="307">CASE–CONTROL</text><text text-anchor="middle" x="240" y="323">start with outcome,</text><text text-anchor="middle" x="240" y="338">look back at exposure</text><text text-anchor="middle" x="240" y="354">→ OR; rare disease</text>
+<rect fill="#dcfce7" height="72" rx="6" stroke="#334155" width="148" x="324" y="290"></rect>
+<text font-weight="bold" text-anchor="middle" x="398" y="307">CROSS-SECTIONAL</text><text text-anchor="middle" x="398" y="323">exposure + outcome</text><text text-anchor="middle" x="398" y="338">at one point in time</text><text text-anchor="middle" x="398" y="354">→ prevalence</text>
+<rect fill="#dcfce7" height="72" rx="6" stroke="#334155" width="148" x="482" y="290"></rect>
+<text font-weight="bold" text-anchor="middle" x="556" y="307">ECOLOGICAL</text><text text-anchor="middle" x="556" y="323">population-level</text><text text-anchor="middle" x="556" y="338">data only</text><text text-anchor="middle" x="556" y="354">→ ecological fallacy</text>
+</g>
+</svg>

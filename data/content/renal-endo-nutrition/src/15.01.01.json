@@ -1,0 +1,1643 @@
+{
+ "area": "usmle2026.15.01.01",
+ "sections": [
+  {
+   "id": "s23c-s150101-1-1",
+   "exam": "step1",
+   "heading": "Insulin secretion and action; types of diabetes",
+   "html": "<p>Insulin is made in pancreatic beta cells as preproinsulin; cleavage in the endoplasmic reticulum gives proinsulin, and cleavage in secretory granules gives <strong>insulin plus C-peptide in equal amounts</strong>. C-peptide is not cleared by the liver on first pass and has a longer half-life, so it is the better marker of the patient's own insulin secretion. Injected insulin contains no C-peptide.</p><h3>How glucose triggers secretion</h3><ol><li>Glucose enters through <strong>GLUT2</strong>, a high-capacity transporter that keeps intracellular glucose close to plasma glucose.</li><li><strong>Glucokinase</strong> (high Km, not inhibited by its product) phosphorylates it, so it acts as the beta cell's glucose sensor.</li><li>Glycolysis and oxidation raise the ATP/ADP ratio, which <strong>closes ATP-sensitive K<sup>+</sup> channels</strong> (Kir6.2 pore with the SUR1 subunit).</li><li>The membrane depolarises, voltage-gated Ca<sup>2+</sup> channels open, and Ca<sup>2+</sup> drives granule exocytosis.</li><li>Incretins (GLP-1 and GIP from the gut after a meal) act on Gs-coupled receptors and amplify secretion only when glucose is raised. This is why an oral glucose load releases more insulin than the same glucose given intravenously.</li></ol>[[figure:s23c-fig150101-1]]<h3>What insulin and glucagon do</h3><table><tr><th>Process</th><th>Insulin (fed state)</th><th>Glucagon (fasting state)</th></tr><tr><td>Glucose uptake</td><td>Moves GLUT4 to the membrane in skeletal muscle and adipose tissue</td><td>No direct effect on muscle</td></tr><tr><td>Liver glucose output</td><td>Suppresses glycogenolysis and gluconeogenesis; stimulates glycogen synthesis</td><td>Stimulates glycogenolysis and gluconeogenesis (cAMP, protein kinase A)</td></tr><tr><td>Fat</td><td>Stimulates lipogenesis; inhibits hormone-sensitive lipase</td><td>Lipolysis; with low insulin, fatty acids go to ketogenesis in the liver</td></tr><tr><td>Protein</td><td>Anabolic</td><td>Promotes amino acid use for gluconeogenesis</td></tr><tr><td>Potassium</td><td>Drives K<sup>+</sup> into cells (Na<sup>+</sup>/K<sup>+</sup>-ATPase)</td><td>—</td></tr></table><p>The insulin receptor is a receptor tyrosine kinase; its metabolic effects run mainly through the PI3K-Akt pathway. Brain, red blood cells, kidney medulla and hepatocytes take up glucose without insulin (non-GLUT4 transporters).</p><h3>Types of diabetes</h3><table><tr><th>Feature</th><th>Type 1</th><th>Type 2</th></tr><tr><td>Mechanism</td><td>T-cell-mediated autoimmune destruction of beta cells</td><td>Insulin resistance plus progressive relative beta-cell failure</td></tr><tr><td>Genetics</td><td>HLA-DR3 and HLA-DR4 (DQ2/DQ8) association; weaker family concordance</td><td>Strongly polygenic; very high concordance in identical twins</td></tr><tr><td>Islet histology</td><td><strong>Insulitis</strong> (lymphocytes in islets), then loss of beta cells</td><td><strong>Islet amyloid</strong> (amylin, also called islet amyloid polypeptide)</td></tr><tr><td>Markers</td><td>Autoantibodies to GAD65, IA-2, ZnT8 and insulin; low C-peptide</td><td>No autoantibodies; C-peptide normal or high early</td></tr><tr><td>Typical start</td><td>Childhood or young adulthood, often with DKA</td><td>Adulthood with obesity; increasingly in adolescents</td></tr><tr><td>Acute crisis</td><td>Diabetic ketoacidosis</td><td>Hyperosmolar hyperglycemic state (DKA can occur too)</td></tr></table><ul><li><strong>Latent autoimmune diabetes in adults (LADA)</strong>: adult-onset autoimmune diabetes, autoantibody positive, that does not need insulin at first but progresses to insulin dependence over months to years.</li><li><strong>Monogenic diabetes (MODY)</strong>: autosomal dominant, young onset, not obese, antibody negative. <em>GCK</em> loss raises the glucose set point and gives lifelong mild, stable fasting hyperglycemia with few complications; it usually needs no treatment. <em>HNF1A</em> variants give progressive diabetes with low renal glucose threshold (glycosuria) and marked sensitivity to sulfonylureas.</li><li><strong>Secondary diabetes</strong>: pancreatic disease (chronic pancreatitis, cystic fibrosis, hemochromatosis, pancreatectomy), endocrine excess (Cushing syndrome, acromegaly, glucagonoma, pheochromocytoma) and drugs (glucocorticoids, thiazides, second-generation antipsychotics, calcineurin inhibitors, some HIV protease inhibitors, niacin).</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> islet amyloid points to type 2, insulitis to type 1. Hemosiderin in islets with bronze skin is hemochromatosis, a secondary cause.</p></div>",
+   "figureIds": [
+    "s23c-fig150101-1"
+   ],
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Type 1 Diabetes",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK507713/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Type 2 Diabetes",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK513253/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Maturity Onset Diabetes in the Young",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532900/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Diabetes",
+     "url": "https://medlineplus.gov/diabetes.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150101-1-2",
+   "exam": "step1",
+   "heading": "Diabetes: complications and drugs by mechanism",
+   "html": "<h3>Acute crises: why ketones in one and not the other</h3><table><tr><th>Feature</th><th>Diabetic ketoacidosis (DKA)</th><th>Hyperosmolar hyperglycemic state (HHS)</th></tr><tr><td>Insulin</td><td>Absent or nearly so</td><td>Some insulin remains: enough to restrain lipolysis and ketogenesis, not enough to control glucose</td></tr><tr><td>Glucose</td><td>Raised, often 250–600 mg/dL; can be near normal with SGLT2 inhibitors (euglycemic DKA)</td><td>Very high, often above 600 mg/dL</td></tr><tr><td>Acid-base</td><td>Anion gap metabolic acidosis from beta-hydroxybutyrate and acetoacetate</td><td>Little or no acidosis</td></tr><tr><td>Osmolality and mental status</td><td>Mildly raised</td><td>Markedly raised; confusion to coma tracks osmolality</td></tr><tr><td>Course</td><td>Hours to a day</td><td>Days of osmotic diuresis and dehydration, often in older adults</td></tr></table><p>Glucagon, cortisol and catecholamines rise in both. Without insulin, hormone-sensitive lipase releases fatty acids that the liver turns into ketoacids. Insulin deficiency also shifts potassium out of cells, so <strong>serum K<sup>+</sup> may be normal or high while total-body K<sup>+</sup> is depleted</strong> by urinary losses. Kussmaul breathing is respiratory compensation; acetone gives a fruity breath odour. Cerebral edema is the feared complication of treatment, especially in children.</p><h3>Chronic complications</h3><ul><li><strong>Nonenzymatic glycation</strong>: glucose attaches to proteins without an enzyme (hemoglobin A1c is the measurable example). Advanced glycation end-products cross-link collagen and basement membranes, trap LDL and plasma proteins and activate inflammatory receptors. Result: thickened capillary basement membranes, <strong>hyaline arteriolosclerosis</strong> of afferent and efferent arterioles, accelerated atherosclerosis.</li><li><strong>Polyol (sorbitol) pathway</strong>: in tissues that take up glucose without insulin (lens, Schwann cells, retina, kidney papillae), <strong>aldose reductase</strong> reduces excess glucose to sorbitol, which these cells convert slowly. Sorbitol draws in water and depletes NADPH, causing <strong>cataracts</strong> and <strong>peripheral neuropathy</strong>.</li><li><strong>Diabetic kidney disease</strong>: early glomerular hyperfiltration, then mesangial expansion, diffuse and then <strong>nodular (Kimmelstiel-Wilson) glomerulosclerosis</strong> with PAS-positive nodules, GBM thickening and albuminuria.</li><li><strong>Retinopathy</strong>: pericyte loss, microaneurysms, dot-blot hemorrhages and hard exudates (nonproliferative), then VEGF-driven neovascularisation (proliferative).</li><li><strong>Neuropathy</strong>: distal symmetric \"stocking-glove\" sensory loss, autonomic neuropathy (gastroparesis, orthostatic hypotension, erectile dysfunction), mononeuropathies (cranial nerve III palsy that spares the pupil).</li></ul><h3>Drugs by mechanism</h3><table><tr><th>Class</th><th>Mechanism</th><th>Main adverse effects</th></tr><tr><td>Insulins: rapid (lispro, aspart, glulisine), short (regular), intermediate (NPH), long (glargine, detemir, degludec)</td><td>Replace insulin; differ only in absorption profile</td><td>Hypoglycemia, weight gain, lipohypertrophy at injection sites, hypokalemia</td></tr><tr><td>Metformin (biguanide)</td><td>Lowers hepatic gluconeogenesis (in part through AMP-activated protein kinase); improves insulin sensitivity</td><td>GI upset, vitamin B12 deficiency, lactic acidosis in kidney failure or hypoperfusion; no hypoglycemia alone; weight neutral</td></tr><tr><td>Sulfonylureas (glipizide, glimepiride, glyburide); meglitinides (repaglinide)</td><td>Bind SUR1 and close K-ATP channels, so insulin is released regardless of glucose</td><td>Hypoglycemia (worst with glyburide, in older adults and in kidney failure), weight gain</td></tr><tr><td>Thiazolidinediones (pioglitazone)</td><td>PPAR-gamma agonists (nuclear receptor): raise insulin sensitivity in fat, muscle, liver</td><td>Fluid retention and heart failure, weight gain, fractures</td></tr><tr><td>GLP-1 receptor agonists (semaglutide, liraglutide, dulaglutide); tirzepatide (GIP and GLP-1 agonist)</td><td>Glucose-dependent insulin release, less glucagon, slower gastric emptying, satiety</td><td>Nausea and vomiting, gallbladder disease, pancreatitis; avoid with personal or family history of medullary thyroid cancer or MEN2</td></tr><tr><td>DPP-4 inhibitors (sitagliptin, linagliptin)</td><td>Block breakdown of endogenous GLP-1 and GIP</td><td>Generally mild; weight neutral; pancreatitis rarely</td></tr><tr><td>SGLT2 inhibitors (empagliflozin, dapagliflozin, canagliflozin)</td><td>Block sodium-glucose cotransporter 2 in the proximal tubule, causing glycosuria</td><td>Genital mycotic infections, volume depletion, euglycemic DKA; rare necrotising fasciitis of the perineum</td></tr><tr><td>Alpha-glucosidase inhibitors (acarbose)</td><td>Slow carbohydrate digestion at the brush border</td><td>Flatulence, diarrhea; treat hypoglycemia with glucose, not sucrose</td></tr><tr><td>Pramlintide</td><td>Amylin analogue: slows gastric emptying, lowers glucagon</td><td>Hypoglycemia with insulin (mealtime insulin is reduced), nausea</td></tr></table><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Closing the door raises the voltage</em>\": anything that closes the beta-cell K-ATP door (ATP, sulfonylureas) depolarises the cell and releases insulin; diazoxide props the door open.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Adult Diabetic Ketoacidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560723/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hyperosmolar Hyperglycemic Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482142/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Metformin",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK518983/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Sulfonylureas",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK513225/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Euglycemic Diabetic Ketoacidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK554570/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150101-2-1",
+   "exam": "step2ck",
+   "heading": "Diabetes: diagnosis, screening and outpatient management",
+   "html": "<h3>Diagnosis</h3><table><tr><th>Test</th><th>Diabetes</th><th>Prediabetes</th></tr><tr><td>Hemoglobin A1c</td><td>6.5% or higher</td><td>5.7–6.4%</td></tr><tr><td>Fasting plasma glucose (8 h or more without calories)</td><td>126 mg/dL (7.0 mmol/L) or higher</td><td>100–125 mg/dL</td></tr><tr><td>2-hour glucose on a 75-g oral glucose tolerance test</td><td>200 mg/dL (11.1 mmol/L) or higher</td><td>140–199 mg/dL</td></tr><tr><td>Random glucose with classic symptoms or a hyperglycemic crisis</td><td>200 mg/dL or higher</td><td>—</td></tr></table><p>Without unequivocal hyperglycemia, diagnosis needs two abnormal results: two different tests from the same sample, or the same test repeated. If two tests disagree, <strong>repeat the test that was abnormal</strong>. A1c is unreliable when red cell lifespan is altered (hemolysis, recent bleeding or transfusion, pregnancy, iron deficiency, hemoglobin variants, advanced CKD); use glucose-based tests then.</p><h3>Screening</h3><ul><li>USPSTF: adults aged 35–70 with overweight or obesity, every 3 years if normal.</li><li>ADA: everyone from age 35, and earlier in adults with overweight or obesity plus a risk factor (first-degree relative, high-risk ethnicity, hypertension, dyslipidemia, polycystic ovary syndrome, inactivity, history of gestational diabetes).</li><li>Prediabetes: intensive lifestyle programme aiming for about 7% weight loss and 150 minutes a week of activity; metformin can be considered in younger, heavier patients or after gestational diabetes.</li></ul><h3>Treating type 2 diabetes</h3><ol><li><strong>Lifestyle</strong> for everyone: nutrition therapy, activity, weight loss; diabetes self-management education.</li><li><strong>Choose drugs by comorbidity first, then by glucose and weight goals.</strong><ul><li>Established atherosclerotic cardiovascular disease or high risk: a GLP-1 receptor agonist or an SGLT2 inhibitor with proven cardiovascular benefit, <em>regardless of A1c</em>.</li><li>Heart failure (reduced or preserved ejection fraction): an SGLT2 inhibitor.</li><li>CKD with albuminuria or reduced eGFR: an SGLT2 inhibitor (and RAS blockade); a GLP-1 receptor agonist if more glucose lowering is needed.</li><li>Obesity: a GLP-1 receptor agonist or tirzepatide gives the most weight loss.</li><li>Metformin remains a sound, cheap foundation when none of these drives the choice.</li></ul></li><li>Add or intensify every 3 months if the individual A1c target is not reached. Consider insulin early when A1c is above 10%, glucose is 300 mg/dL or higher, or there is catabolism (weight loss) or symptomatic hyperglycemia.</li><li><strong>Insulin</strong>: start basal insulin at about 10 units a day or 0.1–0.2 units/kg/day and titrate by a few units every few days until fasting glucose is at target. If fasting glucose is controlled but A1c is still high, add a GLP-1 receptor agonist or prandial insulin rather than pushing basal insulin ever higher.</li></ol><h3>Targets</h3><ul><li>A1c below 7% for many nonpregnant adults; tighter if achievable without hypoglycemia; <strong>less strict (for example below 8.0%) in older adults with multiple illnesses, cognitive impairment or limited life expectancy</strong>, in whom hypoglycemia causes falls and harm. Stop or avoid sulfonylureas (especially glyburide) and deintensify when glucose is overtreated.</li><li>Blood pressure below 130/80 mm Hg for most; ACE inhibitor or ARB when there is albuminuria.</li><li>Statin: at least moderate intensity for ages 40–75; high intensity with ASCVD or multiple risk factors.</li><li>Aspirin for secondary prevention; for primary prevention only after weighing bleeding risk.</li></ul><h3>Complication surveillance</h3><table><tr><th>Check</th><th>Type 1</th><th>Type 2</th></tr><tr><td>Dilated eye examination</td><td>Within 5 years of onset, then every 1–2 years</td><td>At diagnosis, then every 1–2 years if normal</td></tr><tr><td>Urine albumin-to-creatinine ratio and eGFR</td><td>Yearly from 5 years after onset</td><td>At diagnosis, then at least yearly</td></tr><tr><td>Neuropathy and comprehensive foot examination (monofilament, vibration, pulses)</td><td>From 5 years after onset, then yearly</td><td>At diagnosis, then yearly</td></tr></table><p><strong>Diabetic foot</strong>: a neuropathic plantar ulcer heals only with <strong>offloading</strong> (total contact cast or removable walker), debridement and good perfusion; check pulses and the ankle-brachial index. A positive probe-to-bone test or exposed bone suggests osteomyelitis: radiographs first, then MRI. Antibiotics are for clinically infected wounds only.</p><div class=\"trap\"><p><strong>Exam trap:</strong> in an older patient with recurrent hypoglycemia and an A1c of 6.2% on a sulfonylurea, the answer is to stop the sulfonylurea, not to add snacks.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Type 2 Diabetes",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK513253/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Diabetic Foot Ulceration and Complications",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK499887/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "USPSTF: Prediabetes and type 2 diabetes, screening",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes",
+     "sourceId": "uspstf"
+    },
+    {
+     "label": "MedlinePlus: Diabetes",
+     "url": "https://medlineplus.gov/diabetes.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150101-2-2",
+   "exam": "step2ck",
+   "heading": "Hyperglycemic crises, sick days and planning pregnancy",
+   "html": "<h3>Diabetic ketoacidosis and hyperosmolar hyperglycemic state</h3><p><strong>DKA</strong>: glucose above about 200 mg/dL (or known diabetes), ketonemia (beta-hydroxybutyrate raised) and acidosis (pH below 7.3 or bicarbonate below 18 mEq/L), with a raised anion gap. Precipitants: missed insulin, infection, new-onset type 1, myocardial infarction, pancreatitis, SGLT2 inhibitors, cocaine. <strong>HHS</strong>: glucose usually above 600 mg/dL, markedly raised osmolality (total osmolality classically above about 320 mOsm/kg), little ketosis or acidosis, and often altered mental status.</p><h3>Management (same backbone for both)</h3><ol><li><strong>Fluids first</strong>: isotonic saline (or a balanced crystalloid) about 1–1.5 L in the first hour, then guided by volume status and the corrected sodium. Patients with HHS have the larger deficit.</li><li><strong>Potassium before insulin decisions</strong>:<ul><li>K<sup>+</sup> below 3.5 mEq/L: hold insulin and give IV potassium until 3.5 or higher; insulin would drive K<sup>+</sup> into cells and risk arrhythmia.</li><li>3.5–5.0 mEq/L: add potassium to each litre of fluid.</li><li>Above 5.0 mEq/L: no potassium yet; recheck every 1–2 hours.</li></ul></li><li><strong>Insulin</strong>: continuous IV regular insulin (about 0.1 units/kg/hour). In mild DKA, subcutaneous rapid-acting insulin is an alternative.</li><li><strong>Add dextrose</strong> when glucose falls to about 250 mg/dL in DKA (about 300 mg/dL in HHS) and continue insulin until the ketoacidosis resolves. In DKA, insulin is being given to clear ketones, not just to lower glucose.</li><li><strong>Bicarbonate</strong> only for severe acidemia (pH below about 7.0). Phosphate only if severely low.</li><li><strong>Transition</strong> when the anion gap has closed and the patient can eat: give subcutaneous basal insulin 1–2 hours <em>before</em> stopping the infusion to avoid rebound ketoacidosis.</li><li>Monitor glucose hourly and electrolytes every 2–4 hours; look for and treat the precipitant. Lower glucose and sodium gradually, particularly in children, to reduce the risk of cerebral edema.</li></ol>[[figure:s23c-fig150101-2]]<h3>Sick-day rules</h3><ul><li>Type 1 diabetes: <strong>never stop basal insulin</strong>, even when not eating; check glucose every 2–4 hours and ketones when glucose is high or vomiting occurs; drink carbohydrate-containing fluids if not eating; seek care for persistent vomiting, moderate or large ketones, or confusion.</li><li>Pause SGLT2 inhibitors, metformin, diuretics and ACE inhibitors/ARBs during dehydrating illness. Stop SGLT2 inhibitors at least 3 days before planned surgery.</li></ul><h3>Type 1 diabetes and pregnancy planning</h3><p>Hyperglycemia at conception and in the first trimester raises the risk of miscarriage and congenital anomalies (cardiac defects, neural tube defects, caudal regression). Before conception: reliable contraception until glucose is controlled, an A1c below 6.5% if this can be reached without significant hypoglycemia, folic acid, a dilated eye examination, and stopping teratogenic drugs such as ACE inhibitors, ARBs and statins. Insulin needs fall slightly in the first trimester and rise steeply in the second and third.</p><div class=\"trap\"><p><strong>Exam trap:</strong> \"the glucose is now 220 mg/dL, so stop the insulin drip\" is wrong in DKA. Add dextrose and keep the insulin running until the anion gap closes.</p></div>",
+   "figureIds": [
+    "s23c-fig150101-2"
+   ],
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Adult Diabetic Ketoacidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560723/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hyperosmolar Hyperglycemic Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482142/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Pediatric Diabetic Ketoacidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470282/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Type 1 Diabetes",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK507713/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig150101-1",
+   "caption": "Figure. Glucose-stimulated insulin secretion in the beta cell and where glucose-lowering drugs act.",
+   "file": "figures/s23c-fig150101-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  },
+  {
+   "id": "s23c-fig150101-2",
+   "caption": "Figure. Schematic time-action profiles of insulin preparations after subcutaneous injection.",
+   "file": "figures/s23c-fig150101-2.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set150101-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Confusion and extreme hyperglycemia in an older man",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q150101-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>An 11-year-old girl has had increased thirst, bedwetting and a 4-kg weight loss over 5 weeks. Random plasma glucose is 412 mg/dL, and serum C-peptide is low. Antibodies to glutamic acid decarboxylase are present. If pancreatic tissue had been examined at this stage, which of the following findings would most likely be seen in the islets?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Amyloid deposits between islet cells and capillaries"
+    },
+    {
+     "label": "B",
+     "html": "Diffuse islet cell hyperplasia"
+    },
+    {
+     "label": "C",
+     "html": "Hemosiderin deposits within islet cells"
+    },
+    {
+     "label": "D",
+     "html": "Lymphocytic infiltration with loss of beta cells"
+    },
+    {
+     "label": "E",
+     "html": "Replacement of acini and islets by dense fibrosis"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Weight loss, polyuria, low C-peptide and anti-GAD antibodies in a child are type 1 diabetes. It is a T-cell-mediated autoimmune disease: CD8 and CD4 lymphocytes infiltrate the islets (<strong>insulitis</strong>) and selectively destroy beta cells, while alpha and delta cells remain.</p><p><strong>Takeaway:</strong> insulitis with beta-cell loss is the lesion of type 1 diabetes; islet amyloid belongs to type 2.</p>",
+   "whyNot": {
+    "A": "Amyloid derived from amylin is the islet lesion of long-standing type 2 diabetes.",
+    "B": "Islet hyperplasia is seen in infants of mothers with diabetes, a response to fetal hyperglycemia.",
+    "C": "Iron in islets with diabetes is hereditary hemochromatosis, an adult disease with liver and skin findings.",
+    "E": "Fibrosis of both acini and islets is chronic pancreatitis, which causes diabetes late and with malabsorption."
+   },
+   "objective": "Identify insulitis as the islet lesion of type 1 diabetes.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "type 1 diabetes"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old woman has a fasting plasma glucose of 121 mg/dL on a pre-employment check; A1c is 6.2%. Repeat values a year later are almost identical. She is not overweight, and islet autoantibodies are negative. Her mother and maternal grandfather have had similarly \"slightly high sugars\" for decades without treatment, and none has eye, kidney or nerve complications. Loss of function of which of the following best explains her hyperglycemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Beta-cell glucokinase"
+    },
+    {
+     "label": "B",
+     "html": "Beta-cell K-ATP channel subunit SUR1"
+    },
+    {
+     "label": "C",
+     "html": "Hepatic glucose-6-phosphatase"
+    },
+    {
+     "label": "D",
+     "html": "Insulin receptor tyrosine kinase"
+    },
+    {
+     "label": "E",
+     "html": "Muscle GLUT4 translocation"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Lifelong, mild, stable fasting hyperglycemia without complications, autosomal dominant inheritance, normal weight and negative antibodies fit <strong>GCK-MODY</strong>. Glucokinase is the beta cell's glucose sensor; heterozygous loss of function shifts the threshold for insulin release upward, so glucose is regulated normally but at a higher set point. Treatment is usually unnecessary outside pregnancy.</p><p><strong>Takeaway:</strong> glucokinase variants reset the beta-cell glucose set point and cause mild, stable, familial fasting hyperglycemia.</p>",
+   "whyNot": {
+    "B": "Loss of SUR1 function keeps K-ATP channels closed and causes excess insulin release with hypoglycemia (congenital hyperinsulinism).",
+    "C": "Glucose-6-phosphatase deficiency (von Gierke disease) causes fasting hypoglycemia, not hyperglycemia.",
+    "D": "Severe insulin receptor defects cause marked hyperinsulinemia, acanthosis nigricans and often severe diabetes, not a mild stable rise.",
+    "E": "Impaired GLUT4 translocation is part of acquired insulin resistance in type 2 diabetes and obesity, which does not fit a lean woman with a dominant mild pattern."
+   },
+   "objective": "Recognise glucokinase MODY from its mild, stable, familial phenotype.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "genetics",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "MODY"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 66-year-old man with type 2 diabetes was started on glipizide 3 weeks ago in addition to metformin. Since then he has had two episodes of sweating, tremor and confusion in the late afternoon, relieved by orange juice. During one episode capillary glucose was 48 mg/dL. Which of the following best describes the mechanism by which the new drug causes these episodes?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activation of a nuclear receptor that increases insulin sensitivity"
+    },
+    {
+     "label": "B",
+     "html": "Binding to a beta-cell receptor subunit that closes ATP-sensitive potassium channels"
+    },
+    {
+     "label": "C",
+     "html": "Inhibition of an enzyme that degrades endogenous incretins"
+    },
+    {
+     "label": "D",
+     "html": "Inhibition of glucose reabsorption in the proximal tubule"
+    },
+    {
+     "label": "E",
+     "html": "Slowing of carbohydrate digestion at the intestinal brush border"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Glipizide is a sulfonylurea. It binds the <strong>SUR1 subunit</strong> of the beta-cell K-ATP channel and closes it, depolarising the cell and releasing insulin <em>whatever the glucose level</em>. Insulin release continues when glucose is already low, so hypoglycemia is the main adverse effect, especially with missed meals, older age or kidney impairment.</p><p><strong>Takeaway:</strong> sulfonylureas close K-ATP channels and cause glucose-independent insulin release, so they cause hypoglycemia; metformin alone does not.</p>",
+   "whyNot": {
+    "A": "PPAR-gamma agonists (pioglitazone) sensitise tissues to insulin and do not cause hypoglycemia alone.",
+    "C": "DPP-4 inhibitors raise incretin levels, whose effect on insulin depends on high glucose, so hypoglycemia is rare.",
+    "D": "SGLT2 inhibitors cause glycosuria but rarely hypoglycemia because they do not raise insulin.",
+    "E": "Alpha-glucosidase inhibitors blunt postprandial glucose and do not cause hypoglycemia on their own."
+   },
+   "objective": "Explain how sulfonylureas close beta-cell K-ATP channels and cause hypoglycemia.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "sulfonylurea",
+    "hypoglycemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-1-04",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 54-year-old woman with type 2 diabetes is brought to the emergency department with 2 days of nausea, vomiting and abdominal pain after a dental infection that kept her from eating. She takes metformin and a second drug added 2 months ago, which also caused an episode of vulvovaginal candidiasis. Respirations are deep and rapid.</p><table><tr><th>Serum study</th><th>Value</th></tr><tr><td>Glucose</td><td>196 mg/dL</td></tr><tr><td>Sodium</td><td>136 mEq/L</td></tr><tr><td>Chloride</td><td>100 mEq/L</td></tr><tr><td>Bicarbonate</td><td>11 mEq/L</td></tr><tr><td>Arterial pH</td><td>7.18</td></tr><tr><td>Beta-hydroxybutyrate</td><td>5.8 mmol/L (N &lt; 0.6)</td></tr><tr><td>Lactate, venous</td><td>1.4 mmol/L</td></tr></table><p>Which of the following is the mechanism of action of the second drug?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activation of AMP-activated protein kinase in hepatocytes"
+    },
+    {
+     "label": "B",
+     "html": "Agonism at the glucagon-like peptide-1 receptor"
+    },
+    {
+     "label": "C",
+     "html": "Blockade of the sodium-glucose cotransporter in the proximal tubule"
+    },
+    {
+     "label": "D",
+     "html": "Closure of ATP-sensitive potassium channels in beta cells"
+    },
+    {
+     "label": "E",
+     "html": "Inhibition of dipeptidyl peptidase-4"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has a ketoacidosis (anion gap 25, high beta-hydroxybutyrate) with glucose below 200 mg/dL: <strong>euglycemic DKA</strong>. SGLT2 inhibitors lower glucose by glycosuria, so insulin secretion falls and glucagon rises; with poor intake, ketogenesis takes off while glucose stays modest. Genital candidiasis from glycosuria is another clue to the drug.</p><p><strong>Takeaway:</strong> an anion gap ketoacidosis with near-normal glucose in someone on an SGLT2 inhibitor is euglycemic DKA.</p>",
+   "whyNot": {
+    "A": "Metformin acts partly through AMPK; its feared acid-base effect is lactic acidosis, but lactate here is normal and ketones are high.",
+    "B": "GLP-1 receptor agonists cause nausea but not glycosuria, candidiasis or ketoacidosis.",
+    "D": "Sulfonylureas raise insulin, which suppresses ketogenesis; they cause hypoglycemia, not ketoacidosis.",
+    "E": "DPP-4 inhibitors are weight neutral and well tolerated; they are not linked to euglycemic DKA or genital infections."
+   },
+   "objective": "Recognise euglycemic DKA as an adverse effect of SGLT2 inhibitors.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "SGLT2 inhibitor",
+    "euglycemic DKA"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 48-year-old man has had type 1 diabetes for 30 years with A1c values usually above 9%. He has burning pain and numbness in both feet and early bilateral lens opacities. Researchers studying his Schwann cells find accumulation of an osmotically active sugar alcohol that the cells can only slowly metabolise further. Which of the following enzymes produces this compound?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Aldose reductase"
+    },
+    {
+     "label": "B",
+     "html": "Galactokinase"
+    },
+    {
+     "label": "C",
+     "html": "Glucose-6-phosphate dehydrogenase"
+    },
+    {
+     "label": "D",
+     "html": "Hexokinase"
+    },
+    {
+     "label": "E",
+     "html": "Sorbitol dehydrogenase"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In tissues that take up glucose independently of insulin, high glucose is reduced to <strong>sorbitol by aldose reductase</strong> (using NADPH). Schwann cells, lens and retina have little sorbitol dehydrogenase, so sorbitol accumulates, draws in water and depletes NADPH, contributing to neuropathy and cataracts.</p><p><strong>Takeaway:</strong> aldose reductase converts glucose to sorbitol, which accumulates in lens, nerve and retina in poorly controlled diabetes.</p>",
+   "whyNot": {
+    "B": "Galactokinase phosphorylates galactose; its deficiency causes galactitol cataracts in infants, not diabetic neuropathy.",
+    "C": "G6PD makes NADPH in the pentose phosphate pathway; it does not produce sorbitol.",
+    "D": "Hexokinase phosphorylates glucose to glucose-6-phosphate, which is not osmotically trapped as a sugar alcohol.",
+    "E": "Sorbitol dehydrogenase converts sorbitol onward to fructose; its low activity is why sorbitol builds up, not the source of it."
+   },
+   "objective": "Link aldose reductase and sorbitol accumulation to diabetic neuropathy and cataracts.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "polyol pathway"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old woman has had type 2 diabetes for 20 years and hypertension. Her urine albumin-to-creatinine ratio is 1,400 mg/g, and eGFR is 38 mL/min/1.73 m². Kidney biopsy shows diffusely thickened glomerular basement membranes, mesangial expansion with round, acellular, PAS-positive nodules, and hyaline thickening of both afferent and efferent arterioles. Immunofluorescence shows linear IgG and albumin along the basement membranes without granular deposits. Which of the following processes contributes most to these changes?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activation of the alternative complement pathway"
+    },
+    {
+     "label": "B",
+     "html": "Deposition of light-chain-derived amyloid fibrils"
+    },
+    {
+     "label": "C",
+     "html": "Immune complex deposition in the mesangium"
+    },
+    {
+     "label": "D",
+     "html": "Nonenzymatic glycation of matrix and basement membrane proteins"
+    },
+    {
+     "label": "E",
+     "html": "Osmotic injury from sorbitol accumulation in podocytes"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Nodular (Kimmelstiel-Wilson) glomerulosclerosis with GBM thickening and hyaline arteriolosclerosis of both arterioles is <strong>diabetic kidney disease</strong>. Chronic hyperglycemia glycates matrix proteins nonenzymatically; advanced glycation end-products cross-link collagen, stimulate mesangial matrix production and trap plasma proteins (hence the nonspecific linear IgG and albumin, which is not anti-GBM disease).</p><p><strong>Takeaway:</strong> nonenzymatic glycation drives the basement membrane thickening, mesangial nodules and hyaline arteriolosclerosis of diabetic nephropathy.</p>",
+   "whyNot": {
+    "A": "Alternative pathway overactivity causes C3 glomerulopathy with C3-dominant staining and a proliferative pattern.",
+    "B": "AL amyloid forms Congo red-positive, apple-green birefringent mesangial deposits, not PAS-positive nodules with arteriolar hyalinosis.",
+    "C": "Granular mesangial immune complexes (for example IgA) are absent here; the linear staining is nonspecific trapping.",
+    "E": "The polyol pathway contributes to neuropathy and cataracts; it is not the main mechanism of the glomerular nodules."
+   },
+   "objective": "Attribute the lesions of diabetic nephropathy to nonenzymatic glycation.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "diabetic nephropathy",
+    "Kimmelstiel-Wilson"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>An 81-year-old woman with type 2 diabetes is brought from home after 5 days of increasing confusion and poor oral intake during a urinary infection. Plasma glucose is 1,060 mg/dL, sodium 142 mEq/L, bicarbonate 23 mEq/L and BUN 74 mg/dL. Arterial pH is 7.36. Serum beta-hydroxybutyrate is only slightly raised. Which of the following best explains why she has little ketoacidosis despite extreme hyperglycemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Her glucagon secretion is suppressed by the hyperglycemia"
+    },
+    {
+     "label": "B",
+     "html": "Her liver lacks the enzymes needed for ketogenesis"
+    },
+    {
+     "label": "C",
+     "html": "Ketones are being excreted rapidly in the urine"
+    },
+    {
+     "label": "D",
+     "html": "Residual insulin secretion is enough to restrain lipolysis but not hepatic glucose output"
+    },
+    {
+     "label": "E",
+     "html": "Severe dehydration prevents fatty acids from reaching the liver"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>This is the <strong>hyperosmolar hyperglycemic state</strong>. In type 2 diabetes some insulin is still secreted. Inhibiting hormone-sensitive lipase (and hence the fatty-acid supply for ketogenesis) needs far less insulin than suppressing hepatic glucose output and driving peripheral glucose uptake. So glucose climbs for days with osmotic diuresis and dehydration, while ketoacid production stays modest.</p><p><strong>Takeaway:</strong> in HHS, residual insulin prevents ketosis but not extreme hyperglycemia and hyperosmolality.</p>",
+   "whyNot": {
+    "A": "Glucagon is typically raised in both DKA and HHS, not suppressed.",
+    "B": "Hepatic ketogenic enzymes are intact; ketogenesis is limited by substrate and hormonal signals.",
+    "C": "Ketonuria cannot explain low serum ketones; in DKA large urinary losses coexist with high serum levels.",
+    "E": "Dehydration does not block fatty acid delivery; DKA occurs with severe dehydration too."
+   },
+   "objective": "Explain the absence of significant ketosis in the hyperosmolar hyperglycemic state.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "HHS"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 59-year-old man with type 2 diabetes and stable coronary disease started a new oral drug 4 months ago. His A1c has fallen from 8.3% to 7.2%, but he has gained 4 kg and has new bilateral ankle edema and exertional dyspnea. The drug binds an intracellular receptor that forms a heterodimer with the retinoid X receptor and changes transcription of genes in adipose tissue. Which of the following drugs was most likely started?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Acarbose"
+    },
+    {
+     "label": "B",
+     "html": "Glimepiride"
+    },
+    {
+     "label": "C",
+     "html": "Linagliptin"
+    },
+    {
+     "label": "D",
+     "html": "Pioglitazone"
+    },
+    {
+     "label": "E",
+     "html": "Repaglinide"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Pioglitazone is a <strong>thiazolidinedione</strong>, an agonist of PPAR-gamma, a nuclear receptor that pairs with RXR to change gene transcription, mainly in fat. It improves insulin sensitivity but causes weight gain and renal sodium and fluid retention, which can unmask or worsen heart failure; it is avoided in symptomatic heart failure. Fracture risk is also raised.</p><p><strong>Takeaway:</strong> thiazolidinediones are PPAR-gamma agonists that cause fluid retention, weight gain and heart failure exacerbation.</p>",
+   "whyNot": {
+    "A": "Acarbose acts in the gut lumen on alpha-glucosidases and causes flatulence, not edema.",
+    "B": "Glimepiride closes K-ATP channels at the membrane; it causes weight gain and hypoglycemia but not a nuclear-receptor effect or fluid retention.",
+    "C": "Linagliptin inhibits DPP-4, an extracellular enzyme, and is weight neutral.",
+    "E": "Repaglinide is a meglitinide that closes K-ATP channels, like a short-acting sulfonylurea."
+   },
+   "objective": "Recognise PPAR-gamma agonism and fluid retention with thiazolidinediones.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "thiazolidinedione",
+    "heart failure"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-01",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 46-year-old man has a screening visit. He has no symptoms. BMI is 31 kg/m² and blood pressure is 134/84 mm Hg. Laboratory studies on a single fasting sample:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Hemoglobin A1c</td><td>6.8%</td></tr><tr><td>Fasting plasma glucose</td><td>114 mg/dL</td></tr><tr><td>Hemoglobin</td><td>14.6 g/dL</td></tr><tr><td>MCV</td><td>88 fL</td></tr><tr><td>Creatinine</td><td>0.9 mg/dL</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Diagnose prediabetes and recheck in 1 year"
+    },
+    {
+     "label": "B",
+     "html": "Diagnose type 2 diabetes and start metformin"
+    },
+    {
+     "label": "C",
+     "html": "Measure islet autoantibodies and C-peptide"
+    },
+    {
+     "label": "D",
+     "html": "Repeat the hemoglobin A1c"
+    },
+    {
+     "label": "E",
+     "html": "Start basal insulin at bedtime"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>A1c is in the diabetes range but fasting glucose is in the prediabetes range. Without unequivocal hyperglycemia, diabetes needs two abnormal results; when two tests disagree, <strong>repeat the test that was abnormal</strong>. If the repeat A1c is 6.5% or higher, he has diabetes. There is nothing (anemia, kidney failure) to make A1c unreliable here.</p><p><strong>Takeaway:</strong> discordant screening tests: repeat the abnormal one before labelling diabetes.</p>",
+   "whyNot": {
+    "A": "A1c of 6.8% is above the prediabetes range; it cannot simply be called prediabetes without confirmation.",
+    "B": "Only one test is diagnostic, so the diagnosis is not yet confirmed.",
+    "C": "Nothing suggests autoimmune diabetes in an asymptomatic adult with obesity; antibodies are not first steps.",
+    "E": "Insulin is not indicated for a mildly raised A1c, even if diabetes is confirmed."
+   },
+   "objective": "Confirm a diagnosis of diabetes by repeating the abnormal test when results are discordant.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "uspstf"
+   ],
+   "figureIds": [],
+   "tags": [
+    "diagnosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old woman was found to have type 2 diabetes 2 weeks ago (A1c 7.6% on two occasions) and started metformin. She has no visual symptoms, numbness or other complaints. Blood pressure is 128/78 mm Hg. Which of the following should be arranged now as part of her baseline evaluation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Coronary CT angiography"
+    },
+    {
+     "label": "B",
+     "html": "Dilated retinal examination"
+    },
+    {
+     "label": "C",
+     "html": "Nerve conduction studies"
+    },
+    {
+     "label": "D",
+     "html": "Retinal examination 5 years after diagnosis"
+    },
+    {
+     "label": "E",
+     "html": "Screening urine culture"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Type 2 diabetes is often present for years before diagnosis, so complications may already exist. A <strong>dilated eye examination (or retinal photography) at diagnosis</strong> is recommended, then every 1–2 years if normal. Baseline urine albumin-to-creatinine ratio, eGFR, lipids and a foot examination are also done now.</p><p><strong>Takeaway:</strong> in type 2 diabetes, screen for retinopathy at diagnosis; in type 1, start within 5 years of onset.</p>",
+   "whyNot": {
+    "A": "Routine coronary imaging in asymptomatic patients with diabetes is not recommended.",
+    "C": "Neuropathy screening is clinical (monofilament, vibration, reflexes); nerve conduction studies are for atypical cases.",
+    "D": "Waiting 5 years applies to type 1 diabetes, whose onset is abrupt and well dated.",
+    "E": "Screening for asymptomatic bacteriuria is not recommended in diabetes."
+   },
+   "objective": "Arrange a retinal examination at the diagnosis of type 2 diabetes.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "retinopathy screening"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 44-year-old man with type 2 diabetes for 3 years takes metformin 1,000 mg twice daily. He wants help losing weight. He has no cardiovascular disease, heart failure or kidney disease, and no personal or family history of thyroid cancer or pancreatitis. BMI is 37 kg/m². A1c is 8.4%, eGFR 92 mL/min/1.73 m² and urine albumin-to-creatinine ratio 12 mg/g. Which of the following is the most appropriate addition to his treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Glipizide"
+    },
+    {
+     "label": "B",
+     "html": "Neutral protamine Hagedorn insulin at bedtime"
+    },
+    {
+     "label": "C",
+     "html": "Pioglitazone"
+    },
+    {
+     "label": "D",
+     "html": "Sitagliptin"
+    },
+    {
+     "label": "E",
+     "html": "Weekly semaglutide"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>When weight is a priority, a <strong>GLP-1 receptor agonist</strong> (or the dual GIP/GLP-1 agonist tirzepatide) gives the greatest weight loss along with substantial A1c lowering and a low risk of hypoglycemia. Adverse effects are mainly gastrointestinal; it is avoided with a personal or family history of medullary thyroid cancer or MEN2.</p><p><strong>Takeaway:</strong> for type 2 diabetes with obesity, add a GLP-1 receptor agonist or tirzepatide.</p>",
+   "whyNot": {
+    "A": "Sulfonylureas cause weight gain and hypoglycemia, working against his main goal.",
+    "B": "Insulin causes weight gain and is not needed at an A1c of 8.4% without catabolic symptoms.",
+    "C": "Pioglitazone lowers glucose but causes weight gain and fluid retention.",
+    "D": "Sitagliptin is weight neutral and lowers A1c less than a GLP-1 receptor agonist."
+   },
+   "objective": "Choose a GLP-1 receptor agonist for type 2 diabetes when weight loss is a priority.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.16.04.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "GLP-1 receptor agonist",
+    "obesity"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>An 84-year-old woman with type 2 diabetes, moderate dementia, CKD (eGFR 34 mL/min/1.73 m²) and two falls in 3 months is seen with her daughter. She takes glyburide 5 mg twice daily and linagliptin. Her daughter has found her sweaty and confused twice before lunch, with fingerstick glucose readings of 52 and 58 mg/dL. A1c is 6.1%. Which of the following is the most appropriate change?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add a bedtime snack and continue current drugs"
+    },
+    {
+     "label": "B",
+     "html": "Change glyburide to glipizide at the same dose"
+    },
+    {
+     "label": "C",
+     "html": "Increase linagliptin and keep glyburide"
+    },
+    {
+     "label": "D",
+     "html": "Start basal insulin and stop both drugs"
+    },
+    {
+     "label": "E",
+     "html": "Stop glyburide"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>She is overtreated. For an older adult with dementia, falls and CKD, a less strict A1c target (around 8.0%) is appropriate, and avoiding hypoglycemia matters most. <strong>Glyburide</strong> has active metabolites cleared by the kidney and causes prolonged hypoglycemia; it should be stopped. Linagliptin alone carries little hypoglycemia risk and needs no renal dose change.</p><p><strong>Takeaway:</strong> in frail older adults with hypoglycemia, deintensify and stop sulfonylureas, especially glyburide.</p>",
+   "whyNot": {
+    "A": "Snacks paper over overtreatment and leave a drug that causes dangerous hypoglycemia.",
+    "B": "Glipizide is safer than glyburide, but her A1c of 6.1% means she needs less treatment, not a substitute sulfonylurea at the same dose.",
+    "C": "Escalating therapy is wrong when A1c is already below her target and she is hypoglycemic.",
+    "D": "Insulin would add hypoglycemia risk and complexity for a patient with dementia."
+   },
+   "objective": "Deintensify glucose-lowering therapy and stop glyburide in a frail older adult with hypoglycemia.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "geriatrics",
+    "deprescribing",
+    "hypoglycemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-05",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 58-year-old man with type 2 diabetes takes metformin, empagliflozin and insulin glargine 18 units at bedtime, started 6 weeks ago. He has had no hypoglycemia. His 2-week glucose log (mg/dL):</p><table><tr><th>Time</th><th>Range</th></tr><tr><td>Fasting (before breakfast)</td><td>168–196</td></tr><tr><td>Before lunch</td><td>132–150</td></tr><tr><td>Before dinner</td><td>124–146</td></tr><tr><td>Bedtime</td><td>138–160</td></tr><tr><td>Hemoglobin A1c</td><td>8.6%</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add prandial insulin before each meal"
+    },
+    {
+     "label": "B",
+     "html": "Increase glargine by 2 units every 3 days until fasting glucose is at target"
+    },
+    {
+     "label": "C",
+     "html": "Move the glargine dose to the morning"
+    },
+    {
+     "label": "D",
+     "html": "Reduce glargine to avoid nocturnal hypoglycemia"
+    },
+    {
+     "label": "E",
+     "html": "Stop empagliflozin and add glipizide"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Basal insulin is titrated against the <strong>fasting glucose</strong>. His fasting values are well above a usual target of about 80–130 mg/dL, with no hypoglycemia, so the glargine dose is too low. A simple patient-led titration (for example 2 units every 3 days) is used until fasting glucose is at target. Prandial insulin or a GLP-1 receptor agonist is added only if A1c stays high once fasting glucose is controlled.</p><p><strong>Takeaway:</strong> high fasting glucose on basal insulin without hypoglycemia: titrate the basal dose up.</p>",
+   "whyNot": {
+    "A": "His daytime readings are near target; mealtime insulin is premature until the fasting glucose is fixed.",
+    "C": "Changing the timing of a flat basal insulin does not correct an inadequate dose.",
+    "D": "There is no hypoglycemia and fasting glucose is high, so reducing the dose would worsen control.",
+    "E": "The SGLT2 inhibitor is useful, and a sulfonylurea would add hypoglycemia risk without addressing basal insulin need."
+   },
+   "objective": "Titrate basal insulin to the fasting glucose.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "insulin titration"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-06",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150101-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 76-year-old man with type 2 diabetes who lives alone is brought in after 4 days of increasing confusion and poor intake. He has dry mucous membranes, temperature 37.9°C (100.2°F), pulse 116/min and blood pressure 98/60 mm Hg.</p><table><tr><th>Serum study</th><th>Value</th></tr><tr><td>Glucose</td><td>944 mg/dL</td></tr><tr><td>Sodium</td><td>139 mEq/L</td></tr><tr><td>Potassium</td><td>4.6 mEq/L</td></tr><tr><td>Chloride</td><td>104 mEq/L</td></tr><tr><td>Bicarbonate</td><td>22 mEq/L</td></tr><tr><td>BUN</td><td>68 mg/dL</td></tr><tr><td>Creatinine</td><td>2.2 mg/dL</td></tr><tr><td>Osmolality, serum</td><td>356 mOsm/kg</td></tr><tr><td>Arterial pH</td><td>7.36</td></tr><tr><td>Beta-hydroxybutyrate</td><td>0.8 mmol/L (N &lt; 0.6)</td></tr></table><p>Which of the following is the most appropriate initial step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous 0.45% saline at 100 mL/hour"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous 0.9% saline, about 1 L over the first hour"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous regular insulin bolus before any fluids"
+    },
+    {
+     "label": "D",
+     "html": "Intravenous sodium bicarbonate"
+    },
+    {
+     "label": "E",
+     "html": "Oral rehydration solution"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Extreme hyperglycemia, osmolality 356 mOsm/kg, altered mental status and minimal ketosis without acidosis define the <strong>hyperosmolar hyperglycemic state</strong>. Fluid deficits are very large, so the first step is rapid <strong>isotonic crystalloid</strong> to restore circulating volume; fluids alone also lower glucose. Insulin follows, and the precipitant (probably infection) is sought.</p><p><strong>Takeaway:</strong> HHS: isotonic fluids first, then insulin, with close electrolyte monitoring.</p>",
+   "whyNot": {
+    "A": "Hypotonic fluid at a slow rate does not restore volume in a hypotensive patient; it may be used later once volume is restored.",
+    "C": "Insulin before fluids drives glucose and water into cells and can worsen hypotension; boluses are not needed.",
+    "D": "There is no significant acidosis, so bicarbonate has no role.",
+    "E": "A confused, hypotensive patient cannot safely drink enough to correct a deficit of several litres."
+   },
+   "objective": "Start isotonic fluid resuscitation first in the hyperosmolar hyperglycemic state.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "HHS"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150101-1",
+   "setOrder": 2,
+   "stemHtml": "<p>The patient receives 2 L of 0.9% saline over 2 hours. His blood pressure rises to 118/70 mm Hg, and urine output is 60 mL/hour. Repeat studies show glucose 690 mg/dL and potassium 3.0 mEq/L. ECG shows prominent U waves. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Give IV potassium and start insulin once potassium is at least 3.5 mEq/L"
+    },
+    {
+     "label": "B",
+     "html": "Start an insulin infusion at 0.1 units/kg/hour now"
+    },
+    {
+     "label": "C",
+     "html": "Start an insulin infusion and recheck potassium in 6 hours"
+    },
+    {
+     "label": "D",
+     "html": "Switch fluids to 5% dextrose in water"
+    },
+    {
+     "label": "E",
+     "html": "Give subcutaneous insulin glargine and oral potassium"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Insulin shifts potassium into cells. Starting it with a serum potassium of 3.0 mEq/L (with U waves) risks dangerous hypokalemia and arrhythmia. The rule: if potassium is below 3.5 mEq/L, <strong>hold insulin and replace potassium IV</strong> until it is 3.5 or higher, then start the insulin infusion with potassium in the fluids.</p><p><strong>Takeaway:</strong> in DKA and HHS, potassium below 3.5 mEq/L means potassium first, insulin second.</p>",
+   "whyNot": {
+    "B": "Insulin now would drop his potassium further and risk ventricular arrhythmia.",
+    "C": "Six hours is far too long between potassium checks during insulin treatment.",
+    "D": "Dextrose-only fluid is added when glucose falls to about 300 mg/dL in HHS; glucose is still 690 mg/dL.",
+    "E": "Subcutaneous basal insulin and oral potassium are too slow and unreliable in this setting."
+   },
+   "objective": "Replace potassium before starting insulin when it is below 3.5 mEq/L.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "HHS",
+    "hypokalemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150101-1",
+   "setOrder": 3,
+   "stemHtml": "<p>Potassium is corrected and an insulin infusion is started. Eight hours later he is more alert. Glucose is 286 mg/dL, sodium 146 mEq/L, potassium 4.1 mEq/L and calculated serum osmolality 318 mOsm/kg. Which of the following is the most appropriate change to his treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add dextrose to the intravenous fluids and reduce the insulin infusion rate"
+    },
+    {
+     "label": "B",
+     "html": "Give a bolus of 3% saline"
+    },
+    {
+     "label": "C",
+     "html": "Increase the insulin infusion to lower glucose below 150 mg/dL quickly"
+    },
+    {
+     "label": "D",
+     "html": "Stop the insulin infusion and observe"
+    },
+    {
+     "label": "E",
+     "html": "Stop intravenous fluids and encourage oral intake"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In HHS, once glucose falls to about <strong>300 mg/dL</strong>, dextrose is added to the fluids and the insulin rate is reduced, keeping glucose roughly in the 200–300 mg/dL range until osmolality and mental status normalise. This avoids hypoglycemia and too-rapid falls in osmolality, which can shift water into brain cells.</p><p><strong>Takeaway:</strong> add dextrose when glucose reaches about 300 mg/dL in HHS (about 250 mg/dL in DKA) and keep insulin going at a lower rate.</p>",
+   "whyNot": {
+    "B": "Hypertonic saline is for severe symptomatic hyponatremia; his sodium is already high.",
+    "C": "Lowering glucose quickly drops osmolality too fast and risks hypoglycemia and cerebral edema.",
+    "D": "Stopping insulin abruptly lets glucose climb again before he is ready for subcutaneous insulin.",
+    "E": "Osmolality is still high and he is not yet fully alert; IV fluids should continue."
+   },
+   "objective": "Add dextrose and lower the insulin rate when glucose reaches about 300 mg/dL in HHS.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "HHS"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-09",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 63-year-old man with type 2 diabetes and peripheral neuropathy has a painless ulcer under the head of the right first metatarsal for 6 weeks. He walks on it daily in ordinary shoes. The ulcer is 1.5 cm across, clean, with a callused rim and no surrounding erythema, warmth, drainage or odour; bone cannot be probed. Dorsalis pedis and posterior tibial pulses are palpable, and ankle-brachial index is 1.05. Foot radiographs are normal. Which of the following is the most important next step to promote healing?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Hyperbaric oxygen therapy"
+    },
+    {
+     "label": "B",
+     "html": "Oral amoxicillin-clavulanate for 2 weeks"
+    },
+    {
+     "label": "C",
+     "html": "Pressure offloading with a total contact cast"
+    },
+    {
+     "label": "D",
+     "html": "Topical antibiotic ointment twice daily"
+    },
+    {
+     "label": "E",
+     "html": "Vascular surgery referral for bypass"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is a neuropathic (pressure) ulcer with adequate perfusion and no infection. Repeated pressure while walking is what keeps it open, so <strong>offloading</strong> (a total contact cast or a removable knee-high walker), plus debridement of the callus, is the key to healing. Glucose control and foot care education follow.</p><p><strong>Takeaway:</strong> a noninfected neuropathic plantar ulcer with good perfusion heals with offloading and debridement.</p>",
+   "whyNot": {
+    "A": "Hyperbaric oxygen is an adjunct for selected nonhealing ulcers, not first-line care before offloading.",
+    "B": "Antibiotics are for clinically infected ulcers; this ulcer has no signs of infection.",
+    "D": "Topical antibiotics do not address pressure and are not recommended for uninfected ulcers.",
+    "E": "Pulses and the ankle-brachial index are normal, so revascularisation is not needed."
+   },
+   "objective": "Treat a neuropathic diabetic foot ulcer with offloading and debridement.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "diabetic foot"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-10",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 22-year-old woman with type 1 diabetes calls because she has had vomiting and diarrhea for 12 hours after a family member had the same illness. She cannot eat but can sip fluids. She uses insulin glargine at night and insulin lispro with meals. Her fingerstick glucose is 238 mg/dL, and a home urine ketone test shows trace ketones. Which of the following is the most appropriate advice?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue glargine, sip sugary fluids and check glucose and ketones every 2–4 hours"
+    },
+    {
+     "label": "B",
+     "html": "Double tonight's glargine dose and stop all mealtime lispro until she eats"
+    },
+    {
+     "label": "C",
+     "html": "Skip tonight's glargine dose because she is not eating any meals"
+    },
+    {
+     "label": "D",
+     "html": "Stop all insulin until the vomiting has settled, then restart usual doses"
+    },
+    {
+     "label": "E",
+     "html": "Take an extra 20 units of lispro now and recheck her glucose tomorrow"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>In type 1 diabetes, insulin is needed even without food, because counter-regulatory hormones rise during illness and the liver keeps producing glucose and ketones. <strong>Basal insulin is never stopped</strong>. She should keep sipping fluids that contain carbohydrate, monitor glucose and ketones every few hours, take correction doses of rapid-acting insulin as needed, and seek urgent care if vomiting persists, ketones rise to moderate or large, or she becomes drowsy.</p><p><strong>Takeaway:</strong> on sick days in type 1 diabetes, continue basal insulin and monitor glucose and ketones closely.</p>",
+   "whyNot": {
+    "B": "Doubling basal insulin without monitoring risks hypoglycemia, and stopping all lispro removes the correction doses she may need.",
+    "C": "Missing basal insulin is a leading trigger of DKA.",
+    "D": "Stopping all insulin causes ketoacidosis within hours in type 1 diabetes.",
+    "E": "A large fixed bolus without close monitoring risks hypoglycemia, and waiting until tomorrow misses developing DKA."
+   },
+   "objective": "Give sick-day advice for type 1 diabetes: continue basal insulin and monitor ketones.",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "sick-day rules",
+    "type 1 diabetes"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150101-2-11",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 28-year-old woman with type 1 diabetes for 15 years wants to become pregnant in the next few months. She uses an insulin pump. Her A1c is 8.4%. She takes lisinopril for moderately increased albuminuria and atorvastatin for hyperlipidemia. Her last eye examination was 3 years ago. She uses condoms. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Conceive now, then stop lisinopril and atorvastatin once pregnancy is confirmed"
+    },
+    {
+     "label": "B",
+     "html": "Keep using contraception, stop lisinopril and atorvastatin, start folic acid, lower A1c"
+    },
+    {
+     "label": "C",
+     "html": "Continue lisinopril for kidney protection in pregnancy and stop atorvastatin only"
+    },
+    {
+     "label": "D",
+     "html": "Replace her insulin pump with metformin and conceive once A1c is below 7%"
+    },
+    {
+     "label": "E",
+     "html": "Change from the insulin pump to twice-daily NPH insulin before conceiving"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Poor glucose control at conception raises the risk of miscarriage and major malformations. Before pregnancy she should keep using contraception while working toward an A1c below about 6.5% if safely achievable, start folic acid, have a dilated eye examination (retinopathy can progress in pregnancy), and <strong>stop teratogenic drugs</strong>: ACE inhibitors (fetal renal dysgenesis) and statins.</p><p><strong>Takeaway:</strong> type 1 diabetes and planned pregnancy: optimise A1c first, stop ACE inhibitors and statins, add folic acid, check the eyes.</p>",
+   "whyNot": {
+    "A": "Conceiving with an A1c of 8.4% exposes the embryo to hyperglycemia during organogenesis, which happens before many pregnancies are confirmed.",
+    "C": "ACE inhibitors are contraindicated in pregnancy because of fetal kidney toxicity.",
+    "D": "Metformin cannot replace insulin in type 1 diabetes, and 7% is above the preconception target.",
+    "E": "Insulin pumps are effective and commonly used in pregnancy; there is no need to switch to NPH, and this alone does not address her A1c or teratogenic drugs."
+   },
+   "objective": "Plan pregnancy in type 1 diabetes: optimise glucose and stop teratogenic drugs before conception.",
+   "areas": [
+    "usmle2026.15.01.01",
+    "usmle2026.12.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "preconception",
+    "type 1 diabetes"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c150101-01",
+   "frontHtml": "Which product of proinsulin processing best reflects endogenous insulin secretion, and why?",
+   "backHtml": "C-peptide: released in equal amounts with insulin, not cleared on first pass through the liver, longer half-life; absent from injected insulin.",
+   "sectionId": "s23c-s150101-1-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-02",
+   "frontHtml": "Which beta-cell enzyme acts as the glucose sensor?",
+   "backHtml": "Glucokinase (high Km, not inhibited by product). Loss of function causes GCK-MODY.",
+   "sectionId": "s23c-s150101-1-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-03",
+   "frontHtml": "Sequence of glucose-stimulated insulin release?",
+   "backHtml": "GLUT2 uptake → glucokinase → ↑ ATP/ADP → K-ATP channels close → depolarisation → Ca²⁺ influx → exocytosis.",
+   "sectionId": "s23c-s150101-1-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-04",
+   "frontHtml": "Why does oral glucose release more insulin than the same IV glucose?",
+   "backHtml": "Incretin effect: GLP-1 and GIP from the gut amplify glucose-dependent insulin secretion.",
+   "sectionId": "s23c-s150101-1-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-05",
+   "frontHtml": "Islet histology: type 1 vs type 2 diabetes?",
+   "backHtml": "Type 1: insulitis (lymphocytes) with beta-cell loss. Type 2: islet amyloid (amylin).",
+   "sectionId": "s23c-s150101-1-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-06",
+   "frontHtml": "HLA types associated with type 1 diabetes?",
+   "backHtml": "HLA-DR3 and HLA-DR4 (DQ2 and DQ8).",
+   "sectionId": "s23c-s150101-1-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-07",
+   "frontHtml": "Autoantibodies of type 1 diabetes?",
+   "backHtml": "GAD65, IA-2, ZnT8 and insulin autoantibodies.",
+   "sectionId": "s23c-s150101-1-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-08",
+   "frontHtml": "HNF1A-MODY: two clinical clues?",
+   "backHtml": "Glycosuria from a low renal threshold and marked sensitivity to sulfonylureas.",
+   "sectionId": "s23c-s150101-1-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-09",
+   "frontHtml": "Why do patients with HHS have little ketosis?",
+   "backHtml": "Residual insulin restrains lipolysis and ketogenesis but not hepatic glucose output.",
+   "sectionId": "s23c-s150101-1-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-10",
+   "frontHtml": "Serum potassium in DKA vs total-body potassium?",
+   "backHtml": "Serum often normal or high (insulin lack, acidosis shift K⁺ out of cells); total-body K⁺ is depleted by urinary losses.",
+   "sectionId": "s23c-s150101-1-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-11",
+   "frontHtml": "Enzyme that converts glucose to sorbitol, and tissues harmed?",
+   "backHtml": "Aldose reductase; lens (cataract), Schwann cells (neuropathy), retina, kidney.",
+   "sectionId": "s23c-s150101-1-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-12",
+   "frontHtml": "Kidney lesion specific for diabetic nephropathy?",
+   "backHtml": "Nodular (Kimmelstiel-Wilson) glomerulosclerosis, with GBM thickening and hyaline arteriolosclerosis of afferent and efferent arterioles.",
+   "sectionId": "s23c-s150101-1-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-13",
+   "frontHtml": "Sulfonylurea mechanism and main adverse effects?",
+   "backHtml": "Bind SUR1 → close K-ATP → glucose-independent insulin release; hypoglycemia and weight gain.",
+   "sectionId": "s23c-s150101-1-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-14",
+   "frontHtml": "Pioglitazone: mechanism and adverse effects?",
+   "backHtml": "PPAR-gamma agonist (nuclear receptor with RXR); weight gain, fluid retention and heart failure, fractures.",
+   "sectionId": "s23c-s150101-1-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-15",
+   "frontHtml": "SGLT2 inhibitor adverse effects?",
+   "backHtml": "Genital mycotic infections, volume depletion, euglycemic DKA, rare perineal necrotising fasciitis.",
+   "sectionId": "s23c-s150101-1-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-16",
+   "frontHtml": "GLP-1 receptor agonists are avoided with which history?",
+   "backHtml": "Personal or family history of medullary thyroid carcinoma or MEN2 (also caution with prior pancreatitis).",
+   "sectionId": "s23c-s150101-1-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-17",
+   "frontHtml": "Diagnostic thresholds for diabetes?",
+   "backHtml": "A1c ≥ 6.5%; fasting glucose ≥ 126 mg/dL; 2-h OGTT ≥ 200 mg/dL; random ≥ 200 mg/dL with symptoms.",
+   "sectionId": "s23c-s150101-2-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-18",
+   "frontHtml": "Two screening tests disagree (one diabetic, one not): next step?",
+   "backHtml": "Repeat the test that was abnormal.",
+   "sectionId": "s23c-s150101-2-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-19",
+   "frontHtml": "Type 2 diabetes with heart failure: preferred added drug class?",
+   "backHtml": "SGLT2 inhibitor, regardless of A1c.",
+   "sectionId": "s23c-s150101-2-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-20",
+   "frontHtml": "When is a less strict A1c target (about 8%) appropriate?",
+   "backHtml": "Older adults with multiple illnesses, cognitive impairment, falls or limited life expectancy.",
+   "sectionId": "s23c-s150101-2-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-21",
+   "frontHtml": "When to start retinopathy screening in type 1 vs type 2 diabetes?",
+   "backHtml": "Type 1: within 5 years of onset. Type 2: at diagnosis. Then every 1–2 years if normal.",
+   "sectionId": "s23c-s150101-2-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-22",
+   "frontHtml": "Key treatment for a noninfected neuropathic diabetic foot ulcer?",
+   "backHtml": "Offloading (total contact cast or walker) plus debridement.",
+   "sectionId": "s23c-s150101-2-1",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-23",
+   "frontHtml": "DKA or HHS with K⁺ below 3.5 mEq/L: what first?",
+   "backHtml": "Hold insulin; give IV potassium until at least 3.5 mEq/L.",
+   "sectionId": "s23c-s150101-2-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-24",
+   "frontHtml": "When is dextrose added to fluids in DKA and HHS?",
+   "backHtml": "DKA: glucose about 250 mg/dL. HHS: about 300 mg/dL. Keep insulin running.",
+   "sectionId": "s23c-s150101-2-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-25",
+   "frontHtml": "How to stop an insulin infusion after DKA resolves?",
+   "backHtml": "Give subcutaneous basal insulin 1–2 hours before stopping the infusion.",
+   "sectionId": "s23c-s150101-2-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-26",
+   "frontHtml": "Sick-day rule for basal insulin in type 1 diabetes?",
+   "backHtml": "Never stop it; monitor glucose and ketones and use correction doses.",
+   "sectionId": "s23c-s150101-2-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150101-27",
+   "frontHtml": "Drugs to stop before pregnancy in a woman with diabetes?",
+   "backHtml": "ACE inhibitors/ARBs and statins; start folic acid and aim for A1c below 6.5% if safe.",
+   "sectionId": "s23c-s150101-2-2",
+   "areas": [
+    "usmle2026.15.01.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

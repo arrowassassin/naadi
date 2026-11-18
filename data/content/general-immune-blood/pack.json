@@ -1,0 +1,14 @@
+{
+  "id": "general-immune-blood",
+  "title": "Human development, immune, blood and general principles",
+  "owner": "seg23-a",
+  "idPrefix": "s23a",
+  "outlineVersion": "USMLE-2026",
+  "systems": [
+    "01",
+    "02",
+    "03"
+  ],
+  "retire": [],
+  "retag": {}
+}

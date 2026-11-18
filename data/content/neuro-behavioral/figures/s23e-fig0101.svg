@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 395" role="img" aria-label="Four cross-sections of the lower spine: 1 normal, with a closed vertebral arch; 2 spina bifida occulta, with an open arch, intact skin and a tuft of hair; 3 meningocele, a skin-covered sac of meninges and cerebrospinal fluid with the cord still in the canal; 4 myelomeningocele, a sac that contains the spinal cord and nerve roots.">
+<rect x="0" y="0" width="760" height="395" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="28" font-size="16" font-weight="bold" text-anchor="middle">Spinal neural tube defects: what is in the sac?</text>
+<text x="100" y="62" font-size="14" font-weight="bold" text-anchor="middle">1. Normal</text>
+<text x="100" y="80" font-size="11" text-anchor="middle">arch closed, cord in canal</text>
+<path d="M15,150 L185,150" stroke="#334155" stroke-width="3" fill="none"/>
+<ellipse cx="100" cy="250" rx="48" ry="26" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<path d="M66,232 L72,170 L100,154 L128,170 L134,232" fill="none" stroke="#334155" stroke-width="3"/>
+<circle cx="100" cy="202" r="20" fill="#ffffff" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+<ellipse cx="100" cy="202" rx="12" ry="10" fill="#94a3b8" stroke="#0f172a" stroke-width="1.2"/>
+<text x="285" y="62" font-size="14" font-weight="bold" text-anchor="middle">2. Spina bifida occulta</text>
+<text x="285" y="80" font-size="11" text-anchor="middle">arch open, skin intact</text>
+<path d="M200,150 L370,150" stroke="#334155" stroke-width="3" fill="none"/>
+<path d="M277,150 q-4.0,-14 -8,-22" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+<path d="M282,150 q-1.5,-14 -3,-22" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+<path d="M287,150 q1.0,-14 2,-22" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+<path d="M292,150 q3.5,-14 7,-22" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+<ellipse cx="285" cy="250" rx="48" ry="26" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<path d="M251,232 L255,180" fill="none" stroke="#334155" stroke-width="3"/>
+<path d="M319,232 L315,180" fill="none" stroke="#334155" stroke-width="3"/>
+<circle cx="285" cy="202" r="20" fill="#ffffff" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+<ellipse cx="285" cy="202" rx="12" ry="10" fill="#94a3b8" stroke="#0f172a" stroke-width="1.2"/>
+<text x="470" y="62" font-size="14" font-weight="bold" text-anchor="middle">3. Meningocele</text>
+<text x="470" y="80" font-size="11" text-anchor="middle">meninges + CSF in sac</text>
+<path d="M385,150 L432,150" stroke="#334155" stroke-width="3" fill="none"/>
+<path d="M508,150 L555,150" stroke="#334155" stroke-width="3" fill="none"/>
+<path d="M432,150 C410,80 530,80 508,150" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<ellipse cx="470" cy="250" rx="48" ry="26" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<path d="M436,232 L440,180" fill="none" stroke="#334155" stroke-width="3"/>
+<path d="M504,232 L500,180" fill="none" stroke="#334155" stroke-width="3"/>
+<path d="M450,210 C444,140 430,110 470,106 C510,110 496,140 490,210" fill="#ffffff" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+<ellipse cx="470" cy="202" rx="12" ry="10" fill="#94a3b8" stroke="#0f172a" stroke-width="1.2"/>
+<text x="655" y="62" font-size="14" font-weight="bold" text-anchor="middle">4. Myelomeningocele</text>
+<text x="655" y="80" font-size="11" text-anchor="middle">cord and roots in the sac</text>
+<path d="M570,150 L617,150" stroke="#334155" stroke-width="3" fill="none"/>
+<path d="M693,150 L740,150" stroke="#334155" stroke-width="3" fill="none"/>
+<path d="M617,150 C595,80 715,80 693,150" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<ellipse cx="655" cy="250" rx="48" ry="26" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<path d="M621,232 L625,180" fill="none" stroke="#334155" stroke-width="3"/>
+<path d="M689,232 L685,180" fill="none" stroke="#334155" stroke-width="3"/>
+<path d="M635,210 C629,140 615,110 655,106 C695,110 681,140 675,210" fill="#ffffff" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+<ellipse cx="655" cy="126" rx="13" ry="9" fill="#94a3b8" stroke="#0f172a" stroke-width="1.2"/>
+<path d="M655,135 L655,210" stroke="#94a3b8" stroke-width="5"/>
+<rect x="40" y="315" width="16" height="12" fill="#94a3b8" stroke="#0f172a"/><text x="62" y="326" font-size="12">spinal cord / neural tissue</text>
+<line x1="250" y1="321" x2="276" y2="321" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/><text x="282" y="326" font-size="12">dura and arachnoid</text>
+<line x1="440" y1="321" x2="466" y2="321" stroke="#334155" stroke-width="3"/><text x="472" y="326" font-size="12">skin; open vertebral arch below</text>
+<text x="380" y="360" font-size="12" text-anchor="middle">Panels 2-4 share a vertebral arch that failed to fuse. Panel 4 carries the most neurological deficit and is the</text>
+<text x="380" y="377" font-size="12" text-anchor="middle">form linked with Chiari II malformation and hydrocephalus. AFP rises when the defect is open (not skin-covered).</text>
+</g></svg>

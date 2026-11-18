@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 410" width="720" height="410" role="img" aria-label="Diagram contrasting confounding and effect modification with stratified relative risks" font-family="sans-serif">
+<title>Diagram contrasting confounding and effect modification with stratified relative risks</title>
+<rect x="0" y="0" width="720" height="410" fill="#ffffff"/>
+<defs><marker id="s23g-fig41-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker><marker id="s23g-fig41-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="s23g-fig41-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45309"/></marker></defs>
+<text x="180" y="30" font-size="16" text-anchor="middle" font-weight="bold" fill="#0f172a">A. Confounding</text>
+<text x="540" y="30" font-size="16" text-anchor="middle" font-weight="bold" fill="#0f172a">B. Effect modification</text>
+<line x1="360" y1="15" x2="360" y2="410" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="120" y="55" width="120" height="44" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+<text x="180.0" y="82.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Third variable C</text>
+<rect x="20" y="180" width="110" height="44" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="75.0" y="207.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Exposure</text>
+<rect x="230" y="180" width="110" height="44" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="285.0" y="207.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Outcome</text>
+<line x1="150" y1="99" x2="90" y2="178" stroke="#b45309" stroke-width="2.5" marker-end="url(#s23g-fig41-c)"/>
+<line x1="210" y1="99" x2="272" y2="178" stroke="#b45309" stroke-width="2.5" marker-end="url(#s23g-fig41-c)"/>
+<line x1="132" y1="202" x2="228" y2="202" stroke="#334155" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#s23g-fig41-a)"/>
+<text x="180" y="196" font-size="16" text-anchor="middle" font-weight="bold" fill="#0f172a">?</text>
+<text x="70" y="140" font-size="12" text-anchor="middle" font-weight="normal" fill="#b45309">linked to</text>
+<text x="70" y="154" font-size="12" text-anchor="middle" font-weight="normal" fill="#b45309">exposure</text>
+<text x="290" y="140" font-size="12" text-anchor="middle" font-weight="normal" fill="#b45309">causes</text>
+<text x="290" y="154" font-size="12" text-anchor="middle" font-weight="normal" fill="#b45309">outcome</text>
+<text x="180" y="250" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Dashed arrow: crude association that</text>
+<text x="180" y="265" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">may be produced by C, not by exposure</text>
+<text x="180" y="300" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Stratify by C:</text>
+<text x="180" y="322" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">Crude RR 2.0</text>
+<text x="180" y="342" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">C present RR 1.0   ·   C absent RR 1.0</text>
+<text x="180" y="366" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Strata agree with each other but</text>
+<text x="180" y="381" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a">differ from crude: adjust for C</text>
+<rect x="380" y="180" width="110" height="44" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="435.0" y="207.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Exposure</text>
+<rect x="590" y="180" width="110" height="44" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="645.0" y="207.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Outcome</text>
+<line x1="492" y1="202" x2="588" y2="202" stroke="#2563eb" stroke-width="2.5" marker-end="url(#s23g-fig41-b)"/>
+<rect x="480" y="55" width="120" height="44" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="540.0" y="82.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Modifier M</text>
+<line x1="540" y1="99" x2="540" y2="196" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#s23g-fig41-b)"/>
+<text x="540" y="250" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Solid arrow: real effect whose size</text>
+<text x="540" y="265" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">depends on the level of M</text>
+<text x="540" y="300" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Stratify by M:</text>
+<text x="540" y="322" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">Crude RR 2.0</text>
+<text x="540" y="342" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">M present RR 3.0   ·   M absent RR 1.0</text>
+<text x="540" y="366" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Strata differ from each other:</text>
+<text x="540" y="381" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a">report each stratum, do not pool</text>
+
+</svg>

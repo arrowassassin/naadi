@@ -1,0 +1,71 @@
+<svg aria-label="Developmental milestones chart by age and domain" font-family="sans-serif" role="img" viewbox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-size="12">
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="640" x="0" y="0"></rect>
+<text font-weight="bold" text-anchor="middle" x="30" y="20">Age</text>
+<text font-weight="bold" text-anchor="middle" x="132" y="20">Gross motor</text>
+<text font-weight="bold" text-anchor="middle" x="277" y="20">Fine motor</text>
+<text font-weight="bold" text-anchor="middle" x="422" y="20">Language</text>
+<text font-weight="bold" text-anchor="middle" x="567" y="20">Social / cognitive</text>
+</g>
+<g fill="none" stroke="#334155" stroke-width="1">
+<line x1="60" x2="60" y1="0" y2="450"></line><line x1="205" x2="205" y1="0" y2="450"></line><line x1="350" x2="350" y1="0" y2="450"></line><line x1="495" x2="495" y1="0" y2="450"></line>
+<rect height="450" width="640" x="0" y="0"></rect>
+</g>
+<g fill="#fef3c7"><rect height="42" width="59" x="0.5" y="30"></rect><rect height="42" width="59" x="0.5" y="114"></rect><rect height="42" width="59" x="0.5" y="198"></rect><rect height="42" width="59" x="0.5" y="282"></rect><rect height="42" width="59" x="0.5" y="366"></rect></g>
+<g stroke="#334155" stroke-width="0.6">
+<line x1="0" x2="640" y1="72" y2="72"></line><line x1="0" x2="640" y1="114" y2="114"></line><line x1="0" x2="640" y1="156" y2="156"></line><line x1="0" x2="640" y1="198" y2="198"></line><line x1="0" x2="640" y1="240" y2="240"></line><line x1="0" x2="640" y1="282" y2="282"></line><line x1="0" x2="640" y1="324" y2="324"></line><line x1="0" x2="640" y1="366" y2="366"></line><line x1="0" x2="640" y1="408" y2="408"></line>
+</g>
+<g fill="#0f172a" font-size="12">
+<text font-weight="bold" text-anchor="middle" x="30" y="56">2 mo</text>
+<text x="66" y="48">Lifts head/chest</text><text x="66" y="64">when prone</text>
+<text x="211" y="48">Hands unfisting</text><text x="211" y="64">tracks past midline</text>
+<text x="356" y="48">Coos, alerts</text><text x="356" y="64">to voice</text>
+<text x="501" y="48">Social smile</text><text x="501" y="64">(by 6–8 wk)</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="98">4 mo</text>
+<text x="66" y="90">Rolls front→back;</text><text x="66" y="106">no head lag</text>
+<text x="211" y="90">Reaches, grasps</text><text x="211" y="106">rattle; to mouth</text>
+<text x="356" y="90">Laughs, squeals,</text><text x="356" y="106">turns to sounds</text>
+<text x="501" y="90">Laughs; enjoys</text><text x="501" y="106">people</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="140">6 mo</text>
+<text x="66" y="132">Sits with support</text><text x="66" y="148">(tripod); rolls both</text>
+<text x="211" y="132">Transfers hand to</text><text x="211" y="148">hand; raking grasp</text>
+<text x="356" y="132">Babbles consonants</text><text x="356" y="148">("ba-ba")</text>
+<text x="501" y="132">Stranger anxiety</text><text x="501" y="148">begins</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="182">9 mo</text>
+<text x="66" y="174">Sits alone, crawls,</text><text x="66" y="190">pulls to stand</text>
+<text x="211" y="174">Immature pincer;</text><text x="211" y="190">bangs 2 cubes</text>
+<text x="356" y="174">"Mama/dada"</text><text x="356" y="190">nonspecific</text>
+<text x="501" y="174">Separation anxiety,</text><text x="501" y="190">peek-a-boo, waves</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="224">12 mo</text>
+<text x="66" y="216">Cruises → first</text><text x="66" y="232">independent steps</text>
+<text x="211" y="216">Fine pincer; puts</text><text x="211" y="232">block in cup</text>
+<text x="356" y="216">1–3 words; mama</text><text x="356" y="232">specific; 1-step cmd</text>
+<text x="501" y="216">Imitates, object</text><text x="501" y="232">permanence</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="266">18 mo</text>
+<text x="66" y="258">Runs stiffly; walks</text><text x="66" y="274">up steps with help</text>
+<text x="211" y="258">Tower of 3–4 cubes;</text><text x="211" y="274">scribbles; spoon</text>
+<text x="356" y="258">10–25 words; points</text><text x="356" y="274">to body parts</text>
+<text x="501" y="258">Pretend play begins;</text><text x="501" y="274">points to show</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="308">2 y</text>
+<text x="66" y="300">Kicks ball, jumps;</text><text x="66" y="316">stairs 2 feet/step</text>
+<text x="211" y="300">Tower of 6; copies</text><text x="211" y="316">vertical line</text>
+<text x="356" y="300">2-word phrases, ≥50</text><text x="356" y="316">words, 50% clear</text>
+<text x="501" y="300">Parallel play;</text><text x="501" y="316">2-step commands</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="350">3 y</text>
+<text x="66" y="342">Rides tricycle;</text><text x="66" y="358">alternates feet up</text>
+<text x="211" y="342">Copies circle;</text><text x="211" y="358">tower of 9</text>
+<text x="356" y="342">3-word sentences,</text><text x="356" y="358">75% intelligible</text>
+<text x="501" y="342">Shares, knows age</text><text x="501" y="358">and sex; day-toilet</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="392">4 y</text>
+<text x="66" y="384">Hops on one foot;</text><text x="66" y="400">throws overhand</text>
+<text x="211" y="384">Copies cross and</text><text x="211" y="400">square; scissors</text>
+<text x="356" y="384">Tells stories;</text><text x="356" y="400">100% intelligible</text>
+<text x="501" y="384">Cooperative play,</text><text x="501" y="400">imaginary friends</text>
+<text font-weight="bold" text-anchor="middle" x="30" y="434">5 y</text>
+<text x="66" y="426">Skips, balances on</text><text x="66" y="442">one foot ~10 s</text>
+<text x="211" y="426">Copies triangle;</text><text x="211" y="442">prints letters</text>
+<text x="356" y="426">Fluent speech;</text><text x="356" y="442">counts to 10</text>
+<text x="501" y="426">Follows rules,</text><text x="501" y="442">school readiness</text>
+</g>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="320" y="470">Copying: line 2 y · circle 3 · cross 4 · square 4–5 · triangle 5. Cube tower ≈ 3 × age (y).</text>
+</svg>

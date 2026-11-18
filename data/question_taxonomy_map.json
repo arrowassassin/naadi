@@ -1,0 +1,4692 @@
+{
+ "ch01-q01": [
+  "step1.sys.multisystem",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.molecular_cell_biology"
+ ],
+ "ch01-q02": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.genetics",
+  "topic.multi.molecular_cell_biology",
+  "topic.multi.neoplasia"
+ ],
+ "ch01-q03": [
+  "step1.sys.multisystem",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.molecular_cell_biology"
+ ],
+ "ch01-q04": [
+  "step1.sys.multisystem",
+  "step1.disc.biochemistry",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.molecular_cell_biology"
+ ],
+ "ch01-q05": [
+  "step1.sys.multisystem",
+  "step1.disc.biochemistry",
+  "step1.disc.histology_cell_biology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.molecular_cell_biology"
+ ],
+ "ch01-q06": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.molecular_cell_biology",
+  "topic.nutrition.vitamins_minerals"
+ ],
+ "ch01-q07": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.nutrition.vitamins_minerals",
+  "topic.multi.molecular_cell_biology"
+ ],
+ "ch01-q08": [
+  "step1.sys.multisystem",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.genetics"
+ ],
+ "ch01-q09": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.genetics"
+ ],
+ "ch01-q10": [
+  "step1.sys.multisystem",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.genetics"
+ ],
+ "ch01-q11": [
+  "step1.sys.multisystem",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.genetics"
+ ],
+ "ch01-q12": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.disc.immunology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immunodeficiency"
+ ],
+ "ch01-q13": [
+  "step1.sys.multisystem",
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.molecular_cell_biology",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch01-q14": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q15": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.nutrition.vitamins_minerals"
+ ],
+ "ch01-q16": [
+  "step1.sys.multisystem",
+  "step1.sys.blood_immune",
+  "step1.disc.physiology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors",
+  "topic.heme.hemolysis_hemoglobinopathy"
+ ],
+ "ch01-q17": [
+  "step1.sys.multisystem",
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors",
+  "topic.heme.hemolysis_hemoglobinopathy"
+ ],
+ "ch01-q18": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q19": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q20": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q21": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.behavioral_sciences",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q22": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q23": [
+  "step1.sys.multisystem",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q24": [
+  "step1.sys.multisystem",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q25": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.lipids_atherosclerosis"
+ ],
+ "ch01-q26": [
+  "step1.sys.multisystem",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q27": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q28": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch01-q29": [
+  "step1.sys.blood_immune",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.hypersensitivity"
+ ],
+ "ch01-q30": [
+  "step1.sys.blood_immune",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.hypersensitivity"
+ ],
+ "ch01-q31": [
+  "step1.sys.blood_immune",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immunodeficiency",
+  "topic.immune.immune_basics"
+ ],
+ "ch01-q32": [
+  "step1.sys.blood_immune",
+  "step1.disc.biochemistry",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immunodeficiency"
+ ],
+ "ch01-q33": [
+  "step1.sys.blood_immune",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immunodeficiency",
+  "topic.immune.immune_basics"
+ ],
+ "ch01-q34": [
+  "step1.sys.blood_immune",
+  "step1.disc.biochemistry",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immune_basics"
+ ],
+ "ch01-q35": [
+  "step1.sys.blood_immune",
+  "step1.disc.pharmacology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immune_basics"
+ ],
+ "ch01-q36": [
+  "step1.sys.blood_immune",
+  "step1.disc.pharmacology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immune_basics"
+ ],
+ "ch01-q37": [
+  "step1.sys.blood_immune",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.transplant_immunosuppression"
+ ],
+ "ch01-q38": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.transplant_immunosuppression"
+ ],
+ "ch01-q39": [
+  "step1.sys.blood_immune",
+  "step1.sys.multisystem",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.vaccines",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch01-q40": [
+  "step1.sys.blood_immune",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immune_basics"
+ ],
+ "ch02-q01": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q02": [
+  "step1.sys.multisystem",
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria",
+  "topic.cardio.valvular"
+ ],
+ "ch02-q03": [
+  "step1.sys.multisystem",
+  "step1.sys.human_development",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials",
+  "topic.multi.bacteria",
+  "topic.dev.neonatal"
+ ],
+ "ch02-q04": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q05": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q06": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q07": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q08": [
+  "step1.sys.blood_immune",
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.biochemistry",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immunodeficiency",
+  "topic.multi.bacteria",
+  "topic.immune.immune_basics"
+ ],
+ "ch02-q09": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q10": [
+  "step1.sys.multisystem",
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria",
+  "topic.renal.aki_ckd",
+  "topic.multi.antimicrobials"
+ ],
+ "ch02-q11": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q12": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.pneumonia_infection"
+ ],
+ "ch02-q13": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.gi.esophagus_stomach",
+  "topic.gi.physiology_hormones"
+ ],
+ "ch02-q14": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria",
+  "topic.multi.antimicrobials"
+ ],
+ "ch02-q15": [
+  "step1.sys.multisystem",
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.multi.bacteria",
+  "topic.immune.hypersensitivity"
+ ],
+ "ch02-q16": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.sepsis_systemic_infection"
+ ],
+ "ch02-q17": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q18": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "ch02-q19": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials",
+  "topic.nutrition.vitamins_minerals"
+ ],
+ "ch02-q20": [
+  "step1.sys.multisystem",
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles",
+  "topic.repro.contraception_infertility_menopause"
+ ],
+ "ch02-q21": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch02-q22": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.viruses_hiv",
+  "topic.multi.pharm_principles"
+ ],
+ "ch02-q23": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.liver"
+ ],
+ "ch02-q24": [
+  "step1.sys.gastrointestinal",
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.liver",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch02-q25": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch02-q26": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch02-q27": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch02-q28": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch02-q29": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.viruses_hiv",
+  "topic.multi.genetics"
+ ],
+ "ch02-q30": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.fungi_parasites"
+ ],
+ "ch02-q31": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch02-q32": [
+  "step1.sys.multisystem",
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch02-q33": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.sepsis_systemic_infection",
+  "topic.multi.fungi_parasites"
+ ],
+ "ch02-q34": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.fungi_parasites",
+  "topic.multi.sepsis_systemic_infection"
+ ],
+ "ch02-q35": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.sepsis_systemic_infection",
+  "topic.multi.fungi_parasites"
+ ],
+ "ch02-q36": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials"
+ ],
+ "ch02-q37": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials"
+ ],
+ "ch02-q38": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials"
+ ],
+ "ch02-q39": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials"
+ ],
+ "ch02-q40": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials"
+ ],
+ "ch03-q01": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q02": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q03": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q04": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q05": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.toxicology_environmental"
+ ],
+ "ch03-q06": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q07": [
+  "step1.sys.multisystem",
+  "step1.disc.physiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q08": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q09": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q10": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles",
+  "topic.multi.toxicology_environmental"
+ ],
+ "ch03-q11": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q12": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q13": [
+  "step1.sys.cardiovascular",
+  "step1.disc.physiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.physiology_hemodynamics",
+  "topic.cardio.shock_syncope"
+ ],
+ "ch03-q14": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.end_of_life_surrogates"
+ ],
+ "ch03-q15": [
+  "step1.sys.multisystem",
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles",
+  "topic.heme.anticoagulation_vte"
+ ],
+ "ch03-q16": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q17": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "ch03-q18": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.toxicology_environmental"
+ ],
+ "ch03-q19": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.prevention_screening",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q20": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.diagnostic_tests"
+ ],
+ "ch03-q21": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.diagnostic_tests"
+ ],
+ "ch03-q22": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.diagnostic_tests"
+ ],
+ "ch03-q23": [
+  "step1.sys.biostat_epi",
+  "step1.disc.physiology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.diagnostic_tests"
+ ],
+ "ch03-q24": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.risk_measures",
+  "topic.biostat.study_design",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q25": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.risk_measures",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q26": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.risk_measures",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q27": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.risk_measures",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q28": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.disc.immunology",
+  "step1.comp.pbli",
+  "topic.biostat.risk_measures"
+ ],
+ "ch03-q29": [
+  "step1.sys.biostat_epi",
+  "step1.disc.physiology",
+  "step1.disc.pharmacology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.risk_measures"
+ ],
+ "ch03-q30": [
+  "step1.sys.biostat_epi",
+  "step1.disc.pathology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.risk_measures",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q31": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.bias_confounding"
+ ],
+ "ch03-q32": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.bias_confounding"
+ ],
+ "ch03-q33": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.hypothesis_testing",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q34": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.hypothesis_testing",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q35": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.hypothesis_testing"
+ ],
+ "ch03-q36": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.hypothesis_testing",
+  "topic.biostat.ebm_literature"
+ ],
+ "ch03-q37": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.capacity_consent"
+ ],
+ "ch03-q38": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.minors",
+  "topic.social.confidentiality_reporting"
+ ],
+ "ch03-q39": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.confidentiality_reporting"
+ ],
+ "ch03-q40": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.end_of_life_surrogates"
+ ],
+ "ch03-q41": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.patient_safety_qi"
+ ],
+ "ch03-q42": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.minors"
+ ],
+ "ch03-q43": [
+  "step1.sys.social_sciences",
+  "step1.disc.pathology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.communication"
+ ],
+ "ch03-q44": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.social.patient_safety_qi"
+ ],
+ "ch03-q45": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.communication"
+ ],
+ "ch04-q01": [
+  "step1.sys.multisystem",
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.histology_cell_biology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.cell_injury_inflammation",
+  "topic.cardio.ischemic_heart_disease"
+ ],
+ "ch04-q02": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.cell_injury_inflammation"
+ ],
+ "ch04-q03": [
+  "step1.sys.multisystem",
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.genetics",
+  "topic.heme.heme_malignancy",
+  "topic.multi.cell_injury_inflammation"
+ ],
+ "ch04-q04": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.cell_injury_inflammation"
+ ],
+ "ch04-q05": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.disc.immunology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.immune.immunodeficiency"
+ ],
+ "ch04-q06": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.cell_injury_inflammation"
+ ],
+ "ch04-q07": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.molecular_cell_biology",
+  "topic.multi.cell_injury_inflammation"
+ ],
+ "ch04-q08": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_onc_pharm"
+ ],
+ "ch04-q09": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.cell_injury_inflammation"
+ ],
+ "ch04-q10": [
+  "step1.sys.blood_immune",
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_malignancy",
+  "topic.multi.neoplasia"
+ ],
+ "ch04-q11": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.neoplasia"
+ ],
+ "ch04-q12": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_onc_pharm"
+ ],
+ "ch04-q13": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_onc_pharm"
+ ],
+ "ch04-q14": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.comp.medical_knowledge",
+  "topic.endo.calcium_parathyroid"
+ ],
+ "ch04-q15": [
+  "step1.sys.respiratory_renal",
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.immunology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.resp.lung_cancer_nodules",
+  "topic.multi.neoplasia"
+ ],
+ "ch04-q16": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.pc_diagnosis.history_pe",
+  "topic.heme.heme_malignancy"
+ ],
+ "ch04-q17": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anemia"
+ ],
+ "ch04-q18": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anemia"
+ ],
+ "ch04-q19": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anemia"
+ ],
+ "ch04-q20": [
+  "step1.sys.multisystem",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.nutrition.vitamins_minerals"
+ ],
+ "ch04-q21": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anemia"
+ ],
+ "ch04-q22": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anemia"
+ ],
+ "ch04-q23": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anemia",
+  "topic.heme.hemolysis_hemoglobinopathy"
+ ],
+ "ch04-q24": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemolysis_hemoglobinopathy",
+  "topic.heme.anemia"
+ ],
+ "ch04-q25": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemolysis_hemoglobinopathy"
+ ],
+ "ch04-q26": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemolysis_hemoglobinopathy"
+ ],
+ "ch04-q27": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immune_basics",
+  "topic.heme.hemolysis_hemoglobinopathy"
+ ],
+ "ch04-q28": [
+  "step1.sys.blood_immune",
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_malignancy",
+  "topic.multi.neoplasia"
+ ],
+ "ch04-q29": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemostasis"
+ ],
+ "ch04-q30": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemostasis"
+ ],
+ "ch04-q31": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemostasis"
+ ],
+ "ch04-q32": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemostasis"
+ ],
+ "ch04-q33": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anticoagulation_vte",
+  "topic.heme.hemostasis"
+ ],
+ "ch04-q34": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemostasis"
+ ],
+ "ch04-q35": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anticoagulation_vte"
+ ],
+ "ch04-q36": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.transfusion"
+ ],
+ "ch04-q37": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_malignancy"
+ ],
+ "ch04-q38": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_malignancy"
+ ],
+ "ch04-q39": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_malignancy"
+ ],
+ "ch04-q40": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_malignancy"
+ ],
+ "ch05-q01": [
+  "step1.sys.cardiovascular",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.physiology_hemodynamics"
+ ],
+ "ch05-q02": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.cardio_pharm",
+  "topic.cardio.heart_failure_cardiomyopathy"
+ ],
+ "ch05-q03": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.cardio.embryology_congenital"
+ ],
+ "ch05-q04": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.embryology_congenital",
+  "topic.cardio.physiology_hemodynamics",
+  "topic.cardio.valvular"
+ ],
+ "ch05-q05": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.cardio.ischemic_heart_disease",
+  "topic.cardio.shock_syncope",
+  "topic.cardio.valvular"
+ ],
+ "ch05-q06": [
+  "step1.sys.cardiovascular",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.physiology_hemodynamics"
+ ],
+ "ch05-q07": [
+  "step1.sys.cardiovascular",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.valvular"
+ ],
+ "ch05-q08": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.arrhythmia"
+ ],
+ "ch05-q09": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.arrhythmia"
+ ],
+ "ch05-q10": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.lipids_atherosclerosis"
+ ],
+ "ch05-q11": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.vasculitis"
+ ],
+ "ch05-q12": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.heart_failure_cardiomyopathy",
+  "topic.cardio.arrhythmia"
+ ],
+ "ch05-q13": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.embryology_congenital"
+ ],
+ "ch05-q14": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.cardio_pharm",
+  "topic.cardio.hypertension"
+ ],
+ "ch05-q15": [
+  "step1.sys.cardiovascular",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.shock_syncope",
+  "topic.cardio.physiology_hemodynamics"
+ ],
+ "ch05-q16": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.endocarditis_pericardial",
+  "topic.cardio.valvular"
+ ],
+ "ch05-q17": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.physiology"
+ ],
+ "ch05-q18": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.physiology"
+ ],
+ "ch05-q19": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.physiology"
+ ],
+ "ch05-q20": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.physiology"
+ ],
+ "ch05-q21": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.obstructive"
+ ],
+ "ch05-q22": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.obstructive"
+ ],
+ "ch05-q23": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.restrictive_ild",
+  "topic.resp.pneumonia_infection"
+ ],
+ "ch05-q24": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.lung_cancer_nodules"
+ ],
+ "ch05-q25": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.lung_cancer_nodules"
+ ],
+ "ch05-q26": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.acid_base_electrolytes",
+  "topic.resp.pulmonary_vascular",
+  "topic.renal.physiology"
+ ],
+ "ch05-q27": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.critical_care_ventilation"
+ ],
+ "ch05-q28": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.disc.behavioral_sciences",
+  "step1.disc.histology_cell_biology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.critical_care_ventilation"
+ ],
+ "ch05-q29": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.resp.pleural"
+ ],
+ "ch05-q30": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.pneumonia_infection",
+  "topic.resp.obstructive"
+ ],
+ "ch05-q31": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.obstructive"
+ ],
+ "ch05-q32": [
+  "step1.sys.respiratory_renal",
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.comp.medical_knowledge",
+  "topic.resp.restrictive_ild",
+  "topic.endo.calcium_parathyroid"
+ ],
+ "ch05-q33": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.physiology"
+ ],
+ "ch05-q34": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.medical_knowledge",
+  "topic.renal.physiology"
+ ],
+ "ch05-q35": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.renal_pharm"
+ ],
+ "ch05-q36": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch05-q37": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.disc.biochemistry",
+  "step1.comp.pc_diagnosis.history_pe",
+  "topic.renal.acid_base_electrolytes",
+  "topic.renal.physiology"
+ ],
+ "ch05-q38": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch05-q39": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.glomerular"
+ ],
+ "ch05-q40": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.histology_cell_biology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.glomerular"
+ ],
+ "ch05-q41": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.physiology",
+  "topic.renal.cystic_tumors",
+  "topic.renal.renal_pharm"
+ ],
+ "ch05-q42": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.aki_ckd"
+ ],
+ "ch05-q43": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.renal.cystic_tumors"
+ ],
+ "ch05-q44": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.cystic_tumors",
+  "topic.renal.glomerular",
+  "topic.renal.physiology"
+ ],
+ "ch05-q45": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.stones_urinary_tract"
+ ],
+ "ch06-q01": [
+  "step1.sys.gastrointestinal",
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.embryology_anatomy",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch06-q02": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.gi.physiology_hormones",
+  "topic.gi.liver"
+ ],
+ "ch06-q03": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.embryology_anatomy",
+  "topic.gi.gi_bleeding"
+ ],
+ "ch06-q04": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.comp.medical_knowledge",
+  "topic.gi.malabsorption_ibd"
+ ],
+ "ch06-q05": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.liver"
+ ],
+ "ch06-q06": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.malabsorption_ibd"
+ ],
+ "ch06-q07": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.physiology_hormones",
+  "topic.gi.esophagus_stomach"
+ ],
+ "ch06-q08": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.biliary_pancreas",
+  "topic.gi.malabsorption_ibd",
+  "topic.gi.colorectal"
+ ],
+ "ch06-q09": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.histology_cell_biology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.liver"
+ ],
+ "ch06-q10": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.gi.liver"
+ ],
+ "ch06-q11": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.gi.biliary_pancreas"
+ ],
+ "ch06-q12": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.gi_pharm"
+ ],
+ "ch06-q13": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.gi_pharm"
+ ],
+ "ch06-q14": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.malabsorption_ibd"
+ ],
+ "ch06-q15": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.embryology_anatomy"
+ ],
+ "ch06-q16": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.adrenal"
+ ],
+ "ch06-q17": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.adrenal"
+ ],
+ "ch06-q18": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.adrenal"
+ ],
+ "ch06-q19": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.adrenal"
+ ],
+ "ch06-q20": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.endo.thyroid"
+ ],
+ "ch06-q21": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.thyroid"
+ ],
+ "ch06-q22": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.endo.calcium_parathyroid"
+ ],
+ "ch06-q23": [
+  "step1.sys.reproductive_endocrine",
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.disc.nutrition",
+  "step1.disc.genetics",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.endo.calcium_parathyroid",
+  "topic.multi.genetics"
+ ],
+ "ch06-q24": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.endo.diabetes"
+ ],
+ "ch06-q25": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.diabetes"
+ ],
+ "ch06-q26": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.endo.men_neuroendocrine"
+ ],
+ "ch06-q27": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.endo.men_neuroendocrine"
+ ],
+ "ch06-q28": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.pituitary"
+ ],
+ "ch06-q29": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.endo.pituitary"
+ ],
+ "ch06-q30": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.pc_diagnosis.history_pe",
+  "topic.endo.adrenal",
+  "topic.endo.thyroid"
+ ],
+ "ch06-q31": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.menstrual_amenorrhea_pcos"
+ ],
+ "ch06-q32": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.menstrual_amenorrhea_pcos"
+ ],
+ "ch06-q33": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.menstrual_amenorrhea_pcos",
+  "topic.endo.pituitary"
+ ],
+ "ch06-q34": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.male.male_repro",
+  "topic.repro.contraception_infertility_menopause"
+ ],
+ "ch06-q35": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.preg.prenatal_physiology"
+ ],
+ "ch06-q36": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.gyn_oncology"
+ ],
+ "ch06-q37": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.male.male_repro"
+ ],
+ "ch06-q38": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.breast"
+ ],
+ "ch06-q39": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.breast",
+  "topic.repro.gyn_oncology"
+ ],
+ "ch06-q40": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.male.male_repro"
+ ],
+ "ch06-q41": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.preg.prenatal_physiology"
+ ],
+ "ch06-q42": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.preg.pregnancy_complications"
+ ],
+ "ch06-q43": [
+  "step1.sys.reproductive_endocrine",
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.gyn_oncology",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch06-q44": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.gyn_oncology"
+ ],
+ "ch06-q45": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.preg.prenatal_physiology"
+ ],
+ "ch07-q01": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "ch07-q02": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "ch07-q03": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "ch07-q04": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "ch07-q05": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "ch07-q06": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "ch07-q07": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "ch07-q08": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neurodegenerative_demyelinating"
+ ],
+ "ch07-q09": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neurodegenerative_demyelinating"
+ ],
+ "ch07-q10": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.stroke_hemorrhage"
+ ],
+ "ch07-q11": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.stroke_hemorrhage"
+ ],
+ "ch07-q12": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "ch07-q13": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.stroke_hemorrhage"
+ ],
+ "ch07-q14": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neurodegenerative_demyelinating"
+ ],
+ "ch07-q15": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neuromuscular"
+ ],
+ "ch07-q16": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neurodegenerative_demyelinating",
+  "topic.neuro.tumors_icp_coma"
+ ],
+ "ch07-q17": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.seizures"
+ ],
+ "ch07-q18": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.seizures"
+ ],
+ "ch07-q19": [
+  "step1.sys.multisystem",
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles",
+  "topic.derm.skin_infections_drug_eruptions",
+  "topic.neuro.headache"
+ ],
+ "ch07-q20": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.headache",
+  "topic.neuro.localization",
+  "topic.neuro.tumors_icp_coma"
+ ],
+ "ch07-q21": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neuromuscular"
+ ],
+ "ch07-q22": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.tumors_icp_coma"
+ ],
+ "ch07-q23": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.headache"
+ ],
+ "ch07-q24": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.medical_knowledge",
+  "topic.psych.personality_somatic_defense"
+ ],
+ "ch07-q25": [
+  "step1.sys.human_development",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.dev.milestones"
+ ],
+ "ch07-q26": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.behavioral_sciences",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.psych.sleep_suicide"
+ ],
+ "ch07-q27": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.physiology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.medical_knowledge",
+  "topic.psych.sleep_suicide"
+ ],
+ "ch07-q28": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.psych.psychosis"
+ ],
+ "ch07-q29": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.psych.mood"
+ ],
+ "ch07-q30": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.psych.mood",
+  "topic.psych.anxiety_trauma_ocd"
+ ],
+ "ch07-q31": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pharmacology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.medical_knowledge",
+  "topic.psych.psychosis"
+ ],
+ "ch07-q32": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.psych.psychosis"
+ ],
+ "ch07-q33": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.psych.psychosis"
+ ],
+ "ch07-q34": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.psych.substance_use"
+ ],
+ "ch07-q35": [
+  "step1.sys.behavioral_nervous",
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.medical_knowledge",
+  "topic.psych.substance_use",
+  "topic.gi.liver"
+ ],
+ "ch07-q36": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.medical_knowledge",
+  "topic.psych.substance_use"
+ ],
+ "ch07-q37": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.psych.personality_somatic_defense"
+ ],
+ "ch07-q38": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.limb_anatomy_nerve_injury"
+ ],
+ "ch07-q39": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.limb_anatomy_nerve_injury"
+ ],
+ "ch07-q40": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.limb_anatomy_nerve_injury"
+ ],
+ "ch07-q41": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.msk_pharm"
+ ],
+ "ch07-q42": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.arthritis_crystal"
+ ],
+ "ch07-q43": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.derm.blistering"
+ ],
+ "ch07-q44": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.muscle_disorders",
+  "topic.msk.autoimmune_ctd"
+ ],
+ "ch07-q45": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.msk_pharm"
+ ],
+ "mock1-q01": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.diagnostic_tests"
+ ],
+ "mock1-q02": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.valvular"
+ ],
+ "mock1-q03": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "mock1-q04": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "mock1-q05": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.adrenal"
+ ],
+ "mock1-q06": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.capacity_consent"
+ ],
+ "mock1-q07": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "mock1-q08": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemostasis"
+ ],
+ "mock1-q09": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "mock1-q10": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.obstructive"
+ ],
+ "mock1-q11": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.malabsorption_ibd"
+ ],
+ "mock1-q12": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.menstrual_amenorrhea_pcos"
+ ],
+ "mock1-q13": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.arthritis_crystal"
+ ],
+ "mock1-q14": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.immunology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.immune.immunodeficiency"
+ ],
+ "mock1-q15": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.histology_cell_biology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.ischemic_heart_disease",
+  "topic.cardio.physiology_hemodynamics",
+  "topic.cardio.endocarditis_pericardial"
+ ],
+ "mock1-q16": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.medical_knowledge",
+  "topic.psych.personality_somatic_defense"
+ ],
+ "mock1-q17": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.renal_pharm"
+ ],
+ "mock1-q18": [
+  "step1.sys.multisystem",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "mock1-q19": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neurodegenerative_demyelinating"
+ ],
+ "mock1-q20": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.derm.blistering"
+ ],
+ "mock1-q21": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.anemia"
+ ],
+ "mock1-q22": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.liver"
+ ],
+ "mock1-q23": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.diabetes"
+ ],
+ "mock1-q24": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.physiology"
+ ],
+ "mock1-q25": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.minors",
+  "topic.social.confidentiality_reporting"
+ ],
+ "mock1-q26": [
+  "step1.sys.blood_immune",
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.immune_basics",
+  "topic.multi.bacteria"
+ ],
+ "mock1-q27": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.hypertension"
+ ],
+ "mock1-q28": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.male.male_repro"
+ ],
+ "mock1-q29": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.limb_anatomy_nerve_injury"
+ ],
+ "mock1-q30": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.physiology",
+  "step1.disc.nutrition",
+  "step1.comp.medical_knowledge",
+  "topic.endo.calcium_parathyroid"
+ ],
+ "mock1-q31": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.ebm_literature",
+  "topic.biostat.risk_measures",
+  "topic.biostat.study_design"
+ ],
+ "mock1-q32": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.glomerular"
+ ],
+ "mock1-q33": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neuromuscular"
+ ],
+ "mock1-q34": [
+  "step1.sys.multisystem",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.antimicrobials"
+ ],
+ "mock1-q35": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.comp.medical_knowledge",
+  "topic.gi.malabsorption_ibd"
+ ],
+ "mock1-q36": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_malignancy"
+ ],
+ "mock1-q37": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.cardio.ischemic_heart_disease",
+  "topic.cardio.valvular",
+  "topic.cardio.cardio_pharm"
+ ],
+ "mock1-q38": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.endo.men_neuroendocrine",
+  "topic.endo.thyroid"
+ ],
+ "mock1-q39": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.communication"
+ ],
+ "mock1-q40": [
+  "step1.sys.blood_immune",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.transplant_immunosuppression"
+ ],
+ "mock1-q41": [
+  "step1.sys.biostat_epi",
+  "step1.disc.pharmacology",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.risk_measures"
+ ],
+ "mock1-q42": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.cardio.valvular"
+ ],
+ "mock1-q43": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.physiology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.physiology",
+  "topic.resp.pulmonary_vascular"
+ ],
+ "mock1-q44": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "mock1-q45": [
+  "step1.sys.gastrointestinal",
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.gi.esophagus_stomach",
+  "topic.gi.physiology_hormones",
+  "topic.endo.men_neuroendocrine"
+ ],
+ "mock1-q46": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.endo.adrenal"
+ ],
+ "mock1-q47": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.preg.prenatal_physiology",
+  "topic.preg.pregnancy_complications",
+  "topic.repro.gyn_oncology"
+ ],
+ "mock1-q48": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization"
+ ],
+ "mock1-q49": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.msk.muscle_disorders"
+ ],
+ "mock1-q50": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemolysis_hemoglobinopathy",
+  "topic.heme.anemia"
+ ],
+ "mock1-q51": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.bacteria"
+ ],
+ "mock1-q52": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.patient_safety_qi"
+ ],
+ "mock1-q53": [
+  "step1.sys.multisystem",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.multi.pharm_principles"
+ ],
+ "mock1-q54": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.endocarditis_pericardial",
+  "topic.cardio.valvular"
+ ],
+ "mock1-q55": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.lung_cancer_nodules"
+ ],
+ "mock1-q56": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.histology_cell_biology",
+  "step1.comp.medical_knowledge",
+  "topic.renal.glomerular"
+ ],
+ "mock1-q57": [
+  "step1.sys.gastrointestinal",
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.liver",
+  "topic.multi.viruses_hiv"
+ ],
+ "mock1-q58": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.diabetes"
+ ],
+ "mock1-q59": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.breast"
+ ],
+ "mock1-q60": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.neurodegenerative_demyelinating",
+  "topic.nutrition.vitamins_minerals"
+ ],
+ "mock1-q61": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.derm.skin_cancer"
+ ],
+ "mock1-q62": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.hemostasis"
+ ],
+ "mock1-q63": [
+  "step1.sys.blood_immune",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.immune.hypersensitivity",
+  "topic.immune.immune_basics"
+ ],
+ "mock1-q64": [
+  "step1.sys.biostat_epi",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.pbli",
+  "topic.biostat.bias_confounding"
+ ],
+ "mock1-q65": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.psych.mood"
+ ],
+ "mock1-q66": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.embryology_congenital"
+ ],
+ "mock1-q67": [
+  "step1.sys.respiratory_renal",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.resp.obstructive"
+ ],
+ "mock1-q68": [
+  "step1.sys.respiratory_renal",
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.pc_diagnosis.diagnosis",
+  "topic.renal.acid_base_electrolytes",
+  "topic.endo.pituitary"
+ ],
+ "mock1-q69": [
+  "step1.sys.gastrointestinal",
+  "step1.disc.pathology",
+  "step1.disc.anatomy_embryology",
+  "step1.comp.medical_knowledge",
+  "topic.gi.embryology_anatomy"
+ ],
+ "mock1-q70": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.endo.adrenal"
+ ],
+ "mock1-q71": [
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.repro.breast",
+  "topic.repro.gyn_oncology"
+ ],
+ "mock1-q72": [
+  "step1.sys.behavioral_nervous",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.neuro.localization",
+  "topic.neuro.special_senses",
+  "topic.neuro.neurodegenerative_demyelinating"
+ ],
+ "mock1-q73": [
+  "step1.sys.msk_skin",
+  "step1.disc.pathology",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.msk_pharm"
+ ],
+ "mock1-q74": [
+  "step1.sys.msk_skin",
+  "step1.sys.reproductive_endocrine",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.disc.immunology",
+  "step1.comp.medical_knowledge",
+  "topic.msk.autoimmune_ctd",
+  "topic.preg.labor_postpartum",
+  "topic.cardio.heart_failure_cardiomyopathy"
+ ],
+ "mock1-q75": [
+  "step1.sys.respiratory_renal",
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.nutrition",
+  "step1.disc.microbiology",
+  "step1.disc.pharmacology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.nutrition.vitamins_minerals",
+  "topic.resp.pneumonia_infection",
+  "topic.multi.antimicrobials"
+ ],
+ "mock1-q76": [
+  "step1.sys.multisystem",
+  "step1.disc.pathology",
+  "step1.disc.biochemistry",
+  "step1.comp.medical_knowledge",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "mock1-q77": [
+  "step1.sys.blood_immune",
+  "step1.disc.pathology",
+  "step1.comp.medical_knowledge",
+  "topic.heme.heme_malignancy"
+ ],
+ "mock1-q78": [
+  "step1.sys.cardiovascular",
+  "step1.disc.pathology",
+  "step1.disc.pharmacology",
+  "step1.comp.medical_knowledge",
+  "topic.cardio.arrhythmia"
+ ],
+ "mock1-q79": [
+  "step1.sys.social_sciences",
+  "step1.disc.behavioral_sciences",
+  "step1.comp.communication",
+  "topic.social.end_of_life_surrogates",
+  "topic.social.capacity_consent"
+ ],
+ "mock1-q80": [
+  "step1.sys.multisystem",
+  "step1.disc.genetics",
+  "step1.comp.medical_knowledge",
+  "topic.multi.genetics"
+ ],
+ "ch08-q01": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.ischemic_heart_disease"
+ ],
+ "ch08-q02": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.ischemic_heart_disease"
+ ],
+ "ch08-q03": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.ischemic_heart_disease",
+  "topic.cardio.cardio_pharm"
+ ],
+ "ch08-q04": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.heart_failure_cardiomyopathy",
+  "topic.cardio.cardio_pharm"
+ ],
+ "ch08-q05": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.heart_failure_cardiomyopathy"
+ ],
+ "ch08-q06": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.cardio.arrhythmia",
+  "topic.heme.anticoagulation_vte"
+ ],
+ "ch08-q07": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.arrhythmia",
+  "topic.cardio.valvular"
+ ],
+ "ch08-q08": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.arrhythmia"
+ ],
+ "ch08-q09": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.arrhythmia",
+  "topic.cardio.shock_syncope"
+ ],
+ "ch08-q10": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.arrhythmia"
+ ],
+ "ch08-q11": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.valvular"
+ ],
+ "ch08-q12": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.valvular"
+ ],
+ "ch08-q13": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.hypertension"
+ ],
+ "ch08-q14": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.lipids_atherosclerosis"
+ ],
+ "ch08-q15": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_lab_diagnostic",
+  "topic.cardio.heart_failure_cardiomyopathy",
+  "topic.cardio.shock_syncope"
+ ],
+ "ch08-q16": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.endocarditis_pericardial"
+ ],
+ "ch08-q17": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.endocarditis_pericardial",
+  "topic.cardio.valvular"
+ ],
+ "ch08-q18": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.endocarditis_pericardial",
+  "topic.cardio.valvular"
+ ],
+ "ch08-q19": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.hypertension",
+  "topic.renal.aki_ckd"
+ ],
+ "ch08-q20": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vascular_aorta"
+ ],
+ "ch08-q21": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.obstructive"
+ ],
+ "ch08-q22": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.obstructive"
+ ],
+ "ch08-q23": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_clinical_interventions",
+  "topic.resp.obstructive"
+ ],
+ "ch08-q24": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.obstructive"
+ ],
+ "ch08-q25": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_diagnosis",
+  "topic.resp.physiology"
+ ],
+ "ch08-q26": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pneumonia_infection",
+  "topic.resp.obstructive"
+ ],
+ "ch08-q27": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pulmonary_vascular"
+ ],
+ "ch08-q28": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pulmonary_vascular"
+ ],
+ "ch08-q29": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pleural"
+ ],
+ "ch08-q30": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.resp.lung_cancer_nodules"
+ ],
+ "ch08-q31": [
+  "step2ck.sys.respiratory",
+  "step2ck.sys.human_development",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.resp.lung_cancer_nodules",
+  "topic.dev.well_care"
+ ],
+ "ch08-q32": [
+  "step2ck.sys.multisystem",
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.sepsis_systemic_infection",
+  "topic.cardio.shock_syncope"
+ ],
+ "ch08-q33": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.critical_care_ventilation"
+ ],
+ "ch08-q34": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.critical_care_ventilation"
+ ],
+ "ch08-q35": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.aki_ckd"
+ ],
+ "ch08-q36": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.acid_base_electrolytes",
+  "topic.cardio.cardio_pharm"
+ ],
+ "ch08-q37": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch08-q38": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch08-q39": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch08-q40": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch08-q41": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch08-q42": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.aki_ckd"
+ ],
+ "ch08-q43": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.stones_urinary_tract"
+ ],
+ "ch08-q44": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.glomerular"
+ ],
+ "ch08-q45": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.aki_ckd"
+ ],
+ "ch09-q01": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.gi_bleeding"
+ ],
+ "ch09-q02": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.gi_bleeding",
+  "topic.heme.transfusion"
+ ],
+ "ch09-q03": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.esophagus_stomach"
+ ],
+ "ch09-q04": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.esophagus_stomach"
+ ],
+ "ch09-q05": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.malabsorption_ibd"
+ ],
+ "ch09-q06": [
+  "step2ck.sys.msk_skin",
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.msk.msk_pharm",
+  "topic.gi.malabsorption_ibd"
+ ],
+ "ch09-q07": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.liver"
+ ],
+ "ch09-q08": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.liver"
+ ],
+ "ch09-q09": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.gi.liver"
+ ],
+ "ch09-q10": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.liver"
+ ],
+ "ch09-q11": [
+  "step2ck.sys.pregnancy",
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology",
+  "topic.gi.liver"
+ ],
+ "ch09-q12": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.liver"
+ ],
+ "ch09-q13": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.biliary_pancreas"
+ ],
+ "ch09-q14": [
+  "step2ck.sys.human_development",
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.dev.well_care",
+  "topic.gi.colorectal"
+ ],
+ "ch09-q15": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.endo.diabetes"
+ ],
+ "ch09-q16": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.diabetes"
+ ],
+ "ch09-q17": [
+  "step2ck.sys.endocrine",
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.diabetes",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch09-q18": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.diabetes"
+ ],
+ "ch09-q19": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.thyroid"
+ ],
+ "ch09-q20": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.thyroid"
+ ],
+ "ch09-q21": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.thyroid"
+ ],
+ "ch09-q22": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.adrenal"
+ ],
+ "ch09-q23": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.adrenal"
+ ],
+ "ch09-q24": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.adrenal"
+ ],
+ "ch09-q25": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.calcium_parathyroid"
+ ],
+ "ch09-q26": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.endo.calcium_parathyroid"
+ ],
+ "ch09-q27": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.anemia"
+ ],
+ "ch09-q28": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.anticoagulation_vte"
+ ],
+ "ch09-q29": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.anticoagulation_vte",
+  "topic.heme.hemostasis"
+ ],
+ "ch09-q30": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.hemostasis"
+ ],
+ "ch09-q31": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.heme_onc_pharm"
+ ],
+ "ch09-q32": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.heme_onc_pharm"
+ ],
+ "ch09-q33": [
+  "step2ck.sys.human_development",
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.dev.well_care",
+  "topic.repro.breast"
+ ],
+ "ch09-q34": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch09-q35": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.viruses_hiv"
+ ],
+ "ch09-q36": [
+  "step2ck.sys.respiratory",
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pneumonia_infection",
+  "topic.multi.antimicrobials"
+ ],
+ "ch09-q37": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.bacteria",
+  "topic.multi.sepsis_systemic_infection"
+ ],
+ "ch09-q38": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.bacteria"
+ ],
+ "ch09-q39": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.vaginitis_pid_sti"
+ ],
+ "ch09-q40": [
+  "step2ck.sys.pregnancy",
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology",
+  "topic.repro.vaginitis_pid_sti"
+ ],
+ "ch09-q41": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.derm.skin_infections_drug_eruptions"
+ ],
+ "ch09-q42": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.bacteria"
+ ],
+ "ch09-q43": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vasculitis"
+ ],
+ "ch09-q44": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.msk.arthritis_crystal"
+ ],
+ "ch09-q45": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.msk.arthritis_crystal",
+  "topic.msk.msk_pharm"
+ ],
+ "ch10-q01": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q02": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q03": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_diagnosis",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q04": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q05": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q06": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.acute_abdomen"
+ ],
+ "ch10-q07": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q08": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q09": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q10": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q11": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.derm.burns_wounds"
+ ],
+ "ch10-q12": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.derm.burns_wounds"
+ ],
+ "ch10-q13": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_lab_diagnostic",
+  "topic.preg.prenatal_physiology"
+ ],
+ "ch10-q14": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.biliary_pancreas"
+ ],
+ "ch10-q15": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.biliary_pancreas"
+ ],
+ "ch10-q16": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.colorectal"
+ ],
+ "ch10-q17": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.acute_abdomen"
+ ],
+ "ch10-q18": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vascular_aorta"
+ ],
+ "ch10-q19": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.esophagus_stomach",
+  "topic.gi.acute_abdomen"
+ ],
+ "ch10-q20": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.cardio_pharm",
+  "topic.cardio.arrhythmia",
+  "topic.cardio.ischemic_heart_disease"
+ ],
+ "ch10-q21": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_clinical_interventions",
+  "topic.heme.anticoagulation_vte"
+ ],
+ "ch10-q22": [
+  "step2ck.sys.msk_skin",
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.msk.msk_pharm",
+  "topic.multi.trauma_surgery_periop",
+  "topic.msk.arthritis_crystal"
+ ],
+ "ch10-q23": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q24": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.acute_abdomen"
+ ],
+ "ch10-q25": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q26": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.breast"
+ ],
+ "ch10-q27": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.breast"
+ ],
+ "ch10-q28": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.men_neuroendocrine",
+  "topic.endo.thyroid"
+ ],
+ "ch10-q29": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.sys.human_development",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.cardio.vascular_aorta",
+  "topic.dev.well_care"
+ ],
+ "ch10-q30": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vascular_aorta"
+ ],
+ "ch10-q31": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vascular_aorta"
+ ],
+ "ch10-q32": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vascular_aorta"
+ ],
+ "ch10-q33": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.msk.orthopedics_trauma"
+ ],
+ "ch10-q34": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.male.male_repro"
+ ],
+ "ch10-q35": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.male.male_repro"
+ ],
+ "ch10-q36": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.msk.orthopedics_trauma"
+ ],
+ "ch10-q37": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.liver",
+  "topic.msk.msk_pharm"
+ ],
+ "ch10-q38": [
+  "step2ck.sys.multisystem",
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.toxicology_environmental",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "ch10-q39": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.arrhythmia",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch10-q40": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.multi.toxicology_environmental"
+ ],
+ "ch10-q41": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.obgyn",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.toxicology_environmental"
+ ],
+ "ch10-q42": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.toxicology_environmental"
+ ],
+ "ch10-q43": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.msk.msk_pharm"
+ ],
+ "ch10-q44": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.toxicology_environmental"
+ ],
+ "ch10-q45": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.immune.hypersensitivity"
+ ],
+ "ch11-q01": [
+  "step2ck.sys.human_development",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.dev.neonatal"
+ ],
+ "ch11-q02": [
+  "step2ck.sys.human_development",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.dev.neonatal"
+ ],
+ "ch11-q03": [
+  "step2ck.sys.human_development",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.dev.neonatal"
+ ],
+ "ch11-q04": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pneumonia_infection"
+ ],
+ "ch11-q05": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.vasculitis"
+ ],
+ "ch11-q06": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.esophagus_stomach"
+ ],
+ "ch11-q07": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.acute_abdomen",
+  "topic.gi.embryology_anatomy"
+ ],
+ "ch11-q08": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.acute_abdomen"
+ ],
+ "ch11-q09": [
+  "step2ck.sys.social_sciences",
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.social.confidentiality_reporting",
+  "topic.heme.hemostasis"
+ ],
+ "ch11-q10": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.immune.vaccines"
+ ],
+ "ch11-q11": [
+  "step2ck.sys.human_development",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.dev.milestones"
+ ],
+ "ch11-q12": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.child_eating"
+ ],
+ "ch11-q13": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.embryology_congenital"
+ ],
+ "ch11-q14": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pneumonia_infection"
+ ],
+ "ch11-q15": [
+  "step2ck.sys.nervous",
+  "step2ck.sys.multisystem",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.special_senses",
+  "topic.multi.antimicrobials"
+ ],
+ "ch11-q16": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pneumonia_infection"
+ ],
+ "ch11-q17": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.metabolism_inborn_errors"
+ ],
+ "ch11-q18": [
+  "step2ck.sys.human_development",
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.dev.adolescent",
+  "topic.repro.contraception_infertility_menopause"
+ ],
+ "ch11-q19": [
+  "step2ck.sys.pregnancy",
+  "step2ck.sys.human_development",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology",
+  "topic.dev.neonatal"
+ ],
+ "ch11-q20": [
+  "step2ck.sys.human_development",
+  "step2ck.sys.multisystem",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.dev.neonatal",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "ch11-q21": [
+  "step2ck.sys.human_development",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.dev.well_care"
+ ],
+ "ch11-q22": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch11-q23": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology"
+ ],
+ "ch11-q24": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.pregnancy_complications"
+ ],
+ "ch11-q25": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology"
+ ],
+ "ch11-q26": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch11-q27": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch11-q28": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.pregnancy_complications",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch11-q29": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch11-q30": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch11-q31": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch11-q32": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology",
+  "topic.preg.pregnancy_complications"
+ ],
+ "ch11-q33": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology"
+ ],
+ "ch11-q34": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.labor_postpartum"
+ ],
+ "ch11-q35": [
+  "step2ck.sys.endocrine",
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.thyroid",
+  "topic.preg.prenatal_physiology"
+ ],
+ "ch11-q36": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.gyn_oncology",
+  "topic.repro.contraception_infertility_menopause"
+ ],
+ "ch11-q37": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.menstrual_amenorrhea_pcos"
+ ],
+ "ch11-q38": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.contraception_infertility_menopause",
+  "topic.repro.menstrual_amenorrhea_pcos"
+ ],
+ "ch11-q39": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.contraception_infertility_menopause"
+ ],
+ "ch11-q40": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.contraception_infertility_menopause"
+ ],
+ "ch11-q41": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.gyn_oncology"
+ ],
+ "ch11-q42": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.gyn_oncology"
+ ],
+ "ch11-q43": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.vaginitis_pid_sti",
+  "topic.repro.gyn_oncology"
+ ],
+ "ch11-q44": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.breast"
+ ],
+ "ch11-q45": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.contraception_infertility_menopause"
+ ],
+ "ch12-q01": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.stroke_hemorrhage"
+ ],
+ "ch12-q02": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.stroke_hemorrhage"
+ ],
+ "ch12-q03": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.neuro.stroke_hemorrhage"
+ ],
+ "ch12-q04": [
+  "step2ck.sys.nervous",
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.neuro.stroke_hemorrhage",
+  "topic.cardio.arrhythmia"
+ ],
+ "ch12-q05": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vascular_aorta"
+ ],
+ "ch12-q06": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.seizures"
+ ],
+ "ch12-q07": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.seizures"
+ ],
+ "ch12-q08": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.headache"
+ ],
+ "ch12-q09": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.headache"
+ ],
+ "ch12-q10": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.neuromuscular"
+ ],
+ "ch12-q11": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.neuromuscular"
+ ],
+ "ch12-q12": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.localization"
+ ],
+ "ch12-q13": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.tumors_icp_coma"
+ ],
+ "ch12-q14": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.neuro.neurodegenerative_demyelinating"
+ ],
+ "ch12-q15": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.psych.mood",
+  "topic.neuro.seizures",
+  "topic.psych.child_eating"
+ ],
+ "ch12-q16": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.mood",
+  "topic.psych.psychosis"
+ ],
+ "ch12-q17": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.mood"
+ ],
+ "ch12-q18": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.psychosis"
+ ],
+ "ch12-q19": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.psychosis"
+ ],
+ "ch12-q20": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.psych.mood",
+  "topic.neuro.special_senses"
+ ],
+ "ch12-q21": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.substance_use"
+ ],
+ "ch12-q22": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.substance_use",
+  "topic.gi.liver"
+ ],
+ "ch12-q23": [
+  "step2ck.sys.pregnancy",
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.obgyn",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology",
+  "topic.psych.substance_use"
+ ],
+ "ch12-q24": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.sys.nutrition",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.child_eating",
+  "topic.nutrition.vitamins_minerals"
+ ],
+ "ch12-q25": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.child_eating"
+ ],
+ "ch12-q26": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.anxiety_trauma_ocd"
+ ],
+ "ch12-q27": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.psych.mood"
+ ],
+ "ch12-q28": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.sleep_suicide"
+ ],
+ "ch12-q29": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.psych.substance_use"
+ ],
+ "ch12-q30": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.professionalism",
+  "topic.social.capacity_consent"
+ ],
+ "ch12-q31": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.professionalism",
+  "topic.social.end_of_life_surrogates"
+ ],
+ "ch12-q32": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.professionalism",
+  "topic.social.minors"
+ ],
+ "ch12-q33": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.professionalism",
+  "topic.social.confidentiality_reporting"
+ ],
+ "ch12-q34": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.professionalism",
+  "topic.social.communication"
+ ],
+ "ch12-q35": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.systems_based_practice",
+  "topic.social.patient_safety_qi"
+ ],
+ "ch12-q36": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.professionalism",
+  "topic.social.professionalism"
+ ],
+ "ch12-q37": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.professionalism",
+  "topic.social.confidentiality_reporting"
+ ],
+ "ch12-q38": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.professionalism",
+  "topic.social.minors"
+ ],
+ "ch12-q39": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.diagnostic_tests"
+ ],
+ "ch12-q40": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.ebm_literature",
+  "topic.biostat.risk_measures"
+ ],
+ "ch12-q41": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.diagnostic_tests"
+ ],
+ "ch12-q42": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.bias_confounding"
+ ],
+ "ch12-q43": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.ebm_literature",
+  "topic.biostat.hypothesis_testing"
+ ],
+ "ch12-q44": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.ebm_literature",
+  "topic.biostat.bias_confounding",
+  "topic.biostat.study_design"
+ ],
+ "ch12-q45": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.systems_based_practice",
+  "topic.social.patient_safety_qi"
+ ],
+ "mock2-q01": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.ischemic_heart_disease"
+ ],
+ "mock2-q02": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.endo.diabetes"
+ ],
+ "mock2-q03": [
+  "step2ck.sys.human_development",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.dev.well_care"
+ ],
+ "mock2-q04": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.professionalism",
+  "topic.social.capacity_consent"
+ ],
+ "mock2-q05": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.vasculitis",
+  "topic.msk.msk_pharm"
+ ],
+ "mock2-q06": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.labor_postpartum",
+  "topic.preg.pregnancy_complications",
+  "topic.preg.prenatal_physiology"
+ ],
+ "mock2-q07": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.sys.multisystem",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.mood",
+  "topic.multi.toxicology_environmental"
+ ],
+ "mock2-q08": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.obstructive"
+ ],
+ "mock2-q09": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.risk_measures"
+ ],
+ "mock2-q10": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop"
+ ],
+ "mock2-q11": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.gi.gi_bleeding"
+ ],
+ "mock2-q12": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "mock2-q13": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.multi.antimicrobials",
+  "topic.multi.sepsis_systemic_infection"
+ ],
+ "mock2-q14": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.anticoagulation_vte"
+ ],
+ "mock2-q15": [
+  "step2ck.sys.human_development",
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_diagnosis",
+  "topic.dev.neonatal",
+  "topic.gi.liver",
+  "topic.gi.physiology_hormones"
+ ],
+ "mock2-q16": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.gyn_oncology"
+ ],
+ "mock2-q17": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.psych.mood"
+ ],
+ "mock2-q18": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.biliary_pancreas"
+ ],
+ "mock2-q19": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.stroke_hemorrhage"
+ ],
+ "mock2-q20": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.diabetes"
+ ],
+ "mock2-q21": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.arrhythmia",
+  "topic.neuro.stroke_hemorrhage",
+  "topic.cardio.valvular"
+ ],
+ "mock2-q22": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.systems_based_practice",
+  "topic.social.patient_safety_qi"
+ ],
+ "mock2-q23": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.immune.vaccines"
+ ],
+ "mock2-q24": [
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.msk.arthritis_crystal"
+ ],
+ "mock2-q25": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.acute_abdomen"
+ ],
+ "mock2-q26": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.diagnostic_tests",
+  "topic.biostat.ebm_literature"
+ ],
+ "mock2-q27": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.multi.viruses_hiv"
+ ],
+ "mock2-q28": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.labor_postpartum"
+ ],
+ "mock2-q29": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pulmonary_vascular"
+ ],
+ "mock2-q30": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.multi.bacteria",
+  "topic.multi.sepsis_systemic_infection"
+ ],
+ "mock2-q31": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.psych.psychosis"
+ ],
+ "mock2-q32": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.adrenal"
+ ],
+ "mock2-q33": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.cardio.vascular_aorta"
+ ],
+ "mock2-q34": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.anemia"
+ ],
+ "mock2-q35": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.cardio.heart_failure_cardiomyopathy",
+  "topic.cardio.cardio_pharm"
+ ],
+ "mock2-q36": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pneumonia_infection"
+ ],
+ "mock2-q37": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.acid_base_electrolytes",
+  "topic.renal.renal_pharm"
+ ],
+ "mock2-q38": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.repro.contraception_infertility_menopause",
+  "topic.repro.menstrual_amenorrhea_pcos"
+ ],
+ "mock2-q39": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.multi.sepsis_systemic_infection"
+ ],
+ "mock2-q40": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.calcium_parathyroid"
+ ],
+ "mock2-q41": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vascular_aorta"
+ ],
+ "mock2-q42": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.thyroid"
+ ],
+ "mock2-q43": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.obstructive"
+ ],
+ "mock2-q44": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.seizures"
+ ],
+ "mock2-q45": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.vascular_aorta"
+ ],
+ "mock2-q46": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.professionalism",
+  "topic.social.confidentiality_reporting",
+  "topic.social.minors"
+ ],
+ "mock2-q47": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.hypothesis_testing",
+  "topic.biostat.ebm_literature"
+ ],
+ "mock2-q48": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.biliary_pancreas"
+ ],
+ "mock2-q49": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.psych.substance_use",
+  "topic.gi.liver"
+ ],
+ "mock2-q50": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_diagnosis",
+  "topic.renal.aki_ckd"
+ ],
+ "mock2-q51": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.preg.labor_postpartum"
+ ],
+ "mock2-q52": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology"
+ ],
+ "mock2-q53": [
+  "step2ck.sys.endocrine",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.endo.calcium_parathyroid"
+ ],
+ "mock2-q54": [
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.neuro.localization"
+ ],
+ "mock2-q55": [
+  "step2ck.sys.multisystem",
+  "step2ck.sys.respiratory",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.trauma_surgery_periop",
+  "topic.resp.pleural"
+ ],
+ "mock2-q56": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_lab_diagnostic",
+  "topic.gi.acute_abdomen",
+  "topic.gi.embryology_anatomy"
+ ],
+ "mock2-q57": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.cardio.valvular"
+ ],
+ "mock2-q58": [
+  "step2ck.sys.endocrine",
+  "step2ck.sys.msk_skin",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.endo.calcium_parathyroid",
+  "topic.msk.bone"
+ ],
+ "mock2-q59": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.child_eating"
+ ],
+ "mock2-q60": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology",
+  "topic.preg.labor_postpartum",
+  "topic.preg.pregnancy_complications"
+ ],
+ "mock2-q61": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_pharmacotherapy",
+  "topic.psych.anxiety_trauma_ocd",
+  "topic.psych.mood"
+ ],
+ "mock2-q62": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.sys.nervous",
+  "step2ck.clin.medicine",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_diagnosis",
+  "topic.psych.psychosis",
+  "topic.psych.sleep_suicide",
+  "topic.neuro.tumors_icp_coma"
+ ],
+ "mock2-q63": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.repro.breast"
+ ],
+ "mock2-q64": [
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.multi.bacteria",
+  "topic.multi.sepsis_systemic_infection"
+ ],
+ "mock2-q65": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.systems_based_practice",
+  "topic.social.patient_safety_qi"
+ ],
+ "mock2-q66": [
+  "step2ck.sys.respiratory",
+  "step2ck.clin.pediatrics",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pneumonia_infection"
+ ],
+ "mock2-q67": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.renal.stones_urinary_tract"
+ ],
+ "mock2-q68": [
+  "step2ck.sys.pregnancy",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_mixed_management",
+  "topic.preg.prenatal_physiology"
+ ],
+ "mock2-q69": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.cardio.lipids_atherosclerosis"
+ ],
+ "mock2-q70": [
+  "step2ck.sys.behavioral_health",
+  "step2ck.clin.psychiatry",
+  "step2ck.comp.pc_mixed_management",
+  "topic.psych.sleep_suicide"
+ ],
+ "mock2-q71": [
+  "step2ck.sys.blood_immune",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.heme.hemostasis",
+  "topic.heme.hemolysis_hemoglobinopathy"
+ ],
+ "mock2-q72": [
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_lab_diagnostic",
+  "topic.cardio.vascular_aorta"
+ ],
+ "mock2-q73": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.bias_confounding"
+ ],
+ "mock2-q74": [
+  "step2ck.sys.endocrine",
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_lab_diagnostic",
+  "topic.endo.adrenal",
+  "topic.renal.acid_base_electrolytes"
+ ],
+ "mock2-q75": [
+  "step2ck.sys.renal_reproductive",
+  "step2ck.clin.obgyn",
+  "step2ck.comp.pc_health_maintenance",
+  "topic.repro.breast"
+ ],
+ "mock2-q76": [
+  "step2ck.sys.gastrointestinal",
+  "step2ck.clin.pediatrics",
+  "step2ck.clin.surgery",
+  "step2ck.comp.pc_mixed_management",
+  "topic.gi.acute_abdomen"
+ ],
+ "mock2-q77": [
+  "step2ck.sys.msk_skin",
+  "step2ck.sys.cardiovascular",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.msk.msk_pharm",
+  "topic.cardio.vasculitis",
+  "topic.msk.autoimmune_ctd"
+ ],
+ "mock2-q78": [
+  "step2ck.sys.respiratory",
+  "step2ck.sys.multisystem",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pc_mixed_management",
+  "topic.resp.pneumonia_infection",
+  "topic.multi.sepsis_systemic_infection",
+  "topic.multi.antimicrobials"
+ ],
+ "mock2-q79": [
+  "step2ck.sys.social_sciences",
+  "step2ck.clin.medicine",
+  "step2ck.comp.professionalism",
+  "topic.social.end_of_life_surrogates"
+ ],
+ "mock2-q80": [
+  "step2ck.sys.biostat_epi",
+  "step2ck.clin.medicine",
+  "step2ck.comp.pbli",
+  "topic.biostat.diagnostic_tests"
+ ]
+}

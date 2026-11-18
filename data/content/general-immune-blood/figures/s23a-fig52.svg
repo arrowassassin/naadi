@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 340" aria-label="Flow diagram for the work-up of a high hematocrit using erythropoietin and JAK2 testing"><title>Work-up of erythrocytosis</title><desc>A confirmed high hematocrit is separated into relative polycythemia, polycythemia vera (low erythropoietin with a JAK2 mutation) and secondary erythrocytosis (normal or high erythropoietin without a JAK2 mutation).</desc>
+<rect x="0" y="0" width="540" height="340" fill="#ffffff"/>
+<defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/></marker></defs>
+<rect x="176" y="10" width="188" height="42" rx="6" fill="#eeeeee" stroke="#444444"/>
+<text x="270" y="28" font-family="sans-serif" font-size="12" fill="#111111" text-anchor="middle">High hematocrit, confirmed</text>
+<text x="270" y="44" font-family="sans-serif" font-size="12" fill="#111111" text-anchor="middle">when well hydrated</text>
+<line x1="176" y1="31" x2="116" y2="31" stroke="#444444" stroke-width="1.5" marker-end="url(#a2)"/>
+<rect x="6" y="10" width="108" height="42" rx="6" fill="#f3e8d0" stroke="#9a6b00"/>
+<text x="60" y="28" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Corrects: relative</text>
+<text x="60" y="43" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">polycythemia</text>
+<line x1="270" y1="52" x2="270" y2="74" stroke="#444444" stroke-width="1.5" marker-end="url(#a2)"/>
+<rect x="150" y="76" width="240" height="40" rx="6" fill="#dbe6f3" stroke="#1f5fa8"/>
+<text x="270" y="94" font-family="sans-serif" font-size="12" fill="#111111" text-anchor="middle">Serum erythropoietin</text>
+<text x="270" y="110" font-family="sans-serif" font-size="12" fill="#111111" text-anchor="middle">and JAK2 V617F together</text>
+<line x1="200" y1="116" x2="140" y2="146" stroke="#444444" stroke-width="1.5" marker-end="url(#a2)"/>
+<line x1="340" y1="116" x2="400" y2="146" stroke="#444444" stroke-width="1.5" marker-end="url(#a2)"/>
+<rect x="24" y="148" width="212" height="58" rx="6" fill="#eeeeee" stroke="#444444"/>
+<text x="130" y="168" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Erythropoietin LOW</text>
+<text x="130" y="184" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">JAK2 mutation present:</text>
+<text x="130" y="200" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">polycythemia vera</text>
+<rect x="304" y="148" width="224" height="58" rx="6" fill="#eeeeee" stroke="#444444"/>
+<text x="416" y="168" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Erythropoietin NORMAL or HIGH</text>
+<text x="416" y="184" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">no JAK2 mutation:</text>
+<text x="416" y="200" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">secondary erythrocytosis</text>
+<line x1="130" y1="206" x2="130" y2="228" stroke="#444444" stroke-width="1.5" marker-end="url(#a2)"/>
+<line x1="416" y1="206" x2="416" y2="228" stroke="#444444" stroke-width="1.5" marker-end="url(#a2)"/>
+<rect x="18" y="230" width="224" height="76" rx="6" fill="#dbe6f3" stroke="#1f5fa8"/>
+<text x="130" y="249" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Phlebotomy to hematocrit</text>
+<text x="130" y="264" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">below 45% + low-dose aspirin;</text>
+<text x="130" y="279" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">add cytoreduction if age over 60</text>
+<text x="130" y="294" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">or prior thrombosis</text>
+<rect x="300" y="230" width="232" height="76" rx="6" fill="#dbe6f3" stroke="#1f5fa8"/>
+<text x="416" y="249" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Look for the cause: oximetry</text>
+<text x="416" y="264" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">awake and asleep, carboxyhemoglobin,</text>
+<text x="416" y="279" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">drugs, kidney and liver imaging;</text>
+<text x="416" y="294" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">treat the cause</text>
+<text x="270" y="333" font-family="sans-serif" font-size="11" fill="#555555" text-anchor="middle">If JAK2 V617F is negative but erythropoietin is low, test for JAK2 exon 12 mutations.</text>
+</svg>

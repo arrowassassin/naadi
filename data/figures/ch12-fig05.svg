@@ -1,0 +1,42 @@
+<svg aria-label="Status epilepticus treatment algorithm by time" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch12-arrow4" markerheight="7" markerwidth="7" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#e0f2fe" height="74" rx="6" stroke="#334155" width="110" x="10" y="10"></rect>
+<text font-weight="bold" text-anchor="middle" x="65" y="40">0–5 min</text>
+<text text-anchor="middle" x="65" y="56">Stabilization</text>
+<rect fill="#ffffff" height="74" rx="6" stroke="#334155" width="500" x="130" y="10"></rect>
+<text x="140" y="28">ABCs, O2, position on side, time the seizure, cardiac monitor, IV access</text>
+<text x="140" y="44">Fingerstick glucose: if &lt;60 mg/dL → thiamine 100 mg IV, then dextrose (D50)</text>
+<text x="140" y="60">Labs: BMP, Ca, Mg, CBC, ASM levels, tox screen, β-hCG</text>
+<text x="140" y="76">Definition of status: ≥5 min continuous or recurrent without recovery</text>
+<line marker-end="url(#ch12-arrow4)" stroke="#334155" x1="65" x2="65" y1="84" y2="98"></line>
+<rect fill="#dcfce7" height="74" rx="6" stroke="#334155" width="110" x="10" y="100"></rect>
+<text font-weight="bold" text-anchor="middle" x="65" y="130">5–20 min</text>
+<text text-anchor="middle" x="65" y="146">Benzodiazepine</text>
+<rect fill="#ffffff" height="74" rx="6" stroke="#334155" width="500" x="130" y="100"></rect>
+<text x="140" y="118">IV lorazepam 0.1 mg/kg (max 4 mg/dose), may repeat once in 5–10 min</text>
+<text x="140" y="134">No IV: IM midazolam 10 mg (&gt;40 kg; 5 mg if 13–40 kg) — equal or better (RAMPART)</text>
+<text x="140" y="150">Alternatives: IV diazepam 0.15–0.2 mg/kg; intranasal/buccal midazolam; rectal diazepam</text>
+<text x="140" y="166">Under-dosing benzodiazepines is the most common error</text>
+<line marker-end="url(#ch12-arrow4)" stroke="#334155" x1="65" x2="65" y1="174" y2="188"></line>
+<rect fill="#fef3c7" height="74" rx="6" stroke="#334155" width="110" x="10" y="190"></rect>
+<text font-weight="bold" text-anchor="middle" x="65" y="220">20–40 min</text>
+<text text-anchor="middle" x="65" y="236">Second-line</text>
+<rect fill="#ffffff" height="74" rx="6" stroke="#334155" width="500" x="130" y="190"></rect>
+<text x="140" y="208">One IV agent (equally effective, ESETT):</text>
+<text x="140" y="224">Levetiracetam 60 mg/kg (max 4500 mg) · Fosphenytoin 20 mg PE/kg (max 1500)</text>
+<text x="140" y="240">Valproate 40 mg/kg (max 3000 mg; avoid in pregnancy, liver disease)</text>
+<text x="140" y="256">Phenobarbital 15–20 mg/kg if none available</text>
+<line marker-end="url(#ch12-arrow4)" stroke="#334155" x1="65" x2="65" y1="264" y2="278"></line>
+<rect fill="#fee2e2" height="90" rx="6" stroke="#334155" width="110" x="10" y="280"></rect>
+<text font-weight="bold" text-anchor="middle" x="65" y="312">&gt;40 min</text>
+<text text-anchor="middle" x="65" y="328">Refractory</text>
+<text text-anchor="middle" x="65" y="344">status</text>
+<rect fill="#ffffff" height="90" rx="6" stroke="#334155" width="500" x="130" y="280"></rect>
+<text x="140" y="298">Intubate; ICU; continuous EEG (rule out nonconvulsive status)</text>
+<text x="140" y="314">Continuous infusion: midazolam, propofol, or pentobarbital (or ketamine)</text>
+<text x="140" y="330">Titrate to seizure suppression / burst suppression for 24–48 h</text>
+<text x="140" y="346">Search for cause: CT/MRI, LP (encephalitis), autoimmune panel</text>
+<text x="140" y="362">Not waking 20–30 min after convulsions stop → urgent EEG</text>
+</g>
+</svg>

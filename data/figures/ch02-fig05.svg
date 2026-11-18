@@ -1,0 +1,39 @@
+<svg aria-label="Classification chart of DNA and RNA viruses" font-family="sans-serif" role="img" viewbox="0 0 960 415" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch02-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#fef3c7" height="27" rx="7" stroke="#334155" stroke-width="1.3" width="330" x="20" y="16"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="185" y="34">DNA VIRUSES ("HHAPPPPy")</text>
+<rect fill="#e0f2fe" height="72" rx="7" stroke="#334155" stroke-width="1.3" width="330" x="20" y="82"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="start" x="28" y="100">Enveloped</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="115">Herpes — HSV-1/2, VZV, EBV, CMV, HHV-6/7/8</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="130">Hepadna — HBV (partial dsDNA, uses RT)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="145">Pox — variola, mpox, molluscum (cytoplasm)</text>
+<rect fill="#dcfce7" height="87" rx="7" stroke="#334155" stroke-width="1.3" width="330" x="20" y="188"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="start" x="28" y="206">Naked (non-enveloped)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="221">Adeno — pharyngoconjunctivitis, cystitis</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="236">Papilloma — HPV (circular)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="251">Polyoma — JC (PML), BK (circular)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="266">Parvo — B19 (the only ssDNA virus)</text>
+<rect fill="#fee2e2" height="72" rx="7" stroke="#334155" stroke-width="1.3" width="330" x="20" y="319"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="start" x="28" y="337">Rules</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="352">All dsDNA except Parvo · all linear except</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="367">Papilloma, Polyoma, Hepadna (circular)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="28" y="382">All replicate in nucleus except Pox</text>
+<rect fill="#fef3c7" height="27" rx="7" stroke="#334155" stroke-width="1.3" width="580" x="370" y="16"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="660" y="34">RNA VIRUSES</text>
+<rect fill="#dcfce7" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="580" x="370" y="71"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="start" x="378" y="89">(+) ssRNA · naked</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="378" y="104">Picorna (polio, coxsackie, echo, rhino, HAV) · Calici (norovirus) · Hepe (HEV)</text>
+<rect fill="#e0f2fe" height="57" rx="7" stroke="#334155" stroke-width="1.3" width="580" x="370" y="142"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="start" x="378" y="159">(+) ssRNA · enveloped</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="378" y="174">Flavi (HCV, dengue, Zika, West Nile, yellow fever, JE) · Toga (chikungunya)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="378" y="189">Matona (rubella) · Corona (SARS-CoV-2) · Retro (HIV, HTLV: diploid, RT)</text>
+<rect fill="#e0f2fe" height="72" rx="7" stroke="#334155" stroke-width="1.3" width="580" x="370" y="226"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="start" x="378" y="244">(−) ssRNA · enveloped (virion carries RNA-dependent RNA polymerase)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="378" y="259">Orthomyxo* (influenza) · Paramyxo/Pneumo (measles, mumps, RSV, hMPV)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="378" y="274">Rhabdo (rabies) · Filo (Ebola, Marburg) · Arena* (Lassa, LCMV)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="378" y="289">Bunya*/Hanta* (hantavirus, CCHF)</text>
+<rect fill="#dcfce7" height="27" rx="7" stroke="#334155" stroke-width="1.3" width="580" x="370" y="332"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="start" x="378" y="349">dsRNA · naked: Reo* (rotavirus)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="660" y="385">* segmented ("BOAR") → reassortment. All RNA viruses replicate in the</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="660" y="402">cytoplasm except influenza and retroviruses. (+) sense RNA alone is infectious.</text>
+</svg>

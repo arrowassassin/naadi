@@ -1,0 +1,17 @@
+# Do NOT list gradio, spaces or huggingface_hub (platform-managed on ZeroGPU Spaces).
+langgraph==1.2.22
+langgraph-checkpoint-postgres==3.2.1
+langchain-core==1.8.1
+langchain-openai==1.8.0
+langchain-tavily==0.2.18
+langchain-text-splitters==1.1.3
+psycopg[binary,pool]==3.3.9
+pgvector==0.5.1
+sqlalchemy==2.1.8
+pydantic==2.14.3
+sse-starlette==3.7.0
+httpx==0.28.1
+pypdf==7.1.0
+pymupdf==2.1
+python-multipart==0.0.33
+fastembed==0.9.1

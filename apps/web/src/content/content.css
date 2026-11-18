@@ -1,0 +1,11 @@
+/* The one hidden renderer frame for Mermaid diagrams (mermaidHost.ts): off-screen, full-size so text measures normally, never focusable. */
+.naadi-mermaid-sandbox {
+  position: fixed;
+  width: 1024px;
+  height: 768px;
+  left: -20000px;
+  top: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}

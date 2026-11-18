@@ -1,0 +1,11 @@
+/* Reader sheets (Contents, Report an issue): slide up 16 px and fade in. Off under reduced motion (tokens.css). */
+@keyframes naadi-sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

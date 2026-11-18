@@ -1,0 +1,22 @@
+[
+  {
+    "id": "smp-c01",
+    "frontHtml": "Why is a rise in myocardial oxygen demand met by more coronary flow rather than more extraction?",
+    "backHtml": "Resting myocardial oxygen extraction is already about 70–75%, so extraction can rise little; metabolic arteriolar dilation raises flow instead.",
+    "sectionId": "smp-s01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1"
+  },
+  {
+    "id": "smp-c02",
+    "frontHtml": "STEMI with primary PCI available promptly: which reperfusion strategy?",
+    "backHtml": "Primary PCI (fibrinolysis only when timely PCI is not available).",
+    "questionId": "smp-q04",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1"
+  }
+]

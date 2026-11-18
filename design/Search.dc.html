@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi — Search everything</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Caveat:wght@700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.5; padding: 16px 0 48px">
+<div style="position: sticky; top: 16px; z-index: 5; padding: 0 16px"><dc-import name="Nav" active="none" hint-size="100%,58px"></dc-import></div>
+
+<main style="max-width: 1040px; margin: 0 auto; padding: 56px 24px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
+<label style="display: flex; align-items: center; gap: 16px; padding: 0 0 16px; border-bottom: 2px solid #F4F4F0">
+<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C6FF3D" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<input type="search" aria-label="Search everything" value="type 4 rta" style="flex: 1; min-width: 0; background: transparent; border: 0; outline: none; color: #F4F4F0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(40px, 7vw, 88px); letter-spacing: -0.04em; line-height: 1">
+</label>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="7">
+<button type="button" aria-pressed="{{f.on}}" style="{{f.style}}">{{f.label}}</button>
+</sc-for>
+</div>
+
+<section aria-label="Answer" style="padding: 28px; border-radius: 32px; background: #17132E; border: 1px solid #2C2552; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C4BAFF">Naadi's short answer</span>
+<p style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -0.01em">Type 4 RTA is the hyperkalemic one: too little aldosterone, or kidneys that don't respond to it. Normal anion gap, urine pH under 5.5.</p>
+<span style="font-size: 13px; color: #C4BAFF">From Chapter 7, page 3 and two of your notes</span>
+</section>
+
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="4">
+<section style="display: flex; flex-direction: column">
+<h2 style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #9C9EA6">{{g.title}}</h2>
+<sc-for list="{{g.rows}}" as="r" hint-placeholder-count="2">
+<a href="{{r.href}}" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; min-height: 72px; padding: 10px 0; border-top: 1px solid #1F2126; text-decoration: none; color: #F4F4F0">
+<span style="display: flex; flex-direction: column; min-width: 0"><span style="{{r.titleStyle}}">{{r.title}}</span><span style="font-size: 13px; color: #9C9EA6">{{r.meta}}</span></span>
+<span style="font-size: 12px; padding: 5px 12px; border-radius: 999px; border: 1px solid #3A3D45; color: #C9CBD1; white-space: nowrap">{{r.kind}}</span>
+</a>
+</sc-for>
+</section>
+</sc-for>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1250}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const chip = (on) => 'min-height:44px;padding:0 16px;border-radius:999px;font-size:14px;' + (on ? 'border:0;background:#F4F4F0;color:#050506;font-weight:600' : 'border:1px solid #3A3D45;background:transparent;color:#F4F4F0');
+    const filters = ['Everything', 'Chapters', 'My notes', 'Handwriting', 'Questions', 'Uploads', 'Web'].map((label, i) => ({ label, on: i === 0 ? 'true' : 'false', style: chip(i === 0) }));
+    const plain = 'font-weight:600;font-size:18px';
+    const ink = 'font-family:Caveat,cursive;font-weight:700;font-size:28px;line-height:1.1;color:#C4BAFF';
+    const groups = [
+      { title: 'Chapters', rows: [
+        { title: 'Renal tubular acidosis — the three types', meta: 'Renal · Chapter 7 · page 3', kind: 'Read', href: 'Chapter.dc.html', titleStyle: plain },
+        { title: 'Acid–base disorders — normal gap causes', meta: 'Renal · Chapter 6 · video at 12:10', kind: 'Watch', href: 'Lesson.dc.html', titleStyle: plain }] },
+      { title: 'Your notes and handwriting', rows: [
+        { title: '4 → aldo problem   K⁺ HIGH', meta: 'Found in your handwriting · page note on Chapter 7', kind: 'Ink', href: 'Ink.dc.html', titleStyle: ink },
+        { title: 'Type 4 RTA is the one with hyperkalemia.', meta: 'Violet highlight · Qbank explanation', kind: 'Highlight', href: 'Notes.dc.html', titleStyle: plain }] },
+      { title: 'Questions', rows: [
+        { title: '3 questions on hyperkalemic RTA — you missed 2', meta: 'Qbank · Renal', kind: 'Practice', href: 'Builder.dc.html', titleStyle: plain }] },
+      { title: 'Web', rows: [
+        { title: '[WEB RESULT TITLE]', meta: '[SOURCE] · searched just now', kind: 'Web', href: 'Search.dc.html', titleStyle: plain }] }
+    ];
+    return { filters, groups };
+  }
+}
+</script>
+</body>
+</html>

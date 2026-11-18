@@ -1,0 +1,37 @@
+{
+ "meta": {
+  "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+  "terms": "https://open.fda.gov/terms/",
+  "license": "https://open.fda.gov/license/",
+  "last_updated": "2026-11-13",
+  "results": {
+   "skip": 0,
+   "limit": 1,
+   "total": 18
+  }
+ },
+ "results": [
+  {
+   "id": "32977bea-c837-4acc-b469-03a2fc765787",
+   "set_id": "0ad21db3-2b1c-4ed9-a687-bdd6a74d0aae",
+   "effective_time": "20260616",
+   "indications_and_usage": [
+    "1 INDICATIONS AND USAGE BASAGLAR \u00ae is indicated to improve glycemic control in adults and pediatric patients with type 1 diabetes mellitus and in adults with type 2 diabetes mellitus. BASAGLAR \u00ae is a long-acting human insulin analog indicated to improve glycemic control in adults and pediatric patients with type 1 diabetes mellitus and in adults with type 2 diabetes mellitus. ( 1 ) Limitations of Use : Not recommended for treating diabetic ketoacidosis. ( 1 ) Limitations of Use BASAGLAR is not recommended for the treatment of diabetic ketoacidosis."
+   ],
+   "openfda": {
+    "brand_name": [
+     "BASAGLAR KwikPen"
+    ],
+    "generic_name": [
+     "INSULIN GLARGINE"
+    ],
+    "manufacturer_name": [
+     "Eli Lilly and Company"
+    ],
+    "route": [
+     "SUBCUTANEOUS"
+    ]
+   }
+  }
+ ]
+}

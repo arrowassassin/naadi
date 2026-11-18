@@ -1,0 +1,1220 @@
+{
+ "area": "usmle2026.11.03.01",
+ "sections": [
+  {
+   "id": "s23c-s110301-1-1",
+   "exam": "step1",
+   "heading": "Reading the urine: dipstick, sediment, casts, colour and volume",
+   "html": "<p>A urine sample is a liquid biopsy of the kidney. Three parts are read together: the <strong>dipstick</strong> (chemistry), <strong>microscopy</strong> of the spun sediment, and the <strong>volume and colour</strong>. Each answers a different question, and each has blind spots.</p><h3>The dipstick and its blind spots</h3><table><tr><th>Pad</th><th>What it detects</th><th>Misses or misleads</th></tr><tr><td>Protein</td><td>Mainly <strong>albumin</strong> (negatively charged)</td><td>Light chains and other low-molecular-weight proteins; very alkaline or concentrated urine gives false positives</td></tr><tr><td>Blood (heme)</td><td>Peroxidase activity of hemoglobin and <strong>myoglobin</strong></td><td>Positive with free hemoglobin or myoglobin and no red cells: always confirm with microscopy</td></tr><tr><td>Glucose</td><td>Glucose only</td><td>Positive when the filtered load exceeds tubular reabsorption (threshold about 180 mg/dL in plasma), or with an SGLT2 inhibitor, pregnancy or proximal tubule damage at normal plasma glucose</td></tr><tr><td>Leukocyte esterase, nitrite</td><td>Neutrophils; nitrate-reducing gram-negative bacteria</td><td>See urinary infections</td></tr><tr><td>Specific gravity</td><td>Concentration (roughly tracks osmolality)</td><td>Raised by glucose, contrast and protein beyond their osmotic effect</td></tr><tr><td>Bilirubin, urobilinogen</td><td>Conjugated bilirubin; urobilinogen</td><td>Conjugated bilirubin in urine means cholestasis or hepatocellular disease; unconjugated bilirubin is albumin bound and never appears</td></tr></table><h3>Hematuria: where is the blood coming from?</h3><p><strong>Glomerular</strong> bleeding forces red cells through gaps in the glomerular basement membrane and then through the osmotic and pH changes of the tubule, so they arrive <strong>dysmorphic</strong> (blebbed ring forms called acanthocytes), often with <strong>red cell casts</strong> and proteinuria, and the urine is brown or \"cola\" coloured. <strong>Nonglomerular</strong> bleeding (stones, tumours, infection, prostate, papillary necrosis) gives uniform, round red cells, sometimes <strong>clots</strong>, and usually no significant proteinuria. Clots argue strongly against a glomerular source, because urokinase in tubular fluid lyses glomerular blood.</p><p><strong>Heme-positive dipstick without red cells</strong> means a pigment:</p><ul><li><strong>Myoglobin</strong> (rhabdomyolysis: crush injury, prolonged immobility, extreme exertion, statins with interacting drugs, seizures): small (about 17 kDa), freely filtered and cleared, so plasma stays clear; creatine kinase is very high. Myoglobin is toxic to tubules and causes acute tubular necrosis.</li><li><strong>Hemoglobin</strong> (intravascular hemolysis): plasma is pink, haptoglobin is low and LDH and indirect bilirubin are high.</li></ul><p>Papillary necrosis gives painless or colicky hematuria; remember its causes: diabetes, analgesic overuse, sickle cell disease or trait, obstruction with infection, and severe pyelonephritis. In <strong>sickle cell trait</strong> the hypertonic, hypoxic renal medulla promotes sickling, so painless hematuria and an inability to concentrate urine (isosthenuria) can occur even in carriers; renal medullary carcinoma is a rare, aggressive tumour of young people with sickle trait.</p><h3>Proteinuria: how much and what kind?</h3><p>Normal excretion is below 150 mg of protein and below 30 mg of albumin a day; much of the normal protein is Tamm-Horsfall glycoprotein (uromodulin) secreted by the thick ascending limb. Spot ratios estimate daily excretion: the urine albumin-to-creatinine ratio (UACR, mg/g) and protein-to-creatinine ratio (UPCR, g/g are roughly g/day).</p><table><tr><th>Type</th><th>Mechanism</th><th>Typical amount and clue</th></tr><tr><td>Glomerular</td><td>Loss of the size or charge barrier lets albumin through</td><td>Albumin-dominant; above 3.5 g/day is nephrotic range</td></tr><tr><td>Tubular</td><td>Proximal tubule fails to reabsorb filtered small proteins (beta-2 microglobulin, retinol-binding protein)</td><td>Usually below 2 g/day; dipstick often weakly positive or negative; Fanconi syndrome, heavy metals, interstitial nephritis</td></tr><tr><td>Overflow</td><td>Plasma excess of a small protein exceeds tubular uptake</td><td>Immunoglobulin light chains in myeloma (dipstick negative, UPCR high); myoglobin; hemoglobin</td></tr><tr><td>Functional or transient</td><td>Altered glomerular hemodynamics</td><td>Fever, intense exercise, heart failure, seizures; usually below 1 g/day and gone on repeat</td></tr><tr><td>Orthostatic</td><td>Increased protein excretion when upright</td><td>Adolescents and young adults, below about 1 g/day, absent in a first-morning sample; benign</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a negative or trace dipstick with a high UPCR (or a positive sulfosalicylic acid test) means the protein is not albumin. Think <strong>light chains</strong> and look for anemia, hypercalcemia and renal failure.</p></div><h3>Microscopy: casts and crystals</h3><p>Casts are cylinders of Tamm-Horsfall protein moulded in the distal tubule and collecting duct, so anything trapped in a cast came from the kidney.</p>[[figure:s23c-fig110301-1]]<p>Crystals: calcium oxalate dihydrate looks like envelopes (monohydrate needles or dumbbells suggest ethylene glycol), uric acid forms rhomboids or rosettes in acid urine, struvite forms \"coffin lids\" in alkaline infected urine, and <strong>cystine forms hexagons</strong>, which are always abnormal.</p><h3>Urine colour</h3><table><tr><th>Colour</th><th>Causes</th></tr><tr><td>Red or pink</td><td>Red cells, hemoglobin, myoglobin, beets (in some people), rifampin (orange-red), porphyrins</td></tr><tr><td>Orange</td><td>Phenazopyridine, rifampin, concentrated urine, conjugated bilirubin</td></tr><tr><td>Brown or cola</td><td>Glomerular bleeding, myoglobin, conjugated bilirubin, metronidazole</td></tr><tr><td>Darkens to black on standing</td><td><strong>Alkaptonuria</strong> (homogentisic acid oxidises; ochronosis of cartilage); also melanuria with metastatic melanoma</td></tr><tr><td>Port-wine, darkening in light</td><td>Porphyrias (acute intermittent porphyria during attacks)</td></tr><tr><td>Green or blue</td><td>Methylene blue, propofol, amitriptyline, <em>Pseudomonas</em></td></tr><tr><td>Milky</td><td>Pyuria, phosphate crystals, chyluria (lymphatic fistula, filariasis)</td></tr></table><h3>Abnormal volume</h3><ul><li><strong>Oliguria</strong> is below about 400 mL/day (or below 0.5 mL/kg/h); <strong>anuria</strong> is below about 100 mL/day. True anuria is unusual and points to complete obstruction (including a blocked catheter), bilateral renal arterial or venous occlusion, cortical necrosis or severe rapidly progressive glomerulonephritis.</li><li><strong>Polyuria</strong> is above about 3 L/day. The urine osmolality separates a <strong>water diuresis</strong> (urine osmolality well below plasma, usually below about 250 mOsm/kg: central or nephrogenic diabetes insipidus, primary polydipsia) from a <strong>solute diuresis</strong> (urine osmolality near or above plasma, about 300 mOsm/kg or more: glucose, urea after relief of obstruction or high-protein feeding, mannitol, saline).</li></ul><div class=\"pearl\"><p><strong>Naadi memory aid:</strong> \"<em>Dip, spin, look</em>\": dip for chemistry, spin for the sediment, look at the colour and volume. A finding counts only when all three agree.</p></div>",
+   "figureIds": [
+    "s23c-fig110301-1"
+   ],
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Urinalysis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK557685/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Proteinuria",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK564390/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Rhabdomyolysis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448168/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Protein in Urine (medical test)",
+     "url": "https://medlineplus.gov/lab-tests/protein-in-urine/",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110301-2-1",
+   "exam": "step2ck",
+   "heading": "Approach to hematuria, proteinuria and abnormal urine output",
+   "html": "<h3>Hematuria: confirm, exclude benign causes, then stratify</h3><ol><li><strong>Confirm</strong> a positive dipstick with microscopy. Microscopic hematuria is 3 or more red cells per high-power field on a properly collected specimen; a dipstick alone is not enough to start an evaluation.</li><li><strong>Exclude benign or transient causes</strong>: menstruation, vigorous exercise, recent instrumentation, sexual activity and urinary infection. Treat an infection and repeat the urinalysis afterwards.</li><li><strong>Look for a glomerular source</strong>: dysmorphic red cells, red cell casts, proteinuria, rising creatinine or new hypertension point to the kidney; refer to nephrology (urologic evaluation may still be needed if risk is high).</li><li><strong>Stratify risk of urothelial cancer</strong> in nonglomerular hematuria. Risk rises with age, male sex, smoking (pack-years), the number of red cells per field and a history of gross hematuria. Other risk factors: occupational exposure to aromatic amines or benzene dyes, cyclophosphamide, pelvic radiation, aristolochic acid, chronic catheter.</li></ol><table><tr><th>Risk group (AUA microhematuria guidance)</th><th>Typical features</th><th>Evaluation</th></tr><tr><td>Low</td><td>Younger women and men, little or no smoking, 3–10 red cells per field, no other risk factors</td><td>Shared decision: repeat urinalysis within about 6 months, or cystoscopy with renal ultrasonography</td></tr><tr><td>Intermediate</td><td>Middle age, moderate smoking, 11–25 red cells per field, or persistent low-risk hematuria</td><td>Cystoscopy and renal ultrasonography</td></tr><tr><td>High</td><td>Age 60 years or older, more than 30 pack-years, more than 25 red cells per field, or any gross hematuria</td><td><strong>Cystoscopy and CT urography</strong> (multiphase CT with an excretory phase)</td></tr></table><p><strong>Gross hematuria</strong> without an obvious benign cause (for example, a clear infection that resolves) needs cystoscopy and CT urography in adults, even if it happened once. Anticoagulation does not explain hematuria: patients on anticoagulants are evaluated in the same way. If contrast cannot be given, use MR urography or noncontrast imaging with retrograde pyelography.</p><h3>Proteinuria: quantify and classify</h3><ul><li>A positive dipstick is followed by a <strong>quantitative spot ratio</strong> (UACR for albuminuria in diabetes and chronic kidney disease, UPCR when overall protein matters). Categories of albuminuria: A1 below 30, A2 30–300 and A3 above 300 mg/g.</li><li>Repeat a positive test: transient proteinuria from fever, exercise or acute illness disappears.</li><li>In adolescents and young adults with low-grade proteinuria, normal blood pressure and normal kidney function, check a <strong>first-morning sample</strong> (or a split collection of upright and recumbent urine). Protein only when upright is <strong>orthostatic proteinuria</strong>, which is benign and needs reassurance and perhaps a recheck.</li><li>Persistent proteinuria: serum creatinine and eGFR, urine microscopy, blood pressure, glucose and A1c, and, depending on the context, serum and urine protein electrophoresis with free light chains (age over 40, anemia, hypercalcemia), complement, ANA, hepatitis B and C, HIV. Nephrotic-range protein, active sediment or falling eGFR prompt nephrology referral and often biopsy.</li></ul><h3>Oliguria and acute retention</h3><p>In any patient with a sudden fall in urine output, first rule out <strong>obstruction</strong>: bladder scan or straight catheterisation (post-void residual above about 200 mL suggests retention), and flush or replace an existing catheter. Common causes in older men are prostatic enlargement, anticholinergic or opioid drugs and constipation. After relief of prolonged obstruction, watch for a <strong>post-obstructive diuresis</strong> (urine output above about 200 mL/h) with losses of sodium, potassium and water. Only then pursue prerenal and intrinsic causes (see acute kidney injury).</p><h3>Red or dark urine with few red cells</h3><ul><li><strong>Rhabdomyolysis</strong>: heme-positive dipstick, few red cells, creatine kinase often above about 5 times normal (often far higher), hyperkalemia, hyperphosphatemia, early hypocalcemia. Treat with early, generous isotonic fluids aiming at high urine output; stop the offending drug.</li><li><strong>Intravascular hemolysis</strong>: pink plasma, low haptoglobin, high LDH, hemoglobinuria; for example G6PD deficiency after an oxidant drug.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a patient taking warfarin or a direct oral anticoagulant who develops hematuria still gets the full evaluation. Anticoagulation unmasks lesions; it rarely causes bleeding from a normal urinary tract.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Gross and Microscopic Hematuria",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK534213/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Orthostatic Proteinuria",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK562308/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Urine and Urination",
+     "url": "https://medlineplus.gov/urineandurination.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110301-1",
+   "caption": "Figure. Urine casts and what each points to. Casts are moulded in tubules, so their contents come from the kidney.",
+   "file": "figures/s23c-fig110301-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110301-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Proteinuria at a sports physical",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110301-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old man has dark brown urine and puffy eyelids 2 weeks after a sore throat. Blood pressure is 148/94 mm Hg. Phase-contrast microscopy of fresh urine shows many red cells; most are irregular in size and have blebs projecting from a ring-shaped membrane. Which of the following best explains the abnormal shape of these red cells?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Contraction of the cells in hypertonic medullary interstitium after diapedesis through peritubular capillaries"
+    },
+    {
+     "label": "B",
+     "html": "Damage during passage through the glomerular basement membrane and then the changing tubular fluid"
+    },
+    {
+     "label": "C",
+     "html": "Lysis by antibodies and complement in the renal pelvis before entry into the ureter"
+    },
+    {
+     "label": "D",
+     "html": "Mechanical shearing by fibrin strands in small renal arterioles of the cortex"
+    },
+    {
+     "label": "E",
+     "html": "Spherocyte formation in the spleen before the cells are filtered by the kidney"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Dysmorphic red cells, especially <strong>acanthocytes</strong> (ring forms with blebs), are the signature of <strong>glomerular bleeding</strong>. Cells squeeze through gaps in an inflamed glomerular basement membrane and are then exposed to large swings in osmolality and pH along the tubule. Here the cause is postinfectious glomerulonephritis.</p><p><strong>Takeaway:</strong> dysmorphic red cells and red cell casts place hematuria in the glomerulus.</p>",
+   "whyNot": {
+    "A": "Red cells do not enter urine across peritubular capillaries; this mechanism is not how glomerular dysmorphism arises.",
+    "C": "Antibody-mediated lysis in the collecting system is not a mechanism of hematuria; lysed cells would not appear as acanthocytes.",
+    "D": "Shearing by fibrin in arterioles produces schistocytes in blood in thrombotic microangiopathy; it does not explain urinary acanthocytes.",
+    "E": "Intact red cells are not filtered by a normal glomerulus, and spherocytes are smooth spheres without blebs."
+   },
+   "objective": "Explain why glomerular hematuria produces dysmorphic red cells.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "hematuria",
+    "acanthocytes"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 72-year-old woman is found on her kitchen floor, where she had lain for about 2 days after a fall. Her urine is reddish brown. The urine dipstick is strongly positive for blood, but microscopy shows 0–2 red cells per high-power field. Her plasma is straw coloured. Which of the following serum findings is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Low haptoglobin concentration"
+    },
+    {
+     "label": "B",
+     "html": "Markedly raised creatine kinase activity"
+    },
+    {
+     "label": "C",
+     "html": "Raised conjugated bilirubin concentration"
+    },
+    {
+     "label": "D",
+     "html": "Raised reticulocyte count"
+    },
+    {
+     "label": "E",
+     "html": "Raised unconjugated bilirubin concentration"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A heme-positive dipstick with almost no red cells means a pigment: hemoglobin or <strong>myoglobin</strong>. Prolonged immobility after a fall causes pressure necrosis of muscle (<strong>rhabdomyolysis</strong>). Myoglobin is small and is filtered and cleared quickly, so the plasma stays clear, unlike hemoglobinemia, which turns plasma pink. The serum creatine kinase is very high.</p><p><strong>Takeaway:</strong> heme-positive urine without red cells plus clear plasma means myoglobinuria; check creatine kinase.</p>",
+   "whyNot": {
+    "A": "Low haptoglobin marks intravascular hemolysis, in which free hemoglobin makes the plasma pink.",
+    "C": "Conjugated bilirubin darkens urine but does not react on the blood pad.",
+    "D": "A raised reticulocyte count reflects marrow response to anemia or hemolysis, not muscle injury.",
+    "E": "Unconjugated bilirubin rises with hemolysis but is albumin bound and never reaches the urine."
+   },
+   "objective": "Distinguish myoglobinuria from hematuria and hemoglobinuria using the dipstick, microscopy and plasma colour.",
+   "areas": [
+    "usmle2026.11.03.01",
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "rhabdomyolysis",
+    "myoglobinuria"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 67-year-old man has fatigue, back pain and constipation. Hemoglobin is 9.6 g/dL, serum calcium 11.8 mg/dL and serum creatinine 2.3 mg/dL. Urine dipstick shows trace protein. A spot urine protein-to-creatinine ratio is 3.1 g/g. Which of the following best explains the mismatch between the dipstick and the protein-to-creatinine ratio?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "The dipstick reacts mainly with albumin, and the excreted protein is mostly immunoglobulin light chains"
+    },
+    {
+     "label": "B",
+     "html": "The dipstick reacts mainly with light chains, and the excreted protein is mostly albumin"
+    },
+    {
+     "label": "C",
+     "html": "High urine calcium inactivates the indicator dye on the protein pad"
+    },
+    {
+     "label": "D",
+     "html": "Low urine creatinine from loss of muscle mass falsely raises the ratio"
+    },
+    {
+     "label": "E",
+     "html": "Tamm-Horsfall protein in the sample is falsely measured as albumin"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The dipstick protein pad relies on albumin's negative charge and detects other proteins poorly. In <strong>multiple myeloma</strong> (anemia, hypercalcemia, renal failure, bone pain) the kidney filters large amounts of free light chains (<strong>overflow proteinuria</strong>, Bence Jones protein), which the dipstick misses but the total protein measurement detects. Urine protein electrophoresis with immunofixation and serum free light chains confirm it.</p><p><strong>Takeaway:</strong> trace dipstick protein with a high total protein ratio means non-albumin protein, classically light chains.</p>",
+   "whyNot": {
+    "B": "This reverses the problem: the dipstick is insensitive to light chains, not to albumin.",
+    "C": "Calcium does not inactivate the protein pad; the mismatch is about which protein is present.",
+    "D": "Low creatinine excretion can inflate a ratio somewhat, but not enough to explain 3 g/g with a trace dipstick in a man with features of myeloma.",
+    "E": "Tamm-Horsfall protein is a normal, small part of urinary protein and does not explain grams per day."
+   },
+   "objective": "Recognise overflow proteinuria from light chains as a cause of dipstick-negative proteinuria.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "proteinuria",
+    "multiple myeloma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 21-year-old Black man who is a college athlete has had two episodes of painless gross hematuria after training in hot weather. He has no flank pain. His hemoglobin concentration and blood smear are normal. Hemoglobin electrophoresis shows HbA 58% and HbS 40%. Urine osmolality after overnight water restriction is 320 mOsm/kg (serum 290 mOsm/kg). Which of the following best explains both the hematuria and the urine concentrating defect?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Antibody deposition along the glomerular basement membrane"
+    },
+    {
+     "label": "B",
+     "html": "Calcium phosphate deposition in the cortical collecting ducts"
+    },
+    {
+     "label": "C",
+     "html": "Sickling in the hypertonic, hypoxic renal medulla with damage to the vasa recta and papillae"
+    },
+    {
+     "label": "D",
+     "html": "Thinning of the glomerular basement membrane from a type IV collagen variant"
+    },
+    {
+     "label": "E",
+     "html": "Urate crystal deposition in the medullary interstitium"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Even in <strong>sickle cell trait</strong> red cells sickle in the renal medulla, where oxygen tension is low and osmolality and acidity are high. Sickling blocks the vasa recta, which causes microinfarcts of the papillae (hematuria, sometimes papillary necrosis) and disrupts the countercurrent system, so the kidney cannot concentrate urine well (hyposthenuria). Hematuria is often worse with dehydration and exertion.</p><p><strong>Takeaway:</strong> sickle cell trait can cause painless hematuria and a concentrating defect through medullary sickling.</p>",
+   "whyNot": {
+    "A": "Anti-GBM disease causes rapidly progressive glomerulonephritis with dysmorphic red cells, not exertion-linked painless hematuria with normal function.",
+    "B": "Nephrocalcinosis can impair concentration but is not linked to his hemoglobin trait and rarely causes episodic gross hematuria.",
+    "D": "Thin basement membrane disease causes persistent microscopic glomerular hematuria; it does not impair concentrating ability.",
+    "E": "Chronic urate nephropathy is a disease of gout and lead exposure, not of a young athlete with sickle trait."
+   },
+   "objective": "Explain how sickle cell trait causes hematuria and impaired urine concentration.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "sickle cell trait",
+    "hematuria"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 45-year-old man has worked for 20 years in a battery factory with cadmium exposure. Serum creatinine is 1.1 mg/dL and serum glucose 88 mg/dL. Urine dipstick shows trace protein and 1+ glucose. A 24-hour urine collection contains 1.2 g of protein, and electrophoresis shows that most of it migrates as small proteins, with a large beta-2 microglobulin band and little albumin. Which part of the nephron is most likely damaged?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Collecting duct principal cells"
+    },
+    {
+     "label": "B",
+     "html": "Distal convoluted tubule"
+    },
+    {
+     "label": "C",
+     "html": "Glomerular podocytes"
+    },
+    {
+     "label": "D",
+     "html": "Proximal convoluted tubule"
+    },
+    {
+     "label": "E",
+     "html": "Thick ascending limb of the loop of Henle"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Small proteins such as beta-2 microglobulin are filtered freely and normally almost fully reabsorbed by endocytosis in the <strong>proximal tubule</strong>. When that segment is injured (cadmium, other heavy metals, Fanconi syndrome, some drugs), these proteins appear in urine as <strong>tubular proteinuria</strong>, which is mostly not albumin and so reads weakly on the dipstick. Glucosuria with normal plasma glucose is another sign of proximal dysfunction.</p><p><strong>Takeaway:</strong> low-molecular-weight proteinuria (beta-2 microglobulin) plus normoglycemic glucosuria points to proximal tubule injury.</p>",
+   "whyNot": {
+    "A": "Principal cells handle sodium, potassium and water; injury there does not cause loss of small filtered proteins or glucose.",
+    "B": "The distal convoluted tubule reabsorbs sodium chloride and calcium, not filtered proteins or glucose.",
+    "C": "Podocyte injury causes albumin-dominant (glomerular) proteinuria.",
+    "E": "The thick ascending limb reabsorbs sodium, potassium and chloride and secretes Tamm-Horsfall protein; it does not reclaim filtered small proteins."
+   },
+   "objective": "Recognise tubular proteinuria from proximal tubule injury.",
+   "areas": [
+    "usmle2026.11.03.01",
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "tubular proteinuria",
+    "cadmium"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 6-year-old boy has had swelling around his eyes and ankles for 10 days. Blood pressure is normal. Serum albumin is 1.9 g/dL and cholesterol 380 mg/dL. Urine microscopy shows round bodies that, under polarised light, show a Maltese-cross pattern. Which of the following do these structures most likely represent?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Calcium oxalate crystals"
+    },
+    {
+     "label": "B",
+     "html": "Cholesterol-laden tubular cells and lipid droplets"
+    },
+    {
+     "label": "C",
+     "html": "Cystine crystals"
+    },
+    {
+     "label": "D",
+     "html": "Degenerated neutrophils"
+    },
+    {
+     "label": "E",
+     "html": "Yeast forms"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>In <strong>nephrotic syndrome</strong>, lipoproteins leak through the glomerulus and are taken up by tubular cells, which slough as <strong>oval fat bodies</strong>; free cholesterol esters show a <strong>Maltese cross</strong> under polarised light. Lipiduria and fatty casts accompany heavy proteinuria, hypoalbuminemia and hyperlipidemia.</p><p><strong>Takeaway:</strong> Maltese-cross lipid bodies in urine mean lipiduria of nephrotic syndrome.</p>",
+   "whyNot": {
+    "A": "Calcium oxalate crystals look like envelopes or dumbbells and are not related to hypoalbuminemia.",
+    "C": "Cystine forms flat hexagons, seen in cystinuria with stones.",
+    "D": "Neutrophils appear as granular cells with lobed nuclei and suggest infection or inflammation, not lipiduria.",
+    "E": "Yeast are budding ovoid forms and do not show a Maltese cross."
+   },
+   "objective": "Identify oval fat bodies with a Maltese cross as a sign of nephrotic syndrome.",
+   "areas": [
+    "usmle2026.11.03.01",
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "nephrotic syndrome",
+    "lipiduria"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old man has had stiff, painful knees and hips for several years, and the cartilage of his ears has a blue-black tinge. He reports that his urine turns dark, almost black, if left standing in a container. Deficiency of which of the following enzymes is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cystathionine beta-synthase"
+    },
+    {
+     "label": "B",
+     "html": "Fumarylacetoacetate hydrolase"
+    },
+    {
+     "label": "C",
+     "html": "Homogentisate 1,2-dioxygenase"
+    },
+    {
+     "label": "D",
+     "html": "Phenylalanine hydroxylase"
+    },
+    {
+     "label": "E",
+     "html": "Tyrosinase"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p><strong>Alkaptonuria</strong> is an autosomal recessive defect of <strong>homogentisate 1,2-dioxygenase</strong> in tyrosine breakdown. Homogentisic acid accumulates and is excreted; in urine it oxidises and polymerises to a dark pigment when exposed to air, especially in alkaline urine. Deposition in connective tissue (ochronosis) darkens cartilage and causes early degenerative arthritis of large joints and the spine.</p><p><strong>Takeaway:</strong> urine that blackens on standing plus dark cartilage and early arthritis is alkaptonuria.</p>",
+   "whyNot": {
+    "A": "Cystathionine beta-synthase deficiency causes homocystinuria: lens dislocation, thrombosis and a marfanoid habitus.",
+    "B": "Fumarylacetoacetate hydrolase deficiency is tyrosinemia type I, with liver failure and renal Fanconi syndrome in infancy.",
+    "D": "Phenylalanine hydroxylase deficiency is phenylketonuria, with a musty odour and intellectual disability if untreated.",
+    "E": "Tyrosinase deficiency causes oculocutaneous albinism, with reduced, not increased, pigment."
+   },
+   "objective": "Link urine that darkens on standing to alkaptonuria and its enzyme defect.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "urine colour",
+    "alkaptonuria"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man is admitted with septic shock from a perforated diverticulum and receives vasopressors for 2 days. His urine output falls to 300 mL/day, and serum creatinine rises from 1.0 to 3.4 mg/dL over 3 days. Which of the following urine sediment findings is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Broad waxy casts"
+    },
+    {
+     "label": "B",
+     "html": "Hyaline casts only"
+    },
+    {
+     "label": "C",
+     "html": "Muddy brown granular casts and renal tubular epithelial cells"
+    },
+    {
+     "label": "D",
+     "html": "Oval fat bodies with fatty casts"
+    },
+    {
+     "label": "E",
+     "html": "Red blood cell casts with dysmorphic red cells"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Prolonged hypotension causes <strong>ischemic acute tubular necrosis</strong>. Injured tubular cells slough into the lumen and break down, forming coarse <strong>muddy brown granular casts</strong>, along with free renal tubular epithelial cells. The straight portion of the proximal tubule and the medullary thick ascending limb are most vulnerable because of their high oxygen demand in a low-oxygen region.</p><p><strong>Takeaway:</strong> muddy brown granular casts mean acute tubular necrosis.</p>",
+   "whyNot": {
+    "A": "Broad waxy casts form in dilated, atrophic tubules and indicate advanced chronic kidney disease.",
+    "B": "Hyaline casts alone are typical of prerenal states, not established tubular injury after days of shock.",
+    "D": "Oval fat bodies and fatty casts indicate the lipiduria of nephrotic syndrome.",
+    "E": "Red cell casts mean glomerulonephritis, not ischemic tubular injury."
+   },
+   "objective": "Match muddy brown granular casts to acute tubular necrosis.",
+   "areas": [
+    "usmle2026.11.03.01",
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "casts",
+    "acute tubular necrosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-1-09",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 49-year-old man has passed about 5 L of urine a day for 2 weeks, with thirst and a 4-kg weight loss. Laboratory studies show:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Serum sodium</td><td>141 mEq/L</td></tr><tr><td>Serum glucose</td><td>452 mg/dL</td></tr><tr><td>Serum osmolality</td><td>306 mOsm/kg</td></tr><tr><td>Urine osmolality</td><td>390 mOsm/kg</td></tr><tr><td>Urine glucose</td><td>4+</td></tr></table><p>Which of the following best describes the mechanism of his polyuria?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Failure of the collecting duct to respond to antidiuretic hormone"
+    },
+    {
+     "label": "B",
+     "html": "Impaired release of antidiuretic hormone from the posterior pituitary"
+    },
+    {
+     "label": "C",
+     "html": "Osmotic diuresis from filtered glucose exceeding proximal tubular reabsorption"
+    },
+    {
+     "label": "D",
+     "html": "Primary excess water intake that suppresses antidiuretic hormone"
+    },
+    {
+     "label": "E",
+     "html": "Washout of the medullary gradient by a loop diuretic effect of hyperglycemia"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Glucose filtered above the transport maximum of proximal SGLT2 and SGLT1 stays in the tubule and holds water with it: an <strong>osmotic (solute) diuresis</strong>. The urine osmolality is near or above plasma (here 390 mOsm/kg), which separates a solute diuresis from a water diuresis, where the urine is dilute (well below plasma osmolality).</p><p><strong>Takeaway:</strong> polyuria with urine osmolality at or above plasma is a solute diuresis; with very dilute urine it is a water diuresis.</p>",
+   "whyNot": {
+    "A": "Nephrogenic diabetes insipidus produces dilute urine, far below plasma osmolality.",
+    "B": "Central diabetes insipidus also produces dilute urine, not urine more concentrated than plasma.",
+    "D": "Primary polydipsia produces very dilute urine and a low-normal serum sodium.",
+    "E": "Hyperglycemia has no loop-diuretic action on the thick ascending limb; the solute load explains the diuresis."
+   },
+   "objective": "Use urine osmolality to separate a solute diuresis from a water diuresis.",
+   "areas": [
+    "usmle2026.11.03.01",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "polyuria",
+    "osmotic diuresis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old man has microscopic hematuria found during an insurance examination. He has smoked 1 pack of cigarettes daily for 40 years. He has no dysuria, flank pain or recent exercise, and he takes no medications. Blood pressure is 128/80 mm Hg. Repeat urinalysis 2 weeks later shows 30 red blood cells per high-power field with normal morphology, no casts, no protein and no leukocyte esterase or nitrite. Serum creatinine is 0.9 mg/dL. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cystoscopy and CT urography"
+    },
+    {
+     "label": "B",
+     "html": "Prostate-specific antigen measurement only"
+    },
+    {
+     "label": "C",
+     "html": "Renal ultrasonography alone"
+    },
+    {
+     "label": "D",
+     "html": "Repeat urinalysis in 6 months"
+    },
+    {
+     "label": "E",
+     "html": "Urine cytology alone"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>He has confirmed nonglomerular microscopic hematuria and is at <strong>high risk</strong> of urothelial cancer (age above 60, more than 30 pack-years, more than 25 red cells per field). High-risk patients need evaluation of both the bladder and the upper tracts: <strong>cystoscopy plus CT urography</strong>.</p><p><strong>Takeaway:</strong> high-risk microscopic hematuria (older, heavy smoker, many red cells) needs cystoscopy and CT urography.</p>",
+   "whyNot": {
+    "B": "PSA screens for prostate cancer and does not evaluate the bladder or upper tract for the source of hematuria.",
+    "C": "Ultrasonography alone misses small urothelial tumours of the bladder and upper tract and omits the bladder examination.",
+    "D": "Repeat testing alone is reserved for some low-risk patients; delay is inappropriate at his risk level.",
+    "E": "Cytology is insensitive for low-grade tumours and does not replace cystoscopy and imaging."
+   },
+   "objective": "Evaluate high-risk microscopic hematuria with cystoscopy and CT urography.",
+   "areas": [
+    "usmle2026.11.03.01",
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "hematuria",
+    "bladder cancer"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 35-year-old woman comes for a routine examination. She feels well. A urine dipstick done in the office is 1+ for blood and negative for protein, leukocyte esterase and nitrite. Her last menstrual period ended 12 days ago. She has never smoked. Blood pressure is 118/72 mm Hg. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cystoscopy"
+    },
+    {
+     "label": "B",
+     "html": "CT urography"
+    },
+    {
+     "label": "C",
+     "html": "Microscopic examination of a urine specimen"
+    },
+    {
+     "label": "D",
+     "html": "Referral to nephrology"
+    },
+    {
+     "label": "E",
+     "html": "Urine culture"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A positive dipstick for blood is not hematuria until <strong>microscopy confirms red cells</strong> (3 or more per high-power field). The blood pad also reacts to free hemoglobin and myoglobin, and dipsticks give false positives. Further evaluation, if any, depends on the microscopy result and her risk group.</p><p><strong>Takeaway:</strong> confirm a heme-positive dipstick with urine microscopy before any hematuria work-up.</p>",
+   "whyNot": {
+    "A": "Cystoscopy is not done for an unconfirmed dipstick result in a low-risk young woman.",
+    "B": "Imaging is premature before hematuria is confirmed and the risk group is known.",
+    "D": "There are no features of glomerular disease (no protein, normal blood pressure).",
+    "E": "Without pyuria, nitrite or symptoms, infection is unlikely, and culture does not confirm hematuria."
+   },
+   "objective": "Confirm dipstick-positive blood with microscopy before evaluating hematuria.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "hematuria"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 79-year-old man is evaluated on the second day after hip fracture repair because he has passed only 90 mL of urine in the past 8 hours. He is restless and has lower abdominal discomfort. He has benign prostatic hyperplasia and received oxybutynin for bladder spasms and intravenous morphine for pain. Blood pressure is 142/84 mm Hg and pulse 92/min. The lower abdomen is dull to percussion above the pubis. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bladder ultrasonography followed by urethral catheterisation"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous furosemide"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous 0.9% saline bolus"
+    },
+    {
+     "label": "D",
+     "html": "Renal ultrasonography with Doppler"
+    },
+    {
+     "label": "E",
+     "html": "Urine sodium and creatinine to calculate the fractional excretion of sodium"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>New oliguria in an older man with prostatic enlargement who has received an anticholinergic and an opioid, with suprapubic dullness and discomfort, is <strong>acute urinary retention</strong> until proven otherwise. A bladder scan confirms a large residual volume, and a <strong>urethral catheter</strong> relieves the obstruction and restores urine flow. Lower-tract obstruction should be excluded before fluid or diuretic decisions.</p><p><strong>Takeaway:</strong> in sudden oliguria, check the bladder first.</p>",
+   "whyNot": {
+    "B": "A diuretic cannot work against bladder outlet obstruction and could worsen discomfort and volume status.",
+    "C": "He shows no signs of hypovolemia, and fluid will not drain an obstructed bladder.",
+    "D": "Renal imaging may follow if upper-tract obstruction is suspected after the bladder is drained, but it is not the first step.",
+    "E": "Urine indices are uninterpretable until obstruction is excluded and urine can be collected."
+   },
+   "objective": "Exclude and relieve bladder outlet obstruction first in acute oliguria.",
+   "areas": [
+    "usmle2026.11.03.01",
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "oliguria",
+    "urinary retention",
+    "geriatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-2-04",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 26-year-old man of Mediterranean ancestry has dark urine and fatigue 2 days after starting a sulfonamide-containing antibiotic. He is pale and mildly jaundiced. Laboratory studies show:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Hemoglobin</td><td>8.9 g/dL</td></tr><tr><td>Reticulocytes</td><td>6% of red cells</td></tr><tr><td>Lactate dehydrogenase</td><td>820 U/L (N = 45–200 U/L)</td></tr><tr><td>Haptoglobin</td><td>below 10 mg/dL (N = 30–200 mg/dL)</td></tr><tr><td>Bilirubin, total</td><td>3.2 mg/dL</td></tr><tr><td>Bilirubin, direct</td><td>0.3 mg/dL</td></tr><tr><td>Creatine kinase</td><td>110 U/L (N = 25–200 U/L)</td></tr><tr><td>Urine dipstick</td><td>blood 3+</td></tr><tr><td>Urine microscopy</td><td>0–1 red cells per high-power field</td></tr></table><p>Plasma is pink after centrifugation. Which of the following is the most likely cause of his dark urine?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bilirubinuria from hepatocellular injury"
+    },
+    {
+     "label": "B",
+     "html": "Glomerular hematuria"
+    },
+    {
+     "label": "C",
+     "html": "Hemoglobinuria from intravascular hemolysis"
+    },
+    {
+     "label": "D",
+     "html": "Myoglobinuria from muscle injury"
+    },
+    {
+     "label": "E",
+     "html": "Porphyrinuria from an acute porphyria"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A heme-positive dipstick with no red cells, pink plasma, low haptoglobin, high LDH, raised unconjugated bilirubin and reticulocytosis after an oxidant drug is <strong>intravascular hemolysis</strong> (most likely G6PD deficiency), with free hemoglobin filtered into the urine. Stop the drug, support with fluids, and test G6PD activity after recovery (levels can be falsely normal during the episode because young cells have more enzyme).</p><p><strong>Takeaway:</strong> heme-positive urine without red cells plus pink plasma and low haptoglobin is hemoglobinuria.</p>",
+   "whyNot": {
+    "A": "Direct (conjugated) bilirubin is normal, so bilirubinuria is not the cause; bilirubin also does not react on the blood pad.",
+    "B": "Glomerular hematuria would show many dysmorphic red cells on microscopy.",
+    "D": "Normal creatine kinase and pink plasma rule against myoglobinuria.",
+    "E": "Porphyrins do not react on the blood pad, and the hemolysis profile is not explained by porphyria."
+   },
+   "objective": "Identify hemoglobinuria from intravascular hemolysis using a chart of hemolysis markers and urine findings.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "hemoglobinuria",
+    "G6PD deficiency"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110301-2-05",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 16-year-old boy has a sports physical. He feels well and has no edema. Blood pressure is 114/70 mm Hg. A random urine dipstick in the afternoon shows 2+ protein and no blood; microscopy is normal. Serum creatinine is 0.8 mg/dL. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Kidney biopsy"
+    },
+    {
+     "label": "B",
+     "html": "Measure protein in a first-morning urine sample"
+    },
+    {
+     "label": "C",
+     "html": "Renal ultrasonography"
+    },
+    {
+     "label": "D",
+     "html": "Serum complement and antinuclear antibody testing"
+    },
+    {
+     "label": "E",
+     "html": "Start an angiotensin-converting enzyme inhibitor"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Isolated low-grade proteinuria in a healthy adolescent with normal blood pressure, sediment and creatinine is most often <strong>orthostatic</strong> or transient. A <strong>first-morning sample</strong> (or a split upright and recumbent collection) tests this: protein that disappears overnight is orthostatic and benign.</p><p><strong>Takeaway:</strong> in a healthy teenager with isolated proteinuria, check a first-morning urine before any work-up.</p>",
+   "whyNot": {
+    "A": "Biopsy is for persistent, significant proteinuria or other signs of kidney disease, not a first finding.",
+    "C": "Imaging is not useful for isolated proteinuria at this stage.",
+    "D": "Serologic testing is for persistent proteinuria with features of glomerulonephritis or systemic disease.",
+    "E": "Treatment is not indicated until persistent pathologic proteinuria is confirmed."
+   },
+   "objective": "Test for orthostatic proteinuria with a first-morning sample in a healthy adolescent.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "proteinuria",
+    "orthostatic"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110301-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q110301-2-06",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>The first-morning urine sample shows a protein-to-creatinine ratio of 0.08 g/g. A urine sample collected at the end of a school day shows 0.6 g/g. Microscopy remains normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Kidney biopsy to exclude early glomerular disease"
+    },
+    {
+     "label": "B",
+     "html": "A low-protein diet with repeat testing in 3 months"
+    },
+    {
+     "label": "C",
+     "html": "Nephrology referral to start immunosuppression"
+    },
+    {
+     "label": "D",
+     "html": "Reassurance with a periodic urine and blood pressure recheck"
+    },
+    {
+     "label": "E",
+     "html": "Restriction of sports until the proteinuria resolves"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Normal protein after recumbency and modest protein after hours upright is <strong>orthostatic proteinuria</strong>. Long-term follow-up shows an excellent prognosis, so management is <strong>reassurance</strong> with a periodic recheck of urine and blood pressure. He can play sports.</p><p><strong>Takeaway:</strong> orthostatic proteinuria is benign: reassure and recheck periodically.</p>",
+   "whyNot": {
+    "A": "Biopsy is not indicated for benign orthostatic proteinuria.",
+    "B": "Diet changes have no role in a benign postural finding.",
+    "C": "There is no glomerular disease to treat.",
+    "E": "Exercise is safe; restriction would harm him without benefit."
+   },
+   "objective": "Reassure a patient with confirmed orthostatic proteinuria.",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_prognosis"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "proteinuria",
+    "orthostatic"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110301-1",
+   "setOrder": 2
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110301-01",
+   "frontHtml": "Which proteins does the dipstick protein pad detect best, and which does it miss?",
+   "backHtml": "Albumin; it misses light chains and other low-molecular-weight proteins.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-02",
+   "frontHtml": "Dysmorphic red cells (acanthocytes) and red cell casts: source of hematuria?",
+   "backHtml": "Glomerular.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-03",
+   "frontHtml": "Hematuria with clots: glomerular or nonglomerular?",
+   "backHtml": "Nonglomerular (urinary tract below the glomerulus); clots argue against glomerular bleeding.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-04",
+   "frontHtml": "Heme-positive dipstick, no red cells, clear plasma, very high CK?",
+   "backHtml": "Myoglobinuria from rhabdomyolysis.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-05",
+   "frontHtml": "Heme-positive dipstick, no red cells, pink plasma, low haptoglobin?",
+   "backHtml": "Hemoglobinuria from intravascular hemolysis.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-06",
+   "frontHtml": "Beta-2 microglobulin in urine with little albumin: what kind of proteinuria and where is the lesion?",
+   "backHtml": "Tubular proteinuria; proximal tubule.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-07",
+   "frontHtml": "Muddy brown granular casts?",
+   "backHtml": "Acute tubular necrosis.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-08",
+   "frontHtml": "Waxy and broad casts?",
+   "backHtml": "Advanced chronic kidney disease (stasis in dilated atrophic tubules).",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-09",
+   "frontHtml": "Maltese-cross bodies under polarised light in urine?",
+   "backHtml": "Oval fat bodies (lipiduria) of nephrotic syndrome.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-10",
+   "frontHtml": "Hexagonal urine crystals?",
+   "backHtml": "Cystine (cystinuria).",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-11",
+   "frontHtml": "Urine that turns black on standing, dark ear cartilage, early arthritis?",
+   "backHtml": "Alkaptonuria: homogentisate 1,2-dioxygenase deficiency.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-12",
+   "frontHtml": "Polyuria with urine osmolality at or above plasma osmolality?",
+   "backHtml": "Solute (osmotic) diuresis: glucose, urea, mannitol, saline.",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-13",
+   "frontHtml": "Painless hematuria and a urine concentrating defect in a young person with HbS 40%?",
+   "backHtml": "Sickle cell trait (medullary sickling, papillary injury).",
+   "sectionId": "s23c-s110301-1-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-14",
+   "frontHtml": "Definition of microscopic hematuria?",
+   "backHtml": "3 or more red cells per high-power field on microscopy of a properly collected specimen.",
+   "sectionId": "s23c-s110301-2-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-15",
+   "frontHtml": "High-risk microscopic hematuria (age 60+, more than 30 pack-years, more than 25 RBC/hpf, or any gross hematuria): evaluation?",
+   "backHtml": "Cystoscopy and CT urography.",
+   "sectionId": "s23c-s110301-2-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-16",
+   "frontHtml": "Does anticoagulation explain hematuria?",
+   "backHtml": "No; evaluate as for any patient.",
+   "sectionId": "s23c-s110301-2-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-17",
+   "frontHtml": "Isolated low-grade proteinuria in a healthy adolescent: first test?",
+   "backHtml": "First-morning urine (or split upright and recumbent collection) for orthostatic proteinuria.",
+   "sectionId": "s23c-s110301-2-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110301-18",
+   "frontHtml": "Sudden oliguria in an older man on anticholinergics or opioids: first step?",
+   "backHtml": "Bladder scan and catheterisation to relieve retention.",
+   "sectionId": "s23c-s110301-2-1",
+   "areas": [
+    "usmle2026.11.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

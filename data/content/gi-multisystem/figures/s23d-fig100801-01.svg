@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Flowchart classifying ascites by serum-ascites albumin gradient and then by ascitic total protein" font-family="sans-serif">
+<defs><marker id="sa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="160" y="14" width="400" height="48" rx="8" fill="#e0f2fe" stroke="#334155"/>
+<text x="360" y="35" font-size="14" text-anchor="middle" fill="#0f172a">Ascitic fluid: SAAG =</text>
+<text x="360" y="54" font-size="13" text-anchor="middle" fill="#0f172a">serum albumin minus ascitic albumin</text>
+<line x1="280" y1="62" x2="190" y2="96" stroke="#334155" stroke-width="2" marker-end="url(#sa)"/>
+<line x1="440" y1="62" x2="535" y2="96" stroke="#334155" stroke-width="2" marker-end="url(#sa)"/>
+<rect x="30" y="98" width="320" height="44" rx="8" fill="#fef3c7" stroke="#334155"/>
+<text x="190" y="117" font-size="14" text-anchor="middle" fill="#0f172a">SAAG 1.1 g/dL or more</text>
+<text x="190" y="135" font-size="12" text-anchor="middle" fill="#0f172a">portal hypertension</text>
+<rect x="380" y="98" width="310" height="44" rx="8" fill="#dcfce7" stroke="#334155"/>
+<text x="535" y="117" font-size="14" text-anchor="middle" fill="#0f172a">SAAG below 1.1 g/dL</text>
+<text x="535" y="135" font-size="12" text-anchor="middle" fill="#0f172a">no portal hypertension</text>
+<line x1="120" y1="142" x2="100" y2="176" stroke="#334155" stroke-width="2" marker-end="url(#sa)"/>
+<line x1="260" y1="142" x2="275" y2="176" stroke="#334155" stroke-width="2" marker-end="url(#sa)"/>
+<line x1="535" y1="142" x2="535" y2="176" stroke="#334155" stroke-width="2" marker-end="url(#sa)"/>
+<rect x="20" y="178" width="165" height="150" rx="8" fill="#fce7f3" stroke="#334155"/>
+<text x="102" y="200" font-size="13" text-anchor="middle" fill="#0f172a">Protein below 2.5</text>
+<text x="32" y="228" font-size="12" fill="#0f172a">Cirrhosis</text>
+<text x="32" y="250" font-size="12" fill="#0f172a">Massive liver</text>
+<text x="32" y="266" font-size="12" fill="#0f172a">metastases</text>
+<text x="32" y="294" font-size="12" fill="#0f172a">Low opsonins:</text>
+<text x="32" y="310" font-size="12" fill="#0f172a">higher SBP risk</text>
+<rect x="195" y="178" width="165" height="150" rx="8" fill="#ede9fe" stroke="#334155"/>
+<text x="277" y="200" font-size="13" text-anchor="middle" fill="#0f172a">Protein 2.5 or more</text>
+<text x="207" y="228" font-size="12" fill="#0f172a">Heart failure</text>
+<text x="207" y="250" font-size="12" fill="#0f172a">Constrictive</text>
+<text x="207" y="266" font-size="12" fill="#0f172a">pericarditis</text>
+<text x="207" y="288" font-size="12" fill="#0f172a">Budd-Chiari</text>
+<text x="207" y="304" font-size="12" fill="#0f172a">syndrome</text>
+<rect x="380" y="178" width="310" height="150" rx="8" fill="#f1f5f9" stroke="#334155"/>
+<text x="535" y="200" font-size="13" text-anchor="middle" fill="#0f172a">Peritoneal or low-albumin causes</text>
+<text x="392" y="228" font-size="12" fill="#0f172a">Peritoneal carcinomatosis</text>
+<text x="392" y="250" font-size="12" fill="#0f172a">Tuberculous peritonitis (lymphocytes)</text>
+<text x="392" y="272" font-size="12" fill="#0f172a">Pancreatic ascites (high amylase)</text>
+<text x="392" y="294" font-size="12" fill="#0f172a">Nephrotic syndrome (low protein)</text>
+<text x="20" y="350" font-size="12" fill="#0f172a">Protein values are ascitic total protein in g/dL.</text>
+</svg>

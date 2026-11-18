@@ -1,0 +1,77 @@
+{
+  "graphs": {
+    "ping": {
+      "path": "./naadi_api/agent/graphs/ping.py:graph",
+      "description": "Agent runtime self-test: streams from the router role, emits a block, interrupts to confirm, records to agent_health"
+    },
+    "tavily_usage": {
+      "path": "./naadi_api/agent/graphs/tavily_usage.py:graph",
+      "description": "Daily reconciliation of Tavily's usage reading with Naadi's own ledger (records only)"
+    },
+    "coach": {
+      "path": "./naadi_api/agent/graphs/coach.py:graph",
+      "description": "Nightly study coach: facts -> validated suggestions for Today (rules fallback when the job budget is spent)"
+    },
+    "youtube_map": {
+      "path": "./naadi_api/agent/graphs/youtube_map.py:graph",
+      "description": "Weekly YouTube mapper: refresh or drop stored metadata (30-day policy), score new uploads of allow-listed channels offline, queue candidates for approval"
+    },
+    "author": {
+      "path": "./naadi_api/agent/graphs/author.py:graph",
+      "description": "Question authoring: coverage gaps -> draft -> NBME lint -> citation check -> blind solve by a different model family -> human review queue; nightly item statistics"
+    },
+    "pathway_verify": {
+      "path": "./naadi_api/agent/graphs/pathway_verify.py:graph",
+      "description": "Weekly official-page check: pathway tasks whose official page changed are flagged for an admin, with verbatim quotes"
+    },
+    "ink_ocr": {
+      "path": "./naadi_api/agent/graphs/ink_ocr.py:graph",
+      "description": "Handwriting search: idle ink layers -> Pillow tiles -> one vision call per tile -> recognized_text (sweep every 2 min, nightly retry of deferred layers)"
+    },
+    "planner": {
+      "path": "./naadi_api/agent/graphs/planner.py:graph",
+      "description": "Planner: rebalance proposals after missed days (pure function, zero LLM calls) -> interrupt to confirm -> plan updated in one transaction; the system cron mode sends the daily Web Push reminders"
+    },
+    "backup": {
+      "path": "./naadi_api/agent/graphs/backup.py:graph",
+      "description": "Backups: nightly pg_dump of public + auth users, weekly Storage tarball; age-encrypted to the owner's key, pushed to the private HF dataset with 30-day retention (records not_configured until the owner sets the token and key)"
+    },
+    "prune": {
+      "path": "./naadi_api/agent/graphs/prune.py:graph",
+      "description": "Daily retention: llm_usage 90 d, search_cache past its longest TTL, sync_ops 24 h, sync_tombstones 90 d, agent_health 90 d, search_usage 13 months"
+    },
+    "ingest": {
+      "path": "./naadi_api/agent/graphs/ingest.py:graph",
+      "description": "Universal ingest: one background run per file, link or paste -> sniff and secure -> local sensitivity gate (Vault prompt) -> sandboxed extraction, vision for scans -> understand -> confirm placement -> place -> index"
+    },
+    "tutor": {
+      "path": "./naadi_api/agent/graphs/tutor.py:graph",
+      "description": "Page-aware study assistant: guard (server exam mode) -> tutor with tools (confirm interrupts) -> compose"
+    }
+  },
+  "auth": {
+    "path": "naadi_api.agent.auth:auth",
+    "disable_studio_auth": true
+  },
+  "http": {
+    "app": "naadi_api.agent.host:naadi_app",
+    "enable_custom_route_auth": false,
+    "cors": {
+      "allow_origins": [],
+      "allow_credentials": false,
+      "allow_methods": ["GET", "POST", "PATCH", "PUT", "DELETE"],
+      "allow_headers": ["authorization", "content-type"],
+      "expose_headers": ["Content-Location", "Location"],
+      "max_age": 600
+    }
+  },
+  "checkpointer": {
+    "durability": "async",
+    "ttl": {
+      "strategy": "keep_latest",
+      "default_ttl": 43200,
+      "sweep_interval_minutes": 60,
+      "sweep_limit": 200
+    }
+  }
+}

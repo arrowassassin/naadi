@@ -1,0 +1,98 @@
+/* Pathway (S17): prose from the seeded Markdown. Colours are tokens; nothing here carries meaning by colour alone. */
+/* The route rail scrolls sideways on a phone. It is `relative` so the screen-reader-only text inside it (absolutely
+   positioned) is clipped with it instead of widening the page. */
+.pathway-rail {
+  scrollbar-width: thin;
+}
+.pathway-md {
+  color: var(--color-text-2);
+  font-size: var(--text-ui);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.pathway-md > * + * {
+  margin-top: 0.75rem;
+}
+.pathway-md p,
+.pathway-md ul,
+.pathway-md ol,
+.pathway-md blockquote,
+.pathway-md h2,
+.pathway-md h3,
+.pathway-md h4,
+.pathway-md h5 {
+  margin-block: 0;
+}
+.pathway-md h2,
+.pathway-md h3,
+.pathway-md h4,
+.pathway-md h5 {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-top: 1.25rem;
+}
+.pathway-md h2 {
+  font-size: 1.375rem;
+}
+.pathway-md h3 {
+  font-size: 1.125rem;
+}
+.pathway-md h4,
+.pathway-md h5 {
+  font-size: 1rem;
+}
+.pathway-md ul,
+.pathway-md ol {
+  padding-left: 1.25rem;
+}
+.pathway-md li + li {
+  margin-top: 0.25rem;
+}
+.pathway-md a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.pathway-md a:hover {
+  color: var(--color-text-2);
+}
+.pathway-md code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--color-surface-2);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+}
+.pathway-md blockquote {
+  border-left: 3px solid var(--color-line-dashed);
+  padding-left: 0.75rem;
+  color: var(--color-text-3);
+}
+.pathway-md hr {
+  border: 0;
+  border-top: 1px solid var(--color-line-soft);
+}
+.pathway-md table {
+  border-collapse: collapse;
+  min-width: 100%;
+  font-size: var(--text-ui-sm);
+}
+.pathway-md th,
+.pathway-md td {
+  border-bottom: 1px solid var(--color-line-soft);
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  text-align: left;
+  vertical-align: top;
+}
+.pathway-md th {
+  color: var(--color-text-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-label-sm);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

@@ -1,0 +1,61 @@
+# Upload deploy/gen-space to the private naadi-gen ZeroGPU Space. Only when that folder changes on main, or by hand.
+# Never creates the Space and never requests paid hardware (the Space is created once by the owner, see
+# deploy/gen-space/README.md). The one live image smoke spends ZeroGPU quota, so it runs only when asked for.
+name: deploy-gen
+
+on:
+  push:
+    branches: [main]
+    paths: ["deploy/gen-space/**", ".github/workflows/deploy-gen.yml"]
+  workflow_dispatch:
+    inputs:
+      smoke:
+        description: "Run one live image smoke after the upload (spends ZeroGPU quota)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-gen
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  UV_VERSION: "0.11.32"
+  SPACE_ID: arrowassassin/naadi-gen
+
+jobs:
+  upload:
+    name: upload naadi-gen
+    if: github.repository == 'arrowassassin/naadi' && (github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - name: Require HF_TOKEN
+        run: |
+          if [ -z "${HF_TOKEN}" ]; then
+            echo "::error::Missing GitHub Actions secret HF_TOKEN. See docs/SECRETS.md."
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+      - name: Upload the Space files (no hardware change)
+        run: |
+          uv tool install huggingface_hub==2.4.0
+          if ! hf spaces info "${SPACE_ID}" >/dev/null 2>&1; then
+            echo "::notice::${SPACE_ID} does not exist yet (the owner creates it once, see deploy/gen-space/README.md); nothing uploaded."
+            exit 0
+          fi
+          hf upload "${SPACE_ID}" deploy/gen-space . --repo-type space \
+            --exclude "smoke.py" --exclude "__pycache__/*" \
+            --commit-message "deploy ${GITHUB_SHA::7}"
+      - name: Live image smoke (spends ZeroGPU quota; manual only)
+        if: github.event_name == 'workflow_dispatch' && inputs.smoke
+        run: uv run --with gradio_client==2.7.2 python deploy/gen-space/smoke.py

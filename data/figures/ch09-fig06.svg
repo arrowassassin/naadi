@@ -1,0 +1,68 @@
+<svg aria-label="Anemia workup by MCV" role="img" viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch09-arrow6" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" width="340" x="150" y="8"></rect>
+<text font-weight="bold" x="320" y="31">Anemia → CBC, MCV, reticulocyte index, smear</text>
+<line marker-end="url(#ch09-arrow6)" stroke="#334155" x1="220" x2="110" y1="44" y2="60"></line>
+<line marker-end="url(#ch09-arrow6)" stroke="#334155" x1="320" x2="320" y1="44" y2="60"></line>
+<line marker-end="url(#ch09-arrow6)" stroke="#334155" x1="420" x2="530" y1="44" y2="60"></line>
+<rect fill="#fef3c7" height="30" rx="6" stroke="#334155" width="200" x="10" y="62"></rect>
+<text font-weight="bold" x="110" y="82">Microcytic (MCV &lt;80)</text>
+<rect fill="#dcfce7" height="30" rx="6" stroke="#334155" width="200" x="220" y="62"></rect>
+<text font-weight="bold" x="320" y="82">Normocytic (80–100)</text>
+<rect fill="#fee2e2" height="30" rx="6" stroke="#334155" width="200" x="430" y="62"></rect>
+<text font-weight="bold" x="530" y="82">Macrocytic (&gt;100)</text>
+<rect fill="#ffffff" height="290" rx="6" stroke="#334155" width="200" x="10" y="100"></rect>
+<text font-weight="bold" x="110" y="118">Ferritin first</text>
+<text x="110" y="136">&lt;30 (or &lt;100 inflamed)</text>
+<text x="110" y="152">→ iron deficiency</text>
+<text x="110" y="168">Men / postmenopausal:</text>
+<text x="110" y="184">EGD + colonoscopy</text>
+<text x="110" y="200">Premenopausal: menses,</text>
+<text x="110" y="216">celiac; GI if symptoms</text>
+<text x="110" y="240">Ferritin normal/high,</text>
+<text x="110" y="256">low TIBC → chronic</text>
+<text x="110" y="272">disease (hepcidin)</text>
+<text x="110" y="296">Normal iron, Mentzer</text>
+<text x="110" y="312">(MCV/RBC) &lt;13 →</text>
+<text x="110" y="328">thalassemia: Hb</text>
+<text x="110" y="344">electrophoresis</text>
+<text x="110" y="368">Ring sideroblasts →</text>
+<text x="110" y="384">lead, alcohol, B6, MDS</text>
+<rect fill="#ffffff" height="290" rx="6" stroke="#334155" width="200" x="220" y="100"></rect>
+<text font-weight="bold" x="320" y="118">RI &gt;2 (marrow working)</text>
+<text x="320" y="136">Acute blood loss, or</text>
+<text x="320" y="152">hemolysis: ↑LDH, ↑indirect</text>
+<text x="320" y="168">bilirubin, ↓haptoglobin</text>
+<text x="320" y="184">→ direct Coombs (DAT)</text>
+<text x="320" y="200">DAT+: warm (IgG)/cold</text>
+<text x="320" y="216">(IgM) AIHA, drug, CLL</text>
+<text x="320" y="232">DAT−: smear —</text>
+<text x="320" y="248">schistocytes (TTP/HUS/</text>
+<text x="320" y="264">DIC/valve), spherocytes,</text>
+<text x="320" y="280">bite cells (G6PD), sickle</text>
+<text font-weight="bold" x="320" y="304">RI &lt;2 (underproduction)</text>
+<text x="320" y="322">CKD (EPO), chronic</text>
+<text x="320" y="338">disease, early iron def.,</text>
+<text x="320" y="354">hypothyroid, marrow</text>
+<text x="320" y="370">infiltration/aplasia</text>
+<text x="320" y="386">→ marrow biopsy if needed</text>
+<rect fill="#ffffff" height="290" rx="6" stroke="#334155" width="200" x="430" y="100"></rect>
+<text font-weight="bold" x="530" y="118">Megaloblastic</text>
+<text x="530" y="134">(hypersegmented PMNs)</text>
+<text x="530" y="152">B12 low/borderline →</text>
+<text x="530" y="168">↑MMA + ↑homocysteine</text>
+<text x="530" y="184">(folate: only ↑Hcy)</text>
+<text x="530" y="200">Anti-intrinsic factor Ab</text>
+<text x="530" y="216">(pernicious anemia),</text>
+<text x="530" y="232">metformin, PPI, vegan</text>
+<text x="530" y="248">→ replace B12 BEFORE</text>
+<text x="530" y="264">folate (neuro injury)</text>
+<text font-weight="bold" x="530" y="290">Non-megaloblastic</text>
+<text x="530" y="308">Alcohol, liver disease,</text>
+<text x="530" y="324">hypothyroidism, drugs</text>
+<text x="530" y="340">(MTX, hydroxyurea,</text>
+<text x="530" y="356">zidovudine), MDS (older,</text>
+<text x="530" y="372">cytopenias) → marrow</text>
+</g>
+</svg>

@@ -1,0 +1,314 @@
+[
+  {
+    "id": "s23g-fig11",
+    "chapterId": "s23g-ch01",
+    "caption": "Figure 1. Three epidemic curve shapes: a point-source outbreak with one sharp peak, a continuous common-source outbreak with a plateau, and a propagated outbreak with successive waves about one serial interval apart.",
+    "file": "figures/s23g-fig11.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig12",
+    "chapterId": "s23g-ch01",
+    "caption": "Figure 2. Population pyramids for three populations, showing the percentage of the total population in each 10-year age band for males (left) and females (right).",
+    "file": "figures/s23g-fig12.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig13",
+    "chapterId": "s23g-ch01",
+    "caption": "Figure 3. Kaplan-Meier estimates of overall survival for regimen A and regimen B, with tick marks on the curves and the numbers at risk below the time axis.",
+    "file": "figures/s23g-fig13.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig14",
+    "chapterId": "s23g-ch11",
+    "caption": "Figure 4. Kaplan-Meier estimates of overall survival in a fictional trial of early surgery versus watchful management, with the numbers at risk below the time axis.",
+    "file": "figures/s23g-fig14.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig15",
+    "chapterId": "s23g-ch01",
+    "caption": "Figure 5. The levels of prevention placed on the natural history of disease: primordial and primary prevention before disease begins, secondary prevention in the preclinical phase, tertiary prevention in clinical disease, and quaternary prevention at every stage.",
+    "file": "figures/s23g-fig15.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig16",
+    "chapterId": "s23g-ch01",
+    "caption": "Figure 6. Epidemic curve of cases of a febrile rash illness in a primary school community, by day of symptom onset.",
+    "file": "figures/s23g-fig16.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig21",
+    "chapterId": "s23g-ch02",
+    "caption": "Figure 1. Naming a study design: first ask whether the investigator assigned the exposure, then whether there is a comparison group, then how participants were selected and in which direction in time the study looks.",
+    "file": "figures/s23g-fig21.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig22",
+    "chapterId": "s23g-ch02",
+    "caption": "Figure 2. A parallel two-arm trial in which some participants never start their assigned drug, some cross over and some are lost. Intention-to-treat, per-protocol and as-treated analyses use different groups from the same trial.",
+    "file": "figures/s23g-fig22.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig23",
+    "chapterId": "s23g-ch02",
+    "caption": "Figure 3. Reading a forest plot: each trial's square and confidence-interval line, the vertical line of no effect, and the pooled diamond.",
+    "file": "figures/s23g-fig23.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig24",
+    "chapterId": "s23g-ch12",
+    "caption": "Figure 4. Funnel plots. A symmetric funnel (A) is what chance alone produces; a funnel with a missing corner (B) suggests small unfavourable studies are absent.",
+    "file": "figures/s23g-fig24.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig25",
+    "chapterId": "s23g-ch02",
+    "caption": "Figure 5. Forest plot of five fictional randomized trials of agent L versus placebo for preventing recurrent kidney stones.",
+    "file": "figures/s23g-fig25.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig26",
+    "chapterId": "s23g-ch12",
+    "caption": "Figure 6. Funnel plot of 14 fictional randomized trials of supplement R versus placebo.",
+    "file": "figures/s23g-fig26.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig31",
+    "chapterId": "s23g-ch03",
+    "caption": "Figure 1. The 2×2 table: rows are exposure or test result, columns are outcome or true disease status. The formulas on the right build relative risk, risk difference, NNT, odds ratio, sensitivity, specificity, predictive values and likelihood ratios from cells a to d.",
+    "file": "figures/s23g-fig31.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig32",
+    "chapterId": "s23g-ch03",
+    "caption": "Figure 2. Test values in people without (solid) and with (dashed) a disease overlap. Values right of the cut-off are called positive; moving the cut-off left lowers false negatives and raises false positives, so sensitivity rises and specificity falls.",
+    "file": "figures/s23g-fig32.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig33",
+    "chapterId": "s23g-ch03",
+    "caption": "Figure 3. ROC curves for two tests measured in the same patients. Test A lies closer to the upper-left corner and has the larger area under the curve; the dotted diagonal is a test no better than chance.",
+    "file": "figures/s23g-fig33.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig34",
+    "chapterId": "s23g-ch03",
+    "caption": "Figure 4. Top: a normal distribution with about 68%, 95% and 99.7% of values within 1, 2 and 3 SD of the mean. Bottom: right-skewed and left-skewed distributions, with the mean pulled toward the tail.",
+    "file": "figures/s23g-fig34.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig35",
+    "chapterId": "s23g-ch03",
+    "caption": "Figure 5. Scatter plots with Pearson r of about +0.9, 0 and −0.6, and a curved relation whose r is near 0 despite a strong pattern.",
+    "file": "figures/s23g-fig35.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig36",
+    "chapterId": "s23g-ch03",
+    "caption": "Figure 6. ROC curve of a fictional serum marker with five candidate cut-offs numbered 1 to 5; the dotted diagonal shows no discrimination.",
+    "file": "figures/s23g-fig36.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig37",
+    "chapterId": "s23g-ch03",
+    "caption": "Figure 7. Histogram of length of hospital stay for 124 patients in a fictional ward, with three summary values marked P, Q and R.",
+    "file": "figures/s23g-fig37.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig38",
+    "chapterId": "s23g-ch03",
+    "caption": "Figure 8. Average nightly sleep and a cardiometabolic risk score for 60 adults in a fictional survey, one point per person.",
+    "file": "figures/s23g-fig38.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig39",
+    "chapterId": "s23g-ch13",
+    "caption": "Figure 9. ROC curves of two fictional tests, X (solid, circles) and Y (dashed, squares), for the same disease, with the diagonal of no discrimination.",
+    "file": "figures/s23g-fig39.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig41",
+    "chapterId": "s23g-ch04",
+    "caption": "Figure 1. Confounding versus effect modification. A confounder is linked to the exposure and independently causes the outcome, so stratum results agree with each other but not with the crude result; an effect modifier changes the size of a real effect, so stratum results differ.",
+    "file": "figures/s23g-fig41.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig42",
+    "chapterId": "s23g-ch04",
+    "caption": "Figure 2. Screening biases. Top: earlier detection lengthens measured survival without moving the date of death (lead time). Bottom: periodic screens are more likely to catch slow-growing tumours with long silent phases (length time).",
+    "file": "figures/s23g-fig42.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig43",
+    "chapterId": "s23g-ch04",
+    "caption": "Figure 3. The four outcomes of a significance test, with alpha, beta and power, and 95% confidence intervals for a difference (null value 0) and a ratio (null value 1) that do or do not include the null value.",
+    "file": "figures/s23g-fig43.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig44",
+    "chapterId": "s23g-ch04",
+    "caption": "Figure 4. Forest plot of five fictional placebo-controlled trials with a pooled estimate; odds ratios on a log scale.",
+    "file": "figures/s23g-fig44.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig45",
+    "chapterId": "s23g-ch14",
+    "caption": "Figure 5. Bar graph from a fictional promotional brochure comparing 12-month remission rates with drug X and drug Y.",
+    "file": "figures/s23g-fig45.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig46",
+    "chapterId": "s23g-ch04",
+    "caption": "Figure 6. Kaplan-Meier curves for overall survival in a fictional trial, with numbers at risk.",
+    "file": "figures/s23g-fig46.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig51",
+    "chapterId": "s23g-ch05",
+    "caption": "Figure 1. The US drug development pathway: preclinical studies, the IND, clinical phases I to III, NDA or BLA review and approval, then phase IV studies, MedWatch reporting and REMS. IRB review and informed consent apply at every clinical step.",
+    "file": "figures/s23g-fig51.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig52",
+    "chapterId": "s23g-ch05",
+    "caption": "Figure 2. Group sequential monitoring. The efficacy boundary (solid) is very strict at early looks and relaxes towards the final analysis; the harm boundary (dashed) sits below zero. Between the boundaries the trial continues.",
+    "file": "figures/s23g-fig52.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig53",
+    "chapterId": "s23g-ch05",
+    "caption": "Figure 3. Monitoring chart for a fictional placebo-controlled trial, showing its prespecified boundaries and the observed test statistic at the first two interim looks.",
+    "file": "figures/s23g-fig53.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig61",
+    "chapterId": "s23g-ch06",
+    "caption": "Figure 1. Assessing decision-making capacity: name the decision, fix reversible causes, test the four abilities at a level matched to the stakes, then either the patient decides or a surrogate does, reassessing as things change.",
+    "file": "figures/s23g-fig61.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig62",
+    "chapterId": "s23g-ch16",
+    "caption": "Figure 1. Who decides when the patient cannot: the patient's written wishes, then a named agent, then the state's default surrogate order, then ethics consultation and court; every rung uses substituted judgment before best interests.",
+    "file": "figures/s23g-fig62.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig71",
+    "chapterId": "s23g-ch07",
+    "caption": "Figure 1. Confidentiality decision chart. Confidentiality is the default; disclosure without the patient's consent is justified only by a recognised exception (serious risk to an identifiable person or to the patient, a reportable disease, suspected child or elder abuse), and disclosure on the patient's behalf follows her consent or, if she is incapacitated, her interests. Every disclosure is limited to what is needed.",
+    "file": "figures/s23g-fig71.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig72",
+    "chapterId": "s23g-ch07",
+    "caption": "Figure 2. Palliative care and hospice across a serious illness. Palliative care can start at diagnosis and runs alongside disease-directed treatment; hospice begins when the prognosis is 6 months or less and comfort is the goal, with curative treatment of the terminal illness forgone by adults under the Medicare benefit.",
+    "file": "figures/s23g-fig72.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig81",
+    "chapterId": "s23g-ch08",
+    "caption": "Figure 1. The four elements of negligence as a chain: duty, breach of the standard of care, causation and damages, with a clinical example for each link. A claim fails if any single link cannot be shown.",
+    "file": "figures/s23g-fig81.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig91",
+    "chapterId": "s23g-ch09",
+    "caption": "Figure 1. The Swiss-cheese model. Each layer of defence has holes; latent conditions (solid layers) and an active failure at the front line (dashed layer) let a hazard reach the patient only when the holes line up.",
+    "file": "figures/s23g-fig91.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig92",
+    "chapterId": "s23g-ch19",
+    "caption": "Figure 2. The Plan-Do-Study-Act cycle. Each cycle is a small, rapid test of one change; successive cycles widen the test before a change is spread.",
+    "file": "figures/s23g-fig92.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig93",
+    "chapterId": "s23g-ch19",
+    "caption": "Figure 3. (A) Run chart of the monthly median door-to-antibiotic time for patients with suspected sepsis, with the baseline median and the month a triage change began. (B) Control chart of weekly inpatient falls on the medical wards, with the centre line and control limits calculated from weeks 1 to 12.",
+    "file": "figures/s23g-fig93.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  },
+  {
+    "id": "s23g-fig94",
+    "chapterId": "s23g-ch09",
+    "caption": "Figure 4. A cause-and-effect (fishbone) diagram for late first antibiotic doses on the wards, grouping possible contributing causes into six categories.",
+    "file": "figures/s23g-fig94.svg",
+    "source": "naadi-original-v1",
+    "attribution": null
+  }
+]

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi — Planner</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button,input{font-family:inherit}
+button{cursor:pointer}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.5; padding: 0 0 24px">
+
+<nav aria-label="Main" style="position: sticky; top: 16px; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; width: fit-content; max-width: calc(100% - 32px); box-sizing: border-box; margin: 0 auto; padding: 6px; border-radius: 28px; background: rgba(20,21,25,0.72); backdrop-filter: blur(18px); border: 1px solid #26282E">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px 0 10px; text-decoration: none; color: #F4F4F0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 19px"><span style="width: 28px; height: 28px; border-radius: 50%; background: #C6FF3D; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1400" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l3-7 4 14 3-7h6"></path></svg></span>Naadi</a>
+<a href="Main.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Today</a>
+<a href="Lesson.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Learn</a>
+<a href="Qbank.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Practice</a>
+<a href="Planner.dc.html" aria-current="page" style="display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #F4F4F0; color: #050506; text-decoration: none; font-weight: 600; font-size: 14px">Plan</a>
+<a href="Notes.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Notes</a>
+</nav>
+
+<main style="max-width: 1320px; margin: 0 auto; padding: 64px 24px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+<header style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9C9EA6">16 – 22 November 2026</span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(56px, 10vw, 136px); line-height: 0.88; letter-spacing: -0.05em">Week 6 <span style="color: #5A5D66">of 11</span></h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+<div style="display: flex; padding: 4px; border-radius: 999px; background: #0E0F12; border: 1px solid #1F2126">
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: #C9CBD1; font-size: 14px">Day</button>
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: #F4F4F0; color: #050506; font-weight: 600; font-size: 14px">Week</button>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: #C9CBD1; font-size: 14px">Month</button>
+</div>
+<button type="button" style="min-height: 52px; padding: 0 22px; border-radius: 999px; border: 0; background: #9D8CFF; color: #0D0828; font-weight: 600; font-size: 15px">Rebalance with Naadi</button>
+<button type="button" style="min-height: 52px; padding: 0 22px; border-radius: 999px; border: 1px solid #3A3D45; background: transparent; color: #F4F4F0; font-size: 15px">Sync calendar</button>
+</div>
+</header>
+
+<!-- Week -->
+<div style="overflow-x: auto; border-radius: 32px; border: 1px solid #1F2126; background: #0A0B0D">
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); min-width: 1040px">
+<sc-for list="{{days}}" as="d" hint-placeholder-count="7">
+<section aria-label="{{d.label}}" style="{{d.col}}">
+<div style="display: flex; align-items: baseline; justify-content: space-between">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #9C9EA6">{{d.dow}}</span>
+<span style="{{d.num}}">{{d.date}}</span>
+</div>
+<sc-for list="{{d.blocks}}" as="b" hint-placeholder-count="3">
+<div style="{{b.style}}">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; opacity: 0.8">{{b.t}}</span>
+<span style="font-weight: 600; font-size: 14px; line-height: 1.25">{{b.name}}</span>
+</div>
+</sc-for>
+<span style="margin-top: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">{{d.hours}}</span>
+</section>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<section aria-labelledby="ms-h" style="flex: 2 1 520px; min-width: 0; padding: 32px; border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+<h2 id="ms-h" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em">Road to exam day</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 20px; background: #1B1D22"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">SAT 21 NOV</span><span style="font-weight: 600">NBME practice exam</span><span style="font-size: 13px; color: #9C9EA6">Full length, timed</span></li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 20px; border: 1px dashed #3A3D45"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">[DATE]</span><span style="font-weight: 600">First pass of Qbank done</span><span style="font-size: 13px; color: #9C9EA6">Then: missed-only pass</span></li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 20px; border: 1px dashed #3A3D45"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">[DATE]</span><span style="font-weight: 600">Scheduling permit check</span><span style="font-size: 13px; color: #9C9EA6">Confirm Prometric slot</span></li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 20px; background: #C6FF3D; color: #0B1400"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px">[EXAM DATE]</span><span style="font-weight: 700">Step 1</span><span style="font-size: 13px">38 days away</span></li>
+</ol>
+</section>
+<section aria-label="Naadi suggestion" style="flex: 1 1 320px; min-width: 0; padding: 32px; border-radius: 32px; background: #17132E; border: 1px solid #2C2552; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C4BAFF">Naadi noticed</span>
+<p style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em">Thursday is overloaded and Sunday is empty. Move the pharm block and keep Sunday as a half-day?</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 0; background: #F4F4F0; color: #050506; font-weight: 600; font-size: 14px">Apply change</button><button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid #5A4FA0; background: transparent; color: #E7E3FF; font-size: 14px">Keep as is</button></div>
+</section>
+</div>
+</main>
+
+<div style="position: sticky; bottom: 20px; z-index: 6; max-width: 780px; margin: 36px auto 0; padding: 0 16px; box-sizing: border-box">
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 999px; background: rgba(20,21,25,0.86); backdrop-filter: blur(22px); border: 1px solid #34363D">
+<button type="button" aria-label="Attach a document, image or video" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: #23252B; color: #F4F4F0; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+<label style="flex: 1; min-width: 0; display: flex"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask Naadi</span><input type="text" placeholder="“I lost Wednesday — replan my week”" style="flex: 1; min-width: 0; min-height: 48px; background: transparent; border: 0; outline: none; color: #F4F4F0; font-size: 16px"></label>
+<button type="button" aria-label="Send" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: #C6FF3D; color: #0B1400; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const blk = 'display:flex;flex-direction:column;gap:4px;padding:12px;border-radius:16px;';
+    const kinds = {
+      video: blk + 'background:#1B1D22;color:#F4F4F0',
+      q: blk + 'background:#F4F4F0;color:#050506',
+      cards: blk + 'background:#17132E;color:#E7E3FF;border:1px solid #2C2552',
+      exam: blk + 'background:#C6FF3D;color:#0B1400;min-height:150px',
+      rest: blk + 'border:1px dashed #3A3D45;color:#C9CBD1'
+    };
+    const week = [
+      ['Mon', '16', '6 h', [['09:00', 'Acid–base disorders', 'video'], ['11:00', 'Qbank · 40 renal', 'q'], ['20:00', 'Cards · 62 due', 'cards']]],
+      ['Tue', '17', '6 h', [['09:00', 'RTA types I, II, IV', 'video'], ['11:00', 'Qbank · 40 mixed', 'q'], ['20:00', 'Cards', 'cards']]],
+      ['Wed', '18', '5.5 h', [['09:00', 'Diuretics', 'video'], ['11:00', 'Custom set · acid–base', 'q'], ['20:00', 'Cards', 'cards']]],
+      ['Thu', '19', '8 h', [['08:00', 'Glomerular disease', 'video'], ['10:00', 'Qbank · 40 renal', 'q'], ['14:00', 'Pharm · autonomics', 'video'], ['16:00', 'Qbank · 40 pharm', 'q'], ['20:00', 'Cards', 'cards']]],
+      ['Fri', '20', '4 h', [['09:00', 'Review all misses', 'q'], ['14:00', 'Light cards only', 'cards']]],
+      ['Sat', '21', '7 h', [['08:00', 'NBME practice exam', 'exam'], ['17:00', 'Score review with Naadi', 'cards']]],
+      ['Sun', '22', '0 h', [['—', 'Rest day', 'rest']]]
+    ];
+    const days = week.map(([dow, date, hours, blocks], i) => ({
+      dow, date, hours: hours + ' planned', label: dow + ' ' + date + ' November',
+      col: 'display:flex;flex-direction:column;gap:10px;min-height:520px;padding:20px 14px;box-sizing:border-box;' + (i ? 'border-left:1px solid #1F2126;' : '') + (i === 0 ? 'background:#0E0F12' : ''),
+      num: 'font-family:Bricolage Grotesque,sans-serif;font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.04em;color:' + (i === 0 ? '#C6FF3D' : '#F4F4F0'),
+      blocks: blocks.map(([t, name, k]) => ({ t, name, style: kinds[k] }))
+    }));
+    return { days };
+  }
+}
+</script>
+</body>
+</html>

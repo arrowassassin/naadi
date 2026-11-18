@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi — Question on phone</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.45; padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 14px">
+<header style="display: flex; align-items: center; gap: 10px">
+<a href="PhoneToday.dc.html" aria-label="Exit block" style="width: 44px; height: 44px; flex: none; border-radius: 50%; background: #141519; border: 1px solid #26282E; color: #F4F4F0; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></a>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">14 / 40</span>
+<div role="img" aria-label="Question 14 of 40" style="flex: 1; height: 5px; border-radius: 3px; background: #26282E"><div style="width: 35%; height: 5px; border-radius: 3px; background: #F4F4F0"></div></div>
+<span style="display: flex; align-items: center; min-height: 36px; padding: 0 12px; border-radius: 999px; background: #F4F4F0; color: #050506; font-family: 'JetBrains Mono', monospace; font-size: 13px">38:52</span>
+</header>
+
+<p style="margin: 0; font-size: 17px; line-height: 1.55">A 34-year-old woman has fatigue and two episodes of kidney stones in the past year.</p>
+<div style="padding: 12px 14px; border-radius: 16px; background: #0E0F12; border: 1px solid #26282E; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.7; color: #F4F4F0">Na⁺ 140 · Cl⁻ 114 · HCO₃⁻ 16<br>K⁺ 3.1 · urine pH 6.8</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.15; letter-spacing: -0.01em">What is the most likely cause?</h1>
+
+<div style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{options}}" as="o" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{o.on}}" style="{{o.style}}"><span style="{{o.badge}}">{{o.id}}</span><span style="flex: 1; text-align: left">{{o.text}}</span></button>
+</sc-for>
+</div>
+
+<div style="display: flex; gap: 8px">
+<button type="button" style="min-height: 56px; padding: 0 18px; border-radius: 999px; border: 1px solid #3A3D45; background: transparent; color: #F4F4F0; font-size: 14px">Flag</button>
+<button type="button" style="min-height: 56px; padding: 0 18px; border-radius: 999px; border: 1px solid #3A3D45; background: transparent; color: #F4F4F0; font-size: 14px">Labs</button>
+<button type="button" style="flex: 1; min-height: 56px; border-radius: 999px; border: 0; background: #C6FF3D; color: #0B1400; font-weight: 600; font-size: 16px">Submit</button>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const row = 'display:flex;align-items:center;gap:12px;width:100%;min-height:56px;padding:6px 14px 6px 6px;border-radius:18px;font-size:15px;box-sizing:border-box;';
+    const dot = 'width:44px;height:44px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;';
+    const options = [['A', 'Impaired proximal HCO₃⁻ reabsorption'], ['B', 'Impaired distal H⁺ secretion'], ['C', 'Low aldosterone'], ['D', 'Lactic acid overproduction'], ['E', 'Diarrhea']].map(([id, text]) => {
+      const on = id === 'B';
+      return { id, text, on: on ? 'true' : 'false',
+        style: row + (on ? 'background:#F4F4F0;border:1px solid #F4F4F0;color:#050506' : 'background:#0E0F12;border:1px solid #26282E;color:#F4F4F0'),
+        badge: dot + (on ? 'background:#050506;color:#F4F4F0' : 'background:#1B1D22;color:#F4F4F0') };
+    });
+    return { options };
+  }
+}
+</script>
+</body>
+</html>

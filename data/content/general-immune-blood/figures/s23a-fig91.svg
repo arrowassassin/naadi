@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" aria-label="Schematic bars comparing body water, fat and lean tissue in a young adult and an older adult, with drug distribution consequences">
+<title>Body composition and drug distribution with aging</title>
+<rect x="0" y="0" width="680" height="400" fill="#ffffff"/>
+<text x="340" y="28" font-family="sans-serif" font-size="16" font-weight="bold" fill="#222222" text-anchor="middle">Body composition shifts with age (schematic, not to scale)</text>
+<g font-family="sans-serif" font-size="13" fill="#222222">
+<text x="40" y="92">Young adult</text>
+<rect x="150" y="70" width="300" height="34" fill="#1f5fa8"/>
+<rect x="450" y="70" width="80" height="34" fill="#e0b98f" stroke="#8a5a2b"/>
+<rect x="530" y="70" width="100" height="34" fill="#bbbbbb"/>
+<text x="300" y="92" fill="#ffffff" text-anchor="middle">Total body water</text>
+<text x="490" y="92" text-anchor="middle">Fat</text>
+<text x="580" y="92" text-anchor="middle">Other</text>
+<text x="40" y="162">Older adult</text>
+<rect x="150" y="140" width="240" height="34" fill="#1f5fa8"/>
+<rect x="390" y="140" width="150" height="34" fill="#e0b98f" stroke="#8a5a2b"/>
+<rect x="540" y="140" width="90" height="34" fill="#bbbbbb"/>
+<text x="270" y="162" fill="#ffffff" text-anchor="middle">Total body water (lower)</text>
+<text x="465" y="162" text-anchor="middle">Fat (higher)</text>
+<text x="585" y="162" text-anchor="middle">Other</text>
+<text x="150" y="196" font-size="12" fill="#555555">Lean (muscle) mass also falls, lowering creatinine production.</text>
+</g>
+<line x1="40" y1="214" x2="640" y2="214" stroke="#999999" stroke-width="1"/>
+<g font-family="sans-serif" font-size="13" fill="#222222">
+<rect x="40" y="232" width="285" height="140" fill="#ffffff" stroke="#1f5fa8" stroke-width="2"/>
+<text x="56" y="256" font-weight="bold" fill="#1f5fa8">Water-soluble drugs</text>
+<text x="56" y="280">Smaller volume of distribution</text>
+<text x="56" y="302">Higher plasma level per dose</text>
+<text x="56" y="330" fill="#444444">Examples: lithium, digoxin,</text>
+<text x="56" y="350" fill="#444444">ethanol, aminoglycosides</text>
+<rect x="355" y="232" width="285" height="140" fill="#ffffff" stroke="#8a5a2b" stroke-width="2"/>
+<text x="371" y="256" font-weight="bold" fill="#8a5a2b">Fat-soluble drugs</text>
+<text x="371" y="280">Larger volume of distribution</text>
+<text x="371" y="302">Longer half-life, accumulation</text>
+<text x="371" y="330" fill="#444444">Examples: diazepam,</text>
+<text x="371" y="350" fill="#444444">many anesthetics</text>
+</g>
+</svg>

@@ -1,0 +1,290 @@
+import { MessagePrimitive, ThreadPrimitive, useAuiState } from "@assistant-ui/react";
+import { Button, ErrorState } from "@naadi/ui";
+import { Link } from "@tanstack/react-router";
+import { LogIn, RotateCw, Sparkles } from "lucide-react";
+import { createContext, type ReactNode, useContext, useEffect, useMemo } from "react";
+import { useUiText } from "../copy/useUiText";
+import { type ActionHandlers, BlockView, NoticeBlock, SourcesBlock } from "./blocks";
+import { ConfirmChip } from "./ConfirmChip";
+import { ensureMarkdown, Markdown } from "./Markdown";
+import { type Block, type Citation, TOOL_NAMES } from "./protocol";
+import type { Tutor } from "./useTutor";
+
+/*
+ * The conversation: assistant-ui's thread viewport and message primitives over the tutor runtime. The student's
+ * messages are paper-coloured bubbles; everything the assistant wrote sits on violet framing. Each AI message
+ * renders its markdown (Streamdown), then its blocks (by message_id), then its sources. Blocks that belong to no
+ * rendered message (thread level, or a message the stream has not named yet) follow the last message.
+ */
+
+interface ThreadData {
+  tutor: Tutor;
+  blocksFor: (id: string) => Block[];
+  citationsFor: (id: string) => Citation[];
+  disclaimerId: string | null;
+  handlers: ActionHandlers;
+}
+
+const Ctx = createContext<ThreadData | null>(null);
+
+function useThreadData(): ThreadData {
+  const v = useContext(Ctx);
+  if (!v) throw new Error("ThreadView context missing");
+  return v;
+}
+
+function UserText({ text }: { text: string }) {
+  return <p className="m-0 whitespace-pre-wrap break-words">{text}</p>;
+}
+
+function UserMessage() {
+  const t = useUiText();
+  return (
+    <MessagePrimitive.Root className="flex flex-col items-end" data-message-role="user">
+      <span className="sr-only">{t("agent.thread.you")}</span>
+      <div className="max-w-[88%] rounded-[20px_20px_6px_20px] bg-control px-4 py-3 text-text text-ui">
+        <MessagePrimitive.Parts components={{ Text: UserText }} />
+      </div>
+    </MessagePrimitive.Root>
+  );
+}
+
+function AssistantText({ text }: { text: string }) {
+  const { tutor, citationsFor } = useThreadData();
+  const id = useAuiState((s) => s.message.id);
+  const running = useAuiState((s) => s.message.status?.type === "running");
+  const citations = useMemo(() => citationsFor(id), [citationsFor, id]);
+  return <Markdown text={text} streaming={running && tutor.isRunning} citations={citations} />;
+}
+
+const noTool = () => null;
+
+function AssistantMessage() {
+  const t = useUiText();
+  const { tutor, blocksFor, citationsFor, disclaimerId, handlers } = useThreadData();
+  const id = useAuiState((s) => s.message.id);
+  const hasText = useAuiState((s) => s.message.parts.some((p) => p.type === "text" && p.text.trim().length > 0));
+  const blocks = blocksFor(id);
+  if (!hasText && blocks.length === 0) return null;
+  const hasSources = blocks.some((b) => b.type === "sources");
+  const citations = hasSources ? [] : citationsFor(id);
+  return (
+    <MessagePrimitive.Root className="flex flex-col gap-3" data-message-role="assistant" data-message-id={id}>
+      <span className="sr-only">{t("agent.thread.naadi")}</span>
+      {blocks
+        .filter((b) => b.type === "notice" && b.data.kind === "disclaimer" && b.id === disclaimerId)
+        .map((b) => (
+          <BlockView key={b.id} block={b} handlers={handlers} busy={tutor.isRunning} />
+        ))}
+      <MessagePrimitive.Parts components={{ Text: AssistantText, tools: { Fallback: noTool } }} />
+      {blocks
+        .filter((b) => !(b.type === "notice" && b.data.kind === "disclaimer"))
+        .map((b) => (
+          <BlockView key={b.id} block={b} handlers={handlers} busy={tutor.isRunning} />
+        ))}
+      {citations.length ? <SourcesBlock items={citations} /> : null}
+    </MessagePrimitive.Root>
+  );
+}
+
+function ToolStatus({ tutor }: { tutor: Tutor }) {
+  const t = useUiText();
+  if (tutor.phase === "thinking" && !(tutor.tool && tutor.tool.status === "running")) {
+    return (
+      <p role="status" className="m-0 flex items-center gap-2 text-text-2 text-ui-sm" data-status="thinking">
+        <Sparkles aria-hidden="true" size={16} className="animate-pulse text-violet" />
+        {t("agent.thinking")}
+      </p>
+    );
+  }
+  if (!tutor.isRunning || !tutor.tool || tutor.tool.status !== "running") return null;
+  const known = (TOOL_NAMES as readonly string[]).includes(tutor.tool.tool);
+  return (
+    <p
+      role="status"
+      className="m-0 flex items-center gap-2 text-text-2 text-ui-sm"
+      data-status="tool"
+      data-tool={tutor.tool.tool}
+    >
+      <Sparkles aria-hidden="true" size={16} className="animate-pulse text-violet" />
+      {t(known ? `agent.tool.${tutor.tool.tool}` : "agent.tool.working")}
+    </p>
+  );
+}
+
+function RunState({ tutor }: { tutor: Tutor }) {
+  const t = useUiText();
+  if (tutor.phase === "session_expired") {
+    return (
+      <div
+        role="alert"
+        className="flex flex-col gap-3 rounded-block border border-amber/60 bg-surface-2 p-4"
+        data-state="session_expired"
+      >
+        <p className="m-0 font-semibold text-text">{t("agent.session.title")}</p>
+        <p className="m-0 text-text-2">{t(tutor.refreshFailed ? "agent.session.failed" : "agent.session.body")}</p>
+        {tutor.refreshFailed ? (
+          <Link to="/sign-in" className="inline-flex min-h-11 items-center gap-2 self-start text-violet-text">
+            <LogIn aria-hidden="true" size={16} /> {t("agent.session.sign_in")}
+          </Link>
+        ) : (
+          <Button
+            variant="assistant"
+            className="self-start"
+            icon={<RotateCw size={16} className={tutor.refreshing ? "animate-spin" : undefined} />}
+            disabled={tutor.refreshing}
+            onClick={() => void tutor.continueAfterRefresh()}
+          >
+            {t("agent.session.continue")}
+          </Button>
+        )}
+      </div>
+    );
+  }
+  if (tutor.phase === "rate_limited" && !tutor.turnNotice) {
+    // The runtime refused the run (429): busy, with the time it said to come back (a minute when it did not).
+    const wait = tutor.error?.retryAfterS ?? 60;
+    const resetAt = new Date(Date.now() + wait * 1000).toISOString();
+    return <NoticeBlock notice={{ kind: "rate_limited", reset_at: resetAt }} />;
+  }
+  if (tutor.phase === "error" && tutor.error) {
+    const status = tutor.error.status;
+    const message =
+      status === null
+        ? t("agent.error.network")
+        : status === 409
+          ? t("agent.exam_mode")
+          : status >= 500
+            ? t("agent.error.server")
+            : t("agent.error.generic");
+    return (
+      <ErrorState
+        title={t("agent.error.title")}
+        message={message}
+        requestId={tutor.error.requestId}
+        onRetry={status === 409 ? undefined : () => void tutor.retry()}
+        retryLabel={t("agent.error.retry")}
+      />
+    );
+  }
+  return null;
+}
+
+/**
+ * The sources a rendered answer lists. A tool turn and its answer render as one message, so the tool's citations
+ * and compose's `#final` ones (the sources the answer actually used) meet here: the final ones win; without them,
+ * one entry per source.
+ */
+export function sourcesOf(list: readonly Citation[]): Citation[] {
+  const finals = list.filter((c) => c.id.endsWith("#final"));
+  const pick = finals.length ? finals : list;
+  const seen = new Set<string>();
+  return pick.filter((c) => {
+    const key = c.id.replace(/#final$/, "").replace(/@[^@]*$/, "");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+/** The browser's report of a ResizeObserver loop: benign by the ResizeObserver spec (delivered next frame). */
+const RO_LOOP = "ResizeObserver loop completed with undelivered notifications.";
+
+export function ThreadView({ tutor, empty, onAsk }: { tutor: Tutor; empty: ReactNode; onAsk: ActionHandlers["ask"] }) {
+  const t = useUiText();
+  // assistant-ui's thread auto-scroll observes this viewport and its rows and updates its store from the observer
+  // callback; when a turn adds several blocks in one frame the browser defers the rest to the next frame and
+  // reports it. Only that exact report is cancelled, and only while this thread viewport is on screen.
+  // The chat is open: warm the markdown renderer now (only while online), before the first answer streams.
+  useEffect(() => ensureMarkdown(), []);
+  useEffect(() => {
+    const onError = (e: ErrorEvent) => {
+      if (e.message === RO_LOOP) e.preventDefault();
+    };
+    window.addEventListener("error", onError);
+    return () => window.removeEventListener("error", onError);
+  }, []);
+  // assistant-ui renders one assistant turn (the AI message that called tools, the tool results and the final
+  // answer) as ONE message under the turn's FIRST AI id; the server ties blocks and citations to whichever AI
+  // message produced them. Every AI id maps to the id of the message that is actually rendered.
+  const renderedId = useMemo(() => {
+    const map = new Map<string, string>();
+    let head: string | null = null;
+    for (const m of tutor.messages) {
+      if (m.type === "human") {
+        head = null;
+        continue;
+      }
+      if (m.type !== "ai" || typeof m.id !== "string") continue;
+      head ??= m.id;
+      map.set(m.id, head);
+    }
+    return map;
+  }, [tutor.messages]);
+  const aiIds = useMemo(() => new Set(renderedId.values()), [renderedId]);
+  const data = useMemo<ThreadData>(() => {
+    const byMessage = new Map<string, Block[]>();
+    const orphans: Block[] = [];
+    for (const b of tutor.blocks) {
+      const at = b.message_id ? renderedId.get(b.message_id) : undefined;
+      if (at) byMessage.set(at, [...(byMessage.get(at) ?? []), b]);
+      else orphans.push(b);
+    }
+    const cites = new Map<string, Citation[]>();
+    const looseCites: Citation[] = [];
+    for (const c of tutor.citations) {
+      const at = c.message_id ? renderedId.get(c.message_id) : undefined;
+      if (at) cites.set(at, [...(cites.get(at) ?? []), c]);
+      else looseCites.push(c);
+    }
+    const last = [...aiIds].at(-1) ?? null;
+    const firstDisclaimer = tutor.blocks.find((b) => b.type === "notice" && b.data.kind === "disclaimer");
+    return {
+      tutor,
+      blocksFor: (id) => byMessage.get(id) ?? [],
+      // Citations the stream has not tied to a rendered message yet belong to the latest answer.
+      citationsFor: (id) => sourcesOf([...(cites.get(id) ?? []), ...(id === last ? looseCites : [])]),
+      disclaimerId: firstDisclaimer?.id ?? null,
+      handlers: { ask: onAsk },
+      orphans,
+    } as ThreadData & { orphans: Block[] };
+  }, [tutor, aiIds, renderedId, onAsk]);
+  const orphans = (data as ThreadData & { orphans: Block[] }).orphans;
+  const lastAiId = [...aiIds].at(-1) ?? null;
+
+  return (
+    <Ctx.Provider value={data}>
+      <ThreadPrimitive.Root className="flex min-h-0 flex-1 flex-col">
+        <ThreadPrimitive.Viewport
+          aria-label={t("agent.thread.label")}
+          className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto overscroll-contain px-4 py-4 tablet:px-6"
+          data-thread=""
+        >
+          <ThreadPrimitive.Empty>{empty}</ThreadPrimitive.Empty>
+          <ThreadPrimitive.Messages>
+            {({ message }) => (message.role === "user" ? <UserMessage /> : <AssistantMessage />)}
+          </ThreadPrimitive.Messages>
+          {orphans.length ? (
+            <div className="flex flex-col gap-3" data-thread-blocks="" data-after={lastAiId ?? undefined}>
+              {orphans
+                .filter((b) => !(b.type === "notice" && b.data.kind === "disclaimer" && b.id !== data.disclaimerId))
+                .map((b) => (
+                  <BlockView key={b.id} block={b} handlers={data.handlers} busy={tutor.isRunning} />
+                ))}
+            </div>
+          ) : null}
+          {tutor.confirm ? (
+            <ConfirmChip
+              key={JSON.stringify(tutor.confirm)}
+              request={tutor.confirm}
+              busy={tutor.isRunning}
+              onResume={(v) => void tutor.resume(v)}
+            />
+          ) : null}
+          <ToolStatus tutor={tutor} />
+          <RunState tutor={tutor} />
+        </ThreadPrimitive.Viewport>
+      </ThreadPrimitive.Root>
+    </Ctx.Provider>
+  );
+}

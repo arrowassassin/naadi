@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi — Text chapter with page notes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="position: relative; width: 1366px; height: 1024px; box-sizing: border-box; overflow: hidden; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.5; padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 16px">
+
+<!-- Chapter bar -->
+<header style="display: flex; align-items: center; gap: 10px">
+<a href="Main.dc.html" aria-label="Back" style="width: 48px; height: 48px; flex: none; border-radius: 50%; background: #141519; border: 1px solid #26282E; color: #F4F4F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+<div style="display: flex; flex-direction: column; margin-right: auto">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #9C9EA6">Renal · Chapter 7 of 14</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px">Renal tubular acidosis</span>
+</div>
+<div role="group" aria-label="Chapter formats" style="display: flex; padding: 4px; border-radius: 999px; background: #0E0F12; border: 1px solid #1F2126">
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: #F4F4F0; color: #050506; font-weight: 600; font-size: 14px">Read · 9 pages</button>
+<button type="button" disabled style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: #8A8C92; font-size: 14px">No video</button>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: #C9CBD1; font-size: 14px">Questions · 18</button>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: #C9CBD1; font-size: 14px">Cards · 12</button>
+</div>
+<button type="button" aria-pressed="true" style="min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1px solid #C6FF3D; background: transparent; color: #C6FF3D; font-size: 14px; font-weight: 600">Notes open</button>
+</header>
+
+<div style="flex: 1; min-height: 0; display: flex; gap: 16px">
+
+<!-- Reading page -->
+<article style="position: relative; flex: 1; min-width: 0; border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; padding: 36px 44px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; overflow: hidden">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C6FF3D">Page 3 · The three types</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #9C9EA6">3 / 9 · about 4 min</span>
+</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 52px; line-height: 0.96; letter-spacing: -0.04em">Same acidosis,<br>three different leaks.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9CBD1">Every renal tubular acidosis is a <mark style="background: #C6FF3D; color: #0B1400; padding: 1px 4px; border-radius: 4px">normal anion gap metabolic acidosis</mark>. What separates them is where the tubule fails — and what happens to potassium.</p>
+<div style="border-radius: 20px; border: 1px solid #26282E; overflow: hidden; font-size: 15px">
+<div style="display: grid; grid-template-columns: 1.1fr 1.6fr 0.9fr 0.9fr; gap: 12px; padding: 12px 16px; background: #1B1D22; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #C9CBD1"><span>Type</span><span>Defect</span><span>Urine pH</span><span>Serum K⁺</span></div>
+<div style="display: grid; grid-template-columns: 1.1fr 1.6fr 0.9fr 0.9fr; gap: 12px; padding: 14px 16px; border-top: 1px solid #26282E"><span style="font-weight: 600">1 · Distal</span><span style="color: #C9CBD1">α-intercalated cells can't secrete H⁺</span><span>&gt; 5.5</span><span>Low</span></div>
+<div style="display: grid; grid-template-columns: 1.1fr 1.6fr 0.9fr 0.9fr; gap: 12px; padding: 14px 16px; border-top: 1px solid #26282E"><span style="font-weight: 600">2 · Proximal</span><span style="color: #C9CBD1">Proximal tubule can't reabsorb HCO₃⁻</span><span>&lt; 5.5</span><span>Low</span></div>
+<div style="display: grid; grid-template-columns: 1.1fr 1.6fr 0.9fr 0.9fr; gap: 12px; padding: 14px 16px; border-top: 1px solid #26282E"><span style="font-weight: 600">4 · Hyperkalemic</span><span style="color: #C9CBD1">Low aldosterone, or resistance to it</span><span>&lt; 5.5</span><span><mark style="background: #C4BAFF; color: #050506; padding: 1px 4px; border-radius: 4px">High</mark></span></div>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9CBD1">Type 1 is the one that forms calcium phosphate stones. Type 2 often arrives as part of Fanconi syndrome.</p>
+
+<!-- Assistant dock inside reading column -->
+<div style="position: absolute; left: 24px; right: 24px; bottom: 20px; display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 999px; background: rgba(20,21,25,0.9); border: 1px solid #34363D">
+<button type="button" aria-label="Previous page" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: #23252B; color: #F4F4F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+<label style="flex: 1; min-width: 0; display: flex"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask Naadi</span><input type="text" placeholder="Ask Naadi about this page…" style="flex: 1; min-width: 0; min-height: 48px; padding-left: 10px; background: transparent; border: 0; outline: none; color: #F4F4F0; font-size: 16px"></label>
+<button type="button" aria-label="Send" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: #9D8CFF; color: #0D0828; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+<button type="button" aria-label="Next page" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: #C6FF3D; color: #0B1400; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+</div>
+</article>
+
+<!-- Page notes -->
+<aside aria-label="Notes for this page" style="width: 540px; flex: none; border-radius: 32px; background: #F4F4F0; color: #050506; display: flex; flex-direction: column; overflow: hidden">
+<div style="padding: 18px 20px 12px; display: flex; align-items: center; gap: 10px">
+<div style="display: flex; flex-direction: column; margin-right: auto">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Page notes</span>
+<span style="font-size: 12px; color: #55575E">Pinned to page 3 · saved to Notes › Renal</span>
+</div>
+<div role="group" aria-label="Note mode" style="display: flex; padding: 4px; border-radius: 999px; background: #E2E2DC">
+<button type="button" style="min-height: 44px; padding: 0 14px; border-radius: 999px; border: 0; background: transparent; color: #050506; font-size: 13px">Type</button>
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border-radius: 999px; border: 0; background: #050506; color: #F4F4F0; font-weight: 600; font-size: 13px">Write</button>
+<button type="button" style="min-height: 44px; padding: 0 14px; border-radius: 999px; border: 0; background: transparent; color: #050506; font-size: 13px">Both</button>
+</div>
+</div>
+
+<!-- Typed block -->
+<div style="margin: 0 20px; padding: 14px 16px; border-radius: 18px; background: #FFFFFF; border: 1px solid #D5D5CF; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #55575E">Typed</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.5">All three are normal gap. Type 4 is the only one with high K⁺ — think low aldosterone.</p>
+</div>
+
+<!-- Handwriting canvas -->
+<div style="position: relative; flex: 1; min-height: 0; margin: 12px 20px 0; border-radius: 22px; background-color: #FFFFFF; background-image: radial-gradient(#C9C9C2 1.2px, transparent 1.2px); background-size: 22px 22px; border: 1px solid #D5D5CF; overflow: hidden">
+<span style="position: absolute; left: 14px; top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #55575E">Handwritten · Apple Pencil</span>
+<span style="position: absolute; left: 28px; top: 44px; font-family: Caveat, cursive; font-weight: 700; font-size: 38px; line-height: 1; color: #050506">RTA = normal gap!</span>
+<span style="position: absolute; left: 28px; top: 100px; font-family: Caveat, cursive; font-size: 30px; line-height: 1.15; color: #050506">1 → distal, can't dump H⁺<br>2 → proximal, loses bicarb<br>4 → aldo problem</span>
+<span style="position: absolute; left: 300px; top: 176px; font-family: Caveat, cursive; font-weight: 700; font-size: 34px; color: #5B45D6; transform: rotate(-6deg)">K⁺ HIGH</span>
+<svg viewBox="0 0 500 320" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><path d="M210 196c30 4 56 2 84-6" fill="none" stroke="#5B45D6" stroke-width="3" stroke-linecap="round"></path><path d="M284 182l12 8-12 10" fill="none" stroke="#5B45D6" stroke-width="3" stroke-linecap="round"></path><path d="M24 86c60-8 150-6 232 0" fill="none" stroke="#7FB800" stroke-width="10" stroke-linecap="round" opacity="0.45"></path><path d="M296 214c26 8 66 8 96-2" fill="none" stroke="#5B45D6" stroke-width="3" stroke-linecap="round"></path></svg>
+<button type="button" style="position: absolute; right: 12px; bottom: 12px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: #050506; color: #F4F4F0; font-size: 13px; font-weight: 600">Convert to text</button>
+</div>
+
+<!-- Pencil toolbar -->
+<div role="toolbar" aria-label="Drawing tools" style="margin: 12px 20px 20px; padding: 6px; border-radius: 999px; background: #050506; display: flex; align-items: center; gap: 4px">
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border-radius: 999px; border: 0; background: #F4F4F0; color: #050506; font-size: 13px; font-weight: 600">Pen</button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border-radius: 999px; border: 0; background: transparent; color: #F4F4F0; font-size: 13px">Marker</button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border-radius: 999px; border: 0; background: transparent; color: #F4F4F0; font-size: 13px">Eraser</button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border-radius: 999px; border: 0; background: transparent; color: #F4F4F0; font-size: 13px">Lasso</button>
+<span style="flex: 1"></span>
+<button type="button" aria-label="Ink black" style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #F4F4F0; background: #050506"></button>
+<button type="button" aria-label="Ink violet" style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #050506; background: #9D8CFF"></button>
+<button type="button" aria-label="Ink green" style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #050506; background: #C6FF3D"></button>
+<button type="button" aria-label="Insert image or page snapshot" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #23252B; color: #F4F4F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+</div>
+</aside>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1366,"height":1024}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

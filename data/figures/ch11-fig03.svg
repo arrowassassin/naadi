@@ -1,0 +1,54 @@
+<svg aria-label="AAP 2021 febrile infant algorithm by age group" font-family="sans-serif" role="img" viewbox="0 0 640 390" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch11-arrow2" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-size="12">
+<rect fill="#e0f2fe" height="44" rx="6" stroke="#334155" width="500" x="70" y="8"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="26">Well-appearing term infant 8–60 d, T ≥38.0 °C (AAP 2021)</text>
+<text text-anchor="middle" x="320" y="43">Ill-appearing at ANY age → full sepsis work-up, admit, IV antibiotics</text>
+</g>
+<g marker-end="url(#ch11-arrow2)" stroke="#334155" stroke-width="1.5">
+<line x1="200" x2="112" y1="52" y2="72"></line><line x1="320" x2="320" y1="52" y2="72"></line><line x1="440" x2="527" y1="52" y2="72"></line>
+</g>
+<g fill="#0f172a" font-size="12">
+<rect fill="#fee2e2" height="30" rx="6" stroke="#334155" width="195" x="15" y="74"></rect>
+<text font-weight="bold" text-anchor="middle" x="112" y="94">8–21 days</text>
+<rect fill="#fee2e2" height="190" rx="6" stroke="#334155" width="195" x="15" y="110"></rect>
+<text x="23" y="130">• UA + urine culture (cath)</text>
+<text x="23" y="148">• Blood culture</text>
+<text x="23" y="166">• Inflammatory markers</text>
+<text x="23" y="184">• Lumbar puncture</text>
+<text x="23" y="202">• ADMIT + parenteral abx</text>
+<text x="23" y="220">  ampicillin + ceftazidime</text>
+<text x="23" y="238">  (or gentamicin)</text>
+<text x="23" y="256">• Add acyclovir if HSV risk</text>
+<text x="23" y="274">  (vesicles, seizures, ↑LFTs,</text>
+<text x="23" y="292">  maternal lesions)</text>
+<rect fill="#fef3c7" height="30" rx="6" stroke="#334155" width="196" x="222" y="74"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="94">22–28 days</text>
+<rect fill="#fef3c7" height="190" rx="6" stroke="#334155" width="196" x="222" y="110"></rect>
+<text x="230" y="130">• UA, blood culture,</text>
+<text x="230" y="148">  inflammatory markers</text>
+<text x="230" y="166">• IMs abnormal → LP,</text>
+<text x="230" y="184">  admit, parenteral abx</text>
+<text x="230" y="202">• IMs normal → LP may be</text>
+<text x="230" y="220">  done; if UA, IMs (± CSF)</text>
+<text x="230" y="238">  normal: observe in</text>
+<text x="230" y="256">  hospital, or home with</text>
+<text x="230" y="274">  reliable 24-h follow-up</text>
+<rect fill="#dcfce7" height="30" rx="6" stroke="#334155" width="195" x="430" y="74"></rect>
+<text font-weight="bold" text-anchor="middle" x="527" y="94">29–60 days</text>
+<rect fill="#dcfce7" height="190" rx="6" stroke="#334155" width="195" x="430" y="110"></rect>
+<text x="438" y="130">• UA, blood culture,</text>
+<text x="438" y="148">  inflammatory markers</text>
+<text x="438" y="166">• All normal → home,</text>
+<text x="438" y="184">  no LP, no abx,</text>
+<text x="438" y="202">  recheck in 24–36 h</text>
+<text x="438" y="220">• UA+ only, IMs normal →</text>
+<text x="438" y="238">  oral abx, LP not needed</text>
+<text x="438" y="256">• IMs abnormal → consider</text>
+<text x="438" y="274">  LP; abx; often admit</text>
+<rect fill="#e0f2fe" height="68" rx="6" stroke="#334155" width="610" x="15" y="312"></rect>
+<text x="25" y="331">Abnormal IMs: procalcitonin &gt;0.5 ng/mL, CRP &gt;2.0 mg/dL, ANC &gt;4000–5200/μL, T &gt;38.5 °C.</text>
+<text x="25" y="349">Outside this pathway (treat like 8–21 d): ≤7 d old, &lt;37 wk, ill-appearing, focal infection.</text>
+<text x="25" y="367">3–36 mo, well, immunized: bacteremia &lt;1% → urine test if at risk; no routine blood cx.</text>
+</g>
+</svg>

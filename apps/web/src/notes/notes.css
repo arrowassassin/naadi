@@ -1,0 +1,88 @@
+/* Base editor CSS (TipTap's injected <style> is off: the production CSP allows no inline styles). */
+.note-prose {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  font-variant-ligatures: none;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.note-prose:focus-visible {
+  outline: none;
+}
+.note-prose > * + * {
+  margin-top: 0.75em;
+}
+.note-prose p,
+.note-prose h2,
+.note-prose h3,
+.note-prose ul,
+.note-prose ol,
+.note-prose blockquote {
+  margin-bottom: 0;
+}
+.note-prose p {
+  margin-top: 0;
+}
+.note-prose h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.75em;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.note-prose h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3em;
+  line-height: 1.1;
+}
+.note-prose ul {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+.note-prose ol {
+  list-style: decimal;
+  padding-left: 1.6em;
+}
+.note-prose li + li {
+  margin-top: 0.25em;
+}
+.note-prose blockquote {
+  border-left: 3px solid currentColor;
+  padding-left: 0.9em;
+  color: var(--color-paper-text-2);
+}
+.note-prose mark {
+  color: var(--color-ground);
+  border-radius: 4px;
+  padding: 1px 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.note-prose p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  color: var(--color-paper-text-2);
+}
+.note-prose .ProseMirror-selectednode {
+  outline: 2px solid var(--color-ground);
+}
+.note-prose .ProseMirror-gapcursor {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+}
+.note-prose .ProseMirror-gapcursor::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  width: 20px;
+  border-top: 1px solid currentColor;
+}
+.note-prose.ProseMirror-focused .ProseMirror-gapcursor {
+  display: block;
+}

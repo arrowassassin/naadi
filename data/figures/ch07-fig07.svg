@@ -1,0 +1,27 @@
+<svg aria-label="Four dopamine pathways and effects of D2 blockade by antipsychotics" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch07-arrow4" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text font-weight="bold" x="20" y="24">Pathway (origin → target)</text><text font-weight="bold" x="300" y="24">Normal role</text><text font-weight="bold" x="450" y="24">D2 blockade effect</text>
+<rect fill="#fee2e2" height="70" stroke="#334155" width="620" x="10" y="35"></rect>
+<text font-weight="bold" x="20" y="55">Mesolimbic</text><text x="20" y="73">VTA → nucleus accumbens</text>
+<line marker-end="url(#ch07-arrow4)" stroke="#334155" x1="190" x2="285" y1="68" y2="68"></line>
+<text x="300" y="60">Reward, motivation;</text><text x="300" y="78">↑ DA → positive symptoms</text>
+<text x="450" y="60">↓ Positive symptoms</text><text x="450" y="78">(therapeutic target)</text>
+<rect fill="#fef3c7" height="70" stroke="#334155" width="620" x="10" y="115"></rect>
+<text font-weight="bold" x="20" y="135">Mesocortical</text><text x="20" y="153">VTA → prefrontal cortex</text>
+<line marker-end="url(#ch07-arrow4)" stroke="#334155" x1="190" x2="285" y1="148" y2="148"></line>
+<text x="300" y="140">Cognition, affect;</text><text x="300" y="158">↓ DA → negative symptoms</text>
+<text x="450" y="140">May worsen negative/</text><text x="450" y="158">cognitive symptoms</text>
+<rect fill="#e0f2fe" height="70" stroke="#334155" width="620" x="10" y="195"></rect>
+<text font-weight="bold" x="20" y="215">Nigrostriatal</text><text x="20" y="233">SNc → dorsal striatum</text>
+<line marker-end="url(#ch07-arrow4)" stroke="#334155" x1="190" x2="285" y1="228" y2="228"></line>
+<text x="300" y="220">Motor control</text><text x="300" y="238">(basal ganglia)</text>
+<text x="450" y="215">EPS: dystonia (hours–days),</text><text x="450" y="231">akathisia (days–wks), parkinsonism</text><text x="450" y="247">(wks), tardive dyskinesia (months)</text>
+<rect fill="#dcfce7" height="70" stroke="#334155" width="620" x="10" y="275"></rect>
+<text font-weight="bold" x="20" y="295">Tuberoinfundibular</text><text x="20" y="313">Arcuate → median eminence</text>
+<line marker-end="url(#ch07-arrow4)" stroke="#334155" x1="190" x2="285" y1="308" y2="308"></line>
+<text x="300" y="300">DA tonically inhibits</text><text x="300" y="318">prolactin release</text>
+<text x="450" y="300">Hyperprolactinemia: galactorrhea,</text><text x="450" y="318">amenorrhea, gynecomastia,</text><text x="450" y="334">↓ libido (risperidone worst)</text>
+<text text-anchor="middle" x="320" y="368">Atypicals add 5-HT2A antagonism → ↑ DA release in nigrostriatal/mesocortical → fewer EPS</text>
+</g>
+</svg>

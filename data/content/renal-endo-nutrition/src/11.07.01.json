@@ -1,0 +1,1370 @@
+{
+ "area": "usmle2026.11.07.01",
+ "sections": [
+  {
+   "id": "s23c-s110701-1-1",
+   "exam": "step1",
+   "heading": "Kidney and urinary tract development and its anomalies",
+   "html": "<h3>Three kidneys in sequence</h3><ul><li><strong>Pronephros</strong> (week 4, cervical region): never functions in humans and regresses.</li><li><strong>Mesonephros</strong> (weeks 4–8, thoracolumbar): an interim kidney in the first trimester. Its duct, the <strong>mesonephric (Wolffian) duct</strong>, persists in males as the epididymis, vas deferens, seminal vesicle and ejaculatory duct, and it gives rise to the ureteric bud in both sexes.</li><li><strong>Metanephros</strong> (from week 5, sacral region): the permanent kidney. Fetal urine production begins around weeks 10–12 and, from the second trimester on, is the main source of amniotic fluid.</li></ul><h3>Reciprocal induction</h3><p>The <strong>ureteric bud</strong> grows out of the distal mesonephric duct into the <strong>metanephric mesenchyme</strong> (blastema). Each tissue instructs the other: the mesenchyme secretes glial cell–derived neurotrophic factor (GDNF), which acts on the RET receptor of the bud to drive its outgrowth and branching, and the branching bud tips induce the mesenchyme to condense and form nephrons.</p><table><tr><th>Origin</th><th>Adult structures</th></tr><tr><td>Ureteric bud</td><td>Ureter, renal pelvis, major and minor calyces, collecting ducts</td></tr><tr><td>Metanephric mesenchyme</td><td>Glomerular (Bowman) capsule, proximal tubule, loop of Henle, distal convoluted tubule</td></tr><tr><td>Urogenital sinus (from the cloaca)</td><td>Bladder (most of it), urethra; the allantois connects the bladder dome to the umbilicus as the urachus, later the median umbilical ligament</td></tr></table>[[figure:s23c-fig110701-1]]<p>When induction fails, the kidney does not form (<strong>agenesis</strong>) or forms abnormally (<strong>dysplasia</strong>). The <strong>ureteropelvic junction</strong> is the last part of the ureter to canalise, which helps explain why it is the commonest site of congenital obstruction.</p><h3>Ascent</h3><p>The kidneys start in the pelvis and ascend to the lumbar region between weeks 6 and 9, rotating so the hilum faces medially and taking new arterial branches from the aorta as they rise (which is why accessory renal arteries are common). Failed ascent leaves a <strong>pelvic kidney</strong>. If the lower poles fuse, the isthmus of the resulting <strong>horseshoe kidney</strong> is caught under the <strong>inferior mesenteric artery</strong>. Horseshoe kidney is usually asymptomatic but predisposes to ureteropelvic junction obstruction, stones, infection and, rarely, Wilms tumour; it is associated with <strong>Turner syndrome</strong> and trisomy 18.</p><h3>Congenital anomalies of the kidney and urinary tract</h3><table><tr><th>Anomaly</th><th>Mechanism</th><th>Key features</th></tr><tr><td>Bilateral renal agenesis</td><td>Ureteric bud fails to form or induce mesenchyme</td><td>No fetal urine: severe oligohydramnios from mid-gestation, <strong>Potter sequence</strong> (pulmonary hypoplasia, flattened face, limb positioning defects such as clubfoot); lethal from pulmonary hypoplasia</td></tr><tr><td>Unilateral agenesis</td><td>Same, one side</td><td>Often incidental; compensatory hypertrophy of the other kidney; associated genital tract anomalies (for example uterine anomalies in girls)</td></tr><tr><td>Multicystic dysplastic kidney</td><td>Abnormal bud–mesenchyme interaction, often with ureteral atresia</td><td>Nonfunctioning kidney of noncommunicating cysts of varying size; histology shows primitive ducts with fibromuscular collars and islands of cartilage; usually unilateral and often involutes; contralateral anomalies (reflux, ureteropelvic junction obstruction) are common</td></tr><tr><td>Ureteropelvic junction obstruction</td><td>Narrow, poorly peristaltic segment or a crossing lower-pole vessel</td><td>Commonest cause of congenital hydronephrosis; dilated pelvis and calyces with a normal ureter; older children may have intermittent flank pain after large fluid loads</td></tr><tr><td>Duplex collecting system</td><td>Early splitting of one ureteric bud (partial) or two buds (complete)</td><td>In complete duplication, the <strong>upper-pole ureter</strong> inserts lower and more medially and tends to obstruct (ectopic insertion, ureterocele); the <strong>lower-pole ureter</strong> inserts higher and more laterally and tends to reflux</td></tr><tr><td>Ectopic ureter</td><td>Bud arises too far from its usual site</td><td>In girls the ureter may open below the sphincter (urethra, vagina): continuous dribbling despite normal voiding. In boys it always opens above the external sphincter (bladder neck, prostatic urethra, seminal vesicle, vas), so it causes infection, not continuous leakage</td></tr><tr><td>Urachal remnants</td><td>Persistence of the allantoic connection</td><td>Patent urachus (urine from the umbilicus), urachal cyst or sinus; urachal adenocarcinoma at the bladder dome in adults</td></tr><tr><td>Bladder exstrophy</td><td>Failure of mesoderm to reinforce the infraumbilical cloacal membrane</td><td>Open bladder plate on the lower abdominal wall, epispadias, widely separated pubic bones; higher later risk of bladder adenocarcinoma</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> Potter sequence is a consequence of oligohydramnios, not a single disease. Any cause of absent fetal urine (bilateral agenesis, bilateral multicystic dysplasia, autosomal recessive polycystic kidney disease, posterior urethral valves) or chronic leakage of fluid produces it, and the cause of death is pulmonary hypoplasia.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Upper pole goes low</em>\": in a complete duplex system the upper-pole ureter ends lower and obstructs; the lower-pole ureter ends higher and refluxes.</p></div>",
+   "figureIds": [
+    "s23c-fig110701-1"
+   ],
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Embryology, Kidney, Bladder, and Ureter",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK547747/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Horseshoe Kidney",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK431105/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Potter Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560858/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Bladder Exstrophy",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK563156/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Patent Urachus",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK557723/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110701-2-1",
+   "exam": "step2ck",
+   "heading": "Congenital anomalies of the kidney and urinary tract: evaluation and management",
+   "html": "<h3>Prenatal hydronephrosis</h3><p>Dilation of the renal pelvis is the commonest anomaly found on prenatal ultrasonography. Most mild dilation resolves. After birth:</p><ul><li><strong>Unilateral</strong> hydronephrosis with a normal bladder: renal and bladder ultrasonography after about <strong>48 hours</strong> of life (and within the first weeks). Earlier scans underestimate dilation because newborns are relatively oliguric in the first 1–2 days.</li><li><strong>Bilateral</strong> hydronephrosis, a thick bladder or a dilated posterior urethra in a boy, or oligohydramnios: suspect posterior urethral valves. Scan in the first day, place a urethral catheter, and obtain voiding cystourethrography.</li><li>Persistent or worsening dilation leads to voiding cystourethrography (reflux, valves) and a <strong>diuretic renal scan</strong> (MAG3 with furosemide), which measures split function and drainage.</li></ul><h3>Ureteropelvic junction obstruction</h3><ul><li>Ultrasonography: dilated pelvis and calyces with a non-dilated ureter.</li><li>Diuretic renography: delayed drainage after furosemide indicates obstruction; split function is measured at the same time.</li><li>Many infants are watched with serial ultrasound. <strong>Pyeloplasty</strong> (open, laparoscopic or robotic dismembered pyeloplasty) is offered for symptoms (pain, infection, stones), reduced split function (often below about 40%), falling function on follow-up or worsening dilation.</li></ul><h3>Multicystic dysplastic kidney</h3><p>Ultrasound shows noncommunicating cysts without normal parenchyma; a renal scan confirms no function. Management is <strong>conservative</strong>: serial ultrasonography to confirm involution and growth of the other kidney, and evaluation of the contralateral kidney, which has reflux or ureteropelvic junction obstruction in a meaningful share of children (voiding cystourethrography if it is dilated or the child has a febrile UTI). Nephrectomy is reserved for rare complications such as a large mass effect, hypertension or a solid component.</p><h3>Bilateral agenesis and lethal oligohydramnios</h3><p>Absent kidneys and bladder with anhydramnios at the mid-trimester anatomy scan predict lethal pulmonary hypoplasia. Counsel the family about the prognosis and the options (continuing with perinatal palliative care or ending the pregnancy), with support and genetic evaluation, because some forms recur.</p><h3>Duplex systems and ectopic ureter</h3><p>A girl who is wet all day and night yet also voids normally has an ectopic ureter until proven otherwise. Renal and bladder ultrasonography usually shows a duplex kidney with a dilated upper pole; MRI urography or cystoscopy locates the opening. Treatment is surgical (upper-pole heminephrectomy if that moiety does not function, or ureteral reimplantation or ureteroureterostomy). A ureterocele may be punctured endoscopically.</p><h3>Horseshoe and pelvic kidney</h3><p>Usually found incidentally and need no treatment. Children with <strong>Turner syndrome</strong> should have renal ultrasonography at diagnosis because of the frequent horseshoe kidney and collecting-system anomalies. Ectopic kidneys complicate trauma, abdominal aortic surgery and transplant surgery planning.</p><h3>Urachal remnants</h3><p>A newborn with persistent clear, urine-like drainage from the umbilicus may have a <strong>patent urachus</strong>; a fluid creatinine much higher than serum supports it. Ultrasonography of the umbilical region and bladder is the first test, with voiding cystourethrography to exclude bladder outlet obstruction, which can keep the urachus open. Symptomatic remnants are excised to prevent infection and later malignancy.</p><h3>Bladder exstrophy</h3><p>Diagnosed at birth (or prenatally by a non-visualised bladder with a low umbilical cord insertion). Cover the bladder plate with plastic wrap and refer for staged reconstruction; long-term issues are continence, fertility, upper-tract protection and cancer surveillance.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a newborn ultrasound on the first day after mild unilateral prenatal hydronephrosis can falsely reassure. Wait about 48 hours unless bilateral disease or a male infant with suspected valves needs earlier assessment.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Ureteropelvic Junction Obstruction",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560740/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Posterior Urethral Valves",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560881/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Potter Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560858/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Patent Urachus",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK557723/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Kidney Diseases",
+     "url": "https://medlineplus.gov/kidneydiseases.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110701-1",
+   "caption": "Figure. Kidney development: the ureteric bud forms the collecting system and the metanephric mesenchyme forms the nephron; a horseshoe kidney stops ascending under the inferior mesenteric artery.",
+   "file": "figures/s23c-fig110701-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110701-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Intermittent flank pain in a child",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110701-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 14-year-old girl with short stature, a webbed neck and primary amenorrhea has a karyotype of 45,X. Renal ultrasonography shows the lower poles of both kidneys joined by a band of tissue anterior to the aorta, lying lower than usual. Which of the following structures most likely prevented normal ascent of these kidneys?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Celiac trunk"
+    },
+    {
+     "label": "B",
+     "html": "Inferior mesenteric artery"
+    },
+    {
+     "label": "C",
+     "html": "Median sacral artery"
+    },
+    {
+     "label": "D",
+     "html": "Superior mesenteric artery"
+    },
+    {
+     "label": "E",
+     "html": "Testicular or ovarian artery"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>In a <strong>horseshoe kidney</strong>, the fused lower poles form an isthmus that catches under the <strong>inferior mesenteric artery</strong> as the kidneys ascend from the pelvis, so the kidneys sit low in the abdomen. It is common in Turner syndrome.</p><p><strong>Takeaway:</strong> horseshoe kidneys are trapped under the inferior mesenteric artery; think Turner syndrome.</p>",
+   "whyNot": {
+    "A": "The celiac trunk arises far above the level reached by the kidneys and does not block their ascent.",
+    "C": "The median sacral artery arises at the aortic bifurcation, below the level of the isthmus.",
+    "D": "The superior mesenteric artery lies above the inferior mesenteric artery; horseshoe kidneys stop below it.",
+    "E": "The gonadal arteries descend lateral to the kidneys and do not form a barrier across the midline."
+   },
+   "objective": "Explain the low position of a horseshoe kidney and its association with Turner syndrome.",
+   "areas": [
+    "usmle2026.11.07.01",
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "horseshoe kidney",
+    "Turner syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A male newborn delivered at 34 weeks dies 2 hours after birth despite intubation and ventilation. Prenatal ultrasonography at 20 weeks showed anhydramnios, and neither kidney nor the bladder could be seen. At birth he had widely spaced eyes, a flattened nose, low-set ears and bilateral clubfoot. Which of the following is the most likely direct cause of death?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Congenital diaphragmatic hernia"
+    },
+    {
+     "label": "B",
+     "html": "Hyperkalemia from absent renal function"
+    },
+    {
+     "label": "C",
+     "html": "Neonatal sepsis"
+    },
+    {
+     "label": "D",
+     "html": "Pulmonary hypoplasia"
+    },
+    {
+     "label": "E",
+     "html": "Uremic encephalopathy"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p><strong>Bilateral renal agenesis</strong> means no fetal urine and therefore almost no amniotic fluid from the second trimester. The resulting <strong>Potter sequence</strong> includes facial compression, limb deformities and, most important, <strong>pulmonary hypoplasia</strong>, because the lungs need amniotic fluid to develop. Respiratory failure, not renal failure, causes death within hours.</p><p><strong>Takeaway:</strong> oligohydramnios from absent fetal urine causes Potter sequence; death is from pulmonary hypoplasia.</p>",
+   "whyNot": {
+    "A": "Nothing suggests a diaphragmatic defect; the findings are those of oligohydramnios.",
+    "B": "Potassium rises over days without kidneys; the placenta cleared solutes before birth, so it cannot explain death at 2 hours.",
+    "C": "Sepsis does not explain the prenatal findings or death within 2 hours of birth.",
+    "E": "Uremia takes days to develop after birth because the placenta did the kidney's work in utero."
+   },
+   "objective": "Identify pulmonary hypoplasia as the lethal consequence of bilateral renal agenesis.",
+   "areas": [
+    "usmle2026.11.07.01",
+    "usmle2026.12.05.02"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_prognosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Potter sequence"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>In a study of human kidney development, cells from the ureteric bud are labelled at week 5 and traced into the mature kidney. Which of the following structures will contain labelled cells?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bowman capsule"
+    },
+    {
+     "label": "B",
+     "html": "Collecting duct"
+    },
+    {
+     "label": "C",
+     "html": "Distal convoluted tubule"
+    },
+    {
+     "label": "D",
+     "html": "Glomerular capillary endothelium"
+    },
+    {
+     "label": "E",
+     "html": "Thick ascending limb of the loop of Henle"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The <strong>ureteric bud</strong> branches to form the ureter, renal pelvis, calyces and <strong>collecting ducts</strong>. The nephron itself, from Bowman capsule through the distal convoluted tubule, comes from the <strong>metanephric mesenchyme</strong>; glomerular capillaries come from ingrowing endothelial precursors.</p><p><strong>Takeaway:</strong> ureteric bud gives the collecting system (collecting ducts to ureter); metanephric mesenchyme gives the nephron up to the distal tubule.</p>",
+   "whyNot": {
+    "A": "Bowman capsule forms from metanephric mesenchyme.",
+    "C": "The distal convoluted tubule is the last nephron segment derived from metanephric mesenchyme.",
+    "D": "Glomerular endothelium comes from angioblasts that migrate into the developing glomerulus, not from the bud.",
+    "E": "The loop of Henle, including the thick ascending limb, is derived from metanephric mesenchyme."
+   },
+   "objective": "Distinguish ureteric bud from metanephric mesenchyme derivatives.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal embryology"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>In mouse embryos lacking a receptor tyrosine kinase expressed on the epithelium of the ureteric bud, the bud fails to grow into the metanephric mesenchyme and both kidneys are absent. Which of the following signalling molecules, secreted by the metanephric mesenchyme, normally activates this receptor?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Anti-Müllerian hormone"
+    },
+    {
+     "label": "B",
+     "html": "Fibroblast growth factor 8 from the apical ectodermal ridge"
+    },
+    {
+     "label": "C",
+     "html": "Glial cell–derived neurotrophic factor"
+    },
+    {
+     "label": "D",
+     "html": "Sonic hedgehog from the notochord"
+    },
+    {
+     "label": "E",
+     "html": "WNT7a from the dorsal limb ectoderm"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Metanephric mesenchyme secretes <strong>glial cell–derived neurotrophic factor (GDNF)</strong>, which binds the <strong>RET</strong> receptor tyrosine kinase on the ureteric bud and drives its outgrowth and branching. Loss of this signalling causes renal agenesis or hypoplasia, and variants in the pathway are found in some children with congenital kidney anomalies. RET is also the gene mutated in Hirschsprung disease and MEN2.</p><p><strong>Takeaway:</strong> GDNF from the metanephric mesenchyme acting on RET in the ureteric bud starts kidney development.</p>",
+   "whyNot": {
+    "A": "Anti-Müllerian hormone from Sertoli cells causes regression of the paramesonephric ducts.",
+    "B": "FGF8 from the apical ectodermal ridge drives proximal-to-distal limb outgrowth.",
+    "D": "Sonic hedgehog from the notochord and floor plate patterns the ventral neural tube.",
+    "E": "WNT7a sets the dorsal-ventral axis of the limb."
+   },
+   "objective": "Name the GDNF–RET signal that induces ureteric bud outgrowth.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal embryology",
+    "RET"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 16-year-old boy has had several episodes of dull left flank pain and nausea, each beginning about an hour after he drinks large volumes of fluid at parties. Between episodes he is well. Ultrasonography during an episode shows marked dilation of the left renal pelvis and calyces, with a normal-calibre left ureter and normal bladder. Which of the following is the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Left ureterovesical junction obstruction"
+    },
+    {
+     "label": "B",
+     "html": "Left vesicoureteral reflux"
+    },
+    {
+     "label": "C",
+     "html": "Obstruction at the left ureteropelvic junction"
+    },
+    {
+     "label": "D",
+     "html": "Posterior urethral valves"
+    },
+    {
+     "label": "E",
+     "html": "Retroperitoneal fibrosis"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Dilation of the pelvis and calyces with a <strong>normal ureter</strong> places the obstruction at the <strong>ureteropelvic junction</strong>. It may come from an intrinsic aperistaltic segment or a crossing lower-pole vessel. A large fluid load overwhelms the narrowed outlet and stretches the pelvis, causing intermittent pain.</p><p><strong>Takeaway:</strong> hydronephrosis with a normal-calibre ureter means ureteropelvic junction obstruction; pain after fluid loads is typical in older children.</p>",
+   "whyNot": {
+    "A": "Obstruction at the ureterovesical junction would dilate the ureter as well (megaureter).",
+    "B": "Reflux dilates the ureter and pelvis together and does not cause pain triggered by drinking.",
+    "D": "Valves affect boys from infancy, distend the bladder and cause bilateral hydronephrosis.",
+    "E": "Retroperitoneal fibrosis affects older adults and narrows the mid ureters, usually on both sides."
+   },
+   "objective": "Localise congenital obstruction to the ureteropelvic junction.",
+   "areas": [
+    "usmle2026.11.07.01",
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ureteropelvic junction obstruction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 6-year-old girl has been damp at all times since toilet training, although she also voids normally several times a day. Her parents have tried timed voiding without change. Examination shows constant moisture of the perineum. Imaging shows a complete duplication of the right collecting system with a dilated upper-pole moiety. Which of the following best describes the most likely anatomy?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Lower-pole ureter inserting into the vagina"
+    },
+    {
+     "label": "B",
+     "html": "Lower-pole ureter inserting laterally in the bladder with reflux"
+    },
+    {
+     "label": "C",
+     "html": "Upper-pole ureter inserting into the bladder at the trigone"
+    },
+    {
+     "label": "D",
+     "html": "Upper-pole ureter inserting into the urethra below the sphincter"
+    },
+    {
+     "label": "E",
+     "html": "Both ureters joining before entering the bladder"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>In a complete duplex system, the <strong>upper-pole ureter</strong> enters lower and more medially than normal and can open <strong>outside the bladder</strong>. In girls, an opening into the urethra below the sphincter or into the vagina leaks continuously while the bladder, filled by the lower pole and the other kidney, still fills and empties normally.</p><p><strong>Takeaway:</strong> a girl with continuous wetness despite normal voiding has an ectopic upper-pole ureter opening below the sphincter.</p>",
+   "whyNot": {
+    "A": "The lower-pole ureter inserts higher and more laterally, on or above the trigone, and does not open ectopically.",
+    "B": "Lateral insertion with reflux is typical of the lower pole, but reflux causes infection, not continuous dribbling.",
+    "C": "A ureter opening normally into the bladder above the sphincter would not cause constant leakage.",
+    "E": "Joining of the ureters is a partial (incomplete) duplication with a single opening in the normal position."
+   },
+   "objective": "Apply the Weigert-Meyer pattern to explain continuous incontinence in a girl with a duplex system.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "duplex kidney",
+    "ectopic ureter"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A routine prenatal ultrasound at 22 weeks shows a normal amount of amniotic fluid, a normal left kidney, and a right flank mass made up of many round, noncommunicating cysts of varying size with no visible renal parenchyma. After birth, a nuclear scan shows no function on the right. If the right kidney were examined microscopically, which of the following findings would be most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cysts lined by flattened epithelium in a kidney of normal architecture"
+    },
+    {
+     "label": "B",
+     "html": "Dilated collecting ducts arranged radially at right angles to the capsule"
+    },
+    {
+     "label": "C",
+     "html": "Primitive tubules surrounded by fibromuscular collars, with islands of cartilage"
+    },
+    {
+     "label": "D",
+     "html": "Small blue cells forming tubules and blastema with stroma"
+    },
+    {
+     "label": "E",
+     "html": "Sheets of clear cells in nests separated by delicate vessels"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is <strong>multicystic dysplastic kidney</strong>, which results from abnormal interaction between the ureteric bud and the metanephric mesenchyme, often with an atretic ureter. Dysplasia means abnormal tissue differentiation: <strong>primitive ducts with fibromuscular collars and islands of cartilage</strong> among cysts. A normal opposite kidney explains the normal amniotic fluid.</p><p><strong>Takeaway:</strong> dysplasia shows primitive ducts and cartilage; unilateral multicystic dysplastic kidney leaves amniotic fluid normal.</p>",
+   "whyNot": {
+    "A": "Simple cysts in an otherwise normal kidney are acquired simple renal cysts of adults.",
+    "B": "Radially arranged dilated collecting ducts are the pattern of autosomal recessive polycystic kidney disease, which is bilateral and causes oligohydramnios.",
+    "D": "Blastema, tubules and stroma make up nephroblastoma (Wilms tumour), a solid tumour of childhood.",
+    "E": "Nests of clear cells describe clear cell renal cell carcinoma in adults."
+   },
+   "objective": "Recognise the histology and course of multicystic dysplastic kidney.",
+   "areas": [
+    "usmle2026.11.07.01",
+    "usmle2026.11.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "multicystic dysplastic kidney"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 6-week-old boy has persistent clear, wet drainage from the umbilicus since the cord separated. The drainage increases when he cries. The fluid's creatinine concentration is many times that of his serum. Persistence of which of the following embryonic structures most likely explains this finding?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Allantois"
+    },
+    {
+     "label": "B",
+     "html": "Omphalomesenteric (vitelline) duct"
+    },
+    {
+     "label": "C",
+     "html": "Paramesonephric duct"
+    },
+    {
+     "label": "D",
+     "html": "Umbilical vein"
+    },
+    {
+     "label": "E",
+     "html": "Urorectal septum"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The <strong>allantois</strong> connects the dome of the bladder to the umbilicus as the <strong>urachus</strong>, which normally closes into the median umbilical ligament. A <strong>patent urachus</strong> drains urine (high creatinine) from the umbilicus, more with straining or crying. Partial persistence gives a urachal cyst or sinus, and in adults urachal remnants can give adenocarcinoma at the bladder dome.</p><p><strong>Takeaway:</strong> urine draining from the umbilicus means a patent urachus, a remnant of the allantois.</p>",
+   "whyNot": {
+    "B": "A persistent vitelline duct connects the ileum to the umbilicus and drains meconium or stool, not urine.",
+    "C": "The paramesonephric ducts form the uterine tubes, uterus and upper vagina; they have no connection to the umbilicus.",
+    "D": "The umbilical vein becomes the ligamentum teres and carries blood, not urine.",
+    "E": "Failure of the urorectal septum causes anorectal malformations and fistulas, not umbilical drainage."
+   },
+   "objective": "Identify a patent urachus as a persistent allantoic remnant.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "urachus"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A newborn girl has a red, moist plate of bladder mucosa exposed on the lower anterior abdominal wall below a low-set umbilicus. The clitoris is bifid, and radiography shows wide separation of the pubic bones. Failure of which of the following developmental processes most directly caused this anomaly?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Canalisation of the ureteropelvic junction"
+    },
+    {
+     "label": "B",
+     "html": "Closure of the caudal neuropore"
+    },
+    {
+     "label": "C",
+     "html": "Fusion of the urethral folds"
+    },
+    {
+     "label": "D",
+     "html": "Mesodermal migration into the infraumbilical body wall"
+    },
+    {
+     "label": "E",
+     "html": "Septation of the cloaca by the urorectal septum"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p><strong>Bladder exstrophy</strong> results when mesoderm fails to migrate between the ectoderm and endoderm of the lower abdominal wall over the cloacal membrane. The unsupported membrane ruptures and exposes the bladder plate, with epispadias and diastasis of the pubic symphysis.</p><p><strong>Takeaway:</strong> bladder exstrophy is a failure of infraumbilical mesoderm to reinforce the cloacal membrane, with epispadias and pubic diastasis.</p>",
+   "whyNot": {
+    "A": "Failed canalisation at the ureteropelvic junction causes hydronephrosis, not an open abdominal wall.",
+    "B": "Failed caudal neuropore closure causes spina bifida.",
+    "C": "Failed fusion of the urethral folds in males causes hypospadias on the ventral penis.",
+    "E": "Failed cloacal septation causes anorectal malformations and persistent cloaca."
+   },
+   "objective": "Explain the embryologic basis of bladder exstrophy.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "bladder exstrophy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A boy is born at 39 weeks' gestation after an uncomplicated pregnancy. Ultrasonography at 32 weeks showed mild dilation of the left renal pelvis (anteroposterior diameter 9 mm), a normal right kidney, a normal bladder and normal amniotic fluid. He is now 6 hours old, feeding well and voiding with a good stream. Examination is normal. Which of the following is the most appropriate plan for imaging?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT urography before discharge"
+    },
+    {
+     "label": "B",
+     "html": "No imaging unless he develops a UTI"
+    },
+    {
+     "label": "C",
+     "html": "Renal and bladder ultrasonography today"
+    },
+    {
+     "label": "D",
+     "html": "Renal and bladder ultrasonography after 48 hours of life"
+    },
+    {
+     "label": "E",
+     "html": "Voiding cystourethrography today"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Mild <strong>unilateral</strong> prenatal pelvic dilation with a normal bladder and normal amniotic fluid is followed up with <strong>postnatal ultrasonography after about 48 hours</strong> (usually within the first weeks). In the first 1–2 days newborns are relatively dehydrated and oliguric, so an early scan can underestimate dilation.</p><p><strong>Takeaway:</strong> for mild unilateral prenatal hydronephrosis, scan after 48 hours of life; scan early only for bilateral disease or suspected valves.</p>",
+   "whyNot": {
+    "A": "CT exposes a newborn to radiation and contrast and adds nothing here.",
+    "B": "Prenatal dilation needs at least one postnatal ultrasound to see whether it persists.",
+    "C": "A first-day scan can miss dilation because of physiologic neonatal oliguria.",
+    "E": "Voiding cystourethrography is invasive and is reserved for persistent dilation, ureteral dilation or suspected valves."
+   },
+   "objective": "Time the postnatal ultrasound after mild unilateral prenatal hydronephrosis.",
+   "areas": [
+    "usmle2026.11.07.01",
+    "usmle2026.12.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "prenatal hydronephrosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old woman, gravida 2, para 1, has a mid-trimester anatomy ultrasound at 20 weeks. There is no measurable amniotic fluid. Neither kidney nor the fetal bladder is visible on repeated scanning, including with colour Doppler of the renal arteries. Membranes are intact. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Serial amnioinfusion every week until delivery"
+    },
+    {
+     "label": "B",
+     "html": "Counselling about the lethal prognosis and her options"
+    },
+    {
+     "label": "C",
+     "html": "Fetal vesicoamniotic shunt placement this week"
+    },
+    {
+     "label": "D",
+     "html": "Repeat ultrasonography at 32 weeks before counselling"
+    },
+    {
+     "label": "E",
+     "html": "Planned cesarean delivery at 34 weeks with neonatal dialysis"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Absent kidneys, absent bladder and anhydramnios at 20 weeks indicate <strong>bilateral renal agenesis</strong>. Lung development cannot proceed without amniotic fluid, so the outcome is lethal pulmonary hypoplasia. The appropriate step is clear, compassionate <strong>counselling about the prognosis</strong> and her options (continuing with perinatal palliative care, or ending the pregnancy), with genetic evaluation and support.</p><p><strong>Takeaway:</strong> bilateral renal agenesis is lethal; counsel about prognosis and options rather than offering interventions that cannot change it.</p>",
+   "whyNot": {
+    "A": "Serial amnioinfusion remains experimental in bilateral renal agenesis and is not a standard option to offer as routine treatment.",
+    "C": "Shunting treats lower urinary tract obstruction in a fetus with kidneys and a full bladder; there is no bladder to drain.",
+    "D": "The diagnosis is already clear, and delaying counselling removes choices from the patient.",
+    "E": "Early delivery cannot overcome pulmonary hypoplasia, and dialysis does not address the cause of death."
+   },
+   "objective": "Counsel about the lethal prognosis of bilateral renal agenesis found prenatally.",
+   "areas": [
+    "usmle2026.11.07.01",
+    "usmle2026.12.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "communication",
+    "pc_prognosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal agenesis",
+    "Potter sequence"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 3-week-old girl has a nontender left flank mass found at a routine visit. She is feeding and growing well. Blood pressure is normal. Ultrasonography shows a left kidney replaced by many noncommunicating cysts of different sizes with no normal parenchyma, and a normal right kidney without dilation. A nuclear renal scan shows no function on the left. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Left nephrectomy"
+    },
+    {
+     "label": "B",
+     "html": "Percutaneous aspiration of the largest cysts"
+    },
+    {
+     "label": "C",
+     "html": "Pyeloplasty of the left kidney"
+    },
+    {
+     "label": "D",
+     "html": "Serial renal ultrasonography"
+    },
+    {
+     "label": "E",
+     "html": "Systemic chemotherapy after biopsy"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>This is a <strong>multicystic dysplastic kidney</strong>, a nonfunctioning dysplastic kidney that usually shrinks over time. Management is <strong>conservative with serial ultrasonography</strong> to confirm involution and compensatory growth of the other kidney, plus blood pressure checks. Nephrectomy is reserved for complications such as a growing mass, hypertension or a solid component.</p><p><strong>Takeaway:</strong> multicystic dysplastic kidney is managed with serial ultrasound; surgery is for complications only.</p>",
+   "whyNot": {
+    "A": "Routine nephrectomy carries surgical risk without benefit in an uncomplicated case.",
+    "B": "Aspirating cysts does not change the course and the cysts reaccumulate.",
+    "C": "Pyeloplasty relieves ureteropelvic junction obstruction in a kidney that works; this kidney has no function.",
+    "E": "Nothing suggests a malignant tumour; the appearance is diagnostic of dysplasia."
+   },
+   "objective": "Manage an uncomplicated multicystic dysplastic kidney with serial ultrasonography.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "multicystic dysplastic kidney"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 5-year-old girl has been wet day and night for as long as her parents remember, although she also voids normally every 3–4 hours. She has had no UTIs. Examination of the abdomen, back and lower limb neurologic function is normal, and her underwear is damp. Urinalysis is normal. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bed-wetting alarm trial for 3 months"
+    },
+    {
+     "label": "B",
+     "html": "Renal and bladder ultrasonography"
+    },
+    {
+     "label": "C",
+     "html": "Spinal MRI"
+    },
+    {
+     "label": "D",
+     "html": "Urodynamic studies"
+    },
+    {
+     "label": "E",
+     "html": "Voiding diary and reassurance only"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Continuous wetness with a <strong>normal voiding pattern</strong> in a girl suggests an <strong>ectopic ureter</strong> opening below the sphincter, usually from the upper pole of a duplex kidney. The first test is <strong>renal and bladder ultrasonography</strong>, which typically shows the duplex kidney with a dilated upper pole; MRI urography or cystoscopy then locates the opening.</p><p><strong>Takeaway:</strong> a girl who is always damp but voids normally needs renal and bladder ultrasonography to look for a duplex kidney with an ectopic ureter.</p>",
+   "whyNot": {
+    "A": "An alarm treats nocturnal enuresis; it cannot stop leakage that bypasses the bladder.",
+    "C": "A normal back and neurologic examination make an occult spinal lesion unlikely; anatomy should be imaged first.",
+    "D": "Urodynamics evaluate bladder function, which is normal; they do not show an ectopic ureter.",
+    "E": "Continuous day-and-night wetness is not normal and must be investigated."
+   },
+   "objective": "Investigate continuous incontinence in a girl with renal and bladder ultrasonography.",
+   "areas": [
+    "usmle2026.11.07.01",
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ectopic ureter",
+    "duplex kidney"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 7-year-old girl was recently diagnosed with Turner syndrome (45,X) after evaluation for short stature. Echocardiography shows a bicuspid aortic valve without coarctation. She has no urinary symptoms, and urinalysis and serum creatinine are normal. Which of the following is the most appropriate additional evaluation at this time?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT angiography of the renal arteries"
+    },
+    {
+     "label": "B",
+     "html": "Dimercaptosuccinic acid (DMSA) renal scan"
+    },
+    {
+     "label": "C",
+     "html": "No renal evaluation unless symptoms develop"
+    },
+    {
+     "label": "D",
+     "html": "Renal ultrasonography"
+    },
+    {
+     "label": "E",
+     "html": "Voiding cystourethrography"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>About a third of girls with Turner syndrome have a structural kidney anomaly, most often a <strong>horseshoe kidney</strong> or a duplicated or malrotated collecting system. <strong>Renal ultrasonography at diagnosis</strong> is recommended for every patient, even without symptoms, because these anomalies predispose to obstruction, infection and hypertension.</p><p><strong>Takeaway:</strong> screen every girl with Turner syndrome with renal ultrasonography at diagnosis.</p>",
+   "whyNot": {
+    "A": "CT angiography uses radiation and contrast and is not a screening test for structural anomalies.",
+    "B": "A DMSA scan looks for cortical scarring after infection; ultrasound is the screening test.",
+    "C": "Renal anomalies are common and often silent, so screening is advised at diagnosis.",
+    "E": "Voiding cystourethrography is for suspected reflux after a febrile UTI or abnormal ultrasound."
+   },
+   "objective": "Screen for renal anomalies in Turner syndrome with ultrasonography.",
+   "areas": [
+    "usmle2026.11.07.01",
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Turner syndrome",
+    "horseshoe kidney"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 2-month-old boy has moist umbilical drainage since his cord fell off at 10 days. The drainage is clear, more noticeable with crying, and its creatinine level is far above his serum creatinine. He is afebrile and the umbilicus is not red. He voids with a strong stream. Which of the following is the most appropriate next step in evaluation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Application of silver nitrate to the umbilicus"
+    },
+    {
+     "label": "B",
+     "html": "CT of the abdomen with oral contrast"
+    },
+    {
+     "label": "C",
+     "html": "Fistulogram through the umbilicus with barium"
+    },
+    {
+     "label": "D",
+     "html": "Observation until 1 year of age"
+    },
+    {
+     "label": "E",
+     "html": "Ultrasonography of the umbilical region and bladder"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Umbilical drainage with a high creatinine indicates a <strong>patent urachus</strong>. <strong>Ultrasonography</strong> is the first test to show the tract between the bladder dome and the umbilicus. Voiding cystourethrography is often added to exclude bladder outlet obstruction, which can keep the urachus open. Symptomatic remnants are excised.</p><p><strong>Takeaway:</strong> suspected patent urachus: ultrasonography first, then surgical excision of the remnant.</p>",
+   "whyNot": {
+    "A": "Silver nitrate treats an umbilical granuloma, which drains small amounts of serous fluid, not urine.",
+    "B": "CT exposes an infant to radiation and is not the first test for a superficial tract.",
+    "C": "A barium study would be used to look for a vitelline duct remnant draining bowel content, not urine.",
+    "D": "A patent urachus does not close on its own and risks infection, so it should be evaluated now."
+   },
+   "objective": "Evaluate a suspected patent urachus with ultrasonography.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "urachus"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110701-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 9-year-old boy has had three episodes of left flank pain with vomiting over 6 months, each lasting several hours. Between episodes he is well. Ultrasonography shows marked dilation of the left renal pelvis and calyces with a normal-calibre left ureter and normal bladder; the right kidney is normal. Serum creatinine is 0.5 mg/dL. Which of the following is the most appropriate next step to assess obstruction and the function of each kidney?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT urography"
+    },
+    {
+     "label": "B",
+     "html": "Diuretic renal scintigraphy with MAG3 and furosemide"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous pyelography"
+    },
+    {
+     "label": "D",
+     "html": "Retrograde pyelography"
+    },
+    {
+     "label": "E",
+     "html": "Voiding cystourethrography"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Symptomatic hydronephrosis with a normal ureter suggests <strong>ureteropelvic junction obstruction</strong>. <strong>Diuretic renography</strong> (technetium-99m MAG3 with furosemide) shows whether tracer drains promptly after the diuretic, which separates true obstruction from a baggy but unobstructed pelvis, and it measures the split function of each kidney.</p><p><strong>Takeaway:</strong> for suspected ureteropelvic junction obstruction, diuretic renography shows drainage and split function.</p>",
+   "whyNot": {
+    "A": "CT urography gives anatomy but not reliable split function or drainage curves, and it uses more radiation.",
+    "C": "Intravenous pyelography is outdated and gives neither split function nor quantified drainage.",
+    "D": "Retrograde pyelography is invasive and is used during surgery, not as the first functional test.",
+    "E": "Voiding cystourethrography looks for reflux; the normal ureter makes reflux unlikely."
+   },
+   "objective": "Assess suspected ureteropelvic junction obstruction with diuretic renography.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ureteropelvic junction obstruction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110701-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q110701-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>Diuretic renography in the boy shows that the left kidney contributes 32% of total function, and tracer stays in the left renal pelvis with little drainage 30 minutes after furosemide. The right kidney drains promptly. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continuous antibiotic prophylaxis and repeat scan in 1 year"
+    },
+    {
+     "label": "B",
+     "html": "Extracorporeal shock wave lithotripsy"
+    },
+    {
+     "label": "C",
+     "html": "Left dismembered pyeloplasty"
+    },
+    {
+     "label": "D",
+     "html": "Left nephrectomy"
+    },
+    {
+     "label": "E",
+     "html": "Long-term indwelling left ureteral stent"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Recurrent pain, reduced split function (below about 40%) and obstructed drainage all favour surgery. <strong>Dismembered pyeloplasty</strong> (open, laparoscopic or robotic) removes the narrowed segment, reattaches the ureter to the pelvis and repositions it in front of any crossing vessel, with high success.</p><p><strong>Takeaway:</strong> symptomatic ureteropelvic junction obstruction with reduced split function needs pyeloplasty.</p>",
+   "whyNot": {
+    "A": "Watching is reasonable for an asymptomatic child with preserved function, not for recurrent pain and reduced function.",
+    "B": "Lithotripsy breaks stones; there is no stone.",
+    "D": "A kidney with 32% function is well worth saving; nephrectomy is for a kidney with negligible function.",
+    "E": "Long-term stents are a temporary bridge with infection and encrustation risks, not definitive treatment."
+   },
+   "objective": "Choose pyeloplasty for symptomatic ureteropelvic junction obstruction with reduced split function.",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ureteropelvic junction obstruction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110701-1",
+   "setOrder": 2
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110701-01",
+   "frontHtml": "Three embryonic kidneys and the fate of each?",
+   "backHtml": "Pronephros regresses; mesonephros is interim and its duct becomes male ducts and gives the ureteric bud; metanephros is permanent (from week 5).",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-02",
+   "frontHtml": "Ureteric bud derivatives?",
+   "backHtml": "Ureter, renal pelvis, major and minor calyces, collecting ducts.",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-03",
+   "frontHtml": "Which parts of the kidney come from the metanephric mesenchyme (metanephric blastema)?",
+   "backHtml": "Everything from the glomerular capsule through the distal convoluted tubule, i.e. the nephron itself; the collecting system comes from the ureteric bud.",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-04",
+   "frontHtml": "Signal that drives ureteric bud outgrowth?",
+   "backHtml": "GDNF from the metanephric mesenchyme acting on RET on the bud.",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-05",
+   "frontHtml": "What traps a horseshoe kidney, and which syndrome is associated?",
+   "backHtml": "The inferior mesenteric artery; Turner syndrome (also trisomy 18).",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-06",
+   "frontHtml": "Cause of death in Potter sequence?",
+   "backHtml": "Pulmonary hypoplasia from oligohydramnios.",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-07",
+   "frontHtml": "Commonest site of congenital urinary obstruction, and why?",
+   "backHtml": "Ureteropelvic junction, the last part of the ureter to canalise (or a crossing vessel).",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-08",
+   "frontHtml": "Complete duplex system: which ureter obstructs and which refluxes?",
+   "backHtml": "Upper-pole ureter inserts low and medial and obstructs (ectopic, ureterocele); lower-pole ureter inserts high and lateral and refluxes.",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-09",
+   "frontHtml": "Histology of multicystic dysplastic kidney?",
+   "backHtml": "Noncommunicating cysts with primitive ducts in fibromuscular collars and islands of cartilage.",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-10",
+   "frontHtml": "Urine from the umbilicus: which remnant, and what cancer later?",
+   "backHtml": "Patent urachus (allantois); urachal adenocarcinoma at the bladder dome.",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-11",
+   "frontHtml": "Bladder exstrophy: defect and associated findings?",
+   "backHtml": "Failed infraumbilical mesoderm over the cloacal membrane; epispadias and pubic diastasis.",
+   "sectionId": "s23c-s110701-1-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-12",
+   "frontHtml": "Mild unilateral prenatal hydronephrosis: when is the newborn scan?",
+   "backHtml": "After about 48 hours of life; early only for bilateral disease or suspected valves.",
+   "sectionId": "s23c-s110701-2-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-13",
+   "frontHtml": "Management of uncomplicated multicystic dysplastic kidney?",
+   "backHtml": "Serial ultrasonography (involution, contralateral growth); check the other kidney; surgery only for complications.",
+   "sectionId": "s23c-s110701-2-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-14",
+   "frontHtml": "Test of drainage and split function in suspected ureteropelvic junction obstruction?",
+   "backHtml": "Diuretic renography (MAG3 with furosemide).",
+   "sectionId": "s23c-s110701-2-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-15",
+   "frontHtml": "Indications for pyeloplasty?",
+   "backHtml": "Symptoms, split function below about 40%, falling function or worsening dilation.",
+   "sectionId": "s23c-s110701-2-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-16",
+   "frontHtml": "Girl always damp but voids normally: first test?",
+   "backHtml": "Renal and bladder ultrasonography (duplex kidney with ectopic upper-pole ureter).",
+   "sectionId": "s23c-s110701-2-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110701-17",
+   "frontHtml": "Renal screening in Turner syndrome?",
+   "backHtml": "Renal ultrasonography at diagnosis for every patient.",
+   "sectionId": "s23c-s110701-2-1",
+   "areas": [
+    "usmle2026.11.07.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

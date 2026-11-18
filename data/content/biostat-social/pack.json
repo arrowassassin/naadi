@@ -1,0 +1,32 @@
+{
+  "id": "biostat-social",
+  "title": "Biostatistics, epidemiology and social sciences",
+  "owner": "seg23-g",
+  "idPrefix": "s23g",
+  "outlineVersion": "USMLE-2026",
+  "systems": [
+    "17",
+    "18"
+  ],
+  "retire": [],
+  "retag": {
+    "ch03-q30": [
+      "usmle2026.17.01.01"
+    ],
+    "ch03-q41": [
+      "usmle2026.18.03.03"
+    ],
+    "ch03-q44": [
+      "usmle2026.18.03.03"
+    ],
+    "ch12-q35": [
+      "usmle2026.18.03.03"
+    ],
+    "mock1-q52": [
+      "usmle2026.18.03.03"
+    ],
+    "mock2-q22": [
+      "usmle2026.18.03.03"
+    ]
+  }
+}

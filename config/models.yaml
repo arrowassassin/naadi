@@ -1,0 +1,158 @@
+# Naadi — FREE model routing via OpenRouter (https://openrouter.ai/api/v1)
+# Catalog read from /api/v1/models on 2026-11-15 (467 models, ~15 ":free" LLMs).
+# Rebalanced 2026-11-16 from live endpoint uptime (OpenRouter endpoints API, last 1d): nemotron-3-ultra 95%,
+# lfm-3-1.7b 69%; gemma-4-31b, ernie-5.5-flash, inkling-2-small 100%; nemotron-3.5-super-vl/lightning 99.8%.
+# Fallbacks spread across providers. Final role choice must pass tools/model_eval (HANDOFF §6.1).
+# Free models change often: run tools/check_models.py at startup/CI and keep IDs ONLY here.
+#
+# Free-tier limits (OpenRouter FAQ, Nov 2026):
+#   • 20 requests/minute on :free models
+#   • 50 requests/day account-wide if lifetime credit purchases < $10
+#   • 1,000 requests/day once you have EVER bought ≥ $10 of credits (one-time; the credits are not spent by :free calls)
+#   → Strongly recommended: a one-time $10 top-up. Falling back between free models does NOT bypass the daily cap.
+# Privacy: free endpoints are mostly single-provider (NVIDIA, Google AI Studio). NVIDIA free endpoints LOG prompts.
+#   Never send PII or vault documents to free models; strip the student's name/email/IDs before every call.
+#   Do NOT set zdr / data_collection:deny on free chains — no eligible provider would remain.
+
+budget:
+  daily_request_cap: 1000          # set 50 until the one-time $10 top-up is made
+  reserve_for_chat: 0.7            # 70% of the daily cap for the tutor; jobs (authoring, OCR) use the rest
+  max_llm_calls_per_turn: 4        # tutor tool loop hard stop
+  rpm: 18                          # stay under 20 rpm with a token bucket
+  on_cap_reached: degrade          # answer from course retrieval only + "AI quota resets at 00:00 UTC"
+  pdf_engine: cloudflare-ai        # ALWAYS set; the default (mistral-ocr) is paid ($2/1k pages)
+  only_free_ids_in_chains: true    # a paid model in a fallback chain is billed at the paid price
+  rate_wait_s: 3                   # when every provider's rpm bucket is empty, wait at most this long for a token
+
+# Providers (2026-11-16 live tests through LangGraph: streaming, tool-calling agent, structured output, image input).
+# NVIDIA API catalog lists 143 chat models but only 4 answer (others 410 retired / 404): its own Nemotrons + Meta muse-glimmer.
+# Nemotron therefore goes DIRECT via NVIDIA (owner's higher limits); other families via OpenRouter :free.
+# Both free tiers may log prompts: PII is stripped before every call and vault content never reaches either.
+providers:
+  nvidia:
+    sdk: langchain-nvidia-ai-endpoints==1.5.0   # ChatNVIDIA
+    key_env: NVIDIA_API_KEY
+    rpm: 35                       # token bucket per provider (the account allows 40/min)
+    daily_cap: 2000               # our own guard; counted from llm_usage (provider = nvidia), reset 00:00 UTC
+    timeout_s: 60
+    probe_before_use: true        # catalog lists retired models: check_models must call each one
+    probe_timeout_s: 30           # one-token probe deadline (/api/health); slow fallbacks have taken ~15 s
+  openrouter:
+    sdk: langchain-openrouter==0.2.9            # ChatOpenRouter (+ openrouter SDK for key/model metadata)
+    key_env: OPENROUTER_API_KEY
+    rpm: 18
+    daily_cap: null               # null = budget.daily_request_cap and OPENROUTER_DAILY_CAP (the lower wins)
+    timeout_s: 60
+    only_free_ids: true           # every id ends with :free, or the free router openrouter/free
+
+# Each role is an ordered chain of {provider, model}; llm.py walks it on 429/5xx/timeout/410,
+# skipping providers whose rpm bucket or daily cap is exhausted, and any model whose SDK profile says it lacks
+# what the call needs (bound tools, image input, JSON output). Prefer newer models.
+# context_tokens: the model's context window (provider docs); the tutor sizes every prompt to it (segment 14).
+# An entry without it is sized as 32k.
+roles:
+  tutor:                          # page-aware chat with tools; vision so lasso crops go straight in
+    temperature: 0.3
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b, context_tokens: 1000000}   # tools+json+image; ttft 1.5s, tool 1.4s
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}           # tools+json+image; tool 1.4s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free, context_tokens: 1000000}    # tools+json; 1M ctx
+      - {provider: nvidia, model: meta/muse-glimmer-30b, context_tokens: 131072}                     # tools; different family on NVIDIA
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free, context_tokens: 131072}  # tools+json+image
+      - {provider: openrouter, model: openrouter/free, context_tokens: 32768}
+  vision:                         # photos, handwriting, page images, diagrams
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b, context_tokens: 1000000}   # read a test ABG image correctly in 1.1s
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free, context_tokens: 131072}
+  structured:                     # flashcards, plans, classification, JSON (validate with pydantic + retry once)
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b, context_tokens: 1000000}   # json 2.1s
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}           # json 2.0s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free, context_tokens: 1000000}    # json 2.3s
+  long_context:                   # chapter / PDF summaries
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b, context_tokens: 1000000}   # 1M ctx
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free, context_tokens: 1000000}    # 1M ctx
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}           # 1M ctx
+  author:                         # night-time question authoring (strongest reasoning; latency irrelevant)
+    temperature: 0.7
+    max_tokens: 6000              # a full item is ~1,200 tokens of JSON; the reasoning model needs room to think first
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3-ultra-550b-a55b, context_tokens: 1000000}        # tools+json; correct tool use 2.5s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free, context_tokens: 1000000}
+  reviewer:                       # blind solver: MUST be a different family from every author model (not NVIDIA, not Baidu)
+    temperature: 0                # Part B: the blind solver runs at temperature 0
+    max_tokens: 1200
+    chain:
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free, context_tokens: 131072}
+      - {provider: openrouter, model: inclusionai/ling-3.2-flash:free, context_tokens: 131072}
+    if_family_equals_author: mark_review_not_independent
+  router:                         # Python rules first; small fast model only when ambiguous
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-lightning-30b-a3b, context_tokens: 131072}    # 0.3s probe
+      - {provider: openrouter, model: nvidia/nemotron-3.5-lightning:free, context_tokens: 131072}
+  embeddings:                      # LOCAL, free, private, no rate limit
+    engine: fastembed==0.9.1
+    model: BAAI/bge-small-en-v1.5   # 384 dims, 67 MB, MIT
+    dimensions: 384                # = halfvec(384) in db/schema.sql
+    reranker: Xenova/ms-marco-MiniLM-L-6-v2
+    cloud_fallback: nvidia/nemotron-3.5-embed-1b:free   # 2048 dims, separate index, NON-PII course text only
+  speech_to_text:
+    order:
+      - ipados_dictation           # free, on-device, zero code
+      - browser: "@huggingface/transformers@4.3.2 onnx-community/whisper-base (WebGPU → WASM)"
+      - server: "faster-whisper==1.2.1 base.en int8 on Space CPU"
+      - last_resort: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free   # audio input; uses daily quota; NVIDIA logs audio
+
+search:
+  provider: tavily                 # FREE plan: 1,000 credits/month (~33/day), 100 rpm
+  depth: basic                     # 1 credit (advanced = 2)
+  max_results: 5
+  include_answer: false            # use snippets; avoid extract calls
+  cache_ttl_days: 7                # normalized-query cache in Postgres (search_cache table)
+  per_user_daily_cap: 25
+  monthly_credit_guard: 950        # stop at 950 and fall back to course retrieval only
+  only_when: course_retrieval_score < 0.55 or user explicitly asks for "latest" / web
+  never_call: [research, crawl, map]
+  include_domains: [usmle.org, ecfmg.org, intealth.org, nrmp.org, aamc.org, ncbi.nlm.nih.gov, cdc.gov,
+                    uspreventiveservicestaskforce.org, fda.gov, who.int, travel.state.gov, uscis.gov]
+  # Media the agent runtime self-test (ping graph) renders in its answer block: one Commons image, one PMC
+  # open-access figure (CC BY), one YouTube video (embed). Cached in search_cache like any search.
+  probe:
+    images_query: "nephron diagram"
+    pmcid: PMC13730868
+    video_url: "https://www.youtube.com/watch?v=czY5nyvZ7cU"
+  # Layered search (naadi_api/search.py): cheapest / most authoritative first; every result keeps source, licence, link.
+  # rps = our own per-source rate limit; ttl_hours = cache lifetime in search_cache; max_results per layer.
+  layers:
+    pubmed:          {enabled: true, ttl_hours: 168, rps: 3, max_results: 5}    # Bio.Entrez, tool=naadi, no email
+    europepmc:       {enabled: true, ttl_hours: 168, rps: 5, max_results: 5}
+    medlineplus:     {enabled: true, ttl_hours: 720, rps: 2, max_results: 3}
+    openfda:         {enabled: true, ttl_hours: 168, rps: 2, max_results: 3}
+    clinicaltrials:  {enabled: true, ttl_hours: 72,  rps: 2, max_results: 3}
+    tavily:          {enabled: true, ttl_hours: 168, rps: 1, max_results: 5}    # guarded: per-user cap + monthly stop
+    searxng:         {enabled: false, ttl_hours: 24, rps: 1, max_results: 5, base_url: "http://127.0.0.1:8888"}
+    commons_images:  {enabled: true, ttl_hours: 720, rps: 2, max_results: 4}
+    youtube_oembed:  {enabled: true, ttl_hours: 720, rps: 2, max_results: 1}
+
+# Upgrade path (paid, only if quality or quotas demand it) — swap per role, nothing else changes:
+#   tutor: anthropic/claude-sonnet-5.5 ($2/$10) · vision/long: google/gemini-3.8-flash · author: anthropic/claude-opus-5.5
+#   reviewer: google/gemini-4-argon · embeddings: openai/text-embedding-3-large (then migrate the index)
+
+# Image / video generation — NOT on OpenRouter (no free model outputs images or video, catalog 2026-11-16).
+# Runs on a private ZeroGPU Space using the owner's HF PRO daily quota: never billed; pauses when the quota is used.
+# HF Inference Providers are NOT used (included credits roll into paid usage).
+generation:
+  provider: hf_zerogpu_space          # called with the official gradio_client
+  space_id: arrowassassin/naadi-gen   # Gradio SDK, ZeroGPU flavor, private
+  image:
+    model: black-forest-labs/FLUX.1-schnell   # Apache-2.0
+    max_per_user_per_day: 30
+  video:
+    model: Lightricks/LTX-Video               # verify license + ZeroGPU fit when building
+    max_seconds: 5
+    max_per_user_per_day: 0                   # video is OFF until the owner confirms the LTX-Video licence (then 5)
+  label: "AI-generated illustration — not clinical reference"
+  publish_requires_admin_approval: true

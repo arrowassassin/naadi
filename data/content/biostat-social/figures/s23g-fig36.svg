@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 470" width="600" height="470" role="img" aria-label="One ROC curve with five numbered points marking different cut-offs" font-family="sans-serif">
+<title>ROC curve with five cut-offs</title>
+<rect x="0" y="0" width="600" height="470" fill="#ffffff"/>
+<line x1="100.0" y1="400.0" x2="440.0" y2="400.0" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="100.0" y1="400.0" x2="100.0" y2="60.0" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="100.0" y1="400.0" x2="100.0" y2="405.0" stroke="#0f172a" stroke-width="1"/>
+<text x="100.0" y="420.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">0.0</text>
+<line x1="95.0" y1="400.0" x2="100.0" y2="400.0" stroke="#0f172a" stroke-width="1"/>
+<text x="91.0" y="404.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">0.0</text>
+<line x1="168.0" y1="400.0" x2="168.0" y2="405.0" stroke="#0f172a" stroke-width="1"/>
+<text x="168.0" y="420.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">0.2</text>
+<line x1="95.0" y1="332.0" x2="100.0" y2="332.0" stroke="#0f172a" stroke-width="1"/>
+<text x="91.0" y="336.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">0.2</text>
+<line x1="236.0" y1="400.0" x2="236.0" y2="405.0" stroke="#0f172a" stroke-width="1"/>
+<text x="236.0" y="420.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">0.4</text>
+<line x1="95.0" y1="264.0" x2="100.0" y2="264.0" stroke="#0f172a" stroke-width="1"/>
+<text x="91.0" y="268.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">0.4</text>
+<line x1="304.0" y1="400.0" x2="304.0" y2="405.0" stroke="#0f172a" stroke-width="1"/>
+<text x="304.0" y="420.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">0.6</text>
+<line x1="95.0" y1="196.0" x2="100.0" y2="196.0" stroke="#0f172a" stroke-width="1"/>
+<text x="91.0" y="200.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">0.6</text>
+<line x1="372.0" y1="400.0" x2="372.0" y2="405.0" stroke="#0f172a" stroke-width="1"/>
+<text x="372.0" y="420.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">0.8</text>
+<line x1="95.0" y1="128.0" x2="100.0" y2="128.0" stroke="#0f172a" stroke-width="1"/>
+<text x="91.0" y="132.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">0.8</text>
+<line x1="440.0" y1="400.0" x2="440.0" y2="405.0" stroke="#0f172a" stroke-width="1"/>
+<text x="440.0" y="420.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">1.0</text>
+<line x1="95.0" y1="60.0" x2="100.0" y2="60.0" stroke="#0f172a" stroke-width="1"/>
+<text x="91.0" y="64.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">1.0</text>
+<text x="270.0" y="442.0" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">1 − specificity (false-positive rate)</text>
+<text x="56.0" y="230.0" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a" transform="rotate(-90 56 230.0)">Sensitivity (true-positive rate)</text>
+<line x1="100.0" y1="400.0" x2="440.0" y2="60.0" stroke="#334155" stroke-width="1.5" stroke-dasharray="3 4"/>
+<path d="M100.0,400.0 L100.0,395.5 L100.0,395.4 L100.0,395.2 L100.0,395.1 L100.0,394.9 L100.0,394.8 L100.0,394.6 L100.0,394.5 L100.0,394.3 L100.1,394.1 L100.1,393.9 L100.1,393.8 L100.1,393.6 L100.1,393.4 L100.1,393.2 L100.1,393.0 L100.1,392.8 L100.1,392.6 L100.1,392.3 L100.1,392.1 L100.1,391.9 L100.1,391.6 L100.1,391.4 L100.1,391.1 L100.1,390.9 L100.1,390.6 L100.1,390.3 L100.1,390.1 L100.1,389.8 L100.1,389.5 L100.1,389.2 L100.1,388.9 L100.1,388.5 L100.2,388.2 L100.2,387.9 L100.2,387.5 L100.2,387.2 L100.2,386.8 L100.2,386.4 L100.2,386.0 L100.2,385.6 L100.2,385.2 L100.2,384.8 L100.2,384.4 L100.3,383.9 L100.3,383.5 L100.3,383.0 L100.3,382.5 L100.3,382.0 L100.3,381.5 L100.3,381.0 L100.4,380.5 L100.4,379.9 L100.4,379.4 L100.4,378.8 L100.4,378.2 L100.4,377.6 L100.5,377.0 L100.5,376.4 L100.5,375.7 L100.5,375.0 L100.6,374.4 L100.6,373.7 L100.6,372.9 L100.6,372.2 L100.7,371.5 L100.7,370.7 L100.7,369.9 L100.8,369.1 L100.8,368.3 L100.9,367.4 L100.9,366.5 L100.9,365.6 L101.0,364.7 L101.0,363.8 L101.1,362.9 L101.1,361.9 L101.2,360.9 L101.2,359.9 L101.3,358.8 L101.4,357.7 L101.4,356.6 L101.5,355.5 L101.6,354.4 L101.6,353.2 L101.7,352.0 L101.8,350.8 L101.9,349.5 L102.0,348.2 L102.0,346.9 L102.1,345.6 L102.2,344.2 L102.4,342.8 L102.5,341.4 L102.6,339.9 L102.7,338.5 L102.8,336.9 L103.0,335.4 L103.1,333.8 L103.2,332.2 L103.4,330.5 L103.6,328.9 L103.7,327.1 L103.9,325.4 L104.1,323.6 L104.3,321.8 L104.5,319.9 L104.7,318.0 L104.9,316.1 L105.1,314.1 L105.4,312.1 L105.6,310.1 L105.9,308.0 L106.2,305.9 L106.5,303.7 L106.8,301.6 L107.1,299.3 L107.4,297.1 L107.8,294.7 L108.2,292.4 L108.5,290.0 L108.9,287.6 L109.4,285.1 L109.8,282.6 L110.3,280.1 L110.8,277.5 L111.3,274.8 L111.8,272.2 L112.3,269.5 L112.9,266.7 L113.5,263.9 L114.2,261.1 L114.8,258.2 L115.5,255.3 L116.3,252.4 L117.0,249.4 L117.8,246.4 L118.7,243.4 L119.6,240.3 L120.5,237.1 L121.5,234.0 L122.5,230.8 L123.5,227.5 L124.6,224.3 L125.8,221.0 L127.0,217.7 L128.3,214.3 L129.6,210.9 L131.0,207.5 L132.5,204.1 L134.0,200.6 L135.6,197.1 L137.3,193.6 L139.0,190.1 L140.9,186.5 L142.8,183.0 L144.8,179.4 L146.9,175.8 L149.1,172.2 L151.5,168.6 L153.9,165.0 L156.4,161.4 L159.1,157.8 L161.9,154.1 L164.8,150.5 L167.8,146.9 L171.0,143.3 L174.4,139.8 L177.9,136.2 L181.6,132.7 L185.4,129.2 L189.4,125.7 L193.6,122.3 L198.1,118.9 L202.7,115.5 L207.5,112.2 L212.6,108.9 L217.9,105.7 L223.4,102.5 L229.3,99.5 L235.4,96.4 L241.7,93.5 L248.4,90.6 L255.4,87.9 L262.7,85.2 L270.4,82.6 L278.4,80.1 L286.8,77.7 L295.6,75.5 L304.9,73.3 L314.5,71.3 L324.6,69.4 L335.2,67.7 L346.3,66.1 L357.9,64.7 L370.1,63.4 L382.8,62.4 L396.1,61.4 L410.1,60.7 L424.7,60.2 L440.0,60.0 L440.0,60.0" stroke="#0f172a" stroke-width="2.5" fill="none"/>
+<circle cx="106.8" cy="301.4" r="6" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="112.8" y="291.4" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">1</text>
+<circle cx="127.2" cy="217.1" r="6" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="133.2" y="207.1" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">2</text>
+<circle cx="174.8" cy="139.3" r="6" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="180.8" y="129.3" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">3</text>
+<circle cx="253.0" cy="88.8" r="6" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="259.0" y="78.8" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">4</text>
+<circle cx="355.0" cy="65.0" r="6" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="361.0" y="55.0" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">5</text>
+<text x="440.0" y="370.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">Numbered circles = 5 cut-offs</text>
+<text x="440.0" y="386.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">Dotted line = no discrimination</text>
+</svg>

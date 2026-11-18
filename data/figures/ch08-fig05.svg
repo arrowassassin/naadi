@@ -1,0 +1,52 @@
+<svg aria-label="Pulmonary embolism diagnostic algorithm" role="img" viewbox="0 0 640 430" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch08-arrow5" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="240" x="200" y="8"></rect>
+<text font-weight="bold" x="320" y="33">Suspected PE</text>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="320" x2="320" y1="48" y2="64"></line>
+<rect fill="#fef3c7" height="36" rx="6" stroke="#334155" width="300" x="170" y="66"></rect>
+<text x="320" y="89">Hemodynamically unstable (SBP &lt;90)?</text>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="470" x2="498" y1="84" y2="84"></line>
+<text x="484" y="77">Yes</text>
+<rect fill="#fee2e2" height="110" rx="6" stroke="#334155" width="132" x="500" y="56"></rect>
+<text x="566" y="76">Bedside echo</text>
+<text x="566" y="92">(RV dilation) or</text>
+<text x="566" y="108">CTPA if feasible</text>
+<text font-weight="bold" x="566" y="128">Systemic lytic</text>
+<text x="566" y="144">(alteplase); if CI:</text>
+<text x="566" y="160">catheter/surgical</text>
+<line stroke="#334155" x1="320" x2="320" y1="102" y2="122"></line>
+<text x="333" y="116">No</text>
+<line stroke="#334155" x1="150" x2="400" y1="122" y2="122"></line>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="150" x2="150" y1="122" y2="140"></line>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="400" x2="400" y1="122" y2="140"></line>
+<rect fill="#dcfce7" height="40" rx="6" stroke="#334155" width="220" x="40" y="142"></rect>
+<text x="150" y="167">Wells ≤4: PE unlikely</text>
+<rect fill="#fee2e2" height="40" rx="6" stroke="#334155" width="190" x="300" y="142"></rect>
+<text x="395" y="167">Wells &gt;4: PE likely</text>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="150" x2="150" y1="182" y2="200"></line>
+<rect fill="#e0f2fe" height="52" rx="6" stroke="#334155" width="260" x="20" y="202"></rect>
+<text x="150" y="222">Low gestalt: PERC all negative?</text>
+<text x="150" y="240">Yes → stop (no testing)</text>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="150" x2="150" y1="254" y2="272"></line>
+<text x="190" y="267">No / not low</text>
+<rect fill="#e0f2fe" height="52" rx="6" stroke="#334155" width="260" x="20" y="274"></rect>
+<text x="150" y="294">D-dimer (age-adjusted &gt;50 y)</text>
+<text x="150" y="312">Negative → PE excluded</text>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="280" x2="330" y1="300" y2="300"></line>
+<text x="305" y="292">Positive</text>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="395" x2="395" y1="182" y2="200"></line>
+<rect fill="#fef3c7" height="52" rx="6" stroke="#334155" width="190" x="300" y="202"></rect>
+<text x="395" y="222">Empiric anticoagulation</text>
+<text x="395" y="240">unless bleeding risk high</text>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="395" x2="395" y1="254" y2="272"></line>
+<rect fill="#fee2e2" height="52" rx="6" stroke="#334155" width="190" x="332" y="274"></rect>
+<text font-weight="bold" x="427" y="294">CT pulmonary</text>
+<text x="427" y="312">angiography (CTPA)</text>
+<line marker-end="url(#ch08-arrow5)" stroke="#334155" x1="427" x2="427" y1="326" y2="344"></line>
+<rect fill="#e0f2fe" height="74" rx="6" stroke="#334155" width="430" x="200" y="346"></rect>
+<text x="415" y="366">Contrast contraindicated (anaphylaxis, severe AKI):</text>
+<text x="415" y="384">V/Q scan, or compression ultrasound of legs</text>
+<text x="415" y="402">(DVT found = treat; no further chest imaging needed)</text>
+</g>
+</svg>

@@ -1,0 +1,35 @@
+<svg aria-label="Calcium homeostasis showing PTH actions on bone and kidney, vitamin D activation, FGF23 and feedback" role="img" viewbox="0 0 640 430" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch06-arrow6" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#fef3c7" height="66" rx="6" stroke="#334155" width="135" x="10" y="15"></rect>
+<text font-weight="bold" x="18" y="33">Skin / diet</text><text x="18" y="51">7-dehydrocholesterol</text><text x="18" y="67">+ UVB → D3 (or diet)</text>
+<line marker-end="url(#ch06-arrow6)" stroke="#334155" stroke-width="2" x1="145" x2="163" y1="48" y2="48"></line>
+<rect fill="#fef3c7" height="66" rx="6" stroke="#334155" width="140" x="165" y="15"></rect>
+<text font-weight="bold" x="173" y="33">Liver</text><text x="173" y="51">25-hydroxylase →</text><text x="173" y="67">25(OH)D (measured)</text>
+<line marker-end="url(#ch06-arrow6)" stroke="#334155" stroke-width="2" x1="305" x2="323" y1="48" y2="48"></line>
+<rect fill="#fef3c7" height="66" rx="6" stroke="#334155" width="160" x="325" y="15"></rect>
+<text font-weight="bold" x="333" y="33">Kidney (PCT)</text><text x="333" y="51">1α-hydroxylase →</text><text x="333" y="67">1,25(OH)₂D (calcitriol)</text>
+<line marker-end="url(#ch06-arrow6)" stroke="#334155" stroke-width="2" x1="485" x2="503" y1="48" y2="48"></line>
+<rect fill="#dcfce7" height="66" rx="6" stroke="#334155" width="125" x="505" y="15"></rect>
+<text font-weight="bold" x="513" y="33">Gut</text><text x="513" y="51">↑ Ca²⁺ and PO₄³⁻</text><text x="513" y="67">absorption</text>
+<rect fill="#e0f2fe" height="52" rx="6" stroke="#334155" width="255" x="165" y="125"></rect>
+<text font-weight="bold" x="175" y="145">Parathyroid chief cells (CaSR, Gq)</text>
+<text x="175" y="165">↓ ionized Ca²⁺ → ↑ PTH secretion</text>
+<line marker-end="url(#ch06-arrow6)" stroke="#334155" stroke-width="2" x1="380" x2="400" y1="125" y2="83"></line>
+<text x="405" y="112">PTH ↑ 1α-hydroxylase</text>
+<line marker-end="url(#ch06-arrow6)" stroke="#334155" stroke-width="2" x1="240" x2="120" y1="177" y2="223"></line>
+<line marker-end="url(#ch06-arrow6)" stroke="#334155" stroke-width="2" x1="320" x2="320" y1="177" y2="223"></line>
+<rect fill="#dcfce7" height="100" rx="6" stroke="#334155" width="200" x="10" y="225"></rect>
+<text font-weight="bold" x="18" y="243">Bone</text><text x="18" y="261">PTH binds osteoblasts →</text><text x="18" y="277">↑ RANKL, ↓ OPG → osteoclast</text><text x="18" y="293">resorption → release of</text><text x="18" y="309">Ca²⁺ and PO₄³⁻</text>
+<rect fill="#dcfce7" height="100" rx="6" stroke="#334155" width="200" x="220" y="225"></rect>
+<text font-weight="bold" x="228" y="243">Kidney</text><text x="228" y="261">↑ Ca²⁺ reabsorption (DCT)</text><text x="228" y="277">↓ PO₄³⁻ reabsorption (PCT)</text><text x="228" y="293">→ phosphaturia, ↑ urine cAMP</text><text x="228" y="309">↑ 1α-hydroxylase</text>
+<rect fill="#e0f2fe" height="200" rx="6" stroke="#334155" stroke-dasharray="4,3" width="200" x="430" y="125"></rect>
+<text font-weight="bold" x="438" y="196">FGF23 (osteocytes)</text><text x="438" y="214">↑ by high PO₄³⁻, calcitriol</text><text x="438" y="230">↓ PO₄³⁻ reabsorption</text><text x="438" y="246">↓ 1α-hydroxylase</text>
+<text font-weight="bold" x="438" y="272">Calcitonin (C cells)</text><text x="438" y="290">↓ osteoclast activity;</text><text x="438" y="306">minor role in humans</text>
+<rect fill="#fee2e2" height="78" rx="6" stroke="#334155" width="620" x="10" y="345"></rect>
+<text font-weight="bold" x="18" y="363">Net effect of PTH: ↑ serum Ca²⁺, ↓ serum PO₄³⁻. Net effect of calcitriol: ↑ Ca²⁺ and ↑ PO₄³⁻.</text>
+<text x="18" y="381">Negative feedback: ↑ Ca²⁺ (via CaSR) and calcitriol ↓ PTH; severe ↓ Mg²⁺ also blocks PTH.</text>
+<text x="18" y="399">Ionized Ca²⁺ ↓ in alkalosis (more albumin binding) → tetany despite normal total Ca²⁺.</text>
+<text x="18" y="415">Corrected Ca = measured Ca + 0.8 × (4 − albumin g/dL). Intermittent PTH (teriparatide) is anabolic.</text>
+</g>
+</svg>

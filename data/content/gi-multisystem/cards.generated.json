@@ -1,0 +1,4202 @@
+[
+ {
+  "id": "s23d-g-03b0dc08926b",
+  "frontHtml": "<p>Identify the HBV replication step targeted by nucleos(t)ide analogues and explain why therapy is long-term.</p>",
+  "backHtml": "<p>HBV nucleos(t)ide analogues inhibit reverse transcription; they suppress but rarely eradicate infection because cccDNA persists.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-01",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a50bdd97e3ac",
+  "frontHtml": "<p>Explain the dependence of hepatitis D virus on HBV surface antigen.</p>",
+  "backHtml": "<p>HDV needs HBsAg for its coat; HBV vaccination therefore also prevents HDV.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-02",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-40cc9150f036",
+  "frontHtml": "<p>Recognise hepatitis E as a cause of fulminant hepatitis in pregnancy.</p>",
+  "backHtml": "<p>Waterborne hepatitis in a pregnant traveller with negative HAV, HBV and HCV tests suggests HEV, which can be fulminant in pregnancy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-03",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b9027111e8a1",
+  "frontHtml": "<p>Link incubation period and food vehicle to a preformed-toxin food poisoning.</p>",
+  "backHtml": "<p>Vomiting within hours of reheated rice points to the preformed emetic toxin of B. cereus.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-04",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-63e3a37f969c",
+  "frontHtml": "<p>Describe the molecular action of C. difficile toxins and the resulting pathology.</p>",
+  "backHtml": "<p>C. difficile toxins inactivate Rho GTPases; the tissue result is pseudomembranous colitis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-05",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-98867ce2023c",
+  "frontHtml": "<p>Recognise the clinical pattern and microscopic appearance of giardiasis.</p>",
+  "backHtml": "<p>Noninvasive steatorrheic diarrhea after stream water suggests Giardia, seen as binucleate flagellated trophozoites.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-06",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-73b5100be44b",
+  "frontHtml": "<p>Identify the histopathology of amebic colitis.</p>",
+  "backHtml": "<p>Amebic colitis shows flask-shaped ulcers with erythrophagocytic trophozoites.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-07",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a9159a65af72",
+  "frontHtml": "<p>Distinguish Whipple disease from MAC enteritis on biopsy.</p>",
+  "backHtml": "<p>PAS-positive, acid-fast-negative foamy macrophages in the small bowel of a middle-aged man with arthralgia and cognitive change indicate Whipple disease.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-08",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d2a7a30408bb",
+  "frontHtml": "<p>Explain the virulence factor that allows H. pylori to colonise the stomach.</p>",
+  "backHtml": "<p>H. pylori survives gastric acid through urease-generated ammonia; the same enzyme underlies its diagnostic tests.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s1-09",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-e2f2677d74a0",
+  "frontHtml": "<p>Interpret a hepatitis B serologic panel showing the window period.</p>",
+  "backHtml": "<p>HBsAg negative, anti-HBs negative and IgM anti-HBc positive equals the window period of acute HBV.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-01",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9b3c5c701014",
+  "frontHtml": "<p>Choose first-line therapy for chronic hepatitis C.</p>",
+  "backHtml": "<p>Chronic HCV is cured with short pangenotypic DAA regimens such as sofosbuvir-velpatasvir.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-02",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0e95a3c53851",
+  "frontHtml": "<p>Select first-line therapy for an initial episode of C. difficile infection.</p>",
+  "backHtml": "<p>First-episode C. difficile infection is treated with oral fidaxomicin (or oral vancomycin), not metronidazole.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-03",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-61cfa6d1f4d0",
+  "frontHtml": "<p>Differentiate amebic from pyogenic liver abscess on clinical grounds.</p>",
+  "backHtml": "<p>A solitary right-lobe abscess after time in an endemic area, without biliary disease, suggests amebic abscess even without diarrhea.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-04",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f0dfcec32f5a",
+  "frontHtml": "<p>Treat amebic liver abscess with tissue and luminal agents.</p>",
+  "backHtml": "<p>Amebic liver abscess is treated medically with metronidazole and then a luminal agent; drainage is the exception.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-05",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-415828504342",
+  "frontHtml": "<p>Select and time the appropriate test of cure after H. pylori therapy.</p>",
+  "backHtml": "<p>Confirm H. pylori eradication with a breath or stool antigen test 4 or more weeks after therapy and 2 weeks off PPIs.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-06",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f9d1656d3058",
+  "frontHtml": "<p>Manage Shiga toxin-producing E. coli infection in a child.</p>",
+  "backHtml": "<p>In suspected STEC infection give fluids and monitor for HUS; avoid antibiotics and antimotility drugs.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-07",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-fd360bffe504",
+  "frontHtml": "<p>Manage hepatic echinococcal cyst.</p>",
+  "backHtml": "<p>Hydatid cysts are treated with albendazole plus procedural management; avoid unprotected aspiration.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-08",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4cf7576d71ef",
+  "frontHtml": "<p>Choose post-exposure prophylaxis for hepatitis A.</p>",
+  "backHtml": "<p>Healthy household contacts of hepatitis A receive hepatitis A vaccine within 2 weeks of exposure.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100101-s2-09",
+  "areas": [
+   "usmle2026.10.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-24f8bfb2470c",
+  "frontHtml": "<p>Recognise the histopathology of Crohn disease.</p>",
+  "backHtml": "<p>Crohn disease is transmural with noncaseating granulomas; UC is mucosal with crypt abscesses.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-01",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-df8ce831245a",
+  "frontHtml": "<p>Associate primary sclerosing cholangitis with cholangiocarcinoma.</p>",
+  "backHtml": "<p>PSC in a patient with UC carries a major risk of cholangiocarcinoma.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-02",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a78d80eb5e3f",
+  "frontHtml": "<p>Describe the mechanism of vedolizumab and contrast it with natalizumab.</p>",
+  "backHtml": "<p>Vedolizumab is gut-selective anti-alpha4beta7 therapy; natalizumab is the non-selective alpha4 antibody with PML risk.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-03",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-10c0317e6195",
+  "frontHtml": "<p>Explain the pharmacogenetic basis of thiopurine toxicity.</p>",
+  "backHtml": "<p>Check TPMT (and NUDT15) before thiopurines; low activity causes severe myelosuppression.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-04",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-99f64eeb6f3a",
+  "frontHtml": "<p>Explain the role of tissue transglutaminase in celiac disease pathogenesis.</p>",
+  "backHtml": "<p>In celiac disease tTG deamidates gliadin, enhancing DQ2/DQ8 presentation to T cells.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-05",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-60de844277c6",
+  "frontHtml": "<p>Identify the immunofluorescence pattern of dermatitis herpetiformis.</p>",
+  "backHtml": "<p>Dermatitis herpetiformis shows granular IgA in dermal papillae and signals celiac disease.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-06",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ffb2fe78a577",
+  "frontHtml": "<p>Recognise the histology of collagenous colitis and its drug triggers.</p>",
+  "backHtml": "<p>Microscopic colitis is diagnosed only on biopsy; collagenous colitis shows a thickened subepithelial collagen band.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-07",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7decc0c808cf",
+  "frontHtml": "<p>Explain the immunopathogenesis of eosinophilic esophagitis.</p>",
+  "backHtml": "<p>EoE is a Th2 allergic disease of the esophagus mediated by IL-5 and IL-13.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-08",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6c589427358d",
+  "frontHtml": "<p>Predict gastric acid and gastrin levels in autoimmune gastritis.</p>",
+  "backHtml": "<p>Autoimmune gastritis produces achlorhydria with high gastrin and B12 deficiency.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s1-09",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f5da52448239",
+  "frontHtml": "<p>Interpret celiac serology in the setting of selective IgA deficiency.</p>",
+  "backHtml": "<p>Always measure total IgA with tTG-IgA; if IgA is deficient, use IgG-based celiac serology.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-01",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-96613f6360cc",
+  "frontHtml": "<p>Recognise acute severe ulcerative colitis and start first-line therapy.</p>",
+  "backHtml": "<p>Acute severe UC is treated first with IV corticosteroids in hospital.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-02",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b103cc507c95",
+  "frontHtml": "<p>Choose rescue therapy for steroid-refractory acute severe UC.</p>",
+  "backHtml": "<p>Steroid-refractory acute severe UC is rescued with infliximab or cyclosporine, or treated with colectomy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-03",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4302e07798de",
+  "frontHtml": "<p>Apply colorectal cancer surveillance rules for IBD with PSC.</p>",
+  "backHtml": "<p>IBD plus PSC means surveillance colonoscopy from PSC diagnosis and every year thereafter.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-04",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9cb34d7af230",
+  "frontHtml": "<p>Manage perianal fistulizing Crohn disease.</p>",
+  "backHtml": "<p>After draining any abscess, perianal fistulizing Crohn disease is treated with an anti-TNF such as infliximab.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-05",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-eea711ff4d22",
+  "frontHtml": "<p>Treat autoimmune hepatitis.</p>",
+  "backHtml": "<p>Autoimmune hepatitis is treated with corticosteroids plus azathioprine.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-06",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-c17de51214ce",
+  "frontHtml": "<p>Choose initial therapy for eosinophilic esophagitis.</p>",
+  "backHtml": "<p>EoE is treated first with a PPI, swallowed topical steroids or diet elimination; procedures for motility disorders have no role.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-07",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2337f7ce289a",
+  "frontHtml": "<p>Identify required safety screening before anti-TNF therapy.</p>",
+  "backHtml": "<p>Screen for latent tuberculosis and hepatitis B before starting anti-TNF therapy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-08",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7c2208174fe1",
+  "frontHtml": "<p>Treat microscopic colitis.</p>",
+  "backHtml": "<p>Budesonide is first-line therapy for microscopic colitis once culprit drugs are removed.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100102-s2-09",
+  "areas": [
+   "usmle2026.10.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0e9ab131410e",
+  "frontHtml": "<p>Link villous adenoma to secretory diarrhea and hypokalemia.</p>",
+  "backHtml": "<p>A large rectal villous adenoma can cause mucous diarrhea with hypokalemia.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-01",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-23724e88ea2c",
+  "frontHtml": "<p>Identify the molecular initiation of the serrated pathway.</p>",
+  "backHtml": "<p>Sessile serrated lesions start with BRAF mutation and progress through CpG island methylation and MLH1 silencing.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-02",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6fa10843fdc2",
+  "frontHtml": "<p>Describe the function of APC and its role in FAP.</p>",
+  "backHtml": "<p>APC normally degrades beta-catenin; its germline loss causes FAP.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-03",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-eb15eef8ca6c",
+  "frontHtml": "<p>Recognise the histology and features of Peutz-Jeghers syndrome.</p>",
+  "backHtml": "<p>Peutz-Jeghers polyps are hamartomas with arborizing smooth muscle; think STK11.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-04",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-1cf6b94c15b7",
+  "frontHtml": "<p>Identify hepatic adenoma as a cause of intraperitoneal hemorrhage.</p>",
+  "backHtml": "<p>A bleeding hypervascular liver mass in a woman on long-term oral contraceptives suggests hepatic adenoma.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-05",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-fc966c73c2e0",
+  "frontHtml": "<p>Explain the pathogenesis of focal nodular hyperplasia.</p>",
+  "backHtml": "<p>FNH is a polyclonal hyperplastic reaction to an abnormal artery, seen as a nodule with a central stellate scar.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-06",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-fc3278c7b059",
+  "frontHtml": "<p>Recognise the pathology of serous cystadenoma of the pancreas.</p>",
+  "backHtml": "<p>Serous cystadenoma is microcystic, glycogen-rich and benign.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-07",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d2e296f39c2f",
+  "frontHtml": "<p>Use immunohistochemistry to separate leiomyoma from GIST.</p>",
+  "backHtml": "<p>Esophageal leiomyoma is desmin positive and KIT/DOG1 negative, unlike GIST.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-08",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-5c765ec4612f",
+  "frontHtml": "<p>Associate juvenile polyposis and HHT with SMAD4.</p>",
+  "backHtml": "<p>Juvenile polyposis with features of HHT points to SMAD4.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s1-09",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-461ebc06e47c",
+  "frontHtml": "<p>Apply post-polypectomy surveillance intervals to an advanced adenoma.</p>",
+  "backHtml": "<p>Any adenoma 10 mm or larger means surveillance colonoscopy in 3 years.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-01",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-919a73aa313c",
+  "frontHtml": "<p>Avoid over-surveillance after removal of small hyperplastic polyps.</p>",
+  "backHtml": "<p>Small hyperplastic polyps only: next colonoscopy in 10 years.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-02",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6cbe73fb0381",
+  "frontHtml": "<p>Choose the imaging test to characterise an incidental liver mass.</p>",
+  "backHtml": "<p>Characterise an incidental liver mass with multiphase MRI before considering biopsy or surgery.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-03",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b0d046cc0d5b",
+  "frontHtml": "<p>Manage a persistent large hepatocellular adenoma.</p>",
+  "backHtml": "<p>A hepatic adenoma persisting at 5 cm or larger after stopping estrogen should be resected.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-04",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-260659367d2b",
+  "frontHtml": "<p>Diagnose focal nodular hyperplasia from MRI features.</p>",
+  "backHtml": "<p>A homogeneously enhancing lesion with a T2-bright central scar and hepatobiliary contrast retention is FNH.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-05",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-749debac1195",
+  "frontHtml": "<p>Manage a pancreatic cyst with worrisome features.</p>",
+  "backHtml": "<p>Pancreatic cysts with worrisome features need EUS with FNA; high-risk stigmata need surgery.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-06",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-27374e22b8eb",
+  "frontHtml": "<p>Distinguish a pancreatic pseudocyst from cystic neoplasms.</p>",
+  "backHtml": "<p>A collection after pancreatitis with very high fluid amylase and low CEA is a pseudocyst.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-07",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-58e41c025ded",
+  "frontHtml": "<p>Choose the surgical approach in familial adenomatous polyposis.</p>",
+  "backHtml": "<p>FAP with a heavy rectal burden is treated with proctocolectomy and an ileal pouch; duodenal surveillance continues afterwards.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-08",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2516763a6943",
+  "frontHtml": "<p>Apply follow-up guidance after piecemeal polypectomy.</p>",
+  "backHtml": "<p>After piecemeal removal of a lesion 20 mm or larger, repeat colonoscopy in 6 months.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100201-s2-09",
+  "areas": [
+   "usmle2026.10.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-75996fd93652",
+  "frontHtml": "<p>Link Barrett metaplasia to its malignant outcome.</p>",
+  "backHtml": "<p>Barrett esophagus (goblet-cell intestinal metaplasia) is the precursor of distal esophageal adenocarcinoma.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-01",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7d07fde98b07",
+  "frontHtml": "<p>Identify the adhesion defect behind hereditary diffuse gastric cancer.</p>",
+  "backHtml": "<p>Diffuse gastric cancer with lobular breast cancer in a family points to germline CDH1 (E-cadherin) loss.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-02",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-59a91ad74e12",
+  "frontHtml": "<p>Explain the mechanism of targeted therapy for GIST.</p>",
+  "backHtml": "<p>GIST is KIT/PDGFRA-driven; imatinib inhibits that tyrosine kinase.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-03",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b42cb489e5b3",
+  "frontHtml": "<p>Connect microsatellite instability to its DNA repair defect.</p>",
+  "backHtml": "<p>Microsatellite instability equals defective mismatch repair; germline loss is Lynch syndrome.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-04",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-dbe39ac13aed",
+  "frontHtml": "<p>Explain the nutritional consequence of carcinoid syndrome.</p>",
+  "backHtml": "<p>Carcinoid syndrome can cause pellagra because tryptophan is diverted from niacin synthesis to serotonin.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-05",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3b4a9093c585",
+  "frontHtml": "<p>Relate a dietary carcinogen to its signature mutation.</p>",
+  "backHtml": "<p>Aflatoxin causes HCC through a characteristic TP53 codon 249 transversion.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-06",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a04dfb1a1381",
+  "frontHtml": "<p>Describe the molecular defect of mutant KRAS in pancreatic cancer.</p>",
+  "backHtml": "<p>KRAS, mutated in most pancreatic adenocarcinomas, is locked on because it fails to hydrolyse GTP.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-07",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-1a76ea5ff5fa",
+  "frontHtml": "<p>Predict the histology of esophageal cancer from location and risk factors.</p>",
+  "backHtml": "<p>Mid-esophageal cancer in a smoker and drinker is squamous cell carcinoma with keratinisation.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-08",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-bc88e64a46ba",
+  "frontHtml": "<p>Identify the infectious cause of cholangiocarcinoma.</p>",
+  "backHtml": "<p>Liver flukes from raw freshwater fish (Clonorchis, Opisthorchis) cause cholangiocarcinoma.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s1-09",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-91962a87fd8e",
+  "frontHtml": "<p>Apply current USPSTF colorectal screening recommendations.</p>",
+  "backHtml": "<p>Average-risk colorectal cancer screening starts at age 45.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-01",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2ec410b88e31",
+  "frontHtml": "<p>Choose the evaluation of iron-deficiency anaemia in an older adult.</p>",
+  "backHtml": "<p>Unexplained iron-deficiency anaemia in an older adult needs colonoscopy and upper endoscopy, not stool testing.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-02",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b0d59c1c7c21",
+  "frontHtml": "<p>Choose the next test for a liver nodule found on HCC surveillance.</p>",
+  "backHtml": "<p>A surveillance nodule of 1 cm or more in cirrhosis needs multiphase CT or MRI.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-03",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ba0886d75c0f",
+  "frontHtml": "<p>Apply noninvasive imaging criteria for HCC.</p>",
+  "backHtml": "<p>In cirrhosis, arterial enhancement with washout on multiphase imaging diagnoses HCC without biopsy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-04",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-de9aa7378406",
+  "frontHtml": "<p>Select the initial imaging for suspected pancreatic head cancer.</p>",
+  "backHtml": "<p>Suspected pancreatic cancer is evaluated first with pancreas-protocol CT, not a tumour marker.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-05",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-68894333b0e8",
+  "frontHtml": "<p>Choose first-line therapy for gastric MALT lymphoma.</p>",
+  "backHtml": "<p>Localised H. pylori-positive gastric MALT lymphoma is treated first by eradicating H. pylori.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-06",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4230b16cc439",
+  "frontHtml": "<p>Manage Barrett esophagus with high-grade dysplasia.</p>",
+  "backHtml": "<p>Barrett esophagus with confirmed dysplasia is treated endoscopically, not with surveillance or esophagectomy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-07",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3e461a08bbc8",
+  "frontHtml": "<p>Stage a newly diagnosed rectal cancer.</p>",
+  "backHtml": "<p>Rectal cancer is locally staged with pelvic MRI after CT of the chest, abdomen and pelvis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-08",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-88e9fa952d43",
+  "frontHtml": "<p>Apply universal tumour screening for Lynch syndrome.</p>",
+  "backHtml": "<p>Every colorectal cancer gets universal mismatch repair (or MSI) testing.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100202-s2-09",
+  "areas": [
+   "usmle2026.10.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-905254cf77a9",
+  "frontHtml": "<p>Explain the anatomic basis of hepatic metastasis from colorectal cancer.</p>",
+  "backHtml": "<p>Portal venous drainage makes the liver the first stop for metastases from most of the GI tract.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-01",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d427d912448f",
+  "frontHtml": "<p>Identify the usual primary of a Krukenberg tumour.</p>",
+  "backHtml": "<p>Krukenberg tumour: bilateral signet-ring ovarian metastases, usually from the stomach.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-02",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-19bc700d619e",
+  "frontHtml": "<p>Explain the anatomic basis of the left supraclavicular node sign.</p>",
+  "backHtml": "<p>A Virchow node reflects abdominal lymph flowing up the thoracic duct to the left venous angle.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-03",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-bab8ed475a7d",
+  "frontHtml": "<p>Recognise metastatic melanoma in the GI tract.</p>",
+  "backHtml": "<p>Melanoma is the commonest metastasis to the small bowel and can present late with bleeding or intussusception.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-04",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-cbe0f911fb63",
+  "frontHtml": "<p>Distinguish metastatic lobular breast cancer from primary diffuse gastric cancer.</p>",
+  "backHtml": "<p>ER/GATA3-positive, E-cadherin-negative single-file cells in the stomach indicate metastatic lobular breast cancer.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-05",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-50631adf4488",
+  "frontHtml": "<p>Apply SAAG to the mechanism of malignant ascites.</p>",
+  "backHtml": "<p>Peritoneal carcinomatosis causes low-SAAG, high-protein ascites through permeability and lymphatic obstruction.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-06",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-70177853fed4",
+  "frontHtml": "<p>Describe the biochemistry of basement membrane invasion.</p>",
+  "backHtml": "<p>Invasion requires metalloproteinases that degrade basement membrane type IV collagen.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-07",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-5ee83996239b",
+  "frontHtml": "<p>Recognise the characteristic adverse effect of oxaliplatin.</p>",
+  "backHtml": "<p>Cold-triggered dysesthesias are characteristic of oxaliplatin.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-08",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a6dae090544d",
+  "frontHtml": "<p>Explain resistance to anti-EGFR antibodies in RAS-mutant colorectal cancer.</p>",
+  "backHtml": "<p>Activating RAS mutations make EGFR antibodies useless because signalling is constitutive downstream.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s1-09",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-5e4fc736e547",
+  "frontHtml": "<p>Manage isolated colorectal liver metastases.</p>",
+  "backHtml": "<p>Resectable liver-only colorectal metastases are treated with curative-intent resection.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-01",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f87b88fedc92",
+  "frontHtml": "<p>Interpret a rising tumour marker during surveillance.</p>",
+  "backHtml": "<p>A rising CEA after colorectal cancer resection calls for CT of the chest, abdomen and pelvis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-02",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4280e60cb046",
+  "frontHtml": "<p>Recognise physical signs of metastatic gastric cancer.</p>",
+  "backHtml": "<p>Virchow node plus periumbilical nodule with early satiety indicates advanced gastric cancer.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-03",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-54f993888302",
+  "frontHtml": "<p>Choose the staging study for a new colon cancer.</p>",
+  "backHtml": "<p>Stage colorectal cancer with CT chest, abdomen and pelvis plus baseline CEA.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-04",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ee7189ba57fd",
+  "frontHtml": "<p>Counsel a patient requesting tumour markers for screening.</p>",
+  "backHtml": "<p>Tumour markers are for follow-up, never for screening asymptomatic people.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-05",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b81450313090",
+  "frontHtml": "<p>Choose the first test for ascites in a patient with cancer.</p>",
+  "backHtml": "<p>New ascites needs diagnostic paracentesis with SAAG, protein and cytology before treatment.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-06",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6e22392e96df",
+  "frontHtml": "<p>Palliate recurrent malignant ascites.</p>",
+  "backHtml": "<p>Rapidly recurrent malignant ascites is palliated with a tunnelled indwelling peritoneal catheter.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-07",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9e894ffd167a",
+  "frontHtml": "<p>Choose palliative pharmacotherapy for malignant bowel obstruction.</p>",
+  "backHtml": "<p>Octreotide reduces secretions and vomiting in inoperable malignant bowel obstruction; avoid prokinetics.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-08",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-e8ed16e00411",
+  "frontHtml": "<p>Manage malignant biliary obstruction in metastatic disease.</p>",
+  "backHtml": "<p>Jaundice with dilated ducts in metastatic pancreatic cancer is palliated with an endoscopic metal stent.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100203-s2-09",
+  "areas": [
+   "usmle2026.10.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-313833da0481",
+  "frontHtml": "<p>Link a chemotherapy antiemetic to its receptor and adverse effect.</p>",
+  "backHtml": "<p>5-HT3 antagonists such as ondansetron can prolong the QT interval.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-01",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6332693e60a3",
+  "frontHtml": "<p>Explain extrapyramidal effects of dopamine-blocking antiemetics.</p>",
+  "backHtml": "<p>Acute dystonia from antiemetics reflects nigrostriatal D2 blockade.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-02",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9ff5d6cd1967",
+  "frontHtml": "<p>Identify the NK1 antagonist antiemetic.</p>",
+  "backHtml": "<p>NK1 antagonists (aprepitant) block substance P and target delayed chemotherapy nausea.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-03",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-063d89a924cb",
+  "frontHtml": "<p>Recognise anticholinergic adverse effects of motion-sickness therapy.</p>",
+  "backHtml": "<p>Scopolamine is a muscarinic antagonist with anticholinergic toxicity in older adults.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-04",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-5d292858510a",
+  "frontHtml": "<p>Explain how the chemoreceptor trigger zone detects emetogenic chemicals.</p>",
+  "backHtml": "<p>The chemoreceptor trigger zone in the area postrema lies outside the blood-brain barrier.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-05",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-8e9bf463b081",
+  "frontHtml": "<p>Calculate and interpret the stool osmotic gap.</p>",
+  "backHtml": "<p>A high stool osmotic gap that resolves with fasting means osmotic diarrhoea, such as lactase deficiency.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-06",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2993f140e225",
+  "frontHtml": "<p>Describe the mechanism of a secretory diarrhoea toxin.</p>",
+  "backHtml": "<p>Cholera toxin causes secretory diarrhoea by ADP-ribosylating Gs and raising cAMP.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-07",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-c26e8f52c43e",
+  "frontHtml": "<p>Distinguish visceral from parietal abdominal pain.</p>",
+  "backHtml": "<p>Early appendicitis pain is periumbilical because midgut visceral afferents enter at T10.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-08",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-fb734a2488e7",
+  "frontHtml": "<p>Explain the maintenance of metabolic alkalosis after vomiting.</p>",
+  "backHtml": "<p>Vomiting alkalosis is maintained by volume contraction, chloride depletion and aldosterone.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s1-09",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-be980029fd13",
+  "frontHtml": "<p>Order appropriate testing for suspected IBS.</p>",
+  "backHtml": "<p>Suspected IBS with diarrhoea needs celiac serology, not routine colonoscopy or CT.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s2-01",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d0d653ae8dca",
+  "frontHtml": "<p>Choose the evaluation of dyspepsia by age and alarm features.</p>",
+  "backHtml": "<p>New dyspepsia at age 60 or older, especially with weight loss, needs upper endoscopy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s2-02",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-be939d309602",
+  "frontHtml": "<p>Localise GI bleeding using clinical and laboratory clues.</p>",
+  "backHtml": "<p>Melena with a disproportionately raised BUN in an NSAID user suggests a bleeding peptic ulcer.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s2-03",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-df27bc0723fc",
+  "frontHtml": "<p>Manage suspected upper GI bleeding after resuscitation.</p>",
+  "backHtml": "<p>Resuscitate, give an IV PPI and perform upper endoscopy within 24 hours for upper GI bleeding.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s2-04",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-37506ec8f864",
+  "frontHtml": "<p>Correct fluid and electrolyte losses from prolonged vomiting.</p>",
+  "backHtml": "<p>Vomiting-induced metabolic alkalosis is treated with normal saline plus potassium chloride.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s2-05",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ca9112ea897e",
+  "frontHtml": "<p>Manage opioid-induced constipation in a patient with cancer pain.</p>",
+  "backHtml": "<p>Refractory opioid-induced constipation is treated with a peripherally acting mu-opioid antagonist.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s2-06",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6c17ead653c2",
+  "frontHtml": "<p>Manage dehydration from acute gastroenteritis in a child.</p>",
+  "backHtml": "<p>Oral rehydration solution is first line for mild to moderate paediatric dehydration.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s2-07",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-da033c03e5df",
+  "frontHtml": "<p>Select an antiemetic for a patient with Parkinson disease.</p>",
+  "backHtml": "<p>In Parkinson disease use ondansetron and avoid dopamine-antagonist antiemetics.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100301-s2-08",
+  "areas": [
+   "usmle2026.10.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ba8091612b0d",
+  "frontHtml": "<p>Identify the organism responsible for oral hairy leukoplakia from its clinical and histologic features.</p>",
+  "backHtml": "<p>Oral hairy leukoplakia is an EBV lesion of the lateral tongue that signals immunosuppression and is not a precancer.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s1-01",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4a812d180b10",
+  "frontHtml": "<p>Explain why pleomorphic adenoma recurs after simple enucleation.</p>",
+  "backHtml": "<p>Pleomorphic adenoma recurs after enucleation because of tumor extensions beyond its incomplete capsule.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s1-02",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2002a8dbb84c",
+  "frontHtml": "<p>Recognize Warthin tumor from its epidemiology and cytology.</p>",
+  "backHtml": "<p>Warthin tumor: older smoker, parotid tail, often bilateral, oncocytic epithelium over lymphoid stroma.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s1-03",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-fa70aafe1f26",
+  "frontHtml": "<p>Relate drug-induced xerostomia to muscarinic M3 blockade.</p>",
+  "backHtml": "<p>Antimuscarinic drugs cause dry mouth by blocking M3 receptors on salivary acinar cells.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s1-04",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-e774b22747c1",
+  "frontHtml": "<p>Associate Behcet disease with its HLA type and clinical triad.</p>",
+  "backHtml": "<p>Behcet disease: recurrent oral and genital ulcers, uveitis and pathergy, associated with HLA-B51.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s1-05",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-791d950ce435",
+  "frontHtml": "<p>Describe how fluoride prevents dental caries.</p>",
+  "backHtml": "<p>Fluoride prevents caries mainly by forming acid-resistant fluorapatite and aiding remineralization.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s1-06",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9c7f968831ff",
+  "frontHtml": "<p>Recognize the lymphoma risk in Sjogren syndrome.</p>",
+  "backHtml": "<p>New persistent parotid enlargement in Sjogren syndrome suggests MALT lymphoma.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s1-07",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ff0809368d4d",
+  "frontHtml": "<p>Explain the molecular basis of p16 positivity in HPV-related oropharyngeal carcinoma.</p>",
+  "backHtml": "<p>p16 overexpression marks HPV-driven oropharyngeal cancer because E7 inactivates Rb.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s1-08",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-026aea09b4d1",
+  "frontHtml": "<p>Choose biopsy as the next step for a persistent red oral lesion in a high-risk patient.</p>",
+  "backHtml": "<p>Persistent erythroplakia needs biopsy; it carries the highest malignant potential of oral lesions.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s2-01",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-54cb80d257cd",
+  "frontHtml": "<p>Prioritize airway management in Ludwig angina.</p>",
+  "backHtml": "<p>In Ludwig angina with airway signs, secure the airway before imaging or anything else.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s2-02",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a3d01738aba1",
+  "frontHtml": "<p>Select empiric antibiotic therapy for Ludwig angina.</p>",
+  "backHtml": "<p>Treat Ludwig angina with IV antibiotics covering oral streptococci and anaerobes, such as ampicillin-sulbactam.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s2-03",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-108af3eb0c82",
+  "frontHtml": "<p>Manage acute bacterial parotitis and recognize its predisposing factors.</p>",
+  "backHtml": "<p>Suppurative parotitis in a dehydrated older patient: rehydrate, stimulate saliva, and give IV anti-staphylococcal antibiotics.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s2-04",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3ef75278388b",
+  "frontHtml": "<p>Prevent oral candidiasis in patients using inhaled corticosteroids.</p>",
+  "backHtml": "<p>Prevent inhaled-corticosteroid thrush by rinsing and spitting after each dose (and a spacer for metered-dose inhalers).</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s2-05",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-e44236e52e16",
+  "frontHtml": "<p>Choose fine-needle aspiration for a persistent cystic neck mass in an adult.</p>",
+  "backHtml": "<p>Persistent adult neck mass: imaging and FNA, not more antibiotics or open biopsy first; think HPV-related oropharyngeal cancer.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100401-s2-06",
+  "areas": [
+   "usmle2026.10.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-07e2cc40547e",
+  "frontHtml": "<p>Explain the neural basis of achalasia.</p>",
+  "backHtml": "<p>Achalasia is caused by loss of NO/VIP inhibitory neurons in the myenteric plexus.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-01",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9b40ea1d8a11",
+  "frontHtml": "<p>Identify the transmission route of Trypanosoma cruzi in Chagas-related achalasia.</p>",
+  "backHtml": "<p>Chagas disease (T. cruzi, triatomine bug feces) causes secondary achalasia, megacolon and cardiomyopathy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-02",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-cd3f222e5331",
+  "frontHtml": "<p>Predict manometric findings in systemic sclerosis.</p>",
+  "backHtml": "<p>Scleroderma esophagus: hypotensive LES and absent distal peristalsis, causing severe reflux.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-03",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-cc33d6b290dd",
+  "frontHtml": "<p>Identify the histology of Barrett esophagus.</p>",
+  "backHtml": "<p>Barrett esophagus is intestinal metaplasia (columnar cells with goblet cells) of the distal esophagus.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-04",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3b21412bdcaf",
+  "frontHtml": "<p>Distinguish HSV from CMV and Candida esophagitis by endoscopy and histology.</p>",
+  "backHtml": "<p>HSV esophagitis: small punched-out ulcers, multinucleated squamous cells with Cowdry A inclusions at the ulcer edge.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-05",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-abae5f603d3f",
+  "frontHtml": "<p>Describe the anatomy and mechanism of Zenker diverticulum.</p>",
+  "backHtml": "<p>Zenker diverticulum is a false pulsion diverticulum through Killian triangle above the cricopharyngeus.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-06",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7798918c7858",
+  "frontHtml": "<p>Recognize drugs that cause pill esophagitis.</p>",
+  "backHtml": "<p>Doxycycline taken with little water before lying down is a classic cause of pill esophagitis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-07",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2fa8e9bc25ff",
+  "frontHtml": "<p>Link Plummer-Vinson syndrome to iron deficiency.</p>",
+  "backHtml": "<p>Plummer-Vinson syndrome: iron deficiency anemia, postcricoid web, dysphagia; treat the iron deficiency and watch for squamous cancer.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-08",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a0cfd30799a6",
+  "frontHtml": "<p>Identify the portosystemic anastomosis that forms esophageal varices.</p>",
+  "backHtml": "<p>Esophageal varices form at the left gastric to azygos portosystemic anastomosis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s1-09",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0269ae4ddf61",
+  "frontHtml": "<p>Start empiric PPI therapy for typical reflux without alarm features.</p>",
+  "backHtml": "<p>Uncomplicated typical GERD: 8-week once-daily PPI trial before breakfast, plus lifestyle measures.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s2-01",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4e1b7b5a85cf",
+  "frontHtml": "<p>Choose manometry to confirm suspected achalasia.</p>",
+  "backHtml": "<p>After endoscopy excludes obstruction, high-resolution manometry confirms achalasia.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s2-02",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-26082fa4d80f",
+  "frontHtml": "<p>Select definitive therapy for achalasia in a fit patient.</p>",
+  "backHtml": "<p>Fit patients with achalasia get myotomy (Heller or POEM) or pneumatic dilation; botulinum toxin is for poor candidates.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s2-03",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-c2ffff4f8a2b",
+  "frontHtml": "<p>Choose primary prophylaxis for large esophageal varices in compensated cirrhosis.</p>",
+  "backHtml": "<p>Primary prophylaxis of large varices: nonselective beta blocker (carvedilol preferred) or band ligation if beta blockers cannot be used.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s2-04",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-65c425e2232b",
+  "frontHtml": "<p>Distinguish Mallory-Weiss tear from Boerhaave syndrome and variceal bleeding.</p>",
+  "backHtml": "<p>Retching then a small hematemesis in a stable patient suggests Mallory-Weiss; chest pain and crepitus suggest Boerhaave.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s2-05",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-84f4b4b19a03",
+  "frontHtml": "<p>Manage suspected Candida esophagitis in HIV.</p>",
+  "backHtml": "<p>Thrush plus odynophagia in advanced HIV: empiric oral fluconazole; endoscope only if no response.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s2-06",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-5b46e5d75bbe",
+  "frontHtml": "<p>Choose the surveillance interval for nondysplastic Barrett esophagus.</p>",
+  "backHtml": "<p>Nondysplastic Barrett of 3 cm or more: PPI plus surveillance endoscopy every 3 years.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s2-07",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-603bb5421ea3",
+  "frontHtml": "<p>Choose the initial test for suspected Zenker diverticulum.</p>",
+  "backHtml": "<p>Suspected Zenker diverticulum: barium swallow first, not blind endoscopy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100402-s2-08",
+  "areas": [
+   "usmle2026.10.04.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2a8f471891cd",
+  "frontHtml": "<p>Describe the second messenger pathways that control parietal cell acid secretion.</p>",
+  "backHtml": "<p>Histamine stimulates acid through H2 receptors, Gs and cAMP; gastrin and ACh act through Gq and calcium.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s1-01",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-28d38a1b087f",
+  "frontHtml": "<p>Predict the gastrin level and related findings in autoimmune atrophic gastritis.</p>",
+  "backHtml": "<p>Autoimmune gastritis: achlorhydria, high gastrin, low pepsinogen I and B12 deficiency.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s1-02",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-347c41311dec",
+  "frontHtml": "<p>Explain the mechanism and key adverse effects of misoprostol.</p>",
+  "backHtml": "<p>Misoprostol is a PGE1 analog that replaces the mucosal protection NSAIDs remove; avoid in pregnancy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s1-03",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ea90eed3f8cd",
+  "frontHtml": "<p>Recognize hypomagnesemia as an adverse effect of long-term PPI therapy.</p>",
+  "backHtml": "<p>Long-term PPIs can cause hypomagnesemia, which leads to hypocalcemia and hypokalemia.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s1-04",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a927a00046b4",
+  "frontHtml": "<p>Identify the histology of Menetrier disease and contrast it with Zollinger-Ellison syndrome.</p>",
+  "backHtml": "<p>Menetrier disease: giant folds from foveolar hyperplasia, low acid and protein-losing gastropathy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s1-05",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7146429d48b3",
+  "frontHtml": "<p>Distinguish the mechanisms of Cushing and Curling stress ulcers.</p>",
+  "backHtml": "<p>Cushing ulcer (brain injury) = vagal acid hypersecretion; Curling ulcer (burns) = hypovolemic ischemia.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s1-06",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-33e59df62333",
+  "frontHtml": "<p>Relate ulcer location to the artery at risk of bleeding.</p>",
+  "backHtml": "<p>Posterior duodenal ulcers bleed from the gastroduodenal artery; anterior ones perforate.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s1-07",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-bf61fa4a955b",
+  "frontHtml": "<p>Identify the mechanism of metoclopramide-induced tardive dyskinesia.</p>",
+  "backHtml": "<p>Metoclopramide blocks D2 receptors; long-term use can cause tardive dyskinesia.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s1-08",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-308c5b85248e",
+  "frontHtml": "<p>Choose the timing of endoscopy in acute upper GI bleeding.</p>",
+  "backHtml": "<p>Nonvariceal upper GI bleeding: resuscitate, start PPI, and perform endoscopy within 24 hours.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s2-01",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-737e79e8f20f",
+  "frontHtml": "<p>Match endoscopic ulcer stigmata to treatment.</p>",
+  "backHtml": "<p>Active bleeding or a nonbleeding visible vessel needs endoscopic hemostasis followed by high-dose PPI.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s2-02",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7dd26735bbb7",
+  "frontHtml": "<p>Apply a restrictive transfusion threshold in upper GI bleeding.</p>",
+  "backHtml": "<p>Stable upper GI bleeding without heart disease: transfuse only when hemoglobin falls below 7 g/dL.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s2-03",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4967b589dada",
+  "frontHtml": "<p>Plan an appropriate test of cure after H. pylori treatment.</p>",
+  "backHtml": "<p>Confirm H. pylori eradication in everyone, at least 4 weeks after treatment and 2 weeks off PPI, with a breath or stool test.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s2-04",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7953baa6515a",
+  "frontHtml": "<p>Choose the initial evaluation for uncomplicated dyspepsia in a younger adult.</p>",
+  "backHtml": "<p>Dyspepsia under age 60 without alarm features: test and treat for H. pylori.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s2-05",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-69863f31c5da",
+  "frontHtml": "<p>Choose the diagnostic test for suspected diabetic gastroparesis.</p>",
+  "backHtml": "<p>Suspected gastroparesis: exclude obstruction with endoscopy, then confirm with 4-hour solid-meal scintigraphy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s2-06",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f15dca1c4c17",
+  "frontHtml": "<p>Manage a perforated peptic ulcer.</p>",
+  "backHtml": "<p>Perforated peptic ulcer with peritonitis needs resuscitation, antibiotics and emergency surgical repair.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100501-s2-07",
+  "areas": [
+   "usmle2026.10.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-586d5010baf0",
+  "frontHtml": "<p>Distinguish osmotic diarrhea due to lactase nonpersistence from secretory causes.</p>",
+  "backHtml": "<p>Diarrhea that stops with fasting and a positive lactose hydrogen breath test indicate osmotic diarrhea from lactase deficiency.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s1-01",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-38a7f69c29eb",
+  "frontHtml": "<p>Explain the cobalamin and folate pattern produced by bacterial overgrowth.</p>",
+  "backHtml": "<p>Low B12 with high folate in a patient with stasis suggests small intestinal bacterial overgrowth.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s1-02",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-42dc3d189dbe",
+  "frontHtml": "<p>Relate the duodenal site of iron absorption to iron deficiency after bariatric surgery.</p>",
+  "backHtml": "<p>Iron is absorbed in the duodenum, so bypass operations that exclude it commonly cause refractory iron deficiency.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s1-03",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-18e8e1c0214d",
+  "frontHtml": "<p>Identify the arterial watershed responsible for splenic flexure ischemia.</p>",
+  "backHtml": "<p>Low-flow ischemic colitis targets watershed segments: the splenic flexure (SMA/IMA) and the rectosigmoid junction (IMA/internal iliac).</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s1-04",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f935a51caf09",
+  "frontHtml": "<p>Explain the mechanism of bile acid diarrhea after limited ileal resection.</p>",
+  "backHtml": "<p>Short ileal loss causes secretory bile acid diarrhea that responds to sequestrants; long ileal loss causes steatorrhea.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s1-05",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-70fbddce77bb",
+  "frontHtml": "<p>Explain the link between aortic stenosis and bleeding from angiodysplasia.</p>",
+  "backHtml": "<p>Aortic stenosis with bleeding cecal angiodysplasia (Heyde syndrome) reflects acquired loss of large vWF multimers from shear stress.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s1-06",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f3db5201b9ef",
+  "frontHtml": "<p>Choose the best initial test for suspected acute arterial mesenteric ischemia.</p>",
+  "backHtml": "<p>Suspected acute mesenteric ischemia calls for immediate CT angiography; normal or mildly raised lactate must never delay it.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s2-01",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b597b75389c8",
+  "frontHtml": "<p>Manage complicated diverticulitis with a large abscess.</p>",
+  "backHtml": "<p>A large diverticular abscess in a stable patient is drained percutaneously alongside IV antibiotics.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s2-02",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-e73459bb66b3",
+  "frontHtml": "<p>Plan follow-up evaluation after complicated diverticulitis.</p>",
+  "backHtml": "<p>Perform colonoscopy after recovery from complicated diverticulitis when no recent examination exists.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s2-03",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-e26afdfdbba5",
+  "frontHtml": "<p>Manage sigmoid volvulus without peritonitis.</p>",
+  "backHtml": "<p>Uncomplicated sigmoid volvulus: endoscopic detorsion first, then elective sigmoid resection before discharge in fit patients.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s2-04",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-491ee5fa80c9",
+  "frontHtml": "<p>Escalate management of acute colonic pseudo-obstruction after failed conservative care.</p>",
+  "backHtml": "<p>Ogilvie syndrome that persists after 24 to 48 hours of conservative care, with a dilated cecum and no peritonitis, is treated with IV neostigmine.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s2-05",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-78dac55e5c6f",
+  "frontHtml": "<p>Select imaging for suspected appendicitis in a pregnant patient.</p>",
+  "backHtml": "<p>In pregnancy, image suspected appendicitis with ultrasound first, then noncontrast MRI if needed.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100502-s2-06",
+  "areas": [
+   "usmle2026.10.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ff3cc9baed68",
+  "frontHtml": "<p>Relate the innervation of the anal canal to pain from hemorrhoids.</p>",
+  "backHtml": "<p>Lesions above the pectinate line are painless (visceral innervation); lesions below it are painful (somatic pudendal innervation).</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-01",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a1d2e7ec34d6",
+  "frontHtml": "<p>Predict lymphatic spread of a tumour below the pectinate line.</p>",
+  "backHtml": "<p>Below the pectinate line, lymph drains to the superficial inguinal nodes.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-02",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-45358a2bbc92",
+  "frontHtml": "<p>Identify the portosystemic anastomosis that forms anorectal varices.</p>",
+  "backHtml": "<p>Anorectal varices form between the portal superior rectal vein and the systemic middle and inferior rectal veins.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-03",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-87460278f876",
+  "frontHtml": "<p>Link the embryologic origin of the anorectum to its epithelium and tumour type.</p>",
+  "backHtml": "<p>Above the pectinate line: endoderm, columnar epithelium, adenocarcinoma. Below: ectoderm, squamous epithelium, SCC.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-04",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0e825e77ff8a",
+  "frontHtml": "<p>Explain the mechanism of topical nitrate therapy for anal fissure.</p>",
+  "backHtml": "<p>Topical nitrates heal fissures by NO-cGMP relaxation of the internal sphincter; headache is the typical adverse effect.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-05",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-1f60375e3e9f",
+  "frontHtml": "<p>State the mechanism of botulinum toxin.</p>",
+  "backHtml": "<p>Botulinum toxin cleaves SNARE proteins and blocks acetylcholine release, giving reversible sphincter relaxation.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-06",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-edae86521956",
+  "frontHtml": "<p>Identify the microbiology of lymphogranuloma venereum proctitis.</p>",
+  "backHtml": "<p>LGV proctitis is caused by C. trachomatis serovars L1 to L3, obligate intracellular bacteria with an elementary and a reticulate body.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-07",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-bd2f3e1cecf3",
+  "frontHtml": "<p>Identify the HPV oncoprotein that inactivates Rb.</p>",
+  "backHtml": "<p>HPV E7 inactivates Rb; E6 degrades p53.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-08",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-adb8ff603bd7",
+  "frontHtml": "<p>Localise the nerve responsible for external anal sphincter weakness.</p>",
+  "backHtml": "<p>Reduced squeeze pressure with intact sphincters after a difficult delivery suggests pudendal nerve injury.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s1-09",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0a62d023204c",
+  "frontHtml": "<p>Manage an acutely thrombosed external hemorrhoid.</p>",
+  "backHtml": "<p>Thrombosed external hemorrhoid seen within about 72 hours: excise under local anesthesia; later, treat conservatively.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s2-01",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-8a6a1ce7e4cb",
+  "frontHtml": "<p>Recognise an atypical anal fissure and evaluate for a secondary cause.</p>",
+  "backHtml": "<p>An off-midline anal fissure demands a search for Crohn disease, HIV, TB, syphilis or cancer before fissure-directed treatment.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s2-02",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-59e99abc88f4",
+  "frontHtml": "<p>Choose empiric treatment for sexually transmitted proctitis.</p>",
+  "backHtml": "<p>Empiric treatment for STI proctitis is ceftriaxone plus doxycycline, extended to 21 days of doxycycline when LGV is suspected.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s2-03",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-15af00dc4869",
+  "frontHtml": "<p>Manage an acute perianal abscess.</p>",
+  "backHtml": "<p>Anorectal abscess: drain it; antibiotics are an adjunct for cellulitis, systemic illness, diabetes or immunosuppression.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s2-04",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-34f225264679",
+  "frontHtml": "<p>Treat a simple low anal fistula after abscess drainage.</p>",
+  "backHtml": "<p>Simple low anal fistula: fistulotomy. Complex or high fistula: seton and sphincter-sparing techniques.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s2-05",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-888e0b7ab886",
+  "frontHtml": "<p>Choose initial therapy for locoregional anal squamous cell carcinoma.</p>",
+  "backHtml": "<p>Anal SCC is treated with chemoradiation (5-FU or capecitabine plus mitomycin); surgery is salvage.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s2-06",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-cbf2f4289009",
+  "frontHtml": "<p>Select local staging imaging for rectal adenocarcinoma.</p>",
+  "backHtml": "<p>Use pelvic MRI for local staging of rectal cancer; CT chest, abdomen and pelvis and CEA complete staging.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s2-07",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f2db0871f955",
+  "frontHtml": "<p>Distinguish full-thickness rectal prolapse from other protruding anal lesions.</p>",
+  "backHtml": "<p>Concentric folds mean full-thickness rectal prolapse; radial folds mean hemorrhoids or mucosal prolapse.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100503-s2-08",
+  "areas": [
+   "usmle2026.10.05.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-abe9fa17bb8d",
+  "frontHtml": "<p>Distinguish Crigler-Najjar type I from other inherited hyperbilirubinemias.</p>",
+  "backHtml": "<p>Crigler-Najjar type I is absent UGT1A1 activity: severe neonatal unconjugated hyperbilirubinemia that phenobarbital cannot lower.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s1-01",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4d4abcf5b415",
+  "frontHtml": "<p>Identify the transporter defect in Dubin-Johnson syndrome.</p>",
+  "backHtml": "<p>Conjugated hyperbilirubinemia with normal enzymes and a black liver is Dubin-Johnson syndrome (MRP2 defect).</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s1-02",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ee153ffd44e5",
+  "frontHtml": "<p>Identify the gene product defective in Wilson disease.</p>",
+  "backHtml": "<p>Wilson disease is an ATP7B defect: impaired biliary copper excretion and ceruloplasmin loading.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s1-03",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7de71aa33376",
+  "frontHtml": "<p>Explain the mechanism of liver injury in alpha-1 antitrypsin deficiency.</p>",
+  "backHtml": "<p>In alpha-1 antitrypsin deficiency, liver disease comes from retained misfolded protein; lung disease comes from lack of circulating inhibitor.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s1-04",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-5a8086eead38",
+  "frontHtml": "<p>Explain the mechanism of lactulose in hepatic encephalopathy.</p>",
+  "backHtml": "<p>Lactulose lowers blood ammonia by colonic acidification (NH3 trapped as NH4+) and catharsis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s1-05",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d25dab7edc52",
+  "frontHtml": "<p>Recognise the composition of Mallory-Denk bodies in alcohol-associated hepatitis.</p>",
+  "backHtml": "<p>Mallory-Denk bodies are ubiquitinated keratin intermediate filament aggregates, typical of alcohol-associated hepatitis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s1-06",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9da077e8242a",
+  "frontHtml": "<p>Calculate severity and choose therapy for severe alcohol-associated hepatitis.</p>",
+  "backHtml": "<p>Severe alcohol-associated hepatitis (Maddrey 32 or more, or MELD above 20) without infection or bleeding is treated with prednisolone, reassessed by the Lille score at day 7.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s2-01",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-09d803afa8d8",
+  "frontHtml": "<p>Risk-stratify fibrosis in a patient with MASLD.</p>",
+  "backHtml": "<p>In MASLD, risk-stratify fibrosis with FIB-4 first, then elastography if FIB-4 is not low.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s2-02",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ed38b6d84c19",
+  "frontHtml": "<p>Screen first-degree relatives for HFE hemochromatosis.</p>",
+  "backHtml": "<p>Screen first-degree relatives of a C282Y homozygote with transferrin saturation, ferritin and HFE genotyping.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s2-03",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6e814f928e2f",
+  "frontHtml": "<p>Choose the initial imaging study for suspected Budd-Chiari syndrome.</p>",
+  "backHtml": "<p>Suspected Budd-Chiari syndrome is evaluated first with Doppler ultrasonography of the hepatic veins.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s2-04",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3f632cee9dab",
+  "frontHtml": "<p>Recognise Wilson disease presenting as acute liver failure.</p>",
+  "backHtml": "<p>Acute liver failure in a young patient with Coombs-negative hemolysis and a very low alkaline phosphatase suggests Wilson disease.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s2-05",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3be9b4991721",
+  "frontHtml": "<p>Manage Wilson disease presenting as acute liver failure.</p>",
+  "backHtml": "<p>Fulminant Wilson disease requires urgent liver transplantation; chelation is for chronic disease.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100601-s2-06",
+  "areas": [
+   "usmle2026.10.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0d0e282c3c70",
+  "frontHtml": "<p>Explain why rapid weight loss predisposes to cholesterol gallstones.</p>",
+  "backHtml": "<p>Rapid weight loss causes cholesterol stones through cholesterol supersaturation and gallbladder hypomotility.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-01",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-c1d73e71d1cf",
+  "frontHtml": "<p>Identify the gallstone type produced by chronic hemolysis.</p>",
+  "backHtml": "<p>Chronic hemolysis causes black pigment (calcium bilirubinate) gallstones, often radiopaque.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-02",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0765e86150a2",
+  "frontHtml": "<p>Describe the mechanism of brown pigment stone formation.</p>",
+  "backHtml": "<p>Brown pigment stones form in infected ducts when bacterial β-glucuronidase deconjugates bilirubin.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-03",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-28552895267b",
+  "frontHtml": "<p>Identify the target antigen of the antimitochondrial antibody in PBC.</p>",
+  "backHtml": "<p>Antimitochondrial antibodies in PBC target the E2 subunit of the pyruvate dehydrogenase complex.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-04",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-540205892a80",
+  "frontHtml": "<p>Recognize the histology of primary sclerosing cholangitis.</p>",
+  "backHtml": "<p>PSC shows onion-skin periductal fibrosis and is strongly associated with ulcerative colitis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-05",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9979d6ebd923",
+  "frontHtml": "<p>Explain how fibrates predispose to cholesterol gallstones.</p>",
+  "backHtml": "<p>Fibrates cause cholesterol gallstones by inhibiting 7α-hydroxylase and raising biliary cholesterol.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-06",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-c15e84cd8b8e",
+  "frontHtml": "<p>Identify the source and actions of cholecystokinin.</p>",
+  "backHtml": "<p>CCK from duodenal and jejunal I cells contracts the gallbladder and relaxes the sphincter of Oddi.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-07",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2c1152168391",
+  "frontHtml": "<p>Describe the proposed pathogenesis of choledochal cysts.</p>",
+  "backHtml": "<p>Choledochal cysts are linked to an anomalous pancreaticobiliary junction that lets pancreatic juice reflux into the bile duct.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-08",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-97b60f497f2c",
+  "frontHtml": "<p>Explain the pathogenesis of gallstone ileus.</p>",
+  "backHtml": "<p>Gallstone ileus: a large stone enters the duodenum through a cholecystoenteric fistula and impacts at the terminal ileum.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s1-09",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-55ba6ca727c0",
+  "frontHtml": "<p>Choose ERCP for a high-likelihood common bile duct stone.</p>",
+  "backHtml": "<p>When ultrasound shows a common bile duct stone, go straight to ERCP for removal, then cholecystectomy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s2-01",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-709b97b8dadd",
+  "frontHtml": "<p>Diagnose acalculous cholecystitis in a critically ill patient.</p>",
+  "backHtml": "<p>A febrile ICU patient with a thick-walled, distended gallbladder and no stones has acalculous cholecystitis until proven otherwise.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s2-02",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b057dfdd409a",
+  "frontHtml": "<p>Select percutaneous cholecystostomy for an unstable patient with cholecystitis.</p>",
+  "backHtml": "<p>Unstable patients with acute cholecystitis, especially acalculous disease in the ICU, are treated with percutaneous cholecystostomy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s2-03",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-ff663cdafd55",
+  "frontHtml": "<p>Choose MRCP to diagnose primary sclerosing cholangitis.</p>",
+  "backHtml": "<p>Suspected PSC is diagnosed with MRCP; ERCP is reserved for treatment or tissue sampling.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s2-04",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f6de2ee80ab4",
+  "frontHtml": "<p>Select first-line therapy for primary biliary cholangitis.</p>",
+  "backHtml": "<p>Ursodeoxycholic acid is first-line, lifelong therapy for primary biliary cholangitis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s2-05",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-1b1f66b36ed9",
+  "frontHtml": "<p>Manage acute cholecystitis during pregnancy.</p>",
+  "backHtml": "<p>Acute cholecystitis in pregnancy is treated with laparoscopic cholecystectomy during the admission, in any trimester.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100602-s2-06",
+  "areas": [
+   "usmle2026.10.06.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-1adaf4a60326",
+  "frontHtml": "<p>Describe the action of secretin on the exocrine pancreas.</p>",
+  "backHtml": "<p>Secretin, released by duodenal acid, stimulates bicarbonate-rich fluid from pancreatic ductal cells.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s1-01",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-618c1ee1aedb",
+  "frontHtml": "<p>Explain the role of enteropeptidase in protease activation.</p>",
+  "backHtml": "<p>Enteropeptidase activates trypsinogen, which then activates the other pancreatic zymogens.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s1-02",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-61509fc1c1e0",
+  "frontHtml": "<p>Explain the mechanism of PRSS1-related hereditary pancreatitis.</p>",
+  "backHtml": "<p>PRSS1 gain-of-function variants cause autosomal dominant hereditary pancreatitis by leaving activated trypsin uncontrolled.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s1-03",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-1c15fb40038e",
+  "frontHtml": "<p>Recognize familial chylomicronemia as a cause of pancreatitis.</p>",
+  "backHtml": "<p>Lipoprotein lipase deficiency causes chylomicronemia, eruptive xanthomas and recurrent pancreatitis in childhood.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s1-04",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-9590720c315b",
+  "frontHtml": "<p>Recognize the histology of IgG4-related autoimmune pancreatitis.</p>",
+  "backHtml": "<p>IgG4-related autoimmune pancreatitis shows IgG4-rich lymphoplasmacytic inflammation, storiform fibrosis and obliterative phlebitis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s1-05",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b3ddbf74c4e5",
+  "frontHtml": "<p>Describe the histology of a pancreatic pseudocyst.</p>",
+  "backHtml": "<p>Pancreatic pseudocysts are walled by fibrous and granulation tissue and lack an epithelial lining.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s1-06",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-209cb8132702",
+  "frontHtml": "<p>Explain why exocrine pancreatic insufficiency can cause B12 deficiency.</p>",
+  "backHtml": "<p>Pancreatic proteases free B12 from haptocorrin; exocrine insufficiency can therefore impair B12 absorption.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s1-07",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-682d6b2b3934",
+  "frontHtml": "<p>Explain the mechanism of pancreatic insufficiency in cystic fibrosis.</p>",
+  "backHtml": "<p>Cystic fibrosis causes pancreatic insufficiency because thick ductal secretions obstruct the ducts and destroy acini.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s1-08",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d6d85a2af804",
+  "frontHtml": "<p>Choose initial fluid therapy for acute pancreatitis.</p>",
+  "backHtml": "<p>Initial treatment of acute pancreatitis is moderate goal-directed lactated Ringer solution with frequent reassessment.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s2-01",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-85d63e98f752",
+  "frontHtml": "<p>Identify hypertriglyceridemia as a cause of acute pancreatitis.</p>",
+  "backHtml": "<p>Lipemic serum with acute pancreatitis suggests hypertriglyceridemia; measure triglycerides early.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s2-02",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0e635646d5d8",
+  "frontHtml": "<p>Plan secondary prevention after hypertriglyceridemia-induced pancreatitis.</p>",
+  "backHtml": "<p>Prevent recurrent hypertriglyceridemic pancreatitis with a fibrate, dietary fat restriction and glucose control.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s2-03",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-be41e79703a1",
+  "frontHtml": "<p>Manage an asymptomatic pancreatic pseudocyst.</p>",
+  "backHtml": "<p>Asymptomatic pancreatic pseudocysts are observed; size alone is not an indication to drain.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s2-04",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-8b80e6b677d6",
+  "frontHtml": "<p>Manage infected pancreatic necrosis.</p>",
+  "backHtml": "<p>Infected pancreatic necrosis in a stable patient: carbapenem first, then delayed, step-up drainage of walled-off necrosis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s2-05",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6ba61e68687b",
+  "frontHtml": "<p>Treat exocrine insufficiency in chronic pancreatitis.</p>",
+  "backHtml": "<p>Steatorrhea from chronic pancreatitis is treated with pancreatic enzyme replacement taken with meals.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s2-06",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a14897c7fc74",
+  "frontHtml": "<p>Select prophylaxis against post-ERCP pancreatitis.</p>",
+  "backHtml": "<p>Rectal NSAIDs (indomethacin or diclofenac) at the time of ERCP reduce post-ERCP pancreatitis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100701-s2-07",
+  "areas": [
+   "usmle2026.10.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d1288af08ed3",
+  "frontHtml": "<p>Relate SAAG to Starling forces in cirrhotic ascites.</p>",
+  "backHtml": "<p>A SAAG of 1.1 g/dL or more reflects raised portal (sinusoidal) hydrostatic pressure as the cause of ascites.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s1-01",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-bf3ce7f17ef7",
+  "frontHtml": "<p>Explain the role of splanchnic vasodilation in cirrhotic ascites.</p>",
+  "backHtml": "<p>Splanchnic vasodilation from nitric oxide underlies the RAAS activation and sodium retention of cirrhosis.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s1-02",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-83089f88462d",
+  "frontHtml": "<p>Identify the mechanism of spironolactone-induced gynecomastia.</p>",
+  "backHtml": "<p>Spironolactone causes gynecomastia through androgen receptor antagonism; switch to eplerenone or amiloride if needed.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s1-03",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-c23d4c1a13ce",
+  "frontHtml": "<p>Identify the usual organisms in spontaneous bacterial peritonitis.</p>",
+  "backHtml": "<p>SBP is typically a single enteric gram-negative organism, most often E. coli .</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s1-04",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0cadbe5720c3",
+  "frontHtml": "<p>Describe the pathophysiology of hepatorenal syndrome.</p>",
+  "backHtml": "<p>Hepatorenal syndrome is functional renal vasoconstriction in structurally normal kidneys, with very low urine sodium.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s1-05",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4c964b400de2",
+  "frontHtml": "<p>Recognize the causes of chylous ascites.</p>",
+  "backHtml": "<p>Chylous ascites (triglycerides above 200 mg/dL) in an adult with bulky nodes suggests lymphoma.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s1-06",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-30a96f43f7f3",
+  "frontHtml": "<p>Associate peritoneal mesothelioma with asbestos.</p>",
+  "backHtml": "<p>Malignant mesothelioma, pleural or peritoneal, is strongly associated with asbestos exposure.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s1-07",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-88e91eb62dc8",
+  "frontHtml": "<p>Recognize the pathology of tuberculous peritonitis.</p>",
+  "backHtml": "<p>Tuberculous peritonitis: lymphocytic, high-protein, low-SAAG ascites; peritoneal biopsy shows caseating granulomas.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s1-08",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6b40f996840a",
+  "frontHtml": "<p>Treat spontaneous bacterial peritonitis with antibiotics and albumin.</p>",
+  "backHtml": "<p>SBP (ascitic PMN of 250/mm3 or more): give an IV third-generation cephalosporin plus IV albumin.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s2-01",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-eb02aff7f7dc",
+  "frontHtml": "<p>Recognize secondary bacterial peritonitis in a patient with ascites.</p>",
+  "backHtml": "<p>Polymicrobial ascites with low glucose and high LDH means secondary peritonitis: broad antibiotics and urgent CT for a source.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s2-02",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-c05e988c10b7",
+  "frontHtml": "<p>Manage secondary peritonitis from a perforated viscus.</p>",
+  "backHtml": "<p>Secondary peritonitis from a free perforation needs surgical source control along with antibiotics.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s2-03",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-e9579f2ee899",
+  "frontHtml": "<p>Use SAAG and ascitic protein to identify cardiac ascites.</p>",
+  "backHtml": "<p>High SAAG with high ascitic protein (2.5 g/dL or more) suggests cardiac ascites or hepatic vein obstruction.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s2-04",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-97300c7eacf6",
+  "frontHtml": "<p>Prevent post-paracentesis circulatory dysfunction with albumin.</p>",
+  "backHtml": "<p>After large-volume paracentesis (more than 5 L), give IV albumin, about 6 to 8 g per liter removed.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s2-05",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-cd68fee6f81f",
+  "frontHtml": "<p>Start first-line treatment for cirrhotic ascites.</p>",
+  "backHtml": "<p>Initial treatment of cirrhotic ascites is about 2 g/day sodium restriction plus spironolactone and furosemide.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s2-06",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-514fe54d9067",
+  "frontHtml": "<p>Treat hepatorenal syndrome.</p>",
+  "backHtml": "<p>Treat hepatorenal syndrome with a vasoconstrictor (terlipressin, or norepinephrine in the ICU) plus albumin.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s2-07",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-1871f3d5ce65",
+  "frontHtml": "<p>Provide secondary prophylaxis after spontaneous bacterial peritonitis.</p>",
+  "backHtml": "<p>After a first episode of SBP, give long-term daily oral antibiotic prophylaxis and refer for transplant evaluation.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100801-s2-08",
+  "areas": [
+   "usmle2026.10.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-79607cc99f2c",
+  "frontHtml": "<p>Relate an indirect inguinal hernia to failed obliteration of the processus vaginalis.</p>",
+  "backHtml": "<p>Indirect inguinal hernia equals a patent processus vaginalis entering lateral to the inferior epigastric vessels.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s1-01",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4d69b5620b76",
+  "frontHtml": "<p>Identify the boundaries of Hesselbach triangle.</p>",
+  "backHtml": "<p>Direct hernias bulge medial to the inferior epigastric vessels through Hesselbach triangle.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s1-02",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6f6b78b339b6",
+  "frontHtml": "<p>Locate the femoral canal and its relations.</p>",
+  "backHtml": "<p>A femoral hernia lies below the inguinal ligament, immediately medial to the femoral vein.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s1-03",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-c199744f7ac4",
+  "frontHtml": "<p>Explain the mechanism of late dumping syndrome.</p>",
+  "backHtml": "<p>Postprandial hypoglycemia hours after gastric surgery is late dumping from an insulin overshoot.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s1-04",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-da725eca8e6c",
+  "frontHtml": "<p>Explain B12 deficiency in blind loop syndrome.</p>",
+  "backHtml": "<p>Low B12 with high folate after a blind loop suggests bacterial overgrowth.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s1-05",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-b4d00e61ca4f",
+  "frontHtml": "<p>Link nutrient deficiency after bariatric surgery to its absorption site.</p>",
+  "backHtml": "<p>Iron deficiency after gastric bypass reflects duodenal bypass and reduced acid.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s1-06",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3c1ce6201152",
+  "frontHtml": "<p>Distinguish Boerhaave rupture from other esophageal lesions.</p>",
+  "backHtml": "<p>Vomiting followed by chest pain and subcutaneous emphysema means transmural rupture, not a Mallory-Weiss tear.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s1-07",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6b0163afb661",
+  "frontHtml": "<p>Relate duodenal retroperitoneal anatomy to its injury mechanism.</p>",
+  "backHtml": "<p>A handlebar injury with delayed bilious vomiting suggests a duodenal hematoma.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s1-08",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-7fe7712b6ea9",
+  "frontHtml": "<p>Choose the confirmatory study for suspected esophageal perforation.</p>",
+  "backHtml": "<p>Suspected esophageal perforation is confirmed with water-soluble contrast esophagography or CT with oral contrast.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s2-01",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6de4222746ad",
+  "frontHtml": "<p>Manage confirmed spontaneous esophageal rupture.</p>",
+  "backHtml": "<p>Boerhaave rupture with free contamination needs emergent surgical repair plus drainage.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s2-02",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-0b78e05059fc",
+  "frontHtml": "<p>Apply the FAST and stability algorithm in blunt abdominal trauma.</p>",
+  "backHtml": "<p>Unstable plus positive FAST after blunt trauma means laparotomy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s2-03",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-4b6f61ad1dff",
+  "frontHtml": "<p>Recognize indications for laparotomy after penetrating abdominal trauma.</p>",
+  "backHtml": "<p>Evisceration after an abdominal stab wound is an indication for laparotomy even when the patient is stable.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s2-04",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-a219de028e01",
+  "frontHtml": "<p>Manage ingestion of a button battery lodged in the esophagus.</p>",
+  "backHtml": "<p>An esophageal button battery requires emergent endoscopic removal.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s2-05",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-2644749dc776",
+  "frontHtml": "<p>Manage early dumping syndrome after bariatric surgery.</p>",
+  "backHtml": "<p>Early dumping is treated first with dietary modification.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q100901-s2-06",
+  "areas": [
+   "usmle2026.10.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-6a7d8de9406c",
+  "frontHtml": "<p>Explain the embryologic basis of omphalocele.</p>",
+  "backHtml": "<p>Omphalocele is a membrane-covered midline defect from failure of the physiologically herniated gut to return.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s1-01",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-10f8fb3642f7",
+  "frontHtml": "<p>Identify the type of esophageal atresia from radiographic findings.</p>",
+  "backHtml": "<p>Coiled tube plus gas in the abdomen means proximal atresia with a distal tracheesophageal fistula.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s1-02",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-269f6b665a21",
+  "frontHtml": "<p>Explain the embryologic origin of annular pancreas.</p>",
+  "backHtml": "<p>Annular pancreas comes from abnormal migration of the ventral pancreatic bud around the duodenum.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s1-03",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-db6482385b54",
+  "frontHtml": "<p>Relate Meckel diverticulum to its embryologic origin.</p>",
+  "backHtml": "<p>Meckel diverticulum is a vitelline duct remnant; ectopic gastric mucosa causes bleeding and a positive pertechnetate scan.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s1-04",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f3d47706d8ad",
+  "frontHtml": "<p>Identify the embryologic basis of cleft lip.</p>",
+  "backHtml": "<p>Cleft lip is failed fusion of the maxillary prominence with the medial nasal prominences.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s1-05",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-dfa941a79b2a",
+  "frontHtml": "<p>Explain the acid-base and renal response in pyloric stenosis.</p>",
+  "backHtml": "<p>Paradoxical aciduria in pyloric stenosis reflects volume-driven aldosterone action plus chloride depletion.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s1-06",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-722e25904078",
+  "frontHtml": "<p>Choose the best imaging test for suspected pyloric stenosis.</p>",
+  "backHtml": "<p>Suspected pyloric stenosis is confirmed by abdominal ultrasound.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s2-01",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d5b19a9b32ee",
+  "frontHtml": "<p>Sequence management of pyloric stenosis.</p>",
+  "backHtml": "<p>In pyloric stenosis, correct fluids and electrolytes first; pyloromyotomy follows.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s2-02",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-1a33037069f2",
+  "frontHtml": "<p>Manage biliary atresia.</p>",
+  "backHtml": "<p>Biliary atresia is treated with an early Kasai procedure; delay worsens outcomes.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s2-03",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-fc1e0d09c3d3",
+  "frontHtml": "<p>Manage duodenal atresia in a newborn.</p>",
+  "backHtml": "<p>Duodenal atresia is managed with decompression, fluids and duodenoduodenostomy.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s2-04",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-93fdf862da3d",
+  "frontHtml": "<p>Evaluate a newborn with omphalocele for associated anomalies.</p>",
+  "backHtml": "<p>Omphalocele demands a search for associated anomalies, starting with echocardiography.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s2-05",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-29b4c0103c0e",
+  "frontHtml": "<p>Choose the diagnostic test for suspected Meckel diverticulum.</p>",
+  "backHtml": "<p>Painless lower GI bleeding in a toddler calls for a Meckel (pertechnetate) scan.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101001-s2-06",
+  "areas": [
+   "usmle2026.10.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-044b59e3bdb3",
+  "frontHtml": "<p>Explain how NSAIDs cause peptic ulcers.</p>",
+  "backHtml": "<p>NSAID ulcers result mainly from loss of COX-1-derived mucosal prostaglandins.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s1-01",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3a207a63fe6c",
+  "frontHtml": "<p>Explain the zonal pattern of acetaminophen hepatotoxicity.</p>",
+  "backHtml": "<p>Acetaminophen causes zone 3 necrosis because CYP2E1 is concentrated there.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s1-02",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-016645f7dd12",
+  "frontHtml": "<p>Recognize the main adverse effect of misoprostol.</p>",
+  "backHtml": "<p>Misoprostol prevents NSAID ulcers but commonly causes diarrhea.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s1-03",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-bd0c73371f31",
+  "frontHtml": "<p>Explain the mechanism of peripherally acting opioid antagonists.</p>",
+  "backHtml": "<p>PAMORAs relieve opioid constipation because they block gut mu receptors but stay out of the brain.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s1-04",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-8f61833c911b",
+  "frontHtml": "<p>Classify drug-induced liver injury and link it to amoxicillin-clavulanate.</p>",
+  "backHtml": "<p>Delayed cholestatic jaundice after amoxicillin-clavulanate is classic idiosyncratic DILI.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s1-05",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-5d1a2a23016a",
+  "frontHtml": "<p>Explain the mechanism of immune checkpoint inhibitor colitis.</p>",
+  "backHtml": "<p>Checkpoint-inhibitor colitis is autoimmune T-cell injury from loss of inhibitory checkpoints.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s1-06",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-415e835d7cb9",
+  "frontHtml": "<p>Choose the diagnostic test for suspected C. difficile infection.</p>",
+  "backHtml": "<p>Test unformed stool for C. difficile when diarrhea follows antibiotics.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s2-01",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-42579ad6d394",
+  "frontHtml": "<p>Select therapy for an initial C. difficile infection.</p>",
+  "backHtml": "<p>Treat a first C. difficile episode with oral fidaxomicin (or oral vancomycin).</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s2-02",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-f018c954522a",
+  "frontHtml": "<p>Use the Rumack-Matthew nomogram to decide on N-acetylcysteine.</p>",
+  "backHtml": "<p>A post-4-hour acetaminophen level above the treatment line means start NAC immediately.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s2-03",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-579df4067214",
+  "frontHtml": "<p>Prevent NSAID-induced peptic ulcer disease in high-risk patients.</p>",
+  "backHtml": "<p>High-GI-risk patients who need an NSAID should receive a PPI.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s2-04",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-3dc1f164d27e",
+  "frontHtml": "<p>Manage laxative-refractory opioid-induced constipation.</p>",
+  "backHtml": "<p>Laxative-refractory opioid constipation calls for a PAMORA once obstruction is excluded.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s2-05",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-fc83dbd751e3",
+  "frontHtml": "<p>Recognize and manage drug-induced pancreatitis.</p>",
+  "backHtml": "<p>Thiopurine-induced pancreatitis requires stopping the drug class permanently.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s2-06",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-d311cfdcb02b",
+  "frontHtml": "<p>Manage immune checkpoint inhibitor colitis.</p>",
+  "backHtml": "<p>Moderate to severe checkpoint-inhibitor colitis is treated by holding the drug and giving glucocorticoids.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s2-07",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "s23d-g-80e4ecf9ba2f",
+  "frontHtml": "<p>Apply stopping rules for isoniazid hepatotoxicity.</p>",
+  "backHtml": "<p>Symptomatic isoniazid hepatitis with ALT above 3 times normal requires stopping isoniazid.</p>",
+  "sectionId": null,
+  "questionId": "s23d-q101101-s2-08",
+  "areas": [
+   "usmle2026.10.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ }
+]

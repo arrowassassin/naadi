@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="720" height="380" role="img" aria-label="Multiple endocrine neoplasia types 1, 2A and 2B: the gene, the mechanism and the tumours of each">
+<title>Multiple endocrine neoplasia syndromes</title>
+<rect x="0" y="0" width="720" height="380" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<rect x="10" y="10" width="226" height="360" rx="8" fill="#eff6ff" stroke="#334155" stroke-width="1.5"/>
+<text x="123" y="36" font-size="15" font-weight="bold" text-anchor="middle">MEN1</text>
+<text x="123" y="56" font-size="12" text-anchor="middle">MEN1 gene (menin), 11q13</text>
+<text x="123" y="72" font-size="12" text-anchor="middle">tumour suppressor: two hits</text>
+<text x="22" y="110" font-size="12" font-weight="bold">Parathyroid</text>
+<text x="22" y="126" font-size="12">multigland hyperplasia;</text>
+<text x="22" y="142" font-size="12">usually the first sign</text>
+<text x="22" y="176" font-size="12" font-weight="bold">Pancreas / duodenum</text>
+<text x="22" y="192" font-size="12">gastrinoma (often duodenal,</text>
+<text x="22" y="208" font-size="12">multiple), insulinoma,</text>
+<text x="22" y="224" font-size="12">nonfunctioning NETs</text>
+<text x="22" y="258" font-size="12" font-weight="bold">Anterior pituitary</text>
+<text x="22" y="274" font-size="12">prolactinoma most often</text>
+<text x="22" y="308" font-size="12" font-weight="bold">Others</text>
+<text x="22" y="324" font-size="12">foregut carcinoids,</text>
+<text x="22" y="340" font-size="12">adrenal cortical nodules</text>
+<rect x="247" y="10" width="226" height="360" rx="8" fill="#fef2f2" stroke="#334155" stroke-width="1.5"/>
+<text x="360" y="36" font-size="15" font-weight="bold" text-anchor="middle">MEN2A</text>
+<text x="360" y="56" font-size="12" text-anchor="middle">RET proto-oncogene, 10q11</text>
+<text x="360" y="72" font-size="12" text-anchor="middle">gain of function: one hit</text>
+<text x="259" y="110" font-size="12" font-weight="bold">Medullary thyroid cancer</text>
+<text x="259" y="126" font-size="12">nearly all carriers; C cells,</text>
+<text x="259" y="142" font-size="12">calcitonin and CEA</text>
+<text x="259" y="176" font-size="12" font-weight="bold">Pheochromocytoma</text>
+<text x="259" y="192" font-size="12">often bilateral</text>
+<text x="259" y="226" font-size="12" font-weight="bold">Parathyroid hyperplasia</text>
+<text x="259" y="260" font-size="12" font-weight="bold">Variants</text>
+<text x="259" y="276" font-size="12">cutaneous lichen amyloidosis;</text>
+<text x="259" y="292" font-size="12">Hirschsprung disease in some</text>
+<text x="259" y="308" font-size="12">families</text>
+<rect x="484" y="10" width="226" height="360" rx="8" fill="#fffbeb" stroke="#334155" stroke-width="1.5"/>
+<text x="597" y="36" font-size="15" font-weight="bold" text-anchor="middle">MEN2B</text>
+<text x="597" y="56" font-size="12" text-anchor="middle">RET (usually M918T)</text>
+<text x="597" y="72" font-size="12" text-anchor="middle">gain of function</text>
+<text x="496" y="110" font-size="12" font-weight="bold">Medullary thyroid cancer</text>
+<text x="496" y="126" font-size="12">earliest and most aggressive</text>
+<text x="496" y="160" font-size="12" font-weight="bold">Pheochromocytoma</text>
+<text x="496" y="194" font-size="12" font-weight="bold">Mucosal neuromas</text>
+<text x="496" y="210" font-size="12">lips, tongue, eyelids;</text>
+<text x="496" y="226" font-size="12">intestinal ganglioneuromas</text>
+<text x="496" y="260" font-size="12" font-weight="bold">Marfanoid body habitus</text>
+<text x="496" y="294" font-size="12" font-weight="bold">No hyperparathyroidism</text>
+<text x="496" y="328" font-size="12">Pheochromocytoma is removed</text>
+<text x="496" y="344" font-size="12">before any other surgery</text>
+</g>
+</svg>

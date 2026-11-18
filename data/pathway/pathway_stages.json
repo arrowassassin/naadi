@@ -1,0 +1,374 @@
+[
+  {
+    "key": "eligibility",
+    "sort": 10,
+    "title": "Eligibility and ECFMG application",
+    "summary_md": "Before any exam, confirm your medical school is listed in WDOMS with an ECFMG Sponsor Note that covers your graduation year; with no Sponsor Note you are not eligible [ECFMG](https://ecfmg.org/2026ib/certification-requirements.html). Open a MyIntealth account ($110) and submit the Application for ECFMG Certification ($580) plus diploma and transcript verification ($110 each) [IMGPrep](https://www.imgprep.com/ecfmg-certification-cost). Do this first: a 2027 Pathway application requires your ECFMG application to be “Accepted” or “Pending Credential Verification”, and your OET booking must carry your MyIntealth ID [ECFMG Pathways](https://apps.wdoms.org/certification-pathways/) [2027 FAQ](https://apps.wdoms.org/certification-pathways/faqs.html). Since January 2026 you register for USMLE through FSMB, not ECFMG [ECFMG News](https://www.ecfmg.org/news/category/pathways/).",
+    "official_links": [
+      {
+        "label": "ECFMG certification requirements (2026 IB)",
+        "url": "https://ecfmg.org/2026ib/certification-requirements.html"
+      },
+      {
+        "label": "WDOMS Sponsor Notes",
+        "url": "https://apps.wdoms.org/resources/sponsor-notes.html"
+      },
+      {
+        "label": "ECFMG 2027 Pathways",
+        "url": "https://apps.wdoms.org/certification-pathways/"
+      },
+      {
+        "label": "USMLE eligibility",
+        "url": "https://www.usmle.org/bulletin-information/eligibility"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "step1",
+    "sort": 20,
+    "title": "USMLE Step 1",
+    "summary_md": "Step 1 is pass/fail, now 14 × 30-minute blocks (280 items) [Lecturio](https://www.lecturio.com/blog/2026-usmle-changes-step-1-2-ck-software-block-updates/), and costs $695 + $210 international surcharge when taken in India [IMGPrep](https://www.imgprep.com/ecfmg-certification-cost). The 2025 first-time pass rate for IMGs was 75% [USMLE](https://www.usmle.org/performance-data). You get at most 3 attempts at a Step in 12 months and 4 failed attempts end USMLE eligibility, so sit only when ready [USMLE](https://www.usmle.org/bulletin-information/eligibility). A NEET PG year gives strong recall; the job is retraining for mechanism-based, two-step questions using UWorld and NBME self-assessments.",
+    "official_links": [
+      {
+        "label": "USMLE eligibility and attempt limits",
+        "url": "https://www.usmle.org/bulletin-information/eligibility"
+      },
+      {
+        "label": "USMLE performance data",
+        "url": "https://www.usmle.org/performance-data"
+      },
+      {
+        "label": "NBME self-assessments",
+        "url": "https://www.nbme.org/examinees/self-assessments"
+      },
+      {
+        "label": "UWorld Step 1",
+        "url": "https://medical.uworld.com/usmle/usmle-step-1/"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "oet_pathway",
+    "sort": 30,
+    "title": "OET Medicine and ECFMG Pathway",
+    "summary_md": "ECFMG certification needs an accepted, unexpired Pathway, which includes OET Medicine at 350 in Listening, Reading and Speaking and 300 in Writing in one sitting [ECFMG](https://ecfmg.org/2026ib/clinical-skills-requirement.html) [ECFMG FAQ](https://ecfmg.org/certification-pathways/faqs.html). No USMLE pass is needed to apply for a 2027 Pathway; passes are needed by the Rank Order List deadline of the Match you enter [2027 FAQ](https://apps.wdoms.org/certification-pathways/faqs.html). The 2027 Pathway deadline is 31 Jan 2027 (ET) and ECFMG must receive OET scores directly by then [ECFMG](https://apps.wdoms.org/certification-pathways/). ECFMG has not announced 2028 Pathways [ECFMG News](https://www.ecfmg.org/news/category/pathways/), so a December 2026 OET plus a 2027 Pathway is low-regret insurance.",
+    "official_links": [
+      {
+        "label": "ECFMG 2027 Pathways",
+        "url": "https://apps.wdoms.org/certification-pathways/"
+      },
+      {
+        "label": "2027 Pathways FAQ",
+        "url": "https://apps.wdoms.org/certification-pathways/faqs.html"
+      },
+      {
+        "label": "Pathway 1",
+        "url": "https://corp.ecfmg.org/certification-pathways/pathway-1.html"
+      },
+      {
+        "label": "Pathways 3-5",
+        "url": "https://certification.ecfmg.org/certification-pathways/pathways-3-5.html"
+      },
+      {
+        "label": "Pathway expiration",
+        "url": "https://corp.ecfmg.org/certification-pathways/expiration.html"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "step2ck",
+    "sort": 40,
+    "title": "USMLE Step 2 CK",
+    "summary_md": "Step 2 CK is scored; the pass mark is 218 since 1 Jul 2025 and the mean is about 250 [iatroX](https://www.iatrox.com/blog/usmle-step-2-ck-2026-passing-standard-mean-score-you-need). This is the score programs filter on: 89% of programs use it for interview decisions [NRMP 2026 PD Survey](https://www.nrmp.org/wp-content/uploads/2026/08/2026-PD-Survey-Report-Narrative-FINAL.pdf). Matched non-US IMGs in Internal Medicine averaged 248 vs 242 for unmatched (2024) [NRMP](https://www.nrmp.org/wp-content/uploads/2024/09/Charting_Outcomes_IMG2024.pdf). Budget about 12 weeks, sit only when predictors are in range, and remember a passed Step cannot be retaken for a higher score [USMLE](https://www.usmle.org/bulletin-information/eligibility).",
+    "official_links": [
+      {
+        "label": "USMLE eligibility",
+        "url": "https://www.usmle.org/bulletin-information/eligibility"
+      },
+      {
+        "label": "UWorld Step 2 CK",
+        "url": "https://medical.uworld.com/usmle/usmle-step-2-ck/"
+      },
+      {
+        "label": "NBME self-assessments",
+        "url": "https://www.nbme.org/examinees/self-assessments"
+      },
+      {
+        "label": "NRMP Charting Outcomes IMG 2024",
+        "url": "https://www.nrmp.org/wp-content/uploads/2024/09/Charting_Outcomes_IMG2024.pdf"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "usce",
+    "sort": 50,
+    "title": "US clinical exposure, letters and the B-1 visa",
+    "summary_md": "MBBS graduates can generally do only observerships (shadowing, no patient contact); hands-on clerkships on a B-1 are limited to students [AMA](https://ama-assn.org/life-career/observership-program-listings-international-medical-graduates) [Temple ISSS](https://global.temple.edu/isss/faculty-staff-and-researchers/temple-links/medical-activities). The main value is the specialty-specific US letter, cited by 84–86% of program directors for interview selection [NRMP 2024](https://www.nrmp.org/wp-content/uploads/2024/08/2024-PD-Survey-Report-narrative_Final.pdf) [NRMP 2026](https://www.nrmp.org/wp-content/uploads/2026/08/2026-PD-Survey-Report-Narrative-FINAL.pdf). B1/B2 interview waits in India were about 6–12 months in Sept 2026 [TravelManToday](https://travelmantoday.com/us-visa-wait-times-indians-2026/), and some hosts require the B-1 before you apply [UTHSCSA](https://lsom.uthscsa.edu/hospital-medicine/home/hospital-medicine-observerships/), so the visa is the hidden critical path.",
+    "official_links": [
+      {
+        "label": "AMA observership FAQ",
+        "url": "https://ama-assn.org/life-career/observership-program-listings-international-medical-graduates"
+      },
+      {
+        "label": "State Dept visa wait times",
+        "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times.html"
+      },
+      {
+        "label": "UAB observership",
+        "url": "https://www.uab.edu/medicine/international/international-programs/observership"
+      },
+      {
+        "label": "KUMC observership",
+        "url": "https://www.kumc.edu/academic-and-student-affairs/departments/office-of-international-programs/inbound-programs/information-for-irsd-observers-and-visitors/international-observership-program.html"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "specialty_choice",
+    "sort": 60,
+    "title": "Choosing specialties",
+    "summary_md": "In 2026, non-US IMGs needing visa sponsorship matched at 54.4%, a five-year low [NRMP](https://www.nrmp.org/about/news/2026/03/nrmp-releases-results-of-the-2026-main-residency-match-for-more-than-38000-future-residents/). Categorical Internal Medicine is by far the largest destination (3,448 non-US IMGs, 30.8% of positions) and Family Medicine is the least score-driven safety [NRMP 2026](https://www.nrmp.org/wp-content/uploads/2026/05/Main_Match_Results_and_Data-2026.pdf). Matched and unmatched IMGs differ by only 5–10 Step 2 CK points but matched IMGs ranked about 2.5× as many programs [NRMP 2024](https://www.nrmp.org/wp-content/uploads/2024/09/Charting_Outcomes_IMG2024.pdf), so interviews are the bottleneck.",
+    "official_links": [
+      {
+        "label": "NRMP 2026 Results and Data",
+        "url": "https://www.nrmp.org/wp-content/uploads/2026/05/Main_Match_Results_and_Data-2026.pdf"
+      },
+      {
+        "label": "NRMP Charting Outcomes 2024",
+        "url": "https://www.nrmp.org/wp-content/uploads/2024/09/Charting_Outcomes_IMG2024.pdf"
+      },
+      {
+        "label": "NRMP Step 2 CK baseline report",
+        "url": "https://www.nrmp.org/match-data/2026/07/charting-outcomes-usmle-step-2-ck-exam-baseline-2/"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "eras_application",
+    "sort": 70,
+    "title": "ERAS application",
+    "summary_md": "ERAS 2028 dates are not yet published; in the 2027 cycle MyERAS opened 4 Jun 2026, applicants could submit from 2 Sep and programs reviewed from 23 Sep [AAMC](https://www.aamc.org/services/eras-for-institutions/medical-schools/timeline). Fees are $11 per program for the first 30 and $30 each after, per specialty [Lecturio](https://www.lecturio.com/blog/eras-2027-timeline-residency-application-strategy/). Internal Medicine gives 3 gold and 12 silver signals [AAMC](https://students-residents.aamc.org/applying-residencies-eras/program-signaling-2027-myeras-application-season). Submit on day one with 100–150 IM and about 30 FM programs.",
+    "official_links": [
+      {
+        "label": "AAMC ERAS timeline",
+        "url": "https://www.aamc.org/services/eras-for-institutions/medical-schools/timeline"
+      },
+      {
+        "label": "AAMC program signaling",
+        "url": "https://students-residents.aamc.org/applying-residencies-eras/program-signaling-2027-myeras-application-season"
+      },
+      {
+        "label": "NRMP applicant calendar",
+        "url": "https://www.nrmp.org/match-calendars/main-residency-applicants/"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "interviews_ranking",
+    "sort": 80,
+    "title": "Interviews and rank order list",
+    "summary_md": "Interviews run roughly October to January [Lecturio](https://www.lecturio.com/blog/eras-2027-timeline-residency-application-strategy/). Program directors' top ranking factors are interpersonal skills (89%) and interview interactions (87%) [NRMP 2024 PD Survey](https://www.nrmp.org/wp-content/uploads/2024/08/2024-PD-Survey-Report-narrative_Final.pdf). Step 1, Step 2 CK and an accepted, unexpired Pathway must all be in place by the Rank Order List certification deadline [ECFMG](https://apps.wdoms.org/certification-pathways/) [ECFMG](https://corp.ecfmg.org/certification-pathways/expiration.html); in the 2027 Match that deadline is 3 Mar 2027 [NRMP](https://www.nrmp.org/match-calendars/main-residency-applicants/).",
+    "official_links": [
+      {
+        "label": "NRMP applicant calendar",
+        "url": "https://www.nrmp.org/match-calendars/main-residency-applicants/"
+      },
+      {
+        "label": "NRMP 2024 PD Survey",
+        "url": "https://www.nrmp.org/wp-content/uploads/2024/08/2024-PD-Survey-Report-narrative_Final.pdf"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "match_day",
+    "sort": 90,
+    "title": "Match week",
+    "summary_md": "In the 2027 Match, Match status is released 15 Mar, SOAP runs 15–18 Mar and Match Day is 19 Mar [NRMP](https://www.nrmp.org/match-calendars/main-residency-applicants/); 2028 dates are not yet published. The week after Match starts the visa critical path: contract, MoHFW Statement of Need, Intealth J-1 application, DS-2019 [Intealth](https://certification.ecfmg.org/evsp/applying-pre-arrival.html) [CGI San Francisco](https://www.cgisf.gov.in/page/statement-of-need-certificates-for-medical-doctors/).",
+    "official_links": [
+      {
+        "label": "NRMP applicant calendar",
+        "url": "https://www.nrmp.org/match-calendars/main-residency-applicants/"
+      },
+      {
+        "label": "Intealth pre-arrival",
+        "url": "https://certification.ecfmg.org/evsp/applying-pre-arrival.html"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "visa_j1",
+    "sort": 100,
+    "title": "J-1 visa (and the H-1B branch)",
+    "summary_md": "J-1 is the default residency visa. It needs ECFMG/Intealth sponsorship and a Statement of Need from MoHFW naming the exact specialty, is generally capped at 7 years, and carries the INA 212(e) two-year home-residency rule [ECFMG EVSP](https://ecfmg.org/evsp/applying-general.html). MoHFW will not issue a NORI “under any circumstance” [CGI San Francisco](https://www.cgisf.gov.in/page/statement-of-need-certificates-for-medical-doctors/), and each SoN needs a ₹10 lakh surety bond with two sureties [MoHFW](https://mohfw.gov.in/sites/default/files/Revised%20guidelines%20for%20issuance%20of%20SON%2C%20ENC%20and%20NORI_0.pdf). In 2026 some Indian matched residents faced refusals and long administrative processing [South Asian Herald](https://southasianherald.com/raja-krishnamoorthi-raises-concerns-over-j-1-visa-delays-for-indian-doctors/), so start every step the week after Match. H-1B for residency needs Step 3 before the petition and is exposed to the $100,000 fee litigation [FSMB/attorneys](https://www.fsmb.org/siteassets/baw-speaker-presentation/session-8-imgs-fsmb-attorneys-nov-2025.pdf).",
+    "official_links": [
+      {
+        "label": "ECFMG EVSP general requirements",
+        "url": "https://ecfmg.org/evsp/applying-general.html"
+      },
+      {
+        "label": "Intealth pre-arrival",
+        "url": "https://certification.ecfmg.org/evsp/applying-pre-arrival.html"
+      },
+      {
+        "label": "CGI San Francisco: Statement of Need",
+        "url": "https://www.cgisf.gov.in/page/statement-of-need-certificates-for-medical-doctors/"
+      },
+      {
+        "label": "MoHFW SoN guidelines",
+        "url": "https://mohfw.gov.in/sites/default/files/Revised%20guidelines%20for%20issuance%20of%20SON%2C%20ENC%20and%20NORI_0.pdf"
+      },
+      {
+        "label": "SEVIS I-901",
+        "url": "https://ice.gov/sevis/i901"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "pre_departure",
+    "sort": 110,
+    "title": "Pre-departure",
+    "summary_md": "Between visa issuance and the flight: buy J-1-compliant insurance starting on the DS-2019 start date [Intealth](https://certification.ecfmg.org/evsp/applying-pre-arrival.html), secure the state training license your program needs [TMB](https://www.tmb.texas.gov/apply-renew/physician/physician-apply/physician-in-training-permit-application) [Rush GME](https://www.rushu.rush.edu/sites/default/files/2026-02/Initial%20Temporary%20Medical%20License%20Checklist__with%20FAQ_2026.pdf), complete TB screening [CDC](https://www.cdc.gov/mmwr/volumes/68/wr/mm6819a3.htm), plan money transfers under LRS [ICICI](https://www.icici.bank.in/nri-banking/nriedge/nri-articles/lrs-for-sending-money-abroad-from-india), and pack a hand-carry document folder [Intealth](https://ecfmg.org/evsp/during-travel.html). You may enter the US no earlier than 30 days before the DS-2019 start date [Intealth](https://certification.ecfmg.org/evsp/applying-pre-arrival.html).",
+    "official_links": [
+      {
+        "label": "Intealth pre-arrival",
+        "url": "https://certification.ecfmg.org/evsp/applying-pre-arrival.html"
+      },
+      {
+        "label": "Intealth travel",
+        "url": "https://ecfmg.org/evsp/during-travel.html"
+      },
+      {
+        "label": "RBI/LRS explainer (ICICI)",
+        "url": "https://www.icici.bank.in/nri-banking/nriedge/nri-articles/lrs-for-sending-money-abroad-from-india"
+      },
+      {
+        "label": "CBP: bringing money",
+        "url": "https://www.cbp.gov/travel/international-visitors/kbyg/money"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "arrival_first_30_days",
+    "sort": 120,
+    "title": "Arrival: first 30 days",
+    "summary_md": "At the airport check that your I-94 reads “J-1 D/S”, then report to the program so the Training Program Liaison validates your arrival in SEVIS [Intealth](https://certification.ecfmg.org/evsp/applying-pre-arrival.html). Apply for an SSN (free) after waiting 11 business days from SEVIS validation [Intealth](https://certification.ecfmg.org/evsp/applying-pre-arrival.html) [SSA](https://www.ssa.gov/pubs/EN-05-10096.pdf). Then: bank account and secured card [Capital One](https://www.capitalone.com/learn-grow/money-management/how-can-immigrants-build-credit), driver license [CA DMV](https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/), nonresident tax setup [IRS](https://www.irs.gov/publications/p519), and a J-2 EAD if your spouse will work ($520) [MIT](https://ischo.mit.edu/information-daily-life/information-spouses-partners-and-families/j-2-work-permission). Watch the postponed DHS rule replacing D/S with fixed admission dates [UTHSCSA OIS](https://wp.uthscsa.edu/ois/immigration/ecfmg-j-1/elimination-of-duration-of-status-impact-on-ecfmg-j-1-alien-physicians/).",
+    "official_links": [
+      {
+        "label": "Intealth pre-arrival",
+        "url": "https://certification.ecfmg.org/evsp/applying-pre-arrival.html"
+      },
+      {
+        "label": "SSA: SSN for non-citizens",
+        "url": "https://www.ssa.gov/pubs/EN-05-10096.pdf"
+      },
+      {
+        "label": "IRS Publication 519",
+        "url": "https://www.irs.gov/publications/p519"
+      },
+      {
+        "label": "CA DMV driver licenses",
+        "url": "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "residency_life",
+    "sort": 130,
+    "title": "Residency life",
+    "summary_md": "ACGME caps work at 80 hours a week averaged over 4 weeks, with one day in seven free [ACGME](https://acgme.org/newsroom/2017/3/acgme-releases-revised-common-program-requirements-section-vi-the-learning-and-working-environment-). PGY-1 pay averaged $68,166 nationally and $77,649 in the West (AAMC, Jul 2025) [AMA](https://www.ama-assn.org/medical-residents/residency-life/resident-physician-pay-still-rising-growth-trails-inflation); Bay Area programs pay $84k–$102k [UCSF](https://meded.ucsf.edu/gme-resident-and-fellow-resource-hub/salary-and-benefits) [FREIDA](https://freida.ama-assn.org/program/1400531051/features-benefits). J-1 residents cannot moonlight [ECFMG](https://ecfmg.org/evsp/applying-general.html), and any trip abroad needs a travel-signed DS-2019 and a valid J-1 stamp [Intealth](https://ecfmg.org/evsp/during-travel.html).",
+    "official_links": [
+      {
+        "label": "ACGME Section VI",
+        "url": "https://acgme.org/newsroom/2017/3/acgme-releases-revised-common-program-requirements-section-vi-the-learning-and-working-environment-"
+      },
+      {
+        "label": "Intealth travel",
+        "url": "https://ecfmg.org/evsp/during-travel.html"
+      },
+      {
+        "label": "Physician Support Line",
+        "url": "https://www.physiciansupportline.com/"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "step3_and_licensure",
+    "sort": 140,
+    "title": "Step 3 and licensure",
+    "summary_md": "Step 3 requires a valid ECFMG certificate and is offered only in the US and territories [USMLE](https://www.usmle.org/bulletin-information/eligibility) [Careers360](https://studyabroad.careers360.com/articles/usmle-test-centres). In California, IMG residents must hold a Postgraduate Training License within 180 days of starting and can get a full license after 24 months of approved training, with Step 3 required [MBC](https://www.mbc.ca.gov/Licensing/Physicians-and-Surgeons/Apply/) [UC Davis GME](https://health.ucdavis.edu/gme/camb_licensing.html). California requires all parts of Step 3 within four attempts [B&P 2177](https://california.public.law/codes/business_and_professions_code_section_2177). Take Step 3 in PGY-1 unless you are pursuing an H-1B for residency.",
+    "official_links": [
+      {
+        "label": "USMLE eligibility",
+        "url": "https://www.usmle.org/bulletin-information/eligibility"
+      },
+      {
+        "label": "Medical Board of California",
+        "url": "https://www.mbc.ca.gov/Licensing/Physicians-and-Surgeons/Apply/"
+      },
+      {
+        "label": "NYSED license requirements",
+        "url": "https://www.op.nysed.gov/professions/physicians/license-requirements"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "post_residency",
+    "sort": 150,
+    "title": "After residency: fellowship, boards, waiver jobs, H-1B, green card",
+    "summary_md": "A J-1 physician must spend two years in India or obtain a waiver [ECFMG](https://ecfmg.org/evsp/applying-general.html); India will not issue a NORI [CGI SF](https://www.cgisf.gov.in/page/statement-of-need-certificates-for-medical-doctors/). Most J-1 doctors take a 3-year Conrad 30 or HHS waiver job in a shortage area and switch to H-1B [USCIS](https://uscis.gov/working-united-states/students-and-exchange-visitors/conrad-30-waiver-program); the federal HHS waiver ran a months-long backlog in 2025–26 [KFF Health News](https://kffhealthnews.org/health-industry/hhs-exchange-visitor-program-visa-waiver-j1-h1b-delays-foreign-doctors-deadline/). The India green-card queue is long: EB-2 India was at 1 Nov 2013 in the Nov 2026 bulletin (verify on travel.state.gov) [F1Jobs](https://www.f1jobs.io/resources/blog/november-2026-visa-bulletin-explained-eb2-eb3-india).",
+    "official_links": [
+      {
+        "label": "USCIS Conrad 30",
+        "url": "https://uscis.gov/working-united-states/students-and-exchange-visitors/conrad-30-waiver-program"
+      },
+      {
+        "label": "HCAI California J-1 waiver",
+        "url": "https://hcai.ca.gov/workforce-capacity/california-primary-care-office/j-1-visa-waiver-program/"
+      },
+      {
+        "label": "AAMC ERAS Fellowship timeline",
+        "url": "https://students-residents.aamc.org/eras-tools-and-worksheets-fellowship-applicants/2027-eras-fellowship-application-timeline"
+      },
+      {
+        "label": "ABIM eligibility",
+        "url": "https://www.abim.org/certification/becoming-certified-in-internal-medicine/confirm-your-eligibility/"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  },
+  {
+    "key": "california_bay_area",
+    "sort": 160,
+    "title": "California and the Bay Area",
+    "summary_md": "Bay Area academic and Kaiser programs take almost no non-US IMGs (Kaiser NorCal Oakland and SF IM about 0%, Santa Clara Valley about 3%) [ResidencyMatch.ai](https://www.residencymatch.ai/img-friendly/by-state/ca). Realistic California targets are Central Valley and Inland Empire programs, nearly all J-1 only; Highland in Oakland is a stretch (577 interviews for 30 seats) [FREIDA](https://freida.ama-assn.org/program/1400531051). California's Conrad 30 requires shortage-area practice [HCAI](https://hcai.ca.gov/workforce-capacity/california-primary-care-office/j-1-visa-waiver-program/), so a Bay Area job is more realistic as the second job after a waiver, not the first.",
+    "official_links": [
+      {
+        "label": "HCAI California J-1 waiver",
+        "url": "https://hcai.ca.gov/workforce-capacity/california-primary-care-office/j-1-visa-waiver-program/"
+      },
+      {
+        "label": "Medical Board of California",
+        "url": "https://www.mbc.ca.gov/Licensing/Physicians-and-Surgeons/Apply/"
+      },
+      {
+        "label": "FREIDA Highland IM",
+        "url": "https://freida.ama-assn.org/program/1400531051"
+      }
+    ],
+    "last_verified": "2026-11-15"
+  }
+]

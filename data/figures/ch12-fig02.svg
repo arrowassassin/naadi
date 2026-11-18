@@ -1,0 +1,33 @@
+<svg aria-label="Comparison of neuroleptic malignant syndrome and serotonin syndrome" role="img" viewbox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#e0f2fe" height="34" stroke="#334155" width="140" x="10" y="10"></rect>
+<text font-weight="bold" text-anchor="middle" x="80" y="32">Feature</text>
+<rect fill="#fef3c7" height="34" stroke="#334155" width="240" x="150" y="10"></rect>
+<text font-weight="bold" text-anchor="middle" x="270" y="32">Neuroleptic malignant syndrome</text>
+<rect fill="#dcfce7" height="34" stroke="#334155" width="240" x="390" y="10"></rect>
+<text font-weight="bold" text-anchor="middle" x="510" y="32">Serotonin syndrome</text>
+<rect fill="#ffffff" height="38" stroke="#334155" width="140" x="10" y="44"></rect><text text-anchor="middle" x="80" y="67">Trigger</text>
+<rect fill="#ffffff" height="38" stroke="#334155" width="240" x="150" y="44"></rect><text text-anchor="middle" x="270" y="60">D2 blockers (haloperidol, metoclopramide)</text><text text-anchor="middle" x="270" y="75">or abrupt levodopa withdrawal</text>
+<rect fill="#ffffff" height="38" stroke="#334155" width="240" x="390" y="44"></rect><text text-anchor="middle" x="510" y="60">SSRI/SNRI + MAOI, linezolid, tramadol,</text><text text-anchor="middle" x="510" y="75">triptan, fentanyl, dextromethorphan</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="140" x="10" y="82"></rect><text text-anchor="middle" x="80" y="103">Onset</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="240" x="150" y="82"></rect><text text-anchor="middle" x="270" y="103">Slow: days–weeks; resolves in ~1–2 wk</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="240" x="390" y="82"></rect><text text-anchor="middle" x="510" y="103">Rapid: &lt;24 h; resolves in ~24 h</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="140" x="10" y="116"></rect><text text-anchor="middle" x="80" y="137">Neuromuscular</text>
+<rect fill="#fee2e2" height="34" stroke="#334155" width="240" x="150" y="116"></rect><text text-anchor="middle" x="270" y="137">"Lead-pipe" rigidity, bradyreflexia</text>
+<rect fill="#fee2e2" height="34" stroke="#334155" width="240" x="390" y="116"></rect><text text-anchor="middle" x="510" y="137">Clonus (inducible, ocular), hyperreflexia</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="140" x="10" y="150"></rect><text text-anchor="middle" x="80" y="171">Mental status</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="240" x="150" y="150"></rect><text text-anchor="middle" x="270" y="171">Confusion, mutism, stupor</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="240" x="390" y="150"></rect><text text-anchor="middle" x="510" y="171">Agitation, anxiety, delirium</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="140" x="10" y="184"></rect><text text-anchor="middle" x="80" y="205">Autonomic / GI</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="240" x="150" y="184"></rect><text text-anchor="middle" x="270" y="205">Labile BP, diaphoresis; normal pupils</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="240" x="390" y="184"></rect><text text-anchor="middle" x="510" y="205">Mydriasis, diarrhea, ↑ bowel sounds</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="140" x="10" y="218"></rect><text text-anchor="middle" x="80" y="239">Labs</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="240" x="150" y="218"></rect><text text-anchor="middle" x="270" y="239">CK very high, leukocytosis, myoglobinuria</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="240" x="390" y="218"></rect><text text-anchor="middle" x="510" y="239">Usually nonspecific (CK mild ↑)</text>
+<rect fill="#ffffff" height="54" stroke="#334155" width="140" x="10" y="252"></rect><text text-anchor="middle" x="80" y="283">Treatment</text>
+<rect fill="#dcfce7" height="54" stroke="#334155" width="240" x="150" y="252"></rect><text text-anchor="middle" x="270" y="270">Stop drug, cool, IV fluids, ICU;</text><text text-anchor="middle" x="270" y="285">benzodiazepines; dantrolene</text><text text-anchor="middle" x="270" y="300">± bromocriptine/amantadine</text>
+<rect fill="#dcfce7" height="54" stroke="#334155" width="240" x="390" y="252"></rect><text text-anchor="middle" x="510" y="270">Stop drug, benzodiazepines, cooling;</text><text text-anchor="middle" x="510" y="285">cyproheptadine (5-HT2A antagonist);</text><text text-anchor="middle" x="510" y="300">T &gt;41.1 °C → sedate, paralyze, intubate</text>
+<text font-weight="bold" text-anchor="middle" x="320" y="330">Both: hyperthermia, tachycardia, altered mental status.</text>
+<text text-anchor="middle" x="320" y="348">Discriminators: rigidity + slow onset (NMS) vs clonus + rapid onset (serotonin).</text>
+</g>
+</svg>

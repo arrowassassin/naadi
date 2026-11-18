@@ -1,0 +1,51 @@
+<svg aria-label="Antidepressant selection flowchart for major depressive disorder" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch12-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="240" x="200" y="8"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="24">MDD confirmed (PHQ-9, ≥2 wk)</text>
+<text text-anchor="middle" x="320" y="40">Screen for bipolarity, suicide risk</text>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="320" x2="320" y1="48" y2="66"></line>
+<rect fill="#fee2e2" height="36" rx="6" stroke="#334155" width="300" x="170" y="68"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="84">Psychotic features / catatonia / not eating?</text>
+<text text-anchor="middle" x="320" y="98">Yes → ECT or AD + antipsychotic</text>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="320" x2="320" y1="104" y2="122"></line>
+<text x="330" y="117">No</text>
+<rect fill="#fef3c7" height="36" rx="6" stroke="#334155" width="400" x="120" y="124"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="140">Pick initial agent by the patient's profile</text>
+<text text-anchor="middle" x="320" y="154">(all ± CBT; reassess at 4–6 wk; full trial 6–8 wk)</text>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="180" x2="80" y1="160" y2="186"></line>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="260" x2="240" y1="160" y2="186"></line>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="380" x2="400" y1="160" y2="186"></line>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="460" x2="560" y1="160" y2="186"></line>
+<rect fill="#dcfce7" height="52" rx="6" stroke="#334155" width="148" x="8" y="188"></rect>
+<text font-weight="bold" text-anchor="middle" x="82" y="204">Default / pregnancy</text>
+<text text-anchor="middle" x="82" y="218">SSRI: sertraline,</text>
+<text text-anchor="middle" x="82" y="232">escitalopram</text>
+<rect fill="#dcfce7" height="52" rx="6" stroke="#334155" width="148" x="166" y="188"></rect>
+<text font-weight="bold" text-anchor="middle" x="240" y="204">Smoker / sexual SE</text>
+<text text-anchor="middle" x="240" y="218">Bupropion</text>
+<text text-anchor="middle" x="240" y="232">(no seizures, no ED)</text>
+<rect fill="#dcfce7" height="52" rx="6" stroke="#334155" width="148" x="326" y="188"></rect>
+<text font-weight="bold" text-anchor="middle" x="400" y="204">Insomnia, wt loss</text>
+<text text-anchor="middle" x="400" y="218">Mirtazapine</text>
+<text text-anchor="middle" x="400" y="232">(elderly)</text>
+<rect fill="#dcfce7" height="52" rx="6" stroke="#334155" width="148" x="484" y="188"></rect>
+<text font-weight="bold" text-anchor="middle" x="558" y="204">Neuropathic pain</text>
+<text text-anchor="middle" x="558" y="218">Duloxetine</text>
+<text text-anchor="middle" x="558" y="232">(SNRI)</text>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="320" x2="320" y1="244" y2="262"></line>
+<rect fill="#fef3c7" height="36" rx="6" stroke="#334155" width="400" x="120" y="264"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="280">Partial / no response after adequate dose and time</text>
+<text text-anchor="middle" x="320" y="294">Check adherence, dose, diagnosis, substances</text>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="220" x2="130" y1="300" y2="320"></line>
+<line marker-end="url(#ch12-arrow)" stroke="#334155" x1="420" x2="510" y1="300" y2="320"></line>
+<rect fill="#e0f2fe" height="52" rx="6" stroke="#334155" width="300" x="10" y="322"></rect>
+<text font-weight="bold" text-anchor="middle" x="160" y="338">No response → switch</text>
+<text text-anchor="middle" x="160" y="352">another SSRI, an SNRI, bupropion,</text>
+<text text-anchor="middle" x="160" y="366">or mirtazapine</text>
+<rect fill="#e0f2fe" height="52" rx="6" stroke="#334155" width="300" x="330" y="322"></rect>
+<text font-weight="bold" text-anchor="middle" x="480" y="338">Partial / ≥2 failures → augment</text>
+<text text-anchor="middle" x="480" y="352">aripiprazole, brexpiprazole, lithium, T3,</text>
+<text text-anchor="middle" x="480" y="366">esketamine, ECT, rTMS</text>
+</g>
+</svg>

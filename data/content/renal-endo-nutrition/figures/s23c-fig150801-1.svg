@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" role="img" aria-label="Adrenal steroid synthesis with the enzymes whose deficiency causes congenital adrenal hyperplasia">
+<title>Adrenal steroid synthesis and CAH enzyme blocks</title>
+<defs><marker id="s23c-f150801-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="470" fill="#ffffff"/>
+<text x="120" y="24" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Mineralocorticoid</text>
+<text x="360" y="24" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Glucocorticoid</text>
+<text x="600" y="24" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Sex steroid</text>
+<rect x="290" y="36" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="360" y="55" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Cholesterol</text>
+<line x1="360" y1="64" x2="360" y2="92" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<text x="368" y="82" font-family="sans-serif" font-size="11" fill="#475569">side-chain cleavage (ACTH-stimulated)</text>
+<rect x="50" y="94" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="120" y="113" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Pregnenolone</text>
+<line x1="290" y1="78" x2="190" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<rect x="290" y="94" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="360" y="113" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">17-OH pregnenolone</text>
+<rect x="530" y="94" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="600" y="113" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">DHEA</text>
+<line x1="190" y1="108" x2="288" y2="108" stroke="#7c3aed" stroke-width="2" marker-end="url(#s23c-f150801-arrow)"/>
+<line x1="430" y1="108" x2="528" y2="108" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<text x="239" y="102" font-family="sans-serif" font-size="11" fill="#6d28d9" text-anchor="middle">17α</text>
+<text x="479" y="102" font-family="sans-serif" font-size="11" fill="#475569" text-anchor="middle">17,20-lyase</text>
+<rect x="50" y="170" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="120" y="189" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Progesterone</text>
+<rect x="290" y="170" width="140" height="28" rx="6" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/><text x="360" y="189" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">17-OH progesterone</text>
+<rect x="530" y="170" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="600" y="189" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Androstenedione</text>
+<line x1="120" y1="122" x2="120" y2="168" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<line x1="360" y1="122" x2="360" y2="168" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<line x1="600" y1="122" x2="600" y2="168" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<text x="128" y="150" font-family="sans-serif" font-size="11" fill="#475569">3β-HSD (all three columns)</text>
+<line x1="190" y1="184" x2="288" y2="184" stroke="#7c3aed" stroke-width="2" marker-end="url(#s23c-f150801-arrow)"/>
+<line x1="430" y1="184" x2="528" y2="184" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<text x="239" y="178" font-family="sans-serif" font-size="11" fill="#6d28d9" text-anchor="middle">17α</text>
+<rect x="50" y="246" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="120" y="265" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">11-Deoxycorticosterone</text>
+<rect x="290" y="246" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="360" y="265" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">11-Deoxycortisol</text>
+<rect x="530" y="246" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="600" y="265" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Testosterone</text>
+<line x1="120" y1="198" x2="120" y2="244" stroke="#b91c1c" stroke-width="2" marker-end="url(#s23c-f150801-arrow)"/>
+<line x1="360" y1="198" x2="360" y2="244" stroke="#b91c1c" stroke-width="2" marker-end="url(#s23c-f150801-arrow)"/>
+<line x1="600" y1="198" x2="600" y2="244" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<text x="128" y="226" font-family="sans-serif" font-size="11" fill="#b91c1c">21-hydroxylase</text>
+<text x="368" y="226" font-family="sans-serif" font-size="11" fill="#b91c1c">21-hydroxylase</text>
+<rect x="50" y="322" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="120" y="341" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Corticosterone</text>
+<rect x="290" y="322" width="140" height="28" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/><text x="360" y="341" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Cortisol</text>
+<rect x="530" y="322" width="140" height="28" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="600" y="341" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">DHT (tissue 5α-reductase)</text>
+<line x1="120" y1="274" x2="120" y2="320" stroke="#0369a1" stroke-width="2" marker-end="url(#s23c-f150801-arrow)"/>
+<line x1="360" y1="274" x2="360" y2="320" stroke="#0369a1" stroke-width="2" marker-end="url(#s23c-f150801-arrow)"/>
+<line x1="600" y1="274" x2="600" y2="320" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<text x="128" y="302" font-family="sans-serif" font-size="11" fill="#0369a1">11β-hydroxylase</text>
+<text x="368" y="302" font-family="sans-serif" font-size="11" fill="#0369a1">11β-hydroxylase</text>
+<rect x="50" y="384" width="140" height="28" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/><text x="120" y="403" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Aldosterone</text>
+<line x1="120" y1="350" x2="120" y2="382" stroke="#334155" stroke-width="1.5" marker-end="url(#s23c-f150801-arrow)"/>
+<text x="128" y="372" font-family="sans-serif" font-size="11" fill="#475569">aldosterone synthase</text>
+<text x="20" y="440" font-family="sans-serif" font-size="12" fill="#b91c1c">21-OH block: ↓ aldosterone, ↓ cortisol, ↑ 17-OH progesterone, ↑ androgens → salt wasting, virilisation</text>
+<text x="20" y="462" font-family="sans-serif" font-size="12" fill="#0369a1">11β-OH block: ↑ 11-deoxycorticosterone (mineralocorticoid) → hypertension, ↑ androgens</text>
+<text x="20" y="484" font-family="sans-serif" font-size="12" fill="#6d28d9">17α block: no cortisol or sex steroids; ↑ mineralocorticoid precursors → hypertension;</text><text x="20" y="502" font-family="sans-serif" font-size="12" fill="#6d28d9">   46,XY infants are undervirilised and 46,XX adolescents lack puberty</text>
+<text x="20" y="526" font-family="sans-serif" font-size="12" fill="#475569">All: low cortisol → high ACTH → bilateral adrenal hyperplasia</text>
+</svg>

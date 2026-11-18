@@ -1,0 +1,221 @@
+/*
+ * Admin console (segment 19). TipTap's injected <style> is off (the production CSP has no 'unsafe-inline'), so the
+ * editor's base CSS lives here, built from the tokens. The live preview uses <ContentRenderer> itself.
+ */
+.admin-prose {
+  position: relative;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  font-variant-ligatures: none;
+  -webkit-user-select: text;
+  user-select: text;
+  color: var(--color-text-2);
+  font-size: var(--text-reading);
+  line-height: 1.65;
+  outline: none;
+}
+.admin-prose:focus-visible {
+  outline: var(--focus-ring-width, 3px) solid var(--color-violet);
+  outline-offset: var(--focus-ring-offset, 2px);
+}
+.admin-prose > * + * {
+  margin-top: 1em;
+}
+.admin-prose p,
+.admin-prose h2,
+.admin-prose h3,
+.admin-prose h4,
+.admin-prose ul,
+.admin-prose ol {
+  margin-bottom: 0;
+}
+.admin-prose p {
+  margin-top: 0;
+}
+.admin-prose h2,
+.admin-prose h3,
+.admin-prose h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+.admin-prose h2 {
+  font-size: 1.5em;
+}
+.admin-prose h3 {
+  font-size: 1.25em;
+}
+.admin-prose h4 {
+  font-size: 1.0625em;
+}
+.admin-prose strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+.admin-prose ul {
+  list-style: disc;
+  padding-left: 1.5em;
+}
+.admin-prose ol {
+  list-style: decimal;
+  padding-left: 1.6em;
+}
+.admin-prose li + li {
+  margin-top: 0.4em;
+}
+.admin-prose li > p + * {
+  margin-top: 0.4em;
+}
+.admin-prose mark {
+  color: var(--color-ground);
+  border-radius: 4px;
+  padding: 1px 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.admin-prose mark[data-color="lime"] {
+  background: var(--color-lime);
+}
+.admin-prose mark[data-color="violet"] {
+  background: var(--color-violet-text);
+}
+.admin-prose mark[data-color="amber"] {
+  background: var(--color-mark-amber);
+}
+/* Callouts: the variant is also written as a word (::before), never by colour alone. */
+.admin-prose div[data-callout] {
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-block);
+  background: var(--color-surface-2);
+  padding: 1rem 1.25rem;
+}
+.admin-prose div[data-callout] > * + * {
+  margin-top: 0.75em;
+}
+.admin-prose div[data-callout="trap"] {
+  border-color: color-mix(in srgb, var(--color-amber) 70%, transparent);
+}
+.admin-prose div[data-callout]::before {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-3);
+  content: attr(data-callout);
+}
+.admin-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.admin-prose table.hy {
+  outline: 1px dashed var(--color-line-dashed);
+  outline-offset: 4px;
+}
+.admin-prose td,
+.admin-prose th {
+  position: relative;
+  border: 1px solid var(--color-line);
+  padding: 0.5rem 0.75rem;
+  vertical-align: top;
+  min-width: 4rem;
+}
+.admin-prose th {
+  background: var(--color-surface-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-label-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--color-text-2);
+}
+.admin-prose [data-align="center"] {
+  text-align: center;
+}
+.admin-prose [data-align="right"] {
+  text-align: right;
+}
+.admin-prose .selectedCell::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--color-paper) 12%, transparent);
+  content: "";
+}
+.admin-prose .ProseMirror-selectednode {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 2px;
+}
+.admin-prose .ProseMirror-gapcursor {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+}
+.admin-prose .ProseMirror-gapcursor::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  width: 20px;
+  border-top: 1px solid var(--color-text);
+}
+.admin-prose.ProseMirror-focused .ProseMirror-gapcursor {
+  display: block;
+}
+.admin-dropcursor {
+  background: var(--color-paper);
+}
+.admin-atom {
+  white-space: normal;
+  cursor: default;
+}
+
+/* Coverage heat-map cells: a texture per status in addition to the word and icon. */
+.admin-cell-gap {
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 6px,
+    color-mix(in srgb, var(--color-amber) 22%, transparent) 6px 8px
+  );
+}
+.admin-cell-thin {
+  background-image: radial-gradient(color-mix(in srgb, var(--color-text-3) 35%, transparent) 1px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+/* Bars (Results board): a thin track with the value in text beside it. */
+.admin-bar {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--color-line);
+  color: var(--color-paper);
+}
+.admin-bar::-webkit-progress-bar {
+  background: var(--color-line);
+  border-radius: 3px;
+}
+.admin-bar::-webkit-progress-value {
+  background: var(--color-paper);
+  border-radius: 3px;
+}
+.admin-bar::-moz-progress-bar {
+  background: var(--color-paper);
+  border-radius: 3px;
+}
+.admin-bar.over::-webkit-progress-value {
+  background: var(--color-amber);
+}
+.admin-bar.over::-moz-progress-bar {
+  background: var(--color-amber);
+}

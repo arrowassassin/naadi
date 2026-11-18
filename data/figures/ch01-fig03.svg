@@ -1,0 +1,47 @@
+<svg aria-label="Urea cycle across mitochondrion and cytosol with enzyme deficiencies" role="img" viewbox="0 0 690 440" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch01-arr-urea" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif">
+<rect fill="#dcfce7" height="395" rx="20" stroke="#334155" stroke-dasharray="6 4" stroke-width="1.5" width="300" x="20" y="30"></rect>
+<text font-size="13" font-weight="bold" text-anchor="start" x="35" y="52">MITOCHONDRION</text>
+<text font-size="13" font-weight="bold" text-anchor="end" x="660" y="52">CYTOSOL</text>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" stroke-width="1.5" width="200" x="50" y="65"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="150.0" y="87.55">NH₃ + CO₂ (HCO₃⁻) + 2 ATP</text>
+<rect fill="#fef3c7" height="36" rx="6" stroke="#334155" stroke-width="1.5" width="200" x="50" y="145"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="150.0" y="167.55">Carbamoyl phosphate</text>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="150" x2="150" y1="101" y2="144"></line>
+<text font-size="12" font-weight="bold" text-anchor="start" x="158" y="120">CPS I</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="158" y="136">(+ N-acetylglutamate)</text>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="60" y="235"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="135.0" y="257.55">Citrulline</text>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="60" y="325"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="135.0" y="347.55">Ornithine</text>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="135" x2="135" y1="181" y2="234"></line>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="135" x2="135" y1="325" y2="272"></line>
+<text font-size="12" font-weight="bold" text-anchor="start" x="143" y="212">OTC</text>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" stroke-width="1.5" width="170" x="400" y="235"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="485.0" y="257.55">Argininosuccinate</text>
+<rect fill="#fef3c7" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="440" y="155"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="495.0" y="175.55">Aspartate</text>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="495" x2="495" y1="187" y2="234"></line>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="210" x2="399" y1="253" y2="253"></line>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="362" y="246">ASS (ATP)</text>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" stroke-width="1.5" width="170" x="400" y="325"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="485.0" y="347.55">Arginine</text>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="485" x2="485" y1="271" y2="324"></line>
+<text font-size="12" font-weight="bold" text-anchor="start" x="493" y="302">ASL</text>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="570" x2="610" y1="265" y2="292"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="605" y="310">Fumarate</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="605" y="326">→ TCA</text>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="399" x2="211" y1="343" y2="343"></line>
+<text font-size="12" font-weight="bold" text-anchor="end" x="392" y="336">arginase</text>
+<rect fill="#fee2e2" height="32" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="430" y="390"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="485.0" y="410.55">Urea → urine</text>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-width="1.6" x1="485" x2="485" y1="361" y2="389"></line>
+<rect fill="#fee2e2" height="44" rx="6" stroke="#334155" stroke-width="1.5" width="300" x="360" y="70"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="510.0" y="88.7">OTC block: carbamoyl phosphate leaks to</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="510.0" y="103.7">cytosol → orotic acid ↑ (pyrimidine path)</text>
+<line marker-end="url(#ch01-arr-urea)" stroke="#334155" stroke-dasharray="6 4" stroke-width="1.6" x1="250" x2="359" y1="155" y2="100"></line>
+<rect fill="#ffffff" height="30" rx="6" stroke="#334155" stroke-width="1.5" width="270" x="35" y="385"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="170.0" y="404.2">Ammonia arrives as glutamine, alanine</text>
+</g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Two-by-two table with true positives, false positives, false negatives and true negatives, plus formulas for sensitivity, specificity, predictive values, likelihood ratios, relative risk and odds ratio." role="img" viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="13">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="320" y="22">The 2×2 table</text>
+<text font-weight="bold" text-anchor="middle" x="235" y="62">Disease +</text>
+<text font-weight="bold" text-anchor="middle" x="385" y="62">Disease −</text>
+<text font-weight="bold" text-anchor="middle" x="100" y="120">Test +</text>
+<text font-weight="bold" text-anchor="middle" x="100" y="200">Test −</text>
+<rect fill="#dcfce7" height="80" stroke="#334155" stroke-width="1.5" width="150" x="160" y="75"></rect>
+<rect fill="#fee2e2" height="80" stroke="#334155" stroke-width="1.5" width="150" x="310" y="75"></rect>
+<rect fill="#fee2e2" height="80" stroke="#334155" stroke-width="1.5" width="150" x="160" y="155"></rect>
+<rect fill="#dcfce7" height="80" stroke="#334155" stroke-width="1.5" width="150" x="310" y="155"></rect>
+<text font-size="16" font-weight="bold" text-anchor="middle" x="235" y="112">a</text><text text-anchor="middle" x="235" y="132">True positive</text>
+<text font-size="16" font-weight="bold" text-anchor="middle" x="385" y="112">b</text><text text-anchor="middle" x="385" y="132">False positive</text><text font-size="12" text-anchor="middle" x="385" y="148">(type I / α)</text>
+<text font-size="16" font-weight="bold" text-anchor="middle" x="235" y="192">c</text><text text-anchor="middle" x="235" y="212">False negative</text><text font-size="12" text-anchor="middle" x="235" y="228">(type II / β)</text>
+<text font-size="16" font-weight="bold" text-anchor="middle" x="385" y="192">d</text><text text-anchor="middle" x="385" y="212">True negative</text>
+<text x="470" y="112">PPV = a / (a+b)</text>
+<text x="470" y="192">NPV = d / (c+d)</text>
+<text text-anchor="middle" x="235" y="256">Sn = a / (a+c)</text>
+<text text-anchor="middle" x="385" y="256">Sp = d / (b+d)</text>
+<rect fill="#e0f2fe" height="124" rx="6" stroke="#334155" width="600" x="20" y="268"></rect>
+<text font-size="12" x="32" y="288">LR+ = Sn / (1 − Sp)        LR− = (1 − Sn) / Sp</text>
+<text font-size="12" x="32" y="306">Prevalence = (a+c) / (a+b+c+d)        Accuracy = (a+d) / total</text>
+<text font-size="12" x="32" y="324">Rows = exposure (cohort/RCT): RR = [a/(a+b)] ÷ [c/(c+d)]</text>
+<text font-size="12" x="32" y="342">Attributable risk = a/(a+b) − c/(c+d)</text>
+<text font-size="12" x="32" y="360">Row 1 treated, row 2 control: ARR = c/(c+d) − a/(a+b);  RRR = ARR ÷ [c/(c+d)];  NNT = 1/ARR</text>
+<text font-size="12" x="32" y="378">Case–control: OR = (a × d) / (b × c)  (≈ RR when the disease is rare)</text>
+</g>
+</svg>

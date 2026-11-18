@@ -1,0 +1,179 @@
+/*
+ * Naadi design tokens: rebuilt from design/System.dc.html and HANDOFF §4 (binding).
+ *
+ * Colour roles are never mixed:
+ *   lime   = the student's next action (one primary per view)
+ *   violet = anything the assistant wrote or does
+ *   paper  = anything the student wrote or drew
+ *   amber  = weak area or wrong answer
+ * Status never relies on colour alone: every chip carries a word.
+ *
+ * `@theme static` makes Tailwind 4 emit every token as a CSS custom property on :root (even when no
+ * utility uses it) and generates utilities such as bg-ground, text-lime, rounded-tile, text-headline.
+ */
+
+@theme static {
+  /* ── Colour: ground, surfaces, lines, text ── */
+  --color-ground: #050506; /* page */
+  --color-surface-1: #0e0f12; /* tiles */
+  --color-surface-2: #1b1d22; /* inner blocks */
+  --color-bar: #141519; /* floating nav pill, assistant bar */
+  --color-control: #23252b; /* round icon controls on bars */
+  --color-line: #26282e; /* borders */
+  --color-line-soft: #1f2126; /* tile borders, row dividers */
+  --color-line-chip: #2a2d34; /* meta chips */
+  --color-line-strong: #34363d; /* swatches, inner controls */
+  --color-line-control: #3a3d45; /* secondary button border */
+  --color-line-dashed: #5a5d66; /* planned / disabled dashed borders */
+  --color-text: #f4f4f0; /* primary */
+  --color-text-2: #c9cbd1; /* body */
+  --color-text-3: #9c9ea6; /* labels: the minimum for small text */
+  --color-text-muted: #8a8c92; /* disabled text, wordmark suffix */
+
+  /* ── Colour: roles ── */
+  --color-paper: #f4f4f0; /* the student's own notes and ink */
+  --color-paper-text-2: #55575e; /* secondary text on paper */
+  --color-lime: #c6ff3d; /* next action */
+  --color-lime-hover: #e2ff94;
+  --color-lime-ink: #0b1400; /* text on lime */
+  --color-violet: #9d8cff; /* assistant */
+  --color-violet-ink: #0d0828; /* text on violet */
+  --color-violet-ground: #17132e; /* AI-written tiles */
+  --color-violet-line: #2c2552; /* border of AI tiles */
+  --color-violet-text: #c4baff; /* text on violet ground; formula highlight */
+  --color-amber: #ffb454; /* weak area / wrong answer */
+  --color-amber-ink: #201200; /* text on an amber badge (wrong answer) */
+  --color-mark-amber: #ffcb85; /* "my mistake" highlight */
+  --color-ink-violet: #5b45d6; /* pen colour on paper */
+
+  /* ── Colour: chart series (assistant charts on violet ground / surface 1). Fixed order, never cycled;
+     validated as a set (dark band, adjacent CVD ΔE ≥ 8.4, normal-vision ΔE ≥ 19.3, ≥ 3:1 on #17132e and
+     #0e0f12). Lime and amber stay reserved for their roles and are not series colours. ── */
+  --color-series-1: #9085e9;
+  --color-series-2: #d95926;
+  --color-series-3: #199e70;
+  --color-series-4: #c98500;
+  --color-series-5: #d55181;
+  --color-series-6: #0ca30c;
+  --color-series-7: #3987e5;
+  --color-series-8: #e66767;
+
+  /* ── Type ── */
+  --font-display: "Bricolage Grotesque Variable", "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-ink: "Caveat", "Bradley Hand", cursive;
+
+  /* display · 800 · 72–216 */
+  --text-display: clamp(4.5rem, 2.4rem + 9vw, 13.5rem);
+  --text-display--line-height: 0.86;
+  --text-display--letter-spacing: -0.05em;
+  --text-display--font-weight: 800;
+  /* headline · 700 · 28–60 */
+  --text-headline: clamp(1.75rem, 1.2rem + 2.2vw, 3.75rem);
+  --text-headline--line-height: 1;
+  --text-headline--letter-spacing: -0.03em;
+  --text-headline--font-weight: 700;
+  /* lead · 400 · 24–38 */
+  --text-lead: clamp(1.5rem, 1.25rem + 0.9vw, 2.375rem);
+  --text-lead--line-height: 1.15;
+  --text-lead--letter-spacing: -0.02em;
+  /* reading · Inter 400 · 17–20 (line-height 1.6–1.7) */
+  --text-reading: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+  --text-reading--line-height: 1.65;
+  /* UI · Inter 13–16 */
+  --text-ui: 0.9375rem;
+  --text-ui--line-height: 1.5;
+  --text-ui-sm: 0.8125rem;
+  --text-ui-sm--line-height: 1.45;
+  /* label · Mono 500 · 11–13, uppercase */
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.3;
+  --text-label--letter-spacing: 0.14em;
+  --text-label-sm: 0.6875rem;
+  --text-label-sm--line-height: 1.3;
+  /* ink · Caveat 700 (design stand-in for handwriting only) */
+  --text-ink: 2.125rem;
+  --text-ink--line-height: 1;
+
+  /* ── Radius: 12 / 16–22 / 26–32 / 36–40 / 999 ── */
+  --radius-inner: 12px;
+  --radius-block-sm: 16px;
+  --radius-swatch: 18px;
+  --radius-block: 22px;
+  --radius-tile-sm: 26px;
+  --radius-tile: 32px;
+  --radius-sheet-sm: 36px;
+  --radius-sheet: 40px;
+  --radius-pill: 999px;
+
+  /* ── Breakpoints: phone < 640, tablet 640–1100, laptop ≥ 1100 ── */
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 40rem;
+  --breakpoint-laptop: 68.75rem;
+
+  /* ── Motion ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-shimmer: naadi-shimmer 1.4s var(--ease-out) infinite;
+
+  @keyframes naadi-shimmer {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+}
+
+:root {
+  /* Spacing scale 4–64 (Tailwind's 4 px base gives p-1 = 4 px … p-16 = 64 px). */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  /* Touch targets: 44 minimum, 48 in the assistant bar, 52–60 for primary CTAs. */
+  --target-min: 44px;
+  --target-assistant: 48px;
+  --target-cta: 52px;
+  --target-cta-lg: 60px;
+
+  /* Layout */
+  --content-max: min(100%, calc(90% + 2 * var(--gutter)));
+  --gutter: clamp(16px, 4vw, 64px);
+
+  /* Motion: 200 ms controls, 400 ms sheets, ease-out. */
+  --duration-control: 200ms;
+  --duration-sheet: 400ms;
+
+  /* Focus ring: 3 px violet, 2 px offset. */
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-violet);
+
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-control: 0ms;
+    --duration-sheet: 0ms;
+  }
+
+  /* biome-ignore-start lint/complexity/noImportantStyles: reduced motion must beat every utility class */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* biome-ignore-end lint/complexity/noImportantStyles: end */
+}

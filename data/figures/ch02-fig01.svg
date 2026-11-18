@@ -1,0 +1,28 @@
+<svg aria-label="Comparison of gram-positive and gram-negative cell envelopes" font-family="sans-serif" role="img" viewbox="0 0 650 315" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch02-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<text fill="#0f172a" font-size="14" font-weight="bold" text-anchor="middle" x="170" y="28">Gram-positive</text>
+<text fill="#0f172a" font-size="14" font-weight="bold" text-anchor="middle" x="480" y="28">Gram-negative</text>
+<rect fill="#fef3c7" height="120" stroke="#334155" stroke-width="1.5" width="260" x="40" y="50"></rect>
+<text fill="#0f172a" font-size="13" font-weight="bold" text-anchor="middle" x="170" y="100">Thick peptidoglycan</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="170" y="118">(20–80 nm; many layers)</text>
+<line stroke="#334155" stroke-width="2.5" x1="55" x2="55" y1="50" y2="190"></line>
+<line stroke="#334155" stroke-width="2.5" x1="285" x2="285" y1="50" y2="190"></line>
+<text fill="#0f172a" font-size="12" font-style="italic" text-anchor="middle" x="170" y="145">teichoic / lipoteichoic acid (vertical)</text>
+<rect fill="#e0f2fe" height="40" stroke="#334155" stroke-width="1.5" width="260" x="40" y="170"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="170" y="195">Cytoplasmic membrane</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="170" y="235">Retains crystal violet → purple</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="170" y="253">LTA → TLR2; no LPS</text>
+<rect fill="#fee2e2" height="45" stroke="#334155" stroke-width="1.5" width="260" x="350" y="50"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="480" y="70">Outer membrane: LPS (lipid A)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="480" y="87">porins; O antigen outside</text>
+<rect fill="#ffffff" height="55" stroke="#334155" stroke-width="1" width="260" x="350" y="95"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="480" y="115">Periplasm (β-lactamases here)</text>
+<rect fill="#fef3c7" height="14" stroke="#334155" width="260" x="350" y="128"></rect>
+<text fill="#0f172a" font-size="12" font-style="italic" text-anchor="middle" x="480" y="165">thin peptidoglycan (1 layer)</text>
+<rect fill="#e0f2fe" height="40" stroke="#334155" stroke-width="1.5" width="260" x="350" y="170"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="480" y="195">Cytoplasmic membrane</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="480" y="235">Loses crystal violet → pink (safranin)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="480" y="253">Lipid A → CD14/TLR4 → septic shock</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="325" y="285">Acid-fast (Mycobacteria): mycolic acids + arabinogalactan over peptidoglycan — Gram-variable/poor.</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="325" y="303">Mycoplasma: no wall, sterols in membrane → β-lactams and vancomycin useless.</text>
+</svg>

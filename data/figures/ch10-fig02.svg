@@ -1,0 +1,56 @@
+<svg aria-label="Decision chart distinguishing tension pneumothorax, cardiac tamponade and massive hemothorax in hypotensive chest trauma" role="img" viewbox="0 0 640 330" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch10-a8" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="13">
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="300" x="170" y="8"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="25">Chest trauma + hypotension</text>
+<text font-size="12" text-anchor="middle" x="320" y="41">Look at neck veins and breath sounds</text>
+<line marker-end="url(#ch10-a8)" stroke="#334155" x1="240" x2="110" y1="48" y2="78"></line>
+<line marker-end="url(#ch10-a8)" stroke="#334155" x1="320" x2="320" y1="48" y2="78"></line>
+<line marker-end="url(#ch10-a8)" stroke="#334155" x1="400" x2="530" y1="48" y2="78"></line>
+<rect fill="#e0f2fe" height="110" rx="6" stroke="#334155" width="200" x="10" y="80"></rect>
+<text font-weight="bold" text-anchor="middle" x="110" y="98">Tension pneumothorax</text>
+<text font-size="12" x="20" y="116">JVD (if not hypovolemic)</text>
+<text font-size="12" x="20" y="132">Absent breath sounds, one side</text>
+<text font-size="12" x="20" y="148">Hyperresonance</text>
+<text font-size="12" x="20" y="164">Trachea away from lesion</text>
+<text font-size="12" x="20" y="180">Hypoxia, ↑ airway pressures</text>
+<rect fill="#e0f2fe" height="110" rx="6" stroke="#334155" width="200" x="220" y="80"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="98">Cardiac tamponade</text>
+<text font-size="12" x="230" y="116">Beck triad: JVD, muffled</text>
+<text font-size="12" x="230" y="132">heart sounds, hypotension</text>
+<text font-size="12" x="230" y="148">Breath sounds EQUAL</text>
+<text font-size="12" x="230" y="164">Pulsus paradoxus &gt; 10 mmHg</text>
+<text font-size="12" x="230" y="180">FAST: pericardial fluid</text>
+<rect fill="#e0f2fe" height="110" rx="6" stroke="#334155" width="200" x="430" y="80"></rect>
+<text font-weight="bold" text-anchor="middle" x="530" y="98">Massive hemothorax</text>
+<text font-size="12" x="440" y="116">FLAT neck veins</text>
+<text font-size="12" x="440" y="132">Absent breath sounds, one side</text>
+<text font-size="12" x="440" y="148">DULL to percussion</text>
+<text font-size="12" x="440" y="164">CXR/eFAST: fluid</text>
+<text font-size="12" x="440" y="180">Signs of hemorrhagic shock</text>
+<line marker-end="url(#ch10-a8)" stroke="#334155" x1="110" x2="110" y1="190" y2="210"></line>
+<line marker-end="url(#ch10-a8)" stroke="#334155" x1="320" x2="320" y1="190" y2="210"></line>
+<line marker-end="url(#ch10-a8)" stroke="#334155" x1="530" x2="530" y1="190" y2="210"></line>
+<rect fill="#fee2e2" height="110" rx="6" stroke="#334155" width="200" x="10" y="212"></rect>
+<text font-size="12" font-weight="bold" x="20" y="232">Clinical diagnosis — no CXR</text>
+<text font-size="12" x="20" y="250">Needle decompression:</text>
+<text font-size="12" x="20" y="266">adult 4th–5th ICS, ant. to MAL</text>
+<text font-size="12" x="20" y="282">(child: 2nd ICS, MCL)</text>
+<text font-size="12" x="20" y="298">or finger thoracostomy</text>
+<text font-size="12" x="20" y="314">→ chest tube 5th ICS</text>
+<rect fill="#fee2e2" height="110" rx="6" stroke="#334155" width="200" x="220" y="212"></rect>
+<text font-size="12" font-weight="bold" x="230" y="232">Penetrating: OR</text>
+<text font-size="12" x="230" y="250">(sternotomy/thoracotomy)</text>
+<text font-size="12" x="230" y="266">Pericardiocentesis or</text>
+<text font-size="12" x="230" y="282">pericardial window = bridge</text>
+<text font-size="12" x="230" y="298">Fluid bolus to support preload</text>
+<text font-size="12" x="230" y="314">Arrest → ED thoracotomy</text>
+<rect fill="#fee2e2" height="110" rx="6" stroke="#334155" width="200" x="430" y="212"></rect>
+<text font-size="12" font-weight="bold" x="440" y="232">Chest tube + blood</text>
+<text font-size="12" x="440" y="250">Thoracotomy if:</text>
+<text font-size="12" x="440" y="266">• ≥ 1500 mL on insertion</text>
+<text font-size="12" x="440" y="282">• &gt; 200 mL/h for 2–4 h</text>
+<text font-size="12" x="440" y="298">• persistent instability</text>
+<text font-size="12" x="440" y="314">Retained clot → VATS</text>
+</g>
+</svg>

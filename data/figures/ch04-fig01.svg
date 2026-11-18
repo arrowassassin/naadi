@@ -1,0 +1,36 @@
+<svg aria-label="Steps of leukocyte extravasation with adhesion molecules and associated immune defects" role="img" viewbox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch04-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="13">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="340" y="22">Leukocyte extravasation (postcapillary venule)</text>
+<rect fill="#e0f2fe" height="96" rx="8" stroke="#334155" width="150" x="15" y="36"></rect>
+<text font-weight="bold" text-anchor="middle" x="90" y="58">1. Rolling</text>
+<text font-size="12" text-anchor="middle" x="90" y="78">E-, P-selectin</text>
+<text font-size="12" text-anchor="middle" x="90" y="96">↔ sialyl-Lewis X</text>
+<text font-size="12" text-anchor="middle" x="90" y="114">(LAD 2 defect)</text>
+<rect fill="#fef3c7" height="96" rx="8" stroke="#334155" width="150" x="182" y="36"></rect>
+<text font-weight="bold" text-anchor="middle" x="257" y="58">2. Tight adhesion</text>
+<text font-size="12" text-anchor="middle" x="257" y="78">ICAM-1 ↔ LFA-1</text>
+<text font-size="12" text-anchor="middle" x="257" y="96">(CD18 β2-integrin)</text>
+<text font-size="12" text-anchor="middle" x="257" y="114">(LAD 1 defect)</text>
+<rect fill="#dcfce7" height="96" rx="8" stroke="#334155" width="150" x="349" y="36"></rect>
+<text font-weight="bold" text-anchor="middle" x="424" y="58">3. Diapedesis</text>
+<text font-size="12" text-anchor="middle" x="424" y="78">PECAM-1 (CD31)</text>
+<text font-size="12" text-anchor="middle" x="424" y="96">between endothelial</text>
+<text font-size="12" text-anchor="middle" x="424" y="114">cells</text>
+<rect fill="#fee2e2" height="96" rx="8" stroke="#334155" width="150" x="516" y="36"></rect>
+<text font-weight="bold" text-anchor="middle" x="591" y="58">4. Chemotaxis</text>
+<text font-size="12" text-anchor="middle" x="591" y="78">C5a, IL-8 (CXCL8),</text>
+<text font-size="12" text-anchor="middle" x="591" y="96">LTB4, kallikrein,</text>
+<text font-size="12" text-anchor="middle" x="591" y="114">N-formyl peptides</text>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="165" x2="180" y1="84" y2="84"></line>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="332" x2="347" y1="84" y2="84"></line>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="499" x2="514" y1="84" y2="84"></line>
+<rect fill="#fee2e2" height="22" stroke="#334155" width="651" x="15" y="148"></rect>
+<text font-size="12" text-anchor="middle" x="340" y="164">Endothelium (selectins up-regulated by TNF, IL-1; P-selectin released from Weibel–Palade bodies by histamine)</text>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="340" y="196">Tissue — key defects</text>
+<text font-size="12" x="30" y="220">• LAD 1 (AR, CD18/ITGB2): delayed umbilical cord separation (&gt; 30 days), neutrophilia, no pus</text>
+<text font-size="12" x="30" y="242">• LAD 2 (AR, fucosylation defect → no sialyl-Lewis X): similar + Bombay blood type, intellectual disability</text>
+<text font-size="12" x="30" y="264">• Chédiak–Higashi (LYST): failed phagolysosome fusion → giant granules, albinism, neuropathy</text>
+<text font-size="12" x="30" y="286">• Glucocorticoids ↓ adhesion molecules → demargination → neutrophilia without left shift</text>
+</g>
+</svg>

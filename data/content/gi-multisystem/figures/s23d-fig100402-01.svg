@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="Dysphagia algorithm separating oropharyngeal from esophageal dysphagia, then mechanical from motility causes" font-family="sans-serif" font-size="13">
+<rect x="285" y="10" width="150" height="36" rx="8" fill="#f1f5f9" stroke="#334155"/>
+<text x="360" y="33" text-anchor="middle" fill="#0f172a" font-weight="bold">Dysphagia</text>
+<line x1="360" y1="46" x2="135" y2="80" stroke="#334155"/>
+<line x1="360" y1="46" x2="560" y2="80" stroke="#334155"/>
+<rect x="20" y="80" width="230" height="56" rx="8" fill="#fce7f3" stroke="#334155"/>
+<text x="135" y="103" text-anchor="middle" fill="#0f172a">Hard to start a swallow;</text>
+<text x="135" y="123" text-anchor="middle" fill="#0f172a">cough, nasal regurgitation</text>
+<rect x="420" y="80" width="280" height="56" rx="8" fill="#e0f2fe" stroke="#334155"/>
+<text x="560" y="103" text-anchor="middle" fill="#0f172a">Food sticks after swallowing</text>
+<text x="560" y="123" text-anchor="middle" fill="#0f172a" font-weight="bold">Esophageal dysphagia</text>
+<line x1="135" y1="136" x2="140" y2="170" stroke="#334155"/>
+<line x1="560" y1="136" x2="380" y2="170" stroke="#334155"/>
+<line x1="560" y1="136" x2="600" y2="170" stroke="#334155"/>
+<rect x="20" y="170" width="240" height="70" rx="8" fill="#fce7f3" stroke="#334155"/>
+<text x="140" y="192" text-anchor="middle" fill="#0f172a" font-weight="bold">Oropharyngeal</text>
+<text x="140" y="210" text-anchor="middle" fill="#0f172a">Stroke, Parkinson, ALS</text>
+<text x="140" y="228" text-anchor="middle" fill="#0f172a">Test: video swallow study</text>
+<rect x="280" y="170" width="200" height="70" rx="8" fill="#fef3c7" stroke="#334155"/>
+<text x="380" y="196" text-anchor="middle" fill="#0f172a">Solids only</text>
+<text x="380" y="218" text-anchor="middle" fill="#0f172a" font-weight="bold">Mechanical</text>
+<rect x="500" y="170" width="200" height="70" rx="8" fill="#dcfce7" stroke="#334155"/>
+<text x="600" y="196" text-anchor="middle" fill="#0f172a">Solids and liquids</text>
+<text x="600" y="218" text-anchor="middle" fill="#0f172a" font-weight="bold">Motility</text>
+<line x1="380" y1="240" x2="102" y2="290" stroke="#334155"/>
+<line x1="380" y1="240" x2="277" y2="290" stroke="#334155"/>
+<line x1="600" y1="240" x2="452" y2="290" stroke="#334155"/>
+<line x1="600" y1="240" x2="627" y2="290" stroke="#334155"/>
+<rect x="20" y="290" width="165" height="70" rx="8" fill="#fef3c7" stroke="#334155"/>
+<text x="102" y="312" text-anchor="middle" fill="#0f172a" font-weight="bold">Progressive</text>
+<text x="102" y="330" text-anchor="middle" fill="#0f172a">Peptic stricture</text>
+<text x="102" y="348" text-anchor="middle" fill="#0f172a">or cancer</text>
+<rect x="195" y="290" width="165" height="70" rx="8" fill="#fef3c7" stroke="#334155"/>
+<text x="277" y="312" text-anchor="middle" fill="#0f172a" font-weight="bold">Intermittent</text>
+<text x="277" y="330" text-anchor="middle" fill="#0f172a">Ring, web or</text>
+<text x="277" y="348" text-anchor="middle" fill="#0f172a">eosinophilic</text>
+<rect x="370" y="290" width="165" height="70" rx="8" fill="#dcfce7" stroke="#334155"/>
+<text x="452" y="312" text-anchor="middle" fill="#0f172a" font-weight="bold">Progressive</text>
+<text x="452" y="330" text-anchor="middle" fill="#0f172a">Achalasia or</text>
+<text x="452" y="348" text-anchor="middle" fill="#0f172a">scleroderma</text>
+<rect x="545" y="290" width="165" height="70" rx="8" fill="#dcfce7" stroke="#334155"/>
+<text x="627" y="312" text-anchor="middle" fill="#0f172a" font-weight="bold">Intermittent</text>
+<text x="627" y="330" text-anchor="middle" fill="#0f172a">Distal esophageal</text>
+<text x="627" y="348" text-anchor="middle" fill="#0f172a">spasm</text>
+<text x="360" y="400" text-anchor="middle" fill="#0f172a">Esophageal dysphagia: endoscopy first; manometry if no obstruction is found</text>
+</svg>

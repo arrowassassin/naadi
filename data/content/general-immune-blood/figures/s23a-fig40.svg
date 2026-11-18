@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" aria-label="Flow diagram: approach to anemia by reticulocyte production index and MCV">
+<title>Approach to anemia by reticulocyte index and MCV</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker></defs>
+<rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#222">
+<rect x="330" y="16" width="240" height="52" rx="8" fill="#eef0f3" stroke="#555"/>
+<text x="450" y="38" font-size="16" text-anchor="middle" font-weight="bold">Anemia confirmed</text>
+<text x="450" y="58" font-size="13" text-anchor="middle">Reticulocyte production index (RPI)</text>
+<line x1="400" y1="68" x2="230" y2="110" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="500" y1="68" x2="690" y2="110" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="60" y="112" width="340" height="52" rx="8" fill="#e6effa" stroke="#2f5d8a" stroke-width="2"/>
+<text x="230" y="134" font-size="15" text-anchor="middle" font-weight="bold">RPI below about 2</text>
+<text x="230" y="154" font-size="13" text-anchor="middle">Underproduction: sort by MCV</text>
+<rect x="540" y="112" width="300" height="52" rx="8" fill="#fbeee3" stroke="#a65a1e" stroke-width="2"/>
+<text x="690" y="134" font-size="15" text-anchor="middle" font-weight="bold">RPI clearly raised</text>
+<text x="690" y="154" font-size="13" text-anchor="middle">Marrow responding: loss or destruction</text>
+<line x1="120" y1="164" x2="90" y2="214" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="230" y1="164" x2="230" y2="214" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="340" y1="164" x2="375" y2="214" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="16" y="216" width="150" height="40" rx="6" fill="#ffffff" stroke="#2f5d8a"/>
+<text x="91" y="234" font-size="13" text-anchor="middle" font-weight="bold">Microcytic</text>
+<text x="91" y="250" font-size="12" text-anchor="middle">MCV below 80 fL</text>
+<rect x="176" y="216" width="110" height="40" rx="6" fill="#ffffff" stroke="#2f5d8a"/>
+<text x="231" y="234" font-size="13" text-anchor="middle" font-weight="bold">Normocytic</text>
+<text x="231" y="250" font-size="12" text-anchor="middle">80-100 fL</text>
+<rect x="296" y="216" width="160" height="40" rx="6" fill="#ffffff" stroke="#2f5d8a"/>
+<text x="376" y="234" font-size="13" text-anchor="middle" font-weight="bold">Macrocytic</text>
+<text x="376" y="250" font-size="12" text-anchor="middle">MCV above 100 fL</text>
+<g font-size="12">
+<text x="20" y="282">Iron deficiency</text>
+<text x="20" y="300">Inflammation (late)</text>
+<text x="20" y="318">Thalassemia</text>
+<text x="20" y="336">Sideroblastic</text>
+<text x="20" y="354">Lead</text>
+<text x="180" y="282">Early iron deficiency</text>
+<text x="180" y="300">Inflammation</text>
+<text x="180" y="318">Kidney disease</text>
+<text x="180" y="336">Aplastic anemia</text>
+<text x="180" y="354">Red cell aplasia</text>
+<text x="180" y="372">Marrow infiltration</text>
+<text x="300" y="282">Megaloblastic:</text>
+<text x="310" y="300">vitamin B12, folate,</text>
+<text x="310" y="318">antimetabolite drugs</text>
+<text x="300" y="342">Non-megaloblastic:</text>
+<text x="310" y="360">alcohol, liver disease,</text>
+<text x="310" y="378">hypothyroidism, MDS</text>
+</g>
+<line x1="690" y1="164" x2="690" y2="214" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="540" y="216" width="300" height="40" rx="6" fill="#ffffff" stroke="#a65a1e"/>
+<text x="690" y="241" font-size="13" text-anchor="middle" font-weight="bold">LDH, haptoglobin, bilirubin, smear</text>
+<line x1="620" y1="256" x2="600" y2="296" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="760" y1="256" x2="780" y2="296" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="500" y="298" width="190" height="40" rx="6" fill="#ffffff" stroke="#a65a1e"/>
+<text x="595" y="316" font-size="13" text-anchor="middle" font-weight="bold">Markers normal</text>
+<text x="595" y="332" font-size="12" text-anchor="middle">Acute blood loss</text>
+<rect x="700" y="298" width="180" height="40" rx="6" fill="#ffffff" stroke="#a65a1e"/>
+<text x="790" y="316" font-size="13" text-anchor="middle" font-weight="bold">Hemolysis markers</text>
+<text x="790" y="332" font-size="12" text-anchor="middle">Direct antiglobulin test</text>
+<line x1="740" y1="338" x2="690" y2="380" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="840" y1="338" x2="850" y2="380" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="590" y="382" width="160" height="40" rx="6" fill="#ffffff" stroke="#a65a1e"/>
+<text x="670" y="400" font-size="13" text-anchor="middle" font-weight="bold">DAT positive</text>
+<text x="670" y="416" font-size="12" text-anchor="middle">Immune hemolysis</text>
+<rect x="760" y="382" width="130" height="40" rx="6" fill="#ffffff" stroke="#a65a1e"/>
+<text x="825" y="400" font-size="13" text-anchor="middle" font-weight="bold">DAT negative</text>
+<text x="825" y="416" font-size="12" text-anchor="middle">Non-immune</text>
+<g font-size="12">
+<text x="596" y="444">Warm (IgG)</text>
+<text x="596" y="462">Cold (C3)</text>
+<text x="596" y="480">Drug-induced</text>
+<text x="766" y="444">Membrane</text>
+<text x="766" y="462">Enzyme</text>
+<text x="766" y="480">Hemoglobin</text>
+<text x="766" y="498">PNH</text>
+<text x="766" y="516">Mechanical</text>
+</g>
+<text x="20" y="430" font-size="12">RPI = reticulocyte % × (hematocrit ÷ 45) ÷ maturation factor</text>
+<text x="20" y="450" font-size="12">Mixed pictures are common: check both branches when results disagree.</text>
+</g>
+</svg>

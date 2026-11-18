@@ -1,0 +1,62 @@
+<svg aria-label="Prenatal care and screening timeline by gestational week" font-family="sans-serif" role="img" viewbox="0 0 640 430" xmlns="http://www.w3.org/2000/svg">
+<text fill="#0f172a" font-size="13" font-weight="bold" text-anchor="middle" x="320" y="18">Prenatal screening timeline (US / ACOG) — bars show weeks of gestation</text>
+<g stroke="#334155" stroke-dasharray="3,3" stroke-width="0.5">
+<line x1="240" x2="240" y1="30" y2="400"></line><line x1="276" x2="276" y1="30" y2="400"></line><line x1="312" x2="312" y1="30" y2="400"></line><line x1="348" x2="348" y1="30" y2="400"></line><line x1="384" x2="384" y1="30" y2="400"></line><line x1="420" x2="420" y1="30" y2="400"></line><line x1="456" x2="456" y1="30" y2="400"></line><line x1="492" x2="492" y1="30" y2="400"></line><line x1="528" x2="528" y1="30" y2="400"></line><line x1="564" x2="564" y1="30" y2="400"></line><line x1="600" x2="600" y1="30" y2="400"></line>
+</g>
+<g fill="#0f172a" font-size="12">
+<text text-anchor="end" x="232" y="50">First-visit labs (see table)</text>
+<text text-anchor="end" x="232" y="74">Cell-free DNA (from 10 wk)</text>
+<text text-anchor="end" x="232" y="98">CVS (diagnostic)</text>
+<text text-anchor="end" x="232" y="122">NT + PAPP-A + hCG (combined)</text>
+<text text-anchor="end" x="232" y="146">Low-dose aspirin start if at risk</text>
+<text text-anchor="end" x="232" y="170">Amniocentesis (diagnostic)</text>
+<text text-anchor="end" x="232" y="194">Quad screen / MSAFP</text>
+<text text-anchor="end" x="232" y="218">Anatomy ultrasound</text>
+<text text-anchor="end" x="232" y="242">GDM screen (50-g GCT)</text>
+<text text-anchor="end" x="232" y="266">Hb, antibody screen; RhIG if Rh−</text>
+<text text-anchor="end" x="232" y="290">Tdap (every pregnancy)</text>
+<text text-anchor="end" x="232" y="314">RSV vaccine (Sep–Jan)</text>
+<text text-anchor="end" x="232" y="338">GBS rectovaginal culture</text>
+<text text-anchor="end" x="232" y="362">39-wk IOL option; IOL by 41–42</text>
+<text text-anchor="end" x="232" y="386">Visit frequency</text>
+</g>
+<g stroke="#334155" stroke-width="1">
+<rect fill="#e0f2fe" height="16" width="36" x="294" y="38"></rect>
+<rect fill="#e0f2fe" height="16" width="108" x="330" y="62"></rect>
+<rect fill="#fef3c7" height="16" width="27" x="330" y="86"></rect>
+<rect fill="#e0f2fe" height="16" width="27" x="339" y="110"></rect>
+<rect fill="#dcfce7" height="16" width="36" x="348" y="134"></rect><rect fill="#dcfce7" fill-opacity="0.5" height="16" width="108" x="384" y="134"></rect>
+<rect fill="#fef3c7" height="16" width="63" x="375" y="158"></rect>
+<rect fill="#e0f2fe" height="16" width="63" x="375" y="182"></rect>
+<rect fill="#e0f2fe" height="16" width="36" x="402" y="206"></rect>
+<rect fill="#fee2e2" height="16" width="36" x="456" y="230"></rect>
+<rect fill="#fee2e2" height="16" width="8" x="488" y="254"></rect>
+<rect fill="#dcfce7" height="16" width="81" x="483" y="278"></rect>
+<rect fill="#dcfce7" height="16" width="45" x="528" y="302"></rect>
+<rect fill="#fee2e2" height="16" width="18" x="564" y="326"></rect>
+<rect fill="#fef3c7" height="16" width="27" x="591" y="350"></rect>
+<rect fill="#e0f2fe" height="16" width="252" x="240" y="374"></rect><rect fill="#fef3c7" height="16" width="72" x="492" y="374"></rect><rect fill="#fee2e2" height="16" width="54" x="564" y="374"></rect>
+</g>
+<g fill="#0f172a" font-size="12">
+<text x="442" y="74">any time ≥10</text>
+<text x="361" y="98">10–13</text>
+<text x="370" y="122">11–14</text>
+<text x="496" y="146">12–28 (ideally &lt;16)</text>
+<text x="442" y="170">≥15</text>
+<text x="442" y="194">15–22</text>
+<text x="442" y="218">18–22</text>
+<text x="496" y="242">24–28</text>
+<text x="500" y="266">28</text>
+<text x="568" y="290">27–36</text>
+<text x="577" y="314">32–36</text>
+<text font-size="12" x="586" y="338">36–37</text>
+<text text-anchor="middle" x="366" y="386">every 4 wk</text>
+<text text-anchor="middle" x="528" y="386">q2 wk</text>
+<text text-anchor="middle" x="591" y="386">weekly</text>
+<text x="335" y="50">6–10</text>
+</g>
+<g fill="#0f172a" font-size="12" text-anchor="middle">
+<line stroke="#334155" stroke-width="1.5" x1="240" x2="618" y1="400" y2="400"></line>
+<text x="240" y="416">0</text><text x="276" y="416">4</text><text x="312" y="416">8</text><text x="348" y="416">12</text><text x="384" y="416">16</text><text x="420" y="416">20</text><text x="456" y="416">24</text><text x="492" y="416">28</text><text x="528" y="416">32</text><text x="564" y="416">36</text><text x="600" y="416">40</text>
+</g>
+</svg>

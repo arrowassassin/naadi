@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" role="img" aria-label="Schematic of serum phosphate after nutrition starts in a starved patient. Without monitoring it falls below the normal band, with the steepest fall and highest risk in days 1 to 4. With daily checks and replacement it stays near the normal band.">
+<rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380.0" y="26" font-size="16" font-weight="bold" text-anchor="middle">Refeeding: serum phosphate in the first 10 days (schematic)</text>
+<rect x="151.0" y="70" width="183.0" height="230" fill="#e2e8f0"/>
+<text x="242.5" y="88" font-size="12" text-anchor="middle" font-weight="bold">highest risk: days 1 to 4</text>
+<rect x="90" y="110" width="610" height="60" fill="#f1f5f9" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+<text x="694" y="128" font-size="11" text-anchor="end" fill="#334155">normal range</text>
+<line x1="90" y1="300" x2="700" y2="300" stroke="#334155" stroke-width="1.5"/>
+<line x1="90" y1="70" x2="90" y2="300" stroke="#334155" stroke-width="1.5"/>
+<text x="30" y="185.0" font-size="12" text-anchor="middle" transform="rotate(-90 30 185.0)">serum phosphate</text>
+<line x1="90.0" y1="300" x2="90.0" y2="305" stroke="#334155"/><text x="90.0" y="320" font-size="12" text-anchor="middle">0</text>
+<line x1="151.0" y1="300" x2="151.0" y2="305" stroke="#334155"/><text x="151.0" y="320" font-size="12" text-anchor="middle">1</text>
+<line x1="212.0" y1="300" x2="212.0" y2="305" stroke="#334155"/><text x="212.0" y="320" font-size="12" text-anchor="middle">2</text>
+<line x1="273.0" y1="300" x2="273.0" y2="305" stroke="#334155"/><text x="273.0" y="320" font-size="12" text-anchor="middle">3</text>
+<line x1="334.0" y1="300" x2="334.0" y2="305" stroke="#334155"/><text x="334.0" y="320" font-size="12" text-anchor="middle">4</text>
+<line x1="395.0" y1="300" x2="395.0" y2="305" stroke="#334155"/><text x="395.0" y="320" font-size="12" text-anchor="middle">5</text>
+<line x1="456.0" y1="300" x2="456.0" y2="305" stroke="#334155"/><text x="456.0" y="320" font-size="12" text-anchor="middle">6</text>
+<line x1="517.0" y1="300" x2="517.0" y2="305" stroke="#334155"/><text x="517.0" y="320" font-size="12" text-anchor="middle">7</text>
+<line x1="578.0" y1="300" x2="578.0" y2="305" stroke="#334155"/><text x="578.0" y="320" font-size="12" text-anchor="middle">8</text>
+<line x1="639.0" y1="300" x2="639.0" y2="305" stroke="#334155"/><text x="639.0" y="320" font-size="12" text-anchor="middle">9</text>
+<line x1="700.0" y1="300" x2="700.0" y2="305" stroke="#334155"/><text x="700.0" y="320" font-size="12" text-anchor="middle">10</text>
+<text x="395.0" y="340" font-size="12" text-anchor="middle">days after nutrition starts</text>
+<path d="M90.0,150 L151.0,185 L212.0,235 L273.0,262 L334.0,270 L395.0,272 L456.0,272 L517.0,271 L578.0,271 L639.0,270 L700.0,270" fill="none" stroke="#0f172a" stroke-width="2.6"/>
+<path d="M90.0,150 L151.0,168 L212.0,180 L273.0,176 L334.0,165 L395.0,158 L456.0,152 L517.0,148 L578.0,146 L639.0,145 L700.0,144" fill="none" stroke="#334155" stroke-width="2.4" stroke-dasharray="8 5"/>
+<text x="407.2" y="262" font-size="12">without monitoring or replacement</text>
+<text x="407.2" y="98" font-size="12">daily checks and replacement</text>
+<path d="M468.2,102 L492.59999999999997,140" stroke="#334155" stroke-width="1"/>
+<text x="40" y="372" font-size="12">Before feeding: check potassium, phosphate, magnesium and glucose; give thiamine before carbohydrate.</text>
+<text x="40" y="392" font-size="12">Days 1 to 4: check electrolytes daily; watch for edema, heart failure, arrhythmia, weakness and confusion.</text>
+<text x="40" y="412" font-size="12">Insulin released by feeding drives phosphate, potassium and magnesium into cells. Values are illustrative.</text>
+</g></svg>

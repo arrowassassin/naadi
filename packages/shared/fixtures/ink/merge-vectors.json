@@ -1,0 +1,523 @@
+{
+  "comment": "Concurrent-edit golden vectors: mergeInkItems(a,b) == mergeInkItems(b,a) == expected (packages/shared/src/ink.fixtures.test.ts), and the API's SQL upsert gives expected whichever replica is written first (apps/api/tests/ink/test_ink_db.py). Full ties with different content are excluded on purpose: the server keeps its stored row and clients adopt it.",
+  "base_ms": 1763000000000,
+  "cases": [
+    {
+      "name": "newer edit wins",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000a",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000010
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000a",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.3, 0.3, 0.5, 0]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000020
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000a",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.3, 0.3, 0.5, 0]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000020
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "disjoint items are unioned",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000b",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000000
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000c",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000000
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000b",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000000
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000c",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000000
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "newer tombstone beats an older edit",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000d",
+          "tool": "pen",
+          "color": "violet",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000020
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000d",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000030,
+          "deleted": true
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000d",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000030,
+          "deleted": true
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "newer edit beats an older tombstone (undo restamp)",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000e",
+          "tool": "pen",
+          "color": "violet",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000040
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000e",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000030,
+          "deleted": true
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000e",
+          "tool": "pen",
+          "color": "violet",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000040
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "tie: tombstone beats a concurrent edit",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000f",
+          "tool": "pen",
+          "color": "violet",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000030
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000f",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000030,
+          "deleted": true
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-00000000000f",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000030,
+          "deleted": true
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "tie: identical copies",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000010",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000010",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000010",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "identical tombstones",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000011",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005,
+          "deleted": true
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000011",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005,
+          "deleted": true
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000011",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005,
+          "deleted": true
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "old copy never resurrects a tombstone",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000012",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000000
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000012",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000001,
+          "deleted": true
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000012",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000001,
+          "deleted": true
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "clock skew within 4 minutes: the device ahead wins on both sides",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000013",
+          "tool": "pen",
+          "color": "violet",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000240000
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000013",
+          "tool": "pen",
+          "color": "lime",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000060000
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000013",
+          "tool": "pen",
+          "color": "violet",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000240000
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "text box edit vs stroke tombstone on different ids",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000014",
+          "tool": "text",
+          "color": "violet",
+          "size": 0.02,
+          "x": 0.1,
+          "y": 0.3,
+          "w": 0.4,
+          "text": "Type 4 = aldo ↓",
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000003
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000015",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000004,
+          "deleted": true
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000014",
+          "tool": "text",
+          "color": "violet",
+          "size": 0.02,
+          "x": 0.1,
+          "y": 0.3,
+          "w": 0.4,
+          "text": "Type 4 = aldo ↓",
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000003
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000015",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000004,
+          "deleted": true
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "several items at once",
+      "a": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000016",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000001
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000017",
+          "tool": "pen",
+          "color": "violet",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000009
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000018",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005,
+          "deleted": true
+        }
+      ],
+      "b": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000016",
+          "tool": "pen",
+          "color": "lime",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000002
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000017",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000008
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000018",
+          "tool": "pen",
+          "color": "amber",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000019",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000000
+        }
+      ],
+      "expected": [
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000016",
+          "tool": "pen",
+          "color": "lime",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000002
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000017",
+          "tool": "pen",
+          "color": "violet",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000009
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000018",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000005,
+          "deleted": true
+        },
+        {
+          "id": "019a8c4e-0000-7000-8000-000000000019",
+          "tool": "pen",
+          "color": "ink",
+          "size": 0.002,
+          "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+          "createdAt": 1763000000000,
+          "updatedAt": 1763000000000
+        }
+      ],
+      "note": ""
+    }
+  ]
+}

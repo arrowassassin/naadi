@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Two by two grid of pancreatic collections by necrosis and time since onset" font-family="sans-serif">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="260" y="16" width="210" height="44" rx="6" fill="#f1f5f9" stroke="#334155"/>
+<text x="365" y="43" font-size="14" text-anchor="middle" fill="#0f172a">First 4 weeks</text>
+<rect x="500" y="16" width="210" height="44" rx="6" fill="#f1f5f9" stroke="#334155"/>
+<text x="605" y="43" font-size="14" text-anchor="middle" fill="#0f172a">After 4 weeks</text>
+<rect x="10" y="74" width="235" height="100" rx="6" fill="#e0f2fe" stroke="#334155"/>
+<text x="22" y="114" font-size="14" fill="#0f172a">Interstitial edematous</text>
+<text x="22" y="136" font-size="13" fill="#0f172a">pancreatitis (no necrosis)</text>
+<rect x="10" y="188" width="235" height="100" rx="6" fill="#fce7f3" stroke="#334155"/>
+<text x="22" y="228" font-size="14" fill="#0f172a">Necrotizing</text>
+<text x="22" y="250" font-size="13" fill="#0f172a">pancreatitis</text>
+<rect x="260" y="74" width="210" height="100" rx="6" fill="#dcfce7" stroke="#334155"/>
+<text x="272" y="98" font-size="13" fill="#0f172a">Acute peripancreatic</text>
+<text x="272" y="118" font-size="13" fill="#0f172a">fluid collection</text>
+<text x="272" y="142" font-size="12" fill="#0f172a">Fluid only, no wall</text>
+<text x="272" y="160" font-size="12" fill="#0f172a">Most resolve</text>
+<rect x="500" y="74" width="210" height="100" rx="6" fill="#dcfce7" stroke="#334155"/>
+<text x="512" y="98" font-size="13" fill="#0f172a">Pseudocyst</text>
+<text x="512" y="122" font-size="12" fill="#0f172a">Fluid in a fibrous wall</text>
+<text x="512" y="140" font-size="12" fill="#0f172a">No epithelial lining</text>
+<text x="512" y="158" font-size="12" fill="#0f172a">Drain only if symptomatic</text>
+<rect x="260" y="188" width="210" height="100" rx="6" fill="#fef3c7" stroke="#334155"/>
+<text x="272" y="212" font-size="13" fill="#0f172a">Acute necrotic</text>
+<text x="272" y="232" font-size="13" fill="#0f172a">collection</text>
+<text x="272" y="256" font-size="12" fill="#0f172a">Fluid plus dead tissue</text>
+<text x="272" y="274" font-size="12" fill="#0f172a">Antibiotics only if infected</text>
+<rect x="500" y="188" width="210" height="100" rx="6" fill="#fef3c7" stroke="#334155"/>
+<text x="512" y="212" font-size="13" fill="#0f172a">Walled-off necrosis</text>
+<text x="512" y="236" font-size="12" fill="#0f172a">Encapsulated debris</text>
+<text x="512" y="254" font-size="12" fill="#0f172a">Drain if infected</text>
+<text x="512" y="272" font-size="12" fill="#0f172a">or symptomatic</text>
+<line x1="470" y1="124" x2="498" y2="124" stroke="#334155" stroke-width="2" marker-end="url(#pa)"/>
+<line x1="470" y1="238" x2="498" y2="238" stroke="#334155" stroke-width="2" marker-end="url(#pa)"/>
+<text x="10" y="316" font-size="12" fill="#0f172a">Arrows: an early collection matures into the later form as a wall develops.</text>
+</svg>

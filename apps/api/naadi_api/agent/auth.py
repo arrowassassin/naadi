@@ -1,0 +1,276 @@
+"""Aegra custom auth: the Supabase access token, verified exactly as for `/api/*` (naadi_api.auth).
+
+- `identity` = the Supabase user id (`sub`); Aegra scopes every assistant, thread, run, cron and store item
+  to it, so user B gets 404 for user A's objects.
+- `permissions` = ["admin"] for admin accounts: a confirmed email (`auth.users.email_confirmed_at`) listed in
+  ADMIN_EMAILS, and the token's session still live in `auth.sessions` (same `AccountDirectory` as `/api/*`).
+  No email or name is placed in the identity (it is copied into run configs and logs).
+- Crons and assistant writes are admin-only: a student never schedules model calls or reconfigures a graph.
+  System crons are owned by `SYSTEM_IDENTITY`, which no token can produce.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+from contextvars import ContextVar
+from typing import Any
+
+from langgraph_sdk import Auth
+
+from ..auth import (
+    AccountDirectory,
+    AuthError,
+    AuthUnavailable,
+    TokenVerifier,
+    build_verifier,
+    parse_admin_emails,
+    user_from_claims,
+)
+from ..db import Database
+from ..logs import get_logger
+from ..settings import get_settings
+from .identity import ADMIN_PERMISSION
+
+log = get_logger("naadi.agent.auth")
+
+auth = Auth()
+
+# Set per request by host.AuthUnavailableAs503; True when the account could not be checked (-> 503).
+unavailable_flag: ContextVar[dict[str, bool] | None] = ContextVar("naadi_agent_auth_unavailable", default=None)
+UNAVAILABLE = json.dumps(
+    {
+        "error": "service_unavailable",
+        "message": "Your account cannot be checked right now. Try again in a moment.",
+        "details": {"retry_after_s": 5},
+    }
+).encode()
+
+
+def mark_unavailable() -> None:
+    flag = unavailable_flag.get()
+    if flag is not None:  # mutated, not re-set: the middleware holds the same dict across task boundaries
+        flag["unavailable"] = True
+
+
+_verifier: TokenVerifier | None = None
+_accounts: AccountDirectory | None = None
+
+
+def configure(verifier: TokenVerifier | None = None, accounts: AccountDirectory | None = None) -> None:
+    """Set the verifier and account directory (tests inject a local JWKS / HS256 secret and database)."""
+    global _verifier, _accounts
+    _verifier = verifier
+    _accounts = accounts
+
+
+def _get() -> tuple[TokenVerifier, AccountDirectory]:
+    global _verifier, _accounts
+    if _verifier is None or _accounts is None:
+        s = get_settings()
+        _verifier = _verifier or build_verifier(s)
+        _accounts = _accounts or AccountDirectory(Database(s.database_url), parse_admin_emails(s.admin_emails))
+    return _verifier, _accounts
+
+
+class AuthUnavailableAs503:
+    """Aegra turns every failure of the auth handler into 401, which tells the client to sign in again. When
+    the account could not be CHECKED (database briefly unreachable), the right answer is 503 + Retry-After:
+    the session is fine. The handler marks that case (agent.auth.mark_unavailable) and this ASGI middleware
+    rewrites that one response."""
+
+    def __init__(self, app: Any) -> None:
+        self.app = app
+
+    async def __call__(self, scope: Any, receive: Any, send: Any) -> None:
+        if scope.get("type") != "http":
+            await self.app(scope, receive, send)
+            return
+        flag = {"unavailable": False}
+        token = unavailable_flag.set(flag)
+        rewriting = False
+
+        async def wrapped(message: Any) -> None:
+            nonlocal rewriting
+            if message["type"] == "http.response.start" and message.get("status") == 401 and flag["unavailable"]:
+                rewriting = True
+                headers = [(k, v) for k, v in message.get("headers", []) if k.lower() not in (b"content-length",)]
+                body = UNAVAILABLE
+                headers += [(b"retry-after", b"5"), (b"content-length", str(len(body)).encode())]
+                await send({**message, "status": 503, "headers": headers})
+                return
+            if rewriting and message["type"] == "http.response.body":
+                if not message.get("more_body"):
+                    await send({"type": "http.response.body", "body": UNAVAILABLE, "more_body": False})
+                return
+            await send(message)
+
+        try:
+            await self.app(scope, receive, wrapped)
+        finally:
+            unavailable_flag.reset(token)
+
+
+@auth.authenticate
+async def authenticate(headers: dict[str, Any]) -> Auth.types.MinimalUserDict:
+    raw = headers.get("authorization") or headers.get("Authorization") or ""
+    if isinstance(raw, bytes):
+        raw = raw.decode("latin-1")
+    scheme, _, token = str(raw).partition(" ")
+    if scheme.lower() != "bearer" or not token.strip():
+        raise Auth.exceptions.HTTPException(status_code=401, detail="Sign in to continue.")
+    verifier, accounts = _get()
+    try:
+        claims = await verifier.verify(token.strip())
+        user = await accounts.resolve(user_from_claims(claims))
+    except AuthUnavailable as exc:
+        log.warning("agent_auth_unavailable", reason=exc.code)
+        mark_unavailable()
+        raise Auth.exceptions.HTTPException(status_code=503, detail=exc.message) from exc
+    except AuthError as exc:
+        log.info("agent_auth_rejected", reason=exc.code)
+        raise Auth.exceptions.HTTPException(status_code=exc.status, detail=exc.message) from exc
+    return {
+        "identity": str(user.user_id),
+        "display_name": "student",
+        "is_authenticated": True,
+        "permissions": [ADMIN_PERMISSION] if user.is_admin else [],
+    }
+
+
+def _is_admin(ctx: Auth.types.AuthContext) -> bool:
+    return ADMIN_PERMISSION in (ctx.permissions or [])
+
+
+@auth.on.crons
+async def crons_admin_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    if ctx.action in ("read", "search") or _is_admin(ctx):
+        return True
+    log.info("agent_auth_denied", resource="crons", action=ctx.action)
+    return False
+
+
+@auth.on.assistants
+async def assistant_writes_admin_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    if ctx.action in ("read", "search") or _is_admin(ctx):
+        return True
+    log.info("agent_auth_denied", resource="assistants", action=ctx.action)
+    return False
+
+
+@auth.on.store
+async def store_server_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    """The store holds long-term memory; clients reach it only through /api/assistant/memories and the tutor's
+    confirmed tools, never through the Agent Protocol /store routes."""
+    log.info("agent_auth_denied", resource="store", action=ctx.action)
+    return False
+
+
+# ── threads: clients start runs with input or resume an interrupt the graph raised; nothing else ──
+
+# Run fields that let a client steer a graph past its own checks: `command.goto`/`command.update` jump to any node
+# with any state, a checkpoint forks from an older state, and interrupt_before/after stop a run between nodes.
+_RUN_STEERING = ("checkpoint", "checkpoint_id", "interrupt_before", "interrupt_after")
+
+
+@auth.on.threads.create_run
+async def runs_input_or_resume_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    command = value.get("command") if isinstance(value, dict) else None
+    if command is not None:
+        keys = {k for k, v in command.items() if v is not None} if isinstance(command, dict) else {"?"}
+        if keys - {"resume"}:
+            log.info("agent_auth_denied", resource="threads", action="create_run", reason="command")
+            return False
+    for field in _RUN_STEERING:
+        if isinstance(value, dict) and value.get(field):
+            log.info("agent_auth_denied", resource="threads", action="create_run", reason=field)
+            return False
+    return True
+
+
+@auth.on.threads.update
+async def thread_updates_runs_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    """`threads.update` covers cancelling a run (the Stop button; Aegra checks the run's owner), and also state
+    writes and metadata patches. Only the run operations are the client's: graph state is written by the graph,
+    and thread metadata is the server's (titles live in assistant_threads, renamed through /api/assistant)."""
+    v = value if isinstance(value, dict) else {}
+    if v.get("run_id") and not any(k in v for k in ("values", "as_node", "metadata", "checkpoint", "checkpoint_id")):
+        return True
+    log.info("agent_auth_denied", resource="threads", action="update")
+    return False
+
+
+@auth.on.threads.delete
+async def thread_deletes_server_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    """Deleting goes through DELETE /api/assistant/threads/{id}, which removes the thread with its list row (a
+    protocol delete would leave the row behind); runs and prune are not the client's either."""
+    log.info("agent_auth_denied", resource="threads", action="delete")
+    return False
+
+
+# Aegra's protocol routes a client may call: exactly what the web app uses (useStream in agent/useAgent.ts: create a
+# thread, stream a run, read state and history, list/get/join/cancel runs; the planner and the diagnostics ping:
+# create, wait and join a run). Everything else under the protocol prefixes is refused, whatever a later Aegra adds:
+# v2 /commands and /stream/events, stateless /runs, state writes, thread search/copy/prune, crons, assistants, store.
+_SEG = r"[^/]+"
+PROTOCOL_ALLOWLIST: tuple[tuple[str, str], ...] = (
+    ("POST", "/threads"),
+    ("GET", "/threads/{thread_id}/state"),
+    ("POST", "/threads/{thread_id}/history"),
+    ("POST", "/threads/{thread_id}/runs"),
+    ("POST", "/threads/{thread_id}/runs/stream"),
+    ("POST", "/threads/{thread_id}/runs/wait"),
+    ("GET", "/threads/{thread_id}/runs"),
+    ("GET", "/threads/{thread_id}/runs/{run_id}"),
+    ("GET", "/threads/{thread_id}/runs/{run_id}/join"),
+    ("GET", "/threads/{thread_id}/runs/{run_id}/stream"),
+    ("POST", "/threads/{thread_id}/runs/{run_id}/cancel"),
+    # Aegra's own probes (no protocol data).
+    ("GET", "/health"),
+    ("GET", "/info"),
+    ("GET", "/live"),
+    ("GET", "/ready"),
+)
+# Paths the protocol owns: anything under these that is not allowlisted is refused.
+PROTOCOL_PREFIXES = ("/threads", "/runs", "/assistants", "/store", "/crons", "/health", "/info", "/live", "/ready")
+
+
+def _template_regex(path: str) -> re.Pattern[str]:
+    return re.compile("^" + re.sub(r"\{[^}]+\}", _SEG, path) + "/?$")
+
+
+_ALLOWED = [(m, _template_regex(p)) for m, p in PROTOCOL_ALLOWLIST]
+
+
+def protocol_route_allowed(method: str, path: str) -> bool:
+    m = "GET" if method == "HEAD" else method
+    return any(m == am and rx.match(path) for am, rx in _ALLOWED)
+
+
+def is_protocol_path(path: str) -> bool:
+    return any(path == p or path.startswith(p + "/") for p in PROTOCOL_PREFIXES)
+
+
+class ProtocolAllowlist:
+    """Deny by default on Aegra's protocol routes: only PROTOCOL_ALLOWLIST passes (review14). Naadi's own routes
+    (/api/*, the SPA) are not protocol paths and pass through to their own auth."""
+
+    def __init__(self, app: Any) -> None:
+        self.app = app
+
+    async def __call__(self, scope: Any, receive: Any, send: Any) -> None:
+        if scope.get("type") == "http":
+            path = str(scope.get("path", ""))
+            method = str(scope.get("method", "GET"))
+            if is_protocol_path(path) and method != "OPTIONS" and not protocol_route_allowed(method, path):
+                from ..errors import error_response
+
+                log.info("agent_auth_denied", resource="protocol", method=method, path_kind=_kind(path))
+                await error_response(403, "This change is not allowed.", "forbidden")(scope, receive, send)
+                return
+        await self.app(scope, receive, send)
+
+
+def _kind(path: str) -> str:
+    """The route shape, without ids (log lines carry no thread or run ids from refused requests)."""
+    return re.sub(r"/[0-9a-fA-F-]{8,}", "/{id}", path)[:80]

@@ -1,0 +1,1315 @@
+{
+ "area": "usmle2026.15.09.01",
+ "sections": [
+  {
+   "id": "s23c-s150901-1-1",
+   "exam": "step1",
+   "heading": "Drug effects on endocrine glands: mechanisms",
+   "html": "<p>Many drugs change endocrine function by acting on a hormone's feedback loop, its synthesis, its receptor or the assay that measures it. Thinking in those four steps makes most questions predictable.</p>\n<h3>Exogenous glucocorticoids</h3>\n<p>Supraphysiologic glucocorticoids (roughly more than 5 mg/day of prednisone or equivalent) suppress CRH and ACTH by negative feedback. Without ACTH the zona fasciculata and reticularis atrophy, so cortisol and adrenal androgens fall. The zona glomerulosa is controlled mainly by angiotensin II and potassium, so <strong>aldosterone is preserved</strong>. Suppression is likely after about 3 weeks of a supraphysiologic dose, and recovery can take months.</p>\n[[figure:s23c-fig150901-1]]\n<p>Effects of glucocorticoid excess by mechanism: gluconeogenesis and insulin resistance (hyperglycemia), protein catabolism (proximal myopathy, thin skin, striae, poor wound healing), reduced osteoblast function and gut calcium absorption (osteoporosis, osteonecrosis of the femoral head), central fat redistribution, immunosuppression with lymphopenia and neutrophil demargination (a raised neutrophil count), eosinopenia, cataracts, glaucoma, mood change and growth suppression in children.</p>\n<h3>Drugs acting on the adrenal and steroid pathways</h3>\n<table><tr><th>Drug</th><th>Action</th><th>Endocrine consequence</th></tr>\n<tr><td>Etomidate</td><td>Inhibits 11-beta-hydroxylase</td><td>Transient cortisol suppression after a single induction dose</td></tr>\n<tr><td>Ketoconazole</td><td>Inhibits several cytochrome P450 steroidogenic enzymes</td><td>Lowers cortisol and testosterone; gynecomastia; used for Cushing syndrome</td></tr>\n<tr><td>Metyrapone</td><td>Inhibits 11-beta-hydroxylase</td><td>Lowers cortisol; 11-deoxycortisol rises</td></tr>\n<tr><td>Mitotane</td><td>Adrenolytic to the cortex</td><td>Adrenal insufficiency; used for adrenocortical carcinoma</td></tr>\n<tr><td>Spironolactone</td><td>Mineralocorticoid and androgen receptor antagonist</td><td>Hyperkalemia, gynecomastia</td></tr>\n<tr><td>Fludrocortisone</td><td>Mineralocorticoid agonist</td><td>Replaces aldosterone; excess causes hypertension and hypokalemia</td></tr>\n<tr><td>Opioids (long-term)</td><td>Suppress hypothalamic GnRH and CRH</td><td>Hypogonadotropic hypogonadism; occasionally central adrenal insufficiency</td></tr></table>\n<h3>Anabolic-androgenic steroids</h3>\n<p>Exogenous testosterone and its analogues suppress GnRH, LH and FSH. Low LH means low intratesticular testosterone, so the testes shrink and spermatogenesis stops (infertility). Other effects: erythrocytosis, low HDL and high LDL, acne, gynecomastia (aromatisation to estradiol), hepatotoxicity and hepatic adenoma with oral 17-alpha-alkylated agents, mood change and, in adolescents, premature epiphyseal closure. After stopping, hypogonadism can persist for months.</p>\n<h3>The thyroid and iodine-rich drugs</h3>\n<ul><li><strong>Amiodarone</strong> is about one third iodine by weight and inhibits type 1 deiodinase (less T4 to T3 conversion, higher reverse T3).<ul><li><em>Hypothyroidism</em>: the iodine load triggers the Wolff-Chaikoff effect (iodine excess inhibits organification); glands with underlying autoimmune thyroiditis fail to escape it.</li><li><em>Type 1 thyrotoxicosis</em>: iodine fuels excess hormone synthesis in a gland with nodules or latent Graves disease (Jod-Basedow phenomenon).</li><li><em>Type 2 thyrotoxicosis</em>: a destructive thyroiditis from direct drug toxicity, releasing stored hormone.</li></ul></li>\n<li><strong>Iodinated contrast</strong> can cause Jod-Basedow thyrotoxicosis in an older patient with multinodular goiter.</li>\n<li><strong>Lithium</strong> is concentrated by the thyroid and inhibits hormone release, causing goiter and hypothyroidism. It also raises the calcium set point of the CaSR, giving hypercalcemia with high PTH, and causes nephrogenic diabetes insipidus.</li>\n<li>Drugs that raise thyroxine-binding globulin (oral estrogen, tamoxifen) raise total T4 with normal free T4; in a patient on levothyroxine, estrogen increases the dose needed. Drugs that impair levothyroxine absorption include calcium, iron, proton pump inhibitors and bile acid sequestrants.</li></ul>\n<h3>Glucose</h3>\n<p>Drugs that raise glucose: glucocorticoids, thiazides (hypokalemia reduces insulin release), atypical antipsychotics (weight gain, insulin resistance; olanzapine and clozapine most), protease inhibitors, calcineurin inhibitors (tacrolimus is toxic to beta cells), statins (small rise in diabetes incidence), niacin and nonselective beta-blockers (which can also mask the adrenergic warning signs of hypoglycemia). <strong>SGLT2 inhibitors</strong> cause glucosuria, lower insulin needs and raise glucagon, so ketogenesis can proceed with near-normal glucose: <strong>euglycemic DKA</strong>, triggered by surgery, fasting, illness or reduced insulin dose.</p>\n<h3>Immune checkpoint inhibitors</h3>\n<p>Releasing T-cell brakes can cause autoimmune endocrine disease. <strong>Anti-CTLA-4</strong> agents (ipilimumab) most often cause <strong>hypophysitis</strong> (headache, central adrenal insufficiency, central hypothyroidism, hypogonadism). <strong>Anti-PD-1/PD-L1</strong> agents (nivolumab, pembrolizumab) most often cause <strong>thyroiditis</strong> (transient thyrotoxicosis followed by hypothyroidism) and, rarely, abrupt insulin-deficient diabetes. Unlike most immune adverse events, endocrinopathies are usually permanent and are managed with hormone replacement rather than high-dose glucocorticoids.</p>\n<h3>Prolactin</h3>\n<p>Dopamine from the tuberoinfundibular pathway tonically inhibits prolactin. D2 antagonists (risperidone and first-generation antipsychotics, metoclopramide) and dopamine-depleting drugs raise prolactin, causing galactorrhea, amenorrhea, infertility, low libido and, over time, low bone density.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> secondary adrenal insufficiency from stopping glucocorticoids spares aldosterone, so potassium is usually normal. Hyperkalemia points to primary adrenal failure.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>CTLA-4 hits the head, PD-1 hits the neck</em>\": hypophysitis with ipilimumab, thyroiditis with nivolumab and pembrolizumab.</p></div>",
+   "figureIds": [
+    "s23c-fig150901-1"
+   ],
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Endocrine-Related Adverse Events From Immune Checkpoint Inhibitors",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK594266/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Anabolic Steroid Toxicity",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK544259/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Amiodarone",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482154/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hyperprolactinemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK537331/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Steroids",
+     "url": "https://medlineplus.gov/steroids.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150901-2-1",
+   "exam": "step2ck",
+   "heading": "Drug-induced endocrine disorders: recognition and management",
+   "html": "<h3>Glucocorticoid therapy: safe use and withdrawal</h3>\n<ul><li><strong>Who is at risk of HPA suppression?</strong> Assume suppression after more than about 3 weeks of a supraphysiologic dose, with evening dosing, or with cushingoid features. Short courses (under 3 weeks) can usually be stopped without taper.</li>\n<li><strong>Tapering:</strong> reduce gradually toward a physiologic dose, then more slowly. If symptoms suggest insufficiency, a morning cortisol (taken 24 hours after the last hydrocortisone dose) helps decide whether the axis has recovered.</li>\n<li><strong>Stress dosing:</strong> patients on long-term glucocorticoids, or who stopped them recently, need extra doses during major surgery, severe illness or trauma. Teach sick-day rules (double or triple the dose during febrile illness), carry an emergency injection and wear medical identification.</li>\n<li><strong>Adrenal crisis</strong> (hypotension, vomiting, abdominal pain, hypoglycemia, hyponatremia, confusion): give <strong>intravenous hydrocortisone immediately</strong> with isotonic saline and dextrose; draw cortisol and ACTH first if it does not delay treatment, but never wait for results.</li>\n<li><strong>Bone protection:</strong> for patients on 2.5 mg/day or more of prednisone for 3 months or longer, give calcium and vitamin D, assess fracture risk, and start a bisphosphonate when risk is moderate or high.</li>\n<li><strong>Hyperglycemia:</strong> prednisone given in the morning raises afternoon and evening glucose most; NPH insulin given with the morning steroid dose matches this pattern.</li></ul>\n<h3>Thyroid effects of drugs: what to do</h3>\n<table><tr><th>Situation</th><th>Findings</th><th>Management</th></tr>\n<tr><td>Amiodarone, type 1 thyrotoxicosis</td><td>Nodular goiter or Graves disease; increased Doppler vascularity; uptake may be low-normal despite iodine load</td><td>Thionamide (methimazole), beta-blocker; perchlorate where available</td></tr>\n<tr><td>Amiodarone, type 2 thyrotoxicosis</td><td>Normal gland, low or absent vascularity and uptake</td><td>Glucocorticoids; amiodarone can often continue if needed for the arrhythmia, decided with cardiology</td></tr>\n<tr><td>Amiodarone hypothyroidism</td><td>High TSH</td><td>Levothyroxine; amiodarone can continue</td></tr>\n<tr><td>Checkpoint-inhibitor thyroiditis</td><td>Thyrotoxicosis with low uptake, then hypothyroidism weeks later</td><td>Beta-blocker for symptoms, monitor TSH and free T4 every few weeks, levothyroxine when hypothyroid; immunotherapy usually continues</td></tr>\n<tr><td>Iodine-induced (Jod-Basedow) thyrotoxicosis</td><td>Older patient with nodular goiter after contrast</td><td>Beta-blocker and methimazole</td></tr></table>\n<h3>Checkpoint inhibitors: other endocrinopathies</h3>\n<ul><li><strong>Hypophysitis:</strong> headache and fatigue, low ACTH and cortisol, often low TSH with low free T4. Start <strong>glucocorticoid replacement before levothyroxine</strong>, because thyroid hormone speeds cortisol clearance and can precipitate adrenal crisis.</li>\n<li><strong>Insulin-deficient diabetes:</strong> rapid onset, often with DKA, low C-peptide. Treat with insulin; glucocorticoids do not reverse it.</li>\n<li><strong>Primary adrenalitis</strong> is rare; treat with hydrocortisone and fludrocortisone.</li></ul>\n<h3>Other drug-related problems</h3>\n<ul><li><strong>SGLT2 inhibitor euglycemic DKA:</strong> anion-gap acidosis with ketones and glucose often below 250 mg/dL. Stop the drug, give fluids and an insulin infusion <strong>with dextrose</strong>. Hold SGLT2 inhibitors before planned surgery (3 days for most agents, 4 days for ertugliflozin) and during acute illness.</li>\n<li><strong>Antipsychotic hyperprolactinemia:</strong> if psychiatric illness allows, switch to a prolactin-sparing agent (aripiprazole) or add low-dose aripiprazole; check a pregnancy test and consider pituitary imaging if prolactin is very high or there are mass symptoms.</li>\n<li><strong>Biotin interference:</strong> high-dose biotin (hair, skin and nail supplements) interferes with streptavidin-biotin immunoassays, falsely lowering results of sandwich assays (TSH) and falsely raising results of competitive assays (free T4, T3), mimicking hyperthyroidism. Stop biotin for at least 2–3 days and repeat the tests.</li>\n<li><strong>Testosterone therapy:</strong> monitor hematocrit; it suppresses spermatogenesis and should not be used by men trying to conceive.</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> in suspected central hypothyroidism with possible ACTH deficiency (hypophysitis, pituitary disease), give glucocorticoid before levothyroxine.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Adrenal Insufficiency",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441832/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Euglycemic Diabetic Ketoacidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK554570/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Endocrine-Related Adverse Events From Immune Checkpoint Inhibitors",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK594266/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Amiodarone",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482154/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig150901-1",
+   "caption": "Figure. Exogenous glucocorticoids suppress CRH and ACTH; the adrenal cortex atrophies, so abrupt withdrawal causes secondary adrenal insufficiency with preserved aldosterone.",
+   "file": "figures/s23c-fig150901-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set150901-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Collapse after stopping prednisone",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q150901-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 26-year-old man who competes in bodybuilding has noticed that his testes have become smaller over the past year. He and his partner have been unable to conceive. He has acne on his back and mild gynecomastia. Hematocrit is 55%, HDL cholesterol 22 mg/dL, LH 0.3 mIU/mL (N = 1.5–9.3) and FSH 0.4 mIU/mL (N = 1.4–18.1). Semen analysis shows no sperm. Which of the following best explains his testicular atrophy?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Direct toxicity of the drug to Leydig cells"
+    },
+    {
+     "label": "B",
+     "html": "Excess prolactin from the drug inhibiting Sertoli cells"
+    },
+    {
+     "label": "C",
+     "html": "Feedback suppression of GnRH and gonadotropins lowering intratesticular testosterone"
+    },
+    {
+     "label": "D",
+     "html": "Loss-of-function variant in the androgen receptor"
+    },
+    {
+     "label": "E",
+     "html": "Testicular ischemia from drug-induced erythrocytosis"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Exogenous androgens suppress hypothalamic GnRH and pituitary LH and FSH by negative feedback. Without LH, Leydig cells make little testosterone, and the very high <strong>intratesticular testosterone</strong> that spermatogenesis needs is lost (serum levels from the drug cannot replace it). Without FSH, Sertoli cell support also falls. The result is small testes and azoospermia. Erythrocytosis, low HDL, acne and gynecomastia (from aromatisation to estradiol) complete the picture of <strong>anabolic steroid use</strong>.</p><p><strong>Takeaway:</strong> Anabolic steroids cause testicular atrophy and infertility through suppressed LH and FSH.</p>",
+   "whyNot": {
+    "A": "The atrophy is from lost gonadotropin stimulation, shown by the suppressed LH, not direct cell toxicity.",
+    "B": "Androgens do not raise prolactin meaningfully, and prolactin would not explain the very low LH and FSH by itself.",
+    "D": "Androgen insensitivity presents at birth with a female phenotype and high LH.",
+    "E": "Erythrocytosis raises thrombotic risk but does not cause gradual testicular atrophy."
+   },
+   "objective": "Explain testicular atrophy from exogenous androgens via gonadotropin suppression.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.14.06.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "anabolic steroids",
+    "hypogonadism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 70-year-old man has taken amiodarone for atrial fibrillation for 8 months. He now has fatigue, cold intolerance and constipation. TSH is 24 µU/mL and free T4 is 0.5 ng/dL. Anti-thyroid peroxidase antibodies are strongly positive. Which of the following best explains his thyroid dysfunction?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Antibody stimulation of the TSH receptor"
+    },
+    {
+     "label": "B",
+     "html": "Destructive thyroiditis with release of stored hormone"
+    },
+    {
+     "label": "C",
+     "html": "Failure to escape from iodine-induced inhibition of organification"
+    },
+    {
+     "label": "D",
+     "html": "Increased hepatic clearance of thyroxine"
+    },
+    {
+     "label": "E",
+     "html": "Pituitary suppression of TSH by the drug"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Amiodarone delivers a large iodine load. Acute iodine excess transiently inhibits organification and hormone synthesis (the <strong>Wolff-Chaikoff effect</strong>); a normal gland escapes within days. A gland already damaged by autoimmune thyroiditis (positive anti-TPO antibodies) cannot escape, so <strong>hypothyroidism</strong> persists. It is treated with levothyroxine while amiodarone continues if still needed.</p><p><strong>Takeaway:</strong> Amiodarone hypothyroidism is failure to escape the Wolff-Chaikoff effect, most often in glands with underlying autoimmune thyroiditis.</p>",
+   "whyNot": {
+    "A": "TSH-receptor stimulating antibodies cause Graves disease with hyperthyroidism.",
+    "B": "Destructive thyroiditis is type 2 amiodarone-induced thyrotoxicosis, which causes hormone excess at first.",
+    "D": "Enzyme inducers such as rifampin raise thyroxine clearance; amiodarone's key effects are iodine excess and deiodinase inhibition.",
+    "E": "TSH is high, which shows the pituitary is responding appropriately to a failing gland."
+   },
+   "objective": "Explain amiodarone-induced hypothyroidism by the Wolff-Chaikoff effect.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "amiodarone",
+    "Wolff-Chaikoff"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 54-year-old woman has taken lithium for bipolar disorder for 15 years. Routine tests show serum calcium 11.1 mg/dL, phosphorus 3.0 mg/dL, intact PTH 78 pg/mL (N = 10–65), 25-hydroxyvitamin D 32 ng/mL and normal creatinine. Her lithium level is in the therapeutic range. Which of the following best explains these findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Increased 1-alpha-hydroxylase activity in the kidney"
+    },
+    {
+     "label": "B",
+     "html": "Increased bone resorption caused by PTH-related peptide"
+    },
+    {
+     "label": "C",
+     "html": "Lithium shifting the calcium set point of the calcium-sensing receptor"
+    },
+    {
+     "label": "D",
+     "html": "Reduced calcium filtration from lithium nephrotoxicity"
+    },
+    {
+     "label": "E",
+     "html": "Vitamin D intoxication from supplements"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Lithium reduces the sensitivity of the parathyroid <strong>calcium-sensing receptor</strong>, so a higher calcium is needed to suppress PTH (a raised set point). The result is <strong>hypercalcemia with high or inappropriately normal PTH</strong>, resembling primary hyperparathyroidism. Long-term use can also lead to parathyroid hyperplasia or adenoma. Lithium also reduces urinary calcium in a way similar to FHH.</p><p><strong>Takeaway:</strong> Lithium causes PTH-dependent hypercalcemia by raising the CaSR set point.</p>",
+   "whyNot": {
+    "A": "Increased 1-alpha-hydroxylase activity (as in granulomas) would suppress PTH.",
+    "B": "PTHrP-driven hypercalcemia suppresses intact PTH.",
+    "D": "Her creatinine is normal, and reduced filtration would not raise PTH with high calcium.",
+    "E": "Her 25-hydroxyvitamin D is normal, and vitamin D excess suppresses PTH."
+   },
+   "objective": "Explain lithium-associated hypercalcemia through the calcium-sensing receptor.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "lithium",
+    "hypercalcemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 24-year-old woman with schizophrenia was started on risperidone 4 months ago. She now has amenorrhea and milky nipple discharge from both breasts. Urine hCG is negative. Serum prolactin is 96 ng/mL (N less than 20). Blockade of receptors in which of the following pathways best explains these findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Mesocortical dopamine pathway"
+    },
+    {
+     "label": "B",
+     "html": "Mesolimbic dopamine pathway"
+    },
+    {
+     "label": "C",
+     "html": "Nigrostriatal dopamine pathway"
+    },
+    {
+     "label": "D",
+     "html": "Raphe serotonin pathway"
+    },
+    {
+     "label": "E",
+     "html": "Tuberoinfundibular dopamine pathway"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Dopamine released from the arcuate nucleus into the hypophyseal portal system (the <strong>tuberoinfundibular pathway</strong>) tonically inhibits lactotrophs through D2 receptors. Risperidone blocks D2 strongly, so prolactin rises, causing galactorrhea and, through suppression of GnRH, amenorrhea.</p><p><strong>Takeaway:</strong> D2 blockade in the tuberoinfundibular pathway causes hyperprolactinemia.</p>",
+   "whyNot": {
+    "A": "Mesocortical blockade may worsen negative and cognitive symptoms, not prolactin.",
+    "B": "Mesolimbic blockade is the intended antipsychotic effect on positive symptoms.",
+    "C": "Nigrostriatal blockade causes parkinsonism, dystonia and akathisia.",
+    "D": "Serotonin 2A blockade by risperidone does not raise prolactin."
+   },
+   "objective": "Link antipsychotic D2 blockade in the tuberoinfundibular pathway to hyperprolactinemia.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "hyperprolactinemia",
+    "antipsychotics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 62-year-old man is receiving combination immunotherapy for metastatic melanoma. Ten weeks after starting, he has severe headache, fatigue and light-headedness. Blood pressure is 94/60 mm Hg. Serum sodium is 129 mEq/L, potassium 4.2 mEq/L, 8 AM cortisol 1.8 µg/dL, ACTH 4 pg/mL (N = 10–60), TSH 0.2 µU/mL and free T4 0.6 ng/dL. MRI shows a diffusely enlarged pituitary gland. Blockade of which of the following molecules is most likely responsible?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CD20"
+    },
+    {
+     "label": "B",
+     "html": "CTLA-4"
+    },
+    {
+     "label": "C",
+     "html": "HER2"
+    },
+    {
+     "label": "D",
+     "html": "TNF-alpha"
+    },
+    {
+     "label": "E",
+     "html": "VEGF"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Inflammatory <strong>hypophysitis</strong> with central adrenal insufficiency and central hypothyroidism is a characteristic adverse effect of <strong>anti-CTLA-4</strong> therapy (ipilimumab), especially in combination with an anti-PD-1 drug. CTLA-4 normally restrains T-cell activation; blocking it unleashes autoimmunity, and pituitary cells may express CTLA-4. Potassium is normal because aldosterone is controlled by renin-angiotensin.</p><p><strong>Takeaway:</strong> Ipilimumab (anti-CTLA-4) most often causes hypophysitis.</p>",
+   "whyNot": {
+    "A": "Anti-CD20 therapy (rituximab) depletes B cells and causes infusion reactions and hepatitis B reactivation, not hypophysitis.",
+    "C": "Anti-HER2 therapy (trastuzumab) is linked to cardiomyopathy.",
+    "D": "TNF-alpha blockade predisposes to tuberculosis reactivation and infections.",
+    "E": "VEGF blockade (bevacizumab) causes hypertension, proteinuria and impaired wound healing."
+   },
+   "objective": "Associate anti-CTLA-4 immunotherapy with hypophysitis.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "checkpoint inhibitors",
+    "hypophysitis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man with type 2 diabetes who takes empagliflozin and metformin has nausea, vomiting and abdominal pain 2 days after a laparoscopic cholecystectomy, during which he ate little. Serum glucose is 186 mg/dL, bicarbonate 11 mEq/L, anion gap 24 and beta-hydroxybutyrate markedly high. Which of the following best explains why ketoacidosis developed with only mild hyperglycemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Inhibition of hepatic gluconeogenesis by metformin"
+    },
+    {
+     "label": "B",
+     "html": "Increased renal glucose excretion lowering insulin and raising glucagon"
+    },
+    {
+     "label": "C",
+     "html": "Lactic acid production from metformin accumulation"
+    },
+    {
+     "label": "D",
+     "html": "Reduced hepatic uptake of free fatty acids"
+    },
+    {
+     "label": "E",
+     "html": "Suppression of ketone excretion by the kidney"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>SGLT2 inhibitors block glucose reabsorption in the proximal tubule, so glucose is lost in urine and blood glucose stays modest. Lower glucose reduces insulin secretion and insulin doses, and the drugs also raise glucagon. With fasting and surgical stress, the low insulin-to-glucagon ratio drives lipolysis and hepatic ketogenesis: <strong>euglycemic DKA</strong>.</p><p><strong>Takeaway:</strong> SGLT2 inhibitors can cause ketoacidosis with near-normal glucose; hold them around surgery and acute illness.</p>",
+   "whyNot": {
+    "A": "Metformin does reduce gluconeogenesis, but it does not drive ketogenesis.",
+    "C": "Metformin-associated lactic acidosis would show a high lactate, not high beta-hydroxybutyrate.",
+    "D": "Ketogenesis needs more hepatic fatty acid delivery and oxidation, not less.",
+    "E": "The acidosis comes from increased ketone production driven by a low insulin-to-glucagon ratio, not from failure to excrete ketones."
+   },
+   "objective": "Explain the mechanism of SGLT2 inhibitor-associated euglycemic DKA.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "SGLT2 inhibitor",
+    "euglycemic DKA"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 47-year-old woman in septic shock is intubated after a single dose of an intravenous induction agent chosen for its hemodynamic stability. The next morning, her serum cortisol is low and 11-deoxycortisol is high. Inhibition of which of the following enzymes by the induction agent best explains these results?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "11-beta-hydroxylase"
+    },
+    {
+     "label": "B",
+     "html": "17-alpha-hydroxylase"
+    },
+    {
+     "label": "C",
+     "html": "21-hydroxylase"
+    },
+    {
+     "label": "D",
+     "html": "Aromatase"
+    },
+    {
+     "label": "E",
+     "html": "Cholesterol side-chain cleavage enzyme"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p><strong>Etomidate</strong> is used for induction because it causes little hypotension, but it inhibits adrenal <strong>11-beta-hydroxylase</strong>, the enzyme that converts 11-deoxycortisol to cortisol. The precursor accumulates while cortisol falls. The effect after a single dose lasts about a day.</p><p><strong>Takeaway:</strong> Etomidate (and metyrapone) inhibit 11-beta-hydroxylase: low cortisol with high 11-deoxycortisol.</p>",
+   "whyNot": {
+    "B": "17-alpha-hydroxylase blockade would lower 11-deoxycortisol as well as cortisol and sex steroids.",
+    "C": "21-hydroxylase blockade would lower 11-deoxycortisol and raise 17-hydroxyprogesterone.",
+    "D": "Aromatase converts androgens to estrogens and is not on the cortisol pathway.",
+    "E": "Side-chain cleavage blockade would lower every steroid, including 11-deoxycortisol."
+   },
+   "objective": "Identify the adrenal enzyme inhibited by etomidate.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "etomidate",
+    "steroidogenesis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-01",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150901-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 68-year-old woman is brought to the emergency department with 2 days of vomiting, abdominal pain and weakness. She took prednisone 30 mg daily for 5 months for polymyalgia rheumatica and stopped it on her own 10 days ago because of weight gain. Temperature is 37.4°C (99.3°F), blood pressure 78/46 mm Hg and pulse 118/min. Serum sodium is 128 mEq/L, potassium 4.4 mEq/L and glucose 58 mg/dL. Blood is drawn for cortisol. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT of the abdomen before any treatment"
+    },
+    {
+     "label": "B",
+     "html": "Cosyntropin stimulation test before treatment"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous hydrocortisone with isotonic saline and dextrose"
+    },
+    {
+     "label": "D",
+     "html": "Intravenous norepinephrine without glucocorticoid"
+    },
+    {
+     "label": "E",
+     "html": "Oral prednisone 5 mg daily"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Abrupt withdrawal after months of supraphysiologic prednisone has left her with suppressed ACTH and atrophic adrenals: <strong>adrenal crisis</strong>. Treatment must not wait for results: give <strong>intravenous hydrocortisone</strong> (for example 100 mg bolus, then continuing doses) with isotonic saline and dextrose. Normal potassium fits secondary adrenal insufficiency, where aldosterone is preserved.</p><p><strong>Takeaway:</strong> Suspected adrenal crisis: give IV hydrocortisone and fluids immediately; test later.</p>",
+   "whyNot": {
+    "A": "Imaging may be needed later, but it should not delay life-saving hydrocortisone.",
+    "B": "Stimulation testing before treatment delays therapy in a crisis; a random cortisol can be drawn first, but treatment starts at once.",
+    "D": "Vasopressors alone will not correct glucocorticoid deficiency, and shock will often be refractory without hydrocortisone.",
+    "E": "Low-dose oral prednisone is inadequate in a vomiting, hypotensive patient."
+   },
+   "objective": "Treat adrenal crisis from glucocorticoid withdrawal with immediate IV hydrocortisone.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "adrenal crisis",
+    "glucocorticoid withdrawal"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-02",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150901-1",
+   "setOrder": 2,
+   "stemHtml": "<p>The patient improves with intravenous hydrocortisone and fluids. She is now eating, and her blood pressure is 128/74 mm Hg. Her polymyalgia symptoms have returned mildly. Which of the following is the most appropriate plan at discharge?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Resume prednisone at the lowest effective dose, taper slowly and teach sick-day rules"
+    },
+    {
+     "label": "B",
+     "html": "Stop all glucocorticoids and treat the polymyalgia with ibuprofen alone"
+    },
+    {
+     "label": "C",
+     "html": "Switch to fludrocortisone alone and stop glucocorticoids"
+    },
+    {
+     "label": "D",
+     "html": "Give dexamethasone once weekly as the only glucocorticoid"
+    },
+    {
+     "label": "E",
+     "html": "Restart prednisone 30 mg daily indefinitely without plans to taper"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She still has active polymyalgia and a suppressed HPA axis. The safe plan is to resume a glucocorticoid at the lowest dose that controls her disease, <strong>taper slowly</strong> toward and then below physiologic doses, and teach <strong>sick-day rules</strong> (increase the dose during illness), with an emergency injection kit and medical identification. Bone protection should be addressed too.</p><p><strong>Takeaway:</strong> After glucocorticoid-withdrawal adrenal crisis, taper slowly with sick-day rules and an emergency plan.</p>",
+   "whyNot": {
+    "B": "Stopping glucocorticoids again would risk another adrenal crisis, and NSAIDs alone rarely control polymyalgia.",
+    "C": "Her deficiency is of cortisol; aldosterone is preserved, so fludrocortisone alone does not help.",
+    "D": "Weekly dosing gives no daily cortisol coverage and is not a recognised regimen.",
+    "E": "Indefinite high-dose prednisone adds avoidable toxicity; the goal is the lowest effective dose."
+   },
+   "objective": "Plan glucocorticoid tapering and sick-day rules after adrenal crisis.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "glucocorticoid taper",
+    "sick-day rules"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-03",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 74-year-old man has taken amiodarone for ventricular tachycardia for 3 years. He has had 6 weeks of weight loss, tremor and more frequent palpitations. He has no goiter or eye findings. Studies show:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>TSH</td><td>less than 0.01 µU/mL</td></tr><tr><td>Free T4</td><td>4.1 ng/dL</td></tr><tr><td>TSH-receptor antibodies</td><td>Negative</td></tr><tr><td>Thyroid ultrasonography</td><td>Normal-sized gland, no nodules, absent vascularity on color-flow Doppler</td></tr><tr><td>24-hour radioiodine uptake</td><td>Less than 1%</td></tr></table><p>Cardiology considers amiodarone essential. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Oral prednisone"
+    },
+    {
+     "label": "B",
+     "html": "Potassium iodide"
+    },
+    {
+     "label": "C",
+     "html": "Radioactive iodine ablation"
+    },
+    {
+     "label": "D",
+     "html": "Total thyroidectomy as first-line therapy"
+    },
+    {
+     "label": "E",
+     "html": "Watchful waiting without treatment"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A normal gland without nodules, absent vascularity, negative TSH-receptor antibodies and near-zero uptake indicate <strong>type 2 amiodarone-induced thyrotoxicosis</strong>, a destructive thyroiditis. It responds to <strong>glucocorticoids</strong>, usually over weeks. Thionamides do little because hormone synthesis is not increased.</p><p><strong>Takeaway:</strong> Type 2 amiodarone thyrotoxicosis (destructive, low vascularity) is treated with glucocorticoids.</p>",
+   "whyNot": {
+    "B": "More iodine would worsen an iodine-loaded gland.",
+    "C": "Radioiodine cannot work when uptake is below 1%.",
+    "D": "Thyroidectomy is reserved for severe disease that fails medical therapy or when rapid control is essential.",
+    "E": "Severe thyrotoxicosis in a man with ventricular arrhythmia needs treatment."
+   },
+   "objective": "Differentiate type 2 amiodarone-induced thyrotoxicosis and treat with glucocorticoids.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "amiodarone",
+    "thyrotoxicosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old woman is referred for possible hyperthyroidism. Laboratory tests done for fatigue show TSH 0.08 µU/mL, free T4 3.2 ng/dL and total T3 260 ng/dL. She has no palpitations, tremor, heat intolerance or weight loss. Pulse is 72/min. There is no goiter, eye findings or tremor. She began a high-dose hair and nail supplement 2 months ago. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Radioactive iodine uptake and scan"
+    },
+    {
+     "label": "B",
+     "html": "Start methimazole"
+    },
+    {
+     "label": "C",
+     "html": "Start propranolol"
+    },
+    {
+     "label": "D",
+     "html": "Stop the supplement and repeat thyroid tests in a few days"
+    },
+    {
+     "label": "E",
+     "html": "TSH-receptor antibody test and thyroid ultrasonography"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Laboratory hyperthyroidism in a clinically euthyroid patient taking a hair and nail supplement suggests <strong>biotin interference</strong>. Many thyroid immunoassays use a streptavidin-biotin system; excess biotin falsely lowers sandwich-assay results (TSH) and falsely raises competitive-assay results (free T4, T3). Stopping biotin for at least 2–3 days and repeating the tests usually resolves the pattern.</p><p><strong>Takeaway:</strong> Discordant thyroid tests in a patient taking biotin: stop biotin and repeat before further testing.</p>",
+   "whyNot": {
+    "A": "Uptake scanning exposes her to radiation for a probable laboratory artefact.",
+    "B": "Methimazole would treat a disease she likely does not have, with risks of agranulocytosis and liver injury.",
+    "C": "She has no adrenergic symptoms to treat.",
+    "E": "Antibody testing could be misleading too, because some antibody assays also use biotin-streptavidin."
+   },
+   "objective": "Recognise biotin interference with thyroid immunoassays.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "biotin",
+    "assay interference"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 59-year-old woman receiving pembrolizumab for lung adenocarcinoma has had 2 weeks of palpitations and anxiety. Pulse is 104/min. There is no goiter tenderness or eye findings. TSH is 0.02 µU/mL, free T4 2.6 ng/dL and TSH-receptor antibodies are negative. Radioiodine uptake is low. Six weeks earlier her thyroid tests were normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "High-dose intravenous methylprednisolone and stop pembrolizumab permanently"
+    },
+    {
+     "label": "B",
+     "html": "Methimazole and stop pembrolizumab"
+    },
+    {
+     "label": "C",
+     "html": "Propranolol, continue pembrolizumab and recheck thyroid tests in 2–4 weeks"
+    },
+    {
+     "label": "D",
+     "html": "Radioactive iodine ablation"
+    },
+    {
+     "label": "E",
+     "html": "Total thyroidectomy"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is <strong>checkpoint-inhibitor thyroiditis</strong>: a painless destructive thyroiditis with a transient thyrotoxic phase (low uptake, negative TSH-receptor antibodies), often followed within weeks by hypothyroidism. Treat symptoms with a <strong>beta-blocker</strong>, keep giving immunotherapy, and monitor thyroid tests every few weeks so that levothyroxine can start when hypothyroidism appears.</p><p><strong>Takeaway:</strong> PD-1 inhibitor thyroiditis: beta-blocker, continue immunotherapy, monitor for later hypothyroidism.</p>",
+   "whyNot": {
+    "A": "High-dose glucocorticoids and permanent discontinuation are not needed for thyroiditis, which is managed with hormone-directed care.",
+    "B": "Methimazole does not help a destructive thyroiditis, where synthesis is not increased.",
+    "D": "Radioiodine cannot be taken up by an inflamed gland and is not indicated.",
+    "E": "Surgery is not indicated for a transient thyroiditis."
+   },
+   "objective": "Manage immune checkpoint inhibitor thyroiditis.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "checkpoint inhibitors",
+    "thyroiditis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man receiving nivolumab for renal cell carcinoma has had 3 days of polyuria, thirst and vomiting. He has no history of diabetes; hemoglobin A1c 2 months ago was 5.4%. Serum glucose is 520 mg/dL, bicarbonate 10 mEq/L, anion gap 26 and beta-hydroxybutyrate is markedly high. C-peptide is undetectable, and hemoglobin A1c is now 7.0%. In addition to managing the ketoacidosis, which of the following is the most appropriate long-term treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "High-dose prednisone to reverse the autoimmune injury"
+    },
+    {
+     "label": "B",
+     "html": "Lifelong insulin therapy"
+    },
+    {
+     "label": "C",
+     "html": "Metformin monotherapy"
+    },
+    {
+     "label": "D",
+     "html": "Oral sulfonylurea"
+    },
+    {
+     "label": "E",
+     "html": "Stop nivolumab and expect diabetes to resolve"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Abrupt diabetes with DKA, undetectable C-peptide and an A1c that has not had time to rise much is <strong>checkpoint-inhibitor-induced diabetes</strong>, an autoimmune destruction of beta cells that is almost always permanent. It requires <strong>insulin</strong>. Glucocorticoids do not restore beta-cell function and would worsen hyperglycemia. Immunotherapy can often continue once glucose is controlled.</p><p><strong>Takeaway:</strong> Checkpoint-inhibitor diabetes is insulin-deficient and permanent: treat with insulin, not steroids.</p>",
+   "whyNot": {
+    "A": "Glucocorticoids do not reverse beta-cell loss and would raise glucose further.",
+    "C": "Metformin does not replace absent insulin and is unsafe right after ketoacidosis.",
+    "D": "Sulfonylureas need functioning beta cells, which he no longer has.",
+    "E": "Beta-cell loss is permanent; stopping the drug does not cure the diabetes."
+   },
+   "objective": "Treat immune checkpoint inhibitor diabetes with insulin.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "checkpoint inhibitors",
+    "diabetes"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-07",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old woman with type 2 diabetes who takes dapagliflozin, metformin and basal insulin has nausea and rapid breathing on postoperative day 2 after a hip replacement. She has eaten little since surgery, and her insulin dose was halved. Serum glucose is 172 mg/dL, sodium 138 mEq/L, chloride 102 mEq/L, bicarbonate 12 mEq/L, arterial pH 7.19, lactate 1.4 mmol/L and serum beta-hydroxybutyrate is markedly high. Which of the following is the most appropriate treatment in addition to stopping dapagliflozin?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous fluids and an insulin infusion with dextrose"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous sodium bicarbonate alone"
+    },
+    {
+     "label": "C",
+     "html": "Restart her full basal insulin dose and observe"
+    },
+    {
+     "label": "D",
+     "html": "Subcutaneous rapid-acting insulin only when glucose exceeds 250 mg/dL"
+    },
+    {
+     "label": "E",
+     "html": "Withhold insulin until glucose rises above 250 mg/dL"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Anion gap 24 with high ketones and only mild hyperglycemia in a patient taking an SGLT2 inhibitor after surgery and reduced intake is <strong>euglycemic DKA</strong>. Treatment is the same as for DKA, fluids, potassium monitoring and an <strong>insulin infusion</strong>, but <strong>dextrose</strong> must be given from the start so that enough insulin can be infused to stop ketogenesis without causing hypoglycemia.</p><p><strong>Takeaway:</strong> Euglycemic DKA: stop the SGLT2 inhibitor; fluids plus insulin infusion with dextrose.</p>",
+   "whyNot": {
+    "B": "Bicarbonate does not stop ketone production and is reserved for very severe acidemia.",
+    "C": "Subcutaneous basal insulin alone is too slow and unreliable to close the anion gap in DKA.",
+    "D": "Glucose-triggered correction would leave her without insulin while ketogenesis continues.",
+    "E": "The problem is insulin deficiency relative to glucagon; withholding insulin worsens ketoacidosis."
+   },
+   "objective": "Treat SGLT2 inhibitor-associated euglycemic DKA with insulin plus dextrose.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "euglycemic DKA",
+    "SGLT2 inhibitor"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-08",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old woman with schizophrenia has been stable for a year on risperidone. She reports 6 months of amenorrhea and occasional nipple discharge. Urine hCG is negative. Serum prolactin is 88 ng/mL (N less than 20). TSH and creatinine are normal. She has no headache or visual symptoms. She would like regular periods. Which of the following is the most appropriate next step, in consultation with her psychiatrist?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add bromocriptine at full dose while continuing risperidone"
+    },
+    {
+     "label": "B",
+     "html": "MRI of the pituitary before any change"
+    },
+    {
+     "label": "C",
+     "html": "Start combined oral contraceptives and ignore the prolactin"
+    },
+    {
+     "label": "D",
+     "html": "Stop all antipsychotic medication"
+    },
+    {
+     "label": "E",
+     "html": "Switch to aripiprazole or add low-dose aripiprazole"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Moderately raised prolactin in a patient on a D2-blocking antipsychotic, without mass symptoms, is most likely <strong>drug-induced</strong>. If her psychiatric illness allows, switch to (or add) <strong>aripiprazole</strong>, a D2 partial agonist that tends to lower prolactin. Pituitary MRI is reasonable if prolactin stays high after the change, is very high, or there are mass symptoms.</p><p><strong>Takeaway:</strong> Antipsychotic hyperprolactinemia: switch to or add aripiprazole if the psychiatric condition permits.</p>",
+   "whyNot": {
+    "A": "Full-dose dopamine agonists can worsen psychosis.",
+    "B": "Imaging first is not needed when a likely drug cause exists and there are no mass symptoms.",
+    "C": "Contraceptives restore bleeding but leave the hypoestrogenic risks and galactorrhea unaddressed and do not answer her wish for natural cycles.",
+    "D": "Stopping antipsychotic therapy risks relapse of schizophrenia."
+   },
+   "objective": "Manage antipsychotic-induced hyperprolactinemia.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "psychiatry",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hyperprolactinemia",
+    "aripiprazole"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150901-2-09",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>An 81-year-old woman with a long-standing multinodular goiter had a contrast-enhanced CT of the chest 4 weeks ago for suspected pulmonary embolism, which was negative. She now has palpitations, weight loss and new atrial fibrillation with a ventricular rate of 132/min. TSH is less than 0.01 µU/mL and free T4 is 3.0 ng/dL. Thyroid ultrasonography shows multiple nodules with increased vascularity. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Beta-blocker and methimazole"
+    },
+    {
+     "label": "B",
+     "html": "Immediate radioactive iodine ablation"
+    },
+    {
+     "label": "C",
+     "html": "Levothyroxine"
+    },
+    {
+     "label": "D",
+     "html": "Oral prednisone"
+    },
+    {
+     "label": "E",
+     "html": "Potassium iodide drops"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>An iodine load from contrast given to an older patient with autonomous thyroid nodules can trigger excess hormone synthesis: <strong>iodine-induced (Jod-Basedow) hyperthyroidism</strong>. Control the heart rate with a <strong>beta-blocker</strong> and block synthesis with <strong>methimazole</strong>. Radioiodine is ineffective until the iodine load clears (uptake is suppressed for weeks), and definitive therapy can be considered later.</p><p><strong>Takeaway:</strong> Jod-Basedow thyrotoxicosis: beta-blocker plus methimazole; radioiodine is ineffective while iodine-loaded.</p>",
+   "whyNot": {
+    "B": "Recent iodine exposure saturates the gland, so radioiodine uptake would be too low to work.",
+    "C": "Levothyroxine would add thyroid hormone to an already thyrotoxic patient.",
+    "D": "Glucocorticoids are for destructive thyroiditis; this gland is overproducing hormone, with increased vascularity.",
+    "E": "More iodine could worsen hyperthyroidism in autonomous nodules."
+   },
+   "objective": "Treat iodine-induced hyperthyroidism after contrast with a beta-blocker and methimazole.",
+   "areas": [
+    "usmle2026.15.09.01",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Jod-Basedow",
+    "iodinated contrast"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c150901-01",
+   "frontHtml": "After how long on a supraphysiologic glucocorticoid dose should HPA suppression be assumed?",
+   "backHtml": "About 3 weeks or more (also evening dosing or cushingoid features); taper rather than stop.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-02",
+   "frontHtml": "Why is potassium usually normal in adrenal insufficiency after stopping glucocorticoids?",
+   "backHtml": "It is secondary (ACTH-deficient); aldosterone is controlled by renin-angiotensin and is preserved.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-03",
+   "frontHtml": "Anabolic steroid use: LH, FSH and testis size?",
+   "backHtml": "LH and FSH suppressed; small testes, azoospermia; also erythrocytosis and low HDL.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-04",
+   "frontHtml": "Amiodarone hypothyroidism mechanism?",
+   "backHtml": "Iodine excess inhibits organification (Wolff-Chaikoff effect) and an autoimmune-damaged gland fails to escape.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-05",
+   "frontHtml": "Type 1 versus type 2 amiodarone-induced thyrotoxicosis?",
+   "backHtml": "Type 1: iodine-fuelled synthesis in nodular or Graves gland (methimazole). Type 2: destructive thyroiditis in a normal gland (glucocorticoids).",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-06",
+   "frontHtml": "How does lithium cause hypercalcemia?",
+   "backHtml": "Raises the CaSR set point, so PTH is high or inappropriately normal; it can also lead to parathyroid hyperplasia or adenoma.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-07",
+   "frontHtml": "Which checkpoint inhibitor class most often causes hypophysitis, and which thyroiditis?",
+   "backHtml": "Anti-CTLA-4 (ipilimumab): hypophysitis. Anti-PD-1/PD-L1 (nivolumab, pembrolizumab): thyroiditis.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-08",
+   "frontHtml": "Enzyme inhibited by etomidate and metyrapone?",
+   "backHtml": "11-beta-hydroxylase: cortisol falls, 11-deoxycortisol rises.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-09",
+   "frontHtml": "Why do SGLT2 inhibitors cause euglycemic DKA?",
+   "backHtml": "Glucosuria keeps glucose low, insulin falls and glucagon rises, so ketogenesis proceeds with near-normal glucose.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-10",
+   "frontHtml": "Thiazide hyperglycemia mechanism?",
+   "backHtml": "Hypokalemia reduces insulin secretion from beta cells.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-11",
+   "frontHtml": "Antipsychotic galactorrhea: pathway?",
+   "backHtml": "D2 blockade in the tuberoinfundibular pathway removes dopamine inhibition of prolactin.",
+   "sectionId": "s23c-s150901-1-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-12",
+   "frontHtml": "Suspected adrenal crisis: first treatment?",
+   "backHtml": "IV hydrocortisone at once with isotonic saline and dextrose; draw cortisol first only if it causes no delay.",
+   "sectionId": "s23c-s150901-2-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-13",
+   "frontHtml": "Sick-day rules for patients on long-term glucocorticoids?",
+   "backHtml": "Double or triple the dose during febrile illness, injectable hydrocortisone if vomiting, medical identification, stress dosing for surgery.",
+   "sectionId": "s23c-s150901-2-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-14",
+   "frontHtml": "Checkpoint-inhibitor thyroiditis management?",
+   "backHtml": "Beta-blocker for the thyrotoxic phase, continue immunotherapy, monitor for hypothyroidism and start levothyroxine when it appears.",
+   "sectionId": "s23c-s150901-2-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-15",
+   "frontHtml": "Hypophysitis with low cortisol and low free T4: which hormone first?",
+   "backHtml": "Glucocorticoid before levothyroxine, to avoid precipitating adrenal crisis.",
+   "sectionId": "s23c-s150901-2-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-16",
+   "frontHtml": "Checkpoint-inhibitor diabetes treatment?",
+   "backHtml": "Insulin; it is permanent and not reversed by glucocorticoids.",
+   "sectionId": "s23c-s150901-2-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-17",
+   "frontHtml": "Biotin effect on thyroid immunoassays?",
+   "backHtml": "Falsely low TSH (sandwich assay) and falsely high free T4 and T3 (competitive assays); stop biotin 2–3 days and repeat.",
+   "sectionId": "s23c-s150901-2-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150901-18",
+   "frontHtml": "Why is radioiodine ineffective soon after iodinated contrast?",
+   "backHtml": "The iodine load saturates the gland, so tracer uptake is suppressed for weeks.",
+   "sectionId": "s23c-s150901-2-1",
+   "areas": [
+    "usmle2026.15.09.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

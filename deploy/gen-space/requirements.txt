@@ -1,0 +1,9 @@
+# Do NOT list gradio, spaces or huggingface_hub (platform-managed on ZeroGPU Spaces); torch ships with ZeroGPU.
+diffusers==0.43.0
+transformers==5.23.0
+accelerate==1.16.0
+sentencepiece==0.2.3
+protobuf==7.36.2
+imageio==2.38.2
+imageio-ffmpeg==0.8.1
+pillow==13.0.0

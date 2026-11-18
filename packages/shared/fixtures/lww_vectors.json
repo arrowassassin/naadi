@@ -1,0 +1,314 @@
+[
+  {
+    "name": "first write on a missing row applies",
+    "stored_ms": null,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399999000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "newer edit wins",
+    "stored_ms": 1763399998000,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399999000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "older edit loses",
+    "stored_ms": 1763399999000,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399998000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "tie keeps the server's row",
+    "stored_ms": 1763399998500,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399998500,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399998500
+    }
+  },
+  {
+    "name": "order A then B: A on a missing row",
+    "stored_ms": null,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399998000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399998000
+    }
+  },
+  {
+    "name": "order A then B: B newer than A",
+    "stored_ms": 1763399998000,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399999000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "order B then A: B on a missing row",
+    "stored_ms": null,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399999000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "order B then A: A older than B loses",
+    "stored_ms": 1763399999000,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399998000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "future stamp is clamped to server time + 5 min",
+    "stored_ms": null,
+    "tombstone_ms": null,
+    "incoming_ms": 1763486400000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763400300000
+    }
+  },
+  {
+    "name": "clamped future stamp ties a stored clamped stamp",
+    "stored_ms": 1763400300000,
+    "tombstone_ms": null,
+    "incoming_ms": 1763400999999,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763400300000
+    }
+  },
+  {
+    "name": "clamped stamp still beats an older row",
+    "stored_ms": 1763400000000,
+    "tombstone_ms": null,
+    "incoming_ms": 1763400400000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763400300000
+    }
+  },
+  {
+    "name": "stamp exactly at the clamp edge is kept",
+    "stored_ms": 1763399999999,
+    "tombstone_ms": null,
+    "incoming_ms": 1763400300000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763400300000
+    }
+  },
+  {
+    "name": "delete newer than the edit applies",
+    "stored_ms": 1763399998000,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399999000,
+    "server_now_ms": 1763400000000,
+    "is_delete": true,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "delete older than the edit loses (edit first)",
+    "stored_ms": 1763399999000,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399998000,
+    "server_now_ms": 1763400000000,
+    "is_delete": true,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "delete tie with the stored row loses",
+    "stored_ms": 1763399998500,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399998500,
+    "server_now_ms": 1763400000000,
+    "is_delete": true,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399998500
+    }
+  },
+  {
+    "name": "edit older than the tombstone loses (delete first)",
+    "stored_ms": null,
+    "tombstone_ms": 1763399999000,
+    "incoming_ms": 1763399998000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "edit newer than the tombstone wins (delete first)",
+    "stored_ms": null,
+    "tombstone_ms": 1763399998000,
+    "incoming_ms": 1763399999000,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "edit tie with the tombstone loses",
+    "stored_ms": null,
+    "tombstone_ms": 1763399998500,
+    "incoming_ms": 1763399998500,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399998500
+    }
+  },
+  {
+    "name": "delete replayed on its own tombstone is a no-op",
+    "stored_ms": null,
+    "tombstone_ms": 1763399998500,
+    "incoming_ms": 1763399998500,
+    "server_now_ms": 1763400000000,
+    "is_delete": true,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399998500
+    }
+  },
+  {
+    "name": "newer delete over an older tombstone applies",
+    "stored_ms": null,
+    "tombstone_ms": 1763399998000,
+    "incoming_ms": 1763399999000,
+    "server_now_ms": 1763400000000,
+    "is_delete": true,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "delete of a missing row with no tombstone applies",
+    "stored_ms": null,
+    "tombstone_ms": null,
+    "incoming_ms": 1763399999000,
+    "server_now_ms": 1763400000000,
+    "is_delete": true,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "re-created row: stored newer than tombstone decides",
+    "stored_ms": 1763399999000,
+    "tombstone_ms": 1763399998000,
+    "incoming_ms": 1763399998500,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "re-created row: a delete between tombstone and stored loses",
+    "stored_ms": 1763399999000,
+    "tombstone_ms": 1763399998000,
+    "incoming_ms": 1763399998500,
+    "server_now_ms": 1763400000000,
+    "is_delete": true,
+    "expect": {
+      "applied": false,
+      "effective_ms": 1763399999000
+    }
+  },
+  {
+    "name": "re-created row: incoming newer than both wins",
+    "stored_ms": 1763399999000,
+    "tombstone_ms": 1763399998000,
+    "incoming_ms": 1763399999500,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 1763399999500
+    }
+  },
+  {
+    "name": "zero stamp on a missing row applies",
+    "stored_ms": null,
+    "tombstone_ms": null,
+    "incoming_ms": 0,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": true,
+      "effective_ms": 0
+    }
+  },
+  {
+    "name": "zero stamp ties a stored zero",
+    "stored_ms": 0,
+    "tombstone_ms": null,
+    "incoming_ms": 0,
+    "server_now_ms": 1763400000000,
+    "is_delete": false,
+    "expect": {
+      "applied": false,
+      "effective_ms": 0
+    }
+  }
+]

@@ -1,0 +1,54 @@
+<svg aria-label="Renin-angiotensin-aldosterone system with drug targets" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch05-arrow-f9" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#ffffff" height="380" width="640" x="0" y="0"></rect>
+<rect fill="#fef3c7" height="70" rx="6" stroke="#334155" width="192" x="10" y="10"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="30">↓ Renal perfusion pressure</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="48">↓ NaCl at macula densa</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="66">↑ Sympathetic (β₁ on JG cells)</text>
+<line marker-end="url(#ch05-arrow-f9)" stroke="#334155" stroke-width="2" x1="202" x2="232" y1="45" y2="45"></line>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="150" x="236" y="25"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="311" y="50">JG cells secrete renin</text>
+<rect fill="#fee2e2" height="40" rx="6" stroke="#334155" width="120" x="400" y="25"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="460" y="42">β-blockers ↓</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="460" y="58">renin release</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="150" x="10" y="125"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="85" y="142">Angiotensinogen</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="85" y="158">(liver)</text>
+<line marker-end="url(#ch05-arrow-f9)" stroke="#334155" stroke-width="2" x1="160" x2="226" y1="145" y2="145"></line>
+<line marker-end="url(#ch05-arrow-f9)" stroke="#334155" stroke-dasharray="5,4" stroke-width="1.5" x1="311" x2="195" y1="65" y2="140"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="168" y="180">renin</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="120" x="230" y="125"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="290" y="150">Angiotensin I</text>
+<line marker-end="url(#ch05-arrow-f9)" stroke="#334155" stroke-width="2" x1="350" x2="426" y1="145" y2="145"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="360" y="136">ACE (lung)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="355" y="182">ACE also degrades</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="355" y="196">bradykinin</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="130" x="430" y="125"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="495" y="150">Angiotensin II</text>
+<rect fill="#fee2e2" height="24" rx="4" stroke="#334155" width="80" x="168" y="190"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="208" y="207">Aliskiren</text>
+<rect fill="#fee2e2" height="24" rx="4" stroke="#334155" width="90" x="360" y="90"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="405" y="107">ACE inhibitors</text>
+<line marker-end="url(#ch05-arrow-f9)" stroke="#334155" stroke-width="2" x1="495" x2="495" y1="165" y2="200"></line>
+<rect fill="#fee2e2" height="24" rx="4" stroke="#334155" width="65" x="570" y="170"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="602" y="187">ARBs</text>
+<line stroke="#dc2626" stroke-width="1.5" x1="570" x2="502" y1="185" y2="190"></line>
+<rect fill="#dcfce7" height="166" rx="6" stroke="#334155" width="345" x="290" y="204"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="298" y="222">Ang II via AT₁ receptors</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="298" y="240">• Arteriolar vasoconstriction → ↑ TPR, ↑ BP</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="298" y="258">• Efferent &gt; afferent constriction → ↑ FF, GFR preserved</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="298" y="276">• Adrenal zona glomerulosa → aldosterone (↑ ENaC,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="298" y="292">   Na⁺/K⁺-ATPase; K⁺ and H⁺ secretion)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="298" y="310">• ↑ PCT Na⁺/H⁺ exchange (contraction alkalosis)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="298" y="328">• Posterior pituitary ADH; hypothalamic thirst</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="298" y="346">• Remodeling/fibrosis of heart, vessels, kidney</text>
+<text fill="#dc2626" font-family="sans-serif" font-size="12" x="298" y="364">MR antagonists block aldosterone (spironolactone)</text>
+<rect fill="#fef3c7" height="130" rx="6" stroke="#334155" width="270" x="10" y="240"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="18" y="258">Counter-regulators</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="276">ANP/BNP (atrial/ventricular stretch):</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="292">  afferent dilation → ↑ GFR; ↓ renin,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="308">  ↓ aldosterone; ↓ CD Na⁺ reabsorption</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="326">  (neprilysin degrades → sacubitril)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="344">Prostaglandins dilate afferent arteriole</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="360">  (blocked by NSAIDs)</text>
+</svg>

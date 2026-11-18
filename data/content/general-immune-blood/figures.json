@@ -1,0 +1,247 @@
+[
+ {
+  "id": "s23a-fig10",
+  "chapterId": "s23a-ch10",
+  "caption": "Lymphocyte development and the step at which major antibody and combined defects act.",
+  "file": "figures/s23a-fig10.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig11",
+  "chapterId": "s23a-ch10",
+  "caption": "Complement pathways, their regulators and what CH50 and AH50 detect.",
+  "file": "figures/s23a-fig11.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig12",
+  "chapterId": "s23a-ch11",
+  "caption": "Stepwise laboratory workup of suspected primary immunodeficiency by infection pattern.",
+  "file": "figures/s23a-fig12.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig13",
+  "chapterId": "s23a-ch10",
+  "caption": "Peripheral blood smear (schematic).",
+  "file": "figures/s23a-fig13.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig20",
+  "chapterId": "s23a-ch12",
+  "file": "figures/s23a-fig20.svg",
+  "source": "naadi-original-v1",
+  "attribution": null,
+  "caption": "Figure 1. The HIV life cycle in a CD4 T cell and the drug class that blocks each step."
+ },
+ {
+  "id": "s23a-fig21",
+  "chapterId": "s23a-ch12",
+  "file": "figures/s23a-fig21.svg",
+  "source": "naadi-original-v1",
+  "attribution": null,
+  "caption": "Figure 2. Transplant rejection types by timing, effector and reversibility."
+ },
+ {
+  "id": "s23a-fig22",
+  "chapterId": "s23a-ch13",
+  "file": "figures/s23a-fig22.svg",
+  "source": "naadi-original-v1",
+  "attribution": null,
+  "caption": "Figure 3. Typical timing of infections after solid organ transplantation."
+ },
+ {
+  "id": "s23a-fig23",
+  "chapterId": "s23a-ch13",
+  "file": "figures/s23a-fig23.svg",
+  "source": "naadi-original-v1",
+  "attribution": null,
+  "caption": "Figure 4. The laboratory HIV testing algorithm."
+ },
+ {
+  "id": "s23a-fig30",
+  "chapterId": "s23a-ch20",
+  "caption": "Figure 1. Plasmodium life cycle in the human host, and the stage each antimalarial class acts on.",
+  "file": "figures/s23a-fig30.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig31",
+  "chapterId": "s23a-ch20",
+  "caption": "Figure 2. The self-sustaining T-cell and macrophage loop of hemophagocytic syndrome and its laboratory signature.",
+  "file": "figures/s23a-fig31.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig32",
+  "chapterId": "s23a-ch20",
+  "caption": "Figure 3. Schematic peripheral blood smear with intraerythrocytic ring forms, including a cross of four organisms in one cell.",
+  "file": "figures/s23a-fig32.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig33",
+  "chapterId": "s23a-ch20",
+  "caption": "Figure 4. Lymph node compartments and the reactive pattern each produces.",
+  "file": "figures/s23a-fig33.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig40",
+  "chapterId": "s23a-ch22",
+  "caption": "Figure 40. Approach to anemia: reticulocyte production index first, then MCV or hemolysis markers and the direct antiglobulin test.",
+  "file": "figures/s23a-fig40.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig41",
+  "chapterId": "s23a-ch22",
+  "caption": "Figure 41. Schematic alkaline hemoglobin electrophoresis patterns for common genotypes.",
+  "file": "figures/s23a-fig41.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig42",
+  "chapterId": "s23a-ch22",
+  "caption": "Figure 42. Heme synthesis across mitochondrion and cytosol, with the enzyme affected in each disorder.",
+  "file": "figures/s23a-fig42.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig50",
+  "chapterId": "s23a-ch24",
+  "caption": "Figure 1. Blood volume, hemoglobin concentration and reticulocytes after a single acute bleed.",
+  "file": "figures/s23a-fig50.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig51",
+  "chapterId": "s23a-ch25",
+  "caption": "Figure 2. Stepwise evaluation of a low platelet count.",
+  "file": "figures/s23a-fig51.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig52",
+  "chapterId": "s23a-ch25",
+  "caption": "Figure 3. Work-up of a high hematocrit with erythropoietin and JAK2 testing.",
+  "file": "figures/s23a-fig52.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig53",
+  "chapterId": "s23a-ch24",
+  "caption": "Figure 4. Peripheral blood smear (schematic), Wright stain.",
+  "file": "figures/s23a-fig53.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig60",
+  "chapterId": "s23a-ch26",
+  "caption": "Interpreting PT and aPTT patterns and the 1:1 mixing study.",
+  "file": "figures/s23a-fig60.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig61",
+  "chapterId": "s23a-ch26",
+  "caption": "Coagulation cascade with natural anticoagulants and anticoagulant drug targets.",
+  "file": "figures/s23a-fig61.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig62",
+  "chapterId": "s23a-ch27",
+  "caption": "Diagnostic pathway for suspected deep vein thrombosis: Wells score, D-dimer and compression ultrasonography.",
+  "file": "figures/s23a-fig62.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig63",
+  "chapterId": "s23a-ch26",
+  "caption": "Transfusion reactions by usual time of onset.",
+  "file": "figures/s23a-fig63.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig70",
+  "chapterId": "s23a-ch28",
+  "caption": "Figure 1. Red-cell fragment shapes in fragmentation hemolysis, and how a fibrin strand or high-shear jet cuts a cell.",
+  "file": "figures/s23a-fig70.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig71",
+  "chapterId": "s23a-ch28",
+  "caption": "Figure 2. Splenic white pulp (follicle, periarteriolar sheath, marginal zone) and red pulp filtration by culling and pitting.",
+  "file": "figures/s23a-fig71.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig72",
+  "chapterId": "s23a-ch28",
+  "caption": "Figure 3. Targets of anticoagulant and antiplatelet drugs and their reversal agents.",
+  "file": "figures/s23a-fig72.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig73",
+  "chapterId": "s23a-ch28",
+  "caption": "Peripheral blood smear (schematic) for a practice question.",
+  "file": "figures/s23a-fig73.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig80",
+  "chapterId": "s23a-ch30",
+  "caption": "Figure 1. Primitive reflexes fade as cortical inhibition matures; the parachute reaction appears late and persists.",
+  "file": "figures/s23a-fig80.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig81",
+  "chapterId": "s23a-ch30",
+  "caption": "Figure 2. Usual sequence of pubertal events: the growth spurt comes early in girls and late in boys.",
+  "file": "figures/s23a-fig81.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig82",
+  "chapterId": "s23a-ch31",
+  "caption": "Figure 3. Growth-faltering patterns: the curve that falls first points to the cause.",
+  "file": "figures/s23a-fig82.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23a-fig90",
+  "chapterId": "s23a-ch32",
+  "caption": "Figure 1. Schematic of FSH, inhibin B and estradiol across the menopausal transition: inhibin B falls first, FSH rises, and estradiol becomes erratic before falling.",
+  "file": "figures/s23a-fig90.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig91",
+  "chapterId": "s23a-ch32",
+  "caption": "Figure 2. Body water falls and fat rises with age, shrinking the distribution volume of water-soluble drugs and enlarging that of fat-soluble drugs.",
+  "file": "figures/s23a-fig91.svg",
+  "source": "naadi-original-v1"
+ },
+ {
+  "id": "s23a-fig92",
+  "chapterId": "s23a-ch33",
+  "caption": "Figure 3. Age ranges for routine adult screening in average-risk adults, summarized from USPSTF recommendations.",
+  "file": "figures/s23a-fig92.svg",
+  "source": "naadi-original-v1"
+ }
+]

@@ -1,0 +1,35 @@
+<svg aria-label="Alcohol withdrawal syndrome timeline from last drink" role="img" viewbox="0 0 640 330" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch12-arrow2" markerheight="7" markerwidth="7" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="320" y="20">Time since last drink (hours)</text>
+<line marker-end="url(#ch12-arrow2)" stroke="#334155" stroke-width="2" x1="40" x2="620" y1="50" y2="50"></line>
+<g text-anchor="middle">
+<line stroke="#334155" x1="40" x2="40" y1="44" y2="56"></line><text x="40" y="40">0</text>
+<line stroke="#334155" x1="120" x2="120" y1="44" y2="56"></line><text x="120" y="40">6</text>
+<line stroke="#334155" x1="200" x2="200" y1="44" y2="56"></line><text x="200" y="40">12</text>
+<line stroke="#334155" x1="280" x2="280" y1="44" y2="56"></line><text x="280" y="40">24</text>
+<line stroke="#334155" x1="360" x2="360" y1="44" y2="56"></line><text x="360" y="40">48</text>
+<line stroke="#334155" x1="440" x2="440" y1="44" y2="56"></line><text x="440" y="40">72</text>
+<line stroke="#334155" x1="520" x2="520" y1="44" y2="56"></line><text x="520" y="40">96</text>
+<line stroke="#334155" x1="590" x2="590" y1="44" y2="56"></line><text x="590" y="40">120</text>
+</g>
+<rect fill="#e0f2fe" height="34" rx="5" stroke="#334155" width="200" x="120" y="66"></rect>
+<text font-weight="bold" text-anchor="middle" x="220" y="81">Minor withdrawal (6–36 h)</text>
+<text text-anchor="middle" x="220" y="95">tremor, anxiety, insomnia, sweating</text>
+<rect fill="#fef3c7" height="34" rx="5" stroke="#334155" width="160" x="200" y="110"></rect>
+<text font-weight="bold" text-anchor="middle" x="280" y="125">Hallucinosis (12–48 h)</text>
+<text text-anchor="middle" x="280" y="139">clear sensorium, normal vitals</text>
+<rect fill="#fee2e2" height="34" rx="5" stroke="#334155" width="200" x="160" y="154"></rect>
+<text font-weight="bold" text-anchor="middle" x="260" y="169">Withdrawal seizures (6–48 h)</text>
+<text text-anchor="middle" x="260" y="183">generalized tonic-clonic, brief</text>
+<rect fill="#fee2e2" height="46" rx="5" stroke="#334155" stroke-width="2" width="230" x="360" y="198"></rect>
+<text font-weight="bold" text-anchor="middle" x="475" y="214">Delirium tremens (48–96 h, to ~5 d)</text>
+<text text-anchor="middle" x="475" y="228">disorientation, hallucinations, fever,</text>
+<text text-anchor="middle" x="475" y="241">tachycardia, HTN; mortality up to ~5%</text>
+<rect fill="#dcfce7" height="66" rx="6" stroke="#334155" width="600" x="20" y="256"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="274">Management</text>
+<text text-anchor="middle" x="320" y="290">Thiamine before glucose · CIWA-Ar every 1–4 h: &lt;8–10 supportive; ≥10 symptom-triggered benzodiazepine</text>
+<text text-anchor="middle" x="320" y="304">Long-acting (chlordiazepoxide, diazepam) unless cirrhosis/elderly → lorazepam or oxazepam</text>
+<text text-anchor="middle" x="320" y="318">DTs/refractory: ICU, escalating IV benzodiazepines ± phenobarbital or propofol; correct Mg, K, PO4</text>
+</g>
+</svg>

@@ -1,0 +1,7 @@
+# multiplayer: parallel-agent coordination for this repo (see .claude/skills/multiplayer/SKILL.md)
+[multiplayer]
+remote        = "origin"
+ledger_branch = "claude/naadi-ledger"   # task distributor + message ledger (append-only)
+shared_branch = "claude/naadi-shared"   # the one branch every parallel agent commits to
+promote_to    = "claude/blissful-knuth-1gh22d"  # lead merges shared -> here after review
+lead          = "lead"

@@ -1,0 +1,1099 @@
+{
+ "area": "usmle2026.15.07",
+ "sections": [
+  {
+   "id": "s23c-s1507-1-1",
+   "exam": "step1",
+   "heading": "Multiple endocrine neoplasia: genetics and tumours",
+   "html": "<p>The <strong>multiple endocrine neoplasia (MEN) syndromes</strong> are autosomal dominant conditions in which tumours arise in several endocrine glands, often in young adults, often in more than one gland, and often bilaterally. Two different genetic mechanisms explain the two main families.</p>\n[[figure:s23c-fig1507-1]]\n<h3>MEN1: loss of a tumour suppressor</h3>\n<p>The <em>MEN1</em> gene on chromosome 11q13 encodes <strong>menin</strong>, a nuclear protein that restrains cell proliferation through effects on transcription and chromatin. Affected people inherit one inactive copy; a tumour forms when the second copy is lost in a cell (the two-hit model), which is why tumours are multiple and appear in several glands over time.</p>\n<ul><li><strong>Parathyroid</strong>: hyperplasia of all four glands, the commonest and usually the earliest feature, presenting with hypercalcemia, stones or bone loss at a younger age than sporadic primary hyperparathyroidism.</li><li><strong>Pancreas and duodenum</strong>: neuroendocrine tumours. Gastrinomas in MEN1 are usually small, multiple and in the duodenal wall; insulinomas and nonfunctioning tumours also occur. Pancreatic neuroendocrine tumours are a leading cause of death in MEN1.</li><li><strong>Anterior pituitary</strong>: adenomas, most often prolactinomas.</li><li>Others: foregut carcinoid tumours (thymic, bronchial, gastric), adrenal cortical nodules, facial angiofibromas and collagenomas, lipomas.</li></ul>\n<p>Hypercalcemia stimulates gastrin release, so uncontrolled hyperparathyroidism makes Zollinger-Ellison syndrome in MEN1 worse.</p>\n<h3>MEN2: gain of function of a receptor tyrosine kinase</h3>\n<p>The <em>RET</em> proto-oncogene (chromosome 10q11) encodes a receptor tyrosine kinase expressed in neural crest derivatives. In MEN2, a <strong>single activating (gain-of-function) mutation</strong> makes the receptor signal without its ligand. The neural crest cells involved are the thyroid <strong>parafollicular C cells</strong> and the <strong>adrenal medullary chromaffin cells</strong>.</p>\n<table><tr><th></th><th>MEN2A</th><th>MEN2B</th></tr>\n<tr><td>Medullary thyroid carcinoma (MTC)</td><td>Nearly all carriers, preceded by C-cell hyperplasia</td><td>Nearly all, earlier (childhood) and more aggressive</td></tr>\n<tr><td>Pheochromocytoma</td><td>About half, often bilateral</td><td>About half</td></tr>\n<tr><td>Primary hyperparathyroidism</td><td>A minority (hyperplasia)</td><td>Absent</td></tr>\n<tr><td>Other</td><td>Cutaneous lichen amyloidosis (itchy plaques over the upper back); Hirschsprung disease in some families</td><td>Mucosal neuromas of lips, tongue and eyelids; intestinal ganglioneuromatosis (constipation, megacolon); marfanoid habitus without lens or aortic disease</td></tr>\n<tr><td>Typical RET variant</td><td>Cysteine codons in the extracellular domain (634 is the classic high-risk codon)</td><td>M918T in the kinase domain</td></tr></table>\n<h3>Medullary thyroid carcinoma</h3>\n<p>MTC arises from <strong>C cells</strong>, which secrete <strong>calcitonin</strong>; the tumour also releases <strong>CEA</strong>, and both serve as tumour markers. Microscopically, nests of polygonal or spindle cells sit in a stroma of amyloid derived from calcitonin, which stains with Congo red. Serum calcium is usually normal despite high calcitonin. Because C cells neither concentrate iodine nor depend on TSH, radioactive iodine and TSH suppression have no role. About a quarter of MTC is hereditary, which is why every patient with MTC is offered germline <em>RET</em> testing.</p>\n<h3>Hirschsprung disease and RET</h3>\n<p>Loss-of-function <em>RET</em> variants impair migration of neural crest cells to the distal bowel and cause Hirschsprung disease. Some MEN2A families carry variants that both activate the receptor in C cells and reduce its signalling at the cell surface in enteric neurons, so the two conditions can occur together.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> MEN1 is a loss-of-function tumour suppressor (two hits); MEN2 is a gain-of-function proto-oncogene (one hit). Hyperparathyroidism belongs to MEN1 and MEN2A, never MEN2B.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>MEN1 counts the glands from the neck down to the belly and up to the head</em>\": parathyroid, pancreas, pituitary. MEN2 is the neural crest pair: C cells and chromaffin cells.</p></div>",
+   "figureIds": [
+    "s23c-fig1507-1"
+   ],
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Multiple Endocrine Neoplasia Type 1",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536980/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Multiple Endocrine Neoplasia Type 2",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK519054/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Medullary Thyroid Cancer",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK459354/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus Genetics: Multiple endocrine neoplasia",
+     "url": "https://medlineplus.gov/genetics/condition/multiple-endocrine-neoplasia/",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s1507-2-1",
+   "exam": "step2ck",
+   "heading": "Multiple endocrine neoplasia: testing, surgery and surveillance",
+   "html": "<h3>Who should be tested</h3>\n<ul><li><strong>Germline <em>RET</em> testing</strong> for every patient with medullary thyroid carcinoma, even without a family history, and for anyone with features of MEN2 (bilateral or young-onset pheochromocytoma, mucosal neuromas).</li><li><strong>Germline <em>MEN1</em> testing</strong> for a patient with two or more of the main MEN1 tumours, primary hyperparathyroidism at a young age or with multigland disease, or a gastrinoma.</li><li><strong>First-degree relatives</strong> of a person with a known pathogenic variant are offered targeted testing, after genetic counselling. Those who test negative need no further screening; carriers enter surveillance.</li></ul>\n<h3>MEN2: the order of operations</h3>\n<ol><li>Before any operation in a patient with MTC or a <em>RET</em> variant, <strong>exclude pheochromocytoma</strong> with plasma free (or urine fractionated) metanephrines. An undiagnosed pheochromocytoma can cause a hypertensive crisis under anaesthesia.</li><li>If a pheochromocytoma is present, give <strong>alpha-adrenergic blockade</strong> (for example phenoxybenzamine or doxazosin) for 1–2 weeks, adding a beta-blocker only after alpha-blockade is established, with salt and fluid loading; then remove the adrenal tumour laparoscopically, preserving the cortex when the disease is bilateral where possible.</li><li>Then perform <strong>total thyroidectomy</strong> with central neck dissection as indicated by tumour size, nodal disease and calcitonin.</li></ol>\n<h3>Prophylactic thyroidectomy in carriers</h3>\n<p>Because MTC develops in nearly every carrier, children who inherit a <em>RET</em> variant have the thyroid removed before cancer spreads. The timing follows the variant's risk:</p>\n<table><tr><th>Risk class</th><th>Example</th><th>Timing of total thyroidectomy</th></tr>\n<tr><td>Highest</td><td>M918T (MEN2B)</td><td>In the first year of life</td></tr>\n<tr><td>High</td><td>Codon 634</td><td>At or before about 5 years, guided by calcitonin</td></tr>\n<tr><td>Moderate</td><td>Other codons</td><td>When calcitonin starts to rise, or in childhood if the family prefers not to wait</td></tr></table>\n<p>Carriers are also screened for pheochromocytoma (from late childhood in high-risk variants) and, in MEN2A, for hyperparathyroidism.</p>\n<h3>After thyroidectomy for MTC</h3>\n<ul><li>Replace levothyroxine to a <strong>normal TSH</strong>, not a suppressed one.</li><li>Follow <strong>calcitonin and CEA</strong>; their doubling times predict progression. Thyroglobulin is not a marker for MTC.</li><li>Radioactive iodine is not used. Advanced, progressive disease is treated with systemic kinase inhibitors, including selective RET inhibitors, by specialists.</li></ul>\n<h3>MEN1 management</h3>\n<ul><li><strong>Primary hyperparathyroidism</strong>: because all glands are hyperplastic, the operation is <strong>subtotal (three-and-a-half gland) parathyroidectomy</strong> or total parathyroidectomy with autotransplantation, plus transcervical thymectomy (supernumerary glands and thymic carcinoids). Removing one enlarged gland leads to persistence or early recurrence.</li><li><strong>Gastrinoma</strong>: high-dose proton pump inhibitor controls acid; correcting hypercalcemia lowers gastrin; surgery is individualised because tumours are often multiple and small.</li><li><strong>Prolactinoma</strong>: a dopamine agonist (cabergoline) first, as in sporadic disease.</li><li><strong>Surveillance</strong> of carriers: periodic calcium and PTH, prolactin, fasting glucose and gastrin, chromogranin-related markers as used locally, and pancreatic and pituitary imaging at intervals.</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> in a patient with a <em>RET</em> variant or MTC, the first preoperative test is plasma metanephrines, and the first operation, if positive, is the adrenalectomy after alpha-blockade.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Multiple Endocrine Neoplasia Type 2",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK519054/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Multiple Endocrine Neoplasia Type 1",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536980/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Medullary Thyroid Cancer",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK459354/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus Genetics: Multiple endocrine neoplasia",
+     "url": "https://medlineplus.gov/genetics/condition/multiple-endocrine-neoplasia/",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig1507-1",
+   "caption": "Figure. Multiple endocrine neoplasia: MEN1 is loss of the menin tumour suppressor; MEN2A and MEN2B are activating RET variants affecting neural crest-derived C cells and chromaffin cells.",
+   "file": "figures/s23c-fig1507-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set1507-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "A RET codon 634 family",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q1507-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 29-year-old man has had two calcium kidney stones. Serum calcium is 11.3 mg/dL and PTH is elevated. His mother had surgery for a pituitary tumour, and his maternal aunt had a pancreatic neuroendocrine tumour. Germline testing shows a pathogenic variant inherited from his mother; DNA from one of his tumours later shows loss of the remaining normal allele. The protein encoded by the affected gene normally has which of the following functions?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "A cell-adhesion molecule that anchors epithelial cells"
+    },
+    {
+     "label": "B",
+     "html": "A GTPase-activating protein that turns off RAS"
+    },
+    {
+     "label": "C",
+     "html": "A nuclear protein that restrains proliferation by regulating transcription"
+    },
+    {
+     "label": "D",
+     "html": "A receptor tyrosine kinase for glial-derived neurotrophic factor ligands"
+    },
+    {
+     "label": "E",
+     "html": "A ubiquitin ligase subunit that degrades hypoxia-inducible factor"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Hyperparathyroidism with relatives who had pituitary and pancreatic neuroendocrine tumours is <strong>MEN1</strong>. The <em>MEN1</em> gene encodes <strong>menin</strong>, a nuclear tumour suppressor that restrains cell proliferation through effects on transcription and chromatin. Tumours arise when the second, normal allele is lost (two hits).</p><p><strong>Takeaway:</strong> MEN1 is caused by loss of the menin tumour suppressor, following the two-hit model.</p>",
+   "whyNot": {
+    "A": "Loss of E-cadherin, an adhesion molecule, causes hereditary diffuse gastric and lobular breast cancer.",
+    "B": "Neurofibromin is the RAS GTPase-activating protein lost in neurofibromatosis type 1.",
+    "D": "RET is the receptor tyrosine kinase activated in MEN2, which does not cause pituitary or pancreatic tumours.",
+    "E": "The VHL protein targets hypoxia-inducible factor; its loss causes renal cell carcinoma, hemangioblastomas and pheochromocytoma."
+   },
+   "objective": "Identify menin as the tumour suppressor lost in MEN1.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MEN1",
+    "menin"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 17-year-old girl has a tall, thin build with long limbs, everted eyelids, and small pink nodules on the tip of her tongue and along her lips. She has had chronic constipation since childhood. A 2-cm firm thyroid nodule is found. Her lenses are normally positioned and echocardiography shows a normal aortic root. In addition to the thyroid tumour, she is at greatest risk of which of the following?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Adrenal medullary tumour secreting catecholamines"
+    },
+    {
+     "label": "B",
+     "html": "Anterior pituitary adenoma secreting prolactin"
+    },
+    {
+     "label": "C",
+     "html": "Duodenal tumour secreting gastrin"
+    },
+    {
+     "label": "D",
+     "html": "Hyperplasia of all four parathyroid glands"
+    },
+    {
+     "label": "E",
+     "html": "Papillary carcinoma of the contralateral thyroid lobe"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Mucosal neuromas, a marfanoid habitus without lens or aortic disease, constipation from intestinal ganglioneuromatosis and a thyroid nodule (medullary thyroid carcinoma) are <strong>MEN2B</strong>. About half of patients develop <strong>pheochromocytoma</strong>, which must be excluded before thyroid surgery.</p><p><strong>Takeaway:</strong> MEN2B = MTC, pheochromocytoma, mucosal neuromas and marfanoid habitus, without hyperparathyroidism.</p>",
+   "whyNot": {
+    "B": "Pituitary adenomas belong to MEN1.",
+    "C": "Gastrinomas belong to MEN1.",
+    "D": "Parathyroid hyperplasia occurs in MEN1 and MEN2A but not in MEN2B.",
+    "E": "Papillary carcinoma is not part of MEN2; the thyroid cancer of MEN2 is medullary."
+   },
+   "objective": "Recognise MEN2B and its association with pheochromocytoma.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MEN2B"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old woman has had itchy, brown, rippled plaques between her shoulder blades for years. She now has a thyroid nodule, and her serum calcitonin is markedly elevated. Her serum calcium is 9.6 mg/dL. From which embryologic tissue do the cells that form her thyroid tumour derive?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Endoderm of the floor of the primitive pharynx"
+    },
+    {
+     "label": "B",
+     "html": "Mesoderm of the second pharyngeal arch"
+    },
+    {
+     "label": "C",
+     "html": "Neural crest cells that migrate to the ultimobranchial body"
+    },
+    {
+     "label": "D",
+     "html": "Surface ectoderm of the stomodeum"
+    },
+    {
+     "label": "E",
+     "html": "Third pharyngeal pouch endoderm that forms the inferior parathyroids"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Cutaneous lichen amyloidosis with a calcitonin-secreting thyroid tumour suggests <strong>MEN2A</strong> with medullary thyroid carcinoma. MTC arises from <strong>parafollicular C cells</strong>, which come from <strong>neural crest</strong> cells that migrate into the ultimobranchial body (from the fourth pharyngeal pouch) and are incorporated into the thyroid. Follicular cells, by contrast, come from endoderm of the pharyngeal floor.</p><p><strong>Takeaway:</strong> C cells, and therefore medullary thyroid carcinoma, are of neural crest origin, like the adrenal medulla.</p>",
+   "whyNot": {
+    "A": "Floor-of-pharynx endoderm forms the follicular cells, the source of papillary and follicular carcinomas.",
+    "B": "Second-arch mesoderm forms muscles of facial expression and parts of the hyoid, not thyroid cells.",
+    "D": "Stomodeal ectoderm forms Rathke's pouch (anterior pituitary) and oral epithelium.",
+    "E": "Third pouch endoderm forms the inferior parathyroids and thymus, not C cells."
+   },
+   "objective": "Trace medullary thyroid carcinoma to neural crest-derived parafollicular C cells.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MTC",
+    "MEN2A",
+    "neural crest"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 6-week-old boy has failed to pass meconium normally and has abdominal distension. Rectal suction biopsy shows absent ganglion cells. His father had a total thyroidectomy for medullary thyroid carcinoma and a left adrenalectomy for pheochromocytoma at age 31. A single germline variant in which of the following genes best explains the disorders in both the father and the son?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "<em>APC</em>"
+    },
+    {
+     "label": "B",
+     "html": "<em>MEN1</em>"
+    },
+    {
+     "label": "C",
+     "html": "<em>NF1</em>"
+    },
+    {
+     "label": "D",
+     "html": "<em>RET</em>"
+    },
+    {
+     "label": "E",
+     "html": "<em>VHL</em>"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The father has <strong>MEN2A</strong> (MTC and pheochromocytoma), caused by an activating germline <em>RET</em> variant. <em>RET</em> signalling is also needed for enteric neural crest cells to colonise the distal bowel. Some MEN2A variants, especially at certain cysteine codons, also lower RET function at the cell surface, so the same variant can cause <strong>Hirschsprung disease</strong>.</p><p><strong>Takeaway:</strong> <em>RET</em> gain of function causes MEN2; reduced RET function causes Hirschsprung disease, and some MEN2A families have both.</p>",
+   "whyNot": {
+    "A": "<em>APC</em> causes familial adenomatous polyposis (and is linked to cribriform-morular thyroid cancer), not MTC or Hirschsprung disease.",
+    "B": "<em>MEN1</em> causes parathyroid, pancreatic and pituitary tumours, not MTC.",
+    "C": "<em>NF1</em> can cause pheochromocytoma but not MTC or aganglionosis.",
+    "E": "<em>VHL</em> causes pheochromocytoma with renal cell carcinoma and hemangioblastomas, not MTC."
+   },
+   "objective": "Link RET variants to both MEN2A and Hirschsprung disease.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.10.10.01"
+   ],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "RET",
+    "Hirschsprung"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 32-year-old woman has asymptomatic hypercalcemia (calcium 11.0 mg/dL) with an elevated PTH and osteopenia on DXA. Her brother has a prolactinoma, and germline testing has confirmed that she carries the family's <em>MEN1</em> variant. Neck ultrasonography shows two enlarged parathyroid glands. Which of the following is the most appropriate operation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Excision of the two enlarged glands only"
+    },
+    {
+     "label": "B",
+     "html": "Excision of the larger gland guided by sestamibi scanning"
+    },
+    {
+     "label": "C",
+     "html": "Radiofrequency ablation of the enlarged glands"
+    },
+    {
+     "label": "D",
+     "html": "Subtotal (three-and-a-half gland) parathyroidectomy with cervical thymectomy"
+    },
+    {
+     "label": "E",
+     "html": "Total thyroidectomy with parathyroid autotransplantation"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Hyperparathyroidism in MEN1 is <strong>multigland hyperplasia</strong>, even when imaging shows only one or two large glands. Limited excision leads to persistent or recurrent disease, so the operation is <strong>subtotal parathyroidectomy</strong> (leaving a remnant of about half a gland), or total parathyroidectomy with autotransplantation, together with <strong>transcervical thymectomy</strong> to remove supernumerary glands and reduce the risk of thymic carcinoid.</p><p><strong>Takeaway:</strong> MEN1 hyperparathyroidism needs subtotal or total parathyroidectomy with thymectomy, not single-gland surgery.</p>",
+   "whyNot": {
+    "A": "All four glands are abnormal; leaving two hyperplastic glands guarantees recurrence.",
+    "B": "Focused single-gland surgery suits a sporadic adenoma, not MEN1.",
+    "C": "Ablation is not a standard treatment for MEN1 hyperparathyroidism.",
+    "E": "The thyroid is normal in MEN1, and removing it adds risk without benefit."
+   },
+   "objective": "Choose subtotal parathyroidectomy with thymectomy for MEN1 hyperparathyroidism.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MEN1",
+    "parathyroidectomy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 46-year-old man was found to have MEN1 after resection of a pancreatic neuroendocrine tumour; germline testing identified a pathogenic <em>MEN1</em> variant. His 19-year-old daughter is healthy, with normal serum calcium, and asks what she should do. Which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Annual pancreatic MRI starting now, without genetic testing"
+    },
+    {
+     "label": "B",
+     "html": "Genetic counselling and targeted testing for her father's variant"
+    },
+    {
+     "label": "C",
+     "html": "No evaluation unless she develops symptoms"
+    },
+    {
+     "label": "D",
+     "html": "Prophylactic subtotal parathyroidectomy"
+    },
+    {
+     "label": "E",
+     "html": "Testing only if she plans a pregnancy"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>MEN1 is autosomal dominant, so each child of a carrier has a 50% chance of inheriting the variant. First-degree relatives are offered <strong>genetic counselling and targeted testing</strong> for the known familial variant. A carrier then begins biochemical and imaging surveillance; a non-carrier needs no further screening, which spares years of tests.</p><p><strong>Takeaway:</strong> offer first-degree relatives targeted testing for a known MEN1 variant; only carriers need surveillance.</p>",
+   "whyNot": {
+    "A": "Imaging everyone without knowing carrier status exposes non-carriers to needless tests.",
+    "C": "Tumours in MEN1 are often silent until advanced; waiting for symptoms loses the benefit of surveillance.",
+    "D": "Parathyroid surgery is done only for established hyperparathyroidism, not prophylactically.",
+    "E": "Her risk does not depend on pregnancy plans; testing is relevant now."
+   },
+   "objective": "Offer cascade genetic testing to relatives in a family with a known MEN1 variant.",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "MEN1",
+    "genetic testing"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 27-year-old woman with known MEN1 (treated by subtotal parathyroidectomy 2 years ago) has had amenorrhea for 6 months and milky nipple discharge. She is not pregnant. Serum prolactin is 168 ng/mL (N below 20). TSH and calcium are normal. MRI shows a 7-mm pituitary adenoma without mass effect. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bromocriptine only if she wishes to conceive"
+    },
+    {
+     "label": "B",
+     "html": "Cabergoline"
+    },
+    {
+     "label": "C",
+     "html": "Octreotide"
+    },
+    {
+     "label": "D",
+     "html": "Pituitary radiation therapy"
+    },
+    {
+     "label": "E",
+     "html": "Transsphenoidal resection"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A microprolactinoma causing hypogonadism and galactorrhea is treated first with a <strong>dopamine agonist</strong>, and cabergoline is preferred because it is more effective and better tolerated. Prolactinomas in MEN1 are treated the same way as sporadic ones, though they can be more resistant.</p><p><strong>Takeaway:</strong> symptomatic prolactinoma, including in MEN1: cabergoline first.</p>",
+   "whyNot": {
+    "A": "Treatment is indicated now for hypogonadism and galactorrhea, regardless of pregnancy plans; bromocriptine is mainly chosen around conception.",
+    "C": "Somatostatin analogues treat GH-secreting adenomas and some neuroendocrine tumours, not prolactinomas.",
+    "D": "Radiation is reserved for rare tumours resistant to drugs and surgery.",
+    "E": "Surgery is for dopamine agonist failure or intolerance."
+   },
+   "objective": "Treat a prolactinoma in MEN1 with cabergoline.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MEN1",
+    "prolactinoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man has a 2.4-cm thyroid nodule. Fine-needle aspiration shows medullary thyroid carcinoma, and serum calcitonin and CEA are elevated. He has no relatives known to have endocrine tumours, and his blood pressure is normal. In addition to staging neck ultrasonography, which of the following tests should be offered to every patient with this diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "BRAF V600E testing of the aspirate"
+    },
+    {
+     "label": "B",
+     "html": "Germline <em>RET</em> testing"
+    },
+    {
+     "label": "C",
+     "html": "Radioiodine uptake scan"
+    },
+    {
+     "label": "D",
+     "html": "Serum thyroglobulin"
+    },
+    {
+     "label": "E",
+     "html": "Thyroid peroxidase antibodies"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>About a quarter of medullary thyroid carcinomas are hereditary, and a family history may be absent (new variants, small families, unrecognised disease). <strong>Every patient with MTC</strong> is therefore offered <strong>germline <em>RET</em> testing</strong>; a positive result changes surgery (pheochromocytoma screening first, parathyroid assessment) and triggers testing of relatives. Plasma metanephrines are also measured before surgery.</p><p><strong>Takeaway:</strong> all patients with MTC get germline RET testing, whatever the family history.</p>",
+   "whyNot": {
+    "A": "BRAF testing helps in indeterminate follicular-cell nodules, not in diagnosed MTC.",
+    "C": "C cells do not concentrate iodine, so radioiodine imaging has no role.",
+    "D": "Thyroglobulin is made by follicular cells and is a marker for differentiated (papillary and follicular) cancer, not MTC.",
+    "E": "Thyroid antibodies identify autoimmune thyroiditis and do not affect MTC care."
+   },
+   "objective": "Offer germline RET testing to every patient with medullary thyroid carcinoma.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MTC",
+    "RET"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-05",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set1507-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 31-year-old woman has a 1.8-cm left thyroid nodule. Fine-needle aspiration shows medullary thyroid carcinoma, and serum calcitonin is high. Germline testing shows a <em>RET</em> codon 634 variant. She has occasional headaches; blood pressure is 138/88 mm Hg. Thyroidectomy is being planned. Which of the following should be done first?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Measurement of plasma free metanephrines"
+    },
+    {
+     "label": "B",
+     "html": "Radioactive iodine whole-body scan"
+    },
+    {
+     "label": "C",
+     "html": "Serum thyroglobulin measurement"
+    },
+    {
+     "label": "D",
+     "html": "Start a beta-blocker for her blood pressure"
+    },
+    {
+     "label": "E",
+     "html": "Total thyroidectomy within the week"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A <em>RET</em> codon 634 variant means <strong>MEN2A</strong>, in which pheochromocytoma is common. Before any surgery, pheochromocytoma must be excluded with <strong>plasma free metanephrines</strong> (or urine fractionated metanephrines); an unsuspected tumour can cause a fatal hypertensive crisis during anaesthesia.</p><p><strong>Takeaway:</strong> in MTC or a RET carrier, check metanephrines before any operation.</p>",
+   "whyNot": {
+    "B": "Radioiodine has no role in MTC.",
+    "C": "Thyroglobulin is not a marker for MTC.",
+    "D": "A beta-blocker alone in a possible pheochromocytoma can precipitate a hypertensive crisis from unopposed alpha stimulation.",
+    "E": "Operating before excluding pheochromocytoma risks an intraoperative crisis."
+   },
+   "objective": "Exclude pheochromocytoma before thyroidectomy in MEN2.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MEN2A",
+    "pheochromocytoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-06",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set1507-1",
+   "setOrder": 2,
+   "stemHtml": "<p>Plasma normetanephrine and metanephrine are both more than four times the upper reference limit. CT shows a 3.5-cm right adrenal mass and a normal left adrenal gland. Which of the following is the most appropriate plan?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Alpha-blockade, then right adrenalectomy, then total thyroidectomy"
+    },
+    {
+     "label": "B",
+     "html": "Beta-blockade, then simultaneous adrenalectomy and thyroidectomy"
+    },
+    {
+     "label": "C",
+     "html": "Bilateral adrenalectomy at the time of thyroidectomy"
+    },
+    {
+     "label": "D",
+     "html": "Total thyroidectomy first, then adrenalectomy in 3 months"
+    },
+    {
+     "label": "E",
+     "html": "Total thyroidectomy now, with surveillance of the adrenal mass"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The pheochromocytoma is treated first. She needs <strong>alpha-adrenergic blockade</strong> for 1–2 weeks (with a beta-blocker added only afterwards, if needed for tachycardia) and volume expansion, then <strong>laparoscopic right adrenalectomy</strong>. Once she has recovered and catecholamines have normalised, <strong>total thyroidectomy</strong> with appropriate neck dissection follows. The normal left adrenal is preserved and kept under surveillance.</p><p><strong>Takeaway:</strong> in MEN2 with pheochromocytoma and MTC: alpha-block, remove the pheochromocytoma, then the thyroid.</p>",
+   "whyNot": {
+    "B": "Starting with a beta-blocker risks unopposed alpha vasoconstriction, and combining both major operations is not preferred.",
+    "C": "Removing a normal left adrenal gland causes lifelong adrenal insufficiency without benefit.",
+    "D": "Thyroid surgery with an active pheochromocytoma risks a hypertensive crisis.",
+    "E": "A functioning pheochromocytoma must be removed, not watched, and it must come first."
+   },
+   "objective": "Sequence alpha-blockade, adrenalectomy and then thyroidectomy in MEN2.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MEN2A",
+    "pheochromocytoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set1507-1",
+   "setOrder": 3,
+   "stemHtml": "<p>She recovers well from both operations. Her 3-year-old son is tested and carries the same <em>RET</em> codon 634 variant. He is well, his neck examination is normal, and his serum calcitonin is within the age-appropriate reference range. Which of the following is the most appropriate recommendation for his thyroid?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Annual neck ultrasonography, with surgery if a nodule appears"
+    },
+    {
+     "label": "B",
+     "html": "Prophylactic radioactive iodine ablation"
+    },
+    {
+     "label": "C",
+     "html": "Total thyroidectomy at or before about age 5, timed by calcitonin"
+    },
+    {
+     "label": "D",
+     "html": "Thyroid surgery only if calcitonin exceeds the adult cutoff"
+    },
+    {
+     "label": "E",
+     "html": "Total thyroidectomy at age 18, when he can consent"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Nearly all <em>RET</em> carriers develop MTC. For high-risk variants such as codon 634, <strong>prophylactic total thyroidectomy</strong> is recommended at or before about 5 years of age, with the exact timing guided by serum calcitonin, so that the thyroid is removed while disease is at most microscopic. He will also be screened for pheochromocytoma and hyperparathyroidism later in childhood.</p><p><strong>Takeaway:</strong> a child with a high-risk RET variant (codon 634) has prophylactic thyroidectomy by about age 5.</p>",
+   "whyNot": {
+    "A": "By the time a nodule appears, MTC may already have spread to lymph nodes.",
+    "B": "C cells do not take up iodine, so ablation would not prevent MTC.",
+    "D": "Waiting for a high calcitonin means waiting for established cancer.",
+    "E": "Waiting until adulthood allows MTC to develop and spread in a high-risk carrier."
+   },
+   "objective": "Time prophylactic thyroidectomy by RET risk class in a child carrier.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MEN2A",
+    "prophylactic thyroidectomy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-08",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 44-year-old man had total thyroidectomy and central neck dissection for sporadic medullary thyroid carcinoma 3 months ago (germline <em>RET</em> testing negative; plasma metanephrines normal). He feels well and takes levothyroxine. Which of the following serum tests are most appropriate for detecting persistent or recurrent cancer?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Calcitonin and CEA"
+    },
+    {
+     "label": "B",
+     "html": "Chromogranin A and serotonin"
+    },
+    {
+     "label": "C",
+     "html": "Free T4 and TSH"
+    },
+    {
+     "label": "D",
+     "html": "Thyroglobulin and thyroglobulin antibodies"
+    },
+    {
+     "label": "E",
+     "html": "Total calcium and PTH"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>MTC cells secrete <strong>calcitonin</strong> and <strong>CEA</strong>. Postoperative levels, and later their doubling times, show whether disease persists and how fast it is growing, and guide imaging.</p><p><strong>Takeaway:</strong> follow medullary thyroid carcinoma with calcitonin and CEA, not thyroglobulin.</p>",
+   "whyNot": {
+    "B": "Chromogranin A and serotonin are used for carcinoid and other neuroendocrine tumours, not as MTC markers.",
+    "C": "Free T4 and TSH guide levothyroxine dosing, not cancer surveillance.",
+    "D": "Thyroglobulin tracks differentiated follicular-cell cancers.",
+    "E": "Calcium and PTH check parathyroid function after neck surgery but do not detect MTC."
+   },
+   "objective": "Use calcitonin and CEA to monitor medullary thyroid carcinoma.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MTC",
+    "tumour markers"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q1507-2-09",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 39-year-old woman with MEN2A had total thyroidectomy for medullary thyroid carcinoma 6 weeks ago. Postoperative calcitonin is undetectable. She takes levothyroxine, and her TSH is now 0.05 µU/mL with a free T4 at the upper limit of normal. She asks whether her dose should stay this high to prevent recurrence. Which of the following is the most appropriate levothyroxine goal?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Dose high enough to keep TSH suppressed below 0.1 µU/mL"
+    },
+    {
+     "label": "B",
+     "html": "Dose high enough to keep free T4 above the reference range"
+    },
+    {
+     "label": "C",
+     "html": "Replacement dose that keeps TSH within the reference range"
+    },
+    {
+     "label": "D",
+     "html": "Stop levothyroxine and give liothyronine until radioiodine is given"
+    },
+    {
+     "label": "E",
+     "html": "Stop thyroid hormone, because her remaining C cells will make it"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>TSH suppression helps in differentiated thyroid cancer because follicular cells grow in response to TSH. <strong>C cells are not TSH-dependent</strong>, so after thyroidectomy for MTC levothyroxine is given only as <strong>replacement</strong>, aiming for a normal TSH. Her current over-replacement risks atrial fibrillation and bone loss without benefit, so the dose should be lowered.</p><p><strong>Takeaway:</strong> after thyroidectomy for MTC, replace thyroid hormone to a normal TSH; do not suppress.</p>",
+   "whyNot": {
+    "A": "Suppression gives no benefit in MTC and adds cardiac and skeletal harm.",
+    "B": "Deliberate hyperthyroxinemia has no role and causes harm.",
+    "D": "Radioiodine is not used in MTC, so there is no reason to withdraw levothyroxine.",
+    "E": "C cells make calcitonin, not thyroid hormone; after total thyroidectomy she needs lifelong levothyroxine."
+   },
+   "objective": "Replace levothyroxine to a normal TSH after thyroidectomy for MTC.",
+   "areas": [
+    "usmle2026.15.07",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "MTC",
+    "levothyroxine"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c1507-01",
+   "frontHtml": "MEN1: gene, protein and mechanism?",
+   "backHtml": "<em>MEN1</em> on 11q13, menin; tumour suppressor, loss of function (two hits).",
+   "sectionId": "s23c-s1507-1-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-02",
+   "frontHtml": "Three main tumour sites in MEN1?",
+   "backHtml": "Parathyroid hyperplasia, pancreatic/duodenal neuroendocrine tumours, anterior pituitary adenomas (mostly prolactinoma).",
+   "sectionId": "s23c-s1507-1-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-03",
+   "frontHtml": "Usually the first manifestation of MEN1?",
+   "backHtml": "Primary hyperparathyroidism from multigland hyperplasia.",
+   "sectionId": "s23c-s1507-1-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-04",
+   "frontHtml": "MEN2: gene and mechanism?",
+   "backHtml": "<em>RET</em> proto-oncogene (receptor tyrosine kinase) on 10q11; gain of function, one hit.",
+   "sectionId": "s23c-s1507-1-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-05",
+   "frontHtml": "MEN2A components?",
+   "backHtml": "Medullary thyroid carcinoma, pheochromocytoma, parathyroid hyperplasia; also cutaneous lichen amyloidosis and Hirschsprung disease in some families.",
+   "sectionId": "s23c-s1507-1-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-06",
+   "frontHtml": "MEN2B components?",
+   "backHtml": "MTC (earliest, most aggressive), pheochromocytoma, mucosal neuromas, intestinal ganglioneuromatosis, marfanoid habitus; no hyperparathyroidism.",
+   "sectionId": "s23c-s1507-1-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-07",
+   "frontHtml": "Cell of origin and markers of medullary thyroid carcinoma?",
+   "backHtml": "Neural crest-derived parafollicular C cells; calcitonin and CEA; amyloid stroma from calcitonin.",
+   "sectionId": "s23c-s1507-1-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-08",
+   "frontHtml": "Why is radioiodine useless in medullary thyroid carcinoma?",
+   "backHtml": "C cells do not concentrate iodine (and are not TSH-dependent).",
+   "sectionId": "s23c-s1507-1-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-09",
+   "frontHtml": "Who gets germline RET testing?",
+   "backHtml": "Every patient with MTC, anyone with MEN2 features, and relatives of known carriers.",
+   "sectionId": "s23c-s1507-2-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-10",
+   "frontHtml": "First test before surgery in a patient with MTC or a RET variant?",
+   "backHtml": "Plasma free (or urine fractionated) metanephrines to exclude pheochromocytoma.",
+   "sectionId": "s23c-s1507-2-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-11",
+   "frontHtml": "Order of surgery in MEN2 with pheochromocytoma and MTC?",
+   "backHtml": "Alpha-blockade, adrenalectomy, then total thyroidectomy.",
+   "sectionId": "s23c-s1507-2-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-12",
+   "frontHtml": "Timing of prophylactic thyroidectomy by RET risk?",
+   "backHtml": "M918T (MEN2B): first year of life; codon 634: at or before about age 5, by calcitonin; moderate risk: when calcitonin rises.",
+   "sectionId": "s23c-s1507-2-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-13",
+   "frontHtml": "Parathyroid operation for MEN1 hyperparathyroidism?",
+   "backHtml": "Subtotal (three-and-a-half gland) or total parathyroidectomy with autotransplant, plus transcervical thymectomy.",
+   "sectionId": "s23c-s1507-2-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-14",
+   "frontHtml": "Levothyroxine goal after thyroidectomy for MTC?",
+   "backHtml": "Normal TSH (replacement); no TSH suppression.",
+   "sectionId": "s23c-s1507-2-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c1507-15",
+   "frontHtml": "Why does treating hyperparathyroidism help Zollinger-Ellison syndrome in MEN1?",
+   "backHtml": "Hypercalcemia stimulates gastrin release; normal calcium lowers gastrin and acid output.",
+   "sectionId": "s23c-s1507-2-1",
+   "areas": [
+    "usmle2026.15.07"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

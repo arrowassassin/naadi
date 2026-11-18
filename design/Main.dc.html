@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi — Today</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button,input{font-family:inherit}
+button{cursor:pointer}
+@keyframes lumen-draw{from{stroke-dashoffset:2600}to{stroke-dashoffset:0}}
+.lumen-pulse{stroke-dasharray:2600;animation:lumen-draw 3.2s ease-out forwards}
+@media (prefers-reduced-motion:reduce){.lumen-pulse{animation:none}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.5; padding: 0 0 24px">
+
+<nav aria-label="Main" style="position: sticky; top: 16px; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; width: fit-content; max-width: calc(100% - 32px); box-sizing: border-box; margin: 0 auto; padding: 6px; border-radius: 28px; background: rgba(20,21,25,0.72); backdrop-filter: blur(18px); border: 1px solid #26282E">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px 0 10px; text-decoration: none; color: #F4F4F0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 19px"><span style="width: 28px; height: 28px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1400" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l3-7 4 14 3-7h6"></path></svg></span>Naadi</a>
+<a href="Main.dc.html" aria-current="page" style="display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #F4F4F0; color: #050506; text-decoration: none; font-weight: 600; font-size: 14px">Today</a>
+<a href="Lesson.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Learn</a>
+<a href="Qbank.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Practice</a>
+<a href="Planner.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Plan</a>
+<a href="Notes.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Notes</a>
+<a href="#pathway" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; color: #C9CBD1; text-decoration: none; font-size: 14px">Pathway</a>
+<button type="button" aria-label="Search everything" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #1B1D22; color: #F4F4F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></button>
+</nav>
+
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+
+<!-- Hero -->
+<header style="position: relative; padding: 72px 0 40px; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9C9EA6">Sun 15 Nov · USMLE Step 1 · exam [EXAM DATE]</span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(72px, 15vw, 216px); line-height: 0.86; letter-spacing: -0.055em">38 days<span style="color: {{accent}}">.</span></h1>
+<svg viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true" style="width: 100%; height: 96px; display: block"><path class="lumen-pulse" d="M0 60 H380 l20 -8 l14 8 h16 l12 -46 l16 92 l14 -46 H560 l22 -14 l22 14 H1200" fill="none" stroke="{{accent}}" stroke-width="2" vector-effect="non-scaling-stroke"></path></svg>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between">
+<p style="margin: 0; max-width: 620px; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(24px, 3vw, 38px); line-height: 1.12; letter-spacing: -0.02em; color: #F4F4F0">Today is renal day. One lesson, forty questions, sixty-two cards — then you're done.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="Lesson.dc.html" style="display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 26px; border-radius: 999px; background: {{accent}}; color: #0B1400; text-decoration: none; font-weight: 600; font-size: 16px"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg>Resume lesson</a>
+<a href="Qbank.dc.html" style="display: flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; border: 1px solid #3A3D45; color: #F4F4F0; text-decoration: none; font-weight: 600; font-size: 16px">Start 40-Q block</a>
+</div>
+</div>
+</header>
+
+<!-- Bento row 1 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<a href="Lesson.dc.html" style="position: relative; flex: 2 1 560px; min-width: 0; min-height: 420px; border-radius: 32px; overflow: hidden; background: #0E0F12; border: 1px solid #1F2126; text-decoration: none; color: #F4F4F0; display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; box-sizing: border-box">
+<svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><g fill="none" stroke="#2A2D34" stroke-width="1.5"><path d="M380 40c-70 0-120 60-120 150s50 170 120 170c40 0 60-30 60-70 0-30-20-50-20-80s40-50 40-100c0-40-30-70-80-70z"></path><path d="M300 190c40 0 70 10 100 40"></path><path d="M330 120c30 20 50 40 70 110"></path><path d="M330 280c30-10 50-30 70-50"></path></g><path d="M400 230c40 20 60 70 60 170" fill="none" stroke="#C6FF3D" stroke-width="2" opacity="0.7"></path><circle cx="400" cy="230" r="5" fill="#C6FF3D"></circle></svg>
+<span style="position: absolute; top: 24px; left: 24px; display: flex; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border-radius: 999px; background: #050506; border: 1px solid #2A2D34">4K HDR</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border-radius: 999px; background: #050506; border: 1px solid #2A2D34">07:48 / 18:42</span></span>
+<span style="position: absolute; top: 24px; right: 24px; width: 64px; height: 64px; border-radius: 50%; background: #F4F4F0; color: #050506; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></span>
+<span style="position: relative; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C6FF3D">Continue · Renal · Lesson 6</span>
+<span style="position: relative; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(32px, 4.4vw, 60px); line-height: 0.98; letter-spacing: -0.03em; max-width: 520px; margin-top: 8px">Acid–base, step by step.</span>
+<span style="position: relative; margin-top: 20px; height: 4px; border-radius: 2px; background: #26282E"><span style="display: block; width: 42%; height: 4px; border-radius: 2px; background: {{accent}}"></span></span>
+</a>
+
+<section aria-label="Readiness" style="flex: 1 1 300px; min-width: 0; border-radius: 32px; background: {{accent}}; color: #0B1400; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase">Readiness</span><span style="font-size: 13px; font-weight: 600">sample data</span></div>
+<div style="position: relative; align-self: center; width: 220px; height: 220px">
+<svg viewBox="0 0 120 120" role="img" aria-label="Readiness 68 percent" style="width: 220px; height: 220px; transform: rotate(-90deg)"><circle cx="60" cy="60" r="52" fill="none" stroke="#0B1400" stroke-opacity="0.16" stroke-width="10"></circle><circle cx="60" cy="60" r="52" fill="none" stroke="#0B1400" stroke-width="10" stroke-linecap="round" stroke-dasharray="222 327"></circle></svg>
+<span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 72px; letter-spacing: -0.05em">68</span>
+</div>
+<p style="margin: 0; font-size: 15px; font-weight: 500">Likely to pass at this pace. Renal is the one thing holding the number down.</p>
+</section>
+</div>
+
+<!-- Bento row 2 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<section aria-labelledby="flow-h" style="flex: 1.3 1 380px; min-width: 0; border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h2 id="flow-h" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">Today's flow</h2><a href="Planner.dc.html" style="font-size: 14px; text-decoration: none; min-height: 44px; display: flex; align-items: center">Full plan</a></div>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<li style="display: grid; grid-template-columns: 56px 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid #1F2126; color: #9C9EA6"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">07:00</span><span style="text-decoration: line-through">Flashcards · renal physiology</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C6FF3D" stroke-width="2.4" stroke-linecap="round" role="img" aria-label="Done"><path d="M5 12l5 5 9-10"></path></svg></li>
+<li style="display: grid; grid-template-columns: 56px 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid #1F2126"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{accent}}">09:00</span><span style="font-weight: 600; font-size: 17px">Video · Acid–base disorders</span><span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: {{accent}}; color: #0B1400">Now</span></li>
+<li style="display: grid; grid-template-columns: 56px 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid #1F2126"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9C9EA6">11:00</span><span>Qbank · 40 questions, timed</span><span style="font-size: 13px; color: #9C9EA6">60 min</span></li>
+<li style="display: grid; grid-template-columns: 56px 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid #1F2126"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9C9EA6">15:00</span><span>Review misses with Naadi</span><span style="font-size: 13px; color: #9C9EA6">45 min</span></li>
+<li style="display: grid; grid-template-columns: 56px 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid #1F2126"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9C9EA6">20:00</span><span>Flashcards · 62 due</span><span style="font-size: 13px; color: #9C9EA6">25 min</span></li>
+</ol>
+</section>
+
+<section aria-labelledby="weak-h" style="flex: 1 1 320px; min-width: 0; border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+<h2 id="weak-h" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">By system</h2>
+<sc-for list="{{systems}}" as="s" hint-placeholder-count="6">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span>{{s.name}}</span><span style="font-family: 'JetBrains Mono', monospace; color: #C9CBD1">{{s.pct}}</span></div>
+<div style="height: 6px; border-radius: 3px; background: #1F2126"><div style="{{s.bar}}"></div></div>
+</div>
+</sc-for>
+<span style="font-size: 12px; color: #9C9EA6">% correct, last 14 days · sample data</span>
+</section>
+
+<section aria-label="Flashcards due" style="flex: 0.8 1 240px; min-width: 0; border-radius: 32px; background: #17132E; border: 1px solid #2C2552; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 16px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C4BAFF">Cards due</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 128px; line-height: 0.85; letter-spacing: -0.06em; color: #F4F4F0">62</span>
+<p style="margin: 0; font-size: 14px; color: #C4BAFF">Spaced repetition, built from your own highlights and missed questions.</p>
+<a href="Notes.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; background: #F4F4F0; color: #050506; text-decoration: none; font-weight: 600">Review now</a>
+</section>
+</div>
+
+<!-- Pathway -->
+<section id="pathway" aria-labelledby="path-h" style="border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; padding: 40px 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: flex-end">
+<h2 id="path-h" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(32px, 4vw, 52px); line-height: 1; letter-spacing: -0.03em">MBBS to Match.</h2>
+<span style="font-size: 14px; color: #9C9EA6; max-width: 360px">The whole IMG route in one line. Requirements change — Naadi checks ECFMG and NRMP pages before each step.</span>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
+<sc-for list="{{path}}" as="p" hint-placeholder-count="6">
+<li style="{{p.box}}">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: 0.75">{{p.n}}</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.1; letter-spacing: -0.01em">{{p.name}}</span>
+<span style="font-size: 13px; opacity: 0.8">{{p.status}}</span>
+</li>
+</sc-for>
+</ol>
+</section>
+
+</div>
+
+<!-- Assistant dock -->
+<div style="position: sticky; bottom: 20px; z-index: 6; max-width: 780px; margin: 28px auto 0; padding: 0 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px">
+<div style="align-self: flex-start; max-width: 520px; padding: 14px 18px; border-radius: 22px 22px 22px 6px; background: rgba(23,19,46,0.92); backdrop-filter: blur(18px); border: 1px solid #3A3170; font-size: 14px; color: #E7E3FF; display: flex; flex-direction: column; gap: 10px">
+<span>You've missed 9 acid–base questions in two weeks. Want a 3-day catch-up block before Saturday's NBME?</span>
+<div style="display: flex; gap: 8px; flex-wrap: wrap"><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: #F4F4F0; color: #050506; font-weight: 600; font-size: 13px">Add to plan</button><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #5A4FA0; background: transparent; color: #E7E3FF; font-size: 13px">Show me why</button></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 999px; background: rgba(20,21,25,0.86); backdrop-filter: blur(22px); border: 1px solid #34363D">
+<button type="button" aria-label="Attach a document, image or video" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: #23252B; color: #F4F4F0; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+<label style="flex: 1; min-width: 0; display: flex"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask Naadi</span><input type="text" placeholder="Ask Naadi about anything on this page…" style="flex: 1; min-width: 0; min-height: 48px; background: transparent; border: 0; outline: none; color: #F4F4F0; font-size: 16px"></label>
+<button type="button" aria-label="Search the web" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: transparent; color: #C9CBD1; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></button>
+<button type="button" aria-label="Voice" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: transparent; color: #C9CBD1; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></button>
+<button type="button" aria-label="Send" style="width: 48px; height: 48px; flex: none; border-radius: 50%; border: 0; background: {{accent}}; color: #0B1400; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C6FF3D","options":["#C6FF3D","#5BE0C8","#FFB454","#9D8CFF"]},"$preview":{"width":1440,"height":2050}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#C6FF3D';
+    const systems = [['Cardiovascular',74],['Pulmonary',69],['Gastrointestinal',66],['Neurology',61],['Endocrine',58],['Renal',47]].map(([name, v]) => ({
+      name, pct: v + '%',
+      bar: 'width:' + v + '%;height:6px;border-radius:3px;background:' + (v < 55 ? '#FFB454' : '#F4F4F0')
+    }));
+    const base = 'display:flex;flex-direction:column;gap:10px;min-height:150px;padding:20px;border-radius:22px;box-sizing:border-box;justify-content:space-between;';
+    const done = base + 'background:#1B1D22;color:#F4F4F0';
+    const now = base + 'background:' + accent + ';color:#0B1400';
+    const todo = base + 'border:1px dashed #3A3D45;color:#C9CBD1';
+    const path = [
+      { n: '01', name: 'ECFMG application', status: 'Done', box: done },
+      { n: '02', name: 'Step 1', status: 'In prep · 38 days', box: now },
+      { n: '03', name: 'Step 2 CK', status: 'Next', box: todo },
+      { n: '04', name: 'OET Medicine', status: 'Planned', box: todo },
+      { n: '05', name: 'ECFMG certification', status: 'Planned', box: todo },
+      { n: '06', name: 'ERAS + Match', status: 'Planned', box: todo }
+    ];
+    return { accent, systems, path };
+  }
+}
+</script>
+</body>
+</html>

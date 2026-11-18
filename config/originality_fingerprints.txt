@@ -1,0 +1,7 @@
+# Originality fingerprints (S23-0): salted SHA-256 digests of 8-word shingles from forbidden commercial texts.
+# Only digests are committed, never the text. Built locally by `tools/build_fingerprints.py` from a corpus the
+# builder may lawfully read (e.g. public snippets); the corpus itself is never stored or committed.
+# No corpus has been assembled (none could be gathered legally in this repo), so this file has no digests and
+# tools/validate_content.py runs the documented FALLBACK: the internal near-duplicate check plus the stratified
+# manual review sample for S23-R (docs/CONTENT_AUTHORING.md §9).
+# salt: 5a23c0de

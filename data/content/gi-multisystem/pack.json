@@ -1,0 +1,13 @@
+{
+  "id": "gi-multisystem",
+  "title": "Gastrointestinal and multisystem",
+  "owner": "seg23-d",
+  "idPrefix": "s23d",
+  "outlineVersion": "USMLE-2026",
+  "systems": [
+    "10",
+    "16"
+  ],
+  "retire": [],
+  "retag": {}
+}

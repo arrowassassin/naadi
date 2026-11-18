@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" role="img" aria-label="Four-chamber schematic of the heart showing a pedunculated left atrial myxoma attached to the interatrial septum near the fossa ovalis, prolapsing through the mitral valve into the left ventricle during diastole">
+<rect x="0" y="0" width="700" height="420" fill="#ffffff"/>
+<text x="350" y="28" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#0f172a">Four-chamber view (diastole)</text>
+<path d="M110,90 Q110,60 150,60 L330,60 L330,190 L110,190 Z" fill="#f1f5f9" stroke="#334155" stroke-width="3"/>
+<path d="M370,60 L550,60 Q590,60 590,90 L590,190 L370,190 Z" fill="#f1f5f9" stroke="#334155" stroke-width="3"/>
+<path d="M110,210 L330,210 L330,380 Q220,400 150,330 Q110,280 110,210 Z" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+<path d="M370,210 L590,210 Q590,290 540,340 Q460,405 370,380 Z" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+<line x1="350" y1="60" x2="350" y2="380" stroke="#334155" stroke-width="10"/>
+<line x1="110" y1="200" x2="330" y2="200" stroke="#334155" stroke-width="2" stroke-dasharray="6,5"/>
+<line x1="370" y1="200" x2="590" y2="200" stroke="#334155" stroke-width="2" stroke-dasharray="6,5"/>
+<line x1="390" y1="200" x2="415" y2="250" stroke="#334155" stroke-width="4"/>
+<line x1="570" y1="200" x2="545" y2="250" stroke="#334155" stroke-width="4"/>
+<line x1="356" y1="135" x2="400" y2="140" stroke="#334155" stroke-width="4"/>
+<path d="M400,120 C470,110 500,150 495,190 C500,230 470,270 450,272 C420,275 410,230 420,195 C425,170 395,160 400,120 Z" fill="#fde68a" stroke="#b45309" stroke-width="3"/>
+<text x="220" y="130" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#0f172a">RA</text>
+<text x="545" y="105" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#0f172a">LA</text>
+<text x="220" y="300" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#0f172a">RV</text>
+<text x="520" y="315" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#0f172a">LV</text>
+<text x="230" y="222" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">tricuspid</text>
+<text x="620" y="222" text-anchor="start" font-family="sans-serif" font-size="12" fill="#334155">mitral</text>
+<line x1="600" y1="218" x2="565" y2="215" stroke="#334155" stroke-width="1.5"/>
+<line x1="440" y1="85" x2="400" y2="132" stroke="#b45309" stroke-width="1.5"/>
+<text x="445" y="82" font-family="sans-serif" font-size="12" fill="#b45309">stalk on septum (fossa ovalis)</text>
+<line x1="640" y1="270" x2="470" y2="255" stroke="#b45309" stroke-width="1.5"/>
+<text x="600" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#b45309">gelatinous mass</text>
+<text x="600" y="305" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#b45309">crosses mitral orifice</text>
+<text x="350" y="410" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#334155">Diastolic obstruction mimics mitral stenosis; fragments can embolize to the systemic circulation.</text>
+</svg>

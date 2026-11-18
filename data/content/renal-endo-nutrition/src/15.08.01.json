@@ -1,0 +1,1146 @@
+{
+ "area": "usmle2026.15.08.01",
+ "sections": [
+  {
+   "id": "s23c-s150801-1-1",
+   "exam": "step1",
+   "heading": "Sex development, congenital adrenal hyperplasia and congenital hypothyroidism",
+   "html": "<h3>Normal sex development</h3>\n<p>Until about week 7 the gonads are bipotential and both duct systems are present. On the Y chromosome, <strong><em>SRY</em></strong> starts testis development; without it an ovary forms.</p>\n<table><tr><th>Testis cell</th><th>Product</th><th>Effect</th></tr>\n<tr><td>Sertoli cell</td><td>Anti-Müllerian hormone (AMH)</td><td>Regression of the Müllerian (paramesonephric) ducts, so no uterus, fallopian tubes or upper vagina</td></tr>\n<tr><td>Leydig cell</td><td>Testosterone</td><td>Wolffian (mesonephric) ducts become epididymis, vas deferens and seminal vesicles</td></tr>\n<tr><td>Target tissues</td><td>Dihydrotestosterone (DHT), made by 5α-reductase type 2</td><td>Penis, scrotum, prostate; male external genitalia</td></tr></table>\n<p>Without AMH the Müllerian ducts persist; without testosterone the Wolffian ducts regress; without DHT the external genitalia look female or ambiguous. Androgens, not ovaries, are needed to virilise, which is why androgen exposure masculinises a 46,XX fetus.</p>\n<h3>Differences (disorders) of sex development</h3>\n<p>The term covers congenital conditions in which chromosomal, gonadal or anatomic sex develops atypically. Use neutral, respectful language with families.</p>\n<table><tr><th>Condition</th><th>Karyotype</th><th>Internal</th><th>External genitalia</th><th>Key labs</th></tr>\n<tr><td>21-hydroxylase deficiency (classic CAH)</td><td>46,XX</td><td>Uterus and ovaries</td><td>Virilised (clitoromegaly, fused labioscrotal folds); 46,XY infants look typical</td><td>High 17-hydroxyprogesterone; salt-wasting form: low Na, high K</td></tr>\n<tr><td>Complete androgen insensitivity (<em>AR</em> variant, X-linked)</td><td>46,XY</td><td>Testes (often inguinal); no uterus (AMH works); no Wolffian structures</td><td>Female; sparse pubic and axillary hair; breasts develop at puberty from aromatised testosterone</td><td>Testosterone and LH high or high-normal; estrogen in the male range</td></tr>\n<tr><td>Partial androgen insensitivity</td><td>46,XY</td><td>Testes</td><td>Ambiguous to undervirilised male</td><td>As above</td></tr>\n<tr><td>5α-reductase type 2 deficiency (autosomal recessive)</td><td>46,XY</td><td>Testes, Wolffian structures present, no uterus</td><td>Ambiguous or female at birth; marked virilisation at puberty (type 1 enzyme and high testosterone); little body hair, small prostate</td><td>Normal testosterone, low DHT, high testosterone-to-DHT ratio</td></tr>\n<tr><td>17α-hydroxylase deficiency</td><td>46,XX or 46,XY</td><td>XY: testes, no uterus</td><td>Female or undervirilised; no puberty</td><td>Low cortisol and sex steroids; high 11-deoxycorticosterone: hypertension, hypokalemia, low renin</td></tr>\n<tr><td>Turner syndrome (45,X or mosaic)</td><td>45,X</td><td>Streak ovaries</td><td>Female; absent or arrested puberty</td><td>High FSH and LH (primary ovarian insufficiency)</td></tr>\n<tr><td>Klinefelter syndrome</td><td>47,XXY</td><td>Small firm testes</td><td>Male; incomplete virilisation, gynecomastia</td><td>Low testosterone, high FSH and LH</td></tr></table>\n<h3>Congenital adrenal hyperplasia</h3>\n<p>An autosomal recessive defect in cortisol synthesis. Low cortisol raises ACTH, which enlarges both adrenals and pushes precursors into whichever pathways remain open (see the figure).</p>\n[[figure:s23c-fig150801-1]]\n<table><tr><th>Enzyme</th><th>Mineralocorticoid effect</th><th>Androgens</th><th>Typical picture</th></tr>\n<tr><td>21-hydroxylase (about 95% of cases)</td><td>Aldosterone low: salt wasting, hypotension, hyperkalemia (classic salt-wasting form)</td><td>High</td><td>Virilised 46,XX newborn; adrenal crisis at 1–3 weeks, often unrecognised in boys; nonclassic form presents later with hirsutism or early pubarche</td></tr>\n<tr><td>11β-hydroxylase</td><td>11-deoxycorticosterone high: hypertension, hypokalemia</td><td>High</td><td>Virilisation with hypertension</td></tr>\n<tr><td>17α-hydroxylase</td><td>11-deoxycorticosterone high: hypertension, hypokalemia</td><td>Low</td><td>Undervirilised 46,XY or absent puberty in 46,XX, with hypertension</td></tr></table>\n<h3>Congenital hypothyroidism</h3>\n<ul><li>Worldwide the leading cause is maternal iodine deficiency. Where iodine intake is adequate, most cases are <strong>thyroid dysgenesis</strong>: an absent, small or <em>ectopic</em> gland (often at the tongue base, from failed descent along the thyroglossal duct from the foramen cecum). The rest are defects in hormone synthesis (dyshormonogenesis, for example thyroid peroxidase variants, often with goiter); a few are central or transient (maternal blocking antibodies, iodine exposure).</li>\n<li>Maternal T4 crosses the placenta, so most newborns look normal at birth. Untreated infants develop prolonged jaundice, poor feeding, constipation, hypotonia, a large tongue, umbilical hernia, a large posterior fontanelle and dry skin, followed by irreversible intellectual disability and growth failure. Newborn screening exists to prevent this.</li></ul>\n<h3>Kallmann syndrome</h3>\n<p>Failure of GnRH neurons to migrate from the olfactory placode to the hypothalamus during development: hypogonadotropic hypogonadism (delayed puberty, low LH, FSH and sex steroids) with anosmia or hyposmia.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> a uterus is present in any 46,XX condition and absent in any 46,XY condition with working Sertoli cells (androgen insensitivity, 5α-reductase deficiency), because AMH depends on the testis, not on androgen action.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> in CAH the enzyme number tells the blood pressure: <em>21</em> drops it (salt lost), <em>11</em> and <em>17</em> lift it (deoxycorticosterone builds up).</p></div>",
+   "figureIds": [
+    "s23c-fig150801-1"
+   ],
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Congenital Adrenal Hyperplasia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448098/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Androgen Insensitivity Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK542206/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Congenital Hypothyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK558913/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus Genetics: 5-alpha reductase deficiency",
+     "url": "https://medlineplus.gov/genetics/condition/5-alpha-reductase-deficiency/",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150801-2-1",
+   "exam": "step2ck",
+   "heading": "Congenital endocrine disorders: newborn evaluation and management",
+   "html": "<h3>The newborn with atypical genitalia</h3>\n<ul><li>Treat it as urgent: the most common cause, <strong>salt-wasting 21-hydroxylase deficiency</strong>, can cause adrenal crisis in the first weeks. Bilateral nonpalpable gonads in a virilised infant suggest a 46,XX infant with CAH until proven otherwise.</li>\n<li><strong>First tests</strong>: serum electrolytes and glucose, 17-hydroxyprogesterone (after the first 24–48 hours), rapid karyotype or sex-chromosome testing, pelvic and abdominal ultrasonography for a uterus and gonads; then testosterone, DHT, AMH, LH and FSH, and ACTH stimulation or genetic panels as needed.</li>\n<li><strong>Do not assign sex</strong> before the evaluation, and say so kindly to the family. Care is led by a multidisciplinary team (endocrinology, urology, genetics, psychology). Irreversible genital surgery is increasingly deferred where it is not medically necessary, so the person can take part in decisions.</li>\n<li><strong>Hypospadias with undescended testes</strong>, especially if either testis is nonpalpable or the hypospadias is proximal, warrants a DSD evaluation (karyotype, hormones) before any surgery; circumcision is postponed because the foreskin may be needed for repair.</li></ul>\n<h3>Congenital adrenal hyperplasia</h3>\n<ul><li><strong>Newborn screening</strong> measures 17-hydroxyprogesterone. Levels are higher in preterm, sick or stressed infants and in samples taken in the first day, so screening cut-offs depend on gestational age or birth weight; a positive screen in a preterm infant is confirmed with serum 17-hydroxyprogesterone (ideally by mass spectrometry) and electrolytes rather than treated immediately if the baby is well.</li>\n<li><strong>Salt-wasting crisis</strong> (vomiting, poor feeding, dehydration, hyponatremia, hyperkalemia, hypoglycemia at 1–3 weeks): IV isotonic saline, dextrose and <strong>stress-dose hydrocortisone</strong> (for example about 50–100 mg/m² IV), then maintenance.</li>\n<li><strong>Maintenance</strong>: hydrocortisone (preferred in children because it is least suppressive of growth), fludrocortisone and, in infants, sodium chloride supplements. Monitor growth velocity, bone age, 17-hydroxyprogesterone and androstenedione. Overtreatment slows growth; undertreatment advances bone age and causes early virilisation and short adult height.</li>\n<li><strong>Sick-day rules</strong>: double or triple the oral glucocorticoid dose for fever or illness; give intramuscular hydrocortisone and seek care if vomiting; fludrocortisone is not increased.</li></ul>\n<h3>Congenital hypothyroidism</h3>\n<ul><li>A raised screening TSH is confirmed with <strong>serum TSH and free T4</strong>. When the screening TSH is markedly high (around 40 mU/L or more) or free T4 is low, start <strong>levothyroxine 10–15 µg/kg/day</strong> as soon as the confirmatory blood is drawn, ideally within the first 2 weeks of life; imaging (ultrasonography or scintigraphy) is optional and must not delay treatment.</li>\n<li>Give the tablet crushed in a little breast milk, formula or water by spoon; keep it apart from soy formula, iron and calcium, which reduce absorption. Recheck TSH and free T4 2 weeks after starting and then frequently in infancy, keeping free T4 in the upper half of the reference range.</li>\n<li>If no permanent cause is shown, a trial off treatment after about age 3 can identify transient hypothyroidism.</li></ul>\n<h3>Turner and Klinefelter syndromes: endocrine care</h3>\n<ul><li><strong>Turner syndrome</strong>: suspect with short stature, absent puberty or primary amenorrhea, lymphedema at birth, or a coarctation. At diagnosis: <strong>cardiac imaging</strong> (bicuspid aortic valve, coarctation, aortic dilation; risk of dissection), renal ultrasonography (horseshoe kidney), hearing and thyroid and celiac screening. Growth hormone for short stature; estrogen started around age 11–12 to induce puberty, with progestin added later.</li>\n<li><strong>Klinefelter syndrome</strong>: testosterone replacement for hypogonadism; infertility counselling (sperm retrieval from the testis is sometimes possible).</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> a 2-week-old boy with typical genitalia, vomiting, hyponatremia and hyperkalemia may have salt-wasting CAH; the normal genitalia hide the diagnosis, and pyloric stenosis gives the opposite electrolytes (hypokalemic, hypochloremic alkalosis).</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Congenital Adrenal Hyperplasia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448098/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Congenital Hypothyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK558913/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Delayed Puberty",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK544322/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig150801-1",
+   "caption": "Figure. Adrenal steroid synthesis. The 21-hydroxylase block lowers cortisol and aldosterone and diverts precursors to androgens; 11β- and 17α-hydroxylase blocks raise 11-deoxycorticosterone and blood pressure.",
+   "file": "figures/s23c-fig150801-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set150801-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Abnormal newborn thyroid screen",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q150801-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 15-year-old adolescent raised as a girl is evaluated because over the past year her voice has deepened, her muscle mass has increased and her clitoris has enlarged markedly. At birth the external genitalia were noted to be slightly atypical. She has no breast development. Karyotype is 46,XY. Ultrasonography shows inguinal testes and no uterus. Serum testosterone is in the adult male range, and the testosterone-to-dihydrotestosterone ratio is markedly raised. Which of the following enzymes is most likely deficient?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "17α-hydroxylase"
+    },
+    {
+     "label": "B",
+     "html": "21-hydroxylase"
+    },
+    {
+     "label": "C",
+     "html": "5α-reductase type 2"
+    },
+    {
+     "label": "D",
+     "html": "Aromatase"
+    },
+    {
+     "label": "E",
+     "html": "3β-hydroxysteroid dehydrogenase"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A 46,XY person with near-female or ambiguous genitalia at birth who virilises strongly at puberty, with normal testosterone and a <strong>high testosterone-to-DHT ratio</strong>, has <strong>5α-reductase type 2 deficiency</strong>. DHT is needed for fetal external genitalia; at puberty the very high testosterone (and the type 1 isoenzyme) drives virilisation. AMH from the testes removed the uterus, and testosterone kept the Wolffian ducts.</p><p><strong>Takeaway:</strong> 46,XY with female or ambiguous genitalia at birth, virilisation at puberty and a high testosterone-to-DHT ratio is 5α-reductase deficiency.</p>",
+   "whyNot": {
+    "A": "17α-hydroxylase deficiency blocks testosterone production, so virilisation at puberty would not occur.",
+    "B": "21-hydroxylase deficiency virilises 46,XX fetuses; it does not undervirilise a 46,XY fetus.",
+    "D": "Aromatase deficiency affects estrogen synthesis; it virilises 46,XX infants and their mothers.",
+    "E": "3β-HSD deficiency lowers testosterone production and usually causes salt wasting in infancy."
+   },
+   "objective": "Identify 5α-reductase deficiency from its genital phenotype and high testosterone-to-DHT ratio.",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [
+    "biochemistry",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "5-alpha reductase deficiency",
+    "DSD"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 2-year-old girl (46,XX) has enlargement of the clitoris and fused labioscrotal folds noted since birth, and rapid growth. Blood pressure is 128/84 mm Hg, well above the 95th percentile for her age. Serum potassium is 3.1 mEq/L. Plasma renin activity is suppressed. Serum 11-deoxycortisol is markedly raised. Accumulation of which of the following steroids most directly causes her hypertension?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "11-Deoxycorticosterone"
+    },
+    {
+     "label": "B",
+     "html": "17-Hydroxyprogesterone"
+    },
+    {
+     "label": "C",
+     "html": "Aldosterone"
+    },
+    {
+     "label": "D",
+     "html": "Androstenedione"
+    },
+    {
+     "label": "E",
+     "html": "Cortisol"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Virilisation with hypertension, hypokalemia and high 11-deoxycortisol means <strong>11β-hydroxylase deficiency</strong>. The block also stops 11-deoxycorticosterone from becoming corticosterone, so <strong>11-deoxycorticosterone</strong> accumulates; it is a potent mineralocorticoid that retains sodium, suppresses renin and wastes potassium. Aldosterone itself is low.</p><p><strong>Takeaway:</strong> in 11β-hydroxylase deficiency, excess 11-deoxycorticosterone causes hypertension and hypokalemia.</p>",
+   "whyNot": {
+    "B": "17-Hydroxyprogesterone rises mildly but has no significant mineralocorticoid activity; it drives androgen excess.",
+    "C": "Aldosterone is low because the final steps of its synthesis need 11β-hydroxylase activity, and renin is suppressed.",
+    "D": "Androstenedione causes the virilisation, not the hypertension.",
+    "E": "Cortisol is deficient in this condition; that is why ACTH is high."
+   },
+   "objective": "Explain hypertension in 11β-hydroxylase deficiency by 11-deoxycorticosterone excess.",
+   "areas": [
+    "usmle2026.15.08.01",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [
+    "biochemistry",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "CAH",
+    "11-beta hydroxylase"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-1-03",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 16-year-old patient raised as a girl is evaluated for absent breast development and no menses. She has hypertension. Examination shows female external genitalia, a short blind-ending vagina and no pubic or axillary hair; height is above average.</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Blood pressure</td><td>152/96 mm Hg</td></tr><tr><td>Serum potassium</td><td>2.9 mEq/L</td></tr><tr><td>Plasma renin activity</td><td>Suppressed</td></tr><tr><td>LH, FSH</td><td>Markedly raised</td></tr><tr><td>Testosterone, estradiol</td><td>Very low</td></tr><tr><td>Karyotype</td><td>46,XY</td></tr><tr><td>Pelvic ultrasonography</td><td>No uterus; intra-abdominal gonads</td></tr></table><p>Which of the following enzyme deficiencies best explains these findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "11β-hydroxylase"
+    },
+    {
+     "label": "B",
+     "html": "17α-hydroxylase"
+    },
+    {
+     "label": "C",
+     "html": "21-hydroxylase"
+    },
+    {
+     "label": "D",
+     "html": "5α-reductase type 2"
+    },
+    {
+     "label": "E",
+     "html": "Aldosterone synthase"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p><strong>17α-hydroxylase deficiency</strong> blocks the routes to cortisol and to all sex steroids. A 46,XY fetus therefore cannot make testosterone and develops female external genitalia, while AMH from the testes still removes the uterus. Precursors pile up in the mineralocorticoid branch, so <strong>11-deoxycorticosterone</strong> causes hypertension, hypokalemia and suppressed renin. At puberty there are no sex steroids, so there is no breast or pubic hair development and gonadotropins are high.</p><p><strong>Takeaway:</strong> absent puberty plus hypertension and hypokalemia points to 17α-hydroxylase deficiency.</p>",
+   "whyNot": {
+    "A": "11β-hydroxylase deficiency causes hypertension but with androgen <em>excess</em> and virilisation.",
+    "C": "21-hydroxylase deficiency causes salt wasting and androgen excess, not hypertension with absent sex steroids.",
+    "D": "5α-reductase deficiency leaves testosterone normal, gives virilisation at puberty and does not cause hypertension.",
+    "E": "Aldosterone synthase deficiency causes salt wasting with high renin, not hypertension."
+   },
+   "objective": "Recognise 17α-hydroxylase deficiency from absent puberty, hypertension and hypokalemia.",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [
+    "biochemistry",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "CAH",
+    "17-alpha hydroxylase",
+    "DSD"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 46,XY infant has typical female external genitalia and bilateral inguinal masses that are found to be testes during hernia repair. Genetic testing shows a loss-of-function variant in the androgen receptor gene. Ultrasonography shows no uterus or fallopian tubes. Normal secretion by which of the following fetal cells best explains the absence of these Müllerian structures?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Granulosa cells"
+    },
+    {
+     "label": "B",
+     "html": "Leydig cells"
+    },
+    {
+     "label": "C",
+     "html": "Primordial germ cells"
+    },
+    {
+     "label": "D",
+     "html": "Sertoli cells"
+    },
+    {
+     "label": "E",
+     "html": "Theca cells"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>In androgen insensitivity the testes form normally. Fetal <strong>Sertoli cells</strong> secrete <strong>anti-Müllerian hormone</strong>, which acts through its own receptor (not the androgen receptor), so the Müllerian ducts regress and there is no uterus or fallopian tubes. Testosterone from Leydig cells is present but cannot act, so Wolffian structures regress and the external genitalia are female.</p><p><strong>Takeaway:</strong> AMH from Sertoli cells removes the Müllerian ducts regardless of androgen action.</p>",
+   "whyNot": {
+    "A": "Granulosa cells are ovarian; there are no ovaries in a 46,XY infant with testes.",
+    "B": "Leydig cell testosterone maintains Wolffian ducts; it does not cause Müllerian regression, and here it cannot act.",
+    "C": "Germ cells become spermatogonia and secrete no hormone that regresses ducts.",
+    "E": "Theca cells are ovarian androgen-producing cells."
+   },
+   "objective": "Attribute Müllerian duct regression to AMH from Sertoli cells.",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "androgen insensitivity",
+    "embryology"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 3-week-old girl has persistent jaundice, poor feeding, constipation and a hoarse cry. Her newborn screening TSH was raised. She has a large tongue, an umbilical hernia and a wide posterior fontanelle. Ultrasonography shows no thyroid tissue in the normal neck position. Scintigraphy shows a small area of uptake at the base of the tongue. Which of the following best explains her condition?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Autoantibodies that block the TSH receptor, passed from the mother"
+    },
+    {
+     "label": "B",
+     "html": "Failure of the thyroid to descend from the foramen cecum"
+    },
+    {
+     "label": "C",
+     "html": "Iodine deficiency during pregnancy"
+    },
+    {
+     "label": "D",
+     "html": "Persistence of the thyroglossal duct as a midline cyst"
+    },
+    {
+     "label": "E",
+     "html": "Variant in thyroid peroxidase that prevents iodine organification"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The thyroid begins as an outpouching at the <strong>foramen cecum</strong> at the back of the tongue and descends along the thyroglossal duct to the front of the neck. <strong>Failure of descent</strong> leaves an ectopic (lingual) thyroid, a form of thyroid dysgenesis and the commonest mechanism of congenital hypothyroidism in iodine-sufficient regions. The small ectopic gland cannot meet demand, so she is hypothyroid.</p><p><strong>Takeaway:</strong> an ectopic lingual thyroid is failed descent from the foramen cecum and a common cause of congenital hypothyroidism.</p>",
+   "whyNot": {
+    "A": "Maternal blocking antibodies cause transient hypothyroidism with a normally placed gland.",
+    "C": "Iodine deficiency causes goiter with a normally placed gland.",
+    "D": "A thyroglossal duct cyst is a midline neck mass that moves with swallowing, usually with a normal gland in place.",
+    "E": "Organification defects cause a goitrous gland in the normal position, with high uptake."
+   },
+   "objective": "Explain an ectopic lingual thyroid as failed descent from the foramen cecum.",
+   "areas": [
+    "usmle2026.15.08.01",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "congenital hypothyroidism",
+    "embryology"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 15-day-old boy born at term has vomited for 2 days, feeds poorly and has lost weight. His external genitalia are typical for a boy, with both testes descended. Pulse is 182/min and capillary refill 4 seconds; the skin of his scrotum is darker than expected. Serum sodium is 121 mEq/L, potassium 7.4 mEq/L, bicarbonate 16 mEq/L and glucose 44 mg/dL. Blood for 17-hydroxyprogesterone has been drawn. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Abdominal ultrasonography for pyloric stenosis"
+    },
+    {
+     "label": "B",
+     "html": "IV normal saline, dextrose and stress-dose hydrocortisone"
+    },
+    {
+     "label": "C",
+     "html": "Oral rehydration solution and observation"
+    },
+    {
+     "label": "D",
+     "html": "Sodium polystyrene sulfonate rectally"
+    },
+    {
+     "label": "E",
+     "html": "Wait for the 17-hydroxyprogesterone result before treatment"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Vomiting and shock at 2 weeks with <strong>hyponatremia, hyperkalemia, acidosis and hypoglycemia</strong> is a salt-wasting adrenal crisis, most likely from <strong>21-hydroxylase deficiency</strong>; in boys the genitalia are normal, so the diagnosis is easily missed. Treat at once with <strong>IV isotonic saline, dextrose and stress-dose hydrocortisone</strong>, which also corrects the potassium.</p><p><strong>Takeaway:</strong> a vomiting 2-week-old with low sodium and high potassium needs saline, dextrose and hydrocortisone for salt-wasting CAH, even with normal genitalia.</p>",
+   "whyNot": {
+    "A": "Pyloric stenosis causes hypochloremic, hypokalemic metabolic alkalosis, the opposite pattern.",
+    "C": "He is in shock and cannot be managed orally.",
+    "D": "Hyperkalemia here resolves with saline and glucocorticoid; a resin is slow and risky in a neonate.",
+    "E": "Treatment cannot wait; the sample is already drawn."
+   },
+   "objective": "Treat salt-wasting CAH crisis in a male neonate with saline, dextrose and hydrocortisone.",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "CAH",
+    "adrenal crisis",
+    "neonate"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 3-day-old girl born at term is in the newborn nursery. On examination she has clitoromegaly and fused, rugated labioscrotal folds with a single perineal opening; no gonads are palpable. She is feeding well, and vital signs are normal. Her parents ask whether their child is a boy or a girl. Which of the following is the most appropriate response and plan?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Advise genital surgery in the first weeks so the child can be raised as a girl"
+    },
+    {
+     "label": "B",
+     "html": "Assign female sex today because no gonads can be felt on examination"
+    },
+    {
+     "label": "C",
+     "html": "Assign male sex today because the genitalia appear clearly virilised"
+    },
+    {
+     "label": "D",
+     "html": "Defer sex assignment and legal registration until the child reaches puberty"
+    },
+    {
+     "label": "E",
+     "html": "Explain that testing comes first; check electrolytes, 17-OHP and karyotype"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A newborn with atypical genitalia needs urgent, structured evaluation, and sex should <strong>not be assigned before it</strong>. Nonpalpable gonads with virilisation suggest a 46,XX infant with <strong>21-hydroxylase deficiency</strong>, which can cause a salt-wasting crisis, so electrolytes and 17-hydroxyprogesterone are urgent alongside karyotype and pelvic ultrasonography. A multidisciplinary team supports the family; results usually allow a recommendation within days.</p><p><strong>Takeaway:</strong> atypical genitalia: explain honestly, evaluate urgently (electrolytes, 17-OHP, karyotype, ultrasound) and assign sex only after the work-up.</p>",
+   "whyNot": {
+    "A": "Irreversible surgery is not urgent and should not precede diagnosis and family-centred decision-making.",
+    "B": "Assignment before testing is inappropriate, even though CAH in a 46,XX infant is likely.",
+    "C": "Virilisation is most often from adrenal androgens in a 46,XX infant, so assignment by appearance can be wrong.",
+    "D": "Assignment is usually made after the newborn evaluation, not deferred until puberty."
+   },
+   "objective": "Approach a newborn with atypical genitalia with urgent testing and deferred sex assignment.",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "communication",
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "DSD",
+    "CAH",
+    "communication"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 9-year-old boy with classic salt-wasting 21-hydroxylase deficiency takes hydrocortisone three times daily and fludrocortisone once daily. He has had a fever of 39.0°C (102.2°F) and a sore throat since this morning. He is drinking well and has not vomited. His parent calls for advice. Which of the following is the most appropriate instruction?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue usual doses and give acetaminophen"
+    },
+    {
+     "label": "B",
+     "html": "Double or triple the hydrocortisone dose until 24 hours after the fever settles"
+    },
+    {
+     "label": "C",
+     "html": "Double the fludrocortisone dose"
+    },
+    {
+     "label": "D",
+     "html": "Give intramuscular hydrocortisone now and go to the emergency department"
+    },
+    {
+     "label": "E",
+     "html": "Stop fludrocortisone during the illness"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Children with CAH cannot raise cortisol in response to illness. For fever or significant illness, the <strong>oral hydrocortisone dose is doubled or tripled</strong> until about a day after recovery. Intramuscular hydrocortisone and emergency care are needed if he vomits, cannot take tablets or becomes drowsy. Fludrocortisone is not changed.</p><p><strong>Takeaway:</strong> CAH sick-day rules: double or triple oral hydrocortisone for fever; injection and emergency care if vomiting.</p>",
+   "whyNot": {
+    "A": "Usual doses are inadequate during febrile illness and risk adrenal crisis.",
+    "C": "Stress dosing concerns glucocorticoid; mineralocorticoid needs do not rise with illness.",
+    "D": "Injection is for vomiting, inability to take oral medicine or signs of crisis; he is drinking well.",
+    "E": "Stopping fludrocortisone risks salt loss and hyperkalemia."
+   },
+   "objective": "Teach sick-day glucocorticoid stress dosing in congenital adrenal hyperplasia.",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "communication"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "CAH",
+    "sick-day rules"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A girl born at 29 weeks' gestation weighing 1,150 g is in the neonatal intensive care unit on day 3 for respiratory distress syndrome. Her newborn screen, collected at 26 hours of age, shows 17-hydroxyprogesterone above the term-infant cut-off but below the cut-off for her birth-weight group. Her external genitalia are typical for a girl. Serum sodium is 138 mEq/L and potassium 4.6 mEq/L. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin hydrocortisone and fludrocortisone today"
+    },
+    {
+     "label": "B",
+     "html": "Obtain a karyotype and pelvic ultrasonography"
+    },
+    {
+     "label": "C",
+     "html": "Order CT of the adrenal glands"
+    },
+    {
+     "label": "D",
+     "html": "Perform an ACTH stimulation test today"
+    },
+    {
+     "label": "E",
+     "html": "Repeat the screen per the preterm protocol"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>17-Hydroxyprogesterone is normally higher in <strong>preterm, sick and stressed infants</strong> and in samples taken early, which is why screening programmes use cut-offs adjusted for birth weight or gestational age and repeat screening in preterm infants. Her value is normal for her birth-weight group, her genitalia are typical and her electrolytes are normal, so the right step is to <strong>repeat the screen per protocol</strong>, not to treat.</p><p><strong>Takeaway:</strong> interpret newborn 17-hydroxyprogesterone against gestational age or birth-weight cut-offs; preterm infants often have false-positive results.</p>",
+   "whyNot": {
+    "A": "Treating without a diagnosis exposes a preterm infant to unnecessary glucocorticoid.",
+    "B": "Her genitalia are typical, so a karyotype adds nothing here.",
+    "C": "Imaging has no role in screening for CAH.",
+    "D": "An ACTH stimulation test is for confirming an abnormal or equivocal result, which this is not for her weight group."
+   },
+   "objective": "Interpret a raised 17-hydroxyprogesterone screen in a preterm infant using adjusted cut-offs.",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic",
+    "systems_based_practice"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "newborn screening",
+    "CAH"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-2-05",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150801-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 10-day-old boy's newborn screen shows a TSH of 92 mU/L (screening cut-off 20). He is feeding well and looks well. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Draw serum TSH and free T4 and start levothyroxine the same day"
+    },
+    {
+     "label": "B",
+     "html": "Order thyroid scintigraphy before deciding on treatment"
+    },
+    {
+     "label": "C",
+     "html": "Repeat the newborn screen in 2 weeks"
+    },
+    {
+     "label": "D",
+     "html": "Start liothyronine (T3)"
+    },
+    {
+     "label": "E",
+     "html": "Wait for serum TSH and free T4 results before treatment"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A markedly raised screening TSH (around 40 mU/L or more) makes congenital hypothyroidism very likely. Draw confirmatory <strong>serum TSH and free T4</strong> and <strong>start levothyroxine (10–15 µg/kg/day) immediately</strong>, without waiting for results; early treatment, ideally within the first 2 weeks, protects neurodevelopment. Imaging is optional and never delays therapy.</p><p><strong>Takeaway:</strong> very high newborn screening TSH: confirm with serum tests and start levothyroxine the same day.</p>",
+   "whyNot": {
+    "B": "Scintigraphy can define the cause but must not delay treatment.",
+    "C": "Waiting another 2 weeks risks permanent harm to brain development.",
+    "D": "Levothyroxine, not liothyronine, is the standard replacement.",
+    "E": "With a screening TSH this high, treatment starts as soon as the confirmatory sample is drawn."
+   },
+   "objective": "Start levothyroxine promptly for congenital hypothyroidism with a markedly raised screening TSH.",
+   "areas": [
+    "usmle2026.15.08.01",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "congenital hypothyroidism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-2-06",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150801-1",
+   "setOrder": 2,
+   "stemHtml": "<p>His confirmatory serum TSH was 96 mU/L and free T4 0.4 ng/dL, and levothyroxine was started. At 4 weeks of age his TSH is still 38 mU/L. His parent dissolves the tablet in a full bottle of soy-based formula, which he often does not finish, and also gives his iron drops at the same feed. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add liothyronine to the current levothyroxine dose"
+    },
+    {
+     "label": "B",
+     "html": "Change to a single weekly levothyroxine dose"
+    },
+    {
+     "label": "C",
+     "html": "Give the crushed tablet by spoon, apart from soy formula and iron"
+    },
+    {
+     "label": "D",
+     "html": "Order thyroid ultrasonography and scintigraphy"
+    },
+    {
+     "label": "E",
+     "html": "Stop the iron drops for the rest of infancy"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Soy formula, iron and calcium bind levothyroxine, and mixing the dose into a full bottle means part of it is never taken. Give the <strong>crushed tablet in a small volume by spoon</strong>, away from soy formula and iron, then recheck TSH and free T4 in a few weeks before deciding whether to raise the dose.</p><p><strong>Takeaway:</strong> before increasing levothyroxine in an infant, fix how it is given: small volume, away from soy, iron and calcium.</p>",
+   "whyNot": {
+    "A": "Liothyronine is not needed; the problem is absorption and incomplete dosing.",
+    "B": "Weekly dosing is not used in infants, where steady levels matter for brain development.",
+    "D": "Imaging does not explain or fix the persistent TSH elevation.",
+    "E": "Iron may be needed; it should be separated from the levothyroxine, not stopped."
+   },
+   "objective": "Correct levothyroxine administration in infants before changing the dose.",
+   "areas": [
+    "usmle2026.15.08.01",
+    "usmle2026.15.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "congenital hypothyroidism",
+    "drug absorption"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-2-07",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 13-year-old girl is evaluated for short stature; she is below the 1st percentile and has grown 3 cm in the past year. She has no breast development. She had swollen hands and feet as a newborn. She has a low posterior hairline and widely spaced nipples. Blood pressure in the right arm is 138/84 mm Hg, and femoral pulses are weak. FSH is 92 mIU/mL. Karyotype is 45,X. Which of the following is the most important evaluation now?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bone marrow biopsy"
+    },
+    {
+     "label": "B",
+     "html": "Cardiac imaging with echocardiography or cardiac MRI"
+    },
+    {
+     "label": "C",
+     "html": "Colonoscopy"
+    },
+    {
+     "label": "D",
+     "html": "MRI of the brain"
+    },
+    {
+     "label": "E",
+     "html": "Ovarian biopsy"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Turner syndrome carries a high risk of <strong>bicuspid aortic valve, coarctation and aortic dilation</strong>, with a risk of dissection. Her arm hypertension and weak femoral pulses suggest coarctation. Every patient needs <strong>cardiac imaging at diagnosis</strong> (echocardiography, plus cardiac MRI in older children), along with renal ultrasonography, hearing and thyroid and celiac screening. Growth hormone and timed estrogen therapy follow.</p><p><strong>Takeaway:</strong> at a Turner syndrome diagnosis, image the heart and aorta.</p>",
+   "whyNot": {
+    "A": "There is no hematologic problem to investigate.",
+    "C": "Colonoscopy is not part of Turner syndrome screening.",
+    "D": "Her gonadotropins are high, so the problem is ovarian, not central; brain MRI is not indicated.",
+    "E": "Streak ovaries are expected; biopsy adds nothing and the high FSH already shows ovarian failure."
+   },
+   "objective": "Prioritise cardiac and aortic imaging at diagnosis of Turner syndrome.",
+   "areas": [
+    "usmle2026.15.08.01",
+    "usmle2026.13.02.08"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Turner syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150801-2-08",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A newborn with a 46,XY karyotype is examined. The urethral meatus opens at the penoscrotal junction, the penis has ventral curvature, and the left testis is not palpable while the right is high in the inguinal canal. The baby is otherwise well. The parents ask about circumcision before discharge. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Circumcision now, with urology follow-up at 1 year"
+    },
+    {
+     "label": "B",
+     "html": "Evaluation for a difference of sex development, and no circumcision"
+    },
+    {
+     "label": "C",
+     "html": "Hypospadias repair in the first week"
+    },
+    {
+     "label": "D",
+     "html": "Observe the testes until age 2 years without further tests"
+    },
+    {
+     "label": "E",
+     "html": "Reassurance and routine well-baby care"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p><strong>Proximal hypospadias with undescended or nonpalpable testes</strong> may be a difference of sex development (for example partial androgen insensitivity, a testosterone synthesis defect, 5α-reductase deficiency or gonadal dysgenesis, or a virilised 46,XX infant when no karyotype is known). It needs endocrine and genetic evaluation (hormones such as testosterone, LH, FSH and AMH; electrolytes) with a specialist team. <strong>Circumcision is postponed</strong> because the foreskin may be needed for later repair.</p><p><strong>Takeaway:</strong> hypospadias plus a nonpalpable or undescended testis calls for a DSD evaluation and no circumcision.</p>",
+   "whyNot": {
+    "A": "The foreskin may be needed for reconstruction, so circumcision is contraindicated.",
+    "C": "Repair is usually done later in infancy, after evaluation; it is not a first-week procedure.",
+    "D": "Undescended testes are usually referred by about 6 months; with hypospadias the combination needs earlier evaluation.",
+    "E": "This combination is not a normal variant and should not be dismissed."
+   },
+   "objective": "Evaluate hypospadias with an undescended testis for a difference of sex development and defer circumcision.",
+   "areas": [
+    "usmle2026.15.08.01",
+    "usmle2026.14.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypospadias",
+    "DSD"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c150801-01",
+   "frontHtml": "Which gene starts testis development?",
+   "backHtml": "<em>SRY</em> on the Y chromosome.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-02",
+   "frontHtml": "What does anti-Müllerian hormone do, and which cell makes it?",
+   "backHtml": "Sertoli cells; it causes regression of the Müllerian ducts (no uterus, tubes or upper vagina).",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-03",
+   "frontHtml": "Which hormone forms male external genitalia and prostate?",
+   "backHtml": "Dihydrotestosterone, made from testosterone by 5α-reductase type 2.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-04",
+   "frontHtml": "46,XY, female at birth, virilises at puberty, normal testosterone, high testosterone-to-DHT ratio?",
+   "backHtml": "5α-reductase type 2 deficiency.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-05",
+   "frontHtml": "Complete androgen insensitivity: internal and external anatomy?",
+   "backHtml": "Testes, no uterus, no Wolffian structures; female external genitalia, breasts at puberty, sparse pubic and axillary hair.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-06",
+   "frontHtml": "Most common CAH enzyme and its electrolyte picture?",
+   "backHtml": "21-hydroxylase (about 95%); salt wasting with hyponatremia and hyperkalemia in the classic form.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-07",
+   "frontHtml": "CAH forms that cause hypertension?",
+   "backHtml": "11β-hydroxylase (with virilisation) and 17α-hydroxylase (with absent sex steroids), from excess 11-deoxycorticosterone.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-08",
+   "frontHtml": "Commonest cause of congenital hypothyroidism where iodine intake is adequate?",
+   "backHtml": "Thyroid dysgenesis (aplasia, hypoplasia or ectopic gland).",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-09",
+   "frontHtml": "Why do most hypothyroid newborns look normal at birth?",
+   "backHtml": "Maternal T4 crosses the placenta.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-10",
+   "frontHtml": "Signs of untreated congenital hypothyroidism?",
+   "backHtml": "Prolonged jaundice, poor feeding, constipation, hypotonia, large tongue, umbilical hernia, large posterior fontanelle.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-11",
+   "frontHtml": "Kallmann syndrome mechanism and clues?",
+   "backHtml": "Failed migration of GnRH neurons from the olfactory placode: hypogonadotropic hypogonadism with anosmia.",
+   "sectionId": "s23c-s150801-1-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-12",
+   "frontHtml": "Virilised newborn with nonpalpable gonads: most likely diagnosis and urgent tests?",
+   "backHtml": "46,XX with 21-hydroxylase CAH; electrolytes, glucose, 17-hydroxyprogesterone, karyotype, pelvic ultrasonography.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-13",
+   "frontHtml": "When is sex assigned in a newborn with atypical genitalia?",
+   "backHtml": "After the evaluation, with a multidisciplinary team; not on appearance alone.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-14",
+   "frontHtml": "Why is newborn 17-hydroxyprogesterone hard to interpret in preterm infants?",
+   "backHtml": "It is physiologically higher in preterm, sick or stressed infants and early samples; cut-offs are adjusted for birth weight or gestational age.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-15",
+   "frontHtml": "Treatment of salt-wasting CAH crisis?",
+   "backHtml": "IV isotonic saline, dextrose and stress-dose hydrocortisone.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-16",
+   "frontHtml": "Glucocorticoid of choice for children with CAH, and why?",
+   "backHtml": "Hydrocortisone: least growth-suppressive.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-17",
+   "frontHtml": "Levothyroxine starting dose in congenital hypothyroidism?",
+   "backHtml": "10–15 µg/kg/day, started as soon as confirmatory blood is drawn, ideally within 2 weeks of birth.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-18",
+   "frontHtml": "How should infant levothyroxine be given?",
+   "backHtml": "Crushed in a small volume by spoon; separate from soy formula, iron and calcium.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-19",
+   "frontHtml": "First evaluation after diagnosing Turner syndrome?",
+   "backHtml": "Cardiac and aortic imaging (bicuspid valve, coarctation, aortic dilation), plus renal ultrasonography.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150801-20",
+   "frontHtml": "Hypospadias with an undescended testis: what to do before surgery?",
+   "backHtml": "DSD evaluation; postpone circumcision.",
+   "sectionId": "s23c-s150801-2-1",
+   "areas": [
+    "usmle2026.15.08.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi — Plan on phone</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.45; padding: 20px 16px 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; line-height: 0.86; letter-spacing: -0.05em">Mon 16</h1>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #9C9EA6; text-align: right">Week 6 of 11<br>6 h planned</span>
+</div>
+
+<div role="group" aria-label="Days this week" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px">
+<sc-for list="{{days}}" as="d" hint-placeholder-count="7">
+<button type="button" aria-pressed="{{d.on}}" style="{{d.style}}"><span style="font-size: 10px; opacity: 0.8">{{d.dow}}</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px">{{d.date}}</span></button>
+</sc-for>
+</div>
+
+<ol style="flex: 1; min-height: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{blocks}}" as="b" hint-placeholder-count="5">
+<li style="{{b.style}}"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: 0.8; width: 44px; flex: none">{{b.t}}</span><span style="flex: 1; display: flex; flex-direction: column"><span style="font-weight: 600; font-size: 15px">{{b.name}}</span><span style="font-size: 12px; opacity: 0.8">{{b.meta}}</span></span><span style="font-size: 12px; font-weight: 600">{{b.tag}}</span></li>
+</sc-for>
+</ol>
+
+<div style="padding: 14px 16px; border-radius: 22px; background: #17132E; border: 1px solid #2C2552; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; color: #E7E3FF">Thursday is overloaded. Move the pharm block to Sunday morning?</span>
+<div style="display: flex; gap: 8px"><button type="button" style="flex: 1; min-height: 44px; border-radius: 999px; border: 0; background: #F4F4F0; color: #050506; font-weight: 600; font-size: 13px">Move it</button><button type="button" style="flex: 1; min-height: 44px; border-radius: 999px; border: 1px solid #5A4FA0; background: transparent; color: #E7E3FF; font-size: 13px">Keep</button></div>
+</div>
+
+<nav aria-label="Tabs" style="display: flex; align-items: center; padding: 6px; border-radius: 999px; background: #141519; border: 1px solid #34363D">
+<a href="PhoneToday.dc.html" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: 48px; color: #C9CBD1; text-decoration: none; font-size: 12px">Today</a>
+<a href="PhoneChapter.dc.html" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: 48px; color: #C9CBD1; text-decoration: none; font-size: 12px">Learn</a>
+<a href="Phone.dc.html" aria-label="Ask Naadi" style="width: 52px; height: 52px; flex: none; border-radius: 50%; background: #9D8CFF; color: #0D0828; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l3-7 4 14 3-7h6"></path></svg></a>
+<a href="PhoneQbank.dc.html" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: 48px; color: #C9CBD1; text-decoration: none; font-size: 12px">Practice</a>
+<a href="PhonePlan.dc.html" aria-current="page" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; background: #F4F4F0; color: #050506; text-decoration: none; font-size: 12px; font-weight: 600">Plan</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const d = 'display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:56px;border-radius:16px;';
+    const days = [['M', 16], ['T', 17], ['W', 18], ['T', 19], ['F', 20], ['S', 21], ['S', 22]].map(([dow, date], i) => ({
+      dow, date, on: i === 0 ? 'true' : 'false',
+      style: d + (i === 0 ? 'border:0;background:#C6FF3D;color:#0B1400' : (i === 5 ? 'border:1px solid #C6FF3D;background:transparent;color:#F4F4F0' : 'border:1px solid #26282E;background:transparent;color:#F4F4F0'))
+    }));
+    const row = 'display:flex;align-items:center;gap:10px;min-height:60px;padding:8px 14px;border-radius:18px;box-sizing:border-box;';
+    const blocks = [
+      ['07:00', 'Cards · renal physiology', 'Done', '', row + 'background:#0E0F12;color:#9C9EA6;text-decoration:line-through'],
+      ['09:00', 'Acid–base disorders', 'Read + watch · 40 min', 'Now', row + 'background:#C6FF3D;color:#0B1400'],
+      ['11:00', 'Qbank · 40 renal', 'Timed · 60 min', '', row + 'background:#F4F4F0;color:#050506'],
+      ['15:00', 'Review misses', 'With Naadi · 45 min', '', row + 'background:#17132E;border:1px solid #2C2552;color:#E7E3FF'],
+      ['20:00', 'Cards · 62 due', '25 min', '', row + 'background:#1B1D22;color:#F4F4F0']
+    ].map(([t, name, meta, tag, style]) => ({ t, name, meta, tag, style }));
+    return { days, blocks };
+  }
+}
+</script>
+</body>
+</html>

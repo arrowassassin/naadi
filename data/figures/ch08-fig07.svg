@@ -1,0 +1,45 @@
+<svg aria-label="Hyponatremia diagnostic algorithm" role="img" viewbox="0 0 640 450" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch08-arrow6" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" width="220" x="210" y="8"></rect>
+<text font-weight="bold" x="320" y="31">Serum Na &lt;135 mEq/L</text>
+<line marker-end="url(#ch08-arrow6)" stroke="#334155" x1="320" x2="320" y1="44" y2="60"></line>
+<rect fill="#fef3c7" height="36" rx="6" stroke="#334155" width="220" x="210" y="62"></rect>
+<text x="320" y="85">Serum osmolality?</text>
+<line marker-end="url(#ch08-arrow6)" stroke="#334155" x1="210" x2="120" y1="80" y2="110"></line>
+<line marker-end="url(#ch08-arrow6)" stroke="#334155" x1="320" x2="320" y1="98" y2="168"></line>
+<line marker-end="url(#ch08-arrow6)" stroke="#334155" x1="430" x2="520" y1="80" y2="110"></line>
+<rect fill="#dcfce7" height="50" rx="6" stroke="#334155" width="200" x="10" y="112"></rect>
+<text x="110" y="132">Normal (275–295):</text>
+<text x="110" y="150">pseudo (lipids, protein)</text>
+<rect fill="#dcfce7" height="50" rx="6" stroke="#334155" width="200" x="430" y="112"></rect>
+<text x="530" y="132">High (&gt;295): hyperglycemia,</text>
+<text x="530" y="150">mannitol (translocational)</text>
+<text x="350" y="140">Low (&lt;275)</text>
+<rect fill="#fef3c7" height="36" rx="6" stroke="#334155" width="220" x="210" y="170"></rect>
+<text x="320" y="193">Urine osmolality?</text>
+<line marker-end="url(#ch08-arrow6)" stroke="#334155" x1="210" x2="120" y1="188" y2="218"></line>
+<line marker-end="url(#ch08-arrow6)" stroke="#334155" x1="430" x2="500" y1="188" y2="218"></line>
+<rect fill="#e0f2fe" height="66" rx="6" stroke="#334155" width="200" x="10" y="220"></rect>
+<text x="110" y="240">&lt;100 mOsm/kg:</text>
+<text x="110" y="257">primary polydipsia, beer</text>
+<text x="110" y="274">potomania, tea-and-toast</text>
+<rect fill="#fef3c7" height="36" rx="6" stroke="#334155" width="250" x="380" y="220"></rect>
+<text x="505" y="243">&gt;100: ADH active → urine Na?</text>
+<line marker-end="url(#ch08-arrow6)" stroke="#334155" x1="440" x2="340" y1="256" y2="290"></line>
+<line marker-end="url(#ch08-arrow6)" stroke="#334155" x1="570" x2="550" y1="256" y2="290"></line>
+<rect fill="#fee2e2" height="84" rx="6" stroke="#334155" width="230" x="220" y="292"></rect>
+<text font-weight="bold" x="335" y="311">U-Na &lt;30</text>
+<text x="335" y="328">Hypovolemic, extrarenal loss</text>
+<text x="335" y="345">(diarrhea, burns) OR hypervolemic</text>
+<text x="335" y="362">(HF, cirrhosis, nephrotic)</text>
+<rect fill="#fee2e2" height="84" rx="6" stroke="#334155" width="170" x="460" y="292"></rect>
+<text font-weight="bold" x="545" y="311">U-Na &gt;30</text>
+<text x="545" y="328">Euvolemic: SIADH,</text>
+<text x="545" y="345">hypothyroid, ↓cortisol</text>
+<text x="545" y="362">Renal loss: thiazide, ↓aldo</text>
+<rect fill="#fef3c7" height="56" rx="6" stroke="#334155" width="620" x="10" y="386"></rect>
+<text font-weight="bold" x="320" y="405">Seizure/coma: 3% saline 100 mL bolus over 10 min, repeat up to ×2</text>
+<text x="320" y="423">Raise Na 4–6 mEq/L acutely; limit ≤8 mEq/L per 24 h if high ODS risk (≤10–12 otherwise)</text>
+</g>
+</svg>

@@ -1,0 +1,35 @@
+/* Exam view (segment 09). Highlights are painted by the CSS Custom Highlight API (exam/highlight.ts), so the
+   question's own markup is never changed. Lime here is the reading highlight of HANDOFF 4 ("key fact"). */
+::highlight(naadi-exam) {
+  background-color: color-mix(in srgb, var(--color-lime) 38%, transparent);
+  color: inherit;
+}
+
+/* Zoom and contrast (the student's choice, kept on this device). */
+[data-exam-root] {
+  --exam-text: 1.1875rem;
+}
+[data-exam-zoom="1"] {
+  --exam-text: 1.0625rem;
+}
+[data-exam-zoom="2"] {
+  --exam-text: 1.1875rem;
+}
+[data-exam-zoom="3"] {
+  --exam-text: 1.375rem;
+}
+[data-exam-zoom="4"] {
+  --exam-text: 1.625rem;
+}
+[data-exam-root] .exam-reading {
+  font-size: var(--exam-text);
+  line-height: 1.65;
+}
+[data-exam-contrast="high"] .exam-reading,
+[data-exam-contrast="high"] .exam-option {
+  background-color: var(--color-paper);
+  color: var(--color-ground);
+}
+[data-exam-contrast="high"] .exam-option {
+  border-color: var(--color-ground);
+}

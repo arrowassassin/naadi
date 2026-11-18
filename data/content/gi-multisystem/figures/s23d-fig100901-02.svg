@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" role="img" aria-label="Algorithm for blunt abdominal trauma based on stability and FAST result" font-family="sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="680" height="330" fill="#ffffff"/>
+<rect x="220" y="15" width="240" height="44" rx="6" fill="#f1f5f9" stroke="#334155"/>
+<text x="340" y="42" font-size="14" fill="#0f172a" text-anchor="middle">Blunt trauma: primary survey</text>
+<line x1="300" y1="59" x2="170" y2="98" stroke="#334155" stroke-width="1.5" marker-end="url(#ar)"/>
+<line x1="380" y1="59" x2="510" y2="98" stroke="#334155" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="40" y="100" width="260" height="44" rx="6" fill="#fce7f3" stroke="#334155"/>
+<text x="170" y="127" font-size="14" fill="#0f172a" text-anchor="middle">Unstable: do FAST</text>
+<rect x="380" y="100" width="260" height="44" rx="6" fill="#dcfce7" stroke="#334155"/>
+<text x="510" y="127" font-size="14" fill="#0f172a" text-anchor="middle">Stable</text>
+<line x1="120" y1="144" x2="90" y2="188" stroke="#334155" stroke-width="1.5" marker-end="url(#ar)"/>
+<line x1="220" y1="144" x2="250" y2="188" stroke="#334155" stroke-width="1.5" marker-end="url(#ar)"/>
+<line x1="510" y1="144" x2="510" y2="188" stroke="#334155" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="10" y="190" width="160" height="60" rx="6" fill="#fef3c7" stroke="#334155"/>
+<text x="90" y="215" font-size="13" fill="#0f172a" text-anchor="middle">FAST positive:</text>
+<text x="90" y="235" font-size="13" fill="#0f172a" text-anchor="middle">laparotomy</text>
+<rect x="180" y="190" width="170" height="60" rx="6" fill="#e0f2fe" stroke="#334155"/>
+<text x="265" y="215" font-size="13" fill="#0f172a" text-anchor="middle">FAST negative:</text>
+<text x="265" y="235" font-size="13" fill="#0f172a" text-anchor="middle">find other source</text>
+<rect x="390" y="190" width="240" height="60" rx="6" fill="#ede9fe" stroke="#334155"/>
+<text x="510" y="215" font-size="13" fill="#0f172a" text-anchor="middle">CT abdomen and pelvis</text>
+<text x="510" y="235" font-size="13" fill="#0f172a" text-anchor="middle">with IV contrast</text>
+<line x1="510" y1="250" x2="510" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="360" y="270" width="300" height="48" rx="6" fill="#dcfce7" stroke="#334155"/>
+<text x="510" y="290" font-size="13" fill="#0f172a" text-anchor="middle">Solid organ injury: nonoperative care,</text>
+<text x="510" y="308" font-size="13" fill="#0f172a" text-anchor="middle">embolize active bleeding</text>
+<text x="20" y="295" font-size="13" fill="#0f172a">Other sources: chest,</text>
+<text x="20" y="312" font-size="13" fill="#0f172a">pelvis, long bones</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg aria-label="Sleep stages with EEG waveforms and typical hypnogram" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#ffffff" height="200" stroke="#334155" width="620" x="10" y="10"></rect>
+<text font-weight="bold" x="20" y="35">Stage</text><text font-weight="bold" x="140" y="35">EEG</text><text font-weight="bold" x="420" y="35">Key features (% adult sleep)</text>
+<text x="20" y="58">Awake, eyes open</text><path d="M140,55 l4,-5 l4,10 l4,-9 l4,8 l4,-10 l4,9 l4,-6 l4,7 l4,-8 l4,6 l4,-7 l4,8 l4,-6 l4,5" fill="none" stroke="#334155"></path><text x="230" y="58">beta (high freq, low amp)</text><text x="420" y="58">alert, active mind</text>
+<text x="20" y="80">Awake, eyes closed</text><path d="M140,77 q6,-8 12,0 t12,0 t12,0 t12,0 t12,0 t12,0" fill="none" stroke="#334155"></path><text x="230" y="80">alpha</text><text x="420" y="80">relaxed</text>
+<rect fill="#e0f2fe" height="22" width="616" x="12" y="88"></rect>
+<text x="20" y="103">N1</text><path d="M140,100 q8,-6 16,0 t16,0 t16,0 t16,0 t16,0" fill="none" stroke="#334155"></path><text x="230" y="103">theta</text><text x="420" y="103">light sleep (5%)</text>
+<rect fill="#e0f2fe" height="22" width="616" x="12" y="112"></rect>
+<text x="20" y="127">N2</text><path d="M140,124 q8,-6 16,0 t16,0 l3,-8 l3,14 l3,-6 q8,-6 16,0 t16,0" fill="none" stroke="#334155"></path><text x="230" y="127">sleep spindles, K complexes</text><text x="420" y="127">deeper (45%); bruxism</text>
+<rect fill="#dcfce7" height="22" width="616" x="12" y="136"></rect>
+<text x="20" y="151">N3 (slow-wave)</text><path d="M140,148 q15,-14 30,0 t30,0 t30,0" fill="none" stroke="#334155"></path><text x="235" y="151">delta (lowest freq, highest amp)</text><text x="420" y="151">deepest (25%); sleepwalking,</text>
+<text x="420" y="166">night terrors, enuresis</text>
+<rect fill="#fee2e2" height="34" width="616" x="12" y="172"></rect>
+<text x="20" y="188">REM</text><path d="M140,185 l4,-5 l4,10 l4,-9 l4,8 l4,-10 l4,9 l4,-6 l4,7" fill="none" stroke="#334155"></path><text x="230" y="188">beta ("paradoxical")</text><text x="420" y="188">dreams, atonia, erections, ↑ O₂</text>
+<text x="420" y="202">use, PPRF (conjugate eye mvmt) (25%)</text>
+<!-- hypnogram -->
+<text font-weight="bold" x="20" y="235">Hypnogram (one night)</text>
+<text x="20" y="262">Wake</text><text x="20" y="285">REM</text><text x="20" y="308">N1</text><text x="20" y="331">N2</text><text x="20" y="354">N3</text>
+<line stroke="#334155" x1="90" x2="90" y1="250" y2="360"></line>
+<line stroke="#334155" x1="90" x2="620" y1="360" y2="360"></line>
+<polyline fill="none" points="95,258 110,304 125,327 140,350 175,350 190,327 205,281 215,281 230,327 245,350 270,350 285,327 305,281 325,281 345,327 365,327 380,350 390,327 410,281 440,281 460,327 480,327 500,281 545,281 560,327 590,281 610,258" stroke="#334155" stroke-width="2"></polyline>
+<text text-anchor="middle" x="300" y="376">~90-min cycles: N3 dominates early night; REM periods lengthen toward morning</text>
+</g>
+</svg>

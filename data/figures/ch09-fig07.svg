@@ -1,0 +1,51 @@
+<svg aria-label="Cancer and preventive screening timeline by age" role="img" viewbox="0 0 640 508" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text font-weight="bold" text-anchor="middle" x="320" y="20">USPSTF screening windows by age (average-risk adults)</text>
+<g stroke="#334155" stroke-dasharray="3,3" stroke-opacity="0.25">
+<line x1="192.9" x2="192.9" y1="34" y2="462"></line><line x1="258.6" x2="258.6" y1="34" y2="462"></line>
+<line x1="324.3" x2="324.3" y1="34" y2="462"></line><line x1="390" x2="390" y1="34" y2="462"></line>
+<line x1="455.7" x2="455.7" y1="34" y2="462"></line><line x1="521.4" x2="521.4" y1="34" y2="462"></line>
+<line x1="587.1" x2="587.1" y1="34" y2="462"></line>
+</g>
+<text font-weight="bold" x="10" y="53">HIV</text>
+<rect fill="#e0f2fe" height="16" stroke="#334155" width="328.6" x="160" y="40"></rect>
+<text x="165" y="74">Once age 15–65 (HCV once 18–79; HBV panel once ≥18)</text>
+<text font-weight="bold" x="10" y="105">Cervical (♀)</text>
+<rect fill="#dcfce7" height="16" stroke="#334155" width="289.2" x="199.4" y="92"></rect>
+<text x="160" y="126">21–29 cytology q3y · 30–65 hrHPV q5y / cotest q5y / cytology q3y</text>
+<text font-weight="bold" x="10" y="157">Breast (♀)</text>
+<rect fill="#fef3c7" height="16" stroke="#334155" width="223.4" x="324.3" y="144"></rect>
+<text x="250" y="178">Mammography every 2 years, 40–74 (USPSTF 2024)</text>
+<text font-weight="bold" x="10" y="209">Colorectal</text>
+<rect fill="#e0f2fe" height="16" stroke="#334155" width="197.2" x="357.1" y="196"></rect>
+<rect fill="#ffffff" height="16" stroke="#334155" stroke-dasharray="4,3" width="65.7" x="554.3" y="196"></rect>
+<text x="215" y="230">45–75: colonoscopy q10y, FIT yearly, etc.; 76–85 individualize</text>
+<text font-weight="bold" x="10" y="261">Lung</text>
+<rect fill="#dcfce7" height="16" stroke="#334155" width="197.1" x="390" y="248"></rect>
+<text x="225" y="282">50–80: annual LDCT if ≥20 pack-years, smoking or quit ≤15 y</text>
+<text font-weight="bold" x="10" y="313">Prostate (♂)</text>
+<rect fill="#fef3c7" height="16" stroke="#334155" width="92" x="422.9" y="300"></rect>
+<rect fill="#fee2e2" height="16" stroke="#334155" width="98.6" x="521.4" y="300"></rect>
+<text text-anchor="middle" x="570" y="313">do not screen</text>
+<text x="235" y="334">55–69: PSA = shared decision-making; ≥70: no PSA</text>
+<text font-weight="bold" x="10" y="365">AAA (♂)</text>
+<rect fill="#e0f2fe" height="16" stroke="#334155" width="65.7" x="488.6" y="352"></rect>
+<text x="250" y="386">Men 65–75 who ever smoked: one-time ultrasound</text>
+<text font-weight="bold" x="10" y="417">Osteoporosis (♀)</text>
+<rect fill="#dcfce7" height="16" stroke="#334155" width="131.4" x="488.6" y="404"></rect>
+<text x="225" y="438">Women ≥65 (younger postmenopausal if at risk): DXA</text>
+<line stroke="#334155" x1="160" x2="620" y1="464" y2="464"></line>
+<g stroke="#334155">
+<line x1="192.9" x2="192.9" y1="464" y2="470"></line><line x1="258.6" x2="258.6" y1="464" y2="470"></line>
+<line x1="324.3" x2="324.3" y1="464" y2="470"></line><line x1="390" x2="390" y1="464" y2="470"></line>
+<line x1="455.7" x2="455.7" y1="464" y2="470"></line><line x1="521.4" x2="521.4" y1="464" y2="470"></line>
+<line x1="587.1" x2="587.1" y1="464" y2="470"></line>
+</g>
+<g text-anchor="middle">
+<text x="192.9" y="484">20</text><text x="258.6" y="484">30</text><text x="324.3" y="484">40</text>
+<text x="390" y="484">50</text><text x="455.7" y="484">60</text><text x="521.4" y="484">70</text>
+<text x="587.1" y="484">80</text>
+</g>
+<text text-anchor="middle" x="390" y="498">Age (years)</text>
+</g>
+</svg>
