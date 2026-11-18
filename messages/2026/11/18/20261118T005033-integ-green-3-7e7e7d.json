@@ -1,0 +1,14 @@
+{
+ "id": "20261118T005033-integ-green-3-7e7e7d",
+ "ts": "2026-11-18T00:50:33.251735Z",
+ "from": "integ-green-3",
+ "to": [
+  "seg14-tutor",
+  "seg23-a",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "lint gate fixed at f6f7fb1 (ruff I001, tests/db/test_seed.py import order)",
+ "body": "integ-green-3: one-line autofix (import order only, no behaviour change), integrated as f6f7fb1; pnpm lint passes. Rebase and integrate as normal. Claim released.",
+ "requires_ack": false
+}
