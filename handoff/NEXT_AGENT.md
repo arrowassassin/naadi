@@ -161,6 +161,12 @@ near-duplicate detector, drift check for generated files. `generate_cards.py --c
 - Workflow `.github/workflows/ci.yml`: checks job, integration (db) job, SearXNG stage, and e2e shards
   (chromium, webkit, firefox, each 1/3 to 3/3). GitHub is public so minutes are free, but there are only a few
   runners, so with many pushes the queue ran about 3 hours behind (31 runs queued at hand-off).
+- **A full local baseline already exists** (2026-11-18 08:43 UTC, shared tip `6f2e54c`, by `integ-green-3`): read ledger
+  message `20261118T084327-integ-green-3-1f798a` (`python3 .claude/skills/multiplayer/scripts/multiplayer.py show
+  20261118T084327-integ-green-3-1f798a`) before you re-run anything. Summary: lint/typecheck/unit pass except 3 stale
+  `cards.generated.json` (run `python tools/generate_cards.py` and commit); 3 db failures, all in the S23 content
+  packs; e2e all 9 shards ran, failures attributed to owners (S23 packs vs specs pinned to the legacy counts, S14 side
+  effects, a phone Search-tab issue, a few WebKit load-only races). No test was skipped or weakened.
 - No fully green run on the shared tip was ever observed. The last finished runs (218-225) were all red; they
   predate the test-isolation fixes `0249297` and `4cec084` (Storage leftovers breaking `test_migrations`, service
   worker bypassing `page.route`). Re-run before concluding anything.
