@@ -55,6 +55,7 @@ export function WhiteboardPage({
   label: string;
 }) {
   const t = useUiText();
+  const [toolsOpen, setToolsOpen] = useState(true);
   const auth = useAuth();
   const images = auth.status === "signed-in" && userUploadsBucket(auth.config) !== null;
   const { note, query } = usePageNote(page);
@@ -136,7 +137,18 @@ export function WhiteboardPage({
           {t("notebooks.error.note_body_too_large")}
         </p>
       ) : null}
-      <div className="h-[min(72dvh,760px)] min-h-[420px] overflow-hidden rounded-[18px] border border-line-strong bg-paper">
+      <button
+        type="button"
+        aria-expanded={toolsOpen}
+        onClick={() => setToolsOpen(!toolsOpen)}
+        className="min-h-11 self-start rounded-pill border border-line-control px-3 text-ui-sm"
+      >
+        {t("ink.toolbar")} <span aria-hidden="true">{toolsOpen ? "▴" : "▾"}</span>
+      </button>
+      <div
+        data-board-tools-hidden={!toolsOpen || undefined}
+        className="h-[min(72dvh,760px)] min-h-[420px] overflow-hidden rounded-[18px] border border-line-strong bg-paper"
+      >
         <ChunkBoundary
           fallback={(retry) => (
             <div className="p-4">

@@ -152,22 +152,37 @@ export function ReaderNotesLayout({
   article: ReactNode;
 }) {
   const lesson = useRef<HTMLDivElement>(null);
+  const notesPane = useRef<HTMLElement>(null);
   useLayoutEffect(() => {
     const column = lesson.current;
-    if (!side || !open || !column) return;
+    const pane = notesPane.current;
+    if (!side || !open || !column || !pane) return;
     const root = document.documentElement;
     const measure = () => {
       const rect = column.getBoundingClientRect();
       root.style.setProperty("--lesson-left", rect.left + "px");
       root.style.setProperty("--lesson-width", rect.width + "px");
     };
+    // The chapter header can put the pane below its sticky inset until the lesson scrolls.
+    const fitPaper = () => {
+      const available = window.innerHeight - pane.getBoundingClientRect().top - 16;
+      pane.style.maxHeight = Math.max(0, available) + "px";
+    };
     measure();
-    const observer = new ResizeObserver(measure);
+    fitPaper();
+    const observer = new ResizeObserver(() => {
+      measure();
+      fitPaper();
+    });
     observer.observe(column);
     window.addEventListener("resize", measure);
+    window.addEventListener("resize", fitPaper);
+    window.addEventListener("scroll", fitPaper, { passive: true });
     return () => {
       observer.disconnect();
       window.removeEventListener("resize", measure);
+      window.removeEventListener("resize", fitPaper);
+      window.removeEventListener("scroll", fitPaper);
       root.style.removeProperty("--lesson-left");
       root.style.removeProperty("--lesson-width");
     };
@@ -199,6 +214,7 @@ export function ReaderNotesLayout({
         </div>
         {side && open ? (
           <aside
+            ref={notesPane}
             data-reader-notes-side=""
             aria-label={t("notes.panel_region")}
             // The bottom dock is confined to the adjacent lesson column.

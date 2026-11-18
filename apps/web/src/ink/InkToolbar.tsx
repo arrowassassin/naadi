@@ -3,6 +3,7 @@ import type { InkColor } from "@naadi/shared";
 import { Button, cx } from "@naadi/ui";
 import { Eraser, Highlighter, Lasso, type LucideIcon, Pen, Redo2, Shapes, Trash2, Type, Undo2 } from "lucide-react";
 import { useRef } from "react";
+import { CollapsibleToolbar } from "../shell/CollapsibleToolbar";
 import { ColourWheel } from "./ColourWheel";
 import { useInkCopy } from "./copy";
 
@@ -76,12 +77,11 @@ export function InkToolbar({
   const markerish = state.tool === "marker";
   const colourless = state.tool === "eraser" || state.tool === "lasso";
   return (
-    <div
-      role="toolbar"
-      aria-label={t("ink.toolbar")}
+    <CollapsibleToolbar
+      label={t("ink.toolbar")}
       className={cx(
         // One row from 640 px up; on a phone, icons and a second row (never a sideways scroll that hides controls).
-        "relative mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-1 rounded-[28px] border border-line-strong bg-ground p-2 [&>*]:shrink-0",
+        "relative mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-1 rounded-[28px] border border-line-strong bg-ground text-text p-2 [&>*]:shrink-0",
         className,
       )}
     >
@@ -245,7 +245,7 @@ export function InkToolbar({
           </Button>
         </form>
       </dialog>
-    </div>
+    </CollapsibleToolbar>
   );
 }
 

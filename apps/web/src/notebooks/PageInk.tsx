@@ -3,7 +3,7 @@ import { cx } from "@naadi/ui";
 import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ApiError, UNREACHABLE } from "../auth/apiError";
 import { InkCanvas } from "../ink/InkCanvas";
-import { StickyInkToolbar } from "../ink/InkToolbar";
+import { InkToolbar } from "../ink/InkToolbar";
 import { InkSaveStatus } from "../ink/persist/InkSaveStatus";
 import { useInkSettings } from "../ink/persist/settings";
 import type { InkTransport } from "../ink/persist/sync";
@@ -23,8 +23,6 @@ export interface PageInkProps {
   label: string;
   /** The page already knows the server is unreachable (device copy): the ink is read from the device too. */
   offline?: boolean;
-  /** Where the toolbar sticks while scrolling (default bottom, like the Notebook board). */
-  toolbar?: "top" | "bottom";
   /**
    * The note itself is not on the server yet (made on this device, its create still queued): the ink is kept on
    * the device ("will sync") and sent once the note exists, instead of being refused by the ink API.
@@ -49,7 +47,6 @@ export function PageInk({
   label,
   offline,
   pending = false,
-  toolbar = "bottom",
   aside,
   className,
 }: PageInkProps) {
@@ -89,8 +86,7 @@ export function PageInk({
 
   const bar =
     on && state ? (
-      <StickyInkToolbar
-        placement={toolbar}
+      <InkToolbar
         state={state}
         theme="paper"
         onEnabled={onToggle}
@@ -116,8 +112,8 @@ export function PageInk({
       data-ink-idle={layer.idle ? "" : undefined}
       data-ink-ready={layer.ready ? "" : undefined}
     >
-      {toolbar === "top" ? bar : null}
-      <div className="relative">
+      {bar && <div className="shrink-0 px-2">{bar}</div>}
+      <div className="relative shrink-0">
         <div className="pointer-events-none absolute top-2 right-2 z-[1] max-w-[calc(100%-1rem)] rounded-block-sm bg-paper/95 px-2 text-ground [&_button]:pointer-events-auto [&_[data-ink-save]]:text-paper-text-2">
           <InkSaveStatus layer={layer} />
           {aside}
@@ -139,7 +135,6 @@ export function PageInk({
           <PaperBackground paper={paper} />
         </InkCanvas>
       </div>
-      {toolbar === "bottom" ? bar : null}
     </div>
   );
 }

@@ -336,6 +336,11 @@ test.describe("notebooks", () => {
       await expect(board).toBeVisible({ timeout: 30_000 });
       const canvas = board.locator("canvas.interactive");
       await expect(canvas).toBeVisible();
+      const tools = page.getByRole("button", { name: "Ink tools", exact: true });
+      await tools.click();
+      await expect(board.locator('[data-testid="toolbar-rectangle"]')).toBeHidden();
+      await expect(canvas).toBeVisible();
+      await tools.click();
       // A rectangle, drawn with Excalidraw's own tool.
       // Excalidraw's tool radios sit under their icons: click the tool's label.
       await board.locator("label", { has: page.locator('[data-testid="toolbar-rectangle"]') }).click();

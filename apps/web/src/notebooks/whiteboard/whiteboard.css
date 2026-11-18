@@ -12,3 +12,7 @@
 .naadi-whiteboard .excalidraw {
   --ui-font: var(--font-sans);
 }
+
+[data-board-tools-hidden] .excalidraw .layer-ui__wrapper {
+  display: none;
+}

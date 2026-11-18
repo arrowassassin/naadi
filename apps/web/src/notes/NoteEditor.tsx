@@ -5,6 +5,7 @@ import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { useUiText } from "../copy/useUiText";
 import { HIGHLIGHT_COLORS, type HighlightColor } from "../highlights/anchor";
 import { SWATCH_CLASS, WORD_KEY } from "../highlights/Mark";
+import { CollapsibleToolbar } from "../shell/CollapsibleToolbar";
 import { EMPTY_DOC, noteExtensions } from "./extensions";
 import { stripPastedHtml } from "./pasteHtml";
 import { IMAGE_TYPES, imagesAvailable, type UploadFailure, uploadNoteImage } from "./storage";
@@ -227,10 +228,9 @@ export function NoteEditor({
   return (
     <div className={cx("flex flex-col gap-3", className)}>
       {editable ? (
-        <div
-          role="toolbar"
-          aria-label={t("notes.format_toolbar")}
-          aria-controls={`${ids}-ed`}
+        <CollapsibleToolbar
+          label={t("notes.format_toolbar")}
+          controls={`${ids}-ed`}
           className="flex flex-wrap items-center gap-1 rounded-block-sm bg-ground/5 p-1"
         >
           <ToolButton
@@ -305,7 +305,7 @@ export function NoteEditor({
               />
             </>
           ) : null}
-        </div>
+        </CollapsibleToolbar>
       ) : null}
       {uploadError ? (
         <p role="alert" className="m-0 text-paper-text-2 text-ui-sm">
