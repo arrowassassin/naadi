@@ -5915,21 +5915,6 @@
   ]
  },
  {
-  "id": "s23a-g-6408ca8dd74a",
-  "frontHtml": "<p>Draw conclusions from a trial summary that respect its primary outcome, harms and population.</p>",
-  "backHtml": "<p>Conclude only what the primary outcome and reported harms support, within the enrolled population.</p>",
-  "sectionId": null,
-  "questionId": "s23a-q1246",
-  "areas": [
-   "usmle2026.02.03.02"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
   "id": "s23a-g-a6553c0d929e",
   "frontHtml": "<p>Screen for latent tuberculosis and hepatitis B before starting a TNF inhibitor.</p>",
   "backHtml": "<p>Before a TNF inhibitor: screen for latent TB (IGRA) and hepatitis B, and update vaccines.</p>",

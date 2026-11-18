@@ -6563,36 +6563,36 @@
       "exam": "step2ck",
       "format": "abstract",
       "chapterId": "s23a-ch13",
-      "stemHtml": "<p>Based on the study summary, which of the following conclusions is best supported?</p>",
+      "stemHtml": "<p>Which interpretation is best supported by the kidney transplant trial's findings?</p>",
       "options": [
         {
           "label": "A",
-          "html": "The study drug lowers mortality in D+/R− kidney recipients"
+          "html": "Extended prophylaxis reduces mortality after D+/R− kidney transplant"
         },
         {
           "label": "B",
-          "html": "The study drug lowers CMV disease at the cost of more neutropenia"
+          "html": "Extended prophylaxis reduces CMV disease but increases treatment-interrupting leukopenia"
         },
         {
           "label": "C",
-          "html": "The study drug should replace prophylaxis in CMV-seropositive recipients"
+          "html": "Extended prophylaxis should become standard for CMV-seropositive transplant recipients"
         },
         {
           "label": "D",
-          "html": "The study drug works by preventing CMV latency in the graft"
+          "html": "Extended prophylaxis works by preventing CMV latency in donor kidneys"
         },
         {
           "label": "E",
-          "html": "The study drug is equivalent to standard prophylaxis"
+          "html": "Extended and standard prophylaxis provide equivalent protection against CMV disease"
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>The trial was powered for CMV disease, which fell from 20% to 10%, and leukopenia requiring dose interruption rose from 8% to 15%, so the best-supported conclusion is a benefit on the primary outcome with more neutropenia. Mortality was low and similar in both groups and the trial was not powered for it; only D+/R− kidney recipients were enrolled, so the results cannot be extended to seropositive recipients.</p><p><strong>Takeaway:</strong> Conclude only what the primary outcome and reported harms support, within the enrolled population.</p>",
+      "explanationHtml": "<p>Extending prophylaxis lowered the 12-month rate of CMV disease from 20% to 10%. Leukopenia requiring interruption increased from 8% to 15%. The trial did not report a neutrophil-specific endpoint. For mortality, events were few and the trial did not have power to detect a difference.</p><p><strong>Takeaway:</strong> Conclude only what the primary outcome and reported harms support, within the enrolled population.</p>",
       "whyNot": {
         "A": "Deaths were few and similar in both arms, and the trial was not powered for mortality.",
         "C": "Only D+/R− recipients were enrolled, so the results do not apply to seropositive recipients.",
         "D": "The study measured clinical outcomes, not the mechanism of CMV latency.",
-        "E": "CMV disease was halved and the difference was significant, so the drugs were not shown to be equivalent."
+        "E": "The longer course reduced the primary outcome, and the trial did not test equivalence."
       },
       "objective": "Draw conclusions from a trial summary that respect its primary outcome, harms and population.",
       "areas": [
@@ -6613,7 +6613,7 @@
         "trial interpretation",
         "CMV prophylaxis"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
