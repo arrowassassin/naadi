@@ -1,9 +1,8 @@
 import { Button, cx, ErrorState, Skeleton } from "@naadi/ui";
-import { PenLine } from "lucide-react";
+import { PenLine, Pin } from "lucide-react";
 import { type Ref, useCallback, useEffect, useId, useImperativeHandle, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
-import { useOnlineStatus } from "../health/useOnlineStatus";
 import { lazyWithFallback } from "../shell/lazyPage";
 import {
   beaconNotes,
@@ -87,7 +86,6 @@ export function PageNotesPanel({
 }: PageNotesPanelProps) {
   const t = useUiText();
   const ids = useId();
-  const online = useOnlineStatus();
   const list = useNotes({ kind: "note", anchor_type: "section", anchor_id: sectionId, limit: 1 });
   const writer = useNoteWriter();
   useNotesSync();
@@ -173,13 +171,18 @@ export function PageNotesPanel({
     };
   }, []);
 
+  useEffect(() => {
+    if (mode === "write" && noteId) inkChange(true);
+  }, [mode, noteId, inkChange]);
+
   const pick = useCallback(
     (m: PanelMode) => {
       setMode(m);
       writeMode(m);
-      if (m === "type") inkChange(false);
+      if (m === "write" && list.data) ensureNote({ ...EMPTY_DOC });
+      inkChange(m === "write");
     },
-    [inkChange],
+    [ensureNote, inkChange, list.data],
   );
 
   useImperativeHandle(
@@ -206,18 +209,43 @@ export function PageNotesPanel({
     <section
       aria-labelledby={`${ids}-h`}
       data-page-notes=""
-      className={cx("flex flex-1 flex-col gap-2 bg-paper text-ground", className)}
+      className={cx("@container flex flex-1 flex-col gap-2 bg-paper text-ground", className)}
     >
-      <div className="flex flex-wrap items-center gap-2 pr-12">
-        <div className="mr-auto flex min-w-0 flex-col">
-          <h2 id={`${ids}-h`} className="m-0 font-display font-extrabold text-[1.5rem] tracking-[-0.02em]">
-            {t("notes.panel_title")}
-          </h2>
-          <span className="truncate text-paper-text-2 text-ui-sm">
+      <div className="notes-panel-header">
+        <h2 id={`${ids}-h`} className="m-0 font-display font-bold text-[1.125rem] leading-tight">
+          {t("notes.panel_title")}
+        </h2>
+        <details className="relative">
+          <summary
+            aria-label={t("notes.panel_pinned", { section: sectionHeading })}
+            className="flex size-11 cursor-pointer list-none items-center justify-center rounded-pill text-paper-text-2 [&::-webkit-details-marker]:hidden"
+          >
+            <Pin size={16} />
+          </summary>
+          <span className="absolute top-full left-0 z-20 w-48 rounded-block-sm border border-ground/20 bg-paper p-2 text-ui-sm shadow-lg">
             {t("notes.panel_pinned", { section: sectionHeading })}
           </span>
-        </div>
-        <fieldset className="m-0 flex rounded-pill border-0 bg-ground/10 p-1">
+        </details>
+        {noteId && showType && (
+          <NoteSaveStatus ids={[noteId]} tone="paper" dirty={dirty} className="notes-header-save" />
+        )}
+        <select
+          aria-label={t("notes.panel_mode")}
+          value={mode}
+          disabled={!list.data}
+          onChange={(e) => pick(e.target.value as PanelMode)}
+          className="notes-mode-select ml-auto min-h-11 rounded-pill bg-ground/10 px-2 text-ui-sm"
+        >
+          {MODES.map((m) => (
+            <option key={m} value={m}>
+              {t(`notes.panel_mode_${m}`)}
+            </option>
+          ))}
+        </select>
+        <fieldset
+          disabled={!list.data}
+          className="notes-mode-tabs m-0 ml-auto flex rounded-pill border-0 bg-ground/10 p-0"
+        >
           <legend className="sr-only">{t("notes.panel_mode")}</legend>
           {MODES.map((m) => (
             <button
@@ -226,7 +254,7 @@ export function PageNotesPanel({
               aria-pressed={mode === m}
               onClick={() => pick(m)}
               className={cx(
-                "min-h-11 rounded-pill border-0 px-3.5 text-[0.8125rem]",
+                "min-h-11 rounded-pill border-0 px-2.5 text-[0.8125rem]",
                 mode === m ? "bg-ground font-semibold text-paper" : "bg-transparent text-ground",
               )}
             >
@@ -287,37 +315,39 @@ export function PageNotesPanel({
           ) : null}
           {showWrite ? (
             <div className="flex flex-col gap-2">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="font-mono text-label-sm text-paper-text-2 uppercase tracking-[0.12em]">
+              {mode === "both" && (
+                <span className="font-mono text-label-sm text-paper-text-2 uppercase">
                   {t("notes.panel_handwritten")}
                 </span>
-                {noteId && !pendingCreate && !inkOn ? (
-                  <Button
-                    variant="secondary"
-                    icon={<PenLine size={16} />}
-                    onClick={() => inkChange(true)}
-                    className="min-h-11 border-ground! text-ground! hover:bg-ground/10!"
-                  >
-                    {t("notes.panel_ink_start")}
-                  </Button>
-                ) : null}
-              </div>
-              {noteId && !pendingCreate ? (
-                <NoteInk noteId={noteId} on={inkOn} onToggle={inkChange} offline={list.fromCache} />
-              ) : noteId ? (
-                <p
-                  role="status"
-                  className="m-0 rounded-block-sm border border-ground/20 border-dashed p-4 text-paper-text-2 text-ui-sm"
+              )}
+              {noteId && !inkOn && (
+                <Button
+                  variant="secondary"
+                  icon={<PenLine size={16} />}
+                  className="min-h-11 self-start border-ground! text-ground!"
+                  onClick={() => inkChange(true)}
                 >
-                  {online ? t("notes.panel_ink_preparing") : t("notes.panel_ink_offline")}
-                </p>
+                  {t("notes.panel_ink_start")}
+                </Button>
+              )}
+              {noteId ? (
+                <NoteInk
+                  noteId={noteId}
+                  on={inkOn}
+                  onToggle={inkChange}
+                  offline={list.fromCache}
+                  pending={pendingCreate}
+                />
               ) : (
                 <div className="flex flex-col items-start gap-3 rounded-block-sm border border-ground/20 border-dashed p-4">
                   <p className="m-0 text-paper-text-2 text-ui-sm">{t("notes.panel_ink_empty")}</p>
                   <Button
                     variant="secondary"
                     icon={<PenLine size={16} />}
-                    onClick={() => ensureNote({ ...EMPTY_DOC })}
+                    onClick={() => {
+                      ensureNote({ ...EMPTY_DOC });
+                      inkChange(true);
+                    }}
                     className="min-h-11 border-ground! text-ground! hover:bg-ground/10!"
                   >
                     {t("notes.panel_ink_begin")}
@@ -326,7 +356,9 @@ export function PageNotesPanel({
               )}
             </div>
           ) : null}
-          {noteId ? <NoteSaveStatus ids={[noteId]} tone="paper" dirty={dirty} /> : null}
+          {noteId && !showType ? (
+            <NoteSaveStatus ids={[noteId]} tone="paper" dirty={dirty} className="data-[note-save=saved]:sr-only" />
+          ) : null}
         </>
       )}
     </section>

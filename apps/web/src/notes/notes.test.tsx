@@ -243,13 +243,15 @@ describe("PageNotesPanel", () => {
     const onInk = vi.fn();
     render(<PageNotesPanel ref={ref} sectionId="s1" sectionHeading="Three leaks" onInkChange={onInk} />);
     expect(screen.getByRole("heading", { name: "Page notes" })).toBeVisible();
+    expect(screen.getByText(/Pinned to Three leaks/)).not.toBeVisible();
+    fireEvent.click(screen.getByLabelText(/Pinned to Three leaks/));
     expect(screen.getByText(/Pinned to Three leaks/)).toBeVisible();
     const editor = await screen.findByRole("textbox", { name: "Your notes on Three leaks" });
     expect(editor).toBeVisible();
-    // Write: no note yet → offer to start, which makes the note
+    // Selecting Write creates the section note and enables ink in one action.
     fireEvent.click(screen.getByRole("button", { name: "Write" }));
     expect(screen.queryByRole("textbox", { name: "Your notes on Three leaks" })).toBeNull();
-    fireEvent.click(screen.getByRole("button", { name: "Start handwriting" }));
+    expect(onInk).toHaveBeenCalledWith(true);
     expect(state.writes[0]).toMatchObject({
       op: "create",
       fields: { kind: "note", anchor_type: "section", anchor_id: "s1" },

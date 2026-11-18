@@ -1,6 +1,8 @@
 import { cx } from "@naadi/ui";
-import { X } from "lucide-react";
-import { type ReactNode, type RefObject, useEffect, useId, useRef, useSyncExternalStore } from "react";
+import { MessageCircle, X } from "lucide-react";
+import { type ReactNode, type RefObject, useEffect, useId, useLayoutEffect, useRef, useSyncExternalStore } from "react";
+import { useAssistantAvailable } from "../assistant/ask";
+import { openAssistant } from "../assistant/store";
 import { useUiText } from "../copy/useUiText";
 import { lazyWithFallback } from "../shell/lazyPage";
 import type { PageNotesHandle } from "./PageNotesPanel";
@@ -54,6 +56,7 @@ function PaperSheet({ open, onClose, children }: { open: boolean; onClose: () =>
   const ref = useRef<HTMLDialogElement>(null);
   const t = useUiText();
   const labelId = useId();
+  const chatAvailable = useAssistantAvailable();
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
@@ -90,7 +93,20 @@ function PaperSheet({ open, onClose, children }: { open: boolean; onClose: () =>
             {t("notes.panel_title")}
           </span>
           <div className="relative flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-5 pt-2 pb-[max(20px,env(safe-area-inset-bottom))]">
-            <div className="absolute top-2 right-5 z-10">
+            <div className="absolute top-2 right-2 z-10 flex">
+              {chatAvailable && (
+                <button
+                  type="button"
+                  aria-label={t("agent.open")}
+                  className="flex size-11 items-center justify-center rounded-pill text-ground"
+                  onClick={() => {
+                    onClose();
+                    openAssistant({ focus: true });
+                  }}
+                >
+                  <MessageCircle aria-hidden="true" size={18} />
+                </button>
+              )}
               <button
                 type="button"
                 onClick={onClose}
@@ -133,6 +149,27 @@ export function ReaderNotesLayout({
   article: ReactNode;
 }) {
   const side = useSidePanel();
+  const lesson = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const column = lesson.current;
+    if (!side || !open || !column) return;
+    const root = document.documentElement;
+    const measure = () => {
+      const rect = column.getBoundingClientRect();
+      root.style.setProperty("--lesson-left", rect.left + "px");
+      root.style.setProperty("--lesson-width", rect.width + "px");
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(column);
+    window.addEventListener("resize", measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+      root.style.removeProperty("--lesson-left");
+      root.style.removeProperty("--lesson-width");
+    };
+  }, [side, open]);
   const t = useUiText();
   // The panel and its editor are fetched once the page has settled, so they are on the device before the student
   // can go offline.
@@ -155,12 +192,15 @@ export function ReaderNotesLayout({
   return (
     <>
       <div className={cx("flex flex-col gap-5", side && open && "laptop:flex-row laptop:items-start")}>
-        <div className="min-w-0 flex-1">{article}</div>
+        <div ref={lesson} className="min-w-0 flex-1">
+          {article}
+        </div>
         {side && open ? (
           <aside
+            data-reader-notes-side=""
             aria-label={t("notes.panel_region")}
-            // Below the shell's top bar and above the Reader's page bar (both publish their height).
-            className="sticky top-[calc(var(--shell-top,0px)+16px)] flex h-[calc(100dvh-var(--shell-top,0px)-var(--reader-bar,0px)-var(--shell-bottom,0px)-32px)] w-[42%] shrink-0 flex-col overflow-y-auto overscroll-contain rounded-tile bg-paper p-4 text-ground"
+            // The bottom dock is confined to the adjacent lesson column.
+            className="sticky top-[calc(var(--shell-top,0px)+16px)] flex h-[calc(100dvh-var(--shell-top,0px)-32px)] w-[42%] shrink-0 flex-col overflow-y-auto overscroll-contain rounded-tile bg-paper p-4 text-ground"
           >
             <div className="absolute top-3 right-4 z-10">
               <button

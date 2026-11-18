@@ -138,3 +138,12 @@
   max-width: calc(100vw - 2rem);
   padding: 0;
 }
+
+@media (min-width: 68.75rem) {
+  html:has([data-reader-notes-side]) [data-shell-bottom] {
+    left: var(--lesson-left);
+    right: auto;
+    width: var(--lesson-width);
+    padding-inline: 0;
+  }
+}
