@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import asyncio
 import uuid
-from collections.abc import Iterator
+from collections.abc import Iterator, Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -285,6 +285,23 @@ def test_reindex_is_idempotent_and_incremental(
     pg.execute("delete from public.notes where id = %s", (world.note_b,))
     run(_reconcile(url, engine, world, ["notes"]))
     assert ("note", str(world.note_b)) not in {(r[0], r[1]) for r in rows(pg, world)}
+
+
+def test_index_job_cannot_restore_a_note_deleted_during_inference(
+    url: str, engine: Engine, world: World, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    embed = engine.embed_passages
+
+    def delete_and_embed(chunks: Sequence[str]) -> list[list[float]]:
+        with psycopg.connect(url) as conn:
+            conn.execute("delete from public.notes where id = %s", (world.note_a,))
+        return embed(chunks)
+
+    monkeypatch.setattr(engine, "embed_passages", delete_and_embed)
+    report = run(_reconcile(url, engine, world, ["notes"], ref_ids=[str(world.note_a)]))
+    assert report["notes"].docs == 1 and report["notes"].embedded == 0
+    with psycopg.connect(url) as conn:
+        assert rows(conn, world) == []
 
 
 def test_clients_can_never_read_the_index(url: str, engine: Engine, world: World, pg: psycopg.Connection[Any]) -> None:

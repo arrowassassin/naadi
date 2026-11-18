@@ -41,6 +41,14 @@ _UPSERT = (
 )
 
 
+def _note_id(doc: Doc) -> str | None:
+    if doc.ref_type == "note":
+        return doc.ref_id
+    if doc.ref_type == "ink" and doc.ref_id.startswith("notebook_page:"):
+        return doc.ref_id.removeprefix("notebook_page:")
+    return None
+
+
 @dataclass
 class KindReport:
     docs: int = 0
@@ -145,14 +153,25 @@ async def reconcile(
                 _index_pool(), engine.embed_passages, [c for _, _, c in batch]
             )
             async with db.pool.connection(timeout=DB_DEADLINE_S) as conn, conn.transaction(), conn.cursor() as cur:
-                await cur.executemany(
-                    _UPSERT,
-                    [
-                        (doc.owner, doc.ref_type, doc.ref_id, i, chunk, vector_literal(vec))
-                        for (doc, i, chunk), vec in zip(batch, vectors, strict=True)
-                    ],
-                )
-            rep.embedded += len(batch)
+                note_ids = [_note_id(doc) for doc, _, _ in batch]
+                existing_notes: set[tuple[uuid.UUID, str]] = set()
+                if any(note_ids):
+                    # A note may have been deleted while inference ran. Hold a lock against deletion until
+                    # these writes commit, so the delete either wins here or removes the newly written rows.
+                    await cur.execute(
+                        "select user_id, id::text from public.notes where id = any(%s::uuid[])"
+                        " order by id for key share",
+                        ([note_id for note_id in note_ids if note_id is not None],),
+                    )
+                    existing_notes.update(await cur.fetchall())
+                writes = [
+                    (doc.owner, doc.ref_type, doc.ref_id, i, chunk, vector_literal(vec))
+                    for (doc, i, chunk), vec, note_id in zip(batch, vectors, note_ids, strict=True)
+                    if note_id is None or (doc.owner, note_id) in existing_notes
+                ]
+                if writes:
+                    await cur.executemany(_UPSERT, writes)
+            rep.embedded += len(writes)
         if stale:
             async with db.pool.connection(timeout=DB_DEADLINE_S) as conn:
                 await conn.execute("delete from public.embeddings where id = any(%s)", (stale,))
