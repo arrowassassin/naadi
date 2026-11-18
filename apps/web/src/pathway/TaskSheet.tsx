@@ -146,7 +146,7 @@ export function TaskSheet({
               <span className="font-mono text-label text-text-3 uppercase tracking-[0.12em]">
                 {t("pathway.cost_label")}
               </span>
-              <p className="m-0 text-text">
+              <p className="m-0 flex min-h-12 items-center text-text">
                 {task.cost_usd === null
                   ? t("pathway.cost_unknown")
                   : task.cost_usd === 0

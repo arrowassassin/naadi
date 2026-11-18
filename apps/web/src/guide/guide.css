@@ -1,0 +1,80 @@
+.guide-index,
+.guide-step {
+  background: var(--color-surface-1);
+  color: var(--color-text);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+}
+.guide-index {
+  margin: auto;
+  width: min(42rem, calc(100% - 1.5rem));
+  max-height: 85dvh;
+  overflow: auto;
+}
+.guide-index::backdrop {
+  background: rgb(0 0 0 / 0.65);
+}
+.guide-index h2,
+.guide-step h2 {
+  font: bold 1.5rem / 1.2 var(--font-display);
+  margin: 0.25rem 0 0.75rem;
+}
+.guide-index h3 {
+  margin: 1.5rem 0 0.5rem;
+}
+.guide-index summary {
+  cursor: pointer;
+  padding: 0.85rem 0;
+  font-weight: 600;
+  border-top: 1px solid var(--color-line);
+}
+.guide-index section {
+  padding: 0 0.5rem 1rem;
+}
+.guide-index h4 {
+  margin: 0.5rem 0;
+}
+.guide-index p,
+.guide-step p {
+  color: var(--color-text-2);
+  line-height: 1.5;
+  margin: 0.35rem 0 0.85rem;
+}
+
+.driver-popover.guide-step {
+  --driver-popover-bg: var(--color-surface-1);
+  background: var(--color-surface-1);
+  color: var(--color-text);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 1rem;
+  padding: 1.15rem;
+  max-width: min(24rem, calc(100vw - 2rem));
+}
+.guide-step .driver-popover-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  padding-right: 1.25rem;
+}
+.guide-step .driver-popover-description {
+  font-family: inherit;
+  color: var(--color-text-2);
+  line-height: 1.5;
+}
+.guide-step .driver-popover-progress-text,
+.guide-step .driver-popover-close-btn {
+  color: var(--color-text-2);
+}
+.guide-step .driver-popover-footer button {
+  min-height: 44px;
+  border: 1px solid var(--color-line);
+  border-radius: 2rem;
+  padding: 0 0.9rem;
+  text-shadow: none;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+.guide-step .driver-popover-footer .driver-popover-next-btn {
+  background: var(--color-lime);
+  color: var(--color-lime-ink);
+}

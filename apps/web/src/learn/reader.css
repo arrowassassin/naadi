@@ -9,3 +9,17 @@
   scroll-padding-top: calc(var(--shell-top, 0px) + 16px);
   scroll-padding-bottom: calc(var(--shell-bottom, 0px) + var(--reader-bar, 0px) + 16px);
 }
+.reader-resource {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 0.125rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.reader-resource:hover {
+  text-decoration: underline;
+}
+[data-learn-page] ul[aria-label] {
+  align-items: center;
+}

@@ -20,6 +20,7 @@ export type PendingAttachment =
 
 export interface AssistantUiState {
   open: boolean;
+  expanded: boolean;
   view: "chat" | "threads";
   draft: string;
   attachments: PendingAttachment[];
@@ -34,6 +35,7 @@ export interface AssistantUiState {
 
 const initial: AssistantUiState = {
   open: false,
+  expanded: false,
   view: "chat",
   draft: "",
   attachments: [],
@@ -72,7 +74,7 @@ export function openAssistant(options: { focus?: boolean } = {}): void {
 }
 
 export function closeAssistant(): void {
-  setAssistantUi({ open: false });
+  setAssistantUi({ open: false, expanded: false });
 }
 
 let attachmentCounter = 0;

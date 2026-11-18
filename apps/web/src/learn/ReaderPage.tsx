@@ -301,6 +301,33 @@ function Reader({
   const label = [systemLabel, where].filter(Boolean).join(t("learn.separator"));
   const phoneLabel = [systemLabel, whereShort, t("learn.section_of", pos)].filter(Boolean).join(t("learn.separator"));
 
+  const resources = (
+    <ul aria-label={t("learn.chapter_has")} className="m-0 flex list-none flex-wrap gap-1.5 p-0">
+      <li>
+        <Chip tone="meta">{t("learn.chip_read", { sections: count(t, "learn.count_section", total) })}</Chip>
+      </li>
+      <li>
+        <Chip tone="meta">{cov.videos ? count(t, "learn.count_video", cov.videos) : t("learn.no_video")}</Chip>
+      </li>
+      {cov.questions ? (
+        <li>
+          <Link className="reader-resource" to="/practice" search={{ exam: detail.exam }}>
+            <Chip tone="meta">{t("learn.chip_questions", { n: String(cov.questions) })}</Chip>
+            <ChevronRight size={14} aria-hidden="true" />
+          </Link>
+        </li>
+      ) : null}
+      {cov.cards ? (
+        <li>
+          <Link className="reader-resource" to="/cards">
+            <Chip tone="meta">{t("learn.chip_cards", { n: String(cov.cards) })}</Chip>
+            <ChevronRight size={14} aria-hidden="true" />
+          </Link>
+        </li>
+      ) : null}
+    </ul>
+  );
+
   const nextLink: ReactNode = next ? (
     <Link
       to="/learn/$chapterId/$sectionId"
@@ -309,10 +336,7 @@ function Reader({
       aria-label={t("learn.next_section", { heading: next.heading })}
       className={NEXT_PILL}
     >
-      <span className="min-w-0 truncate">
-        <span className="hidden tablet:inline">{next.heading}</span>
-        <span className="tablet:hidden">{t("learn.next_short")}</span>
-      </span>
+      <span className="min-w-0 truncate">{t("learn.next_short")}</span>
       <ChevronRight aria-hidden="true" size={20} className="shrink-0" />
     </Link>
   ) : detail.next_chapter ? (
@@ -401,6 +425,8 @@ function Reader({
         </button>
       </header>
 
+      <div className="tablet:hidden">{resources}</div>
+
       {/* Tablet and laptop: chapter bar (Chapter / Lesson boards) */}
       <header className="hidden flex-wrap items-center gap-3 tablet:flex">
         <Link
@@ -414,24 +440,7 @@ function Reader({
           <span className="truncate font-mono text-label-sm tracking-[0.12em] text-text-3 uppercase">{label}</span>
           <span className="font-bold font-display text-[1.25rem] leading-tight">{detail.title}</span>
         </div>
-        <ul aria-label={t("learn.chapter_has")} className="m-0 flex list-none flex-wrap gap-1.5 p-0">
-          <li>
-            <Chip tone="meta">{t("learn.chip_read", { sections: count(t, "learn.count_section", total) })}</Chip>
-          </li>
-          <li>
-            <Chip tone="meta">{cov.videos ? count(t, "learn.count_video", cov.videos) : t("learn.no_video")}</Chip>
-          </li>
-          {cov.questions ? (
-            <li>
-              <Chip tone="meta">{t("learn.chip_questions", { n: String(cov.questions) })}</Chip>
-            </li>
-          ) : null}
-          {cov.cards ? (
-            <li>
-              <Chip tone="meta">{t("learn.chip_cards", { n: String(cov.cards) })}</Chip>
-            </li>
-          ) : null}
-        </ul>
+        {resources}
         <Button
           variant="secondary"
           onClick={() => setContentsOpen(true)}
@@ -494,7 +503,7 @@ function Reader({
             >
               {section.heading}
             </h1>
-            <div className="mx-auto w-full max-w-[46rem]">
+            <div className="mx-auto w-full max-w-[52rem]">
               {section.body ? (
                 <SectionInk
                   sectionId={section.id}
@@ -585,7 +594,7 @@ function Reader({
               />
             ) : null}
             <div ref={endRef} aria-hidden="true" className="h-px" />
-            <div className="mx-auto flex w-full max-w-[46rem] flex-wrap items-center justify-between gap-3 border-line-soft border-t pt-5">
+            <div className="mx-auto flex w-full max-w-[52rem] flex-wrap items-center justify-between gap-3 border-line-soft border-t pt-5">
               <span className="text-text-3 text-ui-sm">{t("content.report_issue_prompt")}</span>
               <Button
                 variant="secondary"

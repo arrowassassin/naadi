@@ -40,10 +40,7 @@ export function usePenSurface(active: boolean): void {
 }
 
 /**
- * The phone bottom-bar slot (S06): a page that has its own bottom actions (the reader's previous / next bar)
- * renders them into this element with a portal, so the phone shows ONE bottom bar: the page's row above the
- * tabs inside the same surface, measured into --shell-bottom. Null on tablet and laptop, where the shell has
- * no bottom bar (the page then keeps its actions in its own layout).
+ * Shared reader navigation slot in the measured shell bottom bar, above the phone tabs or assistant dock.
  */
 let bottomSlot: HTMLElement | null = null;
 const slotListeners = new Set<() => void>();

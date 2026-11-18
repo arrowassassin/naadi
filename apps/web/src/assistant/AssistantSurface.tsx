@@ -1,5 +1,5 @@
 import { cx } from "@naadi/ui";
-import { History, MessageSquarePlus, PanelRightOpen, X } from "lucide-react";
+import { History, Maximize2, MessageSquarePlus, Minimize2, PanelRightOpen, X } from "lucide-react";
 import { type KeyboardEvent, type RefObject, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { CanvasItemView, CanvasSheet, CanvasTabs } from "../canvas/CanvasView";
@@ -53,6 +53,7 @@ const ROUND =
 function Header({ t, tutor, onClose }: { t: T; tutor: Tutor; onClose: () => void }) {
   const ui = useAssistantUi();
   const page = usePageContext();
+  const device = useAssistantLayout();
   const threads = ui.view === "threads";
   return (
     <header className="flex flex-col gap-1 border-line-soft border-b px-4 py-2 tablet:px-5">
@@ -60,8 +61,20 @@ function Header({ t, tutor, onClose }: { t: T; tutor: Tutor; onClose: () => void
         <span aria-hidden="true" className="size-3 shrink-0 rounded-full bg-violet" />
         <h2 className="m-0 font-bold font-display text-[1.25rem] text-text">{t("agent.title")}</h2>
         <span className="flex-1" />
+        {device === "panel" && (
+          <button
+            type="button"
+            data-guide-expand=""
+            className={ROUND}
+            aria-label={t(ui.expanded ? "agent.restore" : "agent.expand")}
+            onClick={() => setAssistantUi((s) => ({ expanded: !s.expanded, focus: s.focus + 1 }))}
+          >
+            {ui.expanded ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+          </button>
+        )}
         <button
           type="button"
+          data-guide-history=""
           aria-pressed={threads}
           aria-label={t("agent.threads.title")}
           onClick={() => setAssistantUi({ view: threads ? "chat" : "threads" })}
@@ -292,7 +305,8 @@ export default function AssistantSurface({ dockSlot }: { dockSlot: HTMLElement |
   useCanvasKeepNotes();
   const tutor = useTutor({ examMode: false });
   const ui = useAssistantUi();
-  const layout = useAssistantLayout();
+  const device = useAssistantLayout();
+  const layout = device === "panel" && ui.expanded ? "fullscreen" : device;
   const canvas = useCanvas();
   const t = useUiText();
   const tutorRef = useRef(tutor);

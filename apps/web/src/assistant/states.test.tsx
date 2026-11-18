@@ -1,6 +1,6 @@
 import { act, renderHook, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { fakeTutor, renderInApp } from "../test/assistant";
 import { AssistantHost, setSurfaceLoaderForTests } from "./AssistantHost";
 import { useAssistantAvailable } from "./ask";
@@ -51,6 +51,12 @@ function Host() {
 }
 
 describe("assistant in the shell", () => {
+  // Keep Vite's first transform of the heavy surface outside the DOM assertion timeout.
+  // The offline test still controls when the loader rejects and when it resolves.
+  beforeAll(async () => {
+    await import("./AssistantSurface");
+  });
+
   it("feature off: no ask handler, nothing rendered", async () => {
     env.features = {};
     const available = renderHook(() => useAssistantAvailable());

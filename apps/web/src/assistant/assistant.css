@@ -98,3 +98,43 @@
   outline: var(--focus-ring-width) solid var(--focus-ring-color);
   outline-offset: var(--focus-ring-offset);
 }
+
+.reader-dock {
+  display: none;
+}
+@media (min-width: 40rem) {
+  [data-shell-bottom]:has([data-reader-slot] > *) {
+    display: block;
+  }
+  .reader-dock:has([data-reader-slot] > *) {
+    display: block;
+    max-width: 48.75rem;
+    margin: 0 auto;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--color-line);
+    border-radius: 1.6rem;
+    background: var(--color-bar);
+  }
+  [data-shell-bottom]:has(.reader-dock nav):has([data-assistant="dock"]) [data-assistant-dock] {
+    max-width: 48.75rem;
+    margin: auto;
+    padding: 0.35rem 0.5rem 0.5rem;
+    background: var(--color-bar);
+    border-radius: 0 0 1.6rem 1.6rem;
+  }
+  [data-shell-bottom]:has([data-assistant="dock"]) .reader-dock {
+    border-radius: 1.6rem 1.6rem 0 0;
+  }
+  html[data-assistant-panel] [data-shell-bottom] {
+    right: calc(var(--assistant-panel-w) + 1.5rem);
+  }
+}
+.sync-notice:has([data-sync-phase="saved"], [data-sync-phase="syncing"]) {
+  position: fixed;
+  top: calc(var(--shell-top, 0px) + env(safe-area-inset-top) + 0.5rem);
+  right: 1rem;
+  z-index: 32;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+  padding: 0;
+}

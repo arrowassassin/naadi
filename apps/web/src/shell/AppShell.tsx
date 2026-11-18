@@ -1,8 +1,8 @@
 import type { NavItem } from "@naadi/shared";
 import { cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, Outlet, useRouter, useRouterState } from "@tanstack/react-router";
-import { Search, UserRound, X } from "lucide-react";
-import { type RefObject, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { CircleHelp, Search, UserRound, X } from "lucide-react";
+import { lazy, type RefObject, Suspense, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { AssistantHost, AssistantTabButton } from "../assistant/AssistantHost";
 import { useAssistantAvailable } from "../assistant/ask";
 import { useMe, useNav } from "../auth/api";
@@ -18,6 +18,8 @@ import { useSearchShortcut, useSuppressSearchShortcut } from "../search/shortcut
 import { setShellBottomSlot, usePenActive } from "./chrome";
 import { NavIcon } from "./icons";
 import { LogoMark } from "./Logo";
+
+const AppGuide = lazy(() => import("../guide/AppGuide"));
 
 const ACCOUNT_PATH = "/settings/account";
 
@@ -175,11 +177,13 @@ function MoreSheet({
   open,
   tabs,
   pathname,
+  onGuide,
   onClose,
 }: {
   open: boolean;
   tabs: TabSpec[];
   pathname: string;
+  onGuide?: () => void;
   onClose: () => void;
 }) {
   const t = useUiText();
@@ -233,6 +237,21 @@ function MoreSheet({
               </li>
             );
           })}
+          {onGuide && (
+            <li>
+              <button
+                type="button"
+                className="flex min-h-12 items-center gap-3 px-4 text-text"
+                onClick={() => {
+                  onClose();
+                  onGuide();
+                }}
+              >
+                <CircleHelp size={20} />
+                {t("guide.title")}
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </dialog>
@@ -251,17 +270,18 @@ export function AppShell() {
   const [slotEl, slotRef] = useState<HTMLDivElement | null>(null);
   // Tablet and up: the assistant's Dock bar (S14) lives in the same bottom bar, so --shell-bottom covers it.
   const [dockEl, dockRef] = useState<HTMLDivElement | null>(null);
-  // The bottom slot exists only where the tab bar is shown (phone, < 640 px).
+  const [readerSlot, setReaderSlot] = useState<HTMLDivElement | null>(null);
+  // Place section navigation above the phone tabs or within the tablet and desktop dock.
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 639.98px)");
-    const apply = () => setShellBottomSlot(mq.matches ? slotEl : null);
+    const apply = () => setShellBottomSlot(mq.matches ? slotEl : readerSlot);
     apply();
     mq.addEventListener("change", apply);
     return () => {
       mq.removeEventListener("change", apply);
       setShellBottomSlot(null);
     };
-  }, [slotEl]);
+  }, [slotEl, readerSlot]);
   const penActive = usePenActive();
   useInsetVar(topRef, "--shell-top");
   useInsetVar(bottomRef, "--shell-bottom", penActive);
@@ -282,6 +302,7 @@ export function AppShell() {
   const t = useUiText();
   useSearchShortcut(searchOn);
   const navLoading = nav.isPending && !nav.data;
+  const [guideOpen, setGuideOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const allTabs: TabSpec[] = [
     ...items.map((i) => ({ id: i.id, to: i.path, label: i.label, icon: i.icon })),
@@ -329,13 +350,23 @@ export function AppShell() {
           {searchOn ? (
             <SearchButton current={isCurrent("/search", pathname)} label={searchCopy("search.title")} />
           ) : null}
+          {!active && (
+            <button
+              type="button"
+              className="flex size-11 shrink-0 items-center justify-center rounded-pill text-text-2 hover:bg-surface-2"
+              aria-label={t("guide.title")}
+              onClick={() => setGuideOpen(true)}
+            >
+              <CircleHelp size={19} />
+            </button>
+          )}
           <Avatar initial={initial} current={onAccount} label={t("shell.account_label")} />
         </nav>
       </header>
       <div aria-hidden="true" className="h-[env(safe-area-inset-top)] tablet:hidden" />
 
       {/* Sync state (segment 18): offline with what will sync, syncing, saved, or what needs attention. */}
-      <div className="mx-auto w-full max-w-(--content-max) px-(--gutter) pt-3 empty:hidden has-[>[hidden]]:hidden">
+      <div className="sync-notice mx-auto w-full max-w-(--content-max) px-(--gutter) pt-3 empty:hidden has-[>[hidden]]:hidden">
         <SyncIndicator offline={offline} />
       </div>
       <div className="mx-auto w-full max-w-(--content-max) px-(--gutter) pt-3 empty:hidden">
@@ -365,7 +396,19 @@ export function AppShell() {
         ) : null}
         {active && !onExamRoute(pathname, active) ? <ExamActiveBanner active={active} /> : null}
         {examGates(pathname, active) && active ? <ExamActiveGate active={active} /> : <Outlet />}
+        {!active && (
+          <footer className="pt-8 tablet:hidden">
+            <button type="button" className="min-h-11 text-text-2 underline" onClick={() => setGuideOpen(true)}>
+              {t("guide.title")}
+            </button>
+          </footer>
+        )}
       </main>
+      {guideOpen && !active && (
+        <Suspense fallback={null}>
+          <AppGuide close={() => setGuideOpen(false)} />
+        </Suspense>
+      )}
 
       <div
         ref={bottomRef}
@@ -420,10 +463,19 @@ export function AppShell() {
             </ul>
           </nav>
         </div>
+        <div className="reader-dock">
+          <div ref={setReaderSlot} data-reader-slot="" />
+        </div>
         <div ref={dockRef} data-assistant-dock="" className="hidden tablet:block" />
       </div>
       <AssistantHost dockSlot={dockEl} onExamRoute={active !== null && onExamRoute(pathname, active)} />
-      <MoreSheet open={moreOpen} tabs={moreTabs} pathname={pathname} onClose={() => setMoreOpen(false)} />
+      <MoreSheet
+        onGuide={active ? undefined : () => setGuideOpen(true)}
+        open={moreOpen}
+        tabs={moreTabs}
+        pathname={pathname}
+        onClose={() => setMoreOpen(false)}
+      />
     </div>
   );
 }
