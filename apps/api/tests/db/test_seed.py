@@ -22,8 +22,8 @@ from naadi_api.seed.report import SeedReport
 from naadi_api.seed.storage import list_folder
 from naadi_api.settings import get_settings
 
-from .rls import DB_MARKS, as_anon, as_user, create_auth_user, require_local
 from ..seed.pack_totals import LEGACY_CHAPTERS, LEGACY_FIGURES, LEGACY_QUESTIONS, LEGACY_SECTIONS, pack_totals
+from .rls import DB_MARKS, as_anon, as_user, create_auth_user, require_local
 from .seed_helpers import BUCKET, CONFIG, DATA, bundle, options, remove_seed, storage
 
 pytestmark = DB_MARKS
