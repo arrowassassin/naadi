@@ -146,19 +146,22 @@ def test_coverage_counts_shared_questions_only(
     client: TestClient, key: SigningKey, world: dict[str, Any], url: str
 ) -> None:
     h = signed_in(key, world["admin"], email=ADMIN_EMAIL, header="Authorization")
-    with_private = client.get("/api/admin/coverage", params={"exam": "step1"}, headers=h)
-    assert with_private.status_code == 200, with_private.text
-    # Give the private rows a real topic: coverage must not move.
+    topic = f"test-private-coverage-{uuid.uuid4().hex[:8]}"
     with psycopg.connect(url, autocommit=True) as c:
-        topic = c.execute(
-            "select id from public.taxonomy_nodes where kind = 'topic' and 'step1' = any(exam) order by id limit 1"
-        ).fetchone()
-        if topic is None:
-            pytest.skip("no taxonomy seeded")
-        before = client.get("/api/admin/coverage", params={"exam": "step1"}, headers=h).json()
-        c.execute("update public.questions set taxonomy_ids = %s where id = any(%s)", ([topic[0]], world["qids"]))
-    after = client.get("/api/admin/coverage", params={"exam": "step1"}, headers=h).json()
-    assert after == before
+        c.execute(
+            "insert into public.taxonomy_nodes (id, kind, label, exam) values (%s, 'topic', 'Test topic', '{step1}')",
+            (topic,),
+        )
+        try:
+            before = client.get("/api/admin/coverage", params={"exam": "step1"}, headers=h)
+            assert before.status_code == 200, before.text
+            assert any(t["id"] == topic and t["counts"]["questions"] == 0 for t in before.json()["topics"])
+            c.execute("update public.questions set taxonomy_ids = %s where id = any(%s)", ([topic], world["qids"]))
+            after = client.get("/api/admin/coverage", params={"exam": "step1"}, headers=h)
+            assert after.status_code == 200, after.text
+            assert after.json() == before.json()
+        finally:
+            c.execute("delete from public.taxonomy_nodes where id = %s", (topic,))
 
 
 async def test_review_counts_queues_and_psychometrics_skip_private_questions(
