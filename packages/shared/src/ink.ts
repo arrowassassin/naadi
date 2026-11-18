@@ -29,12 +29,15 @@ export const InkSurfaceTypeSchema = z.enum([
 export type InkSurfaceType = z.infer<typeof InkSurfaceTypeSchema>;
 
 /**
- * Colour ROLES, never hex: the renderer resolves them from the design tokens for the surface theme.
+ * Preset colours follow the theme; custom RGB colours are stored literally: the renderer resolves them from the design tokens for the surface theme.
  * ink = the student's own ink (ground on paper, paper on dark) · violet = second pen colour
  * (ink-violet on paper) · lime / amber = marker colours with the fixed highlight meanings
  * (key fact / my mistake).
  */
-export const InkColorSchema = z.enum(["ink", "violet", "lime", "amber"]);
+export const InkColorSchema = z.union([
+  z.enum(["ink", "violet", "lime", "amber"]),
+  z.string().regex(/^#[0-9a-fA-F]{6}$/),
+]);
 export type InkColor = z.infer<typeof InkColorSchema>;
 
 export const InkShapeSchema = z.enum(["line", "arrow", "circle", "ellipse", "rect"]);

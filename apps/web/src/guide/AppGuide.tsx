@@ -3,6 +3,7 @@ import { driver } from "driver.js";
 import { useLayoutEffect, useRef } from "react";
 import { useUiText } from "../copy/useUiText";
 import { topics } from "./topics";
+import { WholeTour } from "./WholeTour";
 import "driver.js/dist/driver.css";
 import "./guide.css";
 
@@ -12,7 +13,11 @@ function target(selector: string) {
   );
 }
 
-export default function AppGuide({ close }: { close: () => void }) {
+type Props = { close: () => void; startWhole: () => void; whole: boolean; hasPlan: boolean };
+export default function AppGuide(props: Props) {
+  return props.whole ? <WholeTour close={props.close} hasPlan={props.hasPlan} /> : <GuideIndex {...props} />;
+}
+function GuideIndex({ close, startWhole }: Props) {
   const t = useUiText();
   const dialog = useRef<HTMLDialogElement>(null);
   const tour = useRef<ReturnType<typeof driver> | null>(null);
@@ -72,7 +77,12 @@ export default function AppGuide({ close }: { close: () => void }) {
           {t("guide.close")}
         </Button>
       </header>
-      {available.length > 0 && <Button onClick={() => start()}>{t("guide.tour")}</Button>}
+      <Button onClick={startWhole}>{t("guide.full")}</Button>
+      {available.length > 0 && (
+        <Button variant="secondary" onClick={() => start()}>
+          {t("guide.tour")}
+        </Button>
+      )}
       <h3>{t("guide.browse")}</h3>
       {groups.map((group) => (
         <details key={group}>

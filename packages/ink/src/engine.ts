@@ -46,6 +46,7 @@ import { inkProbe, type ProbeKind } from "./probe";
 import {
   drawItem,
   type InkTheme,
+  inkPaint,
   LiveStroke,
   outlineToPath,
   type Palette,
@@ -173,7 +174,9 @@ export interface InkEngineOptions {
   predict?: boolean;
   latency?: LatencyRecorder;
   now?: () => number;
-  /** Reflow anchoring for text surfaces (12b): see anchors.ts. Call reanchor() after the content reflows. */
+  /** Optional text column defining 1 su and x=0. The canvas still covers the full host, including both margins. */
+  coordinateColumn?: HTMLElement | null;
+  /** Reflow anchoring for text surfaces; a new resolver re-places anchored items. */
   anchors?: InkAnchorResolver | null;
   onStrokesChange?: (diff: InkDiff) => void;
   /** A lasso closed: with the ink it selected (png = ink-only picture) or none (png = null). */
@@ -263,6 +266,8 @@ export class InkEngine {
   private frame: SurfaceFrame = { left: 0, top: 0, width: 0, height: 0 };
   private frameStale = true;
   private widthPx = 0;
+  private unitPx = 0;
+  private originX = 0;
   private heightPx = 0;
   private dpr = 1;
   private readonly dirtyTiles = new Set<string>();
@@ -477,7 +482,7 @@ export class InkEngine {
     this.state.color = color;
     if (this.editor) {
       this.editor.color = color;
-      this.editor.el.style.color = this.palette[color];
+      this.editor.el.style.color = inkPaint(this.palette, color);
     }
     this.emitState();
   }
@@ -551,7 +556,7 @@ export class InkEngine {
     const sel = this.selection;
     if (!sel || sel.ids.length === 0) return;
     const now = this.now();
-    const offset = 16 / Math.max(1, this.widthPx);
+    const offset = 16 / Math.max(1, this.unitPx);
     const copies = sel.ids
       .map((id) => this.doc.get(id))
       .filter((i) => i !== undefined)
@@ -749,6 +754,7 @@ export class InkEngine {
       on(window.visualViewport, "resize", () => this.timed(() => this.measure(), "resize"), { passive: true });
     const ro = new ResizeObserver(() => this.timed(() => this.measure(), "resize"));
     ro.observe(this.host);
+    if (this.o.coordinateColumn) ro.observe(this.o.coordinateColumn);
     this.cleanups.push(() => ro.disconnect());
   }
 
@@ -785,9 +791,9 @@ export class InkEngine {
     if (this.frameStale) {
       const r = this.host.getBoundingClientRect();
       this.frame = {
-        left: r.left + this.host.clientLeft,
+        left: r.left + this.host.clientLeft + this.originX,
         top: r.top + this.host.clientTop,
-        width: this.host.clientWidth,
+        width: this.unitPx,
         height: this.host.clientHeight,
       };
       this.frameStale = false;
@@ -807,8 +813,14 @@ export class InkEngine {
     const w = this.host.clientWidth;
     const h = this.host.clientHeight;
     const dpr = this.effectiveDpr();
-    const changed = w !== this.widthPx || h !== this.heightPx || dpr !== this.dpr;
+    const column = this.o.coordinateColumn;
+    const unit = column?.clientWidth || w;
+    const origin = column ? column.getBoundingClientRect().left - this.host.getBoundingClientRect().left : 0;
+    const changed =
+      unit !== this.unitPx || origin !== this.originX || w !== this.widthPx || h !== this.heightPx || dpr !== this.dpr;
     this.widthPx = w;
+    this.unitPx = unit;
+    this.originX = origin;
     this.heightPx = h;
     this.dpr = dpr;
     if (changed) {
@@ -1202,13 +1214,13 @@ export class InkEngine {
    * moved/resized (renderLive redraws everything each frame anyway).
    */
   private ensureLive(contentSu: Rect): boolean {
-    const w = this.widthPx;
+    const w = this.unitPx;
     const c = this.liveCanvas;
     if (rectIsEmpty(contentSu) || w <= 0) return false;
     const need = {
-      x0: Math.max(0, contentSu.x0 * w - 8),
+      x0: Math.max(0, this.originX + contentSu.x0 * w - 8),
       y0: Math.max(0, contentSu.y0 * w - 8),
-      x1: Math.min(w, contentSu.x1 * w + 8),
+      x1: Math.min(this.widthPx, this.originX + contentSu.x1 * w + 8),
       y1: Math.min(this.heightPx, contentSu.y1 * w + 8),
     };
     const L = this.live;
@@ -1218,7 +1230,7 @@ export class InkEngine {
     const m = LIVE_MARGIN_PX;
     const x0 = Math.floor(Math.max(0, need.x0 - m));
     const y0 = Math.floor(Math.max(0, need.y0 - m));
-    const x1 = Math.ceil(Math.min(w, need.x1 + m));
+    const x1 = Math.ceil(Math.min(this.widthPx, need.x1 + m));
     const y1 = Math.ceil(Math.min(this.heightPx, need.y1 + m));
     const devW = Math.max(1, Math.round((x1 - x0) * this.dpr));
     const devH = Math.max(1, Math.round((y1 - y0) * this.dpr));
@@ -1251,9 +1263,14 @@ export class InkEngine {
     const c = this.tailCanvas;
     if (!ctx) return;
     const tail = this.liveStroke.tail(item, predicted);
-    const w = this.widthPx;
+    const w = this.unitPx;
     const box = bboxOfItem({ ...item, points: tail });
-    const need = { x0: box.x0 * w - 4, y0: box.y0 * w - 4, x1: box.x1 * w + 4, y1: box.y1 * w + 4 };
+    const need = {
+      x0: this.originX + box.x0 * w - 4,
+      y0: box.y0 * w - 4,
+      x1: this.originX + box.x1 * w + 4,
+      y1: box.y1 * w + 4,
+    };
     const T = this.tail;
     const fits = this.tailLease && need.x0 >= T.x0 && need.y0 >= T.y0 && need.x1 <= T.x0 + T.w && need.y1 <= T.y0 + T.h;
     // The canvas keeps its size and only moves (a style change) while the tip fits in it; it is
@@ -1300,8 +1317,8 @@ export class InkEngine {
       if (c.style[key] !== value) (c.style as unknown as Record<string, string>)[key as string] = value;
     }
     const k = (w * this.dpr) / REF;
-    ctx.setTransform(k, 0, 0, k, -this.tail.x0 * this.dpr, -this.tail.y0 * this.dpr);
-    ctx.fillStyle = this.palette[item.color];
+    ctx.setTransform(k, 0, 0, k, (this.originX - this.tail.x0) * this.dpr, -this.tail.y0 * this.dpr);
+    ctx.fillStyle = inkPaint(this.palette, item.color);
     ctx.fill(outlineToPath(strokeOutline({ ...item, points: tail }, false)));
   }
 
@@ -1325,12 +1342,12 @@ export class InkEngine {
       const dx = g?.kind === "drag" ? g.dx : 0;
       const dy = g?.kind === "drag" ? g.dy : 0;
       const b = this.selection.bbox;
-      const pad = 10 / Math.max(1, this.widthPx);
+      const pad = 10 / Math.max(1, this.unitPx);
       box = unionRect(box, { x0: b.x0 + dx - pad, y0: b.y0 + dy - pad, x1: b.x1 + dx + pad, y1: b.y1 + dy + pad });
       for (const p of this.selection.path) box = unionRect(box, pt(p));
     }
     if (this.hover && !g) {
-      const r = (Math.max(this.sizes.eraser, this.toolSizePx()) + 4) / Math.max(1, this.widthPx);
+      const r = (Math.max(this.sizes.eraser, this.toolSizePx()) + 4) / Math.max(1, this.unitPx);
       box = unionRect(box, { x0: this.hover.x - r, y0: this.hover.y - r, x1: this.hover.x + r, y1: this.hover.y + r });
     }
     return box;
@@ -1346,9 +1363,9 @@ export class InkEngine {
   /** Mark tiles dirty for a rectangle in su. */
   private markDirtySu(r: Rect): void {
     if (rectIsEmpty(r)) return;
-    const w = this.widthPx;
+    const w = this.unitPx;
     const p = padRect(r, 2 / Math.max(1, w));
-    const px = { x0: p.x0 * w, y0: p.y0 * w, x1: p.x1 * w, y1: p.y1 * w };
+    const px = { x0: this.originX + p.x0 * w, y0: p.y0 * w, x1: this.originX + p.x1 * w, y1: p.y1 * w };
     if (this.slabH > 0) this.dropParked((i) => i * this.slabH < px.y1 && (i + 1) * this.slabH > px.y0);
     this.markDirtyPx(px, true);
   }
@@ -1537,8 +1554,8 @@ export class InkEngine {
 
   /** Reference space → device px of a canvas whose top edge is at `top` CSS px of the surface. */
   private setDrawTransform(ctx: CanvasRenderingContext2D, top: number): void {
-    const k = (this.widthPx * this.dpr) / REF;
-    ctx.setTransform(k, 0, 0, k, 0, -top * this.dpr);
+    const k = (this.unitPx * this.dpr) / REF;
+    ctx.setTransform(k, 0, 0, k, this.originX * this.dpr, -top * this.dpr);
   }
 
   private renderTile(key: string): Slab | null {
@@ -1559,8 +1576,8 @@ export class InkEngine {
       w: Math.ceil((x1 - x0) * dpr) + 1,
       h: Math.ceil((y1 - y0) * dpr) + 1,
     };
-    const w = this.widthPx;
-    const query = { x0: x0 / w, y0: y0 / w, x1: x1 / w, y1: y1 / w };
+    const w = this.unitPx;
+    const query = { x0: (x0 - this.originX) / w, y0: y0 / w, x1: (x1 - this.originX) / w, y1: y1 / w };
     const entries = this.doc.query(padRect(query, 1 / w)).filter((e) => !this.hidden.has(e.item.id));
     // A layer is painted when the tile has (or had) something of its kind, or it is already allocated.
     const before = this.tileKinds.get(key);
@@ -1656,8 +1673,8 @@ export class InkEngine {
     }
     if (!freehand) this.hideTail();
     let drawn = EMPTY_RECT;
-    const k = this.widthPx * this.dpr;
-    const liveLeft = this.live.x0 * this.dpr;
+    const k = this.unitPx * this.dpr;
+    const liveLeft = (this.live.x0 - this.originX) * this.dpr;
     const liveTop = this.live.y0 * this.dpr;
     const toDev = (r: Rect): Rect => ({
       x0: r.x0 * k - liveLeft,
@@ -1680,7 +1697,7 @@ export class InkEngine {
       else {
         // Frozen chunks go onto the live canvas once each (no clear); the tip goes on the tail canvas.
         const chunks = this.liveStroke.frozenChunks(g.item);
-        ctx.fillStyle = this.palette[g.item.color];
+        ctx.fillStyle = inkPaint(this.palette, g.item.color);
         for (let i = this.liveChunksDrawn; i < chunks.length; i++) ctx.fill(chunks[i] as Path2D);
         this.liveChunksDrawn = chunks.length;
         this.drawTail(g.item, predicted, {
@@ -1692,7 +1709,7 @@ export class InkEngine {
       const box = bboxOfItem(predicted.length > 0 ? { ...g.item, points: [...g.item.points, ...predicted] } : g.item);
       drawn = unionRect(drawn, toDev(box));
     }
-    const lineW = REF / Math.max(1, this.widthPx); // 1 CSS px in reference units
+    const lineW = REF / Math.max(1, this.unitPx); // 1 CSS px in reference units
     if (g?.kind === "lasso" && g.path.length > 1) {
       ctx.save();
       ctx.strokeStyle = this.palette.selection;
@@ -1723,7 +1740,7 @@ export class InkEngine {
         ctx.restore();
       }
       const b = this.selection.bbox;
-      const pad = 6 / Math.max(1, this.widthPx);
+      const pad = 6 / Math.max(1, this.unitPx);
       const box = { x0: b.x0 + dx - pad, y0: b.y0 + dy - pad, x1: b.x1 + dx + pad, y1: b.y1 + dy + pad };
       ctx.save();
       ctx.strokeStyle = this.palette.selection;
@@ -1745,12 +1762,12 @@ export class InkEngine {
       drawn = unionRect(drawn, padRect(toDev(box), 4));
     }
     if (this.hover && !g) {
-      const r = (this.state.tool === "eraser" ? this.sizes.eraser : this.toolSizePx() / 2) / Math.max(1, this.widthPx);
+      const r = (this.state.tool === "eraser" ? this.sizes.eraser : this.toolSizePx() / 2) / Math.max(1, this.unitPx);
       ctx.save();
-      ctx.strokeStyle = this.state.tool === "eraser" ? this.palette.eraser : this.palette[this.state.color];
+      ctx.strokeStyle = this.state.tool === "eraser" ? this.palette.eraser : inkPaint(this.palette, this.state.color);
       ctx.lineWidth = lineW;
       ctx.beginPath();
-      ctx.arc(this.hover.x * REF, this.hover.y * REF, Math.max(r, 2 / Math.max(1, this.widthPx)) * REF, 0, Math.PI * 2);
+      ctx.arc(this.hover.x * REF, this.hover.y * REF, Math.max(r, 2 / Math.max(1, this.unitPx)) * REF, 0, Math.PI * 2);
       ctx.stroke();
       ctx.restore();
       drawn = unionRect(
@@ -1765,8 +1782,8 @@ export class InkEngine {
   }
 
   private suRectToPx(r: Rect): PxRect {
-    const w = this.widthPx;
-    return { left: r.x0 * w, top: r.y0 * w, width: (r.x1 - r.x0) * w, height: (r.y1 - r.y0) * w };
+    const w = this.unitPx;
+    return { left: this.originX + r.x0 * w, top: r.y0 * w, width: (r.x1 - r.x0) * w, height: (r.y1 - r.y0) * w };
   }
 
   // ── Pointer input ─────────────────────────────────────────────────────────
@@ -1826,7 +1843,7 @@ export class InkEngine {
       if (
         this.selection &&
         this.selection.ids.length > 0 &&
-        rectContainsPoint(padRect(this.selection.bbox, 12 / Math.max(1, this.widthPx)), pt.x, pt.y)
+        rectContainsPoint(padRect(this.selection.bbox, 12 / Math.max(1, this.unitPx)), pt.x, pt.y)
       ) {
         this.gesture = { kind: "drag", pointerId: e.pointerId, start: pt, dx: 0, dy: 0, lastT: t };
         for (const id of this.selection.ids) this.hidden.add(id);
@@ -1846,7 +1863,7 @@ export class InkEngine {
     }
     const now = this.now();
     const strokeTool = tool === "marker" ? "marker" : "pen";
-    const sizeSu = roundSu(this.toolSizePx() / Math.max(1, this.widthPx));
+    const sizeSu = roundSu(this.toolSizePx() / Math.max(1, this.unitPx));
     const item: InkStroke = {
       id: uuidv7(now),
       tool: strokeTool,
@@ -2025,7 +2042,7 @@ export class InkEngine {
   // ── Eraser ────────────────────────────────────────────────────────────────
 
   private eraseAlong(path: Vec[]): void {
-    const r = this.sizes.eraser / Math.max(1, this.widthPx);
+    const r = this.sizes.eraser / Math.max(1, this.unitPx);
     let box = EMPTY_RECT;
     for (const p of path) box = unionRect(box, { x0: p.x, y0: p.y, x1: p.x, y1: p.y });
     const candidates = this.doc.query(padRect(box, r + 0.05));
@@ -2064,7 +2081,7 @@ export class InkEngine {
       .filter((e) => selectedByLasso(e.item, path, box))
       .map((e) => e.item.id);
     // Even with no ink inside, the circled region is a selection: "Ask Naadi" works on printed content.
-    if (Math.min(box.x1 - box.x0, box.y1 - box.y0) * this.widthPx < 8) return;
+    if (Math.min(box.x1 - box.x0, box.y1 - box.y0) * this.unitPx < 8) return;
     this.setSelection(ids, path);
     const sel = this.selection;
     if (sel && this.o.onLasso) {
@@ -2115,7 +2132,7 @@ export class InkEngine {
     const sel = this.selection;
     if (!sel) return;
     for (const id of sel.ids) this.hidden.delete(id);
-    if (Math.hypot(dx, dy) * this.widthPx < 1) {
+    if (Math.hypot(dx, dy) * this.unitPx < 1) {
       this.markDirtySu(sel.bbox);
       return;
     }
@@ -2138,7 +2155,7 @@ export class InkEngine {
   private renderPng(sel: SelectionInfo): Promise<Blob | null> {
     if (sel.ids.length === 0) return Promise.resolve(null);
     const padPx = 12;
-    const w = this.widthPx;
+    const w = this.unitPx;
     const cssW = (sel.bbox.x1 - sel.bbox.x0) * w + padPx * 2;
     const cssH = (sel.bbox.y1 - sel.bbox.y0) * w + padPx * 2;
     const scale = Math.min(2, 2048 / Math.max(cssW, cssH));
@@ -2174,13 +2191,13 @@ export class InkEngine {
       .query({ x0: p.x, y0: p.y, x1: p.x, y1: p.y })
       .reverse()
       .find((e) => e.item.tool === "text");
-    const w = Math.max(1, this.widthPx);
+    const w = Math.max(1, this.unitPx);
     if (hit && hit.item.tool === "text") {
       this.openEditor(hit.item.x, hit.item.y, hit.item.w, hit.item.size, hit.item.color, hit.item);
       return;
     }
     const size = this.sizes.text / w;
-    const boxW = Math.max(120 / w, Math.min(0.45, 1 - p.x - 12 / w));
+    const boxW = Math.max(120 / w, Math.min(0.45, (this.widthPx - this.originX - 12) / w - p.x));
     this.openEditor(
       p.x,
       Math.max(0, p.y - size * 0.65),
@@ -2213,7 +2230,7 @@ export class InkEngine {
       outline: `1.5px dashed ${this.palette.selection}`,
       outlineOffset: "4px",
       background: "transparent",
-      color: this.palette[color],
+      color: inkPaint(this.palette, color),
       fontFamily: this.font,
       fontWeight: "500",
       lineHeight: "1.3",
@@ -2253,9 +2270,9 @@ export class InkEngine {
   private positionEditor(): void {
     const ed = this.editor;
     if (!ed) return;
-    const w = this.widthPx;
+    const w = this.unitPx;
     Object.assign(ed.el.style, {
-      left: `${ed.x * w}px`,
+      left: `${this.originX + ed.x * w}px`,
       top: `${ed.y * w}px`,
       width: `${ed.w * w}px`,
       fontSize: `${ed.size * w}px`,

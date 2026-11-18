@@ -5,7 +5,7 @@ import { type RefObject, useEffect, useState } from "react";
  * the block's fingerprint (`data-block-fp`). */
 export function measureBlocks(surface: HTMLElement): AnchorBlock[] {
   const host = surface.querySelector<HTMLElement>("[data-ink-host]") ?? surface;
-  const width = host.clientWidth;
+  const width = surface.querySelector<HTMLElement>("[data-ink-column]")?.clientWidth || host.clientWidth;
   if (width <= 0) return [];
   const top = host.getBoundingClientRect().top;
   const out: AnchorBlock[] = [];

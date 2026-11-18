@@ -56,6 +56,7 @@ export function SectionInkLive({
         : null}
       <InkCanvas
         {...layer.canvasProps}
+        coordinateColumn={surface.current?.querySelector<HTMLElement>("[data-ink-column]")}
         host={slots.host}
         enabled={on}
         surfaceType="section"

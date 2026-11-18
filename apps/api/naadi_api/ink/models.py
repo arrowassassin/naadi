@@ -35,7 +35,7 @@ JS_MAX_SAFE_INTEGER = 9_007_199_254_740_991
 ANCHOR_FP_PATTERN = r"^[A-Za-z][A-Za-z0-9]{0,30}:[0-9a-f]{8}$"
 
 SurfaceType = Literal["section", "question", "flashcard", "pdf_page", "notebook_page", "exam_scratch"]
-InkColor = Literal["ink", "violet", "lime", "amber"]
+InkColor = Literal["ink", "violet", "lime", "amber"] | Annotated[str, Field(pattern=r"^#[0-9a-fA-F]{6}$")]
 InkShape = Literal["line", "arrow", "circle", "ellipse", "rect"]
 
 _ITEM_CONFIG = ConfigDict(strict=True, extra="forbid", allow_inf_nan=False)

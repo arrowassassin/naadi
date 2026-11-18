@@ -36,7 +36,9 @@ export interface InkSurfaceProps {
   palette?: Partial<Palette>;
   sizes?: Partial<ToolSizes>;
   latency?: LatencyRecorder;
-  /** Reflow anchoring for text surfaces (12b); a new resolver re-places anchored items. */
+  /** Optional text column defining 1 su and x=0. The canvas still covers the full host, including both margins. */
+  coordinateColumn?: HTMLElement | null;
+  /** Reflow anchoring for text surfaces; a new resolver re-places anchored items. */
   anchors?: InkAnchorResolver | null;
   /**
    * Attach to this element instead of rendering one (12b): the page already rendered the content and an empty host
@@ -95,6 +97,7 @@ export function InkSurface(props: InkSurfaceProps) {
       palette: p.palette,
       sizes: p.sizes,
       latency: p.latency,
+      coordinateColumn: p.coordinateColumn,
       anchors: p.anchors ?? null,
       // Read through the ref, so a corrected clock that arrives after mount is used.
       now: () => (cb.current.now ?? Date.now)(),

@@ -76,7 +76,9 @@ def test_models_mirror_the_generated_json_schema() -> None:
     assert stroke["points"]["maxItems"] == models.INK_MAX_POINTS
     assert stroke["points"]["minItems"] == 1
     assert text["text"]["maxLength"] == models.INK_MAX_TEXT
-    assert stroke["color"]["enum"] == ["ink", "violet", "lime", "amber"]
+    assert stroke["color"]["anyOf"][0]["enum"] == ["ink", "violet", "lime", "amber"]
+    assert stroke["color"]["anyOf"][1]["pattern"] == "^#[0-9a-fA-F]{6}$"
+    assert models.InkSettings.model_validate({"color": "#18acef"}).color == "#18acef"
     assert stroke["tool"]["enum"] == ["pen", "marker"]
     assert stroke["shape"]["enum"] == ["line", "arrow", "circle", "ellipse", "rect"]
     # same field sets and required fields as the pydantic models

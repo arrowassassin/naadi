@@ -3,6 +3,7 @@ import type { InkColor } from "@naadi/shared";
 import { Button, cx } from "@naadi/ui";
 import { Eraser, Highlighter, Lasso, type LucideIcon, Pen, Redo2, Shapes, Trash2, Type, Undo2 } from "lucide-react";
 import { useRef } from "react";
+import { ColourWheel } from "./ColourWheel";
 import { useInkCopy } from "./copy";
 
 /** Tools with their keyboard shortcut (the letter is a key, not copy: it is what the student presses) and the icon
@@ -80,7 +81,7 @@ export function InkToolbar({
       aria-label={t("ink.toolbar")}
       className={cx(
         // One row from 640 px up; on a phone, icons and a second row (never a sideways scroll that hides controls).
-        "relative flex flex-nowrap items-center gap-0.5 rounded-[28px] border border-line-strong bg-ground p-1.5 max-tablet:flex-wrap max-tablet:gap-y-1 [&>*]:shrink-0",
+        "relative flex flex-wrap items-center gap-0.5 rounded-[28px] border border-line-strong bg-ground p-1.5 gap-y-1 [&>*]:shrink-0",
         className,
       )}
     >
@@ -171,6 +172,7 @@ export function InkToolbar({
               />
             );
           })}
+          <ColourWheel color={state.color} onColor={onColor} disabled={!state.enabled || colourless} />
         </fieldset>
       )}
       <span className="flex-1" />

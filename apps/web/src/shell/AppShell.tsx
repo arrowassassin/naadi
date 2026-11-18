@@ -295,14 +295,34 @@ export function AppShell() {
   // Search shows once the server turns the feature on and this build has the screen.
   // A timed/exam session running on the server (S09): Search and practice stay closed until it is over, also
   // after "Leave", and Ctrl/Cmd+K does nothing (the server refuses tutor practice with 409 exam_active).
-  const active = useActiveExam().data?.active ?? null;
+  const exam = useActiveExam();
+  const active = exam.data?.active ?? null;
   useSuppressSearchShortcut(active !== null);
   const searchOn = me.data?.features.search === true && "/search" in routes && active === null;
   const searchCopy = useSearchCopy();
   const t = useUiText();
   useSearchShortcut(searchOn);
   const navLoading = nav.isPending && !nav.data;
-  const [guideOpen, setGuideOpen] = useState(false);
+  const [guideOpen, setGuideOpen] = useState<false | "index" | "whole">(false);
+  const onboarding = me.data?.profile.settings.onboarding;
+  const hasPlan = Boolean(
+    onboarding && typeof onboarding === "object" && "completed_at" in onboarding && onboarding.completed_at,
+  );
+  const userId = auth.status === "signed-in" ? auth.session.user.id : null;
+  const visit = useRef<string | null>(null);
+  useEffect(() => {
+    if (!userId || !hasPlan || pathname !== "/" || !exam.data || active || visit.current === userId) return;
+    visit.current = userId;
+    const key = "naadi.whole-tour.v1." + userId;
+    try {
+      if (localStorage.getItem(key)) return;
+      localStorage.setItem(key, "seen");
+    } catch {
+      /* Storage can be unavailable in private browsing. */
+    }
+    setGuideOpen("whole");
+  }, [userId, hasPlan, pathname, exam.data, active]);
+
   const [moreOpen, setMoreOpen] = useState(false);
   const allTabs: TabSpec[] = [
     ...items.map((i) => ({ id: i.id, to: i.path, label: i.label, icon: i.icon })),
@@ -355,7 +375,7 @@ export function AppShell() {
               type="button"
               className="flex size-11 shrink-0 items-center justify-center rounded-pill text-text-2 hover:bg-surface-2"
               aria-label={t("guide.title")}
-              onClick={() => setGuideOpen(true)}
+              onClick={() => setGuideOpen("index")}
             >
               <CircleHelp size={19} />
             </button>
@@ -398,7 +418,7 @@ export function AppShell() {
         {examGates(pathname, active) && active ? <ExamActiveGate active={active} /> : <Outlet />}
         {!active && (
           <footer className="pt-8 tablet:hidden">
-            <button type="button" className="min-h-11 text-text-2 underline" onClick={() => setGuideOpen(true)}>
+            <button type="button" className="min-h-11 text-text-2 underline" onClick={() => setGuideOpen("index")}>
               {t("guide.title")}
             </button>
           </footer>
@@ -406,7 +426,12 @@ export function AppShell() {
       </main>
       {guideOpen && !active && (
         <Suspense fallback={null}>
-          <AppGuide close={() => setGuideOpen(false)} />
+          <AppGuide
+            whole={guideOpen === "whole"}
+            hasPlan={hasPlan}
+            startWhole={() => setGuideOpen("whole")}
+            close={() => setGuideOpen(false)}
+          />
         </Suspense>
       )}
 
@@ -470,7 +495,7 @@ export function AppShell() {
       </div>
       <AssistantHost dockSlot={dockEl} onExamRoute={active !== null && onExamRoute(pathname, active)} />
       <MoreSheet
-        onGuide={active ? undefined : () => setGuideOpen(true)}
+        onGuide={active ? undefined : () => setGuideOpen("index")}
         open={moreOpen}
         tabs={moreTabs}
         pathname={pathname}

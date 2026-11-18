@@ -113,7 +113,7 @@ export function SectionInk(props: SectionInkProps) {
 
   return (
     <div className={cx("flex flex-col gap-4", className)} data-section-ink="" data-ink-idle={idle ? "" : undefined}>
-      <div className="flex min-h-11 flex-wrap items-center justify-between gap-x-3 gap-y-1">
+      <div className="relative mx-auto w-full max-w-[52rem] flex min-h-11 flex-wrap items-center justify-between gap-x-3 gap-y-1">
         <Button
           variant="secondary"
           aria-pressed={on}
@@ -123,7 +123,10 @@ export function SectionInk(props: SectionInkProps) {
         >
           {on ? t("ink.page.toggle_on") : t("ink.page.toggle")}
         </Button>
-        <div ref={setStatus} className="contents" />
+        <div
+          ref={setStatus}
+          className="ml-auto rounded-pill bg-surface-1 px-2 has-[[data-ink-save=saved]]:absolute has-[[data-ink-save=saving]]:absolute right-0 top-0"
+        />
       </div>
       {/* Where the live part sits in the tree. When it loads, it renders nothing here (its output goes to the
           slots). When its chunk could not load, the "needs a connection" notice shows here, and only once the

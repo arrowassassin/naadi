@@ -1,5 +1,5 @@
 import type { InkToolName } from "@naadi/ink";
-import type { InkColor } from "@naadi/shared";
+import { type InkColor, InkColorSchema } from "@naadi/shared";
 import { useCallback, useEffect, useRef } from "react";
 import { useMe, useUpdateMe } from "../../auth/api";
 
@@ -14,7 +14,6 @@ export interface InkSettings {
 export const INK_SETTINGS_DEFAULTS: InkSettings = { pen_only: true, predict: true };
 
 const TOOLS: readonly InkToolName[] = ["pen", "marker", "eraser", "lasso", "shapes", "text"];
-const COLORS: readonly InkColor[] = ["ink", "violet", "lime", "amber"];
 
 /** Read whatever is stored, keeping only valid fields (an older or hand-edited value never breaks the canvas). */
 export function parseInkSettings(raw: unknown): InkSettings {
@@ -24,7 +23,8 @@ export function parseInkSettings(raw: unknown): InkSettings {
     predict: typeof o.predict === "boolean" ? o.predict : INK_SETTINGS_DEFAULTS.predict,
   };
   if (TOOLS.includes(o.tool as InkToolName)) out.tool = o.tool as InkToolName;
-  if (COLORS.includes(o.color as InkColor)) out.color = o.color as InkColor;
+  const color = InkColorSchema.safeParse(o.color);
+  if (color.success) out.color = color.data;
   return out;
 }
 

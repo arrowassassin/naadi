@@ -9,7 +9,11 @@ export const REF = 1000;
 
 export type InkTheme = "paper" | "dark";
 
-export type Palette = Record<InkColor, string> & { selection: string; eraser: string };
+export type Palette = Record<"ink" | "violet" | "lime" | "amber", string> & { selection: string; eraser: string };
+
+export function inkPaint(palette: Palette, color: InkColor): string {
+  return palette[color as keyof Palette] ?? color;
+}
 
 /** Which design token each colour role maps to, per surface theme. */
 export const PALETTE_TOKENS: Record<InkTheme, Record<keyof Palette, string>> = {
@@ -137,8 +141,8 @@ function geometry(item: InkStroke): CachedGeometry {
 
 /** The context's transform must map reference space to device px (scale k / REF, translate band). */
 export function drawStroke(ctx: CanvasRenderingContext2D, item: InkStroke, palette: Palette, live = false): void {
-  ctx.fillStyle = palette[item.color];
-  ctx.strokeStyle = palette[item.color];
+  ctx.fillStyle = inkPaint(palette, item.color);
+  ctx.strokeStyle = inkPaint(palette, item.color);
   if (item.shape) {
     const g = live ? { line: polylinePath(item.points) } : geometry(item);
     ctx.lineWidth = item.size * REF * 0.8;
@@ -199,7 +203,7 @@ export class LiveStroke {
 
   /** Everything at once (one canvas): chunks then the tail. */
   draw(ctx: CanvasRenderingContext2D, item: InkStroke, predicted: readonly InkPoint[], palette: Palette): void {
-    ctx.fillStyle = palette[item.color];
+    ctx.fillStyle = inkPaint(palette, item.color);
     for (const c of this.frozenChunks(item)) ctx.fill(c);
     ctx.fill(outlineToPath(strokeOutline({ ...item, points: this.tail(item, predicted) }, false)));
   }
@@ -225,7 +229,7 @@ export function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: 
 
 export function drawTextBox(ctx: CanvasRenderingContext2D, item: InkTextBox, palette: Palette, font: string): void {
   const px = item.size * REF;
-  ctx.fillStyle = palette[item.color];
+  ctx.fillStyle = inkPaint(palette, item.color);
   ctx.font = `500 ${px}px ${font}`;
   ctx.textBaseline = "top";
   const lines = wrapText(ctx, item.text, item.w * REF);

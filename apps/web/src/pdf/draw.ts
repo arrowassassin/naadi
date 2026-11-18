@@ -14,7 +14,7 @@ import {
   rgb,
 } from "pdf-lib";
 import { type Paper, paperPrimitives } from "../notebooks/paper";
-import type { PdfColor, PdfPalette } from "./colors";
+import { type PdfColor, type PdfPalette, parseCssColor } from "./colors";
 import type { FontBytes } from "./fonts";
 import type { InkOp } from "./ink";
 import type { FontKey, LaidPage } from "./layout";
@@ -99,7 +99,9 @@ export function drawLaidPage(
 export function drawInk(page: PDFPage, ops: readonly InkOp[], fonts: PdfFonts, palette: PdfPalette): void {
   const { height } = page.getSize();
   for (const op of ops) {
-    const color = toRgb(palette.ink[op.color]);
+    const paint = parseCssColor(op.color) ?? palette.ink[op.color];
+    if (!paint) throw new Error("Unknown ink colour");
+    const color = toRgb(paint);
     const blendMode = "marker" in op && op.marker ? BlendMode.Multiply : BlendMode.Normal;
     if (op.op === "fill") {
       // drawSvgPath maps the path's y-down coordinates from (x, y) = the page's top-left corner.

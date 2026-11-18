@@ -35,3 +35,37 @@ test("reader guide highlights controls and chat keeps a draft across layouts", a
     await expect(panel.locator("textarea")).toHaveValue("Explain this passage");
   }
 });
+
+test("whole tour launches once, visits enabled screens, and replays from Help", async ({ page }) => {
+  await page.goto("/");
+  const step = page.locator(".guide-step");
+  await expect(step.locator(".driver-popover-title")).toHaveText("Follow today's plan");
+  for (const path of [
+    "/learn",
+    "/practice",
+    "/cards",
+    "/notes",
+    "/plan",
+    "/pathway",
+    "/learn/library",
+    "/search",
+    "/settings/account",
+    "/settings/account",
+  ]) {
+    const progress = await step.locator(".driver-popover-progress-text").textContent();
+    await step.getByRole("button", { name: "Next", exact: true }).click();
+    await expect.poll(() => new URL(page.url()).pathname).toBe(path);
+    await expect(step.locator(".driver-popover-progress-text")).not.toHaveText(progress ?? "");
+  }
+  await step.getByRole("button", { name: "Finish tour" }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await page.reload();
+  await expect(page.locator("[data-state=populated]")).toBeVisible();
+  await expect(step).toHaveCount(0);
+  await page.goto("/settings/account");
+  await page.getByRole("button", { name: "How Naadi works", exact: true }).click();
+  await page.getByRole("button", { name: "Tour the whole app" }).click();
+  await expect(step.locator(".driver-popover-title")).toHaveText("Follow today's plan");
+  await page.keyboard.press("Escape");
+  await expect(page).toHaveURL(/\/settings\/account$/);
+});

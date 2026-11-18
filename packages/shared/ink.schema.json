@@ -12,8 +12,16 @@
             "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
           },
           "color": {
-            "type": "string",
-            "enum": ["ink", "violet", "lime", "amber"]
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": ["ink", "violet", "lime", "amber"]
+              },
+              {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              }
+            ]
           },
           "anchor": {
             "type": "object",
@@ -113,8 +121,16 @@
             "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
           },
           "color": {
-            "type": "string",
-            "enum": ["ink", "violet", "lime", "amber"]
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": ["ink", "violet", "lime", "amber"]
+              },
+              {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              }
+            ]
           },
           "anchor": {
             "type": "object",

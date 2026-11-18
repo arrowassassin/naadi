@@ -503,7 +503,7 @@ function Reader({
             >
               {section.heading}
             </h1>
-            <div className="mx-auto w-full max-w-[52rem]">
+            <div className="-mx-(--gutter) tablet:-mx-11">
               {section.body ? (
                 <SectionInk
                   sectionId={section.id}
@@ -533,52 +533,57 @@ function Reader({
                       : undefined
                   }
                 >
-                  <div ref={rootRef} className="contents">
-                    {/* Segment 13: highlights and the selection toolbar (Highlight / Note / Card; Ask with S14). */}
-                    <HighlightableText
-                      key={section.id}
-                      anchorType="section"
-                      anchorId={section.id}
-                      runs={runs}
-                      enabled={!inkOn}
-                      offline={fromCache}
-                      onNote={(sel) => {
-                        quoteRef.current = sel.anchor.quote;
-                        if (notesOpen && panelRef.current) {
-                          panelRef.current.addQuote(sel.anchor.quote);
-                          quoteRef.current = null;
-                        } else toggleNotes(true);
-                      }}
-                      onCard={(sel) =>
-                        setCardDraft({ front_text: "", back_text: sel.anchor.quote, section_id: section.id })
-                      }
-                      onAsk={
-                        canAsk
-                          ? (sel) =>
-                              askAssistant({
-                                kind: "ask",
-                                context: {
-                                  type: "selection",
-                                  surface: { type: "section", id: section.id },
-                                  text: sel.anchor.quote,
-                                },
-                              })
-                          : undefined
-                      }
-                    >
-                      {(decorate) => (
-                        <ContentRenderer
-                          key={section.id}
-                          doc={section.body}
-                          sectionId={section.id}
-                          media={detail.media}
-                          questions={detail.questions}
-                          onUnknown={logUnknown}
-                          text={t}
-                          decorateText={decorate}
-                        />
-                      )}
-                    </HighlightableText>
+                  <div
+                    data-ink-column=""
+                    className="mx-auto w-full max-w-[min(52rem,calc(100%-5.5rem))] max-tablet:max-w-[calc(100%-2*var(--gutter))]"
+                  >
+                    <div ref={rootRef} className="contents">
+                      {/* Segment 13: highlights and the selection toolbar (Highlight / Note / Card; Ask with S14). */}
+                      <HighlightableText
+                        key={section.id}
+                        anchorType="section"
+                        anchorId={section.id}
+                        runs={runs}
+                        enabled={!inkOn}
+                        offline={fromCache}
+                        onNote={(sel) => {
+                          quoteRef.current = sel.anchor.quote;
+                          if (notesOpen && panelRef.current) {
+                            panelRef.current.addQuote(sel.anchor.quote);
+                            quoteRef.current = null;
+                          } else toggleNotes(true);
+                        }}
+                        onCard={(sel) =>
+                          setCardDraft({ front_text: "", back_text: sel.anchor.quote, section_id: section.id })
+                        }
+                        onAsk={
+                          canAsk
+                            ? (sel) =>
+                                askAssistant({
+                                  kind: "ask",
+                                  context: {
+                                    type: "selection",
+                                    surface: { type: "section", id: section.id },
+                                    text: sel.anchor.quote,
+                                  },
+                                })
+                            : undefined
+                        }
+                      >
+                        {(decorate) => (
+                          <ContentRenderer
+                            key={section.id}
+                            doc={section.body}
+                            sectionId={section.id}
+                            media={detail.media}
+                            questions={detail.questions}
+                            onUnknown={logUnknown}
+                            text={t}
+                            decorateText={decorate}
+                          />
+                        )}
+                      </HighlightableText>
+                    </div>
                   </div>
                 </SectionInk>
               ) : (

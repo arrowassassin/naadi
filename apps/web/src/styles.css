@@ -5,3 +5,10 @@
 
 /* Tailwind does not scan node_modules; the shared components live in a workspace package. */
 @source "../../../packages/ui/src";
+
+.ink-wheel-trigger,
+.ink-colour-disc {
+  background:
+    radial-gradient(circle closest-side, white, transparent),
+    conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
+}

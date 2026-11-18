@@ -358,12 +358,12 @@
       }
     },
     {
-      "name": "hex colour",
+      "name": "malformed hex colour",
       "valid": false,
       "item": {
         "id": "019a8c4e-0000-7000-8000-000000000001",
         "tool": "pen",
-        "color": "#ff0000",
+        "color": "#ff00zz",
         "size": 0.002,
         "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
         "createdAt": 1763000000000,

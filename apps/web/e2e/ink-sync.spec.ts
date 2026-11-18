@@ -450,6 +450,32 @@ test.describe("ink on a reader section", () => {
     }
   });
 
+  test("colour wheel ink crosses both margins and syncs in the original text coordinates", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    const s = await student(browser, baseURL as string, info, "margins");
+    try {
+      const page = await s.device({ width: 1440, height: 900 });
+      await turnInkOn(page);
+      await page.getByRole("button", { name: "Colour wheel" }).click();
+      const dialog = page.getByRole("dialog", { name: "Colour wheel" });
+      await dialog.getByLabel("Exact colour").fill("#1199dd");
+      await dialog.getByRole("button", { name: "Done" }).click();
+      const saving = page.waitForRequest((r) => r.url().includes("/changes") && r.method() === "POST");
+      await penStroke(page, 0.02, 0.98, (await blockTop(page, 2)) + 10);
+      const payload = (await saving).postDataJSON();
+      const stroke = payload.items.find((item: { color: string }) => item.color === "#1199dd");
+      expect(stroke.points[0][0]).toBeLessThan(0);
+      expect(stroke.points.at(-1)[0]).toBeGreaterThan(1);
+      await expect(page.locator(SAVE)).toHaveAttribute("data-ink-save", "saved");
+      await page.reload();
+      await expect(page.locator(SAVE)).toHaveAttribute("data-ink-save", "saved");
+    } finally {
+      await s.done();
+    }
+  });
+
   test("a stroke stays beside its paragraph from 1180 to 390 px wide (within 1 px)", async ({
     browser,
     baseURL,
@@ -466,11 +492,11 @@ test.describe("ink on a reader section", () => {
       await sent;
       const c1 = await violetCentre(a, y - 14, y + 14);
       expect(c1).not.toBeNull();
-      const w1 = (await a.locator(SURFACE).boundingBox())?.width ?? 0;
+      const w1 = (await a.locator("[data-ink-column]").boundingBox())?.width ?? 0;
       await a.setViewportSize({ width: 390, height: 844 });
       await a.waitForTimeout(400); // reflow, re-measure, re-anchor
       const top2 = await blockTop(a, 2);
-      const w2 = (await a.locator(SURFACE).boundingBox())?.width ?? 0;
+      const w2 = (await a.locator("[data-ink-column]").boundingBox())?.width ?? 0;
       expect(top2 / w2).toBeGreaterThan(top1 / w1 + 0.05); // the text really reflowed (block moved down in su)
       const expected = top2 + ((c1 as number) - top1) * (w2 / w1);
       const c2 = await violetCentre(a, expected - 20, expected + 20);
