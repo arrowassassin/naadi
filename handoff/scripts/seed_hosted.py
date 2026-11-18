@@ -15,7 +15,8 @@ only here; values live in the environment / docs/SECRETS.md): SUPABASE_URL, SUPA
 SUPABASE_SERVICE_ROLE_KEY, ADMIN_EMAILS. If the Space is private also HF_TOKEN + HF_SPACE_ID and
 NAADI_SPACE_PRIVATE=1. Optional: NAADI_BASE_URL (default https://arrowassassin-naadi.hf.space).
 
-Raw httpx is used only for the Space's /api/admin/seed job endpoints and the private-Space JWT exchange, which no SDK covers.
+Raw httpx is used only for the Space's /api/admin/seed job endpoints and the private-Space JWT exchange,
+which no SDK covers.
 """
 
 from __future__ import annotations
@@ -37,7 +38,7 @@ def main(mode: str) -> int:
         print(__doc__)
         return 2
     url = os.environ["SUPABASE_URL"]
-    admin = [x for x in re.split(r"[,;\s]+", os.environ["ADMIN_EMAILS"]) if x][0]
+    admin = next(x for x in re.split(r"[,;\s]+", os.environ["ADMIN_EMAILS"]) if x)
     created = mint_link(admin, None)  # {"user_id", "token_hash", "type"}
     anon = create_client(url, os.environ["SUPABASE_ANON_KEY"])
     session = anon.auth.verify_otp({"token_hash": created["token_hash"], "type": created["type"]}).session
