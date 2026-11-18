@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 390" width="660" height="390" role="img" aria-label="Bar graph of 12-month remission rates for drug X and drug Y from a promotional brochure" font-family="sans-serif">
+<title>Bar graph of 12-month remission rates for drug X and drug Y from a promotional brochure</title>
+<rect x="0" y="0" width="660" height="390" fill="#ffffff"/>
+<text x="330" y="28" font-size="16" text-anchor="middle" font-weight="bold" fill="#0f172a">Remission at 12 months</text>
+<line x1="120" y1="60" x2="120" y2="330" stroke="#334155" stroke-width="1.5"/><line x1="120" y1="330" x2="560" y2="330" stroke="#334155" stroke-width="1.5"/>
+<line x1="114" y1="330.0" x2="120" y2="330.0" stroke="#334155"/>
+<text x="108" y="335.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">55%</text>
+<line x1="114" y1="291.4" x2="120" y2="291.4" stroke="#334155"/>
+<text x="108" y="296.42857142857144" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">56%</text>
+<line x1="114" y1="252.9" x2="120" y2="252.9" stroke="#334155"/>
+<text x="108" y="257.8571428571429" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">57%</text>
+<line x1="114" y1="214.3" x2="120" y2="214.3" stroke="#334155"/>
+<text x="108" y="219.28571428571428" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">58%</text>
+<line x1="114" y1="175.7" x2="120" y2="175.7" stroke="#334155"/>
+<text x="108" y="180.71428571428572" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">59%</text>
+<line x1="114" y1="137.1" x2="120" y2="137.1" stroke="#334155"/>
+<text x="108" y="142.14285714285714" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">60%</text>
+<line x1="114" y1="98.6" x2="120" y2="98.6" stroke="#334155"/>
+<text x="108" y="103.57142857142858" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">61%</text>
+<line x1="114" y1="60.0" x2="120" y2="60.0" stroke="#334155"/>
+<text x="108" y="65.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">62%</text>
+<text x="40" y="195" font-size="12" text-anchor="middle" fill="#0f172a" transform="rotate(-90 40 195)">Patients in remission</text>
+<rect x="190" y="98.6" width="110" height="231.4" fill="#2563eb" stroke="#0f172a" stroke-width="1.5"/>
+<text x="245" y="90.57142857142858" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">61%</text>
+<text x="245" y="352" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Drug X</text>
+<rect x="390" y="252.9" width="110" height="77.1" fill="#b45309" stroke="#0f172a" stroke-width="1.5"/>
+<text x="445" y="244.85714285714286" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">57%</text>
+<text x="445" y="352" font-size="13" text-anchor="middle" font-weight="bold" fill="#0f172a">Drug Y</text>
+<text x="330" y="375" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Each group: about 400 patients</text>
+
+</svg>

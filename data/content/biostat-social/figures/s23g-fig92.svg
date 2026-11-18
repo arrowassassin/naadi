@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Plan-Do-Study-Act cycle with four quadrants arranged clockwise, plus a note that successive small cycles build on each other">
+<title>The Plan-Do-Study-Act cycle</title>
+<defs><marker id="s23g-fig92-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="640" height="420" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="320" y="26" font-size="16" text-anchor="middle" font-weight="bold">One PDSA cycle: a small, fast test of a change</text>
+<g stroke="#334155" stroke-width="2">
+<path d="M220,210 L220,70 A140,140 0 0,1 360,210 Z" fill="#dbeafe"/>
+<path d="M220,210 L360,210 A140,140 0 0,1 220,350 Z" fill="#fef3c7"/>
+<path d="M220,210 L220,350 A140,140 0 0,1 80,210 Z" fill="#dbeafe"/>
+<path d="M220,210 L80,210 A140,140 0 0,1 220,70 Z" fill="#fef3c7"/>
+</g>
+<g font-size="16" font-weight="bold" text-anchor="middle">
+<text x="282" y="150">PLAN</text><text x="282" y="282">DO</text><text x="158" y="282">STUDY</text><text x="158" y="150">ACT</text>
+</g>
+<g font-size="12" text-anchor="middle">
+<text x="282" y="168">predict</text><text x="282" y="300">test small</text><text x="158" y="300">compare</text><text x="158" y="168">adopt, adapt</text><text x="158" y="183">or abandon</text>
+</g>
+<path d="M330,105 A145,145 0 0,1 368,180" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#s23g-fig92-arrow)"/>
+<path d="M300,345 A145,145 0 0,1 230,360" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#s23g-fig92-arrow)"/>
+<path d="M90,300 A145,145 0 0,1 72,230" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#s23g-fig92-arrow)"/>
+<path d="M120,105 A145,145 0 0,1 200,66" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#s23g-fig92-arrow)"/>
+<g font-size="12">
+<text x="400" y="80" font-weight="bold">Plan:</text><text x="440" y="80">aim, change, prediction,</text><text x="400" y="96">who, where, what data</text>
+<text x="400" y="150" font-weight="bold">Do:</text><text x="430" y="150">run the test on a small</text><text x="400" y="166">scale; record problems</text>
+<text x="400" y="220" font-weight="bold">Study:</text><text x="448" y="220">compare results with</text><text x="400" y="236">the prediction</text>
+<text x="400" y="290" font-weight="bold">Act:</text><text x="434" y="290">decide the next cycle</text>
+<text x="400" y="340" font-weight="bold">Ramp:</text><text x="448" y="340">each cycle tests</text><text x="400" y="356">wider (1 patient → 1 shift</text><text x="400" y="372">→ 1 unit → many units)</text>
+</g>
+</g>
+</svg>
