@@ -79,7 +79,12 @@ test("writing in split page notes keeps lesson navigation and chat on the left",
   const mode = notes.getByRole("combobox");
   if (await mode.isVisible()) await mode.selectOption("write");
   else await notes.getByRole("button", { name: "Write", exact: true }).click();
-  await expect(notes.getByRole("toolbar", { name: "Ink tools" })).toBeVisible();
+  const toolbar = notes.getByRole("toolbar", { name: "Ink tools" });
+  await expect(toolbar).toBeVisible();
+  const toolsBox = (await toolbar.boundingBox())!;
+  const paperBox = (await notes.locator("[data-page-ink] [data-paper]").boundingBox())!;
+  expect(paperBox.y - (toolsBox.y + toolsBox.height)).toBeGreaterThanOrEqual(11);
+  expect(toolsBox.x - paperBox.x).toBeGreaterThanOrEqual(7);
   const dock = page.locator("[data-shell-bottom]");
   const next = dock.locator("[data-reader-slot] a").last();
   const chat = dock.getByRole("button", { name: "Open the assistant" });

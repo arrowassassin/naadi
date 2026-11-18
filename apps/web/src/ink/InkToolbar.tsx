@@ -81,7 +81,7 @@ export function InkToolbar({
       aria-label={t("ink.toolbar")}
       className={cx(
         // One row from 640 px up; on a phone, icons and a second row (never a sideways scroll that hides controls).
-        "relative mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-0.5 rounded-[28px] border border-line-strong bg-ground p-1.5 gap-y-1 [&>*]:shrink-0",
+        "relative mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-1 rounded-[28px] border border-line-strong bg-ground p-2 [&>*]:shrink-0",
         className,
       )}
     >
@@ -267,7 +267,7 @@ export function StickyInkToolbar({
   ...toolbar
 }: InkToolbarProps & { placement: keyof typeof STICKY; wrapperClassName?: string }) {
   return (
-    <div className={cx(STICKY[placement], "will-change-transform", wrapperClassName)} data-sticky-ink-toolbar="">
+    <div className={cx(STICKY[placement], "px-2 will-change-transform", wrapperClassName)} data-sticky-ink-toolbar="">
       <InkToolbar {...toolbar} />
     </div>
   );

@@ -111,7 +111,7 @@ export function PageInk({
 
   return (
     <div
-      className={cx("flex flex-col", className)}
+      className={cx("flex flex-col gap-3", className)}
       data-page-ink={noteId}
       data-ink-idle={layer.idle ? "" : undefined}
       data-ink-ready={layer.ready ? "" : undefined}
