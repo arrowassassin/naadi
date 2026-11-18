@@ -52,11 +52,15 @@ export class InkDocument {
     this.anchors = anchors;
   }
 
-  /** Every item the user's edit produced gets the anchor of the block under its top edge (or loses a stale one). */
+  /** Stamp local edits newer than previous versions and resolve their current layout anchors. */
   private stamp(change: Change): Change {
-    if (!this.anchors) return change;
     const after = change.after.map((e) => {
-      const item = stampAnchor(e.item, this.anchors);
+      const seen = this.replicaStamp.get(e.item.id);
+      const fresh =
+        seen !== undefined && e.item.updatedAt <= seen
+          ? { ...e.item, updatedAt: Math.max(Math.floor(this.now()), seen + 1) }
+          : e.item;
+      const item = this.anchors ? stampAnchor(fresh, this.anchors) : fresh;
       return item === e.item ? e : { item, seq: e.seq };
     });
     return { before: change.before, after };

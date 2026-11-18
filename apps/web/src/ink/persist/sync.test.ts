@@ -461,7 +461,7 @@ describe("review fixes", () => {
     expect(server.rows.has(bad.id)).toBe(false);
   });
 
-  it("P3: a stale edit with reset (purged deletion) leaves the device without the stroke", async () => {
+  it("P3: a stale stroke absent from a reset is kept locally until the student discards it", async () => {
     const server = new FakeServer();
     const A = make(server);
     await A.s.restore();
@@ -486,8 +486,13 @@ describe("review fixes", () => {
     s2.s.record(add(x));
     await s2.s.restore();
     await s2.s.flush();
+    expect(s2.s.pendingCount).toBe(0);
+    expect(s2.s.lastFailure).toBe("rejected");
+    expect(inkRowsForTests().rejected.map((i) => i.id)).toEqual([x.id]);
+    expect(s2.s.liveItems().map((i) => i.id)).toEqual(expect.arrayContaining([x.id, keep.id]));
+    expect(server.rows.has(x.id)).toBe(false);
+    s2.s.discardRejected();
     expect(s2.s.liveItems().map((i) => i.id)).toEqual([keep.id]);
     expect(s2.remote.flat().some((i) => i.id === x.id && i.deleted)).toBe(true);
-    expect(s2.s.pendingCount).toBe(0);
   });
 });

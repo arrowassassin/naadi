@@ -170,6 +170,19 @@ describe("undo/redo and last-writer-wins sync", () => {
     expect(mergeInkItems(local, merged2).find((i) => i.id === s.id)?.deleted).toBeUndefined();
   });
 
+  it("stamps repeated edits after the previous version even when the clock moves back", () => {
+    const doc = new InkDocument({ now: () => 900 });
+    const item = stroke([[0.1, 0.1]], { createdAt: 1_000, updatedAt: 1_000 });
+    doc.commit({ before: [], after: doc.fresh([item]) });
+    const before = doc.entry(item.id);
+    if (!before) throw new Error("missing stroke");
+    const change = doc.commit({
+      before: [before],
+      after: [{ ...before, item: { ...item, color: "violet", updatedAt: 900 } }],
+    });
+    expect(change?.updated).toEqual([{ ...item, color: "violet", updatedAt: 1_001 }]);
+  });
+
   it("undo of a move restamps the old position", () => {
     let clock = 10;
     const doc = new InkDocument({ now: () => clock });

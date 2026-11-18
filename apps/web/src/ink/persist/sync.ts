@@ -401,6 +401,7 @@ export class InkSync {
     const settled = new Map<string, string>(); // id -> reason it leaves pending
     for (const id of applied) settled.set(id, "applied");
     for (const r of out.rejected) if (r.id && !settled.has(r.id)) settled.set(r.id, r.reason);
+    const remoteIds = new Set(out.remote.map((item) => item.id));
     const done: InkItem[] = [];
     const refused: InkItem[] = [];
     for (const item of batch) {
@@ -408,7 +409,11 @@ export class InkSync {
       if (!reason) continue;
       const cur = this.pending.get(item.id);
       if (cur === item) this.pending.delete(item.id); // a newer local edit stays pending
-      if (reason === "invalid") {
+      // Below the purge horizon the server cannot distinguish a long-offline drawing from an old edit of
+      // deleted ink. Keep a local copy for the student without attempting to resurrect it on the server.
+      const missingAfterReset =
+        reason === "stale" && out.reset && cur === item && !item.deleted && !remoteIds.has(item.id);
+      if (reason === "invalid" || missingAfterReset) {
         refused.push(item);
         this.rejected.set(item.id, item);
       } else done.push(item);
