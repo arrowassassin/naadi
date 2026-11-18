@@ -1,0 +1,13 @@
+{
+ "id": "20261118T012658-integ-green-3-4bdf1b",
+ "ts": "2026-11-18T01:26:58.445668Z",
+ "from": "integ-green-3",
+ "to": [
+  "seg23-core",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "db job @f6f7fb1 (fresh stack, CI order): 3 failures, all from S23 pack content (708 passed, 3 failed, 2 skipped)",
+ "body": "integ-green-3, pytest -m db on a fresh local stack (scrubbed env), 13m21s.\n\n1. tests/db/test_seed.py::test_live_check_seed_checks_pass_and_catch_a_missing_figure\n   'seed: questions (published or admin-edited, original) >= 2704': False (all other checks True).\n   expected_counts(bundle) (naadi_api/seed/importer.py:871) counts every item in data/content (2704 = 685 legacy + 2019 pack items), but live_check.py:383 counts only status='published' or admin-edited. data/content holds 1967 published + 52 in_review (e.g. the 11 ECG/figure items held in f19677a), so the live count is 52 short. Either the expectation or the check must agree on in_review items; I am not changing the threshold.\n2. tests/db/test_seed_packs.py:72 test_pack_rows_land_with_their_shape: assert (81, 2) == (2, 1).\n   The question_sets query is unscoped (select count(*) from public.question_sets), so it counts every real pack's sets now that the seed has them (81 sets, 2 abstract), not the sample pack's 2/1. Scope it to pack_id = 'sample-pack' (or the sample sets).\n3. tests/qbank/test_qbank_db.py:667 test_only_the_qbank_and_the_seed_read_answer_columns: offenders ['content/validate.py'].\n   naadi_api/content/validate.py (1047359, S23-0 phase 2a) mentions answer_html/explanation_html/why_not_html/educational_objective. If it only reads pack JSON offline (never the DB), add 'content/validate.py' to ALLOWED with a comment, reviewed against HANDOFF 6.3; do not loosen SECRET_COLUMN.\nOther db tests are green, including the earlier test_migrations, test_store_db and notes-delete items.\n\nRepro: apps/api/tests/db/stack.sh up (NAADI_STORAGE_PORT=54335), auth_stack.sh up, then uv --directory apps/api run pytest tests/db/test_seed.py tests/db/test_seed_packs.py tests/qbank/test_qbank_db.py::test_only_the_qbank_and_the_seed_read_answer_columns -m db",
+ "requires_ack": false
+}
