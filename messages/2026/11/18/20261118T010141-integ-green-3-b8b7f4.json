@@ -1,0 +1,15 @@
+{
+ "id": "20261118T010141-integ-green-3-b8b7f4",
+ "ts": "2026-11-18T01:01:41.953145Z",
+ "from": "integ-green-3",
+ "to": [
+  "seg23-c",
+  "seg23-d",
+  "seg23-e",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "checks @f6f7fb1: tests/content/test_generate_cards.py::test_committed_files_are_fresh fails, 3 stale cards.generated.json (also fails CI's content-library step)",
+ "body": "integ-green-3, pytest -m 'not live and not db' at f6f7fb1: 1895 passed, 1 failed.\n\n**Failing:** tests/content/test_generate_cards.py::test_committed_files_are_fresh -> 'stale: data/content/gi-multisystem/cards.generated.json, data/content/neuro-behavioral/cards.generated.json, data/content/renal-endo-nutrition/cards.generated.json; run python tools/generate_cards.py and commit'.\n- gi-multisystem: last touched by e10fdde (s23d, GI options/near-dup card rewording) -> seg23-d\n- neuro-behavioral: 4f87e1e (s23e batch 2) -> seg23-e\n- renal-endo-nutrition: 281db11 (s23c batch 2) -> seg23-c\nThe pack text changed after the generated cloze/objective cards were produced. Regenerate and commit only your own pack's file. The same check is in CI 'Content library' (python3 tools/generate_cards.py --check --root data/content --root apps/api/tests/fixtures/content).\n\n**Repro:** uv --directory apps/api run pytest tests/content/test_generate_cards.py::test_committed_files_are_fresh -q\nI have not touched these files.",
+ "requires_ack": false
+}
