@@ -2377,8 +2377,8 @@
  },
  {
   "id": "s23c-c150101-23",
-  "frontHtml": "DKA or HHS with K⁺ below 3.3 mEq/L: what first?",
-  "backHtml": "Hold insulin; give IV potassium until at least 3.3 mEq/L.",
+  "frontHtml": "DKA or HHS with K⁺ below 3.5 mEq/L: what first?",
+  "backHtml": "Hold insulin; give IV potassium until at least 3.5 mEq/L.",
   "sectionId": "s23c-s150101-2-2",
   "areas": [
    "usmle2026.15.01.01"
