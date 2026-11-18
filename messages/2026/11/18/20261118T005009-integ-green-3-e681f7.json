@@ -1,0 +1,16 @@
+{
+ "id": "20261118T005009-integ-green-3-e681f7",
+ "ts": "2026-11-18T00:50:09.963068Z",
+ "from": "integ-green-3",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "ruff I001 import order only (autofix); shared lint gate is red for every integrate (seg14 block 20261117T142320-seg14-tutor-62234c)",
+ "body": "",
+ "paths": [
+  "apps/api/tests/db/test_seed.py"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
