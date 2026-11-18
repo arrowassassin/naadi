@@ -81,7 +81,7 @@ export function InkToolbar({
       aria-label={t("ink.toolbar")}
       className={cx(
         // One row from 640 px up; on a phone, icons and a second row (never a sideways scroll that hides controls).
-        "relative flex flex-wrap items-center gap-0.5 rounded-[28px] border border-line-strong bg-ground p-1.5 gap-y-1 [&>*]:shrink-0",
+        "relative mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-0.5 rounded-[28px] border border-line-strong bg-ground p-1.5 gap-y-1 [&>*]:shrink-0",
         className,
       )}
     >
@@ -175,7 +175,6 @@ export function InkToolbar({
           <ColourWheel color={state.color} onColor={onColor} disabled={!state.enabled || colourless} />
         </fieldset>
       )}
-      <span className="flex-1" />
       <button
         type="button"
         aria-label={t("ink.undo")}
@@ -204,6 +203,7 @@ export function InkToolbar({
       >
         <Redo2 aria-hidden="true" size={18} />
       </button>
+      <span aria-hidden="true" className="mx-1 h-6 w-px bg-line-strong" />
       <button
         type="button"
         aria-label={t("ink.clear")}
