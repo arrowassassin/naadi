@@ -1,0 +1,31 @@
+# YouTube channels crawled by tools/video_catalog.py (the Videos section catalogue).
+# `channel_id: null` is resolved (ids below were resolved 2026-11-24; Handwritten Tutorials has no resolvable handle) from `handle` with channels.list?forHandle (1 quota unit); a channel that does not
+# resolve is skipped and reported. `style` ranks matches: sketch > whiteboard > animation > lecture.
+# `subjects` limits which topic subjects the channel's videos may attach to (`[all]` = no limit).
+# Embeddability is per video; nothing here is a claim about the channel's licence.
+channels:
+  - {handle: "@DirtyMedicine", channel_id: UCZaDAUF7UEcRXIFvGZu3O9Q, name: Dirty Medicine, style: sketch, steps: [step1], subjects: [all]}
+  - {handle: "@pixorize", channel_id: UCpciEfaGm95mWt5L2jRi6ww, name: Pixorize, style: sketch, steps: [step1], subjects: [all]}
+  - {handle: "@physeo", channel_id: UCC0-atSe5RmtcKeDL7lRa_A, name: Physeo, style: sketch, steps: [step1], subjects: [all]}
+  - {handle: "@armandohasudungan", channel_id: UCesNt4_Z-Pm41RzpAClfVcg, name: Armando Hasudungan, style: whiteboard, steps: [step1], subjects: [all]}
+  - {handle: "@osmosis", channel_id: UCNI0qOojpkhsUtaQ4_2NUhQ, name: Osmosis from Elsevier, style: animation, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@ninjanerdofficial", channel_id: UC6QYFutt9cluQ3uSM963_KQ, name: Ninja Nerd, style: whiteboard, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@MedicosisPerfectionalis", channel_id: UCl-J-ovSJhA3or73Q2uVpow, name: Medicosis Perfectionalis, style: animation, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@ZeroToFinals", channel_id: UCwZEjeak8ychtv2Unng5W2A, name: Zero To Finals, style: whiteboard, steps: [step2ck], subjects: [all]}
+  - {handle: "@SpeedPharmacology", channel_id: UC-i2EBYXH6-GAglvuDIaufQ, name: Speed Pharmacology, style: whiteboard, steps: [step1], subjects: [Pharmacology]}
+  - {handle: "@RandyNeilMD", channel_id: UCjTHgZY7U6pajEz61sQCHBw, name: "Randy Neil, MD", style: lecture, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@StrongMed", channel_id: UCFq5vPnNRNNNysLrktz4aSw, name: Strong Medicine, style: whiteboard, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@medcram", channel_id: UCG-iSMVtWbbwDDXgXXypARQ, name: MedCram, style: lecture, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@DoctorHighYieldMD", channel_id: UC0Asdp7ukEshW7sZgC27EtA, name: Doctor High Yield MD, style: whiteboard, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@RhesusMedicine", channel_id: UCRks8wB6vgz0E7buP0L_5RQ, name: Rhesus Medicine, style: whiteboard, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@khanacademymedicine", channel_id: UCJayvjGvKEblkA3KYK1BQQw, name: Khan Academy Medicine, style: whiteboard, steps: [step1], subjects: [all]}
+  - {handle: null, channel_id: UCPHpx55tgrbm8FrYYCflAHw, name: Dr. Najeeb Lectures, style: lecture, steps: [step1], subjects: [all]}
+  - {handle: "@BoardReadyPsych", channel_id: UCxKwnd_Jayw-Rg_zXxRkmLw, name: Board Ready Psych, style: whiteboard, steps: [step1, step2ck], subjects: [Psychiatry, Behavioral Science]}
+  - {handle: "@MemorablePsychiatryandNeurology", channel_id: UCmPnj4g6i8cY6FVNDRB9q0Q, name: Memorable Psychiatry and Neurology, style: sketch, steps: [step1, step2ck], subjects: [Psychiatry, Neurology, Behavioral Science]}
+  - {handle: "@neuroscientificallychallenged", channel_id: UCUgZq9PkDp1xaEivtcfJPSg, name: Neuroscientifically Challenged, style: animation, steps: [step1], subjects: [Neurology, Anatomy, Physiology]}
+  - {handle: "@TheNotedAnatomist", channel_id: UCe9lb3da4XAnN7v3ciTyquQ, name: The Noted Anatomist, style: whiteboard, steps: [step1], subjects: [Anatomy]}
+  - {handle: "@ConanLiuMD", channel_id: UCmbKN0iRCQztCo0o6d9uAew, name: Conan Liu MD, style: whiteboard, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@SamWebster", channel_id: UCMRHZcgwdSE_9wbwcP8aRJw, name: Sam Webster, style: lecture, steps: [step1], subjects: [all]}
+  - {handle: "@LecturioMedical", channel_id: UCbYmF43dpGHz8gi2ugiXr0Q, name: Lecturio Medical, style: lecture, steps: [step1, step2ck], subjects: [all]}
+  - {handle: "@CatalystUniversity", channel_id: UCIzOHtZa0iOH49ez1O5mReQ, name: Catalyst University, style: whiteboard, steps: [step1], subjects: [Biochemistry, Physiology]}
+  - {handle: "@HandwrittenTutorials", channel_id: null, name: Handwritten Tutorials, style: whiteboard, steps: [step1], subjects: [Anatomy, Physiology, Pathology]}
