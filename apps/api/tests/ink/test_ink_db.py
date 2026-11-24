@@ -235,7 +235,7 @@ def test_invalid_and_duplicate_items_are_rejected_individually(client: TestClien
     h = ink.h(key)
     good = stroke()
     newer = {**good, "color": "lime", "updatedAt": good["updatedAt"] + 5}
-    bad = {**stroke(), "color": "#ff0000"}
+    bad = {**stroke(), "color": "#ff00"}  # hex colours are valid (full-colour wheel); this one is malformed
     out = post(client, h, "section", ink.section, [good, bad, None, newer]).json()
     assert out["applied"] == [good["id"]]
     assert {"id": bad["id"], "reason": "invalid"} in out["rejected"]
