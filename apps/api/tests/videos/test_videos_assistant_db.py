@@ -128,7 +128,7 @@ async def test_stem_matches_plural_and_singular() -> None:
 
 async def test_suggest_video_natural_queries(vw: VW, db: Database, pg: Any) -> None:  # noqa: F811
     tag = vw.w.tag
-    _media(pg, vw, 7, title=f"Beta{tag} blocker pharmacology")
+    _media(pg, vw, 7, title=f"Beta{tag} blocker{tag} pharmacology{tag}")
     _media(pg, vw, 8, title=f"Cardiac{tag} murmurs")
     _media(pg, vw, 9)
     for n in (7, 8, 9):
@@ -141,13 +141,13 @@ async def test_suggest_video_natural_queries(vw: VW, db: Database, pg: Any) -> N
         assert r.status == "ok", r.content
         return [b["data"]["media_id"] for b in r.blocks]
 
-    # "mechanism" matches nothing and "blockers" is a plural: the any-key-word retry finds it
-    assert await shown(f"beta{tag} blockers mechanism") == [vw.mid(7)]
+    # every key word is tagged, so real catalogue titles cannot match: "mechanism" matches nothing, "blockers" is a plural
+    assert await shown(f"beta{tag} blocker{tag}s mechanism{tag}") == [vw.mid(7)]
     assert await shown(f"frank starling{tag}") == [vw.mid(9)]
     assert await shown(f"cardiac{tag} murmur") == [vw.mid(8)]  # singular query, plural title
-    assert await shown(f"beta{tag} blockers") == [vw.mid(7)]  # plural query, singular title (no retry needed)
+    assert await shown(f"beta{tag} blocker{tag}s") == [vw.mid(7)]  # plural query, singular title (no retry needed)
     # the retry ranks by words matched: both key words beat one
-    assert await shown(f"cardiac{tag} beta{tag} pharmacology treatment") == [vw.mid(7), vw.mid(8)]
-    assert await shown(f"nothing{tag} mechanism") == []
+    assert await shown(f"cardiac{tag} beta{tag} pharmacology{tag} treatment{tag}") == [vw.mid(7), vw.mid(8)]
+    assert await shown(f"nothing{tag} mechanism{tag}") == []
     off = await call(ctx(db, vw.w.a, videos=False), "suggest_video", {"topic": vw.word})
     assert off.blocks == [] and off.content == "No video library available."
