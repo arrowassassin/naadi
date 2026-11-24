@@ -363,6 +363,8 @@ test.describe("assistant offline", () => {
   }, info) => {
     test.setTimeout(120_000);
     await openFirstSection(page);
+    // The page's own deferred chunks (the section's ink engine loads once the browser is idle) arrive first.
+    await quiet(page);
     // From here on, hold the lazily loaded scripts the chat asks for (the markdown renderer's chunks), as if the
     // connection went before they arrived.
     const held: Route[] = [];
