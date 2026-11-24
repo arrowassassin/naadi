@@ -13,6 +13,9 @@
   --ui-font: var(--font-sans);
 }
 
-[data-board-tools-hidden] .excalidraw .layer-ui__wrapper {
+/* Desktop layout keeps its UI in .layer-ui__wrapper; the phone layout puts its tools in a top and a bottom bar. */
+[data-board-tools-hidden] .excalidraw .layer-ui__wrapper,
+[data-board-tools-hidden] .excalidraw .App-top-bar,
+[data-board-tools-hidden] .excalidraw .App-bottom-bar {
   display: none;
 }
