@@ -392,8 +392,15 @@ def _videos(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str
         }
 
     guard = None if force else ADMIN_EDIT_GUARD
-    refreshed = ("title", "duration_s", "metadata_fetched_at", "attribution")
+    # A YouTube row that exists belongs to the 30-day refresh (title, duration, attribution, fetch time, and
+    # review_status / embeddable when it retires the video): the seed only keeps its identity columns, force or not.
     yt_rows = [media(v) for v in b.videos if v.provider == "youtube"]
+    cur.execute("select id from public.media_assets where id = any(%s)", ([r["id"] for r in yt_rows],))
+    known = {r[0] for r in cur.fetchall()}
+    yt_new = [r for r in yt_rows if r["id"] not in known]
+    yt_known = [
+        {k: r[k] for k in ("id", "kind", "source_id", "youtube_id", "channel_id")} for r in yt_rows if r["id"] in known
+    ]
     file_rows = [media(v) for v in b.videos if v.provider == "commons"]
     topics = upsert(
         cur,
@@ -402,12 +409,15 @@ def _videos(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str
         [t.model_dump() for t in b.video_topics],
     )
     topics.deleted = _delete_missing(cur, "video_topics", "id", [t.id for t in b.video_topics])
-    counts = upsert(cur, "media_assets", ["id"], yt_rows, keep_existing=refreshed, guard=guard)
-    more = upsert(cur, "media_assets", ["id"], file_rows, guard=guard)
-    counts.total += more.total
-    counts.inserted += more.inserted
-    counts.updated += more.updated
-    counts.unchanged += more.unchanged
+    counts = upsert(cur, "media_assets", ["id"], yt_new)
+    for more in (
+        upsert(cur, "media_assets", ["id"], yt_known, guard=guard),
+        upsert(cur, "media_assets", ["id"], file_rows, guard=guard),
+    ):
+        counts.total += more.total
+        counts.inserted += more.inserted
+        counts.updated += more.updated
+        counts.unchanged += more.unchanged
     catalog = upsert(
         cur,
         "video_catalog",

@@ -49,6 +49,8 @@ Reason = Literal[
 ]
 
 # Licence strings that name no licence at all, or defer to a per-file licence that a shared row cannot state.
+# Commons files are licensed per file: CC0, public domain, CC BY and CC BY-SA (never NC or ND).
+COMMONS_LICENCE = re.compile(r"^(CC0|Public domain|CC BY(-SA)? \d)", re.IGNORECASE)
 NO_LICENSE = frozenset({"", "unknown", "none", "per-item", "per-file"})
 SHARE_ALIKE = re.compile(r"(^|[-_ ])SA([-_ ]|$)", re.IGNORECASE)
 NO_DERIVATIVES = re.compile(r"(^|[-_ ])ND([-_ ]|$)", re.IGNORECASE)
@@ -129,6 +131,7 @@ class AssetFacts:
     kind: str  # media_assets.kind
     embeddable: bool | None = None
     metadata_fetched_at: dt.datetime | None = None
+    licence: str | None = None  # the file's own licence (`media_assets.licence` license_short_name), Commons video_file
 
 
 @dataclass(frozen=True)
@@ -185,7 +188,11 @@ def decide(
     source: a stored, modified copy), `rag` (prompts, retrieval, embeddings)."""
     if source is None:
         return "no_source"
-    if not source.licensed and policy.block_without_license:
+    if asset.kind == "video_file":
+        # Played from its host, never re-hosted, and licensed per file: the asset's own snapshot decides.
+        if not COMMONS_LICENCE.match(asset.licence or "") and policy.block_without_license:
+            return "no_license"
+    elif not source.licensed and policy.block_without_license:
         return "no_license"
     if use == "rag":
         return None if source.allow_ai_ingest or not policy.block_non_ai_ingest_from_rag else "no_ai_ingest"
@@ -290,7 +297,8 @@ async def check_media_row(
 ) -> None:
     """Gate an existing `media_assets` row (by id) for `use`; optionally it must already be approved."""
     cur = await conn.execute(
-        "select id, kind, source_id, review_status, embeddable, metadata_fetched_at from public.media_assets"
+        "select id, kind, source_id, review_status, embeddable, metadata_fetched_at,"
+        " licence->>'license_short_name' as licence_name from public.media_assets"
         " where id = %s",
         (media_id,),
     )
@@ -304,10 +312,18 @@ async def check_media_row(
         conn,
         m["source_id"],
         use=use,
-        asset=AssetFacts(m["kind"], m["embeddable"], m["metadata_fetched_at"]),
+        asset=AssetFacts(m["kind"], m["embeddable"], m["metadata_fetched_at"], m["licence_name"]),
         ref_id=media_id,
         page=page,
     )
+
+
+async def media_licence(conn: AsyncConnection[Any], media_id: str) -> str | None:
+    cur = await conn.execute(
+        "select licence->>'license_short_name' as n from public.media_assets where id = %s", (media_id,)
+    )
+    row = await cur.fetchone()
+    return row["n"] if row else None
 
 
 async def check_text_source(conn: AsyncConnection[Any], source_id: str | None, *, ref_id: str | None = None) -> None:

@@ -131,20 +131,12 @@ def test_second_run_changes_nothing(first_run: object, url: str, b: SeedBundle) 
     assert _count(url, "select count(*) from public.chapter_section_revisions where section_id like 'ch%%'") == 0
 
 
-def test_videos_keep_a_refresh_and_an_admin_edit_and_drop_removed_rows(
+def test_commons_videos_keep_an_admin_edit_drop_removed_topics_and_force_restores(
     first_run: object, url: str, b: SeedBundle
 ) -> None:
-    yt = next(v for v in b.videos if v.provider == "youtube")
     file = next(v for v in b.videos if v.provider == "commons")
     only = {"only": ("videos",)}
     with psycopg.connect(url, autocommit=True) as c:
-        c.execute("select set_config('naadi.seed', 'on', false)")  # a refresh is not an admin edit
-        c.execute(
-            "update public.media_assets set title = 'Real title', duration_s = 99, metadata_fetched_at = now(),"
-            " attribution = 'Video: Real' where id = %s",
-            (yt.id,),
-        )
-        c.execute("select set_config('naadi.seed', 'off', false)")
         c.execute("update public.media_assets set title = 'Admin title' where id = %s", (file.id,))
         c.execute(
             "insert into public.video_topics (id, title, subject, step, sort) values ('zz-gone','x','x','step1',0)"
@@ -153,15 +145,9 @@ def test_videos_keep_a_refresh_and_an_admin_edit_and_drop_removed_rows(
         r = run_seed(options(url, **only), bundle=b)
         assert r.tables["video_topics"].deleted == 1
         assert r.tables["video_media_assets"].kept == 0 and r.tables["video_media_assets"].updated == 0
-        row = _row(url, "select title, duration_s, attribution from public.media_assets where id = %s", yt.id)
-        assert row == ("Real title", 99, "Video: Real")
         assert _row(url, "select title from public.media_assets where id = %s", file.id) == ("Admin title",)
-        assert (
-            _row(
-                url, "select kind, url, page_url, licence is not null from public.media_assets where id = %s", file.id
-            )[0]
-            == "video_file"
-        )
+        shape = "select kind, url, page_url, licence is not null from public.media_assets where id = %s"
+        assert _row(url, shape, file.id) == ("video_file", file.file_url, file.file_page, True)
         forced = run_seed(options(url, force=True, **only), bundle=b)
         assert forced.tables["video_media_assets"].updated == 1
         assert _row(url, "select title from public.media_assets where id = %s", file.id) == (file.label,)
@@ -169,6 +155,49 @@ def test_videos_keep_a_refresh_and_an_admin_edit_and_drop_removed_rows(
     finally:
         with psycopg.connect(url, autocommit=True) as c:
             c.execute("delete from public.video_topics where id = 'zz-gone'")
+
+
+async def test_a_reseed_never_undoes_the_real_youtube_refresh(first_run: object, url: str, b: SeedBundle) -> None:
+    from pydantic import SecretStr
+
+    from naadi_api.config_api.schemas import YoutubeRules
+    from naadi_api.db import Database
+    from naadi_api.youtube import mapper
+
+    from ..youtube.fakes import FakeYouTube, WordEmbedder, item
+
+    kept, gone = [v for v in b.videos if v.provider == "youtube"][:2]
+    assert kept.youtube_id and gone.youtube_id
+    with psycopg.connect(url, autocommit=True) as c:
+        # only these two are due for the refresh (every other seeded video was fetched just now)
+        c.execute("select set_config('naadi.seed', 'on', false)")
+        c.execute(
+            "update public.media_assets set metadata_fetched_at = now() where kind = 'video_youtube' and id <> all(%s)",
+            ([kept.id, gone.id],),
+        )
+    api = FakeYouTube({}, {kept.youtube_id: item(kept.youtube_id, "Real title", duration="PT5M")})
+    db = Database(SecretStr(url))
+    try:
+        rep = await mapper.run(db, api, WordEmbedder(), YoutubeRules(), [])  # the real _refresh / drop_video
+    finally:
+        await db.close()
+    assert (rep.refreshed, rep.dropped) == (1, 1)
+    q = "select title, duration_s, review_status, embeddable, metadata_fetched_at, attribution from public.media_assets"
+    before = {i: _row(url, q + " where id = %s", i) for i in (kept.id, gone.id)}
+    assert before[kept.id][:4] == ("Real title", 300, "approved", True)
+    assert before[gone.id][:4] == (None, None, "rejected", False)
+    try:
+        for force in (False, True):
+            run_seed(options(url, force=force, only=("videos",)), bundle=b)
+            for i in (kept.id, gone.id):
+                assert _row(url, q + " where id = %s", i) == before[i], (force, i)
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:  # leave the module's seeded state as it was
+            c.execute(
+                "delete from public.media_assets where kind = 'video_youtube' and id = any(%s)",
+                ([v.id for v in b.videos],),
+            )
+        run_seed(options(url, only=("videos",)), bundle=b)
 
 
 def _row(url: str, query: str, *params: object) -> tuple[object, ...]:

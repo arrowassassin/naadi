@@ -41,8 +41,9 @@ import holds the lock.
 `videos` loads `data/video_topics.json` and `data/videos.json` into `video_topics`, `media_assets` (YouTube
 `video_youtube`, Commons `video_file`) and `video_catalog`; topics and catalog rows no longer in the data are
 deleted. YouTube rows carry only ids and Naadi's own label (no API metadata), so after seeding run
-`tools/youtube_mapper.py --refresh-only` once to fill real titles, durations and attribution. A re-seed keeps what
-the refresh wrote (title, duration, attribution, fetch time) and any row an admin edited (unless `force`).
+`tools/youtube_mapper.py --refresh-only` once to fill real titles, durations and attribution. For a YouTube row that already exists the seed only keeps its identity columns (id, youtube_id, channel_id),
+force or not, so a re-seed never undoes what the refresh wrote or retired. Commons rows follow the data, except
+those an admin edited (unless `force`). Videos removed from the data keep their `media_assets` row (the catalog row goes).
 
 ### Real project (from the Space, so no database URL or service key leaves it)
 
