@@ -114,6 +114,9 @@ class Settings(BaseSettings):
     # Local search (segment 07): bring the embeddings index in line with the content when the API starts
     # (a background task; a no-op when nothing changed or the models are not cached).
     embeddings_autostart: bool = True
+    # Seed `sources`, `videos` and `app_config` (no force, so admin edits are kept) in the background when the API
+    # starts, recorded as a seed run. On in the Space image (deploy/space/Dockerfile); off for local dev and tests.
+    seed_on_start: bool = Field(default=False, validation_alias="NAADI_SEED_ON_START")
 
     # ── Web Push (S16): owner-provided VAPID pair; reminders stay off until all three are set ──
     vapid_public_key: str | None = None

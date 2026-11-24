@@ -40,12 +40,22 @@ import holds the lock.
 
 `videos` loads `data/video_topics.json` and `data/videos.json` into `video_topics`, `media_assets` (YouTube
 `video_youtube`, Commons `video_file`) and `video_catalog`; topics and catalog rows no longer in the data are
-deleted. YouTube rows carry only ids and Naadi's own label (no API metadata), so after seeding run
-`tools/youtube_mapper.py --refresh-only` once to fill real titles, durations and attribution. For a YouTube row that already exists the seed only keeps its identity columns (id, youtube_id, channel_id),
+deleted. YouTube rows carry only ids and Naadi's own label (no API metadata); the deploy seed's refresh step (or
+`tools/youtube_mapper.py --refresh-only`, or the weekly `youtube_map` cron) fills real titles, durations and attribution. For a YouTube row that already exists the seed only keeps its identity columns (id, youtube_id, channel_id),
 force or not, so a re-seed never undoes what the refresh wrote or retired. Commons rows follow the data, except
 those an admin edited (unless `force`). Videos removed from the data keep their `media_assets` row (the catalog row goes).
 
 ### Real project (from the Space, so no database URL or service key leaves it)
+
+**On every deploy (automatic):** when the Space container starts (after `migrate_all` succeeded), the API records
+and runs a seed job for `sources`, `videos` and `app_config` in the background: not a dry run, never forced, so
+admin-edited rows and `app_config` keys are kept and refreshed YouTube metadata is never undone. It is an ordinary
+`seed_runs` row (`started_by` null) under the same lock as the admin job, so a start while another seed is running
+skips it (`boot_seed_skipped`). A failure is logged (`boot_seed_failed`, or the run's `error`) and the API serves
+anyway. After a successful run it fills titles and durations of due YouTube videos (the mapper's refresh step,
+YouTube Data API only, when `YOUTUBE_API_KEY` is set and `youtube.enabled`). Switch: `NAADI_SEED_ON_START`, set to
+`1` in `deploy/space/Dockerfile`; off by default (local dev, tests). A Space variable `NAADI_SEED_ON_START=0` turns
+it off. Other groups (chapters, questions, figures, ...), dry runs and forced runs stay manual, below.
 
 The Space has `DATABASE_URL`, `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` as secrets and ships `data/`.
 Signed in as an admin (an `ADMIN_EMAILS` address), with the access token from the web app session:
@@ -114,10 +124,10 @@ the verification **updates the owner's "last sign-in" time** in Supabase Auth. N
   assembles the build context from tracked files (`scripts/deploy_space.py`: no `.env*`, every secret value scanned
   for), uploads it to the Space, waits for RUNNING and smoke-tests `/api/health` (database ok) and `/`. A newer push
   never cancels a deploy in progress.
-- **After the Videos branch deploys:** re-seed the real project (see "Real project" above, `only: ["sources", "videos", "app_config"]`
-  is enough). Stored `app_config` strings win over the shipped yaml, so the new copy ("Mark watched: {title}" and
-  "Watched: {title}. Press to unmark", the accessible names of the watched buttons) only goes live once `app_config`
-  is re-seeded (a key an admin edited keeps its stored value). Then run `tools/youtube_mapper.py --refresh-only` once.
+- **After a deploy:** `sources`, `videos` and `app_config` are re-seeded automatically at startup (see "Real
+  project" above), followed by the YouTube refresh; check the newest row in `GET /api/admin/seed/runs`. Stored
+  `app_config` strings win over the shipped yaml, so a key an admin edited keeps its stored value until a forced run.
+  Other groups still need the manual admin job.
 - **Watch:** Space → Logs. A failed migration prints one `migrate_all.failed` line and the container exits, so the
   old revision keeps serving until the new one is healthy.
 - **Rollback (code):** revert the bad commit on `main` (`git revert <sha>`) and push; CI and the deploy run as usual

@@ -60,7 +60,8 @@ COPY --from=searxng /opt/searxng /opt/searxng
 COPY --chown=user deploy/searxng/settings.yml ./deploy/searxng/settings.yml
 COPY --chown=user deploy/space/start.sh ./start.sh
 ENV NAADI_STATIC_DIR=/home/user/app/static NAADI_CONFIG_DIR=/home/user/app/config \
-    FASTEMBED_CACHE_PATH=/home/user/.cache/fastembed
+    FASTEMBED_CACHE_PATH=/home/user/.cache/fastembed \
+    NAADI_SEED_ON_START=1
 USER user
 # Local search (segment 07): download the embedding and reranker models (ids from config/models.yaml) into the
 # image, so a query never touches the network. Serving loads them with local_files_only.
@@ -70,8 +71,9 @@ EXPOSE 7860
 # it), then naadi_api/agent/migrate_all.py: Aegra's Alembic migrations + LangGraph checkpoint/store tables, then
 # Naadi's (advisory-locked), then RLS on Aegra's tables and a tripwire that every public table has RLS. A failure
 # logs one `migrate_all.failed` line and the container exits, so nothing serves on a half-migrated schema.
-# Then uvicorn replaces the shell (exec) and receives signals. The top-level app is Aegra hosting the Naadi app
-# (naadi_api/agent/host.py). ONE worker: Aegra's in-memory broker and cron scheduler live in the process, so a
+# Then uvicorn replaces the shell (exec) and receives signals. Its startup records and runs the deploy seed
+# (NAADI_SEED_ON_START: sources, videos, app_config; admin edits kept) in the background; a failure is only
+# logged. The top-level app is Aegra hosting the Naadi app (naadi_api/agent/host.py). ONE worker: Aegra's in-memory broker and cron scheduler live in the process, so a
 # second worker would split streams from their runs and fire crons twice.
 # --no-access-log: our middleware writes one JSON line per request without query strings.
 # --log-config: uvicorn's own lines use the same JSON formatter as the app (naadi_api/uvicorn_logging.json).
