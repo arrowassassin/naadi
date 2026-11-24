@@ -32,6 +32,7 @@ class Shared:
     task_id: str
     media_id: str
     unapproved_media_id: str
+    video_media_id: str  # approved video_file in video_catalog
     plan_template_id: str
 
 
@@ -206,6 +207,12 @@ USER_TABLES: tuple[UserTable, ...] = (
         ("scroll_position", 2.25),
     ),
     UserTable(
+        "video_watches",
+        lambda u, s: {"user_id": u, "media_id": s.video_media_id, "watched_at": "2026-11-24T08:00:00Z"},
+        ("user_id", "media_id"),
+        ("watched_at", "2026-11-24T09:00:00Z"),
+    ),
+    UserTable(
         "ink_items",
         lambda u, s: {
             "user_id": u,
@@ -349,6 +356,7 @@ def seed_shared(conn: psycopg.Connection, owner_for_private: uuid.UUID | None = 
         task_id=f"test-task-{tag}",
         media_id=f"test-fig-{tag}",
         unapproved_media_id=f"test-fig-pending-{tag}",
+        video_media_id=f"wm-test-{tag}",
         plan_template_id=f"test-plan-{tag}",
     )
     insert_row(conn, "sources", {"id": s.source_id, "name": "Test", "license": "proprietary-naadi"})
@@ -403,6 +411,33 @@ def seed_shared(conn: psycopg.Connection, owner_for_private: uuid.UUID | None = 
         conn, "media_assets", {"id": s.media_id, "kind": "svg", "source_id": s.source_id, "review_status": "approved"}
     )
     insert_row(conn, "media_assets", {"id": s.unapproved_media_id, "kind": "svg", "source_id": s.source_id})
+    insert_row(
+        conn,
+        "media_assets",
+        {
+            "id": s.video_media_id,
+            "kind": "video_file",
+            "source_id": s.source_id,
+            "review_status": "approved",
+            "url": "https://upload.example.org/test.webm",
+            "page_url": "https://commons.example.org/File:Test.webm",
+            "licence": Jsonb(
+                {"license_short_name": "CC BY 4.0", "license_url": "https://example.org/l", "artist": "A"}
+            ),
+        },
+    )
+    insert_row(
+        conn,
+        "video_catalog",
+        {
+            "media_id": s.video_media_id,
+            "subject": "Cardiology",
+            "step": "step1",
+            "style": "animation",
+            "sort": 1,
+            "provider": "commons",
+        },
+    )
     insert_row(conn, "section_media", {"section_id": s.section_id, "media_id": s.media_id, "sort": 1})
     insert_row(conn, "section_media", {"section_id": s.section_id, "media_id": s.unapproved_media_id, "sort": 2})
     insert_row(

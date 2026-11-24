@@ -67,7 +67,7 @@ CONTENT_TYPES = {
 }
 YOUTUBE_ID = re.compile(r"^[A-Za-z0-9_-]{11}$")
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be", "www.youtube-nocookie.com"})
-MediaKind = Literal["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]
+MediaKind = Literal["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link", "video_file"]
 ReviewStatus = Literal["unreviewed", "approved", "rejected"]
 
 

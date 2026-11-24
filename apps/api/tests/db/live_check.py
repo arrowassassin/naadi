@@ -47,6 +47,7 @@ USER_TABLES = (
     "generated_media",
     "report_issues",
     "reading_positions",
+    "video_watches",
     "ink_items",
     "block_sections",
     "card_review_logs",

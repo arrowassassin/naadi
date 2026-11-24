@@ -5,7 +5,7 @@ import "../../zod-config";
 import * as z from "zod";
 
 export const zListAdminMediaQuery = z.object({
-  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]).nullish(),
+  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link", "video_file"]).nullish(),
   review_status: z.enum(["unreviewed", "approved", "rejected"]).nullish(),
   q: z.string().max(100).nullish(),
   limit: z.int().gte(1).lte(100).optional().default(48),

@@ -309,7 +309,8 @@
               "video_youtube",
               "audio",
               "pdf",
-              "link"
+              "link",
+              "video_file"
             ],
             "title": "Kind",
             "type": "string"
@@ -9121,7 +9122,8 @@
               "video_youtube",
               "audio",
               "pdf",
-              "link"
+              "link",
+              "video_file"
             ],
             "title": "Kind",
             "type": "string"
@@ -22447,7 +22449,8 @@
                     "video_youtube",
                     "audio",
                     "pdf",
-                    "link"
+                    "link",
+                    "video_file"
                   ],
                   "type": "string"
                 },

@@ -156,7 +156,7 @@ class MediaSource(BaseModel):
 
 class MediaOut(BaseModel):
     id: str
-    kind: Literal["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]
+    kind: Literal["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link", "video_file"]
     url: str | None = Field(description="Browser URL (public or signed); null when it cannot be served")
     title: str | None
     caption: str | None

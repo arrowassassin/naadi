@@ -15,7 +15,7 @@ export const zAdminMedia = z.object({
   embeddable: z.boolean().nullable(),
   height: z.int().nullable(),
   id: z.string(),
-  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]),
+  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link", "video_file"]),
   metadata_fetched_at: z.iso.datetime().nullable(),
   preview_url: z.string().nullable(),
   review_status: z.enum(["unreviewed", "approved", "rejected"]),

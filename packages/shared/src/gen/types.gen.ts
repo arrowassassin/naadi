@@ -162,7 +162,7 @@ export type AdminMedia = {
   /**
    * Kind
    */
-  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link";
+  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | "video_file";
   /**
    * Metadata Fetched At
    */
@@ -5189,7 +5189,7 @@ export type MediaOut = {
   /**
    * Kind
    */
-  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link";
+  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | "video_file";
   source: MediaSource | null;
   /**
    * Title
@@ -12374,7 +12374,7 @@ export type ListAdminMediaData = {
     /**
      * Kind
      */
-    kind?: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | null;
+    kind?: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | "video_file" | null;
     /**
      * Review Status
      */

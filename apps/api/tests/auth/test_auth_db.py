@@ -329,6 +329,7 @@ def _user_rows(pg: psycopg.Connection[Any], uid: uuid.UUID) -> dict[str, int]:
     """Everything the student-facing write paths can create for a user."""
     q = {
         "reading_positions": "select count(*) from public.reading_positions where user_id = %s",
+        "video_watches": "select count(*) from public.video_watches where user_id = %s",
         "blocks": "select count(*) from public.blocks where user_id = %s",
         "attempts": "select count(*) from public.attempts where user_id = %s",
         "ink_layers": "select count(*) from public.ink_layers where user_id = %s",
@@ -358,8 +359,10 @@ def test_a_revoked_session_reads_and_writes_nothing_anywhere(
         headers = h(key, pg, a)
         live = c.put("/api/reading-position", headers=headers, json=position)
         assert live.status_code == 200, live.text
+        pg.execute("insert into public.video_watches (user_id, media_id) values (%s, %s)", (a, sec.video_media_id))
         before = _user_rows(pg, a)
         assert before["reading_positions"] == 1
+        assert before["video_watches"] == 1
         name_before = pg.execute("select display_name from public.profiles where user_id = %s", (a,)).fetchone()
 
         pg.execute("delete from auth.sessions where user_id = %s", (a,))  # "sign out of all devices"
