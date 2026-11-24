@@ -90,7 +90,7 @@ test.describe("signed in as a student", () => {
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     }
     // the server lists only enabled items; the search and assistant buttons are absent, not disabled
-    await expect(page.getByRole("button", { name: /search/i })).toHaveCount(0);
+    await expect(page.getByRole("navigation").getByRole("button", { name: /search/i })).toHaveCount(0);
     await expect(page.getByRole("button", { name: "Ask Naadi" })).toHaveCount(0);
   });
 

@@ -70,10 +70,13 @@ test("Ctrl+K opens Search from anywhere; results are grouped; a chapter hit open
 test("the navigation's search button opens Search, and the shortcut refocuses the field", async ({ page }) => {
   await page.goto("/");
   const phone = (page.viewportSize()?.width ?? 1000) < 768;
-  const button = phone
-    ? page.getByRole("navigation", { name: "Tabs" }).getByRole("link", { name: "Search" })
-    : page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Search everything" });
-  await button.click();
+  if (phone) {
+    // Search follows the server's nav items, so on the phone it sits in More once they fill the tab bar.
+    await page.getByRole("navigation", { name: "Tabs" }).getByRole("button", { name: "More" }).click();
+    await page.getByRole("dialog", { name: "More" }).getByRole("link", { name: "Search" }).click();
+  } else {
+    await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Search everything" }).click();
+  }
   await expect(page).toHaveURL(/\/search$/);
   await expect(searchBox(page)).toBeFocused();
   await searchBox(page).fill("thyroid");
@@ -119,8 +122,15 @@ test("keyboard: arrows move through results and Enter opens one", async ({ page 
   await page.keyboard.press("ArrowUp");
   await expect(searchBox(page)).toBeFocused();
   await page.keyboard.press("ArrowDown");
+  const href = await first.getAttribute("href");
+  expect(href).toMatch(/^\/learn\/[\w-]+\/[\w-]+/);
   await page.keyboard.press("Enter");
-  await expect(page).toHaveURL(/\/learn\/ch\d+\//);
+  await expect
+    .poll(() => {
+      const u = new URL(page.url());
+      return u.pathname + u.search + u.hash;
+    })
+    .toBe(href);
 });
 
 test("nothing found: a clear empty state, and the web panel says what it found", async ({
@@ -210,7 +220,8 @@ test("phone tab bar: icon above label, no label truncated or overflowing", async
   const phone = (page.viewportSize()?.width ?? 1000) < 768;
   test.skip(!phone, "the tab bar is the phone and small-tablet layout");
   const tabs = page.getByRole("navigation", { name: "Tabs" });
-  await expect(tabs.getByRole("link", { name: "Search" })).toBeVisible();
+  // Search sits in More (after the server's nav items), which is marked as the current tab on /search.
+  await expect(tabs.getByRole("button", { name: "More" })).toHaveAttribute("aria-current", "page");
   const fits = await tabs.locator("a").evaluateAll((links) =>
     links.map((a) => {
       const label = a.querySelector("span");
