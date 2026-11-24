@@ -140,8 +140,8 @@ async def test_suggest_video_natural_queries(vw: VW, db: Database, pg: Any) -> N
         r = await call(tc, "suggest_video", {"topic": topic})
         assert r.status == "ok", r.content
         return [b["data"]["media_id"] for b in r.blocks]
+
     # every key word is tagged, so real titles cannot match: "mechanism" matches nothing, "blockers" is a plural
-    # every key word is tagged, so real catalogue titles cannot match: "mechanism" matches nothing, "blockers" is a plural
     assert await shown(f"beta{tag} blocker{tag}s mechanism{tag}") == [vw.mid(7)]
     assert await shown(f"frank starling{tag}") == [vw.mid(9)]
     assert await shown(f"cardiac{tag} murmur") == [vw.mid(8)]  # singular query, plural title
