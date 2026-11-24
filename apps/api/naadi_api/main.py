@@ -49,7 +49,7 @@ from .plan.routes import install_plan_routes
 from .push.routes import install_push_routes
 from .qbank.routes import install_qbank_routes
 from .search_routes import install_search_routes, start_search, stop_search
-from .seed.jobs import drain_seed_tasks
+from .seed.jobs import drain_seed_tasks, start_boot_seed
 from .seed.jobs import router as seed_router
 from .settings import Settings, get_settings
 from .spa import install_spa
@@ -117,6 +117,7 @@ def create_app(
         await start_ink_gc(app)
         await start_export_gc(app)
         await start_sync_gc(app)
+        await start_boot_seed(app)
         log.info(
             "startup",
             environment=settings.app_env,

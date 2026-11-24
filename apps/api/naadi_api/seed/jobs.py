@@ -15,6 +15,7 @@ import asyncio
 import datetime as dt
 import json
 import uuid
+from collections.abc import Coroutine
 from typing import Annotated, Any, Literal, cast
 
 import psycopg
@@ -24,12 +25,16 @@ from psycopg.rows import dict_row
 from pydantic import BaseModel, ConfigDict, Field, JsonValue
 
 from ..auth import AdminUser
+from ..config_api.schemas import YoutubeRules
 from ..db import Database
+from ..embeddings.engine import get_engine
 from ..embeddings.jobs import schedule_reindex
 from ..errors import ErrorResponse
 from ..logs import get_logger
 from ..scrub import scrub
 from ..settings import Settings
+from ..youtube import mapper
+from ..youtube.client import GoogleYouTube, Quota, YouTubeApi
 from .cli import storage_target
 from .data import SeedDataError, default_data_dir
 from .importer import GROUPS, LOCK_KEY, SeedFailed, SeedLocked, SeedOptions, run_seed
@@ -135,7 +140,7 @@ def _execute(settings: Settings, req: SeedRequest) -> tuple[str, dict[str, Any] 
     return "succeeded", report.model_dump(mode="json"), None
 
 
-async def _run(app: Any, run_id: uuid.UUID, req: SeedRequest) -> None:
+async def _run(app: Any, run_id: uuid.UUID, req: SeedRequest) -> str:
     settings: Settings = app.state.settings
     db: Database = app.state.db
     status, report, error = await asyncio.to_thread(_execute, settings, req)
@@ -153,6 +158,7 @@ async def _run(app: Any, run_id: uuid.UUID, req: SeedRequest) -> None:
         # Search follows the content: reconcile the index (unchanged chunks cost a read, not a model call).
         schedule_reindex(app)
     log.info("seed_job_finished", run_id=str(run_id), status=status, dry_run=req.dry_run)
+    return status
 
 
 def _tasks(app: Any) -> set[asyncio.Task[None]]:
@@ -180,28 +186,91 @@ async def start_seed(request: Request, admin: AdminUser, body: SeedRequest) -> J
     limiters = getattr(request.app.state, "rate_limiters", None)
     if limiters and "admin" in limiters:
         limiters["admin"].hit(str(admin.user_id))
-    db: Database = request.app.state.db
     try:
-        async with await _conn(db) as conn:
-            await _mark_stale(conn)
-            cur = conn.cursor(row_factory=dict_row)
-            await cur.execute(
-                f"insert into public.seed_runs (started_by, options) values (%s, %s::jsonb) returning {_COLS}",  # noqa: S608 - fixed column list
-                (admin.user_id, body.model_dump_json()),
-            )
-            row = await cur.fetchone()
+        run = await _insert_run(request.app.state.db, admin.user_id, body)
     except psycopg.errors.UniqueViolation as exc:
         raise HTTPException(409, "A seed job is already running. Wait for it to finish.") from exc
     except (psycopg.OperationalError, TimeoutError) as exc:
         raise HTTPException(503, "The database cannot be reached right now. Try again in a moment.") from exc
-    assert row is not None
-    run = _run_model(row)
-    tasks = _tasks(request.app)
-    task = asyncio.create_task(_run(request.app, run.id, body), name=f"seed-{run.id}")
-    tasks.add(task)
-    task.add_done_callback(tasks.discard)
+    _spawn(request.app, run.id, _run(request.app, run.id, body))
     log.info("seed_job_started", run_id=str(run.id), dry_run=body.dry_run, groups=body.only)
     return JSONResponse(run.model_dump(mode="json"), status_code=202)
+
+
+async def _insert_run(db: Database, started_by: uuid.UUID | None, req: SeedRequest) -> SeedRun:
+    """The `running` row; UniqueViolation when another run is already running."""
+    async with await _conn(db) as conn:
+        await _mark_stale(conn)
+        cur = conn.cursor(row_factory=dict_row)
+        await cur.execute(
+            f"insert into public.seed_runs (started_by, options) values (%s, %s::jsonb) returning {_COLS}",  # noqa: S608 - fixed column list
+            (started_by, req.model_dump_json()),
+        )
+        row = await cur.fetchone()
+    assert row is not None
+    return _run_model(row)
+
+
+def _spawn(app: Any, run_id: uuid.UUID, coro: Coroutine[Any, Any, Any]) -> None:
+    tasks = _tasks(app)
+    task = asyncio.create_task(coro, name=f"seed-{run_id}")
+    tasks.add(task)
+    task.add_done_callback(tasks.discard)
+
+
+# The deploy seed (NAADI_SEED_ON_START): the groups behind the Videos page and its feature flag. Never forced, so
+# admin edits (ADMIN_EDIT_GUARD) and refreshed YouTube metadata (identity-only upsert) are kept.
+BOOT_SEED = SeedRequest(dry_run=False, only=["sources", "videos", "app_config"], force=False)
+
+
+async def start_boot_seed(app: Any) -> None:
+    """Startup hook: record and start the deploy seed in the background. Never raises: a failure is one log line
+    and the API serves anyway (the admin seed endpoint remains for a retry, a force or a dry run)."""
+    settings: Settings = app.state.settings
+    if not settings.seed_on_start:
+        return
+    try:
+        run = await _insert_run(app.state.db, None, BOOT_SEED)
+    except psycopg.errors.UniqueViolation:
+        log.info("boot_seed_skipped", reason="another seed run is running")
+        return
+    except Exception as exc:  # noqa: BLE001 - startup must never fail on the seed
+        log.warning("boot_seed_failed", error=type(exc).__name__, detail=scrub(str(exc), settings.secret_values()))
+        return
+    _spawn(app, run.id, _boot(app, run.id))
+    log.info("seed_job_started", run_id=str(run.id), dry_run=False, groups=BOOT_SEED.only, trigger="startup")
+
+
+async def _boot(app: Any, run_id: uuid.UUID) -> None:
+    settings: Settings = app.state.settings
+    try:
+        if await _run(app, run_id, BOOT_SEED) == "succeeded":
+            await _refresh_youtube(app)
+    except Exception as exc:  # noqa: BLE001 - a background task: log, never propagate
+        log.warning("boot_seed_failed", error=type(exc).__name__, detail=scrub(str(exc), settings.secret_values()))
+
+
+async def _refresh_youtube(app: Any) -> None:
+    """Fill the titles and durations of newly seeded YouTube videos (the mapper's refresh step alone, as
+    `tools/youtube_mapper.py --refresh-only`: no LLM, about one quota unit per 50 due videos)."""
+    settings: Settings = app.state.settings
+    api: YouTubeApi | None = getattr(app.state, "youtube_api", None)  # tests put a fake here
+    if api is None and settings.youtube_api_key is None:
+        return
+    rules = YoutubeRules.model_validate(await app.state.app_config.get("youtube"))
+    if not rules.enabled:
+        return
+    if api is None:
+        assert settings.youtube_api_key is not None
+        api = GoogleYouTube(settings.youtube_api_key.get_secret_value(), Quota(rules.quota_units_per_run))
+    rep = await mapper.run(app.state.db, api, get_engine(settings.config_dir), rules, [])
+    log.info(
+        "boot_youtube_refresh",
+        refreshed=rep.refreshed,
+        dropped=rep.dropped,
+        quota_used=rep.quota_used,
+        errors=len(rep.errors),
+    )
 
 
 @router.get(
