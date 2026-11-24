@@ -1,7 +1,7 @@
 import type { SubjectCounts, VideoOut, VideosOverview, VideoTopicOut } from "@naadi/shared";
 import { Button, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { useNavigate } from "@tanstack/react-router";
-import { CircleCheck, CircleDashed, CircleDot, Search as SearchIcon, X } from "lucide-react";
+import { ChevronDown, CircleCheck, CircleDashed, CircleDot, Search as SearchIcon, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useRegisterPageContext } from "../assistant/pageContext";
 import { ApiError } from "../auth/apiError";
@@ -183,7 +183,7 @@ function TopicsView({
                   <li
                     key={x.id}
                     data-coverage={x.coverage}
-                    className="grid min-h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 border-line-soft border-t py-2"
+                    className="grid min-h-14 grid-cols-1 items-center gap-x-4 gap-y-1 border-line-soft border-t py-2 tablet:grid-cols-[minmax(0,1fr)_auto]"
                   >
                     <span className="flex min-w-0 flex-col">
                       <span className="font-semibold [overflow-wrap:anywhere]">{x.title}</span>
@@ -191,7 +191,7 @@ function TopicsView({
                         {[x.chapter, x.core ? t("videos.core") : null].filter(Boolean).join(" · ")}
                       </span>
                     </span>
-                    <span className="flex flex-wrap items-center justify-end gap-3">
+                    <span className="flex flex-wrap items-center justify-between gap-3 tablet:justify-end">
                       <span
                         className={cx(
                           "inline-flex items-center gap-1.5 text-ui-sm",
@@ -233,8 +233,10 @@ export function VideosPage({ search }: { search: VideosSearch }) {
   const [text, setText] = useState(search.q ?? "");
   const opener = useRef<HTMLElement | null>(null);
 
-  const set = (next: Partial<VideosSearch>, replace = true) =>
-    void navigate({ to: "/videos", search: { ...search, ...next }, replace });
+  const set = (next: Partial<VideosSearch>, replace = true) => {
+    const merged = { ...search, ...next };
+    void navigate({ to: "/videos", search: merged.v ? merged : { ...merged, vs: undefined }, replace });
+  };
 
   // Typing commits to the URL after a short pause; a URL change (back button) puts its query in the field.
   // biome-ignore lint/correctness/useExhaustiveDependencies: only a change of the typed text schedules a commit
@@ -272,7 +274,8 @@ export function VideosPage({ search }: { search: VideosSearch }) {
   const [picked, setPicked] = useState<VideoOut | null>(null);
   const inList = search.v ? (items.find((v) => v.media_id === search.v) ?? null) : null;
   const pickedNow = picked && picked.media_id === search.v ? picked : null;
-  const home = inList ?? pickedNow;
+  // Where the open video lives (its subject's catalogue): the list, the tapped copy, or the URL (a shared link).
+  const home = inList ?? pickedNow ?? (search.v ? search.vs : undefined) ?? null;
   const subjectAll = useSubjectVideos(home?.step ?? null, home?.subject ?? null);
   const shown = search.v
     ? (inList ?? subjectAll.data?.items.find((v) => v.media_id === search.v) ?? pickedNow ?? null)
@@ -281,7 +284,12 @@ export function VideosPage({ search }: { search: VideosSearch }) {
     () => (shown && subjectAll.data ? relatedVideos(shown, subjectAll.data.items) : null),
     [shown, subjectAll.data],
   );
-  const missing = Boolean(search.v) && !shown && !list.isPending && !list.isFetching;
+  const missing =
+    Boolean(search.v) &&
+    !shown &&
+    list.isSuccess &&
+    !list.isFetching &&
+    (!home || subjectAll.isSuccess || subjectAll.isError);
 
   useRegisterPageContext(
     videoPageContext(shown ? { media_id: shown.media_id, title: videoTitle(t, shown) } : null, title),
@@ -290,7 +298,7 @@ export function VideosPage({ search }: { search: VideosSearch }) {
   const open = (v: VideoOut) => {
     if (document.activeElement instanceof HTMLElement && !search.v) opener.current = document.activeElement;
     setPicked(v);
-    set({ v: v.media_id }, false);
+    set({ v: v.media_id, vs: { step: v.step, subject: v.subject } }, false);
   };
   const close = () => {
     set({ v: undefined });
@@ -447,19 +455,26 @@ export function VideosPage({ search }: { search: VideosSearch }) {
               {t("videos.filter_unwatched")}
             </Toggle>
             {channels.length ? (
-              <select
-                aria-label={t("videos.channel_label")}
-                value={search.channel ?? ""}
-                onChange={(e) => set({ channel: e.target.value || undefined, v: undefined })}
-                className={cx(chipClass(Boolean(search.channel)), "max-w-full appearance-auto pr-3")}
-              >
-                <option value="">{t("videos.channel_all")}</option>
-                {channels.map((ch) => (
-                  <option key={ch.id} value={ch.id}>
-                    {t("videos.channel_option", { name: ch.name, n: String(ch.videos) })}
-                  </option>
-                ))}
-              </select>
+              <span className={cx("relative inline-flex max-w-full", search.channel ? "text-ground" : "text-text")}>
+                <select
+                  aria-label={t("videos.channel_label")}
+                  value={search.channel ?? ""}
+                  onChange={(e) => set({ channel: e.target.value || undefined, v: undefined })}
+                  className={cx(chipClass(Boolean(search.channel)), "max-w-full appearance-none truncate pr-10")}
+                >
+                  <option value="">{t("videos.channel_all")}</option>
+                  {channels.map((ch) => (
+                    <option key={ch.id} value={ch.id}>
+                      {t("videos.channel_option", { name: ch.name, n: String(ch.videos) })}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown
+                  aria-hidden="true"
+                  size={16}
+                  className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2"
+                />
+              </span>
             ) : null}
           </fieldset>
 
@@ -469,7 +484,12 @@ export function VideosPage({ search }: { search: VideosSearch }) {
             </p>
           ) : null}
 
-          <div className={cx("grid gap-6", shown && laptop && "grid-cols-[minmax(0,1fr)_minmax(24rem,30rem)]")}>
+          <div
+            className={cx(
+              "grid gap-6",
+              (shown || missing) && laptop && "grid-cols-[minmax(0,1fr)_minmax(24rem,30rem)]",
+            )}
+          >
             <div className="flex min-w-0 flex-col gap-8" aria-busy={list.isFetching || undefined}>
               <p role="status" aria-live="polite" className="sr-only">
                 {list.isFetching ? t("videos.loading") : list.data ? t("videos.count", { n: String(total) }) : ""}

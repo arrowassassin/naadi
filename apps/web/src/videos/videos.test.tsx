@@ -338,6 +338,12 @@ describe("Videos screen", () => {
     }
   });
 
+  it("opens a shared link to a video outside the list from its subject's catalogue", async () => {
+    const vs = encodeURIComponent(JSON.stringify({ step: "step1", subject: "Physiology" }));
+    renderPage(`?v=${STARLING.media_id}&vs=${vs}`);
+    expect(await screen.findByRole("dialog", { name: "Frank-Starling curve" })).toBeVisible();
+  });
+
   it("says so when the URL names a video the list does not hold", async () => {
     renderPage("?v=yt-unknown");
     expect(await screen.findByRole("dialog", { name: "Video not in this list" })).toBeVisible();

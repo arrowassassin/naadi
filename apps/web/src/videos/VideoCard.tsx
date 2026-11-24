@@ -17,7 +17,7 @@ export function videoMeta(t: T, v: VideoOut): string {
 }
 
 /** YouTube's own still (i.ytimg.com, allowed by img-src) or a neutral poster for an open-licence file. */
-export function Thumb({ v, className }: { v: VideoOut; className?: string }) {
+export function Thumb({ v, small = false, className }: { v: VideoOut; small?: boolean; className?: string }) {
   const t = useUiText();
   return (
     <span
@@ -38,8 +38,10 @@ export function Thumb({ v, className }: { v: VideoOut; className?: string }) {
         />
       ) : (
         <span className="flex flex-col items-center gap-2 text-text-2">
-          <Play aria-hidden="true" size={28} />
-          <span className="font-mono text-label-sm uppercase tracking-[0.1em]">{t("videos.channel_commons")}</span>
+          <Play aria-hidden="true" size={small ? 20 : 28} />
+          {small ? null : (
+            <span className="font-mono text-label-sm uppercase tracking-[0.1em]">{t("videos.channel_commons")}</span>
+          )}
         </span>
       )}
     </span>
