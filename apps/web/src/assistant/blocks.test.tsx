@@ -25,7 +25,7 @@ function block(raw: Record<string, unknown>): Block {
 function show(b: Block, ask = vi.fn()) {
   return renderInApp(
     () => <BlockView block={b} handlers={{ ask }} busy={false} />,
-    ["/cards", "/practice/blocks/$blockId/$n", "/learn/library"],
+    ["/cards", "/practice/blocks/$blockId/$n", "/learn/library", "/videos"],
   );
 }
 
@@ -106,6 +106,56 @@ describe("answer blocks", () => {
     const src = new URL(frame?.getAttribute("src") ?? "", window.location.href);
     expect(src.hostname).not.toMatch(/youtube/);
     expect(frame?.getAttribute("sandbox")).toContain("allow-scripts");
+  });
+
+  it("video: a catalogue video links to its place on the Videos page", async () => {
+    show(
+      block({
+        type: "video",
+        data: {
+          provider: "youtube",
+          video_id: "dQw4w9WgXcQ",
+          media_id: "yt-rta",
+          title: "RTA explained",
+          start_s: null,
+          step: "step1",
+          subject: "Renal",
+        },
+      }),
+    );
+    const link = await screen.findByRole("link", { name: "Open in Videos" });
+    const href = new URL(link.getAttribute("href") ?? "", window.location.href);
+    expect(href.pathname).toBe("/videos");
+    expect(href.searchParams.get("v")).toBe("yt-rta");
+    expect(JSON.parse(href.searchParams.get("vs") ?? "null")).toEqual({ step: "step1", subject: "Renal" });
+  });
+
+  it("video: a Commons file plays in the browser's player only when asked, with its credit and licence", async () => {
+    const user = userEvent.setup();
+    show(
+      block({
+        type: "video",
+        data: {
+          provider: "commons",
+          media_id: "cm-heart",
+          title: "Heart valves",
+          start_s: null,
+          file_url: "https://upload.wikimedia.org/heart.webm",
+          page_url: "https://commons.wikimedia.org/wiki/File:Heart.webm",
+          attribution: "Heart valves by Someone, CC BY 4.0",
+          duration_s: 90,
+          licence: { license_short_name: "CC BY 4.0", license_url: "https://creativecommons.org/licenses/by/4.0" },
+        },
+      }),
+    );
+    expect(await screen.findByText("Heart valves by Someone, CC BY 4.0")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "CC BY 4.0" })).toHaveAttribute("rel", "noopener noreferrer");
+    // a chapter video outside the catalogue: no Videos link
+    expect(screen.queryByRole("link", { name: "Open in Videos" })).toBeNull();
+    expect(document.querySelector("video")).toBeNull();
+    await user.click(screen.getByRole("button", { name: /Heart valves/ }));
+    expect(document.querySelector("video")).toHaveAttribute("src", "https://upload.wikimedia.org/heart.webm");
+    expect(document.querySelector("iframe")).toBeNull();
   });
 
   it("sources: chips with the layer in words, course links into the reader, web links out", async () => {

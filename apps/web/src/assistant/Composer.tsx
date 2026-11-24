@@ -22,6 +22,7 @@ const CONTEXT_KEY: Record<AssistantAskContext["type"], string> = {
   coach_suggestion: "agent.context.coach",
   ink_lasso: "agent.context.ink",
   pdf_page: "agent.context.pdf_page",
+  video: "agent.context.video",
 };
 
 const ATTACH_ERROR: Record<AttachError, string> = {

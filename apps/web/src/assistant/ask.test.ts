@@ -43,10 +43,11 @@ describe("assistant ask registry", () => {
       { kind: "quiz", context: { type: "note", id: "n1" } },
       { kind: "ask", context: { type: "coach_suggestion", id: "cs1" } },
       { kind: "ask", context: { type: "ink_lasso", surface: { type: "section", id: "s1" }, png, text: "" } },
+      { kind: "ask", context: { type: "video", id: "yt-loops", t: 75 }, draft: "Explain this video" },
     ];
     for (const a of asks) expect(askAssistant(a)).toBe(true);
     expect(seen).toEqual(asks);
-    expect(asks.map(sendsAtOnce)).toEqual([true, true, false, true, true, true, false, false]);
+    expect(asks.map(sendsAtOnce)).toEqual([true, true, false, true, true, true, false, false, false]);
     off();
   });
 });

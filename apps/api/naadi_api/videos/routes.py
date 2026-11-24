@@ -6,13 +6,9 @@ accepted as watched. "Watched" is a plain checklist: no points, streaks or rewar
 
 from __future__ import annotations
 
-import re
-from functools import lru_cache
-from pathlib import Path
 from typing import Annotated, Any, Literal
 
 import psycopg
-import yaml
 from fastapi import APIRouter, Query, Request
 from fastapi import Path as PathParam
 from fastapi.responses import JSONResponse, Response
@@ -33,11 +29,10 @@ from .models import (
     VideoTopicOut,
     VideoTopicsOut,
 )
+from .query import CH, COMMONS, ITEM_COLS, ITEM_FROM, names_for, search_filter
 
 router = APIRouter(prefix="/api/videos", tags=["videos"])
 NO_STORE = {"cache-control": "private, no-store"}
-COMMONS = "commons"
-MAX_WORDS = 6
 
 _ERRORS: dict[int | str, dict[str, Any]] = {
     401: {"model": ErrorResponse, "description": "Missing, expired or invalid access token"},
@@ -46,25 +41,6 @@ _ERRORS: dict[int | str, dict[str, Any]] = {
 }
 _INVALID: dict[int | str, dict[str, Any]] = {422: {"model": ErrorResponse, "description": "Invalid query"}}
 _NOT_FOUND: dict[int | str, dict[str, Any]] = {404: {"model": ErrorResponse, "description": "Not found"}}
-
-# the channel key of a video: its channel id, or "commons"
-CH = "(case when c.provider = 'commons' then 'commons' else m.channel_id end)"
-
-_ITEM_COLS = """
-c.media_id, c.provider, c.subject, c.step, c.style, c.core, m.title, m.youtube_id, m.url as file_url, m.page_url,
-m.licence, m.attribution, m.duration_s, m.channel_id, (w.media_id is not null) as watched, tp.topics,
-count(*) over () as total
-"""
-_ITEM_FROM = """
-from public.video_catalog c
-join public.media_assets m on m.id = c.media_id
-left join public.video_watches w on w.media_id = c.media_id and w.user_id = (select auth.uid())
-cross join lateral (
-  select coalesce(jsonb_agg(jsonb_build_object('id', t.id, 'title', t.title, 'chapter', t.chapter) order by t.sort),
-                  '[]'::jsonb) as topics
-  from public.video_topics t where t.id = any(c.topic_ids)
-) tp
-"""
 
 _OVERVIEW = """
 with vis as (
@@ -120,17 +96,8 @@ def default_limiters() -> dict[str, RateLimiter]:
     return {"videos_read": RateLimiter(240, 60.0), "videos_write": RateLimiter(120, 60.0)}
 
 
-@lru_cache(maxsize=4)
-def _channel_names(config_dir: Path) -> dict[str, str]:
-    try:
-        data = yaml.safe_load((config_dir / "video_channels.yaml").read_text(encoding="utf-8")) or {}
-    except OSError:
-        return {}
-    return {c["channel_id"]: c["name"] for c in data.get("channels", []) if c.get("channel_id") and c.get("name")}
-
-
 def _names(request: Request) -> dict[str, str]:
-    return {**_channel_names(request.app.state.settings.config_dir), COMMONS: "Wikimedia Commons"}
+    return names_for(request.app.state.settings.config_dir)
 
 
 def _db(request: Request) -> Database:
@@ -141,38 +108,6 @@ def _db(request: Request) -> Database:
 async def _rows(conn: psycopg.AsyncConnection[Any], query: str, params: dict[str, Any]) -> list[dict[str, Any]]:
     cur = await conn.execute(query, params)
     return [dict(r) for r in await cur.fetchall()]
-
-
-def _search(q: str, names: dict[str, str]) -> tuple[str, str, dict[str, Any]]:
-    """(filter, rank expression, params) for a free-text query: every word must match the video title, subject,
-    a direct topic's title or chapter, or the channel name. Rank: topic title > video title > chapter > channel.
-    shortcut: ILIKE scans the filtered catalogue (a few thousand rows), upgrade to trigram/FTS if it grows 10x."""
-    words = re.findall(r"[^\W_]+", q.lower())[:MAX_WORDS]
-    if not words:
-        return "true", "0", {}
-    params: dict[str, Any] = {}
-    hit, topic, title, chapter, channel = [], [], [], [], []
-    for i, word in enumerate(words):
-        params[f"p{i}"] = f"%{word}%"
-        params[f"c{i}"] = [cid for cid, name in names.items() if word in name.lower()]
-        p, ch = (
-            f"%(p{i})s",
-            f"{CH} = any(%(c{i})s::text[])",
-        )
-        topic.append(f"t.title ilike {p}")
-        chapter.append(f"t.chapter ilike {p}")
-        title.append(f"m.title ilike {p}")
-        channel.append(ch)
-        hit.append(
-            f"(m.title ilike {p} or c.subject ilike {p} or {ch} or exists (select 1 from public.video_topics t "  # noqa: S608
-            f"where t.id = any(c.topic_ids) and (t.title ilike {p} or t.chapter ilike {p})))"  # placeholders only
-        )
-    sub = "exists (select 1 from public.video_topics t where t.id = any(c.topic_ids) and {})"
-    rank = (
-        f"case when {sub.format(' and '.join(topic))} then 0 when {' and '.join(title)} then 1 "
-        f"when {sub.format(' and '.join(chapter))} then 2 when {' and '.join(channel)} then 3 else 4 end"
-    )
-    return " and ".join(hit), rank, params
 
 
 def _video(r: dict[str, Any], names: dict[str, str]) -> VideoOut:
@@ -208,12 +143,12 @@ async def list_videos(
     cursor: Annotated[str | None, Query(pattern=r"^\d{1,7}$", description="Offset from a previous `next`")] = None,
 ) -> JSONResponse:
     names = _names(request)
-    where, rank, params = _search(q or "", names)
+    where, rank, params = search_filter(q or "", names)
     offset = int(cursor or 0)
     params |= {"step": None if step == "all" else step, "subject": subject, "channel": channel, "style": style}
     params |= {"limit": limit, "offset": offset}
     sql = (
-        f"select {_ITEM_COLS}, {rank} as rank {_ITEM_FROM} where ({where})"
+        f"select {ITEM_COLS}, {rank} as rank {ITEM_FROM} where ({where})"
         " and (%(step)s::text is null or c.step = %(step)s) and (%(subject)s::text is null or c.subject = %(subject)s)"
         " and (%(style)s::text is null or c.style = %(style)s)"
         f" and (%(channel)s::text is null or {CH} = %(channel)s)"

@@ -60,6 +60,39 @@ describe("page context registry", () => {
     expect(toPageContextIn(null, "/settings")).toEqual({ route: "/settings", type: "page" });
   });
 
+  it("a video ask carries the live position while the page still plays it, else the position it was made at", () => {
+    let t = 80.6;
+    const page: PageContextRegistration = {
+      type: "video",
+      id: "yt-loops",
+      title: "Loops",
+      readVideo: () => ({ media_id: "yt-loops", t }),
+    };
+    expect(toPageContextIn(page, "/videos")).toEqual({
+      route: "/videos",
+      type: "video",
+      id: "yt-loops",
+      title: "Loops",
+      video: { media_id: "yt-loops", t: 80 },
+    });
+    const ask = { type: "video", id: "yt-loops", t: 12 } as const;
+    expect(pageContextFor(ask, page, "/videos")).toEqual({
+      route: "/videos",
+      type: "video",
+      id: "yt-loops",
+      video: { media_id: "yt-loops", t: 80 },
+    });
+    t = 95;
+    expect(pageContextFor(ask, page, "/videos").video).toEqual({ media_id: "yt-loops", t: 95 });
+    // another video is playing now: the ask's own position, or none
+    expect(pageContextFor(ask, { type: "page" }, "/videos").video).toEqual({ media_id: "yt-loops", t: 12 });
+    expect(pageContextFor({ type: "video", id: "yt-loops" }, null, "/x")).toEqual({
+      route: "/x",
+      type: "video",
+      id: "yt-loops",
+    });
+  });
+
   it("an ask's own target wins over the page's registration", () => {
     const page: PageContextRegistration = { type: "section", id: "s1", chapter_id: "ch1", title: "Gap" };
     expect(pageContextFor({ type: "pdf_page", id: "u1:3", image: null }, page, "/library")).toEqual({

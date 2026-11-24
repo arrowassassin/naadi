@@ -137,7 +137,7 @@ function PaneBody({
           <Button
             variant="assistant"
             icon={<Sparkles size={16} />}
-            onClick={() => askAboutVideo(t("videos.ask_draft", { title }))}
+            onClick={() => askAboutVideo({ media_id: v.media_id, title }, t("videos.ask_draft", { title }))}
           >
             {t("videos.ask")}
           </Button>

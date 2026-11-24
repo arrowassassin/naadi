@@ -42,6 +42,8 @@ export const PAGE_TYPES = [
   "practice",
   "cards",
   "page",
+  // the Videos player: id is the media id, the position travels in `video`
+  "video",
   // S15: a page of a PDF open in the canvas (id "{upload_id}:{page}"); get_page reads it through S15's resolver.
   "pdf_page",
 ] as const;
@@ -118,13 +120,31 @@ export const zImageData = z.object({
   width: z.number().positive().nullable().optional(),
   height: z.number().positive().nullable().optional(),
 });
-export const zVideoData = z.object({
-  provider: z.literal("youtube"),
-  video_id: z.string().regex(/^[A-Za-z0-9_-]{6,20}$/),
+const videoBase = {
   media_id: z.string().min(1),
   title: z.string(),
   start_s: z.number().int().min(0).nullable(),
+  /** Where the video lives in the Videos catalogue (absent for a chapter video outside it). */
+  step: z.enum(["step1", "step2ck"]).nullable().optional(),
+  subject: z.string().nullable().optional(),
+};
+export const zVideoLicence = z.object({
+  license_short_name: z.string().nullable().optional(),
+  license_url: z.string().nullable().optional(),
+  artist: z.string().nullable().optional(),
 });
+export const zVideoData = z.discriminatedUnion("provider", [
+  z.object({ ...videoBase, provider: z.literal("youtube"), video_id: z.string().regex(/^[A-Za-z0-9_-]{6,20}$/) }),
+  z.object({
+    ...videoBase,
+    provider: z.literal("commons"),
+    file_url: z.string(),
+    page_url: z.string().nullable(),
+    attribution: z.string().nullable(),
+    duration_s: z.number().nullable(),
+    licence: zVideoLicence.nullable(),
+  }),
+]);
 export const zSourcesData = z.object({ items: z.array(zCitation) });
 export const zAction = z.object({
   action: z.enum(["open_block", "open_canvas", "open_library", "ask"]),

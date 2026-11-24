@@ -11,8 +11,9 @@ import {
 import { act, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { registerAssistantAsk } from "../assistant/ask";
-import { getAssistantUi, resetAssistantUiForTests } from "../assistant/store";
+import { type AssistantAsk, registerAssistantAsk } from "../assistant/ask";
+import { getPageContext } from "../assistant/pageContext";
+import { resetAssistantUiForTests } from "../assistant/store";
 import { ApiError } from "../auth/apiError";
 import { currentVideoPosition } from "../video/playback";
 import { patchWatched } from "./api";
@@ -381,13 +382,17 @@ describe("Videos screen", () => {
     renderPage(`?v=${LOOPS.media_id}`);
     const dialog = await screen.findByRole("dialog", { name: LOOPS.title as string });
     expect(within(dialog).queryByRole("button", { name: "Ask Naadi about this video" })).toBeNull();
-    const off = registerAssistantAsk(() => undefined);
+    const asks: AssistantAsk[] = [];
+    const off = registerAssistantAsk((a) => asks.push(a));
     try {
+      expect(getPageContext()).toMatchObject({ type: "video", id: LOOPS.media_id, title: LOOPS.title });
       const ask = await within(dialog).findByRole("button", { name: "Ask Naadi about this video" });
       expect(ask).toHaveAttribute("data-variant", "assistant");
       await userEvent.click(ask);
-      expect(getAssistantUi().open).toBe(true);
-      expect(getAssistantUi().draft).toContain(LOOPS.title);
+      // a prefilled, unsent question with the video attached as the context chip
+      expect(asks).toEqual([
+        { kind: "ask", context: { type: "video", id: LOOPS.media_id }, draft: expect.stringContaining(LOOPS.title as string) },
+      ]);
     } finally {
       off();
     }

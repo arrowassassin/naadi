@@ -22,6 +22,7 @@ from ...embeddings.query import Scope, search_local
 from ...embeddings.text import html_to_text, tiptap_to_text
 from ...logs import get_logger
 from ...settings import get_settings
+from ...videos.query import COMMONS, names_for
 from .executor import ToolRefused
 from .registry import ToolContext, ToolResult, page_resolver, register_tool
 from .untrusted import UNTRUSTED_REF_TYPES, frame
@@ -194,21 +195,38 @@ async def _note(ctx: ToolContext, note_id: str) -> ToolResult:
     return ToolResult(content=f"The student's note:\n{text or '(empty)'}")
 
 
+_VIDEO = """
+select m.id, m.title, m.caption, m.duration_s, m.channel_id, c.provider, c.subject, c.step,
+       array(select t.title from public.video_topics t where t.id = any(c.topic_ids) order by t.sort) as topics
+from public.media_assets m left join public.video_catalog c on c.media_id = m.id
+where m.id = %s
+"""
+
+
 async def _video(ctx: ToolContext, media_id: str | None) -> ToolResult:
     video = ctx.page.video or {}
     mid = media_id or video.get("media_id")
     if not mid:
         raise ToolRefused("not_found")
-    async with ctx.user_tx() as conn:
-        cur = await conn.execute(
-            "select id, title, caption, duration_s from public.media_assets where id = %s", (str(mid),)
-        )
+    async with ctx.user_tx() as conn:  # RLS: an unapproved video is not found
+        cur = await conn.execute(_VIDEO, (str(mid),))
         row = await cur.fetchone()
     if row is None:
         raise ToolRefused("not_found")
+    names = names_for(get_settings().config_dir)
+    channel = names.get(COMMONS if row["provider"] == COMMONS else row["channel_id"] or "")
+    step = {"step1": "Step 1", "step2ck": "Step 2 CK"}.get(row["step"] or "")
+    facts = [
+        f"Video: {row['title'] or row['id']}",
+        f"Channel: {channel}" if channel else "",
+        f"Subject: {row['subject']} ({step})" if row["subject"] and step else "",
+        f"Topics: {', '.join(row['topics'])}" if row["topics"] else "",
+        row["caption"] or "",
+    ]
     t = video.get("t") if video.get("media_id") == mid else None
-    at = f" The student is at {int(t) // 60}:{int(t) % 60:02d}." if isinstance(t, int | float) else ""
-    return ToolResult(content=f"Video: {row['title'] or row['id']}. {row['caption'] or ''}{at}".strip())
+    at = f"\nThe student is at {int(t) // 60}:{int(t) % 60:02d}." if isinstance(t, int | float) else ""
+    # Titles and captions come from the video's host: third-party text.
+    return ToolResult(content=frame("\n".join(f for f in facts if f), source="video") + at)
 
 
 async def get_page(ctx: ToolContext, args: PageArgs) -> ToolResult:

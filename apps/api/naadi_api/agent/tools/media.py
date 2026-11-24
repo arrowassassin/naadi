@@ -9,8 +9,11 @@ from pydantic import BaseModel, Field
 
 from ...assistant.content import InvalidContent, markdown_to_doc
 from ...assistant.mermaid import InvalidMermaid, validate_mermaid
+from ...settings import get_settings
+from ...videos.query import COMMONS, names_for, search_filter, search_videos
 from .executor import ToolRefused
 from .registry import ToolContext, ToolResult, register_tool
+from .untrusted import frame
 
 
 def canvas_ref(
@@ -46,35 +49,73 @@ async def render_diagram(ctx: ToolContext, args: DiagramArgs) -> ToolResult:
 
 
 class VideoArgs(BaseModel):
-    topic: str = Field(min_length=2, max_length=120)
+    topic: str = Field(min_length=2, max_length=120, description="A short topic, 1 to 3 words (e.g. 'nephritic')")
+    step: Literal["step1", "step2ck"] | None = Field(default=None, description="Only videos for this exam step")
+
+
+MAX_SUGGESTED = 3
+
+
+def video_block_data(row: dict[str, Any]) -> dict[str, Any]:
+    """The `video` block / canvas data of a catalogue row: YouTube through the official player, Commons as a file."""
+    base = {
+        "media_id": row["media_id"],
+        "title": (row["title"] or "")[:200],
+        "start_s": None,
+        "step": row["step"],
+        "subject": row["subject"],
+    }
+    if row["provider"] == COMMONS:
+        lic = row["licence"] if isinstance(row["licence"], dict) else {}
+        return base | {
+            "provider": "commons",
+            "file_url": row["file_url"],
+            "page_url": row["page_url"],
+            "attribution": row["attribution"],
+            "duration_s": row["duration_s"],
+            "licence": {k: lic.get(k) for k in ("license_short_name", "license_url", "artist")} if lic else None,
+        }
+    return base | {"provider": "youtube", "video_id": row["youtube_id"]}
+
+
+# Any approved video (a chapter's too, not only the catalogue's); step/subject only when it is in the catalogue.
+_CANVAS_VIDEO = """
+select m.id as media_id, m.title, m.youtube_id, m.url as file_url, m.page_url, m.licence, m.attribution,
+       m.duration_s, m.channel_id, case when m.kind = 'video_file' then 'commons' else 'youtube' end as provider,
+       c.step, c.subject
+from public.media_assets m left join public.video_catalog c on c.media_id = m.id
+where m.id = %s and m.kind in ('video_youtube', 'video_file') and m.review_status = 'approved'
+  and m.embeddable is not false
+"""
+
+
+def _usable(row: dict[str, Any]) -> bool:
+    return bool(row["file_url"]) if row["provider"] == COMMONS else bool(row["youtube_id"])
+
+
+def _line(row: dict[str, Any], names: dict[str, str]) -> str:
+    channel = names.get(COMMONS if row["provider"] == COMMONS else row["channel_id"] or "", "")
+    topics = ", ".join(t["title"] for t in row["topics"] or [])
+    parts = [row["title"] or row["media_id"], channel, row["subject"], f"topics: {topics}" if topics else ""]
+    return "- " + " · ".join(p for p in parts if p) + f" (media_id {row['media_id']})"
 
 
 async def suggest_video(ctx: ToolContext, args: VideoArgs) -> ToolResult:
-    """Suggest one approved video on a topic from Naadi's library (YouTube through the official player)."""
-    words = [w for w in args.topic.lower().split() if len(w) > 2][:6]
-    if not words:
+    """Show up to 3 approved videos on a topic from Naadi's Videos catalogue (YouTube through the official player,
+    open-licence Wikimedia Commons files), best match first: topic name, then video title, chapter, channel."""
+    if not search_filter(args.topic, {})[2]:
         raise ToolRefused("empty_topic")
-    pattern = "%(" + "|".join(words) + ")%"
-    async with ctx.user_tx() as conn:
-        cur = await conn.execute(
-            "select m.id, m.title, m.youtube_id, m.duration_s, m.attribution from public.media_assets m"
-            " where m.kind = 'video_youtube' and m.review_status = 'approved' and m.embeddable is not false"
-            " and m.youtube_id is not null"
-            " and (lower(coalesce(m.title, '')) similar to %s or lower(coalesce(m.caption, '')) similar to %s)"
-            " order by m.title limit 1",
-            (pattern, pattern),
-        )
-        row = await cur.fetchone()
-    if row is None:
-        return ToolResult(content="No approved video on this topic in the library.")
-    data = {
-        "provider": "youtube",
-        "video_id": row["youtube_id"],
-        "media_id": row["id"],
-        "title": (row["title"] or "")[:200],
-        "start_s": None,
-    }
-    return ToolResult(content=f"Video shown: {row['title']}.", blocks=[{"type": "video", "data": data}])
+    names = names_for(get_settings().config_dir)
+    async with ctx.user_tx() as conn:  # RLS: only approved media are visible
+        rows = await search_videos(conn, args.topic, names, step=args.step, limit=MAX_SUGGESTED * 2)
+    rows = [r for r in rows if _usable(r)][:MAX_SUGGESTED]
+    if not rows:
+        return ToolResult(content="No approved video on this topic in the library. Try a shorter or broader topic.")
+    listing = frame("\n".join(_line(r, names) for r in rows), source="video_catalog")
+    return ToolResult(
+        content=f"Videos shown to the student (title · channel · subject · topics):\n{listing}",
+        blocks=[{"type": "video", "data": video_block_data(r)} for r in rows],
+    )
 
 
 class CanvasArgs(BaseModel):
@@ -124,16 +165,12 @@ async def open_in_canvas(ctx: ToolContext, args: CanvasArgs) -> ToolResult:
         if not args.video_media_id:
             raise ToolRefused("video_required")
         async with ctx.user_tx() as conn:
-            cur = await conn.execute(
-                "select id, title, youtube_id from public.media_assets where id = %s and kind = 'video_youtube'"
-                " and review_status = 'approved' and youtube_id is not null",
-                (args.video_media_id,),
-            )
+            cur = await conn.execute(_CANVAS_VIDEO, (args.video_media_id,))
             row = await cur.fetchone()
-        if row is None:
+        if row is None or not _usable(row):
             raise ToolRefused("not_found")
-        data = {"provider": "youtube", "video_id": row["youtube_id"], "media_id": row["id"], "start_s": None}
-        ref = canvas_ref("video", data, title=args.title, ref={"type": "media", "id": row["id"]})
+        data = video_block_data(row)
+        ref = canvas_ref("video", data, title=args.title, ref={"type": "media", "id": row["media_id"]})
     return ToolResult(
         content=f"Opened in the canvas: {args.title}.",
         canvas=[ref],

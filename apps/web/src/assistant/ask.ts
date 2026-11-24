@@ -26,7 +26,9 @@ export type AssistantAskContext =
   | { type: "ink_lasso"; surface: { type: string; id: string }; png: Blob; text: string }
   /** Segment 15, lasso → Ask on a PDF page: `id` is the ink surface `{upload_id}:{page}` (the server reads the
    * page text through S15's `pdf_page` resolver); `image` is the circled region as a PNG (page + ink). */
-  | { type: "pdf_page"; id: string; image: Blob | null };
+  | { type: "pdf_page"; id: string; image: Blob | null }
+  /** A library video (the Videos player): `id` is its media id, `t` the position in seconds when known. */
+  | { type: "video"; id: string; t?: number };
 
 export interface AssistantAsk {
   kind: AssistantAskKind;
