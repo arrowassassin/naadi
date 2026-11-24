@@ -245,7 +245,13 @@ export function VideosPage({ search }: { search: VideosSearch }) {
 
   const set = (next: Partial<VideosSearch>, replace = true) => {
     const merged = { ...search, ...next };
-    void navigate({ to: "/videos", search: merged.v ? merged : { ...merged, vs: undefined }, replace });
+    // resetScroll off: opening a video must not jump the list to the top (the pane scrolls itself into view)
+    void navigate({
+      to: "/videos",
+      search: merged.v ? merged : { ...merged, vs: undefined },
+      replace,
+      resetScroll: false,
+    });
   };
 
   // Typing commits to the URL after a short pause; a URL change (back button) puts its query in the field.

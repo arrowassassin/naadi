@@ -329,7 +329,7 @@ describe("Videos screen", () => {
     expect(await within(dialog).findByRole("alert")).toHaveTextContent("That change could not be saved");
     expect(within(dialog).getByRole("button", { name: "Mark watched" })).toBeVisible();
     expect(
-      document.querySelector(`[data-video="${LOOPS.media_id}"] button[aria-label="Mark ${LOOPS.title} as watched"]`),
+      document.querySelector(`[data-video="${LOOPS.media_id}"] button[aria-label="Mark watched: ${LOOPS.title}"]`),
     ).not.toBeNull();
     // one alert: none left behind the modal sheet
     expect(screen.getAllByRole("alert", { hidden: true })).toHaveLength(1);
