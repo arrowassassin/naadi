@@ -523,6 +523,7 @@ test.describe("highlights, notes and the selection toolbar", () => {
         },
       });
       expect(made.status).toBe(201);
+      await quiet(page);
       await page.reload();
       await settle(page);
       await expect(page.locator("[data-note-row]")).toHaveCount(1);

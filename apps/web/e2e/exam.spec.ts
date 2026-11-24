@@ -5,9 +5,11 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
+  quiet,
   settle,
   snapSegment,
   test,
+  trackApi,
 } from "./fixtures";
 
 /**
@@ -43,6 +45,7 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
     contexts.push(context);
     await before?.(context);
     const page = await context.newPage();
+    trackApi(page); // before the sign-in callback, so quiet() sees every /api request this page makes
     const link = toLink(runUsers(["link", "--email", email]));
     await page.goto(callbackPath(link, path));
     await page.waitForURL((u) => u.pathname === path, { timeout: 30_000 });
@@ -369,6 +372,7 @@ test.describe("timed block", () => {
       expect(made.status).toBe(201);
       const blockId = made.json.id;
       expect(made.json.config.sections.map((s) => s.time_limit_s)).toEqual([450]);
+      await quiet(page);
       await page.goto(`/practice/blocks/${blockId}/1`);
       await settle(page);
       await page.getByRole("button", { name: "Start the block" }).click();
