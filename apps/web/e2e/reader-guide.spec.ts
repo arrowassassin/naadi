@@ -1,5 +1,5 @@
 import { canMintUsers } from "./auth-users";
-import { expect, expectNoHorizontalOverflow, test } from "./fixtures";
+import { expect, expectNoHorizontalOverflow, test, WHOLE_TOUR_OPT_IN } from "./fixtures";
 import { signedInState } from "./session";
 
 test.skip(!canMintUsers(), "requires the signed-in student fixture");
@@ -37,6 +37,7 @@ test("reader guide highlights controls and chat keeps a draft across layouts", a
 });
 
 test("whole tour launches once, visits enabled screens, and replays from Help", async ({ page }) => {
+  await page.addInitScript((optIn) => localStorage.setItem(optIn, "1"), WHOLE_TOUR_OPT_IN);
   await page.goto("/");
   const step = page.locator(".guide-step");
   await expect(step.locator(".driver-popover-title")).toHaveText("Follow today's plan");

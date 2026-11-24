@@ -1,7 +1,7 @@
 import { mkdirSync } from "node:fs";
 import path from "node:path";
 import AxeBuilder from "@axe-core/playwright";
-import { test as base, expect, type Page, type Request, type TestInfo } from "@playwright/test";
+import { type BrowserContext, test as base, expect, type Page, type Request, type TestInfo } from "@playwright/test";
 
 const SCREENS_DIR = path.resolve(
   import.meta.dirname,
@@ -102,7 +102,38 @@ export function isBenignRequestFailure(errorText: string): boolean {
   return BENIGN_FAILURE.test(errorText);
 }
 
+/**
+ * Test users are returning students: the whole-app tour that opens once on a student's first Today visit
+ * (AppShell, localStorage `naadi.whole-tour.v1.<user id>`) would otherwise cover the screen under test. Every
+ * context reads that flag as "seen" unless a page sets WHOLE_TOUR_OPT_IN first (reader-guide.spec tests the tour).
+ */
+export const WHOLE_TOUR_OPT_IN = "naadi.e2e.whole-tour";
+async function tourAlreadySeen(context: BrowserContext): Promise<void> {
+  await context.addInitScript((optIn) => {
+    const getItem = Storage.prototype.getItem;
+    Storage.prototype.getItem = function (this: Storage, key: string) {
+      const value = getItem.call(this, key);
+      if (value !== null || !key.startsWith("naadi.whole-tour.v1.") || getItem.call(this, optIn) !== null) return value;
+      return "seen";
+    };
+  }, WHOLE_TOUR_OPT_IN);
+}
+
 export const test = base.extend<Fixtures>({
+  // Every context a test opens, the default one and browser.newContext() alike (Playwright's own context fixture
+  // calls browser.newContext too).
+  browser: [
+    async ({ browser }, use) => {
+      const newContext = browser.newContext.bind(browser);
+      browser.newContext = async (options) => {
+        const context = await newContext(options);
+        await tourAlreadySeen(context);
+        return context;
+      };
+      await use(browser);
+    },
+    { scope: "worker" },
+  ],
   consoleErrors: async ({ page }, use) => {
     const errors: string[] = [];
     const allowed: ExpectedHttpError[] = [];
