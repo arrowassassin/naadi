@@ -56,6 +56,7 @@ from .spa import install_spa
 from .sync.gc import start_sync_gc, stop_sync_gc
 from .sync.idempotency import check_routes
 from .sync.models import SyncDeleted, sync_deleted_handler
+from .videos.routes import install_videos_routes
 from .youtube.routes import install_youtube_routes
 
 log = get_logger("naadi.app")
@@ -170,6 +171,7 @@ def create_app(
     install_cards_routes(app)
     install_anki_routes(app)
     install_youtube_routes(app)
+    install_videos_routes(app)
     install_plan_routes(app)
     install_planner_routes(app)
     install_push_routes(app)

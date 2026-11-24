@@ -284,6 +284,11 @@ Regenerate the table below with `cd apps/api && uv run python -m tests.test_rate
 | PATCH | `/api/vault/{doc_id}` | `vault_write` 30/60s user | - | 600 |
 | POST | `/api/vault/{doc_id}/complete` | `vault_write` 30/60s user | - | 600 |
 | GET | `/api/vault/{doc_id}/url` | `vault_url` 60/60s user | - | 600 |
+| GET | `/api/videos` | `videos_read` 240/60s user | - | 600 |
+| GET | `/api/videos/overview` | `videos_read` 240/60s user | - | 600 |
+| GET | `/api/videos/topics` | `videos_read` 240/60s user | - | 600 |
+| DELETE | `/api/videos/{media_id}/watched` | `videos_write` 120/60s user | - | 600 |
+| PUT | `/api/videos/{media_id}/watched` | `videos_write` 120/60s user | - | 600 |
 
 ## ASVS 4.0.3 Level 2
 
