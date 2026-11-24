@@ -50,6 +50,10 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
     await page.goto(callbackPath(link, path));
     await page.waitForURL((u) => u.pathname === path, { timeout: 30_000 });
     await settle(page);
+    // The URL changes before the page has asked for its data: wait for the page, then for its requests, so a
+    // test's next navigation never cuts one off (WebKit reports that as a page error).
+    await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible({ timeout: 30_000 });
+    await quiet(page);
     return { page, context };
   };
   const done = async () => {
