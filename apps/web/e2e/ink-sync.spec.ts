@@ -503,9 +503,15 @@ test.describe("ink on a reader section", () => {
       expect(top2 / w2).toBeGreaterThan(top1 / w1 + 0.05); // the text really reflowed (block moved down in su)
       const expected = top2 + ((c1 as number) - top1) * (w2 / w1);
       // Re-anchoring after the resize can take longer than the reflow on a slow runner: wait until it lands.
-      await expect.poll(() => violetCentre(a, expected - 20, expected + 20), { timeout: 15_000 }).not.toBeNull();
+      const landed = await expect
+        .poll(() => violetCentre(a, expected - 20, expected + 20), { timeout: 15_000 })
+        .not.toBeNull()
+        .then(() => true)
+        .catch(() => false);
+      // When it does not, say where the stroke is instead (the probe screenshots of a CI run show only the band).
+      const near = landed ? null : await violetCentre(a, Math.max(0, expected - 400), expected + 400);
       const c2 = await violetCentre(a, expected - 20, expected + 20);
-      expect(c2).not.toBeNull();
+      expect(c2, `stroke not beside its paragraph: expected ${expected}, ink within 400 px at ${near}`).not.toBeNull();
       expect(Math.abs((c2 as number) - expected)).toBeLessThanOrEqual(1);
       await snap(a, info, consoleOf(a).guard, "reader-ink-reflow-390");
     } finally {
