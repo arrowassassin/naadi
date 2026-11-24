@@ -1,4 +1,5 @@
-"""The catalogue search shared by the Videos routes and the assistant's `suggest_video`: one ranking, one SQL.
+"""The Videos page's catalogue search (substring match, one ranking) and the channel names it shares with the
+assistant's `suggest_video` (which finds videos through the hybrid search index instead).
 
 Everything here runs on a caller's connection (RLS: only approved media are visible)."""
 
@@ -9,7 +10,6 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-import psycopg
 import yaml
 
 COMMONS = "commons"
@@ -65,10 +65,9 @@ def query_words(q: str) -> list[str]:
     return [stem(w) for w in re.findall(r"[^\W_]+", q.lower())][:MAX_WORDS]
 
 
-def search_filter(q: str, names: dict[str, str], *, any_word: bool = False) -> tuple[str, str, dict[str, Any]]:
+def search_filter(q: str, names: dict[str, str]) -> tuple[str, str, dict[str, Any]]:
     """(filter, rank expression, params) for a free-text query: every word must match the video title, subject,
     a direct topic's title or chapter, or the channel name. Rank: topic title > video title > chapter > channel.
-    With `any_word`, one matching word is enough and the rank is the number of words matched (most first).
     shortcut: ILIKE scans the filtered catalogue (a few thousand rows), upgrade to trigram/FTS if it grows 10x."""
     words = query_words(q)
     if not words:
@@ -90,30 +89,9 @@ def search_filter(q: str, names: dict[str, str], *, any_word: bool = False) -> t
             f"(m.title ilike {p} or c.subject ilike {p} or {ch} or exists (select 1 from public.video_topics t "  # noqa: S608
             f"where t.id = any(c.topic_ids) and (t.title ilike {p} or t.chapter ilike {p})))"  # placeholders only
         )
-    if any_word:
-        return " or ".join(hit), "-(" + " + ".join(f"{h}::int" for h in hit) + ")", params
     sub = "exists (select 1 from public.video_topics t where t.id = any(c.topic_ids) and {})"
     rank = (
         f"case when {sub.format(' and '.join(topic))} then 0 when {' and '.join(title)} then 1 "
         f"when {sub.format(' and '.join(chapter))} then 2 when {' and '.join(channel)} then 3 else 4 end"
     )
     return " and ".join(hit), rank, params
-
-
-async def search_videos(
-    conn: psycopg.AsyncConnection[Any],
-    q: str,
-    names: dict[str, str],
-    *,
-    step: str | None,
-    limit: int,
-    any_word: bool = False,
-) -> list[dict[str, Any]]:
-    """The best-ranked catalogue videos for a free-text query (optionally one step)."""
-    where, rank, params = search_filter(q, names, any_word=any_word)
-    sql = (
-        f"select {ITEM_COLS}, {rank} as rank {ITEM_FROM} where ({where})"
-        " and (%(step)s::text is null or c.step = %(step)s) order by rank, c.sort, c.media_id limit %(limit)s"
-    )
-    cur = await conn.execute(sql, params | {"step": step, "limit": limit})
-    return [dict(r) for r in await cur.fetchall()]

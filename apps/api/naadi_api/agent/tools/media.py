@@ -2,16 +2,20 @@
 
 from __future__ import annotations
 
-import re
 import secrets
 from typing import Any, Literal
 
+import psycopg
 from pydantic import BaseModel, Field
 
 from ...assistant.content import InvalidContent, markdown_to_doc
 from ...assistant.mermaid import InvalidMermaid, validate_mermaid
+from ...db import DatabaseNotConfigured
+from ...embeddings.engine import ModelsNotCached, get_engine
+from ...embeddings.query import search_local
+from ...embeddings.sources import STEP_LABEL
 from ...settings import get_settings
-from ...videos.query import COMMONS, names_for, query_words, search_videos
+from ...videos.query import COMMONS, names_for
 from .executor import ToolRefused
 from .registry import ToolContext, ToolResult, register_tool
 from .untrusted import frame
@@ -49,12 +53,19 @@ async def render_diagram(ctx: ToolContext, args: DiagramArgs) -> ToolResult:
     return ToolResult(content="Diagram shown to the student.", blocks=[{"type": "flowchart", "data": {"mermaid": src}}])
 
 
+MAX_SUGGESTED = 3  # videos shown at once
+MAX_CANDIDATES = 8  # videos the model chooses from
+
+
 class VideoArgs(BaseModel):
-    topic: str = Field(min_length=2, max_length=120, description="A short topic, 1 to 3 words (e.g. 'nephritic')")
-    step: Literal["step1", "step2ck"] | None = Field(default=None, description="Only videos for this exam step")
-
-
-MAX_SUGGESTED = 3
+    query: str | None = Field(
+        default=None, min_length=2, max_length=300, description="Step 1: what the student asked for, in their words"
+    )
+    media_ids: list[str] | None = Field(
+        default=None,
+        max_length=MAX_CANDIDATES,
+        description="Step 2: media ids you picked from the step 1 candidates, best first (up to 3 are shown)",
+    )
 
 
 def video_block_data(row: dict[str, Any]) -> dict[str, Any]:
@@ -80,12 +91,12 @@ def video_block_data(row: dict[str, Any]) -> dict[str, Any]:
 
 
 # Any approved video (a chapter's too, not only the catalogue's); step/subject only when it is in the catalogue.
-_CANVAS_VIDEO = """
+_VIDEOS = """
 select m.id as media_id, m.title, m.youtube_id, m.url as file_url, m.page_url, m.licence, m.attribution,
        m.duration_s, m.channel_id, case when m.kind = 'video_file' then 'commons' else 'youtube' end as provider,
        c.step, c.subject
 from public.media_assets m left join public.video_catalog c on c.media_id = m.id
-where m.id = %s and m.kind in ('video_youtube', 'video_file') and m.review_status = 'approved'
+where m.id = any(%s) and m.kind in ('video_youtube', 'video_file') and m.review_status = 'approved'
   and m.embeddable is not false
 """
 
@@ -94,74 +105,68 @@ def _usable(row: dict[str, Any]) -> bool:
     return bool(row["file_url"]) if row["provider"] == COMMONS else bool(row["youtube_id"])
 
 
-def _line(row: dict[str, Any], names: dict[str, str]) -> str:
-    channel = names.get(COMMONS if row["provider"] == COMMONS else row["channel_id"] or "", "")
-    topics = ", ".join(t["title"] for t in row["topics"] or [])
-    parts = [row["title"] or row["media_id"], channel, row["subject"], f"topics: {topics}" if topics else ""]
-    return "- " + " · ".join(p for p in parts if p) + f" (media_id {row['media_id']})"
+async def _visible_videos(ctx: ToolContext, ids: list[str]) -> dict[str, dict[str, Any]]:
+    """The playable rows among `ids` that this student may see (RLS: approved media only)."""
+    async with ctx.user_tx() as conn:
+        cur = await conn.execute(_VIDEOS, (ids,))
+        return {r["media_id"]: dict(r) for r in await cur.fetchall() if _usable(r)}
 
 
-# Words that say what kind of video, not what it is about: never enough on their own for a match.
-GENERIC_WORDS = frozenset(
-    [
-        "a",
-        "an",
-        "and",
-        "are",
-        "about",
-        "basic",
-        "basics",
-        "by",
-        "explain",
-        "explained",
-        "for",
-        "from",
-        "how",
-        "in",
-        "intro",
-        "introduction",
-        "is",
-        "lecture",
-        "mechanism",
-        "mechanisms",
-        "of",
-        "on",
-        "overview",
-        "review",
-        "the",
-        "to",
-        "treatment",
-        "treatments",
-        "video",
-        "videos",
-        "what",
-        "why",
-        "with",
+def _channel(r: dict[str, Any], names: dict[str, str]) -> str:
+    return names.get(COMMONS if r["provider"] == COMMONS else r["channel_id"] or "", "")
+
+
+def _candidate(h: Any, names: dict[str, str]) -> str:
+    r = h.extra
+    topics = "; ".join(r["topics"] or [])
+    parts = [
+        h.title,
+        _channel(r, names),
+        r["subject"],
+        STEP_LABEL.get(r["step"], r["step"]),
+        f"topics: {topics}" if topics else "",
     ]
-)
+    return f"- media_id {h.ref_id}: " + " · ".join(p for p in parts if p)
 
 
 async def suggest_video(ctx: ToolContext, args: VideoArgs) -> ToolResult:
-    """Show up to 3 approved videos on a topic from Naadi's Videos catalogue (YouTube through the official player,
-    open-licence Wikimedia Commons files), best match first: topic name, then video title, chapter, channel."""
+    """Find and show videos from Naadi's Videos library (YouTube through the official player, open-licence Wikimedia
+    Commons files) in two calls. First call with `query` (the student's request as they put it): it returns up to 8
+    candidates (media id, title, channel, subject, step, topics) and shows nothing. Pick the ones that really fit
+    the request, then call again with their `media_ids` (best first, at most 3) to show them. If none fit, show
+    nothing and say so."""
     if not ctx.flags.get("videos"):
         return ToolResult(content="No video library available.")
-    if not query_words(args.topic):
-        raise ToolRefused("empty_topic")
+    if args.media_ids:
+        ids = list(dict.fromkeys(args.media_ids))[:MAX_SUGGESTED]
+        rows = await _visible_videos(ctx, ids)  # never trust the model's ids: only what RLS lets this student see
+        shown = [rows[i] for i in ids if i in rows]
+        if not shown:
+            raise ToolRefused("unknown_media_ids")
+        names = names_for(get_settings().config_dir)
+        lines = [" · ".join(x for x in (r["title"] or r["media_id"], _channel(r, names)) if x) for r in shown]
+        skipped = len(ids) - len(shown)
+        note = f"\n{skipped} unknown media id(s) skipped." if skipped else ""
+        return ToolResult(
+            content="Videos shown to the student:\n"
+            + frame("\n".join(f"- {line}" for line in lines), source="video_catalog")
+            + note,
+            blocks=[{"type": "video", "data": video_block_data(r)} for r in shown],
+        )
+    if not args.query or not args.query.strip():
+        raise ToolRefused("query_required")
+    try:
+        engine = get_engine(get_settings().config_dir)
+        res = await search_local(ctx.db, engine, ctx.user, args.query, scope="videos", limit=MAX_CANDIDATES)
+    except (ModelsNotCached, DatabaseNotConfigured, psycopg.OperationalError, TimeoutError):
+        return ToolResult(content="[error: search_unavailable]", status="error")
+    if not res.hits:
+        return ToolResult(content="No approved video on this topic in the library.")
     names = names_for(get_settings().config_dir)
-    # Every word first; else (one retry, no model call) any key word, most words matched first.
-    keys = " ".join(w for w in re.findall(r"[^\W_]+", args.topic.lower()) if w not in GENERIC_WORDS and len(w) > 2)
-    async with ctx.user_tx() as conn:  # RLS: only approved media are visible
-        rows = await search_videos(conn, args.topic, names, step=args.step, limit=MAX_SUGGESTED * 2)
-        if not rows and keys:
-            rows = await search_videos(conn, keys, names, step=args.step, limit=MAX_SUGGESTED * 2, any_word=True)
-    rows = [r for r in rows if _usable(r)][:MAX_SUGGESTED]
-    if not rows:
-        return ToolResult(content="No approved video on this topic in the library. Try one key word.")
-    listing = frame("\n".join(_line(r, names) for r in rows), source="video_catalog")
+    listing = frame("\n".join(_candidate(h, names) for h in res.hits), source="video_catalog")
     return ToolResult(
-        content=f"Videos shown to the student (title · channel · subject · topics):\n{listing}",
-        blocks=[{"type": "video", "data": video_block_data(r)} for r in rows],
+        content="Candidate videos (nothing is shown yet; call suggest_video with the media_ids that fit, or say"
+        f" none fits):\n{listing}"
     )
 
 
@@ -212,7 +217,7 @@ async def open_in_canvas(ctx: ToolContext, args: CanvasArgs) -> ToolResult:
         if not args.video_media_id:
             raise ToolRefused("video_required")
         async with ctx.user_tx() as conn:
-            cur = await conn.execute(_CANVAS_VIDEO, (args.video_media_id,))
+            cur = await conn.execute(_VIDEOS, ([args.video_media_id],))
             row = await cur.fetchone()
         if row is None or not _usable(row):
             raise ToolRefused("not_found")

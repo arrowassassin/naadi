@@ -8199,7 +8199,7 @@ export type ReindexRequest = {
   /**
    * Kinds
    */
-  kinds?: Array<"sections" | "questions" | "pathway" | "notes" | "ink">;
+  kinds?: Array<"sections" | "questions" | "pathway" | "notes" | "ink" | "videos">;
 };
 
 /**

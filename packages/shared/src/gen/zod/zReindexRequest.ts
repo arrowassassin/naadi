@@ -9,7 +9,7 @@ import * as z from "zod";
  */
 export const zReindexRequest = z.object({
   kinds: z
-    .array(z.enum(["sections", "questions", "pathway", "notes", "ink"]))
+    .array(z.enum(["sections", "questions", "pathway", "notes", "ink", "videos"]))
     .min(1)
     .optional(),
 });

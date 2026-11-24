@@ -14641,7 +14641,8 @@
                 "questions",
                 "pathway",
                 "notes",
-                "ink"
+                "ink",
+                "videos"
               ],
               "type": "string"
             },
