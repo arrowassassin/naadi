@@ -20,6 +20,7 @@ import { AppShell } from "./shell/AppShell";
 import { Wordmark } from "./shell/Logo";
 import { lazyPage } from "./shell/lazyPage";
 import { welcomeRoute } from "./today/routes";
+import { videosRoute } from "./videos/routes";
 
 // Pages other than Today load as their own chunks (segment 22 budget: initial JS <= 250 KB gzip).
 const SettingsAssistantPage = lazyPage(() =>
@@ -182,6 +183,7 @@ export const routeTree = rootRoute.addChildren([
     practiceRoutes(appRoute),
     cardsRoute(appRoute),
     plannerRoute(appRoute),
+    videosRoute(appRoute),
     searchRoute(appRoute),
     notebooksRoutes(appRoute),
     ...notesRoutes(appRoute),

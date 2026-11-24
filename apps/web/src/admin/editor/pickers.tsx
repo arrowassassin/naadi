@@ -15,11 +15,13 @@ import {
   useT,
 } from "../components/ui";
 
-export const MEDIA_KIND_KEYS: Record<MediaKind, string> = {
+/** Every kind a media row can have (the filter list, MEDIA_KINDS, leaves out the catalogue's video files). */
+export const MEDIA_KIND_KEYS: Record<AdminMedia["kind"], string> = {
   svg: "admin.media.kind.svg",
   image: "admin.media.kind.image",
   video_own: "admin.media.kind.video_own",
   video_youtube: "admin.media.kind.video_youtube",
+  video_file: "admin.media.kind.video_file",
   audio: "admin.media.kind.audio",
   pdf: "admin.media.kind.pdf",
   link: "admin.media.kind.link",

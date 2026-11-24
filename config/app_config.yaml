@@ -26,6 +26,7 @@ feature_flags:
   notes: {enabled: true}          # S13 Notes, highlights, notebooks, handwriting search
   pathway: {enabled: true}        # S17 Pathway, vault, cost tracker, weekly official-page check
   search: {enabled: true}         # S07 Search
+  videos: {enabled: true}         # Videos: open-licence and YouTube video catalogue, topic coverage, watched checklist
   cards: {enabled: true}          # S10 Flashcards (FSRS review, create/edit; Builder link, Save as flashcard)
   assistant: {enabled: true}      # S14 tutor assistant (always off in exam mode, decided on the server)
   generation: {enabled: true}     # S15b image/video generation; stays off until HF_GEN_TOKEN is set (not configured)
@@ -42,6 +43,7 @@ ui.nav:
   - {id: today, label: Today, path: /, icon: sun, feature: today}
   - {id: learn, label: Learn, path: /learn, icon: book-open, feature: courses}
   - {id: practice, label: Practice, path: /practice, icon: list-checks, feature: qbank}
+  - {id: videos, label: Videos, path: /videos, icon: play, feature: videos}
   - {id: notes, label: Notes, path: /notes, icon: notebook-pen, feature: notes}
   - {id: plan, label: Plan, path: /plan, icon: calendar, feature: planner}
   - {id: pathway, label: Pathway, path: /pathway, icon: route, feature: pathway}
@@ -2323,6 +2325,74 @@ ui_copy:
   video.note_cancel: "Cancel"
   video.note_open: "Open in Notes"
   video.note_sign_in: "Sign in to take notes on a video."
+  # Videos screen: catalogue, topic map, watched checklist (no rewards for watching)
+  videos.title: "Videos"
+  videos.headline_first: "See it once."
+  videos.headline_second: "Then recall it."
+  videos.view_label: "View"
+  videos.view_browse: "Browse"
+  videos.view_topics: "Topic map"
+  videos.step_label: "Exam"
+  videos.step.step1: "Step 1"
+  videos.step.step2ck: "Step 2 CK"
+  videos.step.all: "All"
+  videos.watched_count: "{n} of {total} marked watched"
+  videos.subjects_label: "Subjects"
+  videos.subjects_all: "All subjects"
+  videos.search_label: "Search videos"
+  videos.search_placeholder: "Search by topic, title, chapter or channel"
+  videos.search_clear: "Clear search"
+  videos.filters_label: "Filters"
+  videos.style_label: "Style"
+  videos.style.sketch: "Sketch"
+  videos.style.whiteboard: "Whiteboard"
+  videos.style.animation: "Animation"
+  videos.style.lecture: "Lecture"
+  videos.filter_core: "Core only"
+  videos.filter_unwatched: "Not watched yet"
+  videos.channel_label: "Channel"
+  videos.channel_all: "All channels"
+  videos.channel_option: "{name} ({n})"
+  videos.channel_commons: "Wikimedia Commons"
+  videos.core: "Core"
+  videos.group: "{subject} · {step}"
+  videos.count: "{n} videos"
+  videos.showing: "Showing {n} of {total}"
+  videos.load_more: "Show more videos"
+  videos.loading: "Loading videos…"
+  videos.more_failed: "More videos could not be loaded. Try again."
+  videos.empty_title: "No videos here yet"
+  videos.empty_body: "Videos appear here once the catalogue is imported."
+  videos.empty_filtered: "Nothing matches these filters. Remove one or try other words."
+  videos.error_title: "Videos could not be loaded"
+  videos.error_body: "Something went wrong on our side. Try again in a moment."
+  videos.error_busy: "Too many requests just now. Wait a moment, then try again."
+  videos.retry: "Try again"
+  videos.mark: "Mark watched"
+  videos.watched: "Watched"
+  videos.mark_label: "Mark {title} as watched"
+  videos.watched_label: "{title}: watched. Press to unmark"
+  videos.toggle_failed: "That change could not be saved. Your list shows what is saved."
+  videos.close: "Close video"
+  videos.pane_mark: "Mark watched"
+  videos.pane_watched: "Watched · undo"
+  videos.ask: "Ask Naadi about this video"
+  videos.ask_draft: "Explain the key points of the video “{title}” and how they are tested."
+  videos.topics_label: "Teaches"
+  videos.more_topic: "More on this topic"
+  videos.more_chapter: "Related in this chapter"
+  videos.missing_title: "Video not in this list"
+  videos.missing_body: "This video is not in the list you are viewing. Close this and change the filters to find it."
+  videos.file_loads: "Loads the file from Wikimedia Commons"
+  videos.file_loads_with_length: "{length} · Loads the file from Wikimedia Commons"
+  videos.file_page: "File page on Wikimedia Commons"
+  videos.coverage_topic: "Has videos"
+  videos.coverage_chapter: "Chapter videos only"
+  videos.coverage_gap: "No video yet"
+  videos.topics_covered: "{n} of {total} topics have videos"
+  videos.topics_empty: "No topics for this choice."
+  videos.topic_show: "Show videos"
+  videos.topic_show_label: "Show videos for {title}"
   privacy.youtube_title: "YouTube API Services"
   privacy.youtube_body: "Naadi shows videos with the official YouTube player and uses the YouTube API Services to find them. Nothing is requested from YouTube until you press play. By watching a video you agree to the YouTube Terms of Service and Google's Privacy Policy."
   privacy.youtube_google: "Google Privacy Policy"
@@ -2728,6 +2798,7 @@ ui_copy:
   admin.media.kind.svg: "SVG figure"
   admin.media.kind.video_own: "Own video"
   admin.media.kind.video_youtube: "YouTube video"
+  admin.media.kind.video_file: "Open-licence video file"
   admin.media.kind_label: "Kind"
   admin.media.metadata_at: "Video details checked {date}"
   admin.media.no_title: "Untitled"

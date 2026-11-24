@@ -14,6 +14,8 @@ SEARCH_MEDIA_HOSTS = (
 )
 # YouTube video thumbnails (the IFrame player's poster and the media mapper's previews, segment 20).
 YOUTUBE_IMG_HOSTS = ("https://i.ytimg.com",)
+# Open-licence video files from Wikimedia Commons, played with a native <video> on the Videos page.
+VIDEO_MEDIA_HOSTS = ("https://upload.wikimedia.org",)
 
 # Violation reports (CSP and the Trusted Types report-only policy) go to this same-origin endpoint
 # (naadi_api/csp_report.py): rate-limited per client, bodies never logged.
@@ -25,7 +27,7 @@ def content_security_policy(settings: Settings) -> str:
     supa = settings.supabase_origin
     connect = ["'self'"]
     img = ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS, *YOUTUBE_IMG_HOSTS]
-    media = ["'self'", "blob:"]
+    media = ["'self'", "blob:", *VIDEO_MEDIA_HOSTS]
     if supa:
         connect += [supa, supa.replace("https://", "wss://", 1)]
         img.append(supa)  # Supabase Storage serves from the project origin (/storage/v1/...)
