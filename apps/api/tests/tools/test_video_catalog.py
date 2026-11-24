@@ -87,7 +87,8 @@ def test_commons_licence_allowlist_attribution_and_snapshot() -> None:
         "artist": "Osmosis",
     }
     assert c.extra["attribution"].startswith('"Gallstones-osmosis-video.webm" by Osmosis, via Wikimedia Commons (')
-    assert c.extra["attribution"].endswith("(https://creativecommons.org/licenses/by-sa/4.0). none")
+    assert c.extra["attribution"].endswith("(https://creativecommons.org/licenses/by-sa/4.0).")
+    assert "none" not in c.extra["attribution"] and c.extra["attribution"] == c.extra["attribution"].rstrip()
 
 
 def test_attribution_template_is_read_from_sources_yaml() -> None:
@@ -371,3 +372,21 @@ def test_committed_data_shape() -> None:
             v["licence_snapshot"] is None if v["provider"] == "youtube" else v["licence_snapshot"]["license_short_name"]
         )
     assert ("sket" + "chy") not in json.dumps(topics).lower()  # no brand names in the data
+
+
+def test_blank_labels_fall_back_to_chapter_then_subject() -> None:
+    blank_chapter = _pin(cand("a", "Unrelated xyz"), "", subject="Pediatrics")
+    topics = [topic("t1", "Nephrotic syndrome", chapter="", subject="Pediatrics")]
+    m = T.match(topics, [blank_chapter], EMBED, 0.99)
+    assert {r["id"]: r["label"] for r in T.assemble(topics, [blank_chapter], m)}["yt-a"] == "Pediatrics"
+
+
+def test_committed_data_has_no_blank_labels_or_dangling_attribution() -> None:
+    videos = json.loads((REPO_ROOT / "data" / "videos.json").read_text())["videos"]
+    assert all(v["label"].strip() for v in videos)
+    assert all(v["attribution"].endswith(").") for v in videos if v["provider"] == "commons")
+
+
+def test_offline_requires_both_caches() -> None:
+    with pytest.raises(SystemExit):
+        T.main(["--offline"])

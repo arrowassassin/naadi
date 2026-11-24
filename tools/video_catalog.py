@@ -300,7 +300,7 @@ def commons_cand(title: str, info: dict[str, Any]) -> Cand | None:
     artist = _meta(info, "Artist") or "Unknown"
     page = "https://commons.wikimedia.org/wiki/" + title.replace(" ", "_")
     snapshot = {"license_short_name": licence, "license_url": _meta(info, "LicenseUrl"), "artist": artist}
-    attribution = attribution_template().format(title=name, file_url=page, modifications="none", **snapshot)
+    attribution = attribution_template().format(title=name, file_url=page, modifications="", **snapshot).rstrip()
     return Cand(
         "wm-" + slug(re.sub(r"\.\w+$", "", name)),
         "commons",
@@ -549,12 +549,16 @@ def assemble(topics: list[dict[str, Any]], cands: list[Cand], m: Matches) -> lis
             continue
         if d:
             first = tmap[d[0][0]]
-            subject, step, label = first["subject"], first["step"], first["title"]
+            subject, step = first["subject"], first["step"]
+            labels = [tmap[t]["title"] for t, _ in d]  # best-scored direct topic first
             core = any(tmap[t]["core"] for t, _ in d)
         else:
             g0 = next(iter(groups))
-            subject, step, label = g0[0], g0[1], g0[2]
+            subject, step = g0[0], g0[1]
+            labels = [g[2] for g in groups]  # chapter-tier topics' chapters
             core = bool(c.extra.get("core", any(tmap[t]["core"] for t in members[g0])))
+        label = next((x for x in (*labels, subject) if x.strip()), "")
+        assert label.strip(), f"blank label for {c.id}"
         rows.append(
             {
                 "id": c.id, "provider": c.provider, "youtube_id": c.youtube_id, "file_url": c.extra.get("file_url"),
@@ -635,8 +639,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument(
         "--no-rerank", action="store_true", help="skip the local cross-encoder (borderline rescue, facet check)"
     )
+    ap.add_argument("--offline", action="store_true", help="never crawl: needs --cache and --embed-cache files")
     ap.add_argument("--sample", type=int, default=40)
     args = ap.parse_args(argv)
+    if args.offline and not (args.cache and args.embed_cache):
+        ap.error("--offline needs --cache and --embed-cache")
 
     from naadi_api.embeddings.engine import get_engine
     from naadi_api.settings import get_settings
@@ -659,6 +666,8 @@ def main(argv: list[str] | None = None) -> int:
         f = args.cache.with_suffix(f".{name}.json") if args.cache else None
         if f and f.exists():
             return [Cand(**c) for c in json.loads(f.read_text())]
+        if args.offline:
+            raise SystemExit(f"--offline: cache {f} is missing")
         got = fetch()
         if f and got:
             f.write_text(json.dumps([asdict(c) for c in got]))
@@ -701,7 +710,10 @@ def main(argv: list[str] | None = None) -> int:
             log("commons: still rate limited after retries, catalogue is PARTIAL (no commons videos)")
             return []
 
-    cands = apply_pins(cached("youtube", youtube) + cached("commons", commons), pins)
+    commons_cands = cached("commons", commons)
+    for c in commons_cands:  # caches from before the empty-modifications fix end in ". none"
+        c.extra["attribution"] = c.extra["attribution"].removesuffix(" none")
+    cands = apply_pins(cached("youtube", youtube) + commons_cands, pins)
     log(f"candidates: {len(cands)}, pins applied: {sum(c.pin for c in cands)} of {len(pins)}")
     rerank = None if args.no_rerank else engine.rerank
     m = match(topics, cands, embed, args.threshold, rerank)
