@@ -53,6 +53,9 @@ EXPECTED = {
     "pack_flashcards": PACKS.cards,
     "section_media": LEGACY_FIGURES + PACKS.section_figures,
     "app_config": len(KEY_SPECS),  # every registered key (other segments add their own)
+    "video_topics": len(json.loads((DATA / "video_topics.json").read_text(encoding="utf-8"))["topics"]),
+    "video_media_assets": len(json.loads((DATA / "videos.json").read_text(encoding="utf-8"))["videos"]),
+    "video_catalog": len(json.loads((DATA / "videos.json").read_text(encoding="utf-8"))["videos"]),
 }
 
 
@@ -126,6 +129,53 @@ def test_second_run_changes_nothing(first_run: object, url: str, b: SeedBundle) 
     assert again.storage.unchanged == FIGURES
     assert _count(url, "select count(*) from public.app_config_history") == 0
     assert _count(url, "select count(*) from public.chapter_section_revisions where section_id like 'ch%%'") == 0
+
+
+def test_videos_keep_a_refresh_and_an_admin_edit_and_drop_removed_rows(
+    first_run: object, url: str, b: SeedBundle
+) -> None:
+    yt = next(v for v in b.videos if v.provider == "youtube")
+    file = next(v for v in b.videos if v.provider == "commons")
+    only = {"only": ("videos",)}
+    with psycopg.connect(url, autocommit=True) as c:
+        c.execute("select set_config('naadi.seed', 'on', false)")  # a refresh is not an admin edit
+        c.execute(
+            "update public.media_assets set title = 'Real title', duration_s = 99, metadata_fetched_at = now(),"
+            " attribution = 'Video: Real' where id = %s",
+            (yt.id,),
+        )
+        c.execute("select set_config('naadi.seed', 'off', false)")
+        c.execute("update public.media_assets set title = 'Admin title' where id = %s", (file.id,))
+        c.execute(
+            "insert into public.video_topics (id, title, subject, step, sort) values ('zz-gone','x','x','step1',0)"
+        )
+    try:
+        r = run_seed(options(url, **only), bundle=b)
+        assert r.tables["video_topics"].deleted == 1
+        assert r.tables["video_media_assets"].kept == 0 and r.tables["video_media_assets"].updated == 0
+        row = _row(url, "select title, duration_s, attribution from public.media_assets where id = %s", yt.id)
+        assert row == ("Real title", 99, "Video: Real")
+        assert _row(url, "select title from public.media_assets where id = %s", file.id) == ("Admin title",)
+        assert (
+            _row(
+                url, "select kind, url, page_url, licence is not null from public.media_assets where id = %s", file.id
+            )[0]
+            == "video_file"
+        )
+        forced = run_seed(options(url, force=True, **only), bundle=b)
+        assert forced.tables["video_media_assets"].updated == 1
+        assert _row(url, "select title from public.media_assets where id = %s", file.id) == (file.label,)
+        assert run_seed(options(url, **only), bundle=b).changes == 0
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("delete from public.video_topics where id = 'zz-gone'")
+
+
+def _row(url: str, query: str, *params: object) -> tuple[object, ...]:
+    with psycopg.connect(url) as c:
+        row = c.execute(query, params).fetchone()
+    assert row is not None
+    return tuple(row)
 
 
 def test_seeded_rows_have_the_contracted_shape(first_run: object, url: str) -> None:

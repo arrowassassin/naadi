@@ -9417,7 +9417,16 @@ export type SeedRequest = {
    * Only
    */
   only?: Array<
-    "sources" | "taxonomy" | "figures" | "chapters" | "questions" | "cards" | "pathway" | "plan" | "app_config"
+    | "sources"
+    | "taxonomy"
+    | "figures"
+    | "chapters"
+    | "videos"
+    | "questions"
+    | "cards"
+    | "pathway"
+    | "plan"
+    | "app_config"
   >;
 };
 

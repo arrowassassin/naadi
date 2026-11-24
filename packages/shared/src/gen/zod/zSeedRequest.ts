@@ -12,7 +12,18 @@ export const zSeedRequest = z.object({
   force: z.boolean().optional().default(false),
   only: z
     .array(
-      z.enum(["sources", "taxonomy", "figures", "chapters", "questions", "cards", "pathway", "plan", "app_config"]),
+      z.enum([
+        "sources",
+        "taxonomy",
+        "figures",
+        "chapters",
+        "videos",
+        "questions",
+        "cards",
+        "pathway",
+        "plan",
+        "app_config",
+      ]),
     )
     .min(1)
     .optional(),

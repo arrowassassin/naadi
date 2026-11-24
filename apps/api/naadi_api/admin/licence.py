@@ -205,6 +205,8 @@ def decide(
         max_age = dt.timedelta(days=policy.youtube_metadata_max_age_days)
         if fetched is None or (now or dt.datetime.now(dt.UTC)) - fetched > max_age:
             return "metadata_stale"
+    elif asset.kind == "video_file":
+        pass  # played from its host (Commons), never re-hosted: no stored-copy rules, whatever `use` says
     elif use == "embed":
         return "embed_only" if not source.youtube else None
     else:

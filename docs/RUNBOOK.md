@@ -7,7 +7,7 @@ them from the environment (docs/SECRETS.md).
 
 The importer (`apps/api/naadi_api/seed/`) loads `data/` + `config/` into Postgres and the `content-public`
 bucket. It is idempotent: a second run reports `changes: 0`. Groups run in this order, each in its own
-transaction: `sources, taxonomy, figures, chapters, questions, pathway, plan, app_config`.
+transaction: `sources, taxonomy, figures, chapters, videos, questions, pathway, plan, app_config`.
 
 ### When the seed data changes
 
@@ -35,6 +35,14 @@ not fail the run. Every other check, the counts included, must pass.
 
 Exit codes: 0 ok, 1 verification failed (report printed), 2 invalid bundle or configuration, 3 another
 import holds the lock.
+
+### Videos group
+
+`videos` loads `data/video_topics.json` and `data/videos.json` into `video_topics`, `media_assets` (YouTube
+`video_youtube`, Commons `video_file`) and `video_catalog`; topics and catalog rows no longer in the data are
+deleted. YouTube rows carry only ids and Naadi's own label (no API metadata), so after seeding run
+`tools/youtube_mapper.py --refresh-only` once to fill real titles, durations and attribution. A re-seed keeps what
+the refresh wrote (title, duration, attribution, fetch time) and any row an admin edited (unless `force`).
 
 ### Real project (from the Space, so no database URL or service key leaves it)
 

@@ -1,7 +1,7 @@
 """Command line for the seed import (apps/api/scripts/seed.py and `python -m naadi_api.seed`).
 
     uv run python scripts/seed.py --data ../../data --config ../../config [--dry-run]
-        [--only sources,taxonomy,figures,chapters,questions,cards,pathway,plan,app_config]
+        [--only sources,taxonomy,figures,chapters,videos,questions,cards,pathway,plan,app_config]
         [--force] [--report out.json] [--storage-url http://localhost:54335] [--allow-split-target]
 
 Database: DATABASE_URL. Storage: SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (a Supabase project) or

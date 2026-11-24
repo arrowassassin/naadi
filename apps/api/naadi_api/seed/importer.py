@@ -55,7 +55,7 @@ log = get_logger("naadi.seed")
 LOCK_KEY = 0x6E616164_69736564  # "naadised": one seed at a time per database
 STATEMENT_TIMEOUT_MS = 120_000
 FIGURE_FOLDER = "figures"
-GROUPS = ("sources", "taxonomy", "figures", "chapters", "questions", "cards", "pathway", "plan", "app_config")
+GROUPS = ("sources", "taxonomy", "figures", "chapters", "videos", "questions", "cards", "pathway", "plan", "app_config")
 _FIGURE_TITLE = re.compile(r"^(Figure\s+\d+[A-Za-z]?)\.\s")
 
 
@@ -362,6 +362,79 @@ SECTION_GUARD: LiteralString = "t.admin_edited_at is null"
 # Chapters, questions and media an admin changed (migration 0036 trigger) are kept unless forced.
 ADMIN_EDIT_GUARD: LiteralString = "t.admin_edited_at is null"
 SEED_PLACEMENT_GUARD: LiteralString = "t.origin = 'seed'"
+
+
+EPOCH = "1970-01-01T00:00:00Z"  # a YouTube row's metadata is unfetched until the 30-day refresh fills it
+
+
+def _videos(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str, TableCounts]:
+    """Video topics, the videos' `media_assets` rows and `video_catalog`. Topics and catalog rows the data no
+    longer has are deleted (seed-owned); a refresh's title, duration, attribution and fetch time are kept."""
+
+    def media(v: Any) -> dict[str, Any]:
+        yt = v.provider == "youtube"
+        return {
+            "id": v.id,
+            "kind": "video_youtube" if yt else "video_file",
+            "source_id": "youtube" if yt else "wikimedia-commons",
+            "title": v.label or None,
+            "url": None if yt else v.file_url,
+            "page_url": None if yt else v.file_page,
+            "licence": v.licence_snapshot,
+            "attribution": None if yt else v.attribution,
+            "youtube_id": v.youtube_id,
+            "channel_id": v.channel_id,
+            "duration_s": v.duration_s,
+            "embeddable": True if yt else None,
+            "metadata_fetched_at": EPOCH if yt else None,
+            "review_status": "approved",
+            "admin_edited_at": None,  # a forced run takes the video back from the admin
+        }
+
+    guard = None if force else ADMIN_EDIT_GUARD
+    refreshed = ("title", "duration_s", "metadata_fetched_at", "attribution")
+    yt_rows = [media(v) for v in b.videos if v.provider == "youtube"]
+    file_rows = [media(v) for v in b.videos if v.provider == "commons"]
+    topics = upsert(
+        cur,
+        "video_topics",
+        ["id"],
+        [t.model_dump() for t in b.video_topics],
+    )
+    topics.deleted = _delete_missing(cur, "video_topics", "id", [t.id for t in b.video_topics])
+    counts = upsert(cur, "media_assets", ["id"], yt_rows, keep_existing=refreshed, guard=guard)
+    more = upsert(cur, "media_assets", ["id"], file_rows, guard=guard)
+    counts.total += more.total
+    counts.inserted += more.inserted
+    counts.updated += more.updated
+    counts.unchanged += more.unchanged
+    catalog = upsert(
+        cur,
+        "video_catalog",
+        ["media_id"],
+        [
+            {
+                "media_id": v.id,
+                "subject": v.subject,
+                "step": v.step,
+                "style": v.style,
+                "core": v.core,
+                "topic_ids": v.topic_ids,
+                "provider": v.provider,
+                "sort": i,
+            }
+            for i, v in enumerate(b.videos)
+        ],
+    )
+    catalog.deleted = _delete_missing(cur, "video_catalog", "media_id", [v.id for v in b.videos])
+    return {"video_topics": topics, "video_media_assets": counts, "video_catalog": catalog}
+
+
+def _delete_missing(cur: psycopg.Cursor[Any], table: str, key: str, keep: list[str]) -> int:
+    cur.execute(
+        sql.SQL("delete from public.{} where {} <> all(%s)").format(sql.Identifier(table), sql.Identifier(key)), (keep,)
+    )
+    return cur.rowcount
 
 
 def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str, TableCounts]:
@@ -677,6 +750,7 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
         "chapter_sections": section_ids,
         "questions": [q.id for q in b.questions],
         "media_assets": [f.id for f in b.figures],
+        "video_topics": [t.id for t in b.video_topics],
         "taxonomy_nodes": [t.id for t in b.taxonomy],
         "pathway_tasks": [t.id for t in b.tasks],
         "question_sets": [s.id for _p, s in b.sets],
@@ -690,6 +764,14 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
         row = cur.fetchone()
         actual[table] = int(row[0]) if row else 0
     one = _scalar
+    actual["video_media_assets"] = one(
+        cur,
+        "select count(*) from public.media_assets where id = any(%s) and kind in ('video_youtube','video_file')",
+        [v.id for v in b.videos],
+    )
+    actual["video_catalog"] = one(
+        cur, "select count(*) from public.video_catalog where media_id = any(%s)", [v.id for v in b.videos]
+    )
     actual["pathway_stages"] = one(
         cur, "select count(*) from public.pathway_stages where key = any(%s)", [s.key for s in b.stages]
     )
@@ -883,6 +965,9 @@ def expected_counts(b: SeedBundle) -> dict[str, int]:
         "pack_flashcards": len(b.cards),
         "section_media": sum(len(b.bodies.sections[s.id].figure_ids) for _c, _i, s in b.sections),
         "app_config": len(file_values(b.config_dir)),
+        "video_topics": len(b.video_topics),
+        "video_media_assets": len(b.videos),
+        "video_catalog": len(b.videos),
     }
 
 
@@ -960,6 +1045,8 @@ def run_seed(opts: SeedOptions, *, bundle: SeedBundle | None = None) -> SeedRepo
                             )
                         elif group == "chapters":
                             report.tables.update(_chapters(cur, b, force=opts.force))
+                        elif group == "videos":
+                            report.tables.update(_videos(cur, b, force=opts.force))
                         elif group == "questions":
                             report.tables.update(_questions(cur, b, force=opts.force))
                         elif group == "cards":
@@ -1023,6 +1110,9 @@ _COUNT_GROUP = {
     "plan_template_days": "plan",
     "sources": "sources",
     "app_config": "app_config",
+    "video_topics": "videos",
+    "video_media_assets": "videos",
+    "video_catalog": "videos",
 }
 
 

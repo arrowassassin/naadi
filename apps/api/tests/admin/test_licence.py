@@ -65,6 +65,10 @@ FRESH = AssetFacts("video_youtube", True, NOW - dt.timedelta(days=1))
         (YT, AssetFacts("video_youtube", None, NOW), "embed", None, "not_embeddable"),
         (YT, AssetFacts("video_youtube", True, NOW - dt.timedelta(days=31)), "page", None, "metadata_stale"),
         (YT, AssetFacts("video_youtube", True, None), "embed", None, "metadata_stale"),
+        # A Commons video_file is linked, not stored: allow_copy=false must not refuse a host/embed edit.
+        (src("CC-BY-SA-4.0", allow_copy=False), AssetFacts("video_file"), "host", None, None),
+        (src("CC-BY-SA-4.0", allow_copy=False), AssetFacts("video_file"), "embed", None, None),
+        (src("per-file", allow_copy=False), AssetFacts("video_file"), "host", None, "no_license"),
     ],
 )
 def test_gate_matrix(
