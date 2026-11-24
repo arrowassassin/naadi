@@ -216,6 +216,21 @@ test.describe("tutor assistant", () => {
     await expect.poll(() => noteCount(page, mine), { timeout: STREAM_TIMEOUT }).toBe(before + 1);
   });
 
+  test("suggest_video: the answer carries a video block with Open in Videos", async ({ page, consoleErrors }, info) => {
+    trackApi(page);
+    await go(page, "/videos");
+    await ask(page, "e2e:video Is there a video on pressure-volume loops?");
+    const panel = conversation(page);
+    const block = panel.locator('[data-block="video"]').first();
+    await expect(block).toBeVisible({ timeout: STREAM_TIMEOUT });
+    await expect(block.getByRole("button", { name: /^Play video:/ })).toBeVisible();
+    await expectNoAxeViolations(page);
+    await expectNoHorizontalOverflow(page);
+    await snap(page, info, consoleErrors, "video-block");
+    await block.getByRole("link", { name: "Open in Videos" }).click();
+    await expect(page).toHaveURL(/\/videos\?.*v=yt-/);
+  });
+
   for (const view of [
     { name: "panel", width: 1180, height: 820 },
     { name: "sheet", width: 820, height: 1180 },

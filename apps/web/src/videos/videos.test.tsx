@@ -284,13 +284,13 @@ describe("Videos screen", () => {
     let refuse: (e: Error) => void = () => undefined;
     sdk.markVideoWatched.mockImplementationOnce(() => new Promise((_, rej) => (refuse = rej)));
     renderPage();
-    const toggle = await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` });
+    const toggle = await screen.findByRole("button", { name: `Mark watched: ${LOOPS.title}` });
     await userEvent.click(toggle);
-    expect(screen.getByRole("button", { name: `${LOOPS.title}: watched. Press to unmark` })).toBeVisible();
+    expect(screen.getByRole("button", { name: `Watched: ${LOOPS.title}. Press to unmark` })).toBeVisible();
     expect(screen.getByText("16 of 405 marked watched")).toBeVisible();
     expect(sdk.markVideoWatched).toHaveBeenCalledWith(expect.objectContaining({ path: { media_id: LOOPS.media_id } }));
     await act(async () => refuse(new ApiError("down", 503, "unavailable", null)));
-    expect(await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` })).toBeVisible();
+    expect(await screen.findByRole("button", { name: `Mark watched: ${LOOPS.title}` })).toBeVisible();
     expect(screen.getByRole("alert")).toHaveTextContent("That change could not be saved");
     await waitFor(() => expect(screen.getByText("15 of 405 marked watched")).toBeVisible());
   });
@@ -307,17 +307,17 @@ describe("Videos screen", () => {
         }),
     );
     renderPage();
-    await userEvent.click(await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` }));
-    await userEvent.click(screen.getByRole("button", { name: `${LOOPS.title}: watched. Press to unmark` }));
+    await userEvent.click(await screen.findByRole("button", { name: `Mark watched: ${LOOPS.title}` }));
+    await userEvent.click(screen.getByRole("button", { name: `Watched: ${LOOPS.title}. Press to unmark` }));
     // the second tap shows at once, but its request waits for the first
-    expect(screen.getByRole("button", { name: `Mark ${LOOPS.title} as watched` })).toBeVisible();
+    expect(screen.getByRole("button", { name: `Mark watched: ${LOOPS.title}` })).toBeVisible();
     expect(sdk.unmarkVideoWatched).not.toHaveBeenCalled();
     const listCalls = sdk.listVideos.mock.calls.length;
     await act(async () => releaseMark());
     await waitFor(() => expect(sdk.unmarkVideoWatched).toHaveBeenCalledTimes(1));
     await waitFor(() => expect(sdk.listVideos.mock.calls.length).toBeGreaterThan(listCalls));
     expect(serverWatched.has(LOOPS.media_id)).toBe(false);
-    expect(await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` })).toBeVisible();
+    expect(await screen.findByRole("button", { name: `Mark watched: ${LOOPS.title}` })).toBeVisible();
   });
 
   it("rolls a failed toggle back in the list and the pane, and says so inside the sheet", async () => {
@@ -347,11 +347,11 @@ describe("Videos screen", () => {
   it("unmarks a watched video", async () => {
     serverWatched.add(LOOPS.media_id);
     renderPage();
-    await userEvent.click(await screen.findByRole("button", { name: `${LOOPS.title}: watched. Press to unmark` }));
+    await userEvent.click(await screen.findByRole("button", { name: `Watched: ${LOOPS.title}. Press to unmark` }));
     expect(sdk.unmarkVideoWatched).toHaveBeenCalledWith(
       expect.objectContaining({ path: { media_id: LOOPS.media_id } }),
     );
-    expect(screen.getByRole("button", { name: `Mark ${LOOPS.title} as watched` })).toBeVisible();
+    expect(screen.getByRole("button", { name: `Mark watched: ${LOOPS.title}` })).toBeVisible();
   });
 
   it("opens the player pane from a card, lists related videos by topic then chapter, and closes", async () => {
@@ -391,7 +391,11 @@ describe("Videos screen", () => {
       await userEvent.click(ask);
       // a prefilled, unsent question with the video attached as the context chip
       expect(asks).toEqual([
-        { kind: "ask", context: { type: "video", id: LOOPS.media_id }, draft: expect.stringContaining(LOOPS.title as string) },
+        {
+          kind: "ask",
+          context: { type: "video", id: LOOPS.media_id },
+          draft: expect.stringContaining(LOOPS.title as string),
+        },
       ]);
     } finally {
       off();

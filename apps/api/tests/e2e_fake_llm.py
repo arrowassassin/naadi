@@ -8,6 +8,7 @@ and the Aegra runtime, with deterministic answers chosen by a keyword in the stu
 - `e2e:save`   → calls save_note (the confirm chip), then confirms or acknowledges the cancel (`e2e:save#tok`
   puts `ref tok` in the note text);
 - `e2e:canvas` → calls open_in_canvas with a document draft;
+- `e2e:video`  → calls suggest_video (needs the seeded Videos catalogue), then a short answer;
 - anything else → a short text answer.
 
 Requests that are not the tutor (no tutor system prompt: the ping self-test, the router, the summariser) get 404
@@ -67,6 +68,10 @@ def decide(messages: list[dict[str, Any]]) -> dict[str, Any]:
         if any("declined" in r for r in tool_results):
             return {"text": "Okay, I did not save anything."}
         return {"text": "Saved the note on this page."}
+    if "e2e:video" in user:
+        if not tool_results:
+            return {"tool": "suggest_video", "args": {"topic": "Ventricular Pressure-Volume Loops"}}
+        return {"text": "Here is a video from the library on that topic."}
     if "e2e:canvas" in user:
         if not tool_results:
             return {
