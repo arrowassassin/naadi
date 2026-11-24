@@ -1,0 +1,162 @@
+# Curated YouTube video ids with a subject / step / chapter hint (Naadi-authored; no YouTube metadata).
+# tools/video_catalog.py scores each pin against the topic map: a pin that passes the precision floor becomes a direct
+# link, otherwise it is only a chapter-tier (related) link.
+pins:
+  - {youtube_id: IeIQ2zfO6dw, subject: "Anatomy", step: step1, chapter: "Abdominal Aorta Branches Anatomy", core: true}
+  - {youtube_id: 6VMiKeAvvTY, subject: "Anatomy", step: step1, chapter: "Circle Of Willis Cerebral Blood Supply", core: false}
+  - {youtube_id: PEPjuiql72M, subject: "Anatomy", step: step1, chapter: "Coronary Arteries Anatomy", core: false}
+  - {youtube_id: hDbWV0EZCAU, subject: "Anatomy", step: step1, chapter: "Cranial Nerves Anatomy Overview", core: false}
+  - {youtube_id: FmwvD7-jd30, subject: "Anatomy", step: step1, chapter: "Femoral Triangle Anatomy", core: false}
+  - {youtube_id: heSsAreO_y0, subject: "Anatomy", step: step1, chapter: "Heart Anatomy Chambers Valves", core: false}
+  - {youtube_id: hzf2rvjnUtQ, subject: "Anatomy", step: step1, chapter: "Inguinal Canal Hernia Anatomy", core: false}
+  - {youtube_id: wz6QCBN42mo, subject: "Anatomy", step: step1, chapter: "Lumbosacral Plexus Anatomy", core: false}
+  - {youtube_id: 97sWvuPXGLI, subject: "Anatomy", step: step1, chapter: "Skull Foramina Anatomy", core: false}
+  - {youtube_id: J9jisOXB_Oo, subject: "Physiology", step: step1, chapter: "Acid Base Physiology Interpretation", core: true}
+  - {youtube_id: tjukdJx27-s, subject: "Physiology", step: step1, chapter: "Adrenal Steroid Hormone Synthesis Pathway", core: false}
+  - {youtube_id: lxZciLnpq7k, subject: "Physiology", step: step1, chapter: "Cardiac Action Potential Physiology", core: false}
+  - {youtube_id: -0CXs9L9O0A, subject: "Physiology", step: step1, chapter: "Cardiac Cycle Pressure Volume Loop", core: true}
+  - {youtube_id: uYu-zvCXiV4, subject: "Physiology", step: step1, chapter: "Countercurrent Mechanism Loop Of Henle", core: false}
+  - {youtube_id: SVqSqPOcahY, subject: "Physiology", step: step1, chapter: "Glomerular Filtration Rate Renal Physiology", core: false}
+  - {youtube_id: BTwgmMfqOW4, subject: "Physiology", step: step1, chapter: "Respiratory Physiology Compliance Surfactant", core: false}
+  - {youtube_id: dcAxPYUGgDs, subject: "Physiology", step: step1, chapter: "Starling Forces Capillary Fluid Exchange", core: false}
+  - {youtube_id: BeI0-xw_cSQ, subject: "Physiology", step: step1, chapter: "Thyroid Hormone Physiology", core: false}
+  - {youtube_id: VAgvPJc3X6w, subject: "Physiology", step: step1, chapter: "Ventilation Perfusion Mismatch", core: true}
+  - {youtube_id: Y32gdtprEj4, subject: "Biochemistry", step: step1, chapter: "Collagen Synthesis Disorders", core: true}
+  - {youtube_id: HtEKHaArT8Q, subject: "Biochemistry", step: step1, chapter: "Dna Repair Mutations Usmle", core: true}
+  - {youtube_id: xoqyF6DJZ-Y, subject: "Biochemistry", step: step1, chapter: "Glycolysis Regulation Biochemistry", core: false}
+  - {youtube_id: IvdaQd9IK4s, subject: "Biochemistry", step: step1, chapter: "Heme Synthesis Porphyria", core: true}
+  - {youtube_id: gE9cIQ9vz0k, subject: "Biochemistry", step: step1, chapter: "Lipoprotein Disorders Biochemistry", core: false}
+  - {youtube_id: 7udUG8KkN_E, subject: "Biochemistry", step: step1, chapter: "Lysosomal Storage Diseases Mnemonic", core: true}
+  - {youtube_id: 0M-B2dOfcUo, subject: "Biochemistry", step: step1, chapter: "Phenylketonuria Amino Acid Metabolism", core: false}
+  - {youtube_id: EHZuFDf7VPE, subject: "Biochemistry", step: step1, chapter: "Purine Metabolism Lesch Nyhan Gout", core: false}
+  - {youtube_id: rr7IRYLqleg, subject: "Biochemistry", step: step1, chapter: "Tca Cycle Biochemistry", core: false}
+  - {youtube_id: qVd2H3VtjAA, subject: "Biochemistry", step: step1, chapter: "Urea Cycle Disorders", core: true}
+  - {youtube_id: k49CUT_Zx10, subject: "Biochemistry", step: step1, chapter: "Vitamins Biochemistry Usmle", core: false}
+  - {youtube_id: IVBCrzjOl40, subject: "Microbiology", step: step1, chapter: "Antibiotics Mechanism Of Action", core: false}
+  - {youtube_id: bcyyR53BnZQ, subject: "Microbiology", step: step1, chapter: "Fungal Infections Mycoses", core: false}
+  - {youtube_id: MI-FkBDamzw, subject: "Microbiology", step: step1, chapter: "Gram Positive Vs Gram Negative Bacteria", core: false}
+  - {youtube_id: 3e7WdGv_0HQ, subject: "Microbiology", step: step1, chapter: "Hepatitis Viruses Serology", core: true}
+  - {youtube_id: KvvECcXnDks, subject: "Microbiology", step: step1, chapter: "Hiv Microbiology Life Cycle", core: false}
+  - {youtube_id: ZWDVy6VRw-I, subject: "Microbiology", step: step1, chapter: "Mycobacterium Tuberculosis Microbiology", core: false}
+  - {youtube_id: 0NBQxasH4CY, subject: "Microbiology", step: step1, chapter: "Parasites Protozoa Helminths", core: false}
+  - {youtube_id: nKhpAu4eO9M, subject: "Microbiology", step: step1, chapter: "Staphylococcus Aureus Toxins", core: false}
+  - {youtube_id: ZrE4i1J3xfs, subject: "Microbiology", step: step1, chapter: "Streptococcus Classification", core: false}
+  - {youtube_id: Bl6vWLqL2D0, subject: "Immunology", step: step1, chapter: "B Cell Maturation Antibody Production", core: false}
+  - {youtube_id: V0cQY0rJGXc, subject: "Immunology", step: step1, chapter: "Complement System Pathways", core: false}
+  - {youtube_id: TAqO0Mq19JQ, subject: "Immunology", step: step1, chapter: "Cytokines Interleukins Usmle", core: false}
+  - {youtube_id: 5g1ijpBI6Dk, subject: "Immunology", step: step1, chapter: "Hiv Cd4 T Cell Immunology", core: false}
+  - {youtube_id: IpHaGrYNTag, subject: "Immunology", step: step1, chapter: "Hypersensitivity Reactions Types", core: true}
+  - {youtube_id: zg61a3BoR8Y, subject: "Immunology", step: step1, chapter: "Immunoglobulin Classes Function", core: false}
+  - {youtube_id: 2-57bqFSJ1E, subject: "Immunology", step: step1, chapter: "Immunology Complement System Pathways Usmle", core: false}
+  - {youtube_id: 80Q-OPDjoE8, subject: "Immunology", step: step1, chapter: "Immunology Complement System Pathways Usmle", core: false}
+  - {youtube_id: xdlvPk_2r-w, subject: "Immunology", step: step1, chapter: "Innate Vs Adaptive Immunity Overview", core: false}
+  - {youtube_id: TMnkihN6zVM, subject: "Immunology", step: step1, chapter: "Mhc Class I Class Ii Antigen Presentation", core: false}
+  - {youtube_id: 7Zo2nv41pV4, subject: "Immunology", step: step1, chapter: "Mhc Class I Class Ii Antigen Presentation", core: false}
+  - {youtube_id: MaOwZnSpkB4, subject: "Immunology", step: step1, chapter: "Primary Immunodeficiency Diseases", core: true}
+  - {youtube_id: xaz5ftvZCyI, subject: "Immunology", step: step1, chapter: "T Cell Activation Cd4 Cd8", core: false}
+  - {youtube_id: AEgIMrV9foE, subject: "Immunology", step: step1, chapter: "Transplant Rejection Types", core: false}
+  - {youtube_id: yHTwktaRa_s, subject: "Immunology", step: step1, chapter: "Vaccines Types Immunology", core: true}
+  - {youtube_id: kRs60qXNFYI, subject: "Pharmacology", step: step1, chapter: "Ace Inhibitors Side Effects", core: false}
+  - {youtube_id: 9xSqezCMHnw, subject: "Pharmacology", step: step1, chapter: "Antiarrhythmic Drugs Classification", core: true}
+  - {youtube_id: omovOv3DFz8, subject: "Pharmacology", step: step1, chapter: "Antibiotics Cell Wall Inhibitors", core: false}
+  - {youtube_id: eZBtQ0rDnG4, subject: "Pharmacology", step: step1, chapter: "Anticoagulants Pharmacology", core: true}
+  - {youtube_id: cI8G2KSQdMo, subject: "Pharmacology", step: step1, chapter: "Autonomic Pharmacology Receptors", core: true}
+  - {youtube_id: WQDncWAEP2Q, subject: "Pharmacology", step: step1, chapter: "Beta Blockers Pharmacology", core: false}
+  - {youtube_id: p2ctcB4688s, subject: "Pharmacology", step: step1, chapter: "Chemotherapy Drugs Side Effects", core: false}
+  - {youtube_id: OhIopfQm9_w, subject: "Pharmacology", step: step1, chapter: "Cytochrome P450 Inducers Inhibitors", core: true}
+  - {youtube_id: xEkoAv2W6iQ, subject: "Pharmacology", step: step1, chapter: "Diabetes Medications Pharmacology", core: true}
+  - {youtube_id: Vh1LZlLCfkU, subject: "Pathology", step: step1, chapter: "Anemia Classification Approach", core: false}
+  - {youtube_id: 4_0-7UOAgx8, subject: "Pathology", step: step1, chapter: "Cell Injury Necrosis Apoptosis", core: false}
+  - {youtube_id: YClJciaGe6s, subject: "Pathology", step: step1, chapter: "Coagulation Disorders Bleeding", core: false}
+  - {youtube_id: PGB6dN1KlwQ, subject: "Pathology", step: step1, chapter: "Liver Cirrhosis Pathology", core: false}
+  - {youtube_id: 41rLAXnlVq4, subject: "Pathology", step: step1, chapter: "Lung Cancer Pathology", core: false}
+  - {youtube_id: 67tUtS3y_GA, subject: "Pathology", step: step1, chapter: "Myocardial Infarction Pathology Complications", core: false}
+  - {youtube_id: 507uDOTuGX8, subject: "Pathology", step: step1, chapter: "Neoplasia Tumor Markers Pathology", core: true}
+  - {youtube_id: f4LqKDHppFM, subject: "Pathology", step: step1, chapter: "Nephrotic Vs Nephritic Syndrome", core: false}
+  - {youtube_id: NqkdqJtxIfs, subject: "Pathology", step: step1, chapter: "Shock Types Pathophysiology", core: false}
+  - {youtube_id: BM2u1PcdOuA, subject: "Pathology", step: step1, chapter: "Thyroid Nodules Pathology", core: false}
+  - {youtube_id: MX83dm5wNgg, subject: "Biostatistics & Epidemiology", step: step1, chapter: "Bias Confounding Biostatistics", core: true}
+  - {youtube_id: 6M3q_5l2qJk, subject: "Biostatistics & Epidemiology", step: step1, chapter: "Number Needed To Treat Biostatistics", core: false}
+  - {youtube_id: VI-5vAFEK3A, subject: "Biostatistics & Epidemiology", step: step1, chapter: "Sensitivity Specificity Positive Predictive Value", core: true}
+  - {youtube_id: RX0qVI1hw-o, subject: "Biostatistics & Epidemiology", step: step1, chapter: "Study Designs Biostatistics Usmle", core: true}
+  - {youtube_id: 1hCj82HL98U, subject: "Behavioral Science", step: step1, chapter: "Defense Mechanisms Personality", core: true}
+  - {youtube_id: d5zIUCsO8EM, subject: "Behavioral Science", step: step1, chapter: "Medical Ethics Informed Consent Usmle", core: true}
+  - {youtube_id: RWL2enliFgY, subject: "Behavioral Science", step: step1, chapter: "Medical Ethics Informed Consent Usmle", core: true}
+  - {youtube_id: 0OsS8Hj0aAY, subject: "Behavioral Science", step: step1, chapter: "Medical Ethics Usmle", core: true}
+  - {youtube_id: iWo90uxkNM0, subject: "Behavioral Science", step: step1, chapter: "Sleep Physiology Stages Usmle", core: false}
+  - {youtube_id: v5DUPLI580g, subject: "Behavioral Science", step: step1, chapter: "Sleep Stages Eeg", core: true}
+  - {youtube_id: wytDunVxNx0, subject: "Behavioral Science", step: step1, chapter: "Substance Intoxication Withdrawal Usmle", core: true}
+  - {youtube_id: qzE_pgacIeQ, subject: "Behavioral Science", step: step1, chapter: "Substance Use Disorders Withdrawal Usmle", core: true}
+  - {youtube_id: -IHtY_6lnTE, subject: "Behavioral Science", step: step1, chapter: "Substance Use Disorders Withdrawal Usmle", core: false}
+  - {youtube_id: tW1oXP9sw98, subject: "Internal Medicine", step: step2ck, chapter: "Acid Base Disorders Clinical Approach", core: false}
+  - {youtube_id: PSeBU6AkhpY, subject: "Internal Medicine", step: step2ck, chapter: "Acute Coronary Syndrome Management", core: false}
+  - {youtube_id: EgGOwekD1O8, subject: "Internal Medicine", step: step2ck, chapter: "Acute Kidney Injury Management", core: false}
+  - {youtube_id: 1E0LcT-M1NY, subject: "Internal Medicine", step: step2ck, chapter: "Adrenal Insufficiency Crisis", core: false}
+  - {youtube_id: H4eSIUhsO20, subject: "Internal Medicine", step: step2ck, chapter: "Ambulatory Medicine Review Step 2 Ck", core: true}
+  - {youtube_id: mOrRJBqm744, subject: "Internal Medicine", step: step2ck, chapter: "Anemia Workup Step 2", core: false}
+  - {youtube_id: iU-uE3xvQF0, subject: "Internal Medicine", step: step2ck, chapter: "Cardiology Review Step 2 Ck", core: false}
+  - {youtube_id: Ywe5jjiJJJo, subject: "Internal Medicine", step: step2ck, chapter: "Chronic Kidney Disease Management", core: false}
+  - {youtube_id: R1f1gWCyutA, subject: "Internal Medicine", step: step2ck, chapter: "Cirrhosis Complications Management", core: false}
+  - {youtube_id: Xjjv6slwfS4, subject: "Internal Medicine", step: step2ck, chapter: "Copd Asthma Management", core: false}
+  - {youtube_id: rh8ycjPCj18, subject: "Internal Medicine", step: step2ck, chapter: "Diabetes Management Step 2", core: false}
+  - {youtube_id: FxOXPVW4ZCc, subject: "Internal Medicine", step: step2ck, chapter: "Diabetic Ketoacidosis Management", core: false}
+  - {youtube_id: MTAz215qRQc, subject: "Internal Medicine", step: step2ck, chapter: "Dr High Yield Obgyn Step 2", core: true}
+  - {youtube_id: CTQBilMKpKY, subject: "Internal Medicine", step: step2ck, chapter: "Dr High Yield Step 2 Ck Internal Medicine", core: true}
+  - {youtube_id: 8DTYbxtV7Tk, subject: "Internal Medicine", step: step2ck, chapter: "Dr High Yield Step 2 Ck Internal Medicine", core: true}
+  - {youtube_id: WkCAia2Jxnk, subject: "Internal Medicine", step: step2ck, chapter: "Electrolyte Disorders Hyponatremia Hyperkalemia", core: false}
+  - {youtube_id: Gsu8NT1yYes, subject: "Internal Medicine", step: step2ck, chapter: "Heart Failure Management", core: false}
+  - {youtube_id: lzyUVVOqyS0, subject: "Internal Medicine", step: step2ck, chapter: "Pneumonia Management", core: false}
+  - {youtube_id: dxFOYVUlY2U, subject: "Internal Medicine", step: step2ck, chapter: "Pulmonary Embolism Management", core: false}
+  - {youtube_id: hLNXJWLsjAE, subject: "Internal Medicine", step: step2ck, chapter: "Thyroid Disease Management", core: false}
+  - {youtube_id: zERmfobGF70, subject: "Internal Medicine", step: step2ck, chapter: "Upper Gi Bleeding Management", core: false}
+  - {youtube_id: rTTAnK3PY4A, subject: "Surgery", step: step2ck, chapter: "Appendicitis Surgery", core: false}
+  - {youtube_id: ZDQ8vObXqZ4, subject: "Surgery", step: step2ck, chapter: "Bowel Obstruction Surgery", core: false}
+  - {youtube_id: a1Ttvmt-NG8, subject: "Surgery", step: step2ck, chapter: "Breast Cancer Management", core: false}
+  - {youtube_id: A6v-y6hr4EQ, subject: "Surgery", step: step2ck, chapter: "Colorectal Cancer Screening Management", core: false}
+  - {youtube_id: HPNJQi_b7NM, subject: "Surgery", step: step2ck, chapter: "Gallbladder Pancreatitis Surgery", core: false}
+  - {youtube_id: zBFfVT1FoiQ, subject: "Surgery", step: step2ck, chapter: "Hernia Surgery Inguinal Femoral", core: false}
+  - {youtube_id: LdM8Zo5SL64, subject: "Surgery", step: step2ck, chapter: "Vascular Surgery Aortic Aneurysm", core: false}
+  - {youtube_id: Q3cVCiraAgw, subject: "Surgery", step: step2ck, chapter: "Wound Healing Surgery Complications", core: false}
+  - {youtube_id: xM2U8tkZgas, subject: "Pediatrics", step: step2ck, chapter: "Bronchiolitis Asthma Pediatric", core: false}
+  - {youtube_id: _yV-pR8Xkl8, subject: "Pediatrics", step: step2ck, chapter: "Developmental Milestones Pediatrics", core: true}
+  - {youtube_id: reny2cvYdp0, subject: "Pediatrics", step: step2ck, chapter: "Dr High Yield Pediatrics Step 2", core: true}
+  - {youtube_id: jyxjXZ0vIz0, subject: "Pediatrics", step: step2ck, chapter: "Growth Charts Failure To Thrive", core: false}
+  - {youtube_id: EtNI4byIAsI, subject: "Pediatrics", step: step2ck, chapter: "Kawasaki Disease Pediatric", core: false}
+  - {youtube_id: gyf_9pmPydY, subject: "Pediatrics", step: step2ck, chapter: "Pyloric Stenosis Intussusception", core: false}
+  - {youtube_id: bledEHU6q3M, subject: "Obstetrics & Gynecology", step: step2ck, chapter: "Dr High Yield Obgyn Step 2", core: true}
+  - {youtube_id: G2Om0nsR5t8, subject: "Obstetrics & Gynecology", step: step2ck, chapter: "Dr High Yield Pediatrics Step 2", core: true}
+  - {youtube_id: Ks-nMVgjrhs, subject: "Obstetrics & Gynecology", step: step2ck, chapter: "Gynecologic Cancers", core: false}
+  - {youtube_id: qtYYb7fjQtE, subject: "Obstetrics & Gynecology", step: step2ck, chapter: "Labor And Delivery Stages", core: false}
+  - {youtube_id: irXbqbOYTHk, subject: "Obstetrics & Gynecology", step: step2ck, chapter: "Postpartum Hemorrhage", core: false}
+  - {youtube_id: C2NJNqvPUK0, subject: "Obstetrics & Gynecology", step: step2ck, chapter: "Preeclampsia Eclampsia Management", core: false}
+  - {youtube_id: RSJlCdOba7w, subject: "Psychiatry", step: step2ck, chapter: "Antipsychotics Side Effects First Generation Second Generation", core: false}
+  - {youtube_id: iN29AR3zW-o, subject: "Psychiatry", step: step2ck, chapter: "Antipsychotics Side Effects First Generation Second Generation", core: false}
+  - {youtube_id: uRufJh56y0E, subject: "Psychiatry", step: step2ck, chapter: "Anxiety Disorders Ocd Usmle", core: true}
+  - {youtube_id: AWKFITL-ke8, subject: "Psychiatry", step: step2ck, chapter: "Depression Bipolar Management", core: false}
+  - {youtube_id: jcQuS_18eRg, subject: "Psychiatry", step: step2ck, chapter: "Dr High Yield Neurology Step 2", core: true}
+  - {youtube_id: 1jv8wHDoliA, subject: "Psychiatry", step: step2ck, chapter: "Personality Disorders", core: true}
+  - {youtube_id: KA-QZHjmMx8, subject: "Psychiatry", step: step2ck, chapter: "Personality Disorders Cluster Usmle", core: false}
+  - {youtube_id: fVlwA1r0ejI, subject: "Psychiatry", step: step2ck, chapter: "Schizophrenia Positive Negative Symptoms", core: false}
+  - {youtube_id: DJlk64uBgDs, subject: "Psychiatry", step: step2ck, chapter: "Schizophrenia Positive Negative Symptoms", core: false}
+  - {youtube_id: trKPgSbsZcs, subject: "Psychiatry", step: step2ck, chapter: "Ssris Snris Antidepressant Side Effects", core: false}
+  - {youtube_id: aN8lsY5VM7Q, subject: "Neurology", step: step2ck, chapter: "Brain Death Examination", core: false}
+  - {youtube_id: o-gCiGqQ-00, subject: "Neurology", step: step2ck, chapter: "Dr High Yield Neurology Step 2", core: true}
+  - {youtube_id: d2vW_CHWqo4, subject: "Neurology", step: step2ck, chapter: "Headache Red Flags Migraine", core: false}
+  - {youtube_id: x_136Lk_XPg, subject: "Neurology", step: step2ck, chapter: "Multiple Sclerosis Management", core: false}
+  - {youtube_id: 31ri-1Nv61M, subject: "Neurology", step: step2ck, chapter: "Neuromuscular Junction Disorders", core: false}
+  - {youtube_id: iO-M7jq-zuY, subject: "Neurology", step: step2ck, chapter: "Parkinson Disease Management", core: false}
+  - {youtube_id: bVfN0RTdVmU, subject: "Neurology", step: step2ck, chapter: "Peripheral Neuropathy Approach", core: false}
+  - {youtube_id: abxcrAvw-O0, subject: "Neurology", step: step2ck, chapter: "Stroke Management Acute", core: false}
+  - {youtube_id: PW5MZtX5scw, subject: "Neurology", step: step2ck, chapter: "Stroke Syndromes Localization", core: false}
+  - {youtube_id: 4BftS-3EIRI, subject: "Neurology", step: step2ck, chapter: "Stroke Syndromes Localization", core: true}
+  - {youtube_id: 2IgFri0B85Q, subject: "Neurology", step: step2ck, chapter: "Stroke Thrombolysis Management", core: false}
+  - {youtube_id: BS0v3-Aa_hM, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Airway Management Emergency", core: false}
+  - {youtube_id: Jaw8AKKVFRI, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Burns Management Fluids", core: false}
+  - {youtube_id: 1ryiy9pcmO4, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Family Medicine Shelf Step 2 Ck High Yield Review", core: true}
+  - {youtube_id: QJHaRTPCfRQ, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Poisoning Toxidromes Antidotes", core: false}
+  - {youtube_id: OgQ6avlpBRY, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Sepsis Management", core: false}
+  - {youtube_id: br5QEdnL4OM, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Sepsis Septic Shock Management", core: false}
+  - {youtube_id: SQMYJyGI3fQ, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Syncope Workup", core: false}
+  - {youtube_id: nTcI1cITnI0, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Syncope Workup Causes", core: false}
+  - {youtube_id: 5UDbuUm8abY, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Toxicology Overdose Management", core: false}
+  - {youtube_id: NYqB-2frWfc, subject: "Emergency & Family Medicine", step: step2ck, chapter: "Uspstf Preventive Screening Guidelines", core: true}

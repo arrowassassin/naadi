@@ -20,9 +20,9 @@ channels:
   - {handle: "@RhesusMedicine", channel_id: UCRks8wB6vgz0E7buP0L_5RQ, name: Rhesus Medicine, style: whiteboard, steps: [step1, step2ck], subjects: [all]}
   - {handle: "@khanacademymedicine", channel_id: UCJayvjGvKEblkA3KYK1BQQw, name: Khan Academy Medicine, style: whiteboard, steps: [step1], subjects: [all]}
   - {handle: null, channel_id: UCPHpx55tgrbm8FrYYCflAHw, name: Dr. Najeeb Lectures, style: lecture, steps: [step1], subjects: [all]}
-  - {handle: "@BoardReadyPsych", channel_id: UCxKwnd_Jayw-Rg_zXxRkmLw, name: Board Ready Psych, style: whiteboard, steps: [step1, step2ck], subjects: [Psychiatry, Behavioral Science]}
-  - {handle: "@MemorablePsychiatryandNeurology", channel_id: UCmPnj4g6i8cY6FVNDRB9q0Q, name: Memorable Psychiatry and Neurology, style: sketch, steps: [step1, step2ck], subjects: [Psychiatry, Neurology, Behavioral Science]}
-  - {handle: "@neuroscientificallychallenged", channel_id: UCUgZq9PkDp1xaEivtcfJPSg, name: Neuroscientifically Challenged, style: animation, steps: [step1], subjects: [Neurology, Anatomy, Physiology]}
+  - {handle: "@boardready", channel_id: UCxKwnd_Jayw-Rg_zXxRkmLw, name: Board Ready Psych, style: whiteboard, steps: [step1, step2ck], subjects: [Psychiatry, Behavioral Science]}
+  - {handle: "@memorablepsych", channel_id: UCmPnj4g6i8cY6FVNDRB9q0Q, name: Memorable Psychiatry and Neurology, style: sketch, steps: [step1, step2ck], subjects: [Psychiatry, Neurology, Behavioral Science]}
+  - {handle: "@NeuroChallenged", channel_id: UCUgZq9PkDp1xaEivtcfJPSg, name: Neuroscientifically Challenged, style: animation, steps: [step1], subjects: [Neurology, Anatomy, Physiology]}
   - {handle: "@TheNotedAnatomist", channel_id: UCe9lb3da4XAnN7v3ciTyquQ, name: The Noted Anatomist, style: whiteboard, steps: [step1], subjects: [Anatomy]}
   - {handle: "@ConanLiuMD", channel_id: UCmbKN0iRCQztCo0o6d9uAew, name: Conan Liu MD, style: whiteboard, steps: [step1, step2ck], subjects: [all]}
   - {handle: "@SamWebster", channel_id: UCMRHZcgwdSE_9wbwcP8aRJw, name: Sam Webster, style: lecture, steps: [step1], subjects: [all]}
