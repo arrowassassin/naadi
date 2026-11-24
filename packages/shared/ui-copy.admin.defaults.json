@@ -370,6 +370,7 @@
     "admin.media.kind.link": "Link",
     "admin.media.kind.pdf": "PDF",
     "admin.media.kind.svg": "SVG figure",
+    "admin.media.kind.video_file": "Open-licence video file",
     "admin.media.kind.video_own": "Own video",
     "admin.media.kind.video_youtube": "YouTube video",
     "admin.media.kind_label": "Kind",

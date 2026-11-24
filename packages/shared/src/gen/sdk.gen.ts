@@ -204,3 +204,8 @@ export { deleteVaultDocument } from "./sdk/deleteVaultDocument";
 export { patchVaultDocument } from "./sdk/patchVaultDocument";
 export { completeVaultUpload } from "./sdk/completeVaultUpload";
 export { getVaultUrl } from "./sdk/getVaultUrl";
+export { listVideos } from "./sdk/listVideos";
+export { getVideosOverview } from "./sdk/getVideosOverview";
+export { listVideoTopics } from "./sdk/listVideoTopics";
+export { unmarkVideoWatched } from "./sdk/unmarkVideoWatched";
+export { markVideoWatched } from "./sdk/markVideoWatched";

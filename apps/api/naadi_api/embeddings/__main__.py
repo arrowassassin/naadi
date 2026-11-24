@@ -1,7 +1,7 @@
 """Command line for the local search index.
 
     python -m naadi_api.embeddings prefetch            # download the models into FASTEMBED_CACHE_PATH (build time)
-    python -m naadi_api.embeddings reindex [--kinds sections,questions,pathway,notes,ink] [--owner UUID]
+    python -m naadi_api.embeddings reindex [--kinds sections,questions,pathway,notes,ink,videos] [--owner UUID]
                                            [--refs ID,ID] [--threads N]
 
 `reindex` is idempotent: unchanged chunks are skipped, removed content is deleted. It needs DATABASE_URL and

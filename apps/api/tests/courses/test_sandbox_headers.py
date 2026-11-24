@@ -20,6 +20,7 @@ def test_app_csp_frames_only_self() -> None:
     # YouTube is framed by the player page on its own origin, never by the app document.
     assert d["frame-src"] == "'self' https://arrowassassin-naadi-player.static.hf.space"
     assert d["style-src"] == "'self'"  # the app itself never allows inline styles
+    assert d["media-src"] == "'self' blob: https://upload.wikimedia.org"  # Commons video files, no Supabase here
 
 
 def test_sandbox_csp_allows_inline_styles_only_there_and_stays_sandboxed() -> None:

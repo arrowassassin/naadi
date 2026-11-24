@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any, Literal
 
 import yaml
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 from ..settings import APP_DIR, REPO_ROOT
 from .packs import (
@@ -137,6 +137,53 @@ class SectionIn(_In):
     # Content packs only (seed/packs.py): USMLE-2026 leaf ids (with ancestors) and link-only further reading.
     taxonomy_ids: list[str] | None = None
     further_reading: list[dict[str, str]] | None = None
+
+
+class VideoTopicIn(_In):
+    id: str = Field(pattern=r"^[a-z0-9][a-z0-9_.-]{0,199}$")  # topic slugs follow long finding lists
+    title: str = Field(min_length=1)
+    subject: str = Field(min_length=1)
+    chapter: str | None = None
+    unit: str | None = None
+    core: bool
+    step: Literal["step1", "step2ck"]
+    sort: int = Field(ge=0)
+    media_ids: list[str]
+    chapter_media_ids: list[str]
+
+
+class VideoIn(_In):
+    """One catalogued video. YouTube rows carry ids and Naadi-authored fields only (no API metadata)."""
+
+    id: str = Field(pattern=ID)
+    provider: Literal["youtube", "commons"]
+    youtube_id: str | None = Field(default=None, pattern=r"^[A-Za-z0-9_-]{11}$")
+    file_url: str | None = Field(default=None, pattern=r"^https://")
+    file_page: str | None = Field(default=None, pattern=r"^https://")
+    channel_id: str | None = None
+    channel_name: str | None = None
+    style: Literal["sketch", "whiteboard", "animation", "lecture"]
+    subject: str = Field(min_length=1)
+    step: Literal["step1", "step2ck"]
+    topic_ids: list[str]
+    core: bool
+    licence: str | None = None
+    licence_snapshot: dict[str, Any] | None = None
+    attribution: str | None = None
+    label: str  # may be blank (one catalogued row has none): the title then waits for the refresh
+    duration_s: int | None = Field(default=None, ge=0)
+
+    @model_validator(mode="after")
+    def _provider_fields(self) -> VideoIn:
+        if self.provider == "youtube":
+            ok = self.youtube_id is not None and self.id == "yt-" + self.youtube_id.lower()
+            what = "youtube rows need youtube_id and id yt-<lowercased id>"
+        else:
+            ok = bool(self.file_url and self.file_page and self.licence_snapshot and self.attribution)
+            what = "commons rows need file_url, file_page, licence_snapshot and attribution"
+        if not ok:
+            raise ValueError(what)
+        return self
 
 
 class ChapterIn(_In):
@@ -349,6 +396,8 @@ class SeedBundle:
     packs: list[Pack] = field(default_factory=list)
     sets: list[tuple[str, PackSet]] = field(default_factory=list)  # (pack id, set)
     cards: list[tuple[str, PackCard]] = field(default_factory=list)  # (pack id, card)
+    video_topics: list[VideoTopicIn] = field(default_factory=list)
+    videos: list[VideoIn] = field(default_factory=list)
     problems: list[str] = field(default_factory=list)
 
     @property
@@ -521,6 +570,8 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
         question_map = {str(k): [str(x) for x in v] for k, v in raw_map.items()}
     else:
         problems.append("question_taxonomy_map.json: expected {questionId: [taxonomy ids]}")
+    video_topics = _models(VideoTopicIn, _json(data_dir / "video_topics.json").get("topics"), "video_topics", problems)
+    videos = _models(VideoIn, _json(data_dir / "videos.json").get("videos"), "videos", problems)
     with (config_dir / "sources.yaml").open(encoding="utf-8") as fh:
         gate = license_gate(yaml.safe_load(fh))
     bodies_path = data_dir / SECTION_BODIES
@@ -563,6 +614,22 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
     dupes([t.id for t in taxonomy], "taxonomy")
     dupes([s.key for s in stages], "pathway_stages")
     dupes([t.id for t in tasks], "pathway_tasks")
+
+    dupes([t.id for t in video_topics], "video_topics")
+    dupes([v.id for v in videos], "videos")
+    video_ids = {v.id for v in videos}
+    topic_ids = {t.id for t in video_topics}
+    for vt in video_topics:
+        for mid in [*vt.media_ids, *vt.chapter_media_ids]:
+            if mid not in video_ids:
+                problems.append(f"video topic {vt.id}: unknown video {mid}")
+    for v in videos:
+        for tid in v.topic_ids:
+            if tid not in topic_ids:
+                problems.append(f"video {v.id}: unknown topic {tid}")
+        source = "youtube" if v.provider == "youtube" else "wikimedia-commons"
+        if source not in source_ids:
+            problems.append(f"video {v.id}: source {source} is not seedable")
 
     if ORIGINAL_SOURCE not in source_ids:
         problems.append(f"license gate: source {ORIGINAL_SOURCE} is not seedable")
@@ -662,6 +729,8 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
         packs=packs,
         sets=sets,
         cards=cards,
+        video_topics=video_topics,
+        videos=videos,
     )
 
 

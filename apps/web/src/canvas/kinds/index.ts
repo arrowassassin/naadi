@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zTipTapDoc } from "../../assistant/protocol";
+import { zTipTapDoc, zVideoData } from "../../assistant/protocol";
 import { registerCanvasKind } from "../registry";
 import { type PdfCanvasData, pdfCanvasKind } from "./pdf";
 
@@ -31,12 +31,13 @@ export const zCanvasChartData = z.object({
   rows: z.array(z.record(z.string(), zCell)).max(500),
   unit: z.enum(["percent", "count", "seconds"]).nullable().optional().default(null),
 });
-export const zCanvasVideoData = z.object({
-  media_id: z.string().min(1),
-  provider: z.literal("youtube"),
-  video_id: z.string().regex(/^[A-Za-z0-9_-]{6,20}$/),
-  start_s: z.number().int().min(0).nullable().optional(),
-});
+// The assistant's video block data; the canvas item carries the title, and older items have no start/title.
+const [zYouTubeVideo, zFileVideo] = zVideoData.options;
+const canvasVideo = { title: z.string().optional(), start_s: z.number().int().min(0).nullable().optional() };
+export const zCanvasVideoData = z.discriminatedUnion("provider", [
+  zYouTubeVideo.extend(canvasVideo),
+  zFileVideo.extend(canvasVideo),
+]);
 
 export type DocumentData = z.infer<typeof zDocumentData>;
 export type DiagramData = z.infer<typeof zDiagramData>;

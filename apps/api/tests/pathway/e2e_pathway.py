@@ -18,9 +18,12 @@ import datetime as dt
 import json
 import re
 from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
 
 import psycopg
 from psycopg.types.json import Jsonb
+
+from naadi_api.cards.stats import DEFAULT_ZONE
 
 TAG = re.compile(r"^[a-z0-9]{3,24}$")
 
@@ -39,7 +42,9 @@ def _tag(tag: str) -> str:
 
 def make(url: str, tag: str) -> dict[str, str]:
     tag = _tag(tag)
-    today = dt.datetime.now(dt.UTC).date()
+    # The test's new student sees staleness counted from today in their profile's zone (the profiles default):
+    # in UTC it can still be yesterday, which would make the 90-day task 91 days old on screen.
+    today = dt.datetime.now(ZoneInfo(DEFAULT_ZONE)).date()
     stage = f"e2e{tag}"
     ids = {k: f"e2e{tag}-{k}" for k in ("fresh", "d90", "d91", "flagged")}
     with _connect(url) as c:

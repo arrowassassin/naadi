@@ -184,6 +184,17 @@ async function blockTop(page: Page, n: number): Promise<number> {
   );
 }
 
+/** Every top-level block's ProseMirror position and top (CSS px from the ink surface's top). */
+async function blockTops(page: Page): Promise<[number, number][]> {
+  return page.evaluate((sel) => {
+    const s = document.querySelector(sel) as HTMLElement;
+    const top = s.getBoundingClientRect().top;
+    return [...s.querySelectorAll<HTMLElement>("[data-block-pm]")]
+      .slice(0, 8)
+      .map((b) => [Number(b.dataset.blockPm), Math.round((b.getBoundingClientRect().top - top) * 10) / 10]);
+  }, SURFACE);
+}
+
 /**
  * Vertical centre (CSS px from the surface top) of the violet ink in a band of the surface, or null when there is
  * none. Read from a screenshot, so it is what the student sees.
@@ -194,10 +205,13 @@ async function violetCentre(page: Page, fromPx: number, toPx: number): Promise<n
   const box = await page.locator(SURFACE).boundingBox();
   if (!box) throw new Error("no surface");
   const top = Math.max(0, fromPx);
-  const height = Math.max(1, toPx - top);
+  // The clip snaps to whole CSS pixels (a fractional clip is rounded by the screenshot, which would shift the
+  // measured centre by up to half a pixel each time); the centre is mapped back from the snapped top.
+  const clipTop = Math.floor(box.y + top);
+  const height = Math.max(1, Math.ceil(box.y + toPx) - clipTop);
   await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
   const shoot = () =>
-    page.screenshot({ clip: { x: box.x, y: box.y + top, width: box.width, height }, animations: "disabled" });
+    page.screenshot({ clip: { x: box.x, y: clipTop, width: box.width, height }, animations: "disabled" });
   // WebKit reports the screenshot tool's <style> as refused by our CSP: the tool's noise, not the app's.
   const g = guards.get(page);
   const png = g ? await g.duringTool(shoot) : await shoot();
@@ -246,7 +260,7 @@ async function violetCentre(page: Page, fromPx: number, toPx: number): Promise<n
     return weight > 0 ? { y: sum / weight, scale: img.height } : null;
   }, png.toString("base64"));
   if (!centre) return null;
-  return top + (centre.y * height) / centre.scale;
+  return clipTop - box.y + (centre.y * height) / centre.scale;
 }
 
 async function turnInkOn(page: Page) {
@@ -489,18 +503,30 @@ test.describe("ink on a reader section", () => {
       const y = top1 + 14;
       const sent = a.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
       await penStroke(a, 0.05, 0.35, y);
-      await sent;
+      const stored = ((await sent).request().postDataJSON() as { items?: { anchor?: unknown }[] }).items?.[0]?.anchor;
       const c1 = await violetCentre(a, y - 14, y + 14);
       expect(c1).not.toBeNull();
       const w1 = (await a.locator("[data-ink-column]").boundingBox())?.width ?? 0;
+      const blocks1 = await blockTops(a);
       await a.setViewportSize({ width: 390, height: 844 });
       await a.waitForTimeout(400); // reflow, re-measure, re-anchor
       const top2 = await blockTop(a, 2);
       const w2 = (await a.locator("[data-ink-column]").boundingBox())?.width ?? 0;
       expect(top2 / w2).toBeGreaterThan(top1 / w1 + 0.05); // the text really reflowed (block moved down in su)
       const expected = top2 + ((c1 as number) - top1) * (w2 / w1);
+      // Re-anchoring after the resize can take longer than the reflow on a slow runner: wait until it lands.
+      const landed = await expect
+        .poll(() => violetCentre(a, expected - 20, expected + 20), { timeout: 15_000 })
+        .not.toBeNull()
+        .then(() => true)
+        .catch(() => false);
+      // When it does not, say what the stroke was anchored to and where the blocks were (a CI run's probe
+      // screenshots show only the band).
+      const why = landed
+        ? ""
+        : JSON.stringify({ expected, top1, c1, w1, top2, w2, stored, blocks1, blocks2: await blockTops(a) });
       const c2 = await violetCentre(a, expected - 20, expected + 20);
-      expect(c2).not.toBeNull();
+      expect(c2, `stroke not beside its paragraph: ${why}`).not.toBeNull();
       expect(Math.abs((c2 as number) - expected)).toBeLessThanOrEqual(1);
       await snap(a, info, consoleOf(a).guard, "reader-ink-reflow-390");
     } finally {

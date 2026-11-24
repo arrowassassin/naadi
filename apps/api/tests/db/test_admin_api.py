@@ -961,3 +961,34 @@ def test_only_storable_licences_publish_text_or_files(
             )
             c.execute("delete from public.questions where source_id in ('test-usmle', 'test-ncnd')")
             c.execute("delete from public.sources where id in ('test-ncnd', 'test-usmle')")
+
+
+def test_a_commons_video_is_approved_by_its_own_licence(
+    client: TestClient, h: dict[str, dict[str, str]], url: str
+) -> None:
+    a = h["admin"]
+    commons = next(v for v in bundle().videos if v.provider == "commons")
+    rows = {
+        "zz-wm-ok": commons.licence_snapshot,
+        "zz-wm-nc": {**(commons.licence_snapshot or {}), "license_short_name": "CC BY-NC 4.0"},
+        "zz-wm-none": None,
+    }
+    with psycopg.connect(url, autocommit=True) as c:
+        for mid, snap in rows.items():
+            c.execute(
+                "insert into public.media_assets (id, kind, source_id, title, url, licence, review_status)"
+                " values (%s, 'video_file', 'wikimedia-commons', 't', %s, %s, 'unreviewed')",
+                (mid, commons.file_url, Jsonb(snap) if snap else None),
+            )
+    try:
+        ok = client.post("/api/admin/media/zz-wm-ok/review", json={"status": "approved"}, headers=a)
+        assert _ok(ok)["review_status"] == "approved"
+        for mid in ("zz-wm-nc", "zz-wm-none"):
+            r = client.post(f"/api/admin/media/{mid}/review", json={"status": "approved"}, headers=a)
+            assert _gate(r) == "no_license", mid
+        # moving the approved row to the same source again is a licence re-check that passes too
+        r = client.patch("/api/admin/media/zz-wm-ok", json={"source_id": "wikimedia-commons"}, headers=a)
+        assert r.status_code == 200, r.text
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("delete from public.media_assets where id like 'zz-wm-%'")

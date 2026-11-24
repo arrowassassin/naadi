@@ -28,15 +28,19 @@ from ..auth import CurrentUser
 from ..auth_db import user_tx
 from ..db import Database
 from ..logs import get_logger
+from ..settings import get_settings
+from ..videos.query import names_for
 from . import ranking
 from .engine import Engine, vector_literal
-from .sources import clean_pathway_text, note_text, pathway_task_text, question_text
+from .sources import VIDEO_SQL, clean_pathway_text, note_text, pathway_task_text, question_text, video_text
 from .text import html_to_text, markdown_to_text, tiptap_to_text
 
 log = get_logger("naadi.embeddings.query")
 
 Scope = Literal["all", "chapters", "questions", "notes", "handwriting", "uploads", "pathway"]
-SCOPE_TYPES: dict[Scope, tuple[str, ...]] = {
+# `videos`: the assistant's video tool only (the search screen has no video group, so the route keeps `Scope`).
+AnyScope = Scope | Literal["videos"]
+SCOPE_TYPES: dict[AnyScope, tuple[str, ...]] = {
     "all": ("section", "upload", "kb_doc", "question", "note", "ink", "pathway", "url"),
     "chapters": ("section",),
     "questions": ("question",),
@@ -44,8 +48,9 @@ SCOPE_TYPES: dict[Scope, tuple[str, ...]] = {
     "handwriting": ("ink",),
     "uploads": ("upload", "kb_doc", "url"),
     "pathway": ("pathway",),
+    "videos": ("video",),
 }
-GroupName = Literal["chapters", "notes", "handwriting", "questions", "uploads", "pathway"]
+GroupName = Literal["chapters", "notes", "handwriting", "questions", "uploads", "pathway", "videos"]
 GROUP_OF = {
     "section": "chapters",
     "note": "notes",
@@ -55,6 +60,7 @@ GROUP_OF = {
     "kb_doc": "uploads",
     "url": "uploads",
     "pathway": "pathway",
+    "video": "videos",
 }
 HNSW_EF_SEARCH = 120
 DB_DEADLINE_S = 5.0
@@ -185,7 +191,7 @@ def relevant(cands: list[Candidate]) -> list[Candidate]:
     return head + tail
 
 
-def select(cands: list[Candidate], scope: Scope, limit: int) -> list[Candidate]:
+def select(cands: list[Candidate], scope: AnyScope, limit: int) -> list[Candidate]:
     """Searching everything keeps at most PER_GROUP per result group so every group can appear."""
     if scope != "all":
         return cands[:limit]
@@ -308,6 +314,13 @@ async def _load_meta(
                     **r,
                     "current": clean_pathway_text(markdown_to_text(r["body_md"]), r["title"]),
                 }
+    vids = [c.ref_id for c in by_type.get("video", [])]
+    if vids:
+        # video_catalog RLS: a row is visible only while its media row is (approved).
+        cur = await conn.execute(VIDEO_SQL + " and c.media_id = any(%s)", (vids,))
+        names = names_for(get_settings().config_dir)
+        for r in await cur.fetchall():
+            meta[("video", r["media_id"])] = {**r, "current": video_text(r, names)}
     return meta
 
 
@@ -360,6 +373,9 @@ async def hydrate(db: Database, user: CurrentUser, cands: Sequence[Candidate], t
                 "note_id": info["surface_id"] if info["surface_type"] == "notebook_page" else None,
                 "question_id": info["surface_id"] if info["surface_type"] == "question" else None,
             }
+        elif c.ref_type == "video":
+            title, context = info["title"] or info["media_id"], info["subject"]
+            target = {"type": "video", "media_id": info["media_id"]}
         else:  # pathway
             title = info["title"]
             context = info["stage_title"] if "task_id" in info else None
@@ -369,12 +385,13 @@ async def hydrate(db: Database, user: CurrentUser, cands: Sequence[Candidate], t
                 "task_id": info.get("task_id"),
                 "guide_key": info.get("guide_key"),
             }
-        hits.append(Hit(c.ref_type, c.ref_id, group, title, context, anchor, snippet, target, score))
+        extra = info if c.ref_type == "video" else {}  # the video tool lists channel, step and topics
+        hits.append(Hit(c.ref_type, c.ref_id, group, title, context, anchor, snippet, target, score, extra))
     return hits
 
 
 async def search_local(
-    db: Database, engine: Engine, user: CurrentUser, q: str, *, scope: Scope = "all", limit: int = 20
+    db: Database, engine: Engine, user: CurrentUser, q: str, *, scope: AnyScope = "all", limit: int = 20
 ) -> LocalResult:
     user_id = user.user_id
     q = re.sub(r"\s+", " ", q).strip()[:MAX_QUERY_CHARS]

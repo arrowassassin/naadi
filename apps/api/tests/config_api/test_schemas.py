@@ -74,7 +74,7 @@ def test_seeded_defaults_match_the_contract(values: dict[str, Any]) -> None:
     assert flags["qbank"]["enabled"] is True and flags["qbank_timed"]["enabled"] is True
     assert flags["ink_lab"] == {"enabled": True, "audience": "admins", "everyone_outside_prod": True}
     nav_paths = [i["path"] for i in values["ui.nav"]]
-    assert nav_paths == ["/", "/learn", "/practice", "/notes", "/plan", "/pathway", "/admin/review"]
+    assert nav_paths == ["/", "/learn", "/practice", "/videos", "/notes", "/plan", "/pathway", "/admin/review"]
     assert values["exam_rules"]["modes"]["exam"]["assistant"] is False
     assert values["exam_rules"]["block"]["max_questions"] == 40
     assert values["storage"]["content_public"] == "content-public"
@@ -185,6 +185,7 @@ async def test_service_falls_back_to_files_without_a_database_and_caches(values:
         "today",
         "learn",
         "practice",
+        "videos",
         "notes",
         "plan",
         "pathway",

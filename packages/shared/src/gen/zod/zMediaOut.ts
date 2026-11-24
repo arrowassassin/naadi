@@ -15,7 +15,7 @@ export const zMediaOut = z.object({
   embeddable: z.boolean().nullable(),
   height: z.int().nullable(),
   id: z.string(),
-  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]),
+  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link", "video_file"]),
   source: zMediaSource.nullable(),
   title: z.string().nullable(),
   url: z.string().nullable(),

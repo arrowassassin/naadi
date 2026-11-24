@@ -147,7 +147,7 @@ class IndexStatus(BaseModel):
 class ReindexRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    kinds: list[Literal["sections", "questions", "pathway", "notes", "ink"]] = Field(
+    kinds: list[Literal["sections", "questions", "pathway", "notes", "ink", "videos"]] = Field(
         default_factory=lambda: list(KINDS), min_length=1
     )
 
@@ -184,7 +184,7 @@ def _hit(h: Hit) -> SearchHit:
     return SearchHit(
         id=f"{h.ref_type}:{h.ref_id}",
         type=cast("Any", h.ref_type),
-        group=h.group,
+        group=cast("Any", h.group),  # never `videos`: the route has no video scope
         title=h.title,
         context=h.context,
         anchor=h.anchor,

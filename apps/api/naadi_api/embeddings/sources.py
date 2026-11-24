@@ -7,7 +7,9 @@ Rules (segment 07 brief, CLAUDE.md):
   selected here, so no code path in this module can put them in an index row or a snippet;
 - shared rows must be published (the same rule RLS applies); drafts and retired rows are removed;
 - mock exams are never indexed (sections or questions): their answer keys are not content;
-- notes and handwriting belong to their owner (`owner_user_id`), nothing else sees them.
+- notes and handwriting belong to their owner (`owner_user_id`), nothing else sees them;
+- videos: only Naadi's own catalogue metadata (title, topics, chapter, subject, step, channel name), never anything
+  from the video itself; the YouTube/Commons sources do not allow AI ingest of their content, and none is read here.
 """
 
 from __future__ import annotations
@@ -21,11 +23,13 @@ from typing import Any, Literal
 import psycopg
 from psycopg.rows import dict_row
 
+from ..settings import get_settings
+from ..videos.query import COMMONS, names_for
 from .chunker import chunk_text
 from .text import html_to_text, markdown_to_text, tiptap_to_text
 
-Kind = Literal["sections", "questions", "pathway", "notes", "ink"]
-KINDS: tuple[Kind, ...] = ("sections", "questions", "pathway", "notes", "ink")
+Kind = Literal["sections", "questions", "pathway", "notes", "ink", "videos"]
+KINDS: tuple[Kind, ...] = ("sections", "questions", "pathway", "notes", "ink", "videos")
 # `embeddings.ref_type` values each kind owns (a private chapter's sections are `upload` / `kb_doc`).
 REF_TYPES: dict[Kind, tuple[str, ...]] = {
     "sections": ("section", "upload", "kb_doc"),
@@ -33,6 +37,7 @@ REF_TYPES: dict[Kind, tuple[str, ...]] = {
     "pathway": ("pathway",),
     "notes": ("note",),
     "ink": ("ink",),
+    "videos": ("video",),
 }
 PRIVATE_SECTION_TYPE = {"user_upload": "upload", "user_kb": "kb_doc"}
 
@@ -253,10 +258,52 @@ async def ink_docs(
             yield Doc(r["user_id"], "ink", f"{r['surface_type']}:{r['surface_id']}", tuple(chunks))
 
 
+STEP_LABEL = {"step1": "Step 1", "step2ck": "Step 2 CK"}
+
+# A catalogue video as the index and hydration read it: approved and embeddable (RLS decides at query time).
+VIDEO_SQL = """
+select c.media_id, c.subject, c.step, c.provider, m.title, m.channel_id,
+       array(select t.title from public.video_topics t where t.id = any(c.topic_ids) order by t.sort) as topics,
+       array(select distinct t.chapter from public.video_topics t
+             where t.id = any(c.topic_ids) and t.chapter is not null order by t.chapter) as chapters
+from public.video_catalog c join public.media_assets m on m.id = c.media_id
+where m.review_status = 'approved' and m.embeddable is not false and coalesce(m.youtube_id, m.url) is not null
+"""
+
+
+def video_text(r: Mapping[str, Any], names: Mapping[str, str]) -> str:
+    """What Naadi holds about a video: its title (the Naadi label, the refreshed YouTube title, or a Commons file
+    title), topics, chapters, subject, step and channel name."""
+    channel = names.get(COMMONS if r["provider"] == COMMONS else r["channel_id"] or "", "")
+    parts = [
+        (r["title"] or "").strip(),
+        "Topics: " + "; ".join(r["topics"]) if r["topics"] else "",
+        "Chapter: " + "; ".join(r["chapters"]) if r["chapters"] else "",
+        " · ".join(x for x in (r["subject"], STEP_LABEL.get(r["step"], r["step"]), channel) if x),
+    ]
+    return "\n".join(p for p in parts if p)
+
+
+async def video_docs(
+    conn: psycopg.AsyncConnection[Any], *, owner: uuid.UUID | None = None, ref_ids: Sequence[str] | None = None
+) -> AsyncIterator[Doc]:
+    """The Videos catalogue (shared); ref id is the media id."""
+    if owner is not None:
+        return
+    params: dict[str, Any] = {}
+    where = _ref_filter("c.media_id", ref_ids, params)
+    names = names_for(get_settings().config_dir)
+    for r in await _rows(conn, VIDEO_SQL + where + " order by c.media_id", params):
+        text = video_text(r, names)
+        if text:
+            yield Doc(None, "video", r["media_id"], (text,))
+
+
 LOADERS = {
     "sections": section_docs,
     "questions": question_docs,
     "pathway": pathway_docs,
     "notes": note_docs,
     "ink": ink_docs,
+    "videos": video_docs,
 }

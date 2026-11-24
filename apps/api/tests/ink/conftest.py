@@ -40,7 +40,10 @@ def key() -> SigningKey:
 
 
 @pytest.fixture
-def client(url: str, key: SigningKey, static_dir: Path) -> Iterator[TestClient]:
+def client(url: str, key: SigningKey, static_dir: Path, ink: Ink) -> Iterator[TestClient]:
+    # Depends on `ink` so the app shuts down (draining the note reindex jobs a write schedules) before `ink`
+    # deletes its users; otherwise a still-running embeddings upsert can deadlock with that cascade delete.
+    del ink
     with build_client(url, key, static_dir) as c:
         yield c
 

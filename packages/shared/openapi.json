@@ -309,7 +309,8 @@
               "video_youtube",
               "audio",
               "pdf",
-              "link"
+              "link",
+              "video_file"
             ],
             "title": "Kind",
             "type": "string"
@@ -3991,6 +3992,30 @@
           "wrong_to_wrong"
         ],
         "title": "ChangeStats",
+        "type": "object"
+      },
+      "ChannelCount": {
+        "properties": {
+          "id": {
+            "description": "The channel id, or 'commons' for Wikimedia Commons files",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "videos": {
+            "title": "Videos",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "videos"
+        ],
+        "title": "ChannelCount",
         "type": "object"
       },
       "ChapterCreate": {
@@ -8866,6 +8891,45 @@
         "title": "LibraryOut",
         "type": "object"
       },
+      "LicenceOut": {
+        "properties": {
+          "artist": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Artist"
+          },
+          "license_short_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "License Short Name"
+          },
+          "license_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "License Url"
+          }
+        },
+        "title": "LicenceOut",
+        "type": "object"
+      },
       "LintFinding": {
         "properties": {
           "detail": {
@@ -9121,7 +9185,8 @@
               "video_youtube",
               "audio",
               "pdf",
-              "link"
+              "link",
+              "video_file"
             ],
             "title": "Kind",
             "type": "string"
@@ -14576,7 +14641,8 @@
                 "questions",
                 "pathway",
                 "notes",
-                "ink"
+                "ink",
+                "videos"
               ],
               "type": "string"
             },
@@ -16849,6 +16915,7 @@
                 "taxonomy",
                 "figures",
                 "chapters",
+                "videos",
                 "questions",
                 "cards",
                 "pathway",
@@ -17390,6 +17457,55 @@
           "items"
         ],
         "title": "StudentItemsOut",
+        "type": "object"
+      },
+      "SubjectCounts": {
+        "properties": {
+          "step": {
+            "enum": [
+              "step1",
+              "step2ck"
+            ],
+            "title": "Step",
+            "type": "string"
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "topics": {
+            "title": "Topics",
+            "type": "integer"
+          },
+          "topics_chapter": {
+            "description": "Topics without one but with a related video from the same chapter",
+            "title": "Topics Chapter",
+            "type": "integer"
+          },
+          "topics_direct": {
+            "description": "Topics with a video that teaches them directly",
+            "title": "Topics Direct",
+            "type": "integer"
+          },
+          "videos": {
+            "title": "Videos",
+            "type": "integer"
+          },
+          "watched": {
+            "title": "Watched",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "step",
+          "subject",
+          "videos",
+          "topics",
+          "topics_direct",
+          "topics_chapter",
+          "watched"
+        ],
+        "title": "SubjectCounts",
         "type": "object"
       },
       "SuggestionDecision": {
@@ -19441,6 +19557,182 @@
         "title": "VideoLookupOut",
         "type": "object"
       },
+      "VideoOut": {
+        "properties": {
+          "attribution": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Attribution"
+          },
+          "channel_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Id"
+          },
+          "channel_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Name"
+          },
+          "core": {
+            "title": "Core",
+            "type": "boolean"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "file_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Set for provider commons (an open-licence file served by its host)",
+            "title": "File Url"
+          },
+          "licence": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LicenceOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "page_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The file's own page (commons)",
+            "title": "Page Url"
+          },
+          "provider": {
+            "enum": [
+              "youtube",
+              "commons"
+            ],
+            "title": "Provider",
+            "type": "string"
+          },
+          "step": {
+            "enum": [
+              "step1",
+              "step2ck"
+            ],
+            "title": "Step",
+            "type": "string"
+          },
+          "style": {
+            "enum": [
+              "sketch",
+              "whiteboard",
+              "animation",
+              "lecture"
+            ],
+            "title": "Style",
+            "type": "string"
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "topics": {
+            "description": "The topics this video teaches directly",
+            "items": {
+              "$ref": "#/components/schemas/VideoTopicRef"
+            },
+            "title": "Topics",
+            "type": "array"
+          },
+          "watched": {
+            "title": "Watched",
+            "type": "boolean"
+          },
+          "youtube_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Set for provider youtube (played through the official player)",
+            "title": "Youtube Id"
+          }
+        },
+        "required": [
+          "media_id",
+          "provider",
+          "youtube_id",
+          "file_url",
+          "page_url",
+          "licence",
+          "title",
+          "channel_id",
+          "channel_name",
+          "duration_s",
+          "style",
+          "subject",
+          "step",
+          "core",
+          "topics",
+          "attribution",
+          "watched"
+        ],
+        "title": "VideoOut",
+        "type": "object"
+      },
       "VideoPos": {
         "additionalProperties": false,
         "description": "Where a video note sits: seconds into the video (`anchor_type 'video'`, segment 20's player).",
@@ -19457,6 +19749,200 @@
           "t"
         ],
         "title": "VideoPos",
+        "type": "object"
+      },
+      "VideoTopicOut": {
+        "properties": {
+          "chapter": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter"
+          },
+          "chapter_media_ids": {
+            "description": "Related videos from the same subject, step and chapter",
+            "items": {
+              "type": "string"
+            },
+            "title": "Chapter Media Ids",
+            "type": "array"
+          },
+          "core": {
+            "title": "Core",
+            "type": "boolean"
+          },
+          "coverage": {
+            "enum": [
+              "topic",
+              "chapter",
+              "gap"
+            ],
+            "title": "Coverage",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "media_ids": {
+            "description": "Videos that teach the topic directly",
+            "items": {
+              "type": "string"
+            },
+            "title": "Media Ids",
+            "type": "array"
+          },
+          "step": {
+            "enum": [
+              "step1",
+              "step2ck"
+            ],
+            "title": "Step",
+            "type": "string"
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "subject",
+          "unit",
+          "chapter",
+          "step",
+          "core",
+          "media_ids",
+          "chapter_media_ids",
+          "coverage"
+        ],
+        "title": "VideoTopicOut",
+        "type": "object"
+      },
+      "VideoTopicRef": {
+        "properties": {
+          "chapter": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "chapter"
+        ],
+        "title": "VideoTopicRef",
+        "type": "object"
+      },
+      "VideoTopicsOut": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/VideoTopicOut"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "VideoTopicsOut",
+        "type": "object"
+      },
+      "VideosOut": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/VideoOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Cursor for the next page, null at the end",
+            "title": "Next"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "next",
+          "total"
+        ],
+        "title": "VideosOut",
+        "type": "object"
+      },
+      "VideosOverview": {
+        "properties": {
+          "channels": {
+            "items": {
+              "$ref": "#/components/schemas/ChannelCount"
+            },
+            "title": "Channels",
+            "type": "array"
+          },
+          "subjects": {
+            "description": "Ordered: step 1 then step 2 CK, subjects in syllabus order",
+            "items": {
+              "$ref": "#/components/schemas/SubjectCounts"
+            },
+            "title": "Subjects",
+            "type": "array"
+          }
+        },
+        "required": [
+          "subjects",
+          "channels"
+        ],
+        "title": "VideosOverview",
         "type": "object"
       },
       "WeakCellOut": {
@@ -22447,7 +22933,8 @@
                     "video_youtube",
                     "audio",
                     "pdf",
-                    "link"
+                    "link",
+                    "video_file"
                   ],
                   "type": "string"
                 },
@@ -38907,6 +39394,501 @@
         "summary": "A signed URL to open the document (works `signed_url_seconds`, never cached)",
         "tags": [
           "vault"
+        ]
+      }
+    },
+    "/api/videos": {
+      "get": {
+        "operationId": "listVideos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "step",
+            "required": false,
+            "schema": {
+              "default": "all",
+              "enum": [
+                "step1",
+                "step2ck",
+                "all"
+              ],
+              "title": "Step",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 80,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Subject"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 100,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Q"
+            }
+          },
+          {
+            "description": "A channel id, or 'commons'",
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 80,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "A channel id, or 'commons'",
+              "title": "Channel"
+            }
+          },
+          {
+            "in": "query",
+            "name": "style",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "sketch",
+                    "whiteboard",
+                    "animation",
+                    "lecture"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Style"
+            }
+          },
+          {
+            "in": "query",
+            "name": "unwatched",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Unwatched",
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "core",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Core",
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 60,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Offset from a previous `next`",
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^\\d{1,7}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Offset from a previous `next`",
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideosOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid query"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Browse and search the approved videos (filters combine; ranked by topic, title, chapter, channel match)",
+        "tags": [
+          "videos"
+        ]
+      }
+    },
+    "/api/videos/overview": {
+      "get": {
+        "operationId": "getVideosOverview",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideosOverview"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Counts per step and subject (videos, topics, topics covered directly or by chapter, watched) and channels",
+        "tags": [
+          "videos"
+        ]
+      }
+    },
+    "/api/videos/topics": {
+      "get": {
+        "operationId": "listVideoTopics",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "step",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "step1",
+                    "step2ck"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Step"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 80,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Subject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideoTopicsOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid query"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The topic map of a step/subject with its video ids and coverage (topic, chapter or gap)",
+        "tags": [
+          "videos"
+        ]
+      }
+    },
+    "/api/videos/{media_id}/watched": {
+      "delete": {
+        "operationId": "unmarkVideoWatched",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "media_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+              "title": "Media Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid query"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Clear the watched tick (no-op when it is not set)",
+        "tags": [
+          "videos"
+        ]
+      },
+      "put": {
+        "operationId": "markVideoWatched",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "media_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+              "title": "Media Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid query"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Tick a video off as watched (no-op when it already is)",
+        "tags": [
+          "videos"
         ]
       }
     }

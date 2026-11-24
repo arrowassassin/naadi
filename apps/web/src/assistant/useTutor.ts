@@ -63,6 +63,12 @@ export function pageContextFor(
       return { route, type: "today", id: ctx.id };
     case "pdf_page":
       return { route, type: "pdf_page", id: ctx.id };
+    case "video": {
+      // The live position when the page still plays this video, else the one the ask was made at.
+      const t = base.video?.media_id === ctx.id ? base.video.t : ctx.t;
+      const video = t !== undefined && Number.isFinite(t) && t >= 0 ? { media_id: ctx.id, t: Math.floor(t) } : null;
+      return { route, type: "video", id: ctx.id, ...(video ? { video } : {}) };
+    }
     default:
       return base;
   }

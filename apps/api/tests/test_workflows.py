@@ -110,10 +110,10 @@ def test_ci_runs_the_dependency_audit_and_uploads_sboms() -> None:
 
 def test_e2e_is_sharded_per_browser() -> None:
     e2e = _load("ci.yml")["jobs"]["e2e"]
-    assert e2e["strategy"]["matrix"]["shard"] == [1, 2, 3]
+    assert e2e["strategy"]["matrix"]["shard"] == [1, 2, 3, 4]
     assert e2e["timeout-minutes"] <= 60
     run = next(s["run"] for s in e2e["steps"] if s.get("name", "").startswith("Build and run e2e"))
-    assert '--shard "${{ matrix.shard }}/3"' in run
+    assert '--shard "${{ matrix.shard }}/4"' in run
 
 
 def test_weekly_restore_test_and_backup_dry_run() -> None:

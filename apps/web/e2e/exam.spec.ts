@@ -5,9 +5,11 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
+  quiet,
   settle,
   snapSegment,
   test,
+  trackApi,
 } from "./fixtures";
 
 /**
@@ -43,10 +45,15 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
     contexts.push(context);
     await before?.(context);
     const page = await context.newPage();
+    trackApi(page); // before the sign-in callback, so quiet() sees every /api request this page makes
     const link = toLink(runUsers(["link", "--email", email]));
     await page.goto(callbackPath(link, path));
     await page.waitForURL((u) => u.pathname === path, { timeout: 30_000 });
     await settle(page);
+    // The URL changes before the page has asked for its data: wait for the page, then for its requests, so a
+    // test's next navigation never cuts one off (WebKit reports that as a page error).
+    await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible({ timeout: 30_000 });
+    await quiet(page);
     return { page, context };
   };
   const done = async () => {
@@ -369,6 +376,7 @@ test.describe("timed block", () => {
       expect(made.status).toBe(201);
       const blockId = made.json.id;
       expect(made.json.config.sections.map((s) => s.time_limit_s)).toEqual([450]);
+      await quiet(page);
       await page.goto(`/practice/blocks/${blockId}/1`);
       await settle(page);
       await page.getByRole("button", { name: "Start the block" }).click();
@@ -487,7 +495,8 @@ test.describe("an exam in progress", () => {
       await page.keyboard.press("ControlOrMeta+k");
       await page.waitForTimeout(400);
       expect(new URL(page.url()).pathname).toBe("/learn");
-      await expect(page.getByRole("link", { name: "Search" })).toHaveCount(0);
+      // the nav's Search link ("Search" on the phone tab bar, "Search everything" beside it); not a chapter such as "Research ethics"
+      await expect(page.getByRole("link", { name: /^Search( everything)?$/ })).toHaveCount(0);
       await snap(page, info, guard, "exam-active-banner");
 
       for (const path of ["/search", "/practice"]) {

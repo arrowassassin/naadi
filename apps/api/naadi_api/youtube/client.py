@@ -109,6 +109,12 @@ class GoogleYouTube:
                 break
         return ids[:limit]
 
+    def channel_by_handle(self, handle: str) -> dict[str, Any] | None:
+        """`channels.list?forHandle=` (1 unit): the channel resource (`id`, `snippet.title`), or None."""
+        res = self._execute(self._svc.channels().list(part="id,snippet", forHandle=handle))
+        items = res.get("items") or []
+        return items[0] if items else None
+
     def videos(self, ids: list[str]) -> dict[str, dict[str, Any]]:
         out: dict[str, dict[str, Any]] = {}
         for i in range(0, len(ids), BATCH):

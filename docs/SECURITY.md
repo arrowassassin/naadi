@@ -41,7 +41,7 @@ Tavily credits, Supabase limits) that keep the app running; the integrity of pub
 
 | Header | Value (production) |
 |---|---|
-| `Content-Security-Policy` | `default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: blob: <Wikimedia, PMC bucket> https://i.ytimg.com <Supabase>; connect-src 'self' <Supabase https + wss>; media-src 'self' blob: <Supabase>; frame-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://huggingface.co; upgrade-insecure-requests; report-uri /api/csp-report; report-to csp` |
+| `Content-Security-Policy` | `default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: blob: <Wikimedia, PMC bucket> <Supabase>; connect-src 'self' <Supabase https + wss>; media-src 'self' blob: https://upload.wikimedia.org <Supabase>; frame-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://huggingface.co; upgrade-insecure-requests; report-uri /api/csp-report; report-to csp` |
 | `Content-Security-Policy-Report-Only` | `require-trusted-types-for 'script'; report-uri /api/csp-report; report-to csp` (not on the sandbox documents) |
 | `Reporting-Endpoints` | `csp="/api/csp-report"` |
 | `Strict-Transport-Security` | `max-age=63072000; includeSubDomains` |
@@ -284,6 +284,11 @@ Regenerate the table below with `cd apps/api && uv run python -m tests.test_rate
 | PATCH | `/api/vault/{doc_id}` | `vault_write` 30/60s user | - | 600 |
 | POST | `/api/vault/{doc_id}/complete` | `vault_write` 30/60s user | - | 600 |
 | GET | `/api/vault/{doc_id}/url` | `vault_url` 60/60s user | - | 600 |
+| GET | `/api/videos` | `videos_read` 240/60s user | - | 600 |
+| GET | `/api/videos/overview` | `videos_read` 240/60s user | - | 600 |
+| GET | `/api/videos/topics` | `videos_read` 240/60s user | - | 600 |
+| DELETE | `/api/videos/{media_id}/watched` | `videos_write` 120/60s user | - | 600 |
+| PUT | `/api/videos/{media_id}/watched` | `videos_write` 120/60s user | - | 600 |
 
 ## ASVS 4.0.3 Level 2
 

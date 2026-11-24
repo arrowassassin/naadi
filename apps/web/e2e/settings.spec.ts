@@ -140,6 +140,7 @@ test.describe("Settings shell and groups", () => {
       const page = await student.open("/settings/account");
       const { errors, guard } = watchConsole(page);
       await onboard(page);
+      await ready(page, "Account"); // the account page's own requests finish before navigating away
 
       // /settings lands on the profile
       await page.goto("/settings");

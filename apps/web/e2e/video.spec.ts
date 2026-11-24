@@ -128,6 +128,8 @@ test.describe("YouTube player and video notes", () => {
       expect(appCsp).toContain("script-src 'self';");
       expect(appCsp).toContain(`frame-src 'self' ${PLAYER_ORIGIN};`);
       expect(appCsp).not.toContain("youtube");
+      // Commons video files (the Videos page's native player) are the only third-party media host
+      expect(appCsp).toContain("media-src 'self' blob: https://upload.wikimedia.org");
       expect(rootHeaders["permissions-policy"] ?? "").toContain(`fullscreen=(self "${PLAYER_ORIGIN}")`);
 
       // source line and Terms link under the player

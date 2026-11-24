@@ -76,6 +76,8 @@ def test_revisions_form_one_linear_chain_with_real_downgrades() -> None:
         "0037",
         "0038",
         "0039",
+        "0040",
+        "0041",
     ]
     assert len(script.get_heads()) == 1
     for r in revs:
@@ -84,7 +86,9 @@ def test_revisions_form_one_linear_chain_with_real_downgrades() -> None:
         funcs = {n.name: n for n in tree.body if isinstance(n, ast.FunctionDef)}
         assert {"upgrade", "downgrade"} <= set(funcs), r.revision
         body = ast.dump(funcs["downgrade"])
-        assert "NotImplementedError" not in body and len(funcs["downgrade"].body) > 1, r.revision
+        assert "NotImplementedError" not in body and not all(
+            isinstance(n, ast.Pass) for n in funcs["downgrade"].body
+        ), r.revision  # a stub is a bare pass or a raise
 
 
 def test_alembic_ini_holds_no_database_url() -> None:

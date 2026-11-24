@@ -162,7 +162,7 @@ export type AdminMedia = {
   /**
    * Kind
    */
-  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link";
+  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | "video_file";
   /**
    * Metadata Fetched At
    */
@@ -2245,6 +2245,26 @@ export type ChangeStats = {
    * Wrong To Wrong
    */
   wrong_to_wrong: number;
+};
+
+/**
+ * ChannelCount
+ */
+export type ChannelCount = {
+  /**
+   * Id
+   *
+   * The channel id, or 'commons' for Wikimedia Commons files
+   */
+  id: string;
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Videos
+   */
+  videos: number;
 };
 
 /**
@@ -5052,6 +5072,24 @@ export type LibraryOut = {
 };
 
 /**
+ * LicenceOut
+ */
+export type LicenceOut = {
+  /**
+   * Artist
+   */
+  artist?: string | null;
+  /**
+   * License Short Name
+   */
+  license_short_name?: string | null;
+  /**
+   * License Url
+   */
+  license_url?: string | null;
+};
+
+/**
  * LintFinding
  */
 export type LintFinding = {
@@ -5189,7 +5227,7 @@ export type MediaOut = {
   /**
    * Kind
    */
-  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link";
+  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | "video_file";
   source: MediaSource | null;
   /**
    * Title
@@ -8161,7 +8199,7 @@ export type ReindexRequest = {
   /**
    * Kinds
    */
-  kinds?: Array<"sections" | "questions" | "pathway" | "notes" | "ink">;
+  kinds?: Array<"sections" | "questions" | "pathway" | "notes" | "ink" | "videos">;
 };
 
 /**
@@ -9417,7 +9455,16 @@ export type SeedRequest = {
    * Only
    */
   only?: Array<
-    "sources" | "taxonomy" | "figures" | "chapters" | "questions" | "cards" | "pathway" | "plan" | "app_config"
+    | "sources"
+    | "taxonomy"
+    | "figures"
+    | "chapters"
+    | "videos"
+    | "questions"
+    | "cards"
+    | "pathway"
+    | "plan"
+    | "app_config"
   >;
 };
 
@@ -9702,6 +9749,44 @@ export type StudentItemsOut = {
    * Items
    */
   items: Array<PlanItemOut>;
+};
+
+/**
+ * SubjectCounts
+ */
+export type SubjectCounts = {
+  /**
+   * Step
+   */
+  step: "step1" | "step2ck";
+  /**
+   * Subject
+   */
+  subject: string;
+  /**
+   * Topics
+   */
+  topics: number;
+  /**
+   * Topics Chapter
+   *
+   * Topics without one but with a related video from the same chapter
+   */
+  topics_chapter: number;
+  /**
+   * Topics Direct
+   *
+   * Topics with a video that teaches them directly
+   */
+  topics_direct: number;
+  /**
+   * Videos
+   */
+  videos: number;
+  /**
+   * Watched
+   */
+  watched: number;
 };
 
 /**
@@ -10826,6 +10911,85 @@ export type VideoLookupOut = {
 };
 
 /**
+ * VideoOut
+ */
+export type VideoOut = {
+  /**
+   * Attribution
+   */
+  attribution: string | null;
+  /**
+   * Channel Id
+   */
+  channel_id: string | null;
+  /**
+   * Channel Name
+   */
+  channel_name: string | null;
+  /**
+   * Core
+   */
+  core: boolean;
+  /**
+   * Duration S
+   */
+  duration_s: number | null;
+  /**
+   * File Url
+   *
+   * Set for provider commons (an open-licence file served by its host)
+   */
+  file_url: string | null;
+  licence: LicenceOut | null;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Page Url
+   *
+   * The file's own page (commons)
+   */
+  page_url: string | null;
+  /**
+   * Provider
+   */
+  provider: "youtube" | "commons";
+  /**
+   * Step
+   */
+  step: "step1" | "step2ck";
+  /**
+   * Style
+   */
+  style: "sketch" | "whiteboard" | "animation" | "lecture";
+  /**
+   * Subject
+   */
+  subject: string;
+  /**
+   * Title
+   */
+  title: string | null;
+  /**
+   * Topics
+   *
+   * The topics this video teaches directly
+   */
+  topics: Array<VideoTopicRef>;
+  /**
+   * Watched
+   */
+  watched: boolean;
+  /**
+   * Youtube Id
+   *
+   * Set for provider youtube (played through the official player)
+   */
+  youtube_id: string | null;
+};
+
+/**
  * VideoPos
  *
  * Where a video note sits: seconds into the video (`anchor_type 'video'`, segment 20's player).
@@ -10837,6 +11001,120 @@ export type VideoPos = {
    * Seconds from the start of the video
    */
   t: number;
+};
+
+/**
+ * VideoTopicOut
+ */
+export type VideoTopicOut = {
+  /**
+   * Chapter
+   */
+  chapter: string | null;
+  /**
+   * Chapter Media Ids
+   *
+   * Related videos from the same subject, step and chapter
+   */
+  chapter_media_ids: Array<string>;
+  /**
+   * Core
+   */
+  core: boolean;
+  /**
+   * Coverage
+   */
+  coverage: "topic" | "chapter" | "gap";
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Media Ids
+   *
+   * Videos that teach the topic directly
+   */
+  media_ids: Array<string>;
+  /**
+   * Step
+   */
+  step: "step1" | "step2ck";
+  /**
+   * Subject
+   */
+  subject: string;
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Unit
+   */
+  unit: string | null;
+};
+
+/**
+ * VideoTopicRef
+ */
+export type VideoTopicRef = {
+  /**
+   * Chapter
+   */
+  chapter: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * VideoTopicsOut
+ */
+export type VideoTopicsOut = {
+  /**
+   * Items
+   */
+  items: Array<VideoTopicOut>;
+};
+
+/**
+ * VideosOut
+ */
+export type VideosOut = {
+  /**
+   * Items
+   */
+  items: Array<VideoOut>;
+  /**
+   * Next
+   *
+   * Cursor for the next page, null at the end
+   */
+  next: string | null;
+  /**
+   * Total
+   */
+  total: number;
+};
+
+/**
+ * VideosOverview
+ */
+export type VideosOverview = {
+  /**
+   * Channels
+   */
+  channels: Array<ChannelCount>;
+  /**
+   * Subjects
+   *
+   * Ordered: step 1 then step 2 CK, subjects in syllabus order
+   */
+  subjects: Array<SubjectCounts>;
 };
 
 /**
@@ -12374,7 +12652,7 @@ export type ListAdminMediaData = {
     /**
      * Kind
      */
-    kind?: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | null;
+    kind?: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | "video_file" | null;
     /**
      * Review Status
      */
@@ -20907,3 +21185,248 @@ export type GetVaultUrlResponses = {
 };
 
 export type GetVaultUrlResponse = GetVaultUrlResponses[keyof GetVaultUrlResponses];
+
+export type ListVideosData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Step
+     */
+    step?: "step1" | "step2ck" | "all";
+    /**
+     * Subject
+     */
+    subject?: string | null;
+    /**
+     * Q
+     */
+    q?: string | null;
+    /**
+     * Channel
+     *
+     * A channel id, or 'commons'
+     */
+    channel?: string | null;
+    /**
+     * Style
+     */
+    style?: "sketch" | "whiteboard" | "animation" | "lecture" | null;
+    /**
+     * Unwatched
+     */
+    unwatched?: boolean;
+    /**
+     * Core
+     */
+    core?: boolean;
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Cursor
+     *
+     * Offset from a previous `next`
+     */
+    cursor?: string | null;
+  };
+  url: "/api/videos";
+};
+
+export type ListVideosErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid query
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListVideosError = ListVideosErrors[keyof ListVideosErrors];
+
+export type ListVideosResponses = {
+  /**
+   * Successful Response
+   */
+  200: VideosOut;
+};
+
+export type ListVideosResponse = ListVideosResponses[keyof ListVideosResponses];
+
+export type GetVideosOverviewData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/videos/overview";
+};
+
+export type GetVideosOverviewErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetVideosOverviewError = GetVideosOverviewErrors[keyof GetVideosOverviewErrors];
+
+export type GetVideosOverviewResponses = {
+  /**
+   * Successful Response
+   */
+  200: VideosOverview;
+};
+
+export type GetVideosOverviewResponse = GetVideosOverviewResponses[keyof GetVideosOverviewResponses];
+
+export type ListVideoTopicsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Step
+     */
+    step?: "step1" | "step2ck" | null;
+    /**
+     * Subject
+     */
+    subject?: string | null;
+  };
+  url: "/api/videos/topics";
+};
+
+export type ListVideoTopicsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid query
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListVideoTopicsError = ListVideoTopicsErrors[keyof ListVideoTopicsErrors];
+
+export type ListVideoTopicsResponses = {
+  /**
+   * Successful Response
+   */
+  200: VideoTopicsOut;
+};
+
+export type ListVideoTopicsResponse = ListVideoTopicsResponses[keyof ListVideoTopicsResponses];
+
+export type UnmarkVideoWatchedData = {
+  body?: never;
+  path: {
+    /**
+     * Media Id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/videos/{media_id}/watched";
+};
+
+export type UnmarkVideoWatchedErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid query
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type UnmarkVideoWatchedError = UnmarkVideoWatchedErrors[keyof UnmarkVideoWatchedErrors];
+
+export type UnmarkVideoWatchedResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type UnmarkVideoWatchedResponse = UnmarkVideoWatchedResponses[keyof UnmarkVideoWatchedResponses];
+
+export type MarkVideoWatchedData = {
+  body?: never;
+  path: {
+    /**
+     * Media Id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/videos/{media_id}/watched";
+};
+
+export type MarkVideoWatchedErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid query
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type MarkVideoWatchedError = MarkVideoWatchedErrors[keyof MarkVideoWatchedErrors];
+
+export type MarkVideoWatchedResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type MarkVideoWatchedResponse = MarkVideoWatchedResponses[keyof MarkVideoWatchedResponses];

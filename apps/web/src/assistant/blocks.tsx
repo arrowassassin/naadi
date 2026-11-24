@@ -14,16 +14,18 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { useMemo } from "react";
+import { useMe } from "../auth/api";
 import { useAuth } from "../auth/session";
 import { getCanvasKind, openInCanvas, zCanvasRef } from "../canvas/registry";
 import { ContentRenderer } from "../content/ContentRenderer";
 import { MermaidBlock } from "../content/RichNodes";
 import type { ContentEnv } from "../content/types";
 import { useUiText } from "../copy/useUiText";
+import { FileVideo } from "../videos/FileVideo";
 import type { AssistantAskKind } from "./ask";
 import { useKnownCopy } from "./copy";
 import { allowedUrl, imagePrefixes } from "./mediaHosts";
-import type { Block, BlockOf, ChartData, Citation, Notice, TableData } from "./protocol";
+import type { Block, BlockOf, ChartData, Citation, Notice, TableData, VideoData } from "./protocol";
 import { formatClock } from "./time";
 
 /*
@@ -110,10 +112,45 @@ export function ImageBlock({ block }: { block: BlockOf<"image"> }) {
   );
 }
 
-/** The existing YouTube node (click-to-load facade, official IFrame player on the privacy-enhanced domain). */
+/**
+ * A library video: YouTube through the existing click-to-load node (official IFrame player via the player page),
+ * an open-licence Commons file in the browser's player. A catalogue video links to its place on the Videos page.
+ */
 export function VideoBlock({ block }: { block: BlockOf<"video"> }) {
   const t = useUiText();
   const d = block.data;
+  const videosOn = useMe().data?.features.videos === true;
+  return (
+    <section aria-label={t("agent.block.video")} className="flex flex-col gap-2" data-block="video">
+      <span className={LABEL}>{t("agent.block.video")}</span>
+      {d.provider === "commons" ? (
+        <FileVideo
+          mediaId={d.media_id}
+          src={d.file_url}
+          title={d.title}
+          durationS={d.duration_s}
+          attribution={d.attribution}
+          licence={d.licence}
+          pageUrl={d.page_url}
+        />
+      ) : (
+        <YouTubeNode d={d} id={block.id} />
+      )}
+      {videosOn && d.step && d.subject ? (
+        <Link
+          to="/videos"
+          search={{ v: d.media_id, vs: { step: d.step, subject: d.subject } }}
+          className="inline-flex min-h-11 items-center gap-1 self-start text-violet-text"
+        >
+          {t("agent.block.video_open")}
+        </Link>
+      ) : null}
+    </section>
+  );
+}
+
+function YouTubeNode({ d, id }: { d: Extract<VideoData, { provider: "youtube" }>; id: string }) {
+  const t = useUiText();
   const media: Record<string, MediaOut> = {
     [d.media_id]: {
       id: d.media_id,
@@ -135,17 +172,7 @@ export function VideoBlock({ block }: { block: BlockOf<"video"> }) {
     content: [{ type: "video", attrs: { mediaId: d.media_id, startS: d.start_s ?? undefined } }],
   };
   return (
-    <section aria-label={t("agent.block.video")} className="flex flex-col gap-2" data-block="video">
-      <span className={LABEL}>{t("agent.block.video")}</span>
-      <ContentRenderer
-        doc={doc}
-        sectionId={`assistant-${block.id}`}
-        media={media}
-        text={t}
-        mode="prod"
-        className="text-ui!"
-      />
-    </section>
+    <ContentRenderer doc={doc} sectionId={`assistant-${id}`} media={media} text={t} mode="prod" className="text-ui!" />
   );
 }
 

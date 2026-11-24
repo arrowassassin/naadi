@@ -17,7 +17,7 @@ from psycopg.types.json import Jsonb
 
 from naadi_api.config_api.schemas import KEY_SPECS
 from naadi_api.seed.data import SeedBundle
-from naadi_api.seed.importer import FIGURE_FOLDER, LOCK_KEY, SeedFailed, SeedLocked, run_seed
+from naadi_api.seed.importer import FIGURE_FOLDER, LOCK_KEY, SeedFailed, SeedLocked, _file_title, run_seed
 from naadi_api.seed.report import SeedReport
 from naadi_api.seed.storage import list_folder
 from naadi_api.settings import get_settings
@@ -53,6 +53,9 @@ EXPECTED = {
     "pack_flashcards": PACKS.cards,
     "section_media": LEGACY_FIGURES + PACKS.section_figures,
     "app_config": len(KEY_SPECS),  # every registered key (other segments add their own)
+    "video_topics": len(json.loads((DATA / "video_topics.json").read_text(encoding="utf-8"))["topics"]),
+    "video_media_assets": len(json.loads((DATA / "videos.json").read_text(encoding="utf-8"))["videos"]),
+    "video_catalog": len(json.loads((DATA / "videos.json").read_text(encoding="utf-8"))["videos"]),
 }
 
 
@@ -126,6 +129,84 @@ def test_second_run_changes_nothing(first_run: object, url: str, b: SeedBundle) 
     assert again.storage.unchanged == FIGURES
     assert _count(url, "select count(*) from public.app_config_history") == 0
     assert _count(url, "select count(*) from public.chapter_section_revisions where section_id like 'ch%%'") == 0
+
+
+def test_commons_videos_keep_an_admin_edit_drop_removed_topics_and_force_restores(
+    first_run: object, url: str, b: SeedBundle
+) -> None:
+    file = next(v for v in b.videos if v.provider == "commons")
+    only = {"only": ("videos",)}
+    with psycopg.connect(url, autocommit=True) as c:
+        c.execute("update public.media_assets set title = 'Admin title' where id = %s", (file.id,))
+        c.execute(
+            "insert into public.video_topics (id, title, subject, step, sort) values ('zz-gone','x','x','step1',0)"
+        )
+    try:
+        r = run_seed(options(url, **only), bundle=b)
+        assert r.tables["video_topics"].deleted == 1
+        assert r.tables["video_media_assets"].kept == 0 and r.tables["video_media_assets"].updated == 0
+        assert _row(url, "select title from public.media_assets where id = %s", file.id) == ("Admin title",)
+        shape = "select kind, url, page_url, licence is not null from public.media_assets where id = %s"
+        assert _row(url, shape, file.id) == ("video_file", file.file_url, file.file_page, True)
+        forced = run_seed(options(url, force=True, **only), bundle=b)
+        assert forced.tables["video_media_assets"].updated == 1
+        assert _row(url, "select title from public.media_assets where id = %s", file.id) == (
+            _file_title(file.file_url, file.label),
+        )
+        assert run_seed(options(url, **only), bundle=b).changes == 0
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("delete from public.video_topics where id = 'zz-gone'")
+
+
+async def test_a_reseed_never_undoes_the_real_youtube_refresh(first_run: object, url: str, b: SeedBundle) -> None:
+    from pydantic import SecretStr
+
+    from naadi_api.config_api.schemas import YoutubeRules
+    from naadi_api.db import Database
+    from naadi_api.youtube import mapper
+
+    from ..youtube.fakes import FakeYouTube, WordEmbedder, item
+
+    kept, gone = [v for v in b.videos if v.provider == "youtube"][:2]
+    assert kept.youtube_id and gone.youtube_id
+    with psycopg.connect(url, autocommit=True) as c:
+        # only these two are due for the refresh (every other seeded video was fetched just now)
+        c.execute("select set_config('naadi.seed', 'on', false)")
+        c.execute(
+            "update public.media_assets set metadata_fetched_at = now() where kind = 'video_youtube' and id <> all(%s)",
+            ([kept.id, gone.id],),
+        )
+    api = FakeYouTube({}, {kept.youtube_id: item(kept.youtube_id, "Real title", duration="PT5M")})
+    db = Database(SecretStr(url))
+    try:
+        rep = await mapper.run(db, api, WordEmbedder(), YoutubeRules(), [])  # the real _refresh / drop_video
+    finally:
+        await db.close()
+    assert (rep.refreshed, rep.dropped) == (1, 1)
+    q = "select title, duration_s, review_status, embeddable, metadata_fetched_at, attribution from public.media_assets"
+    before = {i: _row(url, q + " where id = %s", i) for i in (kept.id, gone.id)}
+    assert before[kept.id][:4] == ("Real title", 300, "approved", True)
+    assert before[gone.id][:4] == (None, None, "rejected", False)
+    try:
+        for force in (False, True):
+            run_seed(options(url, force=force, only=("videos",)), bundle=b)
+            for i in (kept.id, gone.id):
+                assert _row(url, q + " where id = %s", i) == before[i], (force, i)
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:  # leave the module's seeded state as it was
+            c.execute(
+                "delete from public.media_assets where kind = 'video_youtube' and id = any(%s)",
+                ([v.id for v in b.videos],),
+            )
+        run_seed(options(url, only=("videos",)), bundle=b)
+
+
+def _row(url: str, query: str, *params: object) -> tuple[object, ...]:
+    with psycopg.connect(url) as c:
+        row = c.execute(query, params).fetchone()
+    assert row is not None
+    return tuple(row)
 
 
 def test_seeded_rows_have_the_contracted_shape(first_run: object, url: str) -> None:
@@ -495,3 +576,13 @@ def test_report_round_trips_as_json(first_run: tuple[SeedReport, SeedReport]) ->
 def test_unknown_group_is_refused(url: str, b: SeedBundle) -> None:
     with pytest.raises(ValueError, match="unknown groups"):
         run_seed(replace(options(url, dry_run=True), only=("everything",)), bundle=b)
+
+
+def test_commons_video_title_is_the_file_name_and_distinct() -> None:
+    assert _file_title("https://upload.wikimedia.org/wikipedia/commons/0/0f/Acute_cholecystitis_1.webm", "T") == (
+        "Acute cholecystitis 1"
+    )
+    assert _file_title(None, "Topic") == "Topic"
+    files = json.loads((DATA / "videos.json").read_text())["videos"]
+    titles = [_file_title(v["file_url"], v["label"]) for v in files if v["provider"] == "commons"]
+    assert len(set(titles)) == len(titles)

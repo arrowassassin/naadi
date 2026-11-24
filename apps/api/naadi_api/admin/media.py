@@ -37,7 +37,7 @@ from ..logs import get_logger
 from ..seed.storage import StorageTarget
 from ..seed.svg import SvgError, sanitize_svg
 from .common import ADMIN_ERRORS, CONFLICT, INVALID, NOT_FOUND, ConsoleAdmin, Row, audit, not_found, one, rows, run_tx
-from .licence import AssetFacts, GateRefused, Use, check_asset, check_media_row
+from .licence import AssetFacts, GateRefused, Use, check_asset, check_media_row, media_licence
 
 log = get_logger("naadi.admin.media")
 
@@ -67,7 +67,7 @@ CONTENT_TYPES = {
 }
 YOUTUBE_ID = re.compile(r"^[A-Za-z0-9_-]{11}$")
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be", "www.youtube-nocookie.com"})
-MediaKind = Literal["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]
+MediaKind = Literal["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link", "video_file"]
 ReviewStatus = Literal["unreviewed", "approved", "rejected"]
 
 
@@ -668,7 +668,9 @@ async def patch_media(
             updates["taxonomy_ids"] = body.taxonomy_ids
         if body.source_id is not None and body.source_id != before["source_id"]:
             # A new source is a new licence: the asset must pass its gates again before it is shown.
-            facts = AssetFacts(before["kind"], before["embeddable"], before["metadata_fetched_at"])
+            facts = AssetFacts(
+                before["kind"], before["embeddable"], before["metadata_fetched_at"], await media_licence(conn, media_id)
+            )
             use: Use = "embed" if before["kind"] == "video_youtube" else "host"
             await check_asset(conn, body.source_id, use=use, asset=facts, ref_id=media_id)
             updates["source_id"] = body.source_id

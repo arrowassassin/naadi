@@ -6,6 +6,7 @@ import {
   ListChecks,
   type LucideIcon,
   NotebookPen,
+  Play,
   Route,
   Search,
   Sun,
@@ -24,6 +25,7 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   "user-round": UserRound,
   search: Search,
   ellipsis: Ellipsis,
+  play: Play,
 };
 
 export function NavIcon({ name, size = 18 }: { name: string; size?: number }) {

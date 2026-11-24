@@ -41,7 +41,9 @@ DB_DEADLINE_S = 5.0
 
 router = APIRouter(prefix="/api/admin/seed", tags=["admin"])
 
-Group = Literal["sources", "taxonomy", "figures", "chapters", "questions", "cards", "pathway", "plan", "app_config"]
+Group = Literal[
+    "sources", "taxonomy", "figures", "chapters", "videos", "questions", "cards", "pathway", "plan", "app_config"
+]
 
 
 class SeedRequest(BaseModel):

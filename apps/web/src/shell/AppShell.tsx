@@ -112,9 +112,10 @@ function PillItem({ item, current }: { item: NavItem; current: boolean }) {
         className={cx(
           "flex min-h-11 items-center gap-2 rounded-pill text-[0.875rem] whitespace-nowrap no-underline",
           "transition-colors duration-(--duration-control) ease-out",
+          // Compact when the header is narrow (a container query: iPad portrait, or landscape with the assistant dock open).
           current
-            ? "bg-paper px-[18px] font-semibold text-ground hover:text-ground"
-            : "px-4 text-text-2 hover:bg-surface-2 hover:text-text",
+            ? "bg-paper px-3 font-semibold text-ground hover:text-ground @min-[58rem]:px-[18px]"
+            : "px-2.5 text-text-2 hover:bg-surface-2 hover:text-text @min-[58rem]:px-4",
         )}
       >
         {item.label}
@@ -345,43 +346,50 @@ export function AppShell() {
         // sticky bar (25-30% lower fps on iPad), on every page that has the shell.
         className="sticky top-0 z-20 hidden px-4 pt-[max(16px,env(safe-area-inset-top))] pb-2 will-change-transform tablet:block"
       >
-        <nav
-          aria-label={t("shell.nav_main")}
-          aria-busy={navLoading || undefined}
-          className="mx-auto flex w-fit max-w-full items-center gap-1 rounded-[28px] border border-line bg-bar/85 p-1.5 backdrop-blur-[18px]"
-        >
-          <Link
-            to="/"
-            aria-label={t("shell.home_label")}
-            className="flex min-h-11 shrink-0 items-center gap-2 rounded-pill pr-3.5 pl-2.5 font-bold font-display text-[1.1875rem] text-text no-underline hover:text-text"
+        {/* The query container is this wrapper, not the header: Firefox does not re-evaluate a container query when
+            the container's own padding changes (the header's padding-right while the assistant panel is open). */}
+        <div className="@container">
+          <nav
+            aria-label={t("shell.nav_main")}
+            aria-busy={navLoading || undefined}
+            className="mx-auto flex w-fit max-w-full items-center gap-1 rounded-[28px] border border-line bg-bar/85 p-1.5 backdrop-blur-[18px]"
           >
-            <LogoMark />
-            <span aria-hidden="true">Naadi</span>
-          </Link>
-          <ul className="m-0 flex min-w-0 list-none items-center gap-1 overflow-x-auto p-0">
-            {navLoading
-              ? [0, 1, 2].map((i) => (
-                  <li key={i}>
-                    <Skeleton className="h-11 w-20 rounded-pill" />
-                  </li>
-                ))
-              : items.map((item) => <PillItem key={item.id} item={item} current={isCurrent(item.path, pathname)} />)}
-          </ul>
-          {searchOn ? (
-            <SearchButton current={isCurrent("/search", pathname)} label={searchCopy("search.title")} />
-          ) : null}
-          {!active && (
-            <button
-              type="button"
-              className="flex size-11 shrink-0 items-center justify-center rounded-pill text-text-2 hover:bg-surface-2"
-              aria-label={t("guide.title")}
-              onClick={() => setGuideOpen("index")}
+            <Link
+              to="/"
+              aria-label={t("shell.home_label")}
+              className="flex min-h-11 shrink-0 items-center gap-2 rounded-pill pr-2.5 pl-2.5 font-bold @min-[58rem]:pr-3.5 font-display text-[1.1875rem] text-text no-underline hover:text-text"
             >
-              <CircleHelp size={19} />
-            </button>
-          )}
-          <Avatar initial={initial} current={onAccount} label={t("shell.account_label")} />
-        </nav>
+              <LogoMark />
+              {/* The wordmark gives way to the items on iPad portrait; the link keeps its label. */}
+              <span aria-hidden="true" className="hidden @min-[58rem]:inline">
+                Naadi
+              </span>
+            </Link>
+            <ul className="m-0 flex min-w-0 list-none items-center gap-1 overflow-x-auto p-0">
+              {navLoading
+                ? [0, 1, 2].map((i) => (
+                    <li key={i}>
+                      <Skeleton className="h-11 w-20 rounded-pill" />
+                    </li>
+                  ))
+                : items.map((item) => <PillItem key={item.id} item={item} current={isCurrent(item.path, pathname)} />)}
+            </ul>
+            {searchOn ? (
+              <SearchButton current={isCurrent("/search", pathname)} label={searchCopy("search.title")} />
+            ) : null}
+            {!active && (
+              <button
+                type="button"
+                className="flex size-11 shrink-0 items-center justify-center rounded-pill text-text-2 hover:bg-surface-2"
+                aria-label={t("guide.title")}
+                onClick={() => setGuideOpen("index")}
+              >
+                <CircleHelp size={19} />
+              </button>
+            )}
+            <Avatar initial={initial} current={onAccount} label={t("shell.account_label")} />
+          </nav>
+        </div>
       </header>
       <div aria-hidden="true" className="h-[env(safe-area-inset-top)] tablet:hidden" />
 

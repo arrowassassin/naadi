@@ -90,8 +90,48 @@ test.describe("signed in as a student", () => {
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     }
     // the server lists only enabled items; the search and assistant buttons are absent, not disabled
-    await expect(page.getByRole("button", { name: /search/i })).toHaveCount(0);
+    await expect(page.getByRole("navigation").getByRole("button", { name: /search/i })).toHaveCount(0);
     await expect(page.getByRole("button", { name: "Ask Naadi" })).toHaveCount(0);
+  });
+
+  test("every nav item is in view on iPad portrait and landscape (no hidden scroll in the pill)", async ({ page }) => {
+    for (const viewport of [
+      { width: 768, height: 1024 },
+      { width: 820, height: 1180 },
+      { width: 1180, height: 820 },
+    ]) {
+      await page.setViewportSize(viewport);
+      await page.goto("/");
+      const list = page.locator("nav[aria-label=Main] ul");
+      await expect(list.locator("li a").last()).toBeVisible();
+      const { scroll, client } = await list.evaluate((ul) => ({ scroll: ul.scrollWidth, client: ul.clientWidth }));
+      expect(scroll, `${viewport.width} px`).toBeLessThanOrEqual(client);
+    }
+  });
+
+  test("every nav item stays in view with the assistant panel open on iPad landscape and laptop", async ({ page }) => {
+    for (const viewport of [
+      { width: 1180, height: 820 },
+      { width: 1440, height: 900 },
+    ]) {
+      await page.setViewportSize(viewport);
+      await page.goto("/");
+      const field = page.getByRole("textbox", { name: "Ask Naadi" }).filter({ visible: true }).first();
+      await field.fill("hello");
+      await field.press("Enter");
+      await expect(page.locator("html[data-assistant-panel]")).toBeAttached({ timeout: 30_000 });
+      const list = page.locator("nav[aria-label=Main] ul");
+      await expect(list.locator("li a").last()).toBeVisible();
+      const { scroll, client } = await list.evaluate((ul) => ({ scroll: ul.scrollWidth, client: ul.clientWidth }));
+      expect(scroll, `${viewport.width} px, panel open`).toBeLessThanOrEqual(client);
+      // the pill is wholly inside the page area left of the panel
+      const gap = await page.evaluate(() => {
+        const nav = document.querySelector("nav[aria-label=Main]")?.getBoundingClientRect();
+        const panel = document.querySelector('[data-assistant="panel"]')?.getBoundingClientRect();
+        return panel && nav ? panel.left - nav.right : 1;
+      });
+      expect(gap, "pill clear of the panel").toBeGreaterThanOrEqual(0);
+    }
   });
 
   test("loading shows skeletons", async ({ page, consoleErrors }, info) => {

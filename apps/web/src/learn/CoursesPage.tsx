@@ -121,7 +121,7 @@ function ChapterRow({ c, t }: { c: CourseChapter; t: TextLookup }) {
           {own ? <FileText aria-label={t("learn.your_file")} size={18} /> : String(c.number ?? "").padStart(2, "0")}
         </span>
         <span className="flex min-w-0 flex-col gap-1">
-          <span className="font-semibold text-[1.0625rem] leading-snug">{c.title}</span>
+          <span className="font-semibold text-[1.0625rem] leading-snug [overflow-wrap:anywhere]">{c.title}</span>
           <span className="text-text-3 text-ui-sm">{coverageLine(t, c.coverage)}</span>
           <span className="max-w-72">
             <ProgressBar

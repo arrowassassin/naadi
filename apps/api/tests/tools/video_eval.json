@@ -1,0 +1,785 @@
+{
+  "note": "Naadi-authored labels: is the video a correct direct match for the topic",
+  "labels": [
+    {
+      "topic_id": "primary-biliary-cholangitis-and-primary-sclerosing-cholangitis",
+      "video_id": "yt-otxppuin5aq",
+      "ok": false
+    },
+    {
+      "topic_id": "calcium-oxalate-stones-calcium-phosphate-stones",
+      "video_id": "yt-imkuudqzqp0",
+      "ok": false
+    },
+    {
+      "topic_id": "mean-medium-mode-variance-standard-deviation",
+      "video_id": "yt-yxdowqkm4se",
+      "ok": false
+    },
+    {
+      "topic_id": "chronic-heart-failure-hf-soa-part-2",
+      "video_id": "yt-q2t9sfitaiy",
+      "ok": true
+    },
+    {
+      "topic_id": "regulation-actions-of-thyroid-hormones",
+      "video_id": "yt-b7jfqgmi9pk",
+      "ok": true
+    },
+    {
+      "topic_id": "immunodeficiencies-step2ck",
+      "video_id": "yt-xzftb4chjmo",
+      "ok": true
+    },
+    {
+      "topic_id": "cytomegalovirus-herpesviridae",
+      "video_id": "yt-6ycrx8ufn14",
+      "ok": true
+    },
+    {
+      "topic_id": "personality-somatic-disorders-defense-mechanisms-step2ck",
+      "video_id": "yt-1jv8whdolia",
+      "ok": true
+    },
+    {
+      "topic_id": "bacteriology",
+      "video_id": "yt-wm8ox9t9mgm",
+      "ok": false
+    },
+    {
+      "topic_id": "potassium-disorders",
+      "video_id": "yt-n7wajpl8xio",
+      "ok": true
+    },
+    {
+      "topic_id": "law-health-systems-emtala-malpractice-insurance-step2ck",
+      "video_id": "yt-4inj6ekqqbw",
+      "ok": false
+    },
+    {
+      "topic_id": "volvulus-and-ogilvies-syndrome",
+      "video_id": "yt-8fiidafv07w",
+      "ok": true
+    },
+    {
+      "topic_id": "neuromuscular-junction-peripheral-nerve-step2ck",
+      "video_id": "yt-zvno6mer-oe",
+      "ok": false
+    },
+    {
+      "topic_id": "diabetes-soap",
+      "video_id": "yt-s_3my9jrcrw",
+      "ok": false
+    },
+    {
+      "topic_id": "glycogen-synthesis-glycogenesis-degradation-glycogenolysis",
+      "video_id": "yt-q-cyuu5a2t0",
+      "ok": false
+    },
+    {
+      "topic_id": "migraine",
+      "video_id": "yt-vnihrtd20pc",
+      "ok": false
+    },
+    {
+      "topic_id": "msk-anti-inflammatory-pharmacology",
+      "video_id": "yt-i1uhkbocrcw",
+      "ok": true
+    },
+    {
+      "topic_id": "hypothyroidism-soap",
+      "video_id": "yt-haohk5nzt2g",
+      "ok": true
+    },
+    {
+      "topic_id": "lung-nodules-lung-cancer-step2ck",
+      "video_id": "yt-thdhdz-130y",
+      "ok": true
+    },
+    {
+      "topic_id": "hepatitis-b-viral-basics-infectious-diseases-hepatitis-b-part-1-hepadnaviridae",
+      "video_id": "yt-ngomo8sdl3y",
+      "ok": true
+    },
+    {
+      "topic_id": "law-health-systems-emtala-malpractice-insurance",
+      "video_id": "yt-ffza73n-pci",
+      "ok": true
+    },
+    {
+      "topic_id": "cardiac-vascular-function-curves",
+      "video_id": "yt-1kx6tp8cwfw",
+      "ok": false
+    },
+    {
+      "topic_id": "msk-anti-inflammatory-pharmacology-step2ck",
+      "video_id": "yt-lb5ghtcp9la",
+      "ok": true
+    },
+    {
+      "topic_id": "regulation-actions-of-thyroid-hormones",
+      "video_id": "yt-bei0-xw_csq",
+      "ok": true
+    },
+    {
+      "topic_id": "lower-extremity-peripheral-arterial-disease-1-presentation-and-workup",
+      "video_id": "yt-3b6jt4nhhmg",
+      "ok": true
+    },
+    {
+      "topic_id": "gi-physiology-hormones-bilirubin-step2ck",
+      "video_id": "yt-wcpxmbnd5o8",
+      "ok": true
+    },
+    {
+      "topic_id": "mitral-valve-regurgitation-and-prolapse",
+      "video_id": "yt-rsbbu7outko",
+      "ok": true
+    },
+    {
+      "topic_id": "chest-pain-assessment-and-plan",
+      "video_id": "yt--i67erljnyi",
+      "ok": true
+    },
+    {
+      "topic_id": "innate-adaptive-immunity-complement-cytokines-step2ck",
+      "video_id": "yt-rcybuj70v30",
+      "ok": true
+    },
+    {
+      "topic_id": "systemic-lupus-connective-tissue-diseases-step2ck",
+      "video_id": "yt-x1kd05j0vt0",
+      "ok": false
+    },
+    {
+      "topic_id": "vitamin-b6-pyridoxine",
+      "video_id": "yt-mv_hwewb0i8",
+      "ok": true
+    },
+    {
+      "topic_id": "randomized-controlled-trials",
+      "video_id": "yt-lmbxnnjfngs",
+      "ok": true
+    },
+    {
+      "topic_id": "cholelithiasis-and-acute-calculous-cholecystitis",
+      "video_id": "yt-31iz8f6enzo",
+      "ok": true
+    },
+    {
+      "topic_id": "mitochondrial-inheritance-disorders",
+      "video_id": "yt-2rqqfge8rvw",
+      "ok": true
+    },
+    {
+      "topic_id": "g6pd-deficiency-autoimmune-hemolytic-anemia-aiha",
+      "video_id": "yt-xhmco7nhwjg",
+      "ok": true
+    },
+    {
+      "topic_id": "calcium-parathyroid-vitamin-d",
+      "video_id": "yt-jkclt3u5vky",
+      "ok": true
+    },
+    {
+      "topic_id": "acute-mesenteric-and-colonic-ischemia-1-presentation-and-workup",
+      "video_id": "yt-lti1t1bev30",
+      "ok": true
+    },
+    {
+      "topic_id": "ischemic-heart-disease-acute-coronary-syndromes-step2ck",
+      "video_id": "yt-psebu6akhpy",
+      "ok": true
+    },
+    {
+      "topic_id": "pancreatic-cancer",
+      "video_id": "yt-tfzsrqzg9og",
+      "ok": true
+    },
+    {
+      "topic_id": "hyperkalemia-management",
+      "video_id": "yt-1uonvwmvve4",
+      "ok": true
+    },
+    {
+      "topic_id": "hepatitis-a-virus-picornaviridae",
+      "video_id": "yt-htkvb4v5gg8",
+      "ok": true
+    },
+    {
+      "topic_id": "mucopolysaccharidoses-hurler-syndrome-hunter-syndrome",
+      "video_id": "yt-fxoak3juwvi",
+      "ok": true
+    },
+    {
+      "topic_id": "lipid-transport-key-enzymes-major-apolipoproteins-lipoprotein-functions",
+      "video_id": "yt-_wxwl8jidl4",
+      "ok": true
+    },
+    {
+      "topic_id": "autosomal-recessive-diseases",
+      "video_id": "yt-f0swuu5re0k",
+      "ok": true
+    },
+    {
+      "topic_id": "hodgkin-lymphoma",
+      "video_id": "yt-oy_aa6xraay",
+      "ok": true
+    },
+    {
+      "topic_id": "cardiac-action-potentials-pacemaker",
+      "video_id": "yt-h3dddvewbgg",
+      "ok": true
+    },
+    {
+      "topic_id": "action-potentials",
+      "video_id": "yt-jyh8hhk80x8",
+      "ok": true
+    },
+    {
+      "topic_id": "non-hodgkin-lymphoma",
+      "video_id": "yt-o4ofjto3nv4",
+      "ok": true
+    },
+    {
+      "topic_id": "anatomy-of-the-eye",
+      "video_id": "yt-5p2sc3td3ho",
+      "ok": true
+    },
+    {
+      "topic_id": "eye-ear-special-senses",
+      "video_id": "yt-8nzfcqos7ug",
+      "ok": true
+    },
+    {
+      "topic_id": "endocarditis-myocarditis-pericardial-disease",
+      "video_id": "yt-bwcjx7i3rva",
+      "ok": true
+    },
+    {
+      "topic_id": "endocarditis-myocarditis-pericardial-disease",
+      "video_id": "yt-insa4qqcwfo",
+      "ok": true
+    },
+    {
+      "topic_id": "endocarditis-myocarditis-pericardial-disease-step2ck",
+      "video_id": "yt-finnl_umrco",
+      "ok": true
+    },
+    {
+      "topic_id": "liver-disease-hepatitis",
+      "video_id": "yt-r4og0whkpcm",
+      "ok": true
+    },
+    {
+      "topic_id": "b-cell-disorders-digeorge-syndrome",
+      "video_id": "yt-xtyhev-mxdc",
+      "ok": true
+    },
+    {
+      "topic_id": "copd-emphysema",
+      "video_id": "yt-_hjd566xoo0",
+      "ok": true
+    },
+    {
+      "topic_id": "metabolism-disorders-of-galactose",
+      "video_id": "yt-5whfj0ypefe",
+      "ok": false
+    },
+    {
+      "topic_id": "lipids-atherosclerosis",
+      "video_id": "yt-n-maewzcwmm",
+      "ok": true
+    },
+    {
+      "topic_id": "asthma-bronchiectasis",
+      "video_id": "yt-p7fkg7_yxl0",
+      "ok": true
+    },
+    {
+      "topic_id": "epidural-hematoma-subdural-hematoma-subarachnoid-hemorrhage",
+      "video_id": "yt-mrteitookrq",
+      "ok": true
+    },
+    {
+      "topic_id": "esophageal-dysmotility-cancer",
+      "video_id": "yt-5fvlacverey",
+      "ok": false
+    },
+    {
+      "topic_id": "seizures-epilepsy",
+      "video_id": "yt-8xnzfhzwihm",
+      "ok": true
+    },
+    {
+      "topic_id": "hypercalcemia-clinical-presentation",
+      "video_id": "yt-630hhyq-je0",
+      "ok": true
+    },
+    {
+      "topic_id": "clostridium-botulinum",
+      "video_id": "yt-xar2yx-vjxi",
+      "ok": true
+    },
+    {
+      "topic_id": "portal-circulation",
+      "video_id": "yt-qvvk5xwj0qm",
+      "ok": true
+    },
+    {
+      "topic_id": "appendicitis",
+      "video_id": "yt-gjakvwkb6gk",
+      "ok": true
+    },
+    {
+      "topic_id": "pneumothorax",
+      "video_id": "yt-zymcyynmyrq",
+      "ok": true
+    },
+    {
+      "topic_id": "staphylococcus-aureus",
+      "video_id": "yt-ktakw3maftu",
+      "ok": true
+    },
+    {
+      "topic_id": "vitamin-b1-thiamine",
+      "video_id": "yt-ydwox4dofvi",
+      "ok": true
+    },
+    {
+      "topic_id": "vitamin-b1-thiamine",
+      "video_id": "yt-ytemip_gffy",
+      "ok": false
+    },
+    {
+      "topic_id": "kawasaki-disease-soap-part-2",
+      "video_id": "yt-7ho-frdhzzm",
+      "ok": true
+    },
+    {
+      "topic_id": "metabolic-alkalosis",
+      "video_id": "yt-2vbnpg_qezk",
+      "ok": true
+    },
+    {
+      "topic_id": "ketone-bodies",
+      "video_id": "yt-uqijjbdm4ke",
+      "ok": true
+    },
+    {
+      "topic_id": "neuromuscular-junction",
+      "video_id": "yt-edzwx2-odia",
+      "ok": true
+    },
+    {
+      "topic_id": "rett-syndrome",
+      "video_id": "yt-rdn7gjc_ylw",
+      "ok": true
+    },
+    {
+      "topic_id": "tricuspid-regurgitation-soap",
+      "video_id": "yt-7hnqkns3r0g",
+      "ok": false
+    },
+    {
+      "topic_id": "vaccines-immunization",
+      "video_id": "yt-sma116kzyk4",
+      "ok": false
+    },
+    {
+      "topic_id": "croup-soap",
+      "video_id": "yt-z-3x1zi3mma",
+      "ok": false
+    },
+    {
+      "topic_id": "congenital-cystic-kidney-disease",
+      "video_id": "yt-orjnzbgsnx4",
+      "ok": false
+    },
+    {
+      "topic_id": "muscle-disorders-muscular-dystrophies-step2ck",
+      "video_id": "yt-am3rqznx84y",
+      "ok": false
+    },
+    {
+      "topic_id": "intracranial-extracranial-hemorrhages",
+      "video_id": "yt-gmxhqrxsd0c",
+      "ok": false
+    },
+    {
+      "topic_id": "nnt-nnh",
+      "video_id": "yt-6m3q_5l2qjk",
+      "ok": true
+    },
+    {
+      "topic_id": "statins",
+      "video_id": "yt-fuzug03apky",
+      "ok": true
+    },
+    {
+      "topic_id": "prostaglandins-prostacyclin-bosentan-pde5-inhibitors",
+      "video_id": "yt-wz8owdvvyj0",
+      "ok": true
+    },
+    {
+      "topic_id": "gi-pharmacology",
+      "video_id": "yt-q-krceq2iow",
+      "ok": false
+    },
+    {
+      "topic_id": "clinical-trials-drug-approval-process",
+      "video_id": "yt-mjoxnq-dpbi",
+      "ok": true
+    },
+    {
+      "topic_id": "azathioprine-6-mercaptopurine-mycophenolate-mofetil",
+      "video_id": "yt-zgonqghy0m8",
+      "ok": true
+    },
+    {
+      "topic_id": "mycobacterium-tuberculosis",
+      "video_id": "yt-6p6zbhpwiga",
+      "ok": true
+    },
+    {
+      "topic_id": "linezolid",
+      "video_id": "yt-vujofsex6ym",
+      "ok": false
+    },
+    {
+      "topic_id": "cephalosporins",
+      "video_id": "yt-zjfja9i2a4w",
+      "ok": true
+    },
+    {
+      "topic_id": "bisphosphonates-raloxifene-denosumab-calcitonin",
+      "video_id": "yt-dbzibfc8ang",
+      "ok": true
+    },
+    {
+      "topic_id": "biliary-tract-pancreas-step2ck",
+      "video_id": "yt-6oztqeowjgg",
+      "ok": false
+    },
+    {
+      "topic_id": "metformin-thiazolidinediones-pramlintide-sglt2-inhibitors",
+      "video_id": "yt-kt1u6ow5z7o",
+      "ok": false
+    },
+    {
+      "topic_id": "labor-delivery-the-puerperium-step2ck",
+      "video_id": "yt-qtyyb7fjqte",
+      "ok": true
+    },
+    {
+      "topic_id": "stroke-intracranial-hemorrhage-step2ck",
+      "video_id": "yt-lth_cgln6w4",
+      "ok": true
+    },
+    {
+      "topic_id": "cardiac-physiology-hemodynamics-step2ck",
+      "video_id": "yt-rtuzkguujr4",
+      "ok": true
+    },
+    {
+      "topic_id": "colon-polyps-colorectal-cancer-diverticular-disease-step2ck",
+      "video_id": "yt-lx_jy0dmzhg",
+      "ok": false
+    },
+    {
+      "topic_id": "shock-2-hypovolemic-distributive-shock-soaps",
+      "video_id": "yt-yqgoy6bf6h4",
+      "ok": false
+    },
+    {
+      "topic_id": "urea-cycle-hyperammonemia-ornithine-transcarbamylase-deficiency",
+      "video_id": "yt-4hddc7qouok",
+      "ok": false
+    },
+    {
+      "topic_id": "sturge-weber-tuberous-sclerosis",
+      "video_id": "yt-xog_oiipnwi",
+      "ok": true
+    },
+    {
+      "topic_id": "posterior-lobe-of-the-pituitary",
+      "video_id": "yt-uzg0lkpcagq",
+      "ok": true
+    },
+    {
+      "topic_id": "initial-trauma-assessment-secondary-survey",
+      "video_id": "yt-htfqtczobei",
+      "ok": true
+    },
+    {
+      "topic_id": "otitis-media-soap",
+      "video_id": "yt-suonmdt_jes",
+      "ok": true
+    },
+    {
+      "topic_id": "peptic-ulcer-disease",
+      "video_id": "yt-ecb9s2lkpic",
+      "ok": true
+    },
+    {
+      "topic_id": "ace-inhibitors-arbs-aliskiren",
+      "video_id": "yt-mjenhcxzl6i",
+      "ok": true
+    },
+    {
+      "topic_id": "gi-physiology-hormones-bilirubin-step2ck",
+      "video_id": "yt-xhjnn5fvkqi",
+      "ok": true
+    },
+    {
+      "topic_id": "hepatitis-c-viral-life-cycle-hepatitis-part-2",
+      "video_id": "yt-13ldfppp3lc",
+      "ok": false
+    },
+    {
+      "topic_id": "asthma-therapy",
+      "video_id": "yt-tfefagaluyc",
+      "ok": true
+    },
+    {
+      "topic_id": "anatomy-of-the-eye",
+      "video_id": "yt-nf3lyeekjka",
+      "ok": true
+    },
+    {
+      "topic_id": "parasympathetic-nervous-system",
+      "video_id": "yt-u4tkimxnluu",
+      "ok": true
+    },
+    {
+      "topic_id": "cranial-nerve-v-trigeminal",
+      "video_id": "yt-fhbqbrx3kq0",
+      "ok": true
+    },
+    {
+      "topic_id": "aortic-aneurysm",
+      "video_id": "yt-a5mee0lb0ya",
+      "ok": true
+    },
+    {
+      "topic_id": "ear",
+      "video_id": "yt-sv7n-hefbfa",
+      "ok": true
+    },
+    {
+      "topic_id": "hiv-overview-retroviridae-hiv-part-1",
+      "video_id": "yt-ksfrbnswnvq",
+      "ok": true
+    },
+    {
+      "topic_id": "ischemic-heart-disease-acute-coronary-syndromes",
+      "video_id": "yt-2gpz9vk9fa8",
+      "ok": true
+    },
+    {
+      "topic_id": "acute-kidney-injury-chronic-kidney-disease",
+      "video_id": "yt-rgnruqzscwi",
+      "ok": true
+    },
+    {
+      "topic_id": "pleura",
+      "video_id": "yt-qizrjs8c2ck",
+      "ok": true
+    },
+    {
+      "topic_id": "wilms-tumor-soap",
+      "video_id": "yt--iigooefxqa",
+      "ok": true
+    },
+    {
+      "topic_id": "clostridium-perfringens",
+      "video_id": "yt-uhxetfbpbz8",
+      "ok": true
+    },
+    {
+      "topic_id": "pulmonary-embolism-pulmonary-hypertension",
+      "video_id": "yt-s8ehpyrnx2w",
+      "ok": true
+    },
+    {
+      "topic_id": "cranial-nerves-iii-iv-vi-oculomotor-trochlear-abducens-clinical-correlates",
+      "video_id": "yt-7j4iwkm8fca",
+      "ok": true
+    },
+    {
+      "topic_id": "acute-respiratory-distress-syndrome-ards",
+      "video_id": "yt-bxwksu3apic",
+      "ok": true
+    },
+    {
+      "topic_id": "megaloblastic-anemia-folate-deficiency-vitamin-b12-deficiency",
+      "video_id": "yt-7hqhq6n7rwm",
+      "ok": true
+    },
+    {
+      "topic_id": "intussusception-soap",
+      "video_id": "yt-wafrk7jqtja",
+      "ok": true
+    },
+    {
+      "topic_id": "k-sparing-diuretics",
+      "video_id": "yt-cbw63to-isw",
+      "ok": true
+    },
+    {
+      "topic_id": "polyhydramnios-oligohydramnios",
+      "video_id": "yt-gjn83eywd6s",
+      "ok": true
+    },
+    {
+      "topic_id": "nucleus-ribosomes-mitochondria",
+      "video_id": "yt-emljovdawxi",
+      "ok": true
+    },
+    {
+      "topic_id": "leukemias-lymphomas-plasma-cell-disorders",
+      "video_id": "yt-swpblhxuerk",
+      "ok": true
+    },
+    {
+      "topic_id": "anemias-microcytic-macrocytic-normocytic-step2ck",
+      "video_id": "yt-c50powip6dm",
+      "ok": true
+    },
+    {
+      "topic_id": "depressive-bipolar-disorders",
+      "video_id": "yt-bpqmtiwtys4",
+      "ok": true
+    },
+    {
+      "topic_id": "diaphragm-phrenic-nerve",
+      "video_id": "yt-wr6ohk_5o40",
+      "ok": true
+    },
+    {
+      "topic_id": "anemias-microcytic-macrocytic-normocytic",
+      "video_id": "yt-zrd_2r1ivek",
+      "ok": true
+    },
+    {
+      "topic_id": "seizures-epilepsy-step2ck",
+      "video_id": "yt-98ctrjf_320",
+      "ok": true
+    },
+    {
+      "topic_id": "vitamin-b3-niacin",
+      "video_id": "yt-l8lvvz_xkx8",
+      "ok": true
+    },
+    {
+      "topic_id": "heart-failure-cardiomyopathies",
+      "video_id": "yt-ethrxyaobsq",
+      "ok": true
+    },
+    {
+      "topic_id": "ards-respiratory-failure-ventilation-sleep-apnea-step2ck",
+      "video_id": "yt-tz_kvgimcki",
+      "ok": true
+    },
+    {
+      "topic_id": "biliary-tract-pancreas",
+      "video_id": "yt-s95fsq6acsi",
+      "ok": true
+    },
+    {
+      "topic_id": "metabolism-inborn-errors",
+      "video_id": "yt-asd0hokvzxu",
+      "ok": true
+    },
+    {
+      "topic_id": "molecular-cell-biology-lab-techniques",
+      "video_id": "yt-qmoow0ozzq8",
+      "ok": false
+    },
+    {
+      "topic_id": "cranial-nerve-v-trigeminal-clinical-correlates",
+      "video_id": "yt-tr-mman2yf8",
+      "ok": true
+    },
+    {
+      "topic_id": "colorectal-polyps-cancer",
+      "video_id": "yt-h376q6h0se4",
+      "ok": false
+    },
+    {
+      "topic_id": "esophageal-dysmotility-cancer",
+      "video_id": "yt-h376q6h0se4",
+      "ok": false
+    },
+    {
+      "topic_id": "dilated-and-restrictive-cardiomyopathy",
+      "video_id": "yt-mpbp955ww1s",
+      "ok": true
+    },
+    {
+      "topic_id": "non-hodgkin-lymphoma-soap",
+      "video_id": "yt-2lafpzvdiwk",
+      "ok": true
+    },
+    {
+      "topic_id": "cystic-fibrosis-soa",
+      "video_id": "yt-l7hetoma67u",
+      "ok": true
+    },
+    {
+      "topic_id": "cystic-fibrosis-soa",
+      "video_id": "yt-nicr7kht5he",
+      "ok": true
+    },
+    {
+      "topic_id": "aminoglycosides",
+      "video_id": "yt-tondca5nrhe",
+      "ok": true
+    },
+    {
+      "topic_id": "streptococcus-pyogenes-group-a-strep",
+      "video_id": "yt-0_lm8d3lou4",
+      "ok": true
+    },
+    {
+      "topic_id": "oxygen-hemoglobin-dissociation-curve",
+      "video_id": "yt-iu4voxqtvta",
+      "ok": true
+    },
+    {
+      "topic_id": "preterm-labor",
+      "video_id": "yt-68n_y3kjerg",
+      "ok": true
+    },
+    {
+      "topic_id": "staphylococcus-aureus",
+      "video_id": "yt-wybyoi8iva8",
+      "ok": true
+    },
+    {
+      "topic_id": "dna-replication",
+      "video_id": "yt-to6fxp6ptxo",
+      "ok": true
+    },
+    {
+      "topic_id": "pneumonia-soa",
+      "video_id": "yt-llwyu89bk2y",
+      "ok": true
+    },
+    {
+      "topic_id": "fatty-acid-synthesis",
+      "video_id": "yt-do8whqaayso",
+      "ok": true
+    },
+    {
+      "topic_id": "neuromuscular-junction",
+      "video_id": "yt-bvt5ebozheo",
+      "ok": true
+    },
+    {
+      "topic_id": "erythropoietin",
+      "video_id": "yt-wqmqjsf1yd4",
+      "ok": true
+    }
+  ]
+}

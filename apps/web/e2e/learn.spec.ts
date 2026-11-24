@@ -161,7 +161,7 @@ test.describe("course map", () => {
     const list = page
       .getByRole("region", { name: "All chapters" })
       .or(page.locator("section[aria-labelledby=chapters-h]"));
-    await expect(list.getByRole("listitem")).toHaveCount(7); // Step 1 chapters only
+    await expect(list.getByRole("listitem")).toHaveCount(77); // Step 1 chapters only: 7 from segment 05, 70 from the S23 content packs
     // Mock exams are Practice content: never listed in /learn (their sections are not reading material).
     await expect(page.getByText(/Mock Exam/)).toHaveCount(0);
     await expect(page.getByRole("link", { name: /^(Start|Continue|Next): / })).toHaveCount(1);
@@ -176,24 +176,24 @@ test.describe("course map", () => {
     await page.getByRole("link", { name: "USMLE Step 2 CK" }).click();
     await expect(page).toHaveURL(/exam=step2ck/);
     await expect(page.getByRole("link", { name: "USMLE Step 2 CK" })).toHaveAttribute("aria-current", "page");
-    await expect(list.getByRole("listitem")).toHaveCount(5);
+    await expect(list.getByRole("listitem")).toHaveCount(75); // 5 from segment 05, 70 from the S23 content packs
     await expect(list.getByRole("listitem").first()).toContainText("Step 2 CK");
 
-    const tile = page
-      .getByRole("list")
-      .filter({ has: page.getByRole("link", { name: /Cardiovascular/ }) })
-      .getByRole("link", { name: /Cardiovascular/ });
+    const tile = page.locator("section[aria-labelledby=systems-h]").getByRole("link", { name: /Cardiovascular/ });
     await tile.click();
     await expect(page).toHaveURL(/system=step2ck\.sys\.cardiovascular/);
     await expect(page.getByRole("heading", { level: 2, name: /Cardiovascular/ })).toBeVisible();
     const rows = list.getByRole("listitem");
     expect(await rows.count()).toBeGreaterThan(0);
-    expect(await rows.count()).toBeLessThan(5);
+    expect(await rows.count()).toBeLessThan(75); // fewer than every Step 2 CK chapter
     await expectNoAxeViolations(page);
     await snap(page, info, consoleErrors, "courses-filtered");
 
-    await rows.first().getByRole("link").click();
-    await expect(page).toHaveURL(/\/learn\/ch\d+\/ch\d+-s\d+$/);
+    const chapter = rows.first().getByRole("link");
+    const href = await chapter.getAttribute("href");
+    expect(href).toMatch(/^\/learn\/[\w-]+$/);
+    await chapter.click();
+    await expect(page).toHaveURL(new RegExp(`${href}/[\\w-]+$`)); // the chapter opens at its first section
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   });
 
