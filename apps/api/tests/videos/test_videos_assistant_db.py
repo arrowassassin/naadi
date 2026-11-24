@@ -114,6 +114,16 @@ async def test_stem_matches_plural_and_singular() -> None:
         "gas",
         "murmur",
     ]
+    # "es" only after s, x, z, ch, sh: "genes" must not become "gen" (antigen, general)
+    assert [stem(w) for w in ("genes", "viruses", "boxes", "branches", "antigen", "notes", "types")] == [
+        "gene",
+        "virus",
+        "box",
+        "branch",
+        "antigen",
+        "note",
+        "type",
+    ]
 
 
 async def test_suggest_video_natural_queries(vw: VW, db: Database, pg: Any) -> None:  # noqa: F811

@@ -154,7 +154,7 @@ async def list_videos(
         f" and (%(channel)s::text is null or {CH} = %(channel)s)"
         + (" and w.media_id is null" if unwatched else "")
         + (" and c.core" if core else "")
-        + " order by rank, c.sort, c.media_id limit %(limit)s offset %(offset)s"
+        + " order by rank, c.step, c.subject, c.sort, c.media_id limit %(limit)s offset %(offset)s"
     )
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> list[dict[str, Any]]:

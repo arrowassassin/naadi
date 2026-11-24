@@ -752,6 +752,7 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "videos.file_loads",
         "videos.file_loads_with_length",
         "videos.file_page",
+        "videos.file_unplayable",
         "videos.coverage_topic",
         "videos.coverage_chapter",
         "videos.coverage_gap",

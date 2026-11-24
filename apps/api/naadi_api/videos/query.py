@@ -51,11 +51,14 @@ def names_for(config_dir: Path) -> dict[str, str]:
 
 
 def stem(word: str) -> str:
-    """A plural and its singular match each other: "blockers" -> "blocker", "diseases" -> "diseas" (both are then
-    matched as substrings). shortcut: English plurals only, upgrade to FTS stemming if recall still falls short."""
+    """A plural and its singular match each other ("blockers" -> "blocker", "viruses" -> "virus", "genes" -> "gene");
+    both are then matched as substrings. "es" is dropped only after s, x, z, ch, sh. shortcut: English plurals only,
+    upgrade to FTS stemming if recall still falls short."""
     if len(word) <= 3 or not word.endswith("s") or word.endswith("ss"):
         return word
-    return word[:-2] if word.endswith("es") and len(word) > 4 else word[:-1]
+    if word.endswith(("ses", "xes", "zes", "ches", "shes")) and len(word) > 4:
+        return word[:-2]
+    return word[:-1]
 
 
 def query_words(q: str) -> list[str]:

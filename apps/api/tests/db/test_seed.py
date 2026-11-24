@@ -17,7 +17,7 @@ from psycopg.types.json import Jsonb
 
 from naadi_api.config_api.schemas import KEY_SPECS
 from naadi_api.seed.data import SeedBundle
-from naadi_api.seed.importer import FIGURE_FOLDER, LOCK_KEY, SeedFailed, SeedLocked, run_seed
+from naadi_api.seed.importer import FIGURE_FOLDER, LOCK_KEY, SeedFailed, SeedLocked, _file_title, run_seed
 from naadi_api.seed.report import SeedReport
 from naadi_api.seed.storage import list_folder
 from naadi_api.settings import get_settings
@@ -150,7 +150,9 @@ def test_commons_videos_keep_an_admin_edit_drop_removed_topics_and_force_restore
         assert _row(url, shape, file.id) == ("video_file", file.file_url, file.file_page, True)
         forced = run_seed(options(url, force=True, **only), bundle=b)
         assert forced.tables["video_media_assets"].updated == 1
-        assert _row(url, "select title from public.media_assets where id = %s", file.id) == (file.label,)
+        assert _row(url, "select title from public.media_assets where id = %s", file.id) == (
+            _file_title(file.file_url, file.label),
+        )
         assert run_seed(options(url, **only), bundle=b).changes == 0
     finally:
         with psycopg.connect(url, autocommit=True) as c:
@@ -574,3 +576,13 @@ def test_report_round_trips_as_json(first_run: tuple[SeedReport, SeedReport]) ->
 def test_unknown_group_is_refused(url: str, b: SeedBundle) -> None:
     with pytest.raises(ValueError, match="unknown groups"):
         run_seed(replace(options(url, dry_run=True), only=("everything",)), bundle=b)
+
+
+def test_commons_video_title_is_the_file_name_and_distinct() -> None:
+    assert _file_title("https://upload.wikimedia.org/wikipedia/commons/0/0f/Acute_cholecystitis_1.webm", "T") == (
+        "Acute cholecystitis 1"
+    )
+    assert _file_title(None, "Topic") == "Topic"
+    files = json.loads((DATA / "videos.json").read_text())["videos"]
+    titles = [_file_title(v["file_url"], v["label"]) for v in files if v["provider"] == "commons"]
+    assert len(set(titles)) == len(titles)

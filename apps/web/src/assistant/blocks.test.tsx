@@ -161,6 +161,7 @@ describe("answer blocks", () => {
   });
 
   it("video: a Commons file plays in the browser's player only when asked, with its credit and licence", async () => {
+    vi.spyOn(HTMLMediaElement.prototype, "canPlayType").mockReturnValue("maybe"); // jsdom decodes nothing
     const user = userEvent.setup();
     show(
       block({

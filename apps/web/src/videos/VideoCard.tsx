@@ -16,34 +16,25 @@ export function videoMeta(t: T, v: VideoOut): string {
   return v.duration_s ? `${channel} · ${formatClock(v.duration_s)}` : channel;
 }
 
-/** YouTube's own still (i.ytimg.com, allowed by img-src) or a neutral poster for an open-licence file. */
+/** A neutral poster for every card: nothing is requested from YouTube or the file host until the video is pressed. */
 export function Thumb({ v, small = false, className }: { v: VideoOut; small?: boolean; className?: string }) {
   const t = useUiText();
   return (
     <span
+      aria-hidden="true"
       className={cx(
         "relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-block-sm bg-surface-2",
         className,
       )}
     >
-      {v.provider === "youtube" && v.youtube_id ? (
-        <img
-          src={`https://i.ytimg.com/vi/${encodeURIComponent(v.youtube_id)}/hqdefault.jpg`}
-          alt=""
-          width={480}
-          height={360}
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 size-full object-cover"
-        />
-      ) : (
-        <span className="flex flex-col items-center gap-2 text-text-2">
-          <Play aria-hidden="true" size={small ? 20 : 28} />
-          {small ? null : (
-            <span className="font-mono text-label-sm uppercase tracking-[0.1em]">{t("videos.channel_commons")}</span>
-          )}
-        </span>
-      )}
+      <span className="flex flex-col items-center gap-2 text-text-2">
+        <Play size={small ? 20 : 28} />
+        {small ? null : (
+          <span className="font-mono text-label-sm uppercase tracking-[0.1em]">
+            {t(v.provider === "commons" ? "videos.channel_commons" : "video.source")}
+          </span>
+        )}
+      </span>
     </span>
   );
 }

@@ -29,3 +29,6 @@ channels:
   - {handle: "@LecturioMedical", channel_id: UCbYmF43dpGHz8gi2ugiXr0Q, name: Lecturio Medical, style: lecture, steps: [step1, step2ck], subjects: [all]}
   - {handle: "@CatalystUniversity", channel_id: UCIzOHtZa0iOH49ez1O5mReQ, name: Catalyst University, style: whiteboard, steps: [step1], subjects: [Biochemistry, Physiology]}
   - {handle: "@HandwrittenTutorials", channel_id: null, name: Handwritten Tutorials, style: whiteboard, steps: [step1], subjects: [Anatomy, Physiology, Pathology]}
+  - {handle: null, channel_id: UC8C8OTpu7d22QX9VNT781YA, name: Board_Ready_Psych, style: lecture, steps: [step1], subjects: [Behavioral Science]}
+  - {handle: null, channel_id: UCZyjLL6FABIvGW4Ik1Z9UPw, name: Rittenhouse Psychiatric Associates, style: lecture, steps: [step2ck], subjects: [Psychiatry]}
+  - {handle: null, channel_id: UCAFloV5cA8Pcrq454yVHqjA, name: Dr. Paulien Moyaert, style: lecture, steps: [step2ck], subjects: [Obstetrics & Gynecology]}

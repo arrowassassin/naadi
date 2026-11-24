@@ -216,11 +216,8 @@ describe("Videos screen", () => {
     expect(await screen.findByRole("heading", { name: "Physiology · Step 1" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Internal Medicine · Step 2 CK" })).toBeVisible();
     expect(screen.getByText("15 of 405 marked watched")).toBeVisible();
-    const img = document.querySelector<HTMLImageElement>(`[data-video="${LOOPS.media_id}"] img`);
-    expect(img?.src).toBe("https://i.ytimg.com/vi/-0CXs9L9O0A/hqdefault.jpg");
-    expect(img?.getAttribute("loading")).toBe("lazy");
-    // the Commons card has a neutral poster, never a remote image
-    expect(document.querySelector(`[data-video="${CHOLE.media_id}"] img`)).toBeNull();
+    // every card has a neutral poster, never a remote image (nothing is asked of YouTube before a press)
+    expect(document.querySelector("[data-video] img")).toBeNull();
     expect(lastQuery()).toMatchObject({ step: "all", limit: 48, cursor: null, core: false, unwatched: false });
   });
 
@@ -473,7 +470,42 @@ describe("Videos screen", () => {
   });
 });
 
+const FILE_PROPS = {
+  mediaId: CHOLE.media_id,
+  src: CHOLE.file_url as string,
+  title: "Acute cholecystitis",
+  durationS: 437,
+  attribution: CHOLE.attribution,
+  licence: CHOLE.licence,
+  pageUrl: CHOLE.page_url,
+};
+
 describe("FileVideo", () => {
+  beforeEach(() => {
+    // jsdom decodes nothing: pretend this browser plays WebM unless a test says otherwise
+    vi.spyOn(HTMLMediaElement.prototype, "canPlayType").mockReturnValue("maybe");
+  });
+
+  it("explains and links to the file page when the browser cannot play WebM", () => {
+    vi.spyOn(HTMLMediaElement.prototype, "canPlayType").mockReturnValue("");
+    render(<FileVideo {...FILE_PROPS} />);
+    expect(screen.queryByRole("button", { name: /^Play video/ })).toBeNull();
+    expect(screen.getByRole("status")).toHaveTextContent("This browser cannot play this video file here.");
+    expect(screen.getAllByRole("link", { name: "File page on Wikimedia Commons" })[0]).toHaveAttribute(
+      "href",
+      CHOLE.page_url,
+    );
+  });
+
+  it("falls back the same way when the file fails to load", async () => {
+    vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue(undefined);
+    render(<FileVideo {...FILE_PROPS} />);
+    await userEvent.click(screen.getByRole("button", { name: /^Play video/ }));
+    fireEvent.error(document.querySelector("video") as HTMLVideoElement);
+    expect(document.querySelector("video")).toBeNull();
+    expect(screen.getByRole("status")).toHaveTextContent("This browser cannot play this video file here.");
+  });
+
   it("loads nothing until pressed, then plays the file natively and publishes its position", async () => {
     const play = vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue(undefined);
     render(

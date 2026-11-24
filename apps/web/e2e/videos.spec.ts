@@ -165,10 +165,10 @@ test.describe("Videos", () => {
           .toBeLessThan((page.viewportSize()?.height ?? 800) / 3);
       }
 
-      // the facade: nothing from YouTube's player hosts before the press (thumbnails are the stubbed ytimg)
+      // the facade: nothing from YouTube's player hosts before the press (no thumbnail either: ytimg is never asked)
       const play = pane(page).getByRole("button", { name: /^Play video:/ });
       await expect(play).toBeVisible();
-      expect(asked.filter((u) => !u.includes("ytimg.com"))).toEqual([]);
+      expect(asked).toEqual([]);
       await expectNoAxeViolations(page);
       await play.click();
       await expect(pane(page).locator("iframe")).toHaveAttribute("src", new RegExp(`^${PLAYER_ORIGIN}/index\\.html`));
@@ -221,7 +221,14 @@ test.describe("Videos", () => {
       await expect(file.getByRole("link", { name: "CC BY-SA 4.0" })).toBeVisible();
       await expectNoAxeViolations(page);
       await file.getByRole("button", { name: /^Play video:/ }).click();
-      await expect(file.locator("video")).toHaveAttribute("src", /^https:\/\/upload\.wikimedia\.org\//);
+      // the stubbed file is empty, so a browser that decodes it errors at once and the fallback replaces the player:
+      // either way the page link to the file on Commons is offered, and the file itself is the one asked for
+      await expect(file.locator('video[src^="https://upload.wikimedia.org/"], [role="status"]')).toBeVisible();
+      if (await file.getByRole("status").count()) {
+        await expect(
+          file.getByRole("status").getByRole("link", { name: "File page on Wikimedia Commons" }),
+        ).toBeVisible();
+      }
       expect(
         errors.filter((e) => !/wikimedia|media resource|Failed to load/i.test(e)),
         "console errors",

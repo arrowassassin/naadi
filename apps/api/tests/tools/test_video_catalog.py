@@ -390,3 +390,17 @@ def test_committed_data_has_no_blank_labels_or_dangling_attribution() -> None:
 def test_offline_requires_both_caches() -> None:
     with pytest.raises(SystemExit):
         T.main(["--offline"])
+
+
+def test_every_catalogue_channel_has_a_display_name() -> None:
+    import yaml
+
+    named = {
+        c["channel_id"] for c in yaml.safe_load((REPO_ROOT / "config" / "video_channels.yaml").read_text())["channels"]
+    }
+    used = {
+        v["channel_id"]
+        for v in json.loads((REPO_ROOT / "data" / "videos.json").read_text())["videos"]
+        if v["channel_id"]
+    }
+    assert used - named == set()

@@ -174,7 +174,8 @@ def test_search_rank_beats_catalogue_order(
 ) -> None:
     pg.execute("update public.video_catalog set sort = 10 - sort where media_id like %s", (f"yt-{vw.w.tag}-%",))
     assert ids(get(client, key, vw, q=vw.word), vw) == ["1", "2", "3"]
-    assert ids(get(client, key, vw), vw) == ["5", "4", "3", "2", "1"]
+    # no query: Step 1 first, then the catalogue order (video 5 is the Step 2 CK one)
+    assert ids(get(client, key, vw), vw) == ["4", "3", "2", "1", "5"]
 
 
 def test_topics_coverage_ignores_unapproved_videos(client: TestClient, key: SigningKey, vw: VW) -> None:

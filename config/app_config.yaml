@@ -2390,6 +2390,7 @@ ui_copy:
   videos.file_loads: "Loads the file from Wikimedia Commons"
   videos.file_loads_with_length: "{length} · Loads the file from Wikimedia Commons"
   videos.file_page: "File page on Wikimedia Commons"
+  videos.file_unplayable: "This browser cannot play this video file here. Open it on Wikimedia Commons instead."
   videos.coverage_topic: "Has videos"
   videos.coverage_chapter: "Chapter videos only"
   videos.coverage_gap: "No video yet"

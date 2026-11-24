@@ -34,7 +34,7 @@ from contextlib import contextmanager, nullcontext
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, LiteralString
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 import psycopg
 import yaml
@@ -367,6 +367,12 @@ SEED_PLACEMENT_GUARD: LiteralString = "t.origin = 'seed'"
 EPOCH = "1970-01-01T00:00:00Z"  # a YouTube row's metadata is unfetched until the 30-day refresh fills it
 
 
+def _file_title(url: str | None, fallback: str | None) -> str | None:
+    """ "…/Acute_cholecystitis_1.webm" -> "Acute cholecystitis 1"."""
+    name = unquote(urlparse(url or "").path.rsplit("/", 1)[-1])
+    return name.rsplit(".", 1)[0].replace("_", " ").strip() or fallback
+
+
 def _videos(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str, TableCounts]:
     """Video topics, the videos' `media_assets` rows and `video_catalog`. Topics and catalog rows the data no
     longer has are deleted (seed-owned); a refresh's title, duration, attribution and fetch time are kept."""
@@ -377,7 +383,8 @@ def _videos(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str
             "id": v.id,
             "kind": "video_youtube" if yt else "video_file",
             "source_id": "youtube" if yt else "wikimedia-commons",
-            "title": v.label or None,
+            # A Commons file's title is its file name (CC metadata), not the topic label: many files share a topic.
+            "title": (v.label or None) if yt else _file_title(v.file_url, v.label),
             "url": None if yt else v.file_url,
             "page_url": None if yt else v.file_page,
             "licence": v.licence_snapshot,

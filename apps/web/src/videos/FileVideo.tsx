@@ -18,6 +18,11 @@ export interface FileVideoProps {
   pageUrl: string | null;
 }
 
+/** Whether this browser can decode the file; only WebM (what Commons serves us) is checked, anything else is tried. */
+const canPlay = (u: string): boolean =>
+  !/\.webm$/i.test(u.split(/[?#]/)[0] ?? "") ||
+  document.createElement("video").canPlayType('video/webm; codecs="vp9, opus"') !== "";
+
 const https = (u: string | null | undefined): string | null => (u && /^https:\/\//.test(u) ? u : null);
 
 /**
@@ -27,6 +32,7 @@ const https = (u: string | null | undefined): string | null => (u && /^https:\/\
 export function FileVideo({ mediaId, src, title, durationS, attribution, licence, pageUrl }: FileVideoProps) {
   const t = useUiText();
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
   const ref = useRef<HTMLVideoElement>(null);
   const file = https(src);
 
@@ -39,6 +45,7 @@ export function FileVideo({ mediaId, src, title, durationS, attribution, licence
 
   const licenceUrl = https(licence?.license_url);
   const page = https(pageUrl);
+  const unplayable = failed || (file !== null && !canPlay(file));
   const length = durationS && durationS > 0 ? formatClock(durationS) : null;
 
   return (
@@ -48,6 +55,23 @@ export function FileVideo({ mediaId, src, title, durationS, attribution, licence
           <p className="absolute inset-0 m-0 flex items-center justify-center px-6 text-center text-text-2">
             {t("content.video_missing")}
           </p>
+        ) : unplayable ? (
+          <p
+            role="status"
+            className="absolute inset-0 m-0 flex flex-col items-center justify-center gap-2 px-6 text-center text-text-2"
+          >
+            {t("videos.file_unplayable")}
+            {page ? (
+              <a
+                className="text-text underline underline-offset-4"
+                href={page}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("videos.file_page")}
+              </a>
+            ) : null}
+          </p>
         ) : loaded ? (
           // biome-ignore lint/a11y/useMediaCaption: Commons files carry no separate caption track
           <video
@@ -56,6 +80,7 @@ export function FileVideo({ mediaId, src, title, durationS, attribution, licence
             preload="none"
             playsInline
             src={file}
+            onError={() => setFailed(true)}
             title={title}
             onTimeUpdate={(e) => publishVideoPosition(mediaId, e.currentTarget.currentTime)}
             className="absolute inset-0 size-full bg-ground"
