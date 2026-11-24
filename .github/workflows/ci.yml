@@ -223,16 +223,17 @@ jobs:
         run: uv --directory apps/api run pytest -m db -v
 
   e2e:
-    name: e2e (${{ matrix.browser }} ${{ matrix.shard }}/3)
+    name: e2e (${{ matrix.browser }} ${{ matrix.shard }}/4)
     runs-on: ubuntu-24.04
-    # Each browser's six viewport projects are split across three shards (Playwright --shard): each shard pays
-    # the ~6 min stack/seed/index setup once and runs a third of the tests, so no job nears the old 75 min.
+    # Each browser's six viewport projects are split across four shards (Playwright --shard): each shard pays the
+    # stack/seed/index setup once (7-12 min since the content packs: the search index embeds the whole library) and
+    # runs a quarter of the tests. Three shards ran 36 min of tests after that setup and hit the 50 min limit.
     timeout-minutes: 50
     strategy:
       fail-fast: false
       matrix:
         browser: [webkit, chromium, firefox]
-        shard: [1, 2, 3]
+        shard: [1, 2, 3, 4]
     services:
       postgres: # real Supabase Postgres: anon/authenticated/service_role roles + auth schema
         image: supabase/postgres:17.11.0.019
@@ -320,7 +321,7 @@ jobs:
           NAADI_STORAGE_SERVICE_KEY="$(uv --directory apps/api run --frozen python -c 'from tests.db.storage import local_service_key; print(local_service_key())')"
           export NAADI_STORAGE_SERVICE_KEY
           pnpm --filter @naadi/web build
-          pnpm --filter @naadi/web exec playwright test --project "${{ matrix.browser }}-*" --shard "${{ matrix.shard }}/3"
+          pnpm --filter @naadi/web exec playwright test --project "${{ matrix.browser }}-*" --shard "${{ matrix.shard }}/4"
       - name: Lighthouse + installability (iPad 820x1180, Slow 4G, 4x CPU; once, in chromium shard 1)
         if: matrix.browser == 'chromium' && matrix.shard == 1
         env:
