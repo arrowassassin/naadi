@@ -166,26 +166,41 @@ export function patchWatched(data: Cached, { video, watched }: WatchedChange): C
   return data;
 }
 
+/** Every cached value that holds watched state: lists, subject catalogues and the overview (topics hold none). */
+const WATCHED_QUERIES = {
+  queryKey: ["videos"],
+  predicate: (q: { queryKey: readonly unknown[] }) => q.queryKey[1] !== "topics",
+};
+const WATCHED_KEY = ["videos", "watched"];
+
 function applyEverywhere(qc: QueryClient, change: WatchedChange): void {
-  qc.setQueriesData<Cached>({ queryKey: ["videos"] }, (d) => patchWatched(d, change));
+  qc.setQueriesData<Cached>(WATCHED_QUERIES, (d) => patchWatched(d, change));
 }
 
 /**
- * Tick a video off (or back on) at once in every cached list, then tell the server. A failure puts the old state
- * back (the inverse change, so a second toggle of another video in flight is not undone with it).
+ * Tick a video off (or back on) at once in every cached list, then tell the server.
+ * - Requests run one at a time (one mutation scope), in tap order, so mark-then-unmark ends as the student left it.
+ * - Fetches in flight are cancelled first, so none lands on top of the change with the old state.
+ * - A failure applies the inverse change (not a snapshot: a snapshot would also undo a later toggle still queued).
+ * - Once the last queued toggle settles, every list is refetched: the server's state wins, and a "Not watched yet"
+ *   list drops what was just marked.
  */
 export function useToggleWatched() {
   const qc = useQueryClient();
   return useMutation({
+    mutationKey: WATCHED_KEY,
+    scope: { id: "videos-watched" },
     mutationFn: ({ video, watched }: WatchedChange) =>
       authed<unknown>((headers) =>
         (watched ? markVideoWatched : unmarkVideoWatched)({ headers, path: { media_id: video.media_id } }),
       ),
     onMutate: async (change) => {
-      await qc.cancelQueries({ queryKey: ["videos", "overview"] });
+      await qc.cancelQueries(WATCHED_QUERIES);
       applyEverywhere(qc, change);
     },
     onError: (_err, change) => applyEverywhere(qc, { ...change, watched: !change.watched }),
-    onSettled: () => qc.invalidateQueries({ queryKey: ["videos", "overview"] }),
+    // This mutation still counts as running here: 1 = no other toggle is queued behind it.
+    onSettled: () =>
+      qc.isMutating({ mutationKey: WATCHED_KEY }) <= 1 ? qc.invalidateQueries(WATCHED_QUERIES) : undefined,
   });
 }

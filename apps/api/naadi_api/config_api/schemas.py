@@ -707,6 +707,8 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "videos.search_placeholder",
         "videos.search_clear",
         "videos.filters_label",
+        "videos.filters",
+        "videos.filters_count",
         "videos.style_label",
         "videos.style.sketch",
         "videos.style.whiteboard",

@@ -155,15 +155,24 @@ function renderPage(qs = "") {
 
 const lastQuery = () => sdk.listVideos.mock.calls.at(-1)?.[0]?.query as Record<string, unknown>;
 
+/** What the fake server holds as watched: lists answer from it, mark/unmark change it. */
+let serverWatched = new Set<string>();
+const served = (vs: VideoOut[]) => vs.map((v) => ({ ...v, watched: v.watched || serverWatched.has(v.media_id) }));
+
 beforeEach(() => {
   for (const f of Object.values(sdk)) f.mockReset();
+  serverWatched = new Set();
   sdk.getVideosOverview.mockResolvedValue(OVERVIEW);
   sdk.listVideos.mockImplementation(async ({ query }: { query: Record<string, unknown> }) =>
-    query.limit === 200 ? page([LOOPS, LOOPS_2, STARLING]) : page([LOOPS, CHOLE], null, 2),
+    query.limit === 200 ? page(served([LOOPS, LOOPS_2, STARLING])) : page(served([LOOPS, CHOLE]), null, 2),
   );
   sdk.listVideoTopics.mockResolvedValue({ items: [] } satisfies VideoTopicsOut);
-  sdk.markVideoWatched.mockResolvedValue(undefined);
-  sdk.unmarkVideoWatched.mockResolvedValue(undefined);
+  sdk.markVideoWatched.mockImplementation(async ({ path }: { path: { media_id: string } }) => {
+    serverWatched.add(path.media_id);
+  });
+  sdk.unmarkVideoWatched.mockImplementation(async ({ path }: { path: { media_id: string } }) => {
+    serverWatched.delete(path.media_id);
+  });
   resetAssistantUiForTests();
 });
 
@@ -276,20 +285,66 @@ describe("Videos screen", () => {
     renderPage();
     const toggle = await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` });
     await userEvent.click(toggle);
-    const on = screen.getByRole("button", { name: `${LOOPS.title}: watched. Press to unmark` });
-    expect(on).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: `${LOOPS.title}: watched. Press to unmark` })).toBeVisible();
     expect(screen.getByText("16 of 405 marked watched")).toBeVisible();
     expect(sdk.markVideoWatched).toHaveBeenCalledWith(expect.objectContaining({ path: { media_id: LOOPS.media_id } }));
     await act(async () => refuse(new ApiError("down", 503, "unavailable", null)));
-    expect(await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` })).toHaveAttribute(
-      "aria-pressed",
-      "false",
-    );
+    expect(await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` })).toBeVisible();
     expect(screen.getByRole("alert")).toHaveTextContent("That change could not be saved");
+    await waitFor(() => expect(screen.getByText("15 of 405 marked watched")).toBeVisible());
+  });
+
+  it("serialises a rapid mark then unmark and ends in the server's state, refetching once both settle", async () => {
+    let releaseMark: () => void = () => undefined;
+    sdk.markVideoWatched.mockImplementationOnce(
+      ({ path }: { path: { media_id: string } }) =>
+        new Promise<void>((r) => {
+          releaseMark = () => {
+            serverWatched.add(path.media_id);
+            r();
+          };
+        }),
+    );
+    renderPage();
+    await userEvent.click(await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` }));
+    await userEvent.click(screen.getByRole("button", { name: `${LOOPS.title}: watched. Press to unmark` }));
+    // the second tap shows at once, but its request waits for the first
+    expect(screen.getByRole("button", { name: `Mark ${LOOPS.title} as watched` })).toBeVisible();
+    expect(sdk.unmarkVideoWatched).not.toHaveBeenCalled();
+    const listCalls = sdk.listVideos.mock.calls.length;
+    await act(async () => releaseMark());
+    await waitFor(() => expect(sdk.unmarkVideoWatched).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(sdk.listVideos.mock.calls.length).toBeGreaterThan(listCalls));
+    expect(serverWatched.has(LOOPS.media_id)).toBe(false);
+    expect(await screen.findByRole("button", { name: `Mark ${LOOPS.title} as watched` })).toBeVisible();
+  });
+
+  it("rolls a failed toggle back in the list and the pane, and says so inside the sheet", async () => {
+    sdk.markVideoWatched.mockRejectedValueOnce(new ApiError("down", 503, "unavailable", null));
+    renderPage(`?v=${LOOPS.media_id}`);
+    const dialog = await screen.findByRole("dialog", { name: LOOPS.title as string });
+    await within(dialog).findByRole("region", { name: "More on this topic" }); // the subject catalogue is cached
+    await userEvent.click(within(dialog).getByRole("button", { name: "Mark watched" }));
+    expect(await within(dialog).findByRole("alert")).toHaveTextContent("That change could not be saved");
+    expect(within(dialog).getByRole("button", { name: "Mark watched" })).toBeVisible();
+    expect(
+      document.querySelector(`[data-video="${LOOPS.media_id}"] button[aria-label="Mark ${LOOPS.title} as watched"]`),
+    ).not.toBeNull();
+    // one alert: none left behind the modal sheet
+    expect(screen.getAllByRole("alert", { hidden: true })).toHaveLength(1);
+  });
+
+  it("folds the filters behind one control that counts the active ones", async () => {
+    renderPage("?style=sketch&core=1");
+    const filters = await screen.findByRole("button", { name: "Filters · 2" });
+    expect(filters).toHaveAttribute("aria-expanded", "false");
+    await userEvent.click(filters);
+    expect(filters).toHaveAttribute("aria-expanded", "true");
+    expect(document.getElementById(filters.getAttribute("aria-controls") as string)).toHaveClass("flex");
   });
 
   it("unmarks a watched video", async () => {
-    sdk.listVideos.mockResolvedValue(page([{ ...LOOPS, watched: true }]));
+    serverWatched.add(LOOPS.media_id);
     renderPage();
     await userEvent.click(await screen.findByRole("button", { name: `${LOOPS.title}: watched. Press to unmark` }));
     expect(sdk.unmarkVideoWatched).toHaveBeenCalledWith(

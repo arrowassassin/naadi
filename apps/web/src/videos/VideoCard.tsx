@@ -62,7 +62,6 @@ export function WatchedToggle({
   return (
     <button
       type="button"
-      aria-pressed={v.watched}
       aria-label={t(v.watched ? "videos.watched_label" : "videos.mark_label", { title })}
       onClick={() => onToggle(v)}
       className={cx(

@@ -94,6 +94,21 @@ test.describe("signed in as a student", () => {
     await expect(page.getByRole("button", { name: "Ask Naadi" })).toHaveCount(0);
   });
 
+  test("every nav item is in view on iPad portrait and landscape (no hidden scroll in the pill)", async ({ page }) => {
+    for (const viewport of [
+      { width: 768, height: 1024 },
+      { width: 820, height: 1180 },
+      { width: 1180, height: 820 },
+    ]) {
+      await page.setViewportSize(viewport);
+      await page.goto("/");
+      const list = page.locator("nav[aria-label=Main] ul");
+      await expect(list.locator("li a").last()).toBeVisible();
+      const { scroll, client } = await list.evaluate((ul) => ({ scroll: ul.scrollWidth, client: ul.clientWidth }));
+      expect(scroll, `${viewport.width} px`).toBeLessThanOrEqual(client);
+    }
+  });
+
   test("loading shows skeletons", async ({ page, consoleErrors }, info) => {
     await dropUserCache(page);
     let release: () => void = () => {};

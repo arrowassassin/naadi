@@ -1,8 +1,16 @@
 import type { SubjectCounts, VideoOut, VideosOverview, VideoTopicOut } from "@naadi/shared";
 import { Button, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { useNavigate } from "@tanstack/react-router";
-import { ChevronDown, CircleCheck, CircleDashed, CircleDot, Search as SearchIcon, X } from "lucide-react";
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import {
+  ChevronDown,
+  CircleCheck,
+  CircleDashed,
+  CircleDot,
+  Search as SearchIcon,
+  SlidersHorizontal,
+  X,
+} from "lucide-react";
+import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useRegisterPageContext } from "../assistant/pageContext";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
@@ -230,6 +238,8 @@ export function VideosPage({ search }: { search: VideosSearch }) {
   const overview = useVideosOverview();
   const toggle = useToggleWatched();
   const [failed, setFailed] = useState(false);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const filtersId = useId();
   const [text, setText] = useState(search.q ?? "");
   const opener = useRef<HTMLElement | null>(null);
 
@@ -296,7 +306,9 @@ export function VideosPage({ search }: { search: VideosSearch }) {
   );
 
   const open = (v: VideoOut) => {
-    if (document.activeElement instanceof HTMLElement && !search.v) opener.current = document.activeElement;
+    // Focus goes back to the card last opened from the list (not to a related video tapped inside the pane).
+    const from = document.activeElement;
+    if (from instanceof HTMLElement && !from.closest("[data-pane], dialog")) opener.current = from;
     setPicked(v);
     set({ v: v.media_id, vs: { step: v.step, subject: v.subject } }, false);
   };
@@ -316,14 +328,16 @@ export function VideosPage({ search }: { search: VideosSearch }) {
   const subjects = subjectsFor(overview.data, search.step);
   const channels = overview.data?.channels ?? [];
   const filtered = Boolean(search.q || search.channel || search.style || search.core || search.unwatched);
+  const activeFilters = [search.channel, search.style, search.core, search.unwatched].filter(Boolean).length;
+  const paneOpen = shown !== null || missing;
 
   return (
-    <section aria-labelledby="videos-h" className="flex flex-col gap-6 pt-6 pb-10 tablet:pt-10">
-      <header className="flex flex-col gap-5">
+    <section aria-labelledby="videos-h" className="flex flex-col gap-5 pt-2 pb-10 tablet:gap-6 tablet:pt-10">
+      <header className="flex flex-col gap-4 tablet:gap-5">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <h1
             id="videos-h"
-            className="m-0 font-display font-extrabold text-[clamp(3rem,1.5rem+6vw,7rem)] leading-[0.9] tracking-[-0.05em]"
+            className="m-0 font-display font-extrabold text-[clamp(2.25rem,0.75rem+5.5vw,7rem)] leading-[0.9] tracking-[-0.05em]"
           >
             {t("videos.headline_first")}
             <br />
@@ -398,43 +412,59 @@ export function VideosPage({ search }: { search: VideosSearch }) {
         />
       ) : (
         <>
-          <search>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                set({ q: text.trim() || undefined });
-              }}
-              className="flex items-center gap-3 rounded-pill border border-line-control bg-surface-1 px-4"
+          <div className="flex items-center gap-2">
+            <search className="min-w-0 flex-1">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  set({ q: text.trim() || undefined });
+                }}
+                className="flex items-center gap-3 rounded-pill border border-line-control bg-surface-1 px-4"
+              >
+                <SearchIcon aria-hidden="true" size={20} className="shrink-0 text-text-2" />
+                <input
+                  type="search"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  aria-label={t("videos.search_label")}
+                  placeholder={t("videos.search_placeholder")}
+                  maxLength={100}
+                  autoComplete="off"
+                  enterKeyHint="search"
+                  className="min-h-12 min-w-0 flex-1 appearance-none border-0 bg-transparent text-text outline-none placeholder:text-text-3 [&::-webkit-search-cancel-button]:hidden"
+                />
+                {text ? (
+                  <button
+                    type="button"
+                    aria-label={t("videos.search_clear")}
+                    onClick={() => {
+                      setText("");
+                      set({ q: undefined });
+                    }}
+                    className="-mr-2 flex size-11 shrink-0 items-center justify-center rounded-full text-text hover:bg-surface-2"
+                  >
+                    <X aria-hidden="true" size={18} />
+                  </button>
+                ) : null}
+              </form>
+            </search>
+            {/* Phone: the filters fold behind one control so the first video shows on the first screen. */}
+            <button
+              type="button"
+              aria-expanded={filtersOpen}
+              aria-controls={filtersId}
+              onClick={() => setFiltersOpen((o) => !o)}
+              className={cx(chipClass(filtersOpen || activeFilters > 0), "gap-1.5 tablet:hidden")}
             >
-              <SearchIcon aria-hidden="true" size={20} className="shrink-0 text-text-2" />
-              <input
-                type="search"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                aria-label={t("videos.search_label")}
-                placeholder={t("videos.search_placeholder")}
-                maxLength={100}
-                autoComplete="off"
-                enterKeyHint="search"
-                className="min-h-12 min-w-0 flex-1 appearance-none border-0 bg-transparent text-text outline-none placeholder:text-text-3 [&::-webkit-search-cancel-button]:hidden"
-              />
-              {text ? (
-                <button
-                  type="button"
-                  aria-label={t("videos.search_clear")}
-                  onClick={() => {
-                    setText("");
-                    set({ q: undefined });
-                  }}
-                  className="-mr-2 flex size-11 shrink-0 items-center justify-center rounded-full text-text hover:bg-surface-2"
-                >
-                  <X aria-hidden="true" size={18} />
-                </button>
-              ) : null}
-            </form>
-          </search>
+              <SlidersHorizontal aria-hidden="true" size={16} />
+              {activeFilters ? t("videos.filters_count", { n: String(activeFilters) }) : t("videos.filters")}
+            </button>
+          </div>
 
-          <fieldset className="m-0 flex flex-wrap items-center gap-2 border-0 p-0">
+          <fieldset
+            id={filtersId}
+            className={cx("m-0 flex-wrap items-center gap-2 border-0 p-0 tablet:flex", filtersOpen ? "flex" : "hidden")}
+          >
             <legend className="sr-only">{t("videos.filters_label")}</legend>
             {STYLES.map((s) => (
               <Toggle
@@ -478,7 +508,7 @@ export function VideosPage({ search }: { search: VideosSearch }) {
             ) : null}
           </fieldset>
 
-          {failed ? (
+          {failed && !paneOpen ? (
             <p role="alert" className="m-0 text-amber text-ui">
               {t("videos.toggle_failed")}
             </p>
@@ -557,6 +587,7 @@ export function VideosPage({ search }: { search: VideosSearch }) {
                 missing={missing}
                 layout="side"
                 related={related}
+                failed={failed}
                 onClose={close}
                 onToggle={onToggle}
                 onOpen={open}
@@ -569,6 +600,7 @@ export function VideosPage({ search }: { search: VideosSearch }) {
               missing={missing}
               layout="sheet"
               related={related}
+              failed={failed}
               onClose={close}
               onToggle={onToggle}
               onOpen={open}

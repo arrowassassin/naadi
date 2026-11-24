@@ -107,11 +107,14 @@ function RelatedList({ label, items, onOpen }: { label: string; items: VideoOut[
 function PaneBody({
   v,
   related,
+  failed,
   onToggle,
   onOpen,
 }: {
   v: VideoOut;
   related: { topic: VideoOut[]; chapter: VideoOut[] } | null;
+  /** The last watched toggle failed: said here, since the page behind a modal sheet is out of reach. */
+  failed: boolean;
   onToggle: (v: VideoOut) => void;
   onOpen: (v: VideoOut) => void;
 }) {
@@ -121,6 +124,30 @@ function PaneBody({
   return (
     <div className="flex flex-col gap-5">
       <Player key={v.media_id} v={v} />
+      <div className="flex flex-wrap gap-3">
+        {/* The one lime action of the pane: tick it off. Once ticked, undoing it is an ordinary button. */}
+        <Button
+          variant={v.watched ? "secondary" : "primary"}
+          icon={v.watched ? <Check size={16} /> : undefined}
+          onClick={() => onToggle(v)}
+        >
+          {t(v.watched ? "videos.pane_watched" : "videos.pane_mark")}
+        </Button>
+        {canAsk ? (
+          <Button
+            variant="assistant"
+            icon={<Sparkles size={16} />}
+            onClick={() => askAboutVideo(t("videos.ask_draft", { title }))}
+          >
+            {t("videos.ask")}
+          </Button>
+        ) : null}
+      </div>
+      {failed ? (
+        <p role="alert" className="m-0 text-amber text-ui">
+          {t("videos.toggle_failed")}
+        </p>
+      ) : null}
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-text-2 text-ui-sm">{videoMeta(t, v)}</span>
         <Chip tone="meta" srPrefix={t("videos.style_label")}>
@@ -147,26 +174,6 @@ function PaneBody({
           </ul>
         </section>
       ) : null}
-      <div className="flex flex-wrap gap-3">
-        {/* The one lime action of the pane: tick it off. Once ticked, undoing it is an ordinary button. */}
-        <Button
-          variant={v.watched ? "secondary" : "primary"}
-          aria-pressed={v.watched}
-          icon={v.watched ? <Check size={16} /> : undefined}
-          onClick={() => onToggle(v)}
-        >
-          {t(v.watched ? "videos.pane_watched" : "videos.pane_mark")}
-        </Button>
-        {canAsk ? (
-          <Button
-            variant="assistant"
-            icon={<Sparkles size={16} />}
-            onClick={() => askAboutVideo(t("videos.ask_draft", { title }))}
-          >
-            {t("videos.ask")}
-          </Button>
-        ) : null}
-      </div>
       {related === null ? (
         <Skeleton className="h-24 w-full rounded-block" />
       ) : related.topic.length || related.chapter.length ? (
@@ -185,13 +192,14 @@ export interface PaneProps {
   missing: boolean;
   layout: "side" | "sheet";
   related: { topic: VideoOut[]; chapter: VideoOut[] } | null;
+  failed: boolean;
   onClose: () => void;
   onToggle: (v: VideoOut) => void;
   onOpen: (v: VideoOut) => void;
 }
 
 /** The player: a side pane beside the list (laptop, iPad landscape) or a sheet over it (portrait, phone). */
-export function VideoPlayerPane({ video, missing, layout, related, onClose, onToggle, onOpen }: PaneProps) {
+export function VideoPlayerPane({ video, missing, layout, related, failed, onClose, onToggle, onOpen }: PaneProps) {
   const t = useUiText();
   const closeRef = useRef<HTMLButtonElement>(null);
   const paneRef = useRef<HTMLElement>(null);
@@ -207,7 +215,7 @@ export function VideoPlayerPane({ video, missing, layout, related, onClose, onTo
   const open = video !== null || missing;
   const heading = video ? videoTitle(t, video) : t("videos.missing_title");
   const body = video ? (
-    <PaneBody v={video} related={related} onToggle={onToggle} onOpen={onOpen} />
+    <PaneBody v={video} related={related} failed={failed} onToggle={onToggle} onOpen={onOpen} />
   ) : (
     <p className="m-0 text-text-2">{t("videos.missing_body")}</p>
   );
