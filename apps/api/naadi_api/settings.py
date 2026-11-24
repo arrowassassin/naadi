@@ -117,6 +117,9 @@ class Settings(BaseSettings):
     # Seed `sources`, `videos` and `app_config` (no force, so admin edits are kept) in the background when the API
     # starts, recorded as a seed run. On in the Space image (deploy/space/Dockerfile); off for local dev and tests.
     seed_on_start: bool = Field(default=False, validation_alias="NAADI_SEED_ON_START")
+    # Seconds the startup seed waits (inside its background task) so Aegra, crons and the reindex take their
+    # pooler sessions first; the Supabase session pooler allows 15 clients in all.
+    seed_on_start_delay_s: float = Field(default=45.0, ge=0, validation_alias="NAADI_SEED_ON_START_DELAY_S")
 
     # ── Web Push (S16): owner-provided VAPID pair; reminders stay off until all three are set ──
     vapid_public_key: str | None = None
