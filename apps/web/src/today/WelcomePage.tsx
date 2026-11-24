@@ -57,6 +57,13 @@ function daysBetween(from: string, to: string): number {
   return Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / 86_400_000);
 }
 
+/** Today's date (YYYY-MM-DD) in an IANA time zone. */
+function todayIn(timeZone: string): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(
+    new Date(),
+  );
+}
+
 /** The device's IANA time zone, sent with the first onboarding so "today" and the plan's dates are the student's. */
 function deviceTimeZone(): string | undefined {
   try {
@@ -130,11 +137,14 @@ function Form({ state }: { state: OnboardingState }) {
   const [stage, setStage] = useState<"idle" | "saving" | "diagnostic">("idle");
   const save = useSaveOnboarding();
   const diag = useCreateDiagnostic();
-  const minDate = addDays(state.today, 1);
-  const maxDate = addDays(state.today, state.max_days);
-  const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(date) && date >= minDate;
   // Only a first onboarding takes the device's zone; later edits keep the one saved in Settings.
   const [timezone] = useState(() => (state.completed_at === null ? deviceTimeZone() : undefined));
+  // "Today" in the zone the plan will start in (the preview and the saved plan use the device's zone on a first
+  // onboarding): the profile's zone can already be on another date.
+  const today = timezone ? todayIn(timezone) : state.today;
+  const minDate = addDays(today, 1);
+  const maxDate = addDays(today, state.max_days);
+  const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(date) && date >= minDate;
 
   // Debounced, so dragging the hours slider asks the server once it settles.
   const [input, setInput] = useState<{
@@ -159,7 +169,7 @@ function Form({ state }: { state: OnboardingState }) {
     t,
     input ? preview.data : undefined,
     dateOk && days.length > 0,
-    dateOk ? daysBetween(state.today, date) : 0,
+    dateOk ? daysBetween(today, date) : 0,
   );
   const ready = dateOk && days.length > 0 && preview.data?.ok === true && !preview.isPlaceholderData;
   const done = {
@@ -365,7 +375,7 @@ function Form({ state }: { state: OnboardingState }) {
           <p className="m-0 font-medium text-[1rem]">
             {state.diagnostic.available
               ? t("onboarding.next_diagnostic", { n: String(state.diagnostic.questions) })
-              : t("onboarding.next_plan", { date: formatDate(state.today) })}
+              : t("onboarding.next_plan", { date: formatDate(today) })}
           </p>
           <div className="flex flex-col gap-3">
             <button
