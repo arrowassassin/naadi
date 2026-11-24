@@ -109,6 +109,31 @@ test.describe("signed in as a student", () => {
     }
   });
 
+  test("every nav item stays in view with the assistant panel open on iPad landscape and laptop", async ({ page }) => {
+    for (const viewport of [
+      { width: 1180, height: 820 },
+      { width: 1440, height: 900 },
+    ]) {
+      await page.setViewportSize(viewport);
+      await page.goto("/");
+      const field = page.getByRole("textbox", { name: "Ask Naadi" }).filter({ visible: true }).first();
+      await field.fill("hello");
+      await field.press("Enter");
+      await expect(page.locator("html[data-assistant-panel]")).toBeAttached({ timeout: 30_000 });
+      const list = page.locator("nav[aria-label=Main] ul");
+      await expect(list.locator("li a").last()).toBeVisible();
+      const { scroll, client } = await list.evaluate((ul) => ({ scroll: ul.scrollWidth, client: ul.clientWidth }));
+      expect(scroll, `${viewport.width} px, panel open`).toBeLessThanOrEqual(client);
+      // the pill is wholly inside the page area left of the panel
+      const gap = await page.evaluate(() => {
+        const nav = document.querySelector("nav[aria-label=Main]")?.getBoundingClientRect();
+        const panel = document.querySelector('[data-assistant="panel"]')?.getBoundingClientRect();
+        return panel && nav ? panel.left - nav.right : 1;
+      });
+      expect(gap, "pill clear of the panel").toBeGreaterThanOrEqual(0);
+    }
+  });
+
   test("loading shows skeletons", async ({ page, consoleErrors }, info) => {
     await dropUserCache(page);
     let release: () => void = () => {};

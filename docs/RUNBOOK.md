@@ -114,6 +114,10 @@ the verification **updates the owner's "last sign-in" time** in Supabase Auth. N
   assembles the build context from tracked files (`scripts/deploy_space.py`: no `.env*`, every secret value scanned
   for), uploads it to the Space, waits for RUNNING and smoke-tests `/api/health` (database ok) and `/`. A newer push
   never cancels a deploy in progress.
+- **After the Videos branch deploys:** re-seed the real project (see "Real project" above, `only: ["sources", "videos", "app_config"]`
+  is enough). Stored `app_config` strings win over the shipped yaml, so the new copy ("Mark watched: {title}" and
+  "Watched: {title}. Press to unmark", the accessible names of the watched buttons) only goes live once `app_config`
+  is re-seeded (a key an admin edited keeps its stored value). Then run `tools/youtube_mapper.py --refresh-only` once.
 - **Watch:** Space → Logs. A failed migration prints one `migrate_all.failed` line and the container exits, so the
   old revision keeps serving until the new one is healthy.
 - **Rollback (code):** revert the bad commit on `main` (`git revert <sha>`) and push; CI and the deploy run as usual

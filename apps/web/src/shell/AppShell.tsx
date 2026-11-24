@@ -112,10 +112,10 @@ function PillItem({ item, current }: { item: NavItem; current: boolean }) {
         className={cx(
           "flex min-h-11 items-center gap-2 rounded-pill text-[0.875rem] whitespace-nowrap no-underline",
           "transition-colors duration-(--duration-control) ease-out",
-          // Compact below the laptop breakpoint so every item fits the pill on iPad portrait (768-1100 px).
+          // Compact when the header is narrow (a container query: iPad portrait, or landscape with the assistant dock open).
           current
-            ? "bg-paper px-3 font-semibold text-ground hover:text-ground laptop:px-[18px]"
-            : "px-2.5 text-text-2 hover:bg-surface-2 hover:text-text laptop:px-4",
+            ? "bg-paper px-3 font-semibold text-ground hover:text-ground @min-[58rem]:px-[18px]"
+            : "px-2.5 text-text-2 hover:bg-surface-2 hover:text-text @min-[58rem]:px-4",
         )}
       >
         {item.label}
@@ -344,7 +344,7 @@ export function AppShell() {
         ref={topRef}
         // Its own compositing layer: without it WebKit repaints the whole page on every scroll frame under the
         // sticky bar (25-30% lower fps on iPad), on every page that has the shell.
-        className="sticky top-0 z-20 hidden px-4 pt-[max(16px,env(safe-area-inset-top))] pb-2 will-change-transform tablet:block"
+        className="@container sticky top-0 z-20 hidden px-4 pt-[max(16px,env(safe-area-inset-top))] pb-2 will-change-transform tablet:block"
       >
         <nav
           aria-label={t("shell.nav_main")}
@@ -354,11 +354,11 @@ export function AppShell() {
           <Link
             to="/"
             aria-label={t("shell.home_label")}
-            className="flex min-h-11 shrink-0 items-center gap-2 rounded-pill pr-2.5 pl-2.5 font-bold laptop:pr-3.5 font-display text-[1.1875rem] text-text no-underline hover:text-text"
+            className="flex min-h-11 shrink-0 items-center gap-2 rounded-pill pr-2.5 pl-2.5 font-bold @min-[58rem]:pr-3.5 font-display text-[1.1875rem] text-text no-underline hover:text-text"
           >
             <LogoMark />
             {/* The wordmark gives way to the items on iPad portrait; the link keeps its label. */}
-            <span aria-hidden="true" className="hidden laptop:inline">
+            <span aria-hidden="true" className="hidden @min-[58rem]:inline">
               Naadi
             </span>
           </Link>
