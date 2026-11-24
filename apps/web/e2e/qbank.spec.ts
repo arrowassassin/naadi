@@ -13,13 +13,14 @@ import {
 
 /**
  * Segment 08: the Builder and the tutor-mode question view against the real API, the database seeded by
- * segment 05 (Step 1: 380 questions) and the real auth server. Every project signs in as its own throwaway
+ * segment 05 plus the S23 content packs (Step 1: 1,835 published questions) and the real auth server. Every project signs in as its own throwaway
  * student (deleted afterwards), because blocks and attempts are the thing under test.
  */
 test.skip(!canMintUsers(), "signed-in tests need the service role (run pnpm e2e:live-auth against the Space)");
 
-// 380 seeded Step 1 questions, 80 of them mock-exam items (exam-only: never in a tutor pool)
-const STEP1_QUESTIONS = 300;
+// 1,835 published Step 1 questions (380 from segment 05, 1,455 from the S23 content packs), 80 of them mock-exam
+// items (exam-only: never in a tutor pool). In review pack items are not published, so never in a pool either.
+const STEP1_QUESTIONS = 1755;
 
 const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string, full = false) =>
   guard.duringTool(async () => {

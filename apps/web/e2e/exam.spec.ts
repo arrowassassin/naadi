@@ -487,7 +487,8 @@ test.describe("an exam in progress", () => {
       await page.keyboard.press("ControlOrMeta+k");
       await page.waitForTimeout(400);
       expect(new URL(page.url()).pathname).toBe("/learn");
-      await expect(page.getByRole("link", { name: "Search" })).toHaveCount(0);
+      // the nav's Search link ("Search" on the phone tab bar, "Search everything" beside it); not a chapter such as "Research ethics"
+      await expect(page.getByRole("link", { name: /^Search( everything)?$/ })).toHaveCount(0);
       await snap(page, info, guard, "exam-active-banner");
 
       for (const path of ["/search", "/practice"]) {
