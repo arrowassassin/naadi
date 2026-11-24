@@ -302,6 +302,7 @@ test.describe("authoring flow", () => {
     const chapterTitle = `E2E admin chapter ${stamp}`;
     const sectionHeading = `E2E section ${stamp}`;
     let chapterId = "";
+    let questionId = "";
     // feature_flags as found, put back in `finally` whatever happens in between.
     let flagsOriginal: { value: unknown; admin_edited_at: string | null } | null = null;
 
@@ -454,7 +455,7 @@ test.describe("authoring flow", () => {
       await form.getByLabel(c("admin.field.source")).selectOption((original as Src).id);
       await form.getByRole("button", { name: c("admin.questions.create") }).click();
       await admin.waitForURL(/\/admin\/questions\/(?!new)[^/]+$/);
-      const questionId = decodeURIComponent(new URL(admin.url()).pathname.split("/").pop() ?? "");
+      questionId = decodeURIComponent(new URL(admin.url()).pathname.split("/").pop() ?? "");
       // The preview hides the key until "Reveal answer".
       const preview = admin.locator("[data-question-preview]");
       await expect(preview.getByText(c("admin.questions.correct_answer"))).toHaveCount(0);
@@ -636,7 +637,23 @@ test.describe("authoring flow", () => {
         .toBe(JSON.stringify(flagsBefore.value));
       expect(errors, "console errors").toEqual([]);
     } finally {
-      // Leave nothing a student would see: retire the chapter, and put feature_flags back as they were found.
+      // Leave nothing a student would see: retire the question and the chapter, and put feature_flags back as they
+      // were found (a published test question would stay in every later student's Step 1 pool).
+      if (questionId) {
+        const url = `/api/admin/questions/${encodeURIComponent(questionId)}`;
+        const q = await admin.request
+          .get(url, { headers: { authorization: auth } })
+          .then((r) => r.json() as Promise<{ status: string; version: string }>)
+          .catch(() => null);
+        if (q?.status === "published") {
+          await admin.request
+            .post(`${url}/status`, {
+              headers: { authorization: auth },
+              data: { status: "retired", expected_version: q.version, note: "e2e cleanup" },
+            })
+            .catch(() => undefined);
+        }
+      }
       if (chapterId) {
         await admin.request
           .post(`/api/admin/chapters/${encodeURIComponent(chapterId)}/status`, {
