@@ -211,6 +211,10 @@ test.describe("Library", () => {
       await page.waitForTimeout(500);
       await expect(page2.locator("canvas[data-pdf-canvas=rendered]")).toBeAttached();
       await page.getByRole("button", { name: "Write" }).click();
+      // On laptop and desktop Write sits in the header above the pages: reaching it scrolls page 2 away (its ink
+      // surface unmounts out of view), so go back to it.
+      await page.getByRole("button", { name: "Go to page 2" }).click();
+      await expect(page2.locator("[data-ink-surface]")).toBeAttached({ timeout: 30_000 });
       await penStroke(page, "2", 0.2, 0.7, 0.3);
       await penStroke(page, "2", 0.25, 0.65, 0.4);
       await expect(page2.locator("[data-ink-save=saved]")).toBeAttached({ timeout: 20_000 });
