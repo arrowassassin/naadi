@@ -134,16 +134,26 @@ def _execute(settings: Settings, req: SeedRequest) -> tuple[str, dict[str, Any] 
         return "failed", None, scrub("invalid seed bundle: " + "; ".join(exc.problems), secrets, max_len=2000)
     except SeedLocked as exc:
         return "failed", None, str(exc)
+    except psycopg.OperationalError:
+        raise  # connection capacity or a dropped link: the caller decides (the boot seed retries)
     except Exception as exc:  # recorded on the run; the job must always finish its row
         log.exception("seed_job_crashed", error=type(exc).__name__)
         return "failed", None, scrub(f"{type(exc).__name__}: {exc}", secrets, max_len=2000)
     return "succeeded", report.model_dump(mode="json"), None
 
 
-async def _run(app: Any, run_id: uuid.UUID, req: SeedRequest) -> str:
+async def _run(app: Any, run_id: uuid.UUID, req: SeedRequest, *, final: bool = True) -> str:
+    """Run the import and finish the row. With `final=False` a connection error propagates (row left `running`)
+    so the caller can run it again on the same row; otherwise it is recorded as a failure."""
     settings: Settings = app.state.settings
     db: Database = app.state.db
-    status, report, error = await asyncio.to_thread(_execute, settings, req)
+    try:
+        status, report, error = await asyncio.to_thread(_execute, settings, req)
+    except psycopg.OperationalError as exc:
+        if not final:
+            raise
+        status, report = "failed", None
+        error = scrub(f"{type(exc).__name__}: {exc}", settings.secret_values(), max_len=2000)
     async with await _conn(db) as conn:
         await conn.execute(
             "update public.seed_runs set status = %s, finished_at = now(), report = %s::jsonb, error = %s"
@@ -211,7 +221,7 @@ async def _insert_run(db: Database, started_by: uuid.UUID | None, req: SeedReque
     return _run_model(row)
 
 
-def _spawn(app: Any, run_id: uuid.UUID, coro: Coroutine[Any, Any, Any]) -> None:
+def _spawn(app: Any, run_id: uuid.UUID | str, coro: Coroutine[Any, Any, Any]) -> None:
     tasks = _tasks(app)
     task = asyncio.create_task(coro, name=f"seed-{run_id}")
     tasks.add(task)
@@ -223,29 +233,45 @@ def _spawn(app: Any, run_id: uuid.UUID, coro: Coroutine[Any, Any, Any]) -> None:
 BOOT_SEED = SeedRequest(dry_run=False, only=["sources", "videos", "app_config"], force=False)
 
 
+# Waits before attempts 2..5 when the pooler is full or the link drops (the first attempt follows the settle delay).
+BOOT_RETRY_BACKOFF_S = (30.0, 60.0, 120.0, 240.0)
+_sleep = asyncio.sleep  # a seam: tests patch it so nothing really waits
+
+
 async def start_boot_seed(app: Any) -> None:
-    """Startup hook: record and start the deploy seed in the background. Never raises: a failure is one log line
-    and the API serves anyway (the admin seed endpoint remains for a retry, a force or a dry run)."""
-    settings: Settings = app.state.settings
-    if not settings.seed_on_start:
-        return
-    try:
-        run = await _insert_run(app.state.db, None, BOOT_SEED)
-    except psycopg.errors.UniqueViolation:
-        log.info("boot_seed_skipped", reason="another seed run is running")
-        return
-    except Exception as exc:  # noqa: BLE001 - startup must never fail on the seed
-        log.warning("boot_seed_failed", error=type(exc).__name__, detail=scrub(str(exc), settings.secret_values()))
-        return
-    _spawn(app, run.id, _boot(app, run.id))
-    log.info("seed_job_started", run_id=str(run.id), dry_run=False, groups=BOOT_SEED.only, trigger="startup")
+    """Startup hook: schedule the deploy seed in the background and return at once. Never raises: a failure is
+    log lines and the API serves anyway (the admin seed endpoint remains for a retry, a force or a dry run)."""
+    if app.state.settings.seed_on_start:
+        _spawn(app, "boot", _boot(app))
 
 
-async def _boot(app: Any, run_id: uuid.UUID) -> None:
+async def _boot(app: Any) -> None:
+    """Settle, then seed. A full pooler (EMAXCONNSESSION) or a dropped connection is retried with backoff on the
+    same `seed_runs` row, which stays `running` between attempts (one row, so the one-running invariant holds).
+    Real seed errors (bad bundle, failed verification) are recorded by `_run` and not retried."""
     settings: Settings = app.state.settings
+    attempts = len(BOOT_RETRY_BACKOFF_S) + 1
+    run_id: uuid.UUID | None = None
     try:
-        if await _run(app, run_id, BOOT_SEED) == "succeeded":
-            await _refresh_youtube(app)
+        await _sleep(settings.seed_on_start_delay_s)  # Aegra, crons and the reindex hold the pooler's sessions at boot
+        for attempt in range(1, attempts + 1):
+            try:
+                if run_id is None:
+                    run_id = (await _insert_run(app.state.db, None, BOOT_SEED)).id
+                    log.info("seed_job_started", run_id=str(run_id), groups=BOOT_SEED.only, trigger="startup")
+                status = await _run(app, run_id, BOOT_SEED, final=attempt == attempts)
+            except psycopg.errors.UniqueViolation:
+                log.info("boot_seed_skipped", reason="another seed run is running")
+                return
+            except psycopg.OperationalError as exc:
+                if attempt == attempts:
+                    raise
+                log.warning("boot_seed_retry", attempt=attempt, error=type(exc).__name__)
+                await _sleep(BOOT_RETRY_BACKOFF_S[attempt - 1])
+                continue
+            if status == "succeeded":
+                await _refresh_youtube(app)
+            return
     except Exception as exc:  # noqa: BLE001 - a background task: log, never propagate
         log.warning("boot_seed_failed", error=type(exc).__name__, detail=scrub(str(exc), settings.secret_values()))
 
