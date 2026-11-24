@@ -502,6 +502,8 @@ test.describe("ink on a reader section", () => {
       const w2 = (await a.locator("[data-ink-column]").boundingBox())?.width ?? 0;
       expect(top2 / w2).toBeGreaterThan(top1 / w1 + 0.05); // the text really reflowed (block moved down in su)
       const expected = top2 + ((c1 as number) - top1) * (w2 / w1);
+      // Re-anchoring after the resize can take longer than the reflow on a slow runner: wait until it lands.
+      await expect.poll(() => violetCentre(a, expected - 20, expected + 20), { timeout: 15_000 }).not.toBeNull();
       const c2 = await violetCentre(a, expected - 20, expected + 20);
       expect(c2).not.toBeNull();
       expect(Math.abs((c2 as number) - expected)).toBeLessThanOrEqual(1);
