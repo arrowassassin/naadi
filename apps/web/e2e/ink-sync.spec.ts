@@ -194,10 +194,13 @@ async function violetCentre(page: Page, fromPx: number, toPx: number): Promise<n
   const box = await page.locator(SURFACE).boundingBox();
   if (!box) throw new Error("no surface");
   const top = Math.max(0, fromPx);
-  const height = Math.max(1, toPx - top);
+  // The clip snaps to whole CSS pixels (a fractional clip is rounded by the screenshot, which would shift the
+  // measured centre by up to half a pixel each time); the centre is mapped back from the snapped top.
+  const clipTop = Math.floor(box.y + top);
+  const height = Math.max(1, Math.ceil(box.y + toPx) - clipTop);
   await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
   const shoot = () =>
-    page.screenshot({ clip: { x: box.x, y: box.y + top, width: box.width, height }, animations: "disabled" });
+    page.screenshot({ clip: { x: box.x, y: clipTop, width: box.width, height }, animations: "disabled" });
   // WebKit reports the screenshot tool's <style> as refused by our CSP: the tool's noise, not the app's.
   const g = guards.get(page);
   const png = g ? await g.duringTool(shoot) : await shoot();
@@ -246,7 +249,7 @@ async function violetCentre(page: Page, fromPx: number, toPx: number): Promise<n
     return weight > 0 ? { y: sum / weight, scale: img.height } : null;
   }, png.toString("base64"));
   if (!centre) return null;
-  return top + (centre.y * height) / centre.scale;
+  return clipTop - box.y + (centre.y * height) / centre.scale;
 }
 
 async function turnInkOn(page: Page) {
