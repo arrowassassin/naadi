@@ -266,11 +266,19 @@ test.describe("highlights, notes and the selection toolbar", () => {
       await editor.click();
       await page.keyboard.type("Remember the order.");
       await page.waitForResponse(isNoteWrite("PATCH", 200));
-      for (const mode of ["Write", "Both", "Type"]) {
-        await panel.getByRole("button", { name: mode, exact: true }).click();
-        await expect(panel.getByRole("button", { name: mode, exact: true })).toHaveAttribute("aria-pressed", "true");
-      }
-      await panel.getByRole("button", { name: "Both", exact: true }).click();
+      // The mode is a segmented control, or a select once the panel is narrow (side panel on iPad landscape).
+      const modeSelect = panel.getByRole("combobox", { name: "Note mode" });
+      const pickMode = async (mode: string) => {
+        if (await modeSelect.isVisible()) {
+          await modeSelect.selectOption({ label: mode });
+          await expect(modeSelect).toHaveValue(mode.toLowerCase());
+        } else {
+          await panel.getByRole("button", { name: mode, exact: true }).click();
+          await expect(panel.getByRole("button", { name: mode, exact: true })).toHaveAttribute("aria-pressed", "true");
+        }
+      };
+      for (const mode of ["Write", "Both", "Type"]) await pickMode(mode);
+      await pickMode("Both");
       await expect(panel.locator("[data-page-ink]")).toBeVisible();
       await snap(page, info, guard, "page-notes");
       await expectNoAxeViolations(page);
@@ -657,7 +665,7 @@ test.describe("highlights, notes and the selection toolbar", () => {
 
       // On portrait and phone the page notes are a modal sheet: close it to reach the sync indicator.
       const sheet = a.locator("[data-page-notes-sheet][open]");
-      if (await sheet.count()) await sheet.locator("button[aria-label]").first().click();
+      if (await sheet.count()) await sheet.getByRole("button", { name: "Close page notes" }).click();
       await expect(a.locator("[data-page-notes-sheet][open]")).toHaveCount(0);
       await a.locator("[data-sync-phase]:visible").first().click();
       await expect(a.locator("[data-sync-sheet] [data-sync-conflict]").first()).toBeVisible({ timeout: 20_000 });
