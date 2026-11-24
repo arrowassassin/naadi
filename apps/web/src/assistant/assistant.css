@@ -138,6 +138,10 @@
   max-width: calc(100vw - 2rem);
   padding: 0;
 }
+/* With the side panel open the chip sits left of it, clear of the panel's header buttons. */
+html[data-assistant-panel] .sync-notice:has([data-sync-phase="saved"], [data-sync-phase="syncing"]) {
+  right: calc(var(--assistant-panel-w, 0px) + 1.5rem);
+}
 
 @media (min-width: 68.75rem) {
   html:has([data-reader-notes-side]) [data-shell-bottom] {
