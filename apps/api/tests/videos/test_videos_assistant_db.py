@@ -16,8 +16,9 @@ from naadi_api.agent.tools.executor import run_tool_call
 from naadi_api.agent.tools.registry import PageRef, ToolContext
 from naadi_api.db import Database
 from naadi_api.llm import CallContext
+from naadi_api.videos.query import stem
 from tests.db.rls import DB_MARKS
-from tests.videos.test_videos_db import VW, vw  # noqa: F401
+from tests.videos.test_videos_db import VW, _catalog, _media, _topic, vw  # noqa: F401
 
 pytestmark = [*DB_MARKS, pytest.mark.asyncio]
 
@@ -30,7 +31,7 @@ async def db(url: str) -> AsyncIterator[Database]:
     await d.close()
 
 
-def ctx(db: Database, user: uuid.UUID, page: PageRef | None = None) -> ToolContext:
+def ctx(db: Database, user: uuid.UUID, page: PageRef | None = None, *, videos: bool = True) -> ToolContext:
     return ToolContext(
         user_id=user,
         is_admin=False,
@@ -41,7 +42,7 @@ def ctx(db: Database, user: uuid.UUID, page: PageRef | None = None) -> ToolConte
         page=page or PageRef(),
         gateway=None,  # type: ignore[arg-type]  # no tool here calls a model
         call=CallContext(purpose="chat"),
-        flags={},
+        flags={"videos": videos},
         store=None,
     )
 
@@ -102,3 +103,41 @@ async def test_open_in_canvas_opens_a_commons_file_and_refuses_unapproved(vw: VW
     assert data["provider"] == "commons" and data["file_url"] == "https://f.test/a.webm"
     hidden = await call(ctx(db, vw.w.a), "open_in_canvas", args | {"video_media_id": vw.mid(6)})
     assert hidden.status == "refused"
+
+
+async def test_stem_matches_plural_and_singular() -> None:
+    assert [stem(w) for w in ("blockers", "diseases", "abscess", "loops", "gas", "murmur")] == [
+        "blocker",
+        "diseas",
+        "abscess",
+        "loop",
+        "gas",
+        "murmur",
+    ]
+
+
+async def test_suggest_video_natural_queries(vw: VW, db: Database, pg: Any) -> None:  # noqa: F811
+    tag = vw.w.tag
+    _media(pg, vw, 7, title=f"Beta{tag} blocker pharmacology")
+    _media(pg, vw, 8, title=f"Cardiac{tag} murmurs")
+    _media(pg, vw, 9)
+    for n in (7, 8, 9):
+        _catalog(pg, vw, n, topic_ids=[f"{tag}-t9"] if n == 9 else [])
+    _topic(pg, vw, 9, title=f"Frank-Starling{tag} curve", media_ids=[vw.mid(9)])
+    tc = ctx(db, vw.w.a)
+
+    async def shown(topic: str) -> list[str]:
+        r = await call(tc, "suggest_video", {"topic": topic})
+        assert r.status == "ok", r.content
+        return [b["data"]["media_id"] for b in r.blocks]
+
+    # "mechanism" matches nothing and "blockers" is a plural: the any-key-word retry finds it
+    assert await shown(f"beta{tag} blockers mechanism") == [vw.mid(7)]
+    assert await shown(f"frank starling{tag}") == [vw.mid(9)]
+    assert await shown(f"cardiac{tag} murmur") == [vw.mid(8)]  # singular query, plural title
+    assert await shown(f"beta{tag} blockers") == [vw.mid(7)]  # plural query, singular title (no retry needed)
+    # the retry ranks by words matched: both key words beat one
+    assert await shown(f"cardiac{tag} beta{tag} pharmacology treatment") == [vw.mid(7), vw.mid(8)]
+    assert await shown(f"nothing{tag} mechanism") == []
+    off = await call(ctx(db, vw.w.a, videos=False), "suggest_video", {"topic": vw.word})
+    assert off.blocks == [] and off.content == "No video library available."

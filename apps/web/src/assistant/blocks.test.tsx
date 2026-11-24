@@ -16,6 +16,12 @@ vi.mock("../content/mermaidHost", () => ({
   releaseDiagramStyles: () => {},
 }));
 
+const me = vi.hoisted(() => ({ videos: true }));
+vi.mock("../auth/api", async (orig) => ({
+  ...(await orig<typeof import("../auth/api")>()),
+  useMe: () => ({ data: { features: { videos: me.videos } } }),
+}));
+
 function block(raw: Record<string, unknown>): Block {
   const ev = parseCustomEvent({ type: "block", block: { id: "b1", message_id: null, ...raw } });
   if (ev?.type !== "block") throw new Error(`invalid block ${JSON.stringify(raw)}`);
@@ -128,6 +134,30 @@ describe("answer blocks", () => {
     expect(href.pathname).toBe("/videos");
     expect(href.searchParams.get("v")).toBe("yt-rta");
     expect(JSON.parse(href.searchParams.get("vs") ?? "null")).toEqual({ step: "step1", subject: "Renal" });
+  });
+
+  it("video: no Videos link while the Videos section is off", async () => {
+    me.videos = false;
+    try {
+      show(
+        block({
+          type: "video",
+          data: {
+            provider: "youtube",
+            video_id: "dQw4w9WgXcQ",
+            media_id: "yt-rta",
+            title: "RTA explained",
+            start_s: null,
+            step: "step1",
+            subject: "Renal",
+          },
+        }),
+      );
+      expect(await screen.findByRole("button", { name: /RTA explained/ })).toBeInTheDocument();
+      expect(screen.queryByRole("link", { name: "Open in Videos" })).toBeNull();
+    } finally {
+      me.videos = true;
+    }
   });
 
   it("video: a Commons file plays in the browser's player only when asked, with its credit and licence", async () => {

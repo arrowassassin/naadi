@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 import secrets
 from typing import Any, Literal
 
@@ -10,7 +11,7 @@ from pydantic import BaseModel, Field
 from ...assistant.content import InvalidContent, markdown_to_doc
 from ...assistant.mermaid import InvalidMermaid, validate_mermaid
 from ...settings import get_settings
-from ...videos.query import COMMONS, names_for, search_filter, search_videos
+from ...videos.query import COMMONS, names_for, query_words, search_videos
 from .executor import ToolRefused
 from .registry import ToolContext, ToolResult, register_tool
 from .untrusted import frame
@@ -100,17 +101,63 @@ def _line(row: dict[str, Any], names: dict[str, str]) -> str:
     return "- " + " · ".join(p for p in parts if p) + f" (media_id {row['media_id']})"
 
 
+# Words that say what kind of video, not what it is about: never enough on their own for a match.
+GENERIC_WORDS = frozenset(
+    [
+        "a",
+        "an",
+        "and",
+        "are",
+        "about",
+        "basic",
+        "basics",
+        "by",
+        "explain",
+        "explained",
+        "for",
+        "from",
+        "how",
+        "in",
+        "intro",
+        "introduction",
+        "is",
+        "lecture",
+        "mechanism",
+        "mechanisms",
+        "of",
+        "on",
+        "overview",
+        "review",
+        "the",
+        "to",
+        "treatment",
+        "treatments",
+        "video",
+        "videos",
+        "what",
+        "why",
+        "with",
+    ]
+)
+
+
 async def suggest_video(ctx: ToolContext, args: VideoArgs) -> ToolResult:
     """Show up to 3 approved videos on a topic from Naadi's Videos catalogue (YouTube through the official player,
     open-licence Wikimedia Commons files), best match first: topic name, then video title, chapter, channel."""
-    if not search_filter(args.topic, {})[2]:
+    if not ctx.flags.get("videos"):
+        return ToolResult(content="No video library available.")
+    if not query_words(args.topic):
         raise ToolRefused("empty_topic")
     names = names_for(get_settings().config_dir)
+    # Every word first; else (one retry, no model call) any key word, most words matched first.
+    keys = " ".join(w for w in re.findall(r"[^\W_]+", args.topic.lower()) if w not in GENERIC_WORDS and len(w) > 2)
     async with ctx.user_tx() as conn:  # RLS: only approved media are visible
         rows = await search_videos(conn, args.topic, names, step=args.step, limit=MAX_SUGGESTED * 2)
+        if not rows and keys:
+            rows = await search_videos(conn, keys, names, step=args.step, limit=MAX_SUGGESTED * 2, any_word=True)
     rows = [r for r in rows if _usable(r)][:MAX_SUGGESTED]
     if not rows:
-        return ToolResult(content="No approved video on this topic in the library. Try a shorter or broader topic.")
+        return ToolResult(content="No approved video on this topic in the library. Try one key word.")
     listing = frame("\n".join(_line(r, names) for r in rows), source="video_catalog")
     return ToolResult(
         content=f"Videos shown to the student (title · channel · subject · topics):\n{listing}",

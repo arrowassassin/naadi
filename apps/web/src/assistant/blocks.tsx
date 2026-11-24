@@ -14,6 +14,7 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { useMemo } from "react";
+import { useMe } from "../auth/api";
 import { useAuth } from "../auth/session";
 import { getCanvasKind, openInCanvas, zCanvasRef } from "../canvas/registry";
 import { ContentRenderer } from "../content/ContentRenderer";
@@ -118,6 +119,7 @@ export function ImageBlock({ block }: { block: BlockOf<"image"> }) {
 export function VideoBlock({ block }: { block: BlockOf<"video"> }) {
   const t = useUiText();
   const d = block.data;
+  const videosOn = useMe().data?.features.videos === true;
   return (
     <section aria-label={t("agent.block.video")} className="flex flex-col gap-2" data-block="video">
       <span className={LABEL}>{t("agent.block.video")}</span>
@@ -134,7 +136,7 @@ export function VideoBlock({ block }: { block: BlockOf<"video"> }) {
       ) : (
         <YouTubeNode d={d} id={block.id} />
       )}
-      {d.step && d.subject ? (
+      {videosOn && d.step && d.subject ? (
         <Link
           to="/videos"
           search={{ v: d.media_id, vs: { step: d.step, subject: d.subject } }}

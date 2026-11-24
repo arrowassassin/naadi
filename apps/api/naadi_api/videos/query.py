@@ -50,11 +50,24 @@ def names_for(config_dir: Path) -> dict[str, str]:
     return {**channel_names(config_dir), COMMONS: "Wikimedia Commons"}
 
 
-def search_filter(q: str, names: dict[str, str]) -> tuple[str, str, dict[str, Any]]:
+def stem(word: str) -> str:
+    """A plural and its singular match each other: "blockers" -> "blocker", "diseases" -> "diseas" (both are then
+    matched as substrings). shortcut: English plurals only, upgrade to FTS stemming if recall still falls short."""
+    if len(word) <= 3 or not word.endswith("s") or word.endswith("ss"):
+        return word
+    return word[:-2] if word.endswith("es") and len(word) > 4 else word[:-1]
+
+
+def query_words(q: str) -> list[str]:
+    return [stem(w) for w in re.findall(r"[^\W_]+", q.lower())][:MAX_WORDS]
+
+
+def search_filter(q: str, names: dict[str, str], *, any_word: bool = False) -> tuple[str, str, dict[str, Any]]:
     """(filter, rank expression, params) for a free-text query: every word must match the video title, subject,
     a direct topic's title or chapter, or the channel name. Rank: topic title > video title > chapter > channel.
+    With `any_word`, one matching word is enough and the rank is the number of words matched (most first).
     shortcut: ILIKE scans the filtered catalogue (a few thousand rows), upgrade to trigram/FTS if it grows 10x."""
-    words = re.findall(r"[^\W_]+", q.lower())[:MAX_WORDS]
+    words = query_words(q)
     if not words:
         return "true", "0", {}
     params: dict[str, Any] = {}
@@ -74,6 +87,8 @@ def search_filter(q: str, names: dict[str, str]) -> tuple[str, str, dict[str, An
             f"(m.title ilike {p} or c.subject ilike {p} or {ch} or exists (select 1 from public.video_topics t "  # noqa: S608
             f"where t.id = any(c.topic_ids) and (t.title ilike {p} or t.chapter ilike {p})))"  # placeholders only
         )
+    if any_word:
+        return " or ".join(hit), "-(" + " + ".join(f"{h}::int" for h in hit) + ")", params
     sub = "exists (select 1 from public.video_topics t where t.id = any(c.topic_ids) and {})"
     rank = (
         f"case when {sub.format(' and '.join(topic))} then 0 when {' and '.join(title)} then 1 "
@@ -83,10 +98,16 @@ def search_filter(q: str, names: dict[str, str]) -> tuple[str, str, dict[str, An
 
 
 async def search_videos(
-    conn: psycopg.AsyncConnection[Any], q: str, names: dict[str, str], *, step: str | None, limit: int
+    conn: psycopg.AsyncConnection[Any],
+    q: str,
+    names: dict[str, str],
+    *,
+    step: str | None,
+    limit: int,
+    any_word: bool = False,
 ) -> list[dict[str, Any]]:
     """The best-ranked catalogue videos for a free-text query (optionally one step)."""
-    where, rank, params = search_filter(q, names)
+    where, rank, params = search_filter(q, names, any_word=any_word)
     sql = (
         f"select {ITEM_COLS}, {rank} as rank {ITEM_FROM} where ({where})"
         " and (%(step)s::text is null or c.step = %(step)s) order by rank, c.sort, c.media_id limit %(limit)s"
