@@ -1,8 +1,10 @@
 import type { VideoOut } from "@naadi/shared";
 import { Chip, cx } from "@naadi/ui";
 import { Check, Play } from "lucide-react";
+import { useState } from "react";
 import { useUiText } from "../copy/useUiText";
 import { formatClock } from "../video/format";
+import { thumbUrl } from "./thumbUrl";
 
 type T = ReturnType<typeof useUiText>;
 
@@ -16,9 +18,11 @@ export function videoMeta(t: T, v: VideoOut): string {
   return v.duration_s ? `${channel} · ${formatClock(v.duration_s)}` : channel;
 }
 
-/** A neutral poster for every card: nothing is requested from YouTube or the file host until the video is pressed. */
+/** The video's still (YouTube image server or Commons); the neutral poster sits under it and shows if the image fails. */
 export function Thumb({ v, small = false, className }: { v: VideoOut; small?: boolean; className?: string }) {
   const t = useUiText();
+  const src = thumbUrl(v);
+  const [failed, setFailed] = useState(false);
   return (
     <span
       aria-hidden="true"
@@ -27,6 +31,18 @@ export function Thumb({ v, small = false, className }: { v: VideoOut; small?: bo
         className,
       )}
     >
+      {src && !failed ? (
+        <img
+          src={src}
+          alt=""
+          width={320}
+          height={180}
+          loading="lazy"
+          decoding="async"
+          onError={() => setFailed(true)}
+          className="absolute inset-0 size-full object-cover"
+        />
+      ) : null}
       <span className="flex flex-col items-center gap-2 text-text-2">
         <Play size={small ? 20 : 28} />
         {small ? null : (

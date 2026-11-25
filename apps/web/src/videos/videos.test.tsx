@@ -216,8 +216,20 @@ describe("Videos screen", () => {
     expect(await screen.findByRole("heading", { name: "Physiology · Step 1" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Internal Medicine · Step 2 CK" })).toBeVisible();
     expect(screen.getByText("15 of 405 marked watched")).toBeVisible();
-    // every card has a neutral poster, never a remote image (nothing is asked of YouTube before a press)
-    expect(document.querySelector("[data-video] img")).toBeNull();
+    // every card shows its still (YouTube image server or Commons), lazy and with empty alt
+    const imgs = [...document.querySelectorAll<HTMLImageElement>("[data-video] img")];
+    expect(imgs.map((i) => i.getAttribute("src"))).toEqual([
+      "https://i.ytimg.com/vi/-0CXs9L9O0A/mqdefault.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Acute_cholecystitis.webm/330px--Acute_cholecystitis.webm.jpg",
+    ]);
+    for (const i of imgs) {
+      expect(i).toHaveAttribute("alt", "");
+      expect(i).toHaveAttribute("loading", "lazy");
+      expect(i).toHaveAttribute("decoding", "async");
+    }
+    // a broken image falls back to the neutral poster
+    fireEvent.error(imgs[0] as HTMLImageElement);
+    expect(document.querySelectorAll("[data-video] img")).toHaveLength(1);
     expect(lastQuery()).toMatchObject({ step: "all", limit: 48, cursor: null, core: false, unwatched: false });
   });
 

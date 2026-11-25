@@ -5768,7 +5768,7 @@
     "practice.why_not": "Why the others are wrong",
     "practice.your_answer": "Your answer",
     "practice.your_block": "Your block",
-    "privacy.youtube_body": "Naadi shows videos with the official YouTube player and uses the YouTube API Services to find them. Nothing is requested from YouTube until you press play. By watching a video you agree to the YouTube Terms of Service and Google's Privacy Policy.",
+    "privacy.youtube_body": "Naadi shows videos with the official YouTube player and uses the YouTube API Services to find them. Thumbnails load from YouTube's image server; the video itself loads only when you press play. By watching a video you agree to the YouTube Terms of Service and Google's Privacy Policy.",
     "privacy.youtube_google": "Google Privacy Policy",
     "privacy.youtube_google_url": "https://policies.google.com/privacy",
     "privacy.youtube_revoke": "You can revoke access to data YouTube holds about you in Google's security settings.",

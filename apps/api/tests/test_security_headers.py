@@ -10,6 +10,7 @@ from naadi_api.security import (
     CSP_REPORT_PATH,
     SEARCH_MEDIA_HOSTS,
     VIDEO_MEDIA_HOSTS,
+    VIDEO_THUMB_HOSTS,
     content_security_policy,
     permissions_policy,
     trusted_types_report_only_policy,
@@ -36,7 +37,7 @@ def test_csp_is_strict() -> None:
     assert d["style-src"] == ["'self'"]
     assert d["font-src"] == ["'self'"]
     assert d["connect-src"] == ["'self'", SUPA, "wss://abcdefghijklmnopqrst.supabase.co"]
-    assert d["img-src"] == ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS, SUPA]
+    assert d["img-src"] == ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS, *VIDEO_THUMB_HOSTS, SUPA]
     assert d["media-src"] == ["'self'", "blob:", *VIDEO_MEDIA_HOSTS, SUPA]  # Commons video files, Storage clips
     assert d["frame-src"] == ["'self'", "https://arrowassassin-naadi-player.static.hf.space"]  # the player page
     assert d["worker-src"] == ["'self'"]
