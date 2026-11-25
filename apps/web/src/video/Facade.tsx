@@ -9,7 +9,7 @@ function duration(s: number | null, env: ContentEnv): string | null {
   return env.text(r === "0" ? "content.duration_min" : "content.duration_min_s", { m, s: r });
 }
 
-/** Click-to-load: a plain button. No YouTube script, frame or thumbnail is requested before it is pressed. */
+/** Click-to-load: a plain button. No YouTube script or frame is requested before it is pressed. */
 export function Facade({
   title,
   duration: seconds,

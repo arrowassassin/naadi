@@ -12,6 +12,8 @@ SEARCH_MEDIA_HOSTS = (
     "https://thumb.wikimedia.org",
     "https://pmc-oa-opendata.s3.amazonaws.com",
 )
+# Video card thumbnails from YouTube's image server (the player itself is a frame of the player page, not this).
+VIDEO_THUMB_HOSTS = ("https://i.ytimg.com",)
 # Open-licence video files from Wikimedia Commons, played with a native <video> on the Videos page.
 VIDEO_MEDIA_HOSTS = ("https://upload.wikimedia.org",)
 
@@ -24,7 +26,7 @@ CSP_REPORT_GROUP = "csp"
 def content_security_policy(settings: Settings) -> str:
     supa = settings.supabase_origin
     connect = ["'self'"]
-    img = ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS]
+    img = ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS, *VIDEO_THUMB_HOSTS]
     media = ["'self'", "blob:", *VIDEO_MEDIA_HOSTS]
     if supa:
         connect += [supa, supa.replace("https://", "wss://", 1)]

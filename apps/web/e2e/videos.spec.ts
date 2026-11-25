@@ -6,7 +6,7 @@ import { freshStudent, watchConsole } from "./support/student";
 /**
  * The Videos section against the real API and the seeded catalogue (data/videos.json, group `videos`): browse, search,
  * filters, the player pane (side pane on wide screens, sheet on portrait and phone), watched marks, "Ask Naadi about
- * this video" and the topic map. Nothing contacts YouTube, the player Space or Wikimedia: their hosts are answered
+ * this video" and the topic map. Card stills and every other YouTube, player Space or Wikimedia host are answered
  * from here (the real players are video.spec / video-live.spec and the device checklist).
  */
 test.skip(!canMintUsers(), "signed-in tests need the service role (run pnpm e2e:live-auth against the Space)");
@@ -27,7 +27,7 @@ async function stubHosts(page: Page): Promise<string[]> {
   const asked: string[] = [];
   page.on("request", (r) => {
     const host = new URL(r.url()).hostname;
-    if (/(youtube\.com|youtube-nocookie\.com|ytimg\.com|wikimedia\.org)$/.test(host)) asked.push(r.url());
+    if (/(youtube\.com|youtube-nocookie\.com|wikimedia\.org)$/.test(host)) asked.push(r.url());
   });
   const html = (route: Route) =>
     route.fulfill({ status: 200, contentType: "text/html", body: "<!doctype html><title>x</title>" });
@@ -44,7 +44,15 @@ async function stubHosts(page: Page): Promise<string[]> {
   );
   // the Commons file: answered with an empty body (the player just fails to decode it; nothing is downloaded)
   await page.route("https://upload.wikimedia.org/**", (route) =>
-    route.fulfill({ status: 200, contentType: "video/webm", body: Buffer.alloc(0) }),
+    route.fulfill(
+      route.request().url().includes("/thumb/")
+        ? {
+            status: 200,
+            contentType: "image/gif",
+            body: Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", "base64"),
+          }
+        : { status: 200, contentType: "video/webm", body: Buffer.alloc(0) },
+    ),
   );
   return asked;
 }
@@ -165,7 +173,11 @@ test.describe("Videos", () => {
           .toBeLessThan((page.viewportSize()?.height ?? 800) / 3);
       }
 
-      // the facade: nothing from YouTube's player hosts before the press (no thumbnail either: ytimg is never asked)
+      // the card shows its YouTube still; the facade asks nothing from YouTube's player hosts before the press
+      await expect(card(page, YT.id).locator('img[src^="https://i.ytimg.com/vi/"]')).toHaveAttribute(
+        "src",
+        /mqdefault\.jpg$/,
+      );
       const play = pane(page).getByRole("button", { name: /^Play video:/ });
       await expect(play).toBeVisible();
       expect(asked).toEqual([]);
@@ -216,7 +228,11 @@ test.describe("Videos", () => {
       const file = pane(page).locator('[data-node="file-video"]');
       await expect(file.getByRole("button", { name: /^Play video:/ })).toBeVisible();
       await expect(file).toContainText("Loads the file from Wikimedia Commons");
-      expect(asked.filter((u) => u.includes("wikimedia.org"))).toEqual([]);
+      // card stills come from Commons' /thumb/ path; the video file itself is not asked for before the press
+      await expect(
+        card(page, FILE.id).locator('img[src^="https://upload.wikimedia.org/wikipedia/commons/thumb/"]'),
+      ).toBeVisible();
+      expect(asked.filter((u) => u.includes("wikimedia.org") && !u.includes("/thumb/"))).toEqual([]);
       // licence and attribution stay visible under the player
       await expect(file.getByRole("link", { name: "CC BY-SA 4.0" })).toBeVisible();
       await expectNoAxeViolations(page);
