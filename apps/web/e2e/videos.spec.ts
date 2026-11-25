@@ -27,7 +27,9 @@ async function stubHosts(page: Page): Promise<string[]> {
   const asked: string[] = [];
   page.on("request", (r) => {
     const host = new URL(r.url()).hostname;
-    if (/(youtube\.com|youtube-nocookie\.com|wikimedia\.org)$/.test(host)) asked.push(r.url());
+    // Commons /thumb/ stills load before play on purpose (like i.ytimg.com stills), so they are not recorded
+    if (/(youtube\.com|youtube-nocookie\.com|wikimedia\.org)$/.test(host) && !r.url().includes("/thumb/"))
+      asked.push(r.url());
   });
   const html = (route: Route) =>
     route.fulfill({ status: 200, contentType: "text/html", body: "<!doctype html><title>x</title>" });
@@ -173,7 +175,7 @@ test.describe("Videos", () => {
           .toBeLessThan((page.viewportSize()?.height ?? 800) / 3);
       }
 
-      // the card shows its YouTube still; the facade asks nothing from YouTube's player hosts before the press
+      // the card shows its YouTube still; the facade asks nothing from YouTube's player hosts and loads no Commons video file before the press (thumbnails are fine)
       await expect(card(page, YT.id).locator('img[src^="https://i.ytimg.com/vi/"]')).toHaveAttribute(
         "src",
         /mqdefault\.jpg$/,
