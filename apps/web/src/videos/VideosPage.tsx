@@ -381,8 +381,11 @@ export function VideosPage({ search }: { search: VideosSearch }) {
       </header>
 
       {subjects.length ? (
-        <nav aria-label={t("videos.subjects_label")} className="-mx-(--gutter) overflow-x-auto px-(--gutter)">
-          <ul className="m-0 flex w-max list-none gap-2 p-0 pb-1">
+        <nav
+          aria-label={t("videos.subjects_label")}
+          className="-mx-(--gutter) overflow-x-auto px-(--gutter) py-1 [mask-image:linear-gradient(to_right,#000_calc(100%-2rem),transparent)] [scrollbar-width:none] tablet:mx-0 tablet:overflow-visible tablet:px-0 tablet:[mask-image:none] [&::-webkit-scrollbar]:hidden"
+        >
+          <ul className="m-0 flex w-max list-none gap-2 p-0 tablet:w-auto tablet:flex-wrap">
             <li>
               <Toggle on={!search.subject} onClick={() => set({ subject: undefined, v: undefined })}>
                 {t("videos.subjects_all")}
